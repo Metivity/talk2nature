@@ -2,7 +2,15 @@
 
 Established September 30, 2026. The public repository and website are launched. Raviv explicitly requested a new data, code and research collection goal on September 30; funding and the scientific pilot remain open.
 
-## Latest goal: first data, code and research collection
+## Active goal: deploy the website and build Field Notes around a database
+
+Requested September 30, 2026. Deploy the updated public research library and an honest Field Notes product page using Metivity/talk2nature and the existing Pages origin. Verify the live build, research navigation, mobile layout and metadata.
+
+Extend the private owner workbench with persisted study protocols, sessions and linked synthetic observations. Import the reviewed research/source/code/dataset catalogs into the private database with version fingerprints and idempotent synchronization. Define the eventual media-storage boundary and a phone-first observation workflow. Preserve the current authentication, consent, review and withdrawal rules.
+
+Acceptance: successful public deployment and live checks; tested database persistence, evidence links and access controls; a browser-tested study/session/observation rehearsal; reproducible catalog import; current project documentation. Google policy acceptance, paid hosting, real participants, audio capture and playback remain separate unresolved gates, not claims made by this milestone.
+
+## Completed goal: first data, code and research collection
 
 Build a reproducible first collection of primary research, reusable code and suitable public datasets. Start with birds/parrots and the existing evidence library. Record exact sources/versions, review depth, labels, component-specific licenses, attribution, access and limitations. Rank resources by usefulness for predicting independently observed context on held-out individuals and sessions; keep identification benchmarks and plant/fungal sensing separate.
 
