@@ -44,7 +44,7 @@ The demo is a static browser simulation, separate from the private API and datab
 
 ## Next release gates
 
-1. **Make the private app usable by its owner:** finish the pending Google agreement/client setup, verify real sign-in and wrong-account rejection, choose a durable private host/region and an explicit spending limit, and test backup/restore and deletion. Do not deploy SQLite on ephemeral compute storage.
+1. **Make the private app usable by its owner:** finish the pending Google agreement/client setup, verify real sign-in and wrong-account rejection, choose a durable private host/region and an explicit spending limit, and test hosted recovery and deletion. The local `admin.recovery` rehearsal now verifies a separate restored copy and removes live auth state; it does not cover encrypted/off-device backups or reconciliation of withdrawals after the snapshot. Do not deploy SQLite on ephemeral compute storage.
 2. **Define one feasible study:** audit the parrot dataset's label independence and audio linkage; agree on a species, codebook, review process and scientific collaborator. Determine whether the first pilot uses existing licensed data or invited new observations.
 3. **Add invited contribution and short foreground capture:** participant authorization, separately versioned consent, local preview/discard, upload quotas, human-speech/privacy review, private media storage and withdrawal. Test actual iOS/Android devices, interruptions and denied permissions before deployment.
 4. **Evaluate a frozen release:** grouped splits, simple baselines, calibrated uncertainty and confound checks. Only then consider a user-facing suggestion about a bounded observed context. Controlled animal-facing experiments require their own protocol and welfare review.

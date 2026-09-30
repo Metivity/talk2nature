@@ -26,6 +26,8 @@ First collection acceptance checks passed September 30: eight resource records, 
 
 ## Pending work: private research product foundation
 
+September 30 continuation: built and deployed the public Field Notes interactive demo using invented scenes, with browser-only choices and no research intake. Added and ran a private local database recovery rehearsal that strips active authentication state, verifies restored content and never replaces the running database. This is completed preparation within the existing project scope, not a completed hosted pilot. The next product milestone remains real owner sign-in and durable private hosting, followed by an approved invited study.
+
 Create a mobile-product and AI architecture plan, a private owner workbench with Google Sign-In restricted to raviv@metivity.com, controlled contribution/review/release/withdrawal workflows, and a tested local vertical slice. Progress to a hosted pilot after the dedicated cloud project, real identity configuration and spending limit are resolved. Passive observation comes first. No real household recordings, automated animal playback or public recording intake before protocol and permissions are ready.
 
 The detailed product gates are in `PHASE_TWO_PLAN.md`; server, identity and data controls are in `PRIVATE_ARCHITECTURE.md`. Local implementation lives in `admin/`, outside the static website. This work remains unfinished, with Google policy acceptance pending. A code-level auth implementation is not a verified live Google login.

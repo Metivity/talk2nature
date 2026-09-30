@@ -55,3 +55,7 @@ Original software: Apache-2.0 (see `LICENSE`). Original public summaries in `con
 The local `admin/` prototype provides owner-only Google identity verification, a responsive observation form, review gates, synthetic metadata releases and withdrawal. Provider setup is still pending; this is not a live Google-authenticated service. Real observations and audio uploads are disabled. See [setup](admin/README.md), [mobile and AI plan](docs/PHASE_TWO_PLAN.md), and [private architecture](docs/PRIVATE_ARCHITECTURE.md). This code and its private runtime data are separate from the public static build.
 
 [Field Notes](https://metivity.github.io/talk2nature/field-notes/) introduces the app publicly. The local study planner connects protocols, sessions and observations to versioned research evidence in the database; see the [implemented workflow and next gates](docs/FIELD_NOTES.md).
+
+[Try the interactive demo](https://metivity.github.io/talk2nature/field-notes/demo/): invented observations, separate permissions, practice review, simulated release and withdrawal. Choices stay in browser memory; no connection to the private database. Run its checks with `node --test tests/demo.test.mjs`.
+
+The private database has a [local recovery rehearsal](admin/README.md#local-recovery-rehearsal) that restores a separate verified copy without activating it or copying live login sessions.

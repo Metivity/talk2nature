@@ -26,6 +26,7 @@
 - Website: dependency-free Python static builder in `web/build.py`; HTML/CSS/JS output in ignored `dist/`.
 - Research tooling: standard-library Python in `talk2nature/`; synthetic examples only in `examples/`.
 - Run `python3 -m unittest discover -s tests -v`, `python3 web/build.py`, and `python3 scripts/check_site.py` after relevant changes. Inspect meaningful desktop/mobile UI behavior before a public release.
+- The public Field Notes demo is a browser-only simulation with invented scenes and no private API or persistent storage. Run `node --test tests/demo.test.mjs` for demo changes; the Pages workflow also runs these checks. Keep demonstration role switching separate from actual server authorization.
 - A public build requires an explicit `--base-url` and `--public`; local previews are noindex. Never invent a production origin.
 - Deploy only public build output. The audit, funding drafts, local screenshots and raw recordings are not website assets.
 - Use a `codex/` prefix for new branches. Do not commit secrets, raw recordings, personal applicant data or rendered temporary files.
@@ -43,3 +44,4 @@
 - Owner Google identity must be checked server-side and pinned by stable subject. Do not authorize the entire Metivity domain. Google Cloud account verification is complete. Dedicated project `talk2nature` was created under raviv@metivity.com in the metivity.com organization; no billing was attached. OAuth configuration is still being completed; a live client/login is not yet verified.
 - No paid cloud budget has been approved for this phase. No private database on GitHub Pages or ephemeral serverless storage; private origin/region and backup/withdrawal requirements must be resolved before hosted use.
 - Field Notes study/session/evidence tables and the catalog import are documented in `docs/FIELD_NOTES.md`. `python3 -m admin.catalog` imports public metadata only. Preserve frozen study/evidence versions and the distinction between participant observations and external source samples. Study/session records have no deletion UI yet and must remain synthetic.
+- `python3 -m admin.recovery --name <new-name>` rehearses restoration in ignored `data/private/recovery/`, scrubbing live auth state from the copy and never activating it. Preserve pinned owner identity. Copies are unencrypted and may predate withdrawals; never treat this rehearsal as a hosted backup service or reactivate an older snapshot without deletion/revocation reconciliation.

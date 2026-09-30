@@ -15,6 +15,20 @@ python3 -m admin.catalog
 
 Open `http://localhost:4180` (use exactly localhost, matching the default origin). Without a client ID, the page explains setup is incomplete and private routes remain locked. Environment settings are documented in `.env.example`; that file is not loaded automatically. `T2N_DATABASE` defaults to ignored `data/private/admin.sqlite3`. Do not place the database, copies or local secrets inside `dist/`, `content/` or tracked files. Local filesystem owners can read the unencrypted SQLite file; this is not a multi-user workstation security boundary.
 
+## Local recovery rehearsal
+
+```sh
+python3 -m admin.recovery --name first-rehearsal
+```
+
+This reads the current local database, uses SQLite's backup API for a consistent snapshot, removes authentication sessions and login challenges from the copy, and restores into a separate file. The pinned owner identity is preserved. It verifies integrity, foreign keys, table counts and a fingerprint of all restored schema/records. The original database is neither replaced nor activated. An existing output directory is refused.
+
+Outputs are `snapshot.sqlite3`, `restored.sqlite3` and `report.json` inside ignored `data/private/recovery/<name>/`. The directory is owner-only (0700); files are 0600. They remain **unencrypted local copies**, not off-device backups or a hosted recovery service. No automatic schedule or retention policy is enabled. The CLI only publishes its output in this ignored private subtree. Use this with the trusted local prototype database, not arbitrary downloaded SQLite files.
+
+The snapshot excludes live authentication state so restored copies require a fresh login. This does not solve post-snapshot withdrawal: an older copy can contain data withdrawn later. Never switch the app to a restored file without reconciling later withdrawals, deleted records and revoked releases. The current tool deliberately provides no activate/overwrite command. Hosted restoration, encryption, retention, withdrawal reconciliation and operational access remain release gates.
+
+On September 30 the actual 82-record evidence catalog was copied and restored with matching content; the active database was untouched. Isolated tests additionally cover pinned identity, session scrubbing, withdrawn observations and revoked releases, corrupt references, private file modes and overwrite refusal. No real participant data or live Google login was used.
+
 ## Connect real Google Sign-In
 
 1. Sign into Google Cloud as `raviv@metivity.com`. Account verification was completed on September 30.
