@@ -1,6 +1,6 @@
 # Project status
 
-Updated September 30, 2026. Public launch is complete; funding and scientific-pilot dependencies remain.
+Updated September 30, 2026. Public launch is complete. Phase two (private research product foundation) is active; live Google identity, hosting, funding and scientific-pilot dependencies remain.
 
 ## Implemented
 
@@ -45,3 +45,29 @@ The initial public snapshot uses the confirmed repository-local Git identity. Ea
 The library has 15 notes and 54 source records, including three source-based method reviews. Exact candidate model references, licensing distinctions and data limitations are in `docs/MODEL_DATA_DECISION.md`. These are not expert endorsements or replications. The tested metadata/split utility uses synthetic fixtures only. Further model integration depends on a concrete dataset and question.
 
 Keep work bounded to these milestones; broader reading and optional styling remain backlog.
+
+## Phase two checkpoint — September 30, 2026
+
+Raviv requested a new goal for useful mobile apps, controlled contributions, a private owner admin with Google Sign-In, hosting and an AI architecture. Created the active goal and local branch `codex/private-research-foundation` from the public launch history. No new push or deployment has been performed in this phase.
+
+Implemented locally in `admin/`:
+- FastAPI owner workspace and responsive observation form. Only synthetic metadata is admitted; no recording, audio uploads, contributor accounts or model training.
+- Google Identity Services client integration and official server token verification; exact raviv@metivity.com authorization, one-time browser nonce, persistent subject binding, opaque expiring/revocable sessions, CSRF/Origin checks, private-response headers and input limits. Without provider configuration, Sign-In is visibly unavailable and private routes remain locked.
+- Quarantine, four-check review, training-permission gate, fingerprinted private synthetic releases, optimistic version checks, withdrawal payload removal and dependent release revocation. Public sharing is a separate permission and has no publishing endpoint.
+- Separate environment and dependency lock; SQLite runtime under ignored `data/private/`. Hosted Postgres, private objects, workers, backups and contributor roles remain proposed work.
+
+Validation:
+- 21 admin security/workflow tests passed, including actual RSA verification with a generated test key and mocked Google certificate retrieval. These are not live Google login tests.
+- The original 12 repository tests passed. Dependency consistency and JavaScript syntax checks passed. Local noindex site build/check passed: 24 HTML pages / 518 local link references. The public website was not redeployed.
+- Browser: submitted a synthetic observation, verified incomplete review rejection, accepted after four checks, created a private release, withdrew the record, verified release revocation and signed out. Tests used an isolated synthetic SQLite database and an injected test session; production code has no demo login. The test session was revoked and its browser cookie removed.
+- Desktop and narrow-layout checks passed without horizontal overflow at measured widths 1280 and 480 CSS pixels. This browser's viewport tool clamped the narrow layout; no 390-pixel or physical-phone claim is made. Two malformed select options and hidden-button styling found during browser testing were fixed. No native recording/background behavior has been tested.
+- Proof: `tmp/admin-preview/desktop.png` is a crop of the native browser capture showing the synthetic workbench before the withdrawal test. Rendered screenshot files are local only.
+
+Decisions and next actions:
+1. Read `PHASE_TWO_PLAN.md`: start with mobile Field Notes and review; then evaluate a dedicated Android listening station, with iOS and TV capabilities treated separately. First AI work uses licensed acoustic representations, independent behavior labels and held-out baselines. Plants/fungi require separate sensing protocols.
+2. Read `PRIVATE_ARCHITECTURE.md`: modular Python API, private data boundary, explicit release gates and capacity/cost model. Current implementation is a local adapter; do not deploy its SQLite database onto ephemeral serverless storage.
+3. Google Cloud account verification is required. The browser reached Google's “Verify it's you” screen for raviv@metivity.com. Raviv was asked to complete it; no password was requested in chat, no cloud project/client created and no billing linked. Resume in the handed-off Google Cloud tab after his response, configure a dedicated Talk2Nature web client, then verify live owner login and wrong-account denial.
+4. Monthly cloud budget and first device choice were asked asynchronously and remain unanswered. No paid provisioning is authorized. Continue with local/free preparation until the budget and exact project/region are resolved.
+5. Gate B still requires real identity, hosted persistence, backup/restore and deletion checks. Gate C requires a scientist, protocol, consent, contributor authorization and real-device tests before any real data intake.
+
+The active goal is not complete. Funding applicant facts, Kiki ownership/access and scientific collaboration remain unresolved; no outreach or application was submitted in this phase.

@@ -1,6 +1,14 @@
-# Talk2Nature founding goal
+# Talk2Nature goals
 
-Established September 30, 2026. Status: public repository and website launched; broader research/funding goal not complete.
+Established September 30, 2026. The public repository and website are launched. A new phase-two goal was explicitly requested and activated on September 30; funding and the scientific pilot remain open.
+
+## Active goal: private research product foundation
+
+Create a mobile-product and AI architecture plan, a private owner workbench with Google Sign-In restricted to raviv@metivity.com, controlled contribution/review/release/withdrawal workflows, and a tested local vertical slice. Progress to a hosted pilot after the dedicated cloud project, real identity configuration and spending limit are resolved. Passive observation comes first. No real household recordings, automated animal playback or public recording intake before protocol and permissions are ready.
+
+The detailed product gates are in `PHASE_TWO_PLAN.md`; server, identity and data controls are in `PRIVATE_ARCHITECTURE.md`. Local implementation lives in `admin/`, outside the static website. The goal remains active until live identity and the other stated acceptance checks are actually satisfied. A code-level auth implementation is not a verified live Google login.
+
+## Founding objective
 
 Create a credible, useful center for understanding nonhuman communication, with an evidence library, reproducible research tools, a public website and a path to funded scientific work.
 
