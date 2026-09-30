@@ -29,7 +29,15 @@ jobs:
           python3 web/build.py
           python3 scripts/check_site.py
       - name: Build the non-root container
-        run: docker build --tag talk2nature-check .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for name in ['admin/.env', '.env', 'data/private/context-sentinel', 'funding/context-sentinel', 'tmp/context-sentinel']:
+              path = Path(name)
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text('Synthetic exclusion-test marker. Not a credential.')
+          PY
+          docker build --tag talk2nature-check .
       - name: Verify image contents and hosted startup rejection
         run: |
           docker run --rm --network none --entrypoint python talk2nature-check -c 'from pathlib import Path; import os; assert os.geteuid() != 0; p=Path("/app"); assert not (p/"data").exists(); assert not (p/"funding").exists(); assert not list(p.rglob(".env*")); assert not (p/".git").exists(); assert not (p/"admin/tests").exists(); print("Non-root image excludes private working files")'
