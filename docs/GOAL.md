@@ -1,6 +1,6 @@
 # Talk2Nature founding goal
 
-Established September 30, 2026. Status: public launch authorized and in progress; broader research/funding goal not complete.
+Established September 30, 2026. Status: public repository and website launched; broader research/funding goal not complete.
 
 Create a credible, useful center for understanding nonhuman communication, with an evidence library, reproducible research tools, a public website and a path to funded scientific work.
 
