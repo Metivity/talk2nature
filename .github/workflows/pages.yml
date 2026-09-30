@@ -21,6 +21,8 @@ jobs:
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Test
         run: python3 -m unittest discover -s tests -v
+      - name: Test the public demo workflow
+        run: node --test tests/demo.test.mjs
       - name: Build public website
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}

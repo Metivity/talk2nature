@@ -1,0 +1,98 @@
+<section class="section demo-intro">
+  <a class="back-link" href="{{base}}/field-notes/">← About Field Notes</a>
+  <p class="eyebrow"><span class="status-dot"></span> FIELD NOTES / INTERACTIVE DEMO</p>
+  <h1>A small observation.<br><em>A careful beginning.</em></h1>
+  <p class="lede">Try the journey from noticing a behavior to reviewing a research contribution.</p>
+  <p class="demo-notice"><strong>Everything here is invented.</strong> Your choices stay in this tab, disappear on reload and are never sent to our research database. No recording, account or AI prediction is involved.</p>
+</section>
+<section class="section demo-workspace" aria-label="Field Notes demonstration">
+  <noscript><p class="review-box">This interactive demo needs JavaScript. The <a href="{{base}}/field-notes/">Field Notes overview</a> explains the same observation and review workflow.</p></noscript>
+  <div id="demo-app" hidden>
+    <ol class="demo-progress" aria-label="Demo progress">
+      <li data-stage="observe" aria-current="step"><span>01</span> Observe</li>
+      <li data-stage="review"><span>02</span> Review</li>
+      <li data-stage="outcome"><span>03</span> Follow through</li>
+    </ol>
+    <div class="demo-layout">
+      <div class="demo-main">
+        <section id="observe-panel" class="demo-panel" aria-labelledby="observe-heading">
+          <div class="demo-panel-top"><p class="eyebrow">YOUR ROLE / OBSERVER</p><span class="pill">Invented scene</span></div>
+          <h2 id="observe-heading" tabindex="-1">What can you observe?</h2>
+          <div class="scene-switch" role="group" aria-label="Choose an invented scene">
+            <button type="button" data-scene="visible" aria-pressed="true">A clear view</button>
+            <button type="button" data-scene="hidden" aria-pressed="false">An obstructed view</button>
+          </div>
+          <div class="demo-scene" id="scene-art">
+            <svg viewBox="0 0 600 190" aria-hidden="true" focusable="false">
+              <path d="M50 150H550" stroke="#9aaa88" stroke-width="3"/>
+              <path d="M310 89C250 70 236 133 274 145L224 171L288 155C330 145 345 114 310 89Z" fill="#678261"/>
+              <circle cx="326" cy="79" r="28" fill="#193f35"/>
+              <path d="M350 72L375 84L349 92Z" fill="#d7a53c"/>
+              <circle cx="333" cy="74" r="3" fill="#f7f5ed"/>
+              <path d="M295 144L292 155M310 140L310 155M283 157H299M304 157H319" fill="none" stroke="#193f35" stroke-width="3"/>
+              <path d="M274 111Q300 104 311 121Q287 140 271 121Z" fill="#92a37c"/>
+              <g class="scene-screen"><rect x="230" y="30" width="150" height="140" rx="5" fill="#b5bfa2"/><path d="M248 43V157M270 43V157M292 43V157M314 43V157M336 43V157M358 43V157" stroke="#97a588" stroke-width="2"/></g>
+              <text x="27" y="30" fill="#5c6a60" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">ILLUSTRATION · NOT A RECORDING</text>
+            </svg>
+            <div class="scene-caption"><span class="eyebrow">SCENE DESCRIPTION / 10 SECONDS</span><p id="scene-description"></p></div>
+          </div>
+          <form id="observation-form">
+            <fieldset class="demo-labels"><legend>Choose the behavior supported by the description</legend>
+              <label><input type="radio" name="behavior" value="moving" required><span><strong>Moving</strong><small>Changes position along or between perches.</small></span></label>
+              <label><input type="radio" name="behavior" value="resting"><span><strong>Resting</strong><small>Remains in place for the observed interval.</small></span></label>
+              <label><input type="radio" name="behavior" value="feeding"><span><strong>Feeding</strong><small>Visibly takes or handles food with its beak.</small></span></label>
+              <label><input type="radio" name="behavior" value="unknown"><span><strong>Unknown</strong><small>The behavior cannot be determined.</small></span></label>
+            </fieldset>
+            <fieldset class="demo-permissions"><legend>Set permissions for this invented example</legend>
+              <label><input type="checkbox" id="allow-review" required><span>Allow private review <small>Required to enter the review queue.</small></span></label>
+              <label><input type="checkbox" id="allow-training"><span>Also allow research training <small>Optional. Review permission does not include training.</small></span></label>
+              <p class="quiet">Publication permission is off in this demo. These choices are simulated; they do not grant rights to any real data.</p>
+            </fieldset>
+            <button class="button" type="submit">Add to demo review queue <span aria-hidden="true">→</span></button>
+          </form>
+        </section>
+        <section id="review-panel" class="demo-panel" aria-labelledby="review-heading" hidden>
+          <p class="eyebrow">YOUR ROLE / PRACTICE REVIEWER</p>
+          <h2 id="review-heading" tabindex="-1">Check before reuse.</h2>
+          <p>This role switch is a walkthrough. In a real study, an authorized reviewer checks the evidence and records a decision.</p>
+          <div class="demo-summary"><p id="review-scene"></p><p>Observer’s label: <strong id="review-label"></strong></p><p id="review-permissions"></p></div>
+          <p id="review-guidance" class="demo-callout"></p>
+          <form id="review-form">
+            <fieldset class="demo-permissions"><legend>Practice the four review checks</legend>
+              <label><input type="checkbox" name="rights" required><span>Rights checked <small>This demo example was created for the walkthrough.</small></span></label>
+              <label><input type="checkbox" name="consent" required><span>Permissions checked <small>Use only the purposes selected by the observer.</small></span></label>
+              <label><input type="checkbox" name="privacy" required><span>Privacy checked <small>This invented scene contains no people or private media.</small></span></label>
+              <label><input type="checkbox" name="label" required><span>Label checked <small>The visible behavior supports the observer’s label.</small></span></label>
+            </fieldset>
+            <div class="actions"><button class="button" type="submit" id="accept-button">Accept demo observation →</button><button class="demo-secondary" type="button" id="reject-button">Reject example</button></div>
+          </form>
+          <button class="demo-text-button" type="button" data-withdraw>Withdraw this example</button>
+        </section>
+        <section id="outcome-panel" class="demo-panel" aria-labelledby="outcome-heading" hidden>
+          <p class="eyebrow">YOUR ROLE / FOLLOW THE RECORD</p>
+          <h2 id="outcome-heading" tabindex="-1"></h2>
+          <p id="outcome-description"></p>
+          <div class="demo-callout" id="outcome-detail"></div>
+          <button type="button" class="button" id="release-button">Make a demo training release →</button>
+          <p class="quiet" id="release-note">This only changes the walkthrough. No dataset is exported and no model is trained.</p>
+          <button class="demo-text-button" type="button" data-withdraw>Withdraw this example</button>
+          <button class="demo-secondary" type="button" id="reset-button">Try another example</button>
+        </section>
+        <p id="demo-message" role="status" aria-live="polite" class="demo-message"></p>
+      </div>
+      <aside class="demo-record" aria-labelledby="record-heading">
+        <p class="eyebrow">A CONNECTED RESEARCH RECORD</p>
+        <h2 id="record-heading">One moment,<br>with its context.</h2>
+        <ol class="record-chain">
+          <li><span>Study · DEMO-STUDY</span><strong>Observe visible behavior</strong><p>Passive observation. No prompting, playback or inferred emotions.</p></li>
+          <li><span>Session · DEMO-001</span><strong>Invented parrot · Bird A</strong><p>A short example with a fixed behavior codebook.</p></li>
+          <li><span>Observation</span><strong id="record-observation">Waiting for your label</strong><p id="record-permissions">Permissions have not been selected.</p></li>
+          <li><span>Training release</span><strong id="record-release">Not created</strong><p id="record-release-detail">Requires an accepted label and separate training permission.</p></li>
+        </ol>
+        <p class="quiet">This diagram shows how records connect. The public demo is not connected to the private research database.</p>
+        <details><summary>What the first real study would test</summary><p>Whether sound adds information about independently observed behavior on held-out animals and sessions. No sound is analyzed here, and a predicted behavior would not establish the meaning of an animal’s call.</p><a href="{{base}}/research/parrot-data-feasibility/">Read the parrot data assessment →</a></details>
+      </aside>
+    </div>
+    <p class="demo-endnote">Want to build this with us? <a href="{{base}}/contribute/">Explore ways to contribute →</a></p>
+  </div>
+</section>

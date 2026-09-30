@@ -36,6 +36,12 @@ The catalog command reads only the reviewed public JSON files, not external samp
 
 Google setup is still unfinished. The browser rehearsal used a temporary isolated database and an injected synthetic test session; it is not a verified Google login. That session was revoked and its cookie removed after verification. There is no production demo-auth option.
 
+## Public interactive demo
+
+The public `/field-notes/demo/` walkthrough uses two invented scene descriptions. Visitors label visible behavior, separately choose private review and training permission, practice four review checks, create a simulated release and withdraw it. Unknown or unsupported labels cannot pass acceptance; training opt-out blocks release; withdrawal clears the observation and revokes a dependent release.
+
+The demo is a static browser simulation, separate from the private API and database. It has no upload, microphone access, sign-in, persistent browser storage, network submission or model prediction. Reload resets its choices. The observer/reviewer role switch teaches the workflow and is not an authorization mechanism. Its rules are tested with `node --test tests/demo.test.mjs`, which also runs before Pages deployment. This does not change the private server's synthetic-only gate or verify Google Sign-In.
+
 ## Next release gates
 
 1. **Make the private app usable by its owner:** finish the pending Google agreement/client setup, verify real sign-in and wrong-account rejection, choose a durable private host/region and an explicit spending limit, and test backup/restore and deletion. Do not deploy SQLite on ephemeral compute storage.
