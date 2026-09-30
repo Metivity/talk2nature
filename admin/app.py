@@ -136,12 +136,17 @@ def create_app(settings=None, verifier=None, clock=None):
             if len(body) > 16384:
                 return JSONResponse({"detail": "Request is too large."}, status_code=413)
         response = await call_next(request)
+        # GIS injects its branded button CSS as inline styles. Permit those only
+        # on the static sign-in page; private pages retain the stricter policy.
+        styles = "'self' https://accounts.google.com/gsi/style"
+        if request.url.path == "/" and settings.client_id and response.status_code == 200:
+            styles += " 'unsafe-inline'"
         response.headers.update({
             "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow, noarchive",
             "X-Content-Type-Options": "nosniff", "Referrer-Policy": "strict-origin",
             "X-Frame-Options": "DENY", "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Content-Security-Policy": "default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'self' https://accounts.google.com/gsi/style; connect-src 'self' https://accounts.google.com/gsi/; frame-src https://accounts.google.com/gsi/; img-src 'self' data:; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'",
+            "Content-Security-Policy": f"default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; style-src {styles}; connect-src 'self' https://accounts.google.com/gsi/; frame-src https://accounts.google.com/gsi/; img-src 'self' data:; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'",
         })
         if settings.secure:
             response.headers["Strict-Transport-Security"] = "max-age=31536000"
@@ -187,7 +192,8 @@ def create_app(settings=None, verifier=None, clock=None):
                 raise HTTPException(429, "Please try again in a few minutes.")
             db.execute("INSERT INTO challenges VALUES(?,?)", (digest(nonce), now()+CHALLENGE_SECONDS))
         cookie(response, nonce_cookie, nonce, CHALLENGE_SECONDS)
-        return {"ready": True, "client_id": settings.client_id, "nonce": nonce}
+        return {"ready": True, "client_id": settings.client_id, "nonce": nonce,
+                "login_hint": OWNER_EMAIL}
 
     @app.post("/auth/google")
     def login(body: Credential, request: Request, response: Response):

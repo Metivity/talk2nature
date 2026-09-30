@@ -17,7 +17,7 @@ Open `http://localhost:4180` (use exactly localhost, matching the default origin
 
 ## PostgreSQL and hosting preparation
 
-`T2N_DATABASE_URL` selects the tested PostgreSQL adapter; without it, local development uses SQLite. `T2N_HOSTED=1` or Cloud Run's `K_SERVICE` requires HTTPS, a configured Google client, pinned owner subject and PostgreSQL. See [the concrete deployment proposal and release gates](../docs/HOSTING.md). Cloud hosting and live Google Sign-In are still unverified.
+`T2N_DATABASE_URL` selects the tested PostgreSQL adapter; without it, local development uses SQLite. `T2N_HOSTED=1` or Cloud Run's `K_SERVICE` requires HTTPS, a configured Google client, pinned owner subject and PostgreSQL. See [the concrete deployment proposal and release gates](../docs/HOSTING.md). One real local Google owner sign-in and logout succeeded on October 1. A real non-owner account was denied. Cloud hosting and repeat owner login with the explicit pin remain unfinished.
 
 Run `.venv/bin/python scripts/test_postgres.py` to create a disposable local PostgreSQL cluster and exercise the full workbench suite with a restricted runtime role. This requires existing PostgreSQL binaries and does not connect to any existing database. `admin.database init` explicitly initializes the private schema; runtime never runs migrations. The SQLite recovery command below does not back up PostgreSQL.
 
@@ -42,7 +42,18 @@ On September 30 the actual 82-record evidence catalog was copied and restored wi
 3. Configure Google Auth Platform branding and a Web application OAuth client. Use only basic sign-in identity; no Drive/Gmail scopes. For local development add the exact authorized JavaScript origin `http://localhost:4180` (and Google-required localhost origin if the console requires it). Set the owner as the test user if using an external testing consent configuration. A hosted client requires its exact future HTTPS origin; do not invent one.
 4. Set the public web client ID in `T2N_GOOGLE_CLIENT_ID`; no OAuth client secret is used by this ID-token flow. Run the app with its matching `T2N_ORIGIN`.
 5. Complete the Google button flow. The server requires the exact owner email, verified status, correct token audience/issuer/signature/expiry, browser nonce and Workspace domain for initial binding. It stores the stable Google subject privately. Inspect/bind that verified subject through local configuration before a hosted rollout. If Google is not authoritative for the email, explicitly resolve identity; do not remove the check.
-6. Verify owner success, another account denied, logout and session expiry. Google client setup and live login have **not** yet been verified.
+6. Verify owner success, another account denied, logout and session expiry. On October 1 the local client and exact owner test user were created, one real owner login/logout succeeded, and the verified stable subject was saved privately in ignored `admin/.env` (0600). A real non-owner account was denied after signature verification. Repeat owner login with the explicit pin remains outstanding; automated denial/expiry checks pass.
+
+To restart the configured local instance, load the trusted local configuration without printing it:
+
+```sh
+set -a
+. admin/.env
+set +a
+.venv/bin/python -m admin.serve
+```
+
+The Google-rendered button injects inline CSS. Only the configured static sign-in page permits inline styles; private pages do not. Inline scripts remain blocked throughout.
 
 The app loads Google's hosted Identity Services library according to the [official setup guide](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid). The configured client ID is public; ID tokens and session cookies are private. Authentication does not require public access to any private dataset.
 

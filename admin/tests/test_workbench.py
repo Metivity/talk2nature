@@ -92,6 +92,23 @@ class WorkbenchTests(unittest.TestCase):
             with self.subTest(path=path): self.assertEqual(self.client.get(path).status_code,401)
         self.assertEqual(self.client.get("/admin",follow_redirects=False).status_code,303)
 
+    def test_google_button_styles_are_limited_to_signin(self):
+        config = self.client.get('/auth/config').json()
+        self.assertEqual(config['login_hint'], 'raviv@metivity.com')
+        self.assertEqual(set(config), {'ready', 'client_id', 'nonce', 'login_hint'})
+        def directives(path):
+            return dict(part.strip().split(' ', 1) for part in
+                        self.client.get(path).headers['content-security-policy'].split(';'))
+        signin = directives('/')
+        self.assertIn("'unsafe-inline'", signin['style-src'])
+        self.assertNotIn("'unsafe-inline'", signin['script-src'])
+        self.assertEqual(self.login().status_code, 200)
+        for path in ['/admin', '/privacy', '/api/me', '/assets/signin.js']:
+            with self.subTest(path=path):
+                policy = directives(path)
+                self.assertNotIn("'unsafe-inline'", policy['style-src'])
+                self.assertNotIn("'unsafe-inline'", policy['script-src'])
+
     def test_every_private_write_requires_authentication(self):
         for path,body in [("/api/observations",fixture()),("/api/releases",{"ids":["x"]}),
                           ("/api/observations/x/review",{"version":1,"decision":"reject"}),

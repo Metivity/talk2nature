@@ -11,7 +11,7 @@ async function start() {
     const script = document.createElement('script');
     script.src = 'https://accounts.google.com/gsi/client';
     script.onload = () => {
-      google.accounts.id.initialize({client_id: config.client_id, nonce: config.nonce, auto_select: false, callback: async ({credential}) => {
+      google.accounts.id.initialize({client_id: config.client_id, nonce: config.nonce, login_hint: config.login_hint, auto_select: false, callback: async ({credential}) => {
         status.textContent = 'Verifying your account…';
         try {
           const result = await fetch('/auth/google', {method:'POST', credentials:'same-origin', headers:{'Content-Type':'application/json'}, body:JSON.stringify({credential})});
@@ -20,7 +20,7 @@ async function start() {
         } catch (error) { status.textContent = error.message; document.querySelector('#retry').hidden = false; }
       }});
       google.accounts.id.renderButton(document.querySelector('#google-button'), {type:'standard', theme:'outline', size:'large', text:'signin_with'});
-      status.textContent = 'Use your authorized Google account to continue.';
+      status.textContent = `Use ${config.login_hint} to continue.`;
     };
     script.onerror = () => { status.textContent = 'Google Sign-In could not load. Check your connection and try again.'; document.querySelector('#retry').hidden = false; };
     document.head.append(script);

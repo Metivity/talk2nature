@@ -1,6 +1,6 @@
 # Project status
 
-Updated September 30, 2026. The expanded website and Field Notes product page are live. The database-backed study/session rehearsal is implemented locally. Live Google identity, private hosting, funding and scientific-pilot dependencies remain.
+Updated October 1, 2026. The expanded website and Field Notes product page are live. The database-backed study/session rehearsal is implemented locally. Live Google identity, private hosting, funding and scientific-pilot dependencies remain.
 
 ## Implemented
 
@@ -141,3 +141,16 @@ Next required work remains the pending agreement and budget decisions, actual Go
 
 
 Container verification completed on source `6777955` in successful manual run https://github.com/Metivity/talk2nature/actions/runs/36786952737. Both database suites (74 tests), repository checks (23 tests), the pinned-base image build, actual context/image exclusions, non-root execution, missing-hosted-settings rejection and locked local-mode HTTP smoke checks passed. The CI context included harmless `.env`/private-directory markers to prove exclusion; no real private files or cloud credentials were sent. Proof: ignored `tmp/private-hosting-ci.json`. No image was published to a registry and no private service was deployed. Managed PostgreSQL recovery, provider configuration and a dependency/image security review remain before rollout.
+
+
+## October 1: approved hosting and real owner identity
+
+Raviv replied “ok confirm” to the specific Google policy and proposed up-to-US$50/month Cloud Run/Supabase Frankfurt budget questions. Both are approved; do not ask those again. Accepted the Google User Data Policy and created OAuth branding plus the identity-only local web client in the existing `talk2nature` project under raviv@metivity.com. Authorized origins are `http://localhost` and `http://localhost:4180`; no hosted origin or redirect was invented. The exact owner is the sole saved test user. No Gmail/Drive scopes were added, and no unused OAuth client secret was retained.
+
+One real Google login reached the owner workbench with all 82 catalog records, and logout returned to the locked sign-in page. The verified stable subject was saved privately to ignored `admin/.env` with file mode 0600 and loaded into the restarted server. A later rejected login was diagnosed using boolean-only flags around the unchanged official verifier: the Google signature was valid, email and subject did not match the owner, and owner authorization was false. This verifies real non-owner denial without retaining the other account’s identity or token. The temporary diagnostic wrapper was removed and the normal launcher restored. Repeat owner login with the explicit pin has not yet succeeded; do not claim that check passed. Added Google’s documented owner-email login hint and a clear account instruction to avoid selecting the wrong existing Google session. The hint is not an authorization check. No authentication check was relaxed. Proofs are ignored `tmp/admin-preview/google-client-created.png` and `tmp/admin-preview/live-owner-login.png`.
+
+Live browser inspection found Google's injected button CSS blocked by the original CSP. Inline styles are now allowed only on the configured static sign-in page; scripts and all private pages retain their stricter rules. The branded button rendered correctly and fresh browser security logs had no style violations. Added isolation coverage to both database suites. Latest checks: 76 backend tests (including 36 PostgreSQL, no skips), 23 repository tests, local noindex site build/check and Git diff validation passed.
+
+Cloud provisioning has two concrete dependencies. A dedicated billing account named Talk2Nature was prepared under the authorized organization; completing its setup requires owner action. Private billing details are in ignored `data/private/setup-status.json`. No billing was linked to the project or runtime launched. Supabase sign-in requires its separate Terms/Privacy agreement; confirmation was requested and is still pending. Browser tabs for both steps are preserved. Do not recreate the pending billing account or treat the Google agreement approval as Supabase acceptance. Screenshots: `tmp/admin-preview/google-billing-handoff.png` and `tmp/admin-preview/supabase-terms-pending.png`.
+
+Next: resolve the two pending provider steps; verify repeat local pinned-owner login; configure dedicated durable hosting and managed recovery within the approved budget. Hosted service, real recordings and scientific results remain unverified. The public Pages website remains at `71f1656`; no public site change or deployment was needed for this private-auth work.

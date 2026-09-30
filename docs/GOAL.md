@@ -80,3 +80,5 @@ Start with useful original pages about animal communication AI, bioacoustic mode
 ## External dependencies
 
 Confirmed: GitHub owner Metivity and GitHub Pages hosting, authorized September 30, 2026. Awaiting Raviv: funding applicant identity/country/entity; Kiki location and ownership; realistic budget/time commitment. These do not block local preparation. No external partner communication is authorized by the broad research goal alone.
+
+October 1 authorization update: Raviv confirmed Google policy acceptance and the proposed Cloud Run/Supabase Frankfurt setup up to US$50/month. OAuth branding/client and one real local owner login/logout are verified; the owner subject is pinned privately. Hosted work remains unfinished because the Google billing setup and separate Supabase agreement are pending. See the latest STATUS entry; earlier pending-budget statements are historical.
