@@ -145,6 +145,10 @@ def create_app(settings=None, verifier=None, clock=None):
     def signin():
         return FileResponse(ASSETS / "signin.html")
 
+    @app.get("/privacy")
+    def privacy():
+        return FileResponse(ASSETS / "privacy.html")
+
     @app.get("/assets/{name}")
     def asset(name: str):
         if name not in {"style.css", "signin.js", "workbench.js"}:
@@ -254,7 +258,12 @@ def create_app(settings=None, verifier=None, clock=None):
                     or value["label_source"] == "unknown" or value["context"] == "unknown"):
                 raise HTTPException(409, "Rights, consent, privacy and an independent context label must all be reviewed.")
             state = "accepted" if body.decision == "accept" else "rejected"
-            db.execute("UPDATE observations SET state=?,version=version+1 WHERE id=?", (state,key))
+            payload = json.loads(row["payload"])
+            payload["review"] = {"decision": body.decision, "reviewer": "owner",
+                                 "reviewed_at": now(), "source_version": body.version,
+                                 "checks": {field: getattr(body, field) for field in
+                                            ("rights_checked", "consent_checked", "privacy_checked", "label_checked")}}
+            db.execute("UPDATE observations SET payload=?,state=?,version=version+1 WHERE id=?", (json.dumps(payload),state,key))
             audit(db, state, key, now())
         return {"state": state}
 
@@ -287,6 +296,11 @@ def create_app(settings=None, verifier=None, clock=None):
                 value = observation(row)
                 if not value["consent_training"]:
                     raise HTTPException(409, "Training permission is required for every observation.")
+                proof = value.get("review", {})
+                checks = proof.get("checks", {})
+                if proof.get("decision") != "accept" or not all(checks.get(field) is True for field in
+                        ("rights_checked", "consent_checked", "privacy_checked", "label_checked")):
+                    raise HTTPException(409, "A stored review record is required for every observation.")
                 # Mutable workflow state is not part of a content fingerprint.
                 records.append({"id": key, **json.loads(row["payload"])})
             fingerprint = digest(json.dumps(records, sort_keys=True, separators=(",", ":")))
@@ -316,6 +330,8 @@ def create_app(settings=None, verifier=None, clock=None):
                 if not item or item["state"] != "released":
                     raise HTTPException(410, "This release is no longer available.")
                 records.append({"id": member, **json.loads(item["payload"])})
+            if digest(json.dumps(records, sort_keys=True, separators=(",", ":"))) != row["fingerprint"]:
+                raise HTTPException(409, "Release content no longer matches its fingerprint. Review the data store before exporting.")
             return {"schema_version":1, "synthetic":True, "kind":"metadata-rehearsal", "fingerprint":row["fingerprint"], "records":records,
                     "limitations":["No source audio or verified recording hashes; not an acoustic training dataset.", "Review checkboxes are attestations, not independent verification.", "No permission to publish is implied by a private training release."]}
 

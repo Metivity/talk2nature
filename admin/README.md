@@ -16,8 +16,8 @@ Open `http://localhost:4180` (use exactly localhost, matching the default origin
 
 ## Connect real Google Sign-In
 
-1. Sign into Google Cloud as `raviv@metivity.com`. The September 30 attempt reached an organization-requested account verification screen; Raviv must complete that step.
-2. Create/select a dedicated **Talk2Nature** Google Cloud project. Do not use an unrelated company project or attach billing just to obtain an identity client.
+1. Sign into Google Cloud as `raviv@metivity.com`. Account verification was completed on September 30.
+2. Select the dedicated **Talk2Nature** project, ID `talk2nature`, created under the metivity.com organization on September 30. Do not create another project, use an unrelated company project or attach billing just to obtain an identity client.
 3. Configure Google Auth Platform branding and a Web application OAuth client. Use only basic sign-in identity; no Drive/Gmail scopes. For local development add the exact authorized JavaScript origin `http://localhost:4180` (and Google-required localhost origin if the console requires it). Set the owner as the test user if using an external testing consent configuration. A hosted client requires its exact future HTTPS origin; do not invent one.
 4. Set the public web client ID in `T2N_GOOGLE_CLIENT_ID`; no OAuth client secret is used by this ID-token flow. Run the app with its matching `T2N_ORIGIN`.
 5. Complete the Google button flow. The server requires the exact owner email, verified status, correct token audience/issuer/signature/expiry, browser nonce and Workspace domain for initial binding. It stores the stable Google subject privately. Inspect/bind that verified subject through local configuration before a hosted rollout. If Google is not authoritative for the email, explicitly resolve identity; do not remove the check.
@@ -34,7 +34,7 @@ python3 web/build.py
 python3 scripts/check_site.py
 ```
 
-Admin tests generate a temporary RSA signing key and replace Google's certificate retrieval only. They exercise real signature/audience/issuer/expiry verification plus nonce replay, exact owner binding, CSRF, session expiry/logout, private routes, input restrictions, optimistic review versions, training opt-out, atomic release and withdrawal. No network provider test is implied.
+Admin tests generate a temporary RSA signing key and replace Google's certificate retrieval only. They exercise real signature/audience/issuer/expiry verification plus nonce replay, exact owner binding, CSRF, session expiry/logout, private routes, input restrictions, optimistic review versions, training opt-out, atomic release and withdrawal, retained review attestations and release-content integrity. No network provider test is implied.
 
 Only synthetic metadata is admitted; real-data submissions return 409. A private release is a metadata-rehearsal JSON export, not a valid audio manifest or a trained model. It is intentionally distinct from the source-recording manifests in `talk2nature/manifest.py`.
 

@@ -158,6 +158,13 @@ class WorkbenchTests(unittest.TestCase):
         self.assertEqual(self.client.get("/",headers={"Host":"attacker.example"}).status_code,400)
         self.assertEqual(self.client.get("/assets/app.py").status_code,404)
 
+    def test_privacy_disclosure_is_available_before_signin(self):
+        response=self.client.get("/privacy")
+        self.assertEqual(response.status_code,200)
+        self.assertIn("not encrypted by the application",response.text)
+        self.assertIn("no Gmail, Drive or Calendar access",response.text)
+        self.assertIn("noindex",response.headers["x-robots-tag"])
+
     def test_input_limits_no_secrets_echo_and_real_data_disabled(self):
         self.login()
         self.assertEqual(self.post("/api/observations",fixture(synthetic=False)).status_code,409)
@@ -179,8 +186,32 @@ class WorkbenchTests(unittest.TestCase):
         exported=self.client.get("/api/releases/"+released.json()["id"]).json()
         self.assertTrue(exported["synthetic"])
         self.assertFalse(exported["records"][0]["consent_publication"])
+        review=exported["records"][0]["review"]
+        self.assertEqual(review["decision"],"accept")
+        self.assertEqual(review["reviewer"],"owner")
+        self.assertEqual(review["source_version"],1)
+        self.assertEqual(review["reviewed_at"],self.timestamp)
+        self.assertTrue(all(review["checks"].values()))
         fingerprint=digest(json.dumps(exported["records"],sort_keys=True,separators=(",",":")))
         self.assertEqual(exported["fingerprint"],fingerprint)
+
+    def test_release_refuses_missing_review_provenance(self):
+        self.login(); key=self.submit()
+        # A legacy accepted row without saved attestations cannot enter a new release.
+        with self.app.state.store.connect() as db:
+            db.execute("UPDATE observations SET state='accepted' WHERE id=?",(key,))
+        self.assertEqual(self.post("/api/releases",{"ids":[key]}).status_code,409)
+
+    def test_export_detects_changed_released_content(self):
+        self.login(); key=self.submit(); self.accept(key)
+        released=self.post("/api/releases",{"ids":[key]}).json()["id"]
+        with self.app.state.store.connect() as db:
+            payload=json.loads(db.execute("SELECT payload FROM observations WHERE id=?",(key,)).fetchone()[0])
+            payload["note"]="Changed outside the release workflow"
+            db.execute("UPDATE observations SET payload=? WHERE id=?",(json.dumps(payload),key))
+        response=self.client.get("/api/releases/"+released)
+        self.assertEqual(response.status_code,409)
+        self.assertNotIn("Changed outside",response.text)
 
     def test_unknown_rights_context_evidence_or_label_cannot_be_accepted(self):
         self.login()

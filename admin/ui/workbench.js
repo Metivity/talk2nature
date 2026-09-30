@@ -36,6 +36,7 @@ function card(record) {
   if(record.note) item.append(element('p', record.note, 'field-note'));
   item.append(element('p', `Rights: ${record.rights} · ${record.rights_evidence || 'Evidence missing'}`, 'small'));
   item.append(element('p', `Training: ${record.consent_training ? 'permitted' : 'not permitted'} · Publication consideration: ${record.consent_publication ? 'permitted' : 'not permitted'}`, 'small'));
+  if(record.review) item.append(element('p', `Owner review recorded ${new Date(record.review.reviewed_at*1000).toLocaleString()} · observation version ${record.review.source_version}`, 'small'));
   const controls = element('div', undefined, 'card-actions');
   if(record.state === 'quarantined') {
     const fieldset = element('fieldset'); fieldset.append(element('legend','Review checklist'));

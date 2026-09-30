@@ -39,5 +39,5 @@
 - Read `docs/PHASE_TWO_PLAN.md`, `docs/PRIVATE_ARCHITECTURE.md` and `admin/README.md` for private-product work.
 - `admin/` is a separate Python/FastAPI owner-only metadata rehearsal. Run `.venv/bin/python -m unittest discover -s admin/tests -v` after backend changes; keep the original dependency-free website checks as well.
 - Real data is rejected by the server. Do not remove this gate without an approved protocol, consent and hosted-storage review. No demo-auth environment switch in production code.
-- Owner Google identity must be checked server-side and pinned by stable subject. Do not authorize the entire Metivity domain. Google Cloud currently requests Raviv's account verification; no new cloud project or client has been confirmed.
+- Owner Google identity must be checked server-side and pinned by stable subject. Do not authorize the entire Metivity domain. Google Cloud account verification is complete. Dedicated project `talk2nature` was created under raviv@metivity.com in the metivity.com organization; no billing was attached. OAuth configuration is still being completed; a live client/login is not yet verified.
 - No paid cloud budget has been approved for this phase. No private database on GitHub Pages or ephemeral serverless storage; private origin/region and backup/withdrawal requirements must be resolved before hosted use.

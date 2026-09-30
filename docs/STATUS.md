@@ -71,3 +71,15 @@ Decisions and next actions:
 5. Gate B still requires real identity, hosted persistence, backup/restore and deletion checks. Gate C requires a scientist, protocol, consent, contributor authorization and real-device tests before any real data intake.
 
 The active goal is not complete. Funding applicant facts, Kiki ownership/access and scientific collaboration remain unresolved; no outreach or application was submitted in this phase.
+
+## Continuation: cloud identity and provenance
+
+Previous turn classification: progress (implemented and tested the local vertical slice). This continuation also made progress: the actual browser session showed account verification had completed, and the dedicated Google Cloud project `talk2nature` was created under raviv@metivity.com in the metivity.com organization. No billing was attached. The standalone “No organization” path failed validation and resource loading; the separate project uses the authorized account's organization and does not reuse either of its earlier projects.
+
+Google Auth Platform branding is prepared with name Talk2Nature, support/contact raviv@metivity.com, and External/testing audience. Setup is at the final, unchecked “I agree to the Google API Services: User Data Policy” step. Requested Raviv's confirmation at this agreement step as required by the browser-control confirmation rules. Do not accept or click through until that response arrives. No OAuth client exists yet, no test user has been saved yet and live Google Sign-In remains unverified. The cloud tab is preserved for handoff; proof is `tmp/admin-preview/google-policy-approval.png`.
+
+Additional implemented controls: review decisions now retain owner role, source version, timestamp and individual attestations in the private record. New releases reject missing review provenance, and exports recompute their stored content fingerprint before returning data. Withdrawal removes the stored review with the active payload. Added an unauthenticated `/privacy` disclosure linked from Sign-In and the workspace, explaining actual Google data use, session retention, unencrypted local storage and withdrawal limits without claiming hosted controls exist.
+
+Validation: 24 backend tests pass, adding retained-review, missing-review rejection, changed-release rejection and pre-login privacy coverage to the earlier suite. The original 12 tests were unaffected and previously passed. JavaScript syntax and diff checks pass. The local server was restarted with the new code. The new cloud project and code are progress; the goal is still not complete.
+
+Next dependency: obtain the pending policy acceptance decision, finish OAuth branding, create a web client for the exact local origin, add the owner test user and test a real owner login before making a live-auth claim. Hosted deployment still needs the unanswered spending limit, exact hosted origin/region, durable storage and operational checks. No external partner outreach, model training or real-data intake has begun.
