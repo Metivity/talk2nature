@@ -1,6 +1,6 @@
 # Project status
 
-Updated September 30, 2026. Public launch is complete. Phase two (private research product foundation) is active; live Google identity, hosting, funding and scientific-pilot dependencies remain.
+Updated September 30, 2026. Public launch and the first bounded data/code/research collection are complete. Private-product work remains unfinished; live Google identity, hosting, funding and scientific-pilot dependencies remain.
 
 ## Implemented
 
@@ -83,3 +83,17 @@ Additional implemented controls: review decisions now retain owner role, source 
 Validation: 24 backend tests pass, adding retained-review, missing-review rejection, changed-release rejection and pre-login privacy coverage to the earlier suite. The original 12 tests were unaffected and previously passed. JavaScript syntax and diff checks pass. The local server was restarted with the new code. The new cloud project and code are progress; the goal is still not complete.
 
 Next dependency: obtain the pending policy acceptance decision, finish OAuth branding, create a web client for the exact local origin, add the owner test user and test a real owner login before making a live-auth claim. Hosted deployment still needs the unanswered spending limit, exact hosted origin/region, durable storage and operational checks. No external partner outreach, model training or real-data intake has begun.
+
+## Data, code and research collection — September 30, 2026
+
+Raviv explicitly requested this new goal. It proceeds independently of the pending Google policy agreement. Goal scope and acceptance are recorded in `docs/GOAL.md`; collection findings and the next acquisition order are in `docs/COLLECTION.md`.
+
+Created `research/resources.json` with eight reviewed/prioritized paper, code, dataset and model records. Extended the public-content source inventory from 54 to 58 and evidence notes from 15 to 16 with an original parrot-data feasibility note. Source review depth, separate component rights and unresolved artifact checks are explicit. These changes are local; the public site still serves its previously recorded release.
+
+Implemented a standard-library collection CLI with offline planning, explicit IDs, reviewed-license admission, immutable source versions, upstream Git blob checks, SHA-256 receipts, TLS verification, byte limits, staging and no code execution. Downloaded nine files totaling 92,952 bytes into ignored `data/external/`: a parrot annotation table, selected R analysis scripts, Perch configuration, documentation and license notices. No audio, full archives, model weights or publisher articles downloaded. The API for Edmond reports MIT on the dataset and approximately 100.5 GB in full archives; those remain outside the bounded sample plan.
+
+The inspected parrot table contains 808 annotation rows and 176 distinct nonempty behavior strings. `research/parrot_sample_report.json` records aggregate diagnostics and exact source provenance without raw locations or notes. Labels mix observable actions with vocal descriptions, bird entries are incomplete/un-normalized, and audio/selection-table linkage is not yet checked. This is a candidate dataset, not an admitted training corpus. The private admin still rejects real data.
+
+Next scientific milestone: audit full methods, selection-table joins, missing/uncertain identities and behavior-label independence; then decide whether a small matched audio subset can support a held-out baseline. Keep plant/fungal sensing separate. Google Sign-In, cloud budget, Kiki ownership and collaborator access remain pending and do not block this collection workflow.
+
+Validation: 23 repository tests passed (11 collection/report checks plus the original 12), including checksum/size failures, blocked rights, interrupted fetch cleanup, destination safety and aggregate-report provenance. Catalog validation passed. Local noindex build/check passed: 25 HTML pages and 544 link references. Diff checks passed; raw samples/receipts are Git-ignored. The admin was untouched, so its earlier 24-test result was not rerun or represented as a new live-auth check. This completes the bounded collection goal; no trained model or deployed update is claimed.

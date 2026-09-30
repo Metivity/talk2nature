@@ -353,5 +353,26 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
     "year_label": "Documentation checked"
+  },
+  {
+    "slug": "parrot-data-feasibility",
+    "title": "A usable parrot dataset starts with its labels",
+    "taxon": "Birds",
+    "kind": "Dataset feasibility",
+    "year": "2023",
+    "year_label": "Source year",
+    "source_ids": [
+      55,
+      56,
+      57
+    ],
+    "review_depth": "Primary abstract/introduction and official repository documentation reviewed; selected scripts and the 2020 annotation CSV inspected. Full statistical methods, supplemental methods and audio not reviewed.",
+    "finding": "The study reports vocal individuality in monk parakeets. Its public repository provides code, bird identifiers and behavioral notes. Our metadata sample has 808 annotation rows; 752 contain behavior text.",
+    "limitations": "Rows are not necessarily individual calls. The 176 distinct nonempty behavior strings mix visible actions, vocal events and interpretations. Missing identities, uncertainty and audio/session linkage require review. Caller identity is not translation.",
+    "lesson": "Keep source recordings, independent behavior labels and subject/session groups linked. Audit labels before selecting a model.",
+    "next_review": "Inspect selection-table joins, normalize only observable behaviors, assess annotation reliability and evaluate whether enough independent groups remain.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Dataset inspected"
   }
 ]

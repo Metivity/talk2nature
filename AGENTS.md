@@ -12,6 +12,7 @@
 - Existing evidence baseline: `research/build_audit.py` and `output/pdf/talk2nature-audit-and-plan.pdf` (September 30, 2026).
 - Public source records live in `content/`; private application preparation belongs in `funding/`, which is excluded from public builds and Git by default.
 - No QMD collection is configured. Do not index unrelated folders.
+- The current collection goal uses `research/resources.json`, `talk2nature/collection.py` and `docs/COLLECTION.md`. Downloaded third-party samples and receipts belong in ignored `data/external/`, never in the website or `examples/`. Acquisition is separate from scientific admission and the private server's synthetic-only gate.
 
 ## Scientific and editorial standards
 - Distinguish detection, identification, association, experimentally supported meaning, bounded exchange and general translation.

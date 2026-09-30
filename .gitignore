@@ -11,6 +11,7 @@ tmp/
 output/
 funding/
 data/private/
+data/external/
 *.wav
 *.mp3
 *.mp4

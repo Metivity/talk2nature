@@ -39,6 +39,8 @@ Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/G
 - `content/`: public evidence notes, opportunity records and source inventory.
 - `web/`: static website builder and assets.
 - `talk2nature/`: reproducible research utilities.
+- `research/resources.json`: versioned research/code/dataset catalog; see [collection decisions and commands](docs/COLLECTION.md).
+- `data/external/`: ignored third-party samples and acquisition receipts; never website assets.
 - `examples/`: clearly labeled synthetic examples.
 - `tests/`: validation, leakage and website tests.
 - `research/build_audit.py`: local-only earlier audit builder; requires ReportLab if regenerated and is excluded from the public repository.

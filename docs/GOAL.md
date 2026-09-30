@@ -1,12 +1,24 @@
 # Talk2Nature goals
 
-Established September 30, 2026. The public repository and website are launched. A new phase-two goal was explicitly requested and activated on September 30; funding and the scientific pilot remain open.
+Established September 30, 2026. The public repository and website are launched. Raviv explicitly requested a new data, code and research collection goal on September 30; funding and the scientific pilot remain open.
 
-## Active goal: private research product foundation
+## Latest goal: first data, code and research collection
+
+Build a reproducible first collection of primary research, reusable code and suitable public datasets. Start with birds/parrots and the existing evidence library. Record exact sources/versions, review depth, labels, component-specific licenses, attribution, access and limitations. Rank resources by usefulness for predicting independently observed context on held-out individuals and sessions; keep identification benchmarks and plant/fungal sensing separate.
+
+The first deliverable is a validated machine-readable resource catalog, a tested bounded acquisition tool, a small permitted sample with checksums and provenance, and a prioritized baseline/acquisition recommendation. Store third-party samples outside Git and website output. Do not execute downloaded research code or treat a catalog license declaration as proof of scientific suitability. Unresolved licenses remain blocked from acquisition.
+
+This goal proceeds independently of Google Sign-In. It does not authorize paid storage/compute, new household recordings, Kiki imports without ownership confirmation, partner outreach, bulk article reproduction or a claimed animal translator. Detailed collection decisions and reproducible commands belong in `COLLECTION.md`.
+
+Completion requires validated records, tests of acquisition limits and provenance, an inspected lawful sample (or a documented reason none qualifies), and updated continuity. Further collection and model training remain explicit next milestones.
+
+First collection acceptance checks passed September 30: eight resource records, nine acquired files, aggregate annotation inspection, 23 repository tests and a checked local site build. This bounded goal is complete; the broader scientific program and private-product work are not.
+
+## Pending work: private research product foundation
 
 Create a mobile-product and AI architecture plan, a private owner workbench with Google Sign-In restricted to raviv@metivity.com, controlled contribution/review/release/withdrawal workflows, and a tested local vertical slice. Progress to a hosted pilot after the dedicated cloud project, real identity configuration and spending limit are resolved. Passive observation comes first. No real household recordings, automated animal playback or public recording intake before protocol and permissions are ready.
 
-The detailed product gates are in `PHASE_TWO_PLAN.md`; server, identity and data controls are in `PRIVATE_ARCHITECTURE.md`. Local implementation lives in `admin/`, outside the static website. The goal remains active until live identity and the other stated acceptance checks are actually satisfied. A code-level auth implementation is not a verified live Google login.
+The detailed product gates are in `PHASE_TWO_PLAN.md`; server, identity and data controls are in `PRIVATE_ARCHITECTURE.md`. Local implementation lives in `admin/`, outside the static website. This work remains unfinished, with Google policy acceptance pending. A code-level auth implementation is not a verified live Google login.
 
 ## Founding objective
 

@@ -38,6 +38,8 @@ Sources: [bark paper](https://aclanthology.org/2024.lrec-main.1432/), [BEANS tas
 
 No reviewed route is yet admitted as Talk2Nature's context dataset. That is a project-specific finding, not a claim that suitable public data does not exist.
 
+Update, September 30: a subsequent bounded collection found and inspected a promising public monk-parakeet annotation table and associated MIT analysis code. It is still not admitted for training: behavior labels, uncertainty, identities and audio linkage need auditing. See `COLLECTION.md`, `research/resources.json` and `research/parrot_sample_report.json`. No recordings or model weights were acquired.
+
 ## Resume gate and first executable milestone
 
 1. Resolve Kiki's project/ownership and available data; select one species and one observable target with a scientific collaborator. Confirm whether the work concerns natural calls or a learned interface.

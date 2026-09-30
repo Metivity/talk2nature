@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-30",
+  "scope": "First collection: birds/parrots. Original summaries only; raw samples excluded from public output.",
+  "resources": [
+    {
+      "id": "monk-parakeet-paper",
+      "kind": "paper",
+      "title": "Evidence for vocal signatures and voice-prints in a wild parrot",
+      "url": "https://doi.org/10.1098/rsos.230835",
+      "version": "Royal Society Open Science 10:230835 (2023)",
+      "priority": 1,
+      "reviewed": "2026-09-30",
+      "task": "Caller identity across call types; a candidate source for context-label feasibility.",
+      "review_depth": "Primary abstract and introduction via institutional PDF; repository documentation. Full statistical methods and supplement not yet reviewed.",
+      "access": "Institutional full text readable; publisher request returned 403.",
+      "decision": "Read methods next; no translation or causal meaning claim.",
+      "limitations": "Reported vocal individuality does not establish that birds recognize those cues or that an AI knows call meaning. No replication performed.",
+      "attribution": "Smeele, Senar, Aplin and McElreath (2023), DOI 10.1098/rsos.230835.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Article text; no automatic license for linked data/code.",
+        "evidence_url": "https://pure.mpg.de/pubman/item/item_3547893_1/component/file_3547899/Smeele_Evidence_RoySocOpSci_2023.pdf",
+        "conditions": "Credit authors/source and indicate changes. This collection publishes original summaries and links only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-code",
+      "kind": "code",
+      "title": "Monk parakeet vocal-signature analysis code",
+      "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot",
+      "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+      "priority": 1,
+      "reviewed": "2026-09-30",
+      "task": "Reproducible acoustic comparisons and identity analysis.",
+      "review_depth": "README, license, file tree, commit and downloaded data-preparation/MFCC scripts inspected; no execution or complete code audit.",
+      "access": "Public pinned GitHub files.",
+      "decision": "Acquire a small code sample; inspect before any execution.",
+      "limitations": "Selected files are not a complete runnable environment or reproduced result. R/Stan dependencies and large supporting files are absent. Scripts install packages dynamically and source unpinned helpers. The MFCC sample uses globally scaled distances; implement train-only preprocessing for any new held-out classifier.",
+      "attribution": "Simeon Quirinus Smeele; copyright 2022; related Smeele et al. (2023).",
+      "rights": {
+        "license": "MIT",
+        "scope": "Repository code; Edmond v1 separately declares MIT for the deposited dataset.",
+        "evidence_url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
+        "conditions": "Retain the copyright and permission notice. No warranty. Do not infer permission for omitted third-party files.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "files": [
+        {
+          "name": "LICENSE-MIT.txt",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
+          "bytes": 1079,
+          "git_blob_sha1": "b449976f856e1f8ca3f2f27e6711a83213f56eaf"
+        },
+        {
+          "name": "README.md",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/README.md",
+          "bytes": 21057,
+          "git_blob_sha1": "db5ac4faca3bd431de53e1135ee23ac8e5b6993a"
+        },
+        {
+          "name": "create_data_sets.R",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/CODE/00_run_methods/00_DATA_create_data_sets.R",
+          "bytes": 4635,
+          "git_blob_sha1": "4869ddbfac34c93dda6e4e07e5809d25f327ec9f"
+        },
+        {
+          "name": "mfcc.R",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/CODE/00_run_methods/02_MFCC_run.R",
+          "bytes": 2029,
+          "git_blob_sha1": "3fe460671439bbf546f4b3dfcd8b33ecb7d68187"
+        }
+      ],
+      "license_file": "LICENSE-MIT.txt",
+      "admission_reason": "MIT notice verified at the pinned commit; sample is static code and documentation only."
+    },
+    {
+      "id": "monk-parakeet-annotations",
+      "kind": "dataset",
+      "title": "Monk parakeet 2020 annotation table",
+      "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv",
+      "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+      "priority": 1,
+      "reviewed": "2026-09-30",
+      "task": "Inspect observed behavior, uncertainty and individual identifiers for a possible context-association task.",
+      "review_depth": "README field definitions, Git tree checksums, Edmond v1 license metadata and downloaded 2020 annotation table inspected; aggregate report in research/parrot_sample_report.json.",
+      "access": "Small GitHub metadata file; full Edmond archives total 100498691932 bytes and are not selected.",
+      "decision": "Sample acquired and inspected: 808 rows, 752 populated behavior entries and 176 distinct nonempty behavior strings. Require selection-table/audio linkage and an independent label audit before training admission.",
+      "limitations": "No audio acquired. Annotations are free text; a field named context elsewhere describes call sequence structure. Behavior labels cannot be assumed independent, exhaustive or suitable. Full recording overview includes coordinates and is excluded.",
+      "attribution": "Smeele et al. (2023); data DOI 10.17617/3.RUIM5I v1.0; GitHub snapshot separately pinned.",
+      "rights": {
+        "license": "MIT",
+        "scope": "Edmond dataset v1.0 explicitly declares MIT; selected table is in the linked MIT repository.",
+        "evidence_url": "https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I",
+        "conditions": "Retain MIT notice and dataset attribution. Keep original notes local; review location/privacy and third-party provenance before any sharing.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "files": [
+        {
+          "name": "LICENSE-MIT.txt",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
+          "bytes": 1079,
+          "git_blob_sha1": "b449976f856e1f8ca3f2f27e6711a83213f56eaf"
+        },
+        {
+          "name": "annotations-2020.csv",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv",
+          "bytes": 34517,
+          "git_blob_sha1": "badde532a9712071e5048e3d45a8e3de95c618dc"
+        }
+      ],
+      "license_file": "LICENSE-MIT.txt",
+      "admission_reason": "Depositor API reports MIT for released v1.0 and the linked pinned repository carries MIT; only a small metadata table is selected, without recording coordinates or audio."
+    },
+    {
+      "id": "perch-hoplite-code",
+      "kind": "code",
+      "title": "Perch-Hoplite embedding and model tooling",
+      "url": "https://github.com/google-research/perch-hoplite",
+      "version": "050c57b5dac2f6d28ab1f562fa2000c8dcbc2302",
+      "priority": 1,
+      "reviewed": "2026-09-30",
+      "task": "Embedding search, annotation and lightweight classifier workflows.",
+      "review_depth": "Official README, license and pinned model configuration acquired; configuration entries inspected. No installation or model audit.",
+      "access": "Public pinned GitHub files.",
+      "decision": "Acquire documentation/configuration to guide integration; defer installation and weights.",
+      "limitations": "Code license does not prove rights for every model, input dataset or downstream use. No inference performed.",
+      "attribution": "Google Research / Perch-Hoplite contributors; Apache-2.0 notices in source.",
+      "rights": {
+        "license": "Apache-2.0",
+        "scope": "Repository software only.",
+        "evidence_url": "https://github.com/google-research/perch-hoplite/blob/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/LICENSE",
+        "conditions": "Retain applicable license, copyright and NOTICE terms; track modifications. Model and dataset terms require separate review.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "files": [
+        {
+          "name": "LICENSE-Apache-2.0.txt",
+          "url": "https://raw.githubusercontent.com/google-research/perch-hoplite/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/LICENSE",
+          "bytes": 11357,
+          "git_blob_sha1": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835"
+        },
+        {
+          "name": "README.md",
+          "url": "https://raw.githubusercontent.com/google-research/perch-hoplite/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/README.md",
+          "bytes": 4996,
+          "git_blob_sha1": "a1dd2d5d159071bffa946e072cce10a895a76ae3"
+        },
+        {
+          "name": "model_configs.py",
+          "url": "https://raw.githubusercontent.com/google-research/perch-hoplite/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/perch_hoplite/zoo/model_configs.py",
+          "bytes": 12203,
+          "git_blob_sha1": "8b93bac23f084d28f4994e1ca670a3b08bf82e4e"
+        }
+      ],
+      "license_file": "LICENSE-Apache-2.0.txt",
+      "admission_reason": "Official Apache-2.0 repository; immutable configuration and documentation sample, not installed or executed."
+    },
+    {
+      "id": "perch2-cpu-model",
+      "kind": "model",
+      "title": "Perch 2 CPU model candidate",
+      "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu",
+      "version": "perch_v2_cpu/1 (official pinned Hoplite configuration)",
+      "priority": 1,
+      "reviewed": "2026-09-30",
+      "task": "Frozen acoustic representation candidate.",
+      "review_depth": "Same-day model decision reused; CPU bundle terms and signatures have not been inspected.",
+      "access": "CPU-specific card did not render in the earlier review; no model package downloaded.",
+      "decision": "Retain candidate; block weights until exact package terms and provenance are inspected.",
+      "limitations": "No runtime/accuracy result. Pretraining overlap remains unknown. Parent-model license is not a substitute for inspecting selected artifact.",
+      "attribution": "Google Perch team; see official model card.",
+      "rights": {
+        "license": "Apache-2.0 (parent card; CPU bundle unverified)",
+        "scope": "Parent card only; selected binary unverified.",
+        "evidence_url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2",
+        "conditions": "Inspect exact bundle and applicable notices before use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdvox-dcase20k",
+      "kind": "dataset",
+      "title": "BirdVox-DCASE-20k",
+      "url": "https://zenodo.org/records/1208080",
+      "version": "v2 / DOI 10.5281/zenodo.1208080",
+      "priority": 2,
+      "reviewed": "2026-09-30",
+      "task": "Bird-vocalization presence detection; not observed behavior.",
+      "review_depth": "Depositor description, label definitions, file inventory and Conditions of Use reviewed.",
+      "access": "16.5 GB ZIP advertised; no small file selected.",
+      "decision": "Metadata only; potential detector benchmark, not the first context dataset.",
+      "limitations": "Bird/no-bird labels; sensor/time origin of excerpts is hidden from participants, limiting leakage-safe reconstruction of field splits. No known individual identities.",
+      "attribution": "Lostanlen, Salamon, Farnsworth, Kelling and Bello; cite BirdVox-full-night (ICASSP 2018).",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Dataset and contents under depositor Conditions of Use.",
+        "evidence_url": "https://zenodo.org/records/1208080",
+        "conditions": "Credit creators/source and indicate changes. No warranty.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "beans-next",
+      "kind": "dataset",
+      "title": "BEANS-Next",
+      "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next",
+      "version": "Metadata revision 2fc58150c9541698ffc82aaf1f5d5a44993c54bf; live card checked 2026-09-30",
+      "priority": 2,
+      "reviewed": "2026-09-30",
+      "task": "Multi-task animal-audio evaluation, including descriptions.",
+      "review_depth": "Official card/visible schema rechecked; prior Croissant review reused. Full row-by-row audit not performed.",
+      "access": "Public dataset card; audio not downloaded.",
+      "decision": "Metadata only. Keep public test examples out of training for any independent benchmark claim.",
+      "limitations": "Mixed source licenses and heterogeneous tasks; descriptive text is not automatically independently observed behavioral ground truth.",
+      "attribution": "Earth Species Project and the underlying source-dataset creators.",
+      "rights": {
+        "license": "CC-BY-NC-SA-4.0 plus mixed component licenses",
+        "scope": "Dataset card and per-record license fields; not a uniform permissive corpus.",
+        "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next",
+        "conditions": "Audit each underlying source and preserve noncommercial/share-alike restrictions and benchmark splits.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "japanese-tit-syntax",
+      "kind": "paper",
+      "title": "Experimental evidence for compositional syntax in bird calls",
+      "url": "https://www.nature.com/articles/ncomms10986",
+      "version": "Nature Communications 7:10986 (2016)",
+      "priority": 2,
+      "reviewed": "2026-09-30",
+      "task": "Behavioral playback controls for claims about meaning and call order.",
+      "review_depth": "Existing same-day methods review reused from content/research.json; no new full-text review in this collection.",
+      "access": "Original summary/source links already in the project library.",
+      "decision": "Retain as study-design reference; initial Talk2Nature acquisition stays passive.",
+      "limitations": "Species-specific controlled experiment; cannot establish general translation. No new playback is authorized.",
+      "attribution": "Suzuki, Wheatcroft and Griesser (2016), DOI 10.1038/ncomms10986.",
+      "rights": {
+        "license": "Not assessed for collection",
+        "scope": "Paper redistribution not admitted; original project summary only.",
+        "evidence_url": "https://www.nature.com/articles/ncomms10986",
+        "conditions": "Link to primary paper; do not copy full articles or figures.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    }
+  ]
+}

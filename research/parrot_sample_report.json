@@ -1,0 +1,39 @@
+{
+  "resource_id": "monk-parakeet-annotations",
+  "source_sha256": "2c771d60dcc955e28f500a091c242d19fafc928798a069b01ab13554c6e3e2de",
+  "source_url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv",
+  "source_version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+  "rows": 808,
+  "columns": [
+    "annotation_ref",
+    "uncertain",
+    "bird",
+    "behaviour",
+    "location",
+    "others",
+    "association",
+    "notes"
+  ],
+  "nonempty": {
+    "annotation_ref": 808,
+    "uncertain": 12,
+    "bird": 765,
+    "behaviour": 752,
+    "location": 726,
+    "others": 371,
+    "association": 308,
+    "notes": 23
+  },
+  "unique_nonempty_behavior_strings": 176,
+  "duplicate_nonempty_annotation_refs": 0,
+  "uncertainty_flag_1": 12,
+  "training_admitted": false,
+  "limitations": [
+    "Rows are annotations, not necessarily one call each.",
+    "Bird values are not yet normalized individual identities.",
+    "Blank uncertainty flags do not establish label reliability.",
+    "Behavior strings mix visible actions, vocal events and interpretation.",
+    "Audio, selection-table joins, session keys and independent label agreement are absent.",
+    "No raw notes, locations or individual identifiers are exported by this report."
+  ]
+}

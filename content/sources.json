@@ -438,5 +438,39 @@
     "url": "https://github.com/earthspecies/beans/blob/main/datasets.yml",
     "checked": "2026-09-30",
     "origin": "Task configuration reviewed; component datasets not downloaded."
+  },
+  {
+    "id": 55,
+    "title": "Monk parakeet vocal signatures",
+    "description": "Smeele et al. (2023). Caller individuality across vocalization types; primary abstract/introduction reviewed, not a replication.",
+    "url": "https://doi.org/10.1098/rsos.230835",
+    "checked": "2026-09-30",
+    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json.",
+    "review_url": "https://pure.mpg.de/pubman/item/item_3547893_1/component/file_3547899/Smeele_Evidence_RoySocOpSci_2023.pdf",
+    "review_url_label": "Institutional primary-paper copy"
+  },
+  {
+    "id": 56,
+    "title": "Monk parakeet analysis repository",
+    "description": "Official MIT repository; selected code and 2020 annotations acquired at commit 293b2c8d0c3b8e21a4eaa0511fe563207095765a.",
+    "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/tree/293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+    "checked": "2026-09-30",
+    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json."
+  },
+  {
+    "id": 57,
+    "title": "Monk parakeet deposited dataset",
+    "description": "Edmond v1.0; public API reports MIT and three large archives. Archives not downloaded.",
+    "url": "https://doi.org/10.17617/3.RUIM5I",
+    "checked": "2026-09-30",
+    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json."
+  },
+  {
+    "id": 58,
+    "title": "BirdVox-DCASE-20k data",
+    "description": "Depositor documents CC BY 4.0 bird-presence data; not independently observed behavioral context.",
+    "url": "https://zenodo.org/records/1208080",
+    "checked": "2026-09-30",
+    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json."
   }
 ]
