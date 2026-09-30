@@ -1,0 +1,357 @@
+[
+  {
+    "slug": "bird-call-syntax",
+    "title": "When the order of bird calls matters",
+    "taxon": "Birds",
+    "kind": "Behavioral experiment",
+    "year": "2016",
+    "source_ids": [
+      1,
+      50
+    ],
+    "review_depth": "Primary-paper methods, results and figure captions reviewed via author-uploaded text; interpretive commentary also consulted. No replication.",
+    "finding": "Japanese tit playback experiments link call combinations and order to distinct receiver responses.",
+    "limitations": "This supports a bounded interpretation in this species. Commentary distinguishes compositionality from stronger human-like systematicity; general language ability is not established.",
+    "lesson": "Test a proposed meaning against receiver behavior and carefully matched controls.",
+    "next_review": "Ask a qualified researcher which inference and controls could transfer to the chosen pilot.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Methods reviewed",
+    "year_label": "Source year",
+    "study_snapshot": [
+      [
+        "Study unit",
+        "21 birds in the first playback experiment; 34 in the ordering experiment."
+      ],
+      [
+        "Design",
+        "First experiment: within-bird call components, combined calls and background control, with randomized treatment order."
+      ],
+      [
+        "Ordering test",
+        "17 birds per condition: natural versus reversed sequences, with other acoustic features matched."
+      ],
+      [
+        "Outcomes",
+        "Scanning and speaker approach, rather than an AI-generated verbal interpretation."
+      ]
+    ],
+    "review_locator": "Suzuki et al.: Methods, Experiments 1–2; Figures 3–4. Phillips & Wilson: opening argument on systematicity."
+  },
+  {
+    "slug": "sperm-whale-structure",
+    "title": "Patterns inside sperm whale codas",
+    "taxon": "Marine mammals",
+    "kind": "Acoustic analysis",
+    "year": "2024",
+    "source_ids": [
+      2
+    ],
+    "review_depth": "Primary study summary in founding audit; full-text methods review pending.",
+    "finding": "Analysis of sperm whale codas describes contextual and combinatorial acoustic structure.",
+    "limitations": "Conversational context and structural variation are not an English vocabulary or evidence of unrestricted translation.",
+    "lesson": "Model temporal structure while keeping claims about meaning separate from claims about acoustic patterns.",
+    "next_review": "Review the segmentation, individual identities and contextual definitions before reproducing a result.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "whale-birth",
+    "title": "A birth, a group, and changing vocal styles",
+    "taxon": "Marine mammals",
+    "kind": "Observation",
+    "year": "2026",
+    "source_ids": [
+      3
+    ],
+    "review_depth": "Primary study summary in founding audit; full-text methods review pending.",
+    "finding": "A reported sperm whale birth connects changing vocal styles with an observed social event.",
+    "limitations": "A single event offers a valuable observation, but cannot establish a general call dictionary or causal interpretation.",
+    "lesson": "Attach synchronized behavioral context to sound, and retain the event as the unit of analysis.",
+    "next_review": "Identify which interpretations could be tested in independent events.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "naturelm",
+    "title": "NatureLM-audio: a useful starting point",
+    "taxon": "Machine learning",
+    "kind": "Model documentation",
+    "year": "2026",
+    "source_ids": [
+      4,
+      5
+    ],
+    "review_depth": "Official model card and project documentation; Hugging Face revision 77855d9b0acd039f90798dcf0861f626bfefbd6f recorded. No inference run.",
+    "finding": "NatureLM-audio provides a foundation-model approach to describing and classifying biological sounds.",
+    "limitations": "Descriptions are predictions, not verified animal intentions. The reviewed model lists CC BY-NC-SA 4.0; parent-model terms also matter. A paid deployment has not been cleared.",
+    "lesson": "Inspect a frozen release, its training data and license before using it in an evaluation or paid product.",
+    "next_review": "Compare a permitted model against a simple baseline on independently labeled recordings.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Documentation checked",
+    "year_label": "Documentation checked"
+  },
+  {
+    "slug": "birdnet",
+    "title": "BirdNET: identification before interpretation",
+    "taxon": "Machine learning",
+    "kind": "Software documentation",
+    "year": "2026",
+    "source_ids": [
+      7,
+      8,
+      12
+    ],
+    "review_depth": "Official repository and license/review documentation reviewed for the audit.",
+    "finding": "BirdNET supplies bird-sound identification tools and a human review workflow for detections.",
+    "limitations": "Identification does not establish meaning. Main package code is MIT and listed models are CC BY-NC-SA 4.0; separate STM32 artifacts use Apache-2.0. Check the exact release.",
+    "lesson": "Reuse existing identification and review capabilities where they fit instead of assuming a new platform is necessary.",
+    "next_review": "Choose an exact artifact, inspect its terms, and measure errors on the intended recordings.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Documentation checked",
+    "year_label": "Documentation checked"
+  },
+  {
+    "slug": "perch",
+    "title": "Perch: reusable representations of animal sound",
+    "taxon": "Machine learning",
+    "kind": "Software documentation",
+    "year": "2025",
+    "source_ids": [
+      13,
+      14,
+      51,
+      52
+    ],
+    "review_depth": "Official model card, repository migration notice, Hoplite README and frozen model configuration reviewed; no inference run.",
+    "finding": "Perch supplies acoustic embeddings for downstream classifiers. The current practical tooling route is Perch-Hoplite.",
+    "limitations": "Listed model terms are Apache-2.0, but task performance, training-data overlap and the exact downloaded bundle remain unverified. CPU and GPU variants differ.",
+    "lesson": "Consider a frozen embedding baseline once the species, labels and data rights are established.",
+    "next_review": "Verify the CPU artifact, preprocessing and runtime on permitted recordings before selecting it for an experiment.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Documentation checked",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "dolphingemma",
+    "title": "DolphinGemma and shared signals",
+    "taxon": "Marine mammals",
+    "kind": "Project announcement",
+    "year": "2025",
+    "source_ids": [
+      6
+    ],
+    "review_depth": "Official announcement reviewed; not an independent replication.",
+    "finding": "DolphinGemma models patterns in dolphin sounds. The related CHAT work uses learned shared signals in human-dolphin interactions.",
+    "limitations": "Learning a shared interface and translating spontaneous natural communication are distinct scientific tasks.",
+    "lesson": "Choose which question a pilot is trying to answer before selecting the interface or model.",
+    "next_review": "Keep natural-call interpretation and taught-symbol experiments in separate protocols.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "dog-barks",
+    "title": "What bark classification can tell us",
+    "taxon": "Companion animals",
+    "kind": "Machine-learning study",
+    "year": "2024",
+    "source_ids": [
+      21
+    ],
+    "review_depth": "Published paper sections 3–6 reviewed; Tables 3–5 visually checked. No code execution or replication.",
+    "finding": "Human-speech-pretrained Wav2Vec2 improved performance on selected dog-vocalization classification tasks.",
+    "limitations": "Grounding uses four selected, stranger-related categories mixing vocal form and context. These results do not establish broad emotional or language translation.",
+    "lesson": "Grouped evaluation is existing practice. Define independent behavioral labels and a stronger task-specific baseline.",
+    "next_review": "Verify data access and exact model terms before proposing a replication.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Methods reviewed",
+    "year_label": "Source year",
+    "study_snapshot": [
+      [
+        "Dataset",
+        "74 dogs; 16,789 segments across 14 labels, including non-dog sounds."
+      ],
+      [
+        "Evaluation",
+        "Ten-fold dog-grouped evaluation for context, breed and sex; identity recognition uses a different split."
+      ],
+      [
+        "Context result",
+        "62.18% accuracy versus 56.37% majority baseline: +5.81 percentage points."
+      ],
+      [
+        "Availability",
+        "Paper offers dataset and baselines by request; redistribution permission is not established."
+      ]
+    ],
+    "review_locator": "Published pages 16481–16484: Dataset, Experimental Setup, Grounding, Table 4 and Limitations."
+  },
+  {
+    "slug": "parrot-video",
+    "title": "Giving parrots a choice to connect",
+    "taxon": "Birds",
+    "kind": "Interface study",
+    "year": "2024",
+    "source_ids": [
+      49
+    ],
+    "review_depth": "Published PDF pages 4–10 and limitations reviewed; Table 2–4 layout checked. No independent reanalysis.",
+    "finding": "Nine parrots used a caregiver-assisted video-call interface; the study reports greater engagement during the live phase.",
+    "limitations": "Live always preceded playback. Reciprocity, caregiver cues and variable devices also complicate interpretation. Engagement is not a direct welfare or language measure.",
+    "lesson": "Preserve the animal’s ability to stop, separate caregiver impressions from behavior, and account for condition order.",
+    "next_review": "Review design and table-level inconsistencies with a specialist before adopting quantitative claims.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Methods reviewed",
+    "year_label": "Source year",
+    "study_snapshot": [
+      [
+        "Study unit",
+        "Nine home-kept parrots over six months."
+      ],
+      [
+        "Design",
+        "Six live sessions followed by six playback sessions; conditions were not counterbalanced."
+      ],
+      [
+        "Measures",
+        "Call initiation, engagement duration and caregiver interviews/questionnaires."
+      ],
+      [
+        "Support",
+        "Behavior-specialist training, ongoing review and stopping provisions formed part of the study."
+      ]
+    ],
+    "review_locator": "CHI 2024 published version: sections 3–7, pages 4–11; Tables 2–4 on page 9."
+  },
+  {
+    "slug": "dog-buttons",
+    "title": "Learned buttons and receiver responses",
+    "taxon": "Companion animals",
+    "kind": "Study announcement",
+    "year": "2024",
+    "source_ids": [
+      41,
+      40
+    ],
+    "review_depth": "University study report and vendor description reviewed; primary paper review pending.",
+    "finding": "Research-team reporting describes appropriate responses by trained dogs to selected soundboard words.",
+    "limitations": "This is evidence about responses to learned cues, not unrestricted conversation or a natural canine-language translation.",
+    "lesson": "A learned shared interface needs different evaluation from an acoustic classifier.",
+    "next_review": "Review cue controls and distinguish comprehension evidence from spontaneous production claims.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "plant-sounds",
+    "title": "Plants emit signals we can measure",
+    "taxon": "Plants & fungi",
+    "kind": "Abstract review",
+    "year": "2023",
+    "source_ids": [
+      15
+    ],
+    "review_depth": "Indexed primary-paper abstract reviewed; full-text methods review pending.",
+    "finding": "The reported experiments describe airborne sounds from plants under stress and informative differences in recordings.",
+    "limitations": "Informative emissions do not, by themselves, establish intentional communication or human-like language.",
+    "lesson": "Measure a biological signal without converting a model-generated narrative into a scientific claim.",
+    "next_review": "Review instrumentation and environmental controls before treating a sound as plant-derived.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "moths-and-plants",
+    "title": "When another organism responds",
+    "taxon": "Plants & fungi",
+    "kind": "Behavioral experiment",
+    "year": "2026",
+    "source_ids": [
+      16,
+      22
+    ],
+    "review_depth": "Primary-source summary and university account reviewed; full-text methods review pending.",
+    "finding": "Research reports that female moths incorporate plant acoustic emissions into oviposition decisions.",
+    "limitations": "The finding concerns a bounded plant-animal interaction. It does not establish conversation with trees.",
+    "lesson": "Receiver behavior is a stronger test of biological relevance than signal classification alone.",
+    "next_review": "Review playback controls, species and experimental conditions; do not generalize to all plants or insects.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "fungal-signals",
+    "title": "Fungal electricity needs careful controls",
+    "taxon": "Plants & fungi",
+    "kind": "Methods & critique",
+    "year": "2025",
+    "source_ids": [
+      17,
+      18
+    ],
+    "review_depth": "Methods discussion and critique reviewed for the audit; no independent replication performed.",
+    "finding": "Measurement work and critiques highlight difficulties in separating fungal electrical activity from environmental artifacts.",
+    "limitations": "A detected pattern or analogy to words is not evidence of a semantic language.",
+    "lesson": "Instrumentation and controls must come before language claims or a translation interface.",
+    "next_review": "Keep fungi in the reading program until a qualified collaborator defines a feasible measurement question.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year"
+  },
+  {
+    "slug": "annotation-tools",
+    "title": "Start with tools researchers already use",
+    "taxon": "Research tools",
+    "kind": "Software documentation",
+    "year": "2026",
+    "source_ids": [
+      10,
+      11,
+      12
+    ],
+    "review_depth": "Official tool documentation reviewed for the audit.",
+    "finding": "Arbimon, BORIS and BirdNET review tools already cover parts of acoustic analysis, behavioral annotation and detection review.",
+    "limitations": "Feature availability does not prove an unmet product need or interchangeability between annotation formats.",
+    "lesson": "Interview researchers using real workflows. An upstream contribution may be more useful than another platform.",
+    "next_review": "Attempt one end-to-end annotation/export task and document a concrete gap before building an integration.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Documentation checked",
+    "year_label": "Documentation checked"
+  },
+  {
+    "slug": "bioacoustic-benchmarks",
+    "title": "A benchmark is only as useful as its labels",
+    "taxon": "Machine learning",
+    "kind": "Dataset documentation",
+    "year": "2026",
+    "source_ids": [
+      53,
+      54
+    ],
+    "review_depth": "BEANS task configuration and BEANS-Next card, displayed metadata and license description reviewed. No full data audit or experiment.",
+    "finding": "Public benchmarks cover different tasks: the BEANS dog labels identify individuals, while BEANS-Next includes acoustic-description tasks.",
+    "limitations": "These labels do not automatically provide observed behavior or intended meaning. BEANS-Next lists noncommercial terms and source-specific licenses. Training overlap is unresolved.",
+    "lesson": "Select the scientific question first, then verify that the dataset measures it and supports an independent evaluation.",
+    "next_review": "Inspect a relevant component, original annotations, group structure and rights after choosing the pilot question.",
+    "reviewed": "2026-09-30",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Documentation checked",
+    "year_label": "Documentation checked"
+  }
+]

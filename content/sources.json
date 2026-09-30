@@ -1,0 +1,442 @@
+[
+  {
+    "id": 1,
+    "title": "Bird-call syntax",
+    "description": "Suzuki, Wheatcroft & Griesser. Experimental evidence for compositional syntax in bird calls. Nature Communications (2016). Playback experiments in Japanese tits; species-specific evidence.",
+    "url": "https://www.nature.com/articles/ncomms10986",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
+    "review_url": "https://www.researchgate.net/publication/297568801_Experimental_evidence_for_compositional_syntax_in_bird_calls",
+    "review_url_label": "Author-uploaded full text used for the methods review"
+  },
+  {
+    "id": 2,
+    "title": "Sperm whale structure",
+    "description": "Sharma et al. Contextual and combinatorial structure in sperm whale vocalisations. Nature Communications (2024). Structure and acoustic context; not an English translation.",
+    "url": "https://www.nature.com/articles/s41467-024-47221-8",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 3,
+    "title": "Sperm whale behavior and sound",
+    "description": "Aluma et al. Description of a collaborative sperm whale birth and shifts in coda vocal styles during key events. Scientific Reports (26 March 2026). Observational event study.",
+    "url": "https://www.nature.com/articles/s41598-025-27438-3",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 4,
+    "title": "NatureLM-audio",
+    "description": "Earth Species Project. NatureLM-audio model card, accessed 30 September 2026. Tasks, limits, training and CC BY-NC-SA model license.",
+    "url": "https://huggingface.co/EarthSpeciesProject/NatureLM-audio",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 5,
+    "title": "Earth Species Project",
+    "description": "Earth Species Project. What We Do, accessed 30 September 2026. Research tools and bioacoustic dataset infrastructure.",
+    "url": "https://earthspecies.org/what-we-do/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 6,
+    "title": "DolphinGemma",
+    "description": "Google / Herzing & Starner. DolphinGemma announcement (14 April 2025). Natural sound modeling and the separate CHAT project for learned shared signals.",
+    "url": "https://blog.google/innovation-and-ai/products/dolphingemma/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 7,
+    "title": "BirdNET package",
+    "description": "BirdNET team. Python library README, accessed 30 September 2026. Source code MIT; model-license distinctions must be checked per artifact.",
+    "url": "https://github.com/birdnet-team/birdnet",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 8,
+    "title": "BirdNET-STM32 licensing",
+    "description": "BirdNET team. License and Acceptable Use, accessed 30 September 2026. MIT code and Apache 2.0 trained artifacts in this specific project.",
+    "url": "https://birdnet-team.github.io/birdnet-stm32/license/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 9,
+    "title": "Merlin",
+    "description": "Cornell Lab of Ornithology. Merlin Bird ID, accessed 30 September 2026. Free bird identification and sound identification.",
+    "url": "https://www.merlinbirds.org/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 10,
+    "title": "Arbimon",
+    "description": "Rainforest Connection. Getting Started with Arbimon, accessed 30 September 2026. Free collaborative acoustic storage and analysis platform.",
+    "url": "https://arbimon.org/support/arbimon/get-started/getting-started-with-arbimon/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 11,
+    "title": "BORIS",
+    "description": "University of Torino / BORIS project. Behavioral Observation Research Interactive Software, accessed 30 September 2026. Free open-source behavior annotation.",
+    "url": "https://www.boris.unito.it/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 12,
+    "title": "BirdNET review workflow",
+    "description": "BirdNET team. Segment Review documentation, accessed 30 September 2026. Existing human validation workflow for species detections.",
+    "url": "https://birdnet-team.github.io/BirdNET-Analyzer/dev/best-practices/segment-review.html",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 13,
+    "title": "Perch 2.0",
+    "description": "Google DeepMind. How AI is helping advance the science of bioacoustics to save endangered species (7 August 2025). Reusable bioacoustic representations.",
+    "url": "https://deepmind.google/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 14,
+    "title": "Perch source code",
+    "description": "Google Research. Perch repository, accessed 30 September 2026. Code and links to model artifacts; inspect the exact weight license before deployment.",
+    "url": "https://github.com/google-research/perch",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 15,
+    "title": "Plant acoustic emissions",
+    "description": "Khait et al. Sounds emitted by plants under stress are airborne and informative. Cell (2023). Primary research abstract indexed by PubMed.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37001499/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 16,
+    "title": "Moth responses to plant sounds",
+    "description": "Seltzer et al. Female moths incorporate plant acoustic emissions into their oviposition decision-making process. eLife; version of record 5 January 2026. Earlier reviewed preprints appeared in 2024 and 2025.",
+    "url": "https://doi.org/10.7554/eLife.104700",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 17,
+    "title": "Fungal measurement caveats",
+    "description": "Electrical signaling in fungi: past and present challenges (2025). Research and replication-oriented discussion of measurement methods and environmental artifacts.",
+    "url": "https://arodes.hes-so.ch/record/15974/files/Schintke_2025_Electrical_signaling_in_fungi.pdf",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 18,
+    "title": "Fungal language critique",
+    "description": "Blatt et al. Does electrical activity in fungi function as a language? Fungal Ecology (2024). Methodological commentary challenging linguistic claims.",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1754504823001034",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 19,
+    "title": "2026 Coller Dolittle award",
+    "description": "Jeremy Coller Foundation. 2026 award announcement (26 June 2026). Organizational account of Julie Elie's zebra finch work; not a substitute for reading the underlying study.",
+    "url": "https://www.jeremycollerfoundation.org/news-and-insights/press-releases/scientists-win-us100-000-in-2026-coller-dolittle-prize",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 20,
+    "title": "Open source definition",
+    "description": "Open Source Initiative. The Open Source Definition, accessed 30 September 2026. Open-source licensing permits commercial use and does not restrict fields of endeavor.",
+    "url": "https://opensource.org/osd",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 21,
+    "title": "Dog bark classification",
+    "description": "Abzaliev et al. Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification. LREC-COLING (2024). Classification tasks, not unrestricted translation.",
+    "url": "https://aclanthology.org/2024.lrec-main.1432/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
+    "review_url": "https://aclanthology.org/2024.lrec-main.1432.pdf",
+    "review_url_label": "Published paper, including evaluation tables"
+  },
+  {
+    "id": 22,
+    "title": "Israeli research connection",
+    "description": "American Friends of Tel Aviv University. Plant/animal auditory interaction (14 July 2025). Identifies the Yossi Yovel and Lilach Hadany research groups.",
+    "url": "https://www.aftau.org/news_item/tau-finds-first-scientific-evidence-of-plant-animal-auditory-interaction/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 23,
+    "title": "Yovel laboratory",
+    "description": "The Bat Lab for Neuro-Ecology. Official laboratory website, accessed 30 September 2026. A relevant possible scientific conversation, without any implied affiliation.",
+    "url": "https://www.yovelbatlab.com/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 24,
+    "title": "CETI research pathway",
+    "description": "Project CETI. Official project overview, accessed 30 September 2026. Acoustic and behavioral datasets followed by scientific validation.",
+    "url": "https://www.projectceti.org/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 25,
+    "title": "Coller Dolittle current rules",
+    "description": "Tel Aviv University / Jeremy Coller Foundation. Current challenge page; checked 30 September 2026, 14:28 UTC.",
+    "url": "https://coller-dolittle-24.sites.tau.ac.il/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 26,
+    "title": "Tnufa",
+    "description": "Israel Innovation Authority. Current Tnufa program page: amounts, eligible applicants, costs, obligations and 8 October 2026 deadline.",
+    "url": "https://innovationisrael.org.il/programs/מסלול-תנופה-קרן-ההזנק/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 27,
+    "title": "Pre-Seed fund",
+    "description": "Israel Innovation Authority. Current Pre-Seed track: grant ceiling, company and investor requirements, and 8 October 2026 deadline.",
+    "url": "https://innovationisrael.org.il/programs/preseed/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 28,
+    "title": "Experiment crowdfunding",
+    "description": "Experiment. Researcher Guide - Create. Funding targets, platform fees and campaign design. Payout eligibility still needs applicant-specific verification.",
+    "url": "https://experiment.com/guide/create",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 29,
+    "title": "Awesome Foundation",
+    "description": "The Awesome Foundation. Official overview. Small chapter-based grants; timing and local scope vary.",
+    "url": "https://www.awesomefoundation.org/en",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 30,
+    "title": "AWS startup credits",
+    "description": "AWS Activate Credits. Current tier table and eligibility. Promotional service credits are not cash.",
+    "url": "https://aws.amazon.com/startups/credits/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 31,
+    "title": "Google Cloud AI startup program",
+    "description": "Google Cloud. Current Scale AI program terms, credit ceiling and funding-stage conditions. Cloud credits are not a research grant.",
+    "url": "https://cloud.google.com/startup/ai",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 32,
+    "title": "Loro Parque 2027 funding call",
+    "description": "Loro Parque Foundation. Call for 2027 conservation projects, published June 2026; deadline 31 July 2026. Endangered-species and institutional-backing conditions.",
+    "url": "https://www.loroparque-fundacion.org/en/loro-parque-fundacion-opens-its-call-for-conservation-project-funding-for-2027/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 33,
+    "title": "Bezos AI Grand Challenge",
+    "description": "Bezos Earth Fund. Phase II awards announced 23 October 2025. Evidence of prior funding, not a verified open 2026 call.",
+    "url": "https://www.bezosearthfund.org/news-and-insights/bezos-earth-fund-announces-30-million-in-ai-grand-challenge-awards",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 34,
+    "title": "Templeton DI transition",
+    "description": "Templeton World Charity Foundation. Announcement of three Diverse Intelligences research hubs and the approaching end of the active grantmaking phase.",
+    "url": "https://www.templetonworldcharity.org/blog/twcf-launches-three-global-diverse-intelligences-hubs",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 35,
+    "title": "NLnet current call and GenAI policy notice",
+    "description": "NLnet. Apply before 3 November 2026. Open-internet scope and material restrictions on mostly LLM-generated work.",
+    "url": "https://nlnet.nl/news/2026/20260903-call.html",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 36,
+    "title": "National Geographic current grants",
+    "description": "National Geographic Society. Current RFP-based program and listed calls. General project submissions are no longer accepted.",
+    "url": "https://www.nationalgeographic.org/explore/grants-investments",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 37,
+    "title": "HFSP research grants",
+    "description": "Human Frontier Science Program. Research Grants. International basic-research team funding; the 2027 entry-stage deadlines were in March 2026.",
+    "url": "https://www.hfsp.org/funding/hfsp-funding/research-grants",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 38,
+    "title": "Alex Foundation",
+    "description": "The Alex Foundation. About. Research on parrot cognition associated with Irene Pepperberg.",
+    "url": "https://alexfoundation.org/about/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 39,
+    "title": "Parrot video-call research",
+    "description": "University of Glasgow. Polly wants a chatter (2 May 2024). University account of a nine-parrot study comparing live and recorded video interactions.",
+    "url": "https://www.gla.ac.uk/news/archiveofnews/2024/may/headline_1069444_en.html",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 40,
+    "title": "FluentPet",
+    "description": "FluentPet. Talking Dog Buttons. Commercial learned-button communication system; product description, not independent validation.",
+    "url": "https://fluent.pet/pages/talking-dog-buttons",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 41,
+    "title": "Soundboard response study",
+    "description": "University of California / UC San Diego. Dogs understand words from soundboard buttons (29 August 2024). Research-team reporting of responses to trained words.",
+    "url": "https://www.universityofcalifornia.edu/news/dogs-understand-words-soundboard-buttons-study-reveals",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 42,
+    "title": "MeowTalk",
+    "description": "MeowTalk. Official product site. Vendor claims about intent classification and downloads; no independent general-translation validation established by this audit.",
+    "url": "https://www.meowtalk.app/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 43,
+    "title": "Interspecies Internet",
+    "description": "Interspecies Internet. Mission and community. Convening and field infrastructure; no affiliation with Talk2Nature.",
+    "url": "https://www.interspecies.io/mission",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 44,
+    "title": "Haikubox",
+    "description": "Haikubox. Official FAQ. Commercial continuous bird-sound identification hardware and service.",
+    "url": "https://haikubox.com/pages/faq",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 45,
+    "title": "PlantWave",
+    "description": "PlantWave. How It Works. Vendor description of mapping measured electrical variation to music.",
+    "url": "https://plantwave.com/pages/how-it-works",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 46,
+    "title": "Lee Koren",
+    "description": "Bar-Ilan University Data Science and AI Institute. Official profile of Prof. Lee Koren, including vocal communication and rock hyrax research.",
+    "url": "https://dsai.biu.ac.il/team/prof-lee-koren/",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 47,
+    "title": "Hashavua podcast episode",
+    "description": "Episode description names Lee Koren and Yossi Yovel. Audio has not been reviewed; this is not a transcript.",
+    "url": "https://open.spotify.com/episode/7ohiygRkU3iHABmcKIwnbX",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 48,
+    "title": "Conservation X Labs",
+    "description": "Conservation X Labs. Fire Grand Challenge. Winners announced following the January 2026 summit; not a current animal-communication prize.",
+    "url": "https://www.conservationxlabs.com/fire",
+    "checked": "2026-09-30",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+  },
+  {
+    "id": 49,
+    "title": "Parrot video-call primary paper",
+    "description": "Hirskyj-Douglas, Cunha & Kleinberger (2024). Call of the Wild Web: Parrot Engagement in Live vs. Pre-recorded Video Calls. CHI. DOI: 10.1145/3613904.3641938. Published version, CC BY-NC-ND 4.0.",
+    "url": "https://eprints.gla.ac.uk/324981/",
+    "review_url": "https://eprints.gla.ac.uk/324981/2/324981.pdf",
+    "review_url_label": "Published full text used for the methods review",
+    "checked": "2026-09-30",
+    "origin": "Primary-paper follow-up to founding audit source 39."
+  },
+  {
+    "id": 50,
+    "title": "Bird syntax: systematicity commentary",
+    "description": "Phillips & Wilson (2016). Commentary: Experimental evidence for compositional syntax in bird calls. Frontiers in Psychology 7:1171. DOI: 10.3389/fpsyg.2016.01171.",
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01171/full",
+    "checked": "2026-09-30",
+    "origin": "Commentary on the interpretation of source 1; not a replication experiment."
+  },
+  {
+    "id": 51,
+    "title": "Perch 2 model card",
+    "description": "Google. Perch 2 TensorFlow model card: release variants, input/output, limitations and Apache-2.0 terms. No weights downloaded.",
+    "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2",
+    "checked": "2026-09-30",
+    "origin": "Focused model feasibility review."
+  },
+  {
+    "id": 52,
+    "title": "Perch-Hoplite tooling",
+    "description": "Google Research. Official inference and agile modeling repository, reviewed at commit 050c57b5dac2f6d28ab1f562fa2000c8dcbc2302.",
+    "url": "https://github.com/google-research/perch-hoplite/tree/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302",
+    "checked": "2026-09-30",
+    "origin": "README and model configuration reviewed; not installed or audited."
+  },
+  {
+    "id": 53,
+    "title": "BEANS-Next dataset",
+    "description": "Earth Species Project. Dataset card and displayed metadata, revision 2fc58150c9541698ffc82aaf1f5d5a44993c54bf. No audio downloaded or benchmark executed.",
+    "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next",
+    "review_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next/blob/2fc58150c9541698ffc82aaf1f5d5a44993c54bf/beans-next.croissant.json",
+    "review_url_label": "Dataset metadata and source-license description",
+    "checked": "2026-09-30",
+    "origin": "Focused dataset feasibility review."
+  },
+  {
+    "id": 54,
+    "title": "BEANS task definitions",
+    "description": "Earth Species Project. Benchmark dataset/task configuration, including a dog individual-identification task.",
+    "url": "https://github.com/earthspecies/beans/blob/main/datasets.yml",
+    "checked": "2026-09-30",
+    "origin": "Task configuration reviewed; component datasets not downloaded."
+  }
+]

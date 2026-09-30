@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="690" viewBox="0 0 620 690">
+<defs><pattern id="grain" width="17" height="17" patternUnits="userSpaceOnUse"><circle cx="3" cy="5" r=".7" fill="#405943" opacity=".08"/><circle cx="13" cy="13" r=".6" fill="#405943" opacity=".07"/></pattern></defs>
+<path fill="#e7eadc" d="M0 0h620v690H0z"/><path fill="url(#grain)" d="M0 0h620v690H0z"/>
+<circle cx="338" cy="224" r="157" fill="none" stroke="#a8b59b" stroke-width="1"/><circle cx="338" cy="224" r="190" fill="none" stroke="#bec7ae" stroke-width="1"/><circle cx="338" cy="224" r="224" fill="none" stroke="#cbd2bc" stroke-width="1"/>
+<circle cx="407" cy="139" r="57" fill="#e8bd56"/>
+<path d="M92 454c87-19 155-51 231-106 68-49 113-65 181-59" fill="none" stroke="#193f35" stroke-width="5" stroke-linecap="round"/>
+<path d="M170 393c-47-12-58-54-39-115 43 10 80 47 66 96" fill="#75865e"/><path d="M163 335c1 27 13 52 30 75" fill="none" stroke="#e7eadc" stroke-width="2"/>
+<path d="M233 375c5-50 30-68 83-67-1 48-28 75-79 74" fill="#a2ad81"/><path d="m244 371 56-47" stroke="#e7eadc" stroke-width="2"/>
+<path d="M279 269c-24-32-23-62-5-86 12-17 34-26 56-19 27 8 32 27 45 40l42 8-41 18c-3 71-39 113-111 112l-61 19 35-47c-7-13-8-31-5-46l45 1Z" fill="#193f35"/>
+<path d="M296 235c-10 15-12 37 1 51 12 13 31 14 45 8-1-28-17-49-46-59Z" fill="#687e56"/><path d="M283 191c12-9 28-11 41-5" fill="none" stroke="#9ba780" stroke-width="2" stroke-linecap="round"/><circle cx="339" cy="197" r="5" fill="#e7eadc"/><circle cx="340" cy="197" r="2" fill="#193f35"/>
+<path d="m297 338-4 22m21-24 8 9m-37 16 20-9m11-4 17 3" fill="none" stroke="#193f35" stroke-width="3" stroke-linecap="round"/>
+<g fill="none" stroke="#6b7e52" stroke-width="1.5" opacity=".85"><path d="M418 229c14-12 14-29 2-41"/><path d="M438 241c22-21 22-46 4-64"/><path d="M459 254c31-28 31-66 7-91"/></g>
+<g stroke="#7d8c65" stroke-width="2" stroke-linecap="round"><path d="M138 506v-12m10 20v-29m10 40v-49m10 40v-29m10 20v-13m10 5v-1m10 15v-29m10 50v-69m10 60v-49m10 59v-69m10 58v-48m10 27v-8m10 24v-40m10 51v-61m10 40v-20m10 11v-2m10 21v-38m10 51v-63m10 43v-23m10 33v-43m10 62v-81m10 55v-29m10 15v-1m10 7v-12m10 26v-40m10 52v-64m10 49v-34m10 40v-46m10 37v-28m10 20v-12m10 19v-25m10 26v-26"/></g>
+<g fill="#677956" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.5"><text x="155" y="124">LISTEN</text><text x="442" y="394">OBSERVE</text><text x="347" y="558">ILLUSTRATED SIGNAL · NOT DATA</text></g>
+<path d="M164 146v22m-11-11h22M501 365v18m-9-9h18" stroke="#899975" fill="none"/>
+</svg>

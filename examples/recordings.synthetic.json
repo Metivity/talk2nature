@@ -1,0 +1,362 @@
+[
+  {
+    "recording_id": "demo-00-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-00"
+    ],
+    "session_id": "demo-session-00",
+    "source_sha256": "9c1dc5f050a336a868164ff7676919afe94404d24a401fd31a9c47730ae2a615",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:00:00+00:00"
+  },
+  {
+    "recording_id": "demo-00-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-00"
+    ],
+    "session_id": "demo-session-00",
+    "source_sha256": "9c1dc5f050a336a868164ff7676919afe94404d24a401fd31a9c47730ae2a615",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:00:00+00:00"
+  },
+  {
+    "recording_id": "demo-01-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-01"
+    ],
+    "session_id": "demo-session-01",
+    "source_sha256": "161576cb815067bed7fb16c939a6afc81b8e84f06e4310a62701ee7c0ef7e6c5",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:01:00+00:00"
+  },
+  {
+    "recording_id": "demo-01-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-01"
+    ],
+    "session_id": "demo-session-01",
+    "source_sha256": "161576cb815067bed7fb16c939a6afc81b8e84f06e4310a62701ee7c0ef7e6c5",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:01:00+00:00"
+  },
+  {
+    "recording_id": "demo-02-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-02"
+    ],
+    "session_id": "demo-session-02",
+    "source_sha256": "30f5e22f35d09d63e70a8a42801d9e02739bdca8b0e0763855ed052919000a0e",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:02:00+00:00"
+  },
+  {
+    "recording_id": "demo-02-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-02"
+    ],
+    "session_id": "demo-session-02",
+    "source_sha256": "30f5e22f35d09d63e70a8a42801d9e02739bdca8b0e0763855ed052919000a0e",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:02:00+00:00"
+  },
+  {
+    "recording_id": "demo-03-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-03"
+    ],
+    "session_id": "demo-session-03",
+    "source_sha256": "2ae976c05b217f54ffefa4c63e2780e0c9559ac223c0623cbdda78e4046ffa79",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:03:00+00:00"
+  },
+  {
+    "recording_id": "demo-03-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-03"
+    ],
+    "session_id": "demo-session-03",
+    "source_sha256": "2ae976c05b217f54ffefa4c63e2780e0c9559ac223c0623cbdda78e4046ffa79",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:03:00+00:00"
+  },
+  {
+    "recording_id": "demo-04-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-04"
+    ],
+    "session_id": "demo-session-04",
+    "source_sha256": "d8d0740ff98122864670f7acaf7d5831e7742dfe1287f64723ea5cf1aab7608b",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:04:00+00:00"
+  },
+  {
+    "recording_id": "demo-04-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-04"
+    ],
+    "session_id": "demo-session-04",
+    "source_sha256": "d8d0740ff98122864670f7acaf7d5831e7742dfe1287f64723ea5cf1aab7608b",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:04:00+00:00"
+  },
+  {
+    "recording_id": "demo-05-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-05"
+    ],
+    "session_id": "demo-session-05",
+    "source_sha256": "5a3b9b8d65dbc8cd75f5b33ea1fef8ebe42ce93b8f4be7213161fd9efc037eaa",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:05:00+00:00"
+  },
+  {
+    "recording_id": "demo-05-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-05"
+    ],
+    "session_id": "demo-session-05",
+    "source_sha256": "5a3b9b8d65dbc8cd75f5b33ea1fef8ebe42ce93b8f4be7213161fd9efc037eaa",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:05:00+00:00"
+  },
+  {
+    "recording_id": "demo-06-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-06"
+    ],
+    "session_id": "demo-session-06",
+    "source_sha256": "e44537828b9565147715776ba4e6ff85acf9513a9c36758b23e1a2242b851469",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:06:00+00:00"
+  },
+  {
+    "recording_id": "demo-06-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-06"
+    ],
+    "session_id": "demo-session-06",
+    "source_sha256": "e44537828b9565147715776ba4e6ff85acf9513a9c36758b23e1a2242b851469",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:06:00+00:00"
+  },
+  {
+    "recording_id": "demo-07-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-07"
+    ],
+    "session_id": "demo-session-07",
+    "source_sha256": "ef073deda0b8a0f4aed9f5381d9bae10e3db1e64fb10e35eea93d5d518a2babd",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:07:00+00:00"
+  },
+  {
+    "recording_id": "demo-07-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-07"
+    ],
+    "session_id": "demo-session-07",
+    "source_sha256": "ef073deda0b8a0f4aed9f5381d9bae10e3db1e64fb10e35eea93d5d518a2babd",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:07:00+00:00"
+  },
+  {
+    "recording_id": "demo-08-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-08"
+    ],
+    "session_id": "demo-session-08",
+    "source_sha256": "d0c446cb79696201c3315046d7cbc48ad5bdb4f51e27ceecf1db48c135cf5792",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:08:00+00:00"
+  },
+  {
+    "recording_id": "demo-08-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-08"
+    ],
+    "session_id": "demo-session-08",
+    "source_sha256": "d0c446cb79696201c3315046d7cbc48ad5bdb4f51e27ceecf1db48c135cf5792",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:08:00+00:00"
+  },
+  {
+    "recording_id": "demo-09-0",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-09"
+    ],
+    "session_id": "demo-session-09",
+    "source_sha256": "9a9bf738c828745cbda36872d48385332f6dd7e3d2b600b3f3df7d725733f7da",
+    "context_label": "resting",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:09:00+00:00"
+  },
+  {
+    "recording_id": "demo-09-1",
+    "species": "Synthetic parrot example",
+    "individual_ids": [
+      "demo-bird-09"
+    ],
+    "session_id": "demo-session-09",
+    "source_sha256": "9a9bf738c828745cbda36872d48385332f6dd7e3d2b600b3f3df7d725733f7da",
+    "context_label": "feeding",
+    "license": "CC0-1.0 (invented metadata only; no recording exists)",
+    "provenance": "Synthetic software fixture. No animal, person, audio or real observation. Consent is not applicable.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-01T10:09:00+00:00"
+  }
+]

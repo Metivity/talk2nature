@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+node_modules/
+dist/
+tmp/
+output/
+funding/
+data/private/
+*.wav
+*.mp3
+*.mp4
+.openai/
+# The founding audit includes internal planning and stays local by default.
+research/build_audit.py
