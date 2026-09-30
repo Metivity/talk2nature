@@ -29,7 +29,7 @@ Budget alerts are not a hard spending cap. Configure alerts, small resource limi
 - Runtime checks an existing schema version; it never creates or migrates tables. `admin/schema/grant-runtime.sql` limits the service role to required data operations. Tests verify that it cannot create/drop tables or change schema versions.
 - `T2N_DATABASE_URL` selects PostgreSQL. `T2N_HOSTED=1`, or Cloud Run's `K_SERVICE`, requires HTTPS, Google client, pinned owner and remote PostgreSQL. There is no hosted SQLite fallback or demo authentication.
 - `admin.serve` honors `PORT`, disables access logs and untrusted proxy headers, limits concurrency, and binds loopback locally. `/ready` checks database access. The privacy page describes the actual selected adapter.
-- The Docker recipe uses a non-root user and an allowlisted context excluding private data, `.env`, funding drafts, screenshots and Git. No local Docker runtime is installed: the image has **not** been built or tested. Pin the base image digest and build, scan and smoke-test the image before deployment.
+- The Docker recipe uses a non-root user and an allowlisted context excluding private data, `.env`, funding drafts, screenshots and Git. The base image is pinned by registry digest. The image was built and tested on a standard public-repository GitHub runner in [successful run 36786952737](https://github.com/Metivity/talk2nature/actions/runs/36786952737): excluded-file sentinels, non-root execution, rejection of incomplete hosted settings and locked local-mode HTTP behavior all passed. This is not a cloud deployment or a vulnerability-scan result; provider-specific and security review remain release gates.
 
 ## Reproduce the checks
 

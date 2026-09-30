@@ -32,6 +32,8 @@ Create a mobile-product and AI architecture plan, a private owner workbench with
 
 The detailed product gates are in `PHASE_TWO_PLAN.md`; server, identity and data controls are in `PRIVATE_ARCHITECTURE.md`. Local implementation lives in `admin/`, outside the static website. This work remains unfinished, with Google policy acceptance pending. A code-level auth implementation is not a verified live Google login.
 
+October 1 continuation: the PostgreSQL adapter is implemented and the complete workbench flow is tested locally with a restricted database role. Hosted startup is guarded against missing identity and durable storage. `docs/HOSTING.md` contains the concrete provider/capacity/budget proposal. Google agreement acceptance and the paid-hosting decision remain pending; no private service is live. Completing this preparation does not complete the hosted-product milestone.
+
 ## Founding objective
 
 Create a credible, useful center for understanding nonhuman communication, with an evidence library, reproducible research tools, a public website and a path to funded scientific work.
