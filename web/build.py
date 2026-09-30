@@ -41,6 +41,7 @@ def build(output, base_url='', public=False, repo_url=''):
 
     notes, sources, opportunities = load('research'), load('sources'), load('opportunities')
     source_map = {s['id']: s for s in sources}
+    publication = load('publication')
     if len({n['slug'] for n in notes}) != len(notes):
         raise ValueError('Duplicate research slug')
     for n in notes:
@@ -56,6 +57,8 @@ def build(output, base_url='', public=False, repo_url=''):
         canonical = f'{base_url}/{path}' if base_url else ''
         indexing = public and not noindex
         meta = f'<link rel="canonical" href="{esc(canonical)}">' if canonical else ''
+        if public and not path and base_url == publication['base_url']:
+            meta += f'<meta name="google-site-verification" content="{esc(publication["google_site_verification"])}">'
         if base_url:
             meta += f'<meta property="og:url" content="{esc(canonical)}"><meta property="og:image" content="{esc(base_url)}/assets/social.svg">'
         structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title, 'description': description, 'inLanguage': 'en'}

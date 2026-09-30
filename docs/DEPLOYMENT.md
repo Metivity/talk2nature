@@ -17,6 +17,6 @@ python3 web/build.py --public --base-url https://metivity.github.io/talk2nature 
 python3 scripts/check_site.py
 ```
 
-Search Console verification/submission needs an authenticated owner session. A custom domain needs confirmed ownership and DNS access; none has been purchased. For project Pages sites, robots.txt under the project path is not the origin-level robots file; do not claim it controls the whole host. Use page metadata and submit the project sitemap through the owner property when available.
+Search Console uses the raviv@metivity.com owner session and the exact URL-prefix property https://metivity.github.io/talk2nature/. Its public ownership tag is stored in `content/publication.json` and emitted only on that origin’s public home page; retain it after verification. Verification/submission outcomes are recorded in `docs/STATUS.md`. A custom domain needs confirmed ownership and DNS access; none has been purchased. For project Pages sites, robots.txt under the project path is not the origin-level robots file; do not claim it controls the whole host. Use page metadata and submit the project sitemap through the owner property when available.
 
 The website links GitHub's privacy statement and has no analytics, signup or upload service. Local previews remain noindex by default; keep previews on loopback or authenticated hosting because noindex is not access control.
