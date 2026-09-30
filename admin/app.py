@@ -16,6 +16,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from admin.auth import OWNER_EMAIL, Settings, allowed_owner, verify_google_token
 from admin.store import Store, audit, observation
+from admin.studies import attach_session, register_studies
 
 ASSETS = Path(__file__).parent / "ui"
 SESSION_SECONDS = 4 * 60 * 60
@@ -35,6 +36,7 @@ class Credential(Input):
 
 
 class Observation(Input):
+    study_session_id: str | None = Field(default=None, min_length=1, max_length=80)
     species: str = Field(min_length=2, max_length=80)
     individual_id: str = Field(min_length=2, max_length=80)
     session_id: str = Field(min_length=2, max_length=80)
@@ -240,7 +242,10 @@ def create_app(settings=None, verifier=None, clock=None):
         with store.connect() as db:
             if db.execute("SELECT COUNT(*) FROM observations").fetchone()[0] >= 500:
                 raise HTTPException(409, "The local rehearsal is limited to 500 observations.")
+            attach_session(db, value)
             db.execute("INSERT INTO observations(id,payload,state,created) VALUES(?,?,?,?)", (key, json.dumps(value), "quarantined", now()))
+            if body.study_session_id:
+                db.execute("INSERT INTO observation_links VALUES(?,?)", (key, body.study_session_id))
             audit(db, "submitted", key, now())
         return {"id": key, "state": "quarantined", "version": 1}
 
@@ -276,6 +281,7 @@ def create_app(settings=None, verifier=None, clock=None):
             if row["version"] != body.version or row["state"] == "withdrawn":
                 raise HTTPException(409, "This observation has changed. Refresh first.")
             db.execute("UPDATE observations SET payload='{}', state='withdrawn', version=version+1 WHERE id=?", (key,))
+            db.execute("DELETE FROM observation_links WHERE observation_id=?", (key,))
             for release in db.execute("SELECT id,members FROM releases WHERE revoked=0").fetchall():
                 if key in json.loads(release["members"]):
                     db.execute("UPDATE releases SET revoked=1 WHERE id=?", (release["id"],))
@@ -340,4 +346,5 @@ def create_app(settings=None, verifier=None, clock=None):
         with store.connect() as db:
             return [dict(r) for r in db.execute("SELECT action,target,created FROM audit ORDER BY id DESC LIMIT 100")]
 
+    register_studies(app, store, require_owner, now)
     return app

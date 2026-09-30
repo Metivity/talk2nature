@@ -28,7 +28,7 @@ No app-store release, user recruitment, interviews, animal recording or payments
 5. Inspect the clip, human speech/privacy concerns and rights. An uncertain speech detector cannot guarantee that a recording is safe to upload. Retain random, consented background windows as well as detected calls so a detector does not silently define the entire dataset.
 6. Receive a review outcome and correction request. A submitted sample does not train a model automatically. A contributor can withdraw without needing an admin to interpret their reason.
 
-The implementation in `admin/` rehearses metadata submission and review with synthetic examples only. It has no microphone permission, offline cache, audio upload, contributor accounts or phone background service. It is a responsive owner workbench, not a released mobile app.
+The implementation in `admin/` rehearses database-backed study protocols, sessions, linked metadata submission and review with synthetic examples only. Its evidence catalog imports the public sources, notes and resource records with version fingerprints. It has no microphone permission, offline cache, audio upload, contributor accounts or phone background service. It is a responsive owner workbench, not a released mobile app. See `FIELD_NOTES.md` for the implemented milestone and remaining gates.
 
 ## Device constraints change the roadmap
 

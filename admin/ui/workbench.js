@@ -1,5 +1,6 @@
 let csrf = '';
 let records = [];
+let studies = [], studySessions = [], evidence = [];
 const status = document.querySelector('#status');
 function report(message) { status.textContent = message; }
 function element(tag, text, className) {
@@ -37,6 +38,7 @@ function card(record) {
   item.append(element('p', `Rights: ${record.rights} · ${record.rights_evidence || 'Evidence missing'}`, 'small'));
   item.append(element('p', `Training: ${record.consent_training ? 'permitted' : 'not permitted'} · Publication consideration: ${record.consent_publication ? 'permitted' : 'not permitted'}`, 'small'));
   if(record.review) item.append(element('p', `Owner review recorded ${new Date(record.review.reviewed_at*1000).toLocaleString()} · observation version ${record.review.source_version}`, 'small'));
+  item.append(element('p', record.study ? `Study: ${record.study.title} · protocol v${record.study.protocol_version}` : 'Standalone observation from the earlier rehearsal workflow', 'small'));
   const controls = element('div', undefined, 'card-actions');
   if(record.state === 'quarantined') {
     const fieldset = element('fieldset'); fieldset.append(element('legend','Review checklist'));
@@ -59,7 +61,8 @@ function card(record) {
   item.append(controls); return item;
 }
 async function refresh() {
-  const [observations, releases, audit] = await Promise.all([api('/api/observations'),api('/api/releases'),api('/api/audit')]);
+  const [observations, releases, audit, studyRows, sessionRows, evidenceRows] = await Promise.all([api('/api/observations'),api('/api/releases'),api('/api/audit'),api('/api/studies'),api('/api/study-sessions'),api('/api/evidence')]);
+  studies=studyRows;studySessions=sessionRows;evidence=evidenceRows;renderStudies();
   records = observations;
   document.querySelector('#waiting').textContent=records.filter(r=>r.state==='quarantined').length;
   document.querySelector('#accepted').textContent=records.filter(r=>['accepted','released'].includes(r.state)).length;
@@ -84,8 +87,76 @@ document.querySelector('#observation-form').addEventListener('submit',async even
     await api('/api/observations',data);form.reset();setTime();await refresh();report('Observation received and quarantined for review.');status.focus();
   } catch(error) {report(error.message);} finally {button.disabled=false;}
 });
-function setTime() {const now=new Date();document.querySelector('[name="recorded_at"]').value=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16);}
+function localTime() {const now=new Date();return new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16);}
+function setTime() {document.querySelector('[name="recorded_at"]').value=localTime();}
 document.querySelector('#refresh').addEventListener('click',()=>refresh().catch(e=>report(e.message)));
 document.querySelector('#release').addEventListener('click',async event=>{event.target.disabled=true;try{await api('/api/releases',{ids:records.filter(r=>r.state==='accepted' && r.consent_training).map(r=>r.id)});await refresh();report('A private synthetic metadata release was created. No model training was run.');}catch(e){report(e.message);event.target.disabled=false;}});
 document.querySelector('#logout').addEventListener('click',async()=>{try{await api('/auth/logout',{});location.assign('/');}catch(e){report(e.message);}});
-(async()=>{try{csrf=(await api('/api/me')).csrf;setTime();await refresh();}catch(e){report(e.message);}})();
+function fillSelect(select, choices, empty, defaultFirst=false) {
+  const previous=select.value;
+  const placeholder=element('option',empty);placeholder.value='';
+  select.replaceChildren(placeholder,...choices.map(([value,title])=>{const option=element('option',title);option.value=value;return option;}));
+  select.value=choices.some(([value])=>value===previous)?previous:(defaultFirst&&choices.length?choices[0][0]:'');
+}
+function sessionGuidance() {
+  const form=document.querySelector('#observation-form');
+  const session=studySessions.find(s=>s.id===form.elements.study_session_id.value);
+  const study=studies.find(s=>s.id===session?.study_id);
+  form.elements.species.value=study?.payload.species||'';
+  form.elements.individual_id.value=session?.payload.individual_id||'';
+  form.elements.session_id.value=session?.id||'';
+  document.querySelector('#session-guidance').textContent=study?`${study.payload.protocol} Stop: ${study.payload.stop_rule}`:'Start a session above to connect your observation to a protocol.';
+  const previous=form.elements.context.value;
+  const unknown=element('option','Unknown / unclear');unknown.value='unknown';
+  form.elements.context.replaceChildren(unknown,...Object.entries(study?.payload.codebook||{}).map(([key,definition])=>{const option=element('option',`${key}: ${definition}`);option.value=key;return option;}));
+  form.elements.context.value=study?.payload.codebook[previous]?previous:'unknown';
+}
+function renderStudies() {
+  document.querySelector('#evidence-count').textContent=`${evidence.length} catalog records in database`;
+  fillSelect(document.querySelector('#study-evidence'), evidence.filter(e=>e.kind!=='source').map(e=>[e.key,e.title]),'Choose a reviewed resource or note');
+  fillSelect(document.querySelector('#session-study'),studies.filter(s=>s.state==='active').map(s=>[s.id,s.payload.title]),'Choose an active study');
+  fillSelect(document.querySelector('#observation-session'),studySessions.filter(s=>s.state==='open').map(s=>[s.id,`${studies.find(t=>t.id===s.study_id)?.payload.title||'Study'} · ${s.payload.individual_id}`]),'Choose an open session',true);
+  sessionGuidance();
+  const list=document.querySelector('#study-list');list.replaceChildren();
+  if(!studies.length)list.append(element('p','Create a study draft, check its protocol, then activate the synthetic rehearsal.','empty'));
+  for(const study of studies) {
+    const article=element('article',undefined,'observation');
+    article.append(element('h3',study.payload.title),element('p',`${study.payload.species} · ${study.state}`,'small'),element('p',study.payload.question));
+    const details=element('details');details.append(element('summary','Protocol and evidence'),element('p',study.payload.protocol),element('p',`Stop rule: ${study.payload.stop_rule}`));
+    for(const [key,value] of Object.entries(study.payload.codebook))details.append(element('p',`${key}: ${value}`,'small'));
+    for(const ref of study.evidence) {
+      const link=element('a',`Read saved evidence: ${evidence.find(e=>e.key===ref.evidence_key)?.title||ref.evidence_key}`);
+      link.href=`/api/evidence/${encodeURIComponent(ref.evidence_key)}/versions/${ref.fingerprint}`;link.target='_blank';link.rel='noopener';
+      details.append(link,element('br'));
+    }
+    article.append(details);
+    if(study.state==='draft')article.append(action('Activate synthetic study',async()=>{await api(`/api/studies/${study.id}/activate`,{version:study.version});await refresh();report('Synthetic study activated. The protocol is frozen; real participants remain disabled.');}));
+    list.append(article);
+  }
+  const sessions=document.querySelector('#session-list');sessions.replaceChildren();
+  for(const session of studySessions) {
+    const row=element('div',undefined,'release-row');row.append(element('span',`${session.payload.individual_id} · ${session.state} · ${new Date(session.payload.started_at).toLocaleString()}`));
+    if(session.state==='open')row.append(action('Close session',async()=>{await api(`/api/study-sessions/${session.id}/close`,{version:session.version});await refresh();report('Session closed. Existing observations remain available for review.');},'quiet'));
+    sessions.append(row);
+  }
+}
+document.querySelector('#observation-session').addEventListener('change',sessionGuidance);
+document.querySelector('#study-form').addEventListener('submit',async event=>{
+  event.preventDefault();const form=event.target, button=form.querySelector('button');button.disabled=true;
+  try {
+    const fields=Object.fromEntries(new FormData(form));
+    const codebook=Object.fromEntries(['resting','moving','feeding','social'].filter(k=>fields[k].trim()).map(k=>[k,fields[k].trim()]));
+    if(!Object.keys(codebook).length)throw new Error('Define at least one observable behavior.');
+    await api('/api/studies',{title:fields.title,species:fields.species,question:fields.question,protocol:fields.protocol,stop_rule:fields.stop_rule,codebook,evidence_keys:[fields.evidence],method:'passive_observation',synthetic:form.elements.synthetic.checked});
+    form.reset();form.closest('details').open=false;await refresh();report('Study draft saved with its evidence versions. Check the protocol before activating.');
+  }catch(error){report(error.message);}finally{button.disabled=false;}
+});
+document.querySelector('#session-form').addEventListener('submit',async event=>{
+  event.preventDefault();const form=event.target, button=form.querySelector('button');button.disabled=true;
+  try {
+    const fields=Object.fromEntries(new FormData(form));
+    await api('/api/study-sessions',{study_id:fields.study_id,individual_id:fields.individual_id,started_at:new Date(fields.started_at).toISOString(),synthetic:form.elements.synthetic.checked});
+    form.reset();form.elements.started_at.value=localTime();await refresh();report('Session opened. Add invented observations in Field Notes below.');
+  }catch(error){report(error.message);}finally{button.disabled=false;}
+});
+(async()=>{try{csrf=(await api('/api/me')).csrf;setTime();document.querySelector('#session-form [name="started_at"]').value=localTime();await refresh();}catch(e){report(e.message);}})();

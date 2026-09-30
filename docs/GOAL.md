@@ -2,13 +2,15 @@
 
 Established September 30, 2026. The public repository and website are launched. Raviv explicitly requested a new data, code and research collection goal on September 30; funding and the scientific pilot remain open.
 
-## Active goal: deploy the website and build Field Notes around a database
+## Completed milestone: deploy the website and build Field Notes around a database
 
 Requested September 30, 2026. Deploy the updated public research library and an honest Field Notes product page using Metivity/talk2nature and the existing Pages origin. Verify the live build, research navigation, mobile layout and metadata.
 
 Extend the private owner workbench with persisted study protocols, sessions and linked synthetic observations. Import the reviewed research/source/code/dataset catalogs into the private database with version fingerprints and idempotent synchronization. Define the eventual media-storage boundary and a phone-first observation workflow. Preserve the current authentication, consent, review and withdrawal rules.
 
 Acceptance: successful public deployment and live checks; tested database persistence, evidence links and access controls; a browser-tested study/session/observation rehearsal; reproducible catalog import; current project documentation. Google policy acceptance, paid hosting, real participants, audio capture and playback remain separate unresolved gates, not claims made by this milestone.
+
+Acceptance checks completed September 30: deployed public release `3870313`, verified 34 live files, imported 82 database catalog records idempotently, tested study/session/observation persistence and access with 31 backend tests, and completed a synthetic browser rehearsal including a 390-pixel layout. This bounded milestone is complete; live private access and participant collection remain future work.
 
 ## Completed goal: first data, code and research collection
 

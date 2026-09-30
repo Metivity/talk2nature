@@ -12,6 +12,7 @@ from google.auth import crypt, jwt
 
 from admin.app import create_app, digest
 from admin.auth import Settings
+from admin.catalog import sync_catalog
 
 CLIENT_ID = "test-client.apps.googleusercontent.com"
 ORIGIN = "http://localhost:4180"
@@ -22,6 +23,17 @@ def fixture(**changes):
              "recorded_at":"2026-09-30T12:00:00+03:00", "context":"feeding", "label_source":"direct_observation",
              "note":"Invented example: bird near food bowl.", "rights":"creator", "rights_evidence":"Invented fixture; no recording exists.",
              "consent_review":True, "consent_training":True, "consent_publication":False, "synthetic":True}
+    value.update(changes)
+    return value
+
+
+def study_fixture(**changes):
+    value = {'title': 'Synthetic movement study', 'species': 'Cockatiel',
+             'question': 'Can visible movement be labeled consistently?',
+             'protocol': 'Observe an invented bird without playback and record visible behavior before predictions.',
+             'stop_rule': 'Stop on disturbance or uncertainty about permissions.',
+             'codebook': {'moving': 'Visible change in position.', 'feeding': 'Visible ingestion of food.'},
+             'evidence_keys': ['resource:fixture'], 'method': 'passive_observation', 'synthetic': True}
     value.update(changes)
     return value
 
@@ -71,14 +83,18 @@ class WorkbenchTests(unittest.TestCase):
         return self.post(f"/api/observations/{key}/review", {"version":1,"decision":"accept","rights_checked":True,"consent_checked":True,"privacy_checked":True,"label_checked":True})
 
     def test_every_private_read_requires_authentication(self):
-        for path in ["/api/me","/api/observations","/api/releases","/api/releases/guessed","/api/audit"]:
+        for path in ["/api/me","/api/observations","/api/releases","/api/releases/guessed","/api/audit",
+                     '/api/studies','/api/study-sessions','/api/evidence','/api/evidence/resource:fixture/versions/guessed']:
             with self.subTest(path=path): self.assertEqual(self.client.get(path).status_code,401)
         self.assertEqual(self.client.get("/admin",follow_redirects=False).status_code,303)
 
     def test_every_private_write_requires_authentication(self):
         for path,body in [("/api/observations",fixture()),("/api/releases",{"ids":["x"]}),
                           ("/api/observations/x/review",{"version":1,"decision":"reject"}),
-                          ("/api/observations/x/withdraw",{"version":1}),("/auth/logout",{})]:
+                          ("/api/observations/x/withdraw",{"version":1}),("/auth/logout",{}),
+                          ('/api/studies',study_fixture()),('/api/studies/x/activate',{'version':1}),
+                          ('/api/study-sessions',{'study_id':'x','individual_id':'synthetic-bird','started_at':fixture()['recorded_at'],'synthetic':True}),
+                          ('/api/study-sessions/x/close',{'version':1})]:
             with self.subTest(path=path): self.assertEqual(self.client.post(path,json=body).status_code,401)
 
     def test_real_signature_verification_and_owner_binding(self):
@@ -245,6 +261,104 @@ class WorkbenchTests(unittest.TestCase):
         self.login(); key=self.submit()
         self.assertEqual(self.post(f"/api/observations/{key}/review",{"version":1,"decision":"reject"}).status_code,200)
         self.assertEqual(self.post("/api/releases",{"ids":[key]}).status_code,409)
+
+    def seed_evidence(self):
+        self.entries = [{'key':'resource:fixture','kind':'resource','title':'Synthetic reference',
+                         'payload':{'title':'Synthetic reference','version':'test-v1'}}]
+        return sync_catalog(self.app.state.store, self.entries, self.timestamp)
+
+    def create_study(self):
+        self.seed_evidence()
+        result=self.post('/api/studies',study_fixture())
+        self.assertEqual(result.status_code,201,result.text)
+        return result.json()
+
+    def start_study_session(self):
+        study=self.create_study()
+        self.assertEqual(self.post('/api/studies/'+study['id']+'/activate',{'version':1}).status_code,200)
+        result=self.post('/api/study-sessions',{'study_id':study['id'],'individual_id':fixture()['individual_id'],
+            'started_at':fixture()['recorded_at'],'synthetic':True})
+        self.assertEqual(result.status_code,201,result.text)
+        return study,result.json()
+
+    def test_catalog_import_is_idempotent_and_keeps_cited_versions(self):
+        self.login();study=self.create_study()
+        original=self.client.get('/api/evidence').json()[0]['fingerprint']
+        self.assertEqual(sync_catalog(self.app.state.store,self.entries,self.timestamp),
+                         {'records':1,'created':0,'changed':0,'retired':0})
+        self.entries[0]['payload']['version']='test-v2'
+        self.assertEqual(sync_catalog(self.app.state.store,self.entries,self.timestamp)['changed'],1)
+        old=self.client.get('/api/evidence/resource:fixture/versions/'+original).json()
+        self.assertEqual(old['payload']['version'],'test-v1')
+        saved=self.client.get('/api/studies').json()[0]
+        self.assertEqual(saved['evidence'][0]['fingerprint'],original)
+        self.assertEqual(saved['fingerprint'],study['fingerprint'])
+        replacement=[{'key':'source:replacement','kind':'source','title':'Replacement', 'payload':{'title':'Replacement'}}]
+        self.assertEqual(sync_catalog(self.app.state.store,replacement,self.timestamp)['retired'],1)
+        self.assertEqual(self.client.get('/api/evidence/resource:fixture/versions/'+original).status_code,200)
+        self.assertEqual(len(self.client.get('/api/evidence').json()),1)
+
+    def test_catalog_duplicate_import_leaves_existing_catalog_intact(self):
+        self.login();self.seed_evidence()
+        with self.assertRaises(ValueError):
+            sync_catalog(self.app.state.store,self.entries+self.entries,self.timestamp)
+        self.assertEqual(len(self.client.get('/api/evidence').json()),1)
+
+    def test_study_admission_rejects_real_interventions_and_bad_evidence(self):
+        self.login();self.seed_evidence()
+        for changes,code in [({'synthetic':False},409),({'method':'playback'},422),({'codebook':{}},422),
+                             ({'evidence_keys':['absent']},409),({'evidence_keys':['resource:fixture']*2},422)]:
+            with self.subTest(changes=changes):
+                self.assertEqual(self.post('/api/studies',study_fixture(**changes)).status_code,code)
+        self.assertEqual(self.client.get('/api/studies').json(),[])
+        self.assertEqual(self.client.post('/api/studies',json=study_fixture(),headers={'Origin':ORIGIN}).status_code,403)
+
+    def test_study_must_be_activated_and_session_must_be_synthetic(self):
+        self.login();study=self.create_study()
+        body={'study_id':study['id'],'individual_id':'synthetic-bird','started_at':fixture()['recorded_at'],'synthetic':True}
+        self.assertEqual(self.post('/api/study-sessions',body).status_code,409)
+        self.assertEqual(self.post('/api/studies/'+study['id']+'/activate',{'version':2}).status_code,409)
+        self.assertEqual(self.post('/api/studies/'+study['id']+'/activate',{'version':1}).status_code,200)
+        self.assertEqual(self.post('/api/studies/'+study['id']+'/activate',{'version':1}).status_code,409)
+        self.assertEqual(self.post('/api/study-sessions',{**body,'synthetic':False}).status_code,409)
+        self.assertEqual(self.post('/api/study-sessions',{**body,'started_at':'2026-09-30T12:00:00'}).status_code,422)
+
+    def test_linked_observation_enforces_identity_codebook_and_start_time(self):
+        self.login();study,session=self.start_study_session()
+        base=fixture(study_session_id=session['id'],session_id=session['id'])
+        for changes in [{'species':'Wrong species'},{'individual_id':'another-bird'},{'session_id':'different'},
+                        {'context':'resting'},{'recorded_at':'2026-09-29T12:00:00+03:00'}, {'study_session_id':'absent'}]:
+            with self.subTest(changes=changes):
+                self.assertEqual(self.post('/api/observations',{**base,**changes}).status_code,409)
+        self.assertEqual(self.client.get('/api/observations').json(),[])
+
+    def test_linkage_persists_across_restart_and_survives_release_until_withdrawal(self):
+        self.login();study,session=self.start_study_session()
+        key=self.submit(study_session_id=session['id'],session_id=session['id'])
+        self.assertEqual(self.accept(key).status_code,200)
+        release=self.post('/api/releases',{'ids':[key]}).json()['id']
+        app=create_app(self.settings,clock=lambda:self.timestamp)
+        with TestClient(app,base_url=ORIGIN) as client:
+            client.cookies.update(self.client.cookies)
+            self.assertEqual(len(client.get('/api/studies').json()),1)
+            self.assertEqual(len(client.get('/api/study-sessions').json()),1)
+            record=client.get('/api/releases/'+release).json()['records'][0]
+            self.assertEqual(record['study']['protocol_fingerprint'],study['fingerprint'])
+            self.assertEqual(record['study']['protocol_version'],1)
+            self.assertEqual(record['study']['session_id'],session['id'])
+        self.assertEqual(self.post('/api/observations/'+key+'/withdraw',{'version':3}).status_code,200)
+        with self.app.state.store.connect() as db:
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM observation_links').fetchone()[0],0)
+        self.assertEqual(self.client.get('/api/releases/'+release).status_code,410)
+
+    def test_closing_session_blocks_new_observations_without_losing_existing_ones(self):
+        self.login();study,session=self.start_study_session()
+        key=self.submit(study_session_id=session['id'],session_id=session['id'])
+        self.assertEqual(self.post('/api/study-sessions/'+session['id']+'/close',{'version':2}).status_code,409)
+        self.assertEqual(self.post('/api/study-sessions/'+session['id']+'/close',{'version':1}).status_code,200)
+        self.assertEqual(self.post('/api/study-sessions/'+session['id']+'/close',{'version':1}).status_code,409)
+        self.assertEqual(self.post('/api/observations',fixture(study_session_id=session['id'],session_id=session['id'])).status_code,409)
+        self.assertEqual(self.accept(key).status_code,200)
 
 
 if __name__ == "__main__":

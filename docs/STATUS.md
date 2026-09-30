@@ -1,18 +1,18 @@
 # Project status
 
-Updated September 30, 2026. Public launch and the first bounded data/code/research collection are complete. Private-product work remains unfinished; live Google identity, hosting, funding and scientific-pilot dependencies remain.
+Updated September 30, 2026. The expanded website and Field Notes product page are live. The database-backed study/session rehearsal is implemented locally. Live Google identity, private hosting, funding and scientific-pilot dependencies remain.
 
 ## Implemented
 
 - Working brand: Talk2Nature / Listen closely. Understand carefully. Name clearance remains open.
 - Scope, open-source/business approach, contribution rules and company boundaries documented.
 - Apache-2.0 original software and CC BY 4.0 original public-summary policy; no third-party audio or model weights included.
-- Responsive static website: 23 content pages plus 404, original SVG identity, 15 evidence notes, 54-source inventory, ten dated opportunity records, roadmap, methods, contribution and privacy guidance.
+- Responsive static website: 25 content pages plus 404, original SVG identity, 16 evidence notes, 58-source inventory, ten dated opportunity records, Field Notes product page, roadmap, methods, contribution and privacy guidance.
 - Technical SEO preparation: unique titles/descriptions, structured page metadata, canonical/base-path support, sitemap, robots and social metadata. Local builds default to noindex. The public build allows indexing; Search Console ownership is verified. Search-engine indexing is not yet verified.
 - Research utility: metadata validation and deterministic connected-group splits across individuals, sessions and source hashes. Synthetic fixtures only; no trained model or empirical result.
 - Local Tnufa preparation brief and application register in ignored `funding/`. No submitted application or confirmed eligibility.
 
-## Validation
+## Initial launch validation
 
 - Twelve unit/integration tests pass, including leakage chains, mixed synthetic/real rejection, input ordering, missing origin and public project-subpath links.
 - Generated-site checker passes: 24 HTML pages and 543 link references checked locally. External URLs are drawn from the audit; not all external pages were re-fetched during this build.
@@ -97,3 +97,17 @@ The inspected parrot table contains 808 annotation rows and 176 distinct nonempt
 Next scientific milestone: audit full methods, selection-table joins, missing/uncertain identities and behavior-label independence; then decide whether a small matched audio subset can support a held-out baseline. Keep plant/fungal sensing separate. Google Sign-In, cloud budget, Kiki ownership and collaborator access remain pending and do not block this collection workflow.
 
 Validation: 23 repository tests passed (11 collection/report checks plus the original 12), including checksum/size failures, blocked rights, interrupted fetch cleanup, destination safety and aggregate-report provenance. Catalog validation passed. Local noindex build/check passed: 25 HTML pages and 544 link references. Diff checks passed; raw samples/receipts are Git-ignored. The admin was untouched, so its earlier 24-test result was not rerun or represented as a new live-auth check. This completes the bounded collection goal; no trained model or deployed update is claimed.
+
+## Field Notes deployment and database milestone — September 30, 2026
+
+Raviv explicitly approved deployment and requested the next app/database goal. Deployed commit `387031367eb3caed67c142d4f4cf1cc8f9419b65` through successful Pages run https://github.com/Metivity/talk2nature/actions/runs/36761796253 under the verified Metivity account. Live https://metivity.github.io/talk2nature/field-notes/ explains the app and states that it is a private local prototype. The public site has 26 HTML pages including 404, 16 notes and 58 sources. All 34 public content/asset files returned HTTP 200 and matched the checked build; an unknown path returned 404. Public build/check passed with 614 link references and retained canonical/sitemap/Search Console metadata. No claim of search-engine indexing is made.
+
+Browser verification: Field Notes navigation, new parrot note and live search passed. The release page's narrow layout and keyboard mobile menu were checked at a measured 480 CSS pixels with no horizontal overflow; the browser's sizing differed from the requested viewport. Live proof: `tmp/site-preview/field-notes-live.png`; HTTP proof: `tmp/field-notes-live-check.json`.
+
+Private implementation now stores public research catalog snapshots, immutable study protocols/codebooks, exact cited evidence versions, study sessions and observation/session links in SQLite with foreign-key checks. A session must belong to an active synthetic study; linked observations must match its species/animal/session and codebook and not precede its start. Closing a session stops new observations. Existing review/release/withdrawal controls remain, and releases include protocol/evidence references. Legacy standalone synthetic records remain compatible and visibly distinct.
+
+`python3 -m admin.catalog` imported 82 records into the actual local private database: 58 sources, 16 notes and 8 resource records. The second import created/changed/retired zero records. Catalog updates preserve earlier cited versions. External annotation rows, audio and model weights were not imported. Source JSON remains the public editorial source; private study/session/observation records are database-owned. See `docs/FIELD_NOTES.md` for the current schema, media-storage boundary and next gates.
+
+Browser rehearsal in an isolated synthetic database completed study creation, activation, session start, linked observation submission, review, release creation, reload persistence and session closure. The app showed no horizontal overflow at measured 1280 and 390 CSS pixels; the phone layout was visually checked. Screenshot: `tmp/admin-preview/field-notes-desktop.png`. Testing used an injected synthetic session, which was revoked; its cookie and local token file were removed and the isolated server stopped. This is not live Google authentication. The normal locked local server remains on port 4180 with the catalog populated.
+
+Required checks: 31 backend tests passed, including new persistence, frozen-evidence, admission, linkage, access and session-transition coverage; 23 website/research tests passed. JavaScript syntax and diff checks passed. The public website is deployed; the private app is local only. The Google agreement/client, cloud budget/origin/region, durable hosted storage, participant permissions and actual capture tests remain separate gates. No paid services or real-data intake were enabled.

@@ -9,6 +9,7 @@ From the repository root:
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r admin/requirements.lock
+python3 -m admin.catalog
 .venv/bin/python -m uvicorn admin.app:create_app --factory --host 127.0.0.1 --port 4180 --no-access-log
 ```
 
@@ -37,5 +38,7 @@ python3 scripts/check_site.py
 Admin tests generate a temporary RSA signing key and replace Google's certificate retrieval only. They exercise real signature/audience/issuer/expiry verification plus nonce replay, exact owner binding, CSRF, session expiry/logout, private routes, input restrictions, optimistic review versions, training opt-out, atomic release and withdrawal, retained review attestations and release-content integrity. No network provider test is implied.
 
 Only synthetic metadata is admitted; real-data submissions return 409. A private release is a metadata-rehearsal JSON export, not a valid audio manifest or a trained model. It is intentionally distinct from the source-recording manifests in `talk2nature/manifest.py`.
+
+The study planner saves passive protocols, behavior definitions, version-pinned evidence, and open/closed study sessions. New UI observations are linked to those sessions; the server checks species, animal, codebook and session start time. The catalog import is idempotent and preserves cited historical versions. See `docs/FIELD_NOTES.md` for the schema, legacy-record behavior and remaining capture/hosting gates. Withdrawing an observation does not delete the study protocol or session alias; these separate records currently have no deletion UI and must remain synthetic.
 
 See `docs/PHASE_TWO_PLAN.md` and `docs/PRIVATE_ARCHITECTURE.md` for product priorities, scientific limits and unfinished hosted requirements. Do not deploy this SQLite adapter on ephemeral serverless storage. No deployment workflow for the private backend is supplied yet.
