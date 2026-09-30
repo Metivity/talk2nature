@@ -1,6 +1,6 @@
 """Google token verification. No browser assertion is trusted as an identity."""
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -16,6 +16,8 @@ class Settings:
     client_id: str = ""
     owner_sub: str = ""
     database: Path = Path("data/private/admin.sqlite3")
+    database_url: str = field(default="", repr=False)
+    hosted: bool = False
 
     def __post_init__(self):
         url = urlsplit(self.origin)
@@ -26,6 +28,11 @@ class Settings:
             raise ValueError("Only loopback development may use HTTP.")
         if self.client_id and not self.client_id.endswith(".apps.googleusercontent.com"):
             raise ValueError("A Google web client ID is required.")
+        if self.database_url:
+            from admin.postgres import validate_database_url
+            validate_database_url(self.database_url, hosted=self.hosted)
+        if self.hosted and (url.scheme != 'https' or not self.client_id or not self.owner_sub or not self.database_url):
+            raise ValueError('Hosted mode requires HTTPS, a Google client, a pinned owner subject and PostgreSQL.')
 
     @property
     def secure(self):
@@ -36,7 +43,9 @@ class Settings:
         return cls(origin=os.getenv("T2N_ORIGIN", "http://localhost:4180"),
                    client_id=os.getenv("T2N_GOOGLE_CLIENT_ID", ""),
                    owner_sub=os.getenv("T2N_OWNER_SUB", ""),
-                   database=Path(os.getenv("T2N_DATABASE", "data/private/admin.sqlite3")))
+                   database=Path(os.getenv("T2N_DATABASE", "data/private/admin.sqlite3")),
+                   database_url=os.getenv('T2N_DATABASE_URL', ''),
+                   hosted=os.getenv('T2N_HOSTED') == '1' or bool(os.getenv('K_SERVICE')))
 
 
 def verify_google_token(credential, audience):

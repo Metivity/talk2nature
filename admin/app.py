@@ -10,12 +10,12 @@ from urllib.parse import urlsplit
 
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, field_validator
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from admin.auth import OWNER_EMAIL, Settings, allowed_owner, verify_google_token
-from admin.store import Store, audit, observation
+from admin.store import open_store, StorageUnavailable, audit, observation
 from admin.studies import attach_session, register_studies
 
 ASSETS = Path(__file__).parent / "ui"
@@ -80,7 +80,7 @@ def create_app(settings=None, verifier=None, clock=None):
     settings = settings or Settings.from_env()
     verify = verifier or verify_google_token
     now = clock or (lambda: int(time.time()))
-    store = Store(settings.database)
+    store = open_store(settings)
     app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
     app.state.store = store
     session_cookie = "__Host-t2n_session" if settings.secure else "t2n_session"
@@ -110,6 +110,10 @@ def create_app(settings=None, verifier=None, clock=None):
         return dict(session)
 
     Owner = Annotated[dict, Depends(require_owner)]
+
+    @app.exception_handler(StorageUnavailable)
+    async def unavailable(request, exc):
+        return JSONResponse({'detail': 'Private storage is temporarily unavailable.'}, status_code=503)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_input(request, exc):
@@ -149,7 +153,12 @@ def create_app(settings=None, verifier=None, clock=None):
 
     @app.get("/privacy")
     def privacy():
-        return FileResponse(ASSETS / "privacy.html")
+        storage = ('This instance stores metadata in PostgreSQL. Remote connections require verified TLS. '
+                   'Database encryption at rest, hosting location and backup retention depend on the deployment configuration.'
+                   if settings.database_url else
+                   'This instance stores a local SQLite file outside the public website and Git history. '
+                   'The file is not encrypted by the application and depends on the host’s disk protection.')
+        return HTMLResponse((ASSETS / 'privacy.html').read_text().replace('{{storage_description}}', storage))
 
     @app.get("/assets/{name}")
     def asset(name: str):
@@ -160,6 +169,12 @@ def create_app(settings=None, verifier=None, clock=None):
     @app.get("/health")
     def health():
         return {"status": "ok", "mode": "synthetic-metadata-only"}
+
+    @app.get('/ready')
+    def ready():
+        with store.connect() as db:
+            db.execute('SELECT COUNT(*) FROM owner').fetchone()
+        return {'status': 'ready', 'mode': 'synthetic-metadata-only'}
 
     @app.get("/auth/config")
     def auth_config(response: Response):

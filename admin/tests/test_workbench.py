@@ -2,6 +2,7 @@ import json
 import tempfile
 import time
 import unittest
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
 
@@ -39,6 +40,9 @@ def study_fixture(**changes):
 
 
 class WorkbenchTests(unittest.TestCase):
+    def settings_for_test(self):
+        return Settings(client_id=CLIENT_ID, database=Path(self.temp.name)/"private"/"admin.sqlite3")
+
     @classmethod
     def setUpClass(cls):
         key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -50,7 +54,7 @@ class WorkbenchTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.timestamp = int(time.time())
-        self.settings = Settings(client_id=CLIENT_ID, database=Path(self.temp.name)/"private"/"admin.sqlite3")
+        self.settings = self.settings_for_test()
         self.app = create_app(self.settings, clock=lambda:self.timestamp)
         self.client = TestClient(self.app, base_url=ORIGIN)
         self.addCleanup(self.client.close)
@@ -147,21 +151,21 @@ class WorkbenchTests(unittest.TestCase):
             self.assertEqual(self.client.post("/api/observations",json=fixture(),headers=headers).status_code,403)
 
     def test_no_client_configuration_fails_closed(self):
-        app=create_app(Settings(database=Path(self.temp.name)/"not-configured.sqlite3"))
+        app=create_app(replace(self.settings, client_id='', database=Path(self.temp.name)/"not-configured.sqlite3"))
         with TestClient(app,base_url=ORIGIN) as client:
             self.assertEqual(client.get("/auth/config").json(),{"ready":False})
             self.assertEqual(client.post("/auth/google",json={"credential":"x"},headers={"Origin":ORIGIN}).status_code,503)
 
     def test_subject_configuration_revokes_old_sessions(self):
         self.login()
-        app=create_app(Settings(client_id=CLIENT_ID,owner_sub="replacement",database=self.settings.database))
+        app=create_app(replace(self.settings, owner_sub="replacement"))
         with TestClient(app,base_url=ORIGIN) as client:
             client.cookies.update(self.client.cookies)
             self.assertEqual(client.get("/api/me").status_code,401)
 
     def test_http_remote_origin_rejected_and_https_cookie_protected(self):
         with self.assertRaises(ValueError): Settings(origin="http://example.com")
-        app=create_app(Settings(origin="https://private.example",client_id=CLIENT_ID,database=Path(self.temp.name)/"secure.sqlite3"))
+        app=create_app(replace(self.settings, origin="https://private.example", database=Path(self.temp.name)/"secure.sqlite3"))
         with TestClient(app,base_url="https://private.example") as client:
             header=client.get("/auth/config").headers["set-cookie"]
             for text in ["__Host-t2n_nonce","HttpOnly","Secure","SameSite=strict","Path=/"]: self.assertIn(text,header)
@@ -177,7 +181,8 @@ class WorkbenchTests(unittest.TestCase):
     def test_privacy_disclosure_is_available_before_signin(self):
         response=self.client.get("/privacy")
         self.assertEqual(response.status_code,200)
-        self.assertIn("not encrypted by the application",response.text)
+        self.assertIn("verified TLS" if self.settings.database_url else "not encrypted by the application",response.text)
+        self.assertNotIn('{{storage_description}}', response.text)
         self.assertIn("no Gmail, Drive or Calendar access",response.text)
         self.assertIn("noindex",response.headers["x-robots-tag"])
 

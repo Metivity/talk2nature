@@ -50,7 +50,7 @@ def sync_catalog(store, entries, now=None):
             previous = existing.get(entry['key'])
             created += previous is None
             changed += bool(previous and (previous['fingerprint'] != checksum or not previous['active']))
-            db.execute('INSERT OR IGNORE INTO evidence_versions VALUES(?,?,?)', (entry['key'], checksum, payload))
+            db.execute('INSERT INTO evidence_versions VALUES(?,?,?) ON CONFLICT(key,fingerprint) DO NOTHING', (entry['key'], checksum, payload))
             db.execute('''INSERT INTO evidence_catalog VALUES(?,?,?,?,1)
                 ON CONFLICT(key) DO UPDATE SET kind=excluded.kind,title=excluded.title,
                 fingerprint=excluded.fingerprint,active=1''',

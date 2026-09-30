@@ -4,6 +4,17 @@ import sqlite3
 from contextlib import contextmanager
 
 
+class StorageUnavailable(Exception):
+    """Deliberately excludes credentials, connection strings and raw SQL errors."""
+
+
+def open_store(settings):
+    if settings.database_url:
+        from admin.postgres import PostgresStore
+        return PostgresStore(settings.database_url, hosted=settings.hosted)
+    return Store(settings.database)
+
+
 class Store:
     def __init__(self, path):
         self.path = path

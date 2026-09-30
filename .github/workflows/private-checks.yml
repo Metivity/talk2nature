@@ -1,0 +1,47 @@
+name: Check private prototype
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the approved source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Install locked Python dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r admin/requirements.lock
+          .venv/bin/python -m pip check
+      - name: Test SQLite and isolated PostgreSQL
+        run: |
+          export PATH="$(pg_config --bindir):$PATH"
+          .venv/bin/python scripts/test_postgres.py
+      - name: Check publication boundaries
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 web/build.py
+          python3 scripts/check_site.py
+      - name: Build the non-root container
+        run: docker build --tag talk2nature-check .
+      - name: Verify image contents and hosted startup rejection
+        run: |
+          docker run --rm --network none --entrypoint python talk2nature-check -c 'from pathlib import Path; import os; assert os.geteuid() != 0; p=Path("/app"); assert not (p/"data").exists(); assert not (p/"funding").exists(); assert not list(p.rglob(".env*")); assert not (p/".git").exists(); assert not (p/"admin/tests").exists(); print("Non-root image excludes private working files")'
+          if docker run --rm --network none talk2nature-check > hosted-startup.log 2>&1; then
+            echo "ERROR: hosted startup unexpectedly accepted missing settings"
+            exit 1
+          fi
+          python3 -c 'from pathlib import Path; assert "Hosted mode requires" in Path("hosted-startup.log").read_text()'
+      - name: Test locked local-mode container over HTTP
+        run: |
+          docker run --detach --name t2n-smoke --network none -e T2N_HOSTED=0 -e PORT=4180 -e T2N_DATABASE=/tmp/synthetic.sqlite3 talk2nature-check
+          docker exec -i t2n-smoke python - < scripts/check_admin_http.py
+      - name: Stop the temporary smoke container
+        if: always()
+        run: docker rm --force t2n-smoke || true

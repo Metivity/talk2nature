@@ -13,7 +13,13 @@ python3 -m admin.catalog
 .venv/bin/python -m uvicorn admin.app:create_app --factory --host 127.0.0.1 --port 4180 --no-access-log
 ```
 
-Open `http://localhost:4180` (use exactly localhost, matching the default origin). Without a client ID, the page explains setup is incomplete and private routes remain locked. Environment settings are documented in `.env.example`; that file is not loaded automatically. `T2N_DATABASE` defaults to ignored `data/private/admin.sqlite3`. Do not place the database, copies or local secrets inside `dist/`, `content/` or tracked files. Local filesystem owners can read the unencrypted SQLite file; this is not a multi-user workstation security boundary.
+Open `http://localhost:4180` (use exactly localhost, matching the default origin). Without a client ID, the page explains setup is incomplete and private routes remain locked. Environment settings are documented in `admin/.env.example`; that file is not loaded automatically. `T2N_DATABASE` defaults to ignored `data/private/admin.sqlite3`. Do not place the database, copies or local secrets inside `dist/`, `content/` or tracked files. Local filesystem owners can read the unencrypted SQLite file; this is not a multi-user workstation security boundary.
+
+## PostgreSQL and hosting preparation
+
+`T2N_DATABASE_URL` selects the tested PostgreSQL adapter; without it, local development uses SQLite. `T2N_HOSTED=1` or Cloud Run's `K_SERVICE` requires HTTPS, a configured Google client, pinned owner subject and PostgreSQL. See [the concrete deployment proposal and release gates](../docs/HOSTING.md). Cloud hosting and live Google Sign-In are still unverified.
+
+Run `.venv/bin/python scripts/test_postgres.py` to create a disposable local PostgreSQL cluster and exercise the full workbench suite with a restricted runtime role. This requires existing PostgreSQL binaries and does not connect to any existing database. `admin.database init` explicitly initializes the private schema; runtime never runs migrations. The SQLite recovery command below does not back up PostgreSQL.
 
 ## Local recovery rehearsal
 

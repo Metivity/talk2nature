@@ -1,0 +1,17 @@
+**
+!Dockerfile
+!LICENSE
+!NOTICE
+!admin/
+!admin/*.py
+!admin/requirements.lock
+!admin/schema/
+!admin/schema/*.sql
+!admin/ui/
+!admin/ui/*
+!content/
+!content/*.json
+!research/
+!research/resources.json
+!talk2nature/
+!talk2nature/*.py
