@@ -5,7 +5,7 @@ Updated October 1, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_
 | Workstream | Acceptance condition | Owner | Target / state |
 | --- | --- | --- | --- |
 | First tools | Listen, portable labels, Python report; automated and desktop/mobile checks; deployment | Codex, founder review | Released October 1; 41 automated checks and live workflow verified |
-| Nature Station | Bounded local capture, encounter markers, clip review/export, synthetic browser checks | Codex | October 1 implementation; release evidence in STATUS.md |
+| Nature Station | Bounded local capture, encounter markers, clip review/export, synthetic browser checks | Codex | Released October 1; 51 automated checks, 49 live files and synthetic workflow verified |
 | Dedicated phone | Native Android service, visible controls, bounded offline storage, 1/8/24-hour device trials | Codex, Raviv device selection | Next proposed milestone; no native app or unattended validation yet |
 | Scientific direction | Concept, interview script, five tailored outreach drafts | Codex | Prepared; outreach private and unsent |
 | Scientific lead | Qualified person owns species, protocol and welfare decisions | Raviv, scientist | October 31; none committed |
