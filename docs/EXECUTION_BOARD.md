@@ -4,12 +4,12 @@ Updated October 1, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_
 
 | Workstream | Acceptance condition | Owner | Target / state |
 | --- | --- | --- | --- |
-| First tools | Listen, portable labels, Python report; automated and desktop/mobile checks; deployment | Codex, founder review | October 1 release work in progress |
+| First tools | Listen, portable labels, Python report; automated and desktop/mobile checks; deployment | Codex, founder review | Released October 1; 41 automated checks and live workflow verified |
 | Scientific direction | Concept, interview script, five tailored outreach drafts | Codex | Prepared; outreach private and unsent |
 | Scientific lead | Qualified person owns species, protocol and welfare decisions | Raviv, scientist | October 31; none committed |
 | Discovery | 12 conversations documenting workflows and alternatives | Raviv | October 1–14; none logged |
 | Hosting | Complete existing provider steps; hosted owner login, recovery and withdrawal within approved $50/month | Raviv account steps; Codex implementation | Billing completion and separate Supabase agreement pending |
-| Coller Dolittle | Honest late submission; explicit eligibility gap; retain receipt | Codex, specifically authorized | September 30 deadline passed; preparing |
+| Coller Dolittle | Honest late submission; explicit eligibility gap; retain receipt | Codex, specifically authorized | Sent October 1 with methods PDF; acceptance unconfirmed |
 | Tnufa | Confirm applicant, technical novelty and current forms; go/no-go | Raviv, Codex preparation | Decision October 3; published deadline October 8 |
 | Participation | Research, working tool and private interest contact; accurate privacy | Codex | In this release; individual email, not newsletter enrollment |
 | Demonstration | 60-second synthetic walkthrough | Codex script, Raviv recording | Script prepared; video not recorded |
