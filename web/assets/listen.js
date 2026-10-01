@@ -1,7 +1,7 @@
 import {VERSION, MAX_BYTES, readWav, syntheticWav, validateDocument, eventCsv} from './listen-model.mjs';
 
 const $ = id => document.getElementById(id);
-let recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, generation = 0;
+let recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0;
 const ids = ['recording-id', 'session-id', 'individual-id', 'annotator-id'];
 const status = message => { $('listen-status').textContent = message; };
 const rounded = n => Math.round(n * 1000) / 1000;
@@ -10,14 +10,26 @@ function documentValue() {
   ['recording_id', 'session_id', 'individual_id', 'annotator_id'].forEach((key, i) => { r[key] = $(ids[i]).value.trim(); });
   return validateDocument({schema: 'talk2nature.annotation.v1', tool_version: VERSION, recording: r, events: structuredClone(events)});
 }
-function allowReplace() { return !dirty || window.confirm('There are changes that have not been exported as JSON. Discard them?'); }
+function allowReplace() { return !(dirty || draftDirty) || window.confirm('Discard this session and any unfinished observation? Check that your JSON download is saved first.'); }
+function allowDraftReplace() { return !draftDirty || window.confirm('Discard the unfinished observation?'); }
+function markDraft() { draftDirty = true; $('draft-status').textContent = 'Unfinished observation — add it to the log before exporting.'; $('cancel-edit').hidden = false; }
+function readyToExport() {
+  if (!draftDirty) return true;
+  const message = 'Add the unfinished observation to the log, or discard the draft, before exporting.';
+  $('export-status').textContent = message; $('event-error').textContent = message; $('save-event').focus(); return false;
+}
+function exportError(error) {
+  $('export-status').textContent = error.message; status(error.message);
+  const invalid = ids.find(id => !$(id).value.trim());
+  if (invalid) { $('recording-identifiers').open = true; $(invalid).focus(); }
+}
 function releaseAudio() {
   $('recording-audio').pause(); $('recording-audio').removeAttribute('src'); $('recording-audio').load();
   if (mediaUrl) URL.revokeObjectURL(mediaUrl);
   mediaUrl = null;
 }
 function resetEditor() {
-  editing = null; $('event-form').reset(); $('edit-heading').textContent = 'Mark a sound event.';
+  editing = null; draftDirty = false; $('export-status').textContent = ''; $('draft-status').textContent = ''; $('event-form').reset(); $('edit-heading').textContent = 'Mark a sound event.';
   $('save-event').textContent = 'Add event +'; $('cancel-edit').hidden = true; $('event-error').textContent = '';
   $('event-end').value = Math.min(1, recording?.duration_seconds || 1); draw();
 }
@@ -39,13 +51,15 @@ function renderEvents() {
     const li = document.createElement('li'), heading = document.createElement('h3'), description = document.createElement('p'), notes = document.createElement('p'), actions = document.createElement('div');
     heading.textContent = `${e.start_seconds.toFixed(3)}–${e.end_seconds.toFixed(3)} s · ${e.kind}`;
     description.textContent = `${e.context} · ${e.context_source} · ${e.confidence}`; notes.textContent = e.notes; actions.className = 'actions';
-    for (const [label, action] of [['Edit', () => editEvent(e)], ['Remove', () => { events = events.filter(x => x.id !== e.id); dirty = true; if (editing === e.id) resetEditor(); renderEvents(); }]]) {
+    for (const [label, action] of [['Edit', () => editEvent(e)], ['Remove', () => { if (editing === e.id && !allowDraftReplace()) return; events = events.filter(x => x.id !== e.id); dirty = true; if (editing === e.id) resetEditor(); renderEvents(); }]]) {
       const b = document.createElement('button'); b.type = 'button'; b.className = 'listen-secondary'; b.textContent = label; b.setAttribute('aria-label', `${label} event ${e.id}`); b.addEventListener('click', action); actions.append(b);
     }
     li.append(heading, description, notes, actions); $('event-list').append(li);
   }
 }
 function editEvent(e) {
+  if (!allowDraftReplace()) return;
+  draftDirty = false; $('draft-status').textContent = '';
   editing = e.id;
   for (const [id, key] of [['event-start','start_seconds'], ['event-end','end_seconds'], ['event-kind','kind'], ['event-context','context'], ['event-source','context_source'], ['event-confidence','confidence'], ['event-notes','notes']]) $(id).value = e[key];
   $('edit-heading').textContent = `Edit event ${e.id}.`; $('save-event').textContent = 'Save changes'; $('cancel-edit').hidden = false; $('event-error').textContent = '';
@@ -72,7 +86,7 @@ async function openRecording(bufferPromise, origin) {
     $('wave-end').textContent = `${info.duration.toFixed(3)} s`; $('hash-label').textContent = `SHA-256 · ${hash}`;
     $('event-start').max = info.duration; $('event-end').max = info.duration;
     mediaUrl = URL.createObjectURL(new Blob([buffer], {type: 'audio/wav'})); $('recording-audio').src = mediaUrl;
-    $('listen-loaded').hidden = false; resetEditor(); renderEvents();
+    $('listen-loaded').hidden = false; $('export-status').textContent = ''; resetEditor(); renderEvents(); $('recording-title').focus();
     status(origin === 'synthetic' ? 'Example ready. Tones occur at 1–2 and 4–5 seconds. Label them as other sound; there is no animal context.' : 'Recording ready. No audio or labels have been uploaded.');
   } catch (error) { status(`Could not open recording: ${error.message}`); }
   finally { if (current === generation) { $('example').disabled = false; $('wav-file').disabled = false; } }
@@ -93,7 +107,9 @@ $('event-form').addEventListener('submit', event => {
     resetEditor(); renderEvents(); status(`Event ${item.id} saved in this tab. Export JSON to keep your work.`);
   } catch (error) { $('event-error').textContent = error.message; }
 });
-$('cancel-edit').addEventListener('click', resetEditor);
+$('cancel-edit').addEventListener('click', () => { if (allowDraftReplace()) resetEditor(); });
+$('event-form').addEventListener('input', markDraft);
+$('event-form').addEventListener('change', markDraft);
 ids.forEach(id => $(id).addEventListener('input', () => { dirty = true; }));
 ['event-start', 'event-end'].forEach(id => $(id).addEventListener('input', draw));
 function download(content, name, type) {
@@ -101,12 +117,14 @@ function download(content, name, type) {
   a.href = objectUrl; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(objectUrl), 30000);
 }
 $('export-json').addEventListener('click', () => {
-  try { download(JSON.stringify(documentValue(), null, 2) + '\n', 'talk2nature-labels.json', 'application/json'); dirty = false; status('JSON export requested. Check your downloads before closing this tab. The export contains labels and identifiers, not audio.'); }
-  catch (error) { status(error.message); }
+  if (!readyToExport()) return;
+  try { download(JSON.stringify(documentValue(), null, 2) + '\n', 'talk2nature-labels.json', 'application/json'); $('export-status').textContent = 'JSON download requested. Check your downloads before leaving; audio is saved separately.'; status($('export-status').textContent); }
+  catch (error) { exportError(error); }
 });
 $('export-csv').addEventListener('click', () => {
-  try { download(eventCsv(documentValue()), 'talk2nature-events.csv', 'text/csv'); status('CSV export requested. Keep a JSON export too if you want to reopen this work.'); }
-  catch (error) { status(error.message); }
+  if (!readyToExport()) return;
+  try { download(eventCsv(documentValue()), 'talk2nature-events.csv', 'text/csv'); $('export-status').textContent = 'CSV download requested. Save JSON too to reopen your work.'; status($('export-status').textContent); }
+  catch (error) { exportError(error); }
 });
 $('labels-file').addEventListener('change', async event => {
   const file = event.target.files[0]; event.target.value = '';
@@ -132,8 +150,8 @@ const timeAt = event => { const rect = $('waveform').getBoundingClientRect(); re
 $('waveform').addEventListener('pointerdown', event => { if (audioInfo) { dragStart = timeAt(event); $('waveform').setPointerCapture(event.pointerId); } });
 $('waveform').addEventListener('pointermove', event => {
   if (dragStart === null) return;
-  const end = timeAt(event); $('event-start').value = Math.min(dragStart, end); $('event-end').value = Math.max(dragStart, end); draw();
+  const end = timeAt(event); $('event-start').value = Math.min(dragStart, end); $('event-end').value = Math.max(dragStart, end); markDraft(); draw();
 });
 for (const name of ['pointerup', 'pointercancel']) $('waveform').addEventListener(name, () => { dragStart = null; });
 window.addEventListener('resize', draw);
-window.addEventListener('beforeunload', event => { if (dirty) { event.preventDefault(); event.returnValue = ''; } });
+window.addEventListener('beforeunload', event => { if (dirty || draftDirty) { event.preventDefault(); event.returnValue = ''; } });

@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 async function worker({failInstall=false}={}) {
   const scope='/talk2nature/app/', origin='https://fixture.test';
-  const paths=[scope,scope+'station/',scope+'review/','/talk2nature/assets/station.js'];
+  const paths=[scope,scope+'station/',scope+'review/','/talk2nature/assets/station.js?v=fixture'];
   const handlers={}, stores=new Map(), fetches=[], adds=[];
   const old='talk2nature-shell:'+scope+':old', unrelated='another-project-cache';
   stores.set(old,new Map()); stores.set(unrelated,new Map());
@@ -53,4 +53,15 @@ test('readiness checks every file and failed installation removes only the incom
   w.stores.get(w.key).delete(w.origin+w.paths[0]);await w.dispatch('message',extra);assert.equal(result.ready,false);
   const broken=await worker({failInstall:true});await assert.rejects(broken.dispatch('install'),/network/);
   assert.equal(broken.stores.has(broken.key),false);assert.equal(broken.stores.has(broken.old),true);assert.equal(broken.stores.has(broken.unrelated),true);
+});
+
+
+test('only the exact release asset query is served from the public offline cache',async()=>{
+  const w=await worker();await w.dispatch('install');
+  const path='/talk2nature/assets/station.js';
+  const good=await w.dispatch('fetch',{request:new Request(w.origin+path+'?v=fixture')});
+  assert.match(await good.text(),/^cached/);
+  for(const suffix of ['', '?v=old', '?v=fixture&token=private', '?v=fixture&v=fixture'])
+    assert.equal(await w.dispatch('fetch',{request:new Request(w.origin+path+suffix)}),undefined);
+  assert.equal(await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'station/?mode=demo&mode=companion')}),undefined);
 });

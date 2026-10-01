@@ -1,0 +1,33 @@
+name: Website or tool problem
+description: Report a reproducible problem without sharing recordings or private data.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Use synthetic examples when possible. Do not attach recordings, credentials, private speech or sensitive locations. For security/privacy reports, use SECURITY.md."
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: "For example, Android / Chrome, or iPhone / Safari; version if known"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and actual behavior
+      description: "Include any visible error text and whether offline mode was enabled."
+    validations:
+      required: true

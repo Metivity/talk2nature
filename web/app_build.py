@@ -36,7 +36,7 @@ def icon_png(size):
     return b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('!2I5B',size,size,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(raw,9))+chunk(b'IEND',b'')
 
 
-def build_mobile(root, output, prefix, page, station, listen):
+def build_mobile(root, output, prefix, page, station, listen, asset_revision):
     base=prefix
     common=f'<link rel="manifest" href="{base}/app/manifest.webmanifest"><link rel="apple-touch-icon" href="{base}/app/icons/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Talk2Nature"><link rel="stylesheet" href="{base}/assets/app.css"><script type="module" src="{base}/assets/app.js"></script>'
     def template(name): return (root/'web/templates'/name).read_text().replace('{{base}}',base)
@@ -56,5 +56,5 @@ def build_mobile(root, output, prefix, page, station, listen):
     def local(path): return output/(path+'index.html' if path.endswith('/') else path)
     worker_source=(root/'web/templates/app-sw.js').read_text()
     revision=hashlib.sha256(worker_source.encode()+b''.join(local(p).read_bytes() for p in paths)).hexdigest()[:16]
-    worker=worker_source.replace('__REVISION__',revision).replace('__ASSETS__',json.dumps([base+'/'+p for p in paths])).replace('__SCOPE__',json.dumps(base+'/app/'))
+    worker=worker_source.replace('__REVISION__',revision).replace('__ASSETS__',json.dumps([base+'/'+p+(f'?v={asset_revision}' if p.startswith('assets/') else '') for p in paths])).replace('__SCOPE__',json.dumps(base+'/app/'))
     (app_root/'sw.js').write_text(worker)

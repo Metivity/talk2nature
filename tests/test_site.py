@@ -2,6 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import urlsplit
 from web.build import build, load
 from scripts.check_site import check_site
 
@@ -39,7 +40,7 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn('/talk2nature/about/',assets)
             for asset in assets:
                 self.assertTrue(asset.startswith(('/talk2nature/app/','/talk2nature/assets/')))
-                path=root/asset.removeprefix('/talk2nature/')
+                path=root/urlsplit(asset).path.removeprefix('/talk2nature/')
                 self.assertTrue((path/'index.html' if asset.endswith('/') else path).is_file())
             self.assertNotIn('__REVISION__',source)
             self.assertIn('class="app-body"',(root/'app/index.html').read_text())

@@ -10,6 +10,10 @@ Website: https://metivity.github.io/talk2nature/
 
 **First tools:** [Nature Station](https://metivity.github.io/talk2nature/tools/station/) captures short local sound events and encounter markers; [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs; a [Python report](docs/LISTEN.md) examines labels and a metadata splitter keeps related animals/sessions together. Start with synthetic examples; no animal meaning is inferred. Read the [station, device and AI architecture](docs/NATURE_STATION.md).
 
+## Participate
+
+Start with a small [contribution](CONTRIBUTING.md). See [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md), [security reports](SECURITY.md) and the [open-science/community map](https://metivity.github.io/talk2nature/community/). We have no confirmed institutional partners or DPG recognition.
+
 ## Start locally
 
 Python 3.10+; no third-party package required for the website or research toolkit.

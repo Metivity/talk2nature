@@ -2,6 +2,7 @@
 const toggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
 if (toggle && navigation) {
+  toggle.closest('header').classList.add('menu-ready');
   function closeMenu() { toggle.setAttribute('aria-expanded', 'false'); navigation.classList.remove('open'); }
   toggle.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') !== 'true';

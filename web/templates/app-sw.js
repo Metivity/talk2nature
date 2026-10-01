@@ -21,10 +21,16 @@ self.addEventListener('activate', event => {
 });
 self.addEventListener('fetch', event => {
   const request = event.request, url = new URL(request.url), clean = url.origin + url.pathname;
-  if (request.method !== 'GET' || request.headers.has('authorization') || !allowed.has(clean)) return;
-  if (url.search && !(url.pathname === SCOPE_PATH+'station/' && [...url.searchParams.keys()].every(k => k === 'mode') && ['outdoor','companion','demo'].includes(url.searchParams.get('mode')))) return;
+  if (request.method !== 'GET' || request.headers.has('authorization')) return;
+  // Asset queries must exactly match this release. Only the known station mode
+  // query can reuse a query-free page; never normalize arbitrary URL parameters.
+  const stationMode = url.pathname === SCOPE_PATH+'station/' &&
+    [...url.searchParams.keys()].length === 1 &&
+    ['outdoor','companion','demo'].includes(url.searchParams.get('mode'));
+  const key = allowed.has(url.href) ? url.href : stationMode && allowed.has(clean) ? clean : null;
+  if (!key) return;
   event.respondWith((async () => {
-    const cached = await (await caches.open(CACHE)).match(clean);
+    const cached = await (await caches.open(CACHE)).match(key);
     return cached || fetch(request);
   })());
 });

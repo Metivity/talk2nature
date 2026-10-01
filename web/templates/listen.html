@@ -1,26 +1,25 @@
 <section class="section listen-intro">
-  <p class="eyebrow"><span class="status-dot"></span> OPEN TOOL 01 · LISTEN / v0.1</p>
-  <h1>Review a recording.<br><em>Keep the context.</em></h1>
-  <p class="lede">Open a sound, mark an interesting moment, then save your observations.</p><p><a class="text-link" href="{{base}}/app/station/">Need to record first? Start listening →</a></p>
-  <div class="listen-badges"><span>Local processing</span><span>No account</span><span>Exportable labels</span></div>
-  <p class="quiet">This tool marks sounds and observed context. It does not identify species or translate animals. Files stay in this tab until you choose to export labels. No recordings are sent to Talk2Nature.</p>
+  <p class="eyebrow">LISTEN · LOCAL AUDIO REVIEW</p>
+  <h1>Review a recording.</h1>
+  <p class="lede">Open a sound, mark a moment, save your observations.</p>
+  <p class="quiet">No account or upload. No species identification or animal translation.</p>
 </section>
 <section class="section listen-workspace" aria-label="Recording annotation workbench">
   <div class="listen-panel listen-load">
-    <div><p class="eyebrow">01 / OPEN A RECORDING</p><h2>A moment to examine.</h2><p>Choose a WAV up to two minutes long, or try the example. Use only recordings you have permission to inspect.</p><details><summary>Supported files & saved sessions</summary><p>WAV · mono/stereo · PCM 16/24/32-bit or float32 · up to 120 seconds and 25 MB. MP3 and M4A are not supported. For a saved Station session, unzip it first and choose one WAV. Its journal JSON is separate from this tool’s labels.</p></details></div>
-    <div class="listen-load-actions"><label class="button" for="wav-file">Choose a WAV file</label><input id="wav-file" type="file" accept=".wav,audio/wav" aria-describedby="local-note"><button id="example" class="listen-secondary" type="button">Try an example · no file needed</button></div>
-    <p id="local-note" class="quiet">No microphone access or background recording. Nothing is saved automatically. Export your labels before closing or replacing this recording. The example contains computer-generated tones, not animal sounds.</p>
+    <div class="listen-load-actions"><label for="wav-file">Open a WAV · up to 2 minutes / 25 MB</label><input id="wav-file" type="file" accept=".wav,audio/wav" aria-describedby="local-note"><button id="example" class="button" type="button">Try an example · no file needed</button></div>
+    <div><p><a class="text-link" href="{{base}}/app/station/">Need to record first? Start listening →</a></p><details><summary>Supported files & saved sessions</summary><p>Use only recordings you have permission to inspect. WAV · mono/stereo · PCM 16/24/32-bit or float32. MP3 and M4A are not supported. For a saved Station session, unzip it first and choose one WAV. Its journal JSON is separate from this tool’s labels.</p></details></div>
+    <p id="local-note" class="quiet">Work stays in this tab until you export. Nothing is saved automatically. The example uses invented tones; it does not access your microphone.</p>
   </div>
   <p id="listen-status" role="status" aria-live="polite">Start with a WAV or the example. Then mark a sound and save your labels.</p>
   <div id="listen-loaded" hidden>
     <div class="listen-panel">
-      <div class="listen-title-row"><div><p class="eyebrow">02 / INSPECT THE SOUND</p><h2 id="recording-title">Recording</h2></div><span id="origin-badge" class="pill"></span></div>
+      <div class="listen-title-row"><div><p class="eyebrow">02 / INSPECT THE SOUND</p><h2 id="recording-title" tabindex="-1">Recording</h2></div><span id="origin-badge" class="pill"></span></div>
       <p id="audio-summary" class="quiet"></p><p id="quality-note" class="listen-notice"></p>
       <div class="wave-wrap"><canvas id="waveform" height="180" aria-label="Waveform. Drag to choose an interval, or use the start and end fields below."></canvas><div class="wave-scale"><span>0 s</span><span id="wave-end"></span></div></div>
       <p class="quiet">Drag across the waveform to mark an interval. On any device, you can also enter exact start and end times below.</p>
       <audio id="recording-audio" controls preload="none" aria-label="Listen to this recording"></audio>
       <p class="quiet">Playback is only for your own review. Use headphones away from animals; do not broadcast recordings to them.</p>
-      <details><summary>Recording identifiers</summary><p class="quiet">Use aliases, not personal names or sensitive locations. These fields are included in exported labels. The original filename is omitted.</p><div class="listen-grid">
+      <details id="recording-identifiers"><summary>Recording identifiers</summary><p class="quiet">Use aliases, not personal names or sensitive locations. These fields are included in exported labels. The original filename is omitted.</p><div class="listen-grid">
         <label>Recording alias<input id="recording-id" maxlength="80" value="recording-001"></label>
         <label>Session alias<input id="session-id" maxlength="80" value="unknown"></label>
         <label>Animal alias<input id="individual-id" maxlength="80" value="unknown"></label>
@@ -37,11 +36,11 @@
         <p class="quiet">Leave context unknown when you only have audio. A sound that seems “happy” is not a behavioral observation.</p>
         <label>Confidence in this annotation<select id="event-confidence"><option>uncertain</option><option>clear</option></select></label>
         <label>Observation notes (optional)<textarea id="event-notes" rows="3" maxlength="500" placeholder="Describe what happened. Keep identifying details out."></textarea></label>
-        <p id="event-error" role="alert"></p><div class="actions"><button class="button" id="save-event" type="submit">Add event +</button><button class="listen-secondary" id="cancel-edit" type="button" hidden>Cancel edit</button></div>
+        <p id="draft-status" class="quiet" role="status"></p><p id="event-error" role="alert"></p><div class="actions"><button class="button" id="save-event" type="submit">Add event +</button><button class="listen-secondary" id="cancel-edit" type="button" hidden>Discard draft</button></div>
       </form>
       <div class="listen-panel"><p class="eyebrow">04 / REVIEW & EXPORT</p><h2>Your observation log.</h2><p id="event-count" role="status">No events yet.</p><ol id="event-list" class="listen-events"></ol>
         <div class="listen-export"><button id="export-json" class="button" type="button">Export labels · JSON</button><button id="export-csv" class="listen-secondary" type="button">Export event table · CSV</button></div>
-        <label class="listen-import" for="labels-file">Reopen a labels JSON file<input id="labels-file" type="file" accept=".json,application/json"></label><p class="quiet">Open the same WAV first. Imports must match its checksum. JSON preserves the complete record; CSV is for inspection. These exports are preliminary annotations, not an approved training dataset.</p><button id="clear-recording" class="listen-secondary" type="button">Clear this session</button>
+        <p id="export-status" class="quiet"></p><label class="listen-import" for="labels-file">Reopen a labels JSON file<input id="labels-file" type="file" accept=".json,application/json"></label><p class="quiet">Open the same WAV first. Imports must match its checksum. JSON preserves the complete record; CSV is for inspection. These exports are preliminary annotations, not an approved training dataset.</p><button id="clear-recording" class="listen-secondary" type="button">Clear this session</button>
       </div>
     </div>
   </div>

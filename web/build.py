@@ -2,15 +2,16 @@
 import argparse
 import html
 import json
-import shutil
 from pathlib import Path
 from urllib.parse import urlsplit
 from xml.sax.saxutils import escape as xml_escape
 try:
     from .app_build import build_mobile
+    from .assets_build import copy_assets, version_html
     from .hub_build import build_hub
 except ImportError:
     from app_build import build_mobile
+    from assets_build import copy_assets, version_html
     from hub_build import build_hub
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,9 +65,9 @@ def build(output, base_url='', public=False, repo_url=''):
         if not path['notes'] or any(slug not in note_map for slug in path['notes']):
             raise ValueError('Learning path cites a missing note')
     output.mkdir(parents=True, exist_ok=True)
-    shutil.copytree(ROOT / 'web/assets', output / 'assets', dirs_exist_ok=True)
+    asset_revision = copy_assets(ROOT / 'web/assets', output / 'assets')
     pages = []
-    nav_items = [('research/', 'Research library'), ('field-notes/', 'Field Notes'), ('approach/', 'Our approach'), ('mobile/', 'Get the app'), ('opportunities/', 'Funding')]
+    nav_items = [('research/', 'Research library'), ('tools/', 'Tools'), ('watch/', 'Watch & learn'), ('approach/', 'Our approach'), ('app/', 'Open app')]
 
     def page(path, title, description, body, active='', noindex=False, extra_head='', app=False):
         canonical = f'{base_url}/{path}' if base_url else ''
@@ -91,19 +92,19 @@ def build(output, base_url='', public=False, repo_url=''):
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="header"><a class="brand" href="{url()}"><img src="{url('assets/mark.svg')}" alt="" width="32" height="32">Talk2Nature<span class="brand-dot" aria-hidden="true">✳</span></a>
 <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">＋</span></button><nav id="navigation" aria-label="Main navigation">{nav}<a class="nav-cta" href="{url('contribute/')}">Get involved <span aria-hidden="true">↗</span></a></nav></header>
-<main id="main">{body}</main>
+<main id="main" tabindex="-1">{body}</main>
 <footer><div class="footer-top"><a class="brand footer-brand" href="{url()}">Talk2Nature</a><p>A shared curiosity.<br>A careful way forward.</p></div>
-<div class="footer-bottom"><span>Independent initiative · Founded 2026</span><div>{repo}<a href="{url('sources/')}">Sources</a><a href="{url('about/')}">About & privacy</a></div></div>
+<div class="footer-bottom"><span>Independent initiative · Founded 2026</span><div>{repo}<a href="{url('community/')}">Community & governance</a><a href="{url('opportunities/')}">Funding</a><a href="{url('field-notes/')}">Planned study workspace</a><a href="{url('sources/')}">Sources</a><a href="{url('about/')}">About & privacy</a></div></div>
 <p class="fine">Original summaries: CC BY 4.0 · Original software: Apache-2.0. Third-party works keep their own rights. Listed organizations are not implied partners.</p></footer></body></html>'''
         if app:
             header=f'<header class="app-header"><a class="app-brand" href="{url("app/")}"><img src="{url("app/icons/icon-180.png")}" alt="" width="34" height="34">Talk2Nature <small>FIELD COMPANION</small></a><span class="app-local">Local on your device</span><a class="app-project" href="{url("mobile/")}">About this app ↗</a></header>'
             footer=f'<nav class="app-nav" aria-label="App navigation"><a href="{url("app/")}">Home</a><a href="{url("app/station/")}">Listen</a><a href="{url("app/review/")}">Review</a><a href="{url("app/#install")}">Install</a></nav><footer class="app-footer">Early research tools · <a href="{url("about/")}">Privacy</a> · <a href="{url("mobile/#share")}">Share & feedback</a></footer>'
             document=document.replace('<body>','<body class="app-body">').replace('width=device-width,initial-scale=1','width=device-width,initial-scale=1,viewport-fit=cover')
-            document=document[:document.index('<header class="header">')]+header+document[document.index('<main id="main">'):]
+            document=document[:document.index('<header class="header">')]+header+document[document.index('<main id="main" tabindex="-1">'):]
             document=document[:document.index('<footer>')]+footer+'</body></html>'
         target = output / (path + 'index.html' if path.endswith('/') or not path else path)
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(document)
+        target.write_text(version_html(document, prefix, asset_revision))
         if not noindex:
             pages.append(path)
 
@@ -113,7 +114,7 @@ def build(output, base_url='', public=False, repo_url=''):
 <div class="card-meta"><span>{esc(n['taxon'])}</span><span>{esc(n['year'])}</span></div><h3><a href="{url('research/'+n['slug']+'/')}">{esc(n['title'])}</a></h3><p>{esc(n['finding'])}</p><p class="review-stage">{esc(n['review_stage'])}</p><div class="card-foot"><span>{esc(n['kind'])}</span><a href="{url('research/'+n['slug']+'/')}" aria-label="Read {esc(n['title'])}">Read note ↗</a></div></article>'''
 
     page('', 'Understanding the living world', 'Explore the science of animal communication, bioacoustic AI and nature’s signals. A research library and open tools, built with evidence.', f'''
-<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> An open invitation to listen</p><h1>The living world<br> has a lot<br>to <em>say.</em></h1><p class="hero-intro">What could we understand if we listened more closely? We’re bringing research, people and open tools together to explore communication beyond our own species.</p><div class="actions"><a class="button" href="{url('research/')}">Explore the research <span>↗</span></a><a class="text-link" href="{url('mobile/')}">Get the mobile app →</a></div><p class="hero-note">A bold question. A careful, evidence-led beginning.</p></div>
+<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> An open invitation to listen</p><h1>The living world<br> has a lot<br>to <em>say.</em></h1><p class="hero-intro">What could we understand if we listened more closely? We’re bringing research, people and open tools together to explore communication beyond our own species.</p><div class="actions"><a class="button" href="{url('app/')}">Try the app <span>↗</span></a><a class="text-link" href="{url('research/starting-points/')}">Explore the research →</a></div><p class="hero-note">Try a synthetic example, record a short session or review a WAV. No account needed. Animal translation is a research ambition, not a current feature.</p></div>
 <div class="hero-art"><img src="{url('assets/listening.svg')}" alt="An abstract bird and leaf connected by illustrated sound waves" width="620" height="690"><div class="art-caption"><span>FIELD NOTE 001</span><p>Understanding starts<br>with paying attention.</p><span class="caption-star" aria-hidden="true">✳</span></div></div></section>
 <div class="species-strip" aria-label="Research interests"><span>Birds</span><i>✳</i><span>Animals</span><i>✳</i><span>Marine life</span><i>✳</i><span>Plants</span><i>✳</i><span>Fungi</span></div>
 <section class="intro-section section"><p class="eyebrow">THE QUESTION THAT BRINGS US HERE</p><h2>Can we learn to understand<br>the nature around us?</h2><div class="intro-grid"><p>Animals exchange signals. Plants respond to their environments. Researchers are uncovering patterns we once missed. Our ambition is to help turn curiosity into shared, testable understanding.</p><p>We begin with a simple discipline: document what is known, be clear about what isn’t, and build on the work of others. A translation claim needs more than a convincing prediction.</p></div></section>
@@ -136,7 +137,7 @@ def build(output, base_url='', public=False, repo_url=''):
 
     listen_body = (ROOT / 'web/templates/listen.html').read_text().replace('{{base}}', prefix)
     page('tools/listen/', 'Listen: local audio annotation workbench', 'Review a WAV recording locally, mark sound events and independently observed context, and export portable JSON or CSV labels. No account or upload.', listen_body, active='tools/', extra_head=f'<link rel="stylesheet" href="{url("assets/listen.css")}"><script type="module" src="{url("assets/listen.js")}"></script>')
-    build_mobile(ROOT, output, prefix, page, station_body, listen_body)
+    build_mobile(ROOT, output, prefix, page, station_body, listen_body, asset_revision)
     page('tools/', 'Open tools for animal sound research', 'Use Listen for local audio annotation, inspect annotation quality, and plan reproducible evaluation with open-source tools.', f'''
 <section class="page-intro section"><p class="eyebrow">OPEN RESEARCH TOOLS · FIRST RELEASE</p><h1>Useful today.<br><em>Open to examination.</em></h1><p class="lede">Inspect sounds, document observations and make the next research step reproducible. Every tool has a defined scope and visible limits.</p><div class="actions"><a class="button" href="{url('tools/station/')}">Open Nature Station ↗</a><a class="text-link" href="{url('tools/listen/')}">Annotate a WAV in Listen →</a></div></section>
 <section class="section cards contribution-cards"><article><p class="eyebrow">01 / LISTEN · BROWSER TOOL</p><h2>Mark the moment.</h2><p>A local waveform, editable event labels and JSON/CSV exports. Bring a short WAV or try invented tones. No account or upload.</p><a href="{url('tools/listen/')}">Annotate a recording →</a></article><article><p class="eyebrow">02 / ANNOTATION REPORT · PYTHON</p><h2>Examine your labels.</h2><p>Check intervals, observed-context coverage, unknown identities and overlapping events. The report describes annotations; it does not validate biological meaning.</p><a href="https://github.com/Metivity/talk2nature/blob/main/docs/LISTEN.md">Run a reproducible report ↗</a></article><article><p class="eyebrow">03 / MANIFEST SPLITTER · PYTHON</p><h2>Keep related data together.</h2><p>Group declared animal identities, sessions and source checksums before a train/validation/test split. Requires a separately reviewed manifest; Listen exports are not automatically admitted.</p><a href="https://github.com/Metivity/talk2nature/blob/main/docs/LISTEN.md#data-handling">Understand the data boundary ↗</a></article></section>
@@ -182,7 +183,9 @@ def build(output, base_url='', public=False, repo_url=''):
 <section class="page-intro section"><p class="eyebrow">FUNDING THE WORK</p><h1>Ambition needs<br><em>room to grow.</em></h1><p class="lede">A practical register of opportunities that could support careful research. Availability and eligibility are different questions.</p><aside class="review-box"><strong>Program checks are dated below</strong><p>Program terms can change. Follow the official source before applying. Application status is recorded per opportunity; no funding is secured. Credits are not cash.</p></aside></section><section class="section opportunity-list">{opp_cards}</section>''', active='opportunities/')
     repo_action = f'<a class="button" href="{esc(repo_url)}/issues">Open an issue ↗</a>' if repo_url else '<p class="quiet">The public repository and contribution channel are being prepared. This preview does not collect personal details.</p>'
     page('contribute/', 'Contribute to Talk2Nature', 'Help review evidence, improve research tools or shape a focused nonhuman communication pilot.', f'''
-<section class="page-intro section"><p class="eyebrow">GET INVOLVED</p><h1>Bring a skill.<br><em>Bring a question.</em></h1><p class="lede">The most useful first contribution is small, specific and something another person can verify.</p><div class="actions">{repo_action}<a class="text-link" href="mailto:raviv@metivity.com?subject=Talk2Nature%20workflow%20conversation">Express interest by email →</a></div><p class="quiet">Tell Raviv your role, the workflow you want to improve and whether you would like a 20-minute conversation. Please do not attach recordings, personal research data or sensitive locations. This is an individual conversation, not a newsletter subscription or research enrollment.</p></section><section class="section cards contribution-cards"><article><span class="eyebrow">RESEARCHERS</span><h2>Review a claim.</h2><p>Help examine a study’s methods, boundaries and relevance to a possible bird-communication pilot. Specialist review is still needed.</p></article><article><span class="eyebrow">DEVELOPERS</span><h2>Strengthen a tool.</h2><p>Improve metadata validation, reproducibility or compatibility with existing annotation tools. Begin with a testable issue.</p></article><article><span class="eyebrow">NATURALISTS & SUPPORTERS</span><h2>Ground the question.</h2><p>Describe a real observation workflow or a research need. We are not yet accepting raw animal recordings or donations.</p></article></section><section class="section paper-panel"><h2>Build this knowledge hub with us.</h2><div class="actions"><a class="button" href="{url('contribute/source/')}">Suggest a source or question ↗</a><a class="text-link" href="https://github.com/Metivity/talk2nature/issues">Join a public conversation →</a></div><p>Use GitHub issues to discuss findings, propose corrections and coordinate small tasks. You can draft a contribution here before deciding to post it. There is no public recording intake or automatic publication.</p><h2>How we work together</h2><p>Credit the people and studies behind the work. Share original summaries, not copied articles. State uncertainty. Respect animal welfare, privacy and sensitive locations. Correct mistakes openly.</p><p>Organizations in the library are references and possible connections; none is presented as a confirmed Talk2Nature partner.</p></section>''')
+<section class="page-intro section"><p class="eyebrow">GET INVOLVED</p><h1>Bring a skill.<br><em>Bring a question.</em></h1><p class="lede">The most useful first contribution is small, specific and something another person can verify.</p><div class="actions">{repo_action}<a class="text-link" href="mailto:raviv@metivity.com?subject=Talk2Nature%20workflow%20conversation">Express interest by email →</a></div><p class="quiet">Tell Raviv your role, the workflow you want to improve and whether you would like a 20-minute conversation. Please do not attach recordings, personal research data or sensitive locations. This is an individual conversation, not a newsletter subscription or research enrollment.</p></section><section class="section cards contribution-cards"><article><span class="eyebrow">RESEARCHERS</span><h2>Review a claim.</h2><p>Help examine a study’s methods, boundaries and relevance to a possible bird-communication pilot. Specialist review is still needed.</p></article><article><span class="eyebrow">DEVELOPERS</span><h2>Strengthen a tool.</h2><p>Improve metadata validation, reproducibility or compatibility with existing annotation tools. Begin with a testable issue.</p></article><article><span class="eyebrow">NATURALISTS & SUPPORTERS</span><h2>Ground the question.</h2><p>Describe a real observation workflow or a research need. We are not yet accepting raw animal recordings or donations.</p></article></section><section class="section paper-panel"><h2>Build this knowledge hub with us.</h2><div class="actions"><a class="button" href="{url('contribute/source/')}">Suggest a source or question ↗</a><a class="text-link" href="https://github.com/Metivity/talk2nature/issues">Join a public conversation →</a></div><p>Use GitHub issues to discuss findings, propose corrections and coordinate small tasks. You can draft a contribution here before deciding to post it. There is no public recording intake or automatic publication.</p><p><a class="text-link" href="{url('community/')}">Read our contribution rules and explore relevant networks →</a></p><h2>How we work together</h2><p>Credit the people and studies behind the work. Share original summaries, not copied articles. State uncertainty. Respect animal welfare, privacy and sensitive locations. Correct mistakes openly.</p><p>Organizations in the library are references and possible connections; none is presented as a confirmed Talk2Nature partner.</p></section>''')
+    community_body = (ROOT / 'web/templates/community.html').read_text().replace('{{base}}', prefix)
+    page('community/', 'Open science, community and connections', 'How Talk2Nature is governed, how to contribute, and verified routes to open-science and conservation networks. No institutional affiliation is implied.', community_body)
     build_hub(page, url, esc, sources, notes)
     page('sources/', 'Source inventory', f'The Talk2Nature inventory of {len(sources)} research papers, organizations, model documentation and funding sources.', f'''
 <section class="page-intro section"><p class="eyebrow">PROVENANCE</p><h1>Follow every<br><em>thread back.</em></h1><p class="lede">{len(sources)} sources from the founding audit and subsequent reading. Inclusion does not mean a full paper was read or a claim independently replicated. Review depth is recorded in the research notes.</p></section><section class="section"><ol class="source-list inventory">{''.join(f'<li id="source-{s["id"]}"><a href="{esc(s["url"])}">{esc(s["title"])} ↗</a><p>{esc(s["description"])}</p></li>' for s in sources)}</ol></section>''')
@@ -193,7 +196,7 @@ def build(output, base_url='', public=False, repo_url=''):
     (output/'sitemap.xml').write_text(sitemap)
     (output/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n' if public else 'User-agent: *\nDisallow: /\n')
     (output/'.nojekyll').write_text('')
-    (output/'build-info.json').write_text(json.dumps({'public':public,'base_url':base_url,'repo_url':repo_url,'editorial_date':DATE,'pages':len(pages),'research_notes':len(notes),'sources':len(sources)},indent=2)+'\n')
+    (output/'build-info.json').write_text(json.dumps({'public':public,'base_url':base_url,'repo_url':repo_url,'asset_revision':asset_revision,'editorial_date':DATE,'pages':len(pages),'research_notes':len(notes),'sources':len(sources)},indent=2)+'\n')
     return len(pages)
 
 
