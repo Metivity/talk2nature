@@ -6,6 +6,8 @@ An early-stage project documenting the science of nonhuman communication and bui
 
 Website: https://metivity.github.io/talk2nature/
 
+**Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). Optional offline support saves public app files only; export your audio and notes before leaving. Native unattended capture is not released.
+
 **First tools:** [Nature Station](https://metivity.github.io/talk2nature/tools/station/) captures short local sound events and encounter markers; [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs; a [Python report](docs/LISTEN.md) examines labels and a metadata splitter keeps related animals/sessions together. Start with synthetic examples; no animal meaning is inferred. Read the [station, device and AI architecture](docs/NATURE_STATION.md).
 
 ## Start locally
@@ -23,7 +25,7 @@ Open http://127.0.0.1:4173. Local builds are marked noindex.
 python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/demo-split.json
 python3 -m talk2nature.annotations examples/annotations.synthetic.json
 python3 -m unittest discover -s tests -v
-node --test tests/demo.test.mjs tests/listen.test.mjs tests/station.test.mjs
+node --test tests/*.test.mjs
 python3 scripts/check_site.py
 ```
 

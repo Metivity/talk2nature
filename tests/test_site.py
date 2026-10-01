@@ -25,6 +25,25 @@ class SiteTests(unittest.TestCase):
             for origin in ('','http://localhost:4173','https://example.com','https://good.test/?a=b','https://user:secret@good.test'):
                 with self.subTest(origin=origin),self.assertRaises(ValueError): build(Path(d),origin,True)
 
+    def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
+            manifest=json.loads((root/'app/manifest.webmanifest').read_text())
+            self.assertEqual(manifest['scope'],'/talk2nature/app/')
+            self.assertEqual(manifest['start_url'],manifest['scope'])
+            self.assertEqual(manifest['display'],'standalone')
+            for icon in manifest['icons']:
+                self.assertTrue((root/icon['src'].removeprefix('/talk2nature/')).read_bytes().startswith(b'\x89PNG'))
+            source=(root/'app/sw.js').read_text()
+            assets=json.loads(source.split('const ASSETS = ',1)[1].split(';',1)[0])
+            self.assertNotIn('/talk2nature/about/',assets)
+            for asset in assets:
+                self.assertTrue(asset.startswith(('/talk2nature/app/','/talk2nature/assets/')))
+                path=root/asset.removeprefix('/talk2nature/')
+                self.assertTrue((path/'index.html' if asset.endswith('/') else path).is_file())
+            self.assertNotIn('__REVISION__',source)
+            self.assertIn('class="app-body"',(root/'app/index.html').read_text())
+
     def test_checker_catches_missing_asset_and_accidental_private_file(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); build(root)

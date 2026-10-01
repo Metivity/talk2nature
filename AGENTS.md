@@ -58,3 +58,9 @@
 - Preserve bounded event storage, visible permission/start/stop, hidden-page/interruption cleanup, pending-permission cancellation, zero worklet speaker output and manual post-session playback. No automatic animal playback, background browser promise, upload, browser persistence or research admission.
 - `talk2nature.station.v1` is preliminary relative-time metadata. A following sound is not a reply; undetected sound is not silence. Preserve discarded-event tombstones until whole-session discard and exclude calibration from complete quiet-window claims.
 - Run `node --test tests/demo.test.mjs tests/listen.test.mjs tests/station.test.mjs` plus repository/site checks for public audio changes. Verify synthetic browser capture, review/export and responsive layout; distinguish this from actual microphone and physical-phone testing.
+
+## Installable public Field Companion
+- `web/app_build.py`, `web/templates/app*` and `web/assets/app*` generate `/app/` (home, Station and Sound desk) and `/mobile/` (install/share page). Read `docs/MOBILE_AUDIT.md` for the current product audit and distribution plan.
+- Offline setup is user-triggered and saves an exact public-shell allowlist only. Preserve `/app/` service-worker scope, no runtime-response caching, no private/admin routes, no audio/notes, credential-free precaching, bounded revision cleanup and no forced mid-session updates. Do not turn offline availability into a persistent-recording or background-capture claim.
+- Preserve Station session UUID filenames, declared unverified device clock, WAV checksums and storage-limit event tombstones. These do not establish rights, meaning or research admission.
+- Use `node --test tests/*.test.mjs`, Python repository tests, public/local build checks and browser offline workflow checks after relevant mobile changes. No native binary, physical-phone installation or App Store/Google Play release is claimed until separately verified.

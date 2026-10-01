@@ -8,6 +8,14 @@ import {readWav} from '../web/assets/listen-model.mjs';
 function feed(session, seconds, value = 0) {
   for (let n = 0; n < Math.round(seconds * 10); n++) session.push(new Float32Array(session.sampleRate / 10).fill(value));
 }
+test('sessions have separate export identities and a declared device clock', () => {
+  const one=new StationSession(8000), two=new StationSession(8000);
+  assert.notEqual(one.id,two.id); assert.notEqual(one.audioFilename(1),two.audioFilename(1));
+  assert.ok(Number.isFinite(Date.parse(one.exportRecord().started_at_utc)));
+  assert.match(one.exportRecord().clock,/not synchronized/);
+  feed(one,4); feed(one,.5,.1); one.stop();
+  assert.equal(one.exportRecord().events[0].audio_filename,one.audioFilename(1));
+});
 test('event capture includes pre-roll, stops after quiet and exports a Listen-compatible WAV', () => {
   const s = new StationSession(16000); feed(s, 4); feed(s, .5, .1); feed(s, .6);
   assert.equal(s.events.length, 1); const event = s.events[0];
@@ -35,6 +43,11 @@ test('storage, time and sustained-sound clip bounds stop collection', () => {
 test('calibration is not reported as a fully observed quiet window', () => {
   const s = new StationSession(8000); s.mark('person_voice'); feed(s, 12);
   assert.equal(s.markerWindows()[0].outcome, 'incomplete');
+});
+test('an event omitted for storage limits is not misreported as a quiet marker window', () => {
+  const s = new StationSession(8000,{maxBytes:100}); feed(s,4); s.mark('person_voice'); feed(s,9); feed(s,4,.1); s.stop();
+  assert.equal(s.events.length,0); assert.equal(s.markerWindows()[0].outcome,'discarded_sound');
+  assert.equal(s.exportRecord().discarded_events[0].reason,'storage_limit');
 });
 test('worklet zeros every speaker channel while retaining input frames', async () => {
   let Processor; const frames = [];

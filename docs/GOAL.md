@@ -6,6 +6,8 @@ October 1: [the success and international growth plan](SUCCESS_AND_GROWTH_PLAN.m
 
 October 1 station direction: Raviv asked to implement a more creative spare-phone/encounter-learning concept. The current bounded deliverable is [Nature Station](NATURE_STATION.md): foreground local audio events, observed context and voice markers, manual review/export, a synthetic rehearsal, and a documented device/AI path. A native unattended station, trained encounter model, TV pairing and scientific exchange study remain separate future milestones. The private real-data gate remains closed.
 
+October 1 mobile continuation: Raviv requested mobile apps connected to the site, an internal audit, glassmorphism and discovery planning. The bounded release is one installable web Field Companion with three guided workflows, an optional public-only offline shell, safer session exports, a public install/share page and a concrete testing/distribution plan. See [MOBILE_AUDIT.md](MOBILE_AUDIT.md). Native background capture and app-store distribution are subsequent milestones, not features implied by installation.
+
 ## Completed milestone: deploy the website and build Field Notes around a database
 
 Requested September 30, 2026. Deploy the updated public research library and an honest Field Notes product page using Metivity/talk2nature and the existing Pages origin. Verify the live build, research navigation, mobile layout and metadata.

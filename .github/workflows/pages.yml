@@ -22,7 +22,7 @@ jobs:
       - name: Test
         run: python3 -m unittest discover -s tests -v
       - name: Test the public tools and demo workflow
-        run: node --test tests/demo.test.mjs tests/listen.test.mjs tests/station.test.mjs
+        run: node --test tests/*.test.mjs
       - name: Build public website
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}

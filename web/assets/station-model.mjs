@@ -1,5 +1,5 @@
 // A bounded, local energy detector. No species/meaning model or upload path.
-export const STATION_VERSION = '0.1.0';
+export const STATION_VERSION = '0.2.0';
 export const SESSION_SECONDS = 300;
 export const MAX_AUDIO_BYTES = 24 * 1024 * 1024;
 export const MAX_EVENTS = 24;
@@ -23,11 +23,13 @@ export class StationSession {
   constructor(sampleRate, {origin = 'synthetic', margin = 12, maxBytes = MAX_AUDIO_BYTES} = {}) {
     if (!Number.isInteger(sampleRate) || sampleRate < 8000 || sampleRate > 96000 || !['synthetic', 'microphone'].includes(origin) || !Number.isFinite(margin) || margin < 6 || margin > 24 || !Number.isInteger(maxBytes) || maxBytes < 1 || maxBytes > MAX_AUDIO_BYTES) throw Error('Unsupported station settings.');
     this.sampleRate = sampleRate; this.origin = origin; this.margin = margin; this.maxBytes = maxBytes;
+    this.id = crypto.randomUUID(); this.startedAt = new Date().toISOString();
     this.samplesSeen = 0; this.events = []; this.discarded = []; this.markers = []; this.ring = []; this.active = null; this.calibration = [];
     this.threshold = null; this.level = -100; this.peak = 0; this.bytes = 0; this.stopped = false; this.stopReason = null; this.nextId = 1;
     this.totalSamples = 0; this.clippedSamples = 0;
   }
   get elapsed() { return this.samplesSeen / this.sampleRate; }
+  audioFilename(id) { return `talk2nature-${this.id}-event-${id}.wav`; }
   push(samples) {
     if (this.stopped) return null;
     if (!(samples instanceof Float32Array) || !samples.length || samples.length > this.sampleRate / 5 || [...samples].some(x => !Number.isFinite(x))) throw Error('Expected finite audio frames of at most 200 ms.');
@@ -66,7 +68,10 @@ export class StationSession {
     const active = this.active; if (!active) return;
     this.active = null;
     const length = active.frames.reduce((n, f) => n + f.pcm.length, 0);
-    if (this.events.length >= MAX_EVENTS || this.bytes + length * 2 > this.maxBytes) { this.stopped = true; this.stopReason = 'storage_limit'; this.ring = []; return; }
+    if (this.events.length >= MAX_EVENTS || this.bytes + length * 2 > this.maxBytes) {
+      this.discarded.push({id: this.nextId++, onset_seconds: rounded(active.onset), discarded: true, reason: 'storage_limit'});
+      this.stopped = true; this.stopReason = 'storage_limit'; this.ring = []; return;
+    }
     const pcm = new Int16Array(length); let offset = 0;
     for (const frame of active.frames) { pcm.set(frame.pcm, offset); offset += frame.pcm.length; }
     const event = {id: this.nextId++, onset_seconds: rounded(active.onset), last_loud_seconds: rounded(active.lastLoudEnd), clip_start_seconds: rounded(active.frames[0].start), clip_end_seconds: rounded(active.frames.at(-1).end), threshold_dbfs: rounded(this.threshold), peak: rounded(active.peak), ended_by: reason, source_label: 'unreviewed', notes: '', pcm};
@@ -101,6 +106,6 @@ export class StationSession {
   }
   exportRecord(alias = 'station-001', settings = {}) {
     if (typeof alias !== 'string' || !alias.trim() || alias.trim().length > 80) throw Error('Use a station alias of 1–80 characters.');
-    return {schema: 'talk2nature.station.v1', tool_version: STATION_VERSION, station_alias: alias.trim(), origin: this.origin, sample_rate: this.sampleRate, duration_seconds: rounded(this.elapsed), status: this.stopped ? 'stopped' : 'running', stop_reason: this.stopReason, detector: {type: 'energy_threshold', calibration_seconds: 3, margin_db: this.margin, threshold_dbfs: this.threshold, pre_roll_seconds: 1, max_clip_seconds_approx: 6, max_session_seconds: SESSION_SECONDS}, audio_settings: settings, near_full_scale_fraction: this.totalSamples ? this.clippedSamples / this.totalSamples : 0, markers: this.markers.map(m => ({...m})), events: this.events.map(({pcm, ...event}) => ({...event, samples: pcm.length, audio_filename: `station-event-${event.id}.wav`})), discarded_events: this.discarded.map(e => ({...e})), marker_windows: this.markerWindows(), limitations: ['No animal, human speech or meaning classifier is running.', 'A sound following a marker is not evidence of a reply or causation.', 'Undetected sounds and discarded audio are absent; this is not unbiased continuous audio.', 'Discarded clips retain only event ID/onset so deletion is not misreported as silence.', 'No verified consent, identity, research admission or training permission is established.', 'Audio is separate from this JSON. Files remain local until you share them.']};
+    return {schema: 'talk2nature.station.v1', session_id: this.id, started_at_utc: this.startedAt, clock: 'device wall clock; event offsets use processed audio samples; not synchronized', tool_version: STATION_VERSION, station_alias: alias.trim(), origin: this.origin, sample_rate: this.sampleRate, duration_seconds: rounded(this.elapsed), status: this.stopped ? 'stopped' : 'running', stop_reason: this.stopReason, detector: {type: 'energy_threshold', calibration_seconds: 3, margin_db: this.margin, threshold_dbfs: this.threshold, pre_roll_seconds: 1, max_clip_seconds_approx: 6, max_session_seconds: SESSION_SECONDS}, audio_settings: settings, near_full_scale_fraction: this.totalSamples ? this.clippedSamples / this.totalSamples : 0, markers: this.markers.map(m => ({...m})), events: this.events.map(({pcm, ...event}) => ({...event, samples: pcm.length, audio_filename: this.audioFilename(event.id)})), discarded_events: this.discarded.map(e => ({...e})), marker_windows: this.markerWindows(), limitations: ['No animal, human speech or meaning classifier is running.', 'A sound following a marker is not evidence of a reply or causation.', 'Undetected sounds and discarded audio are absent; this is not unbiased continuous audio.', 'Discarded clips retain only event ID/onset so deletion is not misreported as silence.', 'No verified consent, identity, research admission or training permission is established.', 'Audio is separate from this JSON. Files remain local until you share them.']};
   }
 }

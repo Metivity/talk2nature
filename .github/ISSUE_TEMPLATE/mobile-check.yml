@@ -1,0 +1,34 @@
+name: Mobile app check
+description: Report a reproducible device or workflow problem without uploading recordings.
+title: "[Mobile] "
+body:
+  - type: markdown
+    attributes:
+      value: "Start with the synthetic rehearsal. This issue is public: do not attach recordings, private locations, participant details or credentials."
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: "Phone model, OS version, browser name/version; no serial numbers"
+    validations:
+      required: true
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Workflow
+      options:
+        - Synthetic rehearsal
+        - Home-screen installation
+        - Offline public tools
+        - Outdoor or companion session
+        - Sound desk
+        - Accessibility or layout
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps, expected result and actual result
+      description: Include whether this was a browser tab or installed app and whether the screen was locked. Describe the problem without uploading personal data.
+    validations:
+      required: true

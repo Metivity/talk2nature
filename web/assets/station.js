@@ -94,12 +94,12 @@ function draw() {
 function renderMarkers() {
   const list = $('station-markers'); list.replaceChildren(); const windows = session?.markerWindows() || [];
   const detected = windows.filter(w => w.outcome === 'sound_detected').length, quiet = windows.filter(w => w.outcome === 'no_detected_sound').length, incomplete = windows.filter(w => w.outcome === 'incomplete').length, discarded = windows.filter(w => w.outcome === 'discarded_sound').length;
-  $('station-window-summary').textContent = windows.length ? `${detected} voice markers followed by a detected sound · ${quiet} with none detected · ${incomplete} incomplete · ${discarded} with a discarded clip. Timing only; not verified replies.` : 'A shared timeline, before a shared vocabulary.';
+  $('station-window-summary').textContent = windows.length ? `${detected} voice markers followed by a detected sound · ${quiet} with none detected · ${incomplete} incomplete · ${discarded} with a clip not retained. Timing only; not verified replies.` : 'A shared timeline, before a shared vocabulary.';
   for (const marker of [...(session?.markers || [])].reverse()) {
     const li = document.createElement('li'), title = document.createElement('strong'), note = document.createElement('p');
     title.textContent = `${formatTime(marker.at_seconds)} · ${marker.kind === 'person_voice' ? 'Voice marker' : 'Observation'}`; note.textContent = marker.note;
     const window = windows.find(w => w.marker_id === marker.id), detail = document.createElement('p');
-    if (window) detail.textContent = window.outcome === 'sound_detected' ? `Next detected sound: +${window.lag_seconds.toFixed(1)} s, source ${window.source_label}.` : window.outcome === 'discarded_sound' ? 'A detected sound followed; its clip was discarded.' : window.outcome === 'no_detected_sound' ? 'No level-triggered sound in the next 10 seconds.' : 'Ten-second detection window incomplete (calibration or session boundary).';
+    if (window) detail.textContent = window.outcome === 'sound_detected' ? `Next detected sound: +${window.lag_seconds.toFixed(1)} s, source ${window.source_label}.` : window.outcome === 'discarded_sound' ? 'A detected sound followed; its clip was not retained.' : window.outcome === 'no_detected_sound' ? 'No level-triggered sound in the next 10 seconds.' : 'Ten-second detection window incomplete (calibration or session boundary).';
     li.append(title, note, detail); list.append(li);
   }
 }
@@ -122,7 +122,7 @@ function renderEvents() {
     const buttons = document.createElement('div'); buttons.className = 'station-controls';
     for (const [label, action] of [
       ['Review audio', () => { silencePlayer(); playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'})); $('station-player').src = playerUrl; $('station-player').hidden = false; $('station-player').focus(); status(`Sound ${event.id} ready in the audio player. Use headphones away from animals; press Play to review.`); }],
-      ['Save WAV', () => { download(wavBytes(event.pcm, session.sampleRate), `station-event-${event.id}.wav`, 'audio/wav'); status(`Sound ${event.id} download requested. Review it before sharing.`); }],
+      ['Save WAV', () => { download(wavBytes(event.pcm, session.sampleRate), session.audioFilename(event.id), 'audio/wav'); status(`Sound ${event.id} download requested. Review it before sharing.`); }],
       ['Discard clip', () => { silencePlayer(); session.discard(event.id); dirty = true; renderEvents(); renderMarkers(); metrics(); }]
     ]) { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.setAttribute('aria-label', `${label} ${event.id}`); button.disabled = active || pending; button.addEventListener('click', action); buttons.append(button); }
     card.append(title, detail, sourceLabel, details, buttons); list.append(card);
@@ -132,9 +132,21 @@ $('station-start').addEventListener('click', () => start(false)); $('station-dem
 for (const [id, kind] of [['station-voice', 'person_voice'], ['station-observe', 'observation']]) $(id).addEventListener('click', () => {
   try { session.mark(kind, $('station-note').value); $('station-note').value = ''; dirty = true; renderMarkers(); } catch (error) { status(error.message); }
 });
-$('station-export').addEventListener('click', () => {
-  try { download(JSON.stringify(session.exportRecord($('station-alias').value, settings), null, 2) + '\n', 'talk2nature-station.json', 'application/json'); status('Session JSON download requested. It does not contain audio; save each WAV you want to keep before discarding.'); }
-  catch (error) { status(error.message); }
+$('station-export').addEventListener('click', async () => {
+  const snapshot = session;
+  if (!snapshot || active || pending) return;
+  $('station-export').disabled = true;
+  try {
+    const record = snapshot.exportRecord($('station-alias').value, settings);
+    const clips = snapshot.events.map(event => ({id: event.id, pcm: event.pcm}));
+    for (const clip of clips) {
+      const digest = await crypto.subtle.digest('SHA-256', wavBytes(clip.pcm, snapshot.sampleRate));
+      record.events.find(event => event.id === clip.id).audio_sha256 = [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    download(JSON.stringify(record, null, 2) + '\n', `talk2nature-${snapshot.id}.json`, 'application/json');
+    status('Session JSON download requested, with clip checksums. Save each WAV separately; JSON contains no audio.');
+  } catch { status('Export failed. Your local clips remain in this tab; try again before leaving.'); }
+  finally { controls(); }
 });
 $('station-clear').addEventListener('click', () => {
   if (dirty && !window.confirm('Discard this session and all local clips? Previously downloaded files will remain on your device.')) return;
