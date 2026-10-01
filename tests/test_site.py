@@ -64,5 +64,46 @@ class SiteTests(unittest.TestCase):
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
 
+    def test_learning_paths_have_actionable_reviewable_dependencies(self):
+        notes={n['slug']:n for n in load('research')}
+        paths=load('learning-paths')['paths']
+        self.assertEqual(len({p['id'] for p in paths}),len(paths))
+        for path in paths:
+            self.assertTrue(set(path['notes']) <= notes.keys())
+            for field in ('question','decision','next_step','gate'):
+                self.assertTrue(path[field])
+        for note in notes.values():
+            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi'))
+            if 'reuse' in note:
+                for field in ('status','asset','rights','experiment'):
+                    self.assertTrue(note['reuse'][field])
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d))
+            self.assertTrue(check_site(d))
+            page=(Path(d)/'research/starting-points/index.html').read_text()
+            for path in paths:
+                for slug in path['notes']:
+                    self.assertIn(f'/research/{slug}/',page)
+
+    def test_video_sources_have_identity_context_fallbacks_and_no_initial_embeds(self):
+        from html import escape
+        sources=load('sources')
+        videos=[s for s in sources if 'media' in s]
+        self.assertEqual(len({s['url'] for s in videos}),len(videos))
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d))
+            page=(Path(d)/'watch/index.html').read_text()
+            self.assertNotIn('<iframe',page)
+            self.assertNotIn('i.ytimg.com',page)
+            for video in videos:
+                m=video['media']
+                self.assertTrue(m['review_depth'])
+                self.assertTrue(m['creator'])
+                self.assertIn(escape(video['url'],quote=True),page)
+                self.assertIn(escape(m['creator'],quote=True),page)
+                if m['provider']=='youtube':
+                    self.assertRegex(m['video_id'],r'^[A-Za-z0-9_-]{11}$')
+                    self.assertEqual(video['url'],'https://www.youtube.com/watch?v='+m['video_id'])
+
 
 if __name__=='__main__': unittest.main()

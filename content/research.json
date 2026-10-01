@@ -36,7 +36,8 @@
         "Scanning and speaker approach, rather than an AI-generated verbal interpretation."
       ]
     ],
-    "review_locator": "Suzuki et al.: Methods, Experiments 1–2; Figures 3–4. Phillips & Wilson: opening argument on systematicity."
+    "review_locator": "Suzuki et al.: Methods, Experiments 1–2; Figures 3–4. Phillips & Wilson: opening argument on systematicity.",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "sperm-whale-structure",
@@ -55,7 +56,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "whale-birth",
@@ -74,7 +76,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "naturelm",
@@ -94,7 +97,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
-    "year_label": "Documentation checked"
+    "year_label": "Documentation checked",
+    "purpose": "Models & evaluation"
   },
   {
     "slug": "birdnet",
@@ -115,7 +119,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
-    "year_label": "Documentation checked"
+    "year_label": "Documentation checked",
+    "purpose": "Models & evaluation"
   },
   {
     "slug": "perch",
@@ -137,7 +142,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Models & evaluation"
   },
   {
     "slug": "dolphingemma",
@@ -156,7 +162,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "dog-barks",
@@ -194,7 +201,8 @@
         "Paper offers dataset and baselines by request; redistribution permission is not established."
       ]
     ],
-    "review_locator": "Published pages 16481–16484: Dataset, Experimental Setup, Grounding, Table 4 and Limitations."
+    "review_locator": "Published pages 16481–16484: Dataset, Experimental Setup, Grounding, Table 4 and Limitations.",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "parrot-video",
@@ -232,7 +240,8 @@
         "Behavior-specialist training, ongoing review and stopping provisions formed part of the study."
       ]
     ],
-    "review_locator": "CHI 2024 published version: sections 3–7, pages 4–11; Tables 2–4 on page 9."
+    "review_locator": "CHI 2024 published version: sections 3–7, pages 4–11; Tables 2–4 on page 9.",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "dog-buttons",
@@ -252,7 +261,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Behavior & communication"
   },
   {
     "slug": "plant-sounds",
@@ -271,7 +281,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Plants & fungi"
   },
   {
     "slug": "moths-and-plants",
@@ -291,7 +302,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Plants & fungi"
   },
   {
     "slug": "fungal-signals",
@@ -311,7 +323,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
-    "year_label": "Source year"
+    "year_label": "Source year",
+    "purpose": "Plants & fungi"
   },
   {
     "slug": "annotation-tools",
@@ -332,7 +345,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
-    "year_label": "Documentation checked"
+    "year_label": "Documentation checked",
+    "purpose": "Data & annotation"
   },
   {
     "slug": "bioacoustic-benchmarks",
@@ -352,7 +366,8 @@
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
-    "year_label": "Documentation checked"
+    "year_label": "Documentation checked",
+    "purpose": "Models & evaluation"
   },
   {
     "slug": "parrot-data-feasibility",
@@ -373,6 +388,217 @@
     "next_review": "Inspect selection-table joins, normalize only observable behaviors, assess annotation reliability and evaluate whether enough independent groups remain.",
     "reviewed": "2026-09-30",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Dataset inspected"
+    "review_stage": "Dataset inspected",
+    "purpose": "Data & annotation"
+  },
+  {
+    "slug": "aves-avex",
+    "title": "AVES and AVEX: reuse an encoder before training one",
+    "taxon": "Cross-species",
+    "kind": "Model and code",
+    "year": "2022–2026",
+    "source_ids": [
+      59,
+      60,
+      61
+    ],
+    "review_stage": "Abstract & documentation reviewed",
+    "review_depth": "AVES abstract and official AVES/AVEX READMEs, including embedding examples and the AVEX license declaration. No model execution or checkpoint audit.",
+    "finding": "Self-supervised audio encoders learn from unlabeled recordings. AVEX provides a common interface for extracting features and fitting small supervised classifiers.",
+    "limitations": "Useful features or benchmark scores do not establish call meaning. Pretraining overlap, sample-rate choices and checkpoint rights need checking for the exact experiment.",
+    "lesson": "Compare a frozen encoder plus a simple classifier with acoustic and context-only baselines before considering expensive end-to-end training.",
+    "next_review": "Pin an AVEX revision and one checkpoint; inspect its model card, terms, pretraining overlap and frequency coverage before a bounded evaluation.",
+    "reviewed": "2026-10-01",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "year_label": "Source year",
+    "reuse": {
+      "status": "Candidate to evaluate",
+      "asset": "AVEX feature-extraction API; AVES/BirdAVES model family",
+      "rights": "AVEX declares MIT for code. Checkpoint and training-data terms are separate and remain unapproved.",
+      "experiment": "On an approved dataset, compare a frozen representation plus linear classifier against simple acoustic features with the same held-out sessions."
+    },
+    "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "birb-generalization",
+    "title": "BIRB: test on the sounds your app will actually hear",
+    "taxon": "Birds",
+    "kind": "Evaluation method",
+    "year": "2023",
+    "source_ids": [
+      62,
+      14
+    ],
+    "review_stage": "Selected sections reviewed",
+    "review_depth": "Primary paper v2 introduction, benchmark overview and Table 1; repository BIRB entry. Detailed metrics and full experiments still need review.",
+    "finding": "BIRB tests retrieval from passive soundscapes using examples from focal bird recordings, including rare and held-out species.",
+    "limitations": "These are retrieval and species tasks. They do not validate behavior labels, conversation or performance on a phone beside a pet.",
+    "lesson": "Treat a clean recording and a noisy stationary phone as different evaluation conditions. Keep the search examples and test audio independent.",
+    "next_review": "Review the task construction and metrics sections, then check each candidate dataset’s license and overlap with model pretraining.",
+    "reviewed": "2026-10-01",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "year_label": "Source year",
+    "study_snapshot": [
+      [
+        "Task",
+        "Rank soundscape recordings using a few labeled examples."
+      ],
+      [
+        "Shift",
+        "Focal recordings for training versus passive soundscapes for evaluation."
+      ],
+      [
+        "Coverage",
+        "Table 1 separates validation, artificially rare and held-out species sets."
+      ]
+    ],
+    "review_locator": "arXiv:2312.07439v2, introduction, §1.1 and Table 1.",
+    "reuse": {
+      "status": "Use in evaluation design",
+      "asset": "BIRB task design and Perch benchmark code",
+      "rights": "Repository declares Apache-2.0 for code; each underlying dataset requires its own terms check.",
+      "experiment": "Report separate results by recording setting and independent session, plus precision among the clips a human is asked to review."
+    },
+    "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "das-annotation",
+    "title": "DAS: build on an existing annotation workflow",
+    "taxon": "Cross-species",
+    "kind": "Annotation software",
+    "year": "2021–2026",
+    "source_ids": [
+      63,
+      64,
+      72
+    ],
+    "review_stage": "Documentation reviewed",
+    "review_depth": "Official introduction, repository README and bird tutorial through proofreading. The primary performance paper and current package were not evaluated.",
+    "finding": "Deep Audio Segmenter connects manual labels, model training, automatic proposals and human correction in an existing audio workflow.",
+    "limitations": "Suggested labels still need checking. A quick-start training split is not a validation protocol for our intended species or new recording conditions.",
+    "lesson": "Keep model suggestions separate from accepted observations. Test file interoperability and reviewer effort before building another full annotation editor.",
+    "next_review": "Inspect the exact DAS import/export schema and run a synthetic round trip before proposing an adapter.",
+    "reviewed": "2026-10-01",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "year_label": "Source year",
+    "reuse": {
+      "status": "Candidate for interoperability",
+      "asset": "DAS graphical annotation and proposal-review workflow",
+      "rights": "Repository declares Apache-2.0 for code. Example audio, trained models and dependencies need separate checks.",
+      "experiment": "Exchange a synthetic WAV and interval labels, then compare whether event boundaries and labels survive the round trip."
+    },
+    "purpose": "Data & annotation"
+  },
+  {
+    "slug": "bat-context",
+    "title": "Bat calls: context comes from observation",
+    "taxon": "Bats",
+    "kind": "Observational study",
+    "year": "2016",
+    "source_ids": [
+      65
+    ],
+    "review_stage": "Selected methods reviewed",
+    "review_depth": "Primary Materials and Methods sections on housing, monitoring and classification tasks via PMC. Full statistics, supplementary analyses and raw data not reviewed.",
+    "finding": "This study paired bat social calls with synchronized video to label caller, recipient, circumstances and subsequent behavior.",
+    "limitations": "The main analysis used 14,863 calls from seven adult females. Many recordings were excluded when identification was uncertain. Captive social calls and specialized ultrasonic recording do not establish phone or wild-population performance.",
+    "lesson": "Collect context independently of sound interpretation; document uncertain identities and exclusions instead of filling them with confident guesses.",
+    "next_review": "Inspect cross-validation and identity/context controls before treating these data as a template for a held-out-animal experiment.",
+    "reviewed": "2026-10-01",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "year_label": "Source year",
+    "study_snapshot": [
+      [
+        "Observation",
+        "75 days of synchronized audio/video monitoring."
+      ],
+      [
+        "Labels",
+        "Trained observers used video; uncertain caller assignments were excluded."
+      ],
+      [
+        "Instrumentation",
+        "250 kHz audio sampling with specialized ultrasound microphones."
+      ]
+    ],
+    "review_locator": "Prat et al. (2016), Materials and Methods: Bat housing and monitoring; Classification tasks.",
+    "reuse": {
+      "status": "Use in protocol design",
+      "asset": "Synchronized context annotation and explicit exclusion rules",
+      "rights": "Paper access does not grant rights to an entire recording archive. No recordings acquired.",
+      "experiment": "Before modeling, have two reviewers independently label a permitted sample and report agreement and unknown identities."
+    },
+    "purpose": "Behavior & communication"
+  },
+  {
+    "slug": "animal2vec-meerkat",
+    "title": "animal2vec: learn from rare calls and quiet intervals",
+    "taxon": "Mammals",
+    "kind": "Model and dataset",
+    "year": "2024",
+    "source_ids": [
+      66,
+      67
+    ],
+    "review_stage": "Abstract & documentation reviewed",
+    "review_depth": "Primary abstract and official README, including recording setup and dataset link. Edmond files, statistical methods and model checkpoints not inspected.",
+    "finding": "animal2vec targets sparse, unevenly distributed animal sounds. Its companion MeerKAT resource includes precisely timed meerkat vocalization annotations.",
+    "limitations": "The documented recordings largely come from animal-worn devices; others used nearby directional microphones. They are not an unattended-phone benchmark. No transfer result has been measured by Talk2Nature.",
+    "lesson": "Keep background intervals in an approved evaluation set. Testing only retained loud clips cannot measure what the detector missed.",
+    "next_review": "Review event metrics and individual/day split construction; resolve dataset access and exact audio/annotation licenses.",
+    "reviewed": "2026-10-01",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "year_label": "Source year",
+    "reuse": {
+      "status": "Candidate for detection study",
+      "asset": "animal2vec training code; linked MeerKAT dataset",
+      "rights": "Repository declares MIT for code. Dataset and checkpoint terms are not verified here; acquisition remains pending.",
+      "experiment": "Use independently annotated continuous audio to measure missed events and false alarms per hour, including quieter calls."
+    },
+    "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "elephant-calls-controls",
+    "title": "Elephant calls: pair promising findings with their critiques",
+    "taxon": "Elephants",
+    "kind": "Study and reassessment",
+    "year": "2024–2026",
+    "source_ids": [
+      68,
+      69,
+      70,
+      71
+    ],
+    "review_stage": "Selected methods & critique notice reviewed",
+    "review_depth": "Selected discussion and playback methods in the author-organization PDF; Dryad landing page. The 2026 reanalysis was located through a publisher excerpt and related-work listing, not read in full.",
+    "finding": "The 2024 study combines acoustic classification with receiver-response experiments to investigate individually directed calls.",
+    "limitations": "Name-like is a bounded interpretation, not a recovered vocabulary. A 2026 reanalysis questions statistical evidence from the classification analyses; that dispute is not resolved by this note.",
+    "lesson": "Maintain competing explanations and later critiques beside the original claim. Behavioral evidence and classifier results require separate assessment.",
+    "next_review": "Read the full reanalysis, compare the exact null models and seek any author response before adopting the naming claim.",
+    "reviewed": "2026-10-01",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "year_label": "Source year",
+    "study_snapshot": [
+      [
+        "Playback design",
+        "17 subjects; most received calls from the same caller directed to themselves versus someone else."
+      ],
+      [
+        "Observation",
+        "Trial scoring was blind to condition."
+      ],
+      [
+        "Open issue",
+        "The later statistical critique needs a full methods comparison."
+      ]
+    ],
+    "review_locator": "Author-organization PDF pp. 4 and 10 (discussion and playback methods); publisher reanalysis excerpt.",
+    "reuse": {
+      "status": "Read competing analyses first",
+      "asset": "Matched receiver-response comparison; linked analysis/data deposit",
+      "rights": "No audio, figures or code republished. Deposit contents and separate reuse terms remain to be inspected.",
+      "experiment": "Write down alternative explanations and an appropriate null model before making any claim about a signal’s meaning. No playback is proposed for the public app."
+    },
+    "purpose": "Behavior & communication"
   }
 ]

@@ -23,11 +23,11 @@ The *Project Hail Mary* analogy is productive: start with shared observations, r
 - Discarding a clip removes its audio and review text from the session, while retaining its ID/onset to prevent deletion being mislabeled as silence. Discarding the session clears those too. Previously downloaded files remain on the device.
 - A large-screen layout on the same device. Remote TV pairing is not implemented.
 
-Timing is approximate: frames are 100 ms, the final partial frame is not retained, markers use the most recently processed frame, and browser/device latency is not calibrated. Station 0.2 adds a session UUID, an unverified device UTC start time and unique filenames. Event offsets remain relative; station clocks are not synchronized. Browser JSON exports include WAV SHA-256 values; save the WAVs separately. This is a preliminary personal record, not a research manifest, consent receipt or admitted release. Clips omitted for storage limits retain an ID/onset tombstone so they are not counted as silence.
+Timing is approximate: frames are 100 ms, the final partial frame is not retained, markers use the most recently processed frame, and browser/device latency is not calibrated. Station 0.2 introduced a session UUID, an unverified device UTC start time and unique filenames. Event offsets remain relative; station clocks are not synchronized. Browser JSON exports include WAV SHA-256 values; save the WAVs separately. This is a preliminary personal record, not a research manifest, consent receipt or admitted release. Clips omitted for storage limits retain an ID/onset tombstone so they are not counted as silence.
 
 The [mobile Field Companion](https://metivity.github.io/talk2nature/app/) now presents this engine in outdoor, companion and synthetic workflows, alongside Listen's Sound desk. Its optional offline cache saves public app files only. See [the mobile audit](MOBILE_AUDIT.md) for installation, design, testing and distribution decisions.
 
-Use **Try synthetic station → add a test voice marker → Stop recording → review a sound → export JSON and WAV** to explore without recording a household. For microphone use, choose a permitted setting, observe naturally, and review recordings privately with headphones away from animals. A permission checkbox cannot establish the rights or consent of everyone who might be audible.
+Use **Try without a microphone → add a test voice marker → Stop recording → review a sound → Save session · ZIP** to explore without recording a household. For microphone use, choose a permitted setting, observe naturally, and review recordings privately with headphones away from animals. A permission checkbox cannot establish the rights or consent of everyone who might be audible.
 
 ## Devices: an explicit sequence
 
@@ -113,3 +113,9 @@ python3 scripts/check_site.py
 ```
 
 Browser permission and wake-lock behavior were checked against [getUserMedia documentation](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) and the [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). Platform/model documentation review is not a hardware test or a new full-text scientific literature review.
+
+## Version 0.3: one session download
+
+**Save session · ZIP** includes the journal JSON, every retained PCM16 WAV and a short readme. The uncompressed ZIP is generated entirely in memory, with bounded size and flat generated filenames. Journal SHA-256 values describe the exact included WAV bytes; ZIP CRCs support file-manager integrity checks. Discarded audio is excluded while its existing event tombstone remains in JSON. Empty sessions can still save their journal. JSON-only and individual WAV downloads remain available.
+
+Export locks session-changing controls and snapshots metadata/audio before asynchronous hashing. An invalid alias opens Session settings, focuses the field and gives a repair instruction. Downloads are requested, not confirmed by the browser API: check the saved file before leaving. The ZIP is not encrypted. Unzip it before opening one WAV in Review; session JSON is not a Listen annotation import. No new upload, browser persistence or research-admission path exists.

@@ -44,7 +44,7 @@ def build_mobile(root, output, prefix, page, station, listen):
     station_body=station[station.index('<section id="station-console"'):station.index('<section class="section station-future"')]
     station_body=template('app-station-intro.html')+station_body
     page('app/station/','Listen and observe with your phone','A guided foreground listening session with private local clips and encounter markers. Choose an outdoor, companion or synthetic rehearsal workflow.',station_body,extra_head=f'<link rel="stylesheet" href="{base}/assets/station.css">'+common+f'<script type="module" src="{base}/assets/station.js"></script>',app=True)
-    page('app/review/','Sound desk: mobile recording review','Inspect a short local WAV, annotate what you heard and observed, and export your work without uploading the recording.',listen,extra_head=f'<link rel="stylesheet" href="{base}/assets/listen.css">'+common+f'<script type="module" src="{base}/assets/listen.js"></script>',app=True)
+    page('app/review/','Review a recording on your device','Inspect a short local WAV, annotate what you heard and observed, and export your work without uploading the recording.',listen,extra_head=f'<link rel="stylesheet" href="{base}/assets/listen.css">'+common+f'<script type="module" src="{base}/assets/listen.js"></script>',app=True)
     page('mobile/','Get the Talk2Nature mobile app','Try the Talk2Nature web app on Android or iPhone. Installation instructions, practical scenarios and an honest look at what the first release can do.',template('mobile.html'),extra_head=f'<link rel="stylesheet" href="{base}/assets/app.css"><script defer src="{base}/assets/mobile-launch.js"></script>')
     app_root=output/'app'; (app_root/'icons').mkdir(exist_ok=True)
     for size in (180,192,512): (app_root/f'icons/icon-{size}.png').write_bytes(icon_png(size))
@@ -52,7 +52,7 @@ def build_mobile(root, output, prefix, page, station, listen):
     (app_root/'manifest.webmanifest').write_text(json.dumps(manifest,indent=2)+'\n')
     # Exact public shell only. No runtime responses, private routes or user media.
     paths=['app/','app/station/','app/review/','app/manifest.webmanifest']+[f'app/icons/icon-{s}.png' for s in (180,192,512)]
-    paths += ['assets/'+p for p in ('style.css','site.js','mark.svg','app.css','app.js','app-scene.svg','station.css','station.js','station-model.mjs','station-audio.mjs','station-capture.mjs','listen.css','listen.js','listen-model.mjs')]
+    paths += ['assets/'+p for p in ('style.css','hub.css','site.js','mark.svg','app.css','app.js','app-scene.svg','station.css','station.js','station-model.mjs','station-audio.mjs','station-capture.mjs','station-export.mjs','listen.css','listen.js','listen-model.mjs')]
     def local(path): return output/(path+'index.html' if path.endswith('/') else path)
     worker_source=(root/'web/templates/app-sw.js').read_text()
     revision=hashlib.sha256(worker_source.encode()+b''.join(local(p).read_bytes() for p in paths)).hexdigest()[:16]

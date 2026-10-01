@@ -1,0 +1,61 @@
+{
+  "updated": "2026-10-01",
+  "paths": [
+    {
+      "id": "label",
+      "title": "Capture useful context",
+      "question": "What should people record and label?",
+      "decision": "Reuse annotation workflows and independent behavior labels. Make unknowns explicit.",
+      "notes": [
+        "bat-context",
+        "das-annotation",
+        "annotation-tools",
+        "parrot-data-feasibility"
+      ],
+      "next_step": "A synthetic file-exchange check, followed by a species-specific codebook and a reviewer-agreement exercise on approved data.",
+      "gate": "Real observations require an approved protocol, rights and consent. Public clips are not automatically research data."
+    },
+    {
+      "id": "detect",
+      "title": "Find sounds worth reviewing",
+      "question": "How do we detect events without missing the quiet ones?",
+      "decision": "Compare existing detectors and encoders against our simple sound-level trigger. Keep a continuous, independently annotated test sample.",
+      "notes": [
+        "animal2vec-meerkat",
+        "birdnet",
+        "das-annotation"
+      ],
+      "next_step": "Freeze a small permitted evaluation set and measure event recall, false alarms per hour and human review time.",
+      "gate": "Triggered clips alone cannot establish recall. Specialized recorders do not establish phone performance."
+    },
+    {
+      "id": "model",
+      "title": "Reuse models, then test transfer",
+      "question": "Can sound help predict independently observed context?",
+      "decision": "Start with frozen audio features and a small classifier. Compare against context-only, background and simple acoustic baselines.",
+      "notes": [
+        "aves-avex",
+        "perch",
+        "naturelm",
+        "birb-generalization",
+        "bioacoustic-benchmarks"
+      ],
+      "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
+      "gate": "No Talk2Nature animal model has been trained or benchmarked. Language-like output is not verified meaning."
+    },
+    {
+      "id": "meaning",
+      "title": "Know what would count as understanding",
+      "question": "When does an association support a claim about meaning?",
+      "decision": "Study receiver behavior, matched comparisons and competing explanations. Keep new critiques connected to the original paper.",
+      "notes": [
+        "bird-call-syntax",
+        "elephant-calls-controls",
+        "sperm-whale-structure",
+        "dog-buttons"
+      ],
+      "next_step": "Ask a scientific reviewer to assess one bounded hypothesis and its controls before designing any intervention.",
+      "gate": "Public tools remain passive. No automated playback or general translation claim."
+    }
+  ]
+}

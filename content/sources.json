@@ -472,5 +472,379 @@
     "url": "https://zenodo.org/records/1208080",
     "checked": "2026-09-30",
     "origin": "Collection audit; review depth recorded in evidence note and research/resources.json."
+  },
+  {
+    "id": 59,
+    "title": "AVES primary paper",
+    "description": "Hagiwara (2022 preprint; ICASSP 2023). Self-supervised animal-audio representations; abstract reviewed.",
+    "url": "https://arxiv.org/abs/2210.14493",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 60,
+    "title": "AVES and BirdAVES repository",
+    "description": "Official model-family documentation. Configurations and export formats reviewed; no weights downloaded or evaluated.",
+    "url": "https://github.com/earthspecies/aves",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 61,
+    "title": "AVEX encoder library",
+    "description": "Earth Species Project model-loading, embedding and probe API; README and code-license declaration reviewed.",
+    "url": "https://github.com/earthspecies/avex",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 62,
+    "title": "BIRB generalization benchmark",
+    "description": "Hamer et al., arXiv:2312.07439v2 (2023). Introduction, task overview and dataset table reviewed.",
+    "url": "https://arxiv.org/html/2312.07439v2",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 63,
+    "title": "Deep Audio Segmenter documentation",
+    "description": "Official DAS documentation for annotation, training and prediction. Documentation review; not an installation test.",
+    "url": "https://janclemenslab.org/das/",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 64,
+    "title": "Deep Audio Segmenter code",
+    "description": "Official janclemenslab repository; README and Apache-2.0 code-license declaration reviewed.",
+    "url": "https://github.com/janclemenslab/das",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 65,
+    "title": "Bat calls, individuals and context",
+    "description": "Prat, Taub and Yovel (2016), Scientific Reports 6:39419. Selected primary methods on housing, monitoring and classification tasks reviewed through PMC.",
+    "url": "https://www.nature.com/articles/srep39419",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5178335/",
+    "review_url_label": "Primary text used for selected methods review"
+  },
+  {
+    "id": 66,
+    "title": "animal2vec and MeerKAT paper",
+    "description": "Schäfer-Zimmermann et al., arXiv:2406.01253. Primary abstract reviewed; results not independently reproduced.",
+    "url": "https://arxiv.org/abs/2406.01253",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 67,
+    "title": "animal2vec code and dataset documentation",
+    "description": "Official repository describes rare-event learning and the MeerKAT recording setup, with a linked Edmond deposit. README reviewed; data and weights not acquired.",
+    "url": "https://github.com/livingingroups/animal2vec",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 68,
+    "title": "Elephant receiver-specific calls",
+    "description": "Pardo et al. (2024), Nature Ecology & Evolution, DOI 10.1038/s41559-024-02420-w. Publication record; selected text reviewed in the author-organization PDF.",
+    "url": "https://doi.org/10.1038/s41559-024-02420-w",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 69,
+    "title": "Elephant call paper: author-organization PDF",
+    "description": "Save the Elephants hosts the article PDF. Selected discussion and playback methods, PDF pages 4 and 10, reviewed; not all statistical analyses or supplements.",
+    "url": "https://www.savetheelephants.org/wp-content/uploads/2024/06/Nature-Ecology-Evolution-Article.pdf",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 70,
+    "title": "Elephant call data and analysis deposit",
+    "description": "Dryad record linked to the 2024 paper; landing page and related-work link inspected. Files and their reuse terms need a separate review.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.hmgqnk9nj",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 71,
+    "title": "Elephant name-like calls: statistical reanalysis",
+    "description": "Animal Behaviour (2026): Effects of bias when using black box models. Publisher search excerpt and Dryad related-work listing located; full text not accessible in this pass.",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0003347226000849",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 72,
+    "title": "DAS bird annotation tutorial",
+    "description": "Official bird tutorial: annotation, training, prediction and human proofreading workflow reviewed.",
+    "url": "https://janclemenslab.org/das/quickstart_bird.html",
+    "checked": "2026-10-01",
+    "origin": "October 1 usability and research-library expansion; original editorial summaries only."
+  },
+  {
+    "id": 73,
+    "title": "BirdNET video learning resources",
+    "description": "Official project-curated talks and tutorials; link titles and descriptions inspected.",
+    "url": "https://birdnet.cornell.edu/resources/",
+    "checked": "2026-10-01",
+    "origin": "Video-hub primary publisher context."
+  },
+  {
+    "id": 74,
+    "title": "Project CETI: Listen to the whales",
+    "description": "Official project learning site with linked research and embedded films.",
+    "url": "https://listen.projectceti.org/",
+    "checked": "2026-10-01",
+    "origin": "Video-hub primary publisher context."
+  },
+  {
+    "id": 75,
+    "title": "Earth Species Project listening panel",
+    "description": "Official event report links the October 2022 panel with its researchers and co-founder.",
+    "url": "https://earthspecies.org/2022/11/21/using-ai-to-listen-to-all-of-earths-species/",
+    "checked": "2026-10-01",
+    "origin": "Video-hub primary publisher context."
+  },
+  {
+    "id": 76,
+    "title": "Tel Aviv University: plant sounds",
+    "description": "University research explainer with Yossi Yovel and Lilach Hadany video. Specialized ultrasound measurements; no general plant conversation claim.",
+    "url": "https://english.tau.ac.il/plants_emit_sounds",
+    "checked": "2026-10-01",
+    "origin": "Video-hub primary publisher context."
+  },
+  {
+    "id": 78,
+    "title": "WhAM primary preprint",
+    "description": "Project CETI, arXiv:2512.02206. Abstract and code link located; full methods and experimental claims not reviewed.",
+    "url": "https://arxiv.org/abs/2512.02206",
+    "checked": "2026-10-01",
+    "origin": "Video-hub primary publisher context."
+  },
+  {
+    "id": 79,
+    "title": "Using AI to listen to all of Earth's Species",
+    "url": "https://www.youtube.com/watch?v=gTKIJpIaZfg",
+    "description": "A researcher panel on what listening technology might make possible.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "gTKIJpIaZfg",
+      "creator": "Earth Species Project (ESP)",
+      "creator_url": "https://www.youtube.com/@earthspeciesproject",
+      "category": "Research vision",
+      "context_id": 75,
+      "related_notes": [
+        "naturelm",
+        "aves-avex"
+      ],
+      "watch_for": "Separate future ambitions from capabilities backed by a study.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 80,
+    "title": "Listen to the Whales",
+    "url": "https://www.youtube.com/watch?v=ekWd5VxI4yk",
+    "description": "An introduction to the people and questions behind the whale-listening project.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "ekWd5VxI4yk",
+      "creator": "National Geographic Society",
+      "creator_url": "https://www.youtube.com/@natgeosociety",
+      "category": "Research vision",
+      "context_id": 74,
+      "related_notes": [
+        "sperm-whale-structure",
+        "whale-birth"
+      ],
+      "watch_for": "Follow the film with the evidence note on coda structure; structure is not a translated vocabulary.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 81,
+    "title": "Project CETI WhAM (Whale Acoustics Model)",
+    "url": "https://www.youtube.com/watch?v=ccphRKVQnA4",
+    "description": "A project-produced introduction to the Whale Acoustics Model (WhAM).",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "ccphRKVQnA4",
+      "creator": "Project CETI",
+      "creator_url": "https://www.youtube.com/@projectceti",
+      "category": "Research vision",
+      "context_id": 74,
+      "related_notes": [
+        "sperm-whale-structure"
+      ],
+      "watch_for": "Read the linked preprint before judging model claims. “Translative” in a title does not establish whale-to-English translation.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified.",
+      "extra_source_ids": [
+        78
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "title": "Global breakthrough: Plants emit sounds!",
+    "url": "https://www.youtube.com/watch?v=hOWaXi0I2YE",
+    "description": "The university researchers introduce their plant sound measurements.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "hOWaXi0I2YE",
+      "creator": "TAUVOD",
+      "creator_url": "https://www.youtube.com/@telavivuniversity",
+      "category": "Plant research",
+      "context_id": 76,
+      "related_notes": [
+        "plant-sounds",
+        "moths-and-plants"
+      ],
+      "watch_for": "Ask what the sensors measure and which hypotheses remain open. Sound emission does not establish intention or conversation.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 83,
+    "title": "BirdNET: Advancing Conservation with AI Powered Sound ID",
+    "url": "https://www.youtube.com/watch?v=la88RRWZdn4",
+    "description": "A BirdNET overview linked by the project’s learning center.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "la88RRWZdn4",
+      "creator": "Biological Recording Company",
+      "creator_url": "https://www.youtube.com/@biologicalrecordingcompany",
+      "category": "Practical tools",
+      "context_id": 73,
+      "related_notes": [
+        "birdnet"
+      ],
+      "watch_for": "Which identification tasks already have a working tool? What would our context-focused app add?",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 84,
+    "title": "BirdNET : Tips, Tricks, and Insights for Ecoacoustic Analysis - Open Ecoacoustics Webinar Series #2",
+    "url": "https://www.youtube.com/watch?v=aml3nXn9Ilw",
+    "description": "An ecoacoustic analysis webinar hosted by ARDC and linked by BirdNET.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "aml3nXn9Ilw",
+      "creator": "Australian Research Data Commons - ARDC",
+      "creator_url": "https://www.youtube.com/@ARDC_AU",
+      "category": "Practical tools",
+      "context_id": 73,
+      "related_notes": [
+        "birdnet",
+        "birb-generalization"
+      ],
+      "watch_for": "Look for workflow assumptions to check against our intended recordings.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 85,
+    "title": "BioacousTalks: Custom Machine Learning Models with BirdNET Analyzer GUI",
+    "url": "https://www.youtube.com/watch?v=HuEZGIPeyq0",
+    "description": "A Cornell BioacousTalk on creating custom models with BirdNET Analyzer.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "HuEZGIPeyq0",
+      "creator": "K. Lisa Yang Center for Conservation Bioacoustics",
+      "creator_url": "https://www.youtube.com/@CornellSounds",
+      "category": "Practical tools",
+      "context_id": 73,
+      "related_notes": [
+        "birdnet",
+        "aves-avex"
+      ],
+      "watch_for": "Compare adapting an existing tool with training a new model from scratch.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 86,
+    "title": "BioacousTalks: Robust acoustic community monitoring with transfer learning w/ Giordano Jacuzzi",
+    "url": "https://www.youtube.com/watch?v=liFvqrY32mw",
+    "description": "A Cornell BioacousTalk on community monitoring and transfer learning.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "liFvqrY32mw",
+      "creator": "K. Lisa Yang Center for Conservation Bioacoustics",
+      "creator_url": "https://www.youtube.com/@CornellSounds",
+      "category": "Field methods",
+      "context_id": 73,
+      "related_notes": [
+        "birb-generalization",
+        "perch"
+      ],
+      "watch_for": "Which local validation is needed before using a model in a new setting?",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 87,
+    "title": "BioacousTalks: BirdNET for Bats?",
+    "url": "https://www.youtube.com/watch?v=6TStSYAK_sk",
+    "description": "A Cornell BioacousTalk explores BirdNET-style methods for bats.",
+    "checked": "2026-10-01",
+    "origin": "Linked or embedded by the primary publisher context; title, channel and embeddable response verified through YouTube oEmbed.",
+    "media": {
+      "provider": "youtube",
+      "video_id": "6TStSYAK_sk",
+      "creator": "K. Lisa Yang Center for Conservation Bioacoustics",
+      "creator_url": "https://www.youtube.com/@CornellSounds",
+      "category": "Field methods",
+      "context_id": 73,
+      "related_notes": [
+        "bat-context",
+        "birdnet"
+      ],
+      "watch_for": "Check recording hardware and frequency coverage before assuming a phone can capture the target calls.",
+      "review_depth": "Publisher description and video identity checked. Full video not reviewed; caption availability and complete playback not verified."
+    }
+  },
+  {
+    "id": 88,
+    "title": "Real-Time Acoustic Monitoring for Conservation and Community Engagement",
+    "url": "https://vod.video.cornell.edu/media/Webinar%3A+Real-Time+Acoustic+Monitoring+for+Conservation+and+Community+Engagement/1_6uahqkqh",
+    "description": "A Cornell-hosted webinar on recording units, species monitoring and sharing soundscapes.",
+    "checked": "2026-10-01",
+    "origin": "Official Cornell video page and BirdNET learning-center link verified. External playback link only.",
+    "media": {
+      "provider": "external",
+      "creator": "Cornell Lab of Ornithology / Land Trust Bird Conservation Initiative",
+      "creator_url": "https://www.birds.cornell.edu/ccb/",
+      "category": "Field methods",
+      "context_id": 73,
+      "related_notes": [
+        "birdnet",
+        "birb-generalization"
+      ],
+      "watch_for": "Consider power, deployment and metadata needs beyond a short phone recording.",
+      "review_depth": "Publisher page and named presenters checked. Full video and playback not reviewed."
+    }
   }
 ]

@@ -1,5 +1,5 @@
 // A bounded, local energy detector. No species/meaning model or upload path.
-export const STATION_VERSION = '0.2.0';
+export const STATION_VERSION = '0.3.0';
 export const SESSION_SECONDS = 300;
 export const MAX_AUDIO_BYTES = 24 * 1024 * 1024;
 export const MAX_EVENTS = 24;

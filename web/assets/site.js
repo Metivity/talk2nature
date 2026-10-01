@@ -15,6 +15,8 @@ if (toggle && navigation) {
 }
 const search = document.querySelector('#research-search');
 const filter = document.querySelector('#taxon-filter');
+const purpose = document.querySelector('#purpose-filter');
+const reset = document.querySelector('#research-reset');
 if (search && filter) {
   const cards = [...document.querySelectorAll('[data-search]')];
   const count = document.querySelector('#result-count');
@@ -26,13 +28,17 @@ if (search && filter) {
     for (const card of cards) {
       const matchesArea = filter.value === 'all' || card.dataset.taxon === filter.value;
       const matchesText = words.every(word => card.dataset.search.includes(word));
-      card.hidden = !(matchesArea && matchesText);
+      const matchesPurpose = !purpose || purpose.value === 'all' || card.dataset.purpose === purpose.value;
+      card.hidden = !(matchesArea && matchesText && matchesPurpose);
       if (!card.hidden) matches++;
     }
     count.textContent = `${matches} research ${matches === 1 ? 'note' : 'notes'}`;
     empty.hidden = matches !== 0;
+    if (reset) reset.hidden = !query && filter.value === 'all' && (!purpose || purpose.value === 'all');
   }
   search.addEventListener('input', updateResults);
   filter.addEventListener('change', updateResults);
+  purpose?.addEventListener('change', updateResults);
+  reset?.addEventListener('click', () => { search.value = ''; filter.value = 'all'; if (purpose) purpose.value = 'all'; updateResults(); search.focus(); });
   updateResults();
 }

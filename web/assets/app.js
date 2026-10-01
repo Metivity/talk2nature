@@ -2,13 +2,14 @@ const base = new URL('../app/', import.meta.url), $ = id => document.getElementB
 const modes = {
   outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','outdoor-place','A bird moved to another branch. Its identity is uncertain.'],
   companion: ['SHARED MOMENTS','Get to know the everyday.','Observe a familiar animal in its ordinary routine. Mark visible behavior and naturally occurring voices; leave meaning open.','companion-place','The animal moved toward the window while I was already speaking.'],
-  demo: ['SYNTHETIC REHEARSAL','Try curiosity on for size.','Use “Try synthetic station” below. Invented tones let you explore the complete workflow without a microphone.','rehearsal','A test marker, with no animal present.']
+  demo: ['SYNTHETIC REHEARSAL','Try curiosity on for size.','Use “Try without a microphone” below. Invented tones let you explore the complete workflow without a microphone.','rehearsal','A test marker, with no animal present.']
 };
 const mode = new URL(location.href).searchParams.get('mode');
 if ($('scenario-title') && modes[mode]) {
   const [label,title,description,alias,placeholder] = modes[mode];
   $('scenario-label').textContent=label; $('scenario-title').textContent=title; $('scenario-description').textContent=description;
   $('station-alias').value=alias; $('station-note').placeholder=placeholder;
+  if (mode === 'demo') { $('station-start').hidden=true; $('station-permission').closest('.station-setup').hidden=true; }
 }
 for (const a of document.querySelectorAll('.app-nav a')) if (new URL(a.href).pathname===location.pathname && !a.hash) a.setAttribute('aria-current','page');
 let prompt;

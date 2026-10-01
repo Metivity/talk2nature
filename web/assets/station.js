@@ -1,17 +1,18 @@
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
+import {sessionFiles, zipFiles} from './station-export.mjs';
 import {AudioSession} from './station-audio.mjs';
 
 const $ = id => document.getElementById(id);
-let session = null, capture = null, active = false, pending = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
+let session = null, capture = null, active = false, pending = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
 const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 const status = text => { $('station-status').textContent = text; };
 const reasons = {user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
 function controls() {
-  const busy = pending || active;
+  const busy = pending || active || exporting;
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
-  $('station-stop').disabled = !busy;
+  $('station-stop').disabled = !(pending || active);
   $('station-voice').disabled = !active; $('station-observe').disabled = !active;
-  $('station-export').disabled = !session || busy; $('station-clear').disabled = !session || busy;
+  $('station-bundle').disabled = !session || busy; $('station-export').disabled = !session || busy; $('station-clear').disabled = !session || busy;
   $('station-state').textContent = pending ? 'Starting…' : active ? session?.origin === 'synthetic' ? 'Synthetic session' : 'Microphone recording' : session ? 'Stopped · local only' : 'Ready';
   $('station-light').classList.toggle('recording', active && session?.origin === 'microphone');
   $('station-voice').textContent = session?.origin === 'synthetic' ? 'Add test voice marker' : 'Mark my voice';
@@ -30,9 +31,9 @@ function stop(reason = 'user_stop') {
   controls(); renderEvents(); renderMarkers(); metrics();
 }
 async function start(synthetic) {
-  if (pending || active) return;
+  if (pending || active || exporting) return;
   if (!synthetic && !$('station-permission').checked) { status('Confirm that you have permission to record this setting before starting the microphone.'); return; }
-  if (!$('station-alias').value.trim()) { status('Give this station a short alias. Avoid names or precise locations.'); return; }
+  if (!checkAlias()) return;
   if (dirty && !window.confirm('Discard the current local session? Export its JSON and clips first if you want to keep them.')) return;
   if (!window.AudioContext || !window.AudioWorkletNode || (!synthetic && !navigator.mediaDevices?.getUserMedia)) { status('This browser does not support the required audio APIs. Try a current browser on HTTPS.'); return; }
   const token = ++run; pending = true; session = null; dirty = false; levels = []; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
@@ -114,9 +115,9 @@ function renderEvents() {
     const title = document.createElement('h3'), detail = document.createElement('p'), sourceLabel = document.createElement('label'), select = document.createElement('select');
     title.textContent = `Sound ${event.id} · ${formatTime(event.onset_seconds)}`;
     detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · ${session.origin === 'synthetic' ? 'synthetic audio' : 'microphone audio'} · source ${event.source_label}`;
-    sourceLabel.textContent = 'What made this sound?'; select.setAttribute('aria-label', `Source of sound ${event.id}`); select.disabled = active || pending;
+    sourceLabel.textContent = 'What made this sound?'; select.setAttribute('aria-label', `Source of sound ${event.id}`); select.disabled = active || pending || exporting;
     for (const source of SOURCE_LABELS) { const option = document.createElement('option'); option.value = source; option.textContent = source; select.append(option); } select.value = event.source_label;
-    const details = document.createElement('details'), summary = document.createElement('summary'), notes = document.createElement('textarea'); summary.textContent = 'Review note'; notes.value = event.notes; notes.maxLength = 300; notes.disabled = active || pending; notes.setAttribute('aria-label', `Review note for sound ${event.id}`); details.append(summary, notes);
+    const details = document.createElement('details'), summary = document.createElement('summary'), notes = document.createElement('textarea'); summary.textContent = 'Review note'; notes.value = event.notes; notes.maxLength = 300; notes.disabled = active || pending || exporting; notes.setAttribute('aria-label', `Review note for sound ${event.id}`); details.append(summary, notes);
     const saveReview = () => { session.review(event.id, select.value, notes.value); dirty = true; detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · source ${event.source_label} (your review)`; renderMarkers(); };
     select.addEventListener('change', saveReview); notes.addEventListener('change', saveReview); sourceLabel.append(select);
     const buttons = document.createElement('div'); buttons.className = 'station-controls';
@@ -124,7 +125,7 @@ function renderEvents() {
       ['Review audio', () => { silencePlayer(); playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'})); $('station-player').src = playerUrl; $('station-player').hidden = false; $('station-player').focus(); status(`Sound ${event.id} ready in the audio player. Use headphones away from animals; press Play to review.`); }],
       ['Save WAV', () => { download(wavBytes(event.pcm, session.sampleRate), session.audioFilename(event.id), 'audio/wav'); status(`Sound ${event.id} download requested. Review it before sharing.`); }],
       ['Discard clip', () => { silencePlayer(); session.discard(event.id); dirty = true; renderEvents(); renderMarkers(); metrics(); }]
-    ]) { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.setAttribute('aria-label', `${label} ${event.id}`); button.disabled = active || pending; button.addEventListener('click', action); buttons.append(button); }
+    ]) { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.setAttribute('aria-label', `${label} ${event.id}`); button.disabled = active || pending || exporting; button.addEventListener('click', action); buttons.append(button); }
     card.append(title, detail, sourceLabel, details, buttons); list.append(card);
   }
 }
@@ -132,22 +133,26 @@ $('station-start').addEventListener('click', () => start(false)); $('station-dem
 for (const [id, kind] of [['station-voice', 'person_voice'], ['station-observe', 'observation']]) $(id).addEventListener('click', () => {
   try { session.mark(kind, $('station-note').value); $('station-note').value = ''; dirty = true; renderMarkers(); } catch (error) { status(error.message); }
 });
-$('station-export').addEventListener('click', async () => {
-  const snapshot = session;
-  if (!snapshot || active || pending) return;
-  $('station-export').disabled = true;
+function checkAlias() {
+  const input = $('station-alias');
+  if (input.value.trim() && input.value.trim().length <= 80) { input.removeAttribute('aria-invalid'); return true; }
+  $('station-settings').open = true; input.setAttribute('aria-invalid', 'true'); input.focus();
+  status('Enter a station alias of 1–80 characters in Session settings, then try again. Avoid personal names or precise locations.');
+  return false;
+}
+async function exportSession(bundle) {
+  if (!session || active || pending || exporting || !checkAlias()) return;
+  exporting = true; controls(); renderEvents(); status('Preparing your local download…');
   try {
-    const record = snapshot.exportRecord($('station-alias').value, settings);
-    const clips = snapshot.events.map(event => ({id: event.id, pcm: event.pcm}));
-    for (const clip of clips) {
-      const digest = await crypto.subtle.digest('SHA-256', wavBytes(clip.pcm, snapshot.sampleRate));
-      record.events.find(event => event.id === clip.id).audio_sha256 = [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-    download(JSON.stringify(record, null, 2) + '\n', `talk2nature-${snapshot.id}.json`, 'application/json');
-    status('Session JSON download requested, with clip checksums. Save each WAV separately; JSON contains no audio.');
-  } catch { status('Export failed. Your local clips remain in this tab; try again before leaving.'); }
-  finally { controls(); }
-});
+    const files = await sessionFiles(session, $('station-alias').value, settings);
+    if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
+    else download(files[0].bytes, files[0].name, 'application/json');
+    status(bundle ? 'Session download requested: one ZIP with your journal and all retained WAV clips. Check your Downloads folder before leaving. Unzip it to review a WAV.' : 'Journal JSON download requested. This file contains no audio; use Save session for journal and clips together.');
+  } catch { status('Could not prepare the download. Your clips remain in this tab. Try again or save individual WAV files before leaving.'); }
+  finally { exporting = false; controls(); renderEvents(); }
+}
+$('station-bundle').addEventListener('click', () => exportSession(true));
+$('station-export').addEventListener('click', () => exportSession(false));
 $('station-clear').addEventListener('click', () => {
   if (dirty && !window.confirm('Discard this session and all local clips? Previously downloaded files will remain on your device.')) return;
   silencePlayer(); session = null; dirty = false; levels = []; metrics(); renderEvents(); renderMarkers(); draw(); controls(); status('Session discarded. No audio is recording.');

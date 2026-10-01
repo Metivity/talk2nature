@@ -1,0 +1,20 @@
+name: Research question or contribution
+description: Discuss a method or offer help with a specific task.
+title: '[Question] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Discussion is public. Include relevant sources and uncertainty; do not post recordings, sensitive locations, or personal data.'
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question or proposed contribution
+      description: What result or decision would this help with?
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Related evidence note, source or existing issue
+    validations:
+      required: true

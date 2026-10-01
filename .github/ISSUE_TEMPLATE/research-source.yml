@@ -1,0 +1,28 @@
+name: Research source or correction
+description: Suggest an original paper, dataset, tool, video, or correction.
+title: '[Source] '
+body:
+  - type: markdown
+    attributes:
+      value: 'This is public. Do not include raw recordings, personal details, secrets, or sensitive locations. Search existing issues first.'
+  - type: input
+    id: source
+    attributes:
+      label: Original source URL
+      description: Prefer the researcher, institution, publisher or official repository.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: What can we learn or correct?
+      description: Separate reported findings from hypotheses; include creator attribution for videos.
+    validations:
+      required: true
+  - type: textarea
+    id: review
+    attributes:
+      label: What did you actually review?
+      description: Identify sections or timestamps, limitations, and code/data/weights rights if relevant.
+    validations:
+      required: true

@@ -6,7 +6,7 @@ Public entry: https://metivity.github.io/talk2nature/tools/listen/
 
 ## A reproducible five-minute walkthrough
 
-1. Choose **Try the synthetic example**. Computer-generated tones occur at 1–2 and 4–5 seconds. They are not animal sounds.
+1. Choose **Try an example · no file needed**. Computer-generated tones occur at 1–2 and 4–5 seconds. They are not animal sounds.
 2. Enter start `1` and end `2`. Choose `other sound`, context `unknown`, source `not observed`, confidence `clear`. Add the event. Repeat for `4`–`5` seconds.
 3. Export JSON. CSV is available for spreadsheet inspection; JSON preserves the complete record and can be reopened.
 4. To reopen, select the same WAV (or synthetic example), then import the JSON. Checksum, duration, sample rate, channels and declared origin must match. Edit or remove individual events as needed.
@@ -58,3 +58,5 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 Browser checks cover the walkthrough, invalid context, edit/remove, export/reimport, mismatched-source rejection, WAV selection, clearing and mobile overflow. Automated tests cover binary parsing, schema validation, CSV escaping and report arithmetic. Desktop and narrow viewport checks do not establish physical iOS/Android compatibility.
 
 Next candidates: independent reviewer comparison, species-specific codebooks, existing annotation-tool interoperability and mobile audio formats. Choose from organizer interviews.
+
+Station now saves a ZIP containing WAV clips and a separate session journal. Unzip it and select one WAV here. Keep that journal alongside any new annotations; it is not a `talk2nature.annotation.v1` import.
