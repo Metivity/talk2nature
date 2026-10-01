@@ -62,4 +62,4 @@ Library search found AVEX with the model-purpose filter; adding Elephants produc
 
 The private catalog now holds 117 records (87 sources, 22 notes, 8 acquisition resources). Reimport reports zero changes. Only public metadata changed; backend/auth/storage code and real-data gates were untouched. Private backend tests were not rerun or claimed. All research/video review limits remain visible. Proof files are ignored under `tmp/library-qa/`.
 
-The public deployment receipt will be recorded in STATUS.md after verification.
+Published from `db52103db17f8ee221eb0788c7eb4813750b774f` through successful manual workflow [36883924743](https://github.com/Metivity/talk2nature/actions/runs/36883924743). All 75 deployed files returned HTTP 200 and matched the checked build. Live video, reading-path and AVES/AVEX note navigation was inspected. Proof: ignored `tmp/library-qa/live-files.json` and `tmp/site-preview/knowledge-hub-live.png`. Temporary preview tabs/server were closed and network/viewport overrides restored. The verified video room remains open as the deliverable. The bounded milestone is complete; the research queue and usability work above remain open.
