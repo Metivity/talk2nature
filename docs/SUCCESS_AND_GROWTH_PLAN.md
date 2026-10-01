@@ -8,7 +8,9 @@ Worldwide recognition is a longer ambition. The next 90 days should establish ev
 
 ## Where the project stands
 
-The public website, research library, open repository and synthetic Field Notes demo are live. The private workbench contains 82 public catalog records. Local Google owner login, logout, identity pinning and denial of another account were verified; 99 backend and repository tests passed at the latest checkpoint. These establish software progress, not animal-communication results.
+The public website, research library, open repository and synthetic Field Notes demo are live. The private workbench contains 82 public catalog records. Local Google owner login, logout, identity pinning and denial of another account were verified. Subsequent Listen and Nature Station releases are recorded in STATUS.md; these establish software progress, not animal-communication results.
+
+October 1 product update: Raviv requested a more ambitious station and encounter-learning direction. [Nature Station](NATURE_STATION.md) implements a bounded local browser prototype and defines the native-device and learning sequence. Use its synthetic encounter walkthrough for the next demonstration; retain the scientific lead, pilot and external-validation gates below. An installed browser prototype is not an operational worldwide sensor network.
 
 The unfinished essentials are hosted operations and recovery, a committed scientific lead, a selected species and protocol, lawful real data, participant access and capture, external users, an empirical evaluation, and a confirmed funding applicant. Google billing completion and the separate Supabase agreement are pending. Details remain in the private setup record; see [current status](STATUS.md) and [hosting](HOSTING.md).
 

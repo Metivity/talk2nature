@@ -52,3 +52,9 @@
 - `tools/listen/` processes short user-selected WAV files locally; it is separate from synthetic Field Notes and the private database. Preserve no-upload/no-browser-storage behavior and explicit manual playback.
 - `talk2nature.annotation.v1` is preliminary annotation metadata, not an admitted research manifest. A matching checksum does not prove rights, consent, identity or biological meaning. Do not automatically admit it to training/private storage.
 - Run `node --test tests/demo.test.mjs tests/listen.test.mjs` plus repository/site checks after relevant changes. Reproduce browser JSON export/reimport and the Python `talk2nature.annotations` report for release checks.
+
+## Public Nature Station
+- `tools/station/` implements user-started, foreground-only local microphone capture and a silent synthetic pipeline. Read `docs/NATURE_STATION.md` for current bounds and the future device/AI architecture. This is separate from the private synthetic-only database.
+- Preserve bounded event storage, visible permission/start/stop, hidden-page/interruption cleanup, pending-permission cancellation, zero worklet speaker output and manual post-session playback. No automatic animal playback, background browser promise, upload, browser persistence or research admission.
+- `talk2nature.station.v1` is preliminary relative-time metadata. A following sound is not a reply; undetected sound is not silence. Preserve discarded-event tombstones until whole-session discard and exclude calibration from complete quiet-window claims.
+- Run `node --test tests/demo.test.mjs tests/listen.test.mjs tests/station.test.mjs` plus repository/site checks for public audio changes. Verify synthetic browser capture, review/export and responsive layout; distinguish this from actual microphone and physical-phone testing.

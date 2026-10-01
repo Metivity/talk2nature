@@ -4,6 +4,8 @@ Established September 30, 2026. The public repository and website are launched. 
 
 October 1: [the success and international growth plan](SUCCESS_AND_GROWTH_PLAN.md) proposes the next 90 days of scientific validation, participant usefulness, funding and distribution. It records targets and dependencies, not completed partnerships, new spending approval or authorization to send outreach.
 
+October 1 station direction: Raviv asked to implement a more creative spare-phone/encounter-learning concept. The current bounded deliverable is [Nature Station](NATURE_STATION.md): foreground local audio events, observed context and voice markers, manual review/export, a synthetic rehearsal, and a documented device/AI path. A native unattended station, trained encounter model, TV pairing and scientific exchange study remain separate future milestones. The private real-data gate remains closed.
+
 ## Completed milestone: deploy the website and build Field Notes around a database
 
 Requested September 30, 2026. Deploy the updated public research library and an honest Field Notes product page using Metivity/talk2nature and the existing Pages origin. Verify the live build, research navigation, mobile layout and metadata.

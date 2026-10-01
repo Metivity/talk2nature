@@ -2,6 +2,8 @@
 
 Decision record, 30 September 2026. Owner: Raviv. Account boundary: raviv@metivity.com / Metivity/talk2nature. This is a product and research proposal, not a validated business or a claim to translate animals.
 
+October 1 update: Raviv expanded the direction toward spare-phone stations and encounter learning. [NATURE_STATION.md](NATURE_STATION.md) is the current device/AI implementation record. A public, local-only browser station now captures bounded foreground microphone sessions and markers; the private database remains synthetic-only. This advances the station prototype ahead of native implementation, without opening research intake.
+
 ## The first product to build
 
 **Talk2Nature Field Notes:** a mobile observation companion for a small, invited group studying one species. The useful immediate outcome is a consistent observation history and a reviewable dataset. A participant should know what to observe, record a short permitted sample, annotate visible context, and understand whether the contribution was usable. Their reward is a useful journal and feedback about evidence quality, rather than points for uploading more sound.
@@ -37,7 +39,7 @@ The implementation in `admin/` rehearses database-backed study protocols, sessio
 - **iOS native:** recording audio can use the recording audio-session category and the audio background mode, but interruptions still occur. A blanket claim that iPhones cannot record in the background would be wrong. App review, battery use, lock-screen behavior and interruption recovery need device tests. [Apple record category](https://developer.apple.com/documentation/avfaudio/avaudiosession/category-swift.struct/record).
 - **TV:** pair with a phone using a short-lived code in a later version. Default to a display with minimal information, not an owner-admin login left on a shared screen. No assumption that a remote-control microphone supports ambient recording. Any animal-facing display/interface is a separate welfare-reviewed study.
 
-No device choice was supplied yet. The default implementation remains browser-based and owner-only; an Android station is a proposed next experiment.
+No device choice was supplied yet. The private workspace remains owner-only; the public Station is browser-based and local-only. Native Android is the proposed next device milestone, with actual hardware tests required.
 
 ## Can we train it like a language model?
 
