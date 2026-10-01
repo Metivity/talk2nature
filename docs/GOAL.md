@@ -2,6 +2,8 @@
 
 Established September 30, 2026. The public repository and website are launched. Raviv explicitly requested a new data, code and research collection goal on September 30; funding and the scientific pilot remain open.
 
+October 1: [the success and international growth plan](SUCCESS_AND_GROWTH_PLAN.md) proposes the next 90 days of scientific validation, participant usefulness, funding and distribution. It records targets and dependencies, not completed partnerships, new spending approval or authorization to send outreach.
+
 ## Completed milestone: deploy the website and build Field Notes around a database
 
 Requested September 30, 2026. Deploy the updated public research library and an honest Field Notes product page using Metivity/talk2nature and the existing Pages origin. Verify the live build, research navigation, mobile layout and metadata.
@@ -82,3 +84,7 @@ Start with useful original pages about animal communication AI, bioacoustic mode
 Confirmed: GitHub owner Metivity and GitHub Pages hosting, authorized September 30, 2026. Awaiting Raviv: funding applicant identity/country/entity; Kiki location and ownership; realistic budget/time commitment. These do not block local preparation. No external partner communication is authorized by the broad research goal alone.
 
 October 1 authorization update: Raviv confirmed Google policy acceptance and the proposed Cloud Run/Supabase Frankfurt setup up to US$50/month. OAuth branding/client and one real local owner login/logout are verified; the owner subject is pinned privately. Hosted work remains unfinished because the Google billing setup and separate Supabase agreement are pending. See the latest STATUS entry; earlier pending-budget statements are historical.
+
+## October 1: first public software and plan execution
+
+Raviv requested first software tools, implementation of the success plan and a late Coller Dolittle attempt. This release implements Listen, local annotation quality reports, a reproducible fixture, participation paths and a concrete execution board. The broader pilot and international adoption remain gated by scientific leadership, data rights, hosting readiness and external use. See `docs/EXECUTION_BOARD.md`; do not report the whole 90-day plan as completed. The named late prize submission is authorized; other personalized outreach drafts remain unsent.

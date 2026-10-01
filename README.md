@@ -6,6 +6,8 @@ An early-stage project documenting the science of nonhuman communication and bui
 
 Website: https://metivity.github.io/talk2nature/
 
+**First tools:** [Listen: local WAV annotation](https://metivity.github.io/talk2nature/tools/listen/), a [Python annotation quality report](docs/LISTEN.md), and a metadata splitter that keeps related animals/sessions together. Listen needs no upload or account. Start with the synthetic example; no animal meaning is inferred.
+
 ## Start locally
 
 Python 3.10+; no third-party package required for the website or research toolkit.
@@ -19,7 +21,9 @@ Open http://127.0.0.1:4173. Local builds are marked noindex.
 
 ```sh
 python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/demo-split.json
+python3 -m talk2nature.annotations examples/annotations.synthetic.json
 python3 -m unittest discover -s tests -v
+node --test tests/demo.test.mjs tests/listen.test.mjs
 python3 scripts/check_site.py
 ```
 
@@ -52,7 +56,7 @@ Original software: Apache-2.0 (see `LICENSE`). Original public summaries in `con
 
 ## Private research workspace (phase two)
 
-The local `admin/` prototype provides owner-only Google identity verification, a responsive observation form, review gates, synthetic metadata releases and withdrawal. Provider setup is still pending; this is not a live Google-authenticated service. Real observations and audio uploads are disabled. See [setup](admin/README.md), [mobile and AI plan](docs/PHASE_TWO_PLAN.md), and [private architecture](docs/PRIVATE_ARCHITECTURE.md). This code and its private runtime data are separate from the public static build.
+The local `admin/` prototype provides owner-only Google identity verification, a responsive observation form, review gates, synthetic metadata releases and withdrawal. Local owner Google sign-in and wrong-account denial have been verified; hosted provider setup remains pending. Real observations and audio uploads are disabled. See [setup](admin/README.md), [mobile and AI plan](docs/PHASE_TWO_PLAN.md), and [private architecture](docs/PRIVATE_ARCHITECTURE.md). This code and its private runtime data are separate from the public static build.
 
 [Field Notes](https://metivity.github.io/talk2nature/field-notes/) introduces the app publicly. The local study planner connects protocols, sessions and observations to versioned research evidence in the database; see the [implemented workflow and next gates](docs/FIELD_NOTES.md).
 

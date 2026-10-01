@@ -1,0 +1,37 @@
+{
+  "schema": "talk2nature.annotation.v1",
+  "tool_version": "0.1.0",
+  "recording": {
+    "recording_id": "synthetic-tones-001",
+    "session_id": "unknown",
+    "individual_id": "unknown",
+    "annotator_id": "reviewer-001",
+    "sha256": "64a5239b16d931eedbdca79c174929687f4371785dd5a0bf9bdb3e86c669d91e",
+    "duration_seconds": 8,
+    "sample_rate": 16000,
+    "channels": 1,
+    "origin": "synthetic"
+  },
+  "events": [
+    {
+      "id": 1,
+      "start_seconds": 1,
+      "end_seconds": 2,
+      "kind": "other sound",
+      "context": "unknown",
+      "context_source": "not observed",
+      "confidence": "clear",
+      "notes": "Computer-generated tones; no animal observation."
+    },
+    {
+      "id": 2,
+      "start_seconds": 4,
+      "end_seconds": 5,
+      "kind": "other sound",
+      "context": "unknown",
+      "context_source": "not observed",
+      "confidence": "clear",
+      "notes": "Computer-generated tones; no animal observation."
+    }
+  ]
+}
