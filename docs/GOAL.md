@@ -10,6 +10,8 @@ October 1 mobile continuation: Raviv requested mobile apps connected to the site
 
 ## October 2: simple tools, inspiring design and connected evidence
 
+Completed October 2 after the media/model lineage continuation. See [the requirement-by-requirement audit](GOAL_COMPLETION_AUDIT.md). This completes the stated public experience, research and provenance-foundation goal; hosted private service, real-data intake and scientific experiments remain the next program milestones.
+
 Raviv requested a new goal: improve beginner workflows and optional advanced controls; refresh the stable competition-linked homepage and Listen; expand primary-source research across audio-video animal behavior, plants, fungi and disputed ice-crystal claims; build a versioned evidence graph on the existing research database; and define the route to reviewed media contributions and later ML. See [the implementation and scientific plan](DISCOVERY_PLAN.md) and [visual direction](VISUAL_DIRECTION.md).
 
 This milestone delivers a local save/reopen notebook, public evidence map and private graph projection. Hosted media intake, camera capture and trained models are subsequent gates, explicitly tracked in that plan.
