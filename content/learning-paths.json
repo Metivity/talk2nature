@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "paths": [
     {
       "id": "label",
@@ -56,6 +56,22 @@
       ],
       "next_step": "Ask a scientific reviewer to assess one bounded hypothesis and its controls before designing any intervention.",
       "gate": "Public tools remain passive. No automated playback or general translation claim."
+    },
+    {
+      "id": "multimodal",
+      "title": "Connect sound, movement and other signals",
+      "question": "Which measurements could reveal something audio alone misses?",
+      "decision": "Use separate evidence standards for animal behavior, plant physiology and fungal electrophysiology.",
+      "notes": [
+        "sound-and-movement",
+        "plant-chemical-signals",
+        "moths-and-plants",
+        "fungal-propagation-2026",
+        "fungal-words",
+        "ice-crystals-and-evidence"
+      ],
+      "next_step": "Test the notebook workflow now; recruit scientific review for one passive audio-video protocol before expanding sensors.",
+      "gate": "Current public apps do not capture video, identify species or upload data. Plant ultrasound and fungal electricity need suitable hardware."
     }
   ]
 }

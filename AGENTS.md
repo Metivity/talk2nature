@@ -64,3 +64,8 @@
 - Offline setup is user-triggered and saves an exact public-shell allowlist only. Preserve `/app/` service-worker scope, no runtime-response caching, no private/admin routes, no audio/notes, credential-free precaching, bounded revision cleanup and no forced mid-session updates. Do not turn offline availability into a persistent-recording or background-capture claim.
 - Preserve Station session UUID filenames, declared unverified device clock, WAV checksums and storage-limit event tombstones. These do not establish rights, meaning or research admission.
 - Use `node --test tests/*.test.mjs`, Python repository tests, public/local build checks and browser offline workflow checks after relevant mobile changes. No native binary, physical-phone installation or App Store/Google Play release is claimed until separately verified.
+
+## Evidence graph and sound notebooks
+- October 2: `docs/DISCOVERY_PLAN.md` records the multimodal/plant/fungal research direction and hosting gates. Do not claim its future media/model schema is deployed.
+- `talk2nature/knowledge.py` and `admin/knowledge.py` project versioned citations and owner-only research lineage from authoritative records. Preserve frozen references, public/private separation and withdrawal behavior. Citations are not corroboration; graph exports are not training admission.
+- Listen `.t2n` notebooks bundle a bounded WAV and annotation metadata locally; validate audio/checksum/labels before replacing work. Preserve optional technical formats, no upload/persistence and dirty-draft protection. Run notebook tests and browser save/reopen checks after changes.

@@ -294,12 +294,12 @@
       16,
       22
     ],
-    "review_depth": "Primary-source summary and university account reviewed; full-text methods review pending.",
-    "finding": "Research reports that female moths incorporate plant acoustic emissions into oviposition decisions.",
-    "limitations": "The finding concerns a bounded plant-animal interaction. It does not establish conversation with trees.",
+    "review_depth": "Primary PDF indexed abstract and publication-history excerpt reviewed; publisher direct access challenged. Full methods and supplements remain pending.",
+    "finding": "Reported moth egg-laying preferences change with plant-sound playback and whether a real plant is present.",
+    "limitations": "The reported hearing-control result supports a bounded interaction. Context changes the observed preference; this is not general plant conversation.",
     "lesson": "Receiver behavior is a stronger test of biological relevance than signal classification alone.",
-    "next_review": "Review playback controls, species and experimental conditions; do not generalize to all plants or insects.",
-    "reviewed": "2026-09-30",
+    "next_review": "Read the complete protocol, replication structure and hearing controls with a specialist before proposing any intervention.",
+    "reviewed": "2026-10-02",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
     "year_label": "Source year",
@@ -600,5 +600,112 @@
       "experiment": "Write down alternative explanations and an appropriate null model before making any claim about a signal’s meaning. No playback is proposed for the public app."
     },
     "purpose": "Behavior & communication"
+  },
+  {
+    "slug": "sound-and-movement",
+    "title": "Put the sound back into its scene",
+    "taxon": "Across animals",
+    "kind": "Tools & methods",
+    "year": "2022–2024",
+    "source_ids": [
+      89,
+      90,
+      91
+    ],
+    "review_depth": "SuperAnimal abstract, introduction and dataset sections reviewed; SLEAP publisher summary and SimBA paper index and official project description reviewed. No code or model execution.",
+    "finding": "Pose tracking and supervised behavior tools offer building blocks for connecting a call to visible movement.",
+    "limitations": "Keypoints are estimates. Occlusion, identity swaps, unfamiliar species and camera angles require evaluation. Quadruped or mouse checkpoints cannot be assumed to work on parrots.",
+    "lesson": "Compare audio-only, video-only and combined models against independently made behavior labels.",
+    "next_review": "Review exact checkpoint licenses, target-species coverage and synchronization error before testing. Hold out entire animals and sessions.",
+    "reviewed": "2026-10-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year",
+    "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "plant-chemical-signals",
+    "title": "Plants have channels beyond sound",
+    "taxon": "Plants & fungi",
+    "kind": "Mechanism study",
+    "year": "2023",
+    "source_ids": [
+      92
+    ],
+    "review_depth": "Primary abstract, introduction and selected results/methods passages reviewed; supplementary data not reanalysed.",
+    "finding": "Laboratory Arabidopsis imaging connects particular airborne leaf volatiles with calcium responses and defense-related gene expression.",
+    "limitations": "The measurements use specialized reporters and imaging. Ordinary phone video cannot reveal these intracellular signals or decode a plant’s intention.",
+    "lesson": "Select the sensor for the channel being studied: chemistry, physiology and sound need different instruments.",
+    "next_review": "Have a plant physiologist review a passive monitoring question and its environmental controls.",
+    "reviewed": "2026-10-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year",
+    "purpose": "Plants & fungi"
+  },
+  {
+    "slug": "fungal-propagation-2026",
+    "title": "A slow signal needs a different clock",
+    "taxon": "Plants & fungi",
+    "kind": "Measurement study",
+    "year": "2026",
+    "source_ids": [
+      93,
+      17,
+      18
+    ],
+    "review_depth": "Primary PDF abstract and Methods, pages 1–3, reviewed, alongside existing cataloged measurement caveats; independent replication and full statistical review pending.",
+    "finding": "A 2026 study reports time-ordered electrical spikes across eight channels in one oyster-fungus specimen recorded for about fifteen days.",
+    "limitations": "Channels from one specimen are not independent biological replicates. Timing structure does not decode meanings; shuffled-data comparisons do not replace substrate and instrument controls.",
+    "lesson": "Fungal work needs electrodes, environmental logging and long recordings, not a phone microphone alone.",
+    "next_review": "A qualified mycologist and electrophysiologist should design replication and artifact controls before any collection.",
+    "reviewed": "2026-10-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected methods reviewed",
+    "year_label": "Source year",
+    "purpose": "Plants & fungi"
+  },
+  {
+    "slug": "fungal-words",
+    "title": "When “words” are an analogy",
+    "taxon": "Plants & fungi",
+    "kind": "Hypothesis & interpretation",
+    "year": "2021–2022",
+    "source_ids": [
+      94,
+      18
+    ],
+    "review_depth": "Author preprint abstract and existing cataloged critique reviewed; full methods and data reanalysis pending.",
+    "finding": "An electrical-spike study applies word-like grouping and language statistics to fungal recordings.",
+    "limitations": "Statistical resemblance does not establish a vocabulary, a receiver, a referent or a conversation.",
+    "lesson": "Treat a proposed communication code as a hypothesis that needs functional tests.",
+    "next_review": "Ask whether a pattern predicts an independently measured outcome beyond environmental and measurement confounds.",
+    "reviewed": "2026-10-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year",
+    "purpose": "Plants & fungi"
+  },
+  {
+    "slug": "ice-crystals-and-evidence",
+    "title": "Beautiful patterns need independent tests",
+    "taxon": "Scientific method",
+    "kind": "Claim & critique",
+    "year": "2006–2009",
+    "source_ids": [
+      95,
+      96,
+      97
+    ],
+    "review_depth": "2006 primary abstract, 2008 replication abstract and 2009 journal letter on p. 83 reviewed. Raw images, full protocols and later literature not systematically assessed.",
+    "finding": "Emoto and collaborators reported differences in aesthetic ratings of ice-crystal photographs after distant-intention treatments.",
+    "limitations": "A published critique identifies bottle-level non-independence. The follow-up shares investigators. These reports do not establish that water understands words or that thoughts reliably change crystal structure.",
+    "lesson": "Curiosity is welcome; a striking image is not a validated communication mechanism.",
+    "next_review": "If revisited, preregister independent bottle-level replication, blinding, all-image inclusion and objective outcomes. This is not the basis of Talk2Nature’s biology program.",
+    "reviewed": "2026-10-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Initial source note",
+    "year_label": "Source year",
+    "purpose": "Models & evaluation"
   }
 ]

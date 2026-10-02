@@ -83,3 +83,8 @@ If a paid pilot is approved, scope an initial US$25–50/month planning envelope
 - Contributor authorization and cross-user object-access tests before inviting anyone. Separate train/publication permissions and release lineage verified through storage and worker jobs, not only UI state.
 
 This checklist identifies unfinished deployment work. It is not evidence that the local prototype is ready for real household recordings.
+
+
+## October 2: graph projection
+
+`admin/knowledge.py` adds owner-only `GET /api/knowledge-graph` and a workbench connection browser. This read-only projection uses the existing relational database, with no schema migration or extra fact store. It retains historical study references, omits withdrawn observations and removes membership edges for revoked releases. Its graph is not an acoustic training manifest. `talk2nature/knowledge.py` supplies deterministic public citation graphs, with explicitly allowed metadata fields only. The public builder never calls the private endpoint. Media, synchronization and model-run schema extensions are specified in [DISCOVERY_PLAN.md](DISCOVERY_PLAN.md) and remain unimplemented.

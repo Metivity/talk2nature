@@ -17,6 +17,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 from admin.auth import OWNER_EMAIL, Settings, allowed_owner, verify_google_token
 from admin.store import open_store, StorageUnavailable, audit, observation
 from admin.studies import attach_session, register_studies
+from admin.knowledge import register_knowledge
 
 ASSETS = Path(__file__).parent / "ui"
 SESSION_SECONDS = 4 * 60 * 60
@@ -368,4 +369,5 @@ def create_app(settings=None, verifier=None, clock=None):
             return [dict(r) for r in db.execute("SELECT action,target,created FROM audit ORDER BY id DESC LIMIT 100")]
 
     register_studies(app, store, require_owner, now)
+    register_knowledge(app, store, require_owner)
     return app

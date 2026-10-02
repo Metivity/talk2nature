@@ -60,3 +60,10 @@ Browser checks cover the walkthrough, invalid context, edit/remove, export/reimp
 Next candidates: independent reviewer comparison, species-specific codebooks, existing annotation-tool interoperability and mobile audio formats. Choose from organizer interviews.
 
 Station now saves a ZIP containing WAV clips and a separate session journal. Unzip it and select one WAV here. Keep that journal alongside any new annotations; it is not a `talk2nature.annotation.v1` import.
+
+
+## October 2: sound notebooks
+
+The default Save notebook action downloads one `.t2n` file containing the original WAV bytes and validated annotation metadata. Open a sound or notebook restores both. The binary format is eight ASCII bytes `T2NBOOK1`, a little-endian uint32 metadata byte count, UTF-8 annotation JSON, then the complete WAV. Metadata is capped at 2 MiB, audio at 25 MiB and 120 seconds. The reader verifies the WAV layout, SHA-256, duration, channels, sample rate and annotation ranges before replacing any current work. Imported origin remains an unverified declaration. No extraction paths, compressed content or executable markup are processed.
+
+JSON/CSV exports and older matching-label import remain under Advanced. Station ZIPs remain multi-clip session bundles; unzip and open one WAV in Listen, then save that clip’s annotations as a notebook. No notebook upload, automatic research admission or browser persistence is added. Download requests cannot confirm operating-system save success; check Downloads before leaving. The format is implemented in `web/assets/notebook.mjs`.

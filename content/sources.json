@@ -846,5 +846,77 @@
       "watch_for": "Consider power, deployment and metadata needs beyond a short phone recording.",
       "review_depth": "Publisher page and named presenters checked. Full video and playback not reviewed."
     }
+  },
+  {
+    "id": 89,
+    "title": "SuperAnimal: pretrained animal pose models",
+    "description": "Ye et al. (2024), Nature Communications. Reusable pose models; species, viewpoint and checkpoint limits need task-specific validation.",
+    "url": "https://www.nature.com/articles/s41467-024-48792-2",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 90,
+    "title": "SLEAP: multi-animal pose tracking",
+    "description": "Pereira et al. (2022), Nature Methods. A workflow for training and using pose and tracking models. Pose estimates do not establish behavior meaning.",
+    "url": "https://www.nature.com/articles/s41592-022-01426-1",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 91,
+    "title": "SimBA: explainable behavioral classifiers",
+    "description": "Goodwin et al. (2024), Nature Neuroscience. Supervised behavior classification from pose, with explainability and annotation workflows.",
+    "url": "https://www.nature.com/articles/s41593-024-01649-9",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 92,
+    "title": "Plant volatile sensing and calcium responses",
+    "description": "Aratani et al. (2023), Nature Communications. Laboratory imaging of responses to green leaf volatiles.",
+    "url": "https://www.nature.com/articles/s41467-023-41589-9",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 93,
+    "title": "Oyster-fungus electrical propagation study",
+    "description": "Adamatzky (2026), Scientific Reports. Multi-channel recordings and temporal propagation analysis in colonised substrate.",
+    "url": "https://www.nature.com/articles/s41598-026-47035-2",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 94,
+    "title": "Fungal spike patterns and the language analogy",
+    "description": "Adamatzky, preprint (2021), subsequently published in Royal Society Open Science (2022). The analysis groups electrical spikes using a linguistic analogy.",
+    "url": "https://arxiv.org/abs/2112.09907",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 95,
+    "title": "Ice crystals and distant intention: pilot",
+    "description": "Radin, Hayssen, Emoto and Kizu (2006), Explore. A reported blinded experiment using aesthetic ratings of crystal photographs.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16979104/",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 96,
+    "title": "Ice crystals: same-team replication report",
+    "description": "Radin, Lund, Emoto and Kizu (2008), Journal of Scientific Exploration. A reported triple-blind replication; not independent of the original investigators.",
+    "url": "https://cdn.water-crystal.org/pdf/tripleEN.pdf",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 97,
+    "title": "Ice crystal statistics: experimental-unit critique",
+    "description": "Douglas M. Stokes (2009), Journal of Scientific Exploration, letters, p. 83. Critique of treating samples from the same bottles as independent trials.",
+    "url": "https://journalofscientificexploration.org/index.php/jse/article/download/108/46",
+    "checked": "2026-10-02",
+    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
   }
 ]

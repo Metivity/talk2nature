@@ -88,7 +88,7 @@ class WorkbenchTests(unittest.TestCase):
 
     def test_every_private_read_requires_authentication(self):
         for path in ["/api/me","/api/observations","/api/releases","/api/releases/guessed","/api/audit",
-                     '/api/studies','/api/study-sessions','/api/evidence','/api/evidence/resource:fixture/versions/guessed']:
+                     '/api/knowledge-graph','/api/studies','/api/study-sessions','/api/evidence','/api/evidence/resource:fixture/versions/guessed']:
             with self.subTest(path=path): self.assertEqual(self.client.get(path).status_code,401)
         self.assertEqual(self.client.get("/admin",follow_redirects=False).status_code,303)
 
@@ -381,6 +381,32 @@ class WorkbenchTests(unittest.TestCase):
         self.assertEqual(self.post('/api/study-sessions/'+session['id']+'/close',{'version':1}).status_code,409)
         self.assertEqual(self.post('/api/observations',fixture(study_session_id=session['id'],session_id=session['id'])).status_code,409)
         self.assertEqual(self.accept(key).status_code,200)
+
+    def test_graph_tracks_frozen_references_and_withdrawal_without_notes(self):
+        self.login()
+        entries = [{'key':'resource:fixture','kind':'resource','title':'Original source', 'payload':{'title':'Original source'}}]
+        sync_catalog(self.app.state.store, entries)
+        study = self.post('/api/studies', study_fixture()).json()
+        self.assertEqual(self.post('/api/studies/'+study['id']+'/activate', {'version':1}).status_code,200)
+        session = self.post('/api/study-sessions', {'study_id':study['id'],'individual_id':'synthetic-bird-01','started_at':'2026-09-30T11:00:00+03:00','synthetic':True}).json()
+        key = self.submit(study_session_id=session['id'], session_id=session['id'], note='PRIVATE NOTE MUST NOT APPEAR IN GRAPH')
+        self.accept(key)
+        release = self.post('/api/releases', {'ids':[key]}).json()
+        entries[0]['payload']['title'] = 'Changed source'; entries[0]['title']='Changed source'
+        sync_catalog(self.app.state.store, entries)
+        response = self.client.get('/api/knowledge-graph')
+        self.assertEqual(response.status_code,200)
+        graph = response.json()
+        self.assertEqual(graph['visibility'],'owner_only')
+        self.assertNotIn('PRIVATE NOTE MUST NOT APPEAR', response.text)
+        historical = [n for n in graph['nodes'] if n.get('historical')]
+        self.assertEqual(len(historical),1); self.assertEqual(historical[0]['title'],'Original source')
+        self.assertEqual({e['relation'] for e in graph['edges']}, {'uses_frozen_evidence','follows_protocol','observed_in','contains'})
+        self.assertEqual(self.post('/api/observations/'+key+'/withdraw',{'version':3}).status_code,200)
+        graph = self.client.get('/api/knowledge-graph').json()
+        self.assertFalse(any(n['id']=='observation:'+key for n in graph['nodes']))
+        self.assertFalse(any(e['relation']=='contains' for e in graph['edges']))
+        self.assertTrue(next(n for n in graph['nodes'] if n['id']=='release:'+release['id'])['revoked'])
 
 
 if __name__ == "__main__":

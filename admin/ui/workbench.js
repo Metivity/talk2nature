@@ -160,3 +160,23 @@ document.querySelector('#session-form').addEventListener('submit',async event=>{
   }catch(error){report(error.message);}finally{button.disabled=false;}
 });
 (async()=>{try{csrf=(await api('/api/me')).csrf;setTime();document.querySelector('#session-form [name="started_at"]').value=localTime();await refresh();}catch(e){report(e.message);}})();
+
+document.getElementById('show-graph').addEventListener('click', async () => {
+  const button = document.getElementById('show-graph'); button.disabled = true;
+  try {
+    const graph = await api('/api/knowledge-graph');
+    document.getElementById('graph-summary').textContent = `${graph.nodes.length} records · ${graph.edges.length} connections · owner only`;
+    const container = document.getElementById('graph-connections'); container.replaceChildren();
+    const names = new Map(graph.nodes.map(n => [n.id,n.title]));
+    const relations = {cites:'cites',uses_frozen_evidence:'uses a frozen reference',follows_protocol:'follows protocol',observed_in:'observed in',contains:'contains'};
+    for (const node of graph.nodes) {
+      const edges = graph.edges.filter(e => e.from === node.id);
+      if (!edges.length) continue;
+      const detail = element('details'); detail.append(element('summary',node.title));
+      const list = element('ul');
+      for (const edge of edges) list.append(element('li',`${relations[edge.relation]} → ${names.get(edge.to)}`));
+      detail.append(list); container.append(detail);
+    }
+  } catch(error) { report(error.message); }
+  finally { button.disabled = false; }
+});

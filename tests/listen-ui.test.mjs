@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {webcrypto} from 'node:crypto';
 import * as model from '../web/assets/listen-model.mjs';
+import * as notebook from '../web/assets/notebook.mjs';
 
 // Execute the real event handlers with a small DOM facade. This checks whether
 // user drafts are lost or omitted, separately from annotation-format tests.
@@ -25,8 +26,8 @@ function setup() {
   const get=id=>{if(!elements.has(id))elements.set(id,element(id));return elements.get(id);};
   const document={getElementById:get,createElement:()=>element(),body:element()};
   const window={devicePixelRatio:1,confirm(){harness.confirmations++;return harness.confirm;},addEventListener(name,fn){windowEvents[name]=fn;}};
-  const source=fs.readFileSync(new URL('../web/assets/listen.js',import.meta.url),'utf8').replace(/^import .*;\n/,'');
-  vm.runInNewContext(source,{...model,document,window,crypto:webcrypto,Blob,structuredClone,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL(){}},setTimeout(){}});
+  const source=fs.readFileSync(new URL('../web/assets/listen.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
+  vm.runInNewContext(source,{...model,...notebook,document,window,crypto:webcrypto,Blob,structuredClone,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL(){}},setTimeout(){}});
   return {...harness,get,downloads,windowEvents,state:harness,async type(id,value){get(id).value=value;await get('event-form').fire('input');}};
 }
 
@@ -46,7 +47,7 @@ test('replacing or clearing a recording protects an unfinished observation',asyn
 
 test('an unfinished draft cannot silently disappear from JSON or CSV export',async()=>{
   const h=setup();await h.get('example').fire('click');await h.type('event-notes','Pending');
-  await h.get('export-json').fire('click');await h.get('export-csv').fire('click');
+  await h.get('export-json').fire('click');await h.get('export-csv').fire('click');await h.get('save-notebook').fire('click');
   assert.equal(h.downloads.length,0);assert.equal(h.state.focus,'save-event');
   assert.match(h.get('export-status').textContent,/unfinished/);
   await h.get('event-form').fire('submit',{preventDefault(){}});

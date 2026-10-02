@@ -8,6 +8,12 @@ October 1 station direction: Raviv asked to implement a more creative spare-phon
 
 October 1 mobile continuation: Raviv requested mobile apps connected to the site, an internal audit, glassmorphism and discovery planning. The bounded release is one installable web Field Companion with three guided workflows, an optional public-only offline shell, safer session exports, a public install/share page and a concrete testing/distribution plan. See [MOBILE_AUDIT.md](MOBILE_AUDIT.md). Native background capture and app-store distribution are subsequent milestones, not features implied by installation.
 
+## October 2: simple tools, inspiring design and connected evidence
+
+Raviv requested a new goal: improve beginner workflows and optional advanced controls; refresh the stable competition-linked homepage and Listen; expand primary-source research across audio-video animal behavior, plants, fungi and disputed ice-crystal claims; build a versioned evidence graph on the existing research database; and define the route to reviewed media contributions and later ML. See [the implementation and scientific plan](DISCOVERY_PLAN.md) and [visual direction](VISUAL_DIRECTION.md).
+
+This milestone delivers a local save/reopen notebook, public evidence map and private graph projection. Hosted media intake, camera capture and trained models are subsequent gates, explicitly tracked in that plan.
+
 ## Completed milestone: simplicity and a useful research knowledge base
 
 Requested October 1, 2026. Audit the public app as a newcomer, reduce unnecessary choices and technical setup, and make a recording session easy to keep. Expand the library with six focused evidence notes and four reading paths that connect prior methods, code and datasets to proposed experiments. Record review depth, limits, unresolved disputes and separate artifact rights. Sync public metadata into the existing private catalog without opening real-data intake. Raviv’s coordination update expands this same milestone with a curated video room and a practical collaborative contribution route using existing public GitHub issues.
