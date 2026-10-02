@@ -63,3 +63,13 @@ Do not buy reach before the first five testers can complete the exercise. No ana
 “We've released the first Talk2Nature field companion: a free, open-source web app for short listening sessions, observed context and local audio review. Try the synthetic rehearsal without a microphone, then add the app to your home screen if it is useful. This is early research tooling; it does not translate animals. We're looking for device testers and people who already study or document animal behavior. Start here: https://metivity.github.io/talk2nature/mobile/”
 
 The larger objective remains a credible observation and learning network. Distribution should invite useful participation while accurately showing today's capabilities.
+
+## October 2: mobile style and finite motion
+
+Added a shared mobile navigation dock with four 54-pixel-high destinations, section selection, safe-area spacing and bottom focus clearance. Research notes now use a compact field-guide header, readable phone typography and a clearer study summary. The app retains its own navigation, now with 48-pixel targets; the public dock is not duplicated inside it.
+
+The listening app has a shorter phone introduction, compact monitor and a direct Open listening controls link. At a verified 390 × 844 CSS-pixel viewport, activating it placed Start listening at y573 with permission, status and the synthetic option visible. The earlier entry layout placed Start at y1235. Recording permissions, baseline, limits, manual playback and local-only behavior remain intact.
+
+The homepage has three original inline illustrations and keyboard-operable Birds / Plants / Fungi choices, with selected state and a polite announcement. Light humor surrounds the research; scientific findings and limits are unchanged. Motion is finite (at most four seconds per effect), restricted to decorative/editorial elements, and respects OS reduced motion plus a per-page motion switch. No animation loop, new dependency, remote asset, audio or storage was added. Content remains visible if animation support is unavailable.
+
+Browser acceptance: 320-pixel research reading and Menu/Escape; 390-pixel card selection, 54-pixel dock targets, app navigation without duplicate docks, controls jump and offline review/example with no autoplay; 1440-pixel desktop composition. No horizontal overflow on the inspected layouts. OS reduced motion disabled animation and disabled the switch with an explanatory label; manually disabling motion also removed animation. The offline shell includes the exact revision of the two new public assets. These are browser viewport tests, not physical iPhone/Android, screen-reader or native-install validation.

@@ -1,0 +1,66 @@
+/* Pocket field guide: tactile paper, small surprises, unhurried finite motion. */
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.curiosity-garden{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;background:radial-gradient(ellipse at 75% 50%,#e4e8d775,transparent 65%)}
+.curiosity-heading h2{font-size:clamp(2.8rem,5vw,4.8rem)}.curiosity-heading>p:last-child{color:var(--muted);font-size:18px}
+.curiosity-card{position:relative;background:#fffdf6;border:1px solid #d6dcc8;border-radius:36px;box-shadow:0 22px 65px #1c3d3310,inset 0 1px 0 #fff;padding:24px 38px 35px;overflow:hidden}
+.curiosity-switch{display:flex;gap:5px;background:#ecefe3;border-radius:30px;padding:5px;position:relative;z-index:1}.curiosity-switch[hidden],.curiosity-panel[hidden]{display:none}
+.curiosity-switch button{flex:1;min-height:44px;border:0;border-radius:24px;background:transparent;font-size:13px;cursor:pointer}.curiosity-switch button[aria-pressed=true]{background:#244a3d;color:#fffdeb;box-shadow:0 3px 8px #183d3515}
+.curiosity-panel{text-align:center;min-height:430px}.curiosity-art{width:270px;height:171px;max-width:100%;margin:12px auto 0;display:block}.curiosity-number{font-size:9px;letter-spacing:.15em;color:#737f63;margin:12px 0}.curiosity-panel h3{font:400 35px/1.08 Georgia,serif;letter-spacing:-.035em;margin:0 0 18px}.curiosity-panel>p:not(.curiosity-number){font-size:14px;color:#5d705f;max-width:325px;margin:0 auto 20px;line-height:1.75}.curiosity-panel .text-link{display:inline-flex;align-items:center;gap:16px;min-height:44px}
+.field-dock{display:none}.footer-personality{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:28px;padding-top:20px}.footer-personality p{margin:0;font:italic 18px Georgia,serif;color:#5b725e}.motion-control{background:transparent;color:inherit;border:1px solid currentColor;border-radius:28px;font-size:11px;min-height:44px;padding:9px 15px;cursor:pointer}.motion-control:disabled{cursor:default;opacity:.7}.motion-control[hidden]{display:none}
+.field-note .note-topline{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:16px;padding-bottom:20px;margin-bottom:28px}.field-note .note-topline .back-link{margin:0}.note-stamp{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#6c7d63;white-space:nowrap}.note-stamp svg{width:48px;height:30px;stroke:currentColor;fill:none;stroke-width:1.5}.field-note>h1{text-wrap:balance}.field-note>.eyebrow{display:inline-flex;border:1px solid #d2dcc7;background:#e8eddf;padding:7px 12px;border-radius:30px;font-size:9px;letter-spacing:.08em;margin-bottom:22px}.field-note>.lede{border-left:2px solid #93a47b;padding-left:24px}.field-note h2{scroll-margin-top:25px}.field-note .review-box{background:linear-gradient(115deg,#e7ecdf,#f0f1e7);box-shadow:inset 0 1px 0 #fff9}.field-note .study-snapshot{background:#fffdf7;border:1px solid var(--line);padding:28px;border-radius:22px}.field-note .study-snapshot h2{margin-top:0}.field-note .study-snapshot dl>div:last-child{border-bottom:0}
+.signal-rings{position:absolute;right:14%;top:18%;width:130px;height:130px;pointer-events:none;z-index:-1}.signal-rings span{position:absolute;inset:0;border:1px solid #e5efc87a;border-radius:50%;opacity:0}.signal-rings span:nth-child(2){inset:13px}.signal-rings span:nth-child(3){inset:26px}
+@media(prefers-reduced-motion:no-preference){
+  .motion-enabled .world-hero>img{animation:forest-settle 4s cubic-bezier(.2,.7,.3,1) both}
+  .motion-enabled .world-copy>h1{animation:field-arrive .8s cubic-bezier(.2,.7,.3,1) both}
+  .motion-enabled .world-copy>.actions{animation:field-arrive .8s .12s cubic-bezier(.2,.7,.3,1) both}
+  .motion-enabled .signal-rings span{animation:signal-open 2.4s ease-out both}.motion-enabled .signal-rings span:nth-child(2){animation-delay:.35s}.motion-enabled .signal-rings span:nth-child(3){animation-delay:.7s}
+  .motion-enabled .field-arrival{animation:field-arrive .65s cubic-bezier(.2,.7,.3,1) both}
+  .motion-enabled .curiosity-panel:not([hidden]) .curiosity-art{animation:sketch-arrive .6s ease-out both}
+  .motion-enabled .curiosity-panel:not([hidden]) .sketch-wing{transform-origin:125px 95px;animation:wing-hello .45s .25s 2 ease-in-out}
+  .motion-enabled .curiosity-panel:not([hidden]) .sketch-leaf{transform-origin:155px 130px;animation:leaf-hello .8s .1s 2 ease-in-out}
+  .motion-enabled .curiosity-panel:not([hidden]) .sketch-cap{transform-origin:156px 95px;animation:cap-hello .6s .1s 2 ease-in-out}
+  @media(hover:hover){.button,.glass-button,.frontier-links a,.curiosity-switch button{transition:background .2s,border-color .2s,box-shadow .2s}.frontier-links a:hover{box-shadow:0 7px 24px #244d3310}.text-link span,.brand-dot{display:inline-block;transition:transform .25s}.text-link:hover span{transform:translate(2px,-2px)}.brand:hover .brand-dot{transform:rotate(90deg)}}
+}
+@keyframes forest-settle{from{transform:scale(1.035)}to{transform:scale(1)}}
+@keyframes field-arrive{from{opacity:.2;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes signal-open{0%{opacity:0;transform:scale(.7)}25%{opacity:.65}100%{opacity:0;transform:scale(1.4)}}
+@keyframes sketch-arrive{from{opacity:.3;transform:translateY(8px) rotate(-3deg)}to{opacity:1;transform:none}}
+@keyframes wing-hello{50%{transform:rotate(-10deg)}}
+@keyframes leaf-hello{50%{transform:rotate(4deg)}}
+@keyframes cap-hello{50%{transform:rotate(-3deg)}}
+@media(max-width:800px){
+  body:not(.app-body){padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .field-dock{position:fixed;bottom:max(10px,env(safe-area-inset-bottom,0px));left:12px;right:12px;z-index:30;max-width:470px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;border:1px solid #52736155;background:#f8faeeeF;border-radius:27px;padding:6px;box-shadow:0 8px 35px #0c342024;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .field-dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:54px;font-size:10px;text-decoration:none;border-radius:21px;color:#355747}.field-dock svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.field-dock a[aria-current]{background:#204d3e;color:#f5f7e7}
+  body:not(.app-body) :is(input,textarea,select,summary,a,button){scroll-margin-bottom:110px}
+  .curiosity-garden{grid-template-columns:1fr;gap:24px;padding-top:48px;padding-bottom:48px}.curiosity-heading h2 br{display:none}.curiosity-heading h2{font-size:2.8rem;max-width:450px;margin-bottom:14px}.curiosity-heading .eyebrow{font-size:9px;margin-bottom:20px}.curiosity-heading>p:last-child{font-size:16px;margin:0}.curiosity-card{max-width:500px;width:100%;justify-self:center;padding:19px 24px 25px;border-radius:28px}.curiosity-panel{min-height:415px}.curiosity-panel h3{font-size:32px}.curiosity-panel>p:not(.curiosity-number){font-size:15px}.footer-personality{align-items:flex-start;flex-direction:column;gap:16px}.footer-personality p{font-size:17px}.note-stamp{font-size:8px;letter-spacing:.08em}.note-stamp svg{width:34px}.signal-rings{right:3%;top:12%;width:80px;height:80px}
+}
+@media(max-width:580px){.field-note{padding-top:25px}.field-note .note-topline{padding-bottom:17px;margin-bottom:23px}.field-note .note-topline .back-link{font-size:12px;min-height:44px;display:flex;align-items:center}.field-note>.eyebrow{font-size:9px;letter-spacing:.04em;line-height:1.5}.field-note>h1{font-size:clamp(2.25rem,9.3vw,3rem);line-height:1.06;letter-spacing:-.045em;margin-bottom:20px}.field-note>.article-date{font-size:11px}.field-note>.lede{font-size:18px;line-height:1.65;padding-left:17px}.field-note .study-snapshot{padding:22px}.field-note h2{font-size:28px;line-height:1.15}.field-note .source-list{padding-left:20px}.curiosity-art{height:160px;width:252px}.curiosity-panel{min-height:425px}.field-dock a:focus-visible{outline-offset:-2px}}
+@media(prefers-reduced-transparency:reduce){.field-dock{background:#f8faee;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.signal-rings{display:none}*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+
+html:not(.motion-enabled) *{transition:none!important}html:not(.motion-enabled) :is(.research-card,.scenario-card):hover{transform:none}html:not(.motion-enabled){scroll-behavior:auto}
+
+/* Shorter phone setup; the full session remains in document and keyboard order. */
+.app-session-jump{display:none}
+@media(max-width:620px){
+  .app-body{padding-bottom:calc(95px + env(safe-area-inset-bottom,0px))}
+  .app-body :is(a,button,summary,select){scroll-margin-bottom:110px}
+  .app-session-intro{padding-top:10px;padding-bottom:22px}
+  .app-session-intro .app-back{display:flex;align-items:center;min-height:44px;margin-bottom:8px}
+  .app-session-intro h1{font-size:2.2rem;line-height:1.1;margin:12px 0}
+  .app-session-intro>p:not(.app-eyebrow){font-size:14px;line-height:1.6;margin-bottom:14px}
+  .app-session-intro .app-session-steps{display:none}
+  .app-session-jump{display:inline-flex;min-height:46px;margin-top:2px}
+  .app-body .station-topbar{padding:12px 18px}
+  .app-body .station-monitor>.station-kicker{display:none}
+  .app-body .station-monitor{padding:20px}
+  .app-body .station-monitor h2{font-size:27px;margin:0 0 14px}
+  .app-body .station-monitor>p:not(.station-kicker){font-size:14px;line-height:1.6}
+  .app-body .station-scope{margin:17px 0}
+  .app-body .station-scope canvas{height:64px}
+  .app-body .station-metrics{padding-bottom:12px;margin-bottom:10px}
+  .app-body .station-metrics span{font-size:21px}
+  .app-body .station-console.station-large .station-scope canvas{height:150px}
+  .app-nav a{min-height:48px}
+}
