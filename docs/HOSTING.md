@@ -14,7 +14,7 @@ October 1, 2026. Talk2Nature only; Metivity/talk2nature; raviv@metivity.com. Rav
 | Identity | Basic Google identity; exact owner email and verified stable subject; no domain-wide authorization |
 | Origin | Actual provider HTTPS origin, verified before OAuth registration; no purchased domain |
 | Secrets | Database URL and pinned subject held privately; per-secret access for a dedicated service account; no broad Editor grant |
-| Initial data | Reimport 82 public catalog records; synthetic metadata only. Do not upload the local SQLite database, old sessions or external samples |
+| Initial data | Reimport the current 131 public catalog records; synthetic metadata only. Do not upload the local SQLite database, old sessions or external samples |
 
 The proposed locations are listed by [Google](https://docs.cloud.google.com/run/docs/locations) and [Supabase](https://supabase.com/docs/guides/platform/regions). Raviv’s confirmation covers these proposed locations; region selection is not a compliance determination.
 
@@ -71,3 +71,8 @@ No Supabase organization, cloud runtime role, service account, secret, database 
 5. Drill managed PostgreSQL recovery and deletion reconciliation. `admin.recovery` tests SQLite only. PostgreSQL restoration must invalidate sessions/challenges and reconcile withdrawals and revoked releases since the snapshot before serving traffic. Provider backups do not implement withdrawal automatically.
 
 Real participants and recordings still need a scientific protocol, consent, contributor authorization, retention/deletion implementation and actual device testing. These are outside the hosted synthetic milestone.
+
+
+## October 2 schema update
+
+The runtime now requires schema v2. Fresh initialization includes synthetic media descriptors, alignment and model provenance; existing v1 PostgreSQL deployments must use the explicit schema-owner migration and refreshed runtime grants described in [MEDIA_LINEAGE](MEDIA_LINEAGE.md). No object storage or cloud provisioning was added. Hosted acceptance must include lineage persistence and withdrawal invalidation alongside the existing metadata release checks. Provider setup and hosted verification remain outstanding.

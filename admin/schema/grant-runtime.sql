@@ -8,5 +8,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE ON
   talk2nature.observations, talk2nature.releases, talk2nature.audit,
   talk2nature.evidence_versions, talk2nature.evidence_catalog,
   talk2nature.studies, talk2nature.study_evidence,
-  talk2nature.study_sessions, talk2nature.observation_links TO t2n_app;
+  talk2nature.study_sessions, talk2nature.observation_links,
+  talk2nature.research_media, talk2nature.media_sync, talk2nature.model_runs,
+  talk2nature.model_inputs, talk2nature.model_results TO t2n_app;
 GRANT USAGE,SELECT ON ALL SEQUENCES IN SCHEMA talk2nature TO t2n_app;

@@ -23,7 +23,9 @@ Implemented graph nodes: public source, evidence note, acquisition resource; pri
 
 The public build reads explicit public files only. The private endpoint `/api/knowledge-graph` uses the same owner authorization and no-store responses as the workbench. It excludes free-text observation notes and participant aliases from graph properties. It is not an admission or training endpoint. Withdrawing a record removes its observation node and incident edges; revoked releases have no member edges. Previously downloaded graph copies still require separate removal.
 
-### Next schema migration: media and derived results (design, not implemented)
+### Media and derived results: foundation implemented, real intake still designed
+
+The October 2 continuation implemented the synthetic metadata subset in [MEDIA_LINEAGE](MEDIA_LINEAGE.md): audio/video descriptors, synchronization, frozen model specifications/inputs and invented outputs, with withdrawal propagation. The table below describes the fuller real-data design; object storage, media bytes, participant permissions and model execution remain future work.
 
 | Record | Required provenance and constraints |
 | --- | --- |
@@ -113,4 +115,4 @@ Next outreach is a short, tailored request for a methods review with an honest d
 
 ## Current limits
 
-Shared hosting, real participant intake, media-object storage, synchronization, model-run tables, trained models, automatic identification and camera capture are not implemented by the graph projection. Real-data admission remains closed. The public catalog contains metadata and original summaries, not copied full articles, audio or model weights. Physical-phone installation and microphone behavior still require device testing. This bounded release establishes the user experience, research direction and provenance foundation for the next milestone.
+Shared hosting, real participant intake, media-object storage, trained models, automatic identification and camera capture remain unimplemented. Synchronization metadata and model-run/input/result tables are now implemented for synthetic rehearsal only; see MEDIA_LINEAGE.md. Real-data admission remains closed. The public catalog contains metadata and original summaries, not copied full articles, audio or model weights. Physical-phone installation and microphone behavior still require device testing. This bounded release establishes the user experience, research direction and provenance foundation for the next milestone.

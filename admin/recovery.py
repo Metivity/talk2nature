@@ -11,7 +11,8 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 TABLES = ('owner', 'challenges', 'sessions', 'observations', 'releases', 'audit',
           'evidence_versions', 'evidence_catalog', 'studies', 'study_evidence',
-          'study_sessions', 'observation_links')
+          'study_sessions', 'observation_links', 'research_media', 'media_sync',
+          'model_runs', 'model_inputs', 'model_results')
 
 
 def readonly(path):
@@ -23,7 +24,7 @@ def readonly(path):
 def inventory(db):
     schema = db.execute("SELECT type,name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%' ORDER BY name").fetchall()
     tables = {row[1] for row in schema if row[0] == 'table'}
-    if tables != set(TABLES) or any(row[0] not in ('table', 'index') for row in schema):
+    if tables not in (set(TABLES), set(TABLES[:-5])) or any(row[0] not in ('table', 'index') for row in schema):
         raise ValueError('Unrecognized schema: review the recovery tool before using this database.')
     if db.execute('PRAGMA integrity_check').fetchall() != [('ok',)]:
         raise ValueError('Database integrity check failed.')
@@ -32,6 +33,8 @@ def inventory(db):
     digest = hashlib.sha256(json.dumps(schema, separators=(',', ':')).encode())
     counts = {}
     for table in TABLES:
+        if table not in tables:
+            continue
         # Table names are fixed above, never supplied by a database or CLI user.
         records = sorted(json.dumps(row, separators=(',', ':')) for row in db.execute(f'SELECT * FROM {table}'))
         counts[table] = len(records)

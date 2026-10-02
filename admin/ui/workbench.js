@@ -168,7 +168,7 @@ document.getElementById('show-graph').addEventListener('click', async () => {
     document.getElementById('graph-summary').textContent = `${graph.nodes.length} records · ${graph.edges.length} connections · owner only`;
     const container = document.getElementById('graph-connections'); container.replaceChildren();
     const names = new Map(graph.nodes.map(n => [n.id,n.title]));
-    const relations = {cites:'cites',uses_frozen_evidence:'uses a frozen reference',follows_protocol:'follows protocol',observed_in:'observed in',contains:'contains'};
+    const relations = {cites:'cites',uses_frozen_evidence:'uses a frozen reference',follows_protocol:'follows protocol',observed_in:'observed in',contains:'contains',documents:'documents',captured_in:'captured in',aligns:'aligns',uses_release:'uses reviewed release',uses_media:'uses frozen media metadata',uses_alignment:'uses frozen alignment',produces:'has invented output',predicts_on:'refers to input'};
     for (const node of graph.nodes) {
       const edges = graph.edges.filter(e => e.from === node.id);
       if (!edges.length) continue;

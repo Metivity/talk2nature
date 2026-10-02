@@ -69,3 +69,8 @@
 - October 2: `docs/DISCOVERY_PLAN.md` records the multimodal/plant/fungal research direction and hosting gates. Do not claim its future media/model schema is deployed.
 - `talk2nature/knowledge.py` and `admin/knowledge.py` project versioned citations and owner-only research lineage from authoritative records. Preserve frozen references, public/private separation and withdrawal behavior. Citations are not corroboration; graph exports are not training admission.
 - Listen `.t2n` notebooks bundle a bounded WAV and annotation metadata locally; validate audio/checksum/labels before replacing work. Preserve optional technical formats, no upload/persistence and dirty-draft protection. Run notebook tests and browser save/reopen checks after changes.
+
+## Synthetic media/model lineage
+- Schema v2 adds research_media, media_sync, model_runs, model_inputs and model_results. Read docs/MEDIA_LINEAGE.md before changing these records. Existing databases require explicit migration; runtime must not silently migrate PostgreSQL or a legacy SQLite store.
+- Descriptors and outputs are invented metadata only. Preserve no-object/no-upload/no-model-execution boundaries, pre-review media/alignment freezing, exact release/input/split membership, and transactional withdrawal invalidation across dependent runs. Preserve observation labels separately from predictions.
+- Run both adapter suites with scripts/test_postgres.py, migration/recovery tests and existing publication checks after lineage changes. Never run disposable test resets against an existing database.

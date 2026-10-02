@@ -18,6 +18,7 @@ from admin.auth import OWNER_EMAIL, Settings, allowed_owner, verify_google_token
 from admin.store import open_store, StorageUnavailable, audit, observation
 from admin.studies import attach_session, register_studies
 from admin.knowledge import register_knowledge
+from admin.lineage import register_lineage, invalidate_lineage
 
 ASSETS = Path(__file__).parent / "ui"
 SESSION_SECONDS = 4 * 60 * 60
@@ -302,6 +303,7 @@ def create_app(settings=None, verifier=None, clock=None):
                 raise HTTPException(404)
             if row["version"] != body.version or row["state"] == "withdrawn":
                 raise HTTPException(409, "This observation has changed. Refresh first.")
+            invalidate_lineage(db, key, now)
             db.execute("UPDATE observations SET payload='{}', state='withdrawn', version=version+1 WHERE id=?", (key,))
             db.execute("DELETE FROM observation_links WHERE observation_id=?", (key,))
             for release in db.execute("SELECT id,members FROM releases WHERE revoked=0").fetchall():
@@ -370,4 +372,5 @@ def create_app(settings=None, verifier=None, clock=None):
 
     register_studies(app, store, require_owner, now)
     register_knowledge(app, store, require_owner)
+    register_lineage(app, store, require_owner, now)
     return app

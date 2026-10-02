@@ -5,7 +5,7 @@ from urllib.parse import urlsplit, parse_qs
 from admin.store import StorageUnavailable
 
 LOCK_ID = 816421901
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 def validate_database_url(value, hosted=False):

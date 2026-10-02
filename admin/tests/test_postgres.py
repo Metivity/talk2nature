@@ -8,7 +8,7 @@ import unittest
 from urllib.parse import urlsplit
 
 from admin.tests import test_workbench
-from admin.database import initialize
+from admin.database import initialize, migrate
 from admin.postgres import PostgresStore
 from admin.store import StorageUnavailable
 
@@ -24,6 +24,30 @@ def assert_disposable(value):
 
 @unittest.skipUnless(TEST_URL, 'Set T2N_TEST_DATABASE_URL to a disposable local database to run PostgreSQL integration.')
 class PostgresWorkbenchTests(test_workbench.WorkbenchTests):
+    def test_explicit_postgres_v1_migration_preserves_data_and_runtime_is_locked(self):
+        import psycopg
+        with psycopg.connect(TEST_URL) as db:
+            db.execute('DROP SCHEMA talk2nature CASCADE')
+            db.execute((Path(__file__).resolve().parents[1] / 'schema/postgres-v1.sql').read_text())
+            db.execute("INSERT INTO owner VALUES(1,'synthetic-owner')")
+            db.execute("INSERT INTO observations VALUES('retained','{}','withdrawn',2,123)")
+        with self.assertRaises(StorageUnavailable): PostgresStore(TEST_URL)
+        with self.assertRaises(StorageUnavailable): initialize(TEST_URL)
+        self.assertTrue(migrate(TEST_URL))
+        self.assertFalse(migrate(TEST_URL))
+        with PostgresStore(TEST_URL).connect() as db:
+            self.assertEqual(db.execute('SELECT subject FROM owner').fetchone()[0],'synthetic-owner')
+            self.assertEqual(db.execute('SELECT state FROM observations').fetchone()[0],'withdrawn')
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM model_inputs').fetchone()[0],0)
+        if APP_URL:
+            with psycopg.connect(TEST_URL) as db:
+                db.execute((Path(__file__).resolve().parents[1] / 'schema/grant-runtime.sql').read_text())
+            with PostgresStore(APP_URL).connect() as db:
+                self.assertEqual(db.execute('SELECT COUNT(*) FROM research_media').fetchone()[0],0)
+            with self.assertRaises(StorageUnavailable):
+                with PostgresStore(APP_URL).connect() as db:
+                    db.execute('DROP TABLE research_media CASCADE')
+
     def settings_for_test(self):
         import psycopg
         assert_disposable(TEST_URL)

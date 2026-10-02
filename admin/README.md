@@ -73,3 +73,8 @@ Only synthetic metadata is admitted; real-data submissions return 409. A private
 The study planner saves passive protocols, behavior definitions, version-pinned evidence, and open/closed study sessions. New UI observations are linked to those sessions; the server checks species, animal, codebook and session start time. The catalog import is idempotent and preserves cited historical versions. See `docs/FIELD_NOTES.md` for the schema, legacy-record behavior and remaining capture/hosting gates. Withdrawing an observation does not delete the study protocol or session alias; these separate records currently have no deletion UI and must remain synthetic.
 
 See `docs/PHASE_TWO_PLAN.md` and `docs/PRIVATE_ARCHITECTURE.md` for product priorities, scientific limits and unfinished hosted requirements. Do not deploy this SQLite adapter on ephemeral serverless storage. No deployment workflow for the private backend is supplied yet.
+
+
+## Synthetic media and model provenance
+
+Schema v2 adds owner-only media descriptors, audio/video alignment, frozen model specifications and invented output records. Existing local databases require an explicit migration before starting this version; see [MEDIA_LINEAGE](../docs/MEDIA_LINEAGE.md) for migration, endpoint contracts and withdrawal behavior. These are metadata rehearsals, not recording uploads or running models. PostgreSQL upgrades remain schema-owner operations.

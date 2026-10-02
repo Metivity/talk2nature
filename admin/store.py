@@ -19,7 +19,17 @@ class Store:
     def __init__(self, path):
         self.path = path
         path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+        from admin.migrations import VERSION, extend_sqlite
         with self.connect() as db:
+            existing = db.execute("SELECT 1 FROM sqlite_master WHERE name='observations'").fetchone()
+            if existing:
+                if db.execute('PRAGMA user_version').fetchone()[0] != VERSION:
+                    raise StorageUnavailable('SQLite schema needs explicit migration; see docs/MEDIA_LINEAGE.md.')
+                path.chmod(0o600)
+                return
+            if (db.execute("SELECT 1 FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'").fetchone()
+                    or db.execute('PRAGMA user_version').fetchone()[0] != 0):
+                raise StorageUnavailable('Unrecognized local database; initialization refused.')
             db.executescript("""
                 CREATE TABLE IF NOT EXISTS owner (singleton INTEGER PRIMARY KEY CHECK(singleton=1), subject TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS challenges (digest TEXT PRIMARY KEY, expires INTEGER NOT NULL);
@@ -34,6 +44,8 @@ class Store:
                 CREATE TABLE IF NOT EXISTS study_sessions (id TEXT PRIMARY KEY, study_id TEXT NOT NULL REFERENCES studies(id), payload TEXT NOT NULL, state TEXT NOT NULL, version INTEGER NOT NULL DEFAULT 1, created INTEGER NOT NULL);
                 CREATE TABLE IF NOT EXISTS observation_links (observation_id TEXT PRIMARY KEY REFERENCES observations(id), study_session_id TEXT NOT NULL REFERENCES study_sessions(id));
             """)
+            db.execute('BEGIN IMMEDIATE')
+            extend_sqlite(db)
         path.chmod(0o600)
 
     @contextmanager

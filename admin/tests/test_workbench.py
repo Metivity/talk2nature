@@ -14,6 +14,7 @@ from google.auth import crypt, jwt
 from admin.app import create_app, digest
 from admin.auth import Settings
 from admin.catalog import sync_catalog
+from admin.tests.lineage_cases import LineageCases
 
 CLIENT_ID = "test-client.apps.googleusercontent.com"
 ORIGIN = "http://localhost:4180"
@@ -39,7 +40,7 @@ def study_fixture(**changes):
     return value
 
 
-class WorkbenchTests(unittest.TestCase):
+class WorkbenchTests(LineageCases, unittest.TestCase):
     def settings_for_test(self):
         return Settings(client_id=CLIENT_ID, database=Path(self.temp.name)/"private"/"admin.sqlite3")
 
@@ -88,7 +89,7 @@ class WorkbenchTests(unittest.TestCase):
 
     def test_every_private_read_requires_authentication(self):
         for path in ["/api/me","/api/observations","/api/releases","/api/releases/guessed","/api/audit",
-                     '/api/knowledge-graph','/api/studies','/api/study-sessions','/api/evidence','/api/evidence/resource:fixture/versions/guessed']:
+                     '/api/lineage','/api/knowledge-graph','/api/studies','/api/study-sessions','/api/evidence','/api/evidence/resource:fixture/versions/guessed']:
             with self.subTest(path=path): self.assertEqual(self.client.get(path).status_code,401)
         self.assertEqual(self.client.get("/admin",follow_redirects=False).status_code,303)
 

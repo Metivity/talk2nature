@@ -88,3 +88,6 @@ This checklist identifies unfinished deployment work. It is not evidence that th
 ## October 2: graph projection
 
 `admin/knowledge.py` adds owner-only `GET /api/knowledge-graph` and a workbench connection browser. This read-only projection uses the existing relational database, with no schema migration or extra fact store. It retains historical study references, omits withdrawn observations and removes membership edges for revoked releases. Its graph is not an acoustic training manifest. `talk2nature/knowledge.py` supplies deterministic public citation graphs, with explicitly allowed metadata fields only. The public builder never calls the private endpoint. Media, synchronization and model-run schema extensions are specified in [DISCOVERY_PLAN.md](DISCOVERY_PLAN.md) and remain unimplemented.
+
+
+October 2 continuation: [MEDIA_LINEAGE](MEDIA_LINEAGE.md) documents schema v2, synthetic media/clock alignment, frozen model specifications/inputs/results and transactional derivative invalidation. Real media uploads, storage objects and model execution remain disabled.
