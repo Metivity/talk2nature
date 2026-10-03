@@ -1,0 +1,48 @@
+{
+  "schema": "talk2nature.atlas-goals.v1",
+  "updated": "2026-10-04",
+  "goals": [
+    {
+      "id": "more-places",
+      "title": "20 research notes with verified places",
+      "summary": "Expand the map across animals, plants and fungi, starting with the gaps in our existing library.",
+      "metric": "mapped_notes",
+      "target": 20,
+      "acceptance": "Each mapped note needs a cited study-region or animal-origin passage, a review date and an approximate public locator. More pins alone do not establish stronger evidence.",
+      "next_step": "Review remaining study methods and source deposits. Keep locations unknown when only an author affiliation is available.",
+      "action": "Suggest a source or location correction",
+      "path": "contribute/source/"
+    },
+    {
+      "id": "historical-foundations",
+      "title": "Three historical source notes",
+      "summary": "Learn from work published before 2000, alongside modern machine learning.",
+      "metric": "historical_notes",
+      "target": 3,
+      "acceptance": "Three distinct notes with original sources published before 2000, explicit review depth and clear separation of observation and publication dates.",
+      "next_step": "Review the earlier honeybee experiments and classic field communication studies; seek later reassessments as well as the original claims.",
+      "action": "Explore the current historical note",
+      "path": "research/honeybee-dance-history/"
+    },
+    {
+      "id": "parrot-pilot",
+      "title": "One reviewed, passive parrot pilot",
+      "summary": "Turn the provisional budgerigar idea into one answerable question with a workable recording protocol.",
+      "stage": "Needs a scientific reviewer",
+      "acceptance": "Confirmed species and carer access, avian specialist review, consent, independent behavior labels and a successful physical-phone rehearsal. No recruitment or approval is claimed yet.",
+      "next_step": "Resolve access and reviewer availability, then revise the existing draft protocol before admitting real recordings.",
+      "action": "Read the first-animal plan",
+      "path": "research/first-animal/"
+    },
+    {
+      "id": "protected-observations",
+      "title": "A protected first observation release",
+      "summary": "Eventually connect volunteered observations to studies, evidence and this atlas.",
+      "stage": "Needs consent and hosting review",
+      "acceptance": "An approved protocol, reviewed consent and data rights, tested private storage and withdrawal, human review, and a separate public export that protects homes and sensitive wildlife sites.",
+      "next_step": "Complete the existing hosted-storage and consent gates. Public map sharing must be optional and separately reviewed.",
+      "action": "See the planned study workspace",
+      "path": "field-notes/"
+    }
+  ]
+}

@@ -92,5 +92,30 @@ def public_atlas(notes, sources, place_file):
             'notice': 'Curated literature notes, not individual observations, research coverage or animal abundance. Display points are approximate. No private records or recordings.',
             'places': sorted(places, key=lambda p: p['id']), 'groups': GROUPS,
             'records': sorted(records, key=lambda r: (r['source_year'], r['id'])),
-            'sources': [{'id': i, 'title': source_map[i]['title'], 'url': source_map[i]['url']} for i in sorted(source_ids)]}
+            'sources': [{'id': i, 'title': source_map[i]['title'], 'url': source_map[i]['url'], **({'review_url': source_map[i]['review_url']} if source_map[i].get('review_url') else {})} for i in sorted(source_ids)]}
     return {**body, 'fingerprint': fingerprint(body)}
+
+
+def atlas_goals(atlas, plan):
+    """Compute coverage progress; future research gates remain explicit plans."""
+    require(plan.get('schema') == 'talk2nature.atlas-goals.v1', 'Unknown atlas goals schema.')
+    date.fromisoformat(plan['updated'])
+    metrics = {'mapped_notes': sum(bool(r['locations']) for r in atlas['records']),
+               'historical_notes': sum(r['source_year'] < 2000 for r in atlas['records'])}
+    rows, seen = [], set()
+    common = {'id', 'title', 'summary', 'acceptance', 'next_step', 'action', 'path'}
+    require(isinstance(plan.get('goals'), list) and 0 < len(plan['goals']) <= 12, 'Invalid goals list.')
+    for goal in plan['goals']:
+        require(set(goal) in (common | {'metric', 'target'}, common | {'stage'}), 'Unexpected goal fields.')
+        require(all(text(goal[k], 1000) for k in common), 'Goal copy is required.')
+        require(re.fullmatch(r'[a-z][a-z0-9-]*', goal['id']) and goal['id'] not in seen, 'Invalid goal ID.')
+        require(re.fullmatch(r'[a-z0-9][a-z0-9/-]*/', goal['path']) and '..' not in goal['path'], 'Use a local public goal link.')
+        seen.add(goal['id'])
+        if 'metric' in goal:
+            require(goal['metric'] in metrics and type(goal['target']) is int and goal['target'] > 0, 'Unknown metric or invalid target.')
+            current = metrics[goal['metric']]
+            rows.append({**goal, 'current': current, 'status': 'Target reached' if current >= goal['target'] else 'In progress'})
+        else:
+            require(text(goal['stage'], 120), 'A future milestone needs a visible gate.')
+            rows.append({**goal, 'status': goal['stage']})
+    return {'updated': plan['updated'], 'goals': rows}

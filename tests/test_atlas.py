@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from copy import deepcopy
 from pathlib import Path
-from talk2nature.atlas import public_atlas
+from talk2nature.atlas import public_atlas, atlas_goals
 from talk2nature.knowledge import catalog_graph
 from admin.catalog import read_catalog
 from web.build import ROOT, build, load
@@ -22,8 +22,8 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),8)
-        self.assertEqual(len(atlas['places']),7)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),14)
+        self.assertEqual(len(atlas['places']),14)
         self.assertEqual(self.atlas(list(reversed(self.notes))),atlas)
     def test_observation_dates_are_distinct_from_publication_and_origin_from_study_site(self):
         rows={r['id']:r for r in self.atlas()['records']}
@@ -58,4 +58,36 @@ class AtlasTests(unittest.TestCase):
             self.assertIn('/talk2nature/research/map/#evidence-honeybee-dance-history',html)
             self.assertIn('id="atlas-controls" hidden',html)
             self.assertNotIn('geolocation',html)
+            self.assertIn('2024.lrec-main.1432.pdf',html)
+            goals=(Path(d)/'research/atlas/goals/index.html').read_text()
+            self.assertIn('14 of 20',goals)
+            self.assertIn('Needs a scientific reviewer',goals)
+            self.assertIn('Three historical source notes',goals)
             self.assertEqual(len(json.loads((Path(d)/'research/atlas/catalog.json').read_text())['records']),len(self.notes))
+
+    def test_expanded_locations_retain_multi_site_and_date_boundaries(self):
+        rows={r['id']:r for r in self.atlas()['records']}
+        expected={'dolphingemma':{'bahamas'},'dog-barks':{'tepic','puebla'},
+                  'parrot-data-feasibility':{'barcelona'},'plant-sounds':{'tel-aviv'},
+                  'reef-sound-recruitment':{'lizard-island'},'honeyguide-human-cooperation':{'niassa'}}
+        for key,places in expected.items():
+            self.assertEqual({l['place_id'] for l in rows[key]['locations']},places)
+        self.assertIsNone(rows['dolphingemma']['observation_period'])
+        self.assertIsNone(rows['dog-barks']['observation_period'])
+        self.assertEqual(rows['reef-sound-recruitment']['source_year'],2019)
+        self.assertEqual(rows['reef-sound-recruitment']['observation_period']['start_year'],2017)
+        self.assertEqual(rows['parrot-data-feasibility']['observation_period']['end_year'],2021)
+        self.assertIsNone(rows['honeyguide-human-cooperation']['observation_period'])
+        sources={s['id']:s for s in self.atlas()['sources']}
+        self.assertIn('2024.lrec-main.1432.pdf',sources[21]['review_url'])
+
+    def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
+        plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(14,20))
+        self.assertEqual(goals[1]['current'],1)
+        self.assertTrue(all('current' not in g for g in goals[2:]))
+        fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id']!='dog-barks']
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],13)
+        for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
+            changed=deepcopy(plan);changed['goals'][0][field]=value
+            with self.assertRaises(ValueError):atlas_goals(atlas,changed)

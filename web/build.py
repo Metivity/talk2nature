@@ -19,7 +19,7 @@ except ImportError:
     from atlas_build import build_atlas
 
 ROOT = Path(__file__).resolve().parents[1]
-DATE = '2026-10-03'
+DATE = '2026-10-04'
 
 
 def esc(value):

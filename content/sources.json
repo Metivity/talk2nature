@@ -118,8 +118,10 @@
     "title": "Plant acoustic emissions",
     "description": "Khait et al. Sounds emitted by plants under stress are airborne and informative. Cell (2023). Primary research abstract indexed by PubMed.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/37001499/",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-04",
+    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
+    "review_url": "https://www.plant-ditech.com/wp-content/uploads/2024/10/Sounds_article_-_Khait_et_al_2023.pdf",
+    "review_url_label": "Published paper copy used to check the recording protocol"
   },
   {
     "id": 16,
@@ -166,10 +168,10 @@
     "title": "Dog bark classification",
     "description": "Abzaliev et al. Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification. LREC-COLING (2024). Classification tasks, not unrestricted translation.",
     "url": "https://aclanthology.org/2024.lrec-main.1432/",
-    "checked": "2026-09-30",
+    "checked": "2026-10-04",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
     "review_url": "https://aclanthology.org/2024.lrec-main.1432.pdf",
-    "review_url_label": "Published paper, including evaluation tables"
+    "review_url_label": "Published paper used for the location and methods review"
   },
   {
     "id": 22,
@@ -444,10 +446,10 @@
     "title": "Monk parakeet vocal signatures",
     "description": "Smeele et al. (2023). Caller individuality across vocalization types; primary abstract/introduction reviewed, not a replication.",
     "url": "https://doi.org/10.1098/rsos.230835",
-    "checked": "2026-09-30",
+    "checked": "2026-10-04",
     "origin": "Collection audit; review depth recorded in evidence note and research/resources.json.",
-    "review_url": "https://pure.mpg.de/pubman/item/item_3547893_1/component/file_3547899/Smeele_Evidence_RoySocOpSci_2023.pdf",
-    "review_url_label": "Institutional primary-paper copy"
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10548090/",
+    "review_url_label": "Open full text; Methods 2.1–2.2 checked via the Europe PMC article mirror"
   },
   {
     "id": 56,
@@ -1014,5 +1016,29 @@
     "description": "Karl von Frisch, Decoding the Language of the Bee, Nobel lecture (12 December 1973). Selected passages on dance coding and the 1949 Wolfgangsee orientation trial reviewed; historical account, not a modern systematic review.",
     "checked": "2026-10-03",
     "origin": "Historical atlas expansion; original short summary and links only. PDF and figures are not republished."
+  },
+  {
+    "id": 110,
+    "title": "Acoustic enrichment and reef fish recruitment",
+    "url": "https://www.nature.com/articles/s41467-019-13186-2",
+    "description": "Gordon et al. (2019). Abstract, selected results, study-site and control-design methods reviewed; this is a bounded field experiment, not an animal-language translation system.",
+    "checked": "2026-10-04",
+    "origin": "October 4 atlas expansion; original short summary and selected-passage review."
+  },
+  {
+    "id": 111,
+    "title": "Reciprocal signaling in honeyguide–human mutualism",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27463674/",
+    "description": "Spottiswoode, Begg and Begg (2016), Science. Primary abstract reviewed; full experimental methods and data were not obtained for this review.",
+    "checked": "2026-10-04",
+    "origin": "October 4 atlas expansion; original short summary and explicit review limits."
+  },
+  {
+    "id": 112,
+    "title": "Research team account of honeyguide–human cooperation in Niassa",
+    "url": "https://www.cam.ac.uk/research/news/how-humans-and-wild-birds-collaborate-to-get-precious-resources-of-honey-and-wax",
+    "description": "University of Cambridge (22 July 2016), reporting the researchers’ study in Niassa National Reserve, Mozambique. Indexed institutional article passages reviewed for location and context.",
+    "checked": "2026-10-04",
+    "origin": "October 4 atlas expansion; direct institutional research account, not independent replication."
   }
 ]

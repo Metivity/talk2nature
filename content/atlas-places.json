@@ -50,6 +50,55 @@
       "precision": "country",
       "latitude": -14.2,
       "longitude": -51.9
+    },
+    {
+      "id": "bahamas",
+      "label": "Bahamas · dolphin research waters",
+      "precision": "country",
+      "latitude": 25.0,
+      "longitude": -77.4
+    },
+    {
+      "id": "tepic",
+      "label": "Tepic region, Mexico",
+      "precision": "region",
+      "latitude": 21.5,
+      "longitude": -104.9
+    },
+    {
+      "id": "puebla",
+      "label": "Puebla region, Mexico",
+      "precision": "region",
+      "latitude": 19.0,
+      "longitude": -98.2
+    },
+    {
+      "id": "barcelona",
+      "label": "Barcelona region, Spain",
+      "precision": "region",
+      "latitude": 41.4,
+      "longitude": 2.2
+    },
+    {
+      "id": "tel-aviv",
+      "label": "Tel Aviv region, Israel",
+      "precision": "region",
+      "latitude": 32.1,
+      "longitude": 34.8
+    },
+    {
+      "id": "lizard-island",
+      "label": "Lizard Island region, Australia",
+      "precision": "region",
+      "latitude": -14.7,
+      "longitude": 145.5
+    },
+    {
+      "id": "niassa",
+      "label": "Niassa Reserve region, Mozambique",
+      "precision": "region",
+      "latitude": -12.3,
+      "longitude": 37.5
     }
   ]
 }

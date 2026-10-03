@@ -85,3 +85,10 @@
 ## Guided observation UI
 - `web/assets/observation-ui.mjs` supplies human-entered quick notes and complete/partial/discard-aware recaps. Preserve `user-entered` provenance, unknown sound sources, the marker limit, truthful synthetic labels and unadded-draft disclosure. No quick note is an inferred behavior or training label.
 - Preserve phase-aware mobile Stop access, live-region restraint, reduced-motion/transparency support, confirmed reset and export feedback. Keep this UI module in the public offline allowlist. Test via `node --test tests/*.test.mjs` and meaningful browser workflows.
+
+## Public research atlas and next goals
+- Read `docs/RESEARCH_ATLAS.md` and `docs/ATLAS_NEXT_GOALS.md` for geography coverage, location-review scope and future milestones.
+- `content/atlas-places.json` and note-level `atlas` metadata describe coarse public literature locations. Preserve cited passages, animal-origin versus study-region roles, explicit unknowns and separate observation/publication dates. Never substitute author affiliations for study sites or expose participant/sensitive wildlife coordinates.
+- `content/atlas-goals.json` defines measurable coverage targets and future review/hosting gates. Compute coverage from validated records; a multi-site note counts once. Do not turn planned approvals, recruitment or participant releases into completed progress.
+- Atlas location citations may use an explicit public full-text review URL. Publish short original summaries and links, not downloaded PDFs or review screenshots. The atlas is outside the app's offline scope and never reads private observations.
+- Run repository Python/Node suites, both site-build checks and focused desktop/mobile atlas/goals checks after relevant changes; synchronize public metadata without changing frozen study evidence or the synthetic-only admission gate.

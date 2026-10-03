@@ -2,7 +2,28 @@
 
 The public [world atlas](https://metivity.github.io/talk2nature/research/atlas/) connects the literature library to approximate places and a source-year timeline. It is the first geographic layer, not a map of all published research or a live observation service.
 
-## Current coverage
+## Current coverage — October 4, 2026
+
+The atlas now includes **35 notes**, **14 with mapped locations**, across **14 approximate regions**. Twenty-one notes remain without a pin: eleven awaiting location verification and ten without a single applicable site. The complete catalog contains 111 source records, 35 notes and 13 acquisition resources (159 records / 73 citation links).
+
+New locations are the Bahamas, Tepic and Puebla (Mexico), Barcelona (Spain), Tel Aviv (Israel), Lizard Island (Australia), and Niassa (Mozambique). Four existing notes gained supported geography; two new notes cover reef-fish recruitment and honeyguide–human cooperation. The dog study has two locations but remains one research note. Region and note counts measure editorial coverage, not independent evidence or animal abundance.
+
+The [next-goals page](https://metivity.github.io/talk2nature/research/atlas/goals/) tracks 20 mapped notes (currently 14), three historical source notes (currently one), a scientifically reviewed passive parrot pilot, and a protected first observation release. The last two are future milestones with explicit dependencies. See [ATLAS_NEXT_GOALS.md](ATLAS_NEXT_GOALS.md).
+
+| New geography | Basis actually reviewed | Date handling |
+| --- | --- | --- |
+| Bahamas | Research-team DolphinGemma announcement, field-program paragraph | Program start is mentioned; no complete recording interval inferred |
+| Tepic and Puebla, Mexico | Dog-bark paper, section 3 Dataset, printed page 16481 | Recording dates remain unknown |
+| Barcelona, Spain | Monk-parakeet paper, Methods 2.1–2.2, via open full-text mirror | Separate recording windows in October–November 2020 and 2021 |
+| Tel Aviv, Israel | Plant-sounds paper, STAR Methods recording protocol; PDF page 12 / e2 visually checked | Recording dates remain unknown; ultrasound hardware limits retained |
+| Lizard Island, Australia | Reef-fish paper, selected results/discussion and Methods study-site/control passages | Study October–December 2017; paper 2019 |
+| Niassa Reserve, Mozambique | Primary Science abstract plus indexed institutional research-team account naming Niassa | Observation dates and full paper methods remain unreviewed |
+
+Selected-passage review is not full scientific validation. The remaining cat, budgerigar, parrot-video, owner-survey, pig, moth and fungal geography was not inferred from author affiliations or approval bodies. Available cat methods and the previously saved parrot-video text were inspected but did not establish a clear collection geography for this pass. Some full-text retrievals failed; no access restrictions were bypassed. The honeyguide entry explicitly identifies the university account as its location source and the primary abstract as its scientific source.
+
+Public `sources` in the atlas export may now include a checked `review_url` so location citations can link directly to the full-text version actually inspected. Original source URLs remain available. Downloaded article text/PDFs and rendered review images remain ignored, and no new animal recordings or model weights were acquired.
+
+## October 3 baseline
 
 The October 3, 2026 release includes every one of the **33 research notes**: eight have cited geography, across seven display regions; 25 remain without a pin. Fifteen await location review, and ten cover tools, methods, benchmarks or a claim review without a single mapped site. All remain searchable. The source inventory contains 108 records, with 13 curated acquisition resources; the shared catalog has 154 records and 70 citation links.
 

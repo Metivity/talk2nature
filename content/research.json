@@ -232,16 +232,31 @@
     "source_ids": [
       6
     ],
-    "review_depth": "Official announcement reviewed; not an independent replication.",
+    "review_depth": "Official announcement, including its field-program location paragraph, reviewed; not an independent replication or complete dataset audit.",
     "finding": "DolphinGemma models patterns in dolphin sounds. The related CHAT work uses learned shared signals in human-dolphin interactions.",
     "limitations": "Learning a shared interface and translating spontaneous natural communication are distinct scientific tasks.",
     "lesson": "Choose which question a pilot is trying to answer before selecting the interface or model.",
     "next_review": "Keep natural-call interpretation and taught-symbol experiments in separate protocols.",
-    "reviewed": "2026-09-30",
+    "reviewed": "2026-10-04",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
     "year_label": "Source year",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "A country-level locator for the field program described by the researchers. The model announcement does not provide a complete recording-date interval.",
+      "locations": [
+        {
+          "place_id": "bahamas",
+          "role": "study_region",
+          "source_id": 6,
+          "locator": "Researching dolphin society for decades",
+          "basis": "The research team describes its long-term Atlantic spotted dolphin field program in the Bahamas."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "dog-barks",
@@ -252,12 +267,12 @@
     "source_ids": [
       21
     ],
-    "review_depth": "Primary abstract and PDF Experimental Setup paragraphs reviewed; no reproduction or full data audit.",
+    "review_depth": "Primary abstract and selected Dataset/Experimental Setup passages reviewed, including recording regions; no reproduction or full data audit.",
     "finding": "Human-speech-pretrained Wav2Vec2 improved performance on selected dog-vocalization classification tasks.",
     "limitations": "Grounding uses four selected, stranger-related categories mixing vocal form and context. These results do not establish broad emotional or language translation.",
     "lesson": "The paper groups dogs across folds for context, breed and sex tasks; individual-dog recognition uses a different split. Match each evaluation to its intended claim.",
     "next_review": "Inspect household/session dependence and context labeling before treating this as a passive phone benchmark.",
-    "reviewed": "2026-10-03",
+    "reviewed": "2026-10-04",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Selected methods reviewed",
     "year_label": "Source year",
@@ -280,7 +295,29 @@
       ]
     ],
     "review_locator": "Published pages 16481–16484: Dataset, Experimental Setup, Grounding, Table 4 and Limitations.",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "Two recording regions in one study, not two independent datasets. Household locations are not published.",
+      "locations": [
+        {
+          "place_id": "tepic",
+          "role": "study_region",
+          "source_id": 21,
+          "locator": "Section 3: Dataset; PDF page 2, printed page 16481",
+          "basis": "The dataset section names recordings at dog owners’ homes in Tepic and Puebla, Mexico. Only the two broad city regions are shown."
+        },
+        {
+          "place_id": "puebla",
+          "role": "study_region",
+          "source_id": 21,
+          "locator": "Section 3: Dataset; PDF page 2, printed page 16481",
+          "basis": "The dataset section names recordings at dog owners’ homes in Tepic and Puebla, Mexico. Only the two broad city regions are shown."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "parrot-video",
@@ -346,21 +383,37 @@
     "slug": "plant-sounds",
     "title": "Plants emit signals we can measure",
     "taxon": "Plants & fungi",
-    "kind": "Abstract review",
+    "kind": "Recording study",
     "year": "2023",
     "source_ids": [
       15
     ],
-    "review_depth": "Indexed primary-paper abstract reviewed; full-text methods review pending.",
+    "review_depth": "Abstract and selected recording-protocol methods reviewed; PDF page 12 visually checked for the acoustic-box and greenhouse locations, hardware and controls. Full statistical methods and independent replication remain unreviewed.",
     "finding": "The reported experiments describe airborne sounds from plants under stress and informative differences in recordings.",
     "limitations": "Informative emissions do not, by themselves, establish intentional communication or human-like language.",
     "lesson": "Measure a biological signal without converting a model-generated narrative into a scientific claim.",
     "next_review": "Review instrumentation and environmental controls before treating a sound as plant-derived.",
-    "reviewed": "2026-09-30",
+    "reviewed": "2026-10-04",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Initial source note",
+    "review_stage": "Selected methods reviewed",
     "year_label": "Source year",
-    "purpose": "Plants & fungi"
+    "purpose": "Plants & fungi",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "A regional locator for the reported laboratory/greenhouse work. Ultrasonic equipment was used; an ordinary phone microphone is not an equivalent setup.",
+      "locations": [
+        {
+          "place_id": "tel-aviv",
+          "role": "study_region",
+          "source_id": 15,
+          "locator": "STAR Methods: Recording protocol, acoustic box and greenhouse; PDF page 12 / printed e2",
+          "basis": "The recording protocol places the acoustic box at TAU and explicitly names Tel-Aviv University for the greenhouse recordings."
+        }
+      ],
+      "observation_period": null
+    },
+    "review_locator": "STAR Methods, Recording protocol: In the acoustic box / In the greenhouse; PDF page 12, printed e2."
   },
   {
     "slug": "moths-and-plants",
@@ -473,15 +526,36 @@
       56,
       57
     ],
-    "review_depth": "Primary abstract/introduction and official repository documentation reviewed; selected scripts and the 2020 annotation CSV inspected. Full statistical methods, supplemental methods and audio not reviewed.",
+    "review_depth": "Primary abstract/introduction, Methods 2.1–2.2 (study system and collection), and official repository documentation reviewed; selected scripts and the 2020 annotation CSV inspected. Full statistical and supplemental methods and audio not reviewed.",
     "finding": "The study reports vocal individuality in monk parakeets. Its public repository provides code, bird identifiers and behavioral notes. Our metadata sample has 808 annotation rows; 752 contain behavior text.",
     "limitations": "Rows are not necessarily individual calls. The 176 distinct nonempty behavior strings mix visible actions, vocal events and interpretations. Missing identities, uncertainty and audio/session linkage require review. Caller identity is not translation.",
     "lesson": "Keep source recordings, independent behavior labels and subject/session groups linked. Audit labels before selecting a model.",
     "next_review": "Inspect selection-table joins, normalize only observable behaviors, assess annotation reliability and evaluate whether enough independent groups remain.",
-    "reviewed": "2026-09-30",
+    "reviewed": "2026-10-04",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Dataset inspected",
-    "purpose": "Data & annotation"
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "A wild monk-parakeet study area; this is not the location of a Talk2Nature companion-parrot pilot.",
+      "locations": [
+        {
+          "place_id": "barcelona",
+          "role": "study_region",
+          "source_id": 55,
+          "locator": "Methods 2.1: Study system",
+          "basis": "The study names Parc de la Ciutadella and surrounding areas in Barcelona. The atlas uses the broad city region and does not reproduce nest locations."
+        }
+      ],
+      "observation_period": {
+        "label": "Recording windows: 27 Oct–19 Nov 2020 and 31 Oct–30 Nov 2021",
+        "start_year": 2020,
+        "end_year": 2021,
+        "source_id": 55,
+        "locator": "Methods 2.2: Data collection"
+      }
+    }
   },
   {
     "slug": "aves-avex",
@@ -1053,6 +1127,85 @@
         "source_id": 109,
         "locator": "Lecture PDF page 9, final paragraph"
       }
+    }
+  },
+  {
+    "slug": "reef-sound-recruitment",
+    "title": "Fish hear a habitat, not a translated sentence",
+    "taxon": "Fish",
+    "kind": "Controlled field experiment",
+    "year": "2019",
+    "source_ids": [
+      110
+    ],
+    "review_depth": "Abstract, selected results/discussion and Methods passages on study site, acoustic treatment and controls reviewed. Full supplements, analysis code and independent replication not reviewed.",
+    "finding": "A field experiment compared reef-sound playback with dummy-speaker and no-speaker controls. Juvenile fish recruitment and retention increased on acoustically enriched experimental reefs.",
+    "limitations": "This tests responses to a soundscape in one setting and season. It does not identify the meaning of particular fish calls, establish lasting reef recovery or support unsupervised playback by app users.",
+    "lesson": "Measure an observable response against appropriate controls; a sound can guide behavior without being a word.",
+    "next_review": "Review the full statistical supplement and longer-term replication with a marine specialist before proposing any intervention.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected primary passages reviewed",
+    "year_label": "Source year",
+    "review_locator": "Introduction; Results; Methods: Study site and Experimental design.",
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "Experimental reefs are generalized to the island region; no individual reef positions are reproduced.",
+      "locations": [
+        {
+          "place_id": "lizard-island",
+          "role": "study_region",
+          "source_id": 110,
+          "locator": "Methods: Study site",
+          "basis": "The methods locate the work in the lagoon southwest of Lizard Island Research Station, on the northern Great Barrier Reef. The pin represents the wider island region."
+        }
+      ],
+      "observation_period": {
+        "label": "Study period: October–December 2017",
+        "start_year": 2017,
+        "end_year": 2017,
+        "source_id": 110,
+        "locator": "Methods: Study site"
+      }
+    }
+  },
+  {
+    "slug": "honeyguide-human-cooperation",
+    "title": "A shared task can make a shared signal useful",
+    "taxon": "Birds",
+    "kind": "Human–wildlife cooperation study",
+    "year": "2016",
+    "source_ids": [
+      111,
+      112
+    ],
+    "review_depth": "Primary abstract and indexed passages from the university’s research-team account reviewed. Full paper methods, supplementary material and data were not obtained; no independent replication performed.",
+    "finding": "Researchers found that a specialized honey-hunting call used by people in Mozambique increased cooperative guiding by wild honeyguides compared with other human or animal sounds.",
+    "limitations": "The finding concerns a specific cooperative tradition and task. It is not evidence of unrestricted conversation. Local knowledge and the people who maintain this relationship are part of the research context.",
+    "lesson": "Start with a bounded shared task and a measurable response, while respecting the communities whose knowledge makes the question possible.",
+    "next_review": "Obtain the full methods and later cross-cultural studies; seek appropriate local collaboration before proposing any related field experiment.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected primary passages reviewed",
+    "year_label": "Source year",
+    "review_locator": "Science abstract, DOI 10.1126/science.aaf4885; Cambridge research account, opening paragraphs naming Niassa National Reserve.",
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "Region verified in the institutional research account; detailed experimental methods and observation dates remain unreviewed.",
+      "locations": [
+        {
+          "place_id": "niassa",
+          "role": "study_region",
+          "source_id": 112,
+          "locator": "Opening study description: Niassa National Reserve",
+          "basis": "The university’s research-team account identifies experiments with honey-hunters and honeyguides in Niassa National Reserve, Mozambique."
+        }
+      ],
+      "observation_period": null
     }
   }
 ]
