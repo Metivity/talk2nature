@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 async function worker({failInstall=false}={}) {
   const scope='/talk2nature/app/', origin='https://fixture.test';
-  const paths=[scope,scope+'station/',scope+'review/','/talk2nature/assets/station.js?v=fixture'];
+  const paths=[scope,scope+'station/',scope+'review/',scope+'compare/','/talk2nature/assets/station.js?v=fixture'];
   const handlers={}, stores=new Map(), fetches=[], adds=[];
   const old='talk2nature-shell:'+scope+':old', unrelated='another-project-cache';
   stores.set(old,new Map()); stores.set(unrelated,new Map());
@@ -35,7 +35,7 @@ test('private, unknown, authenticated, query-bearing and mutation requests bypas
     new Request(w.origin+'/admin/observations'),new Request(w.origin+w.scope+'private/'),
     new Request(w.origin+w.scope,{method:'POST',body:'private'}),
     new Request(w.origin+w.scope,{headers:{authorization:'Bearer test-only'}}),
-    new Request(w.origin+w.scope+'?token=private'),new Request(w.origin+w.scope+'station/?mode=companion&note=private'),
+    new Request(w.origin+w.scope+'?token=private'),new Request(w.origin+w.scope+'compare/?file=private'),new Request(w.origin+w.scope+'station/?mode=companion&note=private'),
     new Request('https://other.test'+w.scope)
   ]) assert.equal(await w.dispatch('fetch',{request}),undefined);
   assert.equal(w.fetches.length,0);
@@ -65,3 +65,5 @@ test('only the exact release asset query is served from the public offline cache
     assert.equal(await w.dispatch('fetch',{request:new Request(w.origin+path+suffix)}),undefined);
   assert.equal(await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'station/?mode=demo&mode=companion')}),undefined);
 });
+
+test('comparison page is part of the exact public offline shell',async()=>{const w=await worker();await w.dispatch('install');const r=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'compare/')});assert.match(await r.text(),/^cached/);assert.equal(w.fetches.length,0);});

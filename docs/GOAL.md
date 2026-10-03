@@ -133,3 +133,8 @@ Raviv asked for continued ideas, a better app and stronger design. This bounded 
 
 
 Design continuation completed and deployed at `b286d7b`: the new observation flow, original visual design, quick notes and recap passed 96 automated tests, focused browser/offline/accessibility checks, an actual ZIP/WAV download check and the 100-file live comparison. Proposed next features remain a backlog, not delivered functionality.
+
+
+## October 3 continuation: compare saved moments
+
+Raviv asked to continue. The bounded deliverable is a local-only session comparison in the Field Companion: reopen original Station ZIPs, retain whole-window/highlights and incomplete/discard provenance, compare readable context and notes, offer manual playback and a clearly invented example pair. Acceptance requires bounded malformed-import checks, preservation of already-open sessions on failure, offline public-shell support, mobile/desktop/browser import checks, required repository/site tests and a verified Pages release. See [SESSION_COMPARE.md](SESSION_COMPARE.md). This does not open hosted intake or establish biological meaning.

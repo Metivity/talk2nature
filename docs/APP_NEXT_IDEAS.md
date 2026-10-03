@@ -8,17 +8,18 @@ Set up → Observe → Keep separates the work into three visible states. Record
 
 The visual direction is a pocket field guide: deep blue-green glass, warm pale green actions, restrained original parrot illustration, large editorial headings and quiet transitions. Decorative motion is finite and honors reduced-motion and the existing motion switch. The observation UI uses actual captured level data; decorative signals on the home page are explicitly illustration. No success streak or recording-volume leaderboard encourages disturbance.
 
+A subsequent continuation implements **Same place, different day**: reopen original Station ZIPs, compare their saved context and sampling, read observer notes and manually review retained audio. The example pair makes the difference between complete and interrupted windows visible. Device-local comparison does not establish a biological change.
+
 ## Next ideas, in priority order
 
 | Proposal | Useful first version | Acceptance before expanding |
 | --- | --- | --- |
-| Same place, different day | Open two locally saved sessions and compare duration, declared context, notes and recording conditions side by side. | Reopen each complete bundle safely; preserve checksums, synthetic origin, partial/discard records and sampling differences. No automatic cause/meaning claim. |
 | Device rehearsal | A short guided check away from animals, showing recording availability, interruption handling and observed clipping. | Physical Android/iPhone checks; report measured properties and unknowns. Never call an ordinary phone a calibrated instrument. |
 | An observation apprenticeship | Invented examples where people practice separating what they noticed from what they inferred. Explain uncertainty without scoring animal responses. | First-time users can finish and understand the distinction; accessible text alternatives and no external sign-in required. |
 | A researcher’s study pack | A reviewed species/question-specific checklist, consent scope and versioned codebook that travel with a session. | Scientific reviewer, actual access, rights/withdrawal plan and approved hosted admission. A downloaded pack is not consent. |
 | Camera and sound together | First align known synthetic audio/video events and quantify clock error; then evaluate an approved passive protocol. | Reliable synchronization, privacy review and independent visible labels before automatic gesture or behavior inference. |
 
-The strongest next software candidate is local session reopening/comparison. It offers repeat-use value and creates a route toward longitudinal observations while hosted intake remains pending. Validate it with a small number of actual users before expanding the feature set. Avoid claims about natural variation or “progress” based on unmatched devices, selected interesting clips or unreviewed labels.
+Local session reopening/comparison is now implemented; see [Compare moments](SESSION_COMPARE.md). It offers repeat-use value and creates a route toward longitudinal observations while hosted intake remains pending. Validate it with a small number of actual users before expanding the feature set. Avoid claims about natural variation or “progress” based on unmatched devices, selected interesting clips or unreviewed labels.
 
 ## Checks and remaining limits
 

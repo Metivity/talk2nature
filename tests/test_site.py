@@ -38,6 +38,8 @@ class SiteTests(unittest.TestCase):
             source=(root/'app/sw.js').read_text()
             assets=json.loads(source.split('const ASSETS = ',1)[1].split(';',1)[0])
             self.assertNotIn('/talk2nature/about/',assets)
+            self.assertIn('/talk2nature/app/compare/',assets)
+            self.assertTrue(any('/assets/session-import.mjs?' in a for a in assets))
             for asset in assets:
                 self.assertTrue(asset.startswith(('/talk2nature/app/','/talk2nature/assets/')))
                 path=root/urlsplit(asset).path.removeprefix('/talk2nature/')
