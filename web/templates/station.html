@@ -4,6 +4,7 @@
   <div class="station-main">
     <div class="station-monitor">
       <p class="station-kicker">THE LISTENING WINDOW</p><h2 id="station-headline">What happens<br>when we pay attention?</h2><p id="station-status" role="status" aria-live="polite">Try a silent synthetic session, or start a microphone session in a place you have permission to record.</p>
+      {{station_animal_context}}
       <div class="station-scope"><canvas id="station-scope" width="760" height="160" aria-label="Recent sound level. Numeric level and threshold are shown below."></canvas><div class="station-scope-caption"><span id="station-level">— dBFS</span><span id="station-threshold">3-second level check on start</span></div></div>
       <div class="station-metrics"><div><span id="station-time">00:00</span><small>session time</small></div><div><span id="station-event-total">0</span><small>sound candidates</small></div><div><span id="station-memory">0.0 MB</span><small>local audio</small></div></div>
       <div class="station-setup"><label class="station-checkbox"><input id="station-permission" type="checkbox">I have permission to record here, including any people who may be audible.</label></div>

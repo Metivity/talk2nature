@@ -1,6 +1,22 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "paths": [
+    {
+      "id": "first-animal",
+      "title": "Choose the first animal",
+      "question": "Where can we collect useful observations responsibly?",
+      "decision": "Welcome every animal in the app; validate one species and one observable question first.",
+      "notes": [
+        "parrot-community-data",
+        "budgerigar-starting-point",
+        "dog-barks",
+        "catmeows-context",
+        "pig-context-data",
+        "frog-chorus-data"
+      ],
+      "next_step": "Confirm access to several households with the same parrot species; compare annotation feasibility before committing to a pilot.",
+      "gate": "Budgerigars are provisional. No recruited participants, expert sign-off, recording uploads or translation model are implied."
+    },
     {
       "id": "label",
       "title": "Capture useful context",

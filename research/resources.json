@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-30",
-  "scope": "First collection: birds/parrots. Original summaries only; raw samples excluded from public output.",
+  "updated": "2026-10-03",
+  "scope": "Multi-animal evidence and reuse candidates; acquired external samples remain separate from research admission.",
   "resources": [
     {
       "id": "monk-parakeet-paper",
@@ -273,6 +273,157 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "budgerigar-vocal-signature-data",
+      "kind": "dataset",
+      "title": "Zhao (2023) budgerigar data",
+      "url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
+      "version": "10.17632/j8rpy4dc6c.1",
+      "priority": 2,
+      "reviewed": "2026-10-03",
+      "task": "Species-specific feasibility and future baseline design.",
+      "review_depth": "Deposit description and rights metadata; file contents not yet reviewed.",
+      "access": "Public metadata; see acquisition decision.",
+      "decision": "Inspect file inventory and untreated subsets before bounded acquisition.",
+      "limitations": "MATLAB containers require separate inspection; laboratory interventions do not transfer to home observation.",
+      "attribution": "Zhao (2023) budgerigar data; authors credited at the source record.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "This named component only, not linked papers, code, media or weights.",
+        "evidence_url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
+        "conditions": "Retain attribution and verify component-specific rights before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "catmeows-data",
+      "kind": "dataset",
+      "title": "CatMeows data",
+      "url": "https://zenodo.org/records/4008297",
+      "version": "1.0.2 / record 4008297",
+      "priority": 2,
+      "reviewed": "2026-10-03",
+      "task": "Species-specific feasibility and future baseline design.",
+      "review_depth": "Deposit description and rights metadata; file contents not yet reviewed.",
+      "access": "Public metadata; see acquisition decision.",
+      "decision": "No acquisition or commercial integration under the current permissive-only policy.",
+      "limitations": "Non-commercial restriction; elicited contexts are not participant instructions.",
+      "attribution": "CatMeows data; authors credited at the source record.",
+      "rights": {
+        "license": "CC-BY-NC-4.0",
+        "scope": "This named component only, not linked papers, code, media or weights.",
+        "evidence_url": "https://zenodo.org/records/4008297",
+        "conditions": "Retain attribution and verify component-specific rights before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "soundwel-pig-data",
+      "kind": "dataset",
+      "title": "Soundwel pig calls",
+      "url": "https://zenodo.org/records/8252482",
+      "version": "1 / record 8252482",
+      "priority": 2,
+      "reviewed": "2026-10-03",
+      "task": "Species-specific feasibility and future baseline design.",
+      "review_depth": "Deposit description and rights metadata; file contents not yet reviewed.",
+      "access": "Public metadata; see acquisition decision.",
+      "decision": "Defer the large archive until metadata suitability is audited.",
+      "limitations": "Released subset differs from the paper; no identity/session split audit yet.",
+      "attribution": "Soundwel pig calls; authors credited at the source record.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "This named component only, not linked papers, code, media or weights.",
+        "evidence_url": "https://zenodo.org/records/8252482",
+        "conditions": "Retain attribution and verify component-specific rights before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "anuraset-data",
+      "kind": "dataset",
+      "title": "AnuraSet frog calls and labels",
+      "url": "https://zenodo.org/records/8342596",
+      "version": "record 8342596",
+      "priority": 2,
+      "reviewed": "2026-10-03",
+      "task": "Species-specific feasibility and future baseline design.",
+      "review_depth": "Deposit description and rights metadata; file contents not yet reviewed.",
+      "access": "Public metadata; see acquisition decision.",
+      "decision": "Resolve conflicting license declarations before acquisition.",
+      "limitations": "A species-identification benchmark, not a labeled translation dataset.",
+      "attribution": "AnuraSet frog calls and labels; authors credited at the source record.",
+      "rights": {
+        "license": "unresolved: paper CC0; record API cc-by",
+        "scope": "This named component only, not linked papers, code, media or weights.",
+        "evidence_url": "https://zenodo.org/api/records/8342596",
+        "conditions": "Retain attribution and verify component-specific rights before reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "anuraset-code",
+      "kind": "code",
+      "title": "AnuraSet baseline code sample",
+      "url": "https://github.com/soundclim/anuraset/tree/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4",
+      "version": "0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4",
+      "priority": 2,
+      "reviewed": "2026-10-03",
+      "task": "Species-specific feasibility and future baseline design.",
+      "review_depth": "README and exact pinned MIT license reviewed; evaluator selected for later code review.",
+      "access": "Public metadata; see acquisition decision.",
+      "decision": "Acquire only license, README and evaluator for source inspection; do not execute.",
+      "limitations": "No model weights or animal recordings included; baseline performance not reproduced.",
+      "attribution": "AnuraSet baseline code sample; authors credited at the source record.",
+      "rights": {
+        "license": "MIT",
+        "scope": "This named component only, not linked papers, code, media or weights.",
+        "evidence_url": "https://raw.githubusercontent.com/soundclim/anuraset/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4/LICENSE",
+        "conditions": "Retain attribution and verify component-specific rights before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "files": [
+        {
+          "name": "LICENSE",
+          "url": "https://raw.githubusercontent.com/soundclim/anuraset/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4/LICENSE",
+          "bytes": 1079,
+          "git_blob_sha1": "50ebe5e720c846de8dd98c5432e777d27077d75a"
+        },
+        {
+          "name": "README.md",
+          "url": "https://raw.githubusercontent.com/soundclim/anuraset/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4/README.md",
+          "bytes": 3995,
+          "git_blob_sha1": "c874c30bbfb3e37787567a43859a6925d748c694"
+        },
+        {
+          "name": "evaluate.py",
+          "url": "https://raw.githubusercontent.com/soundclim/anuraset/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4/baseline/evaluate.py",
+          "bytes": 8004,
+          "git_blob_sha1": "bd57c805e2784de63654845f33ac1bd87b5a1134"
+        }
+      ],
+      "license_file": "LICENSE",
+      "admission_reason": "Small pinned permissively licensed source sample; no execution or scientific admission."
     }
   ]
 }

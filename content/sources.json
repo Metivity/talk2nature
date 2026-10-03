@@ -918,5 +918,93 @@
     "url": "https://journalofscientificexploration.org/index.php/jse/article/download/108/46",
     "checked": "2026-10-02",
     "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+  },
+  {
+    "id": 98,
+    "title": "Companion-parrot mimicry survey",
+    "url": "https://www.nature.com/articles/s41598-022-24335-x",
+    "description": "Benedict et al. (2022). Community survey; selected methods and results reviewed.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 99,
+    "title": "Companion-parrot survey data",
+    "url": "https://figshare.com/articles/dataset/Data_from_What_Does_Polly_Say_A_Survey_of_Vocal_Mimicry_in_Companion_Parrots/19674330",
+    "description": "Deposited survey table; linked by the paper. No audio acquired; file-level rights not verified.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 100,
+    "title": "Budgerigar vocal signatures and neural pathways",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38070505/",
+    "description": "Zhao et al. (2023), Current Biology. Abstract/highlights checked; invasive methods are not a home-study protocol.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 101,
+    "title": "Budgerigar study data deposit",
+    "url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
+    "description": "Zhao (2023), version 1. Deposit description and CC BY 4.0 declaration reviewed; files not inspected.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 102,
+    "title": "CatMeows version 1.0.2",
+    "url": "https://zenodo.org/records/4008297",
+    "description": "Ludovico et al. (2020). Description, identity fields and non-commercial terms reviewed; record API confirms CC BY-NC 4.0.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 103,
+    "title": "Cat vocalization context classification",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6719916/",
+    "description": "Ntalampiras et al. (2019). Primary abstract reviewed; full methods access was unreliable during this review.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 104,
+    "title": "Pig call context and valence study",
+    "url": "https://www.nature.com/articles/s41598-022-07174-8",
+    "description": "Briefer et al. (2022). Indexed primary abstract/results excerpts reviewed; full methods not reviewed.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 105,
+    "title": "Soundwel pig vocalization deposit",
+    "url": "https://zenodo.org/records/8252482",
+    "description": "Briefer et al., version 1. Repository description and API rights checked; open subset differs from the paper.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 106,
+    "title": "AnuraSet primary dataset paper",
+    "url": "https://www.nature.com/articles/s41597-023-02666-2",
+    "description": "Cañas et al. (2023). Data records, selected validation and code-availability sections reviewed.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 107,
+    "title": "AnuraSet versioned deposit",
+    "url": "https://zenodo.org/records/8342596",
+    "description": "Frog recordings and label tables. Repository API says cc-by; paper says CC0. Resolve before acquisition.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 108,
+    "title": "AnuraSet reproducible benchmark code",
+    "url": "https://github.com/soundclim/anuraset",
+    "description": "Author repository with baseline and preprocessing code. README and MIT declaration reviewed; not executed.",
+    "checked": "2026-10-03",
+    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
   }
 ]

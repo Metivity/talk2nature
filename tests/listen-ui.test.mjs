@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {webcrypto} from 'node:crypto';
 import * as model from '../web/assets/listen-model.mjs';
+import {animalPicker} from '../web/assets/animal-picker.mjs';
 import * as notebook from '../web/assets/notebook.mjs';
 
 // Execute the real event handlers with a small DOM facade. This checks whether
@@ -27,7 +28,7 @@ function setup() {
   const document={getElementById:get,createElement:()=>element(),body:element()};
   const window={devicePixelRatio:1,confirm(){harness.confirmations++;return harness.confirm;},addEventListener(name,fn){windowEvents[name]=fn;}};
   const source=fs.readFileSync(new URL('../web/assets/listen.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
-  vm.runInNewContext(source,{...model,...notebook,document,window,crypto:webcrypto,Blob,structuredClone,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL(){}},setTimeout(){}});
+  vm.runInNewContext(source,{...model,...notebook,animalPicker,document,window,crypto:webcrypto,Blob,structuredClone,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL(){}},setTimeout(){}});
   return {...harness,get,downloads,windowEvents,state:harness,async type(id,value){get(id).value=value;await get('event-form').fire('input');}};
 }
 
@@ -71,4 +72,32 @@ test('cancelling a draft requires confirmation and preserves committed events',a
   assert.equal(h.get('event-notes').value,'New draft');
   h.state.confirm=true;await h.get('cancel-edit').fire('click');
   assert.equal(h.get('event-notes').value,'');assert.match(h.get('event-count').textContent,/1 event/);
+});
+
+test('animal choice survives label import, marks edits unsaved and resets for a fresh recording',async()=>{
+ const h=setup();await h.get('example').fire('click');
+ h.get('listen-animal-group').value='dog';await h.get('listen-animal-group').fire('change');
+ let warned=false;h.windowEvents.beforeunload({preventDefault(){warned=true;}});assert.ok(warned);
+ const doc=JSON.parse(fs.readFileSync(new URL('../examples/annotations.synthetic.json',import.meta.url),'utf8'));
+ const audio=model.syntheticWav();doc.recording.sha256=Buffer.from(await webcrypto.subtle.digest('SHA-256',audio)).toString('hex');
+ doc.animal_context={group:'parrot',species:'budgerigar',basis:'observer-declared'};
+ h.state.confirm=true;
+ await h.get('labels-file').fire('change',{target:{files:[{size:1000,text:async()=>JSON.stringify(doc)}],value:'selected'}});
+ assert.equal(h.get('listen-animal-group').value,'parrot');assert.equal(h.get('listen-animal-species').value,'budgerigar');
+ delete doc.animal_context;
+ await h.get('labels-file').fire('change',{target:{files:[{size:1000,text:async()=>JSON.stringify(doc)}],value:'selected'}});
+ assert.equal(h.get('listen-animal-group').value,'unknown');assert.equal(h.get('listen-animal-species').value,'');
+ await h.get('example').fire('click');assert.equal(h.get('listen-animal-group').value,'unknown');
+});
+
+test('opening a notebook restores animal context through the real file-change handler',async()=>{
+ const h=setup();
+ const doc=JSON.parse(fs.readFileSync(new URL('../examples/annotations.synthetic.json',import.meta.url),'utf8'));
+ doc.animal_context={group:'parrot',species:'budgerigar',basis:'observer-declared'};
+ const buffer=await notebook.makeNotebook(model.syntheticWav(),doc);
+ await h.get('wav-file').fire('change',{target:{files:[{name:'practice.t2n',size:buffer.byteLength,arrayBuffer:async()=>buffer}],value:'selected'}});
+ assert.match(h.get('listen-status').textContent,/Notebook reopened with 2 observations/);
+ assert.equal(h.get('listen-animal-group').value,'parrot');
+ assert.equal(h.get('listen-animal-species').value,'budgerigar');
+ assert.equal(h.get('origin-badge').textContent,'Synthetic tones');
 });

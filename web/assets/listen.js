@@ -1,15 +1,17 @@
+import {animalPicker} from './animal-picker.mjs';
 import {VERSION, MAX_BYTES, readWav, syntheticWav, validateDocument, eventCsv} from './listen-model.mjs';
 import {MAX_NOTEBOOK_BYTES, makeNotebook, readNotebook} from './notebook.mjs';
 
 const $ = id => document.getElementById(id);
 let audioBytes = null, recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0;
+const animal = animalPicker(document, 'listen', () => { if (recording) dirty = true; });
 const ids = ['recording-id', 'session-id', 'individual-id', 'annotator-id'];
 const status = message => { $('listen-status').textContent = message; };
 const rounded = n => Math.round(n * 1000) / 1000;
 function documentValue() {
   const r = {...recording};
   ['recording_id', 'session_id', 'individual_id', 'annotator_id'].forEach((key, i) => { r[key] = $(ids[i]).value.trim(); });
-  return validateDocument({schema: 'talk2nature.annotation.v1', tool_version: VERSION, recording: r, events: structuredClone(events)});
+  return validateDocument({schema: 'talk2nature.annotation.v1', tool_version: VERSION, recording: r, animal_context: animal.value(), events: structuredClone(events)});
 }
 function allowReplace() { return !(dirty || draftDirty) || window.confirm('Discard this session and any unfinished observation? Check that your notebook is in Downloads first.'); }
 function allowDraftReplace() { return !draftDirty || window.confirm('Discard the unfinished observation?'); }
@@ -79,7 +81,7 @@ async function openRecording(bufferPromise, origin) {
     if (current !== generation) return;
     releaseAudio(); audioInfo = info; audioBytes = buffer;
     recording = {sha256: hash, duration_seconds: info.duration, sample_rate: info.sample_rate, channels: info.channels, origin};
-    events = []; dirty = false;
+    events = []; dirty = false; animal.set(restored?.animal_context);
     ['recording-001', 'unknown', 'unknown', 'reviewer-001'].forEach((value, i) => { $(ids[i]).value = value; });
     if (origin === 'synthetic') $('recording-id').value = 'synthetic-tones-001';
     $('recording-title').textContent = origin === 'synthetic' ? 'Two invented sound events.' : 'Your local recording.';
@@ -154,12 +156,14 @@ $('labels-file').addEventListener('change', async event => {
     // Copy only known fields; no imported markup or scripts enter the DOM.
     events = doc.events.map(e => Object.fromEntries(['id', 'start_seconds', 'end_seconds', 'kind', 'context', 'context_source', 'confidence', 'notes'].map(k => [k, e[k]])));
     ['recording_id', 'session_id', 'individual_id', 'annotator_id'].forEach((key, i) => { $(ids[i]).value = doc.recording[key]; });
+    animal.set(doc.animal_context);
     dirty = false; resetEditor(); renderEvents(); status(`Reopened ${events.length} event${events.length === 1 ? '' : 's'} matched to this recording. Origin labels are declarations, not verified provenance.`);
   } catch (error) { status(`Labels were not imported: ${error.message}`); }
 });
 $('clear-recording').addEventListener('click', () => {
   if (!allowReplace()) return;
   generation++; releaseAudio(); recording = null; audioBytes = null; audioInfo = null; draftDirty = false; events = []; dirty = false;
+  animal.set();
   $('listen-loaded').hidden = true; $('event-list').replaceChildren(); status('Session cleared. Previously exported files remain on your device.');
 });
 let dragStart = null;

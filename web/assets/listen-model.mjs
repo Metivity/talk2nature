@@ -1,3 +1,4 @@
+import {validateAnimal} from './animal-model.mjs';
 // Local annotation format. No upload, model prediction or research admission.
 export const VERSION = '0.1.0';
 export const MAX_BYTES = 25 * 1024 * 1024;
@@ -73,6 +74,7 @@ function numeric(value) { return typeof value === 'number' && Number.isFinite(va
 
 export function validateDocument(doc, expected = null) {
   if (!doc || doc.schema !== 'talk2nature.annotation.v1' || doc.tool_version !== VERSION) throw Error('Unsupported annotation format/version.');
+  if (doc.animal_context !== undefined) validateAnimal(doc.animal_context);
   const r = doc.recording;
   if (!r || !/^[a-f0-9]{64}$/.test(r.sha256) || !numeric(r.duration_seconds) || r.duration_seconds <= 0 || r.duration_seconds > MAX_SECONDS || !Number.isInteger(r.sample_rate) || r.sample_rate < 8000 || r.sample_rate > 192000 || ![1, 2].includes(r.channels) || !['synthetic', 'user-supplied'].includes(r.origin)) throw Error('Invalid recording metadata.');
   for (const key of ['recording_id', 'session_id', 'individual_id', 'annotator_id']) text(r[key], key);
@@ -94,5 +96,5 @@ export function eventCsv(doc) {
   validateDocument(doc);
   const quote = value => '"' + String(value).replace(/^[\s]*[=+@-]/, "'$&").replace(/"/g, '""') + '"';
   const keys = ['id', 'start_seconds', 'end_seconds', 'kind', 'context', 'context_source', 'confidence', 'notes'];
-  return [['recording_id', 'source_sha256', ...keys], ...doc.events.map(e => [doc.recording.recording_id, doc.recording.sha256, ...keys.map(k => e[k])])].map(row => row.map(quote).join(',')).join('\r\n') + '\r\n';
+  return [['recording_id', 'source_sha256', 'animal_group', 'species_label', 'identity_basis', ...keys], ...doc.events.map(e => [doc.recording.recording_id, doc.recording.sha256, doc.animal_context?.group ?? 'unknown', doc.animal_context?.species ?? '', doc.animal_context?.basis ?? 'not recorded', ...keys.map(k => e[k])])].map(row => row.map(quote).join(',')).join('\r\n') + '\r\n';
 }

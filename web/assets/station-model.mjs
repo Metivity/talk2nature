@@ -1,3 +1,4 @@
+import {unknownAnimal, validateAnimal} from './animal-model.mjs';
 // A bounded, local energy detector. No species/meaning model or upload path.
 export const STATION_VERSION = '0.3.0';
 export const SESSION_SECONDS = 300;
@@ -20,8 +21,9 @@ export function wavBytes(samples, sampleRate) {
 }
 
 export class StationSession {
-  constructor(sampleRate, {origin = 'synthetic', margin = 12, maxBytes = MAX_AUDIO_BYTES} = {}) {
+  constructor(sampleRate, {origin = 'synthetic', margin = 12, maxBytes = MAX_AUDIO_BYTES, animalContext = unknownAnimal()} = {}) {
     if (!Number.isInteger(sampleRate) || sampleRate < 8000 || sampleRate > 96000 || !['synthetic', 'microphone'].includes(origin) || !Number.isFinite(margin) || margin < 6 || margin > 24 || !Number.isInteger(maxBytes) || maxBytes < 1 || maxBytes > MAX_AUDIO_BYTES) throw Error('Unsupported station settings.');
+    this.animalContext = Object.freeze(validateAnimal(animalContext));
     this.sampleRate = sampleRate; this.origin = origin; this.margin = margin; this.maxBytes = maxBytes;
     this.id = crypto.randomUUID(); this.startedAt = new Date().toISOString();
     this.samplesSeen = 0; this.events = []; this.discarded = []; this.markers = []; this.ring = []; this.active = null; this.calibration = [];
@@ -106,6 +108,6 @@ export class StationSession {
   }
   exportRecord(alias = 'station-001', settings = {}) {
     if (typeof alias !== 'string' || !alias.trim() || alias.trim().length > 80) throw Error('Use a station alias of 1–80 characters.');
-    return {schema: 'talk2nature.station.v1', session_id: this.id, started_at_utc: this.startedAt, clock: 'device wall clock; event offsets use processed audio samples; not synchronized', tool_version: STATION_VERSION, station_alias: alias.trim(), origin: this.origin, sample_rate: this.sampleRate, duration_seconds: rounded(this.elapsed), status: this.stopped ? 'stopped' : 'running', stop_reason: this.stopReason, detector: {type: 'energy_threshold', calibration_seconds: 3, margin_db: this.margin, threshold_dbfs: this.threshold, pre_roll_seconds: 1, max_clip_seconds_approx: 6, max_session_seconds: SESSION_SECONDS}, audio_settings: settings, near_full_scale_fraction: this.totalSamples ? this.clippedSamples / this.totalSamples : 0, markers: this.markers.map(m => ({...m})), events: this.events.map(({pcm, ...event}) => ({...event, samples: pcm.length, audio_filename: this.audioFilename(event.id)})), discarded_events: this.discarded.map(e => ({...e})), marker_windows: this.markerWindows(), limitations: ['No animal, human speech or meaning classifier is running.', 'A sound following a marker is not evidence of a reply or causation.', 'Undetected sounds and discarded audio are absent; this is not unbiased continuous audio.', 'Discarded clips retain only event ID/onset so deletion is not misreported as silence.', 'No verified consent, identity, research admission or training permission is established.', 'Audio is separate from this JSON. Files remain local until you share them.']};
+    return {schema: 'talk2nature.station.v1', animal_context: {...this.animalContext}, session_id: this.id, started_at_utc: this.startedAt, clock: 'device wall clock; event offsets use processed audio samples; not synchronized', tool_version: STATION_VERSION, station_alias: alias.trim(), origin: this.origin, sample_rate: this.sampleRate, duration_seconds: rounded(this.elapsed), status: this.stopped ? 'stopped' : 'running', stop_reason: this.stopReason, detector: {type: 'energy_threshold', calibration_seconds: 3, margin_db: this.margin, threshold_dbfs: this.threshold, pre_roll_seconds: 1, max_clip_seconds_approx: 6, max_session_seconds: SESSION_SECONDS}, audio_settings: settings, near_full_scale_fraction: this.totalSamples ? this.clippedSamples / this.totalSamples : 0, markers: this.markers.map(m => ({...m})), events: this.events.map(({pcm, ...event}) => ({...event, samples: pcm.length, audio_filename: this.audioFilename(event.id)})), discarded_events: this.discarded.map(e => ({...e})), marker_windows: this.markerWindows(), limitations: ['No animal, human speech or meaning classifier is running.', 'A sound following a marker is not evidence of a reply or causation.', 'Undetected sounds and discarded audio are absent; this is not unbiased continuous audio.', 'Discarded clips retain only event ID/onset so deletion is not misreported as silence.', 'No verified consent, identity, research admission or training permission is established.', 'Audio is separate from this JSON. Files remain local until you share them.']};
   }
 }

@@ -174,14 +174,14 @@
     "source_ids": [
       21
     ],
-    "review_depth": "Published paper sections 3–6 reviewed; Tables 3–5 visually checked. No code execution or replication.",
+    "review_depth": "Primary abstract and PDF Experimental Setup paragraphs reviewed; no reproduction or full data audit.",
     "finding": "Human-speech-pretrained Wav2Vec2 improved performance on selected dog-vocalization classification tasks.",
     "limitations": "Grounding uses four selected, stranger-related categories mixing vocal form and context. These results do not establish broad emotional or language translation.",
-    "lesson": "Grouped evaluation is existing practice. Define independent behavioral labels and a stronger task-specific baseline.",
-    "next_review": "Verify data access and exact model terms before proposing a replication.",
-    "reviewed": "2026-09-30",
+    "lesson": "The paper groups dogs across folds for context, breed and sex tasks; individual-dog recognition uses a different split. Match each evaluation to its intended claim.",
+    "next_review": "Inspect household/session dependence and context labeling before treating this as a passive phone benchmark.",
+    "reviewed": "2026-10-03",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Methods reviewed",
+    "review_stage": "Selected methods reviewed",
     "year_label": "Source year",
     "study_snapshot": [
       [
@@ -707,5 +707,111 @@
     "review_stage": "Initial source note",
     "year_label": "Source year",
     "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "parrot-community-data",
+    "title": "Parrot owners can contribute; species still matter",
+    "taxon": "Parrots",
+    "kind": "Community survey",
+    "year": "2022",
+    "source_ids": [
+      98,
+      99
+    ],
+    "review_depth": "Abstract, selected results and data-collection methods; no supplement or raw-table analysis.",
+    "finding": "An owner survey covered 877 parrots from 73 species and found variation in reported mimicry.",
+    "limitations": "Owner reports and recruitment bias limit inference. Learned human sounds are not a decoded natural vocabulary.",
+    "lesson": "Our proposal: retain species and individual identity; distinguish observed behavior from owner interpretation.",
+    "next_review": "Review the questionnaire and deposited table, then test a small species-specific observation codebook.",
+    "reviewed": "2026-10-03",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Data & annotation"
+  },
+  {
+    "slug": "budgerigar-starting-point",
+    "title": "Budgerigars: a candidate, not a shortcut",
+    "taxon": "Parrots",
+    "kind": "Laboratory study and deposit",
+    "year": "2023",
+    "source_ids": [
+      100,
+      101
+    ],
+    "review_depth": "Primary abstract/highlights and deposit description/license; no full statistical audit or file inspection.",
+    "finding": "The study examines individual vocal signatures in budgerigars. Its deposit includes audio in MATLAB structures.",
+    "limitations": "Laboratory neural interventions and elicited calls do not validate passive phone recordings or call meaning.",
+    "lesson": "Our provisional choice is a single-species budgerigar feasibility pilot, conditional on access and expert review.",
+    "next_review": "Inspect recording conditions and which deposited subsets are untreated before proposing acoustic reuse.",
+    "reviewed": "2026-10-03",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Data & annotation"
+  },
+  {
+    "slug": "catmeows-context",
+    "title": "Cats: useful labels, limited reuse",
+    "taxon": "Cats",
+    "kind": "Dataset",
+    "year": "2020",
+    "source_ids": [
+      102,
+      103
+    ],
+    "review_depth": "Version 1.0.2 record, API rights and naming conventions; paper abstract only.",
+    "finding": "CatMeows documents 440 sounds from 21 cats with context, cat, owner and session identifiers.",
+    "limitations": "CC BY-NC 4.0 is not general commercial permission. Elicited contexts should not become app instructions; files were not acquired.",
+    "lesson": "Our proposed evaluations should hold out households and animals, not just random clips.",
+    "next_review": "Review recording dependence and split design; resolve project-specific reuse rights before a benchmark.",
+    "reviewed": "2026-10-03",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Data & annotation"
+  },
+  {
+    "slug": "pig-context-data",
+    "title": "Pig calls: inspect what the labels actually mean",
+    "taxon": "Farm animals",
+    "kind": "Study and dataset",
+    "year": "2022",
+    "source_ids": [
+      104,
+      105
+    ],
+    "review_depth": "Primary indexed abstract/results excerpts and repository description/API; full methods not reviewed.",
+    "finding": "The paper analyzes calls across production contexts. The open Soundwel subset contains 6,888 calls in 17 categories.",
+    "limitations": "The deposit excludes restricted slaughterhouse recordings. Context-associated valence is not a translated sentence or validated household emotion detector.",
+    "lesson": "Our proposed use is a separate farm-research comparison, with its own setting and evaluation.",
+    "next_review": "Audit pig/farm/session identifiers and labeling assumptions before designing any reuse experiment.",
+    "reviewed": "2026-10-03",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Data & annotation"
+  },
+  {
+    "slug": "frog-chorus-data",
+    "title": "Frog choruses: several callers, one recording",
+    "taxon": "Amphibians",
+    "kind": "Benchmark dataset",
+    "year": "2023",
+    "source_ids": [
+      106,
+      107,
+      108
+    ],
+    "review_depth": "Data records, selected validation sections, repository description and code README; no replication.",
+    "finding": "AnuraSet provides multilabel frog-call data and a reproducible baseline for species identification.",
+    "limitations": "Identification is distinct from communication meaning. The paper says CC0 while the versioned record API says cc-by; acquisition is deferred.",
+    "lesson": "Our app retains mixed scenes and uncertainty. Future evaluations should test rare classes and new recording settings.",
+    "next_review": "Resolve dataset rights, inspect site/time dependence and pin the code before downloading a benchmark.",
+    "reviewed": "2026-10-03",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Data & annotation"
   }
 ]

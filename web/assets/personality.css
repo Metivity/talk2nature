@@ -64,3 +64,14 @@ html:not(.motion-enabled) *{transition:none!important}html:not(.motion-enabled) 
   .app-body .station-console.station-large .station-scope canvas{height:150px}
   .app-nav a{min-height:48px}
 }
+
+.animal-context{margin:16px 0;border:1px solid var(--line);border-radius:16px;padding:0 16px}
+.animal-context summary{display:list-item;cursor:pointer;min-height:48px;padding:12px 0;font-size:14px;font-weight:600}
+.animal-context summary span{font-size:12px;font-weight:400;float:right;margin-left:8px;color:var(--muted)}
+.animal-fields{padding:0 0 14px;clear:both}.animal-fields label{display:block;font-size:13px;margin:12px 0 5px}
+.animal-fields :is(select,input){display:block;width:100%;min-height:48px;padding:10px 12px;border:1px solid #829b8b;border-radius:10px;font:inherit;font-size:16px;background:var(--paper);color:var(--ink)}
+.animal-fields p{font-size:13px;line-height:1.65;margin:12px 0 0}.animal-fields .animal-declaration{font-size:11px;opacity:.85}
+.station-console .animal-context{border-color:#69877a}.station-console .animal-context summary span{color:#c4d7ca}.station-console .animal-fields :is(select,input){background:#153933;color:#eff9f0}
+@media(max-width:380px){.animal-context summary span{float:none;display:block;margin:4px 0 0 18px}}
+
+.animal-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:32px 0}.animal-options section{padding:24px;border:1px solid #ccd8d0;border-radius:24px;background:linear-gradient(150deg,#eef6ed,#fff)}.animal-options h3{margin-top:0}.animal-options p:last-child{margin-bottom:0}@media(max-width:620px){.animal-options{grid-template-columns:1fr}.animal-options section{padding:20px}}

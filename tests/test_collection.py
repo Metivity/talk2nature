@@ -48,8 +48,10 @@ class CollectionTests(unittest.TestCase):
         validate(self.catalog)
         ids = [r['id'] for r in self.catalog['resources'] if r['acquisition'] == 'sample_approved']
         selected, size = plan(self.catalog, ids)
-        self.assertEqual(len(selected), 3)
-        self.assertLess(size, 100_000)
+        self.assertEqual({r['id'] for r in selected}, {
+            'monk-parakeet-code', 'monk-parakeet-annotations',
+            'perch-hoplite-code', 'anuraset-code'})
+        self.assertLess(size, 150_000)
 
     def test_unresolved_licenses_and_metadata_cannot_download(self):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):

@@ -1,14 +1,17 @@
+import {animalPicker} from './animal-picker.mjs';
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
 import {sessionFiles, zipFiles} from './station-export.mjs';
 import {AudioSession} from './station-audio.mjs';
 
 const $ = id => document.getElementById(id);
 let session = null, capture = null, active = false, pending = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
+const animal = animalPicker(document, 'station');
 const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 const status = text => { $('station-status').textContent = text; };
 const reasons = {user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
 function controls() {
   const busy = pending || active || exporting;
+  animal.lock(busy || Boolean(session));
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
   $('station-stop').disabled = !(pending || active);
   $('station-voice').disabled = !active; $('station-observe').disabled = !active;
@@ -36,6 +39,8 @@ async function start(synthetic) {
   if (!checkAlias()) return;
   if (dirty && !window.confirm('Discard the current local session? Export its JSON and clips first if you want to keep them.')) return;
   if (!window.AudioContext || !window.AudioWorkletNode || (!synthetic && !navigator.mediaDevices?.getUserMedia)) { status('This browser does not support the required audio APIs. Try a current browser on HTTPS.'); return; }
+  let animalContext;
+  try { animalContext = animal.value(); } catch (error) { status(error.message); return; }
   const token = ++run; pending = true; session = null; dirty = false; levels = []; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
   status(synthetic ? 'Starting invented tones inside the audio engine. No microphone access or audible playback.' : 'Waiting for microphone permission. You can cancel with Stop recording.');
   capture = new AudioSession({
@@ -60,7 +65,7 @@ async function start(synthetic) {
   try {
     const result = await capture.start(synthetic);
     if (token !== run || !result) return;
-    session = new StationSession(result.sampleRate, {origin: synthetic ? 'synthetic' : 'microphone', margin: Number($('station-margin').value)});
+    session = new StationSession(result.sampleRate, {origin: synthetic ? 'synthetic' : 'microphone', margin: Number($('station-margin').value), animalContext});
     settings = result.settings; active = true; pending = false; lastFrameAt = performance.now();
     $('station-headline').textContent = synthetic ? 'A rehearsal in listening.' : 'This place has a rhythm.';
     const setting = value => value === null ? 'unreported' : value ? 'on' : 'off';

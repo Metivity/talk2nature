@@ -108,3 +108,11 @@ October 1 authorization update: Raviv confirmed Google policy acceptance and the
 ## October 1: first public software and plan execution
 
 Raviv requested first software tools, implementation of the success plan and a late Coller Dolittle attempt. This release implements Listen, local annotation quality reports, a reproducible fixture, participation paths and a concrete execution board. The broader pilot and international adoption remain gated by scientific leadership, data rights, hosting readiness and external use. See `docs/EXECUTION_BOARD.md`; do not report the whole 90-day plan as completed. The named late prize submission is authorized; other personalized outreach drafts remain unsent.
+
+## Active goal — October 3: many animals, one credible first pilot
+
+Raviv requested more data, a better app for all animals, and a reasoned choice of first study animal, with companion parrots as his starting idea. The goal is active; prior milestones above remain historical.
+
+Deliver a bounded first expansion: at least eight additional primary source/dataset/code records, four useful evidence notes, an explicit resource/acquisition decision, a species comparison and passive pilot proposal, and an animal-context workflow shared by Station and the sound notebook. Preserve selected group/species (or unknown) through exports and notebook reopening, validate metadata in JavaScript/Python, and test mobile/offline behavior. Update the public evidence graph and local private catalog without opening real-data intake. Publish only after repository/site checks and live verification.
+
+The app should welcome any animal; scientific validation proceeds one species and question at a time. Selecting an animal is an observer declaration, never automatic recognition or a translation claim. Parrots are a provisional lead pending a species-specific feasibility comparison and actual access. Do not combine all parrot species into one early benchmark. Collect public evidence and rights-cleared external samples separately from participant recordings. Hosted intake, participant recruitment, animal playback and trained models remain separate gates.

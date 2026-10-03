@@ -14,6 +14,7 @@
   <div id="listen-loaded" hidden>
     <div class="listen-panel">
       <div class="listen-title-row"><div><p class="eyebrow">02 / INSPECT THE SOUND</p><h2 id="recording-title" tabindex="-1">Recording</h2></div><span id="origin-badge" class="pill"></span></div>
+      {{listen_animal_context}}
       <details class="sound-details"><summary>Sound details & level check</summary><p id="audio-summary" class="quiet"></p><p id="quality-note" class="listen-notice"></p></details>
       <div class="wave-wrap"><canvas id="waveform" height="180" aria-label="Waveform. Drag to choose an interval, or use the start and end fields below."></canvas><div class="wave-scale"><span>0 s</span><span id="wave-end"></span></div></div>
       <p class="quiet">Drag across the waveform to mark an interval. On any device, you can also enter exact start and end times below.</p>

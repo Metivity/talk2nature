@@ -10,6 +10,8 @@ import math
 from pathlib import Path
 import re
 
+from .animal_context import validate_animal
+
 SCHEMA = 'talk2nature.annotation.v1'
 
 
@@ -20,6 +22,8 @@ def number(value):
 def validate(document):
     if not isinstance(document, dict) or document.get('schema') != SCHEMA or document.get('tool_version') != '0.1.0':
         raise ValueError('Unsupported annotation format/version.')
+    if 'animal_context' in document:
+        validate_animal(document['animal_context'])
     recording = document.get('recording')
     if not isinstance(recording, dict):
         raise ValueError('Missing recording metadata.')
@@ -81,6 +85,7 @@ def report(document):
     if recording['origin'] == 'synthetic': warnings.append('Synthetic fixture: no biological result can be inferred.')
     return {
         'report_schema': 'talk2nature.annotation-report.v1',
+        'declared_animal_context': document.get('animal_context'),
         'recording_id': recording['recording_id'], 'declared_source_sha256': recording['sha256'],
         'declared_origin': recording['origin'], 'duration_seconds': recording['duration_seconds'],
         'event_count': len(events), 'annotated_union_seconds': round(coverage(events), 6),
