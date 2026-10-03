@@ -130,3 +130,6 @@ Continuation complete: Whole moment is deployed at `6757c27`; one bounded budger
 ## October 3 continuation: a clearer, more inviting companion
 
 Raviv asked for continued ideas, a better app and stronger design. This bounded release improves the home screen and recording workflow, adds explicit quick observations and a truthful recap, and documents future ideas in `docs/APP_NEXT_IDEAS.md`. Required acceptance: observer-provenance/export boundaries, setup/capture/review, mobile Stop visibility, offline workflow, accessibility preferences, repository/build checks and verified public publication. Comparison across saved sessions is a proposed next feature, not implemented in this release.
+
+
+Design continuation completed and deployed at `b286d7b`: the new observation flow, original visual design, quick notes and recap passed 96 automated tests, focused browser/offline/accessibility checks, an actual ZIP/WAV download check and the 100-file live comparison. Proposed next features remain a backlog, not delivered functionality.
