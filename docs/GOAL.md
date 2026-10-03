@@ -125,3 +125,8 @@ Raviv asked to continue. The next bounded deliverable is a 30-second, user-start
 
 
 Continuation complete: Whole moment is deployed at `6757c27`; one bounded budgerigar container was acquired and inspected, and the pilot readiness/codebook draft is saved. The 39 Python / 54 Node tests, local/offline/mobile browser checks and 99-file live comparison passed. Physical-phone recording, browser download completion/reimport, scientific review, participant access and hosted admission remain explicitly outside this completed release. See the latest `docs/STATUS.md` receipt.
+
+
+## October 3 continuation: a clearer, more inviting companion
+
+Raviv asked for continued ideas, a better app and stronger design. This bounded release improves the home screen and recording workflow, adds explicit quick observations and a truthful recap, and documents future ideas in `docs/APP_NEXT_IDEAS.md`. Required acceptance: observer-provenance/export boundaries, setup/capture/review, mobile Stop visibility, offline workflow, accessibility preferences, repository/build checks and verified public publication. Comparison across saved sessions is a proposed next feature, not implemented in this release.

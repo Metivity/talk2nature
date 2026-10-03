@@ -134,3 +134,10 @@ Whole moment runs without an energy detector/calibration phase. It stops after e
 Its journal uses a distinct **`talk2nature.observation-window.v1`** schema, with `sampling` (requested seconds, processed/retained samples, completion and observer selection). It omits detector/marker-window claims. The retained `events` entry is explicitly `kind: observation_window`, with no detected onset; it is not a vocalization. Markers share its relative timeline without inferred responses. Discard preserves a tombstone and clears completion/retained samples. Device clock/settings, source review, WAV hashes and local ZIP export remain available. The ZIP is a session bundle, not a Listen annotation import; extracted WAVs can be reviewed in Listen.
 
 A whole window does not establish random sampling, calibrated sensing, animal presence, synchronized video, biological meaning or research permission. The app still records processed first-channel phone/browser input, stops when hidden and requires permission for any audible people. See [PILOT_PROTOCOL_DRAFT.md](PILOT_PROTOCOL_DRAFT.md) before research use.
+
+
+## October 3: guided observation and review
+
+The public Station and companion app share Set up → Observe → Keep. Setup precedes instruments; mobile app Stop remains fixed within reach during pending/active capture. Four shortcuts add ordinary `user-entered` observation markers at the current processed-audio time. They neither label acoustic events nor establish independently verified behavior. The existing 100-marker limit remains. `observation-ui.mjs` formats the human-facing recap; journals, capture classes and admission rules are unchanged.
+
+A typed note is included only when explicitly added. If a session ends first, the draft stays readable with an exclusion notice, and a confirmed new session clears it. Countdown updates avoid redundant text writes and live-region chatter; recording state, marker feedback and export status are announced separately. The demo now defaults to a 30-second whole moment. The exact offline allowlist includes the new UI module. Physical devices and scientific protocols remain separate requirements.

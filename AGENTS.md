@@ -80,3 +80,8 @@
 - `web/assets/window-model.mjs` adds a separate user-started 30-second continuous mode with `talk2nature.observation-window.v1` journals. Preserve quiet samples, exact sample bounds, incomplete/interruption/discard status and bounded memory. Window entries are not detected vocalizations; omit detector/response-window inference.
 - Companion mode defaults to Whole moment; public exports remain local and research admission remains closed. Include `tests/window.test.mjs` through the existing `node --test tests/*.test.mjs` command and keep the module in the exact offline allowlist.
 - `research/budgerigar_sample_report.json` is an aggregate structural inspection, not an admitted dataset. Its optional SciPy inspection script parses only the checksum-pinned MAT sample in ignored external storage; no MATLAB code or workspace is executed.
+
+
+## Guided observation UI
+- `web/assets/observation-ui.mjs` supplies human-entered quick notes and complete/partial/discard-aware recaps. Preserve `user-entered` provenance, unknown sound sources, the marker limit, truthful synthetic labels and unadded-draft disclosure. No quick note is an inferred behavior or training label.
+- Preserve phase-aware mobile Stop access, live-region restraint, reduced-motion/transparency support, confirmed reset and export feedback. Keep this UI module in the public offline allowlist. Test via `node --test tests/*.test.mjs` and meaningful browser workflows.

@@ -1,3 +1,4 @@
+import {addQuickObservation, sessionRecap} from './observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from './window-model.mjs';
 import {animalPicker} from './animal-picker.mjs';
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
@@ -8,10 +9,23 @@ const $ = id => document.getElementById(id);
 let session = null, capture = null, active = false, pending = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
 const animal = animalPicker(document, 'station');
 const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
-const status = text => { $('station-status').textContent = text; };
+const status = text => { if ($('station-status').textContent !== text) $('station-status').textContent = text; };
 const reasons = {window_complete: 'Your 30-second window is ready. Quiet moments are included.', window_timeout: 'Recording stopped at the time limit. This window is incomplete; check its recorded duration.', user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
 function controls() {
   const busy = pending || active || exporting;
+  const phase = pending ? 'starting' : active ? 'recording' : session ? 'review' : 'setup';
+  $('station-console').dataset.phase = phase;
+  $('station-status').setAttribute('aria-live', active ? 'off' : 'polite');
+  const unaddedNote = Boolean($('station-note').value.trim());
+  $('station-free-note').hidden = phase === 'review' && !unaddedNote;
+  $('station-draft-warning').hidden = phase !== 'review' || !unaddedNote;
+  $('station-note').readOnly = phase === 'review';
+  for (const step of document.querySelectorAll('[data-step]')) {
+    if (step.dataset.step === (phase === 'starting' ? 'setup' : phase)) step.setAttribute('aria-current', 'step');
+    else step.removeAttribute('aria-current');
+  }
+  for (const button of document.querySelectorAll('[data-observation]')) button.disabled = !active;
+  $('station-new').disabled = !session || busy;
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
@@ -27,6 +41,7 @@ function silencePlayer() {
   if (playerUrl) URL.revokeObjectURL(playerUrl); playerUrl = null;
 }
 function stop(reason = 'user_stop') {
+  const focusReview = document.activeElement === $('station-stop') || document.activeElement?.matches('[data-observation]');
   run++; pending = false; active = false;
   capture?.stop(); capture = null;
   if (deadline) clearTimeout(deadline); if (watchdog) clearInterval(watchdog); deadline = null; watchdog = null;
@@ -34,6 +49,7 @@ function stop(reason = 'user_stop') {
   if (session) { session.stop(reason); dirty = true; status(reasons[session.stopReason] || 'Session stopped.'); }
   else status(reasons[reason] || 'Start cancelled.');
   controls(); renderEvents(); renderMarkers(); metrics();
+  if (focusReview && session) $('station-review').focus();
 }
 async function start(synthetic) {
   if (pending || active || exporting) return;
@@ -44,7 +60,7 @@ async function start(synthetic) {
   let animalContext;
   try { animalContext = animal.value(); } catch (error) { status(error.message); return; }
   const windowMode = $('station-capture-mode').value === 'window';
-  const token = ++run; pending = true; session = null; dirty = false; levels = []; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
+  const token = ++run; pending = true; session = null; dirty = false; levels = []; $('station-marker-feedback').textContent = 'Observe naturally. Tap only what you notice.'; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
   status(synthetic ? 'Starting invented tones inside the audio engine. No microphone access or audible playback.' : 'Waiting for microphone permission. You can cancel with Stop recording.');
   capture = new AudioSession({
     createContext: () => new AudioContext(),
@@ -74,7 +90,7 @@ async function start(synthetic) {
     $('station-headline').textContent = synthetic ? 'A rehearsal in listening.' : 'This place has a rhythm.';
     const setting = value => value === null ? 'unreported' : value ? 'on' : 'off';
     $('station-device').textContent = synthetic ? `Synthetic tones · ${result.sampleRate.toLocaleString()} Hz processing · no microphone, no speaker output.` : `${result.sampleRate.toLocaleString()} Hz processing · gain control ${setting(settings.auto_gain_control)} · noise suppression ${setting(settings.noise_suppression)} · echo cancellation ${setting(settings.echo_cancellation)}. Device settings are reported, not calibrated.`;
-    controls(); renderEvents();
+    controls(); renderEvents(); $('station-stop').focus({preventScroll: true});
     deadline = setTimeout(() => stop(windowMode ? 'window_timeout' : 'time_limit'), windowMode ? WINDOW_SECONDS * 1000 + 1500 : 300000);
     watchdog = setInterval(() => { if (active && performance.now() - lastFrameAt > 5000) stop('no_audio'); }, 1000);
     if (navigator.wakeLock) {
@@ -119,6 +135,8 @@ function download(content, name, type) {
   const url = URL.createObjectURL(new Blob([content], {type})), link = document.createElement('a'); link.href = url; link.download = name; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000);
 }
 function renderEvents() {
+  const recap = sessionRecap(session); $('station-recap').hidden = !recap;
+  if (recap) { $('station-recap-title').textContent = recap.title; $('station-recap-detail').textContent = recap.detail; }
   const list = $('station-events'); list.replaceChildren();
   if (!session?.events.length) { const p = document.createElement('p'); p.className = 'station-empty'; p.textContent = session?.mode === 'window' ? active ? 'Your full window will appear here when recording stops.' : 'No audio window retained.' : 'Your first sound event will appear here.'; list.append(p); return; }
   for (const event of session.events) {
@@ -143,15 +161,20 @@ function renderEvents() {
 function modeGuidance() {
   const whole = $('station-capture-mode').value === 'window';
   $('station-sensitivity').hidden = whole;
-  $('station-mode-guidance').textContent = whole ? 'Keep 30 seconds together, including quiet moments and background sounds. Start during an ordinary routine, before waiting for an interesting call. Review people’s speech before sharing.' : 'Keep short clips when sound rises above the background. Quieter periods are not saved; this is a highlights collection.';
+  $('station-mode-guidance').textContent = whole ? 'Keep the quiet parts, too. An ordinary moment; no need to wait for a call.' : 'Keep short clips when sound rises above the background. Quieter periods are not saved; this is a highlights collection.';
   metrics();
   if ($('scenario-guidance')) $('scenario-guidance').textContent = whole ? 'Keep this screen open. Recording ends after 30 seconds of audio; an early stop or interruption is marked incomplete.' : 'Keep this screen open. Start with three quiet seconds for the detector. Five-minute maximum.';
 }
-if (new URL(location.href).searchParams.get('mode') === 'companion') $('station-capture-mode').value = 'window';
+if (['companion', 'demo'].includes(new URL(location.href).searchParams.get('mode'))) $('station-capture-mode').value = 'window';
 $('station-capture-mode').addEventListener('change', modeGuidance); modeGuidance();
 $('station-start').addEventListener('click', () => start(false)); $('station-demo').addEventListener('click', () => start(true)); $('station-stop').addEventListener('click', () => stop());
+for (const button of document.querySelectorAll('[data-observation]')) button.addEventListener('click', () => {
+  if (!active || exporting) return;
+  try { const marker = addQuickObservation(session, button.dataset.observation); dirty = true; renderMarkers(); $('station-marker-feedback').textContent = `${formatTime(marker.at_seconds)} · ${marker.note} Added to your timeline.`; }
+  catch (error) { $('station-marker-feedback').textContent = error.message; }
+});
 for (const [id, kind] of [['station-voice', 'person_voice'], ['station-observe', 'observation']]) $(id).addEventListener('click', () => {
-  try { session.mark(kind, $('station-note').value); $('station-note').value = ''; dirty = true; renderMarkers(); } catch (error) { status(error.message); }
+  try { const marker = session.mark(kind, $('station-note').value); $('station-note').value = ''; dirty = true; renderMarkers(); $('station-marker-feedback').textContent = `${formatTime(marker.at_seconds)} · ${kind === 'person_voice' ? 'Voice marker' : 'Observation'} added to your timeline.`; } catch (error) { status(error.message); }
 });
 function checkAlias() {
   const input = $('station-alias');
@@ -160,23 +183,25 @@ function checkAlias() {
   status('Enter a station alias of 1–80 characters in Session settings, then try again. Avoid personal names or precise locations.');
   return false;
 }
+function exportStatus(text) { $('station-save-status').hidden = false; $('station-save-status').textContent = text; }
 async function exportSession(bundle) {
   if (!session || active || pending || exporting || !checkAlias()) return;
-  exporting = true; controls(); renderEvents(); status('Preparing your local download…');
+  exporting = true; controls(); renderEvents(); exportStatus('Preparing your local download…');
   try {
     const files = await sessionFiles(session, $('station-alias').value, settings);
     if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
     else download(files[0].bytes, files[0].name, 'application/json');
-    status(bundle ? 'Session download requested: one ZIP with your journal and all retained WAV clips. Check your Downloads folder before leaving. Unzip it to review a WAV.' : 'Journal JSON download requested. This file contains no audio; use Save session for journal and clips together.');
-  } catch { status('Could not prepare the download. Your clips remain in this tab. Try again or save individual WAV files before leaving.'); }
+    exportStatus(bundle ? 'Session download requested: one ZIP with your journal and all retained WAV clips. Check your Downloads folder before leaving. Unzip it to review a WAV.' : 'Journal JSON download requested. This file contains no audio; use Save session for journal and clips together.');
+  } catch { exportStatus('Could not prepare the download. Your clips remain in this tab. Try again or save individual WAV files before leaving.'); }
   finally { exporting = false; controls(); renderEvents(); }
 }
 $('station-bundle').addEventListener('click', () => exportSession(true));
 $('station-export').addEventListener('click', () => exportSession(false));
-$('station-clear').addEventListener('click', () => {
+function clearSession() {
   if (dirty && !window.confirm('Discard this session and all local clips? Previously downloaded files will remain on your device.')) return;
-  silencePlayer(); session = null; dirty = false; levels = []; metrics(); renderEvents(); renderMarkers(); draw(); controls(); status('Session discarded. No audio is recording.');
-});
+  silencePlayer(); session = null; dirty = false; levels = []; $('station-note').value = ''; $('station-save-status').hidden = true; metrics(); renderEvents(); renderMarkers(); draw(); controls(); $('station-headline').textContent = 'Begin with curiosity.'; $('station-marker-feedback').textContent = 'Available while recording. Observe naturally; no need to make anything happen.'; status('Ready for a new moment. Nothing is recording.'); $('station-headline').focus();
+}
+$('station-clear').addEventListener('click', clearSession); $('station-new').addEventListener('click', clearSession);
 $('station-display').addEventListener('click', () => { const large = $('station-console').classList.toggle('station-large'); $('station-display').setAttribute('aria-pressed', String(large)); $('station-display').textContent = large ? 'Standard view' : 'Large-screen view'; draw(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden && (active || pending)) stop('backgrounded'); });
 window.addEventListener('pagehide', () => { if (active || pending) stop('page_closed'); });
