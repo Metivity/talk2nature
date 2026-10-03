@@ -1,3 +1,4 @@
+import {WindowSession, WINDOW_SECONDS} from './window-model.mjs';
 import {animalPicker} from './animal-picker.mjs';
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
 import {sessionFiles, zipFiles} from './station-export.mjs';
@@ -8,10 +9,11 @@ let session = null, capture = null, active = false, pending = false, exporting =
 const animal = animalPicker(document, 'station');
 const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 const status = text => { $('station-status').textContent = text; };
-const reasons = {user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
+const reasons = {window_complete: 'Your 30-second window is ready. Quiet moments are included.', window_timeout: 'Recording stopped at the time limit. This window is incomplete; check its recorded duration.', user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
 function controls() {
   const busy = pending || active || exporting;
   animal.lock(busy || Boolean(session));
+  $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
   $('station-stop').disabled = !(pending || active);
   $('station-voice').disabled = !active; $('station-observe').disabled = !active;
@@ -41,6 +43,7 @@ async function start(synthetic) {
   if (!window.AudioContext || !window.AudioWorkletNode || (!synthetic && !navigator.mediaDevices?.getUserMedia)) { status('This browser does not support the required audio APIs. Try a current browser on HTTPS.'); return; }
   let animalContext;
   try { animalContext = animal.value(); } catch (error) { status(error.message); return; }
+  const windowMode = $('station-capture-mode').value === 'window';
   const token = ++run; pending = true; session = null; dirty = false; levels = []; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
   status(synthetic ? 'Starting invented tones inside the audio engine. No microphone access or audible playback.' : 'Waiting for microphone permission. You can cancel with Stop recording.');
   capture = new AudioSession({
@@ -57,7 +60,8 @@ async function start(synthetic) {
         if (lastEventCount !== session.events.length) { lastEventCount = session.events.length; renderEvents(); }
         renderMarkers();
         if (session.stopped) { stop(session.stopReason); return; }
-        if (session.threshold === null) status('Checking the first three seconds of background level. Keep the setting undisturbed.');
+        if (windowMode) status(`Keeping the whole moment · ${Math.max(0, Math.ceil(WINDOW_SECONDS - result.elapsed))} seconds remaining. Observe the ordinary routine; quiet moments count too.`);
+        else if (session.threshold === null) status('Checking the first three seconds of background level. Keep the setting undisturbed.');
         else if (result.elapsed < 3.3) status(synthetic ? 'Synthetic session running. Invented pulses recur; add a test marker and examine what follows.' : 'Listening locally. Short sound candidates will appear below. Mark only what you actually observed.');
       } catch { stop('capture_error'); }
     }
@@ -65,13 +69,13 @@ async function start(synthetic) {
   try {
     const result = await capture.start(synthetic);
     if (token !== run || !result) return;
-    session = new StationSession(result.sampleRate, {origin: synthetic ? 'synthetic' : 'microphone', margin: Number($('station-margin').value), animalContext});
+    session = new (windowMode ? WindowSession : StationSession)(result.sampleRate, {origin: synthetic ? 'synthetic' : 'microphone', margin: Number($('station-margin').value), animalContext});
     settings = result.settings; active = true; pending = false; lastFrameAt = performance.now();
     $('station-headline').textContent = synthetic ? 'A rehearsal in listening.' : 'This place has a rhythm.';
     const setting = value => value === null ? 'unreported' : value ? 'on' : 'off';
     $('station-device').textContent = synthetic ? `Synthetic tones · ${result.sampleRate.toLocaleString()} Hz processing · no microphone, no speaker output.` : `${result.sampleRate.toLocaleString()} Hz processing · gain control ${setting(settings.auto_gain_control)} · noise suppression ${setting(settings.noise_suppression)} · echo cancellation ${setting(settings.echo_cancellation)}. Device settings are reported, not calibrated.`;
-    controls();
-    deadline = setTimeout(() => stop('time_limit'), 300000);
+    controls(); renderEvents();
+    deadline = setTimeout(() => stop(windowMode ? 'window_timeout' : 'time_limit'), windowMode ? WINDOW_SECONDS * 1000 + 1500 : 300000);
     watchdog = setInterval(() => { if (active && performance.now() - lastFrameAt > 5000) stop('no_audio'); }, 1000);
     if (navigator.wakeLock) {
       try { const lock = await navigator.wakeLock.request('screen'); if (token === run && active) wake = lock; else lock.release().catch(() => {}); } catch { /* A denied wake lock never implies background capture. */ }
@@ -83,10 +87,12 @@ async function start(synthetic) {
   }
 }
 function metrics() {
+  const whole = session ? session.mode === 'window' : $('station-capture-mode').value === 'window';
   $('station-time').textContent = formatTime(session?.elapsed || 0); $('station-event-total').textContent = session?.events.length || 0;
+  $('station-event-caption').textContent = whole ? 'saved window' : 'sound candidates';
   $('station-memory').textContent = `${((session?.bytes || 0) / 1048576).toFixed(1)} MB`;
   $('station-level').textContent = session ? `${session.level.toFixed(1)} dBFS` : '— dBFS';
-  $('station-threshold').textContent = session?.threshold != null ? `trigger ${session.threshold.toFixed(1)} dBFS · not dB SPL` : '3-second level check on start';
+  $('station-threshold').textContent = whole ? 'Continuous audio · no sound trigger' : session?.threshold != null ? `trigger ${session.threshold.toFixed(1)} dBFS · not dB SPL` : '3-second level check on start';
 }
 function draw() {
   const canvas = $('station-scope'), width = Math.max(1, canvas.clientWidth), height = canvas.clientHeight, scale = window.devicePixelRatio || 1;
@@ -100,7 +106,7 @@ function draw() {
 function renderMarkers() {
   const list = $('station-markers'); list.replaceChildren(); const windows = session?.markerWindows() || [];
   const detected = windows.filter(w => w.outcome === 'sound_detected').length, quiet = windows.filter(w => w.outcome === 'no_detected_sound').length, incomplete = windows.filter(w => w.outcome === 'incomplete').length, discarded = windows.filter(w => w.outcome === 'discarded_sound').length;
-  $('station-window-summary').textContent = windows.length ? `${detected} voice markers followed by a detected sound · ${quiet} with none detected · ${incomplete} incomplete · ${discarded} with a clip not retained. Timing only; not verified replies.` : 'A shared timeline, before a shared vocabulary.';
+  $('station-window-summary').textContent = windows.length ? `${detected} voice markers followed by a detected sound · ${quiet} with none detected · ${incomplete} incomplete · ${discarded} with a clip not retained. Timing only; not verified replies.` : session?.mode === 'window' ? 'Your markers share this window’s timeline. They do not establish who made a sound or what it meant.' : 'A shared timeline, before a shared vocabulary.';
   for (const marker of [...(session?.markers || [])].reverse()) {
     const li = document.createElement('li'), title = document.createElement('strong'), note = document.createElement('p');
     title.textContent = `${formatTime(marker.at_seconds)} · ${marker.kind === 'person_voice' ? 'Voice marker' : 'Observation'}`; note.textContent = marker.note;
@@ -114,26 +120,35 @@ function download(content, name, type) {
 }
 function renderEvents() {
   const list = $('station-events'); list.replaceChildren();
-  if (!session?.events.length) { const p = document.createElement('p'); p.className = 'station-empty'; p.textContent = 'Your first sound event will appear here.'; list.append(p); return; }
+  if (!session?.events.length) { const p = document.createElement('p'); p.className = 'station-empty'; p.textContent = session?.mode === 'window' ? active ? 'Your full window will appear here when recording stops.' : 'No audio window retained.' : 'Your first sound event will appear here.'; list.append(p); return; }
   for (const event of session.events) {
     const card = document.createElement('article'); card.className = 'station-event';
     const title = document.createElement('h3'), detail = document.createElement('p'), sourceLabel = document.createElement('label'), select = document.createElement('select');
-    title.textContent = `Sound ${event.id} · ${formatTime(event.onset_seconds)}`;
+    title.textContent = session.mode === 'window' ? session.exportRecord().sampling.complete ? 'Your full 30-second moment' : 'Partial observation window' : `Sound ${event.id} · ${formatTime(event.onset_seconds)}`;
     detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · ${session.origin === 'synthetic' ? 'synthetic audio' : 'microphone audio'} · source ${event.source_label}`;
-    sourceLabel.textContent = 'What made this sound?'; select.setAttribute('aria-label', `Source of sound ${event.id}`); select.disabled = active || pending || exporting;
+    sourceLabel.textContent = session.mode === 'window' ? 'Main source, if known (mixed or quiet? Leave uncertain)' : 'What made this sound?'; select.setAttribute('aria-label', `Source of sound ${event.id}`); select.disabled = active || pending || exporting;
     for (const source of SOURCE_LABELS) { const option = document.createElement('option'); option.value = source; option.textContent = source; select.append(option); } select.value = event.source_label;
     const details = document.createElement('details'), summary = document.createElement('summary'), notes = document.createElement('textarea'); summary.textContent = 'Review note'; notes.value = event.notes; notes.maxLength = 300; notes.disabled = active || pending || exporting; notes.setAttribute('aria-label', `Review note for sound ${event.id}`); details.append(summary, notes);
     const saveReview = () => { session.review(event.id, select.value, notes.value); dirty = true; detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · source ${event.source_label} (your review)`; renderMarkers(); };
     select.addEventListener('change', saveReview); notes.addEventListener('change', saveReview); sourceLabel.append(select);
     const buttons = document.createElement('div'); buttons.className = 'station-controls';
     for (const [label, action] of [
-      ['Review audio', () => { silencePlayer(); playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'})); $('station-player').src = playerUrl; $('station-player').hidden = false; $('station-player').focus(); status(`Sound ${event.id} ready in the audio player. Use headphones away from animals; press Play to review.`); }],
+      ['Review audio', () => { silencePlayer(); playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'})); $('station-player').src = playerUrl; $('station-player').hidden = false; $('station-player').focus(); status(`${session.mode === 'window' ? 'Observation window' : `Sound ${event.id}`} ready in the audio player. Use headphones away from animals; press Play to review.`); }],
       ['Save WAV', () => { download(wavBytes(event.pcm, session.sampleRate), session.audioFilename(event.id), 'audio/wav'); status(`Sound ${event.id} download requested. Review it before sharing.`); }],
       ['Discard clip', () => { silencePlayer(); session.discard(event.id); dirty = true; renderEvents(); renderMarkers(); metrics(); }]
     ]) { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.setAttribute('aria-label', `${label} ${event.id}`); button.disabled = active || pending || exporting; button.addEventListener('click', action); buttons.append(button); }
     card.append(title, detail, sourceLabel, details, buttons); list.append(card);
   }
 }
+function modeGuidance() {
+  const whole = $('station-capture-mode').value === 'window';
+  $('station-sensitivity').hidden = whole;
+  $('station-mode-guidance').textContent = whole ? 'Keep 30 seconds together, including quiet moments and background sounds. Start during an ordinary routine, before waiting for an interesting call. Review people’s speech before sharing.' : 'Keep short clips when sound rises above the background. Quieter periods are not saved; this is a highlights collection.';
+  metrics();
+  if ($('scenario-guidance')) $('scenario-guidance').textContent = whole ? 'Keep this screen open. Recording ends after 30 seconds of audio; an early stop or interruption is marked incomplete.' : 'Keep this screen open. Start with three quiet seconds for the detector. Five-minute maximum.';
+}
+if (new URL(location.href).searchParams.get('mode') === 'companion') $('station-capture-mode').value = 'window';
+$('station-capture-mode').addEventListener('change', modeGuidance); modeGuidance();
 $('station-start').addEventListener('click', () => start(false)); $('station-demo').addEventListener('click', () => start(true)); $('station-stop').addEventListener('click', () => stop());
 for (const [id, kind] of [['station-voice', 'person_voice'], ['station-observe', 'observation']]) $(id).addEventListener('click', () => {
   try { session.mark(kind, $('station-note').value); $('station-note').value = ''; dirty = true; renderMarkers(); } catch (error) { status(error.message); }

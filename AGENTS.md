@@ -74,3 +74,9 @@
 - Schema v2 adds research_media, media_sync, model_runs, model_inputs and model_results. Read docs/MEDIA_LINEAGE.md before changing these records. Existing databases require explicit migration; runtime must not silently migrate PostgreSQL or a legacy SQLite store.
 - Descriptors and outputs are invented metadata only. Preserve no-object/no-upload/no-model-execution boundaries, pre-review media/alignment freezing, exact release/input/split membership, and transactional withdrawal invalidation across dependent runs. Preserve observation labels separately from predictions.
 - Run both adapter suites with scripts/test_postgres.py, migration/recovery tests and existing publication checks after lineage changes. Never run disposable test resets against an existing database.
+
+
+## Whole-moment observation mode
+- `web/assets/window-model.mjs` adds a separate user-started 30-second continuous mode with `talk2nature.observation-window.v1` journals. Preserve quiet samples, exact sample bounds, incomplete/interruption/discard status and bounded memory. Window entries are not detected vocalizations; omit detector/response-window inference.
+- Companion mode defaults to Whole moment; public exports remain local and research admission remains closed. Include `tests/window.test.mjs` through the existing `node --test tests/*.test.mjs` command and keep the module in the exact offline allowlist.
+- `research/budgerigar_sample_report.json` is an aggregate structural inspection, not an admitted dataset. Its optional SciPy inspection script parses only the checksum-pinned MAT sample in ignored external storage; no MATLAB code or workspace is executed.

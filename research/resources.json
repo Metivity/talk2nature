@@ -280,25 +280,36 @@
       "title": "Zhao (2023) budgerigar data",
       "url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
       "version": "10.17632/j8rpy4dc6c.1",
-      "priority": 2,
+      "priority": 1,
       "reviewed": "2026-10-03",
       "task": "Species-specific feasibility and future baseline design.",
-      "review_depth": "Deposit description and rights metadata; file contents not yet reviewed.",
+      "review_depth": "Versioned deposit, license, file inventory and one checksum-pinned MAT file inspected. Full methods, caller/intervention status and biological labels remain unverified.",
       "access": "Public metadata; see acquisition decision.",
-      "decision": "Inspect file inventory and untreated subsets before bounded acquisition.",
-      "limitations": "MATLAB containers require separate inspection; laboratory interventions do not transfer to home observation.",
+      "decision": "Acquired 1,486,634 bytes for structure inspection only: 15 call structures, 82,315 raw samples, stored fs 44101. No training or publication of audio.",
+      "limitations": "Smallest-file selection is biased. No explicit independent behavior-label field in the inspected container. Stored fs 44101 and MATLAB object times need method review. Caller/intervention status remains unverified; filename response does not establish conversation. See research/budgerigar_sample_report.json.",
       "attribution": "Zhao (2023) budgerigar data; authors credited at the source record.",
       "rights": {
         "license": "CC-BY-4.0",
-        "scope": "This named component only, not linked papers, code, media or weights.",
+        "scope": "Dataset files in this versioned deposit; deposit-level declaration, not an independent third-party rights audit.",
         "evidence_url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
         "conditions": "Retain attribution and verify component-specific rights before reuse.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
       },
-      "acquisition": "metadata_only",
-      "files": []
+      "acquisition": "sample_approved",
+      "files": [
+        {
+          "name": "20220502_Blue571_response1_postproof.mat",
+          "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/f09c7d65-540a-45e0-b7d2-81ff86a133b1",
+          "source_url": "https://data.mendeley.com/public-files/datasets/j8rpy4dc6c/files/b573de6f-76d1-46dd-bafb-abe4f4f09a42/file_downloaded",
+          "bytes": 1486634,
+          "sha256": "1130e0426ad81cec26d631d1cc86eb6388ebbe15ed47c011297f239d75c83ef0"
+        }
+      ],
+      "adapter": "mendeley_sha256",
+      "admission_reason": "CC BY 4.0 deposit; one exact file selected by size, known repository SHA-256 and reviewed final public URL. This admits local acquisition only.",
+      "license_notice": "Zhilei Zhao (2023), Data for Anterior forebrain pathway in parrots is necessary for producing learned vocalizations with individual signatures, version 1, doi:10.17632/j8rpy4dc6c.1. Deposit declares CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . Retain attribution and mark derivatives; any third-party content requires separate review."
     },
     {
       "id": "catmeows-data",

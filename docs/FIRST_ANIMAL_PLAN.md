@@ -52,9 +52,16 @@ A continuing research queue: cockatiel natural-call methods; parrots' non-mimicr
 ## Sources and review depth
 
 1. [Zhao et al., budgerigar study](https://pubmed.ncbi.nlm.nih.gov/38070505/): primary abstract/highlights.
-2. [Zhao data, version 1](https://data.mendeley.com/datasets/j8rpy4dc6c/1): deposit description and license; files not inspected.
+2. [Zhao data, version 1](https://data.mendeley.com/datasets/j8rpy4dc6c/1): deposit description/license, inventory and one pinned MAT structure inspected in the continuation; full methods pending.
 3. [Benedict et al., companion-parrot survey](https://www.nature.com/articles/s41598-022-24335-x): selected results and collection methods.
 4. [Abzaliev et al., dog bark study](https://aclanthology.org/2024.lrec-main.1432.pdf): abstract and experimental setup, including grouped folds.
 5. [CatMeows 1.0.2](https://zenodo.org/records/4008297): record description, fields and API rights.
 6. [Soundwel deposit](https://zenodo.org/records/8252482): description and API rights. Full study methods pending.
 7. [AnuraSet paper](https://www.nature.com/articles/s41597-023-02666-2): data records and selected validation; [versioned deposit](https://zenodo.org/records/8342596) and [code](https://github.com/soundclim/anuraset).
+
+
+## Continuation: practice before recruitment
+
+See [PILOT_PROTOCOL_DRAFT.md](PILOT_PROTOCOL_DRAFT.md) for readiness gates and the candidate visible-behavior codebook. Whole moment mode now retains a 30-second audio window, including quiet samples, with explicit incomplete status on interruption. This reduces threshold selection within a window; observer-selected start times still bias sampling. No video capture or independent annotation interface is implemented.
+
+One 1.49 MB licensed budgerigar container has now been acquired and inspected, superseding the earlier metadata-only state above. It contains 15 call structures and no explicit independent visible-behavior field. Stored `fs=44101`, caller/context linkage and intervention status need review. See [COLLECTION.md](COLLECTION.md) and the aggregate report. It is a structural starting point, not a home-context training set or scientific result.

@@ -1,0 +1,76 @@
+{
+  "resource_id": "budgerigar-vocal-signature-data",
+  "source_url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
+  "source_version": "10.17632/j8rpy4dc6c.1",
+  "source_file": "20220502_Blue571_response1_postproof.mat",
+  "source_bytes": 1486634,
+  "source_sha256": "1130e0426ad81cec26d631d1cc86eb6388ebbe15ed47c011297f239d75c83ef0",
+  "license": "CC-BY-4.0",
+  "attribution": "Zhao, Zhilei (2023), Mendeley Data, version 1.",
+  "inspection_date": "2026-10-03",
+  "inspection_environment": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "variables": [
+    {
+      "name": "callStructProof",
+      "shape": [
+        15,
+        1
+      ],
+      "type": "struct"
+    },
+    {
+      "name": "__function_workspace__",
+      "shape": [
+        1,
+        10512
+      ],
+      "type": "uint8"
+    }
+  ],
+  "inspected_variable": "callStructProof",
+  "struct_rows": 15,
+  "fields": [
+    "callTitle",
+    "call_id",
+    "fs",
+    "filename",
+    "timeFileAbs",
+    "onsetTimeOfFile",
+    "offsetTimeOfFile",
+    "onsetTimeAbs",
+    "offsetTimeAbs",
+    "duration",
+    "signalRaw",
+    "signalFiltered",
+    "signalNorm",
+    "title"
+  ],
+  "declared_fs_values": [
+    44101.0
+  ],
+  "raw_sample_count": 82315,
+  "raw_samples_per_row": {
+    "min": 1281,
+    "max": 7041
+  },
+  "total_seconds_if_declared_fs_is_hz": 1.8665109634702162,
+  "declared_duration_range": {
+    "min": 0.029024285163601782,
+    "max": 0.15963356839980958
+  },
+  "raw_samples_all_finite": true,
+  "raw_filtered_normalized_shapes_match": true,
+  "training_admitted": false,
+  "limitations": [
+    "One smallest-file convenience sample from ColonyNoiseCalls, not a representative corpus.",
+    "The stored fs value is 44101; preserved without silently rounding to 44100. Units and acquisition settings need method review.",
+    "Fifteen structure rows are not fifteen independent animals, sessions or verified behavior labels.",
+    "This container has no explicit independent visible-behavior annotation field. Caller and intervention status remain unverified.",
+    "MATLAB object timestamps and the saved function workspace were not interpreted or executed.",
+    "No audio playback, model training, conversation inference or public audio redistribution was performed.",
+    "Full methods, component rights and suitability for home-recording comparisons remain unreviewed."
+  ]
+}

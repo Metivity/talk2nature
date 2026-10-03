@@ -50,8 +50,30 @@ class CollectionTests(unittest.TestCase):
         selected, size = plan(self.catalog, ids)
         self.assertEqual({r['id'] for r in selected}, {
             'monk-parakeet-code', 'monk-parakeet-annotations',
-            'perch-hoplite-code', 'anuraset-code'})
-        self.assertLess(size, 150_000)
+            'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data'})
+        self.assertLess(size, 2_000_000)
+
+    def test_mendeley_sample_is_versioned_hash_pinned_and_not_training_admitted(self):
+        r = copy.deepcopy(next(r for r in self.catalog['resources'] if r['id'] == 'budgerigar-vocal-signature-data'))
+        a = r['files'][0]
+        a['bytes'] = len(self.data)
+        a['sha256'] = hashlib.sha256(self.data).hexdigest()
+        c = {'schema_version': 1, 'resources': [r]}
+        with tempfile.TemporaryDirectory() as temp:
+            result = acquire(c, [r['id']], Path(temp).resolve(), opener=self.opener())
+            receipt = json.loads(Path(result['receipts'][0]).read_text())
+            self.assertFalse(receipt['training_admitted'])
+            self.assertEqual(receipt['resource']['license_notice'], r['license_notice'])
+        for key, value in [('sha256', '0'*64), ('bytes', len(self.data)+1)]:
+            changed = {**a, key:value}
+            with self.assertRaises(ValueError):
+                read_artifact(changed, self.opener())
+        for key, value in [('url', a['url']+'?x=1'), ('url', a['url'].replace('https:', 'http:')), ('sha256','bad'), ('source_url',a['source_url'].replace('j8rpy4dc6c','different0')), ('git_blob_sha1','a'*40)]:
+            bad = copy.deepcopy(c);bad['resources'][0]['files'][0][key] = value
+            with self.subTest(key=key), self.assertRaises(ValueError): validate(bad)
+        for key, value in [('adapter','unknown'), ('version','latest'), ('license_notice','')]:
+            bad = copy.deepcopy(c);bad['resources'][0][key] = value
+            with self.subTest(key=key), self.assertRaises(ValueError): validate(bad)
 
     def test_unresolved_licenses_and_metadata_cannot_download(self):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):

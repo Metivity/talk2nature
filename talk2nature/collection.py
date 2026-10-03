@@ -1,7 +1,8 @@
 """Catalog and acquire small reviewed research samples, without executing them.
 
 License/admission fields are human-reviewed declarations, not legal or scientific
-verification. The initial adapter supports immutable GitHub files only. Downloads
+verification. Adapters support immutable GitHub files and reviewed Mendeley files
+with deposit SHA-256 checksums and a pinned public S3 URL. Downloads
 are not training releases and never enter the private admin or website build.
 """
 import argparse
@@ -82,8 +83,17 @@ def validate(catalog):
                 raise ValueError('Acquisition requires files and a reviewed permissive license.')
             if any(rights[k] != 'conditional' for k in ('research_use', 'commercial_use', 'redistribution')):
                 raise ValueError('Unresolved/restricted rights cannot enter this acquisition adapter.')
-            if not re.fullmatch('[a-f0-9]{40}', resource['version']):
-                raise ValueError('Sample requires an immutable Git commit.')
+            adapter = resource.get('adapter', 'github')
+            deposit = re.fullmatch(r'10\.17632/([a-z0-9]{10})\.([1-9][0-9]*)', resource['version'])
+            if adapter == 'github':
+                if not re.fullmatch('[a-f0-9]{40}', resource['version']):
+                    raise ValueError('Sample requires an immutable Git commit.')
+            elif adapter == 'mendeley_sha256':
+                if not deposit or resource['url'] != f'https://data.mendeley.com/datasets/{deposit[1]}/{deposit[2]}':
+                    raise ValueError('Mendeley sample requires a versioned deposit.')
+                require_text(resource, 'license_notice')
+            else:
+                raise ValueError('Unknown acquisition adapter.')
             require_text(resource, 'admission_reason')
             names = set()
             for artifact in files:
@@ -95,15 +105,25 @@ def validate(catalog):
                 names.add(name)
                 parsed = https_url(require_text(artifact, 'url'))
                 parts = parsed.path.split('/')
-                if (parsed.hostname != 'raw.githubusercontent.com' or parsed.query or parsed.fragment
-                        or len(parts) < 5 or parts[3] != resource['version']
-                        or any(x in ('.', '..') for x in unquote(parsed.path).split('/'))):
-                    raise ValueError('Artifact must use a pinned raw.githubusercontent.com URL.')
+                if adapter == 'github':
+                    if (parsed.hostname != 'raw.githubusercontent.com' or parsed.query or parsed.fragment
+                            or len(parts) < 5 or parts[3] != resource['version']
+                            or any(x in ('.', '..') for x in unquote(parsed.path).split('/'))):
+                        raise ValueError('Artifact must use a pinned raw.githubusercontent.com URL.')
+                    if not re.fullmatch('[a-f0-9]{40}', require_text(artifact, 'git_blob_sha1')) or 'sha256' in artifact:
+                        raise ValueError('Missing or ambiguous Git blob checksum.')
+                else:
+                    uuid = r'[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}'
+                    if (parsed.hostname != 'prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com'
+                            or parsed.query or parsed.fragment or not re.fullmatch('/' + uuid, parsed.path)):
+                        raise ValueError('Mendeley artifact must pin the reviewed public S3 object.')
+                    if not re.fullmatch('[a-f0-9]{64}', require_text(artifact, 'sha256')) or 'git_blob_sha1' in artifact:
+                        raise ValueError('Missing or ambiguous deposit SHA-256.')
+                    if not re.fullmatch(re.escape(f'https://data.mendeley.com/public-files/datasets/{deposit[1]}/files/') + uuid + '/file_downloaded', require_text(artifact, 'source_url')):
+                        raise ValueError('Artifact provenance must match the named deposit.')
                 if type(artifact.get('bytes')) is not int or not 0 < artifact['bytes'] <= MAX_FILE_BYTES:
                     raise ValueError('Artifact exceeds file limit or has invalid size.')
-                if not re.fullmatch('[a-f0-9]{40}', require_text(artifact, 'git_blob_sha1')):
-                    raise ValueError('Missing Git blob checksum.')
-            if resource.get('license_file') not in names:
+            if adapter == 'github' and resource.get('license_file') not in names:
                 raise ValueError('Every sample must retain a license file.')
     return catalog
 
@@ -151,9 +171,13 @@ def read_artifact(artifact, opener):
         data = response.read(artifact['bytes'] + 1)
     if len(data) != artifact['bytes']:
         raise ValueError('Downloaded size does not match reviewed size.')
-    blob = b'blob ' + str(len(data)).encode() + b'\0' + data
-    if hashlib.sha1(blob).hexdigest() != artifact['git_blob_sha1']:
-        raise ValueError('Downloaded Git blob checksum mismatch.')
+    if 'sha256' in artifact:
+        if hashlib.sha256(data).hexdigest() != artifact['sha256']:
+            raise ValueError('Downloaded deposit SHA-256 mismatch.')
+    else:
+        blob = b'blob ' + str(len(data)).encode() + b'\0' + data
+        if hashlib.sha1(blob).hexdigest() != artifact['git_blob_sha1']:
+            raise ValueError('Downloaded Git blob checksum mismatch.')
     return data
 
 

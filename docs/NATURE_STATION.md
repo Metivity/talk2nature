@@ -123,3 +123,14 @@ Export locks session-changing controls and snapshots metadata/audio before async
 ## October 3: animal groups and species labels
 
 The shared “Who was there?” control accepts an observer-declared group and optional species before starting a session. The session snapshots this context and locks editing until the session is discarded; changing the setup cannot retrospectively relabel an existing recording. JSON and ZIP journals include the additive `animal_context` object described in `docs/LISTEN.md`. Unknown remains the default; choosing an animal never changes the detector or claims species recognition. Guidance makes phone-microphone limits explicit for ultrasonic, underwater and vibration signals. Existing capture, playback, export and real-data admission boundaries are unchanged.
+
+
+## October 3: Whole moment · 30 seconds
+
+The capture choice is visible before starting: **Sound highlights** retains the existing energy-triggered clips for up to five minutes; **Whole moment** keeps every processed sample in one user-started 30-second window, including quiet samples. Companion mode defaults to Whole moment; other scenarios retain highlights. The choice and animal context are frozen during a session. Optional sensitivity controls apply only to highlights.
+
+Whole moment runs without an energy detector/calibration phase. It stops after exactly `sample_rate × 30` processed samples and trims the final frame to that bound. The existing visibility/interruption/stall cleanup remains; a 31.5-second wall watchdog protects capture if the sample target is not reached. Early stops, watchdog expiry, storage limits or discarded audio cannot be marked complete. Storage is bounded by sample capacity and the existing byte quota. User playback remains manual; no upload or browser audio persistence is added.
+
+Its journal uses a distinct **`talk2nature.observation-window.v1`** schema, with `sampling` (requested seconds, processed/retained samples, completion and observer selection). It omits detector/marker-window claims. The retained `events` entry is explicitly `kind: observation_window`, with no detected onset; it is not a vocalization. Markers share its relative timeline without inferred responses. Discard preserves a tombstone and clears completion/retained samples. Device clock/settings, source review, WAV hashes and local ZIP export remain available. The ZIP is a session bundle, not a Listen annotation import; extracted WAVs can be reviewed in Listen.
+
+A whole window does not establish random sampling, calibrated sensing, animal presence, synchronized video, biological meaning or research permission. The app still records processed first-channel phone/browser input, stops when hidden and requires permission for any audible people. See [PILOT_PROTOCOL_DRAFT.md](PILOT_PROTOCOL_DRAFT.md) before research use.

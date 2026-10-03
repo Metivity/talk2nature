@@ -109,12 +109,16 @@ October 1 authorization update: Raviv confirmed Google policy acceptance and the
 
 Raviv requested first software tools, implementation of the success plan and a late Coller Dolittle attempt. This release implements Listen, local annotation quality reports, a reproducible fixture, participation paths and a concrete execution board. The broader pilot and international adoption remain gated by scientific leadership, data rights, hosting readiness and external use. See `docs/EXECUTION_BOARD.md`; do not report the whole 90-day plan as completed. The named late prize submission is authorized; other personalized outreach drafts remain unsent.
 
-## Active goal — October 3: many animals, one credible first pilot
+## Completed milestone — October 3: many animals, one credible first pilot
 
-Raviv requested more data, a better app for all animals, and a reasoned choice of first study animal, with companion parrots as his starting idea. The goal is active; prior milestones above remain historical.
+Raviv requested more data, a better app for all animals, and a reasoned choice of first study animal, with companion parrots as his starting idea. This bounded milestone is complete; prior milestones above remain historical.
 
 Deliver a bounded first expansion: at least eight additional primary source/dataset/code records, four useful evidence notes, an explicit resource/acquisition decision, a species comparison and passive pilot proposal, and an animal-context workflow shared by Station and the sound notebook. Preserve selected group/species (or unknown) through exports and notebook reopening, validate metadata in JavaScript/Python, and test mobile/offline behavior. Update the public evidence graph and local private catalog without opening real-data intake. Publish only after repository/site checks and live verification.
 
 The app should welcome any animal; scientific validation proceeds one species and question at a time. Selecting an animal is an observer declaration, never automatic recognition or a translation claim. Parrots are a provisional lead pending a species-specific feasibility comparison and actual access. Do not combine all parrot species into one early benchmark. Collect public evidence and rights-cleared external samples separately from participant recordings. Hosted intake, participant recruitment, animal playback and trained models remain separate gates.
 
 October 3 milestone completed: multi-animal controls, the evidence expansion, licensed code sample, catalog synchronization and provisional first-species plan are deployed at `ac18a83`. Acceptance results and browser file-dialog limitations are documented in `docs/STATUS.md`. The next program milestone is to confirm household/species access and a scientific reviewer, finalize a passive protocol, and inspect a bounded rights-compatible audio subset before any real-data intake or training.
+
+## October 3 continuation: keep the whole observation
+
+Raviv asked to continue. The next bounded deliverable is a 30-second, user-started continuous observation mode alongside existing sound highlights, with explicit partial/discard status, local export, mobile/offline checks and public deployment. Inspect the versioned budgerigar deposit inventory and acquire only a small, rights-reviewed file if suitable; otherwise record the concrete size/format obstacle. Prepare a draft pilot codebook and access/reviewer checklist without claiming recruitment, scientific approval or research admission. Necessary checks are model boundary/export tests, the existing repository suites, a synthetic browser capture and public-build verification. Physical-phone testing and browser file-import permissions remain separate known limitations.
