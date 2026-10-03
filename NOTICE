@@ -9,3 +9,8 @@ https://creativecommons.org/licenses/by/4.0/
 Third-party works, audio, datasets, model weights, names and marks retain
 their own rights. Links and citations do not imply affiliation or endorsement.
 No third-party article text, recordings or model weights are bundled.
+
+web/assets/atlas-land.svg is derived from Natural Earth 1:110m land data
+(public domain): https://www.naturalearthdata.com/about/terms-of-use/
+The pinned source receipt and reproducible derivation are documented in
+research/atlas-map-source.json and docs/RESEARCH_ATLAS.md.

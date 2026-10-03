@@ -1,0 +1,55 @@
+{
+  "schema": "talk2nature.atlas-places.v1",
+  "notice": "Display points are editorial, approximate regional or country locators. They are not observation coordinates, home addresses or study boundaries.",
+  "places": [
+    {
+      "id": "wolfgangsee",
+      "label": "Wolfgangsee, Austria",
+      "precision": "region",
+      "latitude": 47.8,
+      "longitude": 13.4
+    },
+    {
+      "id": "karuizawa",
+      "label": "Karuizawa region, Japan",
+      "precision": "region",
+      "latitude": 36.3,
+      "longitude": 138.6
+    },
+    {
+      "id": "dominica",
+      "label": "Waters off Dominica",
+      "precision": "region",
+      "latitude": 15.4,
+      "longitude": -61.5
+    },
+    {
+      "id": "herzliya",
+      "label": "Herzliya region, Israel",
+      "precision": "region",
+      "latitude": 32.2,
+      "longitude": 34.8
+    },
+    {
+      "id": "kenya",
+      "label": "Kenya · Samburu and Amboseli",
+      "precision": "country",
+      "latitude": 0.0,
+      "longitude": 37.8
+    },
+    {
+      "id": "kalahari",
+      "label": "Northern Cape, South Africa",
+      "precision": "region",
+      "latitude": -26.9,
+      "longitude": 21.8
+    },
+    {
+      "id": "brazil",
+      "label": "Brazil · Cerrado and Atlantic Forest",
+      "precision": "country",
+      "latitude": -14.2,
+      "longitude": -51.9
+    }
+  ]
+}

@@ -37,7 +37,22 @@
       ]
     ],
     "review_locator": "Suzuki et al.: Methods, Experiments 1–2; Figures 3–4. Phillips & Wilson: opening argument on systematicity.",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The methods name forests near Karuizawa. The displayed region does not identify nest boxes.",
+      "locations": [
+        {
+          "place_id": "karuizawa",
+          "role": "study_region",
+          "source_id": 1,
+          "locator": "Methods: study site and call recordings",
+          "basis": "The methods name forests near Karuizawa. The displayed region does not identify nest boxes."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "sperm-whale-structure",
@@ -57,7 +72,28 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
     "year_label": "Source year",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The analysis uses the Dominica Sperm Whale Project’s Eastern Caribbean recordings.",
+      "locations": [
+        {
+          "place_id": "dominica",
+          "role": "study_region",
+          "source_id": 2,
+          "locator": "Results: The dataset",
+          "basis": "The analysis uses the Dominica Sperm Whale Project’s Eastern Caribbean recordings."
+        }
+      ],
+      "observation_period": {
+        "label": "Recordings from 2005–2018",
+        "start_year": 2005,
+        "end_year": 2018,
+        "source_id": 2,
+        "locator": "Results: The dataset"
+      }
+    }
   },
   {
     "slug": "whale-birth",
@@ -77,7 +113,28 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
     "year_label": "Source year",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The authors describe an observed birth off Dominica. The map uses a broad offshore locator.",
+      "locations": [
+        {
+          "place_id": "dominica",
+          "role": "study_region",
+          "source_id": 3,
+          "locator": "Results: Sperm whale birth",
+          "basis": "The authors describe an observed birth off Dominica. The map uses a broad offshore locator."
+        }
+      ],
+      "observation_period": {
+        "label": "Observed 8 July 2023",
+        "start_year": 2023,
+        "end_year": 2023,
+        "source_id": 3,
+        "locator": "Results: Sperm whale birth, opening paragraph"
+      }
+    }
   },
   {
     "slug": "naturelm",
@@ -98,7 +155,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
     "year_label": "Documentation checked",
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "birdnet",
@@ -120,7 +184,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
     "year_label": "Documentation checked",
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "perch",
@@ -143,7 +214,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
     "year_label": "Source year",
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "dolphingemma",
@@ -346,7 +424,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
     "year_label": "Documentation checked",
-    "purpose": "Data & annotation"
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "bioacoustic-benchmarks",
@@ -367,7 +452,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Documentation checked",
     "year_label": "Documentation checked",
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "parrot-data-feasibility",
@@ -417,7 +509,14 @@
       "rights": "AVEX declares MIT for code. Checkpoint and training-data terms are separate and remain unapproved.",
       "experiment": "On an approved dataset, compare a frozen representation plus linear classifier against simple acoustic features with the same held-out sessions."
     },
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "birb-generalization",
@@ -459,7 +558,14 @@
       "rights": "Repository declares Apache-2.0 for code; each underlying dataset requires its own terms check.",
       "experiment": "Report separate results by recording setting and independent session, plus precision among the clips a human is asked to review."
     },
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "das-annotation",
@@ -487,7 +593,14 @@
       "rights": "Repository declares Apache-2.0 for code. Example audio, trained models and dependencies need separate checks.",
       "experiment": "Exchange a synthetic WAV and interval labels, then compare whether event boundaries and labels survive the round trip."
     },
-    "purpose": "Data & annotation"
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "bat-context",
@@ -528,7 +641,22 @@
       "rights": "Paper access does not grant rights to an entire recording archive. No recordings acquired.",
       "experiment": "Before modeling, have two reviewers independently label a permitted sample and report agreement and unknown identities."
     },
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The methods identify the bats’ capture origin near Herzliya. This pin is the animal-origin region, not the location of the acoustic chambers.",
+      "locations": [
+        {
+          "place_id": "herzliya",
+          "role": "animal_origin",
+          "source_id": 65,
+          "locator": "Materials and Methods: Animal retrieval and care",
+          "basis": "The methods identify the bats’ capture origin near Herzliya. This pin is the animal-origin region, not the location of the acoustic chambers."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "animal2vec-meerkat",
@@ -555,7 +683,28 @@
       "rights": "Repository declares MIT for code. Dataset and checkpoint terms are not verified here; acquisition remains pending.",
       "experiment": "Use independently annotated continuous audio to measure missed events and false alarms per hour, including quieter calls."
     },
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The paper locates collection at the Kalahari Research Centre in South Africa. This is a regional locator, not a tracking location.",
+      "locations": [
+        {
+          "place_id": "kalahari",
+          "role": "study_region",
+          "source_id": 66,
+          "locator": "Section 3: MeerKAT dataset",
+          "basis": "The paper locates collection at the Kalahari Research Centre in South Africa. This is a regional locator, not a tracking location."
+        }
+      ],
+      "observation_period": {
+        "label": "Field seasons: Aug–Sep 2017 and Jul–Aug 2019",
+        "start_year": 2017,
+        "end_year": 2019,
+        "source_id": 66,
+        "locator": "Section 3: data collection"
+      }
+    }
   },
   {
     "slug": "elephant-calls-controls",
@@ -599,7 +748,22 @@
       "rights": "No audio, figures or code republished. Deposit contents and separate reuse terms remain to be inspected.",
       "experiment": "Write down alternative explanations and an appropriate null model before making any claim about a signal’s meaning. No playback is proposed for the public app."
     },
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The primary paper identifies fieldwork in Samburu and Amboseli. One country-level locator represents multiple regions; it is not a field site.",
+      "locations": [
+        {
+          "place_id": "kenya",
+          "role": "study_region",
+          "source_id": 69,
+          "locator": "Acknowledgements and author contributions",
+          "basis": "The primary paper identifies fieldwork in Samburu and Amboseli. One country-level locator represents multiple regions; it is not a field site."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "sound-and-movement",
@@ -621,7 +785,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
     "year_label": "Source year",
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "plant-chemical-signals",
@@ -706,7 +877,14 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Initial source note",
     "year_label": "Source year",
-    "purpose": "Models & evaluation"
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "parrot-community-data",
@@ -812,6 +990,69 @@
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Selected evidence reviewed",
     "year_label": "Source year",
-    "purpose": "Data & annotation"
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The paper describes four sites across Brazil’s Cerrado and Atlantic Forest. One country-level locator represents the multi-site dataset.",
+      "locations": [
+        {
+          "place_id": "brazil",
+          "role": "study_region",
+          "source_id": 106,
+          "locator": "Methods: Data Collection and Figure 2 caption",
+          "basis": "The paper describes four sites across Brazil’s Cerrado and Atlantic Forest. One country-level locator represents the multi-site dataset."
+        }
+      ],
+      "observation_period": {
+        "label": "Collection across 2019–2021",
+        "start_year": 2019,
+        "end_year": 2021,
+        "source_id": 106,
+        "locator": "Introduction and Methods: Data Collection"
+      }
+    }
+  },
+  {
+    "slug": "honeybee-dance-history",
+    "title": "Before AI: learning from the honeybee dance",
+    "taxon": "Insects",
+    "kind": "Historical primary account",
+    "year": "1973",
+    "source_ids": [
+      109
+    ],
+    "review_depth": "Selected lecture passages on dance distance/direction and the 1949 orientation trial reviewed; PDF pages 9–10 visually checked. The referenced original experiments and subsequent literature have not all been reviewed.",
+    "finding": "Von Frisch’s lecture connects waggle-dance duration and orientation with food distance and direction. It also recounts a 1949 hive-transfer experiment probing orientation with unfamiliar surroundings.",
+    "limitations": "This is a retrospective account of bounded honeybee signaling and navigation. It does not establish a general conversation system or justify transferring the same code to other animals.",
+    "lesson": "Connect a proposed signal to observable behavior, controlled alternatives and the animal’s sensory world.",
+    "next_review": "Review the original 1946 and 1950 studies and later recruitment experiments, with an independent insect-behavior specialist.",
+    "reviewed": "2026-10-03",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected primary passages reviewed",
+    "year_label": "Lecture year",
+    "review_locator": "Lecture PDF pages 4 and 9–10 (printed pages 79 and 84–85); opening title and date.",
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-03",
+      "location_status": "mapped",
+      "location_note": "The lecture names Brunnwinkl on Wolfgangsee for a 1949 hive-transfer trial. The pin represents the lake region, not all experiments in the lecture.",
+      "locations": [
+        {
+          "place_id": "wolfgangsee",
+          "role": "study_region",
+          "source_id": 109,
+          "locator": "Lecture PDF pages 9–10, printed pages 84–85",
+          "basis": "The lecture names Brunnwinkl on Wolfgangsee for a 1949 hive-transfer trial. The pin represents the lake region, not all experiments in the lecture."
+        }
+      ],
+      "observation_period": {
+        "label": "1949 orientation trial described in a 1973 lecture",
+        "start_year": 1949,
+        "end_year": 1949,
+        "source_id": 109,
+        "locator": "Lecture PDF page 9, final paragraph"
+      }
+    }
   }
 ]

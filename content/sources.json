@@ -1006,5 +1006,13 @@
     "description": "Author repository with baseline and preprocessing code. README and MIT declaration reviewed; not executed.",
     "checked": "2026-10-03",
     "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+  },
+  {
+    "id": 109,
+    "title": "Honeybee communication: von Frisch’s Nobel lecture",
+    "url": "https://www.nobelprize.org/uploads/2018/06/frisch-lecture.pdf",
+    "description": "Karl von Frisch, Decoding the Language of the Bee, Nobel lecture (12 December 1973). Selected passages on dance coding and the 1949 Wolfgangsee orientation trial reviewed; historical account, not a modern systematic review.",
+    "checked": "2026-10-03",
+    "origin": "Historical atlas expansion; original short summary and links only. PDF and figures are not republished."
   }
 ]
