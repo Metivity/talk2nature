@@ -138,3 +138,5 @@ Design continuation completed and deployed at `b286d7b`: the new observation flo
 ## October 3 continuation: compare saved moments
 
 Raviv asked to continue. The bounded deliverable is a local-only session comparison in the Field Companion: reopen original Station ZIPs, retain whole-window/highlights and incomplete/discard provenance, compare readable context and notes, offer manual playback and a clearly invented example pair. Acceptance requires bounded malformed-import checks, preservation of already-open sessions on failure, offline public-shell support, mobile/desktop/browser import checks, required repository/site tests and a verified Pages release. See [SESSION_COMPARE.md](SESSION_COMPARE.md). This does not open hosted intake or establish biological meaning.
+
+Completed: implementation `f9b9e7c` passed 107 automated tests and the documented browser checks, was deployed successfully, and all 104 published files matched the correctly configured public build. This bounded software continuation is complete. Actual phone/file-picker checks, accessible carers and avian scientific review remain next milestones.
