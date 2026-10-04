@@ -175,3 +175,6 @@ Completed: the researcher starter pack, citation metadata, reproduction form and
 ## October 5 continuation: make annotated sound useful in another tool
 
 Raviv requested continued implementation of the recommendations. Bounded deliverable: a one-way Audacity standard-label package from Listen/Sound desk, preserving the unchanged WAV, complete original annotation metadata and an explicit conversion report. Acceptance: bounded format/line-escape/provenance/snapshot checks, no draft loss or stale download, actual browser ZIP inspection, mobile/desktop and offline workflow, repository/site suites and public deployment. Native Audacity import verification is separately pending permission to run an official temporary copy; external researcher demand remains unverified. This does not convert whole Station sessions or implement Safe & Sound.
+
+
+Software milestone released at f587ea1: the one-way Audacity package passed 125 automated tests, actual browser ZIP inspection, responsive/offline checks and the 121-file live comparison. Desktop Audacity verification remains pending permission; browser annotation reimport was blocked by the existing extension file-access setting. No setting was changed and no native/independent compatibility result is claimed. The next validation is a target-app import and external evaluator feedback.
