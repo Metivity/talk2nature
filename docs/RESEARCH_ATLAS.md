@@ -83,3 +83,23 @@ python3 scripts/check_site.py
 New tests cover complete-note coverage, public field boundaries, source/location/date validation, stable catalog versions, observation/source-year distinctions, multi-filter intersection, multi-site counting and mobile cluster separation. The static build includes all notes and citations without JavaScript.
 
 Browser acceptance covered 1440-, 390- and 320-pixel layouts; real pin and select/search/reset handlers; unmapped plant/fungi results; empty-state recovery; distinct 1949/1973 dates; keyboard disclosure and evidence-graph navigation; 44-pixel map controls; 16-pixel mobile inputs; no horizontal overflow; a blocked catalog request and JavaScript-disabled fallback. Temporary browser restrictions were restored. No physical-phone, microphone, participant or biological validation is implied. Publication receipts and final check counts are in `docs/STATUS.md`.
+
+
+## October 4 continuation: two coverage targets reached
+
+The public collection now has **41 notes, 20 mapped notes, 20 approximate regions, 21 notes without pins and 119 sources**. Thirteen collection resources remain unchanged. The public/private metadata catalog has 173 records with 81 citation links. No article files, audio, videos or model weights are distributed.
+
+| Added note | Location evidence actually reviewed | Date boundary |
+| --- | --- | --- |
+| Vervet development (1980) | Publisher abstract and German summary identify Amboseli, Kenya | Fourteen months reported without verified calendar dates; no date interval entered |
+| Humpback song change (1985) | Indexed primary abstract locates recordings near Bermuda | April–May of 13 sampled years within 1957–1975; not continuous coverage |
+| Raven gestures (2011) | Primary abstract places observations in the Northern Alps, Austria | Three field seasons without verified calendar years |
+| Wolf howling (2013) | Main results name the Wolf Science Center, Austria; selected text reviewed via Europe PMC XML | Country locator; no exact enclosure or observation date inferred |
+| Grouper–moray coordination (2006) | Methods name Mersa Bareika, Ras Mohammed National Park, Egypt | September 2002–December 2004 explicitly reported |
+| Dolphin addressing (2013) | Indexed primary methods passage identifies eastern Scottish waters including Moray Firth | No calendar interval entered because complete methods were not obtained |
+
+Original historical study years remain visible separately from observation periods and later reassessment citations. Fischer (2020) supplies a caution about production versus comprehension; Herman (2017) supplies a later review of disputed song functions. Review depth is stated per note: neither older paper is claimed to have received a complete methods review.
+
+Access limits: the 1971 humpback PDF led to an institutional login, so it was not used as a full-text source. Several publisher opens failed. Primary indexed passages were retained only with explicit attribution and limited review labels. The wolf XML mirror was retrieved successfully; the dolphin XML mirror returned HTTP 500, so no complete-method review is claimed. Python's local TLS trust store failed on one retrieval; verified-TLS curl was used successfully for the wolf mirror, with no certificate checks disabled. No paywall or browser challenge was bypassed.
+
+The goal board computes 20/20 and 3/3. It explicitly directs subsequent work toward methods depth and unresolved records; these counts do not close scientific-review, consent, hosting or physical-device requirements.

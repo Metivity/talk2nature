@@ -1207,5 +1207,235 @@
       ],
       "observation_period": null
     }
+  },
+  {
+    "slug": "vervet-alarm-development",
+    "title": "A warning is learned in context",
+    "taxon": "Mammals",
+    "kind": "Historical developmental study",
+    "year": "1980",
+    "source_ids": [
+      113,
+      119
+    ],
+    "review_depth": "Indexed 1980 publisher abstract and German summary; 2020 reassessment abstract and opening passage. Original full methods not obtained.",
+    "finding": "The study describes young vervets giving broader alarm categories and less specific responses than adults. Nearby mothers provided context associated with more adult-like responses.",
+    "limitations": "The 2020 reassessment distinguishes relatively constrained call production from flexible comprehension. An alarm label is not a context-free dictionary entry; the full original methods still need review.",
+    "lesson": "Keep receiver behavior, age and social context beside the sound label.",
+    "next_review": "Obtain the original methods and compare later context-controlled response experiments.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Original study year",
+    "purpose": "Behavior & communication",
+    "review_locator": "1980 publisher abstract and German summary (Zusammenfassung)",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "The original summary places three observed groups in Amboseli, Kenya. The region pin does not identify a troop or precise field site.",
+      "locations": [
+        {
+          "place_id": "amboseli",
+          "role": "study_region",
+          "source_id": 113,
+          "locator": "1980 publisher abstract and German summary (Zusammenfassung)",
+          "basis": "The original summary places three observed groups in Amboseli, Kenya. The region pin does not identify a troop or precise field site."
+        }
+      ],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "humpback-song-history",
+    "title": "A shared song can change across years",
+    "taxon": "Marine mammals",
+    "kind": "Historical acoustic study",
+    "year": "1985",
+    "source_ids": [
+      114,
+      120
+    ],
+    "review_depth": "Indexed 1985 publisher abstract and 2017 review abstract; full methods, spectrograms and original audio not reviewed.",
+    "finding": "Across 163 songs sampled near Bermuda, songs within a year were similar while their content changed across years. The series covers 13 sampled years between 1957 and 1975.",
+    "limitations": "Seasonal sampling is not a continuous 19-year recording. Changing structure does not reveal translated meaning; the later review discusses unresolved functions of song in the mating system.",
+    "lesson": "Test models across years as well as individuals: a recording date can change what a pattern means.",
+    "next_review": "Obtain the full historical methods and examine later work on population change and competing song-function hypotheses.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Original study year",
+    "purpose": "Behavior & communication",
+    "review_locator": "1985 publisher abstract, opening recording and comparison description",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "The original abstract explicitly locates the recordings near Bermuda. One broad waters-region marker represents the collection.",
+      "locations": [
+        {
+          "place_id": "bermuda",
+          "role": "study_region",
+          "source_id": 114,
+          "locator": "1985 publisher abstract, opening recording and comparison description",
+          "basis": "The original abstract explicitly locates the recordings near Bermuda. One broad waters-region marker represents the collection."
+        }
+      ],
+      "observation_period": {
+        "label": "April–May in 13 sampled years within 1957–1975",
+        "start_year": 1957,
+        "end_year": 1975,
+        "source_id": 114,
+        "locator": "1985 publisher abstract, first sentence"
+      }
+    }
+  },
+  {
+    "slug": "raven-object-gestures",
+    "title": "Sometimes the signal is something shown",
+    "taxon": "Birds",
+    "kind": "Observational gesture study",
+    "year": "2011",
+    "source_ids": [
+      115
+    ],
+    "review_depth": "Publisher abstract and figure captions reviewed; full methods and supplementary videos not obtained.",
+    "finding": "Researchers observed ravens showing or offering non-food objects to other ravens, followed by attention to the object and social interaction.",
+    "limitations": "The abstract reports 38 interactions across seven pairs. The proposed role in testing or strengthening relationships is an interpretation, not proof of human-like declarative intent.",
+    "lesson": "A future camera workflow should preserve recipient attention and object context, alongside sound.",
+    "next_review": "Review gesture definitions, observation effort, alternative explanations and full methods before designing a related study.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Behavior & communication",
+    "review_locator": "Publisher abstract, observations paragraph",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "The abstract places observations in the Northern Alps, Austria. Three field seasons are mentioned, but calendar years were not established.",
+      "locations": [
+        {
+          "place_id": "northern-alps",
+          "role": "study_region",
+          "source_id": 115,
+          "locator": "Publisher abstract, observations paragraph",
+          "basis": "The abstract places observations in the Northern Alps, Austria. Three field seasons are mentioned, but calendar years were not established."
+        }
+      ],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "wolf-howling-context",
+    "title": "Who leaves matters to the wolves who stay",
+    "taxon": "Mammals",
+    "kind": "Captive social-context experiment",
+    "year": "2013",
+    "source_ids": [
+      116
+    ],
+    "review_depth": "Selected results, discussion and main methods via Europe PMC XML; supplementary procedures, data and statistical replication not reviewed.",
+    "finding": "In two captive wolf packs, howling after separation was associated with social relationships. The measured cortisol difference did not explain howling frequency within the test condition.",
+    "limitations": "Nine captive, human-raised wolves do not represent every wild pack. A null cortisol association does not establish absence of emotion or a decoded message.",
+    "lesson": "Log social relationships and observation conditions; do not interpret call rate in isolation.",
+    "next_review": "Review supplementary timing and analysis details; seek passive wild-population evidence. Do not recreate separation trials through the app.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Behavior & communication",
+    "review_locator": "Results: opening paragraph naming the study population",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "The study identifies the Wolf Science Center, Austria. A country-level locator is used; no exact enclosure or observation date is inferred.",
+      "locations": [
+        {
+          "place_id": "austria",
+          "role": "study_region",
+          "source_id": 116,
+          "locator": "Results: opening paragraph naming the study population",
+          "basis": "The study identifies the Wolf Science Center, Austria. A country-level locator is used; no exact enclosure or observation date is inferred."
+        }
+      ],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "grouper-moray-coordination",
+    "title": "Two hunters, different skills, a visible signal",
+    "taxon": "Fish",
+    "kind": "Field observation and manipulation",
+    "year": "2006",
+    "source_ids": [
+      117
+    ],
+    "review_depth": "Selected results, discussion and Materials and Methods reviewed; videos and raw records not reviewed.",
+    "finding": "Groupers made visual movements before coordinated hunting with moray eels. The study links signaling to hunting context and reports benefits from complementary hunting behavior.",
+    "limitations": "Individual identities were not always verifiable, and successful hunts were too sparse for the main success analysis to treat each individual separately. This is bounded cooperation, not a general language.",
+    "lesson": "Preserve movement, partner identity, failures and opportunities to act; audio alone could miss the signal.",
+    "next_review": "Review later replication and gesture experiments before treating the behavioral categories as transferable labels.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Behavior & communication",
+    "review_locator": "Materials and Methods: Study site and subjects",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "The methods locate observations in Mersa Bareika, Ras Mohammed National Park, Egypt. The pin represents the broader region.",
+      "locations": [
+        {
+          "place_id": "ras-mohammed",
+          "role": "study_region",
+          "source_id": 117,
+          "locator": "Materials and Methods: Study site and subjects",
+          "basis": "The methods locate observations in Mersa Bareika, Ras Mohammed National Park, Egypt. The pin represents the broader region."
+        }
+      ],
+      "observation_period": {
+        "label": "Observations: September 2002–December 2004",
+        "start_year": 2002,
+        "end_year": 2004,
+        "source_id": 117,
+        "locator": "Materials and Methods: Study site and subjects"
+      }
+    }
+  },
+  {
+    "slug": "dolphin-signature-addressing",
+    "title": "A familiar whistle can address an individual",
+    "taxon": "Marine mammals",
+    "kind": "Controlled playback study",
+    "year": "2013",
+    "source_ids": [
+      118
+    ],
+    "review_depth": "Indexed primary abstract, discussion and methods location passage reviewed. Complete methods, supplements and raw recordings not obtained.",
+    "finding": "Dolphins responded vocally to copies of their own signature whistles more than to the control whistles described in the study, supporting individual-directed use of learned signals.",
+    "limitations": "Individual addressing does not establish open-ended conversation. The authors discuss alternative mechanisms; this note has not independently checked the complete experimental design.",
+    "lesson": "Separate caller identity, receiver identity and acoustic similarity when evaluating a proposed exchange.",
+    "next_review": "Obtain full methods, verify controls and recording periods, and review later evidence before proposing an intervention.",
+    "reviewed": "2026-10-04",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected evidence reviewed",
+    "year_label": "Source year",
+    "purpose": "Behavior & communication",
+    "review_locator": "Indexed primary Materials and Methods opening location passage",
+    "atlas": {
+      "reviewed": "2026-10-04",
+      "location_status": "mapped",
+      "location_note": "The methods passage places group follows off eastern Scotland, including the Moray Firth. One broad regional point is used; it is not a sample coordinate or the authors’ institutional address.",
+      "locations": [
+        {
+          "place_id": "eastern-scotland",
+          "role": "study_region",
+          "source_id": 118,
+          "locator": "Indexed primary Materials and Methods opening location passage",
+          "basis": "The methods passage places group follows off eastern Scotland, including the Moray Firth. One broad regional point is used; it is not a sample coordinate or the authors’ institutional address."
+        }
+      ],
+      "observation_period": null
+    }
   }
 ]

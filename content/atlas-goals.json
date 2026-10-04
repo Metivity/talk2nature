@@ -9,7 +9,7 @@
       "metric": "mapped_notes",
       "target": 20,
       "acceptance": "Each mapped note needs a cited study-region or animal-origin passage, a review date and an approximate public locator. More pins alone do not establish stronger evidence.",
-      "next_step": "Review remaining study methods and source deposits. Keep locations unknown when only an author affiliation is available.",
+      "next_step": "The coverage target is reached. Deepen methods review for mapped abstracts and resolve the remaining unmapped records; more dots alone are not stronger evidence.",
       "action": "Suggest a source or location correction",
       "path": "contribute/source/"
     },
@@ -20,9 +20,9 @@
       "metric": "historical_notes",
       "target": 3,
       "acceptance": "Three distinct notes with original sources published before 2000, explicit review depth and clear separation of observation and publication dates.",
-      "next_step": "Review the earlier honeybee experiments and classic field communication studies; seek later reassessments as well as the original claims.",
-      "action": "Explore the current historical note",
-      "path": "research/honeybee-dance-history/"
+      "next_step": "The three-note target is reached. Obtain the unreviewed original methods and continue checking later reassessments; historical year labels identify the original study, not every later citation.",
+      "action": "Explore the historical whale study",
+      "path": "research/humpback-song-history/"
     },
     {
       "id": "parrot-pilot",

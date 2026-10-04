@@ -22,8 +22,8 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),14)
-        self.assertEqual(len(atlas['places']),14)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),20)
+        self.assertEqual(len(atlas['places']),20)
         self.assertEqual(self.atlas(list(reversed(self.notes))),atlas)
     def test_observation_dates_are_distinct_from_publication_and_origin_from_study_site(self):
         rows={r['id']:r for r in self.atlas()['records']}
@@ -60,7 +60,9 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('14 of 20',goals)
+            self.assertIn('20 of 20',goals)
+            self.assertIn('3 of 3',goals)
+            self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
             self.assertIn('Three historical source notes',goals)
             self.assertEqual(len(json.loads((Path(d)/'research/atlas/catalog.json').read_text())['records']),len(self.notes))
@@ -83,11 +85,28 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(14,20))
-        self.assertEqual(goals[1]['current'],1)
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(20,20))
+        self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id']!='dog-barks']
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],13)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],19)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'In progress')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value
             with self.assertRaises(ValueError):atlas_goals(atlas,changed)
+
+    def test_historical_studies_keep_sampling_windows_and_later_review_distinct(self):
+        rows={r['id']:r for r in self.atlas()['records']}
+        whale=rows['humpback-song-history']
+        self.assertEqual(whale['source_year'],1985)
+        self.assertEqual(whale['year_basis'],'Original study year')
+        self.assertEqual((whale['observation_period']['start_year'],whale['observation_period']['end_year']),(1957,1975))
+        self.assertIn('13 sampled years',whale['observation_period']['label'])
+        self.assertIn(120,whale['source_ids'])
+        self.assertEqual(rows['vervet-alarm-development']['source_year'],1980)
+        for key in ['vervet-alarm-development','raven-object-gestures','wolf-howling-context','dolphin-signature-addressing']:
+            self.assertIsNone(rows[key]['observation_period'])
+        fish=rows['grouper-moray-coordination']
+        self.assertEqual(fish['source_year'],2006)
+        self.assertEqual(fish['observation_period']['end_year'],2004)
+        self.assertEqual(fish['locations'][0]['source_id'],117)

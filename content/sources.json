@@ -1040,5 +1040,75 @@
     "description": "University of Cambridge (22 July 2016), reporting the researchers’ study in Niassa National Reserve, Mozambique. Indexed institutional article passages reviewed for location and context.",
     "checked": "2026-10-04",
     "origin": "October 4 atlas expansion; direct institutional research account, not independent replication."
+  },
+  {
+    "id": 113,
+    "title": "Vervet alarm-call development: original 1980 study",
+    "url": "https://doi.org/10.1111/j.1439-0310.1980.tb01062.x",
+    "description": "Seyfarth and Cheney (1980). Indexed publisher abstract and German summary reviewed; full methods unavailable. The summary identifies Amboseli, Kenya.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
+  },
+  {
+    "id": 114,
+    "title": "Changing humpback songs near Bermuda: 1985 study",
+    "url": "https://doi.org/10.1111/j.1439-0310.1985.tb00118.x",
+    "description": "Payne and Payne (1985). Indexed publisher abstract reviewed: recordings in 13 sampled years between 1957 and 1975, near Bermuda. Full methods not obtained.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
+  },
+  {
+    "id": 115,
+    "title": "Raven showing and offering gestures in the wild",
+    "url": "https://www.nature.com/articles/ncomms1567",
+    "description": "Pika and Bugnyar (2011). Publisher abstract and figure captions reviewed; full methods behind access controls were not obtained.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
+  },
+  {
+    "id": 116,
+    "title": "Wolf howling and social relationships",
+    "url": "https://doi.org/10.1016/j.cub.2013.06.066",
+    "description": "Mazzini et al. (2013). Selected results, discussion and main experimental procedures reviewed through the Europe PMC full-text mirror. Supplementary procedures and raw data not reviewed.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3770902/",
+    "review_url_label": "Primary full text (Europe PMC mirror reviewed)"
+  },
+  {
+    "id": 117,
+    "title": "Groupers and moray eels: coordinated hunting",
+    "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0040431",
+    "description": "Bshary et al. (2006). Selected results, limitations and study-site methods reviewed; supplementary videos not reviewed or republished.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
+  },
+  {
+    "id": 118,
+    "title": "Dolphin signature whistles used in addressing",
+    "url": "https://doi.org/10.1073/pnas.1304459110",
+    "description": "King and Janik (2013). Indexed primary abstract, discussion and location passage reviewed. Full methods and supplementary files were not obtained in this pass.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3740840/",
+    "review_url_label": "Primary full text (indexed passages reviewed)"
+  },
+  {
+    "id": 119,
+    "title": "Primate alarm calls: a 2020 reassessment",
+    "url": "https://doi.org/10.26451/abc.07.02.05.2020",
+    "description": "Fischer (2020). Review abstract and opening discussion read in the journal PDF; distinguishes call production from learned, context-sensitive responses. Not a full review of the cited experiments.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits.",
+    "review_url": "https://www.animalbehaviorandcognition.org/uploads/journals/27/AB_C_Vol7(2)_Fischer.pdf",
+    "review_url_label": "Review PDF (selected passages reviewed)"
+  },
+  {
+    "id": 120,
+    "title": "Humpback song functions: a later review",
+    "url": "https://doi.org/10.1111/brv.12309",
+    "description": "Herman (2017). Publisher abstract reviewed; competing interpretations of song in the mating system remain relevant to reading the historical study. Full synthesis not reviewed.",
+    "checked": "2026-10-04",
+    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
   }
 ]

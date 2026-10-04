@@ -154,3 +154,8 @@ Raviv requested more locations and more goals. Active bounded goal: add at least
 
 
 Completed: deployed `1b7ed730` adds six mapped notes across seven new regions, bringing the atlas to 35 notes / 14 mapped notes / 14 regions. The public goals board and versioned catalog are synchronized. All 118 automated tests, focused browser/site checks and the 114-file live comparison passed. Next goals remain explicitly planned: reach 20 mapped notes, add two more historical notes, obtain review for a passive parrot pilot, and complete consent/storage requirements before a protected observation release.
+
+
+## October 4 continuation: historical evidence and open-source direction
+
+Raviv asked to continue and to audit whether Talk2Nature overlaps others' work, what opening the project means and the right path forward. Bounded deliverable: six additional cited atlas notes, two historical originals with later limitations, updated coverage goals, a founder-facing preliminary audit and clearer public reuse/positioning guidance. Acceptance: citation and chronology checks, versioned catalog sync, repository/site tests, focused mobile/desktop verification and public release. Trademark-register clearance, legal-entity selection, patent analysis, model integration, recruitment and private hosting are not completed by this scope.

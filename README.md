@@ -62,6 +62,8 @@ Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/G
 
 Original software: Apache-2.0 (see `LICENSE`). Original public summaries in `content/`: CC BY 4.0, attributed to Talk2Nature contributors. Source titles, bibliographic facts, linked articles, recordings, model weights and third-party material retain their own terms. No third-party audio or weights are distributed. See `NOTICE`.
 
+Read the [open-source scope and reuse guide](docs/OPEN_SOURCE.md) for commercial reuse, forks, contributor rights, model-license checks and the distinction between open code and permission to publish data. Talk2Nature is a working name; no trademark clearance or registered nonprofit status is claimed.
+
 ## Private research workspace (phase two)
 
 The local `admin/` prototype provides owner-only Google identity verification, a responsive observation form, review gates, synthetic metadata releases and withdrawal. Local owner Google sign-in and wrong-account denial have been verified; hosted provider setup remains pending. Real observations and audio uploads are disabled. See [setup](admin/README.md), [mobile and AI plan](docs/PHASE_TWO_PLAN.md), and [private architecture](docs/PRIVATE_ARCHITECTURE.md). This code and its private runtime data are separate from the public static build.
