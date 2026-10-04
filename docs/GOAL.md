@@ -159,3 +159,6 @@ Completed: deployed `1b7ed730` adds six mapped notes across seven new regions, b
 ## October 4 continuation: historical evidence and open-source direction
 
 Raviv asked to continue and to audit whether Talk2Nature overlaps others' work, what opening the project means and the right path forward. Bounded deliverable: six additional cited atlas notes, two historical originals with later limitations, updated coverage goals, a founder-facing preliminary audit and clearer public reuse/positioning guidance. Acceptance: citation and chronology checks, versioned catalog sync, repository/site tests, focused mobile/desktop verification and public release. Trademark-register clearance, legal-entity selection, patent analysis, model integration, recruitment and private hosting are not completed by this scope.
+
+
+Completed: implementation 25a6e4e is deployed. The atlas reaches 20 mapped notes and three historical originals with explicit review limits, alongside the preliminary founder audit and public reuse guidance. All 119 automated tests, focused browser/site checks and the 120-file live comparison passed. The next useful milestone is one independently reviewed passive parrot protocol and demonstrably useful observations; the legal operator and name clearance remain unresolved before major promotion.
