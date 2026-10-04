@@ -167,3 +167,6 @@ Completed: implementation 25a6e4e is deployed. The atlas reaches 20 mapped notes
 ## October 5: make the project easier to evaluate and reuse
 
 Raviv asked what more would make Talk2Nature successful and useful to science and humanity. The bounded deliverable is a researcher evaluation kit with checked synthetic outputs, citation metadata, a reproduction issue form, and updated execution priorities centered on independent use and standards interoperability. Existing software is reused; no new biological claim, public intake, platform or outreach is implied. Acceptance: citation/schema and issue-form checks, a fresh-checkout run of the documented examples, public repository publication and remote verification. The wider success criteria remain human-dependent and open.
+
+
+Completed: the researcher starter pack, citation metadata, reproduction form and current execution priorities are published at 5d01875. Schema/form checks, fresh-clone fixture reproduction, all 119 existing tests, local site checks and seven-file remote verification passed. The independent evaluator, scientific lead, carer access, format adapter and real-device trials remain future milestones, not completed by this kit.
