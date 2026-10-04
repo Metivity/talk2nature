@@ -1,5 +1,7 @@
 # Talk2Nature success and international growth plan
 
+**October 5 update:** use the [current execution priorities](EXECUTION_BOARD.md) and [researcher evaluation kit](RESEARCHER_START.md) for the next month. The dated October 1 milestones and counts below are historical planning context. Current emphasis is independent reproduction, researcher workflow validation and interoperability before more platforms or broader publicity. Funding dates require fresh verification before action.
+
 Prepared October 1, 2026 for Raviv. Active initiative: Talk2Nature; repository: Metivity/talk2nature. This is a proposed operating plan, not a public launch announcement, partnership claim or authorization to spend beyond the existing hosting budget. No outreach has been sent.
 
 Talk2Nature should earn international attention by producing a useful contribution that other people can test and reuse. The recommended first contribution is a reliable workflow for connecting bird vocalizations with independently observed behavior. Build a small scientific collaboration and a repeatable participant experience around that contribution, then use the resulting methods, tools and findings to grow internationally.

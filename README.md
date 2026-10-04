@@ -14,6 +14,8 @@ Website: https://metivity.github.io/talk2nature/
 
 ## Participate
 
+**For researchers:** use the [evaluation starter pack](docs/RESEARCHER_START.md) for a browser walkthrough or reproducible synthetic command-line example, expected outputs and an honest failure-report route. [CITATION.cff](CITATION.cff) provides software citation metadata; record the exact commit used and cite underlying papers/data separately. No archival DOI or scientific validation is implied.
+
 Start with a small [contribution](CONTRIBUTING.md). See [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md), [security reports](SECURITY.md) and the [open-science/community map](https://metivity.github.io/talk2nature/community/). We have no confirmed institutional partners or DPG recognition.
 
 ## Start locally

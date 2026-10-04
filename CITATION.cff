@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: >-
+  If you use the original Talk2Nature software, please cite this project and
+  record the exact commit used. Cite the underlying scientific papers,
+  third-party software, models and datasets separately. No archival DOI or
+  scientific validation is implied by this citation.
+type: software
+title: "Talk2Nature: tools for observation and reproducible animal-sound research"
+authors:
+  - family-names: Yatom
+    given-names: Raviv
+repository-code: "https://github.com/Metivity/talk2nature"
+url: "https://metivity.github.io/talk2nature/"
+license: Apache-2.0
+abstract: >-
+  Early-stage local observation, annotation and comparison tools with
+  research-metadata utilities. No general animal translator or trained
+  Talk2Nature model is provided. Software was developed with substantive
+  AI assistance; public documentation distinguishes software verification
+  from independent scientific review. This citation covers original software;
+  original summaries and third-party artifacts have separate licenses.
+keywords:
+  - bioacoustics
+  - reproducible research
+  - animal communication
+  - observation

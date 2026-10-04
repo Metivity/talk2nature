@@ -1,6 +1,39 @@
 # Execution board: software to a credible pilot
 
-Updated October 1, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
+Updated October 5, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
+
+## Current priority: earn an independent use
+
+The website and tools have advanced; the bottleneck is external scientific and workflow validation. The October 1 board below is retained as a historical plan, including funding dates that must be rechecked before use. These priorities govern the next work. They do not promise completion of human-dependent milestones by a fixed date.
+
+| Priority / proposed window | Deliverable | Evidence of completion | Status October 5 |
+| --- | --- | --- | --- |
+| 1 / next week | Researcher starter pack, citation metadata and reproduction report form | Existing synthetic commands rerun; expected outputs documented; clean checkout succeeds | Prepared in this continuation; external reproduction remains zero documented |
+| 2 / next two weeks | Six focused workflow conversations from the earlier 12-conversation target | Dated, permissioned notes: current task/tool, observed problem, desired export, willingness to test; select one priority from findings | None documented; Raviv introductions and authorization for outreach needed |
+| 3 / next two weeks | One independent evaluator runs the kit; actual Android and iPhone workflow rehearsals | Exact revision/device, steps, failures and assistance recorded; complete/partial save and reopening checked | No independent evaluator or physical-phone result documented |
+| 4 / next month, conditional | One export bridge to a tool the evaluator already uses | Pinned format, synthetic round-trip/target validation, explicit information-loss report and evaluator feedback | Proposed; investigate Safe & Sound, without claiming compatibility |
+| 5 / next month, conditional | One accountable avian reviewer revises the passive parrot protocol | Agreed role, species/access, codebook, independent-label criteria, welfare/consent and evaluation controls | Reviewer and carer access unconfirmed; intake closed |
+| 6 / after the preceding evidence | An openly inspectable methods release | Exact code, permitted fixtures/results, limitations, authorship and independent report; archive/DOI after scope review | Future; no dataset, biological benchmark or DOI released |
+
+The development lead can prepare software, evidence reviews, test fixtures, adapters, release materials and tailored outreach drafts. Independent reviewers, carers and research organizations must actually agree and do their part; automation cannot supply that evidence. No messages are sent by this plan.
+
+## What we measure
+
+- **Usefulness:** one external team completes a task with the tool; compare time and failures with their existing workflow on the same permitted task. A toy benchmark or self-reported enthusiasm alone is insufficient.
+- **Reproducibility:** one independent run with a recorded revision, actual output and assistance level; include failures. Current documented baseline: zero.
+- **Scientific readiness:** approved question, usable independent labels, enough independent sampling units and a frozen evaluation plan. Thresholds belong to the scientific lead, not an arbitrary dashboard.
+- **Community benefit:** credit substantive contributions, document corrections and negative findings, retain usable open exports, and test accessibility and low-cost devices. Measure actual completion problems instead of calling the product universally accessible.
+- **Reach:** qualified requests, repeated use and external contributions. GitHub stars, uploads and page views are supporting signals, not proof of scientific impact.
+
+The near-term public-benefit hypothesis is lower effort and cost for trustworthy observation, with usable education and research tools even if translation remains unsolved. Future conservation benefit must be tied to an actual partner's decision and measured outcome. Protect participant choice and sensitive species; open code does not require open personal data. Community/Indigenous authority and benefit-sharing require project-specific arrangements where relevant.
+
+## A release worth sharing
+
+Lead with one useful artifact and an accurate claim: an externally checked workflow, a working adapter or a reproducible failure that others can avoid. Prepare a short demo and practical guide, then seek permission for a focused contribution to WILDLABS or a relevant research group. Safe & Sound is a concrete standards lead, not a partner. A scientist-agreed methods release can support funding and specialist coverage; broad advertising should follow usefulness and name clearance.
+
+The next software candidate is the interoperability work above, chosen after feedback. Pause new native platforms, unattended capture, conversational-model training and expansion across species until a demonstrated workflow need justifies them. The general observation app can still welcome different animals.
+
+## Historical October 1 execution board
 
 | Workstream | Acceptance condition | Owner | Target / state |
 | --- | --- | --- | --- |

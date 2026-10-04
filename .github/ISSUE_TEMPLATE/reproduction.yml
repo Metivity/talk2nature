@@ -1,0 +1,55 @@
+name: Reproduction or workflow evaluation
+description: Report an independent run, an assisted run, or a useful failure with synthetic examples.
+title: '[Reproduction] '
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Start with docs/RESEARCHER_START.md. This issue is public. Use synthetic
+        examples only; redact personal paths. Do not attach private recordings,
+        participant details, exact sensitive locations, credentials or environment files.
+        Passing software checks is not biological validation.
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Relationship to this run
+      options:
+        - Independent evaluator
+        - Evaluator with maintainer assistance
+        - Maintainer or project-assisted rerun
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Exact commit, or public page URL and access date
+      description: For a local checkout, use git rev-parse HEAD. Do not include tokens or local paths.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Device, operating system and Python or browser version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and actual result
+      description: Include commands or UI actions, expected result, actual result and any help needed. Failure reports are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: usefulness
+    attributes:
+      label: Scientific workflow and remaining gap
+      description: What would this help you do? What existing tool do you use? What was confusing or missing? Do not include confidential study details.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report check
+      options:
+        - label: This report contains no private media, participant details, credentials or sensitive locations.
+          required: true

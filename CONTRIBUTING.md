@@ -10,6 +10,8 @@ Original code contributions are under Apache-2.0; original public summary contri
 
 ## A useful first change
 
+Researchers can start with the [evaluation kit](docs/RESEARCHER_START.md) and the [reproduction report](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Identify independent versus assisted runs. A failed reproduction, an export mismatch or a correction to a claim is valuable; downloads and page views do not establish adoption.
+
 Try a synthetic workflow on a phone, correct one evidence note with a primary source, or document interchange with an existing annotation tool. Search existing issues first. For bugs include the page, device/browser, steps, expected and actual behavior. A redacted screenshot can help; do not attach raw recordings. If GitHub is unfamiliar, use the site's [draft helper](https://metivity.github.io/talk2nature/contribute/source/) or contact route.
 
 A pull request should explain the user problem, resulting behavior and checks run. Include a regression check for a data-loss or correctness fix. Website changes need local build/link checks and meaningful narrow-screen interaction testing. Public checks run on pull requests with read-only permissions; publishing remains a separate manual action. Passing CI does not authorize deployment or establish a scientific result.

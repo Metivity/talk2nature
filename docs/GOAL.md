@@ -162,3 +162,8 @@ Raviv asked to continue and to audit whether Talk2Nature overlaps others' work, 
 
 
 Completed: implementation 25a6e4e is deployed. The atlas reaches 20 mapped notes and three historical originals with explicit review limits, alongside the preliminary founder audit and public reuse guidance. All 119 automated tests, focused browser/site checks and the 120-file live comparison passed. The next useful milestone is one independently reviewed passive parrot protocol and demonstrably useful observations; the legal operator and name clearance remain unresolved before major promotion.
+
+
+## October 5: make the project easier to evaluate and reuse
+
+Raviv asked what more would make Talk2Nature successful and useful to science and humanity. The bounded deliverable is a researcher evaluation kit with checked synthetic outputs, citation metadata, a reproduction issue form, and updated execution priorities centered on independent use and standards interoperability. Existing software is reused; no new biological claim, public intake, platform or outreach is implied. Acceptance: citation/schema and issue-form checks, a fresh-checkout run of the documented examples, public repository publication and remote verification. The wider success criteria remain human-dependent and open.
