@@ -6,10 +6,11 @@ import {webcrypto} from 'node:crypto';
 import * as model from '../web/assets/listen-model.mjs';
 import {animalPicker} from '../web/assets/animal-picker.mjs';
 import * as notebook from '../web/assets/notebook.mjs';
+import * as audacity from '../web/assets/audacity-export.mjs';
 
 // Execute the real event handlers with a small DOM facade. This checks whether
 // user drafts are lost or omitted, separately from annotation-format tests.
-function setup() {
+function setup(overrides={}) {
   const elements=new Map(), windowEvents={}, downloads=[];
   const defaults={'event-start':'0','event-end':'1','event-kind':'uncertain','event-context':'unknown','event-source':'not observed','event-confidence':'uncertain','event-notes':''};
   const harness={confirm:false,confirmations:0,focus:null};
@@ -28,7 +29,7 @@ function setup() {
   const document={getElementById:get,createElement:()=>element(),body:element()};
   const window={devicePixelRatio:1,confirm(){harness.confirmations++;return harness.confirm;},addEventListener(name,fn){windowEvents[name]=fn;}};
   const source=fs.readFileSync(new URL('../web/assets/listen.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
-  vm.runInNewContext(source,{...model,...notebook,animalPicker,document,window,crypto:webcrypto,Blob,structuredClone,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL(){}},setTimeout(){}});
+  vm.runInNewContext(source,{...model,...notebook,...audacity,...overrides,animalPicker,document,window,crypto:webcrypto,Blob,structuredClone,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL(){}},setTimeout(){}});
   return {...harness,get,downloads,windowEvents,state:harness,async type(id,value){get(id).value=value;await get('event-form').fire('input');}};
 }
 
@@ -48,7 +49,7 @@ test('replacing or clearing a recording protects an unfinished observation',asyn
 
 test('an unfinished draft cannot silently disappear from JSON or CSV export',async()=>{
   const h=setup();await h.get('example').fire('click');await h.type('event-notes','Pending');
-  await h.get('export-json').fire('click');await h.get('export-csv').fire('click');await h.get('save-notebook').fire('click');
+  await h.get('export-json').fire('click');await h.get('export-csv').fire('click');await h.get('save-notebook').fire('click');await h.get('export-audacity').fire('click');
   assert.equal(h.downloads.length,0);assert.equal(h.state.focus,'save-event');
   assert.match(h.get('export-status').textContent,/unfinished/);
   await h.get('event-form').fire('submit',{preventDefault(){}});
@@ -56,6 +57,30 @@ test('an unfinished draft cannot silently disappear from JSON or CSV export',asy
   await h.get('export-json').fire('click');assert.deepEqual(h.downloads,['talk2nature-labels.json']);
   // A requested download is not proof that the browser saved it.
   let warned=false;h.windowEvents.beforeunload({preventDefault(){warned=true;}});assert.ok(warned);
+});
+
+test('Audacity export handles empty events and failed saves without discarding the notebook',async()=>{
+ const h=setup();await h.get('example').fire('click');
+ await h.get('export-audacity').fire('click');assert.equal(h.downloads.length,0);
+ assert.match(h.get('export-status').textContent,/at least one/);
+ await h.get('event-form').fire('submit',{preventDefault(){}});
+ await h.get('export-audacity').fire('click');assert.deepEqual(h.downloads,['talk2nature-audacity.zip']);
+ assert.equal(h.get('export-audacity').disabled,false);
+ assert.match(h.get('export-status').textContent,/download requested/);
+ let warned=false;h.windowEvents.beforeunload({preventDefault(){warned=true;}});assert.ok(warned);
+ const fail=setup({audacityPackage:async()=>{throw Error('Test save failure');}});await fail.get('example').fire('click');
+ await fail.get('event-form').fire('submit',{preventDefault(){}});await fail.get('export-audacity').fire('click');
+ assert.equal(fail.downloads.length,0);assert.match(fail.get('event-count').textContent,/1 event/);
+ assert.match(fail.get('export-status').textContent,/Test save failure/);assert.equal(fail.get('export-audacity').disabled,false);
+});
+
+test('a cleared session cancels a pending Audacity download',async()=>{
+ let release;const pending=new Promise(resolve=>{release=resolve;});
+ const h=setup({audacityPackage:()=>pending});await h.get('example').fire('click');
+ await h.get('event-form').fire('submit',{preventDefault(){}});
+ const saving=h.get('export-audacity').fire('click');assert.equal(h.get('export-audacity').disabled,true);
+ h.state.confirm=true;await h.get('clear-recording').fire('click');release(new Blob(['unused']));await saving;
+ assert.equal(h.downloads.length,0);assert.match(h.get('listen-status').textContent,/Session cleared/);
 });
 
 test('invalid hidden identifiers are revealed and focused on export',async()=>{

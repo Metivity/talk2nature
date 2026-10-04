@@ -1,6 +1,7 @@
 import {animalPicker} from './animal-picker.mjs';
 import {VERSION, MAX_BYTES, readWav, syntheticWav, validateDocument, eventCsv} from './listen-model.mjs';
 import {MAX_NOTEBOOK_BYTES, makeNotebook, readNotebook} from './notebook.mjs';
+import {audacityPackage} from './audacity-export.mjs';
 
 const $ = id => document.getElementById(id);
 let audioBytes = null, recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0;
@@ -144,6 +145,19 @@ $('export-csv').addEventListener('click', () => {
   if (!readyToExport()) return;
   try { download(eventCsv(documentValue()), 'talk2nature-events.csv', 'text/csv'); $('export-status').textContent = 'CSV download requested. Save JSON too to reopen your work.'; status($('export-status').textContent); }
   catch (error) { exportError(error); }
+});
+$('export-audacity').addEventListener('click', async () => {
+  if (!recording || !readyToExport() || $('export-audacity').disabled) return;
+  const current = generation;
+  try {
+    $('export-audacity').disabled = true;
+    const bundle = await audacityPackage(audioBytes, documentValue());
+    if (current !== generation) return;
+    download(bundle, 'talk2nature-audacity.zip', 'application/zip');
+    $('export-status').textContent = 'Audacity package download requested. Check Downloads, unzip it, then open recording.wav and import labels.txt in Audacity. Full notes and conversion limits are included. Save your notebook for reopening here.';
+    status($('export-status').textContent);
+  } catch (error) { if (current === generation) exportError(error); }
+  finally { $('export-audacity').disabled = false; }
 });
 $('labels-file').addEventListener('change', async event => {
   const file = event.target.files[0]; event.target.value = '';

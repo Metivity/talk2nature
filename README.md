@@ -10,6 +10,8 @@ Website: https://metivity.github.io/talk2nature/
 
 **First tools:** [Nature Station](https://metivity.github.io/talk2nature/tools/station/) captures short local sound events and encounter markers; [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs; a [Python report](docs/LISTEN.md) examines labels and a metadata splitter keeps related animals/sessions together. Start with synthetic examples; no animal meaning is inferred. Read the [station, device and AI architecture](docs/NATURE_STATION.md).
 
+**Use another sound editor:** [Continue in Audacity](docs/AUDACITY_EXPORT.md) packages a local WAV, timed labels and complete original annotations with a conversion report. This is a one-way prototype for evaluation; Audacity edits do not update the Talk2Nature notebook.
+
 **Research atlas:** [Explore places and historical work](https://metivity.github.io/talk2nature/research/atlas/) alongside our evidence connections. All library notes remain visible; pins require cited locations. Read the [coverage, provenance and contribution guide](docs/RESEARCH_ATLAS.md).
 
 ## Participate

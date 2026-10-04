@@ -170,3 +170,8 @@ Raviv asked what more would make Talk2Nature successful and useful to science an
 
 
 Completed: the researcher starter pack, citation metadata, reproduction form and current execution priorities are published at 5d01875. Schema/form checks, fresh-clone fixture reproduction, all 119 existing tests, local site checks and seven-file remote verification passed. The independent evaluator, scientific lead, carer access, format adapter and real-device trials remain future milestones, not completed by this kit.
+
+
+## October 5 continuation: make annotated sound useful in another tool
+
+Raviv requested continued implementation of the recommendations. Bounded deliverable: a one-way Audacity standard-label package from Listen/Sound desk, preserving the unchanged WAV, complete original annotation metadata and an explicit conversion report. Acceptance: bounded format/line-escape/provenance/snapshot checks, no draft loss or stale download, actual browser ZIP inspection, mobile/desktop and offline workflow, repository/site suites and public deployment. Native Audacity import verification is separately pending permission to run an official temporary copy; external researcher demand remains unverified. This does not convert whole Station sessions or implement Safe & Sound.

@@ -59,6 +59,8 @@ Browser checks cover the walkthrough, invalid context, edit/remove, export/reimp
 
 Next candidates: independent reviewer comparison, species-specific codebooks, existing annotation-tool interoperability and mobile audio formats. Choose from organizer interviews.
 
+October 5: [Continue in Audacity](AUDACITY_EXPORT.md) exports one unchanged WAV with standard timed labels, original metadata and explicit conversion limits in a local ZIP. Save notebook remains the reopening path. Audacity edits cannot be imported back, and Station session journals stay separate.
+
 Station now saves a ZIP containing WAV clips and a separate session journal. Unzip it and select one WAV here. Keep that journal alongside any new annotations; it is not a `talk2nature.annotation.v1` import.
 
 

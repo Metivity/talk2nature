@@ -92,3 +92,8 @@
 - `content/atlas-goals.json` defines measurable coverage targets and future review/hosting gates. Compute coverage from validated records; a multi-site note counts once. Do not turn planned approvals, recruitment or participant releases into completed progress.
 - Atlas location citations may use an explicit public full-text review URL. Publish short original summaries and links, not downloaded PDFs or review screenshots. The atlas is outside the app's offline scope and never reads private observations.
 - Run repository Python/Node suites, both site-build checks and focused desktop/mobile atlas/goals checks after relevant changes; synchronize public metadata without changing frozen study evidence or the synthetic-only admission gate.
+
+## Audacity export
+- Read `docs/AUDACITY_EXPORT.md` for the one-way Listen/Sound desk bridge. Preserve unchanged WAV bytes, source validation, exact original metadata, declared origin/uncertainty, conversion loss reporting and explicit no-reimport guidance.
+- Standard labels are display text with six-decimal seconds, not spectral/channel annotations or research admission. Keep unsafe line/control characters escaped; reject collapsed intervals and oversized packages.
+- Preserve draft protection, snapshot-before-hash, cancellation on session replacement, local-only downloads and exact offline-shell inclusion. Run Node/Python/site checks plus browser download, desktop/mobile and offline checks; state native Audacity verification separately from formatter tests.

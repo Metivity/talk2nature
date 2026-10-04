@@ -53,7 +53,7 @@ def build_mobile(root, output, prefix, page, station, listen, asset_revision):
     (app_root/'manifest.webmanifest').write_text(json.dumps(manifest,indent=2)+'\n')
     # Exact public shell only. No runtime responses, private routes or user media.
     paths=['app/','app/station/','app/review/','app/compare/','app/manifest.webmanifest']+[f'app/icons/icon-{s}.png' for s in (180,192,512)]
-    paths += ['assets/'+p for p in ('style.css','design.css','personality.css','hub.css','site.js','atmosphere.js','mark.svg','app.css','app.js','app-scene.svg','station.css','station.js','station-model.mjs','window-model.mjs','observation-ui.mjs','station-audio.mjs','station-capture.mjs','station-export.mjs','listen.css','listen.js','listen-model.mjs','notebook.mjs','animal-model.mjs','animal-picker.mjs','compare.css','compare.js','session-import.mjs')]
+    paths += ['assets/'+p for p in ('style.css','design.css','personality.css','hub.css','site.js','atmosphere.js','mark.svg','app.css','app.js','app-scene.svg','station.css','station.js','station-model.mjs','window-model.mjs','observation-ui.mjs','station-audio.mjs','station-capture.mjs','station-export.mjs','listen.css','listen.js','listen-model.mjs','notebook.mjs','audacity-export.mjs','animal-model.mjs','animal-picker.mjs','compare.css','compare.js','session-import.mjs')]
     def local(path): return output/(path+'index.html' if path.endswith('/') else path)
     worker_source=(root/'web/templates/app-sw.js').read_text()
     revision=hashlib.sha256(worker_source.encode()+b''.join(local(p).read_bytes() for p in paths)).hexdigest()[:16]
