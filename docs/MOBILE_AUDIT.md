@@ -64,6 +64,12 @@ Do not buy reach before the first five testers can complete the exercise. No ana
 
 The larger objective remains a credible observation and learning network. Distribution should invite useful participation while accurately showing today's capabilities.
 
+## October 7: parrot field visit
+
+Added a fourth home-card workflow and matching install shortcut. `mode=parrot` opens the existing Station with a 30-second whole-moment window and an observer-declared Parrot group. Species remains optional and editable; no acoustic caller/meaning classifier or automatic reply is added. Calls, mimicry, nearby human speech and visible context are explicitly kept as separate observations. The one new preset module is included in the exact offline shell, and only the allowlisted `mode=parrot` query can reuse the cached Station page.
+
+Validation: 79 Node tests and 50 Python tests passed; the local build/check produced 70 content pages plus 404 and 2,886 valid local links. Browser review verified the parrot selection and whole-window default at a 390 CSS-pixel viewport, with document width matching the viewport. No microphone permission was opened. This is a local preview; it is not deployed and has not been tested on a physical phone.
+
 ## October 2: mobile style and finite motion
 
 Added a shared mobile navigation dock with four 54-pixel-high destinations, section selection, safe-area spacing and bottom focus clearance. Research notes now use a compact field-guide header, readable phone typography and a clearer study summary. The app retains its own navigation, now with 48-pixel targets; the public dock is not duplicated inside it.

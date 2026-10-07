@@ -26,7 +26,7 @@ self.addEventListener('fetch', event => {
   // query can reuse a query-free page; never normalize arbitrary URL parameters.
   const stationMode = url.pathname === SCOPE_PATH+'station/' &&
     [...url.searchParams.keys()].length === 1 &&
-    ['outdoor','companion','demo'].includes(url.searchParams.get('mode'));
+    ['outdoor','companion','parrot','demo'].includes(url.searchParams.get('mode'));
   const key = allowed.has(url.href) ? url.href : stationMode && allowed.has(clean) ? clean : null;
   if (!key) return;
   event.respondWith((async () => {

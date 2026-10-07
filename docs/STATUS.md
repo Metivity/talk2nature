@@ -1,6 +1,6 @@
 # Project status
 
-Updated October 1, 2026. Read the latest dated entries for current release state. The installable web Field Companion, Listen and Nature Station are live. The private study/session rehearsal and real local owner identity work; private hosting and scientific-pilot dependencies remain.
+Updated October 6, 2026. Read the latest dated entries for current release state. The installable web Field Companion, Listen and Nature Station are live. The private study/session rehearsal and real local owner identity work; private hosting and scientific-pilot dependencies remain.
 
 ## Implemented
 
@@ -416,9 +416,57 @@ Exports snapshot before hashing, protect unfinished drafts, preserve work on fai
 
 Validation: **48 Python + 77 Node tests** passed (125 total), whitespace checks and **69-page** local/public builds with **2,812 / 2,882** link references. Browser checks exercised empty-event rejection, draft protection, two synthetic events with Unicode/newline notes and fractional timing, an actual downloaded ZIP, 320/1440-pixel layouts without overflow, keyboard access, no autoplay and offline package generation after user-triggered public-shell installation. Python inspection of the browser ZIP verified CRC, exact WAV SHA-256, all five files, two three-column label rows, original high-precision times and the annotation report. Receipts are ignored tmp/audacity-bridge/download-proof.json and browser-export/. The browser file-chooser helper refused annotation sidecar reimport because the extension lacks file-URL access; this permission was not changed. The real import handler is covered by automated tests, but fresh browser reimport is not claimed.
 
-The official Audacity 4.0.1 arm64 disk image was downloaded into ignored tmp/ and its SHA-256 matched the release metadata. It has not been run or installed; native import verification awaits the explicit permission request. No cross-version compatibility, physical-phone test, independent evaluator or biological validation is claimed. Publication receipt follows.
+The official Audacity 4.0.1 arm64 disk image was downloaded into ignored tmp/ and its SHA-256 matched the release metadata. At the time of the October 5 publication receipt, it had not been run; see the October 6 native import follow-up below. No cross-version compatibility, physical-phone test, independent evaluator or biological validation is claimed.
 
 
 Published implementation **f587ea1bd773c818d4f29ae9bc01c0dc7c43d3a7** through successful Pages run https://github.com/Metivity/talk2nature/actions/runs/37241294478; public checks passed at https://github.com/Metivity/talk2nature/actions/runs/37241294481. All **121** deployed files matched the checked public build over verified TLS. Live checks verified the new action, synthetic annotation flow, unknown context and no playback/overflow at 390px. Screenshot: ignored tmp/audacity-bridge/live-export.jpg; file receipt: tmp/site-audit/live-files.json.
 
-Browser network/display overrides were restored, local test tabs/server closed and the live Sound desk retained as the deliverable. This software prototype is released. Native Audacity import and browser sidecar reimport remain unverified for the reasons above; the pending permission is not approval, and the downloaded official application has not been run. External evaluator feedback, independent scientific review and physical-phone trials remain open. The following documentation receipt does not redeploy.
+Browser network/display overrides were restored, local test tabs/server closed and the live Sound desk retained as the deliverable. This software prototype is released. Browser sidecar reimport remains unverified because the extension lacks file-URL access; no setting was changed. Native Audacity import was verified on October 6 as recorded below. External evaluator feedback, independent scientific review and physical-phone trials remain open. The following documentation receipt does not redeploy.
+
+## October 6: native Audacity import verification
+
+Raviv said “go on,” authorizing the previously proposed native check. The official Audacity 4.0.1 arm64 disk image was mounted read-only and launched without installing it. Its verified source hash is `278c8647b78c77af7f07dbd5e7d9bfc950bc14168047b65738716b61d12055ec`. The synthetic export's `recording.wav` opened successfully, then Audacity **File → Import → Labels** accepted `labels.txt` and created a label track with both events. The Hebrew/emoji note and escaped newline appeared in the label text. Visually, the two label intervals aligned with the two synthetic waveform bursts; selecting them positioned the cursor at approximately 1.54 s and 4.49 s, corresponding to their interval centers.
+
+This verifies opening the WAV and importing the standard label file in Audacity 4.0.1 on macOS arm64 only. The project was not edited or saved, no microphone was used, no sound was played, and the temporary session was discarded. No account was connected; the onboarding **Disable UUID** choice was selected. It does not verify saving/exporting from Audacity, Talk2Nature browser sidecar reimport, other Audacity versions/platforms, physical-phone operation, independent researcher use, or biological meaning. The disk image was detached afterward. This documentation-only receipt does not redeploy.
+
+## October 6: Sound Handoff Lab
+
+Added a mobile-friendly `/tools/interop/` guide and linked it from the tool index and Listen export section. It walks a contributor through making an invented two-tone sample, marking two timed events with Unicode and escaped-newline note cases, importing the WAV and labels in Audacity, and comparing the checksums and expected spans. It records the Audacity 4.0.1 macOS arm64 import as one tested configuration, offers a privacy-safe compatibility issue form, and states that this is only a file-format check—not animal communication, interpretation, or model validation.
+
+Desktop and narrow-layout previews were inspected. All 49 Python tests, 77 Node tests, local build, 70-page/2,849-link site check and whitespace check passed. The lab is in the local `codex/private-research-foundation` working tree and local noindex preview only; it has not been pushed or deployed. Independent researcher reproduction and cross-platform compatibility remain open.
+
+## October 6: university evaluation and community support
+
+Added `SUPPORT.md` with clear routes for workflow attempts, software issues, research-summary corrections, security and conduct reports. Added `docs/UNIVERSITY_EVALUATION.md` with a bounded 20-minute synthetic evaluation, role-specific contribution ideas, researched but explicitly unconfirmed university fit hypotheses, readiness boundaries and an unsent tailored email. Added `/community/university/` to the local site and linked it from community guidance. The invitation asks for independent feedback on workflow fit and export loss; it does not request recordings or present a partnership. The header typography was adjusted after desktop review and checked at mobile width.
+
+Current community advice is to recruit a small reviewer circle (one workflow evaluator, one methods reviewer and one research-software/library reviewer) before broad public contribution. No discussion channel is added while one maintainer lacks moderation capacity. The unresolved gaps are independent scientific review, a conduct appeal route, second maintainer/succession, archival DOI, and an approved protocol/data-governance path before research intake. Public profiles make TAU and Bar-Ilan reasonable fit hypotheses, not prospects with known interest; current bat ultrasonic and synchronized-video workflows remain unvalidated.
+
+Validation passed: 50 Python tests, 77 Node tests, local site build, site/link checks and whitespace check; preview reviewed on desktop and mobile. This remains an uncommitted local-only change set; no GitHub issue, partner or university was contacted, and no website deployment occurred.
+
+## October 7: keep the university invitation navigable before publication
+
+Replaced the landing page's link to the not-yet-published GitHub university brief with an in-page link to the evaluation-boundary section. The local browser confirms it lands on the scope, ready/not-ready criteria and contribution instructions. Regression checks assert the anchor target and guard against reintroducing the unpublished link.
+
+Validation: all 50 Python and 77 Node tests passed, the local builder produced 70 pages plus 404, the site checker found 71 HTML pages and 2,885 valid links, and `git diff --check` passed. This remains local-only; no messages, pushes or deployment were made.
+
+## October 7: parrot prototype review and field visit
+
+Raviv identified a parrot app in Downloads. The likely match calls itself KeeKee (two e's); it was reviewed statically in place. The full private notes are in ignored `funding/keekee-static-review.md`. Strong product ideas include a direct parrot entry, a local clip diary and several understandable tasks. The workspace has no top-level source license or notice, and its bundled sound licenses were not independently verified. Fixed acoustic thresholds are presented as call/speaker labels and mapped to distress, mood and care claims without validation. Its live mode can automatically play calls and turns a later sound inside a short timer into an adaptive reward. Talk2Nature has not imported prototype code, audio, recordings or any user data; the response loop and care/translation claims are excluded from the passive research app.
+
+Added a separate **Parrot field visit** to the public Field Companion: a home card and install shortcut open the existing Station with an observer-declared Parrot group, optional editable species and the 30-second whole-moment mode. The prompt distinguishes calls, mimicry, nearby human voices and visual context. No microphone starts until the user confirms permission and presses Start. The new preset code is in the exact offline-shell allowlist; the service worker accepts only the explicit `mode=parrot` query.
+
+Validation: 79 Node tests and 50 Python tests passed; the local noindex build produced 70 pages plus 404 and the checker verified 71 HTML pages / 2,886 links. Browser review measured the phone viewport at 390 × 844 CSS pixels, with no horizontal overflow; the route showed `animal=parrot` and `capture=window`. No microphone permission was requested. This change remains local: no push, source-code import, external outreach or deployment occurred.
+
+## October 7: full website and project coherence audit
+
+Audited the current local site build, key mobile/public workflows, research and funding metadata, public governance, the private-workbench boundary, and live Pages routes. Added `docs/PROJECT_AUDIT.md` as the dated findings and next-gates register. Clarified the homepage count as “research notes” and “source records.” Rechecked the two Israel Innovation Authority records against the current official program pages and open-applications list: Tnufa and Pre-Seed each show an October 8, 2026 deadline at 12:00. Both remain not submitted; applicant eligibility is unresolved. Added the official cutoff source and exposed its link in the funding card.
+
+Confirmed the local-only university and Sound Handoff Lab paths currently return the designed 404 on live Pages, while their local routes build and pass the local checker. They are not linked from the current live site; no public broken navigation was found. Current local source changes remain uncommitted and unpublished.
+
+Validation: 79 Node tests and 51 repository Python tests pass; the owner-workbench suite passes 104 tests with 49 PostgreSQL integration tests skipped. The disposable PostgreSQL harness could not initialize because the sandbox blocks the `shmget` shared-memory call. The local site builds 70 pages plus 404 and has 2,889 checked local links. Static document checks found no missing titles/descriptions/language, multiple/missing H1s, duplicate IDs, missing image alt text or unsafe blank-target links. Homepage and university page fit 390 CSS pixels without horizontal overflow. No deployment, funding submission, microphone/camera permission or partner contact occurred.
+
+## October 8: release preparation and open-source practice
+
+Raviv authorized deployment and asked for an evidence-based open-source success review applied to Talk2Nature. Added a public-facing operating plan focused on useful external reproductions, newcomer task completion, safe contribution paths, realistic single-maintainer support capacity and sustainability rather than star counts. Added GitHub PR and issue-creation guidance. Existing licenses, governance, security, conduct, citation, source-specific issue forms, read-only CI and manual Pages deployment were already in place; an independent reviewer, second maintainer and tested branch protection remain open.
+
+Rechecked the official Innovation Authority pages on October 8. Tnufa and Pre-Seed deadlines remain today, October 8, at 12:00 Israel time; applicant eligibility and required declarations are not established, and no application was submitted. The local funding records now say when they were checked and identify the timezone. This is not an application recommendation or submission.

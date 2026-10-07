@@ -20,6 +20,10 @@ Website: https://metivity.github.io/talk2nature/
 
 Start with a small [contribution](CONTRIBUTING.md). See [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md), [security reports](SECURITY.md) and the [open-science/community map](https://metivity.github.io/talk2nature/community/). We have no confirmed institutional partners or DPG recognition.
 
+Our [open-source health and adoption plan](docs/OPEN_SOURCE_PRACTICE.md) explains how we make contributions useful, measure progress without vanity metrics and keep the project maintainable.
+
+Need help? See [SUPPORT.md](SUPPORT.md). University and research-software groups can start with the [synthetic evaluation brief](docs/UNIVERSITY_EVALUATION.md); it makes a narrow request for independent workflow feedback and sets out what is not yet ready for a real research pilot.
+
 ## Start locally
 
 Python 3.10+; no third-party package required for the website or research toolkit.
@@ -48,7 +52,7 @@ python3 web/build.py --public --base-url https://metivity.github.io/talk2nature 
 python3 scripts/check_site.py
 ```
 
-Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/GOAL.md), [current status](docs/STATUS.md) and [contribution guide](CONTRIBUTING.md).
+Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/GOAL.md), [current status](docs/STATUS.md), the [project audit](docs/PROJECT_AUDIT.md) and [contribution guide](CONTRIBUTING.md).
 
 ## Repository map
 

@@ -5,7 +5,7 @@ This is a decision queue, not a claim to have reviewed the entire field. The fou
 ## Reading order
 
 1. Japanese tit call-order experiments (source 1): read methods, playback controls and receiver outcomes. Extract what a bounded semantic claim actually requires.
-2. Parrot voluntary interfaces (sources 38–39): retrieve the primary nine-parrot study; inspect selection, choice, intervention and welfare measures with an avian specialist. Decide relevance to Kiki only after app access is confirmed.
+2. Parrot voluntary interfaces (sources 38–39): retrieve the primary nine-parrot study; inspect selection, choice, intervention and welfare measures with an avian specialist. Compare local prototype ideas only after source provenance, bundled-media rights and the study question are resolved.
 3. Bark transfer-learning paper (source 21): inspect individual/session partitioning and class definitions; learn from leakage risks without assuming dog results transfer to birds.
 4. BirdNET, Perch and NatureLM (sources 4, 7–8, 12–14): freeze exact code/checkpoint versions; inspect data provenance, licenses, preprocessing and baseline costs. Do not download weights or promise commercial suitability yet.
 5. BORIS and Arbimon (sources 10–11): try a real researcher-supplied workflow. Write a concrete integration issue or choose an upstream contribution.
@@ -18,7 +18,7 @@ Each completed review should record citation/DOI, exact version, access date, se
 
 Items 1–3 now have method notes on the website. Consult `content/research.json` for study designs, outcomes, limitations and precise reading locations; references and full-text access links are in `content/sources.json`. Bird-syntax interpretation also links to a scholarly commentary. No scientific specialist has reviewed our notes.
 
-Decision: individual-held-out context evaluation and transfer from pretrained acoustic representations already exist. Do not claim those ingredients as novel. Any grant proposal must establish a specific additional contribution. A Kiki interface study, if selected, needs its own design and outcome measures rather than inheriting claims from natural-call classification.
+Decision: individual-held-out context evaluation and transfer from pretrained acoustic representations already exist. Do not claim those ingredients as novel. Any grant proposal must establish a specific additional contribution. A voluntary parrot-interface study, if selected, needs its own design and outcome measures rather than inheriting claims from natural-call classification.
 
 Review follow-up: the parrot paper’s Table 2 displays differences that need checking before quantitative reuse. For example, P3 shows 75% live and 0% playback, but the displayed difference is -8%; P5 shows 58% and 50%, but -75%. These appear inconsistent with their columns. Our note reports the broad author conclusion with limitations and does not reproduce these differences or independently validate the statistical analysis. Do not contact the authors without authorization.
 

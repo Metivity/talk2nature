@@ -1,6 +1,7 @@
 import {addQuickObservation, sessionRecap} from './observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from './window-model.mjs';
 import {animalPicker} from './animal-picker.mjs';
+import {stationPreset} from './station-preset.mjs';
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
 import {sessionFiles, zipFiles} from './station-export.mjs';
 import {AudioSession} from './station-audio.mjs';
@@ -8,6 +9,11 @@ import {AudioSession} from './station-audio.mjs';
 const $ = id => document.getElementById(id);
 let session = null, capture = null, active = false, pending = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
 const animal = animalPicker(document, 'station');
+const preset = stationPreset(new URL(location.href).searchParams.get('mode'));
+if (preset) {
+  $('station-capture-mode').value = preset.captureMode;
+  animal.set(preset.animalContext);
+}
 const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 const status = text => { if ($('station-status').textContent !== text) $('station-status').textContent = text; };
 const reasons = {window_complete: 'Your 30-second window is ready. Quiet moments are included.', window_timeout: 'Recording stopped at the time limit. This window is incomplete; check its recorded duration.', user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
