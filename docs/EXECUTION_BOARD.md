@@ -1,6 +1,6 @@
 # Execution board: software to a credible pilot
 
-Updated October 5, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
+Updated October 7, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
 
 ## Current priority: earn an independent use
 
@@ -8,8 +8,8 @@ The website and tools have advanced; the bottleneck is external scientific and w
 
 | Priority / proposed window | Deliverable | Evidence of completion | Status October 5 |
 | --- | --- | --- | --- |
-| 1 / next week | Researcher starter pack, citation metadata and reproduction report form | Existing synthetic commands rerun; expected outputs documented; clean checkout succeeds | Prepared in this continuation; external reproduction remains zero documented |
-| 2 / next two weeks | Six focused workflow conversations from the earlier 12-conversation target | Dated, permissioned notes: current task/tool, observed problem, desired export, willingness to test; select one priority from findings | None documented; Raviv introductions and authorization for outreach needed |
+| 1 / next week | Independent researcher completes or challenges the synthetic Listen-to-Audacity evaluation | Tested revision/environment, exact result and help level; no media needed | University evaluation brief, SUPPORT.md and public page prepared October 6; no independent reproduction yet |
+| 2 / next two weeks | Six focused workflow conversations from the earlier 12-conversation target | Dated, permissioned notes: current task/tool, observed problem, desired export, willingness to test; select one priority from findings | None documented; one-person-at-a-time outreach draft is ready; no message sent |
 | 3 / next two weeks | One independent evaluator runs the kit; actual Android and iPhone workflow rehearsals | Exact revision/device, steps, failures and assistance recorded; complete/partial save and reopening checked | No independent evaluator or physical-phone result documented |
 | 4 / next month, conditional | One export bridge to a tool the evaluator already uses | Pinned format, synthetic round-trip/target validation, explicit information-loss report and evaluator feedback | Audacity one-way prototype added October 5; native and external-evaluator checks remain open. Safe & Sound session mapping remains proposed |
 | 5 / next month, conditional | One accountable avian reviewer revises the passive parrot protocol | Agreed role, species/access, codebook, independent-label criteria, welfare/consent and evaluation controls | Reviewer and carer access unconfirmed; intake closed |
@@ -31,7 +31,7 @@ The near-term public-benefit hypothesis is lower effort and cost for trustworthy
 
 Lead with one useful artifact and an accurate claim: an externally checked workflow, a working adapter or a reproducible failure that others can avoid. Prepare a short demo and practical guide, then seek permission for a focused contribution to WILDLABS or a relevant research group. Safe & Sound is a concrete standards lead, not a partner. A scientist-agreed methods release can support funding and specialist coverage; broad advertising should follow usefulness and name clearance.
 
-The next software candidate is the interoperability work above, chosen after feedback. Pause new native platforms, unattended capture, conversational-model training and expansion across species until a demonstrated workflow need justifies them. The general observation app can still welcome different animals.
+The next software candidate is the interoperability work above, chosen after feedback. Invite a small number of independent reviewers first; add discussion channels or broad contribution calls only when moderation capacity and a real science task exist. Pause new native platforms, unattended capture, conversational-model training and expansion across species until a demonstrated workflow need justifies them. The general observation app can still welcome different animals.
 
 ## Historical October 1 execution board
 

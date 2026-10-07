@@ -16,4 +16,6 @@ Try a synthetic workflow on a phone, correct one evidence note with a primary so
 
 A pull request should explain the user problem, resulting behavior and checks run. Include a regression check for a data-loss or correctness fix. Website changes need local build/link checks and meaningful narrow-screen interaction testing. Public checks run on pull requests with read-only permissions; publishing remains a separate manual action. Passing CI does not authorize deployment or establish a scientific result.
 
+For help choosing an evaluation or report route, read [SUPPORT.md](SUPPORT.md). University groups can use the [bounded synthetic evaluation brief](docs/UNIVERSITY_EVALUATION.md); it is not a request for research data or a claim of partnership.
+
 Read [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md) and [security reporting](SECURITY.md). Code and summary contributions retain their stated licenses; no contributor license assignment is requested. A substantive AI-generated contribution must be disclosed and its sources and behavior checked by its contributor.

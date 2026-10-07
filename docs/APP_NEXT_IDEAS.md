@@ -19,6 +19,8 @@ A subsequent continuation implements **Same place, different day**: reopen origi
 | A researcher’s study pack | A reviewed species/question-specific checklist, consent scope and versioned codebook that travel with a session. | Scientific reviewer, actual access, rights/withdrawal plan and approved hosted admission. A downloaded pack is not consent. |
 | Camera and sound together | First align known synthetic audio/video events and quantify clock error; then evaluate an approved passive protocol. | Reliable synchronization, privacy review and independent visible labels before automatic gesture or behavior inference. |
 
+The **Parrot field visit** is now a focused entry into the existing Station: it preselects the observer-declared parrot group, opens the 30-second whole-moment mode and prompts people to keep calls, mimicry, nearby human voices and visible context distinct. It does not label call meaning or play a response. This was independently implemented from the Talk2Nature components after reviewing a local parrot-app prototype; no prototype code, audio or user data was copied. See the private static review in ignored `funding/` for its reuse boundaries.
+
 Local session reopening/comparison is now implemented; see [Compare moments](SESSION_COMPARE.md). It offers repeat-use value and creates a route toward longitudinal observations while hosted intake remains pending. Validate it with a small number of actual users before expanding the feature set. Avoid claims about natural variation or “progress” based on unmatched devices, selected interesting clips or unreviewed labels.
 
 ## Checks and remaining limits

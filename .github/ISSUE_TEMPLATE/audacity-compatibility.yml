@@ -1,0 +1,57 @@
+name: Audacity package compatibility report
+description: Report a reproducible match, mismatch or import failure using invented tones.
+title: "[Audacity compatibility] "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        This issue is public. Use the invented tones from the Sound Handoff Lab.
+        Do not upload recordings, notebooks, participant details, personal file paths,
+        credentials, environment files or sensitive wildlife locations. You can report
+        a failure without attaching any file. A successful import is not biological validation.
+  - type: input
+    id: audacity_version
+    attributes:
+      label: Audacity version
+      placeholder: 4.0.1
+    validations:
+      required: true
+  - type: input
+    id: device_os
+    attributes:
+      label: Device, operating system and processor architecture
+      placeholder: MacBook Pro · macOS · Apple silicon
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What happened?
+      options:
+        - Both labels imported in the expected places
+        - A label was missing, shifted or had the wrong text
+        - The WAV or label file would not open
+        - I could not complete the steps
+        - Other result
+    validations:
+      required: true
+  - type: textarea
+    id: observations
+    attributes:
+      label: Steps and expected versus actual result
+      description: Include the public page access date and the exact app steps. If a check failed, describe only what was needed to reproduce it.
+      placeholder: I opened Listen, chose Try an example, marked 1–2 s and 4–5 s, downloaded the package, opened the WAV, and imported the labels…
+    validations:
+      required: true
+  - type: textarea
+    id: usefulness
+    attributes:
+      label: Would this format help in your workflow?
+      description: What did it make easier, what remained awkward, or what tool do you already use?
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report safety check
+      options:
+        - label: I have not attached audio, personal paths, participant information, credentials or sensitive locations.
+          required: true

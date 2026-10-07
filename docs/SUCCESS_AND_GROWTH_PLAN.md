@@ -20,7 +20,7 @@ The unfinished essentials are hosted operations and recovery, a committed scient
 
 Start with one avian research or care team that already records behavior and struggles to produce consistent, reviewable observations. This team is the first prospective customer and study organizer. Invited adult bird carers or observers are contributors. Curious readers are the public audience. Each needs a different invitation and success measure.
 
-Parrots are the leading candidate because of Raviv's interest and possible Kiki experience. Choose the actual species through access, scientific value, observable behavior and achievable independent sampling. Kiki's ownership and data rights must be established before any reuse. If a suitable parrot study cannot be arranged, select a partner-led question with lawful existing data or publish a methods/tooling study.
+Parrots are the leading candidate because of Raviv's interest and app-building experience. Choose the actual species through access, scientific value, observable behavior and achievable independent sampling. Before reusing any prototype component, verify source/package provenance, each bundled sound's license and the rights for any recording or data. If a suitable parrot study cannot be arranged, select a question supported by lawful existing data or publish a methods/tooling study.
 
 The first product is **Field Notes**: a phone-friendly observation journal and a researcher's review workspace. Immediate value comes from useful session history, clear observation instructions, quality feedback and exportable evidence. A contribution should give its author something useful even before a model is trained.
 

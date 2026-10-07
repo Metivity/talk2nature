@@ -39,7 +39,7 @@ The original MFCC script scales its combined matrix for a distance analysis. Tha
 
 The three Edmond archives total **100,498,691,932 bytes** (about 100.5 GB decimal), according to its [public metadata API](https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I). Raw 2020 and 2021 audio alone are about 36.96 GB and 54.55 GB. None was downloaded. Investigate a documented way to obtain a bounded audio subset after the annotation audit; do not launch the full archive transfer by default. The full recording overview includes precise coordinates and is excluded from this sample.
 
-Next acquisition order: selection-table/linkage metadata; a modest matched audio subset with a stated byte budget and privacy/location review; exact model artifact/license; frozen execution dependencies. Expand to other species only when they answer a defined question. Kiki remains an ownership/access dependency; no assets were imported.
+Next acquisition order: selection-table/linkage metadata; a modest matched audio subset with a stated byte budget and privacy/location review; exact model artifact/license; frozen execution dependencies. Expand to other species only when they answer a defined question. A user-created parrot-app prototype has been located and statically reviewed; source and bundled-media rights and research-data access remain unresolved. No prototype assets were imported.
 
 ## Reproduce
 

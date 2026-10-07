@@ -4,12 +4,14 @@
     "name": "Israel Innovation Authority · Tnufa",
     "type": "Grant",
     "deadline": "2026-10-08",
+    "deadline_time": "12:00",
+    "deadline_source_id": 121,
     "status": "Eligibility review",
     "amount": "Up to NIS 200,000; up to 80% of approved costs.",
     "source_id": 26,
     "fit": "Early technological R&D; genuine novelty, applicant eligibility, matching funds and IP obligations need verification.",
-    "next_action": "Prepare an applicant fact sheet and a technical-novelty assessment. Website development alone is not a sufficient R&D case.",
-    "verified": "2026-09-30",
+    "next_action": "The official listing gives 12:00 Israel time on October 8. Confirm the eligible resident-founder or Israeli-company route, novelty, budget, prior funding and IP declarations before considering submission. Website development alone is not a sufficient R&D case.",
+    "verified": "2026-10-08",
     "application_status": "Not submitted"
   },
   {
@@ -30,12 +32,14 @@
     "name": "Israel Innovation Authority · Pre-Seed",
     "type": "Grant",
     "deadline": "2026-10-08",
+    "deadline_time": "12:00",
+    "deadline_source_id": 121,
     "status": "Later-stage fit",
     "amount": "Up to NIS 2 million, subject to program terms.",
     "source_id": 27,
     "fit": "Company and investor requirements make this a later option; eligibility is unconfirmed.",
-    "next_action": "Revisit after entity, R&D financing and investor conditions are established.",
-    "verified": "2026-09-30",
+    "next_action": "The official listing gives 12:00 Israel time on October 8. This track requires an Israeli startup company and signed investment documentation for at least 15% of the proposed round; no entity or investor facts are confirmed. Do not submit until current eligibility and declarations are verified.",
+    "verified": "2026-10-08",
     "application_status": "Not submitted"
   },
   {
@@ -100,7 +104,7 @@
     "source_id": 35,
     "fit": "Current calls focus on internet infrastructure; mostly LLM-generated code is ineligible under the reviewed notice.",
     "next_action": "Do not prepare an application for the current codebase without resolving scope and policy fit.",
-    "verified": "2026-09-30",
+    "verified": "2026-10-07",
     "application_status": "Not submitted"
   },
   {

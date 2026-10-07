@@ -21,10 +21,66 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(check_site(d)['public'])
             self.assertIn('https://fixture.github.io/talk2nature/research/',(Path(d)/'sitemap.xml').read_text())
 
+    def test_audacity_handoff_lab_is_mobile_site_content_with_bounded_claims(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            lab=(root/'tools/interop/index.html').read_text()
+            tools=(root/'tools/index.html').read_text()
+            listen=(root/'tools/listen/index.html').read_text()
+            self.assertIn('A FIVE-MINUTE FORMAT CHECK',lab)
+            self.assertIn('Try an example',lab)
+            self.assertIn('1–2 s',lab)
+            self.assertIn('4–5 s',lab)
+            self.assertIn('Audacity 4.0.1',lab)
+            self.assertIn('does not validate detection accuracy',lab)
+            self.assertIn('/talk2nature/tools/interop/',tools)
+            self.assertIn('/talk2nature/tools/interop/',listen)
+            self.assertIn('audacity-compatibility.yml',lab)
+            self.assertTrue((root/'assets/interop.css').is_file())
+
+    def test_community_invites_bounded_university_evaluation(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            community=(root/'community/index.html').read_text()
+            university=(root/'community/university/index.html').read_text()
+            self.assertIn('Universities: start with a small evaluation',community)
+            self.assertIn('/talk2nature/community/university/',community)
+            self.assertIn('No animal recordings, lab data, endorsement or partnership are requested.',community)
+            self.assertIn('has not validated ultrasonic or synchronized audio-video workflows',community)
+            self.assertIn('One small test.',university)
+            self.assertIn('no animal recording',university)
+            self.assertIn('No Talk2Nature animal-communication model',university)
+            self.assertIn('without permission',university)
+            self.assertIn('href="#evaluation-boundary"',university)
+            self.assertIn('id="evaluation-boundary"',university)
+            self.assertNotIn('blob/main/docs/UNIVERSITY_EVALUATION.md',university)
+            self.assertTrue((root/'assets/university.css').is_file())
+            project_root=Path(__file__).resolve().parents[1]
+            brief=(project_root/'docs/UNIVERSITY_EVALUATION.md').read_text()
+            self.assertIn('not a partnership announcement',brief)
+            self.assertIn('not an ethics determination',brief)
+            self.assertIn('SUPPORT.md', (project_root/'README.md').read_text())
+
     def test_public_build_requires_real_origin(self):
         with tempfile.TemporaryDirectory() as d:
             for origin in ('','http://localhost:4173','https://example.com','https://good.test/?a=b','https://user:secret@good.test'):
                 with self.subTest(origin=origin),self.assertRaises(ValueError): build(Path(d),origin,True)
+
+    def test_funding_deadlines_show_fresh_check_and_official_cutoff_source(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'opportunities/index.html').read_text()
+            self.assertEqual(sum(source['id']==121 for source in load('sources')),1)
+            self.assertIn('Deadline 2026-10-08 · 12:00',page)
+            self.assertIn('official deadline list',page)
+            self.assertIn('Checked 2026-10-07 · Not submitted',page)
+            self.assertIn('no entity or investor facts are confirmed',page)
 
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):
         with tempfile.TemporaryDirectory() as d:

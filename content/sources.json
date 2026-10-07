@@ -208,17 +208,17 @@
   {
     "id": 26,
     "title": "Tnufa",
-    "description": "Israel Innovation Authority. Current Tnufa program page: amounts, eligible applicants, costs, obligations and 8 October 2026 deadline.",
+    "description": "Israel Innovation Authority. Current Tnufa program page: eligible resident entrepreneurs or qualifying Israeli companies, grant terms, eligible costs and IP obligations.",
     "url": "https://innovationisrael.org.il/programs/מסלול-תנופה-קרן-ההזנק/",
-    "checked": "2026-09-30",
+    "checked": "2026-10-08",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Current Pre-Seed track: grant ceiling, company and investor requirements, and 8 October 2026 deadline.",
+    "description": "Israel Innovation Authority. Current Pre-Seed track: qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-09-30",
+    "checked": "2026-10-08",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -282,7 +282,7 @@
     "title": "NLnet current call and GenAI policy notice",
     "description": "NLnet. Apply before 3 November 2026. Open-internet scope and material restrictions on mostly LLM-generated work.",
     "url": "https://nlnet.nl/news/2026/20260903-call.html",
-    "checked": "2026-09-30",
+    "checked": "2026-10-07",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -1110,5 +1110,13 @@
     "description": "Herman (2017). Publisher abstract reviewed; competing interpretations of song in the mating system remain relevant to reading the historical study. Full synthesis not reviewed.",
     "checked": "2026-10-04",
     "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
+  },
+  {
+    "id": 121,
+    "title": "Israel Innovation Authority open application dates",
+    "url": "https://innovationisrael.org.il/%D7%A4%D7%AA%D7%95%D7%97%D7%99%D7%9D-%D7%9C%D7%94%D7%92%D7%A9%D7%94/",
+    "description": "Official open-applications listing. Checked October 8, 2026; it lists the Tnufa and Pre-Seed deadlines on October 8 at 12:00 Israel time.",
+    "checked": "2026-10-08",
+    "origin": "Israel Innovation Authority live submission listing; checked October 8, 2026."
   }
 ]

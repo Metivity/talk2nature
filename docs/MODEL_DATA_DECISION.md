@@ -29,7 +29,7 @@ Sources: [Perch model card](https://www.kaggle.com/models/google/bird-vocalizati
 | --- | --- | --- |
 | Bark transfer-learning study | Primary paper and data-access statement: recordings available by author request. | Potential replication route; no access or redistribution permission obtained. Author contact requires authorization. Does not validate parrot transfer. |
 | BEANS / BEANS-Next | Official task configuration, dataset card and displayed metadata. BEANS dog task labels are individual identities. BEANS-Next includes acoustic-description tasks and per-record license fields. | Useful benchmark candidates, not automatic substitutes for synchronized, independently observed behavior. No benchmark run, full metadata audit or overlap audit performed. |
-| Kiki / contributed parrot recordings | No app, recording or dataset inspected. Ownership, location, species and usable observations unknown. | Do not import another project's assets or infer behavior labels from a generated caption. |
+| User-created parrot-app prototype / contributed recordings | A local app workspace was reviewed statically. No recording or dataset was reviewed; package/source provenance, audio rights and usable research observations remain unverified. | Reuse workflow ideas only. Do not copy code/media or treat its call labels and response signals as validated research data. |
 | New passive observation study | No recruited animals, protocol or collaborator. | Define with an appropriate scientist after founder context and access are known. |
 
 BEANS-Next metadata revision: `2fc58150c9541698ffc82aaf1f5d5a44993c54bf`. The dataset card lists CC BY-NC-SA 4.0 while its Croissant metadata describes mixed source licenses; retain per-record restrictions. A public test set is not a training set for reporting an independent benchmark result.
@@ -42,7 +42,7 @@ Update, September 30: a subsequent bounded collection found and inspected a prom
 
 ## Resume gate and first executable milestone
 
-1. Resolve Kiki's project/ownership and available data; select one species and one observable target with a scientific collaborator. Confirm whether the work concerns natural calls or a learned interface.
+1. Audit source/package provenance and any available recordings separately; select one species and one observable target with a scientific collaborator. Confirm whether the work concerns natural calls or a learned interface.
 2. Document original recording rights, human consent where applicable, individuals, sessions, devices/sites, observation provenance and annotation agreement. Check near duplicates and possible pretraining overlap. Decide what can be published separately from what can be analyzed.
 3. Freeze the model artifact and dependency environment; record artifact checksums and measured runtime on a small permitted sample. Verify preprocessing and align every crop with observation timestamps.
 4. Use the existing manifest validator; additionally hold out relevant sites/devices/time where needed. If groups or class coverage cannot support the chosen evaluation, revise the question or gather appropriate data before reporting accuracy.

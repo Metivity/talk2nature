@@ -19,7 +19,7 @@ The first customer hypothesis is a researcher, sanctuary or avian behavior team 
 | Animal “chat” | Attractive promise, uncertain scientific validity | Fluent answers can disguise missing evidence | Do not ship unrestricted translations or automated playback |
 | Plant/fungal station | Potential environmental or physiological monitoring | Modality-specific hypotheses with proper sensors and controls | Separate later research track |
 
-No app-store release, user recruitment, interviews, animal recording or payments have occurred. Kiki may provide experience or code only after its location and ownership are confirmed.
+No app-store release, user recruitment, interviews, animal recording or payments have occurred. A user-created parrot-app workspace has been located and reviewed statically; its code, package provenance, third-party audio rights and any usable research data require separate review before reuse.
 
 ## A useful mobile flow
 

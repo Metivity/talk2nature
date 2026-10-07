@@ -28,6 +28,8 @@ test('offline shell install omits credentials and activation preserves unrelated
   assert.equal(w.stores.has(w.old),false);assert.equal(w.stores.has(w.unrelated),true);
   const result=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'station/?mode=companion')});
   assert.match(await result.text(),/^cached/);assert.equal(w.fetches.length,0);
+  const parrot=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'station/?mode=parrot')});
+  assert.match(await parrot.text(),/^cached/);assert.equal(w.fetches.length,0);
 });
 test('private, unknown, authenticated, query-bearing and mutation requests bypass the offline cache',async()=>{
   const w=await worker();await w.dispatch('install');

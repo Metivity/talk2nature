@@ -74,7 +74,7 @@ Use Apache-2.0 for new original software and CC BY 4.0 for original public resea
 
 ## First scientific direction
 
-Focus on observed bird communication, with a parrot/Kiki feasibility study as a candidate once ownership, data access and a qualified scientific collaborator are confirmed. First question: can acoustic features improve prediction of a pre-defined observable context on genuinely held-out recordings, compared with context-only and background baselines?
+Focus on observed bird communication, with a parrot feasibility study as a candidate once usable data access and a qualified scientific collaborator are confirmed. First question: can acoustic features improve prediction of a pre-defined observable context on genuinely held-out recordings, compared with context-only and background baselines?
 
 The first code milestone validates recording metadata and constructs grouped evaluation splits. It does not decode animal language. Native-call studies and voluntarily learned interfaces are distinct research directions; choose one protocol before collecting training data. Trees and fungi remain in the evidence library, outside the first experiment.
 
@@ -101,7 +101,7 @@ Start with useful original pages about animal communication AI, bioacoustic mode
 
 ## External dependencies
 
-Confirmed: GitHub owner Metivity and GitHub Pages hosting, authorized September 30, 2026. Awaiting Raviv: funding applicant identity/country/entity; Kiki location and ownership; realistic budget/time commitment. These do not block local preparation. No external partner communication is authorized by the broad research goal alone.
+Confirmed: GitHub owner Metivity and GitHub Pages hosting, authorized September 30, 2026. Awaiting Raviv: funding applicant identity/country/entity and realistic budget/time commitment. A user-created parrot-app workspace has now been located and reviewed statically; no recordings, source-license audit or research-data access have been established. These do not block local preparation. No external partner communication is authorized by the broad research goal alone.
 
 October 1 authorization update: Raviv confirmed Google policy acceptance and the proposed Cloud Run/Supabase Frankfurt setup up to US$50/month. OAuth branding/client and one real local owner login/logout are verified; the owner subject is pinned privately. Hosted work remains unfinished because the Google billing setup and separate Supabase agreement are pending. See the latest STATUS entry; earlier pending-budget statements are historical.
 
@@ -171,10 +171,34 @@ Raviv asked what more would make Talk2Nature successful and useful to science an
 
 Completed: the researcher starter pack, citation metadata, reproduction form and current execution priorities are published at 5d01875. Schema/form checks, fresh-clone fixture reproduction, all 119 existing tests, local site checks and seven-file remote verification passed. The independent evaluator, scientific lead, carer access, format adapter and real-device trials remain future milestones, not completed by this kit.
 
+## October 8: prepare a coherent public release and strengthen open-source practice
+
+Raviv authorized deployment and asked to study how healthy open-source projects earn adoption and apply the useful practices here. Publish the reviewed local site and project changes through the existing tested Pages path. Add an evidence-based project health plan, clearer PR and issue guidance, and explicit success measures based on independent reproductions, task completion, maintainer capacity and continuity—not popularity alone.
+
+Acceptance: all repository and admin tests that are runnable in this environment; explicit public build and boundary checks; mobile/browser verification of the new release; repository changes published through a reviewable GitHub change; successful Pages workflow; live verification of all newly published routes and assets. Do not submit funding applications, claim partnership/research validation, open real-data intake or provision private hosting as part of this release.
+
 
 ## October 5 continuation: make annotated sound useful in another tool
 
 Raviv requested continued implementation of the recommendations. Bounded deliverable: a one-way Audacity standard-label package from Listen/Sound desk, preserving the unchanged WAV, complete original annotation metadata and an explicit conversion report. Acceptance: bounded format/line-escape/provenance/snapshot checks, no draft loss or stale download, actual browser ZIP inspection, mobile/desktop and offline workflow, repository/site suites and public deployment. Native Audacity import verification is separately pending permission to run an official temporary copy; external researcher demand remains unverified. This does not convert whole Station sessions or implement Safe & Sound.
 
 
-Software milestone released at f587ea1: the one-way Audacity package passed 125 automated tests, actual browser ZIP inspection, responsive/offline checks and the 121-file live comparison. Desktop Audacity verification remains pending permission; browser annotation reimport was blocked by the existing extension file-access setting. No setting was changed and no native/independent compatibility result is claimed. The next validation is a target-app import and external evaluator feedback.
+Software milestone released at f587ea1: the one-way Audacity package passed 125 automated tests, actual browser ZIP inspection, responsive/offline checks and the 121-file live comparison. Browser annotation reimport remains blocked by the existing extension file-access setting; no setting was changed.
+
+October 6 native follow-up: with Raviv’s “go on” authorization, the official Audacity 4.0.1 arm64 app imported the synthetic WAV and label sidecar; both labels aligned to the expected synthetic sounds, and Unicode/escaped-note text appeared. The unsaved project was discarded. This closes the target-app import check for this version and platform, not browser reimport, cross-version compatibility, independent evaluation or biological validation. The next useful step is feedback from one independent researcher using their own permitted workflow.
+
+October 6 continuation: built the local Sound Handoff Lab at `/tools/interop/`, linked from Listen and the tools index, with a four-step synthetic reproduction walkthrough, the tested Audacity configuration, scientific/privacy boundaries and a compatibility issue template that requests no media. Desktop/mobile previews, 49 Python tests, 77 Node tests, the local build, 70-page/2,849-link check and whitespace check passed. This is local-only and has not been published. The next check is an independent researcher reproducing the same handoff on their own permitted setup.
+
+## October 6: make university evaluation and open participation practical
+
+Raviv asked how to manage open source successfully, invite contributors at the right scale and introduce the tools to universities. After reviewing community-health, research-software sustainability and citizen-science guidance, the bounded deliverable is a support route, a synthetic-only university evaluation brief with a tailored email draft, and a public `/community/university/` invitation. Recruit a few independent workflow/methods reviewers before inviting general data contributions. No outreach, partnership or real-data intake is implied. See `docs/UNIVERSITY_EVALUATION.md` and `SUPPORT.md`.
+
+The browser workflow is intended as a 20-minute test of annotation/export fidelity, not animal communication. TAU and Bar-Ilan are possible methodological fits based on public research profiles; no interest or readiness is known. The Bat Lab's ultrasonic/video workflow is beyond currently verified support. Remaining structural gaps are independent scientific review, a conduct appeal route, a second maintainer/succession plan, a stable DOI/release archive and research-data governance. The local continuation passed the Python and Node suites, site build/check and desktop/mobile visual review; it has not been deployed or sent to prospective evaluators.
+
+October 7 follow-up: replaced the university page's link to its unpublished GitHub brief with a working in-page link to evaluation boundaries. The browser confirms the anchor and shows the synthetic-only scope next to contribution/report instructions. This closes a preview-path issue; it does not publish the page or make the local workflow link shareable outside the repository preview.
+
+## October 7: full website and project audit
+
+Raviv asked for a coherence audit of the website and whole project, with concrete corrections. The audit confirms the public product is a research library plus local observation tools; it is not a shared recording database or animal translator. The urgent IIA funding entries have been rechecked against official pages, the home-page catalog counts clarified, and the dated findings and next gates are in `docs/PROJECT_AUDIT.md`.
+
+The live Pages site still returns its designed 404 for the local-only `/community/university/` and `/tools/interop/` routes. The current worktree includes those pages and their links, but they have not been deployed. Public observation upload, hosted private storage, a scientific lead/protocol and confirmed funding-applicant facts remain open. The local suites pass except for PostgreSQL integration, which the sandbox could not initialize because shared memory is denied. This audit does not authorize a release or funding submission.

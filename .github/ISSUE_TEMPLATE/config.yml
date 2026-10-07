@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Support and contribution guidance
+    url: https://github.com/Metivity/talk2nature/blob/main/SUPPORT.md
+    about: Choose the right route and keep private recordings or data out of public issues.
+  - name: Security and privacy reports
+    url: https://github.com/Metivity/talk2nature/blob/main/SECURITY.md
+    about: Report suspected vulnerabilities or accidental exposure privately.
+  - name: Community conduct concerns
+    url: https://github.com/Metivity/talk2nature/blob/main/CODE_OF_CONDUCT.md
+    about: Read the conduct policy and its private reporting route.
