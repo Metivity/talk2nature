@@ -1,6 +1,6 @@
 # Project status
 
-Updated October 6, 2026. Read the latest dated entries for current release state. The installable web Field Companion, Listen and Nature Station are live. The private study/session rehearsal and real local owner identity work; private hosting and scientific-pilot dependencies remain.
+Updated October 8, 2026. The public release on `main` is deployed at https://metivity.github.io/talk2nature/; see the October 8 publication receipt below. The installable web Field Companion, Listen and Nature Station are live. The private study/session rehearsal and real local owner identity work; private hosting and scientific-pilot dependencies remain.
 
 ## Implemented
 
@@ -470,3 +470,11 @@ Validation: 79 Node tests and 51 repository Python tests pass; the owner-workben
 Raviv authorized deployment and asked for an evidence-based open-source success review applied to Talk2Nature. Added a public-facing operating plan focused on useful external reproductions, newcomer task completion, safe contribution paths, realistic single-maintainer support capacity and sustainability rather than star counts. Added GitHub PR and issue-creation guidance. Existing licenses, governance, security, conduct, citation, source-specific issue forms, read-only CI and manual Pages deployment were already in place; an independent reviewer, second maintainer and tested branch protection remain open.
 
 Rechecked the official Innovation Authority pages on October 8. Tnufa and Pre-Seed deadlines remain today, October 8, at 12:00 Israel time; applicant eligibility and required declarations are not established, and no application was submitted. The local funding records now say when they were checked and identify the timezone. This is not an application recommendation or submission.
+
+## October 8: public release and live verification
+
+Merged [PR #1](https://github.com/Metivity/talk2nature/pull/1) as `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` and deployed it with the successful [manual Pages workflow](https://github.com/Metivity/talk2nature/actions/runs/37696843446). The public build checked 71 HTML pages and 2,961 internal links; Python and JavaScript workflow tests passed, and only the generated public `dist/` was uploaded.
+
+The live home, university evaluation, Sound Handoff Lab, parrot Field Companion route, evidence map and funding page opened successfully. The university page's published CSS and layout were visually inspected on desktop. Narrow-screen checks at 390 CSS pixels were completed on the local release preview before publication; no physical-phone test is claimed. Hosted storage and real-data admission remain closed, and the university evaluation is still synthetic-only.
+
+GitHub Actions reported that the pinned Pages actions target Node.js 20 and were forced to run on Node.js 24, plus the announced `ubuntu-latest` image migration. The deployment passed. Review supported action-runtime versions before the next workflow maintenance change.
