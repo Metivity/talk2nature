@@ -1,16 +1,17 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-October 5, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 8, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
 ## Choose one route
 
 **Browser route:** open [Compare moments](https://metivity.github.io/talk2nature/app/compare/) and load the invented example pair. Inspect the complete and partial sessions, observer-entered notes and sampling differences. Prepare audio for manual playback only if useful, away from animals. Check whether you can explain why the two records do not establish a change in an animal. Close a session and confirm the other remains available. Report a confusing step or a workflow this could support; no file upload is needed.
 
-**Research-code route:** use the public repository and the synthetic fixtures below. The code is standard-library Python 3.10+. Node is required only for the optional browser-module tests. Run in a fresh checkout or an existing clean checkout; use the exact revision recorded in the report.
+**Research-code route:** use the public repository and the synthetic fixtures below. The code is standard-library Python 3.10+. Node is required only for the optional browser-module tests. The deployed software revision rehearsed for this kit is `aa7119b7635aa3390bd1f7b3bb982e3b596f438d`. To reproduce the recorded baseline, check out that exact revision and verify the printed commit before running the commands:
 
 ```sh
 git clone https://github.com/Metivity/talk2nature.git
 cd talk2nature
+git checkout aa7119b7635aa3390bd1f7b3bb982e3b596f438d
 git rev-parse HEAD
 python3 --version
 python3 -m talk2nature.annotations examples/annotations.synthetic.json
@@ -26,7 +27,8 @@ The two fixtures exercise **separate** tools. The annotation report is not conve
 | Annotation report | 8-second declared duration; two marked events; 2 seconds of interval-union coverage; zero seconds with observed context | Marked coverage is not detection accuracy. |
 | Annotation warnings | Unknown context; unknown animal/session identity; synthetic origin | A valid file can still be unsuitable for a research claim. |
 | Metadata split | 10 connected groups; 12 train, 4 validation and 4 test records | These are invented declarations, not independent animals observed in a study. |
-| Canonical manifest hash | `4ce3aaa1f5ead99af3343d4baed5ac682e4862df9b65d4f08858d34aea93dd90` | Identifies this metadata fixture; it does not authenticate recordings or consent. |
+| `manifest_sha256` in generated split | `4ce3aaa1f5ead99af3343d4baed5ac682e4862df9b65d4f08858d34aea93dd90` | Identifies the source metadata manifest; it does not authenticate recordings or consent. |
+| Generated split-file SHA-256 | `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4` | Checksum of the entire JSON output in this software revision and environment. |
 
 The default seed is `talk2nature-v1`. Repeating the splitter with unchanged input and seed should produce the same file. Record the commit if a future fixture changes. The current splitter groups declared individual IDs, sessions and exact source hashes transitively. It **does not yet group households or devices**, detect near-duplicates or inspect pretrained-model overlap; the proposed parrot protocol requires those additional controls before an empirical evaluation. Ten fixture groups are not a sample-size recommendation.
 
@@ -38,6 +40,12 @@ node --test tests/*.test.mjs
 ```
 
 A passing run establishes behavior on tested inputs, not scientific validity. Record the actual output and failures, rather than copying the expected values into a success report. Use the [reproduction report form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Redact local usernames and paths; do not attach private media, environment files, credentials or participant details. A maintainer/AI rerun is not an independent reproduction.
+
+## Maintainer rehearsal — October 8, 2026
+
+The pinned revision was cloned into a fresh public checkout and exercised on Darwin 25.4.0 arm64 with Python 3.12.5, Node v22.22.1 and Git 2.53.0. The annotation command returned the expected 8-second fixture, two marked events, 2 seconds of interval-union coverage and zero seconds with observed context. The split returned 10 connected groups and 12/4/4 records; repeating it with the same input and seed produced a byte-identical JSON file. The Python suite passed 51 tests and the Node suite passed 79 tests.
+
+The live browser route was also inspected: its invented pair contained a 30-second complete and an 18-second partial budgerigar session, both with observer-declared labels. The comparison described the sampling difference without inferring biological change. Closing one session left the other open. No microphone, playback, upload, real observation, model or permission was used. These checks validate only the recorded software behavior. They were performed by the project maintainer and do **not** count as an independent reproduction or scientific review.
 
 ## Three useful first contributions
 

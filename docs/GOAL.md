@@ -171,6 +171,8 @@ Raviv asked what more would make Talk2Nature successful and useful to science an
 
 Completed: the researcher starter pack, citation metadata, reproduction form and current execution priorities are published at 5d01875. Schema/form checks, fresh-clone fixture reproduction, all 119 existing tests, local site checks and seven-file remote verification passed. The independent evaluator, scientific lead, carer access, format adapter and real-device trials remain future milestones, not completed by this kit.
 
+October 8 continuation: pinned the researcher instructions to the deployed software commit and recorded a fresh-clone maintainer rehearsal, including deterministic output hashes, full Python/Node suites and the live synthetic compare workflow. This improves repeatability of the invitation but does not count as an independent reproduction. The next meaningful milestone requires an external researcher to run the bounded workflow on their own setup, plus a methods reviewer and a second maintainer; no one has been contacted yet.
+
 ## October 8: prepare a coherent public release and strengthen open-source practice
 
 Raviv authorized deployment and asked to study how healthy open-source projects earn adoption and apply the useful practices here. Publish the reviewed local site and project changes through the existing tested Pages path. Add an evidence-based project health plan, clearer PR and issue guidance, and explicit success measures based on independent reproductions, task completion, maintainer capacity and continuity—not popularity alone.
