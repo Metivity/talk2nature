@@ -1,14 +1,14 @@
 # Project status
 
-Updated October 11, 2026. The October 8 public release on `main` is deployed at https://metivity.github.io/talk2nature/; newer local literature, documentation and SEO changes are not deployed. The installable web Field Companion, Listen and Nature Station are live. The private study/session rehearsal and real local owner identity work; private hosting and scientific-pilot dependencies remain.
+Updated October 11, 2026. The live Pages content release is `7d56893` (successful workflow run #23); `main` is now at `53d109a`. The parrotlet research note and corrected sitemap are live. Search Console reports that the new note is not yet indexed, while its live test says it can be crawled; the sitemap report still says “Couldn't fetch” despite a successful live fetch test. The installable web Field Companion, Listen and Nature Station are live. Private hosting and scientific-pilot dependencies remain.
 
 ## Implemented
 
 - Working brand: Talk2Nature / Listen closely. Understand carefully. Name clearance remains open.
 - Scope, open-source/business approach, contribution rules and company boundaries documented.
 - Apache-2.0 original software and CC BY 4.0 original public-summary policy; no third-party audio or model weights included.
-- Responsive static website: 25 content pages plus 404, original SVG identity, 16 evidence notes, 58-source inventory, ten dated opportunity records, Field Notes product page, roadmap, methods, contribution and privacy guidance.
-- Technical SEO preparation: unique titles/descriptions, structured page metadata, canonical/base-path support, sitemap, robots and social metadata. Local builds default to noindex. The public build allows indexing; Search Console ownership is verified. Search-engine indexing is not yet verified.
+- Responsive static website: 74 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 45 research notes, 135 source records, 16 collection resources, ten dated opportunity records, Field Companion, methods, contribution and privacy guidance.
+- Technical SEO: unique titles/descriptions, structured metadata, canonical URLs, sitemap, robots and social metadata; local builds default to noindex. Search Console is verified. Its current overview shows one indexed URL and zero clicks; the newly released parrotlet page remains unknown to Google although its live test says it can be indexed. Sitemap processing is unresolved despite a successful live fetch test.
 - Research utility: metadata validation and deterministic connected-group splits across individuals, sessions and source hashes. Synthetic fixtures only; no trained model or empirical result.
 - Local Tnufa preparation brief and application register in ignored `funding/`. No submitted application or confirmed eligibility.
 
@@ -36,7 +36,7 @@ The initial public snapshot uses the confirmed repository-local Git identity. Ea
 ## Next actions
 
 1. Public deployment is verified. Saved proof: `tmp/site-preview/public-home.png`; detailed HTTP comparison: `tmp/live-launch-check.json`.
-2. Search Console ownership is verified for raviv@metivity.com. As checked October 11, the Page indexing report (last updated October 4) lists one indexed page and zero not-indexed pages; the overview shows zero search clicks and the report shows zero impressions. The submitted sitemap still says “Couldn't fetch,” with zero discovered pages or videos, although its October 11 live URL inspection fetched the exact sitemap successfully as HTTP 200 `application/xml` with crawling and indexing allowed. The discrepancy remains unexplained. The live sitemap repeats `2026-10-04` for every page; the local builder now omits `<lastmod>` until it can publish accurate page-level dates. No sitemap resubmission, indexing request or deployment was made. Do not claim indexing. Diagnostic screenshots from the initial submission remain in `tmp/site-preview/`.
+2. Search Console’s post-release findings and the recommended next step are recorded in the final dated entry below. The new parrotlet note is crawlable but not indexed, and sitemap ingestion remains unresolved. No indexing request or sitemap resubmission has been made; do not claim indexing.
 3. Funding still needs an applicant's legal name, country, individual/company status, eligibility facts, defensible R&D contribution and budget. No application has been submitted. Current Tnufa forms were not retrieved: attachment access failed and direct page retrieval returned HTTP 403. Do not use the old form surfaced by search. Previously verified deadline: October 8, 2026.
 4. Scientific pilot needs Kiki ownership/access if relevant, one species/question, usable independently labeled observations and an appropriate collaborator. No Kiki assets imported, animals recruited, weights installed or model accuracy claimed.
 
@@ -561,3 +561,11 @@ Public metadata sync created five records (three sources, one note and one resou
 PR #6 was merged by squash as `7d56893d204900363a2e1b4810ea997597830d3f` after public checks run #38 passed. The manual Pages workflow run #23 (`38160669903`) completed successfully from `main` at that revision. The live parrotlet note loaded in the browser; its title, canonical URL, description, `index,follow` robots directive, Open Graph title and one JSON-LD block were verified. The note clearly discloses targeted review depth, unresolved article/data rights and the absence of independent specialist review. No dataset was downloaded and no model was trained.
 
 The deployed source includes the sitemap correction that removes the unverified site-wide `<lastmod>`. Its generated public sitemap passed the build checks. Search Console has not yet been refreshed after this release, so indexing and sitemap acceptance remain unknown. A 390-pixel viewport override did not take effect in the available browser (the page remained 1,352 CSS pixels wide); mobile visual QA is still open. Current deployed Pages revision: `7d56893`.
+
+## October 11: post-release Search Console verification
+
+After Pages release `7d56893`, Search Console was checked under the verified property. Its overview showed one indexed URL and zero web-search clicks. The new public parrotlet page’s Google Index result says “URL is not on Google,” with “URL is unknown to Google” and no referring sitemap. Its live test at 8:51 PM said “URL is available to Google” and “Page can be indexed.” This separates discoverability/indexing from page accessibility; it does not promise the page will be selected for indexing.
+
+The submitted `/sitemap.xml` report still showed Type “Unknown,” Last read October 11, Status “Couldn’t fetch,” zero discovered pages/videos and detail “Sitemap could not be read.” A live URL test of that exact sitemap at 8:53 PM reported Crawl allowed = Yes, Page fetch = Successful and Indexing allowed = Yes. Browser inspection of the live XML found 74 `<loc>` entries, including the parrotlet note, and no `<lastmod>` elements. These checks confirm current accessibility and sitemap contents, not that Google’s sitemap processor has accepted or used it.
+
+Google’s [Sitemaps report guidance](https://support.google.com/webmasters/answer/7451001) recommends testing the exact sitemap URL and submitting that same URL in the Sitemaps report when its live fetch succeeds. The sitemap was not resubmitted and the page was not sent an indexing request during this audit. The report has not supplied a code-level failure reason, so no speculative sitemap code change was made. Next: decide whether to resubmit the verified sitemap and request a crawl for the new page, then monitor Search Console; neither action guarantees indexing.
