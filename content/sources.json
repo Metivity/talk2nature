@@ -208,17 +208,17 @@
   {
     "id": 26,
     "title": "Tnufa",
-    "description": "Israel Innovation Authority. Current Tnufa program page: eligible resident entrepreneurs or qualifying Israeli companies, grant terms, eligible costs and IP obligations.",
+    "description": "Israel Innovation Authority. Current Tnufa program page: eligible resident entrepreneurs or qualifying Israeli companies, grant terms, eligible costs and IP obligations. The October 8, 2026 cutoff has passed; no newer date was listed on the page when checked October 11.",
     "url": "https://innovationisrael.org.il/programs/מסלול-תנופה-קרן-ההזנק/",
-    "checked": "2026-10-08",
+    "checked": "2026-10-11",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Current Pre-Seed track: qualifying Israeli-company, investor, R&D-spend and grant requirements.",
+    "description": "Israel Innovation Authority. Current Pre-Seed track: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-08",
+    "checked": "2026-10-11",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -280,9 +280,9 @@
   {
     "id": 35,
     "title": "NLnet current call and GenAI policy notice",
-    "description": "NLnet. Apply before 3 November 2026. Open-internet scope and material restrictions on mostly LLM-generated work.",
+    "description": "NLnet's Restack and CodeSupply calls close November 3, 2026 at 12:00 CET. The call notice says mostly LLM-generated work is currently ineligible and the GenAI policy is being revised; it advises LLM-using projects to wait for the new policy.",
     "url": "https://nlnet.nl/news/2026/20260903-call.html",
-    "checked": "2026-10-07",
+    "checked": "2026-10-11",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -1382,6 +1382,151 @@
     "origin": "Official GitHub issue and current repository files checked October 11, 2026; issue status can change.",
     "rights": {
       "issue": "Linked for status only; the issue is not a model-weight license or release record"
+    }
+  },
+  {
+    "id": 142,
+    "title": "Egyptian fruit bat audiovisual vocalization data descriptor",
+    "url": "https://www.nature.com/articles/sdata2017143",
+    "description": "Prat et al. (2017), Scientific Data. Reviewed abstract, methods, data records, annotation quality check and rights statement. The descriptor reports 293,238 250 kHz WAV files and 91,080 video-derived annotations; no files were acquired.",
+    "checked": "2026-10-11",
+    "origin": "Primary publisher article reviewed October 11, 2026, including its data and usage sections.",
+    "review_url": "https://www.nature.com/articles/sdata2017143",
+    "review_url_label": "Primary data descriptor and rights statement",
+    "rights": {
+      "paper": "Article is CC BY 4.0; linked for reference and no article text or figures are reproduced",
+      "metadata": "The article's CC0 waiver applies to metadata files described by the paper; it does not establish a blanket license for the raw audio/video archive"
+    }
+  },
+  {
+    "id": 143,
+    "title": "Bat vocal sequences and context classification",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10139886/",
+    "description": "Amit and Yovel (2023), iScience. Targeted review of the abstract, reported sequence sample, HMM results, cross-validation description, discussion and data statement. No analysis was reproduced.",
+    "checked": "2026-10-11",
+    "origin": "Primary open-access article reviewed October 11, 2026; no supplement or source code was reviewed.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10139886/",
+    "review_url_label": "Primary article and reported methods/results",
+    "rights": {
+      "paper": "Article is CC BY 4.0; linked for reference and no article text or figures are reproduced",
+      "data_and_code": "Article license does not by itself establish reuse rights for separately hosted audio, annotations, code or model weights"
+    }
+  },
+  {
+    "id": 144,
+    "title": "Egyptian fruit bat sequence encodings and example audio, Mendeley Data version 3",
+    "url": "https://data.mendeley.com/datasets/mjfv43zgtv/3",
+    "description": "Version 3, published October 20, 2022. The record describes phrase.rar example audio, 326 sequence encodings, syllable encodings and context annotations; it declares CC BY 4.0. The official v2/v3 comparison repeats the same descriptions and license. No file manifest or file contents were inspected or downloaded.",
+    "checked": "2026-10-11",
+    "origin": "Exact version 3 Mendeley landing page and official v2/v3 comparison reviewed October 11, 2026.",
+    "review_url": "https://data.mendeley.com/datasets/mjfv43zgtv/3",
+    "review_url_label": "Version 3 deposit description and declared license",
+    "rights": {
+      "deposit": "Mendeley record declares CC BY 4.0 for the deposit; individual file contents and upstream audio provenance have not been checked",
+      "article": "The deposit license does not cover the linked articles or any separately hosted code or model weights"
+    }
+  },
+  {
+    "id": 145,
+    "title": "NLM catalog listing for Egyptian fruit bat Figshare archive item 4556074",
+    "url": "https://springernature.figshare.com/articles/dataset/Egyptian_fruit_bat_vocalizations_files_210/4556074",
+    "description": "The NLM Dataset Catalog's listing for this Figshare item reports CC0 1.0 and describes Rousettus aegyptiacus social vocalizations. The direct Figshare record could not be fetched during review, so the catalog listing is secondary rights evidence only.",
+    "checked": "2026-10-11",
+    "origin": "NLM Dataset Catalog entry reviewed October 11, 2026; direct Figshare page unavailable in the review tool.",
+    "review_url": "https://datasetcatalog.nlm.nih.gov/dataset?q=0000897569",
+    "review_url_label": "NLM Dataset Catalog listing and displayed rights field",
+    "rights": {
+      "catalog": "NLM displays CC0 1.0 for this Figshare subitem; direct deposit terms and exact file scope remain unverified"
+    }
+  },
+  {
+    "id": 146,
+    "title": "animal2vec and MeerKAT peer-reviewed paper",
+    "description": "Schäfer-Zimmermann et al. (2026), Methods in Ecology and Evolution 17:875–888, DOI 10.1111/2041-210x.70218. Targeted review of dataset, annotation, evaluation, results, ethics and data-availability sections; no result reproduced.",
+    "url": "https://doi.org/10.1111/2041-210x.70218",
+    "checked": "2026-10-11",
+    "origin": "Publisher's final peer-reviewed article reviewed October 11, 2026; article text and figures are linked, not reproduced.",
+    "review_url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210x.70218",
+    "review_url_label": "Published article sections 2.1–2.2.3, 3, 4, ethics and data availability"
+  },
+  {
+    "id": 147,
+    "title": "MeerKAT: Meerkat Kalahari Audio Transcripts dataset",
+    "description": "Edmond version 1, DOI 10.17617/3.0J0DYB. The 2026 published paper describes 1,068 hours of 8 kHz audio, of which 184 hours are completely labeled. The article states the data use CC BY-NC 4.0. No files or complete deposit inventory were inspected.",
+    "url": "https://doi.org/10.17617/3.0J0DYB",
+    "checked": "2026-10-11",
+    "origin": "Dataset DOI and rights stated in the publisher's final article; authors' official README reviewed for data structure and identity withholding.",
+    "review_url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210x.70218",
+    "review_url_label": "Publisher data-availability statement and dataset methods",
+    "rights": {
+      "dataset": "CC BY-NC 4.0 as stated by the published article; no commercial use is admitted",
+      "article": "Separate publication; no text or figures reproduced",
+      "identity": "Randomized sample names conceal individual and temporal identity; the paper says those can be requested"
+    }
+  },
+  {
+    "id": 148,
+    "title": "animal2vec code repository and archived release",
+    "description": "Official repository at github.com/livingingroups/animal2vec; the 2026 article states MIT and cites archived release DOI 10.5281/zenodo.17640321. No commit-pinned code snapshot or runtime was inspected.",
+    "url": "https://github.com/livingingroups/animal2vec",
+    "checked": "2026-10-11",
+    "origin": "Official repository license and published article's code-availability statement reviewed October 11, 2026.",
+    "review_url": "https://github.com/livingingroups/animal2vec",
+    "review_url_label": "Official repository, README and license metadata",
+    "rights": {
+      "code": "MIT as stated by the published article and official repository; dependencies and checkpoints have separate terms"
+    }
+  },
+  {
+    "id": 149,
+    "title": "Pretrained animal2vec model weights",
+    "description": "Edmond version 1, DOI 10.17617/3.ETPUKU. The published article states the pretrained and fine-tuned checkpoint weights use CC BY-NC 4.0. No weights were downloaded or executed.",
+    "url": "https://doi.org/10.17617/3.ETPUKU",
+    "checked": "2026-10-11",
+    "origin": "Model-weight DOI and rights stated in the publisher's final article data-availability statement.",
+    "review_url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210x.70218",
+    "review_url_label": "Publisher model-weight availability and license statement",
+    "rights": {
+      "weights": "CC BY-NC 4.0 as stated by the published article; no commercial use is admitted",
+      "code": "The separately licensed MIT repository does not change checkpoint terms"
+    }
+  },
+  {
+    "id": 150,
+    "title": "NLnet Restack program and current call",
+    "url": "https://nlnet.nl/restack/",
+    "description": "Official program scope and November 3, 2026 call. Restack funds open internet infrastructure and foundational technologies, and explicitly excludes AI-related projects except for a narrowly defined exception.",
+    "checked": "2026-10-11",
+    "origin": "Official NLnet Restack program page reviewed October 11, 2026; the cited scope and exception are recorded in the opportunity assessment."
+  },
+  {
+    "id": 151,
+    "title": "NLnet Restack eligibility and proposal FAQ",
+    "url": "https://nlnet.nl/restack/faq/",
+    "description": "Official FAQ: first proposals are €5,000–€50,000; applicants are asked to write proposals themselves and disclose and explain any generative-AI use in proposal text.",
+    "checked": "2026-10-11",
+    "origin": "Official NLnet FAQ reviewed October 11, 2026; proposal-writing and grant-size rules are summarized without reproducing the FAQ."
+  },
+  {
+    "id": 152,
+    "title": "NLnet CodeSupply program and current call",
+    "url": "https://nlnet.nl/codesupply/",
+    "description": "Official program page: November 3, 2026 deadline and €5,000–€50,000 proposals for open-source software supply-chain metadata work covering provenance, licensing, vulnerabilities, security and compliance.",
+    "checked": "2026-10-11",
+    "origin": "Official NLnet CodeSupply program page reviewed October 11, 2026; scope and proposal range are summarized."
+  },
+  {
+    "id": 153,
+    "title": "Egyptian fruit bat Mendeley Data version comparison",
+    "url": "https://data.mendeley.com/datasets/compare/mjfv43zgtv?old=2&new=3",
+    "description": "Official comparison of Mendeley versions 2 and 3. Both descriptions list phrase.rar example WAVs, 326 sequence encodings, encodings for more than 28,000 syllables and context annotations, and both display CC BY 4.0. The comparison does not verify individual files, upstream audio rights or file contents.",
+    "checked": "2026-10-11",
+    "origin": "Mendeley Data's official version-comparison page reviewed October 11, 2026.",
+    "review_url": "https://data.mendeley.com/datasets/compare/mjfv43zgtv?old=2&new=3",
+    "review_url_label": "Official version 2 and 3 metadata comparison",
+    "rights": {
+      "deposit": "Versions 2 and 3 display CC BY 4.0; this does not independently establish upstream rights for any included example audio",
+      "files": "The comparison exposes descriptions, not a verified per-file manifest or content review"
     }
   }
 ]

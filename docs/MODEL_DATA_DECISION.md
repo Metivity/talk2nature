@@ -44,6 +44,12 @@ Update, September 30: a subsequent bounded collection found and inspected a prom
 
 Update, October 11: a targeted fit review changed the role of this candidate. The study asks whether known, individually marked monk parakeets can be identified across call types; it does not test behavior or call meaning. The cross-call-type protocol appears to hold recordings out while retaining known identity classes, so it should not be described as unseen-bird generalization. Use it only as a possible caller-identity reproduction comparator after split/reliability review. It is not the first context dataset. Direct full-text retrieval remained limited and no replication was run; see the dated note in `content/research.json` and `docs/COLLECTION.md`.
 
+## October 11 update: animal2vec / MeerKAT is a rare-event reference
+
+The 2026 peer-reviewed paper reports 1,068 hours of meerkat audio and 184 hours of complete event labels, and evaluates event/call-category prediction with precision–recall metrics. This is useful for detector design and for understanding sparse, noisy, multi-label audio. It does not answer the project's first acoustic-context question: the labels are sound/event categories, and the focal tag is source attribution based partly on intensity, spectral change and context, not a communication-meaning label.
+
+Treat the components separately: the paper links the MeerKAT dataset and checkpoints under CC BY-NC 4.0 and animal2vec code under MIT. The dataset and weights remain outside the shared commercial-capable corpus. The sample-level five-fold design was not verified as animal/session grouped; randomized filenames intentionally conceal identity and chronology, which the authors say may be requested. No data, code or weights were acquired or executed. The evidence note and `research/resources.json` preserve separate versions, rights and review limits. AutoResearch remains **NOT READY**.
+
 ## Resume gate and first executable milestone
 
 1. Audit source/package provenance and any available recordings separately; select one species and one observable target with a scientific collaborator. Confirm whether the work concerns natural calls or a learned interface.
@@ -69,3 +75,9 @@ The Dryad record lists 2.60 GB of audio-video-derived developmental material for
 ## October 11 update: Prompting-MammAlps video retrieval
 
 The separate 2026 Prompting-MammAlps release retrieves camera-trap videos from text queries over explicit visible-behavior labels. It does not test acoustic context or animal meaning. The data are CC BY-NC 4.0, the code repository has no declared license and the reported SALMA checkpoints were not located. Its day-level split does not establish held-out-animal generalization, and the headline scores use different query subsets. Keep the dataset metadata-only and outside the commercial-capable benchmark; do not acquire or run the unlicensed code. It is a design reference for separating query, label and retrieval evaluation only.
+
+## October 11 update: Egyptian fruit-bat context candidate
+
+The 2017 archive is unusually relevant for research design because it pairs audio with video-derived context labels and reports a sampled annotation quality check. Published context accuracies from 2016 and 2023 are acoustic associations with observer-coded context; the studies do not establish receiver comprehension or general translation. Their vocalization/sequence folds do not demonstrate held-out-animal performance, so they are not a ready Talk2Nature benchmark.
+
+Keep the Figshare archive metadata-only until its direct raw-file terms are verified. The 2017 article's CC0 waiver applies to metadata, while NLM's CC0 notice for item 4556074 is secondary evidence. Mendeley Data v3 separately declares CC BY 4.0, but exact file contents and upstream audio provenance need review before acquisition. No files or code were downloaded or run. AutoResearch remains **NOT READY**; any later pilot must freeze deduplication, animal/session-grouped splits, independent labels, simple controls and a locked test before execution.

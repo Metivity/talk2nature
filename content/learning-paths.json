@@ -25,6 +25,7 @@
       "decision": "Reuse annotation workflows and independent behavior labels. Make unknowns explicit.",
       "notes": [
         "bat-context",
+        "egyptian-fruit-bat-data",
         "das-annotation",
         "annotation-tools",
         "parrot-data-feasibility"
@@ -42,8 +43,8 @@
         "birdnet",
         "das-annotation"
       ],
-      "next_step": "Freeze a small permitted evaluation set and measure event recall, false alarms per hour and human review time.",
-      "gate": "Triggered clips alone cannot establish recall. Specialized recorders do not establish phone performance."
+      "next_step": "Specify a rights-cleared continuous-audio evaluation with quiet intervals, event recall, false alarms per hour and review time. Use MeerKAT for metric/schema guidance only unless a separately scoped non-commercial reproduction passes its rights and animal/session split review.",
+      "gate": "Triggered clips alone cannot establish recall. MeerKAT's non-commercial data and checkpoint terms exclude them from the shared commercial-capable path; its public sample names do not expose animal/session groups. Specialized recorders do not establish phone performance."
     },
     {
       "id": "model",
@@ -111,10 +112,11 @@
         "budgerigar-vocal-sociality-data",
         "parrot-data-feasibility",
         "parrotlet-vocal-babbling-development",
-        "mammalps-audio-behavior-benchmark"
+        "mammalps-audio-behavior-benchmark",
+        "egyptian-fruit-bat-data"
       ],
-      "next_step": "Use MammAlps to shape modality-ablation and label-uncertainty checks, but keep it outside the commercial-capable benchmark. Seek permissively reusable synchronized recordings with independently observed behavior or define a passive protocol with a qualified reviewer.",
-      "gate": "MammAlps is noncommercial and uses a day-level split without verified individual holdout; the parrot deposits also have alignment/rights gaps. None is admitted as the first Talk2Nature context benchmark, and none demonstrates call meaning."
+      "next_step": "Compare the bat archive's video-aligned labels and sampled QA with candidate parrot datasets; resolve each component's rights, then define a deduplicated held-out-animal/session protocol before any baseline. Keep MammAlps outside the commercial-capable benchmark.",
+      "gate": "The bat archive's direct raw-audio rights and Mendeley file provenance remain unresolved; its published vocalization/sequence splits do not establish held-out-animal performance or receiver comprehension. MammAlps is noncommercial and uses a day-level split without verified individual holdout; the parrot deposits also have alignment/rights gaps. None is admitted as the first Talk2Nature context benchmark."
     },
     {
       "id": "observable-event-retrieval",

@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 async function worker({failInstall=false}={}) {
   const scope='/talk2nature/app/', origin='https://fixture.test';
-  const paths=[scope,scope+'station/',scope+'review/',scope+'compare/','/talk2nature/assets/station.js?v=fixture'];
+  const paths=[scope,scope+'station/',scope+'review/',scope+'compare/','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture'];
   const handlers={}, stores=new Map(), fetches=[], adds=[];
   const old='talk2nature-shell:'+scope+':old', unrelated='another-project-cache';
   stores.set(old,new Map()); stores.set(unrelated,new Map());

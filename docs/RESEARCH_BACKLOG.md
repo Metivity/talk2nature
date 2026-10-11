@@ -49,6 +49,12 @@ Still needed for a real experiment: data rights, recording ingestion/checksums, 
 
 No one in this list has been contacted or has agreed to participate. Prepare a concise research brief before any authorized outreach.
 
+## October 11 update: MeerKAT can guide detection methods, not the first context benchmark
+
+The published animal2vec/MeerKAT paper is now reviewed beyond its earlier abstract/README-only entry. Its 1,068-hour continuous-audio collection, 184 hours of complete event labels, noisy intervals and event precision–recall evaluation are useful references for detector design. Its label target is call/event classification, not independently observed behavior or receiver understanding.
+
+The peer-reviewed paper states separate terms: MeerKAT data and animal2vec checkpoints are CC BY-NC 4.0; the code is MIT. Data/checkpoints are therefore not admitted to the shared commercial-capable path. Public sample names deliberately hide individual and time order, and the paper's sample-level folds were not verified as animal/session-held-out. Do not download or run the package for this project. Next, reuse the metric and continuous-quiet-window lessons in a rights-cleared evaluation specification; only consider a separately governed academic reproduction after exact inventory and grouping metadata are authorized and reviewed.
+
 ## Model and data checkpoint
 
 See `docs/MODEL_DATA_DECISION.md` for exact candidate references, separate code/model terms and dataset-fit decisions. Perch-Hoplite is the current candidate tooling route; no model has been installed. The public library now includes a benchmark-label note. Further implementation depends on a concrete species/question and usable observations, not another general model survey.
@@ -72,3 +78,17 @@ Decision: do not select this as the first context-prediction dataset or claim it
 Reviewed the primary abstract and targeted Methods text plus the Dryad deposit inventory and reuse policy. The study paired longitudinal contact-call features with home-flock social observations, but not at the same events: contact calls were recorded from individually isolated focal birds, while behavior labels came from separate flock videos. The Dryad file list includes derived call features, social-event coding, interobserver material and example video, but no original call audio. Dryad data are CC0 under its repository policy; the article and included software remain separate artifacts. No files were downloaded.
 
 Decision: retain as a protocol and annotation-schema comparator, not the first acoustic context benchmark. A small aggregate flock-level question is only a future option after exact joins, independent review and a suitable holdout. The immediate data requirement remains synchronized rights-cleared audio with independent event timestamps.
+
+## October 11 checkpoint — funding-call fit and date refresh
+
+Rechecked the official Israel Innovation Authority and NLnet pages. Tnufa's October 8 deadline has passed; its page did not show a later date on October 11. Pre-Seed's page now lists November 9, 2026 at 12:00 Israel time. This is a conditional lead only: the route requires an Israeli-incorporated commercial-R&D company, a recognized investor commitment of at least 15% of the requested round, at least 75% R&D spend, and the stated prior-funding/revenue limits. The applicant entity, investor and eligibility facts remain unconfirmed.
+
+NLnet's November 3 call is active, but neither open fund fits the current project: Restack excludes AI-related projects except a narrow, over-one-million-user infrastructure case; CodeSupply funds software-package supply-chain metadata, not Talk2Nature's biological research catalog. NLnet says its GenAI policy is being revised, warns that mostly LLM-generated work is currently ineligible, and advises projects using LLMs to wait for the updated policy. The Restack FAQ asks applicants to author their own proposal and disclose/explain any GenAI use. Recommendation: do not spend proposal effort on either NLnet fund for the current scope; revisit only if scope and policy materially change. No application was submitted and no external contact was made. Public opportunity records link official sources 26, 27, 35, 150–152.
+
+## October 11 checkpoint — Egyptian fruit-bat context archive
+
+Add the 2017 synchronized audiovisual dataset and 2023 sequence follow-up to the review queue. The descriptor's sampled 435-annotation quality audit and independent video-derived labels make this a strong protocol comparator. Published 2016/2023 context-classification scores are not semantic decoding; neither reported split establishes held-out-animal generalization. The raw Figshare item remains rights-unresolved, while Mendeley v3's CC BY 4.0 declaration needs file/provenance review. Keep both metadata-only. The next useful work is direct item/file-rights verification and a leakage-safe split audit, followed by a bounded baseline proposal only if rights and access permit it.
+
+### October 11 follow-up — Mendeley version history
+
+Reviewed the exact version 3 landing page and the official v2/v3 comparison. Both versions describe phrase.rar example WAVs, 326 sequence encodings, encodings for more than 28,000 syllables and context annotations; both display CC BY 4.0. The description says the original WAVs are available in the separate Prat et al. 2017 archive. The accessible comparison provides deposit metadata, not a verified per-file manifest or provenance for the example audio. Therefore the declaration does not resolve upstream audio rights, no files were downloaded, and the resource remains metadata-only. Next: inspect the actual v3 file inventory and source-archive terms if a permitted metadata/file view becomes available; otherwise retain this limitation and seek an expert review before proposing a benchmark.
