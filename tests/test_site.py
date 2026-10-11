@@ -165,14 +165,31 @@ class SiteTests(unittest.TestCase):
             assets=json.loads(source.split('const ASSETS = ',1)[1].split(';',1)[0])
             self.assertNotIn('/talk2nature/about/',assets)
             self.assertIn('/talk2nature/app/compare/',assets)
+            self.assertIn('/talk2nature/app/practice/',assets)
             self.assertTrue(any('/assets/session-import.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/audacity-export.mjs?' in a for a in assets))
+            self.assertTrue(any('/assets/practice.js?' in a for a in assets))
+            self.assertTrue(any('/assets/practice-model.mjs?' in a for a in assets))
             for asset in assets:
                 self.assertTrue(asset.startswith(('/talk2nature/app/','/talk2nature/assets/')))
                 path=root/urlsplit(asset).path.removeprefix('/talk2nature/')
                 self.assertTrue((path/'index.html' if asset.endswith('/') else path).is_file())
             self.assertNotIn('__REVISION__',source)
             self.assertIn('class="app-body"',(root/'app/index.html').read_text())
+
+    def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'app/practice/index.html').read_text()
+            home=(root/'app/index.html').read_text()
+            self.assertIn('https://fixture.github.io/talk2nature/app/practice/',page)
+            self.assertIn('content="index,follow"',page)
+            self.assertIn('three invented scenes',page)
+            self.assertIn('No points, no data collection',page)
+            self.assertIn('id="practice-title" tabindex="-1"',page)
+            self.assertIn('share a note about the wording',page)
+            self.assertIn('href="/talk2nature/app/practice/"',home)
+            self.assertIn('https://fixture.github.io/talk2nature/app/practice/',(root/'sitemap.xml').read_text())
 
     def test_checker_catches_missing_asset_and_accidental_private_file(self):
         with tempfile.TemporaryDirectory() as d:

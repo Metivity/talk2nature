@@ -25,3 +25,5 @@
 
 @media(max-width:900px){.scenario-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.scenario-grid{grid-template-columns:1fr}}
+.scenario-grid .practice-entry{grid-column:2 / span 2}
+@media(max-width:900px){.scenario-grid .practice-entry{grid-column:auto}}

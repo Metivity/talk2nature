@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 async function worker({failInstall=false}={}) {
   const scope='/talk2nature/app/', origin='https://fixture.test';
-  const paths=[scope,scope+'station/',scope+'review/',scope+'compare/','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture'];
+  const paths=[scope,scope+'station/',scope+'review/',scope+'compare/',scope+'practice/','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture','/talk2nature/assets/practice.js?v=fixture','/talk2nature/assets/practice-model.mjs?v=fixture'];
   const handlers={}, stores=new Map(), fetches=[], adds=[];
   const old='talk2nature-shell:'+scope+':old', unrelated='another-project-cache';
   stores.set(old,new Map()); stores.set(unrelated,new Map());
@@ -69,3 +69,5 @@ test('only the exact release asset query is served from the public offline cache
 });
 
 test('comparison page is part of the exact public offline shell',async()=>{const w=await worker();await w.dispatch('install');const r=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'compare/')});assert.match(await r.text(),/^cached/);assert.equal(w.fetches.length,0);});
+
+test('observation practice page and its modules are part of the exact public offline shell',async()=>{const w=await worker();await w.dispatch('install');const r=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'practice/')});assert.match(await r.text(),/^cached/);assert.ok(w.adds.some(request=>request.url.includes('/assets/practice.js?v=fixture')));assert.ok(w.adds.some(request=>request.url.includes('/assets/practice-model.mjs?v=fixture')));assert.equal(w.fetches.length,0);});
