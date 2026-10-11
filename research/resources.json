@@ -513,6 +513,58 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "prompting-mammalps-s2-retrieval-data",
+      "kind": "dataset",
+      "title": "MammAlps-S2 and Prompting-MammAlps camera-trap retrieval benchmark",
+      "url": "https://huggingface.co/datasets/amathislab/Prompting-MammAlps",
+      "version": "Dataset-card revision 04d96ea01312aab5727a39491ef1d736f1df2728",
+      "priority": 2,
+      "reviewed": "2026-10-11",
+      "task": "Non-commercial methods comparator for retrieving camera-trap clips from human-written queries about visible, labeled behavior; it is not an audio-language or animal-meaning benchmark.",
+      "review_depth": "arXiv v1 sections 1, 3.1–3.2, 4–7 and supplementary S1.1–S1.3; official EPFL project page; pinned Hugging Face card, version and license. No dataset files were downloaded.",
+      "access": "Public card lists about 75 GB of video and 2,865 clips. Its download snippets use a different repository handle from the project page's link; confirm the exact current handle before any acquisition.",
+      "decision": "Keep metadata-only as a non-commercial methods comparator. Exclude it from the shared and commercial-capable training paths; recheck access and rights before any separately approved academic use.",
+      "limitations": "Video-only, not a parrot dataset: seven Alpine mammal species, three sites in one Swiss national park, two non-overlapping field seasons (2023 and 2024), 15 camera views, 23 action labels and 12 activity labels. The 135 prompts were defined with a behavioral ecologist and matched to videos using ground-truth annotations; their independent reliability was not reviewed. The published split holds out acquisition days, not verified animal identities, and the authors note cross-season distribution shifts. Results use set-based F1 and were not reproduced: SALMA+agent reports 0.34 over all 135 queries (0.37 without video-comparison queries), while zero-shot InternVideo2.0 reports 0.18 only on the 113 non-comparison queries; these headline values are not a like-for-like all-query comparison. The dataset is CC BY-NC 4.0. No video, annotation, paper, code or checkpoint was acquired or run.",
+      "attribution": "Gabeff et al. (2026), Prompting-MammAlps / MammAlps-S2. Cite the paper and versioned dataset card separately.",
+      "rights": {
+        "license": "CC-BY-NC-4.0",
+        "scope": "The dataset card declares CC BY-NC 4.0 for MammAlps-S2 and the Prompting-MammAlps dataset; this does not grant code, article or model-weight rights.",
+        "evidence_url": "https://huggingface.co/datasets/amathislab/Prompting-MammAlps/commit/04d96ea01312aab5727a39491ef1d736f1df2728",
+        "conditions": "Non-commercial only; attribution required. Confirm the current data repository and its exact version before acquisition. No dataset files were downloaded.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "prompting-mammalps-retrieval-code",
+      "kind": "code",
+      "title": "Prompting-MammAlps retrieval and SALMA code",
+      "url": "https://github.com/amathislab/prompting-mammalps",
+      "version": "main commit 9627d90b3917e9cc78e27fb08eba18d0fdaaa3c4",
+      "priority": 2,
+      "reviewed": "2026-10-11",
+      "task": "Potential reference for transparent query parsing and evaluation over structured camera-trap behavior annotations.",
+      "review_depth": "Official README, pyproject, SALMA README, repository root inventory and GitHub license metadata reviewed. No code or weights were downloaded or executed.",
+      "access": "Public GitHub source repository. The root has no LICENSE file and GitHub reports no declared repository license; a public repository does not by itself establish reuse rights.",
+      "decision": "Metadata reference only. Do not copy, run or redistribute code until the authors' code license is clarified. Treat SALMA weights as unavailable until an exact release and separate weight license are verified.",
+      "limitations": "Repository code is separate from the CC BY-NC 4.0 dataset, paper and pretrained InternVideo encoder. The reported SALMA model checkpoints were not located; issue 1 asks about their future release. Installation, dependencies, security and baseline reproduction were not evaluated.",
+      "attribution": "Gabeff et al. (2026), official Prompting-MammAlps code repository at commit 9627d90b3917e9cc78e27fb08eba18d0fdaaa3c4.",
+      "rights": {
+        "license": "unresolved: GitHub repository license metadata is null and no root LICENSE file was found",
+        "scope": "Repository code only; dataset, paper, dependencies, InternVideo encoder and SALMA weights have separate rights.",
+        "evidence_url": "https://github.com/amathislab/prompting-mammalps/tree/9627d90b3917e9cc78e27fb08eba18d0fdaaa3c4",
+        "conditions": "Seek explicit code-license confirmation before acquisition, execution, adaptation or redistribution. No code or weights were acquired.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
