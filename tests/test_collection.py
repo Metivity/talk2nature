@@ -85,6 +85,18 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(parrotlet['rights']['commercial_use'],'unresolved')
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog,[parrotlet['id']])
+        retrieval=next(r for r in self.catalog['resources'] if r['id']=='prompting-mammalps-s2-retrieval-data')
+        self.assertEqual(retrieval['acquisition'],'metadata_only')
+        self.assertEqual(retrieval['rights']['license'],'CC-BY-NC-4.0')
+        self.assertEqual(retrieval['rights']['commercial_use'],'not_admitted')
+        self.assertEqual(retrieval['files'],[])
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog,[retrieval['id']])
+        retrieval_code=next(r for r in self.catalog['resources'] if r['id']=='prompting-mammalps-retrieval-code')
+        self.assertIn('unresolved',retrieval_code['rights']['license'])
+        self.assertEqual(retrieval_code['files'],[])
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog,[retrieval_code['id']])
         for field, value in [('license', 'unknown'), ('commercial_use', 'unresolved')]:
             with self.subTest(field=field):
                 c = copy.deepcopy(self.sample)

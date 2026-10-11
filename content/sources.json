@@ -1318,5 +1318,70 @@
     "rights": {
       "geography": "Linked for approximate regional location only; no maps, imagery or text are reproduced"
     }
+  },
+  {
+    "id": 137,
+    "title": "Prompting-MammAlps: fine-grained text-to-video retrieval for camera-trap data",
+    "url": "https://arxiv.org/abs/2607.09876v1",
+    "description": "arXiv v1 posted July 10, 2026. Targeted review of benchmark, retrieval method, experiments, results and discussion. The headline 34% vs 18% comparison needs qualification: the SALMA+agent result is 0.34 across 135 queries, while the zero-shot VLM comparison excludes 22 video-comparison queries and reports 0.18 on the remaining 113. No result was reproduced.",
+    "checked": "2026-10-11",
+    "origin": "Primary arXiv HTML version 1 reviewed October 11, 2026; scope and metric caveats are recorded in the linked note.",
+    "review_url": "https://arxiv.org/html/2607.09876v1",
+    "review_url_label": "Primary paper HTML, version 1",
+    "rights": {
+      "paper": "Linked for reference; article redistribution terms were not reviewed and no text or figures are reproduced"
+    }
+  },
+  {
+    "id": 138,
+    "title": "Prompting-MammAlps official EPFL project page",
+    "url": "https://cnai.epfl.ch/prompting-mammalps/",
+    "description": "Official project page describes MammAlps-S2, the camera-trap seasons and the 135-query text-to-video retrieval benchmark. It links the paper, code and dataset.",
+    "checked": "2026-10-11",
+    "origin": "Official EPFL Mathis Group project page reviewed October 11, 2026.",
+    "review_url": "https://cnai.epfl.ch/prompting-mammalps/",
+    "review_url_label": "Official project overview and dataset links",
+    "rights": {
+      "page": "The project page declares CC BY-NC 4.0; linked for reference only and no page text, images or figures are reproduced"
+    }
+  },
+  {
+    "id": 139,
+    "title": "MammAlps-S2 and Prompting-MammAlps Hugging Face dataset card",
+    "url": "https://huggingface.co/datasets/amathislab/Prompting-MammAlps",
+    "description": "Dataset card revision 04d96ea01312aab5727a39491ef1d736f1df2728 describes 2,865 camera-trap video clips, two field seasons, 135 retrieval queries, and a declared CC BY-NC 4.0 license. No data files were downloaded.",
+    "checked": "2026-10-11",
+    "origin": "Exact Hugging Face dataset card revision and file/rights description reviewed October 11, 2026; no archive acquired.",
+    "review_url": "https://huggingface.co/datasets/amathislab/Prompting-MammAlps/commit/04d96ea01312aab5727a39491ef1d736f1df2728",
+    "review_url_label": "Pinned dataset-card revision and changelog",
+    "rights": {
+      "dataset": "CC BY-NC 4.0 as declared by the dataset card; excludes Talk2Nature's commercial-capable path",
+      "card": "Linked for reference; no card text or images are reproduced"
+    }
+  },
+  {
+    "id": 140,
+    "title": "Official Prompting-MammAlps code repository",
+    "url": "https://github.com/amathislab/prompting-mammalps",
+    "description": "Official repository main commit 9627d90b3917e9cc78e27fb08eba18d0fdaaa3c4. README and SALMA setup were reviewed. GitHub reports no repository license and the root inventory contains no LICENSE file; code was not cloned or run.",
+    "checked": "2026-10-11",
+    "origin": "Official GitHub repository, root contents, README, pyproject and SALMA README reviewed October 11, 2026.",
+    "review_url": "https://github.com/amathislab/prompting-mammalps/tree/9627d90b3917e9cc78e27fb08eba18d0fdaaa3c4",
+    "review_url_label": "Official repository at reviewed main commit",
+    "rights": {
+      "software": "No repository license metadata or root LICENSE file was present at review time; no code reuse rights are assumed",
+      "execution": "Not cloned, acquired or run; dependencies and security were not audited"
+    }
+  },
+  {
+    "id": 141,
+    "title": "SALMA checkpoint release request, official repository issue 1",
+    "url": "https://github.com/amathislab/prompting-mammalps/issues/1",
+    "description": "Issue was open on October 11, 2026 and asks the authors about releasing SALMA checkpoints. No SALMA checkpoint package or model license was located in the reviewed repository.",
+    "checked": "2026-10-11",
+    "origin": "Official GitHub issue and current repository files checked October 11, 2026; issue status can change.",
+    "rights": {
+      "issue": "Linked for status only; the issue is not a model-weight license or release record"
+    }
   }
 ]

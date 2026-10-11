@@ -115,6 +115,18 @@
       ],
       "next_step": "Use MammAlps to shape modality-ablation and label-uncertainty checks, but keep it outside the commercial-capable benchmark. Seek permissively reusable synchronized recordings with independently observed behavior or define a passive protocol with a qualified reviewer.",
       "gate": "MammAlps is noncommercial and uses a day-level split without verified individual holdout; the parrot deposits also have alignment/rights gaps. None is admitted as the first Talk2Nature context benchmark, and none demonstrates call meaning."
+    },
+    {
+      "id": "observable-event-retrieval",
+      "title": "Retrieve observable events without inventing meaning",
+      "question": "Can a natural-language query find video clips whose reviewed behavior labels satisfy it?",
+      "decision": "Treat a prompt as a search interface over an explicit label schema. Evaluate perception, label provenance, prompt parsing and retrieval separately; do not infer vocal meaning from video labels.",
+      "notes": [
+        "mammalps-audio-behavior-benchmark",
+        "prompting-mammalps-video-retrieval"
+      ],
+      "next_step": "Compare the two MammAlps releases' modalities, splits and licenses, then write a leakage-safe retrieval protocol with held-out individuals or sites before considering a model run.",
+      "gate": "Prompting-MammAlps is video-only and CC BY-NC 4.0; its code rights are unresolved and its published day split is not verified animal-held-out. Neither MammAlps release establishes animal language or enters the first commercial-capable benchmark."
     }
   ]
 }
