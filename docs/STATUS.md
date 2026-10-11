@@ -1,14 +1,14 @@
 # Project status
 
-Updated October 11, 2026. The latest verified Pages content release is `7d56893` (successful workflow run #23). GitHub `main` has since advanced to `f891651` through PR #9; that research update and the current local research/app changes have not been deployed. The parrotlet note is live and not yet indexed, though its live test says it can be crawled; sitemap processing remains unresolved despite a successful live fetch test. The installable web Field Companion, Listen and Nature Station are live. Private hosting and scientific-pilot dependencies remain.
+Updated October 11, 2026. The latest verified Pages content release is `6c7f980` (PR #10; successful Pages workflow run #24). The fruit-bat and animal2vec/MeerKAT research pages, refreshed opportunities, and Station review improvement are live. Direct HTTP checks returned 200 for those pages, `/app/station/`, `sitemap.xml` and `robots.txt`; robots points to the sitemap. Search Console has not been refreshed since this release, so current indexing and sitemap-processing status are unknown. The Field Companion, Listen and Nature Station are live. Private hosting and scientific-pilot dependencies remain.
 
 ## Implemented
 
 - Working brand: Talk2Nature / Listen closely. Understand carefully. Name clearance remains open.
 - Scope, open-source/business approach, contribution rules and company boundaries documented.
 - Apache-2.0 original software and CC BY 4.0 original public-summary policy; no third-party audio or model weights included.
-- Responsive static website: 74 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 45 research notes, 135 source records, 16 collection resources, ten dated opportunity records, Field Companion, methods, contribution and privacy guidance.
-- Technical SEO: unique titles/descriptions, structured metadata, canonical URLs, sitemap, robots and social metadata; local builds default to noindex. Search Console is verified. Its current overview shows one indexed URL and zero clicks; the newly released parrotlet page remains unknown to Google although its live test says it can be indexed. Sitemap processing is unresolved despite a successful live fetch test.
+- Responsive static website: 76 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 47 research notes, 152 source records, 24 collection resources, 11 dated opportunity records, Field Companion, methods, contribution and privacy guidance.
+- Technical SEO: unique titles/descriptions, structured metadata, canonical URLs, sitemap, robots and social metadata; local builds default to noindex. Search Console is verified. The October 11 pre-release baseline showed one indexed URL and zero clicks; the parrotlet page was unknown to Google but could be crawled. The latest release has not yet been rechecked in Search Console.
 - Research utility: metadata validation and deterministic connected-group splits across individuals, sessions and source hashes. Synthetic fixtures only; no trained model or empirical result.
 - Local Tnufa preparation brief and application register in ignored `funding/`. No submitted application or confirmed eligibility.
 
@@ -601,3 +601,7 @@ The local public build produced 76 pages plus 404; the site checker passed 77 HT
 Reviewed the official Mendeley v3 landing page and its v2/v3 comparison. Both metadata records describe phrase.rar example WAVs, 326 sequence encodings, encodings for more than 28,000 syllables and context annotations, and both display CC BY 4.0. The description points to the separate 2017 Figshare archive for the original WAVs. The accessible comparison did not establish a per-file manifest or upstream rights for the example audio, so both bat resources remain metadata-only; no files were downloaded or run.
 
 Added the comparison as source 153 and linked it from the fruit-bat research note and resource record. The local public build produced 76 pages plus 404; the site checker passed 77 HTML pages and 3,338 links. The note's canonical URL, `index,follow`, new source link and sitemap entry were verified. All 56 repository Python tests passed. Catalog sync added one record and changed three; the repeat sync changed none (223 records). No deployment or Search Console action occurred. The benchmark remains **NOT READY** pending file-level provenance/rights, a suitable animal-held-out design and specialist review.
+
+## October 11: release verification after PR #10
+
+PR [#10](https://github.com/Metivity/talk2nature/pull/10) merged as `6c7f9801533766cd58425e6c24fab942d9b75ecd` after required check `checks` passed. Pages workflow [run #24](https://github.com/Metivity/talk2nature/actions/runs/38168280522) completed successfully on that commit. Direct HTTP checks returned 200 for the new research pages, opportunities, Station, `sitemap.xml` and `robots.txt`; `robots.txt` points to the sitemap. The local public build and SEO/boundary checker passed with 76 sitemap URLs, 77 HTML files and 3,338 links. Search Console was not refreshed after deployment, so indexing and sitemap-processing results remain unknown.
