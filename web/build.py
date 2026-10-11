@@ -209,7 +209,17 @@ def build(output, base_url='', public=False, repo_url=''):
                 label += f' · <a href="{esc(deadline_source["url"])}">official date details</a>'
         return label
 
-    opp_cards = ''.join(f'''<article class="opportunity"><div><span class="pill">{esc(o['status'])}</span><h2>{esc(o['name'])}</h2><p class="quiet">{esc(o['type'])} · {opportunity_deadline(o)}</p></div><div><p><strong>{esc(o['amount'])}</strong></p><p>{esc(o['fit'])}</p><p>{esc(o['next_action'])}</p><a class="text-link" href="{esc(source_map[o['source_id']]['url'])}">Official program ↗</a><p class="fine">Checked {esc(o['verified'])} · {esc(o['application_status'])}</p></div></article>''' for o in opportunities)
+    def opportunity_sources(item):
+        links = [f'<a class="text-link" href="{esc(source_map[item["source_id"]]["url"])}">Official program ↗</a>']
+        for field, label in (
+            ('terms_source_id', 'Official track rules ↗'),
+            ('open_source_policy_source_id', 'Official open-source procedure ↗'),
+        ):
+            source = source_map.get(item.get(field))
+            if source:
+                links.append(f'<a class="text-link" href="{esc(source["url"])}">{label}</a>')
+        return ' · '.join(links)
+    opp_cards = ''.join(f'''<article class="opportunity"><div><span class="pill">{esc(o['status'])}</span><h2>{esc(o['name'])}</h2><p class="quiet">{esc(o['type'])} · {opportunity_deadline(o)}</p></div><div><p><strong>{esc(o['amount'])}</strong></p><p>{esc(o['fit'])}</p><p>{esc(o['next_action'])}</p>{opportunity_sources(o)}<p class="fine">Checked {esc(o['verified'])} · {esc(o['application_status'])}</p></div></article>''' for o in opportunities)
     page('opportunities/', 'Funding and prizes for animal communication research', 'A dated register of research prizes, grants, crowdfunding and compute credits, with eligibility and closed-call distinctions.', f'''
 <section class="page-intro section"><p class="eyebrow">FUNDING THE WORK</p><h1>Ambition needs<br><em>room to grow.</em></h1><p class="lede">A practical register of opportunities that could support careful research. Availability and eligibility are different questions.</p><aside class="review-box"><strong>Program checks are dated below</strong><p>Program terms can change. Follow the official source before applying. Application status is recorded per opportunity; no funding is secured. Credits are not cash.</p></aside></section><section class="section opportunity-list">{opp_cards}</section>''', active='opportunities/')
     repo_action = f'<a class="button" href="{esc(repo_url)}/issues">Open an issue ↗</a>' if repo_url else '<p class="quiet">The public repository and contribution channel are being prepared. This preview does not collect personal details.</p>'
