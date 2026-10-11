@@ -96,6 +96,13 @@ class AtlasTests(unittest.TestCase):
         self.assertIn('403',mammalps['review_depth'])
         self.assertIn('openaccess.thecvf.com',sources[132]['url'])
         self.assertIn('supplemental',sources[133]['url'])
+        retrieval=rows['prompting-mammalps-video-retrieval']
+        self.assertEqual([l['place_id'] for l in retrieval['locations']],['swiss-national-park'])
+        self.assertEqual(retrieval['observation_period']['start_year'],2023)
+        self.assertEqual(retrieval['observation_period']['end_year'],2024)
+        self.assertIn('do not compare identical query sets',retrieval['limitations'])
+        self.assertIn('135 ecology-informed queries',retrieval['finding'])
+        self.assertEqual(retrieval['source_ids'],[137,138,139,140,141])
         self.assertIn('2024.lrec-main.1432.pdf',sources[21]['review_url'])
         parrotlet=rows['parrotlet-vocal-babbling-development']
         self.assertEqual([l['place_id'] for l in parrotlet['locations']],['guarico-venezuela'])
