@@ -6,7 +6,7 @@ An early-stage project documenting the science of nonhuman communication and bui
 
 Website: https://metivity.github.io/talk2nature/
 
-**Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). Optional offline support saves public app files only; export your audio and notes before leaving. Native unattended capture is not released.
+**Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). The observation-practice exercise and its limits are documented in [its project record](docs/OBSERVATION_PRACTICE.md). Optional offline support saves public app files only; export your audio and notes before leaving. Native unattended capture is not released.
 
 **First tools:** [Nature Station](https://metivity.github.io/talk2nature/tools/station/) captures short local sound events and encounter markers; [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs; a [Python report](docs/LISTEN.md) examines labels and a metadata splitter keeps related animals/sessions together. Start with synthetic examples; no animal meaning is inferred. Read the [station, device and AI architecture](docs/NATURE_STATION.md).
 

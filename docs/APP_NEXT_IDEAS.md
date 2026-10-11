@@ -15,7 +15,7 @@ A subsequent continuation implements **Same place, different day**: reopen origi
 | Proposal | Useful first version | Acceptance before expanding |
 | --- | --- | --- |
 | Device rehearsal | A short guided check away from animals, showing recording availability, interruption handling and observed clipping. | Physical Android/iPhone checks; report measured properties and unknowns. Never call an ordinary phone a calibrated instrument. |
-| An observation apprenticeship | Invented examples where people practice separating what they noticed from what they inferred. Explain uncertainty without scoring animal responses. | First-time users can finish and understand the distinction; accessible text alternatives and no external sign-in required. |
+| An observation apprenticeship | Implemented locally as `/app/practice/`: three invented audio/video/parrot scenes separate direct observations, possible explanations and what the evidence cannot establish. No score, media, sign-in or saved choices. See [the exercise record](OBSERVATION_PRACTICE.md). | Desktop/phone and offline behavior can be checked in software. First-time comprehension and usefulness still require outside user testing; no users have tested it yet. |
 | A researcher’s study pack | A reviewed species/question-specific checklist, consent scope and versioned codebook that travel with a session. | Scientific reviewer, actual access, rights/withdrawal plan and approved hosted admission. A downloaded pack is not consent. |
 | Camera and sound together | First align known synthetic audio/video events and quantify clock error; then evaluate an approved passive protocol. | Reliable synchronization, privacy review and independent visible labels before automatic gesture or behavior inference. |
 
