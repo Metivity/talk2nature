@@ -1584,5 +1584,23 @@
       "item": "The public item API declares CC0 1.0 for item 4555903; this records the repository's declaration, not independent legal advice",
       "file": "The API lists one annotation CSV; its bytes and raw row values were not inspected during metadata review"
     }
+  },
+  {
+    "id": 158,
+    "title": "Israel Innovation Authority Startup Fund Track 7 rules (15 July 2026)",
+    "url": "https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf",
+    "description": "Official benefit track 7 rules dated July 15, 2026. Sections 6.1–6.2 cover Pre-Seed eligibility, R&D location, recognized-investment commitments and rights to program-generated IP. Applicant-specific eligibility is not established.",
+    "checked": "2026-10-11",
+    "origin": "Official Israel Innovation Authority rules PDF; targeted review of sections 2.6, 6.1 and 6.2 on October 11, 2026. This is a source record, not an eligibility or legal determination."
+  },
+  {
+    "id": 159,
+    "title": "Israel Innovation Authority open-source procedure",
+    "url": "https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/",
+    "description": "The official rules page associates the open-source procedure with Pre-Seed; the linked PDF describes a committee-review process and names benefit track 1. Its applicability to Track 7 and this project's licenses needs written confirmation.",
+    "checked": "2026-10-11",
+    "origin": "Official Israel Innovation Authority procedure page and its linked PDF reviewed on October 11, 2026; the page's track associations and the PDF's stated scope are preserved separately.",
+    "review_url": "https://innovationisrael.org.il/wp-content/uploads/2023/08/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97.pdf",
+    "review_url_label": "Official open-source procedure PDF"
   }
 ]

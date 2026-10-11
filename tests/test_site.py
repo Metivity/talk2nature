@@ -146,10 +146,14 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Checked 2026-10-11 · Not submitted; not recommended for current scope',page)
             self.assertIn('No company or investor facts are confirmed',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
+            self.assertIn('Official track rules ↗',page)
+            self.assertIn('Official open-source procedure ↗',page)
+            self.assertIn('https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf',page)
+            self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/',page)
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
             self.assertIn('explicitly excludes AI-related projects',page)
             self.assertIn('software supply-chain datasets',page)
-            for source_id in (150,151,152,154,155):
+            for source_id in (150,151,152,154,155,158,159):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):

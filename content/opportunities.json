@@ -38,9 +38,11 @@
     "amount": "Up to NIS 2 million, subject to program terms.",
     "source_id": 27,
     "fit": "Potentially relevant only if an Israeli-incorporated company is pursuing commercial R&D and meets the track's financing, prior-funding and revenue limits. Talk2Nature's applicant entity and eligibility are unconfirmed.",
-    "next_action": "The official program page now lists November 9, 2026 at 12:00 Israel time. It requires an Israeli-incorporated company focused on commercial R&D, at least 15% recognized investment commitments, and at least 75% of the requested round for R&D; prior funding and revenue caps also apply. No company or investor facts are confirmed. Verify all criteria before preparing anything.",
+    "next_action": "The official page lists November 9, 2026 at 12:00 Israel time. Before drafting, confirm the Israeli applicant, funding/revenue caps, signed recognized-investment commitment of at least 15%, 75% R&D share, Israel-based work and IP/open-source fit. No company or investor facts are confirmed; no application is submitted.",
     "verified": "2026-10-11",
-    "application_status": "Not submitted"
+    "application_status": "Not submitted",
+    "terms_source_id": 158,
+    "open_source_policy_source_id": 159
   },
   {
     "slug": "experiment",
