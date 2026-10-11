@@ -21,6 +21,13 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(check_site(d)['public'])
             self.assertIn('https://fixture.github.io/talk2nature/research/',(Path(d)/'sitemap.xml').read_text())
 
+    def test_public_sitemap_does_not_claim_unverified_page_modification_dates(self):
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            sitemap=(Path(d)/'sitemap.xml').read_text()
+            self.assertNotIn('<lastmod>',sitemap)
+            self.assertGreater(sitemap.count('<loc>'),20)
+
     def test_public_sitemap_rejects_urls_without_a_matching_canonical_page(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -144,7 +151,7 @@ class SiteTests(unittest.TestCase):
             for field in ('question','decision','next_step','gate'):
                 self.assertTrue(path[field])
         for note in notes.values():
-            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction'))
+            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction','Vocal development'))
             if 'reuse' in note:
                 for field in ('status','asset','rights','experiment'):
                     self.assertTrue(note['reuse'][field])

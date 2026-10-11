@@ -2,7 +2,7 @@
 
 The public [world atlas](https://metivity.github.io/talk2nature/research/atlas/) connects the literature library to approximate places and a source-year timeline. It is the first geographic layer, not a map of all published research or a live observation service.
 
-As of October 11, 2026, the library contains **43 notes**, **21 mapped notes** across **21 approximate regions**, **126 source records** and **14 collection resources**. This is evidence-map coverage, not 21 event-aligned datasets or independent replications. The new Las Cruces point is a coarse study-region marker; it does not identify a facility or animal room.
+As of October 11, 2026, the library contains **45 notes**, **23 mapped notes** across **23 approximate regions**, **135 source records** and **16 collection resources**. This is evidence-map coverage, not 23 event-aligned datasets or independent replications. The Las Cruces point is a coarse study-region marker; it does not identify a facility or animal room. MammAlps is mapped only to the Swiss National Park region because the authors withhold exact camera sites.
 
 ## October 4 historical coverage snapshot
 
@@ -27,7 +27,9 @@ Public `sources` in the atlas export may now include a checked `review_url` so l
 
 ## October 11 update
 
-The library now contains **43 notes**, **21 mapped notes** across **21 approximate regions**, **126 source records** and **14 collection resources**. The additional Las Cruces, New Mexico marker is tied to the paper's named NMSU Animal Care Facility and the university's building list; it is generalized to the city and does not mark animal rooms. The associated budgerigar note distinguishes longitudinal call-feature data from separately filmed social events, which are not aligned at the call level. This raises the map coverage count, not the number of event-aligned datasets or independent replications.
+The library now contains **45 notes**, **23 mapped notes** across **23 approximate regions**, **135 source records** and **16 collection resources**. The additional Las Cruces, New Mexico marker is tied to the paper's named NMSU Animal Care Facility and the university's building list; it is generalized to the city and does not mark animal rooms. The associated budgerigar note distinguishes longitudinal call-feature data from separately filmed social events, which are not aligned at the call level. MammAlps is mapped only to its park region; conflicting source-reported collection months are left off the timeline. These totals describe literature coverage, not event-aligned datasets or independent replications.
+
+The parrotlet vocal-babbling study adds a Guárico-region marker based on the study's named Hato Masaguaral site and a rounded KBA factsheet coordinate. It represents a study region, not nest cavities. The Dryad archive is a developmental-vocalization lead with a 2.60 GB listing and an unresolved item-specific rights check; it is not admitted as a context benchmark. Its 2017–2018 field interval comes from the Dryad Methods.
 
 ## October 3 baseline
 

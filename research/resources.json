@@ -461,6 +461,58 @@
       ],
       "license_file": "LICENSE",
       "admission_reason": "Small pinned permissively licensed source sample; no execution or scientific admission."
+    },
+    {
+      "id": "mammalps-wildlife-behavior-data",
+      "kind": "dataset",
+      "title": "MammAlps v3 multimodal wildlife behavior benchmark",
+      "url": "https://doi.org/10.5281/zenodo.15588220",
+      "version": "v3 / record 15588220",
+      "priority": 2,
+      "reviewed": "2026-10-11",
+      "task": "Noncommercial methods comparator for synchronized audio/video and observable behavior labels; modality-ablation design.",
+      "review_depth": "Zenodo v3 metadata, file inventory and declared license; arXiv v2 sections 3.1–3.4, 5 and 9.1–9.2; official GitHub README, evaluation interface and MIT LICENSE.md reviewed. Full archive and supplementary methods were not inspected; no data or code acquired or run.",
+      "access": "Public Zenodo release; 87.9 GB archive plus 13.5 MB dense-annotation file. The dataset license is noncommercial.",
+      "decision": "Retain as a noncommercial methods comparator only. Do not admit its media to the shared Talk2Nature corpus, commercial products or the first commercial-capable benchmark.",
+      "limitations": "Five wild mammal species, three sites in one park and six weeks of collection. Published split is day-level, not verified animal-level; annotation agreement and audio blinding were not established in this review. Authors note subjective labels and geographic/time limits. Benchmark training used four A100 GPUs. Not a parrot set or a language/meaning dataset.",
+      "attribution": "Gabeff et al. (2025), MammAlps v3, Zenodo DOI 10.5281/zenodo.15588220; cite the associated paper and dataset separately.",
+      "rights": {
+        "license": "CC-BY-NC-4.0",
+        "scope": "Dataset version 3 only; separate from the paper, MIT code, dependencies and any model weights.",
+        "evidence_url": "https://zenodo.org/records/15588220",
+        "conditions": "Attribution and noncommercial use required. Talk2Nature does not admit this dataset to its shared or commercial benchmark path; seek separate review for any noncommercial academic study.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "parrotlet-vocal-babbling-data",
+      "kind": "dataset",
+      "title": "Green-rumped parrotlet vocal-babbling audio and measures",
+      "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
+      "version": "Dryad dataset published 2022-05-31",
+      "priority": 2,
+      "reviewed": "2026-10-11",
+      "task": "Potential species-specific vocal-development reference; not an event-context or semantic-translation benchmark.",
+      "review_depth": "Exact Dryad record, Abstract, Methods, version, file inventory and current End User Terms reviewed. The README fetch returned HTTP 403; no files, audio, article PDF or supplement downloaded.",
+      "access": "Public Dryad metadata lists 2.60 GB total: 2.56 GB audio bouts, 43.91 MB spectrographic-measurement spreadsheet and 4.75 KB README.",
+      "decision": "Keep metadata-only. First verify any item-specific license exception and inspect the README, label/linkage schema and intervention structure; then decide whether a narrowly defined developmental question justifies bounded acquisition.",
+      "limitations": "Wild green-rumped parrotlet nestlings at one station in 2017–2018; the study includes corticosterone supplementation. Individual/session joins, timestamped independent behavior labels, split design and full dataset contents were not reviewed. It does not establish call meaning.",
+      "attribution": "Berg and Eggleston (2022), Green-rumped parrotlet vocal-babbling dataset, Dryad DOI 10.5061/dryad.k0p2ngfb3; cite the associated paper separately.",
+      "rights": {
+        "license": "unresolved: Dryad default is CC0; record-level exception not visible",
+        "scope": "Dryad dataset only. Dryad's published terms state CC0 by default unless a different term was indicated during submission; the reviewed record did not surface an item-specific exception. The paper, supplement, software and any weights are separate.",
+        "evidence_url": "https://datadryad.org/terms",
+        "conditions": "Confirm the exact submission terms and inspect the dataset contents before any acquisition or reuse. No data files have been downloaded; metadata cataloging is not research admission.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

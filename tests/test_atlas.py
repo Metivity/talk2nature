@@ -22,8 +22,8 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),21)
-        self.assertEqual(len(atlas['places']),21)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),23)
+        self.assertEqual(len(atlas['places']),23)
         self.assertEqual(self.atlas(list(reversed(self.notes))),atlas)
     def test_observation_dates_are_distinct_from_publication_and_origin_from_study_site(self):
         rows={r['id']:r for r in self.atlas()['records']}
@@ -60,12 +60,15 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('21 of 20',goals)
+            self.assertIn('23 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
             self.assertIn('Three historical source notes',goals)
             self.assertEqual(len(json.loads((Path(d)/'research/atlas/catalog.json').read_text())['records']),len(self.notes))
+            mammalps_page=(Path(d)/'research/mammalps-audio-behavior-benchmark/index.html').read_text()
+            self.assertIn('June–August 2023',mammalps_page)
+            self.assertIn('August–October 2023',mammalps_page)
 
     def test_expanded_locations_retain_multi_site_and_date_boundaries(self):
         rows={r['id']:r for r in self.atlas()['records']}
@@ -85,14 +88,28 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(budgerigar['observation_period']['start_year'],2020)
         self.assertEqual(budgerigar['observation_period']['end_year'],2021)
         sources={s['id']:s for s in self.atlas()['sources']}
+        mammalps=rows['mammalps-audio-behavior-benchmark']
+        self.assertEqual([l['place_id'] for l in mammalps['locations']],['swiss-national-park'])
+        self.assertIsNone(mammalps['observation_period'])
+        self.assertIn('conflict',mammalps['location_note'])
+        self.assertIn('August–October 2023',mammalps['limitations'])
+        self.assertIn('403',mammalps['review_depth'])
+        self.assertIn('openaccess.thecvf.com',sources[132]['url'])
+        self.assertIn('supplemental',sources[133]['url'])
         self.assertIn('2024.lrec-main.1432.pdf',sources[21]['review_url'])
+        parrotlet=rows['parrotlet-vocal-babbling-development']
+        self.assertEqual([l['place_id'] for l in parrotlet['locations']],['guarico-venezuela'])
+        self.assertEqual(parrotlet['observation_period']['start_year'],2017)
+        self.assertEqual(parrotlet['observation_period']['end_year'],2018)
+        self.assertIn('not yet integrated',parrotlet['finding'])
+        self.assertIn('2.56 GB',parrotlet['limitations'])
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(21,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(23,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
-        fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data'}]
+        fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development'}]
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],19)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'In progress')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:

@@ -9,6 +9,7 @@
       "notes": [
         "parrot-community-data",
         "budgerigar-starting-point",
+        "parrotlet-vocal-babbling-development",
         "dog-barks",
         "catmeows-context",
         "pig-context-data",
@@ -108,10 +109,12 @@
       "decision": "Require linked source audio, synchronized observation timestamps, explicit event definitions and groups that support a held-out test. Shared species, date or project membership alone does not align events.",
       "notes": [
         "budgerigar-vocal-sociality-data",
-        "parrot-data-feasibility"
+        "parrot-data-feasibility",
+        "parrotlet-vocal-babbling-development",
+        "mammalps-audio-behavior-benchmark"
       ],
-      "next_step": "Find a rights-cleared recording set with synchronized, independently coded behavior; if it does not exist, define a small passive protocol with a qualified reviewer before collecting anything.",
-      "gate": "These examples show dataset-fit limits; neither is admitted as the first Talk2Nature context benchmark, and neither demonstrates call meaning."
+      "next_step": "Use MammAlps to shape modality-ablation and label-uncertainty checks, but keep it outside the commercial-capable benchmark. Seek permissively reusable synchronized recordings with independently observed behavior or define a passive protocol with a qualified reviewer.",
+      "gate": "MammAlps is noncommercial and uses a day-level split without verified individual holdout; the parrot deposits also have alignment/rights gaps. None is admitted as the first Talk2Nature context benchmark, and none demonstrates call meaning."
     }
   ]
 }

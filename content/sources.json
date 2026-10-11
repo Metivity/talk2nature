@@ -1202,5 +1202,121 @@
     "rights": {
       "policy_page": "Dryad webpage linked for reference only; no substantial text reproduced"
     }
+  },
+  {
+    "id": 128,
+    "title": "MammAlps: a multi-view video behavior monitoring dataset of wild mammals in the Swiss Alps",
+    "url": "https://arxiv.org/abs/2503.18223v2",
+    "description": "Gabeff et al. (2025), CVPR 2025. Targeted review of dataset collection, annotation, benchmarks, discussion and modality ablations. Supplementary materials and full processing pipeline were not reviewed; no model was run.",
+    "checked": "2026-10-11",
+    "origin": "arXiv v2 primary paper reviewed October 11, 2026; source claims and review scope are recorded in the linked note.",
+    "review_url": "https://arxiv.org/html/2503.18223v2",
+    "review_url_label": "Primary paper HTML, version 2",
+    "rights": {
+      "paper": "Linked for reference; article and preprint redistribution terms were not reviewed and no paper text or figures are reproduced"
+    }
+  },
+  {
+    "id": 129,
+    "title": "MammAlps multimodal wildlife behavior dataset, version 3",
+    "url": "https://doi.org/10.5281/zenodo.15588220",
+    "description": "Zenodo v3 record for the MammAlps camera-trap dataset. It lists matched audio/video clips and dense annotations, an 87.9 GB archive and a 13.5 MB annotation file; no files were downloaded.",
+    "checked": "2026-10-11",
+    "origin": "Exact Zenodo v3 metadata, file inventory and declared CC BY-NC 4.0 license reviewed October 11, 2026.",
+    "review_url": "https://zenodo.org/records/15588220",
+    "review_url_label": "Zenodo version 3 record and files",
+    "rights": {
+      "dataset": "CC BY-NC 4.0, as declared by the exact v3 Zenodo record; noncommercial restriction applies",
+      "software_and_weights": "Separate components; dataset license does not cover code or model weights"
+    }
+  },
+  {
+    "id": 130,
+    "title": "Official MammAlps benchmark code",
+    "url": "https://github.com/eceo-epfl/MammAlps",
+    "description": "Official repository README, evaluation interface and LICENSE.md reviewed. GitHub branch history showed latest main change 6fd6ff4e3bd6ce323b7fc7de2c4b600dab796698; code was not cloned, acquired or executed.",
+    "checked": "2026-10-11",
+    "origin": "Official GitHub repository and current LICENSE.md reviewed October 11, 2026; the dataset remains a separately licensed component.",
+    "review_url": "https://github.com/eceo-epfl/MammAlps/tree/6fd6ff4e3bd6ce323b7fc7de2c4b600dab796698",
+    "review_url_label": "Official code at the latest main commit visible in repository history",
+    "rights": {
+      "software": "Repository LICENSE.md declares MIT; applies to project code, not dataset, article, third-party dependencies or weights",
+      "execution": "Not run; no compatibility, security or reproducibility audit performed"
+    }
+  },
+  {
+    "id": 131,
+    "title": "Swiss National Park visitor-centre location",
+    "url": "https://nationalpark.ch/en/visit/national-park-centre/",
+    "description": "Official park visitor information locates the National Park Centre in Zernez, Engadin. Used only as regional geographic context for an approximate map marker; it is not evidence of a MammAlps camera site.",
+    "checked": "2026-10-11",
+    "origin": "Official Swiss National Park visitor-centre page reviewed October 11, 2026.",
+    "rights": {
+      "page": "Linked for geographic context; no text, maps or images reproduced"
+    }
+  },
+  {
+    "id": 132,
+    "title": "MammAlps published CVPR 2025 paper",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Gabeff_MammAlps_A_Multi-view_Video_Behavior_Monitoring_Dataset_of_Wild_Mammals_CVPR_2025_paper.pdf",
+    "description": "Official CVPR 2025 Open Access paper. Targeted indexed excerpt confirms the main-text collection period June–August 2023. The direct PDF fetch returned 403 during review; no full conference-paper rereview is claimed.",
+    "checked": "2026-10-11",
+    "origin": "CVF Open Access primary-paper search result and indexed excerpt reviewed October 11, 2026; direct fetch returned 403.",
+    "review_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Gabeff_MammAlps_A_Multi-view_Video_Behavior_Monitoring_Dataset_of_Wild_Mammals_CVPR_2025_paper.html",
+    "review_url_label": "CVPR proceedings landing page; indexed excerpt only during this review",
+    "rights": {
+      "paper": "Official open-access link for reference; redistribution rights were not separately reviewed and no article text or figures are reproduced"
+    }
+  },
+  {
+    "id": 133,
+    "title": "MammAlps CVPR 2025 supplementary materials",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Gabeff_MammAlps_A_Multi-view_CVPR_2025_supplemental.pdf",
+    "description": "Official CVPR supplement. Its indexed excerpt says acquisition ran August–October 2023, conflicting with the main text. Direct PDF fetch returned 403; only the relevant indexed excerpt was reviewed.",
+    "checked": "2026-10-11",
+    "origin": "CVF Open Access primary supplementary-material search result and indexed excerpt reviewed October 11, 2026; direct fetch returned 403.",
+    "review_url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Gabeff_MammAlps_A_Multi-view_CVPR_2025_supplemental.pdf",
+    "review_url_label": "CVPR supplementary PDF; indexed excerpt only during this review",
+    "rights": {
+      "supplement": "Official linked supplement used for reference only; redistribution rights were not separately reviewed and no supplement content or figures are reproduced"
+    }
+  },
+  {
+    "id": 134,
+    "title": "Vocal babbling in a wild parrot: primary paper",
+    "url": "https://doi.org/10.1098/rspb.2022.0592",
+    "description": "Primary paper on vocal babbling in free-ranging green-rumped parrotlet nestlings. Targeted PMC-indexed excerpts covered the abstract, conclusion and data-access statement; direct page access encountered a browser challenge.",
+    "checked": "2026-10-11",
+    "origin": "PMC article record and indexed primary-paper excerpts reviewed October 11, 2026; direct page open was blocked by a CAPTCHA. No full-paper review is claimed.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9156925/",
+    "review_url_label": "PMC article record; targeted indexed excerpts only",
+    "rights": {
+      "paper": "Article reuse license was not verified; linked for reference only and no article text or figures are reproduced"
+    }
+  },
+  {
+    "id": 135,
+    "title": "Green-rumped parrotlet vocal-babbling data, Dryad version of May 31, 2022",
+    "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
+    "description": "Dryad record describes audio-video bouts recorded in nest cavities, spectrographic measurements and associated metadata. The listing totals 2.60 GB. The README download returned HTTP 403; no dataset files were downloaded.",
+    "checked": "2026-10-11",
+    "origin": "Exact Dryad dataset landing page and current Dryad End User Terms reviewed October 11, 2026; the record page does not surface a separate item-level license notice.",
+    "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k0p2ngfb3",
+    "review_url_label": "Dryad dataset record, version and file inventory",
+    "rights": {
+      "dataset": "Dryad's published terms state CC0 by default unless otherwise indicated during submission; no item-specific exception was surfaced in the reviewed record, so verify before any acquisition or reuse",
+      "paper_and_supplement": "Separate components; the dataset terms do not establish article or supplementary-material reuse rights"
+    }
+  },
+  {
+    "id": 136,
+    "title": "Hato Masaguaral regional location reference",
+    "url": "https://www.keybiodiversityareas.org/en/site/factsheet/14981",
+    "description": "The official Key Biodiversity Areas factsheet's indexed excerpt gives central coordinates for the broader site. Used only to choose a one-decimal Guarico-region map marker, not as evidence about parrot behavior or an exact nest location. Direct page open returned a cache miss.",
+    "checked": "2026-10-11",
+    "origin": "Official KBA factsheet search-index excerpt reviewed October 11, 2026; direct page fetch was unavailable.",
+    "rights": {
+      "geography": "Linked for approximate regional location only; no maps, imagery or text are reproduced"
+    }
   }
 ]
