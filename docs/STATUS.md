@@ -1,13 +1,13 @@
 # Project status
 
-Updated October 11, 2026. The latest verified Pages content release is `6c7f980` (PR #10; successful Pages workflow run #24). The fruit-bat and animal2vec/MeerKAT research pages, refreshed opportunities, and Station review improvement are live. Direct HTTP checks returned 200 for those pages, `/app/station/`, `sitemap.xml` and `robots.txt`; robots points to the sitemap. Search Console has not been refreshed since this release, so current indexing and sitemap-processing status are unknown. The Field Companion, Listen and Nature Station are live. Private hosting and scientific-pilot dependencies remain.
+Updated October 11, 2026. The latest verified Pages content release is `5edb66b` (PR #12; successful Pages workflow run [#38169157607](https://github.com/Metivity/talk2nature/actions/runs/38169157607)). It adds the fruit-bat dataset version-history and file-provenance review. Direct HTTPS checks returned 200 for the updated research page, `sitemap.xml` and `robots.txt`; the page contains the new source and the sitemap lists its URL. Search Console has not been refreshed since this release, so indexing and sitemap-processing status are unknown. The Field Companion, Listen and Nature Station are live. Private hosting and scientific-pilot dependencies remain.
 
 ## Implemented
 
 - Working brand: Talk2Nature / Listen closely. Understand carefully. Name clearance remains open.
 - Scope, open-source/business approach, contribution rules and company boundaries documented.
 - Apache-2.0 original software and CC BY 4.0 original public-summary policy; no third-party audio or model weights included.
-- Responsive static website: 76 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 47 research notes, 152 source records, 24 collection resources, 11 dated opportunity records, Field Companion, methods, contribution and privacy guidance.
+- Responsive static website: 76 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 47 research notes, 154 source records, 24 collection resources, 11 dated opportunity records, Field Companion, methods, contribution and privacy guidance.
 - Technical SEO: unique titles/descriptions, structured metadata, canonical URLs, sitemap, robots and social metadata; local builds default to noindex. Search Console is verified. The October 11 pre-release baseline showed one indexed URL and zero clicks; the parrotlet page was unknown to Google but could be crawled. The latest release has not yet been rechecked in Search Console.
 - Research utility: metadata validation and deterministic connected-group splits across individuals, sessions and source hashes. Synthetic fixtures only; no trained model or empirical result.
 - Local Tnufa preparation brief and application register in ignored `funding/`. No submitted application or confirmed eligibility.
@@ -605,3 +605,9 @@ Added the comparison as source 153 and linked it from the fruit-bat research not
 ## October 11: release verification after PR #10
 
 PR [#10](https://github.com/Metivity/talk2nature/pull/10) merged as `6c7f9801533766cd58425e6c24fab942d9b75ecd` after required check `checks` passed. Pages workflow [run #24](https://github.com/Metivity/talk2nature/actions/runs/38168280522) completed successfully on that commit. Direct HTTP checks returned 200 for the new research pages, opportunities, Station, `sitemap.xml` and `robots.txt`; `robots.txt` points to the sitemap. The local public build and SEO/boundary checker passed with 76 sitemap URLs, 77 HTML files and 3,338 links. Search Console was not refreshed after deployment, so indexing and sitemap-processing results remain unknown.
+
+## October 11: fruit-bat provenance release — PR #12
+
+PR [#12](https://github.com/Metivity/talk2nature/pull/12) merged to `main` as `5edb66b4e967033e2fbc52116f09189760b9ab52` after required checks passed. Pages workflow [run #38169157607](https://github.com/Metivity/talk2nature/actions/runs/38169157607) completed successfully. Direct HTTPS checks returned 200 for the Egyptian fruit-bat page, `sitemap.xml` and `robots.txt`; the page contains the version 1/2 comparison and API documentation source, and the sitemap contains the page URL. The workflow emitted a non-blocking Node.js 20 deprecation notice for two GitHub Actions; the workflow still passed while those actions ran under Node.js 24.
+
+The source library now has 154 records. The Mendeley version 1/2 comparison says v1 was metadata-only; versions 2 and 3 list the same artifact categories. The documented file-list API was not queried, no files were acquired, and file-level/upstream rights remain unresolved. AutoResearch remains **NOT READY**. Search Console was not refreshed, so indexing is unknown.
