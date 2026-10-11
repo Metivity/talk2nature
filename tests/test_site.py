@@ -149,7 +149,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Official track rules ↗',page)
             self.assertIn('Official open-source procedure ↗',page)
             self.assertIn('https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf',page)
-            self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%ת%D7%95%D7%97/',page)
+            self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/',page)
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
             self.assertIn('explicitly excludes AI-related projects',page)
             self.assertIn('software supply-chain datasets',page)
