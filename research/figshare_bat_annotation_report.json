@@ -1,0 +1,98 @@
+{
+  "resource_id": "egyptian-fruit-bat-annotations",
+  "source_version": "Figshare item 4555903 v1; DOI 10.6084/m9.figshare.c.3666502_D1.v1",
+  "source_url": "https://ndownloader.figshare.com/files/7379008",
+  "source_bytes": 3286405,
+  "source_md5": "7781a3725d6f2277de74da84b1383ce0",
+  "source_sha256": "e53558a459c1ed5484ce57b24fb94c2b78fb3988aace6971aa6ade10dc7f3b24",
+  "rows": 91080,
+  "columns": [
+    "FileID",
+    "Emitter",
+    "Addressee",
+    "Context",
+    "Emitter pre-vocalization action",
+    "Addressee pre-vocalization action",
+    "Emitter post-vocalization action",
+    "Addressee post-vocalization action",
+    "Start sample",
+    "End sample"
+  ],
+  "nonempty": {
+    "FileID": 91080,
+    "Emitter": 91080,
+    "Addressee": 91080,
+    "Context": 91080,
+    "Emitter pre-vocalization action": 91080,
+    "Addressee pre-vocalization action": 91080,
+    "Emitter post-vocalization action": 91080,
+    "Addressee post-vocalization action": 91080,
+    "Start sample": 91080,
+    "End sample": 91080
+  },
+  "malformed_rows": 0,
+  "unique_file_ids": 87986,
+  "rows_beyond_unique_file_ids": 3094,
+  "duplicate_file_interval_rows": 0,
+  "invalid_or_reversed_sample_intervals": 0,
+  "noninteger_sample_values": 0,
+  "noninteger_identity_values": 0,
+  "zero_unknown_identity_rows": {
+    "emitter": 7858,
+    "addressee": 19270
+  },
+  "negative_ambiguous_identity_rows": {
+    "emitter": 44075,
+    "addressee": 39368
+  },
+  "published_category_counts": {
+    "context": {
+      "Biting": 1788,
+      "Feeding": 6683,
+      "Fighting": 7963,
+      "General": 29627,
+      "Grooming": 383,
+      "Isolation": 5714,
+      "Kissing": 362,
+      "Landing": 16,
+      "Mating protest": 2338,
+      "Separation": 504,
+      "Sleeping": 33997,
+      "Threat-like": 1065,
+      "Unknown": 640
+    },
+    "pre_vocalization_action_across_both_roles": {
+      "Crawl in": 6534,
+      "Fly in": 3909,
+      "Present": 158164,
+      "Unknown": 13553
+    },
+    "post_vocalization_action_across_both_roles": {
+      "Cower": 77,
+      "Crawl away": 6416,
+      "Fly away": 6745,
+      "Stay": 155485,
+      "Unknown": 13437
+    }
+  },
+  "unmapped_category_code_rows": {
+    "context": 0,
+    "pre_vocalization_action": 0,
+    "post_vocalization_action": 0
+  },
+  "matches_published_table_4_counts": {
+    "rows_match_paper_91080": true,
+    "context_counts_match_paper_table_4": true,
+    "combined_pre_action_counts_match_paper_table_4": true,
+    "combined_post_action_counts_match_paper_table_4": true
+  },
+  "training_admitted": false,
+  "limitations": [
+    "A row is a video-derived vocal-interaction annotation, not a listener-validated message or necessarily an independent animal/session.",
+    "Repeated file IDs can represent multiple annotated interactions within one WAV; row count is not a count of independent calls or trials.",
+    "Negative emitter/addressee IDs mark role uncertainty in the paper; zero is the unknown code. Raw identifiers are not exported.",
+    "Matching published category totals checks transcription and aggregation, not annotation truth, model performance or biological meaning.",
+    "No audio, video, FileInfo timing, code, model weights or animal-held-out split was inspected or run.",
+    "The public report contains aggregate counts and no row values, file IDs, animal IDs or free text."
+  ]
+}

@@ -1547,14 +1547,42 @@
     "id": 155,
     "title": "Mendeley Data public dataset file-list API documentation",
     "url": "https://data.mendeley.com/api/docs/",
-    "description": "Official API documentation describes public dataset and file-list endpoints with a dataset-version parameter. The endpoint was not queried in this review; no file manifest or file content was retrieved.",
+    "description": "Official API documentation describes GET /datasets/publics/{id}/files with a dataset-version parameter and OAuth2 authorization. An unauthenticated request for dataset mjfv43zgtv version 3 returned HTTP 401; no file manifest or content was retrieved, and no account credentials were used.",
     "checked": "2026-10-11",
-    "origin": "Official Mendeley Data API documentation, reviewed through its indexed endpoint descriptions on October 11, 2026.",
+    "origin": "Official Mendeley Data API documentation and one anonymous public-file-list request reviewed October 11, 2026.",
     "review_url": "https://data.mendeley.com/api/docs/",
     "review_url_label": "Official Mendeley Data API documentation",
     "rights": {
       "metadata": "API documentation only; it does not grant rights to dataset files",
-      "files": "No dataset API response or file content was retrieved"
+      "files": "The unauthenticated file-list request returned HTTP 401; no dataset API record or file content was retrieved"
+    }
+  },
+  {
+    "id": 156,
+    "title": "Egyptian fruit bat Figshare item 4556074 public API metadata",
+    "url": "https://api.figshare.com/v2/articles/4556074",
+    "description": "The public Figshare API record reports item-level CC0 1.0 and one file, files210.zip, sized 3,049,199,327 bytes. Its supplied and platform-computed MD5 fields match (9c01a0622b2dde0a3d3686ba0263eec3); the payload was not retrieved and the checksum was not verified locally.",
+    "checked": "2026-10-11",
+    "origin": "Direct GET of the public Figshare item metadata API returned HTTP 200 on October 11, 2026; no file download URL was followed.",
+    "review_url": "https://api.figshare.com/v2/articles/4556074",
+    "review_url_label": "Direct Figshare public item metadata and file manifest",
+    "rights": {
+      "item": "The public item API declares CC0 1.0 for item 4556074; this records the repository's declaration, not independent legal advice",
+      "file": "The API lists one ZIP payload; its contents and any embedded third-party rights notices were not inspected or downloaded"
+    }
+  },
+  {
+    "id": 157,
+    "title": "Egyptian fruit bat annotation table, Figshare item 4555903 metadata",
+    "url": "https://api.figshare.com/v2/articles/4555903",
+    "description": "The public Figshare API declares item-level CC0 1.0 and lists one Annotations.csv file (3,286,405 bytes) with API-reported MD5 7781a3725d6f2277de74da84b1383ce0. A bounded local retrieval verified size and MD5; the raw file stays in ignored storage and only aggregate audit results are recorded in this project.",
+    "checked": "2026-10-11",
+    "origin": "Direct GET of the public Figshare API item metadata returned HTTP 200 on October 11, 2026; the separate download was staged through the bounded collector and verified against the API size/MD5.",
+    "review_url": "https://api.figshare.com/v2/articles/4555903",
+    "review_url_label": "Direct Figshare public item metadata and file manifest",
+    "rights": {
+      "item": "The public item API declares CC0 1.0 for item 4555903; this records the repository's declaration, not independent legal advice",
+      "file": "The API lists one annotation CSV; its bytes and raw row values were not inspected during metadata review"
     }
   }
 ]

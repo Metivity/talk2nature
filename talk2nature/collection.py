@@ -1,9 +1,10 @@
 """Catalog and acquire small reviewed research samples, without executing them.
 
 License/admission fields are human-reviewed declarations, not legal or scientific
-verification. Adapters support immutable GitHub files and reviewed Mendeley files
-with deposit SHA-256 checksums and a pinned public S3 URL. Downloads
-are not training releases and never enter the private admin or website build.
+verification. Adapters support immutable GitHub files, reviewed Mendeley files
+with deposit SHA-256 checksums, and bounded Springer Nature Figshare files with
+item metadata and MD5 verification. Downloads are not training releases and
+never enter the private admin or website build.
 """
 import argparse
 import hashlib
@@ -92,6 +93,13 @@ def validate(catalog):
                 if not deposit or resource['url'] != f'https://data.mendeley.com/datasets/{deposit[1]}/{deposit[2]}':
                     raise ValueError('Mendeley sample requires a versioned deposit.')
                 require_text(resource, 'license_notice')
+            elif adapter == 'figshare_springernature':
+                item_id = resource.get('figshare_item_id')
+                if (type(item_id) is not int or item_id <= 0
+                        or resource['url'] != f'https://api.figshare.com/v2/articles/{item_id}'
+                        or str(item_id) not in resource['version']):
+                    raise ValueError('Figshare sample requires a version-pinned public item API record.')
+                require_text(resource, 'license_notice')
             else:
                 raise ValueError('Unknown acquisition adapter.')
             require_text(resource, 'admission_reason')
@@ -112,7 +120,7 @@ def validate(catalog):
                         raise ValueError('Artifact must use a pinned raw.githubusercontent.com URL.')
                     if not re.fullmatch('[a-f0-9]{40}', require_text(artifact, 'git_blob_sha1')) or 'sha256' in artifact:
                         raise ValueError('Missing or ambiguous Git blob checksum.')
-                else:
+                elif adapter == 'mendeley_sha256':
                     uuid = r'[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}'
                     if (parsed.hostname != 'prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com'
                             or parsed.query or parsed.fragment or not re.fullmatch('/' + uuid, parsed.path)):
@@ -121,6 +129,15 @@ def validate(catalog):
                         raise ValueError('Missing or ambiguous deposit SHA-256.')
                     if not re.fullmatch(re.escape(f'https://data.mendeley.com/public-files/datasets/{deposit[1]}/files/') + uuid + '/file_downloaded', require_text(artifact, 'source_url')):
                         raise ValueError('Artifact provenance must match the named deposit.')
+                else:
+                    file_id = artifact.get('figshare_file_id')
+                    if (type(file_id) is not int or file_id <= 0
+                            or parsed.hostname != 'ndownloader.figshare.com'
+                            or parsed.path != f'/files/{file_id}' or parsed.query or parsed.fragment
+                            or require_text(artifact, 'source_url') != resource['url']
+                            or not re.fullmatch('[a-f0-9]{32}', require_text(artifact, 'md5'))
+                            or 'sha256' in artifact or 'git_blob_sha1' in artifact):
+                        raise ValueError('Figshare artifact must pin its item, file ID, download URL and MD5.')
                 if type(artifact.get('bytes')) is not int or not 0 < artifact['bytes'] <= MAX_FILE_BYTES:
                     raise ValueError('Artifact exceeds file limit or has invalid size.')
             if adapter == 'github' and resource.get('license_file') not in names:
@@ -154,12 +171,45 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ValueError('Redirect refused; review and pin the final source URL.')
 
 
+class FigshareSpringerNatureRedirect(urllib.request.HTTPRedirectHandler):
+    """Allow one Figshare downloader redirect to its reviewed S3 object only."""
+    def __init__(self, artifact):
+        super().__init__()
+        self.artifact = artifact
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        source = urlsplit(req.full_url)
+        target = urlsplit(newurl)
+        file_id = self.artifact['figshare_file_id']
+        expected_source = f'https://ndownloader.figshare.com/files/{file_id}'
+        expected_path = f"/pstorage-npg-968563215/{file_id}/{self.artifact['name']}"
+        if (code != 302 or req.full_url != expected_source
+                or source.scheme != 'https' or source.hostname != 'ndownloader.figshare.com'
+                or source.query or source.fragment
+                or target.scheme != 'https' or target.hostname != 's3-eu-west-1.amazonaws.com'
+                or target.port not in (None, 443) or target.username or target.password
+                or target.path != expected_path or target.fragment or not target.query):
+            raise ValueError('Figshare redirect did not match the reviewed Springer Nature S3 object.')
+        # A second redirect is refused because req.full_url will no longer be the
+        # exact ndownloader URL checked above.
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def read_artifact(artifact, opener):
     request = urllib.request.Request(artifact['url'], headers={
         'User-Agent': 'Talk2Nature-research-collection/1', 'Accept-Encoding': 'identity'})
     with opener.open(request, timeout=30) as response:
-        if response.status != 200 or response.geturl() != artifact['url']:
-            raise ValueError('Unexpected response status or URL.')
+        final_url = urlsplit(response.geturl())
+        if response.status != 200:
+            raise ValueError('Unexpected response status.')
+        if 'figshare_file_id' in artifact:
+            expected_path = f"/pstorage-npg-968563215/{artifact['figshare_file_id']}/{artifact['name']}"
+            if (final_url.scheme != 'https' or final_url.hostname != 's3-eu-west-1.amazonaws.com'
+                    or final_url.port not in (None, 443) or final_url.username or final_url.password
+                    or final_url.path != expected_path or final_url.fragment or not final_url.query):
+                raise ValueError('Unexpected final Figshare object URL.')
+        elif response.geturl() != artifact['url']:
+            raise ValueError('Unexpected response URL.')
         if response.headers.get('Content-Encoding', 'identity') != 'identity':
             raise ValueError('Encoded response refused.')
         if 'text/html' in response.headers.get('Content-Type', '').lower():
@@ -174,6 +224,9 @@ def read_artifact(artifact, opener):
     if 'sha256' in artifact:
         if hashlib.sha256(data).hexdigest() != artifact['sha256']:
             raise ValueError('Downloaded deposit SHA-256 mismatch.')
+    elif 'md5' in artifact:
+        if hashlib.md5(data, usedforsecurity=False).hexdigest() != artifact['md5']:
+            raise ValueError('Downloaded Figshare MD5 mismatch.')
     else:
         blob = b'blob ' + str(len(data)).encode() + b'\0' + data
         if hashlib.sha1(blob).hexdigest() != artifact['git_blob_sha1']:
@@ -194,9 +247,7 @@ def acquire(catalog, identifiers, destination=DESTINATION, max_bytes=MAX_BATCH_B
     for resource in selected:
         if (destination / resource['id']).exists():
             raise ValueError(f'Existing sample: {resource["id"]}; inspect its receipt before collecting again.')
-    if opener is None:
-        opener = urllib.request.build_opener(NoRedirect(),
-            urllib.request.HTTPSHandler(context=ssl.create_default_context(cafile=ca_file)))
+    https_handler = urllib.request.HTTPSHandler(context=ssl.create_default_context(cafile=ca_file))
     receipts = []
     # Stage the whole batch. A failed fetch/check publishes no partial sample.
     with tempfile.TemporaryDirectory(prefix='.collect-', dir=destination) as staging:
@@ -205,7 +256,12 @@ def acquire(catalog, identifiers, destination=DESTINATION, max_bytes=MAX_BATCH_B
             folder.mkdir(mode=0o700)
             entries = []
             for artifact in resource['files']:
-                data = read_artifact(artifact, opener)
+                artifact_opener = opener
+                if artifact_opener is None:
+                    redirect_handler = (FigshareSpringerNatureRedirect(artifact)
+                        if 'figshare_file_id' in artifact else NoRedirect())
+                    artifact_opener = urllib.request.build_opener(redirect_handler, https_handler)
+                data = read_artifact(artifact, artifact_opener)
                 target = folder / artifact['name']
                 target.write_bytes(data)
                 target.chmod(0o600)

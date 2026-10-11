@@ -1,14 +1,18 @@
 import copy
 import hashlib
+import csv
 import io
 import json
 import tempfile
+import urllib.request
 import unittest
 from pathlib import Path
 from unittest.mock import Mock
 
-from talk2nature.collection import (CATALOG, MAX_BATCH_BYTES, NoRedirect,
+from talk2nature.collection import (CATALOG, MAX_BATCH_BYTES,
+                                    FigshareSpringerNatureRedirect, NoRedirect,
                                     acquire, plan, read_artifact, validate)
+from scripts.inspect_bat_annotations import inspect as inspect_bat
 from scripts.inspect_parrot_annotations import inspect
 
 
@@ -50,8 +54,9 @@ class CollectionTests(unittest.TestCase):
         selected, size = plan(self.catalog, ids)
         self.assertEqual({r['id'] for r in selected}, {
             'monk-parakeet-code', 'monk-parakeet-annotations',
-            'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data'})
-        self.assertLess(size, 2_000_000)
+            'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
+            'egyptian-fruit-bat-annotations'})
+        self.assertLess(size, MAX_BATCH_BYTES)
 
     def test_mendeley_sample_is_versioned_hash_pinned_and_not_training_admitted(self):
         r = copy.deepcopy(next(r for r in self.catalog['resources'] if r['id'] == 'budgerigar-vocal-signature-data'))
@@ -74,6 +79,73 @@ class CollectionTests(unittest.TestCase):
         for key, value in [('adapter','unknown'), ('version','latest'), ('license_notice','')]:
             bad = copy.deepcopy(c);bad['resources'][0][key] = value
             with self.subTest(key=key), self.assertRaises(ValueError): validate(bad)
+
+    def test_figshare_sample_pins_item_redirect_size_md5_and_stays_out_of_training(self):
+        data = b'Annotation metadata fixture; no biological rows.\n'
+        item_url = 'https://api.figshare.com/v2/articles/42'
+        artifact = {
+            'name': 'Annotations.csv',
+            'url': 'https://ndownloader.figshare.com/files/7379008',
+            'source_url': item_url,
+            'figshare_file_id': 7379008,
+            'bytes': len(data),
+            'md5': hashlib.md5(data, usedforsecurity=False).hexdigest(),
+        }
+        resource = {
+            'id': 'figshare-test', 'kind': 'dataset', 'title': 'Synthetic Figshare test item',
+            'url': item_url, 'figshare_item_id': 42, 'version': 'Figshare item 42 v1',
+            'reviewed': '2026-10-11', 'priority': 1, 'review_depth': 'Synthetic metadata fixture.',
+            'task': 'Test item and file pinning.', 'access': 'Synthetic only.',
+            'decision': 'Test only.', 'limitations': 'No real data.', 'attribution': 'Fixture.',
+            'rights': {'license': 'CC0-1.0', 'scope': 'Synthetic item.',
+                       'evidence_url': item_url, 'conditions': 'Fixture.',
+                       'research_use': 'conditional', 'commercial_use': 'conditional',
+                       'redistribution': 'conditional'},
+            'license_notice': 'Synthetic CC0 metadata notice.',
+            'acquisition': 'sample_approved', 'adapter': 'figshare_springernature',
+            'admission_reason': 'Synthetic checksum and path verification only.', 'files': [artifact],
+        }
+        catalog = {'schema_version': 1, 'resources': [resource]}
+        validate(catalog)
+        selected, size = plan(catalog, ['figshare-test'])
+        self.assertEqual(size, len(data))
+
+        target = ('https://s3-eu-west-1.amazonaws.com/pstorage-npg-968563215/'
+                  '7379008/Annotations.csv?X-Amz-Signature=fixture')
+        handler = FigshareSpringerNatureRedirect(artifact)
+        request = urllib.request.Request(artifact['url'])
+        redirected = handler.redirect_request(request, None, 302, 'Found', {}, target)
+        self.assertEqual(redirected.full_url, target)
+        for bad_target in (
+            target.replace('s3-eu-west-1.amazonaws.com', 'evil.example'),
+            target.replace('/7379008/Annotations.csv', '/7379008/Other.csv'),
+            target.replace('https://', 'http://'),
+        ):
+            with self.subTest(target=bad_target), self.assertRaisesRegex(ValueError, 'redirect'):
+                handler.redirect_request(request, None, 302, 'Found', {}, bad_target)
+        with self.assertRaisesRegex(ValueError, 'redirect'):
+            handler.redirect_request(urllib.request.Request(target), None, 302, 'Found', {}, target)
+
+        opener = Mock()
+        opener.open.side_effect = lambda request, timeout: Response(
+            data, target, {'Content-Length': str(len(data))})
+        self.assertEqual(read_artifact(artifact, opener), data)
+        for key, value in [('md5', '0' * 32), ('bytes', len(data) + 1)]:
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                read_artifact({**artifact, key: value}, opener)
+        wrong_target_opener = Mock()
+        wrong_target_opener.open.side_effect = lambda request, timeout: Response(
+            data, target.replace('s3-eu-west-1.amazonaws.com', 'evil.example'))
+        with self.assertRaisesRegex(ValueError, 'final Figshare'):
+            read_artifact(artifact, wrong_target_opener)
+
+        with tempfile.TemporaryDirectory() as temp:
+            result = acquire(catalog, ['figshare-test'], Path(temp).resolve(), opener=opener)
+            receipt = json.loads(Path(result['receipts'][0]).read_text())
+            self.assertFalse(receipt['training_admitted'])
+            self.assertEqual(receipt['files'][0]['md5'], artifact['md5'])
+            self.assertEqual(receipt['files'][0]['sha256'], hashlib.sha256(data).hexdigest())
+            self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
 
     def test_unresolved_licenses_and_metadata_cannot_download(self):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
@@ -99,7 +171,9 @@ class CollectionTests(unittest.TestCase):
             plan(self.catalog,[retrieval_code['id']])
         bat_archive=next(r for r in self.catalog['resources'] if r['id']=='egyptian-fruit-bat-audiovisual-archive')
         self.assertEqual(bat_archive['acquisition'],'metadata_only')
-        self.assertTrue(bat_archive['rights']['license'].startswith('unresolved:'))
+        self.assertIn('CC0-1.0 declared at the Figshare item level',bat_archive['rights']['license'])
+        self.assertIn('3,049,199,327-byte file',bat_archive['rights']['conditions'])
+        self.assertEqual(bat_archive['rights']['research_use'],'conditional')
         self.assertEqual(bat_archive['files'],[])
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog,[bat_archive['id']])
@@ -109,7 +183,8 @@ class CollectionTests(unittest.TestCase):
         self.assertIn('separate 2017 archive',bat_encodings['decision'])
         self.assertIn('old=2&new=3',bat_encodings['rights']['evidence_url'])
         self.assertIn('v1 contained metadata only',bat_encodings['review_depth'])
-        self.assertIn('API docs describe versioned public file-list routes',bat_encodings['review_depth'])
+        self.assertIn('OAuth2',bat_encodings['review_depth'])
+        self.assertIn('HTTP 401',bat_encodings['review_depth'])
         self.assertIn('Versions 2 and 3',bat_encodings['access'])
         self.assertEqual(bat_encodings['files'],[])
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
@@ -257,6 +332,47 @@ class CollectionTests(unittest.TestCase):
             (root / 'annotations-2020.csv').write_bytes(data + b'changed')
             with self.assertRaisesRegex(ValueError, 'differs'):
                 inspect(root)
+
+    def test_bat_annotation_report_is_aggregate_and_checks_receipt(self):
+        columns = ['FileID', 'Emitter', 'Addressee', 'Context',
+                   'Emitter pre-vocalization action', 'Addressee pre-vocalization action',
+                   'Emitter post-vocalization action', 'Addressee post-vocalization action',
+                   'Start sample', 'End sample']
+        rows = [
+            ['private-file-key', '-101', '102', '0', '1', '2', '3', '4', '10', '20'],
+            ['private-file-key', '101', '102', '12', '0', '0', '0', '0', '10', '20'],
+        ]
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow(columns)
+        writer.writerows(rows)
+        data = output.getvalue().encode()
+        with tempfile.TemporaryDirectory(dir=Path(tempfile.gettempdir()).resolve()) as temp:
+            folder = Path(temp)
+            (folder / 'Annotations.csv').write_bytes(data)
+            receipt = {
+                'resource_id': 'egyptian-fruit-bat-annotations',
+                'resource': {'version': 'Figshare item 4555903 v1; DOI fixture'},
+                'training_admitted': False,
+                'files': [{'name': 'Annotations.csv', 'bytes': len(data),
+                           'md5': hashlib.md5(data, usedforsecurity=False).hexdigest(),
+                           'sha256': hashlib.sha256(data).hexdigest(),
+                           'url': 'https://example.test/Annotations.csv'}],
+            }
+            (folder / 'receipt.json').write_text(json.dumps(receipt))
+            report = inspect_bat(folder)
+            serialized = json.dumps(report)
+            self.assertEqual(report['rows'], 2)
+            self.assertEqual(report['unique_file_ids'], 1)
+            self.assertEqual(report['rows_beyond_unique_file_ids'], 1)
+            self.assertEqual(report['duplicate_file_interval_rows'], 1)
+            self.assertEqual(report['negative_ambiguous_identity_rows']['emitter'], 1)
+            self.assertFalse(report['training_admitted'])
+            self.assertNotIn('private-file-key', serialized)
+            self.assertNotIn('-101', serialized)
+            (folder / 'Annotations.csv').write_bytes(data + b'changed')
+            with self.assertRaisesRegex(ValueError, 'differs'):
+                inspect_bat(folder)
 
 
 if __name__ == '__main__':
