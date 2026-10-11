@@ -31,6 +31,7 @@ class PageParser(HTMLParser):
 
 def check_site(root):
     root=Path(root)
+    resolved_root=root.resolve()
     info=json.loads((root/'build-info.json').read_text())
     base=urlsplit(info['base_url']); prefix=base.path.rstrip('/')
     parsed={}
@@ -66,8 +67,13 @@ def check_site(root):
                 target_doc=parsed.get(target.resolve())
                 if target_doc and unquote(ref.fragment) not in target_doc.ids: errors.append(f'{path}: broken anchor {link}')
     xml=ElementTree.parse(root/'sitemap.xml')
-    locations=[n.text for n in xml.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    if info['public'] and len(locations)!=info['pages']: errors.append('Sitemap page count mismatch')
+    sitemap_ns='{http://www.sitemaps.org/schemas/sitemap/0.9}'
+    locations=[n.text or '' for n in xml.findall(f'.//{sitemap_ns}loc')]
+    if info['public']:
+        expected_locations={doc.canonical for path,doc in parsed.items() if path.relative_to(resolved_root).as_posix()!='404.html'}
+        if len(locations)!=info['pages']: errors.append('Sitemap page count mismatch')
+        if len(locations)!=len(set(locations)): errors.append('Sitemap contains duplicate URLs')
+        if set(locations)!=expected_locations: errors.append('Sitemap URLs do not match canonical public HTML pages')
     if info['public'] and 'Disallow: /' in (root/'robots.txt').read_text(): errors.append('Public site blocks crawlers')
     if not info['public'] and 'Disallow: /' not in (root/'robots.txt').read_text(): errors.append('Preview permits crawlers')
     forbidden={'.env','AGENTS.md','CLAUDE.md','build_audit.py'}

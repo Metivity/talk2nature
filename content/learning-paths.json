@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03",
+  "updated": "2026-10-11",
   "paths": [
     {
       "id": "first-animal",
@@ -88,6 +88,30 @@
       ],
       "next_step": "Test the notebook workflow now; recruit scientific review for one passive audio-video protocol before expanding sensors.",
       "gate": "Current public apps do not capture video, identify species or upload data. Plant ultrasound and fungal electricity need suitable hardware."
+    },
+    {
+      "id": "animal-interface",
+      "title": "Design technology around the animal",
+      "question": "What changes when an animal uses the interface directly?",
+      "decision": "Use species- and individual-aware interaction design, short optional sessions, and a reliable way to leave; test observable behavior rather than assuming engagement.",
+      "notes": [
+        "parrot-touchscreen-ergonomics",
+        "parrot-video"
+      ],
+      "next_step": "Compare animal-operated tablet tasks with parrot choice in video calls, then ask an animal-computer-interaction researcher to review any future animal-facing design before prototyping.",
+      "gate": "This evidence concerns touchscreen enrichment, not Talk2Nature’s human-operated passive recorder or a way to communicate meaning. This reading path does not add animal-directed features."
+    },
+    {
+      "id": "context-before-meaning",
+      "title": "Align sound with observed behavior",
+      "question": "Can an acoustic feature predict a behavior that was independently observed at the same time?",
+      "decision": "Require linked source audio, synchronized observation timestamps, explicit event definitions and groups that support a held-out test. Shared species, date or project membership alone does not align events.",
+      "notes": [
+        "budgerigar-vocal-sociality-data",
+        "parrot-data-feasibility"
+      ],
+      "next_step": "Find a rights-cleared recording set with synchronized, independently coded behavior; if it does not exist, define a small passive protocol with a qualified reviewer before collecting anything.",
+      "gate": "These examples show dataset-fit limits; neither is admitted as the first Talk2Nature context benchmark, and neither demonstrates call meaning."
     }
   ]
 }

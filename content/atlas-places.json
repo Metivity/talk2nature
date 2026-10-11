@@ -141,6 +141,13 @@
       "precision": "region",
       "latitude": 57.0,
       "longitude": -2.5
+    },
+    {
+      "id": "las-cruces",
+      "label": "Las Cruces, New Mexico",
+      "precision": "region",
+      "latitude": 32.3,
+      "longitude": -106.8
     }
   ]
 }

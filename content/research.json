@@ -516,9 +516,9 @@
   },
   {
     "slug": "parrot-data-feasibility",
-    "title": "A usable parrot dataset starts with its labels",
+    "title": "Monk parakeet voiceprints test caller identity, not meaning",
     "taxon": "Birds",
-    "kind": "Dataset feasibility",
+    "kind": "Bioacoustic identity study",
     "year": "2023",
     "year_label": "Source year",
     "source_ids": [
@@ -526,15 +526,24 @@
       56,
       57
     ],
-    "review_depth": "Primary abstract/introduction, Methods 2.1–2.2 (study system and collection), and official repository documentation reviewed; selected scripts and the 2020 annotation CSV inspected. Full statistical and supplemental methods and audio not reviewed.",
-    "finding": "The study reports vocal individuality in monk parakeets. Its public repository provides code, bird identifiers and behavioral notes. Our metadata sample has 808 annotation rows; 752 contain behavior text.",
-    "limitations": "Rows are not necessarily individual calls. The 176 distinct nonempty behavior strings mix visible actions, vocal events and interpretations. Missing identities, uncertainty and audio/session linkage require review. Caller identity is not translation.",
-    "lesson": "Keep source recordings, independent behavior labels and subject/session groups linked. Audit labels before selecting a model.",
-    "next_review": "Inspect selection-table joins, normalize only observable behaviors, assess annotation reliability and evaluate whether enough independent groups remain.",
-    "reviewed": "2026-10-04",
+    "review_depth": "Reviewed the final-article abstract and targeted methods/figure text surfaced by the primary PMC index, plus the official pinned GitHub README and the existing hash-pinned 2020 annotation sample. Direct full-text retrieval was CAPTCHA-limited; the ANU repository PDF fetch timed out. The supplement, full statistical/code workflow and raw audio were not reviewed or run.",
+    "finding": "A study of 229 monk parakeets tests caller identity across call types; it does not predict behavior or decode meaning.",
+    "limitations": "The research target is individual identity, not behavior, context or semantics. Figure 4 describes splitting recordings and predicting marked bird IDs across call types; this appears to test transfer for known individuals, not generalization to unseen birds (an interpretation of the design). The 2020 annotations contain free-text behavior near vocalizations and incomplete/uncertain identities; the 2021 schema differs. No observer-reliability result was inspected. The deposited audio and derived archives are large and were not acquired.",
+    "lesson": "Use this work as a caller-identity reproduction candidate and a warning to match splits to the claim. It cannot validate Talk2Nature's planned context task. Keep identity, recording and session groups connected; a new-bird or behavior claim needs its own held-out groups and independent labels.",
+    "next_review": "If a caller-identity reproduction is selected, inspect the cross-call-type and observer-reliability scripts, verify the exact group split and per-component data terms, then decide whether a bounded sample is justified. For the first context benchmark, find data with independently observed, timestamp-linked behavior rather than repurposing caller IDs or vocal-event notes.",
+    "reviewed": "2026-10-11",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Dataset inspected",
+    "review_stage": "Targeted study and dataset-fit review",
     "purpose": "Data & annotation",
+    "review_locator": "Final-article abstract and targeted Methods/Figure 4 passages surfaced by the primary PMC index; official pinned repository README and 2020 annotation schema. Direct full-text retrieval was CAPTCHA/timeout limited; supplement, complete analysis workflow and raw audio were not reviewed.",
+    "study_snapshot": [
+      ["Research question", "Are monk-parakeet callers individually distinguishable within and across call types? The target is caller identity, not call meaning or behavior."],
+      ["Study sample", "5,599 vocalizations from 229 individually marked wild monk parakeets in Barcelona, recorded across 2020–2021. The authors categorized 11 call types and analyzed five with enough observations."],
+      ["Reported result", "The final journal abstract reports individual signatures in three of five call types, rapid variation in contact calls, and evidence that a discriminant function predicts caller identity across call types."],
+      ["Cross-call test", "Figure 4 describes splitting recordings into training and test sets, fitting LDA on MFCCs from amplitude-modulated calls, then predicting bird IDs on tonal calls. This appears to evaluate different call types for known identities, not unseen-bird generalization (design interpretation)."],
+      ["Annotation structure", "The 2020 table links annotation_ref values to Raven selections and uses free-text behavior/association fields. The 2021 table instead keys by file and selection and includes structured call type, context and sequence fields. The README says the formats differ."],
+      ["Rights and access", "The article is listed CC BY 4.0; the pinned analysis repository is MIT; the separate Edmond v1 dataset record was previously recorded as MIT. These are distinct artifacts. Large audio/derived archives were not acquired, and component-level data provenance remains open."]
+    ],
     "atlas": {
       "reviewed": "2026-10-04",
       "location_status": "mapped",
@@ -1436,6 +1445,89 @@
         }
       ],
       "observation_period": null
+    }
+  },
+  {
+    "slug": "parrot-touchscreen-ergonomics",
+    "title": "Parrot touchscreen design must account for the bird",
+    "taxon": "Parrots",
+    "kind": "Animal-computer interaction study",
+    "year": "2024",
+    "source_ids": [
+      122,
+      123
+    ],
+    "review_depth": "Reviewed the University of Glasgow repository record and abstract, the author lab's project summary, and targeted Methods, Results and Discussion passages surfaced from the repository-hosted published PDF. The 19 MB PDF could not be fetched directly; this is not a full-paper review. Tables beyond the surfaced passages, supplements, raw data and code were not inspected.",
+    "finding": "Seventeen trained pet parrots frequently multi-tapped; larger targets mattered more than spacing in a touchscreen enrichment task, not a communication test.",
+    "limitations": "This was a touchscreen enrichment and motor-task study, not vocal communication, passive recording or a test of semantic understanding. Recruitment selected adult pet parrots comfortable with screens and objects and familiar with balloon-pop-style games; caregivers needed animal-training experience and time. Three birds did not reach testing within the protocol: two did not progress to stable engagement within six weeks and one showed slight aggression. The task involved training, treats, caregiver support and a specific tablet/perch setup. Outcomes and multitapping varied by bird; the pressure comparison included one bird–caregiver pair. The institutional record displays 'Data Availability Statement: No'; raw data/code access was not verified. No independent specialist review or replication has been completed.",
+    "lesson": "If a future Talk2Nature tool is deliberately operated by a parrot, treat it as a separate animal-computer-interaction and welfare project. Candidate design questions include larger adjustable targets, tolerance for repeated taps, short optional tasks and a reliable voluntary exit, evaluated with qualified animal-computer-interaction and avian review. Do not infer preference, comprehension or communication from a touch pattern. This paper does not justify changing the current human-operated passive recorder or serve as an acoustic ML dataset.",
+    "next_review": "Obtain a directly reviewable full paper and inspect the remaining tables and statistical details; verify whether any data or code are available and their terms. Before an animal-operated prototype, request independent animal-computer-interaction and avian-welfare review. Do not use this study as training or evaluation data for the proposed acoustic benchmark.",
+    "reviewed": "2026-10-11",
+    "expert_review": "Not yet independently reviewed by an animal-computer-interaction or avian specialist.",
+    "review_stage": "Targeted methods and results reviewed",
+    "year_label": "Source year",
+    "purpose": "Animal-computer interaction",
+    "study_snapshot": [
+      ["Sample and selection", "20 adult home-kept pet parrots were recruited; 17 reached testing after gradual training. Eligibility included screen/object comfort and prior balloon-pop-style app experience; caregivers had animal-training experience and time."],
+      ["Protocol", "A 12-caregiver survey and five-bird pilot informed a three-month study. Birds learned a stable target-touch task over up to six weeks; two did not engage enough to progress and one showed slight aggression."],
+      ["Task", "A custom Fitts-style app presented five series of five targets, split into 5–15 tasks at a time according to interest and fatigue. Birds had an exit button and a clear route away; caregivers were trained to stop on distress, and a parrot behaviorist reviewed sessions."],
+      ["Measures", "The app recorded target hits, movement time and touch positions; video review covered on-task behavior. Two researchers independently coded distracted versus on-task segments, with 97% reported agreement."],
+      ["Observed result", "The authors report 4,720 target touches (8,995 including follow-on taps) across 892 series; 45.73% met their 300 ms multi-tap definition. Larger targets mattered more than spacing; the paper reports an approximate threshold near 100 pd / 26 mm on this setup, not a universal standard."],
+      ["Data and rights", "The Glasgow record lists the paper as CC BY-NC-ND 4.0 and displays 'Data Availability Statement: No'. No raw dataset or software package was inspected; separate availability is unverified."]
+    ],
+    "review_locator": "University of Glasgow abstract and author-lab project summary; targeted indexed passages from the published PDF, including Methods 4.1–4.5, Results 5.1–5.2 and Discussion. The full PDF was not directly opened."
+  },
+  {
+    "slug": "budgerigar-vocal-sociality-data",
+    "title": "Budgerigar vocal and social records are not event-aligned",
+    "taxon": "Parrots",
+    "kind": "Vocal learning and sociality study",
+    "year": "2023",
+    "year_label": "Source year",
+    "source_ids": [
+      124,
+      125,
+      126,
+      127
+    ],
+    "review_depth": "Targeted abstract and Methods passages from the primary PMC index, Dryad version/file metadata and README, official NMSU facility locator, and Dryad's reuse policy reviewed. Direct PMC page open encountered CAPTCHA. No Dryad files, raw audio, video, supplement or code were downloaded or executed.",
+    "finding": "A 48-bird budgerigar study paired longitudinal contact-call features with separately coded flock social behavior, but the deposited data do not align each call with a social event.",
+    "limitations": "The calls were recorded from one focal bird at a time in a sound-isolation chamber, visually but not acoustically connected to flockmates. Social interactions were recorded separately in home-flock video sessions. The Dryad file inventory lists derived call-feature tables, behavior coding, an interobserver workbook, example video and R scripts, but no original call audio. Shared group/date/block metadata may support a carefully bounded aggregate association, not event-level prediction or meaning. The design includes 12 flocks in two age classes; age and group-level confounding limit generalization. The reliability workbook and analysis scripts were not inspected.",
+    "lesson": "A dataset can be multimodal in the study design yet still lack the synchronized, independently labeled events a model needs. Require a shared clock and source-file linkage between sound and observed behavior; group or date overlap alone is not event alignment. Treat this Dryad deposit as a protocol/schema comparator, not the first Talk2Nature context benchmark.",
+    "next_review": "If aggregate vocal-learning/sociality analysis is considered, inspect the interobserver assessment, exact file/date/block joins and missingness, and predefine a flock-held-out question with a collaborator. For call-level context prediction, seek synchronized recordings with independent event annotations and access to the original audio.",
+    "reviewed": "2026-10-11",
+    "expert_review": "Not yet independently reviewed by an avian bioacoustics or social-behavior specialist.",
+    "review_stage": "Targeted study and dataset-fit review",
+    "purpose": "Data & annotation",
+    "study_snapshot": [
+      ["Study question", "Does adult age relate to contact-call learning and social integration? The study addresses vocal learning and sociality, not call translation."],
+      ["Animals and design", "48 adult male budgerigars formed 12 novel flocks of four birds: six young-adult and six older-adult flocks. The experiment ran from December 2020 through April 2021."],
+      ["Acoustic sessions", "Each bird had four 55-minute baseline sessions and 16 sessions after joining a flock. Calls were recorded individually in a sound-isolation chamber; nearby flockmates were visible but not acoustically connected."],
+      ["Social observations", "Flock video was collected in two 80-minute sessions per recording block. Early-morning videos were sampled continuously for social interactions during a 40-minute window after a 30-minute settling period."],
+      ["Public deposit", "The February 2024 Dryad version is 68.14 MB and includes contact-call feature tables, social-interaction coding, proximity data, an interobserver-assessment workbook, example video and R scripts. The file inventory does not list original call WAV files."],
+      ["Rights and reuse", "The article lists CC BY 4.0. Dryad's reuse guide says its datasets use CC0; that dataset policy does not clear the article or separately included software. No deposit files were downloaded or re-distributed."]
+    ],
+    "review_locator": "Primary PMC index, Methods 2(a)–(d): Animal housing, Experimental outline, Audio recording and Video recording; Dryad version/file inventory and README; Dryad reuse guide; NMSU building list for city-level study-site locator.",
+    "atlas": {
+      "reviewed": "2026-10-11",
+      "location_status": "mapped",
+      "location_note": "The study names the NMSU Animal Care Facility; the map shows an approximate city-level marker only.",
+      "locations": [
+        {
+          "place_id": "las-cruces",
+          "role": "study_region",
+          "source_id": 126,
+          "locator": "NMSU building list: Animal Care Facility",
+          "basis": "The paper identifies NMSU's Animal Care Facility as the housing site; the university building list locates that facility in Las Cruces. The atlas generalizes to the city and does not mark the facility or animal rooms."
+        }
+      ],
+      "observation_period": {
+        "label": "Experiment: 14 Dec 2020–27 Apr 2021",
+        "start_year": 2020,
+        "end_year": 2021,
+        "source_id": 124,
+        "locator": "Methods 2(b): Experimental outline"
+      }
     }
   }
 ]

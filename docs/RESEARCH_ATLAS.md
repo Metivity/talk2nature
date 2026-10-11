@@ -2,13 +2,15 @@
 
 The public [world atlas](https://metivity.github.io/talk2nature/research/atlas/) connects the literature library to approximate places and a source-year timeline. It is the first geographic layer, not a map of all published research or a live observation service.
 
-## Current coverage — October 4, 2026
+As of October 11, 2026, the library contains **43 notes**, **21 mapped notes** across **21 approximate regions**, **126 source records** and **14 collection resources**. This is evidence-map coverage, not 21 event-aligned datasets or independent replications. The new Las Cruces point is a coarse study-region marker; it does not identify a facility or animal room.
+
+## October 4 historical coverage snapshot
 
 The atlas now includes **35 notes**, **14 with mapped locations**, across **14 approximate regions**. Twenty-one notes remain without a pin: eleven awaiting location verification and ten without a single applicable site. The complete catalog contains 111 source records, 35 notes and 13 acquisition resources (159 records / 73 citation links).
 
 New locations are the Bahamas, Tepic and Puebla (Mexico), Barcelona (Spain), Tel Aviv (Israel), Lizard Island (Australia), and Niassa (Mozambique). Four existing notes gained supported geography; two new notes cover reef-fish recruitment and honeyguide–human cooperation. The dog study has two locations but remains one research note. Region and note counts measure editorial coverage, not independent evidence or animal abundance.
 
-The [next-goals page](https://metivity.github.io/talk2nature/research/atlas/goals/) tracks 20 mapped notes (currently 14), three historical source notes (currently one), a scientifically reviewed passive parrot pilot, and a protected first observation release. The last two are future milestones with explicit dependencies. See [ATLAS_NEXT_GOALS.md](ATLAS_NEXT_GOALS.md).
+At the October 4 snapshot, the [next-goals page](https://metivity.github.io/talk2nature/research/atlas/goals/) tracked 20 mapped notes (then 14), three historical source notes (then one), a scientifically reviewed passive parrot pilot, and a protected first observation release. The last two are future milestones with explicit dependencies. See [ATLAS_NEXT_GOALS.md](ATLAS_NEXT_GOALS.md) for current status.
 
 | New geography | Basis actually reviewed | Date handling |
 | --- | --- | --- |
@@ -22,6 +24,10 @@ The [next-goals page](https://metivity.github.io/talk2nature/research/atlas/goal
 Selected-passage review is not full scientific validation. The remaining cat, budgerigar, parrot-video, owner-survey, pig, moth and fungal geography was not inferred from author affiliations or approval bodies. Available cat methods and the previously saved parrot-video text were inspected but did not establish a clear collection geography for this pass. Some full-text retrievals failed; no access restrictions were bypassed. The honeyguide entry explicitly identifies the university account as its location source and the primary abstract as its scientific source.
 
 Public `sources` in the atlas export may now include a checked `review_url` so location citations can link directly to the full-text version actually inspected. Original source URLs remain available. Downloaded article text/PDFs and rendered review images remain ignored, and no new animal recordings or model weights were acquired.
+
+## October 11 update
+
+The library now contains **43 notes**, **21 mapped notes** across **21 approximate regions**, **126 source records** and **14 collection resources**. The additional Las Cruces, New Mexico marker is tied to the paper's named NMSU Animal Care Facility and the university's building list; it is generalized to the city and does not mark animal rooms. The associated budgerigar note distinguishes longitudinal call-feature data from separately filmed social events, which are not aligned at the call level. This raises the map coverage count, not the number of event-aligned datasets or independent replications.
 
 ## October 3 baseline
 
