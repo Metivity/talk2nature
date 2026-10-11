@@ -78,6 +78,13 @@ class CollectionTests(unittest.TestCase):
     def test_unresolved_licenses_and_metadata_cannot_download(self):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, ['beans-next'])
+        parrotlet=next(r for r in self.catalog['resources'] if r['id']=='parrotlet-vocal-babbling-data')
+        self.assertEqual(parrotlet['acquisition'],'metadata_only')
+        self.assertEqual(parrotlet['files'],[])
+        self.assertTrue(parrotlet['rights']['license'].startswith('unresolved:'))
+        self.assertEqual(parrotlet['rights']['commercial_use'],'unresolved')
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog,[parrotlet['id']])
         for field, value in [('license', 'unknown'), ('commercial_use', 'unresolved')]:
             with self.subTest(field=field):
                 c = copy.deepcopy(self.sample)

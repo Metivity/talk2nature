@@ -6,7 +6,7 @@ This file adapts the small-scope agent instructions in [Karpathy's autoresearch]
 
 ## Current task
 
-No ML task is approved. The working scientific question in `docs/GOAL.md` remains a candidate: whether audio adds predictive information about a small set of independently observed behaviors beyond context baselines on appropriately held-out animals and sessions. The species, target, real-data release, reviewer and evaluation remain unresolved. Do not substitute the synthetic fixtures or the structurally inspected budgerigar sample for those inputs.
+No ML task is approved. The working scientific question in `docs/GOAL.md` remains a candidate: whether audio adds predictive information about a small set of independently observed behaviors beyond context baselines on appropriately held-out animals and sessions. The species, target, real-data release, reviewer and evaluation remain unresolved. MammAlps v3 is a metadata-only noncommercial methods comparator: it pairs video-annotated behavior with audio, but the reviewed evidence does not establish animal-level holdout and its CC BY-NC 4.0 data do not enter the commercial-capable benchmark path. The green-rumped parrotlet Dryad archive is another metadata-only lead, this time about vocal development; its README, individual/session structure, treatment groups and item-specific license terms remain unverified, and the corticosterone study does not answer the current context-prediction question. Do not substitute either candidate, synthetic fixtures or the structurally inspected budgerigar sample for an admitted project dataset.
 
 ## Start conditions
 

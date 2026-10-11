@@ -537,12 +537,30 @@
     "purpose": "Data & annotation",
     "review_locator": "Final-article abstract and targeted Methods/Figure 4 passages surfaced by the primary PMC index; official pinned repository README and 2020 annotation schema. Direct full-text retrieval was CAPTCHA/timeout limited; supplement, complete analysis workflow and raw audio were not reviewed.",
     "study_snapshot": [
-      ["Research question", "Are monk-parakeet callers individually distinguishable within and across call types? The target is caller identity, not call meaning or behavior."],
-      ["Study sample", "5,599 vocalizations from 229 individually marked wild monk parakeets in Barcelona, recorded across 2020–2021. The authors categorized 11 call types and analyzed five with enough observations."],
-      ["Reported result", "The final journal abstract reports individual signatures in three of five call types, rapid variation in contact calls, and evidence that a discriminant function predicts caller identity across call types."],
-      ["Cross-call test", "Figure 4 describes splitting recordings into training and test sets, fitting LDA on MFCCs from amplitude-modulated calls, then predicting bird IDs on tonal calls. This appears to evaluate different call types for known identities, not unseen-bird generalization (design interpretation)."],
-      ["Annotation structure", "The 2020 table links annotation_ref values to Raven selections and uses free-text behavior/association fields. The 2021 table instead keys by file and selection and includes structured call type, context and sequence fields. The README says the formats differ."],
-      ["Rights and access", "The article is listed CC BY 4.0; the pinned analysis repository is MIT; the separate Edmond v1 dataset record was previously recorded as MIT. These are distinct artifacts. Large audio/derived archives were not acquired, and component-level data provenance remains open."]
+      [
+        "Research question",
+        "Are monk-parakeet callers individually distinguishable within and across call types? The target is caller identity, not call meaning or behavior."
+      ],
+      [
+        "Study sample",
+        "5,599 vocalizations from 229 individually marked wild monk parakeets in Barcelona, recorded across 2020–2021. The authors categorized 11 call types and analyzed five with enough observations."
+      ],
+      [
+        "Reported result",
+        "The final journal abstract reports individual signatures in three of five call types, rapid variation in contact calls, and evidence that a discriminant function predicts caller identity across call types."
+      ],
+      [
+        "Cross-call test",
+        "Figure 4 describes splitting recordings into training and test sets, fitting LDA on MFCCs from amplitude-modulated calls, then predicting bird IDs on tonal calls. This appears to evaluate different call types for known identities, not unseen-bird generalization (design interpretation)."
+      ],
+      [
+        "Annotation structure",
+        "The 2020 table links annotation_ref values to Raven selections and uses free-text behavior/association fields. The 2021 table instead keys by file and selection and includes structured call type, context and sequence fields. The README says the formats differ."
+      ],
+      [
+        "Rights and access",
+        "The article is listed CC BY 4.0; the pinned analysis repository is MIT; the separate Edmond v1 dataset record was previously recorded as MIT. These are distinct artifacts. Large audio/derived archives were not acquired, and component-level data provenance remains open."
+      ]
     ],
     "atlas": {
       "reviewed": "2026-10-04",
@@ -1468,12 +1486,30 @@
     "year_label": "Source year",
     "purpose": "Animal-computer interaction",
     "study_snapshot": [
-      ["Sample and selection", "20 adult home-kept pet parrots were recruited; 17 reached testing after gradual training. Eligibility included screen/object comfort and prior balloon-pop-style app experience; caregivers had animal-training experience and time."],
-      ["Protocol", "A 12-caregiver survey and five-bird pilot informed a three-month study. Birds learned a stable target-touch task over up to six weeks; two did not engage enough to progress and one showed slight aggression."],
-      ["Task", "A custom Fitts-style app presented five series of five targets, split into 5–15 tasks at a time according to interest and fatigue. Birds had an exit button and a clear route away; caregivers were trained to stop on distress, and a parrot behaviorist reviewed sessions."],
-      ["Measures", "The app recorded target hits, movement time and touch positions; video review covered on-task behavior. Two researchers independently coded distracted versus on-task segments, with 97% reported agreement."],
-      ["Observed result", "The authors report 4,720 target touches (8,995 including follow-on taps) across 892 series; 45.73% met their 300 ms multi-tap definition. Larger targets mattered more than spacing; the paper reports an approximate threshold near 100 pd / 26 mm on this setup, not a universal standard."],
-      ["Data and rights", "The Glasgow record lists the paper as CC BY-NC-ND 4.0 and displays 'Data Availability Statement: No'. No raw dataset or software package was inspected; separate availability is unverified."]
+      [
+        "Sample and selection",
+        "20 adult home-kept pet parrots were recruited; 17 reached testing after gradual training. Eligibility included screen/object comfort and prior balloon-pop-style app experience; caregivers had animal-training experience and time."
+      ],
+      [
+        "Protocol",
+        "A 12-caregiver survey and five-bird pilot informed a three-month study. Birds learned a stable target-touch task over up to six weeks; two did not engage enough to progress and one showed slight aggression."
+      ],
+      [
+        "Task",
+        "A custom Fitts-style app presented five series of five targets, split into 5–15 tasks at a time according to interest and fatigue. Birds had an exit button and a clear route away; caregivers were trained to stop on distress, and a parrot behaviorist reviewed sessions."
+      ],
+      [
+        "Measures",
+        "The app recorded target hits, movement time and touch positions; video review covered on-task behavior. Two researchers independently coded distracted versus on-task segments, with 97% reported agreement."
+      ],
+      [
+        "Observed result",
+        "The authors report 4,720 target touches (8,995 including follow-on taps) across 892 series; 45.73% met their 300 ms multi-tap definition. Larger targets mattered more than spacing; the paper reports an approximate threshold near 100 pd / 26 mm on this setup, not a universal standard."
+      ],
+      [
+        "Data and rights",
+        "The Glasgow record lists the paper as CC BY-NC-ND 4.0 and displays 'Data Availability Statement: No'. No raw dataset or software package was inspected; separate availability is unverified."
+      ]
     ],
     "review_locator": "University of Glasgow abstract and author-lab project summary; targeted indexed passages from the published PDF, including Methods 4.1–4.5, Results 5.1–5.2 and Discussion. The full PDF was not directly opened."
   },
@@ -1500,12 +1536,30 @@
     "review_stage": "Targeted study and dataset-fit review",
     "purpose": "Data & annotation",
     "study_snapshot": [
-      ["Study question", "Does adult age relate to contact-call learning and social integration? The study addresses vocal learning and sociality, not call translation."],
-      ["Animals and design", "48 adult male budgerigars formed 12 novel flocks of four birds: six young-adult and six older-adult flocks. The experiment ran from December 2020 through April 2021."],
-      ["Acoustic sessions", "Each bird had four 55-minute baseline sessions and 16 sessions after joining a flock. Calls were recorded individually in a sound-isolation chamber; nearby flockmates were visible but not acoustically connected."],
-      ["Social observations", "Flock video was collected in two 80-minute sessions per recording block. Early-morning videos were sampled continuously for social interactions during a 40-minute window after a 30-minute settling period."],
-      ["Public deposit", "The February 2024 Dryad version is 68.14 MB and includes contact-call feature tables, social-interaction coding, proximity data, an interobserver-assessment workbook, example video and R scripts. The file inventory does not list original call WAV files."],
-      ["Rights and reuse", "The article lists CC BY 4.0. Dryad's reuse guide says its datasets use CC0; that dataset policy does not clear the article or separately included software. No deposit files were downloaded or re-distributed."]
+      [
+        "Study question",
+        "Does adult age relate to contact-call learning and social integration? The study addresses vocal learning and sociality, not call translation."
+      ],
+      [
+        "Animals and design",
+        "48 adult male budgerigars formed 12 novel flocks of four birds: six young-adult and six older-adult flocks. The experiment ran from December 2020 through April 2021."
+      ],
+      [
+        "Acoustic sessions",
+        "Each bird had four 55-minute baseline sessions and 16 sessions after joining a flock. Calls were recorded individually in a sound-isolation chamber; nearby flockmates were visible but not acoustically connected."
+      ],
+      [
+        "Social observations",
+        "Flock video was collected in two 80-minute sessions per recording block. Early-morning videos were sampled continuously for social interactions during a 40-minute window after a 30-minute settling period."
+      ],
+      [
+        "Public deposit",
+        "The February 2024 Dryad version is 68.14 MB and includes contact-call feature tables, social-interaction coding, proximity data, an interobserver-assessment workbook, example video and R scripts. The file inventory does not list original call WAV files."
+      ],
+      [
+        "Rights and reuse",
+        "The article lists CC BY 4.0. Dryad's reuse guide says its datasets use CC0; that dataset policy does not clear the article or separately included software. No deposit files were downloaded or re-distributed."
+      ]
     ],
     "review_locator": "Primary PMC index, Methods 2(a)–(d): Animal housing, Experimental outline, Audio recording and Video recording; Dryad version/file inventory and README; Dryad reuse guide; NMSU building list for city-level study-site locator.",
     "atlas": {
@@ -1527,6 +1581,135 @@
         "end_year": 2021,
         "source_id": 124,
         "locator": "Methods 2(b): Experimental outline"
+      }
+    }
+  },
+  {
+    "slug": "mammalps-audio-behavior-benchmark",
+    "title": "MammAlps aligns animal sound with video-annotated behavior",
+    "taxon": "Mammals",
+    "kind": "Multimodal camera-trap benchmark",
+    "year": "2025",
+    "year_label": "Paper and dataset release year",
+    "source_ids": [
+      128,
+      129,
+      130,
+      131,
+      132,
+      133
+    ],
+    "review_depth": "Targeted review of arXiv v2 sections 3.1–3.4, 5, 7.1 and 9.1–9.2; exact Zenodo v3 metadata, README, file inventory and dataset license; official CVPR Open Access indexed excerpts from the main paper and supplementary section A.1; official GitHub README, evaluation interface and LICENSE.md. The direct CVF paper and supplement fetch returned 403, so only targeted indexed excerpts were reviewed for the published version. Other supplementary methods and archive contents were not reviewed; no data or code were downloaded or run.",
+    "finding": "MammAlps provides a real multimodal wildlife behavior benchmark: animal-centered video clips have matched audio and scene maps, with visible behavior labels assigned by two annotators. It evaluates observable actions and activities, not vocal meaning or animal translation.",
+    "limitations": "Five wild mammal species were recorded at three sites in the Swiss National Park over six weeks; the authors withhold the exact site locations. Collection dates conflict across versions: the arXiv v2 and official CVPR main text say June–August 2023, while the arXiv/CVPR supplementary section 7.1/A.1 and Zenodo v3 say August–October 2023. The conflict persists in the published version; direct CVF fetches returned 403 and only indexed excerpts were reviewed. The period is unresolved and is not used in the atlas timeline. The published split holds out days, not verified animal identities; cross-day individual independence is unestablished. Reviewed passages describe two annotators and an unknown class but do not establish inter-annotator agreement statistics or that labeling was audio-blind. The authors acknowledge subjective behavior categories and geographic/time limits. Version 3's full data archive is 87.9 GB. Dataset terms are CC BY-NC 4.0, which excludes Talk2Nature's commercial-capable benchmark path. No audio alignment, labels, model weights, preprocessing or published result were independently reproduced.",
+    "lesson": "This is a strong design comparator for testing whether sound adds predictive information beyond video, scene context and simple baselines. A behavior label is still not a message: define the prediction target, label provenance, modality ablations and grouped test before training.",
+    "next_review": "Keep as a noncommercial methods reference. Before any separately approved academic reproduction, inspect the exact v3 files and dense annotations, cross-day identity structure, label reliability, event/group leakage, code and checkpoint terms, compute and storage needs. For Talk2Nature's first commercial-capable benchmark, continue seeking permissively reusable synchronized recordings with independently observed behavior labels or prepare a reviewed passive protocol.",
+    "reviewed": "2026-10-11",
+    "expert_review": "Not independently reviewed by a wildlife behavior or bioacoustics specialist.",
+    "review_stage": "Targeted paper, release and benchmark-fit review",
+    "purpose": "Data & annotation",
+    "study_snapshot": [
+      [
+        "Study question",
+        "Can models recognize species and observable activities/actions from camera-trap audio, video and scene context? The benchmark does not test semantic translation."
+      ],
+      [
+        "Collection and sample",
+        "Nine camera traps across three sites in the Swiss National Park recorded six weeks of footage. Collection dates conflict across versions: the arXiv/CVPR main text says June–August 2023; the supplement and Zenodo v3 say August–October 2023. Only targeted indexed excerpts from the CVPR version were accessible. The paper describes 43 raw hours and 8.5 hours of curated individual tracks; Benchmark I contains 6,135 clips, five mammal species, 11 activities and 19 actions."
+      ],
+      [
+        "Observation and labels",
+        "Animal-centered video clips are paired with the matching audio and a scene-segmentation modality. Two annotators labeled visible actions and higher-level activities; unknown is available when behavior cannot be identified. The reviewed text does not establish annotator agreement or audio blinding."
+      ],
+      [
+        "Evaluation design",
+        "The published Benchmark I split is random at the day level with label-distribution matching. This is not evidence of unseen-animal generalization. Authors report modality ablations and three-run results; their baseline training used four A100 GPUs. Talk2Nature did not reproduce those results."
+      ],
+      [
+        "Release and rights",
+        "Zenodo version 3 (DOI 10.5281/zenodo.15588220) lists an 87.9 GB archive and a 13.5 MB dense-annotation file. The dataset is CC BY-NC 4.0; the official evaluation-code repository separately declares MIT. Neither component was acquired. No model-weight license was reviewed."
+      ],
+      [
+        "Project decision",
+        "Use as a noncommercial design comparator only. Do not include its media in Talk2Nature's shared training corpus or commercial product. Training remains NOT READY."
+      ]
+    ],
+    "review_locator": "arXiv v2: sections 3.1–3.4, 5, 7.1 and 9.1–9.2; official CVPR 2025 Open Access main-paper and supplement indexed excerpts (direct CVF fetch returned 403); Zenodo v3 README/files/license; official GitHub README, evaluation script and LICENSE.md. No full CVPR PDF/supplement review, other supplementary files, raw archive, data split audit, model weights or code execution.",
+    "atlas": {
+      "reviewed": "2026-10-11",
+      "location_status": "mapped",
+      "location_note": "The study names three sites in the Swiss National Park but withholds their exact locations. The map shows only an approximate park-region marker. The arXiv and CVPR main text, supplement, and Zenodo metadata conflict on collection months; the conflict persists in the indexed CVPR excerpts, so no observation period is plotted pending clarification.",
+      "locations": [
+        {
+          "place_id": "swiss-national-park",
+          "role": "study_region",
+          "source_id": 128,
+          "locator": "arXiv v2, section 3.1 and Supplementary section 7.1",
+          "basis": "The methods place three camera-trap sites in the Swiss National Park and explicitly withhold their exact locations. Only a coarse regional point is shown."
+        }
+      ],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "parrotlet-vocal-babbling-development",
+    "title": "Parrotlet babbling is vocal development, not call translation",
+    "taxon": "Parrots",
+    "kind": "Vocal development study",
+    "year": "2022",
+    "year_label": "Source year",
+    "source_ids": [134, 135, 136],
+    "review_depth": "Targeted PMC-indexed excerpts of the primary paper's abstract, conclusion and data-access statement; the exact Dryad dataset landing page, version, file inventory and current End User Terms; and an indexed excerpt from the official KBA location factsheet. The PMC page opened a CAPTCHA, the Dryad README returned HTTP 403, and the KBA page returned a cache miss. No paper PDF, supplement, dataset file or audio was downloaded or fully reviewed.",
+    "finding": "The study reports vocal babbling and repertoire development in free-ranging green-rumped parrotlet nestlings of both sexes. The paper describes a corticosterone-related repertoire difference and says the babbling repertoire was not yet integrated into functional contexts; this is developmental biology, not evidence of call translation.",
+    "limitations": "One wild species and a nestling developmental stage were studied at Hato Masaguaral in Guárico, Venezuela, during 2017–2018. The Dryad record lists 2.56 GB of audio bouts, a 43.91 MB spreadsheet of spectrographic measurements and a 4.75 KB README. The study includes corticosterone supplementation, so it is not a purely passive observation dataset. The README, measurement schema, individual/session joins, label provenance, audio-video synchronization, treatment groups, split design and model performance were not inspected. No receiver-response or controlled semantic-decoding result is established by the reviewed material. The article reuse license was not verified. Dryad's terms state CC0 by default unless otherwise indicated during submission, but the reviewed record did not surface whether this deposit has an exception; the dataset remains metadata-only pending exact rights and scientific-fit review.",
+    "lesson": "Parrot vocal development is a useful research direction and can help define age-aware questions, but a changing repertoire or hormone-associated difference is not a message. Preserve developmental stage, treatment and individual/session structure before considering any acoustic analysis. Do not use this archive as evidence for general parrot communication or as the first context benchmark.",
+    "next_review": "Verify the article's exact reuse terms and any item-specific Dryad exception; obtain the README through an authorized route; inspect the spreadsheet schema, study methods, individual/session linkage and treatment design; then ask an avian vocal-development reviewer whether a narrowly defined descriptive or developmental question is justified. Reassess the 2.60 GB acquisition only after those gates and a bounded storage plan are satisfied.",
+    "reviewed": "2026-10-11",
+    "expert_review": "Not yet independently reviewed by an avian vocal-development or bioacoustics specialist.",
+    "review_stage": "Targeted paper and dataset-lead review",
+    "purpose": "Vocal development",
+    "study_snapshot": [
+      [
+        "Study question",
+        "How does vocal babbling emerge in wild green-rumped parrotlet nestlings, and how is repertoire development associated with corticosterone? It does not test translation or conversation."
+      ],
+      [
+        "Species and setting",
+        "Free-ranging green-rumped parrotlets (Forpus passerinus), nestlings of both sexes, studied at Hato Masaguaral Research Station in Guárico, Venezuela."
+      ],
+      [
+        "Recording and deposit",
+        "Dryad describes audio-video bouts recorded inside specially designed nest cavities, spectrographic measurements for each element within each bout, and associated metadata. The May 2022 deposit lists 2.60 GB total; its README was not retrievable in this review."
+      ],
+      [
+        "Intervention and result boundary",
+        "The study included corticosterone supplementation. Its abstract reports larger repertoires after treatment had ended; the conclusion says babbling was not yet integrated into functional contexts. This is not a passive-playback protocol or evidence of semantic understanding."
+      ],
+      [
+        "Reuse and access",
+        "Dryad's current terms state CC0 by default unless a different term was indicated during submission. The record did not reveal an item-level exception, which remains to be checked before reuse. The article license is separate and unverified. No files were downloaded."
+      ]
+    ],
+    "review_locator": "Primary paper: PMC-indexed abstract, conclusion and data-access statement; exact Dryad record, Abstract, Methods, file inventory and current End User Terms; official KBA factsheet indexed location excerpt. Direct PMC access encountered CAPTCHA, Dryad README returned 403, and KBA page returned a cache miss.",
+    "atlas": {
+      "reviewed": "2026-10-11",
+      "location_status": "mapped",
+      "location_note": "The Dryad Methods name Hato Masaguaral Research Station in Guárico. The map uses a one-decimal regional marker; it does not identify nests or recording structures.",
+      "locations": [
+        {
+          "place_id": "guarico-venezuela",
+          "role": "study_region",
+          "source_id": 136,
+          "locator": "KBA factsheet, central coordinates; paper/Dryad Methods identify the study region",
+          "basis": "The paper and Dryad record place the study at Hato Masaguaral in Guarico. The KBA factsheet's indexed excerpt gives broader-site central coordinates; the public marker is rounded to one decimal and labeled as a region, not an exact nest or recording site."
+        }
+      ],
+      "observation_period": {
+        "label": "Field work: 2017–2018",
+        "start_year": 2017,
+        "end_year": 2018,
+        "source_id": 135,
+        "locator": "Dryad record, Methods"
       }
     }
   }

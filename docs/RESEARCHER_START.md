@@ -74,3 +74,7 @@ October 5 software continuation: a narrower [Audacity export](AUDACITY_EXPORT.md
 [CITATION.cff](../CITATION.cff) identifies the original software. Include the exact commit in methods; cite papers and external data separately. There is no archival DOI yet. Confirm release authors and archive scope before a future Zenodo deposit; copying a whole mixed-license repository into a software archive deserves an explicit review. See [reuse boundaries](OPEN_SOURCE.md).
 
 The kit can establish whether the workflow is understandable and reproducible. Real research still needs the [pilot gates](PILOT_PROTOCOL_DRAFT.md), a scientific reviewer, appropriate data rights and approved storage. No animal playback, recruitment or real-data intake is enabled here.
+
+### October 11 maintainer recheck
+
+A clean local clone was checked out at the pinned revision `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` using Python 3.12.5 and Node v22.22.1. The documented annotation command returned the expected 8-second synthetic record, two marked events and 2 seconds of union coverage. The split command returned 10 connected groups and 12/4/4 records; its output SHA-256 matched `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4`. The pinned revision's Python suite passed 51 tests and its Node suite passed 79 tests. This was a maintainer rerun from a clean checkout, not an independent reproduction; the clone used the local Git object database.

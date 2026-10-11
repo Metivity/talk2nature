@@ -148,6 +148,20 @@
       "precision": "region",
       "latitude": 32.3,
       "longitude": -106.8
+    },
+    {
+      "id": "swiss-national-park",
+      "label": "Swiss National Park region, Switzerland",
+      "precision": "region",
+      "latitude": 46.7,
+      "longitude": 10.2
+    },
+    {
+      "id": "guarico-venezuela",
+      "label": "Guárico region, Venezuela",
+      "precision": "region",
+      "latitude": 8.6,
+      "longitude": -67.6
     }
   ]
 }
