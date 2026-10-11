@@ -31,8 +31,12 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Fruit-bat calls and context',html)
             self.assertIn('Prat et al. 2017',html)
             self.assertIn('Mendeley Data version 3',html)
-            self.assertIn('official version 2/3 comparison',html)
+            self.assertIn('official version 1/2 and 2/3 comparisons',html)
             self.assertIn('https://data.mendeley.com/datasets/compare/mjfv43zgtv?old=2&amp;new=3',html)
+            self.assertIn('Mendeley Data version 1/2 comparison',html)
+            self.assertIn('https://data.mendeley.com/datasets/compare/mjfv43zgtv?new=2&amp;old=1',html)
+            self.assertIn('version 1 contained metadata only',html)
+            self.assertIn('https://data.mendeley.com/api/docs/',html)
             self.assertIn('held-out-animal',html)
             self.assertIn('index,follow',html)
             self.assertIn('https://fixture.github.io/talk2nature/research/egyptian-fruit-bat-data/',html)
@@ -136,7 +140,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
             self.assertIn('explicitly excludes AI-related projects',page)
             self.assertIn('software supply-chain datasets',page)
-            for source_id in (150,151,152):
+            for source_id in (150,151,152,154,155):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):

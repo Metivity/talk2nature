@@ -108,6 +108,9 @@ class CollectionTests(unittest.TestCase):
         self.assertIn('CC-BY-4.0',bat_encodings['rights']['license'])
         self.assertIn('separate 2017 archive',bat_encodings['decision'])
         self.assertIn('old=2&new=3',bat_encodings['rights']['evidence_url'])
+        self.assertIn('v1 contained metadata only',bat_encodings['review_depth'])
+        self.assertIn('API docs describe versioned public file-list routes',bat_encodings['review_depth'])
+        self.assertIn('Versions 2 and 3',bat_encodings['access'])
         self.assertEqual(bat_encodings['files'],[])
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog,[bat_encodings['id']])

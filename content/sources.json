@@ -1528,5 +1528,33 @@
       "deposit": "Versions 2 and 3 display CC BY 4.0; this does not independently establish upstream rights for any included example audio",
       "files": "The comparison exposes descriptions, not a verified per-file manifest or content review"
     }
+  },
+  {
+    "id": 154,
+    "title": "Egyptian fruit bat Mendeley Data version 1/2 comparison",
+    "url": "https://data.mendeley.com/datasets/compare/mjfv43zgtv?new=2&old=1",
+    "description": "Official comparison says version 1 contained metadata only; version 2 lists phrase.rar example WAVs, 326 sequence encodings, more than 28,000 syllable encodings and context annotations. The displayed CC BY 4.0 declaration does not establish provenance or rights for individual example audio files.",
+    "checked": "2026-10-11",
+    "origin": "Mendeley Data's official version 1/2 comparison reviewed October 11, 2026.",
+    "review_url": "https://data.mendeley.com/datasets/compare/mjfv43zgtv?new=2&old=1",
+    "review_url_label": "Official version 1 and 2 metadata comparison",
+    "rights": {
+      "deposit": "Versions 1 and 2 display CC BY 4.0; version 1 is described as metadata-only",
+      "files": "Version 2 lists a package with example WAVs, but the comparison does not expose a file-level manifest or upstream audio rights"
+    }
+  },
+  {
+    "id": 155,
+    "title": "Mendeley Data public dataset file-list API documentation",
+    "url": "https://data.mendeley.com/api/docs/",
+    "description": "Official API documentation describes public dataset and file-list endpoints with a dataset-version parameter. The endpoint was not queried in this review; no file manifest or file content was retrieved.",
+    "checked": "2026-10-11",
+    "origin": "Official Mendeley Data API documentation, reviewed through its indexed endpoint descriptions on October 11, 2026.",
+    "review_url": "https://data.mendeley.com/api/docs/",
+    "review_url_label": "Official Mendeley Data API documentation",
+    "rights": {
+      "metadata": "API documentation only; it does not grant rights to dataset files",
+      "files": "No dataset API response or file content was retrieved"
+    }
   }
 ]
