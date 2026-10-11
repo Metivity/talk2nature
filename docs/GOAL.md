@@ -203,4 +203,20 @@ October 7 follow-up: replaced the university page's link to its unpublished GitH
 
 Raviv asked for a coherence audit of the website and whole project, with concrete corrections. The audit confirms the public product is a research library plus local observation tools; it is not a shared recording database or animal translator. The urgent IIA funding entries have been rechecked against official pages, the home-page catalog counts clarified, and the dated findings and next gates are in `docs/PROJECT_AUDIT.md`.
 
-The live Pages site still returns its designed 404 for the local-only `/community/university/` and `/tools/interop/` routes. The current worktree includes those pages and their links, but they have not been deployed. Public observation upload, hosted private storage, a scientific lead/protocol and confirmed funding-applicant facts remain open. The local suites pass except for PostgreSQL integration, which the sandbox could not initialize because shared memory is denied. This audit does not authorize a release or funding submission.
+At the time of this audit, the live Pages site returned its designed 404 for `/community/university/` and `/tools/interop/`. Search Console live tests on October 11, 2026 supersede that finding: both exact routes returned HTTP 200 with page-specific HTML, loaded resources and no reported console messages. Both appear in the live sitemap and are available to Google, but neither live test proves indexing. Public observation upload, hosted private storage, a scientific lead/protocol and confirmed funding-applicant facts remain open. The local suites pass except for PostgreSQL integration, which the sandbox could not initialize because shared memory is denied. This audit does not authorize a release or funding submission.
+
+## October 9: adapt AutoResearch without compromising research validity
+
+Raviv asked whether Andrej Karpathy's popular open-source AutoResearch should be incorporated and asked me to decide and implement the right approach. Decision: adopt its narrow agent program, frozen evaluation, baseline-first iteration and complete keep/discard/crash log, but do not copy its single-GPU GPT trainer or run animal-data experiments. Talk2Nature has no admitted dataset and frozen, independently labeled benchmark for the proposed task, while the private model-run workflow remains metadata-only. Added `docs/AUTORESEARCH_ADAPTATION.md` and a clearly **NOT READY** `research/autoresearch/program.md`, linked them from the README and research/model decision records, and specified the scientific/data gates for a later run. No model, GPU job, recording, package or real data was used.
+
+## Active program: research, mobile tools, open source and discovery — October 11, 2026
+
+Continue the broader Talk2Nature goal through reviewable milestones across five connected tracks:
+
+1. Grow the source-grounded library of research, methods, datasets, code, organizations and funding. Preserve versions, review depth, provenance, component-specific rights, uncertainty and the distinction between a source record and an admitted research dataset.
+2. Make the Field Companion easier and more useful on phones, with simple observer workflows and optional advanced detail. Welcome observations about many animals while keeping scientific questions narrow, passive and species-specific.
+3. Improve open-source onboarding, reproducibility, contribution routes and maintainer continuity. Measure useful independent reproductions and task completion, not popularity alone.
+4. Improve technical and research-led SEO, then verify crawls and discovery evidence without promising rankings or claiming indexing that has not been checked.
+5. Prepare one reproducible ML benchmark only when rights-cleared data, independent labels, a qualified reviewer, leakage-safe grouped splits, baselines, a locked test set and safe execution are in place. Until then the AutoResearch program remains **NOT READY**.
+
+Select the next bounded milestone from the repository backlog, record the evidence and limitations, and run the relevant tests and builds. A source or software milestone does not by itself authorize participant-data intake, outside outreach, publication or deployment.

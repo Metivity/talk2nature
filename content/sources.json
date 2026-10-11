@@ -444,20 +444,28 @@
   {
     "id": 55,
     "title": "Monk parakeet vocal signatures",
-    "description": "Smeele et al. (2023). Caller individuality across vocalization types; primary abstract/introduction reviewed, not a replication.",
+    "description": "Smeele et al. (2023), final Royal Society Open Science article. Targeted abstract and methods/figure text reviewed from the primary PMC index; direct full-text retrieval was CAPTCHA-limited and the ANU repository PDF fetch timed out. The ANU record lists Open Access under CC BY 4.0.",
     "url": "https://doi.org/10.1098/rsos.230835",
-    "checked": "2026-10-04",
-    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json.",
-    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10548090/",
-    "review_url_label": "Open full text; Methods 2.1–2.2 checked via the Europe PMC article mirror"
+    "checked": "2026-10-11",
+    "origin": "October 11, 2026 targeted study-fit review; direct article text retrieval remained unavailable.",
+    "review_url": "https://openresearch-repository.anu.edu.au/items/4a5d9893-88f8-4a65-9a28-5d444909d869",
+    "review_url_label": "ANU repository record listing open access and CC BY 4.0",
+    "rights": {
+      "paper": "CC BY 4.0, as listed in the ANU institutional repository",
+      "linked_code_and_data": "Separate artifacts; see source records 56 and 57"
+    }
   },
   {
     "id": 56,
     "title": "Monk parakeet analysis repository",
-    "description": "Official MIT repository; selected code and 2020 annotations acquired at commit 293b2c8d0c3b8e21a4eaa0511fe563207095765a.",
+    "description": "Official repository pinned at commit 293b2c8d0c3b8e21a4eaa0511fe563207095765a. README/schema reviewed; selected code and 2020 annotations were separately acquired and inspected, not executed.",
     "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/tree/293b2c8d0c3b8e21a4eaa0511fe563207095765a",
-    "checked": "2026-09-30",
-    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json."
+    "checked": "2026-10-11",
+    "origin": "Pinned upstream snapshot; README field definitions and repository file inventory reviewed October 11, 2026.",
+    "rights": {
+      "repository_code": "MIT at the pinned commit",
+      "repository_data_and_audio": "Not covered by the code license alone; component terms require separate review"
+    }
   },
   {
     "id": 57,
@@ -1118,5 +1126,81 @@
     "description": "Official open-applications listing. Checked October 8, 2026; it lists the Tnufa and Pre-Seed deadlines on October 8 at 12:00 Israel time.",
     "checked": "2026-10-08",
     "origin": "Israel Innovation Authority live submission listing; checked October 8, 2026."
+  },
+  {
+    "id": 122,
+    "title": "No More Angry Birds: Investigating Touchscreen Ergonomics to Improve Tablet-Based Enrichment for Parrots",
+    "url": "https://doi.org/10.1145/3613904.3642119",
+    "description": "Kleinberger et al. (2024), CHI 2024. Reviewed the University of Glasgow record and abstract, author-lab summary, and targeted indexed PDF passages; the 19 MB PDF could not be fetched directly. The record lists CC BY-NC-ND 4.0 and displays 'Data Availability Statement: No'. No raw dataset or code package was reviewed.",
+    "checked": "2026-10-11",
+    "origin": "October 11, 2026 primary-source review; targeted published-PDF text and official author-lab summary reviewed. Full PDF, remaining tables, supplements and raw data not reviewed.",
+    "review_url": "https://eprints.gla.ac.uk/323000/",
+    "review_url_label": "University of Glasgow record and published-PDF access",
+    "rights": {
+      "paper": "CC BY-NC-ND 4.0, as listed by the University of Glasgow repository",
+      "study_data": "Repository displays 'Data Availability Statement: No'; no raw data were inspected and separate availability is unverified",
+      "study_code": "No code artifact or license was verified"
+    }
+  },
+  {
+    "id": 123,
+    "title": "INTERACT Animal Lab: No More Angry Birds project summary",
+    "url": "https://www.interactanimallab.com/projects/angrybirds",
+    "description": "Official author-lab project summary for the CHI 2024 parrot touchscreen study. Reports the study framing and broad findings; it is a project-page summary, not an independent evaluation or substitute for the full paper.",
+    "checked": "2026-10-11",
+    "origin": "Official INTERACT Animal Lab project page, accessed October 11, 2026; linked as an author-source summary.",
+    "rights": {
+      "webpage": "Copyright/redistribution terms not reviewed; linked for reference only"
+    }
+  },
+  {
+    "id": 124,
+    "title": "Budgerigar aging, vocal learning and social interaction study",
+    "url": "https://doi.org/10.1098/rspb.2023.0365",
+    "description": "Moussaoui et al. (2023), Proceedings of the Royal Society B. Abstract and targeted Methods passages reviewed from the primary PMC index; direct PMC page open encountered CAPTCHA. The article lists CC BY 4.0. The full supplement and raw audio were not reviewed or acquired.",
+    "checked": "2026-10-11",
+    "origin": "Targeted primary-source review of the abstract and Methods surfaced by PMC; article page open was CAPTCHA-limited.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10265024/",
+    "review_url_label": "Primary article record and targeted methods text",
+    "rights": {
+      "paper": "CC BY 4.0, as listed in the primary article record",
+      "linked_data_and_code": "Separate artifacts; review their terms independently"
+    }
+  },
+  {
+    "id": 125,
+    "title": "Budgerigar vocal-learning and social-interaction data",
+    "url": "https://doi.org/10.5061/dryad.fttdz08xr",
+    "description": "Dryad deposit updated February 5, 2024. File inventory includes call-feature tables, social-behavior coding, an interobserver-assessment workbook, example interaction video and R scripts; it does not list original call-audio recordings. No files were downloaded.",
+    "checked": "2026-10-11",
+    "origin": "Dryad landing-page metadata and file inventory reviewed October 11, 2026.",
+    "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.fttdz08xr",
+    "review_url_label": "Dryad dataset versions, files and README",
+    "rights": {
+      "dataset": "Dryad's reuse guide states that Dryad datasets are published under CC0; item-level per-file terms were not separately inspected",
+      "included_code": "R scripts are present in the deposit; no separate software license was verified"
+    }
+  },
+  {
+    "id": 126,
+    "title": "NMSU Animal Care Facility location",
+    "url": "https://space.nmsu.edu/maps-info/index.html",
+    "description": "New Mexico State University's building list places the Animal Care Facility in Las Cruces, New Mexico. Used only to generalize the study site to a city-level atlas marker.",
+    "checked": "2026-10-11",
+    "origin": "Official NMSU campus building list, accessed October 11, 2026.",
+    "rights": {
+      "webpage": "Linked for location reference; no map imagery or coordinates copied beyond an approximate city marker"
+    }
+  },
+  {
+    "id": 127,
+    "title": "Dryad dataset reuse and CC0 policy",
+    "url": "https://datadryad.org/help/guides/reuse",
+    "description": "Dryad's official reuse guide states that Dryad datasets are published under CC0 and recommends scholarly citation. This is repository-wide policy guidance, not a substitute for reviewing included software or other linked artifacts separately.",
+    "checked": "2026-10-11",
+    "origin": "Official Dryad data-reuse guide, accessed October 11, 2026.",
+    "rights": {
+      "policy_page": "Dryad webpage linked for reference only; no substantial text reproduced"
+    }
   }
 ]

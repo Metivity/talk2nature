@@ -32,6 +32,8 @@ Sources: [Perch model card](https://www.kaggle.com/models/google/bird-vocalizati
 | User-created parrot-app prototype / contributed recordings | A local app workspace was reviewed statically. No recording or dataset was reviewed; package/source provenance, audio rights and usable research observations remain unverified. | Reuse workflow ideas only. Do not copy code/media or treat its call labels and response signals as validated research data. |
 | New passive observation study | No recruited animals, protocol or collaborator. | Define with an appropriate scientist after founder context and access are known. |
 
+Update, October 11: the 2023 budgerigar aging study is a useful multimodal near-match, not a call-level context dataset. Calls were recorded from isolated focal birds while visually, but not acoustically, connected to flockmates; social actions were coded from separate home-flock video. The Dryad deposit lists derived call-feature tables and social coding but no original call WAVs. It may support a flock-level vocal-learning/sociality analysis after exact joins and review, but cannot train or test event-level sound-to-behavior prediction. See `content/research.json`, `content/sources.json` and `research/resources.json` for review depth, location, files and separate article/data/software terms.
+
 BEANS-Next metadata revision: `2fc58150c9541698ffc82aaf1f5d5a44993c54bf`. The dataset card lists CC BY-NC-SA 4.0 while its Croissant metadata describes mixed source licenses; retain per-record restrictions. A public test set is not a training set for reporting an independent benchmark result.
 
 Sources: [bark paper](https://aclanthology.org/2024.lrec-main.1432/), [BEANS task configuration](https://github.com/earthspecies/beans/blob/main/datasets.yml), [BEANS-Next card](https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next), [license metadata](https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next/blob/main/beans-next.croissant.json).
@@ -39,6 +41,8 @@ Sources: [bark paper](https://aclanthology.org/2024.lrec-main.1432/), [BEANS tas
 No reviewed route is yet admitted as Talk2Nature's context dataset. That is a project-specific finding, not a claim that suitable public data does not exist.
 
 Update, September 30: a subsequent bounded collection found and inspected a promising public monk-parakeet annotation table and associated MIT analysis code. It is still not admitted for training: behavior labels, uncertainty, identities and audio linkage need auditing. See `COLLECTION.md`, `research/resources.json` and `research/parrot_sample_report.json`. No recordings or model weights were acquired.
+
+Update, October 11: a targeted fit review changed the role of this candidate. The study asks whether known, individually marked monk parakeets can be identified across call types; it does not test behavior or call meaning. The cross-call-type protocol appears to hold recordings out while retaining known identity classes, so it should not be described as unseen-bird generalization. Use it only as a possible caller-identity reproduction comparator after split/reliability review. It is not the first context dataset. Direct full-text retrieval remained limited and no replication was run; see the dated note in `content/research.json` and `docs/COLLECTION.md`.
 
 ## Resume gate and first executable milestone
 
@@ -49,3 +53,7 @@ Update, September 30: a subsequent bounded collection found and inspected a prom
 5. Predefine metrics, background controls, cluster-aware uncertainty, calibration and abstention. Report failure cases and all prespecified comparisons. A predictive association alone does not establish meaning or two-way communication.
 
 Until these inputs exist, more model integration would commit the project to an untested task. The current code milestone remains the tested metadata/split foundation.
+
+## October 9 update: agent-assisted research
+
+Karpathy's AutoResearch is a useful model for a tightly scoped experiment loop, but its GPT pretraining code and validation bits-per-byte objective do not fit Talk2Nature's current research state. No model training was run or enabled. The project adopted a controlled, future-facing agent program with pre-run data/rights/label/split/baseline gates and a locked final test set. See [`AUTORESEARCH_ADAPTATION.md`](AUTORESEARCH_ADAPTATION.md); the runnable status remains **not ready**.

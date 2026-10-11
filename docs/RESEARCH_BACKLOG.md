@@ -52,3 +52,23 @@ No one in this list has been contacted or has agreed to participate. Prepare a c
 ## Model and data checkpoint
 
 See `docs/MODEL_DATA_DECISION.md` for exact candidate references, separate code/model terms and dataset-fit decisions. Perch-Hoplite is the current candidate tooling route; no model has been installed. The public library now includes a benchmark-label note. Further implementation depends on a concrete species/question and usable observations, not another general model survey.
+
+October 9 decision: adopt the experiment-control pattern from Karpathy's AutoResearch, not its language-model trainer. The project-specific agent program is explicitly not ready because no admitted, independently behavior-labeled dataset or frozen benchmark exists. See [`AUTORESEARCH_ADAPTATION.md`](AUTORESEARCH_ADAPTATION.md) and [`research/autoresearch/program.md`](../research/autoresearch/program.md).
+
+## October 11 checkpoint — animal-operated interfaces
+
+The targeted review of CHI 2024's parrot touchscreen ergonomics study (source 122; note `parrot-touchscreen-ergonomics`) now records the screened/trained sample, task, welfare provisions, study-specific multi-tap rule, outcome counts, paper license and unresolved data/code access. Evidence came from the University of Glasgow record and abstract, the authors' lab summary and selected indexed text from the repository-hosted PDF. The direct 19 MB PDF fetch failed, so the complete article and remaining tables were not inspected; this remains a bounded source review, not independent expert review.
+
+Decision: treat this as guidance for evaluating a possible parrot-operated enrichment interface, not for the current human-operated passive recorder, acoustic ML benchmark, animal communication or universal touchscreen defaults. Any such interface needs a separate welfare-reviewed protocol and individual/species-aware usability work. Next source step is to verify the remaining paper details and whether data or code can be lawfully obtained, then seek qualified independent review before prototyping. No animal data were acquired or used.
+
+## October 11 checkpoint — monk-parakeet dataset fit
+
+The targeted review of the 2023 monk-parakeet voiceprint study confirms a useful identity-method comparator, not a communication or context benchmark. The paper reports 5,599 vocalizations from 229 marked birds and individual signatures in three of five analyzed call types. Figure 4's cross-call-type evaluation appears to test caller identity for known individuals, not unseen-bird generalization; that is a design interpretation. The linked 2020/2021 annotation schemas differ, and free-text behavior labels are not independently verified context ground truth. Direct article retrieval was CAPTCHA/timeout limited; the supplement and observer-reliability workflow remain unreviewed. No recordings or weights were acquired, and no model was run.
+
+Decision: do not select this as the first context-prediction dataset or claim it demonstrates call meaning. If a caller-identity reproduction is chosen, inspect the split and reliability scripts and refresh component-specific data terms first. For the first context benchmark, prioritize a rights-cleared dataset with timestamp-linked audio and independently observed target behavior. See `COLLECTION.md`, `MODEL_DATA_DECISION.md` and the `parrot-data-feasibility` evidence note.
+
+## October 11 checkpoint — budgerigar vocal/sociality near-match
+
+Reviewed the primary abstract and targeted Methods text plus the Dryad deposit inventory and reuse policy. The study paired longitudinal contact-call features with home-flock social observations, but not at the same events: contact calls were recorded from individually isolated focal birds, while behavior labels came from separate flock videos. The Dryad file list includes derived call features, social-event coding, interobserver material and example video, but no original call audio. Dryad data are CC0 under its repository policy; the article and included software remain separate artifacts. No files were downloaded.
+
+Decision: retain as a protocol and annotation-schema comparator, not the first acoustic context benchmark. A small aggregate flock-level question is only a future option after exact joins, independent review and a suitable holdout. The immediate data requirement remains synchronized rights-cleared audio with independent event timestamps.

@@ -1,6 +1,6 @@
 # Open-source scope and reuse
 
-Reviewed October 4, 2026. This document explains the repository's existing licenses and contribution boundaries; it does not replace their legal text or provide trademark or patent clearance.
+Reviewed October 8, 2026. This document explains the repository's existing licenses and contribution boundaries; it does not replace their legal text or provide trademark or patent clearance. See the separate [preliminary Talk2Nature name-risk review](BRAND_REVIEW.md); the project name remains uncleared.
 
 ## The contribution we are making
 

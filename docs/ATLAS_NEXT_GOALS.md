@@ -1,12 +1,12 @@
 # Next atlas and observation goals
 
-Reviewed October 4, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
+Reviewed October 11, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
 
 These milestones describe the next program work. They are not claims of funding, recruitment, scientific approval, partnership or a release of participant data. The bounded October 4 software/research task is to expand geography and publish this board; completing it does not complete every future milestone.
 
 | Goal | Current state | Completion evidence | Next action |
 | --- | --- | --- | --- |
-| 20 notes with supported geography | 20 of 20; coverage target reached | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen abstract-only reviews and retain explicit unknowns in the remaining unmapped notes |
+| 20 notes with supported geography | 21 of 20; target reached and exceeded | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen abstract-only reviews and retain explicit unknowns in the remaining unmapped notes; do not optimize for pin count |
 | Three historical source notes | Three of three; coverage target reached | Three distinct notes with original source years before 2000, review depth and observation/source-date separation | Obtain full methods for the new historical notes and continue checking later reassessments |
 | One reviewed passive parrot pilot | Needs reviewer and access | Confirmed carers/species, avian specialist review, consent, independent labels, a successful physical-phone rehearsal | Resolve the access/reviewer checklist in `PILOT_PROTOCOL_DRAFT.md`; do not recruit or ingest real data prematurely |
 | First protected observation release | Needs consent and hosting review | Reviewed protocol/rights, private hosting, tested withdrawal, human review and an independently checked public location projection | Finish the existing hosting/consent gates before implementing public participant pins |

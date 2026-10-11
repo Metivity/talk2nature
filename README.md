@@ -20,6 +20,8 @@ Website: https://metivity.github.io/talk2nature/
 
 Start with a small [contribution](CONTRIBUTING.md). See [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md), [security reports](SECURITY.md) and the [open-science/community map](https://metivity.github.io/talk2nature/community/). We have no confirmed institutional partners or DPG recognition.
 
+For a future agent-assisted ML study, read the [AutoResearch adaptation](docs/AUTORESEARCH_ADAPTATION.md) and its [not-ready agent program](research/autoresearch/program.md). These define experiment safeguards; they do not start model training or approve real-data use.
+
 Our [open-source health and adoption plan](docs/OPEN_SOURCE_PRACTICE.md) explains how we make contributions useful, measure progress without vanity metrics and keep the project maintainable.
 
 Need help? See [SUPPORT.md](SUPPORT.md). University and research-software groups can start with the [synthetic evaluation brief](docs/UNIVERSITY_EVALUATION.md); it makes a narrow request for independent workflow feedback and sets out what is not yet ready for a real research pilot.
@@ -70,7 +72,7 @@ Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/G
 
 Original software: Apache-2.0 (see `LICENSE`). Original public summaries in `content/`: CC BY 4.0, attributed to Talk2Nature contributors. Source titles, bibliographic facts, linked articles, recordings, model weights and third-party material retain their own terms. No third-party audio or weights are distributed. See `NOTICE`.
 
-Read the [open-source scope and reuse guide](docs/OPEN_SOURCE.md) for commercial reuse, forks, contributor rights, model-license checks and the distinction between open code and permission to publish data. Talk2Nature is a working name; no trademark clearance or registered nonprofit status is claimed.
+Read the [open-source scope and reuse guide](docs/OPEN_SOURCE.md) for commercial reuse, forks, contributor rights, model-license checks and the distinction between open code and permission to publish data. See the [preliminary name-risk review](docs/BRAND_REVIEW.md) before using or promoting the Talk2Nature name. Talk2Nature is a working name; no trademark clearance or registered nonprofit status is claimed.
 
 ## Private research workspace (phase two)
 

@@ -21,6 +21,17 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(check_site(d)['public'])
             self.assertIn('https://fixture.github.io/talk2nature/research/',(Path(d)/'sitemap.xml').read_text())
 
+    def test_public_sitemap_rejects_urls_without_a_matching_canonical_page(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            sitemap=root/'sitemap.xml'
+            content=sitemap.read_text()
+            content=content.replace('<loc>https://fixture.github.io/talk2nature/</loc>','<loc>https://fixture.github.io/talk2nature/missing/</loc>',1)
+            sitemap.write_text(content)
+            with self.assertRaisesRegex(ValueError,'Sitemap URLs do not match canonical public HTML pages'):
+                check_site(root)
+
     def test_audacity_handoff_lab_is_mobile_site_content_with_bounded_claims(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -133,7 +144,7 @@ class SiteTests(unittest.TestCase):
             for field in ('question','decision','next_step','gate'):
                 self.assertTrue(path[field])
         for note in notes.values():
-            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi'))
+            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction'))
             if 'reuse' in note:
                 for field in ('status','asset','rights','experiment'):
                     self.assertTrue(note['reuse'][field])
