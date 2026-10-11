@@ -206,7 +206,7 @@ def build(output, base_url='', public=False, repo_url=''):
             label += ' · ' + esc(item['deadline_time'])
             deadline_source = source_map.get(item.get('deadline_source_id'))
             if deadline_source:
-                label += f' · <a href="{esc(deadline_source["url"])}">official deadline list</a>'
+                label += f' · <a href="{esc(deadline_source["url"])}">official date details</a>'
         return label
 
     opp_cards = ''.join(f'''<article class="opportunity"><div><span class="pill">{esc(o['status'])}</span><h2>{esc(o['name'])}</h2><p class="quiet">{esc(o['type'])} · {opportunity_deadline(o)}</p></div><div><p><strong>{esc(o['amount'])}</strong></p><p>{esc(o['fit'])}</p><p>{esc(o['next_action'])}</p><a class="text-link" href="{esc(source_map[o['source_id']]['url'])}">Official program ↗</a><p class="fine">Checked {esc(o['verified'])} · {esc(o['application_status'])}</p></div></article>''' for o in opportunities)

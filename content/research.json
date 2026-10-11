@@ -761,28 +761,25 @@
   },
   {
     "slug": "animal2vec-meerkat",
-    "title": "animal2vec: learn from rare calls and quiet intervals",
+    "title": "animal2vec and MeerKAT: rare-call detection, not translation",
     "taxon": "Mammals",
     "kind": "Model and dataset",
-    "year": "2024",
-    "source_ids": [
-      66,
-      67
-    ],
-    "review_stage": "Abstract & documentation reviewed",
-    "review_depth": "Primary abstract and official README, including recording setup and dataset link. Edmond files, statistical methods and model checkpoints not inspected.",
-    "finding": "animal2vec targets sparse, unevenly distributed animal sounds. Its companion MeerKAT resource includes precisely timed meerkat vocalization annotations.",
-    "limitations": "The documented recordings largely come from animal-worn devices; others used nearby directional microphones. They are not an unattended-phone benchmark. No transfer result has been measured by Talk2Nature.",
-    "lesson": "Keep background intervals in an approved evaluation set. Testing only retained loud clips cannot measure what the detector missed.",
-    "next_review": "Review event metrics and individual/day split construction; resolve dataset access and exact audio/annotation licenses.",
-    "reviewed": "2026-10-01",
+    "year": "2024–2026",
+    "source_ids": [66, 67, 146, 147, 148, 149],
+    "review_stage": "Targeted peer-reviewed methods, results and rights review",
+    "review_depth": "Reviewed the 2026 published article's dataset methods, class definitions, annotation quality, evaluation design/results, discussion, ethics and data-availability statement; the official animal2vec repository and README; and the article's separate dataset, code and checkpoint license statements. The article supplement, deposited files/manifests, archived code contents and model weights were not inspected or acquired. No published result was reproduced.",
+    "finding": "The peer-reviewed study presents animal2vec as a rare-event bioacoustic detector/classifier and MeerKAT as 1,068 hours of 8 kHz meerkat audio, including 184 hours with complete event labels across 66,398 ten-second samples. The paper reports eight vocalization classes and three non-call event classes, overlapping labels, millisecond event boundaries and inter-annotator timing reliability just over 10 ms. It is a valuable example of continuous audio, quiet/background intervals and event-based precision–recall evaluation.",
+    "limitations": "The data combine animal-worn collars and close directional microphones, not ordinary phone recordings. The paper describes a stratified five-fold split over samples but this review did not verify that folds separate animals, days or source recordings. Public filenames are randomized and identity/time order are intentionally unavailable; the authors say these can be requested. A separate held-out-data analysis is not evidence of unseen-animal generalization. The focal label is an analyst's source attribution based partly on relative intensity, spectral change and context; it is not meaning. Predicting assigned call categories, including labels such as alarm or social call, does not demonstrate receiver comprehension or translation. Dataset and checkpoints are CC BY-NC 4.0; the code is MIT. Those rights are separate, and the data/weights are outside the project's commercial-capable path. No media, code or weights were acquired or run.",
+    "lesson": "A useful first ML task can be bounded event detection with complete quiet intervals, explicit source labels and event-level metrics. It must remain separate from context inference, meaning and translation, and it needs animal/session-aware evaluation where authorized group keys exist.",
+    "next_review": "Keep as a methods reference. Before any separate non-commercial reproduction, inspect the exact Edmond inventory and code archive, verify all component terms and dependencies, obtain authorized animal/session grouping metadata, and preregister a leakage-safe evaluation with a qualified reviewer.",
+    "reviewed": "2026-10-11",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "year_label": "Source year",
     "reuse": {
-      "status": "Candidate for detection study",
-      "asset": "animal2vec training code; linked MeerKAT dataset",
-      "rights": "Repository declares MIT for code. Dataset and checkpoint terms are not verified here; acquisition remains pending.",
-      "experiment": "Use independently annotated continuous audio to measure missed events and false alarms per hour, including quieter calls."
+      "status": "Methods reference; no project benchmark admission",
+      "asset": "animal2vec code (MIT); MeerKAT audio/labels and animal2vec checkpoints (CC BY-NC 4.0)",
+      "rights": "The peer-reviewed article identifies separate code, data and model-weight terms. The non-commercial data and checkpoint licenses do not permit inclusion in the project's commercial-capable corpus. No files were acquired.",
+      "experiment": "If a separately governed non-commercial reproduction is justified, evaluate only event detection/call-label prediction and report event-level precision, recall and false alarms; do not interpret outputs as messages."
     },
     "purpose": "Models & evaluation",
     "atlas": {
@@ -793,8 +790,8 @@
         {
           "place_id": "kalahari",
           "role": "study_region",
-          "source_id": 66,
-          "locator": "Section 3: MeerKAT dataset",
+          "source_id": 146,
+          "locator": "Section 2.1: The MeerKAT bioacoustic dataset",
           "basis": "The paper locates collection at the Kalahari Research Centre in South Africa. This is a regional locator, not a tracking location."
         }
       ],
@@ -802,8 +799,8 @@
         "label": "Field seasons: Aug–Sep 2017 and Jul–Aug 2019",
         "start_year": 2017,
         "end_year": 2019,
-        "source_id": 66,
-        "locator": "Section 3: data collection"
+        "source_id": 146,
+        "locator": "Section 2.1: data collection"
       }
     }
   },
@@ -1778,5 +1775,36 @@
         "locator": "Pinned dataset card, dataset description and recording-period fields"
       }
     }
+  },
+  {
+    "slug": "egyptian-fruit-bat-data",
+    "title": "Fruit-bat calls and context: a rich dataset, not a translation key",
+    "taxon": "Egyptian fruit bat (Rousettus aegyptiacus)",
+    "kind": "Audiovisual dataset and context-classification review",
+    "year": "2017–2023",
+    "year_label": "Data descriptor and follow-up study years",
+    "source_ids": [65, 142, 143, 144, 145, 153],
+    "reviewed": "2026-10-11",
+    "review_stage": "Targeted primary literature, dataset and rights review",
+    "review_depth": "Reviewed the 2017 Scientific Data article's abstract, methods, data records, technical validation, usage and rights sections; the 2016 Scientific Reports results and classification methods; the 2023 iScience abstract, dataset description, sequence-HMM methods/results, discussion and data statement; the Mendeley Data version 3 description/license and official version 2/3 comparison; and the NLM catalog entry for a Figshare subitem. No supplementary files, exact data-file manifest, raw media, code or model weights were inspected or acquired, and no published result was reproduced.",
+    "finding": "The 2017 archive describes 293,238 Egyptian fruit-bat WAV files recorded at 250 kHz and 16-bit, plus 91,080 labels derived from synchronized video, including caller, addressee, behavior and social context. The data descriptor reports a post-hoc recheck of 435 annotations, with a 4% estimated context-label error rate (95% CI 2.2–5.8%). This is an unusually useful design for studying acoustic associations with independently observed behavior.",
+    "limitations": "The 2016 analysis reported 61% balanced accuracy for four aggressive contexts versus 25% chance, using 14,863 calls from seven adult females. Its vocalization-level cross-validation does not establish generalization to held-out bats. The 2023 follow-up used sequences from three adult females; the context HMM used 326 sequences (2,953 syllables), formed 12,900 n-grams and reported overall balanced accuracy 66 ± 10 under random eight-fold cross-validation. Shuffling syllable order left the score unchanged. These are predictions of observer-coded context, not evidence that bats or humans interpret a call as a message. The 2023 authors say behavioral experiments are needed to establish biological relevance. The laboratory archive used synchronized video, isolated chambers and specialized 250 kHz ultrasound recording; ordinary phone recordings cannot be assumed to match its bandwidth, calibration or capture conditions. The 2017 article's CC0 waiver covers its metadata files, while the NLM catalog's CC0 listing for Figshare item 4556074 could not be verified at the direct deposit. Mendeley version 3 declares CC BY 4.0 for its separate deposit, but individual files and upstream audio provenance were not inspected. No archive, audio, annotations, encodings, code or weights were acquired or run.",
+    "lesson": "This work offers a strong template for linking sound to independently observed context, auditing annotation uncertainty, and separating acoustic prediction from receiver comprehension. For a new benchmark, split by animal and session, keep context-only and background controls, audit duplicate calls and channels, and reserve receiver-response experiments for a separate hypothesis.",
+    "next_review": "Resolve direct Figshare item and per-file rights; inspect the exact Mendeley version 3 file inventory and its provenance; then assess a small, grouped, rights-compatible baseline only if the files and labels support a defensible held-out-animal question. Keep the AutoResearch program NOT READY until all project gates are met.",
+    "expert_review": "Not independently reviewed by a bat bioacoustics or animal-communication specialist.",
+    "review_locator": "Prat et al. 2017, Methods, Data Records, Technical Validation, Usage Notes and Rights; Prat et al. 2016, Results: Collected data and context identification, and Methods: Classification algorithm and cross validation; Amit and Yovel 2023, Results and Methods: Examining context using HMMs; Mendeley Data version 3 landing page and official versions 2/3 comparison. Full supplements and artifacts not reviewed.",
+    "reuse": {
+      "status": "Metadata-only research lead",
+      "asset": "Video-aligned caller, addressee, context and behavior labels, with a reported sampled annotation quality check",
+      "rights": "The publisher's CC0 waiver applies to metadata files; an NLM catalog entry reports CC0 for a Figshare item but the direct deposit record was unavailable. Mendeley version 3 separately declares CC BY 4.0. Verify each component and file before acquisition or reuse.",
+      "experiment": "Before any model work, freeze a deduplication and held-out-animal/session split, document label definitions and uncertainty, compare acoustic with background/context-only baselines, and state whether outcomes are context association or receiver behavior."
+    },
+    "purpose": "Data & annotation",
+    "study_snapshot": [
+      ["Archive", "293,238 WAV files (250 kHz, 16-bit); 91,080 video-derived annotations; 435 sampled annotations rechecked, with 4% context-label error estimated."],
+      ["2016 context analysis", "14,863 calls from seven adult females; four aggressive contexts; 61% balanced accuracy versus 25% chance. Vocalization-level cross-validation is not held-out-animal validation."],
+      ["2023 sequence analysis", "Three adult females; 326 labeled sequences and 2,953 syllables in the HMM; 12,900 n-grams; 66 ± 10 balanced accuracy with random eight-fold cross-validation. Randomized syllable order did not reduce the reported score."],
+      ["Rights and status", "Figshare item rights remain unverified directly. Mendeley version 3 declares CC BY 4.0, with file-level provenance still unchecked. Both catalog entries remain metadata-only; no files were acquired or run."]
+    ]
   }
 ]

@@ -97,12 +97,49 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(retrieval_code['files'],[])
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog,[retrieval_code['id']])
+        bat_archive=next(r for r in self.catalog['resources'] if r['id']=='egyptian-fruit-bat-audiovisual-archive')
+        self.assertEqual(bat_archive['acquisition'],'metadata_only')
+        self.assertTrue(bat_archive['rights']['license'].startswith('unresolved:'))
+        self.assertEqual(bat_archive['files'],[])
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog,[bat_archive['id']])
+        bat_encodings=next(r for r in self.catalog['resources'] if r['id']=='fruit-bat-sequence-encodings')
+        self.assertEqual(bat_encodings['acquisition'],'metadata_only')
+        self.assertIn('CC-BY-4.0',bat_encodings['rights']['license'])
+        self.assertIn('separate 2017 archive',bat_encodings['decision'])
+        self.assertIn('old=2&new=3',bat_encodings['rights']['evidence_url'])
+        self.assertEqual(bat_encodings['files'],[])
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog,[bat_encodings['id']])
         for field, value in [('license', 'unknown'), ('commercial_use', 'unresolved')]:
             with self.subTest(field=field):
                 c = copy.deepcopy(self.sample)
                 c['resources'][0]['rights'][field] = value
                 with self.assertRaises(ValueError):
                     validate(c)
+
+    def test_meerkat_components_keep_separate_rights_and_stay_metadata_only(self):
+        by_id = {r['id']: r for r in self.catalog['resources']}
+        expected = {
+            'animal2vec-meerkat-paper-final': 'paper',
+            'meerkat-audio-label-dataset': 'dataset',
+            'animal2vec-code': 'code',
+            'animal2vec-model-weights': 'model',
+        }
+        for identifier, kind in expected.items():
+            with self.subTest(resource=identifier):
+                resource = by_id[identifier]
+                self.assertEqual(resource['kind'], kind)
+                self.assertEqual(resource['acquisition'], 'metadata_only')
+                self.assertEqual(resource['files'], [])
+                with self.assertRaisesRegex(ValueError, 'Not admitted'):
+                    plan(self.catalog, [identifier])
+        self.assertEqual(by_id['meerkat-audio-label-dataset']['rights']['license'],
+                         'CC-BY-NC-4.0 as stated in the peer-reviewed paper')
+        self.assertEqual(by_id['meerkat-audio-label-dataset']['rights']['commercial_use'],
+                         'not_admitted')
+        self.assertIn('MIT', by_id['animal2vec-code']['rights']['license'])
+        self.assertIn('CC-BY-NC-4.0', by_id['animal2vec-model-weights']['rights']['license'])
 
     def test_version_urls_and_local_names_are_constrained(self):
         invalid = [

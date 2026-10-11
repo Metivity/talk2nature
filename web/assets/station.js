@@ -5,6 +5,7 @@ import {stationPreset} from './station-preset.mjs';
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
 import {sessionFiles, zipFiles} from './station-export.mjs';
 import {AudioSession} from './station-audio.mjs';
+import {emptyEventsMessage, nextEventFocusId} from './station-review-ui.mjs';
 
 const $ = id => document.getElementById(id);
 let session = null, capture = null, active = false, pending = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
@@ -140,15 +141,21 @@ function renderMarkers() {
 function download(content, name, type) {
   const url = URL.createObjectURL(new Blob([content], {type})), link = document.createElement('a'); link.href = url; link.download = name; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000);
 }
-function renderEvents() {
+function renderEvents(focusEventId = null) {
   const recap = sessionRecap(session); $('station-recap').hidden = !recap;
   if (recap) { $('station-recap-title').textContent = recap.title; $('station-recap-detail').textContent = recap.detail; }
   const list = $('station-events'); list.replaceChildren();
-  if (!session?.events.length) { const p = document.createElement('p'); p.className = 'station-empty'; p.textContent = session?.mode === 'window' ? active ? 'Your full window will appear here when recording stops.' : 'No audio window retained.' : 'Your first sound event will appear here.'; list.append(p); return; }
+  if (!session?.events.length) {
+    const p = document.createElement('p'); p.className = 'station-empty'; p.setAttribute('role', 'status'); p.textContent = emptyEventsMessage(session, active);
+    list.append(p);
+    return;
+  }
+  let focusHeading = null;
   for (const event of session.events) {
     const card = document.createElement('article'); card.className = 'station-event';
     const title = document.createElement('h3'), detail = document.createElement('p'), sourceLabel = document.createElement('label'), select = document.createElement('select');
     title.textContent = session.mode === 'window' ? session.exportRecord().sampling.complete ? 'Your full 30-second moment' : 'Partial observation window' : `Sound ${event.id} · ${formatTime(event.onset_seconds)}`;
+    if (event.id === focusEventId) { title.tabIndex = -1; focusHeading = title; }
     detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · ${session.origin === 'synthetic' ? 'synthetic audio' : 'microphone audio'} · source ${event.source_label}`;
     sourceLabel.textContent = session.mode === 'window' ? 'Main source, if known (mixed or quiet? Leave uncertain)' : 'What made this sound?'; select.setAttribute('aria-label', `Source of sound ${event.id}`); select.disabled = active || pending || exporting;
     for (const source of SOURCE_LABELS) { const option = document.createElement('option'); option.value = source; option.textContent = source; select.append(option); } select.value = event.source_label;
@@ -159,9 +166,23 @@ function renderEvents() {
     for (const [label, action] of [
       ['Review audio', () => { silencePlayer(); playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'})); $('station-player').src = playerUrl; $('station-player').hidden = false; $('station-player').focus(); status(`${session.mode === 'window' ? 'Observation window' : `Sound ${event.id}`} ready in the audio player. Use headphones away from animals; press Play to review.`); }],
       ['Save WAV', () => { download(wavBytes(event.pcm, session.sampleRate), session.audioFilename(event.id), 'audio/wav'); status(`Sound ${event.id} download requested. Review it before sharing.`); }],
-      ['Discard clip', () => { silencePlayer(); session.discard(event.id); dirty = true; renderEvents(); renderMarkers(); metrics(); }]
+      ['Discard clip', () => {
+        silencePlayer();
+        const removedIndex = session.events.findIndex(candidate => candidate.id === event.id);
+        session.discard(event.id); dirty = true;
+        const nextFocusId = nextEventFocusId(session.events, removedIndex);
+        renderEvents(nextFocusId); renderMarkers(); metrics();
+        if (!nextFocusId) {
+          exportStatus(`Clip ${event.id} discarded. No audio clips remain; the session journal keeps the discard records.`);
+          const feedback = $('station-save-status'); feedback.focus({preventScroll: true}); feedback.scrollIntoView({block: 'center', inline: 'nearest'});
+        }
+      }]
     ]) { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.setAttribute('aria-label', `${label} ${event.id}`); button.disabled = active || pending || exporting; button.addEventListener('click', action); buttons.append(button); }
     card.append(title, detail, sourceLabel, details, buttons); list.append(card);
+  }
+  if (focusHeading) {
+    focusHeading.focus();
+    focusHeading.scrollIntoView({block: 'center', inline: 'nearest'});
   }
 }
 function modeGuidance() {

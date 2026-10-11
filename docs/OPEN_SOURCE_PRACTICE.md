@@ -18,6 +18,12 @@ The plan follows GitHub's repository and community-health guidance, the Open Sou
 
 This release adds a pull-request checklist and issue-form contact links so a newcomer can find contribution, support, security and conduct guidance at the point they need it.
 
+## October 11 follow-up: make the first contribution concrete
+
+The repository now has three explicit entry tasks in `CONTRIBUTING.md`: try the microphone-free phone rehearsal, reproduce the synthetic researcher kit from a clean checkout, or check one claim against its primary source. Each task states what to report and links to the matching issue form. This is a contributor guide, not a claim that tasks have been independently completed or that a public invitation has been sent. No recording, model, or private data is needed for these starts.
+
+Next measure whether a first-time contributor can choose a task and submit a useful report without maintainer guidance. Keep the report self-declared as independent, assisted or maintainer-led; a passing form or CI run does not prove adoption or biological validity.
+
 ## Measures that fit the project
 
 Review these quarterly, using issue/PR records and voluntary reports rather than adding analytics or collecting user media:

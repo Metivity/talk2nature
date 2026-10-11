@@ -21,6 +21,39 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(check_site(d)['public'])
             self.assertIn('https://fixture.github.io/talk2nature/research/',(Path(d)/'sitemap.xml').read_text())
 
+    def test_bat_dataset_review_is_a_discoverable_source_linked_page(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            note=root/'research/egyptian-fruit-bat-data/index.html'
+            html=note.read_text()
+            self.assertIn('Fruit-bat calls and context',html)
+            self.assertIn('Prat et al. 2017',html)
+            self.assertIn('Mendeley Data version 3',html)
+            self.assertIn('official version 2/3 comparison',html)
+            self.assertIn('https://data.mendeley.com/datasets/compare/mjfv43zgtv?old=2&amp;new=3',html)
+            self.assertIn('held-out-animal',html)
+            self.assertIn('index,follow',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/egyptian-fruit-bat-data/',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/egyptian-fruit-bat-data/',(root/'sitemap.xml').read_text())
+
+    def test_meerkat_review_exposes_final_evidence_component_rights_and_canonical(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            note=root/'research/animal2vec-meerkat/index.html'
+            html=note.read_text()
+            self.assertIn('animal2vec and MeerKAT',html)
+            self.assertIn('Methods in Ecology and Evolution',html)
+            self.assertIn('CC BY-NC 4.0',html)
+            self.assertIn('MIT',html)
+            self.assertIn('receiver comprehension',html)
+            self.assertIn('index,follow',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/animal2vec-meerkat/',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/animal2vec-meerkat/',(root/'sitemap.xml').read_text())
+
     def test_public_sitemap_does_not_claim_unverified_page_modification_dates(self):
         with tempfile.TemporaryDirectory() as d:
             build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
@@ -96,9 +129,15 @@ class SiteTests(unittest.TestCase):
             page=(root/'opportunities/index.html').read_text()
             self.assertEqual(sum(source['id']==121 for source in load('sources')),1)
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
-            self.assertIn('official deadline list',page)
-            self.assertIn('Checked 2026-10-07 · Not submitted',page)
-            self.assertIn('no entity or investor facts are confirmed',page)
+            self.assertIn('official date details',page)
+            self.assertIn('Checked 2026-10-11 · Not submitted; not recommended for current scope',page)
+            self.assertIn('No company or investor facts are confirmed',page)
+            self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
+            self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
+            self.assertIn('explicitly excludes AI-related projects',page)
+            self.assertIn('software supply-chain datasets',page)
+            for source_id in (150,151,152):
+                self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):
         with tempfile.TemporaryDirectory() as d:
