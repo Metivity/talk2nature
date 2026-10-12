@@ -41,6 +41,7 @@ def build_resource_directory(root: Path, base: str, page):
     catalog = json.loads((root / 'research/resources.json').read_text())
     resources = catalog['resources']
     kind_labels = {'paper': 'Paper', 'dataset': 'Dataset', 'code': 'Code', 'model': 'Model'}
+    acquisition_labels = {'metadata_only': 'Metadata only', 'sample_approved': 'Limited sample route'}
     kind_options = ''.join(
         f'<option value="{kind}">{kind_labels[kind]}</option>'
         for kind in ('paper', 'dataset', 'code', 'model')
@@ -50,8 +51,11 @@ def build_resource_directory(root: Path, base: str, page):
     for item in resources:
         rights = item['rights']
         title = esc(item['title'])
+        acquisition_label = acquisition_labels.get(item['acquisition'])
+        if acquisition_label is None:
+            raise ValueError(f"Unknown resource-acquisition label: {item['acquisition']}")
         entries.append(f'''<article class="resource-entry" data-kind="{esc(item['kind'])}">
-<div class="resource-heading"><div><p class="eyebrow">{kind_labels[item['kind']]} · Catalog reviewed {esc(item['reviewed'])}</p><h2><a href="{https_href(item['url'])}" rel="external noopener">{title} <span aria-hidden="true">↗</span></a></h2></div><span class="resource-status">{esc(item['acquisition'])}</span></div>
+<div class="resource-heading"><div><p class="eyebrow">{kind_labels[item['kind']]} · Catalog reviewed {esc(item['reviewed'])}</p><h2><a href="{https_href(item['url'])}" rel="external noopener">{title} <span aria-hidden="true">↗</span></a></h2></div><span class="resource-status">{esc(acquisition_label)}</span></div>
 <p class="resource-task">{esc(item['task'])}</p>
 <details class="resource-details"><summary>Review, rights and research limits</summary>
 <dl class="resource-facts">
@@ -78,7 +82,7 @@ def build_resource_directory(root: Path, base: str, page):
     page(
         'research/resources/',
         'Research resources: papers, datasets, code and models',
-        f'Browse {len(resources)} animal communication papers, datasets, code and models with review depth, rights scope and research limitations.',
+        f'Browse {len(resources)} papers, datasets, software and model references for animal communication and reproducible research, with review depth, rights scope and limitations.',
         body,
         active='research/',
         extra_head=f'<link rel="stylesheet" href="{base}/assets/resources.css"><script defer src="{base}/assets/resources.js"></script>',

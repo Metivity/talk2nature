@@ -2,7 +2,7 @@
 
 **Status: NOT READY — do not start model training.**
 
-This file adapts the small-scope agent instructions in [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) to a future Talk2Nature benchmark. See [the adaptation decision](../../docs/AUTORESEARCH_ADAPTATION.md). It is not a training script or permission to access real recordings.
+This file adapts the experiment-control pattern in [Karpathy's AutoResearch at the reviewed revision](https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117) to a future Talk2Nature benchmark. See [the adaptation decision](../../docs/AUTORESEARCH_ADAPTATION.md). It is not a training script or permission to access real recordings; no upstream code is included.
 
 ## Current task
 
