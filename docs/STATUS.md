@@ -2,6 +2,16 @@
 
 Updated October 12, 2026. The latest verified Pages content release is `9faa7a7` (PR #43; successful manual Pages workflow run [#38291174874](https://github.com/Metivity/talk2nature/actions/runs/38291174874)). The research-resource route returns HTTP 200 with its self-canonical URL, `index,follow`, updated search description and the pinned AutoResearch record. The public knowledge graph links it to source 214. The sitemap contains 88 project URLs and `robots.txt` names the exact sitemap. These checks verify publication and crawl configuration, not search-engine ingestion. No Search Console or URL Inspection tool/report was available in this task; indexing and search performance remain unverified. Private hosting, physical-phone testing, specialist review and an independently reproduced scientific benchmark remain open.
 
+## October 12 direct Station-to-Review path
+
+**Question:** can someone annotate one clip from a saved Station session without unzipping files or losing the relationship to the original observation?
+
+**Change:** Review can now open a Station session ZIP locally, verify its WAV hashes and declared recording metadata, and offer retained clips for annotation. A selected clip opens the existing Listen review flow without autoplay. Its `.t2n` notebook carries the validated full session journal and selected event ID as source provenance; source labels do not become annotation labels. CSV includes session/event IDs and clip bounds. The original ZIP remains the full session archive. Updated the Station, Listen, Audacity and mobile workflow docs.
+
+**Checks:** 89 Python tests and 98 Node tests pass. The local build produces 88 pages plus 404; the site checker passes for 89 HTML pages and 4,041 links. Headless Chrome at 320, 390 and 1,440 CSS pixels reports no horizontal overflow. At 390 pixels, a synthetic ZIP was imported, a clip reviewed with playback paused, the source-journal limitation displayed, and a `.t2n` notebook downloaded. No JavaScript errors occurred.
+
+**Limits and state:** browser-emulated and synthetic-only. No real animal recording, physical phone, screen-reader review or independent evaluator was involved. Hash validation proves byte correspondence, not rights, identity or meaning. This is a local release candidate on `codex/station-review-bridge`; it has not been pushed, merged or deployed.
+
 ## October 12 researcher-entry path
 
 **Question:** can a first-time researcher begin with the least setup, understand what the app can and cannot establish, and choose a deeper export check only if useful?

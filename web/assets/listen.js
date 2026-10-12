@@ -2,9 +2,10 @@ import {animalPicker} from './animal-picker.mjs';
 import {VERSION, MAX_BYTES, readWav, syntheticWav, validateDocument, eventCsv} from './listen-model.mjs';
 import {MAX_NOTEBOOK_BYTES, makeNotebook, readNotebook} from './notebook.mjs';
 import {audacityPackage} from './audacity-export.mjs';
+import {MAX_BUNDLE_BYTES, openSessionBundle, sessionSummary} from './session-import.mjs';
 
 const $ = id => document.getElementById(id);
-let audioBytes = null, recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0;
+let audioBytes = null, recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0, sessionBundle = null, sessionImportRevision = 0;
 const animal = animalPicker(document, 'listen', () => { if (recording) dirty = true; });
 const ids = ['recording-id', 'session-id', 'individual-id', 'annotator-id'];
 const status = message => { $('listen-status').textContent = message; };
@@ -36,6 +37,37 @@ function resetEditor() {
   editing = null; draftDirty = false; $('export-status').textContent = ''; $('draft-status').textContent = ''; $('event-form').reset(); $('edit-heading').textContent = 'Mark a sound event.';
   $('save-event').textContent = 'Add event +'; $('cancel-edit').hidden = true; $('event-error').textContent = '';
   $('event-end').value = Math.min(1, recording?.duration_seconds || 1); draw();
+}
+function stationSourceMessage(source) {
+  const {journal,event_id:eventId}=source, event=journal.events.find(item=>item.id===eventId);
+  const whole=journal.schema==='talk2nature.observation-window.v1';
+  const description=whole?'Continuous observation window; it is not a detected vocalization.':'Selected sound highlight; it is not confirmation of an animal sound.';
+  return `${whole?'Whole moment':'Station clip'} · ${event.clip_start_seconds.toFixed(3)}–${event.clip_end_seconds.toFixed(3)} s within ${journal.duration_seconds.toFixed(3)} s. ${description}\nThe full session journal, including notes and declarations, is copied into this notebook as source context, not as annotation labels. The notebook is unencrypted; review before sharing.`;
+}
+function renderStationBundle(bundle) {
+  const {record,clips}=bundle, summary=sessionSummary(bundle), list=$('session-clip-list');
+  list.replaceChildren(); $('session-clip-picker').hidden=false;
+  $('session-import-summary').textContent=`${summary.kind} · ${record.duration_seconds.toFixed(1)} seconds observed · ${clips.length} retained clip${clips.length===1?'':'s'} · ${summary.discarded} discarded.`;
+  if(!clips.length) {
+    $('session-import-status').textContent='No clips were retained in this session. An empty session is not evidence of silence; open it in Compare to inspect its journal.';
+    return;
+  }
+  $('session-import-status').textContent='Session checked on this device. Choose a clip to annotate.';
+  for(const clip of clips) {
+    const {event}=clip, item=document.createElement('li'), detail=document.createElement('p'), button=document.createElement('button');
+    const window=record.schema==='talk2nature.observation-window.v1';
+    detail.textContent=window
+      ? `Whole moment · ${event.clip_start_seconds.toFixed(3)}–${event.clip_end_seconds.toFixed(3)} s · continuous audio, not a detected sound.`
+      : `Sound highlight ${event.id} · ${event.clip_start_seconds.toFixed(3)}–${event.clip_end_seconds.toFixed(3)} s in the session.`;
+    button.type='button'; button.className='listen-secondary'; button.textContent='Review this clip';
+    button.setAttribute('aria-label',`Review ${window?'whole moment':`sound highlight ${event.id}`} from ${event.clip_start_seconds.toFixed(3)} to ${event.clip_end_seconds.toFixed(3)} seconds`);
+    button.addEventListener('click',()=>openStationClip(bundle,clip)); item.append(detail,button); list.append(item);
+  }
+}
+function openStationClip(bundle,clip) {
+  const source={journal:structuredClone(bundle.record),event_id:clip.event.id};
+  const bytes=clip.bytes.slice().buffer;
+  return openRecording(Promise.resolve(bytes),bundle.record.origin==='synthetic'?'synthetic':'user-supplied',source);
 }
 function draw() {
   if (!audioInfo) return;
@@ -69,24 +101,27 @@ function editEvent(e) {
   $('edit-heading').textContent = `Edit event ${e.id}.`; $('save-event').textContent = 'Save changes'; $('cancel-edit').hidden = false; $('event-error').textContent = '';
   draw(); $('event-start').focus();
 }
-async function openRecording(bufferPromise, origin) {
+async function openRecording(bufferPromise, origin, stationSource = null) {
   if (!allowReplace()) return;
   const current = ++generation;
-  $('example').disabled = true; $('wav-file').disabled = true; status('Inspecting the WAV file locally…');
+  $('example').disabled = true; $('wav-file').disabled = true; $('session-zip-file').disabled = true; status('Inspecting the WAV file locally…');
   try {
     let buffer = await bufferPromise;
     let restored = null;
     if (origin === 'notebook') { const book = await readNotebook(buffer); buffer = book.audio; restored = book.labels; origin = restored.recording.origin; }
+    const sourceSession=stationSource??restored?.recording?.source_session??null;
     const info = readWav(buffer);
     const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', buffer))].map(b => b.toString(16).padStart(2, '0')).join('');
     if (current !== generation) return;
     releaseAudio(); audioInfo = info; audioBytes = buffer;
-    recording = {sha256: hash, duration_seconds: info.duration, sample_rate: info.sample_rate, channels: info.channels, origin};
-    events = []; dirty = false; animal.set(restored?.animal_context);
-    ['recording-001', 'unknown', 'unknown', 'reviewer-001'].forEach((value, i) => { $(ids[i]).value = value; });
-    if (origin === 'synthetic') $('recording-id').value = 'synthetic-tones-001';
-    $('recording-title').textContent = origin === 'synthetic' ? 'Two invented sound events.' : 'Your local recording.';
-    $('origin-badge').textContent = origin === 'synthetic' ? 'Synthetic tones' : 'User-selected WAV';
+    recording = {sha256: hash, duration_seconds: info.duration, sample_rate: info.sample_rate, channels: info.channels, origin,...(sourceSession?{source_session:structuredClone(sourceSession)}:{})};
+    events = []; dirty = false; animal.set(restored?.animal_context??sourceSession?.journal?.animal_context);
+    ['recording-001', sourceSession?.journal?.session_id??'unknown', 'unknown', 'reviewer-001'].forEach((value, i) => { $(ids[i]).value = value; });
+    if(sourceSession) $('recording-id').value=`station-clip-${sourceSession.event_id}`;
+    else if (origin === 'synthetic') { $('recording-id').value = 'synthetic-tones-001'; $('session-id').value='unknown'; }
+    $('recording-title').textContent = sourceSession ? 'A clip from your saved session.' : origin === 'synthetic' ? 'Two invented sound events.' : 'Your local recording.';
+    $('origin-badge').textContent = sourceSession ? (origin==='synthetic'?'Synthetic session clip':'Station session clip') : origin === 'synthetic' ? 'Synthetic tones' : 'User-selected WAV';
+    $('source-session-note').hidden=!sourceSession; $('source-session-note').textContent=sourceSession?stationSourceMessage(sourceSession):'';
     $('audio-summary').textContent = `${info.duration.toFixed(3)} seconds · ${info.sample_rate.toLocaleString()} Hz · ${info.channels} channel${info.channels === 1 ? '' : 's'} · ${info.bits}-bit`;
     $('quality-note').textContent = info.peak === 0 ? 'Digital silence: every sample is zero.' : `${(info.near_full_scale_fraction * 100).toFixed(3)}% of samples are near full scale (≥ 0.999). This is a basic level check; it does not establish recording quality or detect an animal.`;
     $('wave-end').textContent = `${info.duration.toFixed(3)} s`; $('hash-label').textContent = `SHA-256 · ${hash}`;
@@ -94,9 +129,9 @@ async function openRecording(bufferPromise, origin) {
     mediaUrl = URL.createObjectURL(new Blob([buffer], {type: 'audio/wav'})); $('recording-audio').src = mediaUrl;
     if (restored) { events = restored.events.map(e => Object.fromEntries(['id','start_seconds','end_seconds','kind','context','context_source','confidence','notes'].map(k => [k,e[k]]))); ['recording_id','session_id','individual_id','annotator_id'].forEach((key,i) => { $(ids[i]).value = restored.recording[key]; }); }
     $('listen-loaded').hidden = false; $('export-status').textContent = ''; resetEditor(); renderEvents(); $('recording-title').focus();
-    status(restored ? `Notebook reopened with ${events.length} observation${events.length === 1 ? '' : 's'}. Audio and notes stayed on this device. Origin is an unverified declaration.` : origin === 'synthetic' ? 'Example ready. Tones occur at 1–2 and 4–5 seconds. Label them as other sound; there is no animal context.' : 'Recording ready. No audio or labels have been uploaded.');
+    status(restored ? `Notebook reopened with ${events.length} observation${events.length === 1 ? '' : 's'}. Audio and notes stayed on this device. Origin is an unverified declaration.` : sourceSession ? 'Station clip ready. Its journal is preserved as source context; no observation label or animal meaning was inferred.' : origin === 'synthetic' ? 'Example ready. Tones occur at 1–2 and 4–5 seconds. Label them as other sound; there is no animal context.' : 'Recording ready. No audio or labels have been uploaded.');
   } catch (error) { status(`Could not open recording: ${error.message}`); }
-  finally { if (current === generation) { $('example').disabled = false; $('wav-file').disabled = false; } }
+  finally { if (current === generation) { $('example').disabled = false; $('wav-file').disabled = false; $('session-zip-file').disabled = false; } }
 }
 $('example').addEventListener('click', () => openRecording(Promise.resolve(syntheticWav()), 'synthetic'));
 $('wav-file').addEventListener('change', event => {
@@ -105,6 +140,20 @@ $('wav-file').addEventListener('change', event => {
   const notebook = file.name.toLowerCase().endsWith('.t2n');
   if (file.size > (notebook ? MAX_NOTEBOOK_BYTES : MAX_BYTES)) { status('Choose a sound under 25 MB or a notebook under 28 MB.'); return; }
   return openRecording(file.arrayBuffer(), notebook ? 'notebook' : 'user-supplied');
+});
+$('session-zip-file').addEventListener('change', async event => {
+  const file=event.target.files[0]; event.target.value='';
+  if(!file) return;
+  if(file.size>MAX_BUNDLE_BYTES) { $('session-import-status').textContent='Choose an original session ZIP smaller than 27 MB.'; return; }
+  const current=++sessionImportRevision; $('session-zip-file').disabled=true;
+  $('session-import-status').textContent='Checking the session journal and saved sound hashes on this device…';
+  try {
+    const bundle=await openSessionBundle(await file.arrayBuffer());
+    if(current!==sessionImportRevision) return;
+    sessionBundle=bundle; renderStationBundle(bundle);
+  } catch(error) {
+    if(current===sessionImportRevision) $('session-import-status').textContent=`Could not open this session: ${error.message}${sessionBundle?' The previous checked session remains available.':''}`;
+  } finally { if(current===sessionImportRevision) $('session-zip-file').disabled=false; }
 });
 $('event-form').addEventListener('submit', event => {
   event.preventDefault();
@@ -178,7 +227,7 @@ $('clear-recording').addEventListener('click', () => {
   if (!allowReplace()) return;
   generation++; releaseAudio(); recording = null; audioBytes = null; audioInfo = null; draftDirty = false; events = []; dirty = false;
   animal.set();
-  $('listen-loaded').hidden = true; $('event-list').replaceChildren(); status('Session cleared. Previously exported files remain on your device.');
+  $('source-session-note').hidden=true; $('source-session-note').textContent=''; $('listen-loaded').hidden = true; $('event-list').replaceChildren(); status('Session cleared. Previously exported files remain on your device.');
 });
 let dragStart = null;
 const timeAt = event => { const rect = $('waveform').getBoundingClientRect(); return Math.min(audioInfo.duration, rounded(Math.max(0, (event.clientX - rect.left) / rect.width * audioInfo.duration))); };

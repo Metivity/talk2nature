@@ -10,7 +10,7 @@ October 5, 2026. A local, one-way export from [Sound desk](https://metivity.gith
 4. Open `recording.wav` in Audacity. Use **File → Import → Labels**, or the label editor's Import command, to open `labels.txt`. Menu names may differ by version. Do not trim, resample or shift the audio before comparing label alignment.
 5. Inspect the labels against the sound. Playback is manual; use headphones away from animals. Keep the complete package and original notebook.
 
-The default **Save notebook** remains the way to reopen work in Talk2Nature. This Audacity ZIP is neither a Station session nor a notebook. Changes in Audacity do not update the saved Talk2Nature observations; Audacity-label reimport is not supported. Keep any original Station journal alongside this package because a single WAV does not contain that session's sampling history.
+The default **Save notebook** remains the way to reopen work in Talk2Nature. This Audacity ZIP is neither a Station session nor a notebook. Changes in Audacity do not update the saved Talk2Nature observations; Audacity-label reimport is not supported. When a notebook came from Station, `annotations.json` carries a copy of its validated session journal and selected-clip relationship. Keep the original Station ZIP because the annotation and Audacity packages contain only the selected WAV, not the rest of the session audio.
 
 ## What travels, and what changes
 
@@ -18,7 +18,7 @@ The default **Save notebook** remains the way to reopen work in Talk2Nature. Thi
 | --- | --- |
 | `recording.wav` | Original bytes, including both channels if present. Hash, sample rate, channel count and duration must match the annotation record before export. |
 | `labels.txt` | UTF-8, three tab-separated columns: start seconds, end seconds, display text. Stable event IDs map rows to the original record. Overlapping intervals remain overlapping. |
-| `annotations.json` | Complete validated original annotation document, including exact numeric times, notes, declared animal context when present and recording aliases. This is preliminary metadata, not a research-admission manifest. |
+| `annotations.json` | Complete validated original annotation document, including exact numeric times, notes, declared animal context when present and recording aliases. A Station-derived notebook also carries its source journal and selected event ID, hash and session-relative bounds. This is preliminary metadata, not a research-admission manifest. |
 | `export-report.json` | Source hash, declared origin, row-to-event mapping, maximum time-rounding error and conversion limits. |
 | `READ-ME.txt` | Import steps, privacy and interpretation guidance. |
 

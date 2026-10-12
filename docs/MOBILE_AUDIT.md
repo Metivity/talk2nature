@@ -25,7 +25,7 @@ Native Android is still the next candidate for unattended recording. Wrapping th
 | “Offline ready” can be false after storage eviction | Users could leave connectivity without tools | Worker checks every cached file before reporting readiness; setup failure and repair messaging |
 | Product availability could be mistaken for audience traction | Publicity could overstate progress | Public demo/share link and feedback path; no invented users, partners or results |
 
-Station 0.2 exports remain preliminary. Hashes establish byte correspondence, not permission, animal identity or meaning. The device wall clock is unverified and not synchronized across phones. Compare can reopen the original Station ZIP without unzipping; Sound desk still takes one extracted WAV for detailed annotation and does not import the whole session journal. The Sound desk file guidance now links those two novice paths directly. A unified session-to-annotation notebook remains a separate future improvement.
+Station 0.2 exports remain preliminary. Hashes establish byte correspondence, not permission, animal identity or meaning. The device wall clock is unverified and not synchronized across phones. Compare can reopen the original Station ZIP without unzipping; Review can now verify the ZIP and pass one retained clip with its full session journal into a local annotation notebook. The direct path reduces extraction steps while preserving the distinction between original session notes and new annotation labels.
 
 ## Offline boundary
 
