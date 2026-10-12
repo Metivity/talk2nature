@@ -43,3 +43,5 @@
 .app-body.app-nav-away .app-nav{transform:translate3d(0,calc(100% + 20px),0);opacity:0;pointer-events:none}
 .app-body.app-nav-away .app-nav:focus-within{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}
 @media(prefers-reduced-motion:reduce){.app-nav{transition:none!important}}
+.app-data-note{max-width:54ch;margin:17px 0 -12px;color:#c8ddd5;font-size:12px;line-height:1.55}
+.station-retention-guidance{max-width:56ch;margin:0 0 2px;padding:6px 10px;border:1px solid #c4e8d62b;border-radius:10px;background:#ccece50a;color:#d1e3d8;font-size:12px;line-height:1.5}
