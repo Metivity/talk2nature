@@ -13,6 +13,56 @@ if ($('scenario-title') && modes[mode]) {
   if (mode === 'demo') { $('station-start').hidden=true; $('station-permission').closest('.station-setup').hidden=true; }
 }
 for (const a of document.querySelectorAll('.app-nav a')) if (new URL(a.href).pathname===location.pathname && !a.hash) a.setAttribute('aria-current','page');
+const appNav = document.querySelector('.app-nav');
+if (appNav) {
+  const compactViewport = window.matchMedia('(max-width: 800px)');
+  const isFixedNav = () => window.getComputedStyle(appNav).position === 'fixed';
+  let previousY = Math.max(0, window.scrollY || 0);
+  let direction = 0;
+  let distance = 0;
+  const revealNav = () => document.body.classList.remove('app-nav-away');
+  const hideNav = () => {
+    if (!appNav.contains(document.activeElement)) document.body.classList.add('app-nav-away');
+  };
+  const syncViewport = () => {
+    previousY = Math.max(0, window.scrollY || 0);
+    direction = 0;
+    distance = 0;
+    if (!compactViewport.matches || !isFixedNav() || previousY <= 80) revealNav();
+    else hideNav();
+  };
+  const updateNavOnScroll = () => {
+    const y = Math.max(0, window.scrollY || 0);
+    const delta = y - previousY;
+    previousY = y;
+    if (!compactViewport.matches || !isFixedNav()) {
+      revealNav();
+      direction = 0;
+      distance = 0;
+      return;
+    }
+    if (!delta) return;
+    const nextDirection = Math.sign(delta);
+    if (nextDirection !== direction) distance = 0;
+    direction = nextDirection;
+    distance += Math.abs(delta);
+    if (y <= 48) {
+      revealNav();
+      distance = 0;
+    } else if (distance >= 8) {
+      if (direction > 0 && y > 80) hideNav();
+      else if (direction < 0) revealNav();
+      distance = 0;
+    }
+  };
+  window.addEventListener('scroll', updateNavOnScroll, {passive: true});
+  window.addEventListener('resize', syncViewport, {passive: true});
+  if (previousY > 80 && compactViewport.matches && isFixedNav()) hideNav();
+  appNav.addEventListener('focusin', revealNav);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && window.scrollY <= 48) revealNav();
+  });
+}
 let prompt;
 window.addEventListener('beforeinstallprompt', event => { event.preventDefault(); prompt=event; if ($('app-install')) $('app-install').hidden=false; });
 $('app-install')?.addEventListener('click', async () => {
