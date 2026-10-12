@@ -2235,5 +2235,13 @@
     "url": "https://www.wildlifeacoustics.com/grant-program",
     "checked": "2026-10-12",
     "origin": "Direct HTTPS fetch of the official grant page reviewed October 12, 2026. Checked program purpose, worldwide scope, 2026 deadlines, eligible product categories, request limits and required application attachments. No application was started; detailed portal fields, taxes, shipping and applicant-specific eligibility were not reviewed."
+  },
+  {
+    "id": 214,
+    "title": "AutoResearch · official README and agent program",
+    "description": "Andrej Karpathy's agent-driven, single-GPU language-model training loop at commit 228791fb499afffb54b46200aca536f79142f117. The pinned README declares MIT, while the repository API reports no recognized license and the pinned root has no LICENSE file; rights to reuse code remain unresolved.",
+    "url": "https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official pinned README and program.md, resolved the current master commit with git ls-remote, and checked GitHub repository license metadata and the pinned root file inventory. No code, dependencies, model weights or data were acquired or executed."
   }
 ]

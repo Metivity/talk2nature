@@ -59,7 +59,7 @@ The peer-reviewed paper states separate terms: MeerKAT data and animal2vec check
 
 See `docs/MODEL_DATA_DECISION.md` for exact candidate references, separate code/model terms and dataset-fit decisions. Perch-Hoplite is the current candidate tooling route; no model has been installed. The public library now includes a benchmark-label note. Further implementation depends on a concrete species/question and usable observations, not another general model survey.
 
-October 9 decision: adopt the experiment-control pattern from Karpathy's AutoResearch, not its language-model trainer. The project-specific agent program is explicitly not ready because no admitted, independently behavior-labeled dataset or frozen benchmark exists. See [`AUTORESEARCH_ADAPTATION.md`](AUTORESEARCH_ADAPTATION.md) and [`research/autoresearch/program.md`](../research/autoresearch/program.md).
+October 9 decision, rechecked October 12: adopt the experiment-control pattern from Karpathy's AutoResearch, not its language-model trainer. The project-specific agent program remains explicitly not ready because no admitted, independently behavior-labeled dataset or frozen benchmark exists. The current upstream revision is pinned in the project notes and resource catalog; its README says MIT, but its pinned root has no LICENSE file and GitHub API metadata reports no recognized license, so no upstream code is copied. See [`AUTORESEARCH_ADAPTATION.md`](AUTORESEARCH_ADAPTATION.md) and [`research/autoresearch/program.md`](../research/autoresearch/program.md).
 
 ## October 11 checkpoint — animal-operated interfaces
 

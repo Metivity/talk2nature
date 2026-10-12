@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-12",
-  "scope": "Multi-animal evidence and reuse candidates; acquired external samples remain separate from research admission.",
+  "scope": "Animal-communication evidence and reuse candidates, plus selected methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
       "id": "monk-parakeet-paper",
@@ -1816,6 +1816,35 @@
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "karpathy-autoresearch",
+      "kind": "code",
+      "title": "AutoResearch agentic experiment-loop reference",
+      "url": "https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117",
+      "version": "228791fb499afffb54b46200aca536f79142f117",
+      "source_ids": [
+        214
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Agent-assisted optimization of a fixed single-GPU language-model training setup; its validation bits-per-byte metric is not an animal-behavior measure.",
+      "review_depth": "Pinned official README and program.md, repository metadata and root inventory reviewed. The README declares MIT, but the pinned tree has no LICENSE file and GitHub API license metadata is null. No code, dependencies or training artifacts were acquired or executed.",
+      "access": "Public GitHub documentation and repository metadata at the pinned commit; no source files copied.",
+      "decision": "Adopt the experiment-control pattern only. Talk2Nature's original agent program remains NOT READY; do not import, install or run this trainer.",
+      "limitations": "The upstream task is GPT language-model training on one NVIDIA GPU, using a five-minute run and val_bpb. Its metric and training data do not address animal behavior, context, meaning or communication; it supplies no rights-cleared Talk2Nature data, independent labels, leakage-safe splits or biological validation. Code licensing is unresolved because the README claim lacks a LICENSE file and conflicts with GitHub API metadata.",
+      "attribution": "Andrej Karpathy and the AutoResearch contributors; no affiliation or endorsement is implied.",
+      "rights": {
+        "license": "The pinned README declares MIT; no LICENSE file exists in the pinned root and GitHub API metadata reports no recognized license. Treat as unresolved.",
+        "scope": "Upstream repository code only. No code was copied; data, checkpoints and dependencies retain separate terms.",
+        "evidence_url": "https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/README.md",
+        "conditions": "Do not copy or redistribute code until the license discrepancy is clarified. The Talk2Nature adaptation is an original written protocol.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
       },
       "acquisition": "metadata_only",
       "files": []

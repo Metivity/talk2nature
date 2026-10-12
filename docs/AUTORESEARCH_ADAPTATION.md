@@ -1,10 +1,10 @@
 # Adapting AutoResearch to Talk2Nature
 
-Reviewed October 9, 2026. This is a workflow decision, not an ML benchmark, training run or scientific result.
+Reviewed October 12, 2026 against upstream commit `228791fb499afffb54b46200aca536f79142f117`. This is a workflow decision, not an ML benchmark, training run or scientific result.
 
 ## Decision
 
-Adopt the disciplined experiment loop behind Andrej Karpathy's open-source [autoresearch](https://github.com/karpathy/autoresearch), but do **not** import its trainer or start autonomous animal-data experiments yet. The upstream project is a deliberately small, single-GPU language-model training setup: an agent changes `train.py`, runs within a fixed five-minute budget, and compares validation bits-per-byte while the data-preparation and evaluation code stay fixed. Its [program file](https://github.com/karpathy/autoresearch/blob/master/program.md) supplies the agent's scope and logs kept, discarded and crashed trials.
+Adopt the disciplined experiment-control pattern behind Andrej Karpathy's [AutoResearch](https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117), but do **not** import its trainer or start autonomous animal-data experiments yet. At the pinned revision, an agent changes `train.py`, runs on a single NVIDIA GPU within a fixed five-minute training budget, and optimizes validation bits-per-byte while `prepare.py` keeps data preparation and evaluation fixed. Its [program file](https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md) scopes the agent and logs kept, discarded and crashed trials.
 
 That pattern is useful once Talk2Nature has a defensible benchmark. The objective is different: a language-model loss is not an animal-behavior measure, and the best score on a repeatedly inspected validation set is not scientific evidence. Our current [model/data decision](MODEL_DATA_DECISION.md) says no Talk2Nature dataset is admitted for the proposed context task, no model is installed, and the inspected budgerigar sample does not supply the independent visible-behavior labels that task needs. MammAlps v3 and the separate Prompting-MammAlps retrieval release are documented as noncommercial methods comparators; the latter is video-only, its code license is undeclared and its split does not establish animal-held-out evaluation. Neither release meets the project's commercial-capable reuse path. The private `model_runs` workflow is synthetic metadata rehearsal and does not execute models ([lineage boundary](MEDIA_LINEAGE.md)).
 
@@ -64,7 +64,7 @@ After readiness, keep a durable ledger with one row per trial: experiment ID, tr
 
 ## Sources and scope
 
-- [Karpathy's autoresearch repository](https://github.com/karpathy/autoresearch) and its [agent program](https://github.com/karpathy/autoresearch/blob/master/program.md) were reviewed October 9, 2026. The upstream repository identifies its license as MIT. This project did not copy upstream code or dependencies; the upstream license does not change the separate terms for any data, checkpoint or dependency we might use later.
+- [Karpathy's AutoResearch README](https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/README.md) and [agent program](https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md) were reviewed October 12, 2026. The README declares MIT, but the pinned root has no `LICENSE` file and GitHub API metadata reports no recognized license. Code permissions therefore remain unresolved; do not copy or redistribute the trainer. Talk2Nature adopted only an original experiment protocol and did not copy code or dependencies. The public, metadata-only record is in [`research/resources.json`](../research/resources.json).
 - Current Talk2Nature gates: [model/data decision](MODEL_DATA_DECISION.md), [data collection and rights](COLLECTION.md), [media/model lineage](MEDIA_LINEAGE.md), and [first-animal protocol](PILOT_PROTOCOL_DRAFT.md).
 
 This is an internal project workflow proposal. It is not a claim that an AI agent is a scientist, that the project can translate animal communication, or that a future benchmark has been approved.

@@ -14,12 +14,24 @@ Updated October 12, 2026. The latest verified Pages content release is `c7ae15a`
 
 **Limitations and next decision:** the time estimate has not been measured with outside users; no independent evaluator has reported back. Physical phones, assistive technology and actual research workflows remain untested. Seek one independent evaluator through an authorized path and record actual steps, help needed, failures and usefulness. Independent reproduction remains zero; this UI review is not a biological benchmark or validation of animal communication. Search Console ingestion and performance also remain unverified.
 
+## October 12 AutoResearch integration check
+
+**Question:** should Talk2Nature import the upstream trainer, run an autonomous loop, or adopt only its experiment-control pattern?
+
+**Evidence reviewed:** upstream AutoResearch README and `program.md` at commit `228791fb499afffb54b46200aca536f79142f117`, plus repository license metadata and the pinned root file inventory. The upstream example optimizes a GPT training script on one NVIDIA GPU for five-minute runs using validation bits-per-byte; it does not supply an animal-behavior target or dataset. Its README declares MIT, but the pinned tree has no `LICENSE` file and the GitHub API reports no recognized license.
+
+**Decision and change:** retain the existing Talk2Nature-specific run protocol, which is **NOT READY**, instead of importing or executing upstream code. Added a version-pinned, metadata-only code record and linked it to source 214 in the public knowledge graph. The resource directory now shows human-readable acquisition labels instead of internal status codes. Code reuse rights remain unresolved; no upstream code, dependencies, weights or data were copied, acquired or run. The source review is also recorded in `docs/AUTORESEARCH_ADAPTATION.md` and the research backlog.
+
+**Checks:** all 89 Python and 96 Node tests pass; the collection validator accepts 58 resources; the public build produces 88 pages plus 404; the site checker passes 89 HTML files and 4,130 links. Headless Chrome at 320, 390 and 1,280 CSS pixels reports no horizontal overflow; searching the resource directory returns the pinned record and shows its unresolved rights and NOT READY boundary. The candidate update is not yet merged or deployed.
+
+**Next gate:** no model run until an owner and qualified reviewer approve a narrow question, rights-cleared and independently labeled data, leakage-safe groups, fixed baselines/metrics/locked test, a bounded local environment and a reviewed run card. If these prerequisites are not met, continue source and protocol work without model execution.
+
 ## Implemented
 
 - Working brand: Talk2Nature / Listen closely. Understand carefully. Name clearance remains open.
 - Scope, open-source/business approach, contribution rules and company boundaries documented.
 - Apache-2.0 original software and CC BY 4.0 original public-summary policy; no third-party audio or model weights included.
-- Responsive static website: 88 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 56 research notes, 211 source records, 57 collection-resource records, 13 opportunity records, Field Companion, methods, contribution and privacy guidance.
+- Responsive static website: 88 canonical sitemap URLs plus the noindex 404 page, original SVG identity, 56 research notes, 213 source records, 58 collection-resource records, 13 opportunity records, Field Companion, methods, contribution and privacy guidance.
 - Technical SEO: unique titles/descriptions, structured research citations, canonical URLs, sitemap, robots and social metadata; local builds default to noindex. The Search Console owner property is verified. The last stored reports showed one indexed URL and zero not-indexed URLs, while the sitemap report said “Couldn't fetch” for the earlier 77-URL sitemap. The current 88-URL sitemap and priority routes are reachable, but Search Console processing and indexing have not been rechecked after PRs #25 and #26.
 - Research utility: metadata validation and deterministic connected-group splits across individuals, sessions and source hashes. Synthetic fixtures only; no trained model or empirical result.
 - Local Tnufa preparation brief and application register in ignored `funding/`. No submitted application or confirmed eligibility.
