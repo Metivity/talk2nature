@@ -1078,3 +1078,14 @@ PR [#23](https://github.com/Metivity/talk2nature/pull/23) merged to `main` as `0
 Verified after deployment in Chromium with normal TLS: `/research/resources/`, `/opportunities/`, `/tools/listen/` and the Station route returned HTTP 200 with their expected canonical URLs, `index,follow` and no page errors. At 320 CSS pixels, the live research catalog showed 57 cards; searching BEANS-Zero returned three related records, and the dataset disclosure preserved its unresolved component-license terms with no horizontal overflow. The Horizon call rendered its official topic and eligibility links at 320, 390 and 1440 pixels. Listen's expanded ZIP instructions linked to `/talk2nature/app/compare/`, which returned HTTP 200. A live 320 × 740 synthetic Station rehearsal retained visible Stop, added an uncertain marker, and kept the quick-note controls above Stop. No microphone was accessed.
 
 Live `/sitemap.xml` returned HTTP 200 `application/xml` with 88 unique project-subpath URLs, including the resource and opportunity pages; `/robots.txt` returned HTTP 200 and named that exact sitemap. This confirms deployed crawl configuration, not Google ingestion/indexing or rankings. Search Console has not been refreshed. Physical phones, assistive technology and genuinely independent reproduction remain unverified. The goal remains active; AutoResearch remains **NOT READY**.
+
+
+## October 12 public release: Dryad v6 parrotlet provenance
+
+PR [#25](https://github.com/Metivity/talk2nature/pull/25) merged to `main` as `9ea063b7cac34754f0fa2f7c4585eb831bbb1b69`. Manual Pages run [38273716765](https://github.com/Metivity/talk2nature/actions/runs/38273716765) passed Python tests, Node tests, public build, link/SEO/private-boundary checks, artifact upload and deployment. It publishes Dryad v6 API/version and checksum provenance for the parrotlet resource while keeping the 2.60 GB dataset metadata-only; no dataset bytes were acquired.
+
+After deployment, the parrotlet research page and resource directory returned HTTP 200 with expected titles. The new research URL appears in the live sitemap, and `robots.txt` names that sitemap. These checks establish public delivery and crawl configuration, not search-engine ingestion or ranking; Search Console remains unrefreshed.
+
+## October 12 follow-up: Digital.CSIC lark distribution provenance
+
+Directly reviewed the public CSIC README and archive response headers. They identify the hosted distribution as Zenodo DOI `10.5281/zenodo.17264917`, with a 3,711,242,291-byte archive; the README declares CC BY 4.0 and leaves its file list as N/A. The publisher article still cites adjacent DOI `10.5281/zenodo.17264916`. This corroborates the CSIC distribution identity but does not resolve the article's citation difference or verify archive bytes/checksum. No archive or R code was acquired. The lark resource remains metadata-only, has no qualified specialist review and is not admitted to AutoResearch.

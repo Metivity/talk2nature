@@ -289,8 +289,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('795 calls from 97 calling males',page)
             self.assertIn('not independently observed behaviors',page)
             self.assertIn('CC BY-NC-ND 4.0',page)
-            self.assertIn('Datos.gob.es declares CC BY 4.0 for the specific Digital.CSIC archive and README distributions',page)
-            self.assertIn('direct Zenodo record license and R-script rights remain unverified',page)
+            self.assertIn('Datos.gob.es declares CC BY 4.0 for the specific CSIC archive and README distributions',page)
+            self.assertIn('3,711,242,291 bytes',page)
+            self.assertIn('citation to adjacent DOI 17264916 remains unexplained',page)
+            self.assertIn('Digital.CSIC README and distribution headers for the Dupont',page)
+            self.assertIn('separate Zenodo R script',page)
             self.assertIn('17264916',page)
             self.assertIn('17264917',page)
             canonical='https://fixture.github.io/talk2nature/research/duponts-lark-vocal-types-2026/'

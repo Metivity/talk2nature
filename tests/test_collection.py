@@ -306,11 +306,11 @@ class CollectionTests(unittest.TestCase):
     def test_dupont_lark_dataset_rights_are_separate_and_not_admitted(self):
         resource = next(r for r in self.catalog['resources'] if r['id'] == 'duponts-lark-vocal-types-2026')
         self.assertEqual(resource['kind'], 'dataset')
-        self.assertEqual(resource['source_ids'], [194, 195, 196])
+        self.assertEqual(resource['source_ids'], [194, 195, 196, 212])
         self.assertEqual(resource['acquisition'], 'metadata_only')
         self.assertEqual(resource['files'], [])
         self.assertIn('CC BY 4.0 is declared', resource['rights']['license'])
-        self.assertIn('Zenodo record\'s own license remains unresolved', resource['rights']['license'])
+        self.assertIn('separate Zenodo R script\'s license remains unresolved', resource['rights']['license'])
         self.assertIn('CC BY-NC-ND 4.0', resource['rights']['scope'])
         self.assertEqual(resource['rights']['commercial_use'], 'unresolved')
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
