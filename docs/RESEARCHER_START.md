@@ -1,12 +1,12 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 12, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 13, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
 ## Choose one route
 
 **Quick browser route (a few minutes; no setup):** open [Compare moments](https://metivity.github.io/talk2nature/app/compare/) and choose **Try an example pair**. Compare the complete and partial sessions, their observer-entered notes and the sampling differences. Ask yourself: what does the interface let you describe, and what would be an unsupported claim about animal behavior? Close one session and confirm the other remains available. No microphone, playback or upload is needed. For a deeper file-format check, use the optional [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/); it takes about 20 minutes and Audacity is only needed for that route. To report a barrier or useful gap, use the [public reproduction and workflow form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml), include the page URL and access date, and keep private media and research details out of the report. The time estimate is a project estimate; independent first-use timing has not yet been measured.
 
-**Research-code route:** use the public repository and the synthetic fixtures below. The code is standard-library Python 3.10+. Node is required only for the optional browser-module tests. The deployed software revision rehearsed for this kit is `aa7119b7635aa3390bd1f7b3bb982e3b596f438d`. To reproduce the recorded baseline, check out that exact revision and verify the printed commit before running the commands:
+**Research-code route:** use the public repository and the synthetic fixtures below. The code is standard-library Python 3.10+. Node is required only for the optional browser-module tests. The command block pins a historical exact-output baseline, `aa7119b7635aa3390bd1f7b3bb982e3b596f438d`; it does not claim that revision is the current deployed `main`. Current-main checks are recorded separately below. To reproduce the historical baseline and its expected checksum, check out that exact revision and verify the printed commit before running the commands:
 
 ```sh
 git clone https://github.com/Metivity/talk2nature.git
@@ -76,6 +76,14 @@ A fresh depth-one HTTPS clone of public `main` at `3f5e80b588cd5aebc9bbc646e146a
 All 90 Python tests and 98 Node tests passed, and the validator accepted all 62 resource records. The local noindex build produced 90 pages plus 404; the checker verified 91 HTML files and 4,145 links. The public-origin build also produced 90 pages plus 404; the checker verified 91 HTML files, 4,237 links and all 90 public pages reachable from the homepage. Its sitemap contains 90 URLs, and the clone's tracked working tree remained clean after the checks.
 
 This is a maintainer-run clean-clone check, not an independent reproduction, usability study, scientific validation or biological result. It used only synthetic examples and public metadata; no research media, datasets or model weights were acquired, and no third-party model or research-code repository was run. Independent reproductions remain zero. Next: obtain an external researcher’s report through the existing reproduction route and record the exact revision, output and help required.
+
+## Current public-main clean-clone recheck — October 13, 2026
+
+A fresh depth-one HTTPS clone of public `main` at `57aeaef3ae5b57e275d645491963f416e191fb98` ran the documented annotation and split commands, the complete test suites, collection validation, and local noindex and explicit public-origin builds. Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. Annotation output: an 8-second synthetic fixture, two marked events, 2 seconds of interval-union coverage and zero seconds with observed context. The split contained 10 connected groups and 12/4/4 train/validation/test records; policy SHA-256 `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`; complete JSON SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. Repeating the command produced a byte-identical file.
+
+All 92 Python tests and 98 Node tests passed; the resource validator accepted 65 records. The local noindex build generated 91 pages plus 404; its checker verified 92 HTML files and 4,214 links. The public-origin build also generated 91 pages plus 404; its checker verified 92 HTML files, 4,307 links and 91 reachable public pages. The tracked clone remained clean. Only committed source and synthetic examples were used; no third-party data, model weights or research code were downloaded or executed.
+
+This confirms a maintainer-run public clone and current software checks, not independent reproduction, first-time researcher success, scientific validation or a biological result. The independently verified reproduction count remains zero. The historical `aa7119…` pin and its expected output remain unchanged for readers reproducing that specific baseline.
 
 ## Three useful first contributions
 
