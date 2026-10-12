@@ -12,7 +12,7 @@ The first research question remains whether sound adds information about indepen
 
 | Information | Current storage and behavior |
 | --- | --- |
-| Research sources, original notes, code/model/dataset records | 82 public catalog records imported into private SQLite. Content fingerprints retain historical versions; repeat imports are idempotent. |
+| Research sources, original notes, code/model/dataset records | 339 public catalog records imported into private SQLite as of October 12, 2026. Content fingerprints retain historical versions; repeat imports are idempotent. |
 | Study protocol and codebook | A saved synthetic study contains the question, species, observation instructions, stop rule and defined behavior labels. Protocol content is immutable; revisions require a new study. Activation is a separate, version-checked action. |
 | Evidence used by a study | References point to exact catalog fingerprints, so later catalog changes or retirement do not silently rewrite the study's evidence. |
 | Observation sessions | Linked to an active study and an invented animal alias. Open/closed state and optimistic versions are persisted. These are separate from authentication sessions. |
