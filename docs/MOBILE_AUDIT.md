@@ -148,3 +148,10 @@ This closes the local rendered-layout check for the fixed Stop bar. It is deskto
 ### October 12 candidate: Listen ZIP path and opportunity-page rendering
 
 Built a local release preview for the exact GitHub Pages subpath. At 320 and 390 CSS pixels, the Listen guide's expanded file instructions showed the new “open the original ZIP in Compare” route; its `/talk2nature/app/compare/` target returned HTTP 200. The note still distinguishes whole-session ZIP review from opening one WAV for annotation and reminds visitors to use recordings they have permission to inspect. The funding page rendered at 320, 390 and 1440 CSS pixels without horizontal overflow. Its upcoming Horizon call card exposed direct official topic and applicant-eligibility links. All five page loads returned HTTP 200 with matching canonical URLs and no browser page errors. No recording or microphone access occurred. This is local browser-emulation evidence, not a deployed-site or physical-device test.
+
+
+### October 12 live-release verification
+
+After PR #23 merged and the manual Pages deployment succeeded, the production Station was exercised at 320 × 740 CSS pixels in synthetic mode. The Stop control stayed fixed and visible; the quick-note rows scrolled above it; an uncertain marker was added to the timeline. The live Listen page's ZIP instructions opened Compare at the project-prefixed route, which returned HTTP 200. The public resource directory and opportunity page loaded at their canonical project URLs, with no horizontal overflow at the tested widths. No microphone was accessed.
+
+These are live website and desktop-Chromium emulation checks, not physical-phone, Safari, Android, screen-reader or first-time-user studies. Search Console processing remains unverified.
