@@ -2227,5 +2227,13 @@
       "readme": "CC BY 4.0 is declared by the official Datos.gob.es catalog for this README distribution and in the README itself.",
       "archive": "CC BY 4.0 is declared by the official Datos.gob.es catalog for this specific CSIC archive distribution. This does not establish the license of the separate Zenodo Technical_validation.R file or the article."
     }
+  },
+  {
+    "id": 213,
+    "title": "Wildlife Acoustics Scientific Grant Program · Q4 2026",
+    "description": "Official quarterly wildlife-research product program. Q4 applications are due November 15, 2026. Standard awards are equipment/software rather than cash; applicants may request up to $4,000 in products from a $12,000 quarterly pool. The current page requires proof of the applicant organization's charitable or educational tax-exempt status; a recommendation letter is waived for software-only requests.",
+    "url": "https://www.wildlifeacoustics.com/grant-program",
+    "checked": "2026-10-12",
+    "origin": "Direct HTTPS fetch of the official grant page reviewed October 12, 2026. Checked program purpose, worldwide scope, 2026 deadlines, eligible product categories, request limits and required application attachments. No application was started; detailed portal fields, taxes, shipping and applicant-specific eligibility were not reviewed."
   }
 ]
