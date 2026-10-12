@@ -10,7 +10,7 @@
       "url": "https://doi.org/10.1098/rsos.230835",
       "version": "Royal Society Open Science 10:230835 (2023)",
       "priority": 1,
-      "reviewed": "2026-10-11",
+      "reviewed": "2026-10-12",
       "task": "Caller identity within and across call types; method comparator for evaluation splits, not a behavior/context dataset.",
       "review_depth": "Final-article abstract plus targeted Methods/Figure 4 text surfaced by the primary PMC index; official pinned repository README and existing 2020 annotation sample reviewed. Direct full-text retrieval was CAPTCHA/timeout limited. Supplement and full analysis code were not audited or run.",
       "access": "DOI and open-access institutional record; no raw audio acquired. Large archives are listed separately in Edmond.",
@@ -493,23 +493,51 @@
       "kind": "dataset",
       "title": "Green-rumped parrotlet vocal-babbling audio and measures",
       "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
-      "version": "Dryad dataset published 2022-05-31",
+      "version": "Dryad v6 (API version record 180872); published 2022-05-31; last modified 2022-06-01",
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Potential species-specific vocal-development reference; not an event-context or semantic-translation benchmark.",
-      "review_depth": "Exact Dryad record, Abstract, Methods, version, file inventory and current End User Terms reviewed. The README fetch returned HTTP 403; no files, audio, article PDF or supplement downloaded.",
-      "access": "Public Dryad metadata lists 2.60 GB total: 2.56 GB audio bouts, 43.91 MB spectrographic-measurement spreadsheet and 4.75 KB README.",
-      "decision": "Keep metadata-only. First verify any item-specific license exception and inspect the README, label/linkage schema and intervention structure; then decide whether a narrowly defined developmental question justifies bounded acquisition.",
-      "limitations": "Wild green-rumped parrotlet nestlings at one station in 2017–2018; the study includes corticosterone supplementation. Individual/session joins, timestamped independent behavior labels, split design and full dataset contents were not reviewed. It does not establish call meaning.",
+      "review_depth": "Exact Dryad record, Abstract, Methods, API dataset/version records and three-file inventory reviewed, including per-file SHA-256 metadata. End User Terms (updated May 20, 2025) and Publication Policies (updated April 8, 2026) say published datasets are made public under CC0; no separate exception is displayed on this record. An unauthenticated byte-range request to the API download route returned 401; the web file-stream route returned HTML headers rather than a file. No file bytes, article PDF or supplement were downloaded.",
+      "access": "Official Dryad API v6 inventory totals 2,600,218,232 bytes: AllBouts.zip (2,556,303,736 bytes), the measurements workbook (43,909,749 bytes) and README20220326.csv (4,747 bytes). The README has SHA-256 ae6e5cdf1067de3a11a5561a304a4bea47ba816b2c7f4063fdc98a1f417daf50; exact file IDs, sizes and hashes are cataloged below. No data bytes were acquired.",
+      "decision": "Keep metadata-only. Dataset-level CC0 and a version-pinned inventory are documented, but the contents remain uninspected and the tested download routes did not return the file. Obtain it only through an authorized route, then inspect schema, linkage, interventions and contents; decide with an avian vocal-development reviewer whether a bounded developmental question justifies acquisition. This is not a call-context or semantic-translation benchmark.",
+      "limitations": "Wild green-rumped parrotlet nestlings at one station in 2017–2018; the study includes corticosterone supplementation. Individual/session joins, timestamped independent behavior labels, audio-video timing, split design and full dataset contents were not reviewed. The repository's license declaration does not establish privacy/welfare suitability, benchmark fitness or model admission. It does not establish call meaning.",
       "attribution": "Berg and Eggleston (2022), Green-rumped parrotlet vocal-babbling dataset, Dryad DOI 10.5061/dryad.k0p2ngfb3; cite the associated paper separately.",
+      "api_version_record": {
+        "id": 180872,
+        "version_number": 6,
+        "publication_date": "2022-05-31",
+        "last_modification_date": "2022-06-01",
+        "url": "https://datadryad.org/api/v2/versions/180872",
+        "license": "https://spdx.org/licenses/CC0-1.0.html"
+      },
+      "api_file_inventory": [
+        {
+          "file_id": 1532809,
+          "name": "AllBouts.zip",
+          "bytes": 2556303736,
+          "sha256": "4a84c26844e395989a814a722a2e81ddd6c2ea79b43256486c038ac855ce3325"
+        },
+        {
+          "file_id": 1532811,
+          "name": "ESM_TABLE_2_20220326.xlsx",
+          "bytes": 43909749,
+          "sha256": "8bd416ff95662f7aea25483f646efc12f9043bfc94a68f25c0d789f62146a2d3"
+        },
+        {
+          "file_id": 1532810,
+          "name": "README20220326.csv",
+          "bytes": 4747,
+          "sha256": "ae6e5cdf1067de3a11a5561a304a4bea47ba816b2c7f4063fdc98a1f417daf50"
+        }
+      ],
       "rights": {
-        "license": "unresolved: Dryad default is CC0; record-level exception not visible",
-        "scope": "Dryad dataset only. Dryad's published terms state CC0 by default unless a different term was indicated during submission; the reviewed record did not surface an item-specific exception. The paper, supplement, software and any weights are separate.",
-        "evidence_url": "https://datadryad.org/terms",
-        "conditions": "Confirm the exact submission terms and inspect the dataset contents before any acquisition or reuse. No data files have been downloaded; metadata cataloging is not research admission.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "CC0 1.0 under Dryad's published-dataset policy; no separate exception is displayed on this record",
+        "scope": "The published Dryad dataset only. The README and data files were not opened. The journal article, supplement, software, model weights and any embedded third-party content remain separate components.",
+        "evidence_url": "https://datadryad.org/publication_policy",
+        "conditions": "Dryad's current policy supports dataset-level reuse under CC0, but inspect the README and exact file contents, linkage, intervention structure and privacy/welfare implications before acquisition or model use. No files were downloaded or admitted to research.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
