@@ -2,7 +2,7 @@
 
 The public [world atlas](https://metivity.github.io/talk2nature/research/atlas/) connects the literature library to approximate places and a source-year timeline. It is the first geographic layer, not a map of all published research or a live observation service.
 
-As of October 12, 2026, the local library contains **49 notes**, **25 mapped notes** across **24 approximate places**, **163 source records** and **28 collection resources**. This is local evidence-map coverage, not 25 event-aligned datasets or independent replications; this continuation has not been deployed. The Costa Rica marker is country-scale because the study concerns a Critically Endangered wild parrot; it does not expose the field property or recording site. MammAlps remains mapped only to the Swiss National Park region because the authors withhold exact camera sites.
+As of October 13, 2026, the local library contains **59 notes**, **29 mapped notes** across **27 approximate places**, **223 source records** and **65 collection resources**. This is local evidence-map coverage, not 25 event-aligned datasets or independent replications; this continuation has not been deployed. The Costa Rica marker is country-scale because the study concerns a Critically Endangered wild parrot; it does not expose the field property or recording site. MammAlps remains mapped only to the Swiss National Park region because the authors withhold exact camera sites.
 
 ## October 4 historical coverage snapshot
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "scope": "Animal-communication evidence and reuse candidates, plus selected methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -1960,6 +1960,96 @@
         "scope": "The preprint manuscript only; the reused audio corpora, third-party code, dependencies and pretrained model weights have separate rights.",
         "evidence_url": "https://arxiv.org/abs/2610.07107",
         "conditions": "Cite the exact version and follow CC BY 4.0 attribution terms. No paper text or figures are reproduced here. Do not infer permission for the underlying datasets, software or model weights.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-identity-paper-2023",
+      "kind": "paper",
+      "title": "Individual identity information persists in learned calls of introduced parrot populations",
+      "url": "https://doi.org/10.1371/journal.pcbi.1011231",
+      "version": "PLOS Computational Biology 19(7): e1011231 (2023)",
+      "source_ids": [
+        221
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Compare the relative acoustic structure of individual identity and group/site identity in learned parrot contact calls; methods comparator, not a context or meaning dataset.",
+      "review_depth": "Reviewed the primary article sections on sampling, random-forest similarity, the species comparison, results, discussion, ethics, and linked data/code. The supplementary PDF, full analysis workflow, and raw audio were not reviewed or reproduced.",
+      "access": "Peer-reviewed open-access article. PLOS displays CC BY 4.0 for the manuscript. No article text or figures were copied.",
+      "decision": "Use as a parrot identity and social-scale method reference. Do not treat the reported training accuracy as held-out unseen-caller performance or as evidence of translation.",
+      "limitations": "The study reports 229 individual-scale monk-parakeet calls from 8 native-range and 9 introduced-range individuals, plus 1,353 site-scale calls across 63 sites. The random forest was trained on 156 calls from 8 known individuals. Its 97.44% accuracy (95% CI 93.57–99.30) is training accuracy. The remaining 73 calls from 9 other individuals were used to derive random-forest proximity patterns and cluster structure, not to report unseen-caller classification accuracy. The study infers identity-related information from acoustic convergence; it does not test receiver comprehension or assign call meanings. The authors identify playback work as necessary to test how receivers use signals. PLOS supplementary analyses were not audited.",
+      "attribution": "Smith-Vidaurre G, Pérez-Marrufo V, Hobson EA, Salinas-Melgoza A, Wright TF (2023). PLoS Comput Biol 19(7): e1011231. DOI 10.1371/journal.pcbi.1011231.",
+      "rights": {
+        "license": "CC BY 4.0 displayed by PLOS for the article.",
+        "scope": "Article text only. Linked Figshare data and GitHub/Zenodo code are separate assets with separately reviewed terms.",
+        "evidence_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011231",
+        "conditions": "Cite the article and attribute any permitted reuse. No article text or figures are reproduced here; do not infer recording, data, or software rights from the manuscript license.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-identity-figshare-2023",
+      "kind": "dataset",
+      "title": "Smith-Vidaurre et al. identity-encoding calls and selection table",
+      "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
+      "version": "Figshare DOI 10.6084/m9.figshare.22582099.v2; version 2 record reviewed October 12, 2026",
+      "source_ids": [
+        221,
+        222
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Potential source for a separately scoped acoustic identity/convergence reproduction; not a behavior/context-labelled corpus.",
+      "review_depth": "Public item metadata and README reviewed. The API reports 22 files totaling 187,820,138 bytes and the item-level license CC BY 4.0. Provider checksums were not verified locally; no audio, selection table, or archive was acquired.",
+      "access": "Public Figshare v2 record and metadata only. Its README lists pre-processed WAV calls and a selection table. No files are in Talk2Nature storage.",
+      "decision": "Keep metadata-only. Consider a bounded caller-identity reproduction only after reconciling the file inventory with article counts, reviewing exact audio provenance and rights, and obtaining qualified methods review. Exclude from context/meaning training by default.",
+      "limitations": "The README/selection inventory reports 1,596 call clips, while the article main text describes 229 individual-scale plus 1,353 site-scale monk-parakeet calls (1,582 total) and separately includes yellow-naped amazon comparator calls recorded in Costa Rica in 1994. The extra 14 inventory records have not been reconciled to exact source files. No file-level audit, license-scope verification, animal/session grouping, or independent reproduction was performed. Metadata availability and an item-level CC BY 4.0 declaration do not establish that any proposed model task is scientifically valid.",
+      "attribution": "Smith-Vidaurre G, Pérez-Marrufo V, Hobson EA, Salinas-Melgoza A, Wright TF (2023). Figshare v2, DOI 10.6084/m9.figshare.22582099.v2.",
+      "rights": {
+        "license": "CC BY 4.0 declared by the Figshare record at item level.",
+        "scope": "Dataset item; the article, analysis code, dependencies, and any third-party recordings are separate components.",
+        "evidence_url": "https://api.figshare.com/v2/articles/22582099",
+        "conditions": "Attribute the deposit and follow its declared terms. Before retrieving, redistributing, or training on a file, reconcile its source and exact license scope; provider-supplied checksums were not locally verified.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-identity-code-2023",
+      "kind": "code",
+      "title": "Analysis code for identity information in introduced parrot populations",
+      "url": "https://github.com/gsvidaurre/identity-information-post-introduction/tree/v1.0.0",
+      "version": "GitHub v1.0.0 tag; associated Zenodo DOI 10.5281/zenodo.8030605",
+      "source_ids": [
+        221,
+        223,
+        224
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Reproducibility reference for R Markdown analyses of acoustic identity and social-scale convergence.",
+      "review_depth": "GitHub README, file listing, archived status, and MIT license indicator reviewed. Zenodo v1.0.0 metadata reports a 12,413,376-byte archive and the license field other-open. No code file or archive was acquired, inspected, or executed.",
+      "access": "Public archived GitHub repository and Zenodo metadata. GitHub README describes ten R Markdown analyses plus custom functions and rendered HTML outputs.",
+      "decision": "Keep metadata-only. If reproduction becomes justified, pin the exact commit/archive, resolve the Zenodo artifact license metadata, inspect code and dependencies, then run only in a bounded environment with the corresponding permitted data.",
+      "limitations": "The GitHub repository is archived. Its MIT license and Zenodo artifact license field other-open are distinct records; the snapshot license was not independently resolved. The code and dependency graph were not audited or executed, so no runnable or reproduced result is claimed.",
+      "attribution": "Smith-Vidaurre G et al. (2023), analysis code accompanying PLoS Comput Biol 19(7): e1011231; archived GitHub repository and Zenodo v1.0.0.",
+      "rights": {
+        "license": "GitHub identifies the repository as MIT; Zenodo metadata for the linked archive says other-open.",
+        "scope": "GitHub repository and Zenodo archive have distinct license metadata. Neither determines the rights for the article or linked recordings.",
+        "evidence_url": "https://github.com/gsvidaurre/identity-information-post-introduction",
+        "conditions": "Use the GitHub repository under its MIT notice. Do not assume the archived Zenodo artifact has identical terms until its exact license is resolved; audit dependencies and embedded materials before execution or reuse.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

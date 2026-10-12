@@ -176,6 +176,20 @@
       "precision": "country",
       "latitude": 40.0,
       "longitude": -4.0
+    },
+    {
+      "id": "uruguay",
+      "label": "Uruguay",
+      "precision": "country",
+      "latitude": -32.5,
+      "longitude": -56.0
+    },
+    {
+      "id": "united-states",
+      "label": "United States",
+      "precision": "country",
+      "latitude": 39.8,
+      "longitude": -98.6
     }
-]
+  ]
 }
