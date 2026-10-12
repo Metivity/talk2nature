@@ -35,13 +35,21 @@ def catalog_graph(entries):
                 node[field] = payload[field]
         nodes.append(node)
     for entry in sorted(entries, key=lambda e: e['key']):
-        if entry['kind'] == 'note':
-            for source_id in sorted(set(entry['payload'].get('source_ids', []))):
-                key = f'source:{source_id}'
-                if key not in current:
-                    raise ValueError('Evidence note cites a missing source.')
-                edges.append({'from': current[entry['key']], 'relation': 'cites', 'to': current[key],
-                              'basis': 'Explicit source_ids in this note; target is the catalog version at graph build time.'})
+        if entry['kind'] not in {'note', 'resource'}:
+            continue
+        source_ids = entry['payload'].get('source_ids', [])
+        if (not isinstance(source_ids, list)
+                or any(type(source_id) is not int for source_id in source_ids)):
+            raise ValueError('Catalog source_ids must be a list of integer source IDs.')
+        relation = 'cites' if entry['kind'] == 'note' else 'cataloged_from'
+        basis = ('Explicit source_ids in this note; target is the catalog version at graph build time.'
+                 if entry['kind'] == 'note' else
+                 'Explicit source_ids in this resource; target is the catalog version at graph build time.')
+        for source_id in sorted(set(source_ids)):
+            key = f'source:{source_id}'
+            if key not in current:
+                raise ValueError('Catalog record references a missing source.')
+            edges.append({'from': current[entry['key']], 'relation': relation, 'to': current[key], 'basis': basis})
     return finish_graph(nodes, edges, 'public_metadata')
 
 

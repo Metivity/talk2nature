@@ -126,10 +126,14 @@
   {
     "id": 16,
     "title": "Moth responses to plant sounds",
-    "description": "Seltzer et al. Female moths incorporate plant acoustic emissions into their oviposition decision-making process. eLife; version of record 5 January 2026. Earlier reviewed preprints appeared in 2024 and 2025.",
+    "description": "Seltzer et al. Female moths incorporate plant acoustic emissions into their oviposition decision-making process. eLife; version of record 5 January 2026. The article is CC BY 4.0; earlier reviewed preprints appeared in 2024 and 2025.",
     "url": "https://doi.org/10.7554/eLife.104700",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-12",
+    "origin": "The full version-of-record text, methods, figures, public reviewer comments and author responses were reviewed through the NCBI PMC full text and official eLife PDF. Exact scope and limits are documented in the linked evidence note.",
+    "rights": {
+      "article": "The article states that it is distributed under the Creative Commons Attribution License (CC BY 4.0). This does not automatically establish the license for separate dataset, code or media artifacts.",
+      "conditions": "Talk2Nature publishes an original summary and links to the article, figures/data record and dataset. Attribute article material and inspect each linked artifact's terms separately."
+    }
   },
   {
     "id": 17,
@@ -218,7 +222,7 @@
     "title": "Pre-Seed fund",
     "description": "Israel Innovation Authority. Current Pre-Seed track: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-11",
+    "checked": "2026-10-12",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -907,27 +911,27 @@
   },
   {
     "id": 95,
-    "title": "Ice crystals and distant intention: pilot",
-    "description": "Radin, Hayssen, Emoto and Kizu (2006), Explore. A reported blinded experiment using aesthetic ratings of crystal photographs.",
+    "title": "Ice crystals and distant intention: 2006 double-blind pilot",
+    "description": "Radin, Hayssen, Emoto and Kizu (2006), Explore 2:408–411. Full four-page article reviewed from an author-hosted copy. Four bottles yielded 40 selected crystal images for blind beauty ratings; this is the study authors’ reported pilot result, not evidence of communication.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/16979104/",
-    "checked": "2026-10-02",
-    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+    "checked": "2026-10-12",
+    "origin": "PubMed provides the indexed record and DOI. Full-text review used an author-hosted copy; details and review limits are in the linked note."
   },
   {
     "id": 96,
-    "title": "Ice crystals: same-team replication report",
-    "description": "Radin, Lund, Emoto and Kizu (2008), Journal of Scientific Exploration. A reported triple-blind replication; not independent of the original investigators.",
-    "url": "https://cdn.water-crystal.org/pdf/tripleEN.pdf",
-    "checked": "2026-10-02",
-    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+    "title": "Ice crystals and distant intention: 2008 triple-blind follow-up",
+    "description": "Radin, Lund, Emoto and Kizu (2008), Journal of Scientific Exploration 22:481–493. Full paper reviewed: six bottles, two per condition, and 300 photographs; authors report weak subjective-rating results and a nonsignificant three-condition contrast result. Same investigator group as the 2006 pilot.",
+    "url": "https://journalofscientificexploration.org/index.php/jse/article/view/117/55",
+    "checked": "2026-10-12",
+    "origin": "Publisher-hosted full paper. Stokes’s separate 2009 letter addresses the bottle-level interpretation of the 2008 treated-versus-proximal comparison."
   },
   {
     "id": 97,
-    "title": "Ice crystal statistics: experimental-unit critique",
-    "description": "Douglas M. Stokes (2009), Journal of Scientific Exploration, letters, p. 83. Critique of treating samples from the same bottles as independent trials.",
+    "title": "Ice-crystal statistics: 2009 letter on the 2008 experiment",
+    "description": "Douglas M. Stokes (2009), Journal of Scientific Exploration letters, p. 83. For the 2008 treated-versus-proximal comparison, argues that the four bottles (two per condition), not the repeated dishes/images, are the experimental units and gives a maximum one-tailed exact rank probability of 1/6. This is not a critique of the 2006 pilot.",
     "url": "https://journalofscientificexploration.org/index.php/jse/article/download/108/46",
-    "checked": "2026-10-02",
-    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+    "checked": "2026-10-12",
+    "origin": "Publisher-hosted collected letters PDF; see the 2009 letter on p. 83 and the linked research note for scope."
   },
   {
     "id": 98,
@@ -1602,5 +1606,490 @@
     "origin": "Official Israel Innovation Authority procedure page and its linked PDF reviewed on October 11, 2026; the page's track associations and the PDF's stated scope are preserved separately.",
     "review_url": "https://innovationisrael.org.il/wp-content/uploads/2023/08/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97.pdf",
     "review_url_label": "Official open-source procedure PDF"
+  },
+  {
+    "id": 160,
+    "title": "Name use by companion parrots (2026)",
+    "url": "https://doi.org/10.1371/journal.pone.0346830",
+    "description": "Peer-reviewed multi-species survey of reported human-name and animal-name use by companion parrots. The paper describes its coded S2 phrase dataset as de-identified; the file itself was not inspected. Article text is CC BY 4.0; supporting data need separate privacy and rights review.",
+    "checked": "2026-10-12",
+    "origin": "PLOS ONE full article HTML reviewed for abstract, methods, results and discussion, plus its correction notice. Supporting information, raw survey data and figures were not downloaded or inspected."
+  },
+  {
+    "id": 161,
+    "title": "Correction: Name use by companion parrots (2026)",
+    "url": "https://doi.org/10.1371/journal.pone.0349699",
+    "description": "PLOS ONE correction published May 20, 2026, adding missing ORCID identifiers for authors three through five. The correction does not address the article's abstract/results count discrepancy.",
+    "checked": "2026-10-12",
+    "origin": "Official PLOS ONE correction notice reviewed; it lists only the missing ORCID identifiers and an apology."
+  },
+  {
+    "id": 162,
+    "title": "Decoding parrot duets: complex communication in yellow-naped amazons (2026)",
+    "url": "https://doi.org/10.1002/jav.03552",
+    "description": "Peer-reviewed study of wild yellow-naped amazon warble duets. It reports structured, flexible call sequences but explicitly says their semantic meanings cannot yet be assigned with confidence. The publisher marks the article Open Access; the specific reuse license was not established in this review.",
+    "checked": "2026-10-12",
+    "origin": "Publisher full-text HTML reviewed for abstract, study sites/recordings, call categorization, acoustic analyses, syntax methods/results, discussion, data availability and supplement inventory. No supplementary files were downloaded."
+  },
+  {
+    "id": 163,
+    "title": "Data from: Decoding parrot duets: complex communication in yellow-naped amazons (Dryad, 2026)",
+    "url": "https://doi.org/10.5061/dryad.rn8pk0prb",
+    "description": "Dryad v1 lists a README and a 65.46 KB workbook of Raven measurements, including duet file names, pair initials, sequence positions, call types and acoustic measurements. It does not list raw recordings. Pair identifiers and sensitive-species context warrant review before any file acquisition or reuse.",
+    "checked": "2026-10-12",
+    "origin": "Official Dryad landing page and README description reviewed; neither file was downloaded or inspected.",
+    "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.rn8pk0prb",
+    "review_url_label": "Dryad dataset record and file manifest"
+  },
+  {
+    "id": 164,
+    "title": "Dryad data reuse guidance: repository-wide CC0 policy",
+    "url": "https://datadryad.org/help/guides/reuse",
+    "description": "Dryad states that its datasets are published under CC0 and recommends scholarly attribution. This is repository-wide policy guidance, recorded separately from the paper and from review of any individual dataset contents.",
+    "checked": "2026-10-12",
+    "origin": "Official Dryad reuse guidance reviewed; it states that all Dryad datasets are CC0 and recommends citation as scholarly courtesy.",
+    "review_url": "https://datadryad.org/help/guides/reuse",
+    "review_url_label": "Dryad official reuse-rights guide"
+  },
+  {
+    "id": 165,
+    "title": "Detection of electrical signals in fungal mycelia in response to external stimuli (2025)",
+    "url": "https://doi.org/10.1016/j.isci.2025.113484",
+    "description": "Buffi et al. develop an extracellular fungal-potential-card method and test voltage/frequency changes in Fusarium oxysporum under controlled conditions. The paper does not establish semantic communication.",
+    "checked": "2026-10-12",
+    "origin": "Publisher/PMC indexed article reviewed for abstract, setup, selected results, discussion, data statement and CC BY 4.0 license; supplementary Method S1 and raw data were not inspected.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12483595/",
+    "review_url_label": "Open full-text article record"
+  },
+  {
+    "id": 166,
+    "title": "Raw voltage data for the fungal-potential-card study (Mendeley Data v1)",
+    "url": "https://doi.org/10.17632/srkxbkh6sp.1",
+    "description": "Mendeley describes raw voltage-potential data from Fusarium oxysporum before and after external stimuli and displays CC BY 4.0. File-level contents and analysis suitability have not been checked.",
+    "checked": "2026-10-12",
+    "origin": "Official Mendeley Data version 1 landing page and reuse declaration reviewed; its visible page did not expose a file manifest and no files were downloaded.",
+    "review_url": "https://data.mendeley.com/datasets/srkxbkh6sp/1",
+    "review_url_label": "Mendeley Data record and license"
+  },
+  {
+    "id": 167,
+    "title": "Egyptian fruit bat per-file metadata (FileInfo.csv), Figshare item 4555897",
+    "url": "https://api.figshare.com/v2/articles/4555897",
+    "description": "The official Figshare item API declares CC0 1.0 and lists FileInfo.csv (31,574,701 bytes; file ID 8900695), but md5 is null. The 2017 data descriptor says this file contains exact recording time, recording channel and voiced-segment sample positions. The CSV itself was not downloaded or inspected.",
+    "checked": "2026-10-12",
+    "origin": "Direct GET of the public Figshare item API over verified TLS on October 12, 2026. The API returned one file and no MD5; the file body was not requested.",
+    "review_url": "https://api.figshare.com/v2/articles/4555897",
+    "review_url_label": "Direct Figshare public item metadata and file manifest",
+    "rights": {
+      "item": "The public item API declares CC0 1.0 for item 4555897; this records the repository declaration, not independent legal advice.",
+      "file": "The API lists one 31,574,701-byte FileInfo.csv; its bytes and contents were not retrieved or inspected."
+    }
+  },
+  {
+    "id": 168,
+    "title": "Egyptian fruit bat subject and annotation metadata (Metadata.pdf), Figshare item 4555900",
+    "url": "https://api.figshare.com/v2/articles/4555900",
+    "description": "The official Figshare item API declares CC0 1.0 and lists Metadata.pdf (367,257 bytes; file ID 8900800), but md5 is null. The 2017 data descriptor says the PDF describes subjects and annotation definitions. Its body was acquired only for local methods review; the receipt records size, TLS provenance and a computed SHA-256, not an upstream checksum.",
+    "checked": "2026-10-12",
+    "origin": "Direct GET of the public Figshare item API over verified TLS on October 12, 2026. The API returned one file and no MD5; the file was separately acquired under the bounded collector.",
+    "review_url": "https://api.figshare.com/v2/articles/4555900",
+    "review_url_label": "Direct Figshare public item metadata and file manifest",
+    "rights": {
+      "item": "The public item API declares CC0 1.0 for item 4555900; this records the repository declaration, not independent legal advice.",
+      "file": "The API lists one 367,257-byte Metadata.pdf; its upstream MD5 is unavailable. A local receipt records the retrieved bytes and SHA-256; the PDF is not published or admitted to training."
+    }
+  },
+  {
+    "id": 169,
+    "title": "Vocal Imitation in Parrots Allows Addressing of Specific Individuals in a Dynamic Communication Network",
+    "description": "Primary controlled playback study testing whether a call imitation directed at one orange-fronted conure changes the responses of paired target and non-target birds.",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049747",
+    "checked": "2026-10-12",
+    "origin": "Full PLOS ONE article page reviewed on October 12, 2026. The review covered the study design, results, discussion, animal research permits and article license; no data or code were acquired.",
+    "review_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049747",
+    "review_url_label": "PLOS ONE full-text article, methods, results, ethics and license statement",
+    "rights": {
+      "article": "The PLOS article page states the Creative Commons Attribution License but does not expose a version identifier in the reviewed text; this records the source statement, not independent legal advice.",
+      "data_and_code": "No associated recordings, trial-level data, supplementary files or analysis code were acquired or rights-reviewed."
+    }
+  },
+  {
+    "id": 170,
+    "title": "An automatic analysis of ultrasound vocalisations for the prediction of interaction context in captive Egyptian fruit bats",
+    "description": "Peer-reviewed EUSIPCO 2024 study comparing acoustic-feature and spectrogram models on video-context-labelled bat calls.",
+    "url": "https://doi.org/10.23919/EUSIPCO63174.2024.10715475",
+    "checked": "2026-10-12",
+    "origin": "The official EUSIPCO 2024 five-page proceedings paper and its methods, dataset, evaluation, results and discussion were reviewed. No model code, split files, dataset media or weights were acquired or run.",
+    "review_url": "https://eurasip.org/Proceedings/Eusipco/Eusipco2024/pdfs/0001277.pdf",
+    "review_url_label": "Official EUSIPCO 2024 proceedings paper (pp. 1277–1281)",
+    "rights": {
+      "article": "Proceedings reuse terms were not separately reviewed. Public availability is not treated as a redistribution license; Talk2Nature publishes an original summary and citation only.",
+      "data_and_code": "The paper uses the separately cataloged Egyptian fruit-bat archive. Its code-release statement and split artifacts were checked only in the paper; no code or partition files were located or acquired in this review."
+    }
+  },
+  {
+    "id": 171,
+    "title": "Author manuscript: Egyptian fruit-bat context prediction (arXiv v1)",
+    "description": "Versioned author manuscript of the EUSIPCO 2024 context-prediction study; arXiv records acceptance at EUSIPCO.",
+    "url": "https://arxiv.org/abs/2406.06332v1",
+    "checked": "2026-10-12",
+    "origin": "The official arXiv v1 record and manuscript were checked against the final EUSIPCO proceedings PDF to identify the version relationship and stated license.",
+    "review_url": "https://arxiv.org/abs/2406.06332v1",
+    "review_url_label": "Official arXiv v1 record, accepted at EUSIPCO 2024",
+    "rights": {
+      "article": "The arXiv v1 record declares CC BY-NC-ND 4.0 for that manuscript version. This does not establish the reuse terms for the proceedings copy, data, code or model artifacts.",
+      "data_and_code": "No dataset media, model weights, code or split files were acquired or run."
+    }
+  },
+  {
+    "id": 172,
+    "title": "Audio Jungle Book Project: animal-audio evaluation leakage audit (development repository)",
+    "description": "Author-maintained code and findings for identity, recording-site and background leakage experiments across animal-audio datasets.",
+    "url": "https://github.com/slug-labz/Audio-Jungle-Book-Project/tree/dev",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the public README, bat subsection and adversarial-correction sections of FINDINGS.md, and the repository data README. The project describes its workshop paper as in progress. No code, results archive, datasets or model weights were acquired or run; the exact license file and immutable branch commit were not verified.",
+    "review_url": "https://github.com/slug-labz/Audio-Jungle-Book-Project/blob/dev/FINDINGS.md",
+    "review_url_label": "Author-maintained findings and corrections, mutable dev branch",
+    "rights": {
+      "article": "No peer-reviewed article or completed manuscript was identified in this review; the repository says a workshop paper is in progress.",
+      "data_and_code": "The README states code is MIT, but the exact LICENSE file was not verified. Datasets and model weights have separate terms; none were acquired or cleared."
+    }
+  },
+  {
+    "id": 173,
+    "title": "Andreas Triantafyllopoulos public GitHub profile and repository list",
+    "description": "Author-linked GitHub account checked as a bounded search for the promised EUSIPCO bat-context code and split files.",
+    "url": "https://github.com/ATriantafyllopoulos?tab=repositories",
+    "checked": "2026-10-12",
+    "origin": "The author's personal website links to this public GitHub account. The visible repository page lists 13 public repositories; none visibly matched the EUSIPCO 2024 bat-context paper. This limited profile check does not establish that code is absent from coauthor, lab, organization, archival or unindexed locations.",
+    "review_url": "https://atriantafyllopoulos.github.io/",
+    "review_url_label": "Author personal site linking to public GitHub profile"
+  },
+  {
+    "id": 174,
+    "title": "Earth Species Library Egyptian fruit-bat pipeline (pinned 2021 snapshot)",
+    "description": "Pinned public repository snapshot containing the bat README, data-download instructions, preprocessing notebooks and PyTorch data-loader notebook.",
+    "url": "https://github.com/earthspecies/library/tree/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the pinned repository root inventory, Egyptian-fruit-bat README and four notebook previews at commit 6382c52bf553569528e0a790efe16e5ae42f0094 (June 28, 2021). The visible root file list contains no LICENSE file. Notebook 99a declares dataset CC BY 4.0 and says its code license is “to be linked”; it describes FileInfo.csv mapping and explicitly does not create a train/validation split. Notebook 02 constructs an emitter-identity task and a shuffled row-level stratified fold. Notebook 99b keeps emitter identity for a 10-emitter subset. This bounded review did not download files or execute code.",
+    "review_url": "https://github.com/earthspecies/library/tree/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat",
+    "review_url_label": "Earth Species Library Egyptian-fruit-bat folder at the reviewed immutable commit",
+    "rights": {
+      "code": "No LICENSE file appears in the visible root inventory at the pinned commit; notebook 99a says the code license is “to be linked”. Code reuse is not cleared.",
+      "data": "Notebook 99a states CC BY 4.0 for its dataset, while Talk2Nature catalogs separate direct Figshare item-level records for the 2017 archive and components. The declaration scopes and archive-copy provenance have not been reconciled.",
+      "model": "The repository README mentions a pretrained ResNet context-prediction example, but its exact code, checkpoint and relationship to EUSIPCO 2024 were not inspected.",
+      "conditions": "Treat repository code, archive copies, original Figshare items and any pretrained weights as separate assets. Do not reuse or acquire until terms and provenance are verified. No files were downloaded and no code was run.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
+  },
+  {
+    "id": 175,
+    "title": "Earth Species Library: Egyptian fruit-bat PyTorch data-loader notebook",
+    "description": "Pinned notebook constructs a spectrogram dataset for emitter/speaker identification and uses a shuffled, row-level stratified fold.",
+    "origin": "Reviewed the task-definition, preprocessing and split cells in the displayed notebook at commit 6382c52bf553569528e0a790efe16e5ae42f0094 (June 28, 2021). It uses Emitter as the target, takes the first second of each recording, creates 64-bin mel spectrograms and applies shuffled StratifiedKFold over annotation rows, using fold zero. Because emitter identity is the prediction target, the same identities occur in both train and validation rows. No notebook or data file was downloaded or executed.",
+    "url": "https://github.com/earthspecies/library/blob/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat/02_Create_PyTorch_DataLoaders.ipynb",
+    "checked": "2026-10-12",
+    "review_url_label": "PyTorch loader notebook at commit 6382c52 (speaker-identity task and row split)",
+    "review_url": "https://github.com/earthspecies/library/blob/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat/02_Create_PyTorch_DataLoaders.ipynb",
+    "rights": {
+      "code": "No repository-level code license was identified in the visible pinned root inventory; notebook 99a says code license “to be linked”.",
+      "data": "Notebook 99a declares CC BY 4.0 for the dataset; the declaration has not been reconciled with direct Figshare file-level records or the provenance/terms of derived archive copies.",
+      "conditions": "Metadata review only. Do not reuse code or acquire/redistribute data until each artifact and intended use is independently cleared.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
+  },
+  {
+    "id": 176,
+    "title": "Earth Species Library: Egyptian fruit-bat preprocessing notebook",
+    "description": "Pinned preprocessing notebook maps annotation FileIDs to filenames and records that it did not define a train/validation split.",
+    "origin": "Reviewed the displayed metadata, FileInfo mapping, label and split statements at commit 6382c52bf553569528e0a790efe16e5ae42f0094 (June 28, 2021). The notebook says the original data collection spans 65 Figshare pages; it fetches FileInfo.csv by its listed Figshare file ID to map annotation FileIDs to filenames, reports a historical 30.1 MB transfer, and says the best split is not apparent, so it does not create train/validation partitions. Its front matter declares dataset CC BY 4.0 and code license “to be linked”. No files were downloaded or code executed.",
+    "url": "https://github.com/earthspecies/library/blob/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat/99a_Data_Preprocessing.ipynb",
+    "checked": "2026-10-12",
+    "review_url_label": "Preprocessing notebook at commit 6382c52 (FileInfo join and no split)",
+    "review_url": "https://github.com/earthspecies/library/blob/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat/99a_Data_Preprocessing.ipynb",
+    "rights": {
+      "code": "No repository-level code license was identified in the visible pinned root inventory; notebook 99a says code license “to be linked”.",
+      "data": "Notebook 99a declares CC BY 4.0 for the dataset; the declaration has not been reconciled with direct Figshare file-level records or the provenance/terms of derived archive copies.",
+      "conditions": "Metadata review only. Do not reuse code or acquire/redistribute data until each artifact and intended use is independently cleared.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
+  },
+  {
+    "id": 177,
+    "title": "Earth Species Library: Egyptian fruit-bat mini-dataset notebook",
+    "description": "Pinned notebook builds a smaller emitter-identity subset rather than a context-prediction benchmark.",
+    "origin": "Reviewed the displayed selection and output-label cells at commit 6382c52bf553569528e0a790efe16e5ae42f0094 (June 28, 2021). It filters to the ten most common positive emitter IDs, randomly permutes and selects 1,000 rows per emitter, and retains only Emitter and File Name. The reviewed sampling cell does not specify a random seed. This is a reduced identity dataset, not a context split or paper reproduction. No files were downloaded or code executed.",
+    "url": "https://github.com/earthspecies/library/blob/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat/99b_Data_Preprocessing.ipynb",
+    "checked": "2026-10-12",
+    "review_url_label": "Mini-dataset notebook at commit 6382c52 (ten-emitter identity subset)",
+    "review_url": "https://github.com/earthspecies/library/blob/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat/99b_Data_Preprocessing.ipynb",
+    "rights": {
+      "code": "No repository-level code license was identified in the visible pinned root inventory; notebook 99a says code license “to be linked”.",
+      "data": "Notebook 99a declares CC BY 4.0 for the dataset; the declaration has not been reconciled with direct Figshare file-level records or the provenance/terms of derived archive copies.",
+      "conditions": "Metadata review only. Do not reuse code or acquire/redistribute data until each artifact and intended use is independently cleared.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
+  },
+  {
+    "id": 178,
+    "title": "BioCPPNet: automatic bioacoustic source separation with deep neural networks",
+    "description": "Peer-reviewed, cross-species method for separating overlapping animal vocalizations before downstream analysis.",
+    "url": "https://doi.org/10.1038/s41598-021-02790-2",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the primary article's abstract, Methods, Data availability, Code availability, Results, Discussion and rights statement. The review covered synthetic-mixture construction, the bat open/closed-speaker setup, reported validation metrics and dataset distinctions. No code, data, supplementary media or weights were downloaded or executed.",
+    "review_url": "https://www.nature.com/articles/s41598-021-02790-2",
+    "review_url_label": "Scientific Reports article: methods, results, data/code statements and license",
+    "rights": {
+      "article": "Scientific Reports states that the article is licensed CC BY 4.0. Third-party material may be excluded where its credit line says so.",
+      "data_and_code": "The article points to public macaque and Egyptian-fruit-bat datasets, while dolphin data were used under a license and are not public. The linked repository's code license was not identified in its reviewed root inventory. Data, code, trained weights and article material remain separate assets; none were acquired."
+    }
+  },
+  {
+    "id": 179,
+    "title": "Earth Species Project BioCPPNet source-separation repository",
+    "description": "Author-linked code repository for the BioCPPNet mixture-generation, separator and downstream evaluation pipeline.",
+    "url": "https://github.com/earthspecies/cocktail-party-problem/tree/7092851cbd9a32116e6453583823d5334ab11f1b",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the public README and visible root inventory at commit 7092851cbd9a32116e6453583823d5334ab11f1b (February 1, 2022). The README describes dataset preparation, mixture generation, classifier/separator training and evaluation. No LICENSE file appeared in the reviewed root inventory. No code, datasets, outputs or weights were downloaded or run.",
+    "review_url": "https://github.com/earthspecies/cocktail-party-problem/blob/7092851cbd9a32116e6453583823d5334ab11f1b/README.md",
+    "review_url_label": "Repository README at the reviewed immutable commit",
+    "rights": {
+      "code": "No repository-level LICENSE was visible at the reviewed commit. Code reuse, modification and redistribution are unresolved; public availability is not permission.",
+      "data_and_weights": "The repository instructs users to provide datasets. The paper identifies distinct macaque, Egyptian-fruit-bat and restricted dolphin data sources. Any source audio, generated mixtures, checkpoints and model weights require separate provenance and rights review.",
+      "conditions": "Metadata-only reference. Do not clone, install, execute or reuse this implementation until the exact code license and all intended-use terms are verified.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
+  },
+  {
+    "id": 180,
+    "title": "Do animals use names? Conceptual and empirical criteria",
+    "description": "A 2026 review proposes criteria for claims that animal signals function as names: individual reference, symbolic representation and shared meaning.",
+    "url": "https://doi.org/10.1016/j.tics.2026.06.008",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official PubMed record and the official ScienceDirect listing for bibliographic metadata, abstract, publisher highlights, Open Access/Creative Commons status and copyright information. The direct publisher page returned HTTP 403; full text, references and supplementary files were not reviewed.",
+    "review_url": "https://pubmed.ncbi.nlm.nih.gov/42486753/",
+    "review_url_label": "PubMed record: abstract, metadata and copyright statement",
+    "rights": {
+      "article": "ScienceDirect identifies the article as Open Access under a Creative Commons license, but the accessible listing does not expose the exact license version or conditions. The PubMed record also displays copyright © 2026 the authors, published by Elsevier, all rights reserved.",
+      "conditions": "Metadata and citation only; publish an original short summary and link. Confirm the exact Creative Commons terms before reproducing article text, figures or other material.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
+  },
+  {
+    "id": 181,
+    "title": "European Commission portal record: BiodivFuture 2026–2027",
+    "description": "The European Commission Research and Innovation portal lists the BiodivFuture call with a November 2, 2026 deadline, which conflicts with the Biodiversa+ call page and formal announcement that give November 10, 2026.",
+    "url": "https://projects.research-and-innovation.ec.europa.eu/en/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/restore-our-ocean-and-waters/horizon-europe-european-biodiversity-partnership-biodivfuture-novel-ecosystems-biodiversity-socio",
+    "checked": "2026-10-12",
+    "origin": "Official European Commission Research and Innovation portal listing reviewed October 12, 2026. Its displayed date differs from the call-organizer page and formal call document; preserve as a discrepancy and verify with the call secretariat before relying on either date."
+  },
+  {
+    "id": 182,
+    "title": "Biodiversa+ 2026–2027 BiodivFuture joint-call page",
+    "description": "Official call-organizer page for the transnational BiodivFuture call on novel ecosystems, biodiversity and socio-ecological trajectories. It lists the mandatory pre-proposal deadline as November 10, 2026 at 12:00 CET.",
+    "url": "https://www.biodiversa.eu/2026/06/09/2026-2027-joint-call/",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Biodiversa+ call page on October 12, 2026 for scope, two-stage schedule, deadline, consortium requirements and partner-search route."
+  },
+  {
+    "id": 183,
+    "title": "BiodivFuture Document 1: Announcement of Opportunity",
+    "description": "Formal 2026–2027 call document. It confirms the November 10, 2026 noon CET pre-proposal deadline, mandatory five-page first-stage description and per-partner budgets, plus the three-country and three-funding-organisation consortium rule.",
+    "url": "https://www.biodiversa.eu/wp-content/uploads/2026/09/BiodivFuture_Doc1_Announcement-opportunity.pdf",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official 20-page Biodiversa+ Announcement of Opportunity, version published September 2026, for call scope, deadline, pre-proposal requirements and consortium eligibility."
+  },
+  {
+    "id": 184,
+    "title": "BiodivFuture Funding Organisation Rules, version 1",
+    "description": "Official national/regional funding rules published for the September 2026 call launch. The Israel Ministry of Environmental Protection entry lists a €120,000 call contribution and maximum per project, eligibility through ISF-recognized research institutions, collaboration by independent researchers/NGOs/local authorities, and an Israel-based project component.",
+    "url": "https://www.biodiversa.eu/wp-content/uploads/2026/09/BiodivFuture_Funding-Organisation_Rules_V1_09-09-2026.pdf",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the Israel/MoEP section of the official 109-page funding-organisation rules document. The linked gov.il national call page did not expose readable text during this check, so additional national administrative rules remain unverified."
+  },
+  {
+    "id": 185,
+    "title": "BiodivFuture official partner and project search",
+    "description": "The Electronic Proposal Submission System provides a public partner/project search page for the 2026–2027 BiodivFuture call.",
+    "url": "https://proposals.etag.ee/biodiversa/2026/partner-search",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the public partner-search page on October 12, 2026. Visible listings include researchers seeking project or partner matches; no listing was submitted, no individual was contacted and no affiliation was independently verified."
+  },
+  {
+    "id": 186,
+    "title": "Moth–plant acoustic study: full text and public review record",
+    "description": "NCBI PubMed Central full text of the eLife version of record, including methods, figures, reviewer comments and author responses.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12768406/",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the complete indexed article text and the included public review/author-response material. The article's license statement identifies CC BY 4.0. This is a source-access route for reading, not a second independent study."
+  },
+  {
+    "id": 187,
+    "title": "eLife figures and source data for the moth–plant acoustic study",
+    "description": "The publisher supplement is listed as Source data 1, a 1.2 MB ZIP described by PMC as raw data tables and analysis code; the figures page also lists raw scatter-plot data for Figure 1. The linked archive itself was not downloaded or inspected.",
+    "url": "https://elifesciences.org/articles/104700/figures",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official eLife figures/data page and the article package listing in NCBI PMC. The publisher ZIP and separate figure supplement were not downloaded; exact contents, checksums, runtime requirements, overlap with Mendeley Data v1 and any artifact-specific terms remain unverified.",
+    "rights": {
+      "article": "The eLife article states CC BY 4.0. The separate source-data archive and figure supplements have not had their own file-level notices checked.",
+      "conditions": "Keep the publisher archive metadata-only until contents, provenance and applicable artifact-specific terms are reviewed. Do not infer permission to execute, redistribute or use as training data from the article license alone."
+    }
+  },
+  {
+    "id": 188,
+    "title": "Mendeley Data v1: moth oviposition tables and analysis code",
+    "description": "Author-linked data deposit for the eLife study; its record describes the content as codes and statistics and displays a CC0 1.0 license.",
+    "url": "https://doi.org/10.17632/yg7ms8rn37.1",
+    "checked": "2026-10-12",
+    "origin": "Reviewed Mendeley Data v1 metadata and file tree: published November 14, 2025; contributor Guy Zer; description 'Codes and statistics of the above paper'; item-level CC0 1.0. The separate file-listing and checksum review is recorded in source 192."
+  },
+  {
+    "id": 189,
+    "title": "Water-crystal methodology: 2017 technical note",
+    "description": "Kokubo, Nemoto and Kawano (2017), Journal of Parapsychology 81(1):73–86. Full 14-page technical note reviewed. It discusses non-independent crystal photographs and too few bottle-level treatment units, and acknowledges limitations in the authors’ own small tests. It is methodological context, not a decisive independent replication or evidence of communication.",
+    "url": "https://www.parapsychologypress.org/_files/ugd/82c4a8_d4d214eaafb64f15b33776b5019621d5.pdf",
+    "checked": "2026-10-12",
+    "origin": "The journal issue page lists the article and describes all articles in the issue as open access; a specific article-level reuse license was not verified: https://www.parapsychologypress.org/jp-81-1"
+  },
+  {
+    "id": 190,
+    "title": "Egyptian fruit bat subject and annotation metadata (Figshare item 4555900)",
+    "description": "The five-page Metadata.pdf item declares CC0 1.0. Tables 1–4 describe treatment periods, dates, group composition, recording channels, subject and maternal fields, annotation columns and label definitions. Talk2Nature reviewed the file locally; no PDF pages or subject IDs were republished.",
+    "url": "https://api.figshare.com/v2/articles/4555900",
+    "checked": "2026-10-12",
+    "origin": "Figshare item 4555900 v1, file ID 8900800. API reports 367,257 bytes and md5=null; the acquisition receipt records a local SHA-256 without claiming source-checksum verification.",
+    "rights": {
+      "item": "Figshare item API declares CC0 1.0 for Metadata.pdf only; this does not grant rights to the article, annotations, FileInfo.csv, audio/video or model artifacts.",
+      "conditions": "Cite the item and keep file-level rights separate. No PDF content or raw identifiers were republished."
+    }
+  },
+  {
+    "id": 191,
+    "title": "Egyptian fruit bat video-derived annotations (Figshare item 4555903)",
+    "description": "The item API declares CC0 1.0 for Annotations.csv. Its 91,080-row table contains FileID, emitter, addressee, context, pre/post actions and sample bounds. A local aggregate structural and participant-pair report is available in the repository; raw rows and IDs are not published and training admission remains false.",
+    "url": "https://api.figshare.com/v2/articles/4555903",
+    "checked": "2026-10-12",
+    "origin": "Figshare item 4555903 v1; the exact 3,286,405-byte CSV matched its API MD5 and local SHA-256 receipt. The item is separate from the 2017 paper, Metadata.pdf, FileInfo.csv and audiovisual archive.",
+    "rights": {
+      "item": "Figshare item API declares CC0 1.0 for Annotations.csv only; this is the repository declaration, not legal advice or blanket permission for other assets.",
+      "conditions": "Talk2Nature reports aggregate structure only, preserves source provenance, and does not admit rows to model training."
+    }
+  },
+  {
+    "id": 192,
+    "title": "Mendeley Data v1 file inventory and integrity metadata for the moth study",
+    "description": "The public file browser lists 32 files in three folders: basic_arena_fig1_S2 (6), coridor_arena_fig2_S3_S4 (5), and Location_fig_3 (21). By displayed extensions these are 24 CSV, four R, two MATLAB and two XLSX files. No audio extension appears in the inventory. The 50 KB data.xlsx preview shows experiment, date, arena, repetition, control, speaker side, female count, examined side and egg-cluster columns. A partial run_stats_whole.m preview reads data.xlsx. The Download All ZIP is displayed as 1.22 MB with SHA-256 0cce953171fcf416ead21696f30b3234e7bee70e93f7b5a6a8bc403765156c8a.",
+    "url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+    "checked": "2026-10-12",
+    "origin": "Inspected the public Mendeley Data v1 file tree and previews in a browser. File information panels displayed these individual SHA-256 values: data.xlsx (c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6), run_stats_whole.m (a2a656ba1c2d410728b159db42b5eaa6090f8a90e2974bfb94417a18c89c1067), and 220310_01_xypts.csv (b8b7ab99e9ab7db8190a0b60194b07ec802418e8b0b7227cb0461c57758e3bd8). The same panels display CC0 1.0. These are repository-reported checksums, not locally verified hashes; no files were downloaded or code executed.",
+    "rights": {
+      "item": "The Mendeley dataset page and the three inspected file-information panels display CC0 1.0. The CC0 notice does not establish rights the depositor may not own, third-party permissions, or the scientific validity of the files.",
+      "conditions": "Cite the dataset and keep the publisher article and eLife source-data ZIP separate. The ZIP has not been inspected or compared. No data were admitted to training or redistributed."
+    }
+  },
+  {
+    "id": 193,
+    "title": "Mendeley Data API: public dataset file routes",
+    "description": "The current official API reference lists public dataset file metadata, file-listing and download-redirect routes as OAuth2-protected. This documents an API access path; it does not change the rights on the public Mendeley item or prove that its browser download is unavailable.",
+    "url": "https://data.mendeley.com/api/docs/",
+    "checked": "2026-10-12",
+    "origin": "The official API reference identifies GET /datasets/{id}/files/{file_uuid}/{event_type} and GET /datasets/publics/{id}/files as OAuth2 routes. No API request, client registration or token was used."
+  },
+  {
+    "id": 194,
+    "title": "Pérez-Granados et al. (2026), Dupont's lark songs and calls",
+    "description": "A 2026 Scientific Data descriptor reports a curated acoustic dataset from 20 Spanish populations: 4,297 annotated songs from 191 males and 795 calls from 97 males, categorized into song and call types. The publisher licenses the article CC BY-NC-ND 4.0; the Zenodo dataset and R validation code are separate assets with separate terms.",
+    "url": "https://doi.org/10.1038/s41597-026-07131-4",
+    "checked": "2026-10-12",
+    "origin": "Full publisher version of record reviewed on October 12, 2026: abstract; Methods (study area, field recording, annotation and vocalization identification); Data Record; Technical Validation; Usage Notes; Data and Code Availability; Rights and Permissions. No article text, figure, data or code was copied or acquired.",
+    "rights": {
+      "article": "The publisher states CC BY-NC-ND 4.0 for the article; this does not cover the dataset or code.",
+      "dataset": "The article points to Zenodo DOI 10.5281/zenodo.17264916. The exact record license was not independently verified.",
+      "code": "Technical_validation.R is identified by the article as a separate Zenodo file; its item-level license was not verified."
+    }
+  },
+  {
+    "id": 195,
+    "title": "Zenodo indexed record 17264917 for Dupont's lark songs and calls",
+    "description": "Zenodo's indexed record 17264917 matches the article's title, authors, species and dataset counts, and reports an eight-file, 3.7 GB deposit including song/call archives, metadata, repertoire matrices and Technical_validation.R. The article cites the adjacent DOI 10.5281/zenodo.17264916; this identifier discrepancy is unresolved.",
+    "url": "https://zenodo.org/records/17264917",
+    "checked": "2026-10-12",
+    "origin": "Zenodo's indexed record result reports the exact dataset title, creators, counts, DOI 10.5281/zenodo.17264917, file list, sizes and MD5 values. Direct record and API access returned errors during this review; file bytes, checksums and item-level rights were not independently verified, and no files were downloaded.",
+    "rights": {
+      "dataset": "Zenodo record license unresolved. A separate Digital.CSIC distribution is declared CC BY 4.0 by the Spanish public-data catalog; do not assume this verifies the original Zenodo metadata or package contents.",
+      "code": "Unresolved for the separately listed Technical_validation.R file."
+    }
+  },
+  {
+    "id": 196,
+    "title": "Digital.CSIC distribution metadata for the Dupont's lark dataset",
+    "description": "The Spanish public-data catalog identifies the Spanish National Research Council (CSIC) as publisher and lists a public Digital.CSIC distribution, record handle 10261/424783: 17264917.zip and README.txt. Its metadata declares CC BY 4.0 for both distributions and dates them 2026-06-18. The archive itself and README contents were not retrieved.",
+    "url": "https://datos.gob.es/es/catalogo/ea0041268-un-conjunto-de-datos-acusticos-a-gran-escala-de-una-passerina-con-comportamiento-vocal-variable-espacialmente-anotaciones-a-gran-escala-de-tipos-de-canciones-y-llamadas-dataset-traduccion-automatica",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Datos.gob.es catalog metadata: publisher CSIC; handle http://hdl.handle.net/10261/424783; public distribution URLs on Digital.CSIC; archive and README; access-right and CC BY 4.0 fields; distribution dates. Direct Digital.CSIC handle and README requests timed out; the archive was not requested or downloaded.",
+    "rights": {
+      "dataset": "CC BY 4.0 is declared in Datos.gob.es metadata for the specific Digital.CSIC distribution 17264917.zip. The archive contents and identity against the Zenodo record were not independently checked.",
+      "readme": "CC BY 4.0 is declared in the same catalog for the separate README.txt distribution.",
+      "code": "The catalog does not establish rights for Zenodo's separately listed Technical_validation.R file."
+    }
+  },
+  {
+    "id": 197,
+    "title": "Common mycorrhizal networks: citation bias and evidence limits",
+    "description": "Karst, Jones and Hoeksema (2023), Nature Ecology & Evolution. A Perspective examining positive citation bias and overinterpretation in claims about forest common mycorrhizal networks. The publisher later corrected the reference list by removing four extraneous references and renumbering citations.",
+    "url": "https://www.nature.com/articles/s41559-023-01986-1",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Nature record, indexed article text and the linked author correction. The article abstract and selected passages were available through the publisher result, but direct rendering required publisher authentication in this review. Supplementary material and cited primary field studies were not independently reviewed.",
+    "rights": {
+      "article": "Publisher article; no redistribution license was verified. This project links to the source and publishes an original summary only.",
+      "correction": "Publisher correction states that four extraneous references were removed and the article references renumbered; no figures or article text are reproduced."
+    }
+  },
+  {
+    "id": 198,
+    "title": "Re-examining carbon sharing claims in the mother-tree hypothesis",
+    "description": "Henriksson et al. (2023), New Phytologist 239:19–28. A review of ectomycorrhizal carbon metabolism, boreal forest regeneration and isotope studies; the authors argue that evidence for significant net carbon transfer through common mycorrhizal networks benefiting recipients remains lacking.",
+    "url": "https://doi.org/10.1111/nph.18935",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the publisher article page, including the summary, selected discussion and author disclosures. It argues that alternative soil and biological pathways complicate isotope-based inference. The underlying datasets and cited experiments were not independently reanalyzed. One author disclosed a financial interest in an organic-fertilizer company.",
+    "rights": {
+      "article": "Publisher article; exact redistribution license was not verified. Link and cite only; no article text, figure or supplement is reproduced.",
+      "author_disclosure": "The publisher page reports a competing interest for one author; this is recorded as context, not a judgment about the evidence."
+    }
+  },
+  {
+    "id": 199,
+    "title": "Response to questions about common mycorrhizal networks",
+    "description": "Simard, Ryan and Perry (published January 2025), Frontiers in Forests and Global Change. An Opinion responding to critiques of forest common mycorrhizal network research and arguing that multiple methods support context-dependent network connections and resource transfer.",
+    "url": "https://doi.org/10.3389/ffgc.2024.1512518",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the complete publisher-hosted Opinion page, including its article type, context, selected discussion and author statements. The authors address critiques by Karst et al., Henriksson et al. and Robinson et al. This response is a scholarly argument, not an independent replication of those disputed studies.",
+    "rights": {
+      "article": "The publisher identifies this open-access article as CC BY. The license applies to this article, not cited studies or source datasets.",
+      "source_data": "No underlying data, figures or supplementary files were acquired or redistributed."
+    }
+  },
+  {
+    "id": 200,
+    "title": "Author correction to the common-mycorrhizal-network perspective",
+    "description": "Karst, Jones and Hoeksema (2023), Nature Ecology & Evolution 7:623. The publisher says four extraneous references were removed and references renumbered; the notice does not report a change to the article’s main claims.",
+    "url": "https://www.nature.com/articles/s41559-023-02035-7",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Nature correction record and its description of the editorial correction. The correction concerns four extraneous references and renumbering, not new experimental evidence.",
+    "rights": {
+      "correction": "Publisher correction record. No text or figures are reproduced; link to the official notice."
+    }
   }
 ]

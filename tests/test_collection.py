@@ -55,8 +55,37 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual({r['id'] for r in selected}, {
             'monk-parakeet-code', 'monk-parakeet-annotations',
             'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
-            'egyptian-fruit-bat-annotations'})
+            'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf'})
         self.assertLess(size, MAX_BATCH_BYTES)
+
+    def test_bat_fileinfo_stays_metadata_only_and_pdf_has_explicit_missing_digest(self):
+        by_id = {r['id']: r for r in self.catalog['resources']}
+        fileinfo = by_id['egyptian-fruit-bat-fileinfo']
+        metadata = by_id['egyptian-fruit-bat-metadata-pdf']
+        self.assertEqual(fileinfo['acquisition'], 'metadata_only')
+        self.assertEqual(fileinfo['files'], [])
+        self.assertEqual(fileinfo['figshare_item_id'], 4555897)
+        self.assertEqual(metadata['acquisition'], 'sample_approved')
+        artifact = metadata['files'][0]
+        self.assertEqual(artifact['figshare_file_id'], 8900800)
+        self.assertIsNone(artifact['md5'])
+        self.assertIn('md5=null', artifact['md5_unavailable_reason'])
+        self.assertEqual(plan(self.catalog, [metadata['id']])[1], 367257)
+
+    def test_fungal_electrophysiology_components_keep_rights_separate_and_unacquired(self):
+        records = {r['id']: r for r in self.catalog['resources']}
+        paper = records['fungal-electrophysiology-stimuli-2025-paper']
+        dataset = records['fungal-electrophysiology-stimuli-2025-data']
+        code = records['fungal-electrophysiology-stimuli-2025-method-s1']
+        self.assertEqual(paper['rights']['license'], 'CC-BY-4.0 for the article as stated in the published paper')
+        self.assertEqual(dataset['rights']['license'], 'CC-BY-4.0 as displayed on the Mendeley Data v1 record')
+        self.assertIn('Unresolved', code['rights']['license'])
+        for record in (paper, dataset, code):
+            with self.subTest(resource=record['id']):
+                self.assertEqual(record['acquisition'], 'metadata_only')
+                self.assertEqual(record['files'], [])
+        self.assertEqual(dataset['kind'], 'dataset')
+        self.assertEqual(code['kind'], 'code')
 
     def test_mendeley_sample_is_versioned_hash_pinned_and_not_training_admitted(self):
         r = copy.deepcopy(next(r for r in self.catalog['resources'] if r['id'] == 'budgerigar-vocal-signature-data'))
@@ -147,6 +176,55 @@ class CollectionTests(unittest.TestCase):
             self.assertEqual(receipt['files'][0]['sha256'], hashlib.sha256(data).hexdigest())
             self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
 
+    def test_figshare_missing_upstream_md5_is_explicit_and_receipt_does_not_overclaim(self):
+        data = b'%PDF-1.7\nsynthetic metadata fixture\n'
+        item_url = 'https://api.figshare.com/v2/articles/4555900'
+        artifact = {
+            'name': 'Metadata.pdf',
+            'url': 'https://ndownloader.figshare.com/files/8900800',
+            'source_url': item_url,
+            'figshare_file_id': 8900800,
+            'bytes': len(data),
+            'md5': None,
+            'md5_unavailable_reason': 'The public Figshare item API returned md5=null.',
+        }
+        resource = {
+            'id': 'figshare-pdf-test', 'kind': 'dataset', 'title': 'Synthetic Figshare PDF item',
+            'url': item_url, 'figshare_item_id': 4555900, 'version': 'Figshare item 4555900 v1',
+            'reviewed': '2026-10-12', 'priority': 1, 'review_depth': 'Synthetic metadata fixture.',
+            'task': 'Test bounded retrieval without an upstream digest.', 'access': 'Synthetic only.',
+            'decision': 'Test only.', 'limitations': 'No real data.', 'attribution': 'Fixture.',
+            'rights': {'license': 'CC0-1.0', 'scope': 'Synthetic item.',
+                       'evidence_url': item_url, 'conditions': 'Fixture.',
+                       'research_use': 'conditional', 'commercial_use': 'conditional',
+                       'redistribution': 'conditional'},
+            'license_notice': 'Synthetic CC0 metadata notice.',
+            'acquisition': 'sample_approved', 'adapter': 'figshare_springernature',
+            'admission_reason': 'Test size/TLS provenance and local checksum only.', 'files': [artifact],
+        }
+        catalog = {'schema_version': 1, 'resources': [resource]}
+        validate(catalog)
+        target = ('https://s3-eu-west-1.amazonaws.com/pstorage-npg-968563215/'
+                  '8900800/Metadata.pdf?X-Amz-Signature=fixture')
+        opener = Mock()
+        opener.open.side_effect = lambda request, timeout: Response(
+            data, target, {'Content-Length': str(len(data)), 'Content-Type': 'application/pdf'})
+
+        with tempfile.TemporaryDirectory() as temp:
+            result = acquire(catalog, [resource['id']], Path(temp).resolve(), opener=opener)
+            receipt = json.loads(Path(result['receipts'][0]).read_text())
+            file_receipt = receipt['files'][0]
+            self.assertFalse(receipt['training_admitted'])
+            self.assertIsNone(file_receipt['md5'])
+            self.assertFalse(file_receipt['source_checksum_verified'])
+            self.assertEqual(file_receipt['sha256'], hashlib.sha256(data).hexdigest())
+            self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
+
+        invalid = copy.deepcopy(catalog)
+        del invalid['resources'][0]['files'][0]['md5_unavailable_reason']
+        with self.assertRaisesRegex(ValueError, 'md5_unavailable_reason'):
+            validate(invalid)
+
     def test_unresolved_licenses_and_metadata_cannot_download(self):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, ['beans-next'])
@@ -218,6 +296,28 @@ class CollectionTests(unittest.TestCase):
                          'not_admitted')
         self.assertIn('MIT', by_id['animal2vec-code']['rights']['license'])
         self.assertIn('CC-BY-NC-4.0', by_id['animal2vec-model-weights']['rights']['license'])
+
+    def test_dupont_lark_dataset_rights_are_separate_and_not_admitted(self):
+        resource = next(r for r in self.catalog['resources'] if r['id'] == 'duponts-lark-vocal-types-2026')
+        self.assertEqual(resource['kind'], 'dataset')
+        self.assertEqual(resource['source_ids'], [194, 195, 196])
+        self.assertEqual(resource['acquisition'], 'metadata_only')
+        self.assertEqual(resource['files'], [])
+        self.assertIn('CC BY 4.0 is declared', resource['rights']['license'])
+        self.assertIn('Zenodo record\'s own license remains unresolved', resource['rights']['license'])
+        self.assertIn('CC BY-NC-ND 4.0', resource['rights']['scope'])
+        self.assertEqual(resource['rights']['commercial_use'], 'unresolved')
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog, [resource['id']])
+
+        code = next(r for r in self.catalog['resources'] if r['id'] == 'duponts-lark-technical-validation-r-2026')
+        self.assertEqual(code['kind'], 'code')
+        self.assertEqual(code['acquisition'], 'metadata_only')
+        self.assertEqual(code['files'], [])
+        self.assertIn('Unresolved', code['rights']['license'])
+        self.assertEqual(code['rights']['research_use'], 'unresolved')
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog, [code['id']])
 
     def test_version_urls_and_local_names_are_constrained(self):
         invalid = [
@@ -341,6 +441,9 @@ class CollectionTests(unittest.TestCase):
         rows = [
             ['private-file-key', '-101', '102', '0', '1', '2', '3', '4', '10', '20'],
             ['private-file-key', '101', '102', '12', '0', '0', '0', '0', '10', '20'],
+            ['private-file-key-2', '103', '104', '3', '1', '2', '3', '4', '30', '40'],
+            ['private-file-key-3', '102', '103', '4', '1', '2', '3', '4', '50', '60'],
+            ['private-file-key-4', '0', '104', '0', '0', '0', '0', '0', '70', '80'],
         ]
         output = io.StringIO()
         writer = csv.writer(output)
@@ -362,14 +465,26 @@ class CollectionTests(unittest.TestCase):
             (folder / 'receipt.json').write_text(json.dumps(receipt))
             report = inspect_bat(folder)
             serialized = json.dumps(report)
-            self.assertEqual(report['rows'], 2)
-            self.assertEqual(report['unique_file_ids'], 1)
+            self.assertEqual(report['rows'], 5)
+            self.assertEqual(report['unique_file_ids'], 4)
             self.assertEqual(report['rows_beyond_unique_file_ids'], 1)
             self.assertEqual(report['duplicate_file_interval_rows'], 1)
             self.assertEqual(report['negative_ambiguous_identity_rows']['emitter'], 1)
+            self.assertEqual(report['participant_pair_structure'], {
+                'unique_known_ids_across_both_roles': 4,
+                'unique_ids_in_emitter_field': 3,
+                'unique_ids_in_addressee_field': 3,
+                'rows_with_two_identified_participants': 4,
+                'unique_interacting_pairs': 3,
+                'connected_components_among_pair_linked_ids': 1,
+                'largest_pair_component_ids': 4,
+                'known_ids_without_a_pair_edge': 0,
+            })
             self.assertFalse(report['training_admitted'])
             self.assertNotIn('private-file-key', serialized)
             self.assertNotIn('-101', serialized)
+            for identity in ('101', '102', '103', '104'):
+                self.assertNotIn(identity, serialized)
             (folder / 'Annotations.csv').write_bytes(data + b'changed')
             with self.assertRaisesRegex(ValueError, 'differs'):
                 inspect_bat(folder)

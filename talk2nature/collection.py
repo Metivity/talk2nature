@@ -131,13 +131,20 @@ def validate(catalog):
                         raise ValueError('Artifact provenance must match the named deposit.')
                 else:
                     file_id = artifact.get('figshare_file_id')
+                    md5 = artifact.get('md5')
                     if (type(file_id) is not int or file_id <= 0
                             or parsed.hostname != 'ndownloader.figshare.com'
                             or parsed.path != f'/files/{file_id}' or parsed.query or parsed.fragment
                             or require_text(artifact, 'source_url') != resource['url']
-                            or not re.fullmatch('[a-f0-9]{32}', require_text(artifact, 'md5'))
+                            or 'md5' not in artifact
+                            or (md5 is not None and (not isinstance(md5, str)
+                                or not re.fullmatch('[a-f0-9]{32}', md5)))
                             or 'sha256' in artifact or 'git_blob_sha1' in artifact):
-                        raise ValueError('Figshare artifact must pin its item, file ID, download URL and MD5.')
+                        raise ValueError('Figshare artifact must pin its item, file ID, download URL and checksum status.')
+                    if md5 is None:
+                        require_text(artifact, 'md5_unavailable_reason')
+                    elif 'md5_unavailable_reason' in artifact:
+                        raise ValueError('Do not describe a present Figshare MD5 as unavailable.')
                 if type(artifact.get('bytes')) is not int or not 0 < artifact['bytes'] <= MAX_FILE_BYTES:
                     raise ValueError('Artifact exceeds file limit or has invalid size.')
             if adapter == 'github' and resource.get('license_file') not in names:
@@ -224,8 +231,8 @@ def read_artifact(artifact, opener):
     if 'sha256' in artifact:
         if hashlib.sha256(data).hexdigest() != artifact['sha256']:
             raise ValueError('Downloaded deposit SHA-256 mismatch.')
-    elif 'md5' in artifact:
-        if hashlib.md5(data, usedforsecurity=False).hexdigest() != artifact['md5']:
+    elif 'figshare_file_id' in artifact:
+        if artifact.get('md5') is not None and hashlib.md5(data, usedforsecurity=False).hexdigest() != artifact['md5']:
             raise ValueError('Downloaded Figshare MD5 mismatch.')
     else:
         blob = b'blob ' + str(len(data)).encode() + b'\0' + data
@@ -265,7 +272,11 @@ def acquire(catalog, identifiers, destination=DESTINATION, max_bytes=MAX_BATCH_B
                 target = folder / artifact['name']
                 target.write_bytes(data)
                 target.chmod(0o600)
-                entries.append({**artifact, 'sha256': hashlib.sha256(data).hexdigest()})
+                entry = {**artifact, 'sha256': hashlib.sha256(data).hexdigest()}
+                entry['source_checksum_verified'] = (
+                    'git_blob_sha1' in artifact or 'sha256' in artifact
+                    or ('figshare_file_id' in artifact and artifact.get('md5') is not None))
+                entries.append(entry)
             receipt = {'schema_version': 1, 'resource_id': resource['id'],
                 'retrieved_at': datetime.now(timezone.utc).isoformat(),
                 'catalog_sha256': catalog_hash, 'resource': resource, 'files': entries,

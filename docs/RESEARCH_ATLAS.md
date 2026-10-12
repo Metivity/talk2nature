@@ -2,7 +2,7 @@
 
 The public [world atlas](https://metivity.github.io/talk2nature/research/atlas/) connects the literature library to approximate places and a source-year timeline. It is the first geographic layer, not a map of all published research or a live observation service.
 
-As of October 11, 2026, the library contains **45 notes**, **23 mapped notes** across **23 approximate regions**, **135 source records** and **16 collection resources**. This is evidence-map coverage, not 23 event-aligned datasets or independent replications. The Las Cruces point is a coarse study-region marker; it does not identify a facility or animal room. MammAlps is mapped only to the Swiss National Park region because the authors withhold exact camera sites.
+As of October 12, 2026, the local library contains **49 notes**, **25 mapped notes** across **24 approximate places**, **163 source records** and **28 collection resources**. This is local evidence-map coverage, not 25 event-aligned datasets or independent replications; this continuation has not been deployed. The Costa Rica marker is country-scale because the study concerns a Critically Endangered wild parrot; it does not expose the field property or recording site. MammAlps remains mapped only to the Swiss National Park region because the authors withhold exact camera sites.
 
 ## October 4 historical coverage snapshot
 
@@ -111,3 +111,7 @@ Original historical study years remain visible separately from observation perio
 Access limits: the 1971 humpback PDF led to an institutional login, so it was not used as a full-text source. Several publisher opens failed. Primary indexed passages were retained only with explicit attribution and limited review labels. The wolf XML mirror was retrieved successfully; the dolphin XML mirror returned HTTP 500, so no complete-method review is claimed. Python's local TLS trust store failed on one retrieval; verified-TLS curl was used successfully for the wolf mirror, with no certificate checks disabled. No paywall or browser challenge was bypassed.
 
 The goal board computes 20/20 and 3/3. It explicitly directs subsequent work toward methods depth and unresolved records; these counts do not close scientific-review, consent, hosting or physical-device requirements.
+
+## October 12: wild yellow-naped amazon duets
+
+The 2026 duet-structure paper places fieldwork in north-west Costa Rica during 2006–2008. The atlas adds only a country-scale Costa Rica point because the focal wild species is Critically Endangered. The named private property and any recording coordinates are omitted. The observation period is cited separately from the 2026 publication year. This is literature geography, not an animal sighting or observation submitted through the app.

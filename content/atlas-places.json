@@ -162,6 +162,20 @@
       "precision": "region",
       "latitude": 8.6,
       "longitude": -67.6
+    },
+    {
+      "id": "costa-rica",
+      "label": "Costa Rica",
+      "precision": "country",
+      "latitude": 9.8,
+      "longitude": -83.8
+    },
+    {
+      "id": "spain",
+      "label": "Spain · 20 study populations (country-level locator)",
+      "precision": "country",
+      "latitude": 40.0,
+      "longitude": -4.0
     }
-  ]
+]
 }

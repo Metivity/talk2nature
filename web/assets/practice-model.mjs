@@ -26,13 +26,13 @@ export const SCENES = Object.freeze([
     ]
   },
   {
-    id: 'parrot-and-phrase',
-    title: 'A parrot and a phrase',
-    setup: 'A person says “hello.” Later in the same clip, a parrot makes a similar-sounding phrase. No response-choice test is shown.',
+    id: 'parrot-reported-name',
+    title: 'A reported name',
+    setup: 'An invented note says a parrot used its dog’s name after the dog barked. A short audio clip includes a similar phrase, but the dog is off-camera and nothing was checked against other situations.',
     claims: [
-      { text: 'The person spoke, then the parrot made a similar sound.', category: 'observed', explanation: 'That sequence is directly described. Similar sound does not alone establish what the parrot understood.' },
-      { text: 'The parrot understood the word “hello.”', category: 'unknown', explanation: 'The clip does not show whether the parrot understands the word. A suitable test would be needed.' },
-      { text: 'The parrot was trying to make the person laugh.', category: 'possible', explanation: 'That is a playful interpretation, but the scene does not establish the parrot’s intention.' }
+      { text: 'The caregiver reports a phrase after the dog barks.', category: 'observed', explanation: 'The invented note says that. It records what the caregiver reported; it does not independently check the timing.' },
+      { text: 'The phrase may be linked to the dog or its bark.', category: 'possible', explanation: 'That is one possible explanation. The scene does not compare other dogs, other sounds or other moments.' },
+      { text: 'The parrot uses this name to identify this one dog.', category: 'unknown', explanation: 'The note and similar-sounding clip do not show whether the parrot identifies the dog or repeats a phrase around a familiar cue. A fair test would compare other dogs and situations.' }
     ]
   }
 ]);

@@ -45,6 +45,16 @@
     "emitter": 44075,
     "addressee": 39368
   },
+  "participant_pair_structure": {
+    "unique_known_ids_across_both_roles": 48,
+    "unique_ids_in_emitter_field": 41,
+    "unique_ids_in_addressee_field": 33,
+    "rows_with_two_identified_participants": 70001,
+    "unique_interacting_pairs": 136,
+    "connected_components_among_pair_linked_ids": 3,
+    "largest_pair_component_ids": 31,
+    "known_ids_without_a_pair_edge": 13
+  },
   "published_category_counts": {
     "context": {
       "Biting": 1788,
@@ -91,6 +101,7 @@
     "A row is a video-derived vocal-interaction annotation, not a listener-validated message or necessarily an independent animal/session.",
     "Repeated file IDs can represent multiple annotated interactions within one WAV; row count is not a count of independent calls or trials.",
     "Negative emitter/addressee IDs mark role uncertainty in the paper; zero is the unknown code. Raw identifiers are not exported.",
+    "The participant-pair graph uses absolute nonzero IDs from both role columns to retain known participants when role assignment is uncertain; it is an aggregate structure check, not a verified subject-independent split.",
     "Matching published category totals checks transcription and aggregation, not annotation truth, model performance or biological meaning.",
     "No audio, video, FileInfo timing, code, model weights or animal-held-out split was inspected or run.",
     "The public report contains aggregate counts and no row values, file IDs, animal IDs or free text."

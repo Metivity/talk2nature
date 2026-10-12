@@ -27,6 +27,8 @@ Timing is approximate: frames are 100 ms, the final partial frame is not retaine
 
 The [mobile Field Companion](https://metivity.github.io/talk2nature/app/) now presents this engine in outdoor, companion and synthetic workflows, alongside Listen's Sound desk. Its optional offline cache saves public app files only. See [the mobile audit](MOBILE_AUDIT.md) for installation, design, testing and distribution decisions.
 
+The Field Companion's [phone rehearsal](https://metivity.github.io/talk2nature/app/check/) is separate from animal observations: a user-started eight-second check reduces microphone frames to temporary aggregate readings and stops on backgrounding or interruption. It stores no sound, result or device identifier, has no export or playback, and does not calibrate the microphone. Physical-device and reference-recorder checks remain required.
+
 Use **Try without a microphone → add a test voice marker → Stop recording → review a sound → Save session · ZIP** to explore without recording a household. For microphone use, choose a permitted setting, observe naturally, and review recordings privately with headphones away from animals. A permission checkbox cannot establish the rights or consent of everyone who might be audible.
 
 ## Devices: an explicit sequence

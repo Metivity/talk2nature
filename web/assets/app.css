@@ -27,3 +27,13 @@
 @media(max-width:620px){.scenario-grid{grid-template-columns:1fr}}
 .scenario-grid .practice-entry{grid-column:2 / span 2}
 @media(max-width:900px){.scenario-grid .practice-entry{grid-column:auto}}
+
+.animal-range{margin-top:8px;margin-bottom:54px}
+.animal-range-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,auto);align-items:center;gap:30px;padding:28px 32px;border-color:#cfe4c83d;background:linear-gradient(120deg,#dce9c812,#9fd4c90b)}
+.animal-range-copy h2{font:clamp(1.8rem,3vw,2.5rem)/1.12 Georgia,serif;letter-spacing:-.035em;margin:10px 0;color:#e7efcf}
+.animal-range-copy>p:not(.app-eyebrow){max-width:720px;color:#c7dad1;font-size:14px;line-height:1.75;margin:0 0 10px}
+.animal-range-copy .app-small{margin-bottom:0;color:#b8cec2}
+.animal-range-actions{display:grid;justify-items:start;gap:12px}
+.animal-range-actions .glass-button{min-height:48px;gap:12px}
+.animal-range-link{color:#d6e8c8;font-size:12px;text-decoration-thickness:1px;text-underline-offset:4px}
+@media(max-width:620px){.animal-range{margin-top:0;margin-bottom:38px}.animal-range-card{grid-template-columns:1fr;gap:18px;padding:23px 21px;border-radius:21px}.animal-range-copy h2{font-size:27px}.animal-range-copy>p:not(.app-eyebrow){font-size:13px;line-height:1.7}.animal-range-actions{justify-items:stretch}.animal-range-actions .glass-button{width:100%;min-height:50px}.animal-range-link{padding:8px 2px}}

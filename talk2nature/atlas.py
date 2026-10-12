@@ -27,6 +27,13 @@ def group(taxon):
         return 'plants_fungi'
     if taxon in {'Machine learning', 'Research tools', 'Cross-species', 'Across animals', 'Scientific method'}:
         return 'methods'
+    normalized = taxon.casefold()
+    if any(term in normalized for term in ('parrot', 'conure', 'amazon', 'parakeet', 'budgerigar', 'cockatiel', 'macaw', 'cockatoo', 'kea')):
+        return 'birds'
+    if any(term in normalized for term in ('fruit bat', 'bat (', 'rousettus')):
+        return 'mammals'
+    if any(term in normalized for term in ('plant', 'fung', 'mushroom', 'mycelium')):
+        return 'plants_fungi'
     return 'other_animals'
 
 

@@ -35,6 +35,7 @@ def check_site(root):
     info=json.loads((root/'build-info.json').read_text())
     base=urlsplit(info['base_url']); prefix=base.path.rstrip('/')
     parsed={}
+    link_graph={}
     errors=[]
     for path in root.rglob('*.html'):
         doc=PageParser(); doc.feed(path.read_text()); parsed[path.resolve()]=doc
@@ -49,6 +50,7 @@ def check_site(root):
     titles=[d.title for d in parsed.values()]
     if len(set(titles))!=len(titles): errors.append('Duplicate page titles')
     for path,doc in parsed.items():
+        linked_pages=set()
         for link in doc.links:
             ref=urlsplit(link)
             if ref.scheme or ref.netloc:
@@ -63,9 +65,12 @@ def check_site(root):
                 target=path.parent/unquote(ref.path) if ref.path else path
             if target.is_dir(): target=target/'index.html'
             if not target.exists(): errors.append(f'{path}: broken link {link}'); continue
+            if target.suffix=='.html' and target.resolve() in parsed:
+                linked_pages.add(target.resolve())
             if ref.fragment and target.suffix=='.html':
                 target_doc=parsed.get(target.resolve())
                 if target_doc and unquote(ref.fragment) not in target_doc.ids: errors.append(f'{path}: broken anchor {link}')
+        link_graph[path]=linked_pages
     xml=ElementTree.parse(root/'sitemap.xml')
     sitemap_ns='{http://www.sitemaps.org/schemas/sitemap/0.9}'
     locations=[n.text or '' for n in xml.findall(f'.//{sitemap_ns}loc')]
@@ -74,14 +79,37 @@ def check_site(root):
         if len(locations)!=info['pages']: errors.append('Sitemap page count mismatch')
         if len(locations)!=len(set(locations)): errors.append('Sitemap contains duplicate URLs')
         if set(locations)!=expected_locations: errors.append('Sitemap URLs do not match canonical public HTML pages')
-    if info['public'] and 'Disallow: /' in (root/'robots.txt').read_text(): errors.append('Public site blocks crawlers')
-    if not info['public'] and 'Disallow: /' not in (root/'robots.txt').read_text(): errors.append('Preview permits crawlers')
+        home=(resolved_root/'index.html').resolve()
+        public_pages={path for path in parsed if path.relative_to(resolved_root).as_posix()!='404.html'}
+        if home not in public_pages:
+            errors.append('Public homepage is missing')
+            reachable=set()
+        else:
+            reachable={home}; pending=[home]
+            while pending:
+                current=pending.pop()
+                for target in link_graph.get(current,()):
+                    if target in public_pages and target not in reachable:
+                        reachable.add(target); pending.append(target)
+        unreachable=sorted(public_pages-reachable)
+        for path in unreachable:
+            errors.append(f'Public page is not reachable from homepage: {path.relative_to(resolved_root).as_posix()}')
+    robots_lines=(root/'robots.txt').read_text().splitlines()
+    if info['public']:
+        if 'Disallow: /' in robots_lines: errors.append('Public site blocks crawlers')
+        expected_sitemap=f'Sitemap: {info["base_url"]}/sitemap.xml'
+        if expected_sitemap not in robots_lines: errors.append('Public robots.txt does not name the exact sitemap URL')
+    elif 'Disallow: /' not in robots_lines:
+        errors.append('Preview permits crawlers')
     forbidden={'.env','AGENTS.md','CLAUDE.md','build_audit.py'}
     for path in root.rglob('*'):
         if path.name in forbidden or path.suffix in {'.wav','.mp3','.mp4','.pdf','.py','.toml'} or 'funding' in path.relative_to(root).parts:
             errors.append(f'Unexpected private/source artifact in public output: {path}')
     if errors: raise ValueError('\n'.join(errors))
-    return {'html_pages':len(parsed),'links_checked':sum(len(d.links) for d in parsed.values()),'public':info['public']}
+    result={'html_pages':len(parsed),'links_checked':sum(len(d.links) for d in parsed.values()),'public':info['public']}
+    if info['public']:
+        result['reachable_public_pages']=len(reachable)
+    return result
 
 
 if __name__=='__main__':

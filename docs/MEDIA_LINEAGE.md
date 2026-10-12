@@ -14,7 +14,7 @@ Five normalized tables extend the existing study/observation/release database on
 | `model_inputs` | Foreign-key membership for the exact media metadata version used by a run. |
 | `model_results` | An invented result on a run input and bounded interval, including a complete codebook probability distribution, abstention and explicitly unvalidated calibration. It never replaces a human observation. |
 
-The knowledge graph now connects all of these to existing sources, studies, sessions, observations and releases. Relationships include `documents`, `captured_in`, `aligns`, `uses_release`, `uses_media`, `uses_alignment`, `produces` and `predicts_on`. These describe provenance, not biological meaning. The owner interface shows their plain-language names through Research connections. Public `/research/map/` remains a projection of public catalog files only.
+The knowledge graph now connects all of these to existing sources, studies, sessions, observations and releases. Relationships include `documents`, `captured_in`, `aligns`, `uses_release`, `uses_media`, `uses_alignment`, `produces` and `predicts_on`. The public metadata projection also records `cites` edges from evidence notes and `cataloged_from` edges from resource records when their `source_ids` explicitly identify source entries; missing references fail closed. These edges describe provenance, not biological meaning. The owner interface shows its plain-language relationships through Research connections. Public `/research/map/` remains a projection of public catalog files only.
 
 ## Admission and lifecycle
 

@@ -80,6 +80,9 @@ def inspect(folder=DEFAULT_FOLDER):
     negative_emitter = negative_addressee = unknown_emitter = unknown_addressee = 0
     noninteger_identity_values = noninteger_sample_values = 0
     invalid_intervals = 0
+    role_ids = {'emitter': set(), 'addressee': set()}
+    participant_pairs = set()
+    rows_with_two_identified_participants = 0
 
     for row in reader:
         rows += 1
@@ -118,8 +121,19 @@ def inspect(folder=DEFAULT_FOLDER):
                         unknown_emitter += 1
                     else:
                         unknown_addressee += 1
+                if identity != 0:
+                    role_ids[negative_counter].add(abs(identity))
             except ValueError:
                 noninteger_identity_values += 1
+
+        try:
+            emitter_id = abs(int(row['Emitter'].strip()))
+            addressee_id = abs(int(row['Addressee'].strip()))
+        except ValueError:
+            emitter_id = addressee_id = 0
+        if emitter_id and addressee_id and emitter_id != addressee_id:
+            rows_with_two_identified_participants += 1
+            participant_pairs.add(tuple(sorted((emitter_id, addressee_id))))
 
         context = row['Context'].strip()
         if context in CONTEXT_CODES:
@@ -145,6 +159,26 @@ def inspect(folder=DEFAULT_FOLDER):
     contexts = dict(sorted(contexts.items()))
     pre_actions = dict(sorted(pre_actions.items()))
     post_actions = dict(sorted(post_actions.items()))
+    adjacency = {}
+    for left, right in participant_pairs:
+        adjacency.setdefault(left, set()).add(right)
+        adjacency.setdefault(right, set()).add(left)
+    component_sizes = []
+    visited = set()
+    for animal_id in adjacency:
+        if animal_id in visited:
+            continue
+        stack = [animal_id]
+        visited.add(animal_id)
+        size = 0
+        while stack:
+            current = stack.pop()
+            size += 1
+            for neighbor in adjacency[current] - visited:
+                visited.add(neighbor)
+                stack.append(neighbor)
+        component_sizes.append(size)
+    all_known_ids = role_ids['emitter'] | role_ids['addressee']
     reference_matches = {
         'rows_match_paper_91080': rows == 91080,
         'context_counts_match_paper_table_4': contexts == PUBLISHED_CONTEXT_COUNTS,
@@ -170,6 +204,16 @@ def inspect(folder=DEFAULT_FOLDER):
         'noninteger_identity_values': noninteger_identity_values,
         'zero_unknown_identity_rows': {'emitter': unknown_emitter, 'addressee': unknown_addressee},
         'negative_ambiguous_identity_rows': {'emitter': negative_emitter, 'addressee': negative_addressee},
+        'participant_pair_structure': {
+            'unique_known_ids_across_both_roles': len(all_known_ids),
+            'unique_ids_in_emitter_field': len(role_ids['emitter']),
+            'unique_ids_in_addressee_field': len(role_ids['addressee']),
+            'rows_with_two_identified_participants': rows_with_two_identified_participants,
+            'unique_interacting_pairs': len(participant_pairs),
+            'connected_components_among_pair_linked_ids': len(component_sizes),
+            'largest_pair_component_ids': max(component_sizes, default=0),
+            'known_ids_without_a_pair_edge': len(all_known_ids - set(adjacency)),
+        },
         'published_category_counts': {
             'context': contexts,
             'pre_vocalization_action_across_both_roles': pre_actions,
@@ -186,6 +230,7 @@ def inspect(folder=DEFAULT_FOLDER):
             'A row is a video-derived vocal-interaction annotation, not a listener-validated message or necessarily an independent animal/session.',
             'Repeated file IDs can represent multiple annotated interactions within one WAV; row count is not a count of independent calls or trials.',
             'Negative emitter/addressee IDs mark role uncertainty in the paper; zero is the unknown code. Raw identifiers are not exported.',
+            'The participant-pair graph uses absolute nonzero IDs from both role columns to retain known participants when role assignment is uncertain; it is an aggregate structure check, not a verified subject-independent split.',
             'Matching published category totals checks transcription and aggregation, not annotation truth, model performance or biological meaning.',
             'No audio, video, FileInfo timing, code, model weights or animal-held-out split was inspected or run.',
             'The public report contains aggregate counts and no row values, file IDs, animal IDs or free text.',

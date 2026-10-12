@@ -1,0 +1,32 @@
+<section class="app-container device-check-intro">
+  <a class="app-back" href="{{base}}/app/">← Back to your field companion</a>
+  <div class="device-check-heading"><div><p class="app-eyebrow">BEFORE YOU HEAD OUT / PHONE REHEARSAL</p><h1>Check the phone.<br><em>Then meet the moment.</em></h1><p>Try an eight-second microphone check at home, away from animals. It shows whether this browser's audio pipeline produces samples and notices interruptions.</p></div><div class="device-check-orbit" aria-hidden="true"><span>8</span><small>seconds</small><i>listen · check · clear</i></div></div>
+  <div class="device-check-layout">
+    <article class="glass device-check-card" id="device-check" data-phase="setup">
+      <p class="app-eyebrow">A QUICK CHECK, NOT A CALIBRATION OR PASS/FAIL</p>
+      <h2 id="check-title">Keep the room ordinary.</h2>
+      <p id="check-status" role="status" aria-live="polite">The app reads incoming sound levels while this page stays open. It does not save or play the sound.</p>
+      <div class="device-check-steps" id="check-setup">
+        <ol><li>Choose a quiet room with no animal nearby.</li><li>Keep the phone still and this page visible.</li><li>Allow the browser microphone prompt, then wait up to eight seconds.</li></ol>
+        <label class="device-check-consent"><input id="check-permission" type="checkbox">I have permission to check the microphone here, including from anyone who may be audible.</label>
+        <div class="device-check-actions"><button id="check-start" class="glass-button primary" type="button">Start 8-second check</button><a class="glass-button" href="{{base}}/app/station/?mode=demo">Practice with invented tones</a></div>
+      </div>
+      <div id="check-running" class="device-check-running" hidden>
+        <div class="device-check-meter" aria-hidden="true"><span id="check-level-bar"></span></div>
+        <p><strong id="check-elapsed">0.0</strong> / 8 seconds</p>
+        <p class="device-check-small">Processed audio stays in memory only long enough to update these measurements.</p>
+        <button id="check-stop" class="glass-button check-stop" type="button">Stop check</button>
+      </div>
+      <div id="check-result" class="device-check-result" hidden>
+        <p class="device-check-result-label">YOUR PHONE CHECK</p>
+        <h3 id="check-result-title" tabindex="-1"></h3>
+        <p id="check-result-detail"></p>
+        <details><summary>Technical readings</summary><dl><div><dt>Processed duration</dt><dd id="check-duration">—</dd></div><div><dt>Processing rate</dt><dd id="check-rate">—</dd></div><div><dt>Highest level</dt><dd id="check-peak">—</dd></div><div><dt>Near digital maximum</dt><dd id="check-ceiling">—</dd></div></dl><p class="device-check-small">These are browser-input readings in dBFS, not calibrated sound-pressure measurements. They cannot verify microphone sensitivity, frequency response, quiet-sound capture or device-to-device consistency.</p></details>
+        <div class="device-check-actions"><button id="check-again" class="glass-button primary" type="button">Run another check</button><a class="glass-button" href="{{base}}/app/station/?mode=companion">Open a field moment</a></div>
+      </div>
+      <p class="device-check-footnote">No raw audio, device identifier, result or location is saved or uploaded. Leaving this page clears the check. This does not approve recording in any particular place.</p>
+    </article>
+    <aside class="glass device-check-note"><p class="app-eyebrow">WHAT THIS CAN TELL YOU</p><h2>Is the browser processing input?</h2><p>The check shows whether processed samples arrive, how long they arrive, and whether any approach the digital ceiling. Silence can still produce samples.</p><p>A completed check does not certify the microphone. Phone processing can change sound, and a quiet animal call may still be missed.</p><p>For wildlife, start only where recording is permitted, keep a respectful distance, and never play sounds to prompt a response.</p></aside>
+  </div>
+</section>
+<noscript><p class="app-container">The phone check needs JavaScript and microphone access. You can still use the rest of the research library.</p></noscript>
