@@ -1,17 +1,24 @@
 # University evaluation brief
 
-Updated October 6, 2026. This is an invitation to evaluate an early research-software workflow. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
+Updated October 12, 2026. This is an invitation to evaluate an early research-software workflow. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
 
-## The right first ask
+## Start with the browser; go deeper only if useful
 
-Talk2Nature is ready for a small **software and workflow evaluation with synthetic material**. A researcher, research-software engineer, librarian or student working with a supervisor can spend about 20 minutes asking whether one narrow workflow is understandable and useful:
+Talk2Nature is ready for a small **software and workflow evaluation with synthetic material**. Start with the [browser-only Compare moments review](https://metivity.github.io/talk2nature/app/compare/); no account, microphone, playback, download or Audacity installation is needed:
+
+1. Choose **Try an example pair** and compare the two invented sessions and their observer-entered notes.
+2. Notice how the complete and partial sessions differ in sampling. Ask what the interface supports you in describing and what it does not establish about animal behavior.
+3. Close one session and confirm the other remains open.
+4. If a step is confusing or a field is missing, use the [public reproduction and workflow form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Include the page URL and access date; do not include recordings or confidential research details.
+
+For a deeper, roughly 20-minute export review, the [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/) guides a synthetic Listen-to-Audacity check:
 
 1. Use the invented two-tone example in the browser-based Listen tool and mark two timed events.
 2. Export the local package and import its WAV and timed labels in Audacity, if Audacity is already part of the evaluator's workflow.
 3. Check whether the time spans and note text survive, compare the source checksums, and identify one confusing step, missing field or failed conversion.
 4. Report the tested revision and software versions, how much help was needed, what happened, and whether this is a workflow the group would use.
 
-The [researcher starter kit](RESEARCHER_START.md) provides the broader browser and Python evaluation routes. The [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/) provides the focused export walkthrough. The evaluation requires no account, microphone, animal recording, model download, data upload or study data. The current native import check covers Audacity 4.0.1 on macOS arm64 only; it is not a claim of cross-platform conformance.
+The [researcher starter kit](RESEARCHER_START.md) also provides a reproducible Python route. The evaluation requires no animal recording, model download, data upload or study data. Browser-review time is a project estimate; independent first-use timing has not yet been measured. The current native import check covers Audacity 4.0.1 on macOS arm64 only; it is not a claim of cross-platform conformance.
 
 The question is deliberately modest: **does this help a researcher preserve and inspect an observation record, and what does it fail to represent?** It does not test whether a call has a meaning, identify an animal, measure a model, or demonstrate conversation with wildlife.
 

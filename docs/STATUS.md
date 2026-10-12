@@ -2,6 +2,18 @@
 
 Updated October 12, 2026. The latest verified Pages content release is `4f01fc1` (PR #28; successful manual Pages workflow run [#38277855444](https://github.com/Metivity/talk2nature/actions/runs/38277855444)). It updates the lark research note and source/resource provenance. Direct HTTPS checks returned 200 for the homepage, lark research page, `/research/resources/`, `sitemap.xml` and `robots.txt`; the lark page has its expected self-canonical URL. The sitemap contains 88 project URLs, including the lark note, and `robots.txt` names that sitemap. These checks verify availability and crawl configuration, not search-engine ingestion. The last stored Search Console report predates PRs #25, #26 and #28; current sitemap processing and URL inspection remain unverified. Private hosting, physical-phone testing, specialist review and an independently reproduced scientific benchmark remain open.
 
+## October 12 researcher-entry path candidate
+
+**Question:** can a first-time researcher begin with the least setup, understand what the app can and cannot establish, and choose a deeper export check only if useful?
+
+**Evidence reviewed:** the live university invitation, community page, researcher starter kit, public reproduction issue form and the current Compare moments interface. They presented the browser comparison and the 20-minute Audacity handoff as competing entry points. The app already supports an invented pair, local comparison and closing one session without losing the other.
+
+**Change:** the university invitation now leads with the browser-only comparison and offers the Listen-to-Audacity check as an optional second route. The community invitation, researcher kit, university brief and search description use the same path and explain the limits. No outside data, animal recordings or third-party research artifacts were collected or added.
+
+**Checks:** 89 Python tests and 96 Node tests pass; the public build produces 88 pages plus 404; the site checker passes for 89 HTML files, 4,127 links and 88 reachable public pages. Headless Chrome at 320, 390 and 1,280 CSS pixels reports no horizontal overflow. The university CTA opens Compare moments; the example pair loads; closing the first session leaves the second available; there are no JavaScript errors. These are local emulated-browser checks. The candidate has not yet been merged or deployed.
+
+**Limitations and next decision:** the time estimate has not been measured with outside users; no independent evaluator has reported back. Physical phones, assistive technology and actual research workflows remain untested. After release, seek one independent evaluator through an authorized path and record actual steps, help needed, failures and usefulness. Independent reproduction remains zero; this UI review is not a biological benchmark or validation of animal communication.
+
 ## Implemented
 
 - Working brand: Talk2Nature / Listen closely. Understand carefully. Name clearance remains open.
