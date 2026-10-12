@@ -69,6 +69,14 @@ All 90 Python tests and 98 Node tests passed, and the catalog validator accepted
 
 This is a maintainer-run clean-clone check, not an independent reproduction, usability study, scientific validation or biological result. No research media, datasets or model weights were acquired, and no third-party models or research-code repositories were run. Independently verified reproductions remain zero.
 
+## Latest public-main clean-clone recheck — PR #57, October 12, 2026
+
+A fresh depth-one HTTPS clone of public `main` at `3f5e80b588cd5aebc9bbc646e146a1897ce1ac00` ran the documented annotation and split commands, the complete test suites, the resource catalog validator, and local noindex and explicit public-origin builds. Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. The synthetic annotation report returned an 8-second fixture, two events, 2 seconds of interval-union coverage and zero seconds of observed context. The splitter returned 10 connected groups and 12/4/4 train/validation/test records; its complete output SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`.
+
+All 90 Python tests and 98 Node tests passed, and the validator accepted all 62 resource records. The local noindex build produced 90 pages plus 404; the checker verified 91 HTML files and 4,145 links. The public-origin build also produced 90 pages plus 404; the checker verified 91 HTML files, 4,237 links and all 90 public pages reachable from the homepage. Its sitemap contains 90 URLs, and the clone's tracked working tree remained clean after the checks.
+
+This is a maintainer-run clean-clone check, not an independent reproduction, usability study, scientific validation or biological result. It used only synthetic examples and public metadata; no research media, datasets or model weights were acquired, and no third-party model or research-code repository was run. Independent reproductions remain zero. Next: obtain an external researcher’s report through the existing reproduction route and record the exact revision, output and help required.
+
 ## Three useful first contributions
 
 1. **Reproduce:** run either route on a clean device or checkout and describe where the instructions fail. An honest failure report is useful.
