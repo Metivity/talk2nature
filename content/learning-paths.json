@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "paths": [
     {
       "id": "first-animal",
@@ -61,7 +61,8 @@
         "speech-pretraining-transfer-2026",
         "birb-generalization",
         "bioacoustic-benchmarks",
-        "fruit-bat-context-ml-2024"
+        "fruit-bat-context-ml-2024",
+        "monk-parakeet-population-identity-2023"
       ],
       "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
       "gate": "No Talk2Nature animal model has been trained or benchmarked. Language-like output is not verified meaning."

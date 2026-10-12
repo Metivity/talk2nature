@@ -2478,5 +2478,97 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "monk-parakeet-population-identity-2023",
+    "title": "Monk parakeet calls carry individual identity information",
+    "seo_description": "A peer-reviewed monk-parakeet study compares calls across native and introduced populations. Its 97.44% score is training accuracy, not animal translation.",
+    "taxon": "Monk parakeet and yellow-naped amazon",
+    "kind": "Parrot acoustic identity and social-scale comparison",
+    "purpose": "Models & evaluation",
+    "year": "2023",
+    "year_label": "Published 27 July 2023",
+    "source_ids": [
+      221,
+      222,
+      223,
+      224
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Targeted primary article, dataset metadata, and code-provenance review; no file acquisition or reproduction",
+    "review_depth": "Reviewed the PLOS article’s sampling, methods, results, discussion, ethics, and linked-resource sections. Also reviewed the Figshare v2 item/API/README from October 12, GitHub README/license/repository status, and Zenodo v1.0.0 metadata. The PLOS supplement and complete code/dependency workflow were not audited. No dataset files, audio, or code were acquired or run.",
+    "review_locator": "PLOS Methods 2.2, 2.4–2.10; Results 3.1–3.5; Discussion 4.1–4.3; Ethics and Data Availability. Figshare v2 record and README; GitHub repository README/license; Zenodo v1.0.0 API metadata.",
+    "finding": "The authors report stronger acoustic convergence at the individual than site scale in native-range Uruguay and introduced U.S. monk parakeet populations. Their yellow-naped amazon comparator showed stronger convergence at the regional-dialect scale. This is evidence about acoustic identity structure and a proposed identity-signaling framework, not decoded call meaning or demonstrated receiver comprehension.",
+    "limitations": "The article’s supervised random forest was trained on 156 calls from 8 known monk parakeets using 114 selected features. The reported 97.44% accuracy (95% CI 93.57–99.30) is training accuracy. The remaining 73 individual-scale calls from 9 other birds were used to produce proximity matrices and inspect clustering patterns; the paper does not report that 97.44% as held-out unseen-caller accuracy. The study reports 229 individual-scale monk-parakeet calls from 17 individuals and 1,353 site-scale calls from 63 sites. The Figshare README/selection inventory lists 1,596 clips, leaving 14 records to reconcile against the article’s monk-parakeet counts and comparator material. The full supplement, exact file-level rights/provenance, and code were not audited. Acoustic similarity cannot by itself show what a caller intends or what a receiver understands.",
+    "lesson": "For Talk2Nature, separate known-individual identification, population/site similarity, call categories, independently observed behavior, receiver response, and meaning. This is a valuable parrot-specific methods reference and a reminder to report exactly what a validation set tests. A receiver-use claim needs an appropriately reviewed behavioral experiment; the authors point to playback work for that question.",
+    "next_review": "If a caller-identity reproduction is selected, reconcile the 1,596-record inventory with the article and supplement, verify exact source files and rights, inspect the pinned code and dependencies, and have a qualified bioacoustics reviewer assess the analysis and animal/session grouping. Keep all assets metadata-only until that bounded case is justified. Do not use this dataset as a context or meaning benchmark.",
+    "expert_review": "Not independently reviewed by a bioacoustics or animal-communication specialist.",
+    "reuse": {
+      "status": "Metadata-only original summary with links; no article passages, figures, dataset files, audio, code, or weights copied.",
+      "asset": "PLOS displays CC BY 4.0 for the article; Figshare declares CC BY 4.0 for its item; GitHub identifies its code repository as MIT; the related Zenodo archive uses separate other-open metadata. These license statements apply to different assets and were not treated as interchangeable.",
+      "rights": "Cite each source and follow its own terms. The data files and code remain unacquired; provider checksums are not locally verified and the archived Zenodo snapshot license is unresolved.",
+      "experiment": "A literature and metadata review only. No Talk2Nature model was trained, run, or evaluated; no animal communication or context inference was attempted."
+    },
+    "study_snapshot": [
+      [
+        "Research question",
+        "At which social scale do monk-parakeet contact calls show the strongest acoustic convergence in native and introduced populations, compared with a parrot species with regional dialects?"
+      ],
+      [
+        "Study scope",
+        "Monk parakeets: 229 individual-scale calls from 8 native-range and 9 introduced-range individuals, plus 1,353 site-scale calls from 63 sites (37 Uruguay, 26 U.S.). Yellow-naped amazon contact calls from Costa Rica in 1994 provide a separate comparator."
+      ],
+      [
+        "Methods",
+        "Spectrographic cross-correlation and random-forest similarity; 1,844 candidate acoustic/image features were reduced to 114 for the final model. The random forest trained on 156 calls from 8 known individuals; 73 calls from 9 other individuals supported proximity/clustering analyses."
+      ],
+      [
+        "Reported pattern",
+        "Monk-parakeet calls showed strongest convergence at the individual scale in both native and introduced ranges; the yellow-naped amazon comparison showed strongest convergence at the regional-dialect scale."
+      ],
+      [
+        "Score boundary",
+        "97.44% (95% CI 93.57–99.30) is reported as training classification accuracy. It is not a held-out accuracy for identifying unseen callers and does not measure call meaning."
+      ],
+      [
+        "Rights and reproducibility",
+        "Article CC BY 4.0; Figshare item-level CC BY 4.0; GitHub code MIT; associated Zenodo archive says other-open. All dataset/code files remain metadata-only; no results independently reproduced."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "mapped",
+      "location_note": "Country-scale study regions only: Uruguay and the United States concern monk parakeets; Costa Rica is a 1994 yellow-naped amazon comparator. Map points are approximate editorial locators, not recording coordinates.",
+      "locations": [
+        {
+          "place_id": "uruguay",
+          "role": "study_region",
+          "source_id": 221,
+          "locator": "Methods 2.2: Recording contact calls",
+          "basis": "Native-range monk-parakeet contact calls were recorded in 2017 at 37 sites across seven departments. The atlas shows only the country-scale study region."
+        },
+        {
+          "place_id": "united-states",
+          "role": "study_region",
+          "source_id": 221,
+          "locator": "Methods 2.2: Recording contact calls",
+          "basis": "Introduced-range monk-parakeet contact calls were sampled at 26 sites across five states in 2004, 2011, 2018, and 2019. The atlas shows only the country-scale study region."
+        },
+        {
+          "place_id": "costa-rica",
+          "role": "study_region",
+          "source_id": 221,
+          "locator": "Methods 2.10: Comparing hierarchical mapping patterns with another parrot species",
+          "basis": "The yellow-naped amazon comparator uses previously published contact calls recorded in 1994. This is a separate species and historical comparator, not a monk-parakeet site."
+        }
+      ],
+      "observation_period": {
+        "label": "Discontinuous source recordings: Costa Rica 1994; United States 2004–2019; Uruguay 2017",
+        "start_year": 1994,
+        "end_year": 2019,
+        "source_id": 221,
+        "locator": "Methods 2.2 and 2.10"
+      }
+    }
   }
 ]

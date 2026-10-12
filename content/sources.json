@@ -2303,5 +2303,49 @@
     "url": "https://www.edmond.mpg.de/Glossary_FAQ/",
     "checked": "2026-10-12",
     "origin": "Official Edmond ZIP-viewer documentation reviewed October 12, 2026; this documents a method, not the target file's presence in the monk-parakeet archives."
+  },
+  {
+    "id": 221,
+    "title": "Individual identity information persists in learned calls of introduced parrot populations",
+    "description": "Peer-reviewed PLOS Computational Biology study comparing acoustic identity patterns in native- and introduced-range monk parakeets, with yellow-naped amazons as a regional-dialect comparator.",
+    "url": "https://doi.org/10.1371/journal.pcbi.1011231",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the primary PLOS article sections on recording windows, individual/site samples, random-forest similarity, the yellow-naped amazon comparison, results, discussion, ethics, and data/code availability. PLOS labels the article peer-reviewed and displays CC BY 4.0. The supplementary PDF, audio, dataset files, and code were not acquired or run.",
+    "rights": {
+      "paper": "The PLOS article is distributed under CC BY 4.0 with attribution. This manuscript license does not automatically establish the rights or provenance of the linked recordings, dataset files, or analysis code."
+    }
+  },
+  {
+    "id": 222,
+    "title": "Smith-Vidaurre et al. identity-encoding calls and selection table (Figshare v2)",
+    "description": "Official Figshare dataset record for the paper. The October 12, 2026 API record reports 22 files totaling 187,820,138 bytes and item-level CC BY 4.0; the README describes pre-processed call clips and a selection table. No audio or table file was acquired.",
+    "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the public Figshare v2 record, its API metadata, and README. The record declares CC BY 4.0 and the API lists 22 files. Provider-reported file checksums were not locally verified; no raw audio, selection table, or archive was retained.",
+    "rights": {
+      "dataset": "The Figshare record declares CC BY 4.0 at item level. The exact source and provenance of every recording and any third-party material were not independently audited; do not infer rights for the related article or code from this data record."
+    }
+  },
+  {
+    "id": 223,
+    "title": "Analysis code for identity information in introduced parrot populations",
+    "description": "Archived GitHub repository accompanying the PLOS paper. Its README describes ten R Markdown analyses and custom functions; GitHub identifies the repository license as MIT.",
+    "url": "https://github.com/gsvidaurre/identity-information-post-introduction",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the public GitHub README, repository file listing, archived status, and MIT license indicator. The code was not downloaded, inspected file by file, or executed. The repository was archived in July 2023 according to its README.",
+    "rights": {
+      "repository": "GitHub identifies the repository code as MIT-licensed. This license does not apply to the separate article, recordings, or dataset; no dependency or embedded third-party license audit was performed."
+    }
+  },
+  {
+    "id": 224,
+    "title": "Zenodo v1.0.0 archive of the parrot identity analysis code",
+    "description": "Versioned Zenodo code artifact related to the archived GitHub repository. The previously reviewed Zenodo API metadata records DOI 10.5281/zenodo.8030605, version v1.0.0, and an artifact license value of other-open.",
+    "url": "https://zenodo.org/records/8030605",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Zenodo API record metadata and its relation to the GitHub v1.0.0 version. The archive itself was not downloaded or inspected; the Zenodo license value is recorded separately from the GitHub MIT license.",
+    "rights": {
+      "artifact": "Zenodo metadata uses the value other-open. The exact license terms for the archived artifact were not independently resolved, so do not assume this snapshot has the same license scope as the GitHub repository."
+    }
   }
 ]
