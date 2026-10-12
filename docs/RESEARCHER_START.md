@@ -61,6 +61,14 @@ A new depth-one public clone at `abbbd45a1606599a96b847d236c855a018da2158` (afte
 
 The clean clone passed 89 Python tests and 98 Node tests. The noindex build produced 88 pages plus 404; the checker passed 89 HTML pages and 4,041 links. This is a maintainer-run clean-clone recheck, not an independent reproduction or a biological result. The live deployed code release is `cd74ccbe95c023fd40aca7ee72030bd0dd1ad05f`; `abbbd45` adds only the post-release status evidence to that release.
 
+## Current public-main source and build recheck — October 12, 2026
+
+A fresh depth-one HTTPS clone of public `main` at `d5681b6fb426238add92699f4ed754a7c64398a3` ran the documented synthetic annotation and split commands, the complete test suites, resource validation, and both noindex and public-origin site builds. Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. The annotation report showed an 8-second synthetic fixture, two marked events, 2 seconds of interval-union coverage and zero seconds with observed context. The splitter produced 10 declared connected groups and 12/4/4 train/validation/test records; its policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the complete split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`.
+
+All 90 Python tests and 98 Node tests passed, and the catalog validator accepted all 61 resource records. The local noindex build generated 89 pages plus 404; its checker verified 90 HTML files and 4,096 links. The public-origin build also generated 89 pages plus 404; its checker verified 90 HTML files, 4,186 links and 89 reachable public pages. The generated sitemap contains 89 URLs. The clone's tracked working tree remained clean after both builds.
+
+This is a maintainer-run clean-clone check, not an independent reproduction, usability study, scientific validation or biological result. No research media, datasets or model weights were acquired, and no third-party models or research-code repositories were run. Independently verified reproductions remain zero.
+
 ## Three useful first contributions
 
 1. **Reproduce:** run either route on a clean device or checkout and describe where the instructions fail. An honest failure report is useful.
