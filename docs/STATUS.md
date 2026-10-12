@@ -1,6 +1,6 @@
 # Project status
 
-Updated October 12, 2026. The latest verified Pages content release is `9faa7a7` (PR #43; successful manual Pages workflow run [#38291174874](https://github.com/Metivity/talk2nature/actions/runs/38291174874)). The research-resource route returns HTTP 200 with its self-canonical URL, `index,follow`, updated search description and the pinned AutoResearch record. The public knowledge graph links it to source 214. The sitemap contains 88 project URLs and `robots.txt` names the exact sitemap. These checks verify publication and crawl configuration, not search-engine ingestion. No Search Console or URL Inspection tool/report was available in this task; indexing and search performance remain unverified. Private hosting, physical-phone testing, specialist review and an independently reproduced scientific benchmark remain open.
+Updated October 12, 2026. The latest verified Pages content release is `cd74ccbe` (PR #46; successful manual Pages workflow run [#38294889632](https://github.com/Metivity/talk2nature/actions/runs/38294889632)). The live Review route returned HTTP 200 with its canonical URL; the synthetic Station-clip import was exercised successfully at 390 CSS pixels. The research-resource route also returned HTTP 200 with a self-canonical URL and `index,follow`; the sitemap contains 88 project URLs and `robots.txt` names the exact sitemap. The public knowledge graph links the pinned AutoResearch record to source 214. These checks verify publication and crawl configuration, not search-engine ingestion. Search Console indexing and search performance remain unverified. Private hosting, physical-phone testing, specialist review and an independently reproduced scientific benchmark remain open.
 
 ## October 12 direct Station-to-Review path
 
@@ -10,7 +10,7 @@ Updated October 12, 2026. The latest verified Pages content release is `9faa7a7`
 
 **Checks:** 89 Python tests and 98 Node tests pass. The local build produces 88 pages plus 404; the site checker passes for 89 HTML pages and 4,041 links. Headless Chrome at 320, 390 and 1,440 CSS pixels reports no horizontal overflow. At 390 pixels, a synthetic ZIP was imported, a clip reviewed with playback paused, the source-journal limitation displayed, and a `.t2n` notebook downloaded. No JavaScript errors occurred.
 
-**Limits and state:** browser-emulated and synthetic-only. No real animal recording, physical phone, screen-reader review or independent evaluator was involved. Hash validation proves byte correspondence, not rights, identity or meaning. This is a local release candidate on `codex/station-review-bridge`; it has not been pushed, merged or deployed.
+**Release and limits:** PR [#46](https://github.com/Metivity/talk2nature/pull/46) merged as `cd74ccbe`; Pages run [#38294889632](https://github.com/Metivity/talk2nature/actions/runs/38294889632) succeeded. The canonical live Review page returned HTTP 200. At 390 CSS pixels, headless Chrome imported the synthetic ZIP, showed the provenance caveat and kept playback paused without JavaScript errors. This remains browser-emulated and synthetic-only: no real animal recording, physical phone, screen-reader review or independent evaluator was involved. Hash validation proves byte correspondence, not rights, identity or meaning.
 
 ## October 12 researcher-entry path
 
