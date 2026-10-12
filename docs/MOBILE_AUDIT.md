@@ -163,3 +163,9 @@ Built the current repository snapshot (`5fb188d`) as a public-origin local previ
 In the microphone-free rehearsal at 320 × 740, tapping “Try without a microphone” entered the synthetic recording state; tapping Stop returned to local review. A guarded `getUserMedia` stub recorded zero microphone calls, the viewport remained 320 pixels wide, and Chromium reported no page errors. No audio was recorded, saved or exported. The temporary species example was only a browser interaction and was discarded when the page closed.
 
 This is maintainer-run responsive and interaction QA of the current source, not a physical-phone, screen-reader, Safari, first-time-participant or independent usability test. It found no concrete layout or control defect to change. Next: collect a small amount of consented first-time-user feedback and test on actual iOS/Android devices before claiming field usability; participant recording intake remains closed.
+
+### October 12 follow-up: public-site dock while reading
+
+The fixed bottom dock previously occupied the last 68 CSS pixels of the viewport at 320 × 740 and intersected the below-fold research summary. It now moves out of view after deliberate downward scrolling, returns on upward scrolling or near the top, and is revealed when keyboard focus enters the navigation. In local public-build Chromium checks at 320 × 740, the dock moved fully below the viewport while the summary scrolled above it; upward scrolling and keyboard focus restored it. At 390 × 844 the page width remained within the viewport; at 900 × 900 the site dock remained hidden. Reduced-motion emulation reported a zero-second transition. No page errors occurred.
+
+This is desktop Chromium with emulated viewport sizes, not a physical-phone, Safari, screen-reader or first-time-user check. The footer navigation remains usable without JavaScript, though it will not auto-hide. No audio, microphone, participant data or browser storage was used.
