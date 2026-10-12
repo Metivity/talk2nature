@@ -697,6 +697,18 @@ class SiteTests(unittest.TestCase):
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
 
+    def test_parrot_annotation_note_links_current_edmond_terms(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            note=(root/'research/parrot-data-feasibility/index.html').read_text()
+            sources=(root/'sources/index.html').read_text()
+            self.assertIn('href="https://www.edmond.mpg.de/Terms_of_Use/"',note)
+            self.assertIn('href="https://www.edmond.mpg.de/"',note)
+            self.assertIn('id="source-225"',sources)
+            self.assertIn('id="source-226"',sources)
+            self.assertIn('fileAccessRequest flag does not resolve any individual file',note)
+
     def test_parrot_video_interface_note_preserves_reporting_and_rights_gates(self):
         note=next(n for n in load('research') if n['slug']=='parrot-video')
         self.assertIn('65 parrot-triggered live calls',note['finding'])
