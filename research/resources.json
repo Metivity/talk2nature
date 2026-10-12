@@ -1368,7 +1368,7 @@
       "kind": "dataset",
       "title": "Dupont's lark song and call recordings with expert-assigned type annotations",
       "url": "https://datos.gob.es/es/catalogo/ea0041268-un-conjunto-de-datos-acusticos-a-gran-escala-de-una-passerina-con-comportamiento-vocal-variable-espacialmente-anotaciones-a-gran-escala-de-tipos-de-canciones-y-llamadas-dataset-traduccion-automatica",
-      "version": "Digital.CSIC handle 10261/424783; its README recommends Zenodo DOI 17264917 and the archive headers cite the same DOI. The 2026 article cites adjacent DOI 17264916; this citation difference remains unexplained.",
+      "version": "Zenodo concept DOI 10.5281/zenodo.17264916 resolves to current version DOI 10.5281/zenodo.17264917 (record 17264917); Digital.CSIC handle 10261/424783 hosts a separately cataloged distribution.",
       "source_ids": [
         194,
         195,
@@ -1378,29 +1378,71 @@
       "priority": 3,
       "reviewed": "2026-10-12",
       "task": "Methods reference for event-level song/call type annotation, repertoire analysis and spatial vocal variation. Not a semantic-translation or independently observed behavior benchmark.",
-      "review_depth": "Reviewed the full 2026 publisher article, indexed Zenodo record, official Datos.gob.es catalog, complete CSIC README and archive HEAD metadata. The README identifies DOI 17264917, states CC BY 4.0 and lists no file inventory; archive headers report 3,711,242,291 bytes and cite DOI 17264917. The article still cites DOI 17264916. The archive bytes/checksum and separate R script license remain unverified.",
-      "access": "The CSIC archive and README are publicly listed under handle 10261/424783. The README and archive headers identify the hosted dataset as DOI 17264917; the article's citation to 17264916 remains unexplained. The 3,711,242,291-byte archive body has not been downloaded or checksum-verified.",
-      "decision": "Metadata-only. The CSIC distribution identity and CC BY 4.0 declaration are better established, but do not download the 3.71 GB archive or use it for ML until the article DOI discrepancy is explained, a verifiable archive checksum/inventory is available, and a qualified avian-bioacoustics reviewer identifies a useful bounded question. Labels remain acoustic vocal types, not context or meaning.",
-      "limitations": "The study covers 20 populations in Spain, with 4,297 songs from 191 males (401 song types) and 795 calls from 97 males (80 call types). Birds were not individually marked; measures reduced but do not prove that repeat recordings are independent, and song/call individuals could not be matched. One expert made the primary annotations; uncertain or population-shared types received additional review. Labels are acoustic type categories, not independent behavior observations or word meanings. No published grouped ML split was reviewed. The authors advise against broad frequency-feature comparisons because of spatial dialect variation. The article cites DOI 17264916, while the matching Zenodo record and direct CSIC README/archive headers identify DOI 17264917; the citation discrepancy remains unexplained. The 3,711,242,291-byte archive body and checksum were not inspected.",
-      "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, et al. (2026). A large-scale acoustic dataset of a passerine with spatially variable vocal behavior: fine-scale annotations of song and call types. Scientific Data 13, 770. https://doi.org/10.1038/s41597-026-07131-4. The article cites https://doi.org/10.5281/zenodo.17264916; the matching indexed Zenodo record reports https://doi.org/10.5281/zenodo.17264917. Digital.CSIC handle: http://hdl.handle.net/10261/424783.",
+      "review_depth": "Reviewed the full 2026 publisher article, official Zenodo API concept-DOI redirect and version record, official Datos.gob.es catalog, complete CSIC README and archive HEAD metadata. The API resolves concept DOI 17264916 to version DOI 17264917 and declares record-level CC BY 4.0 plus an eight-file inventory with provider-supplied sizes and MD5 values. The CSIC README also identifies 17264917 and CC BY 4.0; its archive HEAD reports 3,711,242,291 bytes. No file bytes were acquired or locally verified.",
+      "access": "The official Zenodo API returns HTTP 302 from concept DOI 17264916 to version record 17264917 (HTTP 200); the record's conceptdoi field is 17264916. It declares record-level CC BY 4.0 and an eight-file inventory. The CSIC archive and README are separately listed under handle 10261/424783; the README and archive headers identify 17264917. Provider MD5 values are recorded below but unverified locally; the 3,711,242,291-byte CSIC archive body and its file membership remain uninspected.",
+      "decision": "Metadata-only. The article's DOI citation is explained as the Zenodo concept DOI, and the current version record is 17264917. Before downloading the 3.71 GB CSIC archive or using any files for ML, obtain qualified avian-bioacoustics review of a bounded question, decide which distribution is needed, and establish a storage and integrity plan. Provider file checksums are available but not locally verified. Review the R script and dependencies before any execution. Labels remain acoustic vocal types, not context or meaning.",
+      "limitations": "The study covers 20 populations in Spain, with 4,297 songs from 191 males (401 song types) and 795 calls from 97 males (80 call types). Birds were not individually marked; measures reduced but do not prove that repeat recordings are independent, and song/call individuals could not be matched. One expert made primary annotations; uncertain or population-shared types received additional review. Labels are acoustic type categories, not independent behavior observations or word meanings. No published grouped ML split was reviewed. The authors advise against broad frequency-feature comparisons because of spatial dialect variation. Zenodo's MD5 values are provider metadata, not local verification. The CSIC archive was not checked against the Zenodo file set.",
+      "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, et al. (2026). A large-scale acoustic dataset of a passerine with spatially variable vocal behavior: fine-scale annotations of song and call types. Scientific Data 13, 770. Article DOI: https://doi.org/10.1038/s41597-026-07131-4. Dataset concept DOI 10.5281/zenodo.17264916 resolves to version DOI 10.5281/zenodo.17264917. Digital.CSIC handle: http://hdl.handle.net/10261/424783.",
       "rights": {
-        "license": "CC BY 4.0 is declared by Datos.gob.es for the specific Digital.CSIC archive 17264917.zip and README.txt; the README itself states CC BY 4.0 and recommends DOI 17264917. The archive's HEAD cite-as link matches that DOI, but its bytes/checksum remain unverified. The separate Zenodo R script's license remains unresolved.",
-        "scope": "Only the two Digital.CSIC distributions as listed by the public catalog. The article separately states CC BY-NC-ND 4.0; the direct Zenodo record and its Technical_validation.R file are distinct assets with unverified terms.",
-        "evidence_url": "https://datos.gob.es/es/catalogo/ea0041268-un-conjunto-de-datos-acusticos-a-gran-escala-de-una-passerina-con-comportamiento-vocal-variable-espacialmente-anotaciones-a-gran-escala-de-tipos-de-canciones-y-llamadas-dataset-traduccion-automatica",
-        "conditions": "No archive or code acquired. Before acquisition or model use, explain the article's adjacent DOI 17264916 citation, obtain a verifiable archive checksum and contents inventory, preserve CC BY 4.0 attribution for the CSIC distribution, and obtain qualified review of the specific research question. Do not infer the separate R script's license.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "CC BY 4.0 is declared by the Zenodo API record-level license field for the dataset deposit, and separately by Datos.gob.es for the specific CSIC archive and README distributions. The article is separately CC BY-NC-ND 4.0. No dataset or code bytes were acquired; the CSIC archive contents and provider checksums remain unverified locally.",
+        "scope": "The publisher article is CC BY-NC-ND 4.0. The Zenodo deposit and the specific Digital.CSIC archive/README distributions have separate record/catalog CC BY 4.0 declarations. The R script is listed in Zenodo, but code contents, dependencies and third-party notices were not reviewed.",
+        "evidence_url": "https://zenodo.org/api/records/17264916",
+        "conditions": "The concept DOI to version DOI relationship is confirmed by the official API. Before acquisition or model use, obtain qualified review of the specific research question, select the exact distribution, verify downloaded files against provider metadata, and preserve attribution. Do not execute the R script until its contents and dependencies are reviewed.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
-      "files": []
+      "files": [],
+      "api_file_inventory": [
+        {
+          "name": "Metadata.csv",
+          "bytes": 14189,
+          "md5": "55e521620f0788a4017b5901128a3580"
+        },
+        {
+          "name": "Call.zip",
+          "bytes": 1146490000,
+          "md5": "2bd91ff9d5487f37569edcd58d81e743"
+        },
+        {
+          "name": "Technical_validation.R",
+          "bytes": 10132,
+          "md5": "750627a8f2b70c2879d8ae203783dc54"
+        },
+        {
+          "name": "Call_binary_matrix.csv",
+          "bytes": 17221,
+          "md5": "3aca6d833e3d2a5ebbd7978898675bad"
+        },
+        {
+          "name": "Song_binary_matrix.csv",
+          "bytes": 158379,
+          "md5": "f50777d9a7a49c433bc32ab3783e93ae"
+        },
+        {
+          "name": "Call_distance_matrix.csv",
+          "bytes": 180866,
+          "md5": "cf252c051747ee0aed85381432a74fe6"
+        },
+        {
+          "name": "Song_distance_matrix.csv",
+          "bytes": 712797,
+          "md5": "2c81073f72a95442f59cc0c880d29a1d"
+        },
+        {
+          "name": "Song.zip",
+          "bytes": 2563657345,
+          "md5": "83c97ad67ca0bb26025e55b15bc9fdc4"
+        }
+      ]
     },
     {
       "id": "duponts-lark-technical-validation-r-2026",
       "kind": "code",
       "title": "Technical_validation.R for the Dupont's lark dataset",
       "url": "https://zenodo.org/records/17264917",
-      "version": "Zenodo indexed record 17264917 reports Technical_validation.R (10.1 kB); the article cites DOI 17264916 and direct record access was unavailable.",
+      "version": "Zenodo version record 17264917 lists Technical_validation.R (10,132 bytes; provider MD5 750627a8f2b70c2879d8ae203783dc54); concept DOI is 17264916.",
       "source_ids": [
         194,
         195
@@ -1408,19 +1450,19 @@
       "priority": 3,
       "reviewed": "2026-10-12",
       "task": "Potentially inspect analysis-validation code for reproducibility after exact record identity and code license are verified. No code execution is planned at intake.",
-      "review_depth": "The article identifies a separately named R validation script, and the Zenodo indexed result lists Technical_validation.R at 10.1 kB. The script bytes, record identity, dependencies, code license and checksum were not inspected or verified.",
-      "access": "Listed in the indexed Zenodo record result; the record cites DOI 17264917 while the article points to 17264916. Direct Zenodo access failed during this review.",
-      "decision": "Metadata-only. Do not acquire or execute until DOI identity and the script's specific license, source and dependencies are verified and the code is reviewed as untrusted input.",
-      "limitations": "This script is described as reproducing the paper's technical-validation analysis. It is not a communication decoder, ML baseline or proof of animal meaning. No independent reproduction was performed.",
-      "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, et al. (2026). Scientific Data 13, 770. Article DOI: https://doi.org/10.1038/s41597-026-07131-4. Indexed Zenodo record: https://zenodo.org/records/17264917; article Data Availability cites https://doi.org/10.5281/zenodo.17264916.",
+      "review_depth": "The official Zenodo API concept DOI response redirects 17264916 to version record 17264917. Its metadata lists Technical_validation.R at 10,132 bytes with an MD5 value and record-level license CC BY 4.0. The script bytes, code structure, dependencies, third-party notices and behavior were not inspected; no code was downloaded or run.",
+      "access": "Listed in the official Zenodo API version record 17264917, reached from concept DOI 17264916. Provider metadata reports 10,132 bytes and MD5 750627a8f2b70c2879d8ae203783dc54; this checksum has not been locally verified.",
+      "decision": "Metadata-only. Do not acquire or execute until a qualified reviewer selects a bounded use, the code contents and dependencies are reviewed as untrusted input, and any third-party notices are checked. The Zenodo record-level CC BY 4.0 declaration is recorded, but it is not a substitute for code/security review.",
+      "limitations": "This script is described as reproducing the paper's technical-validation analysis. It is not a communication decoder, ML baseline or proof of animal meaning. No independent reproduction was performed; no code or dependency was inspected.",
+      "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, et al. (2026). Scientific Data 13, 770. Article DOI: https://doi.org/10.1038/s41597-026-07131-4. Zenodo concept DOI 10.5281/zenodo.17264916 resolves to version DOI 10.5281/zenodo.17264917.",
       "rights": {
-        "license": "Unresolved for the separately listed Technical_validation.R. The article's CC BY-NC-ND 4.0 license does not establish the code license; the Digital.CSIC catalog metadata reviewed here does not establish terms for this Zenodo code artifact.",
-        "scope": "The R script only. Dataset archive, README and article have separate terms.",
-        "evidence_url": "https://zenodo.org/records/17264917",
-        "conditions": "No code acquired or executed. Verify exact DOI/record, file-level license, checksum and dependencies before retrieval or use.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "Zenodo's record-level license metadata declares CC BY 4.0 for the dataset deposit that lists this file. No separate software license file, code bytes, dependencies or third-party notices were reviewed.",
+        "scope": "Technical_validation.R only. Dataset archive, README and article are separate assets.",
+        "evidence_url": "https://zenodo.org/api/records/17264916",
+        "conditions": "No code acquired or executed. Review contents, dependencies, third-party notices and security before use; verify the file against the provider MD5 if a bounded authorized acquisition is later approved.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []

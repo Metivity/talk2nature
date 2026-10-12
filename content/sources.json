@@ -2011,27 +2011,29 @@
   {
     "id": 194,
     "title": "Pérez-Granados et al. (2026), Dupont's lark songs and calls",
-    "description": "A 2026 Scientific Data descriptor reports a curated acoustic dataset from 20 Spanish populations: 4,297 annotated songs from 191 males and 795 calls from 97 males, categorized into song and call types. The publisher licenses the article CC BY-NC-ND 4.0; the Zenodo dataset and R validation code are separate assets with separate terms.",
+    "description": "A 2026 Scientific Data descriptor reports a curated acoustic dataset from 20 Spanish populations: 4,297 annotated songs from 191 males and 795 calls from 97 males, categorized into song and call types. Its cited Zenodo concept DOI resolves to a version record whose metadata declares CC BY 4.0; article rights remain separate.",
     "url": "https://doi.org/10.1038/s41597-026-07131-4",
     "checked": "2026-10-12",
     "origin": "Full publisher version of record reviewed on October 12, 2026: abstract; Methods (study area, field recording, annotation and vocalization identification); Data Record; Technical Validation; Usage Notes; Data and Code Availability; Rights and Permissions. No article text, figure, data or code was copied or acquired.",
     "rights": {
       "article": "The publisher states CC BY-NC-ND 4.0 for the article; this does not cover the dataset or code.",
-      "dataset": "The article points to Zenodo DOI 10.5281/zenodo.17264916. The exact record license was not independently verified.",
-      "code": "Technical_validation.R is identified by the article as a separate Zenodo file; its item-level license was not verified."
+      "dataset": "The article cites Zenodo concept DOI 10.5281/zenodo.17264916. The official Zenodo API resolves it to version DOI 10.5281/zenodo.17264917, whose record-level license field is CC BY 4.0. The record metadata and file contents remain distinct evidence; no files were acquired.",
+      "code": "Technical_validation.R is listed among the files in the Zenodo record whose record-level license field is CC BY 4.0. No code bytes, dependencies or separate software license file were reviewed; the article's CC BY-NC-ND 4.0 license does not cover the dataset or code."
     }
   },
   {
     "id": 195,
-    "title": "Zenodo indexed record 17264917 for Dupont's lark songs and calls",
-    "description": "Zenodo's indexed record 17264917 matches the article's title, authors, species and dataset counts, and reports an eight-file, 3.7 GB deposit including song/call archives, metadata, repertoire matrices and Technical_validation.R. The article cites the adjacent DOI 10.5281/zenodo.17264916; this identifier discrepancy is unresolved.",
+    "title": "Zenodo concept DOI and version record for Dupont's lark songs and calls",
+    "description": "The official Zenodo API resolves concept DOI 10.5281/zenodo.17264916 to version record 10.5281/zenodo.17264917: its record ID is 17264917 and its conceptdoi is 17264916. The record-level license field is CC BY 4.0 and its eight-file inventory includes provider-supplied sizes and MD5 values. No file bytes were downloaded or locally verified.",
     "url": "https://zenodo.org/records/17264917",
     "checked": "2026-10-12",
-    "origin": "Zenodo's indexed record result reports the exact dataset title, creators, counts, DOI 10.5281/zenodo.17264917, file list, sizes and MD5 values. Direct record and API access returned errors during this review; file bytes, checksums and item-level rights were not independently verified, and no files were downloaded.",
+    "origin": "On October 12, 2026, an HTTPS GET to https://zenodo.org/api/records/17264916 returned HTTP 302 with Location /api/records/17264917; following that redirect returned HTTP 200 JSON for record ID 17264917. The response declares DOI 10.5281/zenodo.17264917, conceptdoi 10.5281/zenodo.17264916, record-level license cc-by-4.0, and eight file names, byte sizes and MD5 values. The MD5 values are provider metadata, not locally computed checksums; no files were fetched. This explains the article's use of the concept DOI and the mirror's version DOI.",
     "rights": {
-      "dataset": "Zenodo record license unresolved. A separate Digital.CSIC distribution is declared CC BY 4.0 by the Spanish public-data catalog; do not assume this verifies the original Zenodo metadata or package contents.",
-      "code": "Unresolved for the separately listed Technical_validation.R file."
-    }
+      "dataset": "Zenodo record metadata declares CC BY 4.0 for the deposit. The article's CC BY-NC-ND 4.0 license is separate; no dataset files were downloaded or inspected.",
+      "code": "Technical_validation.R is listed in the same Zenodo record carrying record-level CC BY 4.0 metadata. No code bytes, dependencies, third-party notices or separate software license were reviewed; inspect before use or execution."
+    },
+    "review_url": "https://zenodo.org/api/records/17264916",
+    "review_url_label": "Official Zenodo API response for the concept DOI and current version record"
   },
   {
     "id": 196,

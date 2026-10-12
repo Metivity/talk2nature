@@ -303,16 +303,15 @@ class CollectionTests(unittest.TestCase):
         self.assertIn('MIT', by_id['animal2vec-code']['rights']['license'])
         self.assertIn('CC-BY-NC-4.0', by_id['animal2vec-model-weights']['rights']['license'])
 
-    def test_dupont_lark_dataset_rights_are_separate_and_not_admitted(self):
+    def test_dupont_lark_dataset_rights_and_acquisition_gate_are_separate(self):
         resource = next(r for r in self.catalog['resources'] if r['id'] == 'duponts-lark-vocal-types-2026')
         self.assertEqual(resource['kind'], 'dataset')
         self.assertEqual(resource['source_ids'], [194, 195, 196, 212])
         self.assertEqual(resource['acquisition'], 'metadata_only')
         self.assertEqual(resource['files'], [])
         self.assertIn('CC BY 4.0 is declared', resource['rights']['license'])
-        self.assertIn('separate Zenodo R script\'s license remains unresolved', resource['rights']['license'])
         self.assertIn('CC BY-NC-ND 4.0', resource['rights']['scope'])
-        self.assertEqual(resource['rights']['commercial_use'], 'unresolved')
+        self.assertEqual(resource['rights']['commercial_use'], 'conditional')
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, [resource['id']])
 
@@ -320,8 +319,8 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(code['kind'], 'code')
         self.assertEqual(code['acquisition'], 'metadata_only')
         self.assertEqual(code['files'], [])
-        self.assertIn('Unresolved', code['rights']['license'])
-        self.assertEqual(code['rights']['research_use'], 'unresolved')
+        self.assertIn('record-level license metadata declares CC BY 4.0', code['rights']['license'])
+        self.assertEqual(code['rights']['research_use'], 'conditional')
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, [code['id']])
 
