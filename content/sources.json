@@ -396,11 +396,11 @@
   {
     "id": 49,
     "title": "Parrot video-call primary paper",
-    "description": "Hirskyj-Douglas, Cunha & Kleinberger (2024). Call of the Wild Web: Parrot Engagement in Live vs. Pre-recorded Video Calls. CHI. DOI: 10.1145/3613904.3641938. Published version, CC BY-NC-ND 4.0.",
+    "description": "Hirskyj-Douglas, Cunha & Kleinberger (2024). Call of the Wild Web: Parrot Engagement in Live vs. Pre-recorded Video Calls. CHI 2024, Article 625, 1–14. DOI: 10.1145/3613904.3641938. The University of Glasgow record lists CC BY-NC-ND 4.0 and a Data Availability Statement of ‘No’.",
     "url": "https://eprints.gla.ac.uk/324981/",
     "review_url": "https://eprints.gla.ac.uk/324981/2/324981.pdf",
     "review_url_label": "Published full text used for the methods review",
-    "checked": "2026-09-30",
+    "checked": "2026-10-12",
     "origin": "Primary-paper follow-up to founding audit source 39."
   },
   {
@@ -474,10 +474,10 @@
   {
     "id": 57,
     "title": "Monk parakeet deposited dataset",
-    "description": "Edmond v1.0; public API reports MIT and three large archives. Archives not downloaded.",
+    "description": "Edmond v1 API rechecked October 12, 2026: released version declares MIT and lists three archives totaling 100,498,691,932 bytes. Names, sizes and repository MD5 values were inspected; no archive was downloaded and hashes were not locally verified. The pinned GitHub annotation-table copy has not been matched byte-for-byte to an archive file.",
     "url": "https://doi.org/10.17617/3.RUIM5I",
-    "checked": "2026-09-30",
-    "origin": "Collection audit; review depth recorded in evidence note and research/resources.json."
+    "checked": "2026-10-12",
+    "origin": "Official Edmond v1 API response inspected over verified TLS; component mapping and archive contents remain unverified."
   },
   {
     "id": 58,
@@ -2090,6 +2090,127 @@
     "origin": "Reviewed the official Nature correction record and its description of the editorial correction. The correction concerns four extraneous references and renumbering, not new experimental evidence.",
     "rights": {
       "correction": "Publisher correction record. No text or figures are reproduced; link to the official notice."
+    }
+  },
+  {
+    "id": 201,
+    "title": "European Research Executive Agency: Transformative change towards a nature-positive economy and society",
+    "description": "Official REA call overview for Horizon Europe HORIZON-NATURE-2027-02. It lists an opening date of 13 October 2026, the 14 January 2027 deadline, €108 million across five topics, and the 16 October information day and 19 October brokerage event.",
+    "url": "https://rea.ec.europa.eu/funding-and-grants/horizon-europe-cluster-6-food-bioeconomy-natural-resources-agriculture-and-environment/transformative-change-towards-nature-positive-economy-and-society_en",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official European Research Executive Agency call overview on October 12, 2026. The page lists the call schedule and five topic areas; it directs applicants to the work programme and Funding & Tenders Portal for binding details.",
+    "rights": {
+      "page": "Official European Commission information page; summarized and linked, not reproduced. The work programme and final topic conditions take precedence."
+    }
+  },
+  {
+    "id": 202,
+    "title": "Horizon Europe Work Programme 2026–2027, Part 14: HORIZON-NATURE-2027-02-05",
+    "description": "The official work programme defines the cost-effective biodiversity-monitoring topic for EU policies: three areas cover pollinator monitoring, soil biodiversity and the Water Framework Directive. It calls for operational monitoring methods, demonstrations, species identification/quantification and FAIR-by-design data; the topic is a €16 million RIA with expected EU contributions of €5–6 million for three projects, using lump-sum funding.",
+    "url": "https://research-and-innovation.ec.europa.eu/document/download/01964d0c-a8eb-4f23-baa4-87d96812dca6_en",
+    "checked": "2026-10-12",
+    "origin": "Reviewed pages 144–147 and the call overview on pages 13–15 of the official Horizon Europe Work Programme 2026–2027, Part 14, Horizontal Activities. No document pages or text are reproduced.",
+    "rights": {
+      "work_programme": "Official EU work-programme source; linked and summarized. Topic-specific conditions and the live Funding & Tenders Portal remain authoritative."
+    }
+  },
+  {
+    "id": 203,
+    "title": "European Research Executive Agency: who should apply to Horizon Europe",
+    "description": "Official REA guidance says most Horizon Europe calls require at least three partner organisations from three different EU or associated countries, with at least one EU country. Call-specific pages may set additional conditions or exceptions.",
+    "url": "https://rea.ec.europa.eu/horizon-europe-who-should-apply_en",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official European Research Executive Agency guidance on general Horizon Europe applicant and consortium conditions on October 12, 2026.",
+    "rights": {
+      "page": "Official European Commission information page; summarized and linked. Topic-specific eligibility rules take precedence."
+    }
+  },
+  {
+    "id": 204,
+    "title": "Robinson et al. (2025), NatureLM-audio and BEANS-Zero",
+    "description": "Published ICLR 2025 proceedings paper. Targeted review of architecture, training data, benchmark tasks, results and comparison caveats; original summary only, no reproduction.",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/36c20807317ae6cb3817acd554da2d32-Paper-Conference.pdf",
+    "checked": "2026-10-12",
+    "origin": "Official ICLR proceedings PDF reviewed October 12, 2026: abstract, model/training sections, BEANS-Zero evaluation, Tables 3–6, baseline-comparison caveat, conclusion and risk discussion. No code, weights or data were acquired or run.",
+    "rights": {
+      "article": "Article-specific redistribution terms were not reviewed. Talk2Nature publishes only an original summary and citation."
+    }
+  },
+  {
+    "id": 205,
+    "title": "Official NatureLM-audio guide and current limitations",
+    "description": "Earth Species Project overview and Quick Start guide. The project page reports a v1.1 demo update on April 9, 2026; the current guide lists exploratory tasks and frequency, taxonomic-prompt and geographic limitations.",
+    "url": "https://projects.earthspecies.org/naturelm-audio/latest/quick_start.html",
+    "checked": "2026-10-12",
+    "origin": "Official Earth Species Project overview and latest Quick Start reviewed October 12, 2026; the v1.1 update date was checked on the overview. No hosted demo was run.",
+    "rights": {
+      "documentation": "Official documentation summarized and linked; no media or model artifacts reproduced."
+    }
+  },
+  {
+    "id": 206,
+    "title": "NatureLM-audio training dataset card and metadata",
+    "description": "Hugging Face dataset viewer lists 26.4M rows in one training split, an overall license value of “other”, and three values in its row-level license field. This is metadata inspection, not a corpus rights audit.",
+    "url": "https://huggingface.co/datasets/EarthSpeciesProject/NatureLM-audio-training",
+    "checked": "2026-10-12",
+    "origin": "Public Hugging Face dataset card and viewer metadata reviewed October 12, 2026. Only displayed schema, row count and sample metadata/license values were inspected; no files or rows were downloaded or copied.",
+    "rights": {
+      "dataset": "The hub-level license is reported as “other”; row-level examples show differing values. Rights for each component and recording remain unresolved."
+    }
+  },
+  {
+    "id": 207,
+    "title": "BEANS-Zero evaluation dataset card",
+    "description": "Hugging Face lists the composite BEANS-Zero dataset at 50.5 GB with a generic “other” license label; component-level terms were not audited.",
+    "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero",
+    "checked": "2026-10-12",
+    "origin": "Public Hugging Face dataset card, metadata and file-size listing reviewed October 12, 2026. No data files were downloaded or inspected.",
+    "rights": {
+      "dataset": "Generic “other” label; underlying component datasets retain separate rights and provenance. No reuse permission is inferred."
+    }
+  },
+  {
+    "id": 208,
+    "title": "Official BEANS-Zero evaluation-code repository",
+    "description": "Earth Species Project README describes data-fetch and evaluation commands and notes Java 8 for caption evaluation. A targeted root LICENSE URL returned 404; no code was run.",
+    "url": "https://github.com/earthspecies/beans-zero",
+    "checked": "2026-10-12",
+    "origin": "Official GitHub repository README/root inventory reviewed October 12, 2026; direct root LICENSE path was checked and returned 404. Repository main was not pinned or cloned.",
+    "rights": {
+      "software": "No repository license was established in this review. Dataset and model terms are separate."
+    }
+  },
+  {
+    "id": 209,
+    "title": "Marincione et al. (2025), model merging for bioacoustics",
+    "description": "NeurIPS 2025 AI for Non-Human Animal Communication workshop paper, available as arXiv v2. It reports prompt-format brittleness and a narrow closed-set unseen-family result; not an animal-meaning study.",
+    "url": "https://arxiv.org/abs/2511.05171",
+    "checked": "2026-10-12",
+    "origin": "arXiv abstract and 11-page v2 paper reviewed October 12, 2026, including the prompt comparison, merging method, closed-set evaluation and stated limitations. No model result was reproduced.",
+    "rights": {
+      "article": "The arXiv display license was not separately checked. Talk2Nature publishes an original summary and link only."
+    }
+  },
+  {
+    "id": 210,
+    "title": "Official code for NatureLM-audio model merging",
+    "description": "Author-group repository identifies itself as the official implementation of the 2025 workshop paper and includes an MIT LICENSE. README requires access to Llama 3.1 8B and a GPU with at least 24 GB VRAM; code was not run.",
+    "url": "https://github.com/gladia-research-group/model-merging-NatureLM-audio",
+    "checked": "2026-10-12",
+    "origin": "Official author-group repository README, file inventory and LICENSE reviewed October 12, 2026. Mutable main branch not pinned; code and dependencies not audited or executed.",
+    "rights": {
+      "software": "Repository LICENSE is MIT for code; base-model weights, NatureLM weights and benchmark data have separate terms."
+    }
+  },
+  {
+    "id": 211,
+    "title": "NatureLM-audio official source repository and code license",
+    "description": "Earth Species Project repository and LICENSE identify MIT-licensed software. The main branch is mutable; its code and dependencies were not cloned, audited or executed.",
+    "url": "https://github.com/earthspecies/NatureLM-audio",
+    "checked": "2026-10-12",
+    "origin": "Official repository root inventory, README and LICENSE checked October 12, 2026. No commit was pinned and no code was acquired or run.",
+    "rights": {
+      "software": "Repository LICENSE states MIT for code. This does not license model weights, Llama, datasets or third-party dependencies."
     }
   }
 ]

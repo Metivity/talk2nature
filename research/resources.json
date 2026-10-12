@@ -89,18 +89,18 @@
       "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv",
       "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
       "priority": 1,
-      "reviewed": "2026-10-11",
+      "reviewed": "2026-10-12",
       "task": "Inspect labels and group keys; the sample is not yet suitable for a context-association benchmark.",
-      "review_depth": "README field definitions for both years, Git tree checksums, previously checked Edmond v1 license metadata and downloaded 2020 annotation table inspected; aggregate report in research/parrot_sample_report.json. Edmond license metadata was not refreshed this review.",
-      "access": "Small GitHub metadata file; full Edmond archives total 100498691932 bytes and are not selected.",
-      "decision": "Sample acquired and inspected: 808 rows, 752 populated behavior entries and 176 distinct nonempty behavior strings. Keep training admission false; require linked recordings, independently defined context labels and group audit.",
-      "limitations": "No audio acquired. Annotations are free text; a field named context elsewhere describes call sequence structure. Behavior labels cannot be assumed independent, exhaustive or suitable. Full recording overview includes coordinates and is excluded.",
+      "review_depth": "README field definitions for both years, pinned Git tree checksums and the locally held 2020 annotation sample were reviewed; its aggregate report is research/parrot_sample_report.json. The official Edmond v1 API was rechecked on 2026-10-12: status RELEASED, version 1, license MIT, with three named archives, sizes and repository MD5 values. No Edmond archive was downloaded and its hashes were not locally verified. The selected GitHub CSV was not matched byte-for-byte to an archive member.",
+      "access": "The selected 34,517-byte GitHub annotation table is local under ignored external storage. Edmond lists three archives totaling 100,498,691,932 bytes; none was downloaded.",
+      "decision": "Sample acquired and inspected: 808 rows, 752 populated behavior entries and 176 distinct nonempty behavior strings. Retain it as a static local reference only; keep training admission false and do not redistribute pending exact file provenance, privacy review, linked recordings, independent context labels and group audit.",
+      "limitations": "No audio acquired. Annotations are free text; a field named context elsewhere describes call sequence structure. Behavior labels cannot be assumed independent, exhaustive or suitable. The version-level Edmond MIT declaration is not a byte-level identity proof for the GitHub CSV. Full recording overview includes coordinates and is excluded.",
       "attribution": "Smeele et al. (2023); data DOI 10.17617/3.RUIM5I v1.0; GitHub snapshot separately pinned.",
       "rights": {
         "license": "MIT",
-        "scope": "The prior catalog review recorded MIT for Edmond v1.0; this metadata was not refreshed on 2026-10-11. The linked repository code has a separate MIT notice.",
+        "scope": "The official Edmond API declares MIT for the released v1 dataset as a whole. The selected GitHub CSV is a separate copy; its exact identity within the Edmond archives is not verified, and repository code, article text and recordings remain separate components.",
         "evidence_url": "https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I",
-        "conditions": "Recheck the dataset deposit terms and component provenance before use or sharing. Keep original notes local and review location/privacy; do not infer audio rights from the code license.",
+        "conditions": "Treat MIT as the depositor's version-level declaration; verify the selected file's provenance and privacy before downstream use or sharing. Do not infer article or recording rights from the code license or dataset label.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
@@ -121,7 +121,7 @@
         }
       ],
       "license_file": "LICENSE-MIT.txt",
-      "admission_reason": "The prior depositor API review reported MIT for released v1.0; this metadata was not refreshed in the October 11 review. Only a small metadata table is selected, without recording coordinates or audio."
+      "admission_reason": "The local static reference is the 34,517-byte table from an immutable GitHub repository version with its MIT notice; the separate Edmond v1 API also declares MIT at dataset level. Exact archive-to-table identity and privacy are unresolved, so this does not admit the table to training or authorize redistribution."
     },
     {
       "id": "budgerigar-vocal-social-dryad",
@@ -1224,15 +1224,46 @@
         "archive_size_displayed": "1.22 MB",
         "archive_sha256_displayed": "0cce953171fcf416ead21696f30b3234e7bee70e93f7b5a6a8bc403765156c8a",
         "folders": [
-          {"name": "basic_arena_fig1_S2", "files_displayed": 6},
-          {"name": "coridor_arena_fig2_S3_S4", "files_displayed": 5},
-          {"name": "Location_fig_3", "files_displayed": 21}
+          {
+            "name": "basic_arena_fig1_S2",
+            "files_displayed": 6
+          },
+          {
+            "name": "coridor_arena_fig2_S3_S4",
+            "files_displayed": 5
+          },
+          {
+            "name": "Location_fig_3",
+            "files_displayed": 21
+          }
         ],
-        "extensions_displayed": {"csv": 24, "R": 4, "m": 2, "xlsx": 2},
+        "extensions_displayed": {
+          "csv": 24,
+          "R": 4,
+          "m": 2,
+          "xlsx": 2
+        },
         "file_panels_reviewed": [
-          {"name": "data.xlsx", "size_displayed": "50 KB", "license_displayed": "CC0 1.0", "sha256_displayed": "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6", "file_uuid": "02812bb3-0cc2-4bbf-bf32-2781a054f937", "public_download_url": "https://data.mendeley.com/public-files/datasets/yg7ms8rn37/files/02812bb3-0cc2-4bbf-bf32-2781a054f937/file_downloaded"},
-          {"name": "run_stats_whole.m", "size_displayed": "7.64 KB", "license_displayed": "CC0 1.0", "sha256_displayed": "a2a656ba1c2d410728b159db42b5eaa6090f8a90e2974bfb94417a18c89c1067"},
-          {"name": "220310_01_xypts.csv", "size_displayed": "1.66 KB", "license_displayed": "CC0 1.0", "sha256_displayed": "b8b7ab99e9ab7db8190a0b60194b07ec802418e8b0b7227cb0461c57758e3bd8"}
+          {
+            "name": "data.xlsx",
+            "size_displayed": "50 KB",
+            "license_displayed": "CC0 1.0",
+            "sha256_displayed": "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6",
+            "file_uuid": "02812bb3-0cc2-4bbf-bf32-2781a054f937",
+            "public_download_url": "https://data.mendeley.com/public-files/datasets/yg7ms8rn37/files/02812bb3-0cc2-4bbf-bf32-2781a054f937/file_downloaded"
+          },
+          {
+            "name": "run_stats_whole.m",
+            "size_displayed": "7.64 KB",
+            "license_displayed": "CC0 1.0",
+            "sha256_displayed": "a2a656ba1c2d410728b159db42b5eaa6090f8a90e2974bfb94417a18c89c1067"
+          },
+          {
+            "name": "220310_01_xypts.csv",
+            "size_displayed": "1.66 KB",
+            "license_displayed": "CC0 1.0",
+            "sha256_displayed": "b8b7ab99e9ab7db8190a0b60194b07ec802418e8b0b7227cb0461c57758e3bd8"
+          }
         ],
         "downloaded": false,
         "retrieval_attempt": {
@@ -1425,6 +1456,35 @@
       "files": []
     },
     {
+      "id": "parrot-live-playback-study-2024",
+      "kind": "paper",
+      "title": "Parrot choice in live and playback video calls",
+      "url": "https://eprints.gla.ac.uk/324981/",
+      "version": "CHI 2024 proceedings, Article 625, pages 1–14; DOI 10.1145/3613904.3641938.",
+      "source_ids": [
+        49
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "A design and methods comparator for animal-operated interfaces and caregiver-mediated live versus playback interactions; not an acoustic communication benchmark.",
+      "review_depth": "Published paper pages 3–12 reviewed for eligibility, ethics, protocol, analysis, results and limitations. Tables 2–4 were inspected visually; Table 2 percentages and Table 3 duration totals were checked against displayed cells. No raw-data reanalysis, replication or independent expert review.",
+      "access": "The University of Glasgow repository hosts the published 14-page PDF under CC BY-NC-ND 4.0 and records Data Availability Statement: No. No study dataset, code or media were acquired.",
+      "decision": "Metadata-only. Use as an interface-method comparator. Do not reuse participant-level differences or duration aggregates until the Table 2/3 reporting discrepancies are resolved and the analysis receives independent review.",
+      "limitations": "Nine home-kept parrots; live calls always preceded playback, so condition order was not counterbalanced. Reciprocal calls, caregiver mediation and variable home devices complicate interpretation. The Table 2 row labeled ‘Live minus playback’ appears to use the reverse direction, and P3/P5 values conflict with the displayed percentages. The text reports 561 live-phase and 142 playback minutes; direct sums of Table 3 cells are about 239 and 149 minutes. Without underlying data the duration discrepancy cannot be resolved. Engagement does not establish welfare benefit, comprehension or language.",
+      "attribution": "Hirskyj-Douglas I, Cunha J, Kleinberger R (2024). Call of the Wild Web: Parrot Engagement in Live vs. Pre-recorded Video Calls. CHI 2024, Article 625, 1–14. DOI 10.1145/3613904.3641938.",
+      "rights": {
+        "license": "CC BY-NC-ND 4.0 as listed by the University of Glasgow repository for the published article.",
+        "scope": "Published article only. No separate license for study data, code or media was established; the repository records Data Availability Statement: No.",
+        "evidence_url": "https://eprints.gla.ac.uk/324981/",
+        "conditions": "The article license is non-commercial and no-derivatives. This catalog includes an original summary and link only; do not redistribute the PDF or infer rights for other study artifacts.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "cmn-network-response-simard-2025",
       "kind": "paper",
       "title": "Response to questions about common mycorrhizal networks",
@@ -1446,6 +1506,242 @@
         "scope": "The Frontiers article only; cited papers, study data and other figures retain their own rights.",
         "evidence_url": "https://www.frontiersin.org/journals/forests-and-global-change/articles/10.3389/ffgc.2024.1512518/full",
         "conditions": "Attribution is required under CC BY 4.0. This repository links and summarizes; it does not reproduce article figures or text.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "naturelm-audio-iclr-paper-2025",
+      "kind": "paper",
+      "title": "NatureLM-audio: an audio-language foundation model for bioacoustics",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/36c20807317ae6cb3817acd554da2d32-Paper-Conference.pdf",
+      "version": "ICLR 2025 proceedings paper (21 pages)",
+      "source_ids": [
+        204
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Primary source for the NatureLM-audio architecture and BEANS-Zero benchmark claims.",
+      "review_depth": "Targeted review of model/training methods, benchmark construction, evaluation tables, baseline caveat and risk discussion; no replication or artifact audit.",
+      "access": "Official proceedings PDF read online; no local copy or figure reused.",
+      "decision": "Use the paper to define what the published evaluation tests; do not treat reported scores as communication or as a Talk2Nature result.",
+      "limitations": "Talk2Nature has not reproduced the results or audited every benchmark component. The paper’s counts can refer to prompts derived from the same recordings.",
+      "attribution": "Robinson, D., Miron, M., Hagiwara, M. and Pietquin, O. (2025), ICLR proceedings.",
+      "rights": {
+        "license": "Not separately reviewed",
+        "scope": "Article only; linked citation and original summary, no reproduced text or figures.",
+        "evidence_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/36c20807317ae6cb3817acd554da2d32-Paper-Conference.pdf",
+        "conditions": "Check article-specific terms before any further reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "naturelm-audio-code",
+      "kind": "code",
+      "title": "NatureLM-audio official source code",
+      "url": "https://github.com/earthspecies/NatureLM-audio",
+      "version": "Mutable main branch checked 2026-10-12; no commit pinned",
+      "source_ids": [
+        211
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Official software for running and training the NatureLM-audio model.",
+      "review_depth": "Repository README/root inventory and MIT LICENSE checked; code, dependencies and security were not audited or run.",
+      "access": "Public GitHub repository; no clone or files acquired.",
+      "decision": "MIT applies to code only; retain as a reference, not an integrated dependency.",
+      "limitations": "Model weights, base Llama terms, training/evaluation audio and third-party dependencies have separate rights and requirements.",
+      "attribution": "Earth Species Project, NatureLM-audio repository.",
+      "rights": {
+        "license": "MIT",
+        "scope": "Repository software only; not weights, datasets, papers or dependencies.",
+        "evidence_url": "https://github.com/earthspecies/NatureLM-audio/blob/main/LICENSE",
+        "conditions": "Pin and audit the exact revision and dependencies before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "naturelm-audio-weights",
+      "kind": "model",
+      "title": "NatureLM-audio model weights",
+      "url": "https://huggingface.co/EarthSpeciesProject/NatureLM-audio/tree/77855d9b0acd039f90798dcf0861f626bfefbd6f",
+      "version": "Hugging Face revision 77855d9b0acd039f90798dcf0861f626bfefbd6f; model card lists CC BY-NC-SA 4.0",
+      "source_ids": [
+        4,
+        205
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Bioacoustic audio-language classification and captioning research comparator.",
+      "review_depth": "Pinned model-card revision and current official task limitations were recorded; weights were not downloaded or evaluated.",
+      "access": "Hugging Face model record; use also requires access to the separately licensed Llama 3.1 8B Instruct base model.",
+      "decision": "Do not include in paid or commercial-capable services without additional rights; not selected for the first Talk2Nature implementation.",
+      "limitations": "Current v1.1 documentation may not describe every behavior of the pinned checkpoint. No inference or resource estimate was performed.",
+      "attribution": "Earth Species Project, NatureLM-audio model card and project documentation.",
+      "rights": {
+        "license": "CC-BY-NC-SA-4.0",
+        "scope": "NatureLM-audio model weights only; Llama base-model terms apply separately.",
+        "evidence_url": "https://huggingface.co/EarthSpeciesProject/NatureLM-audio/commit/77855d9b0acd039f90798dcf0861f626bfefbd6f",
+        "conditions": "Non-commercial terms; separately review parent-model access/terms and exact checkpoint before any research use.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "naturelm-audio-training-data",
+      "kind": "dataset",
+      "title": "NatureLM-audio training dataset",
+      "url": "https://huggingface.co/datasets/EarthSpeciesProject/NatureLM-audio-training",
+      "version": "Dataset card/viewer checked 2026-10-12; 26.4M rows displayed",
+      "source_ids": [
+        206,
+        204
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Audio-text training examples for the NatureLM-audio model.",
+      "review_depth": "Inspected only the public card/viewer schema, displayed row count, and sample row license/source fields; did not enumerate the corpus or audit components.",
+      "access": "Public Hugging Face dataset card; files were not downloaded.",
+      "decision": "Metadata-only. Do not treat the corpus as one cleared training set or reuse it before per-source rights and provenance review.",
+      "limitations": "The hub-level license is “other”; the viewer exposes three row-level license values. The paper says prompt counts may derive from the same audio, so 26.4M rows do not equal 26.4M distinct recordings.",
+      "attribution": "Earth Species Project, NatureLM-audio-training dataset card and Robinson et al. (2025).",
+      "rights": {
+        "license": "Hub record: other; individual rows have differing license values",
+        "scope": "Composite training dataset; rights and source provenance must be resolved at component/record level.",
+        "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/NatureLM-audio-training",
+        "conditions": "No ingestion, training, redistribution or commercial use until specific source assets and terms are reviewed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "beans-zero-benchmark-data",
+      "kind": "dataset",
+      "title": "BEANS-Zero bioacoustic benchmark dataset",
+      "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero",
+      "version": "Hub card checked 2026-10-12; 50.5 GB listed",
+      "source_ids": [
+        207,
+        204
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Zero-shot audio-plus-text evaluation across species classification, detection and other bioacoustic tasks.",
+      "review_depth": "Reviewed hub-level metadata and paper description; component file inventory, provenance and license terms were not audited.",
+      "access": "Public Hugging Face dataset card; no files acquired.",
+      "decision": "Do not download as a single bundle or admit to training; use only after a bounded component, terms and split review.",
+      "limitations": "The hub license value is “other”; the 50.5 GB composite contains components whose terms and evaluation-group structure may differ.",
+      "attribution": "Earth Species Project, BEANS-Zero dataset; Robinson et al. (2025).",
+      "rights": {
+        "license": "Hub record: other; component-specific terms unresolved",
+        "scope": "Composite evaluation dataset; each component remains separately licensed.",
+        "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero",
+        "conditions": "Review exact component provenance, reuse conditions, split construction and size before any acquisition or evaluation.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "beans-zero-evaluation-code",
+      "kind": "code",
+      "title": "BEANS-Zero evaluation software",
+      "url": "https://github.com/earthspecies/beans-zero",
+      "version": "Mutable main branch reviewed 2026-10-12; no commit pinned",
+      "source_ids": [
+        208
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Fetch/list/evaluate BEANS-Zero tasks and calculate reported benchmark metrics.",
+      "review_depth": "README and root inventory reviewed; direct root LICENSE URL returned 404. Code and dependencies were not cloned or run.",
+      "access": "Public GitHub repository; caption evaluation documentation states a Java 8 runtime requirement.",
+      "decision": "Do not reuse until an explicit code license and compatible component terms are verified.",
+      "limitations": "No code license was established; evaluation reproducibility, security, label validity and data permissions were not audited.",
+      "attribution": "Earth Species Project, BEANS-Zero repository.",
+      "rights": {
+        "license": "Unresolved",
+        "scope": "Benchmark evaluation code only; separate from benchmark data and model.",
+        "evidence_url": "https://github.com/earthspecies/beans-zero",
+        "conditions": "Confirm the exact repository revision and license before copying, installing or executing code.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "naturelm-model-merging-workshop-paper-2025",
+      "kind": "paper",
+      "title": "Model merging improves zero-shot generalization in bioacoustic foundation models",
+      "url": "https://arxiv.org/abs/2511.05171",
+      "version": "arXiv v2, revised 2025-11-19; NeurIPS 2025 AI for Non-Human Animal Communication workshop",
+      "source_ids": [
+        209
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Test prompt robustness and instruction-following recovery in NatureLM-audio by interpolating its LoRA with the Llama base model.",
+      "review_depth": "arXiv v2 sections 2–4 and limitations reviewed; no independent reproduction or peer-review assessment beyond workshop identification.",
+      "access": "arXiv abstract and PDF; no local copy or figure reused.",
+      "decision": "Use as a prompt-robustness and closed-set evaluation lead, not evidence of animal-language understanding or broadly proven generalization.",
+      "limitations": "The reported unseen-family result uses one 425-sample, 40-class closed-set split. Authors identify the evaluation as limited in scope.",
+      "attribution": "Marincione, D., Crisostomi, D., Dessi, R., Rodolà, E. and Rossi, E. (2025), NeurIPS workshop paper, arXiv:2511.05171v2.",
+      "rights": {
+        "license": "Not separately checked",
+        "scope": "Article only; Talk2Nature publishes an original summary and link.",
+        "evidence_url": "https://arxiv.org/abs/2511.05171",
+        "conditions": "Verify the displayed article license before any redistribution or derivative use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "naturelm-model-merging-code",
+      "kind": "code",
+      "title": "Model-merging implementation for NatureLM-audio",
+      "url": "https://github.com/gladia-research-group/model-merging-NatureLM-audio",
+      "version": "Mutable main branch checked 2026-10-12; no commit pinned",
+      "source_ids": [
+        210,
+        209
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Reproduce authors’ LoRA interpolation experiments and prompt/closed-set classification results.",
+      "review_depth": "README, root inventory and MIT LICENSE reviewed; code, results and environment were not independently audited or run.",
+      "access": "Public author-group GitHub repository; README lists Llama 3.1 access and a GPU with at least 24 GB VRAM.",
+      "decision": "Keep as a later research reference; do not integrate model weights or run without separate data/model rights and a frozen evaluation plan.",
+      "limitations": "Repo code license does not cover the base Llama model, NatureLM weights, benchmark data or dependencies; main branch is mutable.",
+      "attribution": "Gladia Research Group, official implementation repository for Marincione et al. (2025).",
+      "rights": {
+        "license": "MIT",
+        "scope": "Repository code only; base model, fine-tuned checkpoint and datasets have separate terms.",
+        "evidence_url": "https://github.com/gladia-research-group/model-merging-NatureLM-audio/blob/main/LICENSE",
+        "conditions": "Pin and audit exact code/dependencies; obtain access to the model/data and review their terms before use.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

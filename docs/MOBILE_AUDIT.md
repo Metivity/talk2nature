@@ -25,7 +25,7 @@ Native Android is still the next candidate for unattended recording. Wrapping th
 | “Offline ready” can be false after storage eviction | Users could leave connectivity without tools | Worker checks every cached file before reporting readiness; setup failure and repair messaging |
 | Product availability could be mistaken for audience traction | Publicity could overstate progress | Public demo/share link and feedback path; no invented users, partners or results |
 
-Station 0.2 exports remain preliminary. Hashes establish byte correspondence, not permission, animal identity or meaning. The device wall clock is unverified and not synchronized across phones. Listen can inspect a Station WAV but does not import its entire journal; a later export bundle/import workflow remains a usability improvement.
+Station 0.2 exports remain preliminary. Hashes establish byte correspondence, not permission, animal identity or meaning. The device wall clock is unverified and not synchronized across phones. Compare can reopen the original Station ZIP without unzipping; Sound desk still takes one extracted WAV for detailed annotation and does not import the whole session journal. The Sound desk file guidance now links those two novice paths directly. A unified session-to-annotation notebook remains a separate future improvement.
 
 ## Offline boundary
 
@@ -136,4 +136,15 @@ The result distinguishes browser audio receipt from device quality. Processing r
 
 Served the local noindex build over a temporary loopback-only static server and inspected it in Chrome. The phone rehearsal was visually checked at 390 CSS pixels and the phone rehearsal, resource directory, conure evidence page and world atlas at 320 CSS pixels. In each measured view, document width matched the viewport. The resource search returned the single conure playback record from 34 resources; its expanded disclosure showed separate review depth, rights scope and the unstated license version. Atlas filters placed the conure under birds, Egyptian fruit bat under mammals, and *Fusarium* under plants & fungi. The check's permission declaration remained unchecked; pressing Start produced the permission reminder and focused the checkbox without opening a browser microphone prompt. No browser console errors appeared during these checks.
 
-This is responsive desktop-Chrome evidence, not physical-phone, microphone, screen-reader or user-comprehension validation. The corresponding live resource-directory URL still renders the project's not-found page; no deployment or live Search Console/indexing check occurred.
+This is responsive desktop-Chrome evidence, not physical-phone, microphone, screen-reader or user-comprehension validation. At the time of this pre-release check, the live resource-directory URL returned the project's not-found page. A later October 12 release check superseded that observation: the live route now returns the indexable resource directory, while the current local candidate contains one additional unpublished resource. See `docs/STATUS.md` for the exact live response and sitemap checks. Search Console indexing remains unverified.
+
+### October 12 follow-up: Station controls with the fixed Stop bar
+
+Built the current public candidate for its GitHub Pages subpath and exercised the synthetic rehearsal in mobile-emulated Chromium at 320 × 740 and 390 × 844 CSS pixels. At both widths, the fixed Stop control remained visible; after scrolling the quick observations and marker guidance into view, the controls and welfare guidance sat fully above Stop. At 390 pixels, all four quick-observation buttons occupied two visible rows and the “Observe naturally” guidance remained readable. At 320 pixels, the “Do not provoke calls” guidance was fully visible above Stop. An uncertain marker was added successfully to the synthetic timeline. No microphone was requested or used, and no browser page errors occurred during the 320-pixel check.
+
+This closes the local rendered-layout check for the fixed Stop bar. It is desktop Chromium with emulated phone dimensions, not physical iPhone/Android, Safari, assistive-technology or first-time-user validation. The candidate remains local and undeployed.
+
+
+### October 12 candidate: Listen ZIP path and opportunity-page rendering
+
+Built a local release preview for the exact GitHub Pages subpath. At 320 and 390 CSS pixels, the Listen guide's expanded file instructions showed the new “open the original ZIP in Compare” route; its `/talk2nature/app/compare/` target returned HTTP 200. The note still distinguishes whole-session ZIP review from opening one WAV for annotation and reminds visitors to use recordings they have permission to inspect. The funding page rendered at 320, 390 and 1440 CSS pixels without horizontal overflow. Its upcoming Horizon call card exposed direct official topic and applicant-eligibility links. All five page loads returned HTTP 200 with matching canonical URLs and no browser page errors. No recording or microphone access occurred. This is local browser-emulation evidence, not a deployed-site or physical-device test.

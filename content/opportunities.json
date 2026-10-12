@@ -63,6 +63,23 @@
     "application_status": "Not pursued; eligible host, scientific fit and consortium unconfirmed"
   },
   {
+    "slug": "horizon-nature-monitoring-2027",
+    "name": "Horizon Europe · HORIZON-NATURE-2027-02-05: Cost-effective biodiversity monitoring",
+    "type": "Collaborative research and innovation action",
+    "deadline": "2027-01-14",
+    "deadline_time": "17:00 Brussels time",
+    "deadline_source_id": 201,
+    "topic_source_id": 202,
+    "eligibility_source_id": 203,
+    "status": "Upcoming · research consortium required",
+    "amount": "€16 million topic budget; expected €5–6 million per project for three projects. Lump-sum RIA; this is not funding available directly to Talk2Nature.",
+    "source_id": 201,
+    "fit": "A possible future methods contribution only. The topic is anchored to one of three EU policy areas: pollinator monitoring under the Nature Restoration Regulation, soil biodiversity under the Soil Monitoring Law, or biodiversity monitoring under the Water Framework Directive. It expects operational monitoring, demonstration cases, species identification/quantification and FAIR-by-design data. Talk2Nature currently has no validated species-identification or counting capability, policy monitoring evidence, confirmed research lead or eligible consortium; it is not a stand-alone animal-communication or general software grant.",
+    "next_action": "The call is scheduled to open October 13, 2026. Reassess only after the live Funding & Tenders topic is available and a qualified, eligible research consortium identifies a concrete need that Talk2Nature can meet with a tested open-source data or annotation workflow. The public information day is October 16 and brokerage event October 19; no registration or contact has been made.",
+    "verified": "2026-10-12",
+    "application_status": "Not pursued; no applicant, science lead, policy-ready method or consortium"
+  },
+  {
     "slug": "experiment",
     "name": "Experiment",
     "type": "Crowdfunding",

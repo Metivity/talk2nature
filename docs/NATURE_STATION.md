@@ -120,7 +120,7 @@ Browser permission and wake-lock behavior were checked against [getUserMedia doc
 
 **Save session · ZIP** includes the journal JSON, every retained PCM16 WAV and a short readme. The uncompressed ZIP is generated entirely in memory, with bounded size and flat generated filenames. Journal SHA-256 values describe the exact included WAV bytes; ZIP CRCs support file-manager integrity checks. Discarded audio is excluded while its existing event tombstone remains in JSON. Empty sessions can still save their journal. JSON-only and individual WAV downloads remain available.
 
-Export locks session-changing controls and snapshots metadata/audio before asynchronous hashing. An invalid alias opens Session settings, focuses the field and gives a repair instruction. Downloads are requested, not confirmed by the browser API: check the saved file before leaving. The ZIP is not encrypted. Unzip it before opening one WAV in Review; session JSON is not a Listen annotation import. No new upload, browser persistence or research-admission path exists.
+Export locks session-changing controls and snapshots metadata/audio before asynchronous hashing. An invalid alias opens Session settings, focuses the field and gives a repair instruction. Downloads are requested, not confirmed by the browser API: check the saved file before leaving. The ZIP is not encrypted. Open the original ZIP in Compare to review the full session without unzipping. For detailed annotation of one clip, extract its WAV and open it in Review; keep the session journal beside the annotation because the journal is not a Listen-label import. No new upload, browser persistence or research-admission path exists.
 
 ## October 3: animal groups and species labels
 

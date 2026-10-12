@@ -108,6 +108,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('linked LICENSE file was not verified',leakage_resource['rights']['license'])
             self.assertIn(html.escape(leakage_resource['limitations']),page)
             self.assertIn(html.escape(leakage_resource['rights']['license']),page)
+            parrot_data=next(r for r in resources if r['id']=='monk-parakeet-annotations')
+            self.assertIn('exact identity within the Edmond archives is not verified',parrot_data['rights']['scope'])
+            self.assertIn('keep training admission false',parrot_data['decision'])
+            self.assertIn(html.escape(parrot_data['rights']['scope']),page)
+            self.assertIn(html.escape(parrot_data['limitations']),page)
             research_index=(root/'research/index.html').read_text()
             self.assertIn('/talk2nature/research/resources/',research_index)
             self.assertIn('https://fixture.github.io/talk2nature/research/resources/',(root/'sitemap.xml').read_text())
@@ -453,6 +458,26 @@ class SiteTests(unittest.TestCase):
             for source_id in (181,182,183,184,185):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
+    def test_horizon_biodiversity_monitoring_call_states_policy_fit_and_consortium_gates(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'opportunities/index.html').read_text()
+            self.assertIn('Horizon Europe · HORIZON-NATURE-2027-02-05: Cost-effective biodiversity monitoring',page)
+            self.assertIn('HORIZON-NATURE-2027-02-05',page)
+            self.assertIn('Deadline 2027-01-14 · 17:00 Brussels time',page)
+            self.assertIn('€16 million topic budget',page)
+            self.assertIn('€5–6 million per project for three projects',page)
+            self.assertIn('pollinator monitoring under the Nature Restoration Regulation',page)
+            self.assertIn('soil biodiversity under the Soil Monitoring Law',page)
+            self.assertIn('Water Framework Directive',page)
+            self.assertIn('no validated species-identification or counting capability',page)
+            self.assertIn('not a stand-alone animal-communication or general software grant',page)
+            self.assertIn('Official topic details ↗',page)
+            self.assertIn('Applicant eligibility ↗',page)
+            for source_id in (201,202,203):
+                self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
+
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
@@ -527,6 +552,30 @@ class SiteTests(unittest.TestCase):
             self.assertIn('.animal-range-card{',css)
             self.assertIn('@media(max-width:620px){.animal-range',css)
 
+    def test_recording_stop_bar_leaves_phone_scroll_space_for_observation_notes(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            css=(root/'assets/app.css').read_text()
+            self.assertIn(
+                '.app-body:has(.station-console:is([data-phase=starting],[data-phase=recording]))'
+                '{padding-bottom:calc(112px + env(safe-area-inset-bottom))}',
+                css,
+            )
+
+    def test_sound_desk_explains_station_zip_review_and_annotation_paths(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            sound_desk=(root/'app/review/index.html').read_text()
+            compare=(root/'app/compare/index.html').read_text()
+            self.assertIn('href="/talk2nature/app/compare/"',sound_desk)
+            self.assertIn('open the original ZIP in Compare',sound_desk)
+            self.assertIn('no unzipping needed',sound_desk)
+            self.assertIn('annotate one clip here, unzip the ZIP and choose a WAV',sound_desk)
+            self.assertIn('accept=".zip,application/zip"',compare)
+            self.assertIn('No unzipping needed.',compare)
+
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
@@ -560,6 +609,27 @@ class SiteTests(unittest.TestCase):
                 if note['review_stage']=='Methods reviewed':
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
+
+    def test_parrot_video_interface_note_preserves_reporting_and_rights_gates(self):
+        note=next(n for n in load('research') if n['slug']=='parrot-video')
+        self.assertIn('65 parrot-triggered live calls',note['finding'])
+        self.assertIn('Table 3',note['limitations'])
+        self.assertIn('P3 and P5',note['limitations'])
+        self.assertIn('caregiver then placed the call',dict(note['study_snapshot'])['Interface'])
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='parrot-live-playback-study-2024')
+        self.assertEqual(resource['source_ids'],[49])
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertIn('CC BY-NC-ND 4.0',resource['rights']['license'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            note_page=(root/'research/parrot-video/index.html').read_text()
+            resource_page=(root/'research/resources/index.html').read_text()
+            self.assertIn('duration magnitude remains unresolved',note_page)
+            self.assertIn('P3 and P5 entries also conflict',note_page)
+            self.assertIn('Parrot choice in live and playback video calls',resource_page)
+            self.assertIn('No study dataset, code or media were acquired',resource_page)
 
     def test_learning_paths_have_actionable_reviewable_dependencies(self):
         notes={n['slug']:n for n in load('research')}
