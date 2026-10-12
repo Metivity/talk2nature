@@ -2243,5 +2243,38 @@
     "url": "https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117",
     "checked": "2026-10-12",
     "origin": "Reviewed the official pinned README and program.md, resolved the current master commit with git ls-remote, and checked GitHub repository license metadata and the pinned root file inventory. No code, dependencies, model weights or data were acquired or executed."
+  },
+  {
+    "id": 215,
+    "title": "Vocal development and patterns of vocal variation inform conservation of a critically endangered macaw",
+    "description": "Allison, Jimenez and Wright (2026), Animal Behaviour 236, Article 123580. Publisher abstract reports little adult call variation among wild, captive and reintroduced Costa Rican populations, with mid-development differences among nestling calls. This is acoustic variation and development, not evidence of meaning or conversation.",
+    "url": "https://doi.org/10.1016/j.anbehav.2026.123580",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the publisher abstract, available section snippets and data-availability statement. Full article text and supplement were not accessible in this review. No article file, recordings or supplementary material were copied.",
+    "rights": {
+      "article": "Publisher article reuse license was not established; Talk2Nature uses an original summary and citation only."
+    }
+  },
+  {
+    "id": 216,
+    "title": "Dryad dataset: great green macaw vocal development and population variation",
+    "description": "Versioned Dryad record DOI 10.5061/dryad.z8w9ghxrb, published April 23, 2026. It lists selection tables, derived acoustic/analysis files and R scripts. The associated article says sound files are available from the corresponding author on request.",
+    "url": "https://doi.org/10.5061/dryad.z8w9ghxrb",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Dryad record, README descriptions and file inventory; the page lists 497.76 MB. The README describes 2023–2024 Costa Rican recordings, adult handheld capture, nestling ARUs and extended-selection RDS objects combined with corresponding sound files through warbleR. No file bytes were downloaded, RDS internals were not inspected and no code was run.",
+    "rights": {
+      "dataset": "Dryad policy requires submitted files to meet CC0; the reviewed item page did not expose per-file license fields. Do not extend this to the article or assume whether derived RDS files embed or reference audio."
+    }
+  },
+  {
+    "id": 217,
+    "title": "Dryad current data and software licensing policy",
+    "description": "Current Dryad guidance says every file submitted to Dryad must abide by CC0; incompatible software licenses cannot be archived there, though code can be linked from a dedicated software repository.",
+    "url": "https://datadryad.org/help/guides/best_practices",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the official Dryad Good data practices page. It says all files submitted to Dryad must abide by CC0, incompatible software licenses cannot be archived, and code can instead be linked from a dedicated software repository.",
+    "rights": {
+      "policy": "Repository-level guidance; it does not establish an article license or settle the exact license scope of code embedded in a particular dataset record."
+    }
   }
 ]

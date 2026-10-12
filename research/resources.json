@@ -1848,6 +1848,95 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "great-green-macaw-vocal-development-paper-2026",
+      "kind": "paper",
+      "title": "Vocal development and patterns of vocal variation inform conservation of a critically endangered macaw",
+      "url": "https://doi.org/10.1016/j.anbehav.2026.123580",
+      "version": "Animal Behaviour 236 (June 2026), Article 123580",
+      "source_ids": [
+        215
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Compare adult contact-call variation across wild, captive and reintroduced populations and describe nestling vocal development; not a context or meaning task.",
+      "review_depth": "Publisher abstract, limited section snippets and data-availability statement reviewed. Full methods, figures and supplementary material were not accessible; no independent analysis was performed.",
+      "access": "Publisher abstract and linked Dryad record; no article file or study data acquired.",
+      "decision": "Include as a parrot vocal-development comparator. Do not present it as a communication-decoding or receiver-comprehension study.",
+      "limitations": "Study covers three Costa Rican population categories. Adult birds were not individually marked; population counts are minimum estimates. The paper reports minimal adult population variation and mid-development nestling variation, with alternative developmental explanations. No independent Talk2Nature review or replication.",
+      "attribution": "Allison, A. G., Jimenez, M., & Wright, T. F. (2026). Animal Behaviour 236, 123580. https://doi.org/10.1016/j.anbehav.2026.123580.",
+      "rights": {
+        "license": "Not established in this review.",
+        "scope": "Publisher article text only; this project stores an original summary and citation, not article text or figures.",
+        "evidence_url": "https://www.sciencedirect.com/science/article/pii/S000334722600117X",
+        "conditions": "Do not redistribute article content or figures without confirming the article license.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "great-green-macaw-vocal-development-data-2026",
+      "kind": "dataset",
+      "title": "Great green macaw vocal-development and population-variation data",
+      "url": "https://doi.org/10.5061/dryad.z8w9ghxrb",
+      "version": "Dryad record published 2026-04-23; DOI 10.5061/dryad.z8w9ghxrb",
+      "source_ids": [
+        216,
+        217
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Metadata and derived analyses for adult and nestling call selection/variation; no independently observed behavior labels or established semantic targets.",
+      "review_depth": "Reviewed Dryad landing-page metadata, README description and file inventory plus current Dryad data policy. The page lists 497.76 MB of files. No files were downloaded, hashed or inspected internally.",
+      "access": "Public Dryad metadata and file listings. The article says sound files are available from the corresponding author on request; no request was made. Do not assume the contents of large RDS files without inspecting them.",
+      "decision": "Metadata-only methods and parrot research reference; not admitted to the first audio/context benchmark.",
+      "limitations": "The published summary describes vocal development and population-level acoustic variation, not behavior-context prediction or receiver comprehension. Adult individuals were unmarked. Exact RDS contents, audio embedding/reference structure, animal/site grouping, privacy sensitivity and file-specific reuse scope were not inspected.",
+      "attribution": "Allison, Alexander; Jimenez, Mario; Wright, Timothy (2026). Vocal development and patterns of vocal variation inform conservation of a critically endangered macaw [Dataset]. Dryad. https://doi.org/10.5061/dryad.z8w9ghxrb.",
+      "rights": {
+        "license": "CC0 1.0 under Dryad repository policy; the item page did not expose per-file license fields in this review.",
+        "scope": "Dryad dataset files only. This does not license the publisher article or any sound files held outside the public deposit; associated scripts are cataloged separately.",
+        "evidence_url": "https://datadryad.org/help/guides/best_practices",
+        "conditions": "Cite the dataset. Before any use or acquisition, inspect the exact file, record version, RDS contents, group structure and threatened-species location sensitivity. No model training or redistribution is approved by this metadata entry.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "great-green-macaw-vocal-development-code-2026",
+      "kind": "code",
+      "title": "R analysis scripts for great green macaw vocal-development data",
+      "url": "https://doi.org/10.5061/dryad.z8w9ghxrb",
+      "version": "Scripts listed in the Dryad record published 2026-04-23; exact code revision not separately pinned",
+      "source_ids": [
+        216,
+        217
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "R scripts for adult call acoustic analysis and nestling vocal-development analysis, according to the Dryad file descriptions.",
+      "review_depth": "File inventory and README descriptions only. Script contents, dependencies, execution safety and output reproducibility were not reviewed.",
+      "access": "R script files are listed inside the Dryad dataset record; no script bytes were acquired.",
+      "decision": "Keep metadata-only. Confirm the exact license scope and statically inspect scripts and dependencies before copying or executing.",
+      "limitations": "Dryad policy for data files does not establish the separate license or security of each software component. The scripts require external packages and sound-file access; no runnable environment or independent reproduction was verified.",
+      "attribution": "Allison, Alexander; Jimenez, Mario; Wright, Timothy (2026). Associated R scripts in Dryad record 10.5061/dryad.z8w9ghxrb.",
+      "rights": {
+        "license": "Dryad policy requires all files hosted there, including code, to abide by CC0; no separate item-level script notice was displayed.",
+        "scope": "R scripts only; separate from Dryad data files, publisher article and any author-held recordings.",
+        "evidence_url": "https://datadryad.org/dataset/doi:10.5061/dryad.z8w9ghxrb",
+        "conditions": "The policy-level CC0 statement does not audit the script contents, dependencies or embedded third-party material. Inspect the exact file and provenance before copying, installing, executing or redistributing it.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
