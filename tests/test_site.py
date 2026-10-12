@@ -603,7 +603,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn('href="/talk2nature/app/compare/"',sound_desk)
             self.assertIn('open the original ZIP in Compare',sound_desk)
             self.assertIn('no unzipping needed',sound_desk)
-            self.assertIn('annotate one clip here, unzip the ZIP and choose a WAV',sound_desk)
+            self.assertIn('Annotate a clip from a saved session',sound_desk)
+            self.assertIn('accept=".zip,application/zip"',sound_desk)
+            self.assertIn('We check the saved sound hashes',sound_desk)
+            self.assertIn('carry a copy of the session journal',sound_desk)
             self.assertIn('accept=".zip,application/zip"',compare)
             self.assertIn('No unzipping needed.',compare)
 

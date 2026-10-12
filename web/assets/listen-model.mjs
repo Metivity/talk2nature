@@ -1,4 +1,5 @@
 import {validateAnimal} from './animal-model.mjs';
+import {validateSessionClipSource} from './session-import.mjs';
 // Local annotation format. No upload, model prediction or research admission.
 export const VERSION = '0.1.0';
 export const MAX_BYTES = 25 * 1024 * 1024;
@@ -78,6 +79,7 @@ export function validateDocument(doc, expected = null) {
   const r = doc.recording;
   if (!r || !/^[a-f0-9]{64}$/.test(r.sha256) || !numeric(r.duration_seconds) || r.duration_seconds <= 0 || r.duration_seconds > MAX_SECONDS || !Number.isInteger(r.sample_rate) || r.sample_rate < 8000 || r.sample_rate > 192000 || ![1, 2].includes(r.channels) || !['synthetic', 'user-supplied'].includes(r.origin)) throw Error('Invalid recording metadata.');
   for (const key of ['recording_id', 'session_id', 'individual_id', 'annotator_id']) text(r[key], key);
+  if (r.source_session !== undefined) validateSessionClipSource(r.source_session, r);
   if (expected && ['sha256', 'duration_seconds', 'sample_rate', 'channels', 'origin'].some(key => r[key] !== expected[key])) throw Error('This label file does not match the open recording and its origin.');
   if (!Array.isArray(doc.events) || doc.events.length > 1000) throw Error('Use at most 1,000 events.');
   const seen = new Set();
@@ -96,5 +98,8 @@ export function eventCsv(doc) {
   validateDocument(doc);
   const quote = value => '"' + String(value).replace(/^[\s]*[=+@-]/, "'$&").replace(/"/g, '""') + '"';
   const keys = ['id', 'start_seconds', 'end_seconds', 'kind', 'context', 'context_source', 'confidence', 'notes'];
-  return [['recording_id', 'source_sha256', 'animal_group', 'species_label', 'identity_basis', ...keys], ...doc.events.map(e => [doc.recording.recording_id, doc.recording.sha256, doc.animal_context?.group ?? 'unknown', doc.animal_context?.species ?? '', doc.animal_context?.basis ?? 'not recorded', ...keys.map(k => e[k])])].map(row => row.map(quote).join(',')).join('\r\n') + '\r\n';
+  const source=doc.recording.source_session;
+  const sourceEvent=source?.journal.events.find(event=>event.id===source.event_id);
+  const provenance=source&&sourceEvent ? [source.journal.session_id,source.event_id,sourceEvent.clip_start_seconds,sourceEvent.clip_end_seconds,source.journal.duration_seconds,source.journal.origin] : ['','','','','',''];
+  return [['recording_id', 'source_sha256', 'source_session_id', 'source_session_event_id', 'source_clip_start_seconds', 'source_clip_end_seconds', 'source_session_duration_seconds', 'source_session_declared_origin', 'animal_group', 'species_label', 'identity_basis', ...keys], ...doc.events.map(e => [doc.recording.recording_id, doc.recording.sha256, ...provenance, doc.animal_context?.group ?? 'unknown', doc.animal_context?.species ?? '', doc.animal_context?.basis ?? 'not recorded', ...keys.map(k => e[k])])].map(row => row.map(quote).join(',')).join('\r\n') + '\r\n';
 }

@@ -45,7 +45,7 @@ export function readBundleFiles(buffer) {
   return files;
 }
 
-function validateJournal(r) {
+export function validateSessionJournal(r) {
   check(object(r) && ['talk2nature.station.v1','talk2nature.observation-window.v1'].includes(r.schema),'Choose a Station Save session ZIP. Sound desk notebooks and loose recordings use Review.');
   const window=r.schema==='talk2nature.observation-window.v1';
   check(r.status==='stopped' && ['synthetic','microphone'].includes(r.origin) && uuid.test(r.session_id) && short(r.station_alias,80) && r.station_alias.trim() && short(r.started_at_utc,40) && /^\d{4}-\d\d-\d\dT/.test(r.started_at_utc) && Number.isFinite(Date.parse(r.started_at_utc)) && short(r.clock,200) && short(r.tool_version,40) && short(r.stop_reason,80),'The saved session details are incomplete or unsupported.');
@@ -87,7 +87,7 @@ export async function openSessionBundle(buffer, digest=bytes=>crypto.subtle.dige
   const files=readBundleFiles(buffer), journals=[...files.keys()].filter(n=>n.endsWith('.json'));
   check(journals.length===1 && files.get(journals[0]).length<=262144,'The session needs one small original journal.');
   let parsed; try { parsed=JSON.parse(decode(files.get(journals[0]))); } catch { fail('The saved session journal could not be read.'); }
-  const record=validateJournal(parsed);
+  const record=validateSessionJournal(parsed);
   check(journals[0]===`talk2nature-${record.session_id}.json` && files.has('READ-ME.txt') && files.size===record.events.length+2,'The ZIP contains missing or unexpected files.');
   const clips=[];
   for(const event of record.events) {
@@ -97,6 +97,16 @@ export async function openSessionBundle(buffer, digest=bytes=>crypto.subtle.dige
     clips.push({event,bytes});
   }
   return {record,clips};
+}
+
+// Keep a clip tied to the exact checked event journal when it enters a notebook.
+export function validateSessionClipSource(source, recording) {
+  check(object(source) && Object.keys(source).sort().join(',')==='event_id,journal' && object(source.journal) && integer(source.event_id,1,2000), 'Station session provenance is invalid.');
+  const record=validateSessionJournal(source.journal), event=record.events.find(item=>item.id===source.event_id);
+  check(event && event.audio_sha256===recording.sha256 && record.sample_rate===recording.sample_rate && recording.channels===1 && near(event.samples/record.sample_rate,recording.duration_seconds), 'This recording does not match the retained Station clip.');
+  const expectedOrigin=record.origin==='synthetic'?'synthetic':'user-supplied';
+  check(recording.origin===expectedOrigin, 'The declared session origin does not match this recording.');
+  return source;
 }
 
 export function sessionSummary({record:r}) {
