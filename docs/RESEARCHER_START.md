@@ -140,3 +140,12 @@ This rehearsal confirms the current local code and public source files work toge
 The repository now includes `research/figshare_bat_annotation_report.json`, an aggregate-only audit of the full video-derived Egyptian fruit-bat annotation table. It records 48 known participant IDs across role fields and a 136-pair graph across three components; it contains no raw rows or subject IDs. It is **not** the EUSIPCO paper's filtered 35,074-call subset, its fold files, a model run, or evidence that the published subject-independent split is valid.
 
 To regenerate it, use the locally acquired source file only after reviewing the item terms, receipt and limits in [COLLECTION.md](COLLECTION.md): `python3 scripts/inspect_bat_annotations.py --output research/figshare_bat_annotation_report.json`. The script verifies the file against its acquisition receipt and refuses to run if it has changed; the raw CSV stays in ignored `data/external/` and `training_admitted` remains false. No audio or video is needed. This is a maintainer-verified aggregate reproduction, not an independent researcher reproduction.
+
+
+### October 12 current candidate: clean-source recheck
+
+Reconstructed the current 232-file source candidate from committed base `4b606c058d6d728c75e642ad0beb779d9e3ddbca` plus its tracked working-tree diff. Candidate fingerprint: `ca03693397bb5c621e55ea463f14d18244a5cd2fa285fd833471474d24e84292`. No nonignored untracked source files were present. The fresh copy had no `.git`, `.env` or ignored `data/external/` acquisitions.
+
+On Python 3.12.5, Node v22.22.1 and Git 2.53.0, the documented annotation command returned the expected 8-second synthetic fixture, two marked events and 2 seconds of interval-union coverage. The split command returned 10 connected groups and 12/4/4 records, with policy SHA-256 `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`. The generated split matched the documented complete-file hash `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`; a second run was byte-identical. All 89 Python tests, 93 Node tests and 57 resource validations passed. The public-origin build generated 88 pages plus 404; the site checker passed 89 HTML files, 4,120 links and all 88 public pages reachable from the homepage.
+
+This is a maintainer-run clean-source rehearsal of the uncommitted candidate, not a remote clone, independent researcher reproduction, biological result or release. The public reproduction instructions remain pinned to the deployed revision until a separately reviewed release.

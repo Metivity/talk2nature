@@ -232,13 +232,15 @@ def build(output, base_url='', public=False, repo_url=''):
             ('national_rules_source_id', 'National funding rules ↗'),
             ('partner_search_source_id', 'Call partner search ↗'),
             ('conflicting_date_source_id', 'Other official listing (date differs) ↗'),
+            ('topic_source_id', 'Official topic details ↗'),
+            ('eligibility_source_id', 'Applicant eligibility ↗'),
         ):
             source = source_map.get(item.get(field))
             if source:
                 links.append(f'<a class="text-link" href="{esc(source["url"])}">{label}</a>')
         return ' · '.join(links)
     opp_cards = ''.join(f'''<article class="opportunity"><div><span class="pill">{esc(o['status'])}</span><h2>{esc(o['name'])}</h2><p class="quiet">{esc(o['type'])} · {opportunity_deadline(o)}</p></div><div><p><strong>{esc(o['amount'])}</strong></p><p>{esc(o['fit'])}</p><p>{esc(o['next_action'])}</p>{opportunity_sources(o)}<p class="fine">Checked {esc(o['verified'])} · {esc(o['application_status'])}</p></div></article>''' for o in opportunities)
-    page('opportunities/', 'Funding and prizes for animal communication research', 'A dated register of research prizes, grants, crowdfunding and compute credits, with eligibility and closed-call distinctions.', f'''
+    page('opportunities/', 'Funding and prizes for Talk2Nature research', 'A dated register of grants, prizes and other support relevant to Talk2Nature’s careful animal communication and biodiversity research, with eligibility checks.', f'''
 <section class="page-intro section"><p class="eyebrow">FUNDING THE WORK</p><h1>Ambition needs<br><em>room to grow.</em></h1><p class="lede">A practical register of opportunities that could support careful research. Availability and eligibility are different questions.</p><aside class="review-box"><strong>Program checks are dated below</strong><p>Program terms can change. Follow the official source before applying. Application status is recorded per opportunity; no funding is secured. Credits are not cash.</p></aside></section><section class="section opportunity-list">{opp_cards}</section>''', active='opportunities/')
     repo_action = f'<a class="button" href="{esc(repo_url)}/issues">Open an issue ↗</a>' if repo_url else '<p class="quiet">The public repository and contribution channel are being prepared. This preview does not collect personal details.</p>'
     page('contribute/', 'Contribute to Talk2Nature', 'Help review evidence, improve research tools or shape a focused nonhuman communication pilot.', f'''

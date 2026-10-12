@@ -37,3 +37,5 @@
 .animal-range-actions .glass-button{min-height:48px;gap:12px}
 .animal-range-link{color:#d6e8c8;font-size:12px;text-decoration-thickness:1px;text-underline-offset:4px}
 @media(max-width:620px){.animal-range{margin-top:0;margin-bottom:38px}.animal-range-card{grid-template-columns:1fr;gap:18px;padding:23px 21px;border-radius:21px}.animal-range-copy h2{font-size:27px}.animal-range-copy>p:not(.app-eyebrow){font-size:13px;line-height:1.7}.animal-range-actions{justify-items:stretch}.animal-range-actions .glass-button{width:100%;min-height:50px}.animal-range-link{padding:8px 2px}}
+
+@media(max-width:620px){.app-body:has(.station-console:is([data-phase=starting],[data-phase=recording])){padding-bottom:calc(112px + env(safe-area-inset-bottom))}}

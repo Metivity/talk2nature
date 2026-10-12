@@ -138,23 +138,30 @@
   },
   {
     "slug": "naturelm",
-    "title": "NatureLM-audio: a useful starting point",
-    "taxon": "Machine learning",
-    "kind": "Model documentation",
-    "year": "2026",
+    "title": "NatureLM-audio: a bioacoustic model, not a nature translator",
+    "taxon": "Machine learning · bioacoustics",
+    "kind": "Audio-language model and benchmark evidence",
+    "year": "2025–2026",
     "source_ids": [
       4,
-      5
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
     ],
-    "review_depth": "Official model card and project documentation; Hugging Face revision 77855d9b0acd039f90798dcf0861f626bfefbd6f recorded. No inference run.",
-    "finding": "NatureLM-audio provides a foundation-model approach to describing and classifying biological sounds.",
-    "limitations": "Descriptions are predictions, not verified animal intentions. The reviewed model lists CC BY-NC-SA 4.0; parent-model terms also matter. A paid deployment has not been cleared.",
-    "lesson": "Inspect a frozen release, its training data and license before using it in an evaluation or paid product.",
-    "next_review": "Compare a permitted model against a simple baseline on independently labeled recordings.",
-    "reviewed": "2026-09-30",
-    "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Documentation checked",
-    "year_label": "Documentation checked",
+    "review_depth": "Reviewed the ICLR 2025 proceedings abstract, architecture/training sections, BEANS-Zero tasks and evaluation, Tables 3–6, the BirdNET/Perch comparison caveat, conclusion and risk discussion. Reviewed Sections 2–4 and limitations of the 11-page arXiv v2 follow-up identified by its authors as a NeurIPS 2025 workshop paper. Checked the official overview/Quick Start, the Hugging Face model and dataset metadata, and the official code/data repository inventories and license files described in the source records. No dataset files, code or model weights were acquired, no inference was run and no results were reproduced.",
+    "finding": "NatureLM-audio combines a BEATs audio encoder with Llama 3.1 8B Instruct and responds to audio-plus-text prompts with outputs such as species labels, detections, call types, life-stage classes and captions. Its ICLR 2025 paper reports strong results on several BEANS-Zero tasks and evaluates held-out taxa; the paper cautions that BirdNET and Perch comparison datasets overlap their training data, so those are topline rather than fully fair comparisons. A NeurIPS 2025 workshop follow-up preprint exposes prompt-format brittleness: asking for common and scientific names together reduced accuracy to 6–12% on two benchmark components compared with prompts asking for one name. For those combined-name prompts, the authors report that LoRA interpolation at about α=0.7 raises accuracy from 6% to 45% on Watkins and 12% to 63% on CBI. Separately, on one 425-sample, 40-class closed-set unseen-family task, reported F1 rose from 0.09 to 0.28 (the authors describe this as a >200% relative improvement). These are bounded classification and instruction-following results, not evidence that the model discovers what an animal means or can hold a conversation with it. The current training-data viewer lists 26.4 million rows; the paper notes that prompt counts can derive from the same audio, so row counts are not unique recordings.",
+    "limitations": "The ICLR results are benchmark-specific, and Talk2Nature has not independently reproduced them. The follow-up is a NeurIPS 2025 workshop paper/preprint, not a Talk2Nature validation; its authors state that the unseen-family closed-set result is limited in scope. Current official documentation says the v1.1 demo was updated in April 2026, while its Quick Start says performance is strongest for birds, especially in North America and Western Europe; calls above about 8 kHz (including bat calls) are outside the model frequency range; tropical regions are harder; wrong-taxon prompts are not reliably rejected; and emotion interpretation or translation beyond call-type prediction is unsupported. Several other prompted tasks are explicitly experimental. The model card identifies CC BY-NC-SA 4.0 weights with Llama 3.1 terms also applicable. The 26.4M-row training dataset and 50.5 GB BEANS-Zero dataset each display a generic “other” license at the hub; row-level training-data license values differ, and component rights were not audited. The NatureLM code repository and merging-code repository declare MIT, but that does not clear weights or datasets. The BEANS-Zero code repository had no root LICENSE at the checked URL. No files were acquired, and no model or code was run.",
+    "lesson": "Treat a fluent answer as a model prediction about a defined acoustic task, not as an animal’s message. For Talk2Nature, keep the first software value in passive recording, observation, and transparent researcher review; clearly separate human-entered notes from model guesses. If a later benchmark is justified, select one labelable task, pin model and data versions, compare against simple and context-only baselines, hold out animals or sites where appropriate, test prompt sensitivity, and document each component’s license before any run. The large Llama-based model and its non-commercial weights are not a default phone or paid-product dependency.",
+    "next_review": "Ask qualified bioacoustic and ML reviewers which single task and holdout unit would answer a useful project question. Reconcile training and benchmark component rights, pin exact code/model releases, and estimate compute only after a rights-cleared dataset and independent labels exist. Do not start AutoResearch until its documented data, reviewer, split, metric, locked-test, baseline and execution-boundary gates are all met.",
+    "reviewed": "2026-10-12",
+    "expert_review": "No independent bioacoustic specialist review, author verification or Talk2Nature reproduction has occurred.",
+    "review_stage": "Targeted primary-paper and official model/data/code metadata review; no independent reproduction",
+    "year_label": "ICLR 2025 paper; NeurIPS 2025 workshop follow-up; official demo documentation updated April 9, 2026",
     "purpose": "Models & evaluation",
     "atlas": {
       "reviewed": "2026-10-03",
@@ -162,7 +169,9 @@
       "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
       "locations": [],
       "observation_period": null
-    }
+    },
+    "seo_description": "NatureLM-audio classifies and captions bioacoustic sound; benchmark performance and prompt failures do not show animal understanding or translation.",
+    "review_locator": "ICLR 2025 paper: model and training sections; BEANS-Zero dataset/evaluation; Tables 3–6; comparison with BirdNET/Perch; conclusion and risk discussion. Marincione et al. arXiv v2: Sections 2–4 and “Limitations and Future Work.” Official documentation: April 9, 2026 v1.1 demo update and Quick Start “Experimental Tasks”/“Limitations.” Hugging Face cards: row count, schema, dataset license labels and listed size. GitHub: README/root inventory and LICENSE status as recorded in sources 208–211."
   },
   {
     "slug": "birdnet",
@@ -322,19 +331,20 @@
   {
     "slug": "parrot-video",
     "title": "Giving parrots a choice to connect",
+    "seo_description": "A nine-parrot study compares live and prerecorded video calls, with caregiver-mediated use, welfare safeguards, and unresolved table inconsistencies.",
     "taxon": "Birds",
     "kind": "Interface study",
     "year": "2024",
     "source_ids": [
       49
     ],
-    "review_depth": "Published PDF pages 4–10 and limitations reviewed; Table 2–4 layout checked. No independent reanalysis.",
-    "finding": "Nine parrots used a caregiver-assisted video-call interface; the study reports greater engagement during the live phase.",
-    "limitations": "Live always preceded playback. Reciprocity, caregiver cues and variable devices also complicate interpretation. Engagement is not a direct welfare or language measure.",
-    "lesson": "Preserve the animal’s ability to stop, separate caregiver impressions from behavior, and account for condition order.",
-    "next_review": "Review design and table-level inconsistencies with a specialist before adopting quantitative claims.",
-    "reviewed": "2026-09-30",
-    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_depth": "Published paper pages 3–12 reviewed for participant screening/ethics, protocol, analysis, results and limitations; Tables 2–4 checked visually. Table 2 percentages and Table 3 duration totals were checked against the displayed cells. No raw-data reanalysis or replication.",
+    "finding": "In a six-month, nine-parrot home study, Table 2 lists 65 parrot-triggered live calls and 40 playback calls out of 108 possible in each phase. The authors report a live-phase advantage, but the published duration totals do not reconcile across the text and Table 3; the duration magnitude remains unresolved.",
+    "limitations": "The live phase always came first, so condition order was not counterbalanced; reciprocal calls, caregiver cues and variable home devices also complicate interpretation. Table 2's row labeled ‘Live minus playback’ appears to show mostly playback-minus-live values; its P3 and P5 entries also conflict with the displayed percentages. The Data Analysis text reports 561 live-phase and 142 playback minutes, while summing Table 3's displayed per-parrot cells gives about 239 and 149 minutes, respectively; no underlying data were available to resolve this. The inferential tests were not independently recomputed. Engagement is not a direct welfare, comprehension or language measure.",
+    "lesson": "The parrots signaled and selected a caller, but caregivers initiated the calls. Treat animal choice, caregiver mediation and responsiveness as separate design variables; preserve retreat and stopping options. This is an animal-computer-interface study, not a passive acoustic-collection or communication-decoding result.",
+    "next_review": "Check for an authoritative correction and obtain independent avian animal-computer-interaction and statistical review before reusing participant-level Table 2 values or adapting the protocol.",
+    "reviewed": "2026-10-12",
+    "expert_review": "Not yet independently reviewed by an avian, animal-computer-interaction or statistical specialist.",
     "review_stage": "Methods reviewed",
     "year_label": "Source year",
     "study_snapshot": [
@@ -343,19 +353,23 @@
         "Nine home-kept parrots over six months."
       ],
       [
+        "Interface",
+        "The parrot rang a bell and selected a bird image; a caregiver then placed the call."
+      ],
+      [
         "Design",
-        "Six live sessions followed by six playback sessions; conditions were not counterbalanced."
+        "Six live sessions came before six playback sessions. Sessions allowed up to two five-minute calls in a three-hour window; condition order was not counterbalanced."
       ],
       [
         "Measures",
-        "Call initiation, engagement duration and caregiver interviews/questionnaires."
+        "Bird-triggered call counts and duration, time to first call, caregiver diaries, interviews and questionnaires."
       ],
       [
-        "Support",
-        "Behavior-specialist training, ongoing review and stopping provisions formed part of the study."
+        "Welfare support",
+        "Caregivers received welfare training; specialists reviewed recordings; birds could retreat behind a visual barrier and caregivers were instructed to stop calls if distress appeared."
       ]
     ],
-    "review_locator": "CHI 2024 published version: sections 3–7, pages 4–11; Tables 2–4 on page 9.",
+    "review_locator": "CHI 2024 published version: participant/method sections and analysis, pages 3–8; Tables 2–4, page 9; results and limitations, pages 10–12.",
     "purpose": "Behavior & communication"
   },
   {
