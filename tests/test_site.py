@@ -624,6 +624,18 @@ class SiteTests(unittest.TestCase):
             self.assertIn('.animal-range-card{',css)
             self.assertIn('@media(max-width:620px){.animal-range',css)
 
+    def test_companion_explains_temporary_audio_and_notes_before_recording(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            home=(root/'app/index.html').read_text()
+            station=(root/'app/station/index.html').read_text()
+            guidance='Nothing uploads or auto-saves. Export before closing to keep your audio and notes.'
+            self.assertIn(guidance,home)
+            self.assertIn(guidance,station)
+            self.assertLess(station.index('id="station-retention-guidance"'),station.index('id="station-start"'))
+            self.assertIn('aria-describedby="station-retention-guidance"',station)
+
     def test_recording_stop_bar_leaves_phone_scroll_space_for_observation_notes(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

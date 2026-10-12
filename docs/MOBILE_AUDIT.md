@@ -164,6 +164,12 @@ In the microphone-free rehearsal at 320 × 740, tapping “Try without a microph
 
 This is maintainer-run responsive and interaction QA of the current source, not a physical-phone, screen-reader, Safari, first-time-participant or independent usability test. It found no concrete layout or control defect to change. Next: collect a small amount of consented first-time-user feedback and test on actual iOS/Android devices before claiming field usability; participant recording intake remains closed.
 
+### October 13 follow-up: session retention explained before recording
+
+The novice path previously showed “On your device” but did not explain that an unexported session disappears when the page closes; the export reminder appeared only in the later review screen. Added a short warning on the companion home page and directly above Station's recording controls. The Start button's accessible description points to the warning. It says that nothing uploads or auto-saves and that users must export to keep audio and notes. No storage, upload, identity, or backend behavior changed.
+
+In local Chromium at 320 × 740 and 390 × 844 CSS pixels, the home action and Station setup remained within the viewport, with no horizontal overflow. Clicking the microphone-free demo called `getUserMedia` zero times; no page errors occurred. This is maintainer browser emulation, not a physical phone, screen-reader run or first-time-user comprehension study. See `docs/STATUS.md` for automated checks and counts.
+
 ### October 12 follow-up: public-site dock while reading
 
 The fixed bottom dock previously occupied the last 68 CSS pixels of the viewport at 320 × 740 and intersected the below-fold research summary. It now moves out of view after deliberate downward scrolling, returns on upward scrolling or near the top, and is revealed when keyboard focus enters the navigation. In local public-build Chromium checks at 320 × 740, the dock moved fully below the viewport while the summary scrolled above it; upward scrolling and keyboard focus restored it. At 390 × 844 the page width remained within the viewport; at 900 × 900 the site dock remained hidden. Reduced-motion emulation reported a zero-second transition. No page errors occurred.

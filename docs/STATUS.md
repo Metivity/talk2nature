@@ -1208,3 +1208,9 @@ PR [#59](https://github.com/Metivity/talk2nature/pull/59) merged to `main` as `7
 A local Chrome preview at 390 × 844 and 1440 × 1000 CSS pixels loaded all four stylesheets with no browser errors or horizontal overflow. This is desktop-browser emulation, not physical-phone or participant testing. Google Search Console was not checked; crawling, indexing, rankings, and organic discovery remain unknown.
 
 The successful run emitted non-blocking maintenance warnings: pinned Pages actions still declare Node.js 20 while GitHub runners are forcing Node.js 24, and `ubuntu-latest` is scheduled to move to Ubuntu 26 on October 19, 2026. Track action/runtime compatibility as a release-maintenance task; no deployment failure resulted. AutoResearch remains **NOT READY**.
+
+## October 13 app audit — session retention before recording
+
+Added a plain-language disclosure to the Field Companion home page and the direct Station setup path. It explains that nothing uploads or auto-saves and that export is needed to keep audio and notes. The Start button references the disclosure for assistive technology. A site regression test checks that it appears before the recording control. No persistence or backend behavior changed.
+
+The full Python suite passes (91 tests), the Node suite passes (98 tests), and the public build produces 91 pages plus the custom 404. The site checker validates 92 HTML files and 4,298 links, with 91 reachable public pages. Local Chromium checks at 320 × 740 and 390 × 844 CSS pixels show the first action within the viewport without horizontal overflow; the synthetic no-microphone path made zero microphone calls and produced no page errors. This is not physical-device, screen-reader or first-time-user testing. No participant data is collected or uploaded.
