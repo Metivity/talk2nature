@@ -439,6 +439,10 @@ class SiteTests(unittest.TestCase):
             brief=(project_root/'docs/UNIVERSITY_EVALUATION.md').read_text()
             self.assertIn('not a partnership announcement',brief)
             self.assertIn('not an ethics determination',brief)
+            self.assertIn('browser-only comparison of two invented observation sessions',brief)
+            self.assertIn('https://metivity.github.io/talk2nature/app/compare/',brief)
+            self.assertIn('optional, deeper Listen-to-Audacity check',brief)
+            self.assertNotIn('try a short synthetic Listen-to-Audacity workflow',brief)
             self.assertIn('SUPPORT.md', (project_root/'README.md').read_text())
 
     def test_public_build_requires_real_origin(self):

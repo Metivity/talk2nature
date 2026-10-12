@@ -48,15 +48,15 @@ Talk2Nature is still a single-maintainer initiative. It currently has contributi
 
 Personalize the bracketed phrase with a specific public paper, workflow or tool after reading it. Write to one relevant person at a time; do not use a mass mailing or imply an existing connection.
 
-> **Subject:** Could you review one small bioacoustic workflow?
+> **Subject:** Could you try a browser-only research-software review?
 >
 > Hello [Name],
 >
 > I’m Raviv Yatom, founder and maintainer of Talk2Nature, an early independent project documenting animal-communication research and building local-first observation tools. I noticed your group's work on [specific public method or paper], especially [one concrete point relevant to annotation, acoustic context or research software].
 >
-> Would you or a research-software colleague be willing to try a short synthetic Listen-to-Audacity workflow and tell me one thing it preserves, one thing it misses, and whether this solves a task you actually have? The [evaluation kit](https://github.com/Metivity/talk2nature/blob/main/docs/UNIVERSITY_EVALUATION.md) uses invented material; no recordings or study data are requested. Talk2Nature does not currently translate animal communication or accept research recordings. I’m asking for independent feedback, not an endorsement, partnership or commitment.
+> Would you or a research-software colleague be willing to try a quick, browser-only comparison of two invented observation sessions? The [Compare moments review](https://metivity.github.io/talk2nature/app/compare/) needs no account, microphone, download, playback or upload. I’d value one thing it helped you describe and one thing that remained unclear. If file handoff is relevant to your work, the [evaluation kit](https://github.com/Metivity/talk2nature/blob/main/docs/UNIVERSITY_EVALUATION.md) also offers an optional, deeper Listen-to-Audacity check. Talk2Nature does not translate animal communication or accept research recordings. This is a software review, not a request for endorsement, partnership or commitment.
 >
-> If useful, I’d be glad to arrange a 20-minute walkthrough. If it is not a fit, no reply is needed. I will not name or quote your group without permission.
+> If useful, I’d be glad to hear what existing workflow you would compare it with. If it is not a fit, no reply is needed. I will not name or quote your group without permission.
 >
 > Thank you,
 > Raviv
