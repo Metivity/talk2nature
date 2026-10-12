@@ -6,6 +6,8 @@ message: >-
   scientific validation is implied by this citation.
 type: software
 title: "Talk2Nature: tools for observation and reproducible animal-sound research"
+version: 0.1.0
+date-released: 2026-10-12
 authors:
   - family-names: Yatom
     given-names: Raviv
