@@ -33,11 +33,29 @@ class SiteTests(unittest.TestCase):
             'mobile-check.yml':'mobile-check form',
             'reproduction.yml':'reproduction form',
             'research-source.yml':'source-review form',
+            'scientific-review.yml':'scientific review form',
         }
         self.assertEqual(form_links,expected)
         for filename in expected:
             with self.subTest(template=filename):
                 self.assertTrue((project_root/'.github'/'ISSUE_TEMPLATE'/filename).is_file())
+
+    def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')
+        self.assertEqual(len(note['review_request']['questions']),4)
+        guide=(project_root/'docs'/'BAT_CONTEXT_REVIEW.md').read_text()
+        self.assertIn('The exact paper partitions',guide)
+        self.assertIn("not the paper's filtered 35,074-call subset",guide)
+        self.assertIn('No independent specialist review has been received',guide)
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(Path(d)/'research'/'fruit-bat-context-ml-2024'/'index.html').read_text()
+            self.assertIn('OPEN METHODS QUESTION',page)
+            self.assertIn('Submit a public methods review',page)
+            self.assertIn('No independent specialist review has been received',page)
+            self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/BAT_CONTEXT_REVIEW.md',page)
+            self.assertIn('scientific-review.yml',page)
 
     def test_local_preview_is_complete_and_noindex(self):
         with tempfile.TemporaryDirectory() as d:
