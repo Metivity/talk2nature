@@ -1001,24 +1001,24 @@
     "id": 106,
     "title": "AnuraSet primary dataset paper",
     "url": "https://www.nature.com/articles/s41597-023-02666-2",
-    "description": "Cañas et al. (2023). Data records, selected validation and code-availability sections reviewed.",
-    "checked": "2026-10-03",
+    "description": "Cañas et al. (2023). Full data-availability and split descriptions and selected baseline results reviewed via PMC; no reproduction.",
+    "checked": "2026-10-12",
     "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
   },
   {
     "id": 107,
     "title": "AnuraSet versioned deposit",
     "url": "https://zenodo.org/records/8342596",
-    "description": "Frog recordings and label tables. Repository API says cc-by; paper says CC0. Resolve before acquisition.",
-    "checked": "2026-10-03",
+    "description": "Record 8342596; official API declares record-level cc-by and lists five files. Paper says the data are CC0; conflicting declarations remain unresolved and no files were acquired.",
+    "checked": "2026-10-12",
     "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
   },
   {
     "id": 108,
     "title": "AnuraSet reproducible benchmark code",
-    "url": "https://github.com/soundclim/anuraset",
-    "description": "Author repository with baseline and preprocessing code. README and MIT declaration reviewed; not executed.",
-    "checked": "2026-10-03",
+    "url": "https://github.com/soundclim/anuraset/tree/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4",
+    "description": "Pinned author-code sample: README, MIT license and evaluator read as text. Evaluator is not executed; the dataset loader and split implementation remain unreviewed.",
+    "checked": "2026-10-12",
     "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
   },
   {
