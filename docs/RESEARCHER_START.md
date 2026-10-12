@@ -79,6 +79,10 @@ The kit can establish whether the workflow is understandable and reproducible. R
 
 A clean local clone was checked out at the pinned revision `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` using Python 3.12.5 and Node v22.22.1. The documented annotation command returned the expected 8-second synthetic record, two marked events and 2 seconds of union coverage. The split command returned 10 connected groups and 12/4/4 records; its output SHA-256 matched `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4`. The pinned revision's Python suite passed 51 tests and its Node suite passed 79 tests. This was a maintainer rerun from a clean checkout, not an independent reproduction; the clone used the local Git object database.
 
+### October 12 remote public-clone recheck
+
+Cloned the public GitHub repository over HTTPS into a fresh temporary checkout and checked out the exact pinned revision `aa7119b7635aa3390bd1f7b3bb982e3b596f438d`. On Python 3.12.5 and Node v22.22.1, the documented annotation command reported an 8-second synthetic record, two events, 2 seconds of annotated interval coverage and zero seconds with observed context. The manifest command reported 10 declared groups and 12/4/4 train/validation/test records; its output SHA-256 matched the documented `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4`. All 51 Python tests and all 79 Node tests passed. This confirms the pinned instructions work from a remote public clone; it remains a maintainer rerun, not an independent reproduction, scientific validation or real-data result.
+
 ### October 12 release-candidate recheck
 
 From a clean source archive of local commit `6841a18bc40a860b3fd7196941955afb7b77f982`, the documented annotation and split commands produced the expected 8-second/two-event report and 10 groups with 12/4/4 records. The generated split checksum remained `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4`. From the same archive, 63 Python tests, 86 JavaScript tests, the 31-record resource validator, the 80-page public build and the site checker (81 HTML pages, 3,542 links) passed.
