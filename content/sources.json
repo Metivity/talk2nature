@@ -1302,13 +1302,14 @@
     "id": 135,
     "title": "Green-rumped parrotlet vocal-babbling data, Dryad version of May 31, 2022",
     "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
-    "description": "Dryad record describes audio-video bouts recorded in nest cavities, spectrographic measurements and associated metadata. The listing totals 2.60 GB. The README download returned HTTP 403; no dataset files were downloaded.",
-    "checked": "2026-10-11",
-    "origin": "Exact Dryad dataset landing page and current Dryad End User Terms reviewed October 11, 2026; the record page does not surface a separate item-level license notice.",
+    "description": "The published Dryad record describes audio-video bouts recorded in nest cavities, spectrographic measurements and associated metadata. The official API identifies version 6 and a three-file inventory totaling 2,600,218,232 bytes, with SHA-256 digests. Dryad's current publication policy says accepted datasets are published under CC0; tested file routes did not return the README bytes, and no files were downloaded.",
+    "checked": "2026-10-12",
+    "origin": "Exact Dryad dataset page, public API dataset/version/file records (v6, version record 180872), End User Terms updated May 20, 2025, and Publication Policies updated April 8, 2026 reviewed October 12, 2026. The current policy states that published datasets are made public under CC0; no record-specific exception is displayed. The unauthenticated API download route returned 401 to a byte-range request; the web file stream returned HTML rather than the file. No file bytes were read or saved.",
     "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k0p2ngfb3",
     "review_url_label": "Dryad dataset record, version and file inventory",
     "rights": {
-      "dataset": "Dryad's published terms state CC0 by default unless otherwise indicated during submission; no item-specific exception was surfaced in the reviewed record, so verify before any acquisition or reuse",
+      "dataset": "Dryad's current Terms and Publication Policies say accepted/published datasets are made public under CC0. This published DOI has no separate exception displayed on its record. Dataset-level statement only: the README and file contents remain uninspected, so this does not establish suitability or admission for a particular analysis or model.",
+      "policy_evidence_url": "https://datadryad.org/publication_policy",
       "paper_and_supplement": "Separate components; the dataset terms do not establish article or supplementary-material reuse rights"
     }
   },

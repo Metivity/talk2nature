@@ -1777,12 +1777,12 @@
       135,
       136
     ],
-    "review_depth": "Targeted PMC-indexed excerpts of the primary paper's abstract, conclusion and data-access statement; the exact Dryad dataset landing page, version, file inventory and current End User Terms; and an indexed excerpt from the official KBA location factsheet. The PMC page opened a CAPTCHA, the Dryad README returned HTTP 403, and the KBA page returned a cache miss. No paper PDF, supplement, dataset file or audio was downloaded or fully reviewed.",
+    "review_depth": "Targeted PMC-indexed excerpts of the primary paper's abstract, conclusion and data-access statement; the exact Dryad dataset landing page, public API dataset/version/file records (v6, version record 180872), current End User Terms and Publication Policies; and an indexed excerpt from the official KBA location factsheet. Dryad's published policy states accepted datasets are made public under CC0, with no separate exception shown on this record. API file metadata supplied exact IDs, sizes and SHA-256 digests. An unauthenticated byte-range request to the API download route returned 401; the web file stream returned HTML rather than the file. No paper PDF, supplement, dataset file or audio was downloaded or fully reviewed.",
     "finding": "The study reports vocal babbling and repertoire development in free-ranging green-rumped parrotlet nestlings of both sexes. The paper describes a corticosterone-related repertoire difference and says the babbling repertoire was not yet integrated into functional contexts; this is developmental biology, not evidence of call translation.",
-    "limitations": "One wild species and a nestling developmental stage were studied at Hato Masaguaral in Guárico, Venezuela, during 2017–2018. The Dryad record lists 2.56 GB of audio bouts, a 43.91 MB spreadsheet of spectrographic measurements and a 4.75 KB README. The study includes corticosterone supplementation, so it is not a purely passive observation dataset. The README, measurement schema, individual/session joins, label provenance, audio-video synchronization, treatment groups, split design and model performance were not inspected. No receiver-response or controlled semantic-decoding result is established by the reviewed material. The article reuse license was not verified. Dryad's terms state CC0 by default unless otherwise indicated during submission, but the reviewed record did not surface whether this deposit has an exception; the dataset remains metadata-only pending exact rights and scientific-fit review.",
+    "limitations": "One wild species and a nestling developmental stage were studied at Hato Masaguaral in Guárico, Venezuela, during 2017–2018. The current Dryad API lists version 6 with 2.56 GB of audio bouts, a 43.91 MB spreadsheet of spectrographic measurements and a 4.75 KB README; per-file sizes and SHA-256 values are recorded in the resource catalog. The study includes corticosterone supplementation, so it is not a purely passive observation dataset. The README bytes, measurement schema, individual/session joins, label provenance, audio-video synchronization, treatment groups, split design and model performance were not inspected. No receiver-response or controlled semantic-decoding result is established by the reviewed material. Dryad's current terms and policy state that published datasets are made public under CC0, and no record-specific exception is displayed; this dataset-level license evidence does not establish scientific fit, privacy/welfare suitability or model admission. The article reuse license is separate and was not verified.",
     "lesson": "Parrot vocal development is a useful research direction and can help define age-aware questions, but a changing repertoire or hormone-associated difference is not a message. Preserve developmental stage, treatment and individual/session structure before considering any acoustic analysis. Do not use this archive as evidence for general parrot communication or as the first context benchmark.",
-    "next_review": "Verify the article's exact reuse terms and any item-specific Dryad exception; obtain the README through an authorized route; inspect the spreadsheet schema, study methods, individual/session linkage and treatment design; then ask an avian vocal-development reviewer whether a narrowly defined descriptive or developmental question is justified. Reassess the 2.60 GB acquisition only after those gates and a bounded storage plan are satisfied.",
-    "reviewed": "2026-10-11",
+    "next_review": "Obtain the README through an authorized route; inspect the spreadsheet schema, study methods, individual/session linkage, audio-video timing, treatment design and file contents; then ask an avian vocal-development reviewer whether a narrowly defined descriptive or developmental question is justified. The dataset-level CC0 policy is documented, but the 2.60 GB acquisition remains metadata-only until content and scientific-fit checks plus a bounded storage plan are satisfied. Review the article's reuse terms separately before reproducing its text or figures.",
+    "reviewed": "2026-10-12",
     "expert_review": "Not yet independently reviewed by an avian vocal-development or bioacoustics specialist.",
     "review_stage": "Targeted paper and dataset-lead review",
     "purpose": "Vocal development",
@@ -1797,7 +1797,7 @@
       ],
       [
         "Recording and deposit",
-        "Dryad describes audio-video bouts recorded inside specially designed nest cavities, spectrographic measurements for each element within each bout, and associated metadata. The May 2022 deposit lists 2.60 GB total; its README was not retrievable in this review."
+        "Dryad describes audio-video bouts recorded inside specially designed nest cavities, spectrographic measurements for each element within each bout, and associated metadata. The May 2022 deposit lists 2.60 GB total across AllBouts.zip (2.56 GB), a 43.91 MB measurements workbook and a 4.75 KB README. The README request returned HTTP 403; no files were downloaded."
       ],
       [
         "Intervention and result boundary",
@@ -1805,10 +1805,10 @@
       ],
       [
         "Reuse and access",
-        "Dryad's current terms state CC0 by default unless a different term was indicated during submission. The record did not reveal an item-level exception, which remains to be checked before reuse. The article license is separate and unverified. No files were downloaded."
+        "Dryad's current End User Terms and Publication Policies state that published datasets are made public under CC0; no exception is displayed on this record. This establishes the repository's dataset-level license statement, not scientific admission or file-content suitability. The article license is separate and unverified. No files were downloaded."
       ]
     ],
-    "review_locator": "Primary paper: PMC-indexed abstract, conclusion and data-access statement; exact Dryad record, Abstract, Methods, file inventory and current End User Terms; official KBA factsheet indexed location excerpt. Direct PMC access encountered CAPTCHA, Dryad README returned 403, and KBA page returned a cache miss.",
+    "review_locator": "Primary paper: PMC-indexed abstract, conclusion and data-access statement; exact Dryad record, Abstract and Methods; Dryad API dataset, version and file endpoints; Dryad End User Terms (updated May 20, 2025) and Publication Policies (updated April 8, 2026); official KBA factsheet indexed location excerpt. Direct PMC access encountered CAPTCHA; API file download returned 401 and the web stream returned HTML; KBA page returned a cache miss.",
     "atlas": {
       "reviewed": "2026-10-11",
       "location_status": "mapped",

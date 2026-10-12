@@ -225,14 +225,20 @@ class CollectionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'md5_unavailable_reason'):
             validate(invalid)
 
-    def test_unresolved_licenses_and_metadata_cannot_download(self):
+    def test_declared_cc0_dataset_license_does_not_admit_unreviewed_archive(self):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, ['beans-next'])
         parrotlet=next(r for r in self.catalog['resources'] if r['id']=='parrotlet-vocal-babbling-data')
         self.assertEqual(parrotlet['acquisition'],'metadata_only')
         self.assertEqual(parrotlet['files'],[])
-        self.assertTrue(parrotlet['rights']['license'].startswith('unresolved:'))
-        self.assertEqual(parrotlet['rights']['commercial_use'],'unresolved')
+        self.assertIn('CC0',parrotlet['rights']['license'])
+        self.assertEqual(parrotlet['rights']['research_use'],'conditional')
+        self.assertEqual(parrotlet['rights']['commercial_use'],'conditional')
+        self.assertEqual(parrotlet['rights']['redistribution'],'conditional')
+        self.assertEqual(parrotlet['api_version_record']['version_number'],6)
+        self.assertEqual(sum(item['bytes'] for item in parrotlet['api_file_inventory']),2600218232)
+        readme=next(item for item in parrotlet['api_file_inventory'] if item['name']=='README20220326.csv')
+        self.assertEqual(readme['sha256'],'ae6e5cdf1067de3a11a5561a304a4bea47ba816b2c7f4063fdc98a1f417daf50')
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog,[parrotlet['id']])
         retrieval=next(r for r in self.catalog['resources'] if r['id']=='prompting-mammalps-s2-retrieval-data')
