@@ -47,6 +47,14 @@ The pinned revision was cloned into a fresh public checkout and exercised on Dar
 
 The live browser route was also inspected: its invented pair contained a 30-second complete and an 18-second partial budgerigar session, both with observer-declared labels. The comparison described the sampling difference without inferring biological change. Closing one session left the other open. No microphone, playback, upload, real observation, model or permission was used. These checks validate only the recorded software behavior. They were performed by the project maintainer and do **not** count as an independent reproduction or scientific review.
 
+## Current-main clean-clone recheck — October 12, 2026
+
+A fresh depth-one public clone of `main` at `a52876d6061f3eb73f0fd54cd436a6948bad59a2` ran the documented annotation and splitter commands, then the complete Python and Node suites. This main revision follows the deployed software revision `705daf95f19b2ed8a6e2ecdb60d607768a25b08d` only by a status-log edit; the software diff is empty. Python 3.12.5 reported 89 passing tests, and Node v22.22.1 reported 93 passing tests.
+
+The annotation command returned an 8-second synthetic fixture with two marked events, 2 seconds of interval-union coverage and 0 seconds of observed context. The splitter returned 10 connected groups and 12/4/4 records, with policy SHA-256 `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`; the complete current-output SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`.
+
+This maintainer-run public-clone check verifies current-source setup and tested software behavior; it is not an independent reproduction, scientific validation or biological result. Keep the older `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` pin for its historical expected checksum. Current output includes the later context-label-presence diagnostic, so its complete JSON hash is intentionally different.
+
 ## Three useful first contributions
 
 1. **Reproduce:** run either route on a clean device or checkout and describe where the instructions fail. An honest failure report is useful.
