@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "paths": [
     {
       "id": "first-animal",
@@ -8,6 +8,8 @@
       "decision": "Welcome every animal in the app; validate one species and one observable question first.",
       "notes": [
         "parrot-community-data",
+        "companion-parrot-name-use-2026",
+        "wild-parrot-duet-structure-2026",
         "budgerigar-starting-point",
         "parrotlet-vocal-babbling-development",
         "dog-barks",
@@ -56,7 +58,8 @@
         "perch",
         "naturelm",
         "birb-generalization",
-        "bioacoustic-benchmarks"
+        "bioacoustic-benchmarks",
+        "fruit-bat-context-ml-2024"
       ],
       "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
       "gate": "No Talk2Nature animal model has been trained or benchmarked. Language-like output is not verified meaning."
@@ -65,15 +68,20 @@
       "id": "meaning",
       "title": "Know what would count as understanding",
       "question": "When does an association support a claim about meaning?",
-      "decision": "Study receiver behavior, matched comparisons and competing explanations. Keep new critiques connected to the original paper.",
+      "decision": "Study receiver behavior, matched comparisons and competing explanations. Distinguish companion parrots' learned human names from natural conspecific signals proposed as names; keep each critique connected to the original evidence.",
       "notes": [
         "bird-call-syntax",
+        "duponts-lark-vocal-types-2026",
+        "animal-name-criteria-2026",
+        "companion-parrot-name-use-2026",
+        "wild-parrot-duet-structure-2026",
+        "parrot-vocal-imitation-addressing-2012",
         "elephant-calls-controls",
         "sperm-whale-structure",
         "dog-buttons"
       ],
       "next_step": "Ask a scientific reviewer to assess one bounded hypothesis and its controls before designing any intervention.",
-      "gate": "Public tools remain passive. No automated playback or general translation claim."
+      "gate": "A caregiver report about a human-created name differs from evidence about natural conspecific calls. Neither an individual acoustic signature nor a receiver response alone establishes shared meaning. Public tools remain passive; no automated playback or general translation claim."
     },
     {
       "id": "multimodal",
@@ -84,8 +92,11 @@
         "sound-and-movement",
         "plant-chemical-signals",
         "moths-and-plants",
+        "fungal-signals",
         "fungal-propagation-2026",
+        "fungal-electrophysiology-stimuli-2025",
         "fungal-words",
+        "tree-fungal-networks-evidence",
         "ice-crystals-and-evidence"
       ],
       "next_step": "Test the notebook workflow now; recruit scientific review for one passive audio-video protocol before expanding sensors.",
@@ -107,16 +118,17 @@
       "id": "context-before-meaning",
       "title": "Align sound with observed behavior",
       "question": "Can an acoustic feature predict a behavior that was independently observed at the same time?",
-      "decision": "Require linked source audio, synchronized observation timestamps, explicit event definitions and groups that support a held-out test. Shared species, date or project membership alone does not align events.",
+      "decision": "Treat overlap separation as an upstream preprocessing candidate, then evaluate caller attribution and independently observed context as separate tasks. Preserve unknown and mixed-source cases.",
       "notes": [
+        "biocppnet-source-separation-2021",
         "budgerigar-vocal-sociality-data",
         "parrot-data-feasibility",
         "parrotlet-vocal-babbling-development",
         "mammalps-audio-behavior-benchmark",
         "egyptian-fruit-bat-data"
       ],
-      "next_step": "Compare the bat archive's video-aligned labels and sampled QA with candidate parrot datasets; resolve each component's rights, then define a deduplicated held-out-animal/session protocol before any baseline. Keep MammAlps outside the commercial-capable benchmark.",
-      "gate": "The bat archive's direct raw-audio rights and Mendeley file provenance remain unresolved; its published vocalization/sequence splits do not establish held-out-animal performance or receiver comprehension. MammAlps is noncommercial and uses a day-level split without verified individual holdout; the parrot deposits also have alignment/rights gaps. None is admitted as the first Talk2Nature context benchmark."
+      "next_step": "First establish rights and a source-resolved evaluation set. Compare known-source synthetic mixtures with and without separation, then test any downstream context claim on frozen animal/session groups with independent observation labels and appropriate baselines.",
+      "gate": "BioCPPNet reports validation on constructed mixtures and downstream caller identity; it does not validate natural phone recordings or receiver comprehension, and the reviewed code snapshot has no visible LICENSE. Bat-archive raw-audio rights and joins remain unresolved, and no source is admitted to the first Talk2Nature context benchmark."
     },
     {
       "id": "observable-event-retrieval",

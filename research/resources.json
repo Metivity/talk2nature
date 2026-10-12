@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "scope": "Multi-animal evidence and reuse candidates; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -600,12 +600,12 @@
       "figshare_item_id": 4555903,
       "version": "Figshare item 4555903 v1; DOI 10.6084/m9.figshare.c.3666502_D1.v1",
       "priority": 1,
-      "reviewed": "2026-10-11",
+      "reviewed": "2026-10-12",
       "task": "Audit the schema and aggregate structure of video-observed caller, addressee, behavior and social-context labels; not a translation benchmark.",
-      "review_depth": "Direct GET of the public Figshare API item record returned HTTP 200 and declared CC0 1.0. Its single Annotations.csv file was acquired into ignored external storage; exact size and API MD5 matched, and the local SHA-256 is recorded in the receipt and aggregate report. A schema-only audit found 91,080 rows across the paper's 10 columns, no malformed/blank fields, and exact matches to all published Table 4 category totals. No raw values were exported.",
+      "review_depth": "Direct GET of the public Figshare API item record returned HTTP 200 and declared CC0 1.0. Its single Annotations.csv file was acquired into ignored external storage; exact size and API MD5 matched, and the local SHA-256 is recorded in the receipt and aggregate report. A schema-only audit found 91,080 rows across the paper's 10 columns, no malformed/blank fields, and exact matches to all published Table 4 category totals. No raw values were exported. Rechecked with the aggregate-only participant-pair audit; the complete report contains counts only, no raw row or identity values.",
       "access": "Public Figshare item API and direct file URL. The 2017 data descriptor describes this complete annotation table as 91,080 video-derived interaction annotations. This is one small archive component, not a sampled subset of rows; the raw file remains in ignored local storage.",
-      "decision": "Retain this one bounded annotation-table component only for local schema and aggregate-quality review. Publish the aggregate report, not raw rows; do not fetch the audiovisual archive, extract archives, execute code or admit these labels to training.",
-      "limitations": "The API declares item-level CC0; this records the repository's declaration, not independent legal advice. The file has 87,986 distinct FileID values, with 3,094 rows beyond that count; the paper notes that files can hold multiple interactions. All intervals were valid and none duplicated, but matching published category totals checks transcription/aggregation, not annotation truth. Emitter/addressee zero and negative codes carry uncertainty. No audio, video, FileInfo timestamps, session grouping or held-out-animal benchmark was inspected.",
+      "decision": "Retain the one bounded annotation-table component locally for schema and aggregate structural review. The current report describes all 91,080 annotation rows, not the paper’s filtered 35,074-record model subset. Keep training_admitted false; do not publish raw rows.",
+      "limitations": "The API declares item-level CC0; this records the repository's declaration, not independent legal advice. The file has 87,986 distinct FileID values, with 3,094 rows beyond that count; the paper notes that files can hold multiple interactions. All intervals were valid and none duplicated, but matching published category totals checks transcription/aggregation, not annotation truth. Emitter/addressee zero and negative codes carry uncertainty. No audio, video, FileInfo timestamps, session grouping or held-out-animal benchmark was inspected. The pair graph uses both participant fields and absolute nonzero IDs, but does not recover FileInfo timing/channel joins, the paper’s filtered subset, or its exact fold membership.",
       "attribution": "Prat et al. (2017), Egyptian fruit bat data descriptor; Figshare item 4555903, DOI 10.6084/m9.figshare.c.3666502_D1.v1.",
       "rights": {
         "license": "CC0-1.0",
@@ -629,6 +629,9 @@
           "bytes": 3286405,
           "md5": "7781a3725d6f2277de74da84b1383ce0"
         }
+      ],
+      "source_ids": [
+        191
       ]
     },
     {
@@ -757,6 +760,695 @@
         "research_use": "conditional",
         "commercial_use": "not_admitted",
         "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "companion-parrot-name-use-2026",
+      "kind": "paper",
+      "title": "Name use by companion parrots",
+      "url": "https://doi.org/10.1371/journal.pone.0346830",
+      "version": "PLOS ONE 21(4): e0346830 (2026); correction 21(5): e0349699",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Method reference for studying reported use of learned human names by companion parrots; not an acoustic dataset or animal-language benchmark.",
+      "review_depth": "Article abstract, methods, results and discussion plus the official correction reviewed. Supporting information, figures and raw survey files were not inspected; no reanalysis performed.",
+      "access": "Open-access PLOS ONE article; data availability points to manuscript and supporting information. Methods say respondents were asked for respondent and parrot names; the article describes S2 as de-identified supporting information.",
+      "decision": "Metadata-only. Use the paper as a methods and interface-design reference. The S2 file itself was not inspected; review its fields, privacy risk, file-level terms and intended-use rights before acquisition or reuse.",
+      "limitations": "Human reports of learned human-language phrases, not natural-call audio. Context is respondent-reported and observer-coded; author discussion notes selection bias, subjective scoring and that the reports do not unequivocally establish understanding. The abstract reports 802 example phrases with names; Results reports 801. The correction only adds ORCID identifiers.",
+      "attribution": "Benedict, Groiss, Hoeschele, Reinisch and Dahlin (2026), DOI 10.1371/journal.pone.0346830; correction DOI 10.1371/journal.pone.0349699.",
+      "rights": {
+        "license": "CC-BY-4.0 for article text as stated by PLOS; supporting data/files not separately reviewed",
+        "scope": "Article text and correction only. Participant data and supporting files are separate components; do not infer their privacy status or reuse rights from the article license.",
+        "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346830",
+        "conditions": "Publish an original attributed summary and link. Do not copy article text, figures or participant-level material. Review the exact supporting files and applicable consent/privacy terms before any reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "yellow-naped-amazon-duets-2026-paper",
+      "kind": "paper",
+      "title": "Decoding parrot duets: complex communication in yellow-naped amazons",
+      "url": "https://doi.org/10.1002/jav.03552",
+      "version": "Journal of Avian Biology 2026:e03552; DOI 10.1002/jav.03552",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Methods reference for wild-parrot call categorization and sequence structure; not a translated-message or phone-recording benchmark.",
+      "review_depth": "Publisher article sections reviewed: abstract, methods, results, discussion, data statement and supplement inventory. No independent reproduction; no supplements acquired.",
+      "access": "Publisher marks the article Open Access; the specific article license was not established in this review.",
+      "decision": "Metadata-only. Publish an original summary and link. Do not reproduce article text, figures, supplementary files or audio until each component’s terms are reviewed.",
+      "limitations": "Sample units vary by analysis; the 52-duet syntax analysis covers 12 pairs. Human call labels, reported repeatability and acoustic classification limits are described in the evidence note. Sequence organization does not establish semantics.",
+      "attribution": "Dahlin, C.R., Killinger, B., Snipe, M., Small, O., Guenther, B. and Richwine, L. (2026), Journal of Avian Biology 2026:e03552.",
+      "rights": {
+        "license": "Open Access label; specific article license unresolved",
+        "scope": "Article text and figures only; supporting information and dataset are separate artifacts.",
+        "evidence_url": "https://doi.org/10.1002/jav.03552",
+        "conditions": "Original short summary and citation link only; no copying or redistribution until exact license terms are confirmed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "yellow-naped-amazon-duets-dryad-2026",
+      "kind": "dataset",
+      "title": "Raven measurements for yellow-naped amazon warble duets",
+      "url": "https://doi.org/10.5061/dryad.rn8pk0prb",
+      "version": "Dryad v1, published 2026-01-27; DOI 10.5061/dryad.rn8pk0prb",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Reference for call-event, speaker/pair, sequence-position and acoustic-measurement fields in a wild-parrot duet study.",
+      "review_depth": "Reviewed the Dryad landing page, file list and README description, plus repository-wide Dryad reuse guidance. README and workbook bytes and rows were not inspected.",
+      "access": "Dryad lists README.md (2.46 KB) and Supplement_Data_DRYAD.xlsx (65.46 KB); the latter is described as Raven measurements, not raw audio.",
+      "decision": "Keep metadata-only. Before any acquisition, review exact rows and pair identifiers, sensitive-species implications, and fit with a defined research question. No training admission.",
+      "limitations": "The workbook includes duet names and pair initials; labels depend on the original field study and human call lexicon. It does not include the source recordings required to reproduce acoustic measurements. The article’s separate WAV/DOCX supplements have not been reviewed.",
+      "attribution": "Dahlin, C.R. et al. (2026), Data from: Decoding parrot duets: Complex communication in yellow-naped amazons [Dataset]. Dryad. DOI 10.5061/dryad.rn8pk0prb.",
+      "rights": {
+        "license": "CC0 per Dryad’s current repository-wide reuse guide; no separate file notice inspected",
+        "scope": "This Dryad dataset only. Paper text and publisher supplements have separate rights.",
+        "evidence_url": "https://datadryad.org/help/guides/reuse",
+        "conditions": "Cite as scholarly courtesy. Keep metadata-only until the workbook fields and pair identifiers receive a sensitive-species and research-use review.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "fungal-electrophysiology-stimuli-2025-paper",
+      "kind": "paper",
+      "title": "Detection of electrical signals in fungal mycelia in response to external stimuli",
+      "url": "https://doi.org/10.1016/j.isci.2025.113484",
+      "version": "iScience 28:113484 (2025)",
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Methods reference for controlled extracellular recording of fungal electrical activity; not a biological-language or Talk2Nature model result.",
+      "review_depth": "Reviewed indexed article abstract, setup, selected results, discussion, data statement and article license. Supplementary files and full statistical tables were not inspected; no result reproduced.",
+      "access": "Open-access article; publisher copy states CC BY 4.0.",
+      "decision": "Metadata-only. Publish an original summary and link. Do not copy article text, figures or supplements into this project.",
+      "limitations": "One Fusarium oxysporum strain and a specialized laboratory sensor. Extracellular voltage patterns do not establish a message or semantic code; some treatment contrasts were nonsignificant or electrode/solvent-confounded.",
+      "attribution": "Buffi, M. et al. (2025), iScience 28, 113484. DOI 10.1016/j.isci.2025.113484.",
+      "rights": {
+        "license": "CC-BY-4.0 for the article as stated in the published paper",
+        "scope": "Article only; dataset and supplementary code are cataloged separately.",
+        "evidence_url": "https://doi.org/10.1016/j.isci.2025.113484",
+        "conditions": "Credit the authors and source and indicate changes. The website uses original summaries and links; no article text or figures are copied.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "fungal-electrophysiology-stimuli-2025-data",
+      "kind": "dataset",
+      "title": "Fusarium oxysporum raw voltage-potential data before and after stimuli",
+      "url": "https://doi.org/10.17632/srkxbkh6sp.1",
+      "version": "Mendeley Data v1, published 2025-10-10",
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Possible methods-reproduction input for extracellular fungal electrophysiology, not an animal behavior or communication benchmark.",
+      "review_depth": "Reviewed the official Mendeley version 1 description and displayed CC BY 4.0 declaration. The visible record did not expose a file manifest; no files were downloaded or inspected.",
+      "access": "The record describes raw voltage-potential data from F. oxysporum before and after external stimuli; exact files, sample counts and metadata were not visible in the reviewed page.",
+      "decision": "Keep metadata-only. Before acquisition, verify exact files, provenance, treatment/replicate metadata and preprocessing, then assess fit with a mycology/electrophysiology reviewer. No training admission.",
+      "limitations": "The paper tests one fungal strain with laboratory electrodes and reports mixed treatment effects. Even suitable data would measure sensor activity, not decode fungal meaning or animal communication.",
+      "attribution": "Buffi, M. et al. (2025), Detection of electrical signals in fungal mycelia in response to external stimuli [Dataset]. Mendeley Data, v1. DOI 10.17632/srkxbkh6sp.1.",
+      "rights": {
+        "license": "CC-BY-4.0 as displayed on the Mendeley Data v1 record",
+        "scope": "This dataset record only; article and supplementary code are separate components.",
+        "evidence_url": "https://data.mendeley.com/datasets/srkxbkh6sp/1",
+        "conditions": "Credit authors and dataset DOI. Keep files unacquired until the manifest and study metadata are reviewed; license alone does not establish scientific suitability.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "fungal-electrophysiology-stimuli-2025-method-s1",
+      "kind": "code",
+      "title": "Analysis code identified as supplementary Method S1",
+      "url": "https://doi.org/10.1016/j.isci.2025.113484",
+      "version": "Method S1 referenced by the 2025 article; exact file/version not inspected",
+      "priority": 3,
+      "reviewed": "2026-10-12",
+      "task": "Potential implementation reference for reproducing the paper's STFT and power-spectral-density analysis.",
+      "review_depth": "Article data-availability statement reviewed; supplementary Method S1 bytes and code were not inspected or executed.",
+      "access": "The article says analysis code is in Method S1; no specific repository URL or component-level license was verified.",
+      "decision": "Metadata-only. Review the exact code, dependencies, license and outputs before any acquisition or execution. Do not treat the article's CC BY statement as verified software licensing.",
+      "limitations": "The existence of supplementary code does not establish reproducibility, safe execution or applicability to Talk2Nature data.",
+      "attribution": "Buffi, M. et al. (2025), iScience 28, 113484. DOI 10.1016/j.isci.2025.113484.",
+      "rights": {
+        "license": "Unresolved for the supplementary code component",
+        "scope": "Method S1/code only; paper and Mendeley dataset have distinct records and terms.",
+        "evidence_url": "https://doi.org/10.1016/j.isci.2025.113484",
+        "conditions": "Do not acquire, execute or redistribute until the exact file and its license are confirmed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "egyptian-fruit-bat-fileinfo",
+      "kind": "dataset",
+      "title": "Egyptian fruit bat per-file times, channels and voiced segments (FileInfo.csv)",
+      "url": "https://api.figshare.com/v2/articles/4555897",
+      "figshare_item_id": 4555897,
+      "version": "Figshare item 4555897 v1; collection DOI 10.6084/m9.figshare.c.3666502",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Determine whether video-derived FileID annotations can be joined to recording time, channel, treatment and session for a leakage-safe grouping audit.",
+      "review_depth": "The 2017 Scientific Data descriptor was reviewed for Data Records and Usage Notes. The direct public Figshare item API was read over verified TLS and reported a CC0 item declaration, one 31,574,701-byte FileInfo.csv and md5=null. The file contents were not retrieved.",
+      "access": "Public item API lists FileInfo.csv, file ID 8900695. The article says it carries exact recording time, recording channel and voiced-segment sample positions for each file.",
+      "decision": "Keep metadata-only. The 31.6 MB file exceeds the collector’s 5 MiB per-file limit and has no upstream MD5. Do not fetch until an independently reviewed, bounded integrity plan establishes that this join is needed.",
+      "limitations": "The file, schema, row coverage, identifiers, timing and joins were not inspected. Its existence makes a FileID/time/channel join plausible, not verified; no animal/session split or benchmark is established.",
+      "attribution": "Prat et al. (2017), Egyptian fruit bat vocalization data descriptor; Figshare item 4555897 and collection DOI 10.6084/m9.figshare.c.3666502.",
+      "rights": {
+        "license": "CC0-1.0",
+        "scope": "The public Figshare item API declares CC0 1.0 for this item; this records the repository's declaration, not independent legal advice. Only item 4555897 and its listed FileInfo.csv. The item API lists a 31,574,701-byte file and no MD5; the file body was not inspected.",
+        "evidence_url": "https://api.figshare.com/v2/articles/4555897",
+        "conditions": "Retain item/file provenance. Do not treat the paper’s license as a substitute for this item declaration. Keep metadata-only until a bounded use and integrity path are reviewed.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "egyptian-fruit-bat-metadata-pdf",
+      "kind": "dataset",
+      "title": "Egyptian fruit bat subject and annotation metadata (Metadata.pdf)",
+      "url": "https://api.figshare.com/v2/articles/4555900",
+      "figshare_item_id": 4555900,
+      "version": "Figshare item 4555900 v1; collection DOI 10.6084/m9.figshare.c.3666502",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Review subject/treatment descriptions and annotation definitions before assessing FileID-to-session and animal-group splits.",
+      "review_depth": "The 2017 data descriptor and direct Figshare item API were reviewed. The API declared CC0 1.0, listed one 367,257-byte Metadata.pdf (file ID 8900800) and returned md5=null. The file was acquired with the bounded collector, inspected locally and not republished. Visual review of all five pages found 20 treatment periods with date ranges, group compositions and recording channels, subject/maternal fields, and the annotation schema. FileInfo.csv remains a separate unacquired item.",
+      "access": "Public Figshare item API; one PDF. The API supplies no MD5. The collector verifies HTTPS, exact file ID/redirect and size, then records a local SHA-256 marked as not source-verified.",
+      "decision": "Retain one local copy in ignored external storage for methods review only. Do not publish the PDF, extract any animal recordings, or admit its contents to training.",
+      "limitations": "The item’s CC0 declaration is not independent legal advice. A computed SHA-256 identifies the received bytes but cannot substitute for an absent upstream checksum. PDF tables and definitions do not by themselves prove that audio, annotations and sessions join correctly.",
+      "attribution": "Prat et al. (2017), Egyptian fruit bat vocalization data descriptor; Figshare item 4555900 and collection DOI 10.6084/m9.figshare.c.3666502.",
+      "rights": {
+        "license": "CC0-1.0",
+        "scope": "The public Figshare item API declares CC0 1.0 for this item; this records the repository's declaration, not independent legal advice. Only item 4555900 and its listed Metadata.pdf. The item API lists one 367,257-byte file and md5=null; audio/video files and the article have separate records and rights.",
+        "evidence_url": "https://api.figshare.com/v2/articles/4555900",
+        "conditions": "Use the local copy only for methods review; retain attribution and the acquisition receipt. Do not republish the PDF or infer training permission from its item license.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "license_notice": "Official Figshare public item API for item 4555900 declares CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/), checked 2026-10-12.",
+      "acquisition": "sample_approved",
+      "adapter": "figshare_springernature",
+      "admission_reason": "One 367,257-byte CC0-declared metadata PDF is needed to inspect subject and annotation definitions. The API provides no source MD5; the bounded collector verifies HTTPS, the exact item/file redirect and size, stores the computed SHA-256 as local provenance only, and keeps the sample ignored and outside training/public builds.",
+      "files": [
+        {
+          "name": "Metadata.pdf",
+          "url": "https://ndownloader.figshare.com/files/8900800",
+          "source_url": "https://api.figshare.com/v2/articles/4555900",
+          "figshare_file_id": 8900800,
+          "bytes": 367257,
+          "md5": null,
+          "md5_unavailable_reason": "The public Figshare item API returned md5=null."
+        }
+      ],
+      "source_ids": [
+        190
+      ]
+    },
+    {
+      "id": "parrot-vocal-imitation-addressing-2012",
+      "kind": "paper",
+      "title": "Vocal imitation in parrots: addressing specific individuals",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049747",
+      "version": "PLOS ONE 7(11): e49747 (2012)",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Understand what a targeted contact-call playback can establish about receiver response and what it cannot establish about meaning.",
+      "review_depth": "Reviewed the full primary PLOS article text for the abstract, introduction, Materials and Methods, Results, Discussion, Ethics Statement and article license. No raw recordings, associated dataset, supplementary material or analysis code were acquired or inspected; no reanalysis was performed.",
+      "access": "Open full-text PLOS article; associated recordings, dataset, supplementary materials and code were not checked or acquired.",
+      "decision": "Use as a controlled signal-function comparator. Do not treat as evidence of translation, a companion-parrot result or support for consumer-app playback.",
+      "limitations": "This was a controlled playback study of 36 wild-caught orange-fronted conures from 27 flocks, paired in short-term outdoor aviaries during 2007. Of 72 trial periods, 44 were retained for analysis after caller-assignment and outside-interaction exclusions. The authors report higher call rates and shorter response latency for the targeted bird overall, with a sex-specific call-rate pattern; non-target birds also responded. This supports a bounded, context-specific receiver response to acoustically targeted imitation, not decoding of sentence meaning, general conversation, or a result transferable to pet parrots, other species or phone speakers. The experiment used captured birds, repeated playback and video observation under research permits. No Talk2Nature replication or independent specialist review exists.",
+      "attribution": "Balsby, Momberg and Dabelsteen (2012), PLOS ONE 7(11): e49747, DOI 10.1371/journal.pone.0049747.",
+      "rights": {
+        "license": "Creative Commons Attribution License (version not stated on the reviewed PLOS article page)",
+        "scope": "Published article text only. The current article page does not identify a license version. Raw recordings, trial-level data, figures, supplements and code have not been separately assessed.",
+        "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049747",
+        "conditions": "Attribute the authors and source and indicate adaptations. Verify the applicable license version before reusing article material; Talk2Nature publishes an original summary and link and reproduces no figures.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "egyptian-fruit-bat-context-paper-2024",
+      "kind": "paper",
+      "title": "Predicting interaction context in captive Egyptian fruit bats",
+      "url": "https://doi.org/10.23919/EUSIPCO63174.2024.10715475",
+      "version": "EUSIPCO 2024, pp. 1277–1281; arXiv author manuscript v1: 2406.06332",
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Reproducibility and evaluation-split comparator for context prediction from bat ultrasound calls.",
+      "review_depth": "Reviewed the complete official five-page EUSIPCO proceedings paper and arXiv v1 record/manuscript, including dataset filtering, subject-independent test-fold description, random train/validation split, models, metrics, results, errors and license record. No code, split files, data media, model weights or supplementary artifacts were acquired or run.",
+      "access": "Official EUSIPCO proceedings PDF and versioned arXiv v1 manuscript; article PDFs were reviewed in the browser only.",
+      "decision": "Use as a methods and reported-baseline reference. Do not treat its result as a Talk2Nature reproduction, animal communication translation, or evidence of receiver comprehension.",
+      "limitations": "The paper reports three subject-independent development/test folds, but the exact partition files, identity/group definitions, session overlap and channel/treatment balance have not been independently verified. Its 70/30 train/validation split within each development set is stratified random and does not account for identity. The reported sample-bootstrap confidence intervals are not group-clustered. Grooming recall is zero, context labels are video-derived, and no public code or split artifact was located in the targeted review despite the paper's statement that code would be released upon acceptance.",
+      "attribution": "Triantafyllopoulos, A., Gebhard, A., Milling, M., Rampp, S. & Schuller, B. (2024), EUSIPCO 2024, DOI 10.23919/EUSIPCO63174.2024.10715475; arXiv:2406.06332v1.",
+      "rights": {
+        "license": "CC BY-NC-ND 4.0 declared for arXiv v1; proceedings-version terms not separately reviewed",
+        "scope": "The arXiv v1 manuscript only. Dataset, code, trained weights and official proceedings PDF have separate or unresolved rights.",
+        "evidence_url": "https://arxiv.org/abs/2406.06332v1",
+        "conditions": "Publish an original summary and citation only. Do not redistribute either paper file, figures, code or weights from this record.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal-audio-identity-site-leakage-audit",
+      "kind": "code",
+      "title": "Audio Jungle Book Project: animal-audio evaluation leakage audit",
+      "url": "https://github.com/slug-labz/Audio-Jungle-Book-Project/tree/dev",
+      "version": "Mutable dev branch reviewed 2026-10-12; immutable commit not verified",
+      "source_ids": [
+        172
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Identify group leakage, background/site confounds and evaluation controls relevant to animal-audio models.",
+      "review_depth": "Reviewed the public repository README, the bat and correction sections of its FINDINGS.md, and its data README. No repository snapshot or code was downloaded or run; result files, complete draft paper, exact license file, and underlying data or weights were not inspected.",
+      "access": "Public GitHub repository on the mutable dev branch; no commit-pinned snapshot was created.",
+      "decision": "Use as an emerging methods lead for leakage audits, not as peer-reviewed evidence, a reproduced baseline, a bat behavior benchmark, or evidence of call meaning.",
+      "limitations": "The repository says its workshop paper/write-up is still in progress. Its findings are author-reported and have not been independently reproduced by Talk2Nature. The bat entry describes a BEANS sample with emitter IDs but no usable behavioral labels, so it informs identity analysis only. The findings document records substantial corrections to earlier transfer and inferential claims. Inspect an immutable code/results version and obtain independent methods review before relying on reported metrics. Data and pretrained weights have separate terms that were not assessed.",
+      "attribution": "slug-labz, Audio Jungle Book Project, public GitHub repository (dev branch), checked 2026-10-12.",
+      "rights": {
+        "license": "The README states that code is MIT; the linked LICENSE file was not verified in this review.",
+        "scope": "Repository code only, as stated in its README. Datasets and pretrained weights are separate assets whose licenses were not reviewed.",
+        "evidence_url": "https://github.com/slug-labz/Audio-Jungle-Book-Project/tree/dev",
+        "conditions": "Before reuse, pin a commit and verify its exact LICENSE file. Assess each dataset and model-weight license independently; the code statement does not clear data use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "earthspecies-egyptian-fruit-bat-library",
+      "kind": "code",
+      "title": "Earth Species Library: Egyptian fruit-bat data pipeline",
+      "url": "https://github.com/earthspecies/library/tree/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat",
+      "version": "Commit 6382c52bf553569528e0a790efe16e5ae42f0094 (2021-06-28; immutable reviewed snapshot)",
+      "source_ids": [
+        174,
+        175,
+        176,
+        177
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Find reusable data-access and preprocessing groundwork for the public Egyptian fruit-bat archive, then determine whether it supports any part of the reported context-prediction workflow.",
+      "review_depth": "Reviewed the pinned root inventory, bat-folder README and displayed content of notebooks 01 (download instructions), 02 (PyTorch loader), 99a (preprocessing) and 99b (mini dataset). The review covered stated dataset/code licenses, FileInfo mapping, prediction target and split construction. No notebook, raw dataset, archive or model output was downloaded; no code was executed.",
+      "access": "Public GitHub repository at an immutable 2021 commit. The README links to large Internet Archive copies; notebook 99a also lists a Figshare FileInfo.csv download. No archive or file was acquired.",
+      "decision": "Useful historical data-access and preprocessing documentation, but not the EUSIPCO 2024 context model or its three subject-independent folds. The pinned commit predates that paper. Notebook 02 predicts emitter identity and uses a shuffled row-level stratified fold; notebook 99a creates no train/validation split; notebook 99b builds a smaller emitter-identity subset. Do not claim a context baseline reproduction or communication result.",
+      "limitations": "The repository overview mentions a pretrained ResNet context-prediction example, but no exact model source/checkpoint or link to the later EUSIPCO study was verified. Notebook 99a reports that FileInfo.csv maps annotation FileIDs to filenames and shows a historical 30.1 MB download via Figshare file ID 8900695; equivalence to Talk2Nature’s separately cataloged 31.6 MB FileInfo item has not been checked. The notebook declares dataset CC BY 4.0, while its code license is “to be linked”; the visible root inventory has no LICENSE file. The dataset declaration, direct item-level Figshare terms and derived archive-copy provenance remain separate and unresolved.",
+      "attribution": "Earth Species Project, earthspecies/library, Egyptian-fruit-bat pipeline, commit 6382c52bf553569528e0a790efe16e5ae42f0094, checked 2026-10-12.",
+      "rights": {
+        "license": "Repository code license unresolved: the visible root inventory has no LICENSE file, and notebook 99a says the code license is “to be linked”.",
+        "scope": "Notebook 99a declares dataset CC BY 4.0, but that statement does not independently clear the original Figshare items, derived Internet Archive copies, or any model weights. Rights and provenance must be checked per artifact.",
+        "evidence_url": "https://github.com/earthspecies/library/tree/6382c52bf553569528e0a790efe16e5ae42f0094/egyptian_fruit_bat",
+        "conditions": "Keep metadata-only. Pin and assess the exact code, archive copy, original data item and checkpoint separately before reuse. Resolve the declared-term discrepancy; do not exceed the 5 MiB collector cap or infer EUSIPCO split provenance from these notebooks.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biocppnet-paper-2021",
+      "kind": "paper",
+      "title": "BioCPPNet: automatic bioacoustic source separation",
+      "url": "https://doi.org/10.1038/s41598-021-02790-2",
+      "version": "Scientific Reports 11, 23502 (2021); DOI 10.1038/s41598-021-02790-2",
+      "source_ids": [
+        178
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Understand source separation of overlapping animal vocalizations as an upstream processing step, and keep reconstruction evidence distinct from context or communication claims.",
+      "review_depth": "Reviewed the article abstract, Methods, Data availability, Code availability, Results, Discussion and rights statement. No source data, mixture media, code, supplementary files or weights were acquired or run.",
+      "access": "Publisher's open-access article page; no article file or supplementary media copied into Talk2Nature.",
+      "decision": "Use as a cross-species method reference for separating generated overlapping call mixtures, not as an animal-language decoder or a demonstrated natural-field recording solution.",
+      "limitations": "The reported mixtures are constructed from known individual recordings; Talk2Nature has not verified performance on natural uncontrolled mixtures. Reported SI-SDR and downstream identity are reconstruction proxies, not communication metrics. The article identifies public macaque and bat data and restricted dolphin data; item-level data terms and provenance remain separate.",
+      "attribution": "Bermant, P.C. (2021), BioCPPNet: automatic bioacoustic source separation with deep neural networks, Scientific Reports 11, 23502, DOI 10.1038/s41598-021-02790-2.",
+      "rights": {
+        "license": "Creative Commons Attribution 4.0 International for the article, as stated in the publisher's rights section.",
+        "scope": "Article text; third-party material may be excluded in its credit line. This does not license the code, source datasets, derived mixtures or model weights.",
+        "evidence_url": "https://www.nature.com/articles/s41598-021-02790-2",
+        "conditions": "Talk2Nature publishes an original summary and citation. Attribute any article reuse and check credit lines; assess each dataset, code repository and model artifact separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "earthspecies-biocppnet-code-2021",
+      "kind": "code",
+      "title": "Earth Species Project BioCPPNet implementation",
+      "url": "https://github.com/earthspecies/cocktail-party-problem/tree/7092851cbd9a32116e6453583823d5334ab11f1b",
+      "version": "Reviewed commit 7092851cbd9a32116e6453583823d5334ab11f1b (2022-02-01)",
+      "source_ids": [
+        179
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Trace the paper's stated code release for source separation, mixture generation and downstream evaluation.",
+      "review_depth": "Reviewed the repository README and visible root inventory at the pinned commit. No files were cloned, downloaded, installed, executed or redistributed.",
+      "access": "Public GitHub repository at a pinned commit. The README describes dataset setup, generated mixture preparation, classifier/separator training and evaluation.",
+      "decision": "Keep as a metadata-only implementation lead. Do not reuse the code until a repository license is identified and the target dataset/model path is separately cleared.",
+      "limitations": "No LICENSE file is visible in the reviewed root inventory. The README requires external animal datasets, and associated data and trained weights have separate rights. Talk2Nature has not audited code quality, dependency safety, reproducibility or natural-field performance.",
+      "attribution": "Earth Species Project, cocktail-party-problem, BioCPPNet repository, reviewed commit 7092851cbd9a32116e6453583823d5334ab11f1b, checked 2026-10-12.",
+      "rights": {
+        "license": "No license identified in the visible repository root at the reviewed commit; code reuse and redistribution are unresolved.",
+        "scope": "Repository code only. Article text, datasets, mixtures, pretrained weights and any downstream models have separate terms.",
+        "evidence_url": "https://github.com/earthspecies/cocktail-party-problem/tree/7092851cbd9a32116e6453583823d5334ab11f1b",
+        "conditions": "Metadata-only. Do not clone, install, execute, modify or redistribute code until exact terms and the intended use are verified; review dataset and weights independently.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal-name-criteria-2026",
+      "kind": "paper",
+      "title": "Do animals use names? Conceptual and empirical criteria",
+      "url": "https://doi.org/10.1016/j.tics.2026.06.008",
+      "version": "Trends in Cognitive Sciences, online ahead of print 22 July 2026; DOI 10.1016/j.tics.2026.06.008",
+      "source_ids": [
+        180
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Use a proposed conceptual framework to keep claims about animal names distinct from identity, context association and receiver response.",
+      "review_depth": "Abstract/highlights-only review. The official PubMed record and ScienceDirect listing were reviewed for metadata, abstract, publisher highlights and Open Access/Creative Commons status; the direct publisher page returned HTTP 403. Full text, references, supplementary files and underlying studies were not reviewed in this pass.",
+      "access": "ScienceDirect identifies the article as Open Access under a Creative Commons license. The exact license version and conditions were not visible in the accessible listing; the direct publisher page returned HTTP 403. No article file or other material was copied.",
+      "decision": "Keep as a metadata-only conceptual reference, not primary experimental evidence or a translation method. The abstract proposes individual reference, symbolic representation and shared meaning as minimum criteria, and identifies four taxa discussed by the review.",
+      "limitations": "The abstract does not expose how each criterion is operationalized or how the reviewed evidence is weighed. These are the authors' proposed criteria, not established consensus. No full-text review or Talk2Nature reanalysis was performed.",
+      "attribution": "Jaakkola, King and Bruck (2026), Trends in Cognitive Sciences, DOI 10.1016/j.tics.2026.06.008.",
+      "rights": {
+        "license": "ScienceDirect identifies the article as Open Access under a Creative Commons license, but the exact version and conditions were not visible in the accessible listing. PubMed also displays copyright © 2026 the authors, published by Elsevier, all rights reserved.",
+        "scope": "Bibliographic metadata and a short original summary only. The article text, figures, data and supplementary materials were not copied or separately reviewed.",
+        "evidence_url": "https://pubmed.ncbi.nlm.nih.gov/42486753/",
+        "conditions": "Metadata-only. Confirm the exact Creative Commons terms before reusing article content; cite and link to the original record.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moth-plant-oviposition-data",
+      "kind": "dataset",
+      "title": "Moth oviposition tables and analysis code",
+      "url": "https://doi.org/10.17632/yg7ms8rn37.1",
+      "version": "Mendeley Data v1; published 2025-11-14",
+      "source_ids": [
+        188,
+        192,
+        193
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Potential reference for a bounded reproduction of receiver response to plant-like acoustic cues; not an audio corpus or animal-language training set.",
+      "review_depth": "Reviewed the Mendeley Data v1 metadata, public file tree and limited browser previews. The tree lists 32 files in three folders: 24 CSV, four R, two MATLAB and two XLSX. A data.xlsx preview exposes arena/repetition/date/treatment and egg-cluster fields; a partial run_stats_whole.m preview loads data.xlsx and separates experiment 3. File panels for data.xlsx, run_stats_whole.m and one XY-point CSV display CC0 1.0 and SHA-256 values. The Download All ZIP panel displays 1.22 MB and a SHA-256. The exact data.xlsx file UUID and public download link were observed. A direct request in the Codex in-app browser returned net::ERR_BLOCKED_BY_CLIENT; no file was returned. The official API reference marks public file-list/download routes OAuth2. No API client or token was used. No file was downloaded, full scripts/workbooks were not reviewed, code was not executed and no result was independently reproduced.",
+      "access": "Public version 1 file browser and Download All ZIP (displayed 1.22 MB; repository-displayed SHA-256 recorded in source 192). The data.xlsx file panel links to UUID 02812bb3-0cc2-4bbf-bf32-2781a054f937. Its exact public download URL is recorded in observed_inventory. The direct request was blocked by the browser client, which does not establish a Mendeley server denial. Official API file-list and download routes require OAuth2. Three folders contain 32 tabular/code files; no audio filename is listed. The eLife source-data ZIP is a separate artifact and was not compared.",
+      "decision": "Keep metadata-only. Resume a bounded local-only reproduction only if an allowed retrieval route returns the exact versioned artifact and its downloaded SHA-256 matches the repository value. Inspect data joins, repeated experimental units and code dependencies before any execution; do not admit this behavioral table/tracking deposit as an audio or model-training corpus. Leave the separate publisher ZIP metadata-only unless a specific comparison is needed and its terms are verified.",
+      "limitations": "The deposit concerns one controlled study of Egyptian cotton leafworm moths and tomato-plant playback. Its listed files are tables, analysis code and XY-point data, not listed audio recordings. A behavioral reanalysis would not establish general plant communication, animal translation or model readiness. Previewed metadata and hashes are not local file verification; Talk2Nature has not independently reproduced the reported effects or received specialist review.",
+      "attribution": "Zer G. (2025). Female Moths Incorporate Plant Acoustic Emissions into Their Oviposition Decision-Making Process. Mendeley Data v1. DOI 10.17632/yg7ms8rn37.1.",
+      "rights": {
+        "license": "CC0 1.0 as displayed on the Mendeley Data v1 item record.",
+        "scope": "The deposited Mendeley Data item only. The repository page and file-information panels for data.xlsx, run_stats_whole.m and 220310_01_xypts.csv display CC0 1.0. The CC0 notice applies only to rights the affirmer can grant and does not establish third-party or privacy rights. The eLife article is a separate CC BY 4.0 work; the publisher source-data ZIP and any audio/model weights have separate unresolved rights.",
+        "evidence_url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+        "conditions": "No files have been acquired. Cite the deposit as scholarly practice; if selected files are acquired, verify their downloaded SHA-256 against the repository display, review data/code contents and dependencies, and retain the exact version and rights notice. Do not infer scientific admission from CC0 or file availability.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "observed_inventory": {
+        "reviewed": "2026-10-12",
+        "archive_name": "Female Moths Incorporate Plant Acoustic Emissions into Their Oviposition Decision-Making Process.zip",
+        "archive_size_displayed": "1.22 MB",
+        "archive_sha256_displayed": "0cce953171fcf416ead21696f30b3234e7bee70e93f7b5a6a8bc403765156c8a",
+        "folders": [
+          {"name": "basic_arena_fig1_S2", "files_displayed": 6},
+          {"name": "coridor_arena_fig2_S3_S4", "files_displayed": 5},
+          {"name": "Location_fig_3", "files_displayed": 21}
+        ],
+        "extensions_displayed": {"csv": 24, "R": 4, "m": 2, "xlsx": 2},
+        "file_panels_reviewed": [
+          {"name": "data.xlsx", "size_displayed": "50 KB", "license_displayed": "CC0 1.0", "sha256_displayed": "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6", "file_uuid": "02812bb3-0cc2-4bbf-bf32-2781a054f937", "public_download_url": "https://data.mendeley.com/public-files/datasets/yg7ms8rn37/files/02812bb3-0cc2-4bbf-bf32-2781a054f937/file_downloaded"},
+          {"name": "run_stats_whole.m", "size_displayed": "7.64 KB", "license_displayed": "CC0 1.0", "sha256_displayed": "a2a656ba1c2d410728b159db42b5eaa6090f8a90e2974bfb94417a18c89c1067"},
+          {"name": "220310_01_xypts.csv", "size_displayed": "1.66 KB", "license_displayed": "CC0 1.0", "sha256_displayed": "b8b7ab99e9ab7db8190a0b60194b07ec802418e8b0b7227cb0461c57758e3bd8"}
+        ],
+        "downloaded": false,
+        "retrieval_attempt": {
+          "reviewed": "2026-10-12",
+          "file": "data.xlsx",
+          "result": "The exact public download URL returned net::ERR_BLOCKED_BY_CLIENT in the Codex in-app browser. The web fetcher also could not access it. No file was returned and no checksum was verified locally.",
+          "api_access": "The official Mendeley API reference marks public file-list and download routes OAuth2-protected; no client or token was used."
+        }
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "elife-moth-source-data",
+      "kind": "dataset",
+      "title": "Publisher source-data archive for the moth–plant acoustic study",
+      "url": "https://cdn.elifesciences.org/articles/104700/elife-104700-data1-v1.zip",
+      "version": "eLife Source data 1 v1; ZIP; listed as 1.2 MB in the PMC package record",
+      "source_ids": [
+        186,
+        187
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Potential source for checking the published behavioral tables and analysis provenance; distinct from a sound corpus or animal-language training set.",
+      "review_depth": "Verified the publisher supplement link and PMC package description, which identifies raw data tables and analysis code. The source ZIP, raw Figure 1 scatter supplement, checksums, internal file names, and overlap with Mendeley Data v1 were not inspected.",
+      "access": "A direct publisher ZIP link is listed in the article package record as 1.2 MB. The Mendeley data-availability record separately describes codes and statistics. Whether these artifacts duplicate or complement one another is unknown.",
+      "decision": "Keep metadata-only. Before acquisition, verify artifact-specific terms, exact archive inventory, integrity information, data dictionary, code dependencies and correspondence with the article. Never execute the archive contents as part of intake.",
+      "limitations": "The archive is linked to one controlled study of Egyptian cotton leafworm moths and tomato-plant playback. Even a reproducible reanalysis would test a bounded behavioral result, not general plant communication or animal translation.",
+      "attribution": "Seltzer R, Zer Eshel G, et al. (2026). Female moths incorporate plant acoustic emissions into their oviposition decision-making process. eLife 13:RP104700. Source data 1.",
+      "rights": {
+        "license": "Unconfirmed for the separate source-data ZIP; the article states CC BY 4.0 but the archive has not been independently checked for file-level notices.",
+        "scope": "The publisher source-data ZIP and any embedded code/data only. This does not change the separate Mendeley Data v1 CC0 record or the article-text license.",
+        "conditions": "Do not acquire, execute, redistribute, or use for commercial or model-training purposes until the ZIP contents, attribution, third-party material and artifact-specific terms have been reviewed.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12768406/",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "ice-crystal-methodology-2017",
+      "kind": "paper",
+      "title": "Water-crystal methodology and experimental units",
+      "url": "https://www.parapsychologypress.org/_files/ugd/82c4a8_d4d214eaafb64f15b33776b5019621d5.pdf",
+      "version": "The Journal of Parapsychology 81(1), 73–86 (2017)",
+      "source_ids": [
+        189
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-12",
+      "task": "Methods context for clustered photographs, bottle-level experimental units and small-sample claims; not an animal-communication resource.",
+      "review_depth": "Full 14-page publisher-hosted technical note reviewed, including its summary of prior ice-crystal methods and the authors’ own small test series. No figures or source data were copied; no independent analysis or specialist review was performed.",
+      "access": "Publisher-hosted issue PDF. The issue page labels its articles open access, but an article-level reuse license was not verified.",
+      "decision": "Metadata-only. Cite and link for methods discussion; do not acquire, reproduce, train on or commercially reuse article content unless exact reuse terms are confirmed.",
+      "limitations": "The note is published in a parapsychology journal and its authors entertain anomalous-effect claims. It identifies dependence among repeated photographs/judges and says its own two-bottle-per-condition tests are too small; it is not a broad systematic review or a decisive independent null replication. It supplies no evidence that water understands language or communicates.",
+      "attribution": "Kokubo H, Nemoto Y & Kawano K. (2017). Technical Note: Discussion on Methodology of Water Crystal Formation as a Detection System for Psi. The Journal of Parapsychology 81(1), 73–86.",
+      "rights": {
+        "license": "The journal issue page states all articles are open access; no explicit article-level reuse license was verified.",
+        "scope": "The article only. No permission is inferred for related articles, data, images or code.",
+        "evidence_url": "https://www.parapsychologypress.org/jp-81-1",
+        "conditions": "Metadata-only; cite and link. Confirm exact terms before copying, redistributing, training on or commercially using article content.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "duponts-lark-vocal-types-2026",
+      "kind": "dataset",
+      "title": "Dupont's lark song and call recordings with expert-assigned type annotations",
+      "url": "https://datos.gob.es/es/catalogo/ea0041268-un-conjunto-de-datos-acusticos-a-gran-escala-de-una-passerina-con-comportamiento-vocal-variable-espacialmente-anotaciones-a-gran-escala-de-tipos-de-canciones-y-llamadas-dataset-traduccion-automatica",
+      "version": "Digital.CSIC handle 10261/424783; catalog lists 17264917.zip and README.txt distributions dated 2026-06-18. Zenodo indexed record 17264917 matches the dataset, while the article cites adjacent DOI 17264916; discrepancy unresolved.",
+      "source_ids": [
+        194,
+        195,
+        196
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-12",
+      "task": "Methods reference for event-level song/call type annotation, repertoire analysis and spatial vocal variation. Not a semantic-translation or independently observed behavior benchmark.",
+      "review_depth": "Reviewed the full 2026 publisher article, Zenodo's indexed record result and the official Datos.gob.es catalog metadata for Digital.CSIC handle 10261/424783. The indexed Zenodo result reports an eight-file, 3.7 GB record, including Song.zip, Call.zip, metadata, repertoire matrices and Technical_validation.R; the CSIC catalog lists a separate archive and README with CC BY 4.0. Direct Zenodo and Digital.CSIC access failed; no bytes, checksums, archive contents or direct Zenodo license were verified, and nothing was downloaded or executed.",
+      "access": "Datos.gob.es lists a public Digital.CSIC archive download and README for handle 10261/424783. The Zenodo result matching the title/authors/counts reports DOI 17264917, but the article cites DOI 17264916. Direct file access and identity reconciliation remain outstanding.",
+      "decision": "Metadata-only. Do not acquire or use for ML pending DOI reconciliation, exact archive/checksum verification, qualified scientific review and a clear bounded non-semantic question. The currently mapped labels are acoustic vocal types, not context or meaning.",
+      "limitations": "The study covers 20 populations in Spain, with 4,297 songs from 191 males (401 song types) and 795 calls from 97 males (80 call types). Birds were not individually marked; measures reduced but do not prove that repeat recordings are independent, and song/call individuals could not be matched. One expert made the primary annotations; uncertain or population-shared types received additional review. Labels are acoustic type categories, not independent behavior observations or word meanings. No published grouped ML split was reviewed. The authors advise against broad frequency-feature comparisons because of spatial dialect variation. Dataset DOI differs between the article (17264916) and matching indexed Zenodo result (17264917).",
+      "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, et al. (2026). A large-scale acoustic dataset of a passerine with spatially variable vocal behavior: fine-scale annotations of song and call types. Scientific Data 13, 770. https://doi.org/10.1038/s41597-026-07131-4. The article cites https://doi.org/10.5281/zenodo.17264916; the matching indexed Zenodo record reports https://doi.org/10.5281/zenodo.17264917. Digital.CSIC handle: http://hdl.handle.net/10261/424783.",
+      "rights": {
+        "license": "CC BY 4.0 is declared by Datos.gob.es for the specific Digital.CSIC archive 17264917.zip and README.txt distributions. The archive bytes and identity against the Zenodo dataset were not verified; the Zenodo record's own license remains unresolved.",
+        "scope": "Only the two Digital.CSIC distributions as listed by the public catalog. The article separately states CC BY-NC-ND 4.0; the direct Zenodo record and its Technical_validation.R file are distinct assets with unverified terms.",
+        "evidence_url": "https://datos.gob.es/es/catalogo/ea0041268-un-conjunto-de-datos-acusticos-a-gran-escala-de-una-passerina-con-comportamiento-vocal-variable-espacialmente-anotaciones-a-gran-escala-de-tipos-de-canciones-y-llamadas-dataset-traduccion-automatica",
+        "conditions": "Metadata-only. Before any retrieval, resolve the 17264916/17264917 identifier discrepancy, verify the actual CSIC archive, its checksum and included files, and follow the declared CC BY 4.0 attribution terms for that distribution. Do not infer the Zenodo code license.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "duponts-lark-technical-validation-r-2026",
+      "kind": "code",
+      "title": "Technical_validation.R for the Dupont's lark dataset",
+      "url": "https://zenodo.org/records/17264917",
+      "version": "Zenodo indexed record 17264917 reports Technical_validation.R (10.1 kB); the article cites DOI 17264916 and direct record access was unavailable.",
+      "source_ids": [
+        194,
+        195
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-12",
+      "task": "Potentially inspect analysis-validation code for reproducibility after exact record identity and code license are verified. No code execution is planned at intake.",
+      "review_depth": "The article identifies a separately named R validation script, and the Zenodo indexed result lists Technical_validation.R at 10.1 kB. The script bytes, record identity, dependencies, code license and checksum were not inspected or verified.",
+      "access": "Listed in the indexed Zenodo record result; the record cites DOI 17264917 while the article points to 17264916. Direct Zenodo access failed during this review.",
+      "decision": "Metadata-only. Do not acquire or execute until DOI identity and the script's specific license, source and dependencies are verified and the code is reviewed as untrusted input.",
+      "limitations": "This script is described as reproducing the paper's technical-validation analysis. It is not a communication decoder, ML baseline or proof of animal meaning. No independent reproduction was performed.",
+      "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, et al. (2026). Scientific Data 13, 770. Article DOI: https://doi.org/10.1038/s41597-026-07131-4. Indexed Zenodo record: https://zenodo.org/records/17264917; article Data Availability cites https://doi.org/10.5281/zenodo.17264916.",
+      "rights": {
+        "license": "Unresolved for the separately listed Technical_validation.R. The article's CC BY-NC-ND 4.0 license does not establish the code license; the Digital.CSIC catalog metadata reviewed here does not establish terms for this Zenodo code artifact.",
+        "scope": "The R script only. Dataset archive, README and article have separate terms.",
+        "evidence_url": "https://zenodo.org/records/17264917",
+        "conditions": "No code acquired or executed. Verify exact DOI/record, file-level license, checksum and dependencies before retrieval or use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "cmn-evidence-review-karst-2023",
+      "kind": "paper",
+      "title": "Common mycorrhizal networks: citation bias and evidence limits",
+      "url": "https://doi.org/10.1038/s41559-023-01986-1",
+      "version": "Nature Ecology & Evolution 7, 501–511 (2023); author correction 7, 623 (2023).",
+      "source_ids": [
+        197,
+        200
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "A critical reading for claims about forest network prevalence, resource transfer and “mother tree” effects; not a communication dataset or model benchmark.",
+      "review_depth": "Reviewed official publisher metadata, abstract and surfaced passages, plus the publisher correction. Nature page authentication limited direct article rendering; supplementary files and cited field studies were not independently reviewed.",
+      "access": "Publisher DOI and correction links. No article file, dataset or supplementary material acquired.",
+      "decision": "Metadata-only. Use as a cited critique in the evidence debate; keep its correction attached to the source record.",
+      "limitations": "The article evaluates a literature and citation record; it is not a new receiver-response experiment. The correction removed four extraneous references and renumbered citations. Do not infer that the correction changed the substantive conclusions.",
+      "attribution": "Karst J, Jones MD, Hoeksema JD (2023). Positive citation bias and overinterpreted results lead to misinformation on common mycorrhizal networks in forests. Nature Ecology & Evolution 7, 501–511. DOI 10.1038/s41559-023-01986-1.",
+      "rights": {
+        "license": "Publisher article; redistribution license not verified.",
+        "scope": "Article only; the correction, underlying field studies and any data have separate records and terms.",
+        "evidence_url": "https://www.nature.com/articles/s41559-023-01986-1",
+        "conditions": "Link and cite the publisher record. Publish an original summary only; do not copy article text, figures or supplements.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "cmn-mother-tree-review-henriksson-2023",
+      "kind": "paper",
+      "title": "Re-examining the evidence for the mother-tree hypothesis",
+      "url": "https://doi.org/10.1111/nph.18935",
+      "version": "New Phytologist 239, 19–28 (2023).",
+      "source_ids": [
+        198
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Review the physiological and isotope-method arguments about carbon transfer through ectomycorrhizal networks; not evidence of a tree communication code.",
+      "review_depth": "Reviewed the publisher abstract and selected online article sections, including its alternative-pathway discussion and competing-interest statement. No isotope datasets or cited experiments were reanalyzed.",
+      "access": "Publisher DOI; no article file or data acquired.",
+      "decision": "Metadata-only. Link in an explicitly contested evidence map; seek a forest-mycorrhizal specialist before translating the critique into a local experiment.",
+      "limitations": "The authors focus on significant net carbon transfer through common ectomycorrhizal networks and its benefit to recipients, especially in boreal forests. The paper does not disprove all network connections or all plant–fungus signaling. One author disclosed a financial interest in an organic-fertilizer company.",
+      "attribution": "Henriksson N, Marshall J, Högberg MN, Högberg P, Polle A, Franklin O, Näsholm T (2023). Re-examining the evidence for the mother tree hypothesis – resource sharing among trees via ectomycorrhizal networks. New Phytologist 239, 19–28. DOI 10.1111/nph.18935.",
+      "rights": {
+        "license": "Publisher article; exact redistribution license not verified in this review.",
+        "scope": "Article only; underlying cited datasets have separate rights.",
+        "evidence_url": "https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.18935",
+        "conditions": "Cite and link to the publisher. No article text, figure, dataset or supplement is copied or acquired.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "cmn-network-response-simard-2025",
+      "kind": "paper",
+      "title": "Response to questions about common mycorrhizal networks",
+      "url": "https://doi.org/10.3389/ffgc.2024.1512518",
+      "version": "Frontiers in Forests and Global Change 7, 1512518; published 2025-01-21.",
+      "source_ids": [
+        199
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-12",
+      "task": "Read the counterarguments and methods perspective on forest network structure and context-dependent material transfer; this Opinion is not an independent replication.",
+      "review_depth": "Reviewed the full publisher-hosted Opinion page, including article type, methods context, selected response sections and licensing statement. No source data or cited studies were acquired.",
+      "access": "Open-access publisher page; no data or figures copied.",
+      "decision": "Metadata-only. Present as an attributed scholarly response alongside the critiques, not as a neutral adjudication or independent test.",
+      "limitations": "The authors argue that multiple methods support network connections and context-specific transfer, while acknowledging multiple simultaneous pathways. As an Opinion by researchers active in the subject, it is an argument rather than a new independent experimental replication.",
+      "attribution": "Simard SW, Ryan TSL, Perry DA (2025). Opinion: Response to questions about common mycorrhizal networks. Frontiers in Forests and Global Change 7:1512518. DOI 10.3389/ffgc.2024.1512518.",
+      "rights": {
+        "license": "CC BY 4.0 as stated by the publisher for this article.",
+        "scope": "The Frontiers article only; cited papers, study data and other figures retain their own rights.",
+        "evidence_url": "https://www.frontiersin.org/journals/forests-and-global-change/articles/10.3389/ffgc.2024.1512518/full",
+        "conditions": "Attribution is required under CC BY 4.0. This repository links and summarizes; it does not reproduce article figures or text.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []

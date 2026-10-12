@@ -32,8 +32,14 @@ def read_catalog(root=ROOT):
                             'title': row['title'], 'payload': row})
     if len({e['key'] for e in entries}) != len(entries):
         raise ValueError('Duplicate catalog key.')
-    if any(not set(n['source_ids']) <= {s['id'] for s in sources} for n in notes):
-        raise ValueError('Evidence note cites a missing source.')
+    source_ids = {s['id'] for s in sources}
+    for kind, rows in (('Evidence note', notes), ('Resource', resources)):
+        for row in rows:
+            references = row.get('source_ids', [])
+            if (not isinstance(references, list)
+                    or any(type(source_id) is not int for source_id in references)
+                    or not set(references) <= source_ids):
+                raise ValueError(f'{kind} cites a missing or invalid source.')
     return entries
 
 

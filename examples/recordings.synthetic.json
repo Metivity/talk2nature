@@ -15,7 +15,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:00:00+00:00"
+    "recorded_at": "2026-09-01T10:00:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-00"
+      ],
+      "device": [
+        "demo-device-00"
+      ]
+    }
   },
   {
     "recording_id": "demo-00-1",
@@ -33,7 +41,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:00:00+00:00"
+    "recorded_at": "2026-09-01T10:00:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-00"
+      ],
+      "device": [
+        "demo-device-00"
+      ]
+    }
   },
   {
     "recording_id": "demo-01-0",
@@ -51,7 +67,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:01:00+00:00"
+    "recorded_at": "2026-09-01T10:01:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-00"
+      ],
+      "device": [
+        "demo-device-00"
+      ]
+    }
   },
   {
     "recording_id": "demo-01-1",
@@ -69,7 +93,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:01:00+00:00"
+    "recorded_at": "2026-09-01T10:01:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-00"
+      ],
+      "device": [
+        "demo-device-00"
+      ]
+    }
   },
   {
     "recording_id": "demo-02-0",
@@ -87,7 +119,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:02:00+00:00"
+    "recorded_at": "2026-09-01T10:02:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-01"
+      ],
+      "device": [
+        "demo-device-01"
+      ]
+    }
   },
   {
     "recording_id": "demo-02-1",
@@ -105,7 +145,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:02:00+00:00"
+    "recorded_at": "2026-09-01T10:02:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-01"
+      ],
+      "device": [
+        "demo-device-01"
+      ]
+    }
   },
   {
     "recording_id": "demo-03-0",
@@ -123,7 +171,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:03:00+00:00"
+    "recorded_at": "2026-09-01T10:03:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-01"
+      ],
+      "device": [
+        "demo-device-01"
+      ]
+    }
   },
   {
     "recording_id": "demo-03-1",
@@ -141,7 +197,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:03:00+00:00"
+    "recorded_at": "2026-09-01T10:03:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-01"
+      ],
+      "device": [
+        "demo-device-01"
+      ]
+    }
   },
   {
     "recording_id": "demo-04-0",
@@ -159,7 +223,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:04:00+00:00"
+    "recorded_at": "2026-09-01T10:04:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-02"
+      ],
+      "device": [
+        "demo-device-02"
+      ]
+    }
   },
   {
     "recording_id": "demo-04-1",
@@ -177,7 +249,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:04:00+00:00"
+    "recorded_at": "2026-09-01T10:04:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-02"
+      ],
+      "device": [
+        "demo-device-02"
+      ]
+    }
   },
   {
     "recording_id": "demo-05-0",
@@ -195,7 +275,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:05:00+00:00"
+    "recorded_at": "2026-09-01T10:05:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-02"
+      ],
+      "device": [
+        "demo-device-02"
+      ]
+    }
   },
   {
     "recording_id": "demo-05-1",
@@ -213,7 +301,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:05:00+00:00"
+    "recorded_at": "2026-09-01T10:05:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-02"
+      ],
+      "device": [
+        "demo-device-02"
+      ]
+    }
   },
   {
     "recording_id": "demo-06-0",
@@ -231,7 +327,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:06:00+00:00"
+    "recorded_at": "2026-09-01T10:06:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-03"
+      ],
+      "device": [
+        "demo-device-03"
+      ]
+    }
   },
   {
     "recording_id": "demo-06-1",
@@ -249,7 +353,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:06:00+00:00"
+    "recorded_at": "2026-09-01T10:06:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-03"
+      ],
+      "device": [
+        "demo-device-03"
+      ]
+    }
   },
   {
     "recording_id": "demo-07-0",
@@ -267,7 +379,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:07:00+00:00"
+    "recorded_at": "2026-09-01T10:07:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-03"
+      ],
+      "device": [
+        "demo-device-03"
+      ]
+    }
   },
   {
     "recording_id": "demo-07-1",
@@ -285,7 +405,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:07:00+00:00"
+    "recorded_at": "2026-09-01T10:07:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-03"
+      ],
+      "device": [
+        "demo-device-03"
+      ]
+    }
   },
   {
     "recording_id": "demo-08-0",
@@ -303,7 +431,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:08:00+00:00"
+    "recorded_at": "2026-09-01T10:08:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-04"
+      ],
+      "device": [
+        "demo-device-04"
+      ]
+    }
   },
   {
     "recording_id": "demo-08-1",
@@ -321,7 +457,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:08:00+00:00"
+    "recorded_at": "2026-09-01T10:08:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-04"
+      ],
+      "device": [
+        "demo-device-04"
+      ]
+    }
   },
   {
     "recording_id": "demo-09-0",
@@ -339,7 +483,15 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:09:00+00:00"
+    "recorded_at": "2026-09-01T10:09:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-04"
+      ],
+      "device": [
+        "demo-device-04"
+      ]
+    }
   },
   {
     "recording_id": "demo-09-1",
@@ -357,6 +509,14 @@
     "label_source": "direct_observation",
     "sensitive_location": false,
     "synthetic": true,
-    "recorded_at": "2026-09-01T10:09:00+00:00"
+    "recorded_at": "2026-09-01T10:09:00+00:00",
+    "group_ids": {
+      "household": [
+        "demo-household-04"
+      ],
+      "device": [
+        "demo-device-04"
+      ]
+    }
   }
 ]

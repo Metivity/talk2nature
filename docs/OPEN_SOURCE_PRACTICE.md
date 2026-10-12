@@ -22,7 +22,25 @@ This release adds a pull-request checklist and issue-form contact links so a new
 
 The repository now has three explicit entry tasks in `CONTRIBUTING.md`: try the microphone-free phone rehearsal, reproduce the synthetic researcher kit from a clean checkout, or check one claim against its primary source. Each task states what to report and links to the matching issue form. This is a contributor guide, not a claim that tasks have been independently completed or that a public invitation has been sent. No recording, model, or private data is needed for these starts.
 
+A regression test now ties the three guide links to their expected GitHub issue-form paths and confirms each referenced form exists in the repository. It prevents a common documentation-drift failure but does not test GitHub's hosted rendering, form submission or first-time contributor success.
+
 Next measure whether a first-time contributor can choose a task and submit a useful report without maintainer guidance. Keep the report self-declared as independent, assisted or maintainer-led; a passing form or CI run does not prove adoption or biological validity.
+
+## October 12 maintainer check: source-suggestion draft flow
+
+**Question.** Can a visitor prepare a source suggestion without a GitHub account, understand what will be shared and stop before posting?
+
+**Observed.** On the public [source and research-question helper](https://metivity.github.io/talk2nature/contribute/source/), the empty preview action returned focus to the required title field. A completed synthetic draft displayed its contribution type, source URL, declared review depth, rationale and the disclaimer that Talk2Nature had not independently validated it. The generated GitHub issue URL contained that same draft. Source review of `web/assets/hub.js` and `web/assets/hub-model.mjs` confirms that the form validates and builds the preview/link locally; the submit handler contains no network request. The page states that drafts are not autosaved and choosing the GitHub link transmits the draft for review; creating the issue remains a separate GitHub action. I did not open the generated link or submit anything.
+
+**Result and limits.** The basic browser flow behaved as described in this maintainer-run check. All three focused `tests/hub.test.mjs` cases passed, including configured-repository routing and rejection of unsafe or oversized drafts. The example used `example.org` and an explicit synthetic-only rationale; it is not a source proposal or contribution. I did not inspect browser network logs, so this is not a full network audit. The check also does not establish independent usability, mobile layout, screen-reader behavior, or successful GitHub issue creation. Keep independently verified contributions at zero until an outside contributor completes and reports a task without maintainer guidance.
+
+**Next.** Narrow-phone and keyboard checks are recorded below; a screen-reader check and independent first-time contributor report remain open. Do not count a preview or generated issue link as a contribution.
+
+## October 12 follow-up: narrow-phone and keyboard check
+
+Checked the same public helper in Chrome at a 390 × 844 viewport. The form controls remained within the viewport, and the visible labels supplied names for the textboxes and selectors. Starting at the title field, keyboard Tab moved in order through the source URL, review-depth selector, rationale and preview button. The focused preview button had a clear outline and remained above the fixed bottom navigation. The form was left blank; no draft was generated or sent.
+
+This confirms one maintainer-run narrow-viewport and keyboard path. It is not a physical-phone or virtual-keyboard test, a screen-reader audit, an independent usability test, or evidence across every breakpoint. No product change was needed from this check. Keep those other checks open before broad contributor outreach.
 
 ## Measures that fit the project
 

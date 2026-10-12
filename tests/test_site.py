@@ -1,13 +1,44 @@
+import html
 import json
+import re
 import tempfile
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 from web.build import build, load
 from scripts.check_site import check_site
 
 
+class SearchDescriptionParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.description=''
+
+    def handle_starttag(self, tag, attrs):
+        values=dict(attrs)
+        if tag=='meta' and values.get('name')=='description':
+            self.description=values.get('content','')
+
+
 class SiteTests(unittest.TestCase):
+    def test_contributor_first_steps_link_to_existing_issue_forms(self):
+        project_root=Path(__file__).resolve().parents[1]
+        guide=(project_root/'CONTRIBUTING.md').read_text()
+        form_links={filename:label for label,filename in re.findall(
+            r'\[([^\]]+)\]\(https://github\.com/Metivity/talk2nature/issues/new\?template=([A-Za-z0-9_.-]+)\)',
+            guide,
+        )}
+        expected={
+            'mobile-check.yml':'mobile-check form',
+            'reproduction.yml':'reproduction form',
+            'research-source.yml':'source-review form',
+        }
+        self.assertEqual(form_links,expected)
+        for filename in expected:
+            with self.subTest(template=filename):
+                self.assertTrue((project_root/'.github'/'ISSUE_TEMPLATE'/filename).is_file())
+
     def test_local_preview_is_complete_and_noindex(self):
         with tempfile.TemporaryDirectory() as d:
             build(Path(d))
@@ -18,8 +49,121 @@ class SiteTests(unittest.TestCase):
     def test_project_subpath_keeps_links_and_canonicals_intact(self):
         with tempfile.TemporaryDirectory() as d:
             build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
-            self.assertTrue(check_site(d)['public'])
+            result=check_site(d)
+            self.assertTrue(result['public'])
+            self.assertEqual(result['reachable_public_pages'],result['html_pages']-1)
             self.assertIn('https://fixture.github.io/talk2nature/research/',(Path(d)/'sitemap.xml').read_text())
+
+    def test_public_html_page_must_be_discoverable_from_homepage(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            target=root/'research/atlas/index.html'
+            target_path=target.resolve()
+            public_prefix='/talk2nature/research/atlas/'
+            absolute='https://fixture.github.io/talk2nature/research/atlas/'
+            for page in root.rglob('*.html'):
+                if page.resolve()==target_path:
+                    continue
+                content=page.read_text().replace(f'href="{public_prefix}"','href="#"')
+                content=content.replace(f'href="{absolute}"','href="#"')
+                page.write_text(content)
+            with self.assertRaisesRegex(ValueError,'Public page is not reachable from homepage: research/atlas/index.html'):
+                check_site(root)
+
+    def test_public_robots_names_the_exact_sitemap_url(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            robots=root/'robots.txt'
+            self.assertIn('Sitemap: https://fixture.github.io/talk2nature/sitemap.xml',robots.read_text().splitlines())
+            robots.write_text('User-agent: *\nAllow: /\nSitemap: https://fixture.github.io/sitemap.xml\n')
+            with self.assertRaisesRegex(ValueError,'Public robots.txt does not name the exact sitemap URL'):
+                check_site(root)
+
+    def test_resource_directory_lists_records_and_separates_rights_from_acquisition(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/resources/index.html').read_text()
+            resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+            self.assertEqual(page.count('<article class="resource-entry"'),len(resources))
+            for resource in resources:
+                self.assertIn(html.escape(resource['title']),page)
+            self.assertIn('rel="canonical" href="https://fixture.github.io/talk2nature/research/resources/"',page)
+            self.assertIn('<meta name="robots" content="index,follow">',page)
+            self.assertIn('Conditional; check the license, scope and stated conditions',page)
+            self.assertIn('Unresolved; treat as not cleared.',page)
+            self.assertIn('Not admitted for this project.',page)
+            self.assertIn('Metadata only; no files are included in this public directory.',page)
+            self.assertIn('A bounded sample path is approved by the collection rules',page)
+            self.assertIn('not a systematic review or legal clearance',page)
+            self.assertIn('version not stated',page)
+            self.assertNotIn('data/external/',page)
+            self.assertNotIn('"files":',page)
+            leakage_resource=next(r for r in resources if r['id']=='animal-audio-identity-site-leakage-audit')
+            self.assertIn('workshop paper/write-up is still in progress',leakage_resource['limitations'])
+            self.assertIn('bat behavior benchmark',leakage_resource['decision'])
+            self.assertIn('linked LICENSE file was not verified',leakage_resource['rights']['license'])
+            self.assertIn(html.escape(leakage_resource['limitations']),page)
+            self.assertIn(html.escape(leakage_resource['rights']['license']),page)
+            research_index=(root/'research/index.html').read_text()
+            self.assertIn('/talk2nature/research/resources/',research_index)
+            self.assertIn('https://fixture.github.io/talk2nature/research/resources/',(root/'sitemap.xml').read_text())
+
+    def test_parrot_playback_note_separates_receiver_response_from_translation(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            note=root/'research/parrot-vocal-imitation-addressing-2012/index.html'
+            page=note.read_text()
+            self.assertIn('36 temporarily captive wild conures from 27 flocks',page)
+            self.assertIn('44 of 72 trial periods',page)
+            self.assertIn('Animal Behaviour Society guidelines',page)
+            self.assertIn('not decoding of sentence meaning',page)
+            self.assertIn('index,follow',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/parrot-vocal-imitation-addressing-2012/',page)
+            self.assertIn('https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049747',page)
+            reading=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/parrot-vocal-imitation-addressing-2012/',reading)
+            atlas=json.loads((root/'research/atlas/catalog.json').read_text())
+            mapped=next(r for r in atlas['records'] if r['id']=='parrot-vocal-imitation-addressing-2012')
+            self.assertEqual(mapped['locations'][0]['place_id'],'costa-rica')
+            self.assertEqual(mapped['observation_period']['start_year'],2007)
+
+    def test_all_pages_have_unique_concise_search_descriptions(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root)
+            descriptions=[]
+            for path in root.rglob('index.html'):
+                parser=SearchDescriptionParser()
+                parser.feed(path.read_text())
+                self.assertTrue(parser.description.strip(),path)
+                self.assertLessEqual(len(parser.description),160,path)
+                descriptions.append(parser.description)
+            self.assertGreaterEqual(len(descriptions),60)
+            self.assertEqual(len(descriptions),len(set(descriptions)))
+
+    def test_research_page_structured_data_matches_visible_sources_and_review_date(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            slug='tree-fungal-networks-evidence'
+            note=next(n for n in load('research') if n['slug']==slug)
+            sources={s['id']:s for s in load('sources')}
+            page=(root/'research'/slug/'index.html').read_text()
+            raw=re.search(r'<script type="application/ld\+json">(.*?)</script>',page).group(1)
+            structured=json.loads(raw)
+            self.assertEqual(structured['@type'],'WebPage')
+            self.assertEqual(structured['about'],{'@type':'Thing','name':note['taxon']})
+            self.assertEqual(structured['lastReviewed'],note['reviewed'])
+            citations=structured['citation']
+            self.assertEqual([item['url'] for item in citations],[sources[i]['url'] for i in note['source_ids']])
+            for source_id in note['source_ids']:
+                self.assertIn(sources[source_id]['url'],page)
 
     def test_bat_dataset_review_is_a_discoverable_source_linked_page(self):
         with tempfile.TemporaryDirectory() as d:
@@ -28,6 +172,9 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(check_site(root)['public'])
             note=root/'research/egyptian-fruit-bat-data/index.html'
             html=note.read_text()
+            description=re.search(r'<meta name="description" content="([^"]*)">',html).group(1)
+            self.assertLessEqual(len(description),160)
+            self.assertIn('Animal/session splits remain unverified.',description)
             self.assertIn('Fruit-bat calls and context',html)
             self.assertIn('Prat et al. 2017',html)
             self.assertIn('Mendeley Data version 3',html)
@@ -46,6 +193,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Egyptian fruit bat annotation table, Figshare item 4555903 metadata',html)
             self.assertIn('https://api.figshare.com/v2/articles/4555903',html)
             self.assertIn('3,286,405 bytes',html)
+            self.assertIn('FileInfo.csv',html)
+            self.assertIn('https://api.figshare.com/v2/articles/4555897',html)
+            self.assertIn('Metadata.pdf',html)
+            self.assertIn('https://api.figshare.com/v2/articles/4555900',html)
             self.assertIn('held-out-animal',html)
             self.assertIn('index,follow',html)
             self.assertIn('https://fixture.github.io/talk2nature/research/egyptian-fruit-bat-data/',html)
@@ -66,6 +217,135 @@ class SiteTests(unittest.TestCase):
             self.assertIn('index,follow',html)
             self.assertIn('https://fixture.github.io/talk2nature/research/animal2vec-meerkat/',html)
             self.assertIn('https://fixture.github.io/talk2nature/research/animal2vec-meerkat/',(root/'sitemap.xml').read_text())
+
+    def test_companion_parrot_name_use_note_is_indexable_and_preserves_correction(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            note=root/'research/companion-parrot-name-use-2026/index.html'
+            html=note.read_text()
+            self.assertIn('When companion parrots use names',html)
+            self.assertIn('1,202 companion parrots across 89 species',html)
+            self.assertIn('802 example phrases',html)
+            self.assertIn('Results section says 801',html)
+            self.assertIn('correction adds ORCID identifiers only',html)
+            self.assertIn('respondent and parrot names',html)
+            self.assertIn('describes its S2 phrase dataset as de-identified',html)
+            self.assertIn('index,follow',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/companion-parrot-name-use-2026/',html)
+            self.assertIn('https://doi.org/10.1371/journal.pone.0349699',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/companion-parrot-name-use-2026/',(root/'sitemap.xml').read_text())
+            first_animal=(root/'research/first-animal/index.html').read_text()
+            self.assertIn('2026 companion-parrot survey',first_animal)
+            reading_path=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/companion-parrot-name-use-2026/',reading_path)
+
+    def test_animal_name_criteria_review_is_abstract_limited_and_discoverable(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/animal-name-criteria-2026/index.html').read_text()
+            self.assertIn('Do animal calls function as names?',page)
+            self.assertIn('individual reference',page)
+            self.assertIn('symbolic representation',page)
+            self.assertIn('shared meaning',page)
+            self.assertIn('spectacled parrotlets',page)
+            self.assertIn('Abstract and publisher-highlights review',page)
+            self.assertIn('not a new experiment or an ML result',page)
+            self.assertIn('has not received independent review',page)
+            self.assertIn('Creative Commons license',page)
+            self.assertIn('much of the presented evidence is equivocal',page)
+            self.assertIn('The PubMed abstract and ScienceDirect publisher highlights/metadata were available',page)
+            self.assertIn('all rights reserved',page)
+            self.assertIn('https://pubmed.ncbi.nlm.nih.gov/42486753/',page)
+            self.assertIn('https://doi.org/10.1016/j.tics.2026.06.008',page)
+            canonical='https://fixture.github.io/talk2nature/research/animal-name-criteria-2026/'
+            self.assertIn(canonical,page)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+            resource=next(r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources'] if r['id']=='animal-name-criteria-2026')
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['source_ids'],[180])
+            path=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/animal-name-criteria-2026/',path)
+            self.assertIn('/research/companion-parrot-name-use-2026/',path)
+            self.assertIn('natural conspecific signals proposed as names',path)
+            self.assertIn('A caregiver report about a human-created name differs',path)
+
+    def test_dupont_lark_note_is_discoverable_and_keeps_data_rights_separate(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/duponts-lark-vocal-types-2026/index.html').read_text()
+            self.assertIn("Dupont's lark songs and calls",page)
+            self.assertIn('4,297 annotated songs from 191 singing males',page)
+            self.assertIn('795 calls from 97 calling males',page)
+            self.assertIn('not independently observed behaviors',page)
+            self.assertIn('CC BY-NC-ND 4.0',page)
+            self.assertIn('Datos.gob.es declares CC BY 4.0 for the specific Digital.CSIC archive and README distributions',page)
+            self.assertIn('direct Zenodo record license and R-script rights remain unverified',page)
+            self.assertIn('17264916',page)
+            self.assertIn('17264917',page)
+            canonical='https://fixture.github.io/talk2nature/research/duponts-lark-vocal-types-2026/'
+            self.assertIn(canonical,page)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+            record=json.loads((root/'research/atlas/catalog.json').read_text())
+            lark=next(r for r in record['records'] if r['id']=='duponts-lark-vocal-types-2026')
+            self.assertEqual(lark['place_labels'],['Spain · 20 study populations (country-level locator)'])
+            self.assertIn('no individual site pins are shown',lark['location_note'])
+            path=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/duponts-lark-vocal-types-2026/',path)
+
+    def test_wild_parrot_duet_study_is_indexable_and_coarsely_mapped(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=root/'research/wild-parrot-duet-structure-2026/index.html'
+            html=page.read_text()
+            self.assertIn('Wild parrot duet structure: sequence patterns, not decoded meaning',html)
+            self.assertIn('52 high-quality warble duets from 12 pairs',html)
+            self.assertIn('19 positive and four negative',html)
+            self.assertIn('cannot confidently assign meanings',html)
+            self.assertIn('https://doi.org/10.1002/jav.03552',html)
+            self.assertIn('https://datadryad.org/dataset/doi:10.5061/dryad.rn8pk0prb',html)
+            self.assertIn('https://datadryad.org/help/guides/reuse',html)
+            self.assertIn('specific article reuse license was not established',html)
+            self.assertIn('index,follow',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/wild-parrot-duet-structure-2026/',html)
+            self.assertNotIn('Ahogados',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/wild-parrot-duet-structure-2026/',(root/'sitemap.xml').read_text())
+
+    def test_fungal_electrophysiology_note_is_discoverable_without_language_claims(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
+            page=root/'research/fungal-electrophysiology-stimuli-2025/index.html'
+            html=page.read_text()
+            self.assertIn('Fungal electrical activity: a sensor study, not a decoded language',html)
+            self.assertIn('significant 1,604% power-spectral-density increase',html)
+            self.assertIn('not significant',html)
+            self.assertIn('DMSO',html)
+            self.assertIn('Method S1',html)
+            self.assertIn('CC BY 4.0',html)
+            self.assertIn('semantic code',html)
+            self.assertIn('content="index,follow"',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/fungal-electrophysiology-stimuli-2025/',html)
+            self.assertIn('https://doi.org/10.1016/j.isci.2025.113484',html)
+            self.assertIn('https://doi.org/10.17632/srkxbkh6sp.1',html)
+            self.assertIn('https://fixture.github.io/talk2nature/research/fungal-electrophysiology-stimuli-2025/',(root/'sitemap.xml').read_text())
+            reading_path=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/fungal-electrophysiology-stimuli-2025/',reading_path)
+            atlas=json.loads((root/'research/atlas/catalog.json').read_text())
+            record=next(r for r in atlas['records'] if r['id']=='wild-parrot-duet-structure-2026')
+            self.assertEqual(record['locations'][0]['place_id'],'costa-rica')
+            place=next(p for p in atlas['places'] if p['id']=='costa-rica')
+            self.assertEqual(place['precision'],'country')
+            first_animal=(root/'research/first-animal/index.html').read_text()
+            self.assertIn('/research/wild-parrot-duet-structure-2026/',first_animal)
+            reading_path=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/wild-parrot-duet-structure-2026/',reading_path)
 
     def test_public_sitemap_does_not_claim_unverified_page_modification_dates(self):
         with tempfile.TemporaryDirectory() as d:
@@ -156,6 +436,23 @@ class SiteTests(unittest.TestCase):
             for source_id in (150,151,152,154,155,158,159):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
+    def test_biodivfuture_call_links_rules_and_discloses_deadline_conflict(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'opportunities/index.html').read_text()
+            self.assertIn('Biodiversa+ · BiodivFuture 2026–2027',page)
+            self.assertIn('Deadline 2026-11-10 · 12:00 CET · 11:00 UTC',page)
+            self.assertIn('The Biodiversa+ call page and formal PDF give November 10; the Commission portal lists November 2',page)
+            self.assertIn('National funding rules ↗',page)
+            self.assertIn('Call partner search ↗',page)
+            self.assertIn('Other official listing (date differs) ↗',page)
+            self.assertIn('ISF-recognized Israeli research institution',page)
+            self.assertIn('No application is prepared',page)
+            for source_id in (181,182,183,184,185):
+                self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
+
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
@@ -170,16 +467,65 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn('/talk2nature/about/',assets)
             self.assertIn('/talk2nature/app/compare/',assets)
             self.assertIn('/talk2nature/app/practice/',assets)
+            self.assertIn('/talk2nature/app/check/',assets)
             self.assertTrue(any('/assets/session-import.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/audacity-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/practice.js?' in a for a in assets))
             self.assertTrue(any('/assets/practice-model.mjs?' in a for a in assets))
+            for name in ('device-check.css','device-check.js','device-check-model.mjs'):
+                self.assertTrue(any('/assets/'+name+'?' in a for a in assets))
             for asset in assets:
                 self.assertTrue(asset.startswith(('/talk2nature/app/','/talk2nature/assets/')))
                 path=root/urlsplit(asset).path.removeprefix('/talk2nature/')
                 self.assertTrue((path/'index.html' if asset.endswith('/') else path).is_file())
             self.assertNotIn('__REVISION__',source)
             self.assertIn('class="app-body"',(root/'app/index.html').read_text())
+
+    def test_phone_rehearsal_is_discoverable_and_truthful_about_temporary_measurements(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            page=(root/'app/check/index.html').read_text()
+            home=(root/'app/index.html').read_text()
+            station=(root/'app/station/index.html').read_text()
+            self.assertIn('https://fixture.github.io/talk2nature/app/check/',page)
+            self.assertIn('content="index,follow"',page)
+            self.assertIn('away from animals',page)
+            self.assertIn('No raw audio, device identifier, result or location is saved or uploaded.',page)
+            self.assertIn('not calibrated sound-pressure measurements',page)
+            self.assertIn('id="check-permission" type="checkbox"',page)
+            self.assertNotIn('id="check-permission" checked',page)
+            self.assertIn('id="check-start"',page)
+            self.assertIn('id="check-stop"',page)
+            self.assertIn('id="check-result" class="device-check-result" hidden',page)
+            self.assertNotIn('<audio',page)
+            self.assertIn('Check your phone at home.',home)
+            self.assertIn('Check your phone at home, away from animals',station)
+            self.assertIn('https://fixture.github.io/talk2nature/app/check/',(root/'sitemap.xml').read_text())
+            css=(root/'assets/device-check.css').read_text()
+            self.assertIn('@media(max-width:700px)',css)
+            self.assertIn('position:fixed',css)
+            script=(root/'assets/device-check.js').read_text()
+            self.assertIn("./station-audio.mjs?v=",script)
+            self.assertIn("./device-check-model.mjs?v=",script)
+            self.assertIn("./station-capture.mjs?v=",script)
+            about=(root/'about/index.html').read_text()
+            self.assertIn('temporary aggregate readings, never saves or uploads sound',about)
+
+    def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            home=(root/'app/index.html').read_text()
+            self.assertIn('MORE THAN PARROTS',home)
+            self.assertIn('amphibian, reptile, fish, invertebrate',home)
+            self.assertIn('or leave it unknown',home)
+            self.assertIn('the app does not identify the sound source',home)
+            self.assertIn('Plants and fungi need different sensing tools.',home)
+            self.assertIn('/talk2nature/app/station/?mode=companion#station-console',home)
+            self.assertIn('/talk2nature/research/frontiers/',home)
+            css=(root/'assets/app.css').read_text()
+            self.assertIn('.animal-range-card{',css)
+            self.assertIn('@media(max-width:620px){.animal-range',css)
 
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:

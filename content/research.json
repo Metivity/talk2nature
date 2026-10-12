@@ -418,21 +418,26 @@
   {
     "slug": "moths-and-plants",
     "title": "When another organism responds",
+    "seo_description": "A moth study shows that plant-emitted ultrasonic clicks can alter egg-laying choices, with results changing when real plants are present.",
     "taxon": "Plants & fungi",
     "kind": "Behavioral experiment",
     "year": "2026",
     "source_ids": [
       16,
-      22
+      22,
+      186,
+      187,
+      188,
+      192
     ],
-    "review_depth": "Primary PDF indexed abstract and publication-history excerpt reviewed; publisher direct access challenged. Full methods and supplements remain pending.",
-    "finding": "Reported moth egg-laying preferences change with plant-sound playback and whether a real plant is present.",
-    "limitations": "The reported hearing-control result supports a bounded interaction. Context changes the observed preference; this is not general plant conversation.",
-    "lesson": "Receiver behavior is a stronger test of biological relevance than signal classification alone.",
-    "next_review": "Read the complete protocol, replication structure and hearing controls with a specialist before proposing any intervention.",
-    "reviewed": "2026-10-02",
+    "review_depth": "Full version-of-record text reviewed through the NCBI PMC copy and eLife PDF, including main methods, figures, public reviewer comments and author responses. The public Mendeley Data v1 file browser was inventoried: three folders with 32 files (24 CSV, four R, two MATLAB and two XLSX). Previewed the data.xlsx headers/rows, one XY-point CSV, and part of run_stats_whole.m, which loads data.xlsx and separates experiment 3. File-information panels for data.xlsx, run_stats_whole.m and one XY-point CSV displayed CC0 1.0 and SHA-256 values; the Download All ZIP panel displayed a SHA-256. No files were downloaded, full workbooks/scripts were not inspected, code was not run, raw data were not reanalysed, and no independent specialist review was obtained.",
+    "finding": "In controlled choices, female Egyptian cotton leafworm moths (Spodoptera littoralis) changed where they laid egg clusters when playback of drought-stressed tomato-plant clicks was present. The preference depended on the other cues: playback attracted oviposition in a plant-free arena, while moths preferred the silent side when healthy tomato plants were offered on both sides. Deafening removed the plant-free playback preference; male-moth click controls did not produce a detected preference. A separate long-arena experiment used a lower 30-click/min rate and found egg clusters concentrated near the playback and feeder rather than the silent edge.",
+    "limitations": "This is one moth species, one plant species and a controlled laboratory/greenhouse study, not evidence that plants intentionally communicate or that animals can be translated by AI. The authors characterize drought sounds as a likely cue rather than an evolved message. The main choice experiments used 60 clicks/min; the authors measured at most 20 clicks/min from 45 drying seedlings in a 50-hour recording and argue that a dense patch could raise exposure. The later 30-click/min gradient setup differs in arena and subject design, so it is not a direct replication of the main choice trials. Preferences also reverse with plant context; other visual, olfactory and tactile cues complicate interpretation. The Mendeley inventory contains tabular and XY-point files, not listed audio recordings; it cannot serve as an animal-audio benchmark. The limited preview does not verify all file contents, joins, dependencies or the publisher ZIP's correspondence. Reviewer comments raised ecological realism, effect-size presentation, availability of raw data/code and species generalization; Talk2Nature has not independently reproduced or reanalysed the results.",
+    "lesson": "A receiver's controlled response can show that a sound is a usable cue in a specific setting. That is a stronger behavioral result than detecting a signal, but it does not by itself establish a sender's intent, a shared message or conversation.",
+    "next_review": "Obtain qualified insect-bioacoustics review of the experimental units and analysis. If a bounded retrieval route is verified, inspect a checksum-matched subset of the Mendeley data and code without executing unreviewed code, then reproduce one prespecified table with its true replicate structure. Keep the separate publisher ZIP metadata-only unless exact comparison is necessary and its artifact terms are verified. This is not an audio/model-training benchmark; ordinary phone microphones are not ultrasonic recorders.",
+    "reviewed": "2026-10-12",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Initial source note",
+    "review_stage": "Full-text methods, results and public review record reviewed",
     "year_label": "Source year",
     "purpose": "Plants & fungi"
   },
@@ -456,6 +461,59 @@
     "review_stage": "Initial source note",
     "year_label": "Source year",
     "purpose": "Plants & fungi"
+  },
+  {
+    "slug": "fungal-electrophysiology-stimuli-2025",
+    "title": "Fungal electrical activity: a sensor study, not a decoded language",
+    "seo_description": "Fungal-potential sensors recorded electrical activity in one strain. The study suggests a measurement method, not a decoded fungal language.",
+    "taxon": "Fusarium oxysporum (filamentous fungus)",
+    "kind": "Extracellular electrophysiology and stimulus-response study",
+    "year": "2025",
+    "year_label": "Publication year",
+    "source_ids": [
+      165,
+      166,
+      17,
+      18
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Targeted primary article and dataset metadata review",
+    "review_depth": "Reviewed the publisher/PMC indexed article abstract, experimental setup, selected Results and Figures 1–3, Discussion, license and data-availability statement; checked the Mendeley Data v1 landing-page description and license. The article and data pages were intermittently CAPTCHA/403 limited. Supplementary Method S1, the raw dataset files and the full per-treatment statistical tables were not inspected; no result was reproduced.",
+    "finding": "Buffi et al. tested a printed fungal-potential card with embedded differential electrodes, a controlled humid chamber and Faraday cage on one Fusarium oxysporum strain. The article reports a significant 1,604% power-spectral-density increase after fungal growth connected inoculated electrodes compared with non-inoculated controls. The authors argue the setup can detect fungal-associated electrical activity and report that some treatments alter the recorded frequency patterns.",
+    "limitations": "This is a laboratory sensor/method study on one strain, not an animal-style communication experiment. Extracellular voltage and frequency patterns do not identify a message, receiver, referent or semantic code. Treatment effects were mixed: the cycloheximide power change was not significant; voriconazole's increase was not significant; calcimycin's pattern matched its DMSO carrier, which likely interfered with the gold electrodes; sodium azide's temporary change also had a brief water-control anomaly. The 2024 critique and 2025 review describe unresolved measurement and interpretation challenges. The dataset page declares CC BY 4.0 but its file manifest and bytes were not reviewed; the analysis code is only identified as supplementary Method S1 and its component-specific terms were not confirmed.",
+    "lesson": "Treat fungal electrophysiology as a separate sensing channel that needs laboratory electrodes, environmental controls and biological controls. Evidence of stimulus-associated activity is not evidence of language or of a phone-mediated way to talk with mushrooms.",
+    "next_review": "Before any reuse, inspect the exact Mendeley file manifest and data, reproduce the documented preprocessing, and review supplementary Method S1 and its terms separately from the paper and dataset. Ask a qualified mycologist/electrophysiologist to assess replication, biological-replicate structure and electrode/solvent controls. Keep it outside the first animal benchmark and do not start model training.",
+    "expert_review": "Not independently reviewed by a mycologist or electrophysiologist.",
+    "review_locator": "Buffi et al. 2025, iScience 28:113484, DOI 10.1016/j.isci.2025.113484: Abstract; Introduction; Results, Development of an experimental setup, Validation and Evaluation of the biological origin; Figures 1–3; Discussion; Data Availability and license statement. Mendeley Data version 1 landing page, DOI 10.17632/srkxbkh6sp.1. For methodological context, Blatt et al. 2024 commentary and Buffi et al. 2025 FEMS review. Supplementary Method S1 and dataset files not inspected.",
+    "reuse": {
+      "status": "Metadata-only; article, dataset and supplementary code were not acquired",
+      "asset": "The Mendeley record describes raw voltage-potential data from F. oxysporum before and after external stimuli. The article says analysis code is in supplementary Method S1.",
+      "rights": "The iScience article identifies CC BY 4.0 for the article. Mendeley Data v1 displays CC BY 4.0 for that dataset. These statements apply to separate components; Method S1's code terms were not independently verified. No files were downloaded or admitted to training.",
+      "experiment": "A future methods replication would need exact file provenance, isolate and replicate metadata, carrier/electrode controls, and a preregistered separation of fungal growth/activity from abiotic voltage shifts. It would test a physiological measurement, not fungal language."
+    },
+    "purpose": "Plants & fungi",
+    "study_snapshot": [
+      [
+        "Measurement",
+        "Printed circuit-board cards with embedded 2 mm gold-covered differential electrodes; humid incubation chamber, Faraday cage and time-frequency analysis. This is not a phone-microphone setup."
+      ],
+      [
+        "Model",
+        "Fusarium oxysporum strain NEU 195. The inoculated electrodes developed frequency components above 1.5 Hz after the expected hyphal connection period; the reported PSD increase versus uninoculated controls was significant."
+      ],
+      [
+        "Treatment controls",
+        "Cycloheximide reduced higher-frequency content, but its reported 74.21% PSD reduction was not significant. Voriconazole's reported PSD increase was not significant."
+      ],
+      [
+        "Electrode confound",
+        "Calcimycin and DMSO produced the same reduction pattern, which the authors attribute more plausibly to DMSO interaction with gold electrodes than to fungal response."
+      ],
+      [
+        "Available data and code",
+        "Mendeley describes raw voltage data before/after stimuli and displays CC BY 4.0; its visible page did not expose a file manifest. The article identifies supplementary Method S1 for code. Neither component was acquired or reviewed file-by-file."
+      ]
+    ]
   },
   {
     "slug": "annotation-tools",
@@ -587,6 +645,7 @@
   {
     "slug": "aves-avex",
     "title": "AVES and AVEX: reuse an encoder before training one",
+    "seo_description": "AVES and AVEX offer reusable animal-sound representations. Compare them as features; they do not identify meaning in a call.",
     "taxon": "Cross-species",
     "kind": "Model and code",
     "year": "2022–2026",
@@ -762,10 +821,18 @@
   {
     "slug": "animal2vec-meerkat",
     "title": "animal2vec and MeerKAT: rare-call detection, not translation",
+    "seo_description": "animal2vec and MeerKAT support rare-call detection in a large meerkat audio dataset. Their labels enable event evaluation, not translation.",
     "taxon": "Mammals",
     "kind": "Model and dataset",
     "year": "2024–2026",
-    "source_ids": [66, 67, 146, 147, 148, 149],
+    "source_ids": [
+      66,
+      67,
+      146,
+      147,
+      148,
+      149
+    ],
     "review_stage": "Targeted peer-reviewed methods, results and rights review",
     "review_depth": "Reviewed the 2026 published article's dataset methods, class definitions, annotation quality, evaluation design/results, discussion, ethics and data-availability statement; the official animal2vec repository and README; and the article's separate dataset, code and checkpoint license statements. The article supplement, deposited files/manifests, archived code contents and model weights were not inspected or acquired. No published result was reproduced.",
     "finding": "The peer-reviewed study presents animal2vec as a rare-event bioacoustic detector/classifier and MeerKAT as 1,068 hours of 8 kHz meerkat audio, including 184 hours with complete event labels across 66,398 ten-second samples. The paper reports eight vocalization classes and three non-call event classes, overlapping labels, millisecond event boundaries and inter-annotator timing reliability just over 10 ms. It is a valuable example of continuous audio, quiet/background intervals and event-based precision–recall evaluation.",
@@ -957,23 +1024,24 @@
   },
   {
     "slug": "ice-crystals-and-evidence",
-    "title": "Beautiful patterns need independent tests",
+    "title": "Ice-crystal claims: why beautiful images need stronger tests",
     "taxon": "Scientific method",
     "kind": "Claim & critique",
-    "year": "2006–2009",
+    "year": "2006–2017",
     "source_ids": [
       95,
       96,
-      97
+      97,
+      189
     ],
-    "review_depth": "2006 primary abstract, 2008 replication abstract and 2009 journal letter on p. 83 reviewed. Raw images, full protocols and later literature not systematically assessed.",
-    "finding": "Emoto and collaborators reported differences in aesthetic ratings of ice-crystal photographs after distant-intention treatments.",
-    "limitations": "A published critique identifies bottle-level non-independence. The follow-up shares investigators. These reports do not establish that water understands words or that thoughts reliably change crystal structure.",
-    "lesson": "Curiosity is welcome; a striking image is not a validated communication mechanism.",
-    "next_review": "If revisited, preregister independent bottle-level replication, blinding, all-image inclusion and objective outcomes. This is not the basis of Talk2Nature’s biology program.",
-    "reviewed": "2026-10-02",
+    "review_depth": "Reviewed the full 2006 four-page article, full 2008 Journal of Scientific Exploration paper, Douglas Stokes’s 2009 letter (p. 83), and Kokubo, Nemoto and Kawano’s 2017 technical note (pp. 73–86). Checked the reported designs, outcomes and experimental units. The 2006 full text was read from an author-hosted copy; its indexed PubMed record remains linked. Raw photographs, original analysis files/code and a full systematic literature search were not reviewed; no independent specialist review was obtained.",
+    "finding": "The 2006 pilot reports that 100 blind judges gave higher beauty ratings to 24 selected treated-condition images than to 16 control images (means 2.87 vs 1.88; one-tailed p=.001). The images came from just four bottles (two per condition), and only drops with a discernible crystal were photographed. The same investigator group’s 2008 triple-blind follow-up used six bottles (two per condition) and 300 drop photographs. Its authors reported a weak three-condition beauty effect (p=.03) and a treated-versus-proximal-control comparison at p=.05, one-tailed; the beauty effect was not significant after adjustment for image interest (p=.20), and the three-condition objective-contrast result was not significant (p=.25). These are reports by the study authors, not independent confirmation.",
+    "limitations": "The 2006 image-level ratings do not create more independent treated water sources than the four bottles; the authors themselves noted different treatment/control environments, selective photographing of visible crystals and the need to assess all drops and use more objective measures. The 2008 authors modeled bottles as random effects but used only two bottles per condition. Stokes’s 2009 letter specifically critiques the 2008 treated-versus-proximal comparison: treating the four bottles as the units gives a maximum one-tailed exact rank probability of 1/6 (.167). This letter does not directly analyze the 2006 pilot. The 2017 technical note discusses dependent photographs and too few bottles; its authors also acknowledge their own judge-level tests were invalid and their two-bottle-per-condition trials too small. That small methods study is not a decisive independent null replication. No reviewed study shows that water understands words, carries a message, or reliably changes crystal structure because of thought.",
+    "lesson": "Many photographs and ratings cannot substitute for independent experimental units. A communication claim also needs a defined sender and receiver, a signal, and a controlled functional response; visual resemblance or a human beauty score is not a message. This is a lesson in research design, not biological evidence or a basis for Talk2Nature machine learning.",
+    "next_review": "Keep this as a methods-critical case only. Any new test would need specialist review, preregistration, many independently randomized bottle batches, blinded handling, all-drop measurement, objective outcomes, a frozen analysis and independent replication. Do not use these papers to train or benchmark an animal-communication model.",
+    "reviewed": "2026-10-12",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Initial source note",
+    "review_stage": "Targeted full-text methods review; not a systematic review",
     "year_label": "Source year",
     "purpose": "Models & evaluation",
     "atlas": {
@@ -982,7 +1050,8 @@
       "location_note": "This note covers a tool, benchmark, method or claim review rather than one verified observation site.",
       "locations": [],
       "observation_period": null
-    }
+    },
+    "seo_description": "Ice-crystal beauty ratings are not communication evidence. Few treatment bottles and selected images limit what these studies establish."
   },
   {
     "slug": "parrot-community-data",
@@ -1006,8 +1075,31 @@
     "purpose": "Data & annotation"
   },
   {
+    "slug": "companion-parrot-name-use-2026",
+    "title": "When companion parrots use names: what a survey can and cannot show",
+    "seo_description": "A caregiver survey reports name use across companion parrots. It suggests observation questions, not an audio corpus or proof of call meaning.",
+    "taxon": "Parrots",
+    "kind": "Multi-species owner survey",
+    "year": "2026",
+    "source_ids": [
+      160,
+      161
+    ],
+    "review_depth": "PLOS ONE article HTML reviewed for abstract, methods, results and discussion; the official correction notice was checked. Supporting information, raw survey data and figures were not downloaded or inspected, and no independent reanalysis was performed.",
+    "finding": "The survey reports on 1,202 companion parrots across 89 species; phrase-use information was supplied for 884 birds, with names reported for 413. Multiple observers identified 131 reported examples of appropriate name use across 88 birds and 30 species, and 69 individualized examples across 42 birds and 19 species.",
+    "limitations": "These are human survey reports about learned human-language phrases, not recordings or experiments on natural parrot calls. Context was supplied or interpreted by respondents, reports were not representative, and the authors state that scoring remained subjective and does not unequivocally demonstrate understanding. The abstract says 802 example phrases contained names while the Results section says 801; the May 2026 correction adds ORCID identifiers only. Methods say the survey requested both respondent and parrot names. The article describes its S2 phrase dataset as de-identified, but we have not inspected that workbook or independently assessed disclosure risk; review the exact files and terms before reuse.",
+    "lesson": "For a simple phone workflow, keep three things distinct: a time-stamped event someone could observe, the owner's own description of context, and any later scientific interpretation. Use aliases, preserve unknowns, and never turn an owner's interpretation into a model label by default. This survey is useful for designing a participatory observation interface, not for training an audio model or claiming that parrots translate human speech.",
+    "next_review": "Compare the survey's categories with controlled parrot name-use studies and ask a qualified parrot-communication researcher to review a prospective, privacy-preserving codebook before any participant data collection. A useful follow-up would test observer agreement on directly observed context separately from owner-reported interpretation.",
+    "reviewed": "2026-10-12",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Targeted primary-source review",
+    "year_label": "Study year",
+    "purpose": "Data & annotation"
+  },
+  {
     "slug": "budgerigar-starting-point",
     "title": "Budgerigars: a candidate, not a shortcut",
+    "seo_description": "A budgerigar dataset may support individual vocal-signature research, but its sample-rate metadata is unresolved. It is not a ready benchmark.",
     "taxon": "Parrots",
     "kind": "Laboratory study and deposit",
     "year": "2023",
@@ -1114,6 +1206,7 @@
   {
     "slug": "honeybee-dance-history",
     "title": "Before AI: learning from the honeybee dance",
+    "seo_description": "Von Frisch linked waggle-dance duration and direction with food distance and orientation through controlled experiments.",
     "taxon": "Insects",
     "kind": "Historical primary account",
     "year": "1973",
@@ -1156,6 +1249,7 @@
   {
     "slug": "reef-sound-recruitment",
     "title": "Fish hear a habitat, not a translated sentence",
+    "seo_description": "A reef-sound playback experiment found more juvenile fish settled or stayed at enriched reefs. This is habitat response, not sentence translation.",
     "taxon": "Fish",
     "kind": "Controlled field experiment",
     "year": "2019",
@@ -1198,6 +1292,7 @@
   {
     "slug": "honeyguide-human-cooperation",
     "title": "A shared task can make a shared signal useful",
+    "seo_description": "In Mozambique, a specialized honey-hunting call helped people and wild honeyguides coordinate around a shared task.",
     "taxon": "Birds",
     "kind": "Human–wildlife cooperation study",
     "year": "2016",
@@ -1235,6 +1330,7 @@
   {
     "slug": "vervet-alarm-development",
     "title": "A warning is learned in context",
+    "seo_description": "Young vervets gave broader alarm categories than adults; maternal context was associated with more adult-like responses.",
     "taxon": "Mammals",
     "kind": "Historical developmental study",
     "year": "1980",
@@ -1272,6 +1368,7 @@
   {
     "slug": "humpback-song-history",
     "title": "A shared song can change across years",
+    "seo_description": "Historical humpback recordings show songs similar within years but changing across years, revealing long-term vocal pattern shifts.",
     "taxon": "Marine mammals",
     "kind": "Historical acoustic study",
     "year": "1985",
@@ -1351,6 +1448,7 @@
   {
     "slug": "wolf-howling-context",
     "title": "Who leaves matters to the wolves who stay",
+    "seo_description": "In two captive wolf packs, post-separation howling related to social bonds; cortisol did not explain howling frequency in the test.",
     "taxon": "Mammals",
     "kind": "Captive social-context experiment",
     "year": "2013",
@@ -1387,6 +1485,7 @@
   {
     "slug": "grouper-moray-coordination",
     "title": "Two hunters, different skills, a visible signal",
+    "seo_description": "Groupers gave visual signals before coordinated hunts with moray eels, linking a visible cue to a cooperative context.",
     "taxon": "Fish",
     "kind": "Field observation and manipulation",
     "year": "2006",
@@ -1429,6 +1528,7 @@
   {
     "slug": "dolphin-signature-addressing",
     "title": "A familiar whistle can address an individual",
+    "seo_description": "Playback tests found dolphins responded more to copies of their own signature whistles, supporting individual-directed calls.",
     "taxon": "Marine mammals",
     "kind": "Controlled playback study",
     "year": "2013",
@@ -1513,6 +1613,7 @@
   {
     "slug": "budgerigar-vocal-sociality-data",
     "title": "Budgerigar vocal and social records are not event-aligned",
+    "seo_description": "A 48-bird study paired contact-call features with separate flock behavior labels; records do not align each call to an event.",
     "taxon": "Parrots",
     "kind": "Vocal learning and sociality study",
     "year": "2023",
@@ -1584,6 +1685,7 @@
   {
     "slug": "mammalps-audio-behavior-benchmark",
     "title": "MammAlps aligns animal sound with video-annotated behavior",
+    "seo_description": "MammAlps links wildlife audio with video-annotated behavior to evaluate visible actions, not vocal meaning.",
     "taxon": "Mammals",
     "kind": "Multimodal camera-trap benchmark",
     "year": "2025",
@@ -1651,11 +1753,16 @@
   {
     "slug": "parrotlet-vocal-babbling-development",
     "title": "Parrotlet babbling is vocal development, not call translation",
+    "seo_description": "Green-rumped parrotlet nestlings babble as their vocal repertoires develop; this is evidence about development, not call translation.",
     "taxon": "Parrots",
     "kind": "Vocal development study",
     "year": "2022",
     "year_label": "Source year",
-    "source_ids": [134, 135, 136],
+    "source_ids": [
+      134,
+      135,
+      136
+    ],
     "review_depth": "Targeted PMC-indexed excerpts of the primary paper's abstract, conclusion and data-access statement; the exact Dryad dataset landing page, version, file inventory and current End User Terms; and an indexed excerpt from the official KBA location factsheet. The PMC page opened a CAPTCHA, the Dryad README returned HTTP 403, and the KBA page returned a cache miss. No paper PDF, supplement, dataset file or audio was downloaded or fully reviewed.",
     "finding": "The study reports vocal babbling and repertoire development in free-ranging green-rumped parrotlet nestlings of both sexes. The paper describes a corticosterone-related repertoire difference and says the babbling repertoire was not yet integrated into functional contexts; this is developmental biology, not evidence of call translation.",
     "limitations": "One wild species and a nestling developmental stage were studied at Hato Masaguaral in Guárico, Venezuela, during 2017–2018. The Dryad record lists 2.56 GB of audio bouts, a 43.91 MB spreadsheet of spectrographic measurements and a 4.75 KB README. The study includes corticosterone supplementation, so it is not a purely passive observation dataset. The README, measurement schema, individual/session joins, label provenance, audio-video synchronization, treatment groups, split design and model performance were not inspected. No receiver-response or controlled semantic-decoding result is established by the reviewed material. The article reuse license was not verified. Dryad's terms state CC0 by default unless otherwise indicated during submission, but the reviewed record did not surface whether this deposit has an exception; the dataset remains metadata-only pending exact rights and scientific-fit review.",
@@ -1713,11 +1820,18 @@
   {
     "slug": "prompting-mammalps-video-retrieval",
     "title": "Natural-language prompts can retrieve annotated wildlife videos",
+    "seo_description": "Prompting-MammAlps tests text search over visible-behavior labels in wildlife video. It does not translate animal signals.",
     "taxon": "Mammals",
     "kind": "Text-to-video retrieval benchmark",
     "year": "2026",
     "year_label": "arXiv v1 posted July 10, 2026; official code README lists ECCV 2026",
-    "source_ids": [137, 138, 139, 140, 141],
+    "source_ids": [
+      137,
+      138,
+      139,
+      140,
+      141
+    ],
     "review_depth": "Targeted review of arXiv v1 sections 1, 3.1–3.2, 4–7 and supplement S1.1–S1.3; official EPFL project page; pinned Hugging Face dataset card; official GitHub README, pyproject, SALMA README, repository root inventory and checkpoint issue. No dataset, code, article or model weights were acquired; no code or result was run.",
     "finding": "Prompting-MammAlps tests whether natural-language queries can retrieve camera-trap videos whose structured, visible-behavior annotations satisfy each query. The 135 ecology-informed queries include multi-attribute, multi-animal and temporal relations. This is a text interface to a video-label schema, not translation of animal signals or a two-way communication system.",
     "limitations": "The benchmark is video-only and covers seven Alpine mammal species, three sites in one Swiss national park, 15 camera views and two non-overlapping seasons (2023 and 2024); it is not a parrot or audio benchmark. The published split is by acquisition day, not verified individual identity, and cross-season distribution shift is reported. Query/video matches are built from ground-truth annotations; independent label-reliability review was not performed here. The authors report set-based F1: SALMA plus the query agent scores 0.34 across all 135 queries and 0.37 on the 113 without video-comparison prompts; zero-shot InternVideo2.0 scores 0.18 only on those 113. The commonly repeated 34% vs 18% figures therefore do not compare identical query sets. An oracle query agent on ground-truth annotations scores 0.87, so retrieval quality depends strongly on the upstream perception/annotation layer. No result was independently reproduced. Dataset terms are CC BY-NC 4.0, the code repository has no declared license, and no SALMA checkpoint release was found.",
@@ -1783,30 +1897,430 @@
     "kind": "Audiovisual dataset and context-classification review",
     "year": "2017–2023",
     "year_label": "Data descriptor and follow-up study years",
-    "source_ids": [65, 142, 143, 144, 145, 153, 154, 155, 156, 157],
-    "reviewed": "2026-10-11",
+    "source_ids": [
+      65,
+      142,
+      143,
+      144,
+      145,
+      153,
+      154,
+      155,
+      156,
+      157,
+      167,
+      168
+    ],
+    "reviewed": "2026-10-12",
     "review_stage": "Targeted primary literature, dataset and rights review",
-    "review_depth": "Reviewed the 2017 Scientific Data article's abstract, methods, data records, Table 3, Table 4, technical validation, usage and rights sections; the 2016 Scientific Reports results and classification methods; the 2023 iScience abstract, dataset description, sequence-HMM methods/results, discussion and data statement; the Mendeley Data version 3 description/license and official version 1/2 and 2/3 comparisons; the Mendeley public file-list API documentation and one anonymous version 3 request (HTTP 401; documentation specifies OAuth2); the NLM catalog entry; and direct public Figshare API metadata for archive item 4556074 and annotation item 4555903. Acquired only the 3.29 MB annotation table with verified size/MD5 and made an aggregate-only schema/category-count comparison to the 2017 paper. No audio/video, code or model weights were inspected, and no published model result was reproduced.",
-    "finding": "The 2017 archive describes 293,238 Egyptian fruit-bat WAV files recorded at 250 kHz and 16-bit, plus 91,080 labels derived from synchronized video, including caller, addressee, behavior and social context. The data descriptor reports a post-hoc recheck of 435 annotations, with a 4% estimated context-label error rate (95% CI 2.2–5.8%). This is an unusually useful design for studying acoustic associations with independently observed behavior.",
-    "limitations": "The 2016 analysis reported 61% balanced accuracy for four aggressive contexts versus 25% chance, using 14,863 calls from seven adult females. Its vocalization-level cross-validation does not establish generalization to held-out bats. The 2023 follow-up used sequences from three adult females; the context HMM used 326 sequences (2,953 syllables), formed 12,900 n-grams and reported overall balanced accuracy 66 ± 10 under random eight-fold cross-validation. Shuffling syllable order left the score unchanged. These are predictions of observer-coded context, not evidence that bats or humans interpret a call as a message. The 2023 authors say behavioral experiments are needed to establish biological relevance. The laboratory archive used synchronized video, isolated chambers and specialized 250 kHz ultrasound recording; ordinary phone recordings cannot be assumed to match its bandwidth, calibration or capture conditions. The Figshare public item API declares CC0 1.0 for archive item 4556074 and lists one 3,049,199,327-byte ZIP; its payload and embedded rights notices were not inspected. The separate annotation item 4555903 declares CC0 1.0; its 3,286,405-byte file was locally size/MD5 verified. The aggregate audit found 91,080 rows, 87,986 distinct file IDs, no malformed fields and exact Table 4 count matches. These are structural/transcription checks, not independent validation. Multiple annotations can belong to one file; ambiguous/unknown identities are present. No raw rows are published. No media, encodings, code or weights were inspected or run.",
+    "review_depth": "Reviewed the 2017 Scientific Data article's abstract, methods, data records, Tables 3–4, technical validation, usage and rights sections; the 2016 Scientific Reports results and classification methods; the 2023 iScience abstract, dataset description, sequence-HMM methods/results, discussion and data statement; the Mendeley Data version 3 description/license and official version 1/2 and 2/3 comparisons; the Mendeley public file-list API documentation and one anonymous version 3 request (HTTP 401; documentation specifies OAuth2); the NLM catalog entry; and direct public Figshare API metadata for archive item 4556074, annotation item 4555903, FileInfo item 4555897 and Metadata.pdf item 4555900. Acquired only the 3.29 MB annotation table with verified size/MD5 for aggregate-only schema/category-count comparison, plus the 367,257-byte metadata PDF for visual review of all five pages; its source API supplies no MD5, so the receipt's SHA-256 is local provenance only. No audio/video, FileInfo.csv, code or model weights were inspected, and no published model result was reproduced.",
+    "seo_description": "A bat vocalization dataset links calls to observed behavior, but it is not a translation key. Animal/session splits remain unverified.",
+    "finding": "The 2017 archive describes 293,238 Egyptian fruit-bat WAV files recorded at 250 kHz and 16-bit, plus 91,080 labels derived from synchronized video, including caller, addressee, behavior and social context. The data descriptor reports a post-hoc recheck of 435 annotations, with a 4% estimated context-label error rate (95% CI 2.2–5.8%). The reviewed metadata PDF says annotation FileIDs map to FileInfo.csv; its tables describe recording-date ranges, treatment/channel settings and bats that recur across treatments, and define known, unknown and ambiguous caller/receiver codes. This makes a file/animal grouping audit plausible, but not yet verified against FileInfo rows.",
+    "limitations": "The 2016 analysis reported 61% balanced accuracy for four aggressive contexts versus 25% chance, using 14,863 calls from seven adult females. Its vocalization-level cross-validation does not establish generalization to held-out bats. The 2023 follow-up used sequences from three adult females; the context HMM used 326 sequences (2,953 syllables), formed 12,900 n-grams and reported overall balanced accuracy 66 ± 10 under random eight-fold cross-validation. Shuffling syllable order left the score unchanged. These are predictions of observer-coded context, not evidence that bats or humans interpret a call as a message. The 2023 authors say behavioral experiments are needed to establish biological relevance. The laboratory archive used synchronized video, isolated chambers and specialized 250 kHz ultrasound recording; ordinary phone recordings cannot be assumed to match its bandwidth, calibration or capture conditions. The Figshare public item API declares CC0 1.0 for archive item 4556074 and lists one 3,049,199,327-byte ZIP; its payload and embedded rights notices were not inspected. The separate annotation item 4555903 declares CC0 1.0; its 3,286,405-byte file was locally size/MD5 verified. The aggregate audit found 91,080 rows, 87,986 distinct file IDs, no malformed fields and exact Table 4 count matches. These are structural/transcription checks, not independent validation. The PDF does not prove FileInfo row coverage, uniqueness or actual joins; the 31,574,701-byte FileInfo.csv was not fetched. Its API record has no upstream MD5 and the file exceeds the collector's 5 MiB per-file ceiling. Multiple annotations can belong to one file; ambiguous/unknown identities are present. No raw rows are published. No audio, video, FileInfo contents, encodings, code or weights were inspected or run.",
     "lesson": "This work offers a strong template for linking sound to independently observed context, auditing annotation uncertainty, and separating acoustic prediction from receiver comprehension. For a new benchmark, split by animal and session, keep context-only and background controls, audit duplicate calls and channels, and reserve receiver-response experiments for a separate hypothesis.",
-    "next_review": "The 3.05 GB audio/video archive remains metadata-only and is not required for this bounded audit. Next verify annotation-to-audio/session joins and a leakage-safe animal/session grouping from the published metadata with a qualified bat-bioacoustics reviewer; keep this annotation-only component out of training unless an independently reviewed protocol and fit-for-purpose benchmark are approved. Mendeley's file-list request needs OAuth2; do not use credentials without explicit authorization. AutoResearch remains NOT READY until all project gates are met.",
+    "next_review": "The 3.05 GB audio/video archive remains metadata-only and is not required for this bounded audit. First determine with a qualified bat-bioacoustics reviewer whether acquiring FileInfo.csv is necessary and define a bounded integrity plan for its missing upstream MD5; if justified, inspect only schema, key coverage, duplicate FileIDs, recording times/channels and links to the already audited annotation aggregate. Then test whether animal- and session-grouped splits can be formed without cross-group leakage. Keep annotations out of training unless an independently reviewed protocol and fit-for-purpose benchmark are approved. Mendeley's file-list request needs OAuth2; do not use credentials without explicit authorization. AutoResearch remains NOT READY until all project gates are met.",
     "expert_review": "Not independently reviewed by a bat bioacoustics or animal-communication specialist.",
-    "review_locator": "Prat et al. 2017, Methods, Data Records, Table 3, Table 4, Technical Validation, Usage Notes and Rights; Prat et al. 2016, Results: Collected data and context identification, and Methods: Classification algorithm and cross validation; Amit and Yovel 2023, Results and Methods: Examining context using HMMs; Mendeley Data version 3 landing page and official versions 1/2 and 2/3 comparisons; official Mendeley API docs and anonymous 401 response; direct Figshare public API metadata for items 4556074 and 4555903; aggregate-only local audit in research/figshare_bat_annotation_report.json. Full supplements and audiovisual archive payload not reviewed.",
+    "review_locator": "Prat et al. 2017, Methods, Data Records, Tables 1–4, Technical Validation, Usage Notes and Rights; Metadata.pdf, visually reviewed all five pages: treatment/date/channel table, subject/treatment table, annotation FileID and signed-identity definitions, and context/action definitions; Prat et al. 2016, Results: Collected data and context identification, and Methods: Classification algorithm and cross validation; Amit and Yovel 2023, Results and Methods: Examining context using HMMs; Mendeley Data version 3 landing page and official versions 1/2 and 2/3 comparisons; official Mendeley API docs and anonymous 401 response; direct Figshare public API metadata for items 4556074, 4555903, 4555897 and 4555900; aggregate-only local audit in research/figshare_bat_annotation_report.json. FileInfo.csv, full supplements and audiovisual archive payload not reviewed.",
     "reuse": {
-      "status": "One annotation-table component acquired locally for aggregate audit; audiovisual archive and Mendeley deposit remain metadata-only",
+      "status": "The annotation table and Metadata.pdf are acquired locally for aggregate/methods review; audiovisual archive, FileInfo.csv and Mendeley deposit remain metadata-only",
       "asset": "Video-derived caller, addressee, context and behavior labels; the local aggregate check reproduces the paper's published category totals but does not validate annotation truth",
-      "rights": "The direct Figshare API declares CC0 1.0 separately for archive item 4556074 (3.05 GB ZIP, not acquired) and annotation item 4555903 (3.29 MB CSV, locally size/MD5 verified). The annotation table stays ignored/local, with an aggregate report only; no training admission. The paper's CC0 waiver concerns article metadata and its text is separately CC BY 4.0. Mendeley v3 separately declares CC BY 4.0; its file-list API requires OAuth2 and anonymous access returned 401.",
+      "rights": "The direct Figshare API declares CC0 1.0 separately for archive item 4556074 (3.05 GB ZIP, not acquired), annotation item 4555903 (3.29 MB CSV, locally size/MD5 verified), FileInfo item 4555897 (31.57 MB CSV, not acquired) and Metadata.pdf item 4555900 (367 KB; local copy with size and computed SHA-256, no upstream MD5). The annotation table and PDF stay ignored/local; only aggregate and original methodological summaries are published, with no training admission. The paper's CC0 waiver concerns article metadata and its text is separately CC BY 4.0. Mendeley v3 separately declares CC BY 4.0; its file-list API requires OAuth2 and anonymous access returned 401.",
       "experiment": "Before any model work, freeze a deduplication and held-out-animal/session split, document label definitions and uncertainty, compare acoustic with background/context-only baselines, and state whether outcomes are context association or receiver behavior."
     },
     "purpose": "Data & annotation",
     "study_snapshot": [
-      ["Archive", "293,238 WAV files (250 kHz, 16-bit); 91,080 video-derived annotations; 435 sampled annotations rechecked, with 4% context-label error estimated."],
-      ["2016 context analysis", "14,863 calls from seven adult females; four aggressive contexts; 61% balanced accuracy versus 25% chance. Vocalization-level cross-validation is not held-out-animal validation."],
-      ["2023 sequence analysis", "Three adult females; 326 labeled sequences and 2,953 syllables in the HMM; 12,900 n-grams; 66 ± 10 balanced accuracy with random eight-fold cross-validation. Randomized syllable order did not reduce the reported score."],
-      ["Figshare item metadata", "The public API declares item-level CC0 1.0 and lists one files210.zip file, 3,049,199,327 bytes. Platform-supplied and computed MD5 fields agree; the payload remains metadata-only and no local checksum was made."],
-      ["Annotation-only file audit", "The separate CC0-declared 3,286,405-byte Annotations.csv was fetched with the bounded collector and matched its API MD5. Aggregate-only inspection found 91,080 complete rows, 87,986 distinct FileIDs and exact matches to all context/action category totals in published Table 4. Raw rows are not in the repository or website; this verifies structure and transcription only."],
-      ["Rights and status", "The 3.05 GB audiovisual ZIP remains metadata-only; the smaller annotation CSV is stored only under ignored external data and is not admitted to training. Mendeley v3 declares CC BY 4.0, but its versioned file-list request returned HTTP 401 without OAuth2. No media, code or model was acquired or run."]
+      [
+        "Archive",
+        "293,238 WAV files (250 kHz, 16-bit); 91,080 video-derived annotations; 435 sampled annotations rechecked, with 4% context-label error estimated."
+      ],
+      [
+        "2016 context analysis",
+        "14,863 calls from seven adult females; four aggressive contexts; 61% balanced accuracy versus 25% chance. Vocalization-level cross-validation is not held-out-animal validation."
+      ],
+      [
+        "2023 sequence analysis",
+        "Three adult females; 326 labeled sequences and 2,953 syllables in the HMM; 12,900 n-grams; 66 ± 10 balanced accuracy with random eight-fold cross-validation. Randomized syllable order did not reduce the reported score."
+      ],
+      [
+        "Figshare item metadata",
+        "The public API declares item-level CC0 1.0 and lists one files210.zip file, 3,049,199,327 bytes. Platform-supplied and computed MD5 fields agree; the payload remains metadata-only and no local checksum was made."
+      ],
+      [
+        "Annotation-only file audit",
+        "The separate CC0-declared 3,286,405-byte Annotations.csv was fetched with the bounded collector and matched its API MD5. Aggregate-only inspection found 91,080 complete rows, 87,986 distinct FileIDs and exact matches to all context/action category totals in published Table 4. Raw rows are not in the repository or website; this verifies structure and transcription only."
+      ],
+      [
+        "Metadata PDF review",
+        "All five pages of the 367,257-byte PDF were visually reviewed. The tables map treatment date ranges, social compositions and recording channels; list animal IDs and treatments; and define FileID links plus unknown/ambiguous emitter and addressee codes. This supports a proposed join audit, but does not verify FileInfo.csv contents or any leakage-safe split."
+      ],
+      [
+        "Rights and status",
+        "The 3.05 GB audiovisual ZIP remains metadata-only; the smaller annotation CSV is stored only under ignored external data and is not admitted to training. Mendeley v3 declares CC BY 4.0, but its versioned file-list request returned HTTP 401 without OAuth2. No media, code or model was acquired or run."
+      ]
     ]
+  },
+  {
+    "slug": "wild-parrot-duet-structure-2026",
+    "title": "Wild parrot duet structure: sequence patterns, not decoded meaning",
+    "seo_description": "Wild yellow-naped amazons show flexible duet sequences, but the study could not confidently assign meanings to calls or duets.",
+    "taxon": "Yellow-naped amazon (Amazona auropalliata)",
+    "kind": "Wild vocal-sequence study and dataset review",
+    "year": "2026",
+    "year_label": "Publication year",
+    "source_ids": [
+      162,
+      163,
+      164
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Targeted primary article, dataset metadata and reuse-rights review",
+    "review_depth": "Reviewed the publisher article HTML for its abstract, sites and recordings, call categorization, acoustic analyses, syntax methods and results, discussion, data-availability statement and supplementary-file inventory. Reviewed the full Dryad dataset landing page and README description and Dryad’s current reuse-rights guide. The workbook and publisher supplements were not downloaded or inspected; no published analysis was reproduced.",
+    "finding": "The study examined warble duets from 13 mated pairs of wild yellow-naped amazons in north-west Costa Rica during 2006–2008. The authors report creating 1,136 duet files; 52 high-quality warble duets from 12 pairs were used in the syntax analysis. They report recurring call types, flexible ordering, 19 positive and four negative call-type associations, while most complete duet sequences were unique. This is evidence of measurable sequence structure in this study, not a translated conversation.",
+    "limitations": "Analysis-specific sample counts differ: the initial lexicon is described as 469 calls from 54 duets and 13 pairs, while syntax analysis used 52 duets from 12 pairs. Methods describe 36 multi-example call types plus 11 one-time forms grouped as “Unknown”; results report 36 call types and three variants. The reported 92% repeatability came from two supervised undergraduate scorers scoring 15 hidden duets three times; it is not independent external validation. Calls could overlap and be difficult to segment, and sex assignment relied on established duet-order rules. Quadratic discriminant analysis and naive Bayes did not classify the full call-type set; pairwise naive Bayes separated only two similar types. Syntax/collocation is not semantic decoding: the authors state that they cannot confidently assign meanings to calls, collocates or duets and discuss possible territory-defense functions. Recordings used a tripod-mounted directional microphone and video, not ordinary phone capture. The species is described as Critically Endangered, so this atlas uses country-scale geography only. Dryad lists a small measurements workbook, not raw audio; the publisher separately lists a WAV and two DOCX supplements whose terms and contents were not reviewed. The specific article reuse license was not established. No Talk2Nature specialist review, independent replication or model result exists.",
+    "lesson": "For Talk2Nature, represent pair or individual identity, ordered event positions, timing, overlap, uncertain caller identity and annotation provenance separately. Preserve “unknown” and distinguish a next vocal event from a response. Keep sequence structure, context association and experimentally demonstrated meaning as different evidence levels. This wild-species study is a methods comparator; it does not establish that household phone recordings are suitable or change the provisional companion-parrot pilot.",
+    "next_review": "Keep this as a metadata-only methods reference, outside the first ML benchmark. Before considering the workbook, review the exact rows and pair identifiers under a specialist-led sensitive-species and research-use assessment; evaluate article and supplementary-file terms separately. A future question should test whether independent annotators can agree on call boundaries and speaker/overlap labels before comparing acoustic baselines. AutoResearch remains NOT READY.",
+    "expert_review": "Not independently reviewed by a parrot bioacoustics or animal-communication specialist.",
+    "review_locator": "Dahlin et al. 2026, publisher article: Abstract; Material and methods, Sites and recordings, Categorization and analysis of call types, and Duet syntax; Results, Categorization and analysis of call types and Duet syntax; Discussion; Data availability and Supporting Information. Dryad v1 landing page and README description. Dryad official reuse guidance. Workbook, WAV and DOCX files not inspected.",
+    "reuse": {
+      "status": "Metadata-only; no files acquired",
+      "asset": "Dryad lists README.md and Supplement_Data_DRYAD.xlsx (65.46 KB) of Raven measurements, not raw audio. The publisher lists a separate 254.5 KB WAV and two DOCX supplements.",
+      "rights": "Dryad’s current reuse guide says all Dryad datasets are CC0 and recommends citation as scholarly courtesy. The specific workbook rows and any item-level notice were not inspected; no file is acquired or admitted for training. The article is marked Open Access, but its specific reuse license was not confirmed. Publisher supplements are separate artifacts with unreviewed terms.",
+      "experiment": "Do not use as a model benchmark. A future specialist-reviewed exercise could test manual call-boundary, speaker and overlap agreement using permitted material, then compare sequence and acoustic baselines; keep animal/pair groups intact and separate syntax from semantic or receiver-response claims."
+    },
+    "purpose": "Behavior & communication",
+    "study_snapshot": [
+      [
+        "Field sample",
+        "13 mated wild pairs in north-west Costa Rica, 2006–2008; 1,136 duet files created; the syntax analysis used 52 high-quality warble duets from 12 pairs. Directional microphone plus video."
+      ],
+      [
+        "Call lexicon",
+        "The initial lexicon used 469 calls from 54 duets/13 pairs. Methods group 11 single-occurrence forms as Unknown alongside 36 recurring types; results report 36 types and three variants."
+      ],
+      [
+        "Human scoring",
+        "Reported 92% repeatability on 15 hidden duets scored three times by two supervised undergraduate researchers; scoring remained slow and overlap was difficult."
+      ],
+      [
+        "Sequence analysis",
+        "19 positive and four negative call-type associations; 47.1% of 17 analyzed types were classed as timed and 52.9% not timed. Most complete duet sequences were unique."
+      ],
+      [
+        "Automated categorization",
+        "DFA and naive Bayes did not parse the complete call-type set; pairwise naive Bayes separated two similar call types."
+      ],
+      [
+        "Available deposit",
+        "Dryad v1 lists README.md and a 65.46 KB measurements workbook. Its description includes duet names and pair initials; no raw audio is listed in the deposit."
+      ],
+      [
+        "Interpretation",
+        "The authors report syntactic structure and explicitly say they cannot yet assign distinct semantic meanings to the calls or duets."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-12",
+      "location_status": "mapped",
+      "location_note": "The article methods place the wild study in north-west Costa Rica. Because the focal species is Critically Endangered, the public atlas uses a country-scale point and omits the named property and any exact site.",
+      "locations": [
+        {
+          "place_id": "costa-rica",
+          "role": "study_region",
+          "source_id": 162,
+          "locator": "Material and methods, Sites and recordings",
+          "basis": "The publisher article identifies north-west Costa Rica as the field region. The public point is generalized to the country; no exact property or recording coordinates are published."
+        }
+      ],
+      "observation_period": {
+        "label": "Field recordings: 2006–2008",
+        "start_year": 2006,
+        "end_year": 2008,
+        "source_id": 162,
+        "locator": "Material and methods, Sites and recordings"
+      }
+    }
+  },
+  {
+    "slug": "parrot-vocal-imitation-addressing-2012",
+    "title": "A parrot can imitate a call to address another bird. What the experiment shows.",
+    "seo_description": "A controlled conure study links targeted call imitation to receiver responses; it does not establish human-like translation or justify app playback.",
+    "taxon": "Orange-fronted conure (Eupsittula canicularis; the 2012 paper uses Aratinga canicularis)",
+    "kind": "Controlled playback study",
+    "purpose": "Behavior & communication",
+    "year": "2012",
+    "year_label": "Publication year",
+    "source_ids": [
+      169
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Full-text methods and results review",
+    "review_depth": "Reviewed the full primary PLOS article text for the abstract, introduction, Materials and Methods, Results, Discussion, Ethics Statement and article license. No raw recordings, associated dataset, supplementary material or analysis code were acquired or inspected; no reanalysis was performed.",
+    "review_locator": "PLOS article: Abstract; Introduction; Materials and Methods (study population, stimuli, execution and analysis); Results; Discussion; Ethics Statement; citation and copyright notice.",
+    "finding": "Balsby, Momberg and Dabelsteen tested whether a call resembling one of two paired birds would selectively affect that bird. They studied 36 temporarily captive wild conures from 27 flocks. After exclusions, 44 of 72 trial periods were analyzed. Targeted birds responded with higher call rates and shorter latency overall, while some non-target responses were also recorded. The authors interpret this as evidence that vocal imitation can address a specific individual in this species and setting.",
+    "study_snapshot": [
+      [
+        "Study group",
+        "36 wild-caught orange-fronted conures from 27 flocks, placed in 18 pairs in outdoor aviaries for a short-term study."
+      ],
+      [
+        "Stimulus",
+        "A recorded contact-call loop was selected to resemble one of the two birds; each pair received four randomized trials."
+      ],
+      [
+        "Observation",
+        "Audio and video were used to count calls, estimate response latency and identify callers across the small social network."
+      ],
+      [
+        "Analysis set",
+        "44 of 72 trial periods were retained after exclusions for uncertain caller identity or outside-bird interactions."
+      ],
+      [
+        "Animal oversight",
+        "The paper reports following Animal Behaviour Society guidelines and holding local research and CITES permits."
+      ]
+    ],
+    "expert_review": "This Talk2Nature synthesis has not received independent review by an avian communication specialist.",
+    "limitations": "This was a controlled playback study of 36 wild-caught orange-fronted conures from 27 flocks, paired in short-term outdoor aviaries during 2007. Of 72 trial periods, 44 were retained for analysis after caller-assignment and outside-interaction exclusions. The authors report higher call rates and shorter response latency for the targeted bird overall, with a sex-specific call-rate pattern; non-target birds also responded. This supports a bounded, context-specific receiver response to acoustically targeted imitation, not decoding of sentence meaning, general conversation, or a result transferable to pet parrots, other species or phone speakers. The experiment used captured birds, repeated playback and video observation under research permits. No Talk2Nature replication or independent specialist review exists.",
+    "lesson": "A receiver response can support a narrow claim about signal function in a defined context without revealing semantic content. The study also shows why a focal bird cannot always be analyzed alone: non-target flock members may respond. For our app, playback is an intervention, not a harmless conversational interface. Keep public tools passive; any later playback experiment needs qualified scientific and animal-welfare review, a defined protocol and relevant permits.",
+    "next_review": "Ask a qualified avian behavior specialist to review the interpretation and welfare implications. Separately verify whether trial data, recordings or code are available and their terms before any reproduction; none were acquired in this review.",
+    "atlas": {
+      "reviewed": "2026-10-12",
+      "location_status": "mapped",
+      "location_note": "The methods place the experiment in Santa Rosa National Park, Guanacaste, Costa Rica. The public map uses the existing country-scale point and omits exact site coordinates.",
+      "locations": [
+        {
+          "place_id": "costa-rica",
+          "role": "study_region",
+          "source_id": 169,
+          "locator": "Materials and Methods, study site and dates",
+          "basis": "The primary article names the Costa Rica research site. The atlas links the study to the existing country-scale point; no exact coordinates are published."
+        }
+      ],
+      "observation_period": {
+        "label": "Playback experiments: June–August 2007",
+        "start_year": 2007,
+        "end_year": 2007,
+        "source_id": 169,
+        "locator": "Materials and Methods, study dates"
+      }
+    }
+  },
+  {
+    "slug": "fruit-bat-context-ml-2024",
+    "title": "A 2024 model study predicts bat context—with important limits",
+    "seo_description": "A peer-reviewed bat study reports context predictions with subject-independent test folds; its split files and group boundaries still need verification.",
+    "taxon": "Egyptian fruit bat (Rousettus aegyptiacus)",
+    "kind": "Machine-learning study",
+    "purpose": "Models & evaluation",
+    "year": "2024",
+    "year_label": "EUSIPCO 2024 proceedings; arXiv manuscript v1",
+    "source_ids": [
+      142,
+      170,
+      171,
+      173,
+      174,
+      175,
+      176,
+      177,
+      190,
+      191
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Full conference-paper review, pinned code/data-lead review, and bounded annotation/metadata audit",
+    "review_depth": "Reviewed all five pages of the official EUSIPCO 2024 proceedings paper and the official arXiv v1 record/manuscript, focusing on dataset filtering, evaluation protocol, model setup, metrics, class errors, data source and license. Also reviewed the first author’s linked public GitHub profile and the pinned Earth Species Library snapshot at commit 6382c52bf553569528e0a790efe16e5ae42f0094: root inventory, bat README and displayed task/split/license sections from notebooks 01, 02, 99a and 99b. No code, split files, raw media, model weights or supplements were downloaded or run. The profile check is bounded and does not prove no separate release exists. The acquired five-page Figshare Metadata.pdf item 4555900 was visually reviewed across Tables 1–4. It lists 20 treatment periods with date ranges, group composition and channels; subject IDs, mother/date-of-birth fields; and an annotation schema with both emitter and addressee. The already-acquired 91,080-row Annotations.csv item was rechecked with an aggregate-only participant-pair audit. No raw annotation rows or IDs were exported. The 31.6 MB FileInfo.csv item and the paper’s exact fold files remain unacquired/unavailable.",
+    "review_locator": "EUSIPCO 2024 paper, Sections II Dataset, III Methodology (Cross-validation, SVM and Deep learning), IV Results & Discussion, Tables I–II and confusion matrix; official arXiv v1 submission/version/license record; first author personal site and linked public GitHub repository list; Earth Species Library commit 6382c52: root file inventory, Egyptian-fruit-bat README; notebook 02 task and StratifiedKFold cells; notebook 99a license, FileInfo mapping and no-split statements; notebook 99b emitter subset selection; 2017 dataset descriptor for source context.; local aggregate report: research/figshare_bat_annotation_report.json, generated from the checksum-verified Figshare item 4555903 without exporting row values or IDs",
+    "finding": "Triantafyllopoulos et al. report 35,074 retained vocalizations across 11 context classes after excluding unknown labels, the rare landing class, cases without a clear emitter and utterances longer than three seconds. Their three-fold evaluation describes subject-independent development/test partitions with class balance. Across pooled test predictions, they report unweighted average recall of 22.4% for an SVM using ten pitch features, 27.7% for ResNet-50 and 33.3% for EfficientNet-B0. The paper says EfficientNet used ImageNet-pretrained initialization and promises to release code and partitions upon acceptance. The first author’s linked GitHub account lists 13 public repositories, with no matching paper repository visible in the checked list. The separately reviewed Earth Species Library notebooks are pinned to a 2021 commit, before the EUSIPCO paper: its 02 notebook predicts emitter identity and uses a shuffled, row-level stratified five-fold split; 99a documents archive preprocessing but says a train/validation split is not apparent and creates none; 99b makes a reduced emitter-identity subset. Notebook 99a says FileInfo.csv maps FileID values to filenames, but this establishes a dependency only for that preprocessing route. These notebooks do not reproduce the later paper or verify its folds. The EUSIPCO result predicts video-coded interaction context in captive bats; it does not test message meaning or receiver comprehension. An aggregate-only audit of the full 91,080-row annotation component (not the paper’s 35,074-record filtered set) found 48 known IDs across the two role columns and 70,001 rows with two identified participants. Treating negative IDs as known participants with uncertain role, those rows form 136 distinct pairs in three connected components; the largest contains 31 IDs. This is a description of the source table, not verification of the paper’s split or model results.",
+    "study_snapshot": [
+      [
+        "Data and labels",
+        "The study reuses captive Egyptian fruit-bat ultrasound calls recorded at 250 kHz with infrared video. Context labels were manually assigned from video; 35,074 utterances remained after the stated filters."
+      ],
+      [
+        "Reported split",
+        "The paper describes three subject-independent development/test folds. Within each development fold, the 70/30 train/validation split was stratified random and did not account for identity."
+      ],
+      [
+        "Reported results",
+        "UAR: SVM 22.4%, ResNet-50 27.7%, EfficientNet-B0 33.3%. The paper gives 95% intervals from 1,000 bootstrap resamples of examples, not animal/session clusters."
+      ],
+      [
+        "Error pattern",
+        "The best model had zero recall for grooming and often confused rare or potentially ambiguous classes. The authors discuss possible effects of class imbalance, annotation ambiguity, pup development and chamber acoustics."
+      ],
+      [
+        "Source-table grouping fields",
+        "The separate five-page Metadata.pdf lists 20 date-bounded treatments, social composition, channels, subject IDs and mother/date-of-birth fields. Annotation rows include emitter and addressee; negative IDs preserve a known participant pair when roles are uncertain, while zero means unknown. The full-table aggregate graph is not the paper subset or its reported folds."
+      ]
+    ],
+    "expert_review": "The published study is an important prior method; this Talk2Nature assessment has not received independent review by a bat bioacoustics specialist.",
+    "limitations": "The paper’s subject-independent test split is a positive reported safeguard, but Talk2Nature has not inspected the partitions or verified which identities, roles, sessions, dates, microphones, chambers or treatments cross folds. The training/validation split inside each development set ignores identity. Confidence intervals bootstrap individual predictions rather than clustered animals or sessions. Class frequencies are unequal and grooming recall is zero. Context is an observer-coded group/action category, not a test of receiver interpretation. The author-profile search is bounded. The pinned Earth Species notebook snapshot predates the EUSIPCO paper and therefore is not its promised release; a separate coauthor/lab/archive release may still exist. The repository root inventory has no visible LICENSE, and notebook 99a states code license “to be linked”; it declares dataset CC BY 4.0, which is not reconciled with Talk2Nature’s direct item-level Figshare records or derived archive-copy provenance. No independent reproduction or specialist review exists. The paper reports ImageNet-pretrained vision weights, not a bioacoustic foundation model. The arXiv v1 manuscript declares CC BY-NC-ND 4.0; proceedings-copy reuse terms were not separately reviewed. The identity graph covers the complete annotation table, not the 35,074 records used by the 2024 paper, and cannot establish whether its three folds isolate all interacting bats, emitters only, sessions, channels, treatments or chamber backgrounds. Metadata.pdf provides treatment and subject context, but the necessary per-file timestamp/channel join is in a separate 31,574,701-byte FileInfo.csv item with no upstream MD5; it was not fetched. The aggregate graph is not an independent split or leakage test.",
+    "lesson": "The reported animal-held-out test split is a useful design target, but must be inspectable and audited by all caller/addressee identities, sessions, files, dates, channels and treatments. A 2021 archive-preparation notebook can clarify FileID-to-file joins without proving that FileInfo.csv is necessary for an unrelated later paper split audit. The Earth Species loader’s shuffled row-level split evaluates emitter identity rather than unseen-animal context prediction; the mini archive drops context labels. Compare acoustic models with class-prior, context-only and background/chamber baselines, use group-aware uncertainty, and keep prediction distinct from translation or comprehension. Because an interaction has two participant fields and uncertainty markers, a subject-independent claim should specify whether the split holds out emitters, both interacting animals, or another unit; it should also account for recording period, treatment/chamber and channel. Source tables make those checks possible in principle but do not prove the reported folds.",
+    "next_review": "Search coauthor and lab repositories for the promised code and exact folds, and obtain qualified bat-bioacoustics review of the target generalization unit. If a reviewer confirms FileInfo is necessary, first make a bounded integrity plan for its 31.6 MB file with no upstream MD5; join only the needed file/time/channel metadata and report exclusions and leakage tests. Do not train or claim reproduction until exact partitions, rights, labels, groups, baselines, metrics, a locked test and safe execution are independently reviewable.",
+    "reuse": {
+      "status": "The video-derived Annotations.csv component was used for a checksum-verified aggregate structure report only; training_admitted remains false. Metadata.pdf was inspected locally and not republished.",
+      "asset": "The EUSIPCO paper, arXiv v1 manuscript, Annotations.csv, Metadata.pdf, FileInfo.csv, audiovisual archive, code and model weights are separate assets.",
+      "rights": "Figshare items 4555903 and 4555900 individually declare CC0 1.0; this is the repository declaration for those items, not legal advice or blanket permission for the article, 31.6 MB FileInfo item, audiovisual files, code or weights. No raw rows or PDF pages are published.",
+      "experiment": "Use aggregates only for source-structure review. Any benchmark requires exact split artifacts, independently reviewed identity/session/channel grouping, artifact-specific rights, specialist review and the remaining frozen-evaluation gates."
+    }
+  },
+  {
+    "slug": "biocppnet-source-separation-2021",
+    "title": "BioCPPNet separates overlapping calls—it does not decode them",
+    "seo_description": "A peer-reviewed bioacoustic source-separation method for macaques, dolphins and bats, with important limits on what the output means.",
+    "taxon": "Rhesus macaque, bottlenose dolphin and Egyptian fruit bat",
+    "kind": "Machine-learning method",
+    "purpose": "Models & evaluation",
+    "year": "2021",
+    "year_label": "Scientific Reports, December 2021",
+    "source_ids": [
+      178,
+      179
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Primary paper method/results review and pinned implementation-repository review",
+    "review_depth": "Reviewed the article abstract, Methods, Data availability, Code availability, Results, Discussion and CC BY 4.0 statement, plus the linked repository README and visible root inventory at commit 7092851cbd9a32116e6453583823d5334ab11f1b. No code, recordings, generated mixtures, supplementary media or trained weights were acquired or executed.",
+    "review_locator": "Scientific Reports article: source-separation design, bat data/splits, SI-SDR and downstream identity results, data/code availability, discussion and rights; GitHub README: setup and pipeline; pinned repository root inventory: visible file list and absence of a LICENSE entry.",
+    "finding": "BioCPPNet is a supervised source-separation pipeline, an audio-cleanup step rather than a communication decoder. The study constructs mixtures by additively combining known individual vocalizations, then trains a lightweight U-Net to estimate separated waveforms. It evaluates macaque, dolphin and Egyptian-fruit-bat material. For bats, the paper reports 31,399 calls from 15 highly represented individuals, with 12 used in a closed-speaker regime and three held for an open-speaker evaluation. It reports bat validation SI-SDR 9.7 and downstream caller-identity accuracy 57.5% for the closed-speaker setting; the open-speaker SI-SDR is reported as 10.0. Those results concern reconstruction and identity on generated mixtures, not behavior, context meaning, receiver comprehension or conversation.",
+    "study_snapshot": [
+      [
+        "Task",
+        "Separate two or three overlapping animal-call streams into estimated source waveforms."
+      ],
+      [
+        "Mixtures",
+        "The paper synthetically adds individually annotated vocalizations or vocalization streams to create mixtures with known source waveforms."
+      ],
+      [
+        "Bat evaluation",
+        "The reported bat material uses calls from 15 individuals: 12 for the closed-speaker regime and three for the open-speaker test. The model is evaluated with SI-SDR and a downstream individual-identity classifier."
+      ],
+      [
+        "Availability",
+        "The paper links macaque and Egyptian-fruit-bat datasets; dolphin recordings were provided under license and are not public. Article terms are CC BY 4.0, while implementation-code terms were not visible in the reviewed repository root."
+      ]
+    ],
+    "expert_review": "This Talk2Nature synthesis has not received independent review by a bioacoustic source-separation specialist.",
+    "limitations": "The mixtures are constructed from known isolated source recordings, so the reported experiment does not by itself validate performance on naturally recorded, uncontrolled field mixtures. SI-SDR and caller-identity accuracy are reconstruction proxies, not evidence that a model identified call purpose or meaning. The bat open-speaker test uses three held-out individuals from the selected subset, and Talk2Nature has not reproduced the pipeline or audited source/session overlap. The repository has no visible LICENSE at the reviewed commit, so implementation reuse is not cleared. Dataset, source audio, generated mixtures, model weights and paper terms remain separate; dolphin data are explicitly restricted. No independent reproduction or expert review exists.",
+    "lesson": "Keep the analysis stages distinct: detection, overlap separation, caller/source attribution, observable context association, and experimentally supported receiver response answer different questions. Source separation could make later observation or annotation more usable, but it cannot turn an acoustic stream into a translated sentence. Any future Talk2Nature separation module needs licensed inputs, known-source synthetic fixtures, a rights-cleared model/code path and evaluation against natural field recordings before public claims.",
+    "next_review": "Ask a qualified bioacoustics reviewer whether source separation addresses a real bottleneck in the project's selected species and phone-recording workflow. Before implementation reuse, verify the exact repository license and inspect code/data/model provenance under a bounded, non-installing review. If pursued, first define a rights-cleared synthetic-mixture evaluation with source checksums, fixed splits, SI-SDR plus downstream utility and failure cases; this technical rehearsal must remain separate from any semantic-communication claim. Keep AutoResearch NOT READY until all benchmark gates are met.",
+    "reuse": {
+      "status": "Metadata-only methods reference; no code, data, generated mixtures or trained weights acquired or executed.",
+      "asset": "BioCPPNet paper, implementation repository, source datasets and any derived checkpoints are separate assets.",
+      "rights": "The article states CC BY 4.0, subject to third-party material credit lines. The linked repository's visible pinned root has no LICENSE, and code reuse is unresolved. Dataset and model terms vary by source and were not cleared by the article license.",
+      "experiment": "Consider only as an upstream audio source-separation comparator after an expert confirms a use case and all code/data/model rights, inputs, groups, metrics and field-domain limitations are resolved."
+    }
+  },
+  {
+    "slug": "animal-name-criteria-2026",
+    "title": "Do animal calls function as names? A proposed test framework",
+    "seo_description": "A 2026 review proposes criteria for animal-name claims. This abstract-only record separates individual reference, symbolic representation and shared meaning.",
+    "taxon": "Multiple taxa; the review discusses spectacled parrotlets, common marmosets, African elephants and bottlenose dolphins",
+    "kind": "Conceptual review",
+    "purpose": "Behavior & communication",
+    "year": "2026",
+    "year_label": "Trends in Cognitive Sciences, online ahead of print 22 July 2026",
+    "source_ids": [
+      180
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Abstract and publisher-highlights review; full text was not accessible in this review",
+    "review_depth": "Reviewed the official PubMed record and ScienceDirect listing for article metadata, abstract, publisher highlights, Open Access/Creative Commons status and copyright information. The direct publisher page returned HTTP 403. Full text, references, supplementary files and underlying studies were not reviewed; no data or analyses were acquired or reproduced.",
+    "review_locator": "PubMed record: publication date, DOI, abstract and copyright statement; official ScienceDirect listing: abstract, highlights and Open Access/Creative Commons tag. Direct publisher page returned HTTP 403.",
+    "finding": "Jaakkola, King and Bruck propose three minimum criteria for identifying animal signals as names: individual reference, symbolic representation and shared meaning. Their abstract says the review considers evidence about name-like calls in spectacled parrotlets, common marmosets, African elephants and bottlenose dolphins; publisher highlights say much of the presented evidence is equivocal. This is a conceptual review, not a new experiment or an ML result.",
+    "limitations": "The PubMed abstract and ScienceDirect publisher highlights/metadata were available; the direct full-text page returned HTTP 403. The operational definitions, evidence grading, counterexamples and detailed treatment of each species therefore remain unreviewed. The criteria are the authors' proposal, not a demonstrated universal consensus. A signal associated with an individual or followed by a response does not by itself establish symbolic reference or shared meaning.",
+    "expert_review": "This abstract-level Talk2Nature summary has not received independent review by an animal-communication specialist.",
+    "lesson": "Keep observed acoustic patterns, candidate individual identity, context, receiver response and any claim of shared reference as separate evidence fields. A model that predicts who responds—or a caregiver report that a phrase occurs near a person—does not alone establish that a signal is a name. Talk2Nature should reserve name or meaning claims for tests that distinguish the target individual from acoustic similarity and context and that assess receiver behavior under suitable controls. This framework does not justify app playback or conversational translation.",
+    "next_review": "When full text is lawfully accessible, review how the authors define and evaluate each criterion and compare it with the already cataloged primary parrot and dolphin experiments. Turn unresolved distinctions into one species-specific, expert-reviewed protocol; do not start a benchmark until its existing rights, labels, grouping, baseline and holdout gates are met.",
+    "attribution": "Jaakkola, K., King, S.L. and Bruck, J.N. (2026), Do animals use names? Conceptual and empirical criteria. Trends in Cognitive Sciences. DOI 10.1016/j.tics.2026.06.008.",
+    "reuse": {
+      "status": "Metadata-only conceptual reference based on an abstract-level review; no full text, figures, data or supplementary files copied.",
+      "asset": "The review article, any underlying empirical studies, datasets and code are separate assets.",
+      "rights": "ScienceDirect identifies the article as Open Access under a Creative Commons license, but the exact version and conditions were not visible in the accessible listing. PubMed also displays copyright © 2026 the authors, published by Elsevier, all rights reserved. Cite and link; confirm the precise terms before reuse.",
+      "experiment": "Use as a question-framing aid only. It supplies no training data, benchmark, app classifier or evidence that Talk2Nature can identify animal names."
+    }
+  },
+  {
+    "slug": "duponts-lark-vocal-types-2026",
+    "title": "Dupont's lark songs and calls: an annotated vocal-type dataset",
+    "seo_description": "A 2026 Dupont's lark dataset catalogs expert-assigned song and call types across 20 Spanish populations; the labels do not establish meaning or translation.",
+    "taxon": "Birds · Dupont's lark (Chersophilus duponti)",
+    "kind": "Dataset descriptor",
+    "purpose": "Behavior & communication",
+    "year": "2026",
+    "year_label": "Scientific Data 13, Article 770 (2026); version of record 22 May 2026",
+    "source_ids": [
+      194,
+      195,
+      196
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Full publisher article plus Zenodo-index and public-sector distribution metadata reviewed; original Zenodo record and license unresolved",
+    "review_depth": "Reviewed the full publisher version of record, including Abstract; Methods (study area, recording, annotation and vocalization identification); Data Record; Technical Validation; Usage Notes; Data Availability; Code Availability; and Rights and Permissions. Also reviewed Zenodo's indexed result for record 17264917 and the official Datos.gob.es catalog entry for Digital.CSIC handle 10261/424783. The article cites adjacent Zenodo DOI 17264916, so the identifier relationship remains unresolved. Direct Zenodo and Digital.CSIC access failed; no dataset, code, figure, README or article files were downloaded, copied or reproduced.",
+    "review_locator": "Publisher article: Methods sections 'Study area', 'Bird recording', 'Audio annotation protocol' and 'Vocalization identification'; Data Record; Technical Validation; Usage Notes; Data Availability; Code Availability; Rights and Permissions. Zenodo indexed result: title, DOI and reported file inventory. Datos.gob.es: CSIC publisher, Digital.CSIC handle, listed archive/README distributions and their declared access/license metadata.",
+    "finding": "The article describes standardized recordings from 20 Spanish populations and reports 4,297 annotated songs from 191 singing males, representing 401 song types, plus 795 calls from 97 calling males, representing 80 call types. Experts categorized acoustic song and call types and provide event timing, frequency bounds and individual IDs. One ornithologist performed the primary annotation; uncertain classifications and types reported as shared among populations received additional expert review. Zenodo's indexed record 17264917 matches the title, authors and counts and reports an eight-file, 3.7 GB deposit including Song.zip, Call.zip, Metadata.csv, repertoire matrices and Technical_validation.R. The article instead cites DOI 17264916. Datos.gob.es lists a separate Digital.CSIC archive and README under handle 10261/424783 and declares CC BY 4.0 for those distributions.",
+    "limitations": "The article's categories are acoustic song/call types, not independently observed behaviors, communicative meanings or evidence of translation. Only males and two vocalization classes are included. Birds were not individually marked; recording same-day within 500 m was used to reduce repeat-individual risk, but identity and independence are not guaranteed. The authors could not match individuals between the song and call collections. Primary annotation came from one expert; secondary review focused on uncertain or population-shared labels, not a reported blinded agreement sample. No train/validation/test split or ML baseline was reviewed. Because spatial dialect variation is high, the authors caution against broad frequency-feature comparisons. The article cites Zenodo DOI 17264916 while the matching indexed Zenodo record reports DOI 17264917; this discrepancy has not been resolved with the depositor. The CSIC catalog declares CC BY 4.0 only for its listed archive and README distributions; their contents and exact identity were not inspected, and the separate Zenodo code license remains unresolved. The paper says the threatened species' metadata coordinates were rounded to about 1 km; Talk2Nature maps only Spain at country level.",
+    "lesson": "This is a useful model for pairing event boundaries, vocal-type labels, individual metadata and geographic context, while keeping acoustic form separate from behavior and meaning. The CSIC catalog provides a rights statement for its own distribution, but the adjacent Zenodo DOI discrepancy and uninspected archive mean no bytes have been admitted. Any future computational evaluation would need verified artifact identity, qualified review and a specialist-selected split that groups likely repeated individuals and population structure. This resource does not supply the independent behavior labels needed for Talk2Nature's candidate context-prediction question and is not admitted to AutoResearch.",
+    "next_review": "Resolve the DOI 17264916/17264917 discrepancy using authoritative record metadata; inspect the CSIC README and archive identity/checksum through an accessible route, and verify Zenodo's direct record license separately. Keep the dataset and R script as separate resources. Only after a qualified avian-bioacoustics reviewer identifies a useful, bounded annotation or repertoire question should the project consider acquisition; do not treat acoustic type codes as communication or behavior labels.",
+    "expert_review": "No independent avian-bioacoustics specialist review has been obtained for this Talk2Nature note.",
+    "attribution": "Pérez-Granados C, Alonso-Moya CD, Barrero A, Sáez-Gómez P, Bota G, Lahoz-Monfort JJ, Osiejuk TS, Rogers A, Schuchmann KL, Traba J. (2026). A large-scale acoustic dataset of a passerine with spatially variable vocal behavior: fine-scale annotations of song and call types. Scientific Data 13, 770. DOI 10.1038/s41597-026-07131-4. The article cites dataset DOI 10.5281/zenodo.17264916; the matching indexed Zenodo dataset result reports 10.5281/zenodo.17264917. DOI discrepancy unresolved. Digital.CSIC record handle 10261/424783.",
+    "reuse": {
+      "status": "Metadata-only original summary. No article text, figure, dataset or code was copied, downloaded or redistributed.",
+      "asset": "The article, original Zenodo record, Digital.CSIC archive/README distribution and separately listed Technical_validation.R are distinct assets.",
+      "rights": "The publisher states CC BY-NC-ND 4.0 for the article. Datos.gob.es declares CC BY 4.0 for the specific Digital.CSIC archive and README distributions, but their contents and identity against Zenodo were not inspected. The matching indexed Zenodo record reports DOI 17264917 while the article cites 17264916; the direct Zenodo record license and R-script rights remain unverified.",
+      "experiment": "No files, code or models are admitted. Consider acquisition only after resolving the DOI discrepancy, verifying the exact archive and artifact-specific terms, defining a useful bounded question and obtaining qualified review. This dataset does not support the project's context/meaning benchmark as currently framed."
+    },
+    "atlas": {
+      "reviewed": "2026-10-12",
+      "location_status": "mapped",
+      "location_note": "One country-level Spain locator represents 20 study populations; no individual site pins are shown. The paper says the threatened species' metadata coordinates are rounded to about 1 km.",
+      "locations": [
+        {
+          "place_id": "spain",
+          "role": "study_region",
+          "source_id": 194,
+          "locator": "Methods: Study area; Data Record (Metadata.csv description)",
+          "basis": "The article describes 20 study populations in Spain and says the recorded-male coordinates in its metadata are rounded to about 1 km because the species is threatened. The atlas shows only a country-level locator, not individual study points."
+        }
+      ],
+      "observation_period": {
+        "label": "March–June 2024 and 2025",
+        "start_year": 2024,
+        "end_year": 2025,
+        "source_id": 194,
+        "locator": "Methods: Study area"
+      }
+    }
+  },
+  {
+    "slug": "tree-fungal-networks-evidence",
+    "title": "Can trees talk through fungi? What mycorrhizal networks show",
+    "seo_description": "Mycorrhizal networks may connect plant roots, but tree communication needs separate tests of signal transfer, receiver response and ecological effect.",
+    "taxon": "Plants & fungi",
+    "kind": "Evidence review and debate",
+    "year": "2023–2025",
+    "year_label": "Peer-reviewed debate and response",
+    "source_ids": [
+      197,
+      198,
+      199,
+      200
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Targeted publisher-source review; not a systematic review",
+    "review_depth": "Reviewed the Nature publisher record and surfaced article passages plus its author correction; the New Phytologist summary and selected discussion; and the full publisher-hosted Frontiers Opinion, including its article type and author statements. Direct rendering of the Nature article required publisher authentication in this review. The underlying studies, supplementary files and data were not reanalyzed, and no specialist review was obtained.",
+    "finding": "A common mycorrhizal network describes fungal hyphae shared by roots of two or more plants; such connections have been documented in particular systems, while their prevalence and functions remain debated. Whether material moves through them, whether that movement changes a receiver, and whether information is communicated are separate questions. Karst, Jones and Hoeksema (2023) warn that popular and scientific claims about widespread forest networks and beneficial “mother tree” transfers can outrun the evidence and report positive citation bias. Henriksson et al. (2023) argue that isotope studies do not yet establish significant net carbon transfer through these networks that benefits recipients, and discuss alternative pathways. Simard, Ryan and Perry (2025) respond that multiple methods support network connections and context-dependent transfer in forests. This published disagreement is a reason to state the evidence level precisely, not to declare either that networks never occur or that trees have a demonstrated shared language.",
+    "limitations": "This debate is especially about forest ecology and ectomycorrhizal systems; it does not settle every plant–fungus relationship. A fungal connection or isotope transfer is not by itself evidence that one plant sent information another received. The 2025 response is explicitly an Opinion by researchers involved in this field, not an independent replication. One author of the 2023 New Phytologist review disclosed a financial interest in an organic-fertilizer company. The linked primary studies and their methods were not exhaustively reviewed here.",
+    "lesson": "Keep the claims on separate rungs: demonstrate the fungal connection; trace the material and route; measure an independent receiver response; test whether a sender-derived signal explains that response better than soil, water, root, stress or other pathways. Do not call resource movement a conversation without evidence of information transfer and receiver-specific effect.",
+    "next_review": "Ask a forest mycorrhizal ecologist to review this evidence map. Then compare original tracer and network-mapping experiments, focusing on controls that distinguish hyphal connections from soil and root pathways and on independent receiver outcomes. Propose a signaling experiment only if the signal, route and receiver response can each be measured; keep this outside the acoustic AutoResearch benchmark.",
+    "expert_review": "No independent forest-mycorrhizal specialist has reviewed this Talk2Nature note.",
+    "purpose": "Plants & fungi",
+    "reuse": {
+      "status": "Evidence-map only; no article or biological data admitted.",
+      "asset": "Four attributed publisher records, including the published correction; no papers, figures, supplements, source datasets or code are stored here.",
+      "rights": "The linked papers retain their own publisher terms. Talk2Nature reproduces no article text, figures, datasets or supplementary materials; this is an original summary with citations.",
+      "experiment": "No experiment, model or claim about tree-to-tree language is admitted by this note. A future study needs specialist review and controls that identify both the transfer route and an independently measured receiver response."
+    },
+    "attribution": "Karst J, Jones MD, Hoeksema JD (2023), Nature Ecology & Evolution 7:501–511, with author correction 7:623; Henriksson N et al. (2023), New Phytologist 239:19–28; Simard SW, Ryan TSL, Perry DA (2025), Frontiers in Forests and Global Change 7:1512518."
   }
 ]

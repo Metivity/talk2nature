@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from copy import deepcopy
 from pathlib import Path
-from talk2nature.atlas import public_atlas, atlas_goals
+from talk2nature.atlas import public_atlas, atlas_goals, group
 from talk2nature.knowledge import catalog_graph
 from admin.catalog import read_catalog
 from web.build import ROOT, build, load
@@ -22,9 +22,25 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),24)
-        self.assertEqual(len(atlas['places']),23)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),27)
+        playback=records['parrot-vocal-imitation-addressing-2012']
+        self.assertEqual(playback['group'],'birds')
+        self.assertEqual(playback['locations'][0]['place_id'],'costa-rica')
+        self.assertEqual(playback['observation_period']['start_year'],2007)
+        self.assertEqual(len(atlas['places']),25)
+        lark=records['duponts-lark-vocal-types-2026']
+        self.assertEqual(lark['locations'][0]['place_id'],'spain')
+        self.assertIn('country-level',lark['location_note'])
+        spain=next(p for p in self.places['places'] if p['id']=='spain')
+        self.assertEqual(spain['precision'],'country')
         self.assertEqual(self.atlas(list(reversed(self.notes))),atlas)
+
+    def test_species_level_taxa_map_to_their_biological_group(self):
+        self.assertEqual(group('Orange-fronted conure (Eupsittula canicularis)'), 'birds')
+        self.assertEqual(group('Yellow-naped amazon (Amazona auropalliata)'), 'birds')
+        self.assertEqual(group('Egyptian fruit bat (Rousettus aegyptiacus)'), 'mammals')
+        self.assertEqual(group('Fusarium oxysporum (filamentous fungus)'), 'plants_fungi')
+        self.assertEqual(group('Amphibians'), 'other_animals')
     def test_observation_dates_are_distinct_from_publication_and_origin_from_study_site(self):
         rows={r['id']:r for r in self.atlas()['records']}
         self.assertEqual(rows['honeybee-dance-history']['source_year'],1973)
@@ -33,6 +49,8 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(rows['whale-birth']['observation_period']['start_year'],2023)
         self.assertEqual(rows['bat-context']['locations'][0]['role'],'animal_origin')
         self.assertEqual(rows['elephant-calls-controls']['source_year'],2026)
+        self.assertEqual(rows['duponts-lark-vocal-types-2026']['observation_period']['start_year'],2024)
+        self.assertEqual(rows['duponts-lark-vocal-types-2026']['observation_period']['end_year'],2025)
     def test_precise_or_unreviewed_locations_and_missing_citations_fail_closed(self):
         for mutation in [lambda p:p.update(precision='exact'),lambda p:p.update(latitude=47.8123),lambda p:p.update(longitude=181),lambda p:p.update(latitude=True),lambda p:p.update(latitude=float('nan')),lambda p:p.update(private_address='sensitive')]:
             places=deepcopy(self.places);mutation(places['places'][0])
@@ -60,7 +78,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('24 of 20',goals)
+            self.assertIn('27 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -74,7 +92,9 @@ class AtlasTests(unittest.TestCase):
         rows={r['id']:r for r in self.atlas()['records']}
         expected={'dolphingemma':{'bahamas'},'dog-barks':{'tepic','puebla'},
                   'parrot-data-feasibility':{'barcelona'},'plant-sounds':{'tel-aviv'},
-                  'reef-sound-recruitment':{'lizard-island'},'honeyguide-human-cooperation':{'niassa'}}
+                  'reef-sound-recruitment':{'lizard-island'},'honeyguide-human-cooperation':{'niassa'},
+                  'wild-parrot-duet-structure-2026':{'costa-rica'},
+                  'duponts-lark-vocal-types-2026':{'spain'}}
         for key,places in expected.items():
             self.assertEqual({l['place_id'] for l in rows[key]['locations']},places)
         self.assertIsNone(rows['dolphingemma']['observation_period'])
@@ -110,14 +130,20 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(parrotlet['observation_period']['end_year'],2018)
         self.assertIn('not yet integrated',parrotlet['finding'])
         self.assertIn('2.56 GB',parrotlet['limitations'])
+        wild_parrot=rows['wild-parrot-duet-structure-2026']
+        self.assertEqual(wild_parrot['observation_period']['start_year'],2006)
+        self.assertEqual(wild_parrot['observation_period']['end_year'],2008)
+        self.assertEqual(wild_parrot['locations'][0]['role'],'study_region')
+        costa_rica=next(p for p in self.atlas()['places'] if p['id']=='costa-rica')
+        self.assertEqual(costa_rica['precision'],'country')
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(24,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(27,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
-        fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],20)
+        fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],22)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value
