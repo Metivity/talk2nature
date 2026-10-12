@@ -2036,13 +2036,13 @@
   {
     "id": 196,
     "title": "Digital.CSIC distribution metadata for the Dupont's lark dataset",
-    "description": "The Spanish public-data catalog identifies the Spanish National Research Council (CSIC) as publisher and lists a public Digital.CSIC distribution, record handle 10261/424783: 17264917.zip and README.txt. Its metadata declares CC BY 4.0 for both distributions and dates them 2026-06-18. The archive itself and README contents were not retrieved.",
+    "description": "The Spanish public-data catalog identifies CSIC as publisher and lists the public Digital.CSIC distribution under handle 10261/424783: 17264917.zip and README.txt. It declares CC BY 4.0 for both distributions. Directly reviewed README and archive-response provenance are recorded in source 212; the archive bytes and checksum remain unverified.",
     "url": "https://datos.gob.es/es/catalogo/ea0041268-un-conjunto-de-datos-acusticos-a-gran-escala-de-una-passerina-con-comportamiento-vocal-variable-espacialmente-anotaciones-a-gran-escala-de-tipos-de-canciones-y-llamadas-dataset-traduccion-automatica",
     "checked": "2026-10-12",
-    "origin": "Reviewed the official Datos.gob.es catalog metadata: publisher CSIC; handle http://hdl.handle.net/10261/424783; public distribution URLs on Digital.CSIC; archive and README; access-right and CC BY 4.0 fields; distribution dates. Direct Digital.CSIC handle and README requests timed out; the archive was not requested or downloaded.",
+    "origin": "Reviewed official Datos.gob.es metadata: CSIC publisher; handle 10261/424783; public Digital.CSIC archive and README URLs; access-right and CC BY 4.0 fields; distribution dates 2026-06-18. The direct README and archive response headers were separately reviewed in source 212.",
     "rights": {
-      "dataset": "CC BY 4.0 is declared in Datos.gob.es metadata for the specific Digital.CSIC distribution 17264917.zip. The archive contents and identity against the Zenodo record were not independently checked.",
-      "readme": "CC BY 4.0 is declared in the same catalog for the separate README.txt distribution.",
+      "dataset": "Datos.gob.es declares CC BY 4.0 for the specific Digital.CSIC 17264917.zip distribution. Its direct HTTP headers cite Zenodo DOI 10.5281/zenodo.17264917 and report its size, but no archive bytes or checksum were verified.",
+      "readme": "Datos.gob.es declares CC BY 4.0 for the specific README.txt distribution; the README itself also states CC BY 4.0.",
       "code": "The catalog does not establish rights for Zenodo's separately listed Technical_validation.R file."
     }
   },
@@ -2212,6 +2212,18 @@
     "origin": "Official repository root inventory, README and LICENSE checked October 12, 2026. No commit was pinned and no code was acquired or run.",
     "rights": {
       "software": "Repository LICENSE states MIT for code. This does not license model weights, Llama, datasets or third-party dependencies."
+    }
+  },
+  {
+    "id": 212,
+    "title": "Digital.CSIC README and distribution headers for the Dupont's lark dataset",
+    "description": "The full 4,169-byte README recommends citing the dataset as Zenodo DOI 10.5281/zenodo.17264917 and states CC BY 4.0. The hosted 17264917.zip response headers cite the same DOI and report 3,711,242,291 bytes. This identifies the CSIC distribution, not the uninspected archive contents or a source-published checksum.",
+    "url": "https://digital.csic.es/bitstream/10261/424783/2/README.txt",
+    "checked": "2026-10-12",
+    "origin": "Read the complete README by direct HTTPS GET: Content-Length 4,169; locally observed body SHA-256 15e2b0a61dd76dca60f993e2512aab0351875a10acdd52ef0ad78d07baeb8ae5 (computed during review; no publisher checksum was listed). It identifies the dataset's 2025 repository citation as DOI 10.5281/zenodo.17264917, states CC BY 4.0, and says File List: N/A. A HEAD request to the archive returned HTTP 200, Content-Length 3,711,242,291 and a Link cite-as header for the same DOI. The archive body and separately listed R code were not fetched, saved, executed or checksum-verified.",
+    "rights": {
+      "readme": "CC BY 4.0 is declared by the official Datos.gob.es catalog for this README distribution and in the README itself.",
+      "archive": "CC BY 4.0 is declared by the official Datos.gob.es catalog for this specific CSIC archive distribution. This does not establish the license of the separate Zenodo Technical_validation.R file or the article."
     }
   }
 ]
