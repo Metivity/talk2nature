@@ -80,6 +80,21 @@
     "application_status": "Not pursued; no applicant, science lead, policy-ready method or consortium"
   },
   {
+    "slug": "wildlife-acoustics-q4-2026",
+    "name": "Wildlife Acoustics · Q4 Scientific Product Grant",
+    "type": "Equipment/software grant",
+    "deadline": "2026-11-15",
+    "deadline_source_id": 213,
+    "terms_source_id": 213,
+    "status": "Conditional · eligible host and field study required",
+    "amount": "Non-cash products: up to $4,000 per applicant from a $12,000 quarterly pool; software-only recipients receive annual Kaleidoscope Pro licenses.",
+    "source_id": 213,
+    "fit": "Potentially useful only for a defined terrestrial wildlife research, habitat-monitoring or conservation study led through an eligible charitable or educational organization. This is not cash for general app development. Talk2Nature has no confirmed eligible host, wild-species field study or scientific lead.",
+    "next_action": "Reconsider only if an eligible educational/charitable host and qualified scientific lead define a passive, welfare-reviewed wildlife monitoring question and confirm the host's required status documentation. The official page exempts software-only requests from the recommendation-letter requirement but does not list an exemption from organization-status documentation. No application or outreach has been initiated.",
+    "verified": "2026-10-12",
+    "application_status": "Not pursued; eligible host and project fit unconfirmed"
+  },
+  {
     "slug": "experiment",
     "name": "Experiment",
     "type": "Crowdfunding",
