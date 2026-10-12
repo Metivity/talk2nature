@@ -462,10 +462,10 @@
   {
     "id": 56,
     "title": "Monk parakeet analysis repository",
-    "description": "Official repository pinned at commit 293b2c8d0c3b8e21a4eaa0511fe563207095765a. README/schema reviewed; selected code and 2020 annotations were separately acquired and inspected, not executed.",
+    "description": "Official repository pinned at commit 293b2c8d0c3b8e21a4eaa0511fe563207095765a. The 34,517-byte local 2020 annotation CSV's Git blob SHA-1 (badde532a9712071e5048e3d45a8e3de95c618dc) matches this pinned source file; its SHA-256 is 2c771d60dcc955e28f500a091c242d19fafc928798a069b01ab13554c6e3e2de.",
     "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/tree/293b2c8d0c3b8e21a4eaa0511fe563207095765a",
-    "checked": "2026-10-11",
-    "origin": "Pinned upstream snapshot; README field definitions and repository file inventory reviewed October 11, 2026.",
+    "checked": "2026-10-12",
+    "origin": "Pinned upstream snapshot and local Git blob verification; README field definitions and repository file inventory reviewed October 12, 2026. Hash identity establishes the GitHub source copy, not membership in the separate Edmond deposit.",
     "rights": {
       "repository_code": "MIT at the pinned commit",
       "repository_data_and_audio": "Not covered by the code license alone; component terms require separate review"
@@ -474,7 +474,7 @@
   {
     "id": 57,
     "title": "Monk parakeet deposited dataset",
-    "description": "Edmond v1 API rechecked October 12, 2026: released version declares MIT and lists three archives totaling 100,498,691,932 bytes. Names, sizes and repository MD5 values were inspected; no archive was downloaded and hashes were not locally verified. The pinned GitHub annotation-table copy has not been matched byte-for-byte to an archive file.",
+    "description": "Edmond v1 API rechecked October 12, 2026: released version declares MIT and lists three archives totaling 100,498,691,932 bytes. Names, sizes and repository MD5 values were inspected; no archive or member was downloaded. The local GitHub annotation-table copy is checksum-verified against its pinned GitHub commit, but has not been matched to a member inside the Edmond archives.",
     "url": "https://doi.org/10.17617/3.RUIM5I",
     "checked": "2026-10-12",
     "origin": "Official Edmond v1 API response inspected over verified TLS; component mapping and archive contents remain unverified."
@@ -2287,5 +2287,21 @@
     "rights": {
       "paper": "CC BY 4.0 is displayed on the arXiv v1 record for the manuscript. This does not establish rights to the reused audio corpora, code, or pretrained model weights."
     }
+  },
+  {
+    "id": 219,
+    "title": "Edmond data access and reuse terms",
+    "description": "Official user guidance says dataset downloads require acceptance of Edmond's terms of use, including the license assigned to the dataset. It documents single-file download as an access option.",
+    "url": "https://www.edmond.mpg.de/Data_Access_Usage/",
+    "checked": "2026-10-12",
+    "origin": "Official Edmond data access documentation reviewed October 12, 2026; no download or terms acceptance was performed."
+  },
+  {
+    "id": 220,
+    "title": "Edmond ZIP preview and member access",
+    "description": "Official Edmond guidance says ZIP archives can be previewed and individual members listed and downloaded without downloading the full archive first. This provides a possible route to compare the annotation CSV while avoiding the multi-gigabyte archives; availability of that exact member in this deposit is not yet confirmed.",
+    "url": "https://www.edmond.mpg.de/Glossary_FAQ/",
+    "checked": "2026-10-12",
+    "origin": "Official Edmond ZIP-viewer documentation reviewed October 12, 2026; this documents a method, not the target file's presence in the monk-parakeet archives."
   }
 ]
