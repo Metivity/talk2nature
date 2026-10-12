@@ -4,6 +4,8 @@
 
 An early-stage project documenting the science of nonhuman communication and building tools for reproducible animal-sound research. No general animal translator or trained Talk2Nature model exists yet.
 
+**Current source release:** [v0.1.0](https://github.com/Metivity/talk2nature/releases/tag/v0.1.0), an early pre-1.0 version whose interfaces and formats may change. Cite the software with [`CITATION.cff`](CITATION.cff) and record the exact commit used.
+
 Website: https://metivity.github.io/talk2nature/
 
 **Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). The observation-practice exercise and its limits are documented in [its project record](docs/OBSERVATION_PRACTICE.md). Optional offline support saves public app files only; export your audio and notes before leaving. Native unattended capture is not released.
