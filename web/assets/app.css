@@ -39,3 +39,7 @@
 @media(max-width:620px){.animal-range{margin-top:0;margin-bottom:38px}.animal-range-card{grid-template-columns:1fr;gap:18px;padding:23px 21px;border-radius:21px}.animal-range-copy h2{font-size:27px}.animal-range-copy>p:not(.app-eyebrow){font-size:13px;line-height:1.7}.animal-range-actions{justify-items:stretch}.animal-range-actions .glass-button{width:100%;min-height:50px}.animal-range-link{padding:8px 2px}}
 
 @media(max-width:620px){.app-body:has(.station-console:is([data-phase=starting],[data-phase=recording])){padding-bottom:calc(112px + env(safe-area-inset-bottom))}}
+.app-nav{transition:transform .22s ease,opacity .22s ease}
+.app-body.app-nav-away .app-nav{transform:translate3d(0,calc(100% + 20px),0);opacity:0;pointer-events:none}
+.app-body.app-nav-away .app-nav:focus-within{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){.app-nav{transition:none!important}}
