@@ -55,6 +55,12 @@ The annotation command returned an 8-second synthetic fixture with two marked ev
 
 This maintainer-run public-clone check verifies current-source setup and tested software behavior; it is not an independent reproduction, scientific validation or biological result. Keep the older `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` pin for its historical expected checksum. Current output includes the later context-label-presence diagnostic, so its complete JSON hash is intentionally different.
 
+## Latest-main clean-clone recheck — October 12, 2026
+
+A new depth-one public clone at `abbbd45a1606599a96b847d236c855a018da2158` (after the Station-to-Review release) ran the documented annotation and splitter commands, both complete test suites, the local build and the link/SEO boundary checker. Environment: Python 3.12.5, Node v22.22.1. The annotation report again showed an 8-second synthetic example, two marked events, 2 seconds of interval coverage and 0 seconds of observed context. The splitter produced 10 declared connected groups and 12/4/4 records; its complete output SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`.
+
+The clean clone passed 89 Python tests and 98 Node tests. The noindex build produced 88 pages plus 404; the checker passed 89 HTML pages and 4,041 links. This is a maintainer-run clean-clone recheck, not an independent reproduction or a biological result. The live deployed code release is `cd74ccbe95c023fd40aca7ee72030bd0dd1ad05f`; `abbbd45` adds only the post-release status evidence to that release.
+
 ## Three useful first contributions
 
 1. **Reproduce:** run either route on a clean device or checkout and describe where the instructions fail. An honest failure report is useful.
