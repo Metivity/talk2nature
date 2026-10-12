@@ -2338,5 +2338,82 @@
       "experiment": "No experiment, model or claim about tree-to-tree language is admitted by this note. A future study needs specialist review and controls that identify both the transfer route and an independently measured receiver response."
     },
     "attribution": "Karst J, Jones MD, Hoeksema JD (2023), Nature Ecology & Evolution 7:501–511, with author correction 7:623; Henriksson N et al. (2023), New Phytologist 239:19–28; Simard SW, Ryan TSL, Perry DA (2025), Frontiers in Forests and Global Change 7:1512518."
+  },
+  {
+    "slug": "great-green-macaw-vocal-development-2026",
+    "title": "Macaw calls change with age and population. That is not a translation.",
+    "seo_description": "A 2026 great green macaw study compares adult population calls and nestling development; its Dryad record is a methods reference, not a sound corpus.",
+    "taxon": "Great green macaw (Ara ambiguus)",
+    "kind": "Vocal development and population variation",
+    "purpose": "Vocal development",
+    "year": "2026",
+    "year_label": "Publication year",
+    "source_ids": [
+      215,
+      216,
+      217
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Targeted publisher abstract and dataset-metadata review; full methods not reviewed",
+    "review_depth": "Reviewed the publisher abstract and exposed section snippets; the publisher page itself was not fully accessible. Also reviewed the Dryad record, abstract, README descriptions and file inventory, and Dryad’s current data-reuse policy. The README says the RDS selection objects combine call selections with corresponding sound files through warbleR, but their contents were not inspected. No article, data, audio, code or supplementary bytes were acquired or executed.",
+    "finding": "Allison, Jimenez and Wright compare great green macaw adult contact calls across wild, captive and reintroduced Costa Rican populations and describe nestling call development. The publisher abstract reports minimal adult call variation among the three population categories and variation in nestling calls during mid-development. The authors discuss morphology, call overproduction, selective attrition and vocal convergence as possible explanations. This concerns acoustic development and variation, not a demonstrated call meaning.",
+    "limitations": "The study uses one region in Costa Rica and three population categories. Adult birds were not individually marked, and population individual counts are minimum estimates. The Dryad record lists selection tables, acoustic measurements, derived analysis files and R scripts. Its README says extended-selection RDS objects combine selected calls with corresponding sound files through warbleR and use sound-file names; the files were not inspected, so it remains unknown whether audio samples are embedded or referenced. The paper says sound files can be obtained from the corresponding author on request. No public behavioral event labels, receiver-comprehension test, independent Talk2Nature review or reproduction was established. This cannot support a context-prediction or translation benchmark.",
+    "lesson": "A parrot vocal-development study can inform what changes across age and population without establishing what any call communicates. Keep identity, age, population, acoustic structure and independently observed behavior as separate fields. For Talk2Nature’s first question, prioritize synchronized, independently coded events rather than treating age or population categories as meanings.",
+    "next_review": "If a concrete use is proposed, first inspect the exact Dryad record version, README, file inventory and RDS contents; resolve code rights separately; check individual/site grouping and sensitive-location risks; then seek qualified avian-vocal-development review. No data request or author contact was made. Keep this resource outside the first ML benchmark unless a narrow, independently reviewable question emerges.",
+    "expert_review": "Not independently reviewed by a parrot bioacoustics or vocal-development specialist.",
+    "review_locator": "Publisher abstract and available Adult Sampling Sites/Adult Call Selection snippets; Dryad record abstract, README descriptions/file inventory; Dryad Good data practices. Full article methods, figures, supplements and deposited file contents were not reviewed.",
+    "reuse": {
+      "status": "Metadata-only; no article, data, audio or code files acquired.",
+      "asset": "Dryad lists 497.76 MB of selection/derived analysis files and R scripts. Its README says extended-selection RDS objects combine selected calls with corresponding sound files through warbleR, but the files were not opened to determine whether audio is embedded or referenced. The article says sound files can be obtained on request.",
+      "rights": "Dryad policy says all files hosted there, including code, must abide by CC0; the item page showed no separate script notice and dependencies or embedded third-party code were not reviewed. The publisher article license and any sound files held outside this record remain unverified. Only an original summary and links are included here.",
+      "experiment": "Not a model benchmark or conversation dataset. Any future use requires exact-file and RDS inspection, rights and sensitive-location review, a narrow study question, and independent specialist review."
+    },
+    "study_snapshot": [
+      [
+        "Study question",
+        "Compare adult contact-call acoustic variation across wild, captive and reintroduced populations and describe nestling vocal development."
+      ],
+      [
+        "Adult sample",
+        "The publisher snippet reports 289 selected high-quality calls: 160 wild, 86 captive and 43 reintroduced. Birds were not individually marked; the paper estimates minimum individual counts."
+      ],
+      [
+        "Recording context",
+        "Dryad README describes Costa Rican recordings from 2023 and 2024; adults used handheld recording equipment and nestlings autonomous recording units."
+      ],
+      [
+        "Reported pattern",
+        "The abstract reports minimal adult population variation and mid-development nestling variation; proposed mechanisms are explanations to test, not evidence of semantic content."
+      ],
+      [
+        "Public deposit",
+        "Dryad lists 497.76 MB of selection tables, measurements, derived RDS results, spreadsheets and R scripts. Its README says extended-selection RDS objects combine selected calls with corresponding sound files through warbleR, but the files were not opened to determine whether audio is embedded or referenced. The article says sound files can be obtained on request."
+      ],
+      [
+        "Rights and status",
+        "Dryad’s current policy requires CC0 for submitted files. Article reuse rights and code-file scope remain separate. Nothing was acquired, run, admitted or independently reviewed."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-12",
+      "location_status": "mapped",
+      "location_note": "The study record names Costa Rica and compares wild, captive and reintroduced populations. The public atlas uses the existing country-level locator and omits sites, nests and coordinates.",
+      "locations": [
+        {
+          "place_id": "costa-rica",
+          "role": "study_region",
+          "source_id": 215,
+          "locator": "Publisher abstract: three populations in Costa Rica; Dryad README describes recordings made in Costa Rica.",
+          "basis": "The public map shows only Costa Rica at country precision. No exact population, nest or recording coordinates are added."
+        }
+      ],
+      "observation_period": {
+        "label": "Recordings: 2023–2024",
+        "start_year": 2023,
+        "end_year": 2024,
+        "source_id": 216,
+        "locator": "Dryad README description: adult and nestling recordings in 2023 and 2024."
+      }
+    }
   }
 ]

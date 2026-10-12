@@ -325,6 +325,47 @@ class SiteTests(unittest.TestCase):
             path=(root/'research/starting-points/index.html').read_text()
             self.assertIn('/research/duponts-lark-vocal-types-2026/',path)
 
+    def test_great_green_macaw_note_preserves_evidence_rights_and_map_precision(self):
+        note=next(n for n in load('research') if n['slug']=='great-green-macaw-vocal-development-2026')
+        resources={r['id']:r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']}
+        paper=resources['great-green-macaw-vocal-development-paper-2026']
+        data=resources['great-green-macaw-vocal-development-data-2026']
+        code=resources['great-green-macaw-vocal-development-code-2026']
+        self.assertEqual(set(note['source_ids']),{215,216,217})
+        for resource in (paper,data,code):
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+        self.assertEqual(paper['rights']['license'],'Not established in this review.')
+        self.assertIn('CC0',data['rights']['license'])
+        self.assertIn('Dryad policy',code['rights']['license'])
+        self.assertEqual(code['rights']['research_use'],'conditional')
+        self.assertIn('RDS objects combine selected calls',note['limitations'])
+        self.assertIn('whether audio samples are embedded or referenced',note['limitations'])
+        self.assertIn('not a demonstrated call meaning',note['finding'])
+        self.assertEqual([place['place_id'] for place in note['atlas']['locations']],['costa-rica'])
+        self.assertIn('country-level',note['atlas']['location_note'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/great-green-macaw-vocal-development-2026/index.html').read_text()
+            self.assertIn('Macaw calls change with age and population',page)
+            self.assertIn('not a demonstrated call meaning',page)
+            self.assertIn('whether audio samples are embedded or referenced',page)
+            canonical='https://fixture.github.io/talk2nature/research/great-green-macaw-vocal-development-2026/'
+            self.assertIn(canonical,page)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+            atlas=json.loads((root/'research/atlas/catalog.json').read_text())
+            mapped=next(row for row in atlas['records'] if row['id']==note['slug'])
+            self.assertEqual(len(mapped['locations']),1)
+            self.assertEqual(mapped['locations'][0]['place_id'],'costa-rica')
+            path=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('/research/great-green-macaw-vocal-development-2026/',path)
+            resource_page=(root/'research/resources/index.html').read_text()
+            self.assertIn(paper['title'],resource_page)
+            self.assertIn(data['title'],resource_page)
+            self.assertIn(code['title'],resource_page)
+
     def test_wild_parrot_duet_study_is_indexable_and_coarsely_mapped(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
