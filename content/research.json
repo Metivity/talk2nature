@@ -2415,5 +2415,66 @@
         "locator": "Dryad README description: adult and nestling recordings in 2023 and 2024."
       }
     }
+  },
+  {
+    "slug": "speech-pretraining-transfer-2026",
+    "title": "Speech models carry animal vocal patterns—not animal meanings",
+    "seo_description": "A 2026 arXiv study tests whether human-speech audio encoders transfer to animal calls. It finds acoustic transfer, not animal-language translation.",
+    "taxon": "Cross-species: rock hyrax, zebra finch, little owl and infant marmoset",
+    "kind": "Cross-species representation-transfer study",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "arXiv:2610.07107v1, submitted 5 October 2026; preprint",
+    "source_ids": [
+      218
+    ],
+    "reviewed": "2026-10-12",
+    "review_stage": "Full arXiv v1 HTML and version/license metadata reviewed; associated datasets, code and model assets not audited",
+    "review_depth": "Reviewed the complete arXiv v1 HTML, including dataset descriptions, encoder families, caller-identification and call-type tasks, fold construction, result tables, the session-independent sensitivity analysis and conclusion. Confirmed the submitted version/date and CC BY 4.0 manuscript license on the arXiv record. No paper-linked code or data release was identified in the reviewed record/full text; this is not an exhaustive search. No audio, dataset files, code or weights were acquired or run. The arXiv record does not establish publication or peer-review status.",
+    "review_locator": "arXiv v1 HTML: Sections 2.1–2.3 (datasets, representations and evaluation), Tables 1–3, session-independent sensitivity analysis in Results, Conclusions, and the arXiv version/license record.",
+    "finding": "Arias-Vergara et al. compare 15 frozen speech, speaker-verification, animal-bioacoustic and general-audio encoders on caller identification in four species and call-type classification in three. The strongest speech-pretrained representation outperforms animal-pretrained representations in three of seven task–dataset comparisons; the other four differences are not statistically significant. Controlled comparisons find no systematic advantage from multilingual coverage or animal-domain pretraining, and useful encoder layers vary with architecture. This shows that some acoustic caller and call-type information transfers across domains; the study does not predict independently observed behavior or test message meaning.",
+    "limitations": "Caller-identification folds were grouped by recording session, but individuals with fewer than three sessions had their largest session split into contiguous blocks so the same caller appeared in different folds. This applied to 2/16 hyraxes, 13/33 zebra finches and all 16 little owls. The paper's session-independent sensitivity analysis reports a 0.19–0.37 UAR drop for little owls; zebra-finch UAR was 0.44 for the session-independent birds versus 0.81 for block-split birds. Therefore some caller-ID results do not estimate performance on wholly unseen individuals. The separate call-type task holds callers out, but its labels are vocal categories, not meanings. The study uses four taxa, historical source corpora and frozen encoders; fine-tuning could change the results. Source-audio, code, dependency and model-weight rights are separate and were not assessed, and results were not independently reproduced.",
+    "lesson": "Human-speech pretraining can yield features useful for animal acoustic classification, but this is not the same as training an animal-language LLM. A credible Talk2Nature question would need an independently observed target, animal- and session-safe evaluation, simple acoustic and context-only baselines, and audited model/data rights. Keep acoustic identity, call type, behavior association, receiver response and meaning as distinct claims.",
+    "next_review": "Check whether a peer-reviewed version, exact fold files or an author-maintained code/data release appears. Before any reproduction, audit the source-corpus and checkpoint terms separately and have a bioacoustic methods reviewer assess the identity split. No files were acquired and no author contact was made.",
+    "expert_review": "Not independently reviewed by a bioacoustics or animal-communication specialist.",
+    "reuse": {
+      "status": "Metadata-only original summary of arXiv v1; no manuscript passages, figures, data, audio, code or weights copied.",
+      "asset": "The arXiv record displays CC BY 4.0 for the manuscript. The reused audio corpora, third-party code and dependencies, and pretrained model weights are separate assets whose rights were not reviewed.",
+      "rights": "Cite the exact arXiv version and follow its CC BY 4.0 attribution terms. No permission for source recordings, code or model weights is inferred from the manuscript license.",
+      "experiment": "This is a representation-transfer study for caller identity and vocal-type labels, not a communication benchmark. No Talk2Nature model was trained, run or evaluated."
+    },
+    "study_snapshot": [
+      [
+        "Study question",
+        "Which properties of speech, animal-bioacoustic and general-audio encoders transfer to animal caller identification and call-type classification?"
+      ],
+      [
+        "Species and tasks",
+        "Rock hyrax, zebra finch, little owl and infant marmoset; caller identification in all four and call-type classification in three."
+      ],
+      [
+        "Models and headline result",
+        "Fifteen frozen encoders; speech-pretrained representations were significantly stronger in 3/7 comparisons and not significantly different in the other four. Multilingual and animal-domain pretraining showed no systematic advantage."
+      ],
+      [
+        "Identity split caveat",
+        "Caller-ID folds were usually session-grouped, but some individuals with few sessions had one session divided into blocks across folds. Session-independent sensitivity results were lower, especially for owls."
+      ],
+      [
+        "Interpretation boundary",
+        "UAR on identity and vocal-category labels measures classification. It does not establish independently observed context, receiver comprehension or meaning."
+      ],
+      [
+        "Rights and reproducibility",
+        "CC BY 4.0 applies to the manuscript per the arXiv record. No paper-linked code/data release was identified in this bounded review; underlying corpora and weights need separate rights review. No result was reproduced."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-12",
+      "location_status": "pending",
+      "location_note": "The preprint combines four reused corpora. Review the original source studies and location precision before assigning map regions; no places are mapped in this note.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

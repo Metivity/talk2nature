@@ -2276,5 +2276,16 @@
     "rights": {
       "policy": "Repository-level guidance; it does not establish an article license or settle the exact license scope of code embedded in a particular dataset record."
     }
+  },
+  {
+    "id": 218,
+    "title": "Neural Representations, Natural Connections: What Transfers From Human Speech Foundation Models to Animal Vocalizations?",
+    "description": "A 2026 arXiv v1 study evaluates 15 frozen speech, animal-bioacoustic and general-audio encoders on caller identification and call-type classification across four species. The tasks test acoustic information transfer, not communicative meaning.",
+    "url": "https://arxiv.org/abs/2610.07107",
+    "checked": "2026-10-12",
+    "origin": "Reviewed the complete arXiv v1 HTML, including dataset descriptions, encoder families, evaluation folds, result tables, the session-independent sensitivity analysis, conclusion and version/license metadata. The arXiv page displays CC BY 4.0 for the manuscript. No paper-linked code or data release was identified in the reviewed record/full text; this is not an exhaustive search. No files, recordings, datasets or model weights were acquired or run.",
+    "rights": {
+      "paper": "CC BY 4.0 is displayed on the arXiv v1 record for the manuscript. This does not establish rights to the reused audio corpora, code, or pretrained model weights."
+    }
   }
 ]

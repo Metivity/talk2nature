@@ -1937,6 +1937,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "speech-pretraining-transfer-animal-vocalizations-2026",
+      "kind": "paper",
+      "title": "Neural Representations, Natural Connections: What Transfers From Human Speech Foundation Models to Animal Vocalizations?",
+      "url": "https://arxiv.org/abs/2610.07107",
+      "version": "arXiv:2610.07107v1, submitted 2026-10-05",
+      "source_ids": [
+        218
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-12",
+      "task": "Compare frozen human-speech, animal-bioacoustic and general-audio representations on caller identification and call-type classification across four species.",
+      "review_depth": "Full arXiv v1 HTML reviewed, including dataset descriptions, encoder families, fold construction, result tables, the session-independent sensitivity analysis and conclusion. No paper-linked code or data release was identified in the reviewed record/full text; this was not an exhaustive search. No code, audio, dataset files or model weights were acquired or run.",
+      "access": "The arXiv HTML and version/license metadata were reviewed online; no files were copied.",
+      "decision": "Use as a recent preprint-level method and evaluation comparator. It supports transfer of acoustic caller/call-type information, not a claim of decoding communication or predicting independently observed behavior.",
+      "limitations": "This is arXiv v1; publication or peer-review status was not established in this review. Caller-identification folds were grouped by session, but for individuals with fewer than three sessions the largest session was split into contiguous blocks, so the same animal appeared across folds for 2/16 hyraxes, 13/33 finches and all 16 owls. In a session-independent sensitivity analysis, owl UAR fell by 0.19–0.37 across encoders; finch UAR was 0.44 for session-independent individuals versus 0.81 for block-split individuals. Call-type evaluation held callers out, but vocal-type labels are not meaning labels. The study uses four taxa and frozen encoders on reused corpora. Rights to the source audio and pretrained model assets remain separate and were not assessed.",
+      "attribution": "Arias-Vergara, T., Hauer, C., Brotier, H., Nöth, E., Maier, A. and Koren, L. (2026). Neural Representations, Natural Connections: What Transfers From Human Speech Foundation Models to Animal Vocalizations? arXiv:2610.07107v1.",
+      "rights": {
+        "license": "CC BY 4.0 as displayed on the arXiv v1 record for the manuscript.",
+        "scope": "The preprint manuscript only; the reused audio corpora, third-party code, dependencies and pretrained model weights have separate rights.",
+        "evidence_url": "https://arxiv.org/abs/2610.07107",
+        "conditions": "Cite the exact version and follow CC BY 4.0 attribution terms. No paper text or figures are reproduced here. Do not infer permission for the underlying datasets, software or model weights.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
