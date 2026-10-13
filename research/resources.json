@@ -215,27 +215,28 @@
       "id": "perch2-cpu-model",
       "kind": "model",
       "title": "Perch 2 CPU model candidate",
-      "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu",
+      "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1",
       "version": "perch_v2_cpu/1 (official pinned Hoplite configuration)",
       "source_ids": [
-        51
+        51,
+        299
       ],
       "priority": 1,
-      "reviewed": "2026-09-30",
+      "reviewed": "2026-10-14",
       "task": "Frozen acoustic representation candidate.",
-      "review_depth": "Same-day model decision reused; CPU bundle terms and signatures have not been inspected.",
-      "access": "CPU-specific card did not render in the earlier review; no model package downloaded.",
-      "decision": "Retain candidate; block weights until exact package terms and provenance are inspected.",
-      "limitations": "No runtime/accuracy result. Pretraining overlap remains unknown. Parent-model license is not a substitute for inspecting selected artifact.",
+      "review_depth": "Exact Google CPU variation/version page reviewed; cross-checked the version pin and input/embedding configuration against frozen Perch-Hoplite source. No model package downloaded or run.",
+      "access": "Public exact-version model card; it lists a 410.28 MB package and says CPU-compatible. Package bytes, checksum and runtime were not inspected.",
+      "decision": "Keep as a metadata-only candidate. The exact variation card declares Apache-2.0, but artifact integrity, additional download terms, training-data provenance, preprocessing and scientific fit still need review before use.",
+      "limitations": "The parent card names public audio sources but does not provide an item-level training manifest or license audit. Pretraining overlap is unknown; no runtime, accuracy, cost or phone performance was measured. This is an acoustic representation, not a communication model.",
       "attribution": "Google Perch team; see official model card.",
       "rights": {
-        "license": "Apache-2.0 (parent card; CPU bundle unverified)",
-        "scope": "Parent card only; selected binary unverified.",
-        "evidence_url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2",
-        "conditions": "Inspect exact bundle and applicable notices before use.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "Apache-2.0 (declared by the exact CPU variation/version card)",
+        "scope": "The Google Perch v2 CPU variation, version 1 model artifact as listed on Kaggle. This declaration does not establish rights in the underlying training recordings or resolve any additional platform terms.",
+        "evidence_url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1",
+        "conditions": "Follow Apache-2.0 notice and attribution conditions. Before adoption or redistribution, verify the exact downloaded bytes and applicable terms; review training-data provenance separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []

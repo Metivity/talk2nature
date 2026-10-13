@@ -3062,5 +3062,13 @@
     "url": "https://edmond.mpg.de/api/datasets/:persistentId?persistentId=doi%3A10.17617%2F3.8ZSP3J",
     "checked": "2026-10-13",
     "origin": "The official Edmond DataVerse API response was reviewed October 13, 2026. It identifies released version 1, the single archive's exact byte size and provider MD5, and custom terms Attribution-NonCommercial-ShareAlike 4.0 International. This rights declaration applies to the dataset record; paper, code and model weights remain separate. No dataset file was requested."
+  },
+  {
+    "id": 299,
+    "title": "Perch 2 CPU variation v1 model card",
+    "description": "Google. Exact Perch v2 CPU variation and version page. Declares Apache-2.0, CPU compatibility, and matching weights to the GPU perch_v2 version 2. No weights downloaded.",
+    "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1",
+    "checked": "2026-10-14",
+    "origin": "Exact-version model card reviewed October 14, 2026 and cross-checked against Perch-Hoplite model configuration at commit 050c57b5dac2f6d28ab1f562fa2000c8dcbc2302. Artifact bytes, checksum and underlying training-data rights were not inspected."
   }
 ]
