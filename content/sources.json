@@ -2475,5 +2475,13 @@
     "url": "https://docs.edmond.mpg.de/Data_Access_Usage/",
     "checked": "2026-10-13",
     "origin": "Reviewed the official Edmond Data Access & Usage guide sections on access, license acceptance, versioning and exact-version citation. No dataset terms were accepted and no files were downloaded."
+  },
+  {
+    "id": 239,
+    "title": "Bioacoustics datasets community directory",
+    "description": "A community-maintained directory for discovering bioacoustic datasets, with metadata fields for version, license, annotation level, taxa, geography, recording type and other properties. The maintainers say the information is incomplete and progressively updated.",
+    "url": "https://github.com/bioacoustic-ai/bioacoustics-datasets/tree/c412c5c3fd65552d17e492dac35f2be2c30349a4",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the README and root file inventory at commit c412c5c3fd65552d17e492dac35f2be2c30349a4 (commit date 2026-05-26) and GitHub repository API metadata. The README describes its scope, metadata schema and contribution route; the API reports no recognized repository license and the pinned root inventory has no LICENSE file. No dataset rows or files were acquired or audited."
   }
 ]
