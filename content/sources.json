@@ -3070,5 +3070,13 @@
     "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1",
     "checked": "2026-10-14",
     "origin": "Exact-version model card reviewed October 14, 2026 and cross-checked against Perch-Hoplite model configuration at commit 050c57b5dac2f6d28ab1f562fa2000c8dcbc2302. Artifact bytes, checksum and underlying training-data rights were not inspected."
+  },
+  {
+    "id": 300,
+    "title": "CrowdBark project page",
+    "description": "Project-team description of a crowdsourced multimodal dog-communication study and its intended future open dataset; the page does not link a versioned data release.",
+    "url": "https://lit.eecs.umich.edu/crowdbark/",
+    "checked": "2026-10-14",
+    "origin": "Official project landing page reviewed October 14, 2026 for the stated research aims, requested participant observations, team and visible links. The linked form was not opened or submitted; no data or code release was located on the page."
   }
 ]

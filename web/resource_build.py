@@ -40,11 +40,11 @@ def acquisition_status(value):
 def build_resource_directory(root: Path, base: str, page):
     catalog = json.loads((root / 'research/resources.json').read_text())
     resources = catalog['resources']
-    kind_labels = {'paper': 'Paper', 'dataset': 'Dataset', 'code': 'Code', 'model': 'Model', 'standard': 'Standard'}
+    kind_labels = {'paper': 'Paper', 'dataset': 'Dataset', 'code': 'Code', 'model': 'Model', 'standard': 'Standard', 'project': 'Project'}
     acquisition_labels = {'metadata_only': 'Metadata only', 'sample_approved': 'Limited sample route'}
     kind_options = ''.join(
         f'<option value="{kind}">{kind_labels[kind]}</option>'
-        for kind in ('paper', 'dataset', 'code', 'model', 'standard')
+        for kind in ('paper', 'dataset', 'code', 'model', 'standard', 'project')
     )
 
     entries = []
@@ -75,14 +75,14 @@ def build_resource_directory(root: Path, base: str, page):
 <div><dt>Collection status</dt><dd>{acquisition_status(item['acquisition'])}</dd></div>
 </dl></details></article>''')
 
-    body = f'''<section class="page-intro section library-intro"><p class="eyebrow">THE RESOURCE DIRECTORY · {len(resources)} RECORDS</p><h1>Find what exists.<br><em>Know what it permits.</em></h1><p class="lede">Papers, datasets, code, models and standards connected to questions in animal communication and the wider living world. Each record shows what we reviewed, the next research decision and the limits we found.</p><p class="quiet">This is a curated working catalog, not a systematic review or legal clearance. A public link is not permission to download, redistribute, train on, or commercially use the underlying work.</p></section>
+    body = f'''<section class="page-intro section library-intro"><p class="eyebrow">THE RESOURCE DIRECTORY · {len(resources)} RECORDS</p><h1>Find what exists.<br><em>Know what it permits.</em></h1><p class="lede">Papers, datasets, code, models, standards and research projects connected to questions in animal communication and the wider living world. Each record shows what we reviewed, the next research decision and the limits we found.</p><p class="quiet">This is a curated working catalog, not a systematic review or legal clearance. A public link is not permission to download, redistribute, train on, or commercially use the underlying work.</p></section>
 <nav class="section hub-nav" aria-label="Research library navigation"><a href="{base}/research/">Research notes</a><a href="{base}/research/starting-points/">Reading paths</a><a href="{base}/research/map/">Evidence connections</a><a href="{base}/contribute/source/">Suggest a resource</a></nav>
 <section class="section resource-directory"><div class="resource-filters"><div><label for="resource-search">Search all resource details</label><input id="resource-search" type="search" placeholder="Try parrot, annotation, fungi…"></div><div><label for="resource-kind">Resource type</label><select id="resource-kind"><option value="all">All types</option>{kind_options}</select></div></div><div class="library-results-bar"><p id="resource-count" class="quiet" role="status" aria-live="polite">{len(resources)} resources · Search and filters are optional; all records are listed below.</p><button id="resource-reset" type="button" hidden>Clear filters</button></div><div id="resource-results">{''.join(entries)}</div><p id="resource-empty" hidden>No resources match. Clear the filters or try another phrase.</p></section>
 <section class="section paper-panel resource-note"><h2>How to read these records.</h2><p>“Catalog reviewed” is the date our record was checked; it does not mean the paper or artifact received independent peer review from Talk2Nature. The review-depth field says exactly what was inspected.</p><p>Rights declarations apply only to the component and scope named in that record. “Conditional” is not blanket permission; “unresolved” means we have not established the terms; “not admitted” means this project has not cleared that use. Check current upstream terms and seek rights-holder guidance before reuse.</p><p>Sample approval controls a bounded metadata-collection workflow. It does not establish biological labels, participant consent, model-training suitability or benchmark readiness. We keep these separate from scientific admission.</p><p><a href="{base}/research/starting-points/">Follow a reading path to the next experiment →</a></p></section>'''
     page(
         'research/resources/',
-        'Research resources: papers, datasets, code, models and standards',
-        f'Browse {len(resources)} research resources—papers, datasets, software, models and standards—for reproducible research, with review and rights notes.',
+        'Research resources: papers, datasets, code, models, standards and projects',
+        f'Browse {len(resources)} research resources—papers, datasets, software, models, standards and projects—for reproducible research, with review and rights notes.',
         body,
         active='research/',
         extra_head=f'<link rel="stylesheet" href="{base}/assets/resources.css"><script defer src="{base}/assets/resources.js"></script>',

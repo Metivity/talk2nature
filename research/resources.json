@@ -3856,6 +3856,33 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "crowdbark-project-page",
+      "kind": "project",
+      "title": "CrowdBark: crowdsourced multimodal dog-communication study",
+      "url": "https://lit.eecs.umich.edu/crowdbark/",
+      "version": "Project landing page accessed 2026-10-14; no versioned data release linked",
+      "source_ids": [300],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Potential comparison for multimodal, owner-contributed canine observations and project-level open-data plans; not a released dataset or validated communication model.",
+      "review_depth": "Read the official project page and its visible project and team descriptions. It invites short dog videos with audio, context and contributor interpretations, and states that submissions are intended to support a future open research dataset. No dataset DOI, version, schema, code repository or data license is linked from the page as reviewed. The linked submission form was not opened or used.",
+      "access": "The page offers a linked Google Form intake and describes a planned shared open dataset; no public, versioned dataset release was located in the reviewed page or its visible links.",
+      "decision": "Catalog as a project lead only. Do not describe it as released open data, a validated outcome or evidence of call meaning. No video, personal information or form submission was sent.",
+      "limitations": "The page describes intended study of dog facial expression, posture, vocalization, context and human interpretation, and asks contributors for breed, age, sex, personality, context and their interpretation. It advises against identifiable human faces, private conversations and personal information. The page reviewed does not document consent and ethics terms, retention or withdrawal, dataset licensing, access controls or an annotation protocol; the form was not opened. Contributor interpretations are hypotheses, not independent behavior labels or evidence of animal meaning.",
+      "attribution": "CrowdBark team. CrowdBark: A Crowdsourced Study of Dog Communication Using AI. University of Michigan project page, accessed 2026-10-14.",
+      "rights": {
+        "license": "No license located for a dataset release; the page describes an intended future open dataset",
+        "scope": "Project-page description and future dataset intent only; no license for contributor videos or code is established.",
+        "evidence_url": "https://lit.eecs.umich.edu/crowdbark/",
+        "conditions": "Do not submit Talk2Nature or user recordings, reuse future data, or call the data open-licensed until a versioned release and its consent, license, privacy, retention, withdrawal and access terms are reviewed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
