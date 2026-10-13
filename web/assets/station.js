@@ -8,7 +8,7 @@ import {AudioSession} from './station-audio.mjs';
 import {emptyEventsMessage, nextEventFocusId} from './station-review-ui.mjs';
 
 const $ = id => document.getElementById(id);
-let session = null, capture = null, active = false, pending = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
+let session = null, capture = null, active = false, pending = false, pendingSynthetic = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
 const animal = animalPicker(document, 'station');
 const preset = stationPreset(new URL(location.href).searchParams.get('mode'));
 if (preset) {
@@ -44,6 +44,7 @@ function controls() {
   $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
   $('station-stop').disabled = !(pending || active);
+  $('station-stop').textContent = pendingSynthetic || session?.origin === 'synthetic' ? 'End rehearsal' : 'Stop recording';
   $('station-voice').disabled = !active; $('station-observe').disabled = !active;
   $('station-soundscape-context').disabled = phase !== 'review' || exporting;
   renderSoundscapeContext();
@@ -58,7 +59,7 @@ function silencePlayer() {
 }
 function stop(reason = 'user_stop') {
   const focusReview = document.activeElement === $('station-stop') || document.activeElement?.matches('[data-observation]');
-  run++; pending = false; active = false;
+  run++; pending = false; pendingSynthetic = false; active = false;
   capture?.stop(); capture = null;
   if (deadline) clearTimeout(deadline); if (watchdog) clearInterval(watchdog); deadline = null; watchdog = null;
   wake?.release().catch(() => {}); wake = null;
@@ -76,7 +77,7 @@ async function start(synthetic) {
   let animalContext;
   try { animalContext = animal.value(); } catch (error) { status(error.message); return; }
   const windowMode = $('station-capture-mode').value === 'window';
-  const token = ++run; pending = true; session = null; dirty = false; levels = []; $('station-marker-feedback').textContent = 'Observe naturally. Tap only what you notice.'; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
+  const token = ++run; pending = true; pendingSynthetic = synthetic; session = null; dirty = false; levels = []; $('station-marker-feedback').textContent = 'Observe naturally. Tap only what you notice.'; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
   status(synthetic ? 'Starting invented tones inside the audio engine. No microphone access or audible playback.' : 'Waiting for microphone permission. You can cancel with Stop recording.');
   capture = new AudioSession({
     createContext: () => new AudioContext(),
@@ -102,7 +103,7 @@ async function start(synthetic) {
     const result = await capture.start(synthetic);
     if (token !== run || !result) return;
     session = new (windowMode ? WindowSession : StationSession)(result.sampleRate, {origin: synthetic ? 'synthetic' : 'microphone', margin: Number($('station-margin').value), animalContext});
-    settings = result.settings; active = true; pending = false; lastFrameAt = performance.now();
+    settings = result.settings; active = true; pending = false; pendingSynthetic = false; lastFrameAt = performance.now();
     $('station-headline').textContent = synthetic ? 'A rehearsal in listening.' : 'This place has a rhythm.';
     const setting = value => value === null ? 'unreported' : value ? 'on' : 'off';
     $('station-device').textContent = synthetic ? `Synthetic tones · ${result.sampleRate.toLocaleString()} Hz processing · no microphone, no speaker output.` : `${result.sampleRate.toLocaleString()} Hz processing · gain control ${setting(settings.auto_gain_control)} · noise suppression ${setting(settings.noise_suppression)} · echo cancellation ${setting(settings.echo_cancellation)}. Device settings are reported, not calibrated.`;

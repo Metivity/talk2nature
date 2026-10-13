@@ -1,5 +1,15 @@
 # Project status
 
+## October 13 microphone-free rehearsal wording and mobile workflow
+
+**Question:** does the phone rehearsal make clear that it is an invented, no-microphone exercise rather than a live recording?
+
+**Finding and change:** the synthetic rehearsal showed a “Stop recording” control even though the visitor had selected “Try without a microphone.” `station.js` now labels the active/pending synthetic control “End rehearsal”; microphone capture keeps “Stop recording,” including its permission-pending cancel state.
+
+**Workflow evidence:** at a 390 × 844 CSS-pixel emulated viewport, the public companion route offered the all-animal selector, showed Dog as an observer declaration with species-specific caution, and ran the synthetic session without a microphone permission. A movement marker appeared in the timed journal; stopping preserved it in the recap; a downloaded ZIP passed archive-integrity checking and reopened in Compare as a dog observer-declared example with one recording and one observation. Compare stated the file stayed on-device. The generated synthetic test archive was moved to Trash after inspection. No real recording, participant data or animal interaction was involved.
+
+**Validation and limits:** all 116 Python tests and 107 Node tests passed; the local noindex build produced 104 pages plus 404 and passed the checker across 105 HTML documents and 5,035 links. The production-origin candidate also reached 104 pages and passed the checker across 105 HTML documents and 5,141 links. The final local preview visibly exposed “End rehearsal” in the synthetic session at 390 × 844. This is browser emulation and a maintainer-run synthetic workflow, not physical-phone testing, novice testing or evidence of field readiness. No microphone permission was requested. AutoResearch remains **NOT READY**.
+
 ## October 13 dog-bark context-classification methods review
 
 **Question:** what does the 2024 dog-bark study's context score establish, and which grouping, label and rights limits matter before treating it as a reusable benchmark?
