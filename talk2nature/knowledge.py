@@ -41,6 +41,8 @@ def catalog_graph(entries):
         if (not isinstance(source_ids, list)
                 or any(type(source_id) is not int for source_id in source_ids)):
             raise ValueError('Catalog source_ids must be a list of integer source IDs.')
+        if not source_ids:
+            raise ValueError('Every public note and resource must reference at least one source.')
         relation = 'cites' if entry['kind'] == 'note' else 'cataloged_from'
         basis = ('Explicit source_ids in this note; target is the catalog version at graph build time.'
                  if entry['kind'] == 'note' else
