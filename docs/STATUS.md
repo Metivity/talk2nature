@@ -1854,3 +1854,11 @@ The linked Dryad page reports 385 minutes across four days, 48 species and 16,05
 **Change:** added one source-linked research note, five source records and three separate resource records. The metadata-only catalog now has 120 records; the research library has 73 notes and 295 source records. The candidate page has a unique title/description, self-canonical URL, source links and sitemap entry.
 
 **Validation:** all 118 Python tests and 109 Node tests pass; JSON parsing and `git diff --check` pass. The local build/check reports 105 pages plus 404, 106 HTML documents and 5,114 links. The public-origin candidate passes with 105 pages plus 404, 106 HTML documents, 5,220 links and all 105 public pages reachable. Generated-page checks confirm the SEO title/canonical, crawlability, sitemap inclusion, rights caveat and no-translation boundary. This is local build evidence only: the candidate is not merged or deployed, and Google Search Console status, indexing and ranking remain unverified.
+
+## October 13 publication receipt — OpenSoundscape evidence page
+
+PR [#120](https://github.com/Metivity/talk2nature/pull/120) merged to `main` as `b7f7f53b7a6eef939d0997232d5ea2d0916263e4`. The manual [Pages workflow](https://github.com/Metivity/talk2nature/actions/runs/38431712443) passed its Python and Node suites, built and checked the public site, and deployed the checked artifact.
+
+Live HTTPS checks returned HTTP 200 for the [OpenSoundscape research page](https://metivity.github.io/talk2nature/research/opensoundscape-bioacoustic-workflow/), [resource directory](https://metivity.github.io/talk2nature/research/resources/), sitemap and robots file. The page serves its unique title and description, self-canonical URL, index-follow directive, source/rights caveats and no-translation boundary; its route is in the sitemap named by `robots.txt`. The resource directory lists the paper, pinned MIT code release and metadata-only Dryad dataset as separate records.
+
+This verifies publication and crawl configuration only. Search Console indexing, impressions and rankings were not checked; no independent reviewer, dataset acquisition, model run or scientific validation is claimed. AutoResearch remains **NOT READY**.
