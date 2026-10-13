@@ -82,6 +82,32 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(result['reachable_public_pages'],result['html_pages']-1)
             self.assertIn('https://fixture.github.io/talk2nature/research/',(Path(d)/'sitemap.xml').read_text())
 
+    def test_public_pages_require_unique_search_descriptions(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            home=(root/'index.html').read_text()
+            match=re.search(r'<meta name="description" content="[^"]*">',home)
+            self.assertIsNotNone(match)
+            target=root/'about'/'index.html'
+            page=target.read_text()
+            page=re.sub(r'<meta name="description" content="[^"]*">',match.group(0),page,count=1)
+            target.write_text(page)
+            with self.assertRaisesRegex(ValueError,'Duplicate public meta descriptions'):
+                check_site(root)
+
+    def test_public_structured_metadata_must_be_valid_json(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            target=root/'research'/'index.html'
+            page=target.read_text()
+            page=re.sub(r'(<script type="application/ld\+json">).*?(</script>)',r'\1{broken-json}\2',page,count=1)
+            target.write_text(page)
+            with self.assertRaisesRegex(ValueError,'invalid JSON-LD structured metadata'):
+                check_site(root)
+
     def test_public_html_page_must_be_discoverable_from_homepage(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
