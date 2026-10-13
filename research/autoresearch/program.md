@@ -12,13 +12,19 @@ No ML task is approved. The working scientific question in `docs/GOAL.md` remain
 
 Do not run an agent or model until the project owner and a qualified scientific reviewer have completed the run card in `docs/AUTORESEARCH_ADAPTATION.md`, verified every applicable readiness gate there, and approved a specific local run. If a required gate cannot be evidenced, stop and report it.
 
+## Validation-only selection and locked test
+
+Select checkpoints, epochs, hyperparameters, thresholds, early stopping and seeds using training/validation data only. Do not query the locked final test during an autonomous loop. After the model, preprocessing, thresholds, seed schedule, metrics and report plan are frozen, evaluate the final pipeline on that test and report the result without using it to choose a candidate. The WhAM review documents a published downstream protocol that selected its best classifier checkpoint on the test split; treat that as a cautionary example, not a procedure to copy.
+
+If a test result is viewed and then influences any choice, mark that set as development data. Do not report it as a final generalization estimate; a new independent test set is required. Log whether and when final-test access occurred and any deviation. This policy does not make the current task ready: all other scientific, rights and safety gates still apply.
+
 ## Agent scope after approval
 
 For a future, separately approved run:
 
 - Work only on the named `codex/` experiment branch and exact approved revision.
 - Change only the model/configuration files named in the reviewed run card. Do not change data, labels, preprocessing, splits, evaluation, metrics, rights records or this program during a run.
-- Run the same frozen baseline, seeds and budget for each candidate. Do not expose or query the locked final test set while iterating.
+- Run the same frozen baseline, seeds and budget for each candidate. Do not expose or query the locked final test set while iterating; validation alone may guide selection, and a test result never selects a checkpoint or candidate.
 - Record every attempted change, metric, uncertainty, runtime, memory use and outcome, including crashes and discarded trials.
 - Keep all recordings local in the approved access boundary. Do not upload, publish, share, play sounds to animals, contact people, access credentials, merge, deploy or change permissions.
 - Stop when the declared budget or stopping rule is reached. Do not continue overnight or expand scope without fresh human review.

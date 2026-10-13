@@ -16,6 +16,18 @@ test('sessions have separate export identities and a declared device clock', () 
   feed(one,4); feed(one,.5,.1); one.stop();
   assert.equal(one.exportRecord().events[0].audio_filename,one.audioFilename(1));
 });
+test('whole-session setting notes are optional, user-entered and distinct from absence', () => {
+  const s=new StationSession(8000);
+  assert.deepEqual(s.exportRecord().soundscape_context,{schema:'talk2nature.soundscape-context.v1',scope:'whole_session',status:'not_recorded',categories:[],provenance:'user-entered'});
+  assert.throws(()=>s.setSoundscapeContext(['other_animals']),/after stopping/);
+  feed(s,4);s.stop();
+  const chosen=s.setSoundscapeContext(['people_or_machines','other_animals']);
+  assert.equal(chosen.status,'observer_selected');assert.deepEqual(s.exportRecord().soundscape_context.categories,['people_or_machines','other_animals']);
+  assert.throws(()=>s.setSoundscapeContext(['not-a-category']),/listed options/);
+  assert.throws(()=>s.setSoundscapeContext(['other_animals','other_animals']),/listed options/);
+  s.setSoundscapeContext([]);assert.equal(s.exportRecord().soundscape_context.status,'not_recorded');
+  assert.match(s.exportRecord().limitations.join(' '),/not evidence of absence/);
+});
 test('event capture includes pre-roll, stops after quiet and exports a Listen-compatible WAV', () => {
   const s = new StationSession(16000); feed(s, 4); feed(s, .5, .1); feed(s, .6);
   assert.equal(s.events.length, 1); const event = s.events[0];

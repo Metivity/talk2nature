@@ -1125,6 +1125,47 @@
     "purpose": "Data & annotation"
   },
   {
+    "slug": "companion-parrot-name-use-s2-2026",
+    "title": "Companion-parrot S2: reported context is not a call label",
+    "seo_description": "The companion-parrot name-use S2 spreadsheet is a coded caregiver survey, not an audio corpus or validated model benchmark. Its contents remain uninspected.",
+    "taxon": "Parrots",
+    "kind": "Supplementary survey dataset",
+    "year": "2026",
+    "source_ids": [
+      160,
+      261
+    ],
+    "review_depth": "Reviewed the primary PLOS paper's methods and S2 description and the NLM Dataset Catalog record, which links the S2 DOI to PLOS Figshare item 32046233 and reports CC BY 4.0. The direct Figshare page/API were not retrievable in this review. No workbook bytes, schema or cell contents were inspected; no reanalysis was performed.",
+    "finding": "PLOS describes S2 as a spreadsheet of parrot name phrases with coding and de-identified supporting information. The paper says phrase-use context was based on survey-takers' accounts of when or how a phrase was used, not inferred from the phrase's words; observers coded and reconciled the reports. The NLM catalog reports CC BY 4.0 for the linked Figshare item.",
+    "limitations": "This is survey-derived phrase and context metadata, not natural-call audio or a receiver-response experiment. Respondents were asked for respondent and parrot names. Although the article describes S2 as de-identified, the workbook and its fields were not inspected, so re-identification risk and consent scope are unknown. The cataloged license does not resolve those issues. Do not treat caregiver context or researcher coding as independent ground truth or as model training labels.",
+    "lesson": "In the phone app, keep a sound event, a person's account of the surrounding situation, a researcher's coded category, and a model prediction as separate records with separate provenance. This dataset is a useful interface-design example; it is not evidence that a model can infer what a parrot means.",
+    "next_review": "Only if a concrete research question justifies access, review the exact workbook fields and terms under a privacy and consent assessment. Before any secondary analysis, determine how identifiers were removed, whether the original consent covers reuse, and whether repeated reports require bird- or household-grouped evaluation. No acquisition or participant-data intake is currently approved.",
+    "reviewed": "2026-10-13",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Metadata-only source and rights review",
+    "year_label": "Publication year",
+    "purpose": "Data & annotation",
+    "review_locator": "PLOS ONE Methods and Supporting Information S2; NLM Dataset Catalog item metadata",
+    "study_snapshot": [
+      [
+        "Artifact",
+        "PLOS S2 spreadsheet of coded parrot name phrases; workbook not inspected"
+      ],
+      [
+        "Context provenance",
+        "Survey-taker account, then observer coding; not acoustic inference"
+      ],
+      [
+        "Rights evidence",
+        "NLM Dataset Catalog reports CC BY 4.0 for the linked Figshare item"
+      ],
+      [
+        "Talk2Nature status",
+        "Metadata only; no download, redistribution or training admission"
+      ]
+    ]
+  },
+  {
     "slug": "budgerigar-starting-point",
     "title": "Budgerigars: a candidate, not a shortcut",
     "seo_description": "A budgerigar dataset may support individual vocal-signature research, but its sample-rate metadata is unresolved. It is not a ready benchmark.",
@@ -2756,6 +2797,71 @@
       "reviewed": "2026-10-13",
       "location_status": "not_applicable",
       "location_note": "This note reviews a model, datasets and evaluation method rather than a verified observation or study-site record.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "wham-sperm-whale-model",
+    "title": "WhAM: acoustic style transfer is not whale translation",
+    "seo_description": "WhAM generates sperm-whale-style audio and learns features for coda classification. Its acoustic style transfer does not translate whale meaning.",
+    "taxon": "Sperm whale · cetacean bioacoustics",
+    "kind": "Generative audio and representation learning",
+    "year": "2025",
+    "year_label": "arXiv v1 posted 2025-12-01; official project repository identifies the work as NeurIPS 2025",
+    "source_ids": [
+      78,
+      252,
+      253,
+      254
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Full main-text review and targeted methods/artifact metadata review; no independent reproduction",
+    "review_depth": "Read the full arXiv v1 main text from abstract through limitations, and reviewed targeted Appendix E sections on training data, compute, downstream classification and expert perceptual evaluation. Checked the official repository README/license and pinned source revision, the DSWP dataset card and its current repository revision, and the Zenodo model-weight record. No code, audio, datasets, model weights, paper figures or supplementary files were downloaded or run; Appendix D and artifact contents were not fully audited.",
+    "finding": "WhAM fine-tunes the music-pretrained VampNet masked acoustic token model in two stages: domain adaptation on animal-audio collections, then sperm-whale-specific training on DSWP and CETI. The paper describes 2,507 DSWP and 7,653 CETI annotated codas for this work. It evaluates generated audio with Fréchet Audio Distance and a five-expert listening study, and tests learned embeddings on coda detection, rhythm, social-unit and vowel-type classification. The paper explicitly defines “translation” as converting prompts, including noise or other animal sounds, into sperm-whale coda-like acoustic style; it says semantic translation remains a separate, more ambitious goal. On the reported classification table, WhAM exceeds simple random/majority baselines but the reported specialist or general bioacoustic embeddings perform better across these tasks. For example, social-unit accuracy is 70.5% for WhAM versus 93.2% for BirdNET. The paper describes social-unit classification within data from a single vocal clan as closer to speaker identification than dialect classification.",
+    "limitations": "The downstream protocol describes an 80/20 label-stratified train/test split and selects the best classifier checkpoint based on test-set performance. The reviewed description does not establish a separate validation set or grouping by whale, recording, session or source, so the reported test metrics should not be treated as an untouched independent estimate. The public DSWP card currently lists 1,501 isolated snippets (~45 minutes; 585 MB), fewer than the paper’s 2,507 DSWP training codas; the exact relationship is unresolved. The card says the clips lack behavioral context and per-file recording-system metadata and all come from one clan and region. The paper identifies codec limitations, unnatural synthetic click onset/decay/background, echolocation-like artifacts and possible echolocation contamination in data prepared as communication codas. Its expert study involved five specialists with only moderate inter-expert agreement. The acoustic outputs and classification labels do not demonstrate receiver comprehension, behavioral function or meaning. The paper is CC BY-NC-ND 4.0, code MIT, DSWP card CC BY 4.0, while the weight record displays no license; these are distinct component rights. No independent reproduction or specialist review occurred.",
+    "lesson": "Use WhAM to study a specific generative-modeling and representation-learning approach, not as a conversation engine or a reason to play generated animal-like sounds to animals. Its test-set model selection and unspecified entity grouping are concrete examples for Talk2Nature’s benchmark rules: group correlated samples before splitting, freeze an untouched test set, select checkpoints only on validation data, compare simple and domain-specific baselines, and keep acoustic similarity separate from biological function or meaning.",
+    "next_review": "If this becomes relevant to a future benchmark, first obtain qualified cetacean-bioacoustics review, resolve exact DSWP/CETI release provenance and rights, verify a grouped split by relevant animal/recording/session, and freeze validation and test protocols before any model evaluation. Resolve the model-weight license and dependency/data terms before download or execution. Do not use it in the public companion or initiate playback. AutoResearch remains NOT READY.",
+    "expert_review": "No independent cetacean-bioacoustics specialist review, author verification or Talk2Nature reproduction has occurred.",
+    "review_locator": "arXiv v1 sections 1, 3.1–3.2, 4.1–4.3 and 5; Appendix E.1–E.5 targeted data, training, compute, classification and expert-evaluation passages; official GitHub README/LICENSE at commit 00a8b787c040db23cd51ac4417481a09ac354985; DSWP card; Zenodo DOI 10.5281/zenodo.17633708.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This is a model and dataset review, not a new observation or mapped study-site record.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "biodiversity-media-data-standards",
+    "title": "Biodiversity standards can carry media and provenance, not animal meaning",
+    "seo_description": "Darwin Core and Audubon Core offer biodiversity metadata structures; neither turns a sound candidate into verified behavior or meaning.",
+    "taxon": "Cross-taxon biodiversity data",
+    "kind": "Data standards and interoperability",
+    "year": "2026",
+    "year_label": "Darwin Core Data Package guide issued 2026-05-26; current Audubon Core term list reviewed",
+    "source_ids": [
+      255,
+      256,
+      257,
+      258,
+      259
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Targeted review of official standards documentation, the TDWG schema-source commit and issue #759; no Talk2Nature conformance prototype or independent standards review",
+    "review_depth": "Reviewed the Darwin Core Data Package guide's normative requirements and versioned profile, including the requirement to use official per-table field descriptors; the conceptual model sections on Occurrence, Identification and Media; selected current Audubon Core terms covering media rights, access points, hashes and reviewer metadata; GitHub state/comments for issue #759; and the official rs.tdwg.org repository tree. The versioned profile and table-schema URLs linked by the guide returned HTTP 404 in this environment. The repository's profile and event-schema paths trace to commit e0cc2509953eeed24ad312b6e91e7bfcadd37a3b, titled 'Initial pre-review DwC-DP schemas'; the repository source is unversioned and is not used as the released 1.0 profile. No package or field mapping was generated or validated.",
+    "finding": "Darwin Core provides a biodiversity-data vocabulary and conceptual model; its 2026 Data Package guide specifies a descriptor, tabular resources and schemas whose field descriptors must come from the official per-table schemas. Audubon Core describes biodiversity-related multimedia resources and offers terms for aspects such as rights and access. Issue #759 is closed, and its visible discussion says guide section 3.4 already states the field-descriptor rule; the official review index was stale. The separate deployment gap remains: the versioned profile/schema URLs returned 404 here, while the repository's visible snapshot is unversioned and marked pre-review. These standards may support future metadata exchange, but the present Station session is not yet a protocol-defined sampling event.",
+    "limitations": "A format conversion cannot establish that an animal was present, that a sound belongs to a species or behavior, or that a signal has meaning. Darwin Core distinguishes an organism, an occurrence and a media entity; a generic sound candidate or observer note should not be promoted to a confirmed occurrence. No mapping of current Station or Listen fields has been validated. Current device time is declared unverified, exact location is not collected, and rights for the standard-document text were not established. The observed versioned-URL failures are environment-specific; the pre-review GitHub snapshot is not evidence of final published schemas.",
+    "lesson": "Keep the Talk2Nature journal and annotation formats as the source records. Before drafting an adapter, define what one sampling event means and retrieve the official schemas; map only fields with a verified equivalent, preserve provenance and unknowns, distinguish media from observations and identifications, report information loss, and validate against a pinned official profile. Do not call an export compliant before independent review.",
+    "next_review": "Check the official versioned profile and per-table schema URLs again, and confirm that their contents match a released version rather than the pre-review repository snapshot. Define, with a qualified researcher, whether and how a Station session could be a sampling event, including time, location and effort. Only then create a synthetic mapping proposal and validator fixture, and ask a biodiversity-informatics reviewer to challenge it before any conformance claim or real-data export.",
+    "expert_review": "No independent biodiversity-informatics review, standards-conformance validation or Talk2Nature export test has occurred.",
+    "review_locator": "Darwin Core Data Package guide, issued 2026-05-26, sections 1–3.4; Darwin Core conceptual model sections 2.3 and 2.8; current Audubon Core term list; issue #759 state/comments; rs.tdwg.org repository commit e0cc2509953eeed24ad312b6e91e7bfcadd37a3b; sources and pages checked 2026-10-13.",
+    "purpose": "Data standards & interoperability",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This is a review of data standards, not a study-site or observation record.",
       "locations": [],
       "observation_period": null
     }
