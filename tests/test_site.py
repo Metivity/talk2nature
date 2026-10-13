@@ -56,6 +56,54 @@ class SiteTests(unittest.TestCase):
         self.assertIn('A blocked attempt is useful',form)
         self.assertIn('only a maintainer-reviewed run of the documented software commands counts toward independent reproduction',guide)
 
+    def test_dog_bark_review_separates_context_association_split_and_component_rights(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='dog-barks')
+        self.assertEqual(note['review_depth'].split(',')[0],'Full seven-page ACL Anthology paper reviewed on 2026-10-13')
+        self.assertIn('manually assigned',note['limitations'])
+        self.assertIn('session, stimulus-instance or recording-condition grouping',note['limitations'])
+        self.assertIn('not proof that those groups leaked',note['limitations'])
+        self.assertEqual(len(note['review_request']['questions']),4)
+        guide=(project_root/'docs'/'DOG_BARK_REVIEW.md').read_text()
+        self.assertIn('does not link a versioned deposit',note['study_snapshot'][-1][1])
+        self.assertIn('The paper PDF states CC BY-NC 4.0',guide)
+        self.assertIn('No data or code were requested, downloaded, executed',guide)
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('dog-bark-decoding-')}
+        self.assertEqual(set(selected),{
+            'dog-bark-decoding-paper-2024',
+            'dog-bark-decoding-data-2024',
+            'dog-bark-decoding-code-2024',
+        })
+        self.assertEqual({r['kind'] for r in selected.values()},{'paper','dataset','code'})
+        for resource in selected.values():
+            with self.subTest(resource=resource['id']):
+                self.assertEqual(resource['source_ids'],[21])
+                self.assertEqual(resource['acquisition'],'metadata_only')
+                self.assertEqual(resource['files'],[])
+        self.assertIn('Conflicting notices',selected['dog-bark-decoding-paper-2024']['rights']['license'])
+        self.assertIn('Not stated',selected['dog-bark-decoding-data-2024']['rights']['license'])
+        self.assertIn('Not stated',selected['dog-bark-decoding-code-2024']['rights']['license'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'dog-barks'/'index.html').read_text()
+            description=SearchDescriptionParser()
+            description.feed(page)
+            self.assertIn('dog-held-out context classification predicts associations',description.description)
+            self.assertIn('OPEN METHODS QUESTION',page)
+            self.assertIn('dog-grouped evaluation',page)
+            self.assertIn('Read the focused reviewer brief',page)
+            self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/DOG_BARK_REVIEW.md',page)
+            self.assertIn('scientific-review.yml',page)
+            self.assertIn('/research/dog-barks/',(root/'sitemap.xml').read_text())
+            paths=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn('/research/dog-barks/',paths)
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('Dog vocalization dataset described in the 2024 bark-classification paper',resource_page)
+            self.assertIn('Dog-bark baseline implementations described in the 2024 paper',resource_page)
+
     def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')

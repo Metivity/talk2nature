@@ -3580,6 +3580,87 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "dog-bark-decoding-paper-2024",
+      "kind": "paper",
+      "title": "Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification",
+      "url": "https://aclanthology.org/2024.lrec-main.1432/",
+      "version": "LREC-COLING 2024, pages 16480–16486",
+      "source_ids": [21],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Methods comparator for dog-held-out context classification and transfer from human-speech representations; not evidence of call meaning or cross-species transfer.",
+      "review_depth": "The complete seven-page publisher-hosted paper was reviewed, including stimulus collection, segmentation and annotation, grouped cross-validation, all task results and limitations. No model run, independent reproduction or external review.",
+      "access": "Full paper is linked by the ACL Anthology; no full text, figure or supplement was copied into the repository.",
+      "decision": "Keep as a cited methods reference. The selected four-class task predicts labels associated with induced study situations. Do not call it animal translation or transfer its result to parrots. No exact Wav2Vec2 checkpoint identifier or reusable training package was established in this review.",
+      "limitations": "The article PDF footer says CC BY-NC 4.0, while the ACL Anthology's site-level notice says materials from 2016 onward are CC BY 4.0. These declarations conflict at the item level; do not reuse article text or figures until resolved. The data and baseline-code availability statements are separate components and provide no license for either.",
+      "attribution": "Abzaliev, A., Pérez-Espinosa, H. and Mihalcea, R. (2024). LREC-COLING 2024, 16480–16486. https://aclanthology.org/2024.lrec-main.1432/",
+      "rights": {
+        "license": "Conflicting notices: the paper PDF states CC BY-NC 4.0; the ACL Anthology page-level notice states CC BY 4.0 for materials published since 2016",
+        "scope": "Article only. Dataset, baseline implementations, pretrained model and underlying LibriSpeech material retain separate rights.",
+        "evidence_url": "https://aclanthology.org/2024.lrec-main.1432/",
+        "conditions": "Link and cite the paper; publish only an original summary. Resolve the article-specific license before reusing text, figures or other content.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-bark-decoding-data-2024",
+      "kind": "dataset",
+      "title": "Dog vocalization dataset described in the 2024 bark-classification paper",
+      "url": "https://aclanthology.org/2024.lrec-main.1432/",
+      "version": "Paper-described dataset; no public versioned deposit identified",
+      "source_ids": [21],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Historical methods reference for induced canine vocalizations and stimulus-associated labels; not admitted to Talk2Nature training.",
+      "review_depth": "The full paper and its final availability statement were reviewed. The paper says the dataset is available by request; no files, schema, manifest or access terms were inspected, and no request was made.",
+      "access": "Described as available by request from the corresponding author; the paper does not link a public data deposit or versioned manifest, and external repository searches were not part of this review.",
+      "decision": "Metadata only. Before any future access request or use, establish the exact question, dataset version, consent/privacy scope, recording and session/household keys, label provenance, access conditions and reuse rights. No author contact or acquisition has occurred.",
+      "limitations": "The paper describes 74 dogs, 16,789 sound segments and 14 labels, with collection at owners' homes in two Mexican cities under induced stimuli. Context labels were assigned from information associated with the stimulus. This is not a naturally sampled phone dataset or independently verified behavior ground truth. No raw data were inspected.",
+      "attribution": "Abzaliev, A., Pérez-Espinosa, H. and Mihalcea, R. (2024), dataset described in LREC-COLING paper 2024.lrec-main.1432.",
+      "rights": {
+        "license": "Not stated or verified; by-request availability is not a reuse license",
+        "scope": "Dog-vocalization dataset only. Article, baseline code and pretrained model terms are separate.",
+        "evidence_url": "https://aclanthology.org/2024.lrec-main.1432/",
+        "conditions": "No access request, download, training or redistribution until exact terms and privacy/consent scope are reviewed and explicitly approved.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-bark-decoding-code-2024",
+      "kind": "code",
+      "title": "Dog-bark baseline implementations described in the 2024 paper",
+      "url": "https://aclanthology.org/2024.lrec-main.1432/",
+      "version": "Unversioned; the paper says baselines are available by request",
+      "source_ids": [21],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Potential reproducibility reference only if a specific code release and dependencies are lawfully obtained and reviewed.",
+      "review_depth": "The full paper's availability statement and model methods were reviewed. The paper does not link a public code repository; external repository searches were not part of this review. No request was made and no code was run.",
+      "access": "The paper says its baselines are available by request alongside the dataset; it does not provide a public repository link.",
+      "decision": "Metadata only. Do not present the Wav2Vec2 library implementation or pretrained speech model as the paper's complete baseline. If authorized access is later pursued, verify exact code revision, checkpoint ID, dependencies, data split and component licenses before execution.",
+      "limitations": "The paper does not establish in this review the exact code release, checkpoint, training configuration or dependency versions needed for reproduction. No code was acquired or executed.",
+      "attribution": "Abzaliev, A., Pérez-Espinosa, H. and Mihalcea, R. (2024), baseline implementations described in LREC-COLING paper 2024.lrec-main.1432.",
+      "rights": {
+        "license": "Not stated or verified; by-request availability is not a code license",
+        "scope": "Baseline code only. Article, dataset, pretrained Wav2Vec2 model and LibriSpeech terms are separate.",
+        "evidence_url": "https://aclanthology.org/2024.lrec-main.1432/",
+        "conditions": "No code request, download, execution or redistribution until exact source revision and its license/dependencies are reviewed and explicitly approved.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

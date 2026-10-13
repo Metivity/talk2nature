@@ -80,6 +80,29 @@ class CollectionTests(unittest.TestCase):
         self.assertTrue(all(f['md5'] is None for r in (data, code) for f in r['files']))
         self.assertEqual(plan(self.catalog, [data['id'], code['id']])[1], 7064)
 
+    def test_dog_bark_paper_data_and_code_keep_conflicting_or_missing_rights_unadmitted(self):
+        records={r['id']:r for r in self.catalog['resources']}
+        expected={
+            'dog-bark-decoding-paper-2024': 'paper',
+            'dog-bark-decoding-data-2024': 'dataset',
+            'dog-bark-decoding-code-2024': 'code',
+        }
+        for identifier,kind in expected.items():
+            resource=records[identifier]
+            with self.subTest(resource=identifier):
+                self.assertEqual(resource['kind'],kind)
+                self.assertEqual(resource['source_ids'],[21])
+                self.assertEqual(resource['acquisition'],'metadata_only')
+                self.assertEqual(resource['files'],[])
+                self.assertTrue(all(resource['rights'][field]=='unresolved'
+                                    for field in ('research_use','commercial_use','redistribution')))
+                with self.assertRaisesRegex(ValueError,'Not admitted'):
+                    plan(self.catalog,[identifier])
+        self.assertIn('PDF states CC BY-NC 4.0',records['dog-bark-decoding-paper-2024']['rights']['license'])
+        self.assertIn('page-level notice states CC BY 4.0',records['dog-bark-decoding-paper-2024']['rights']['license'])
+        self.assertIn('by-request availability is not a reuse license',records['dog-bark-decoding-data-2024']['rights']['license'])
+        self.assertIn('by-request availability is not a code license',records['dog-bark-decoding-code-2024']['rights']['license'])
+
     def test_metadata_only_data_standards_are_catalogable_but_not_acquired(self):
         records = {r['id']: r for r in self.catalog['resources']}
         for identifier in ('darwin-core-data-package-standard', 'audubon-core-media-standard'):
