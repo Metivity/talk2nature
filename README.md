@@ -14,7 +14,7 @@ Website: https://metivity.github.io/talk2nature/
 
 **Use another sound editor:** [Continue in Audacity](docs/AUDACITY_EXPORT.md) packages a local WAV, timed labels and complete original annotations with a conversion report. This is a one-way prototype for evaluation; Audacity edits do not update the Talk2Nature notebook.
 
-**Research annotation exchange:** Listen has an experimental one-way [AOEF 1.1 export](docs/INTEROPERABILITY.md) for a separate annotation workbench. Synthetic serialization passed with soundevent 2.10.0; Whombat application import is still untested. The export is local-only and preserves a full, unencrypted provenance sidecar.
+**Research annotation exchange:** Listen has an experimental one-way [AOEF 1.1 export](docs/INTEROPERABILITY.md) for a separate annotation workbench. The exact export passed a synthetic Whombat 0.9.0 desktop-UI import using invented audio; this verifies format compatibility only, not scientific suitability or real-recording behavior. The export is local-only and preserves a full, unencrypted provenance sidecar.
 
 **Research atlas:** [Explore places and historical work](https://metivity.github.io/talk2nature/research/atlas/) alongside our evidence connections. All library notes remain visible; pins require cited locations. Read the [coverage, provenance and contribution guide](docs/RESEARCH_ATLAS.md).
 

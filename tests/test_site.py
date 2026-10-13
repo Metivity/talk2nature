@@ -755,6 +755,10 @@ class SiteTests(unittest.TestCase):
             review=(root/'app/review/index.html').read_text()
             self.assertIn('id="export-aoef"',review)
             self.assertIn('sidecar',review)
+            listen=(root/'tools/listen/index.html').read_text()
+            self.assertIn('passed a synthetic Whombat 0.9.0 desktop-UI import',listen)
+            self.assertIn('scientific suitability remain untested',listen)
+            self.assertNotIn('import into the Whombat app itself has not been tested',listen)
 
     def test_parrot_annotation_note_links_current_edmond_terms(self):
         with tempfile.TemporaryDirectory() as d:

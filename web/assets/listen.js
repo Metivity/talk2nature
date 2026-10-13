@@ -217,7 +217,7 @@ $('export-aoef').addEventListener('click', async () => {
     const bundle = await aoefPackage(audioBytes, documentValue());
     if (current !== generation) return;
     download(bundle, 'talk2nature-aoef.zip', 'application/zip');
-    $('export-status').textContent = 'AOEF package download requested. Unzip it, import the dataset with this folder as the audio directory, then import the annotation project. Keep the original notebook; Whombat UI import is untested.';
+    $('export-status').textContent = 'AOEF package download requested. The current format passed a synthetic Whombat 0.9.0 UI check; follow the import steps below. This export is unencrypted and experimental. Keep the original notebook.';
     status($('export-status').textContent);
   } catch (error) { if (current === generation) exportError(error); }
   finally { $('export-aoef').disabled = false; }

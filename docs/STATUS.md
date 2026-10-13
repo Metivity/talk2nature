@@ -1334,3 +1334,13 @@ PR [#71](https://github.com/Metivity/talk2nature/pull/71) was merged to `main` a
 Direct HTTPS checks returned HTTP 200 for the home page, the new ANIMAL-SPOT research note, `/mobile/`, `/tools/station/`, `sitemap.xml` and `robots.txt`. The research note is indexable with its expected canonical URL and is present in the sitemap; the mobile and Station pages link to the Android source while identifying it as a prototype without a signed APK or field validation. These checks verify publication and crawlable metadata, not that a search engine has indexed the pages.
 
 **Limits and next decision:** no physical-phone, field, long-duration, battery/thermal, screen-reader or independent-user test has been completed. Search Console access and current indexing remain unresolved. No third-party dataset or model was admitted; keep AutoResearch **NOT READY**. Next: perform an owner-operated Android hardware rehearsal, verify exact Edmond corpus terms/provenance before any acquisition, and check Search Console when the owner property is reachable.
+
+## October 13 Listen interoperability claim alignment
+
+**Question:** do the public README and Listen interface describe the same verified AOEF-to-Whombat test as the interoperability evidence record?
+
+**Finding and change:** the exact current AOEF export was imported through the Whombat 0.9.0 desktop UI using an invented eight-second WAV, as recorded in `docs/INTEROPERABILITY.md`. The README, Listen guide, app help and export confirmation still called that UI import untested. Updated those user-facing claims and added regression checks so they now report the bounded synthetic format-compatibility check while retaining the limitations: real animal recordings, scientific suitability and independent validation remain unreviewed. The export stays local, one-way, experimental and unencrypted.
+
+**Checks:** all 95 Python and 105 Node tests pass; the metadata-only catalog validates 73 resources. Local noindex build: 94 pages plus 404 and 4,389 checked links. Public-origin build: 94 pages plus 404, 4,485 checked links and 94 reachable public pages. Desktop Chrome emulation of the synthetic example at 1,440 × 900, 390 × 844 and 320 × 740 CSS pixels shows no horizontal overflow or JavaScript errors; the expanded compatibility guidance is visible at phone widths. This is browser emulation, not a physical-phone or scientific review.
+
+**Release state and next decision:** this correction is validated locally and is not yet deployed. After review and merge, publish through the manual Pages workflow and verify the live Listen page. The existing deployment only proves the prior copy. Search Console indexing and any independent Whombat/researcher review remain unverified; keep AutoResearch **NOT READY**.
