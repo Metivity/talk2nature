@@ -3268,5 +3268,61 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "hyenaset-event-detection-benchmark",
+    "title": "HyenaSET: a strong sound-event benchmark, not a communication test",
+    "seo_description": "HyenaSET offers 243 hours of expert-reviewed hyena vocalizations and an individual-held-out split. Its rights and baseline limit reuse.",
+    "taxon": "Spotted hyenas",
+    "kind": "Preprint and sound-event dataset",
+    "year": "2026",
+    "year_label": "bioRxiv v2 preprint; Edmond dataset v1",
+    "source_ids": [
+      148,
+      296,
+      297,
+      298
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Targeted preprint methods and results; official dataset version, file and terms metadata",
+    "review_depth": "Read the bioRxiv v2 abstract and targeted data-collection, annotation, split, benchmark and data/code-availability sections. Examined official Edmond and DataCite metadata for version 1, release date, archive size, provider checksum and dataset terms. The paper is a preprint, not peer-reviewed. No audio, labels, code or model weights were downloaded, installed or run; no data rows, coordinates or individual timestamps were inspected. No independent review or reproduction occurred.",
+    "finding": "HyenaSET is a useful recent sound-event methods comparator: its Edmond v1 metadata describes 590,480 ten-second clips, about 1,640 hours from 19 spotted hyenas, with 87,394 expert-reviewed clips (about 243 hours). The annotations mark vocalization intervals and types, and distinguish calls from the collar-wearing focal hyena from nearby non-focal callers. The preprint provides sample-stratified splits and a four-individual held-out split, then reports an animal2vec baseline. These targets concern event detection, call categories and source attribution; they are not independently observed receiver responses or evidence of message meaning.",
+    "limitations": "The bioRxiv manuscript is not peer-reviewed. Edmond's v1 archive is one 107,184,528,475-byte TAR.GZ with a provider MD5 that Talk2Nature has not locally verified. Its dataset-specific terms are CC BY-NC-SA 4.0, so the data are not admitted to the shared commercial-capable training path; the preprint, animal2vec code and model weights have separate rights. The record describes a CSV that maps randomized names to individual identities and recording times for four test individuals; no rows or precise locations were reviewed, so wildlife-location sensitivity remains unresolved. The preprint says animal2vec is pretrained on all available audio before fine-tuning on the first cross-validation split. That wording implies exposure to audio from held-out partitions; our methods interpretation is that the reported result is transductive unless the authors clarify otherwise, not a strict unseen-audio baseline. No independently observed behavior or receiver-response labels were established by this review.",
+    "lesson": "A useful design reference can still be unusable as project training data. Preserve event boundaries, focal/non-focal attribution, quiet intervals, animal-held-out tests and a separate record of what data a representation model sees during pretraining. A held-out label split is not a clean generalization test if unlabeled test audio entered pretraining. Keep signal detection and source attribution separate from independently observed context, receiver response and meaning.",
+    "next_review": "Keep the records metadata-only. Before considering a separate non-commercial reproduction, have a qualified bioacoustics and machine-learning reviewer inspect the exact label dictionary, group manifests, pretraining exposure and wildlife metadata; first establish a concrete question that this 107 GB collar-recorded dataset can answer. Do not acquire it or use its weights in the shared project path without a scoped rights, privacy and evaluation review.",
+    "expert_review": "No independent bioacoustics or machine-learning specialist has reviewed this Talk2Nature assessment.",
+    "review_locator": "Woerner et al., bioRxiv v2: abstract and targeted sections on data collection, annotation, train/test splits, animal2vec pretraining, benchmark table and data/code availability. Edmond v1: official dataset and API metadata for release date, size, checksum and custom terms. Checked 2026-10-13; no data files acquired.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Recording inventory",
+        "Edmond v1 metadata lists 590,480 ten-second clips (about 1,640 hours) from 19 spotted hyenas; the archive is about 107 GB."
+      ],
+      [
+        "Reviewed labels",
+        "87,394 clips (about 243 hours) were expert-reviewed; 10,293 clips contain at least one marked focal or non-focal vocalization. Labels are sound events, not receiver responses."
+      ],
+      [
+        "Evaluation splits",
+        "The dataset description lists five sample-stratified splits and a four-individual held-out split. The preprint says the animal2vec baseline is pretrained on all available audio before fine-tuning on the first split."
+      ],
+      [
+        "Rights and reported result",
+        "Dataset: CC BY-NC-SA 4.0. Preprint: CC BY 4.0. Code and weights are separate. The preprint reports a micro-average AP of 0.86; Talk2Nature did not reproduce it."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only methods comparator; not admitted to the shared commercial-capable data path",
+      "asset": "bioRxiv preprint (CC BY 4.0); Edmond dataset v1 (CC BY-NC-SA 4.0); animal2vec code and checkpoints are separate assets",
+      "rights": "The dataset license is non-commercial and share-alike. Its public availability does not authorize commercial use in Talk2Nature. No data, code or weights were acquired.",
+      "experiment": "No Talk2Nature model run is authorized by this review. A future separately governed non-commercial reproduction would still need rights and privacy checks, reviewer approval, split-safe pretraining and exact baseline reproduction."
+    },
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "pending",
+      "location_note": "The preprint names Maasai Mara, Kenya, but the dataset links some randomized clips to individual identities and timestamps. No map marker is published until wildlife-location sensitivity is reviewed.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

@@ -3038,5 +3038,29 @@
     "url": "https://datadryad.org/mission",
     "checked": "2026-10-13",
     "origin": "Official Dryad mission page reviewed October 13, 2026. It states that Dryad publishes data exclusively under CC0. This is repository-wide policy evidence, not an item-level license field; the exact archived version's reuse terms should be reconfirmed before acquisition or training."
+  },
+  {
+    "id": 296,
+    "title": "HyenaSET: Hyena Sound Event Transcripts preprint v2",
+    "description": "Woerner et al.'s bioRxiv preprint describes a large spotted-hyena sound-event dataset and an animal2vec benchmark.",
+    "url": "https://www.biorxiv.org/content/10.64898/2026.06.14.732108v2",
+    "checked": "2026-10-13",
+    "origin": "The bioRxiv v2 PDF and record were reviewed October 13, 2026 for the abstract and targeted data-collection, annotation, split, benchmark and data/code-availability sections. The article is a preprint, not peer-reviewed. bioRxiv states CC BY 4.0. No audio, code, weights or labels were acquired, installed or run."
+  },
+  {
+    "id": 297,
+    "title": "HyenaSET dataset v1, Edmond",
+    "description": "Official Edmond dataset DOI for HyenaSET version 1, published June 22, 2026.",
+    "url": "https://doi.org/10.17617/3.8ZSP3J",
+    "checked": "2026-10-13",
+    "origin": "The official Edmond record and DOI metadata were reviewed October 13, 2026. Version 1 lists one 107,184,528,475-byte TAR.GZ archive and a provider-reported MD5 of 6b7523b755e1a284adc2be1b575c3930; the file was not downloaded or locally hashed."
+  },
+  {
+    "id": 298,
+    "title": "HyenaSET v1 terms and file metadata API",
+    "description": "Official Edmond API metadata declares the dataset-specific CC BY-NC-SA 4.0 terms and the v1 archive inventory.",
+    "url": "https://edmond.mpg.de/api/datasets/:persistentId?persistentId=doi%3A10.17617%2F3.8ZSP3J",
+    "checked": "2026-10-13",
+    "origin": "The official Edmond DataVerse API response was reviewed October 13, 2026. It identifies released version 1, the single archive's exact byte size and provider MD5, and custom terms Attribution-NonCommercial-ShareAlike 4.0 International. This rights declaration applies to the dataset record; paper, code and model weights remain separate. No dataset file was requested."
   }
 ]

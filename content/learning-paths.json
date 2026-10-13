@@ -47,10 +47,11 @@
         "birdnet",
         "das-annotation",
         "animal-spot-parrot-detection-2022",
-        "pteroset-detection-benchmark-2026"
+        "pteroset-detection-benchmark-2026",
+        "hyenaset-event-detection-benchmark"
       ],
       "next_step": "Specify a rights-cleared continuous-audio evaluation with quiet intervals, event recall, false alarms per hour and review time. Use MeerKAT for metric/schema guidance only unless a separately scoped non-commercial reproduction passes its rights and animal/session split review.",
-      "gate": "Triggered clips alone cannot establish recall. MeerKAT's non-commercial data and checkpoint terms exclude them from the shared commercial-capable path; its public sample names do not expose animal/session groups. Specialized recorders do not establish phone performance."
+      "gate": "Triggered clips alone cannot establish recall. MeerKAT's non-commercial data and checkpoint terms exclude them from the shared commercial-capable path; its public sample names do not expose animal/session groups. HyenaSET's dataset is CC BY-NC-SA 4.0, and its individual-held-out split is useful only as a methods reference until group files and location sensitivity are reviewed. Its reported animal2vec baseline pretrains on all available audio, so treat it as transductive unless clarified. Specialized recorders do not establish phone performance."
     },
     {
       "id": "model",
