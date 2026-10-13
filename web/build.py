@@ -235,6 +235,9 @@ def build(output, base_url='', public=False, repo_url=''):
         for field, label in (
             ('terms_source_id', 'Official track rules ↗'),
             ('open_source_policy_source_id', 'Official open-source procedure ↗'),
+            ('genai_policy_source_id', 'Official GenAI policy ↗'),
+            ('call_notice_source_id', 'Current call and policy notice ↗'),
+            ('application_form_source_id', 'Current application form ↗'),
             ('national_rules_source_id', 'National funding rules ↗'),
             ('partner_search_source_id', 'Call partner search ↗'),
             ('conflicting_date_source_id', 'Other official listing (date differs) ↗'),

@@ -24,4 +24,4 @@ Credit contributions in commits, releases and research notes as appropriate. Dis
 
 ## Basis and next governance milestone
 
-This lightweight process draws on [GitHub's maintainer guidance](https://opensource.guide/best-practices/) and [community guidance](https://opensource.guide/building-community/). The next step is an independent scientific reviewer and a second code reviewer with explicitly agreed responsibilities, not an invented board. Assess public-benefit readiness with the [DPG Standard](https://www.digitalpublicgoods.net/standard); no recognition or certification is claimed.
+This lightweight process draws on [GitHub's maintainer guidance](https://opensource.guide/best-practices/) and [community guidance](https://opensource.guide/building-community/). The next step is an independent scientific reviewer and a second code reviewer with explicitly agreed responsibilities, not an invented board. The [DPG readiness review](docs/DPG_READINESS.md) is a maintainer self-assessment for the public software component only; there is no nomination, recognition or certification claim.

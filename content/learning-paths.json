@@ -16,7 +16,8 @@
         "dog-barks",
         "catmeows-context",
         "pig-context-data",
-        "frog-chorus-data"
+        "frog-chorus-data",
+        "smartphone-bioacoustics-device-variability"
       ],
       "next_step": "Confirm access to several households with the same parrot species; compare annotation feasibility before committing to a pilot.",
       "gate": "Budgerigars are provisional. No recruited participants, expert sign-off, recording uploads or translation model are implied."
@@ -45,7 +46,8 @@
         "animal2vec-meerkat",
         "birdnet",
         "das-annotation",
-        "animal-spot-parrot-detection-2022"
+        "animal-spot-parrot-detection-2022",
+        "pteroset-detection-benchmark-2026"
       ],
       "next_step": "Specify a rights-cleared continuous-audio evaluation with quiet intervals, event recall, false alarms per hour and review time. Use MeerKAT for metric/schema guidance only unless a separately scoped non-commercial reproduction passes its rights and animal/session split review.",
       "gate": "Triggered clips alone cannot establish recall. MeerKAT's non-commercial data and checkpoint terms exclude them from the shared commercial-capable path; its public sample names do not expose animal/session groups. Specialized recorders do not establish phone performance."
@@ -66,7 +68,8 @@
         "monk-parakeet-population-identity-2023",
         "shared-bioacoustic-dataset-loader",
         "animal-spot-parrot-detection-2022",
-        "coarse-soundscape"
+        "coarse-soundscape",
+        "pteroset-detection-benchmark-2026"
       ],
       "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
       "gate": "No Talk2Nature animal model has been trained or benchmarked. Language-like output is not verified meaning."
@@ -78,6 +81,7 @@
       "decision": "Study receiver behavior, matched comparisons and competing explanations. Distinguish companion parrots' learned human names from natural conspecific signals proposed as names; keep each critique connected to the original evidence.",
       "notes": [
         "bird-call-syntax",
+        "heterospecific-mobbing-sequences",
         "duponts-lark-vocal-types-2026",
         "animal-name-criteria-2026",
         "companion-parrot-name-use-2026",
@@ -104,6 +108,7 @@
         "fungal-electrophysiology-stimuli-2025",
         "fungal-words",
         "tree-fungal-networks-evidence",
+        "common-endophyte-networks-resource-transfer",
         "ice-crystals-and-evidence"
       ],
       "next_step": "Test the notebook workflow now; recruit scientific review for one passive audio-video protocol before expanding sensors.",
@@ -132,7 +137,8 @@
         "parrot-data-feasibility",
         "parrotlet-vocal-babbling-development",
         "mammalps-audio-behavior-benchmark",
-        "egyptian-fruit-bat-data"
+        "egyptian-fruit-bat-data",
+        "lilac-crowned-amazon-vocal-context-2016"
       ],
       "next_step": "First establish rights and a source-resolved evaluation set. Compare known-source synthetic mixtures with and without separation, then test any downstream context claim on frozen animal/session groups with independent observation labels and appropriate baselines.",
       "gate": "BioCPPNet reports validation on constructed mixtures and downstream caller identity; it does not validate natural phone recordings or receiver comprehension, and the reviewed code snapshot has no visible LICENSE. Bat-archive raw-audio rights and joins remain unresolved, and no source is admitted to the first Talk2Nature context benchmark."

@@ -4,7 +4,7 @@ This is a decision queue, not a claim to have reviewed the entire field. The fou
 
 ## Reading order
 
-1. Japanese tit call-order experiments (source 1): read methods, playback controls and receiver outcomes. Extract what a bounded semantic claim actually requires.
+1. Bird-call sequence and receiver-response studies (sources 1, 262, 264–269): targeted 2016–2025 experiments and the 2024 competing-theory abstract are recorded. The new allopatric Carolina-wren study broadens the receiver comparison, but did not test reversed sequence order; its small stimulus set and nonsignificant between-species contrast limit inference. The 2017 Mendeley page exposes no file rows; its documented dataset API returned HTTP 401 without authorization. Resume artifact review only through a legitimate authorized route or creator-provided manifest. Wiley's 2024 formal-analysis supplement returned HTTP 403. Next, review full-text methods and data availability when accessible, then prepare a focused comparison of testable predictions for independent scientific review. All data/code records remain metadata-only; no animal playback or benchmark admission follows from these literature reviews.
 2. Parrot voluntary interfaces (primary video-call paper source 49; touchscreen study source 122): bounded methods notes are now recorded for both. Next obtain independent avian/animal-computer-interaction and statistical review; resolve the video-call paper's Table 2 discrepancy before quantitative reuse. Keep these interface studies separate from the current human-operated passive recorder and acoustic benchmark. Any prototype needs its own welfare-reviewed protocol and separate media rights.
 3. Bark transfer-learning paper (source 21): inspect individual/session partitioning and class definitions; learn from leakage risks without assuming dog results transfer to birds.
 4. BirdNET, Perch and NatureLM (sources 4, 7–8, 12–14): freeze exact code/checkpoint versions; inspect data provenance, licenses, preprocessing and baseline costs. Do not download weights or promise commercial suitability yet.
@@ -218,6 +218,10 @@ Reviewed the full arXiv v2 paper and the official pinned code, model-card and ED
 
 Decision: do not add predictions to the Field Companion. Consider optional human-entered context only after reviewing whether the current observation workflow has a real gap and obtaining ecoacoustic input. Next research gate: compare the full methods and annotations against a leakage-safe context benchmark plan, resolve exact EDANSA file/label provenance before any retrieval, and wait for a verified peer-reviewed paper or independent review. AutoResearch remains **NOT READY**.
 
+## October 13 checkpoint — common endophyte networks
+
+Waschk et al. (2026) report isotope/resource movement through common endophyte networks in a controlled Arabidopsis system. This adds a non-acoustic plant–fungus methods reference, not evidence that plants exchange or understand messages. The paper is CC BY 4.0; its linked GitLab data and code repository is pinned at `5b4ea51c038213e62feb6580daa5a48ccbfa32ff`, but the project API and visible root files declare no dataset or code license. No files were acquired or executed. Next gate: independent plant–fungus review of the controls and interpretation, then exact data/code terms and artifact structure before any reproduction. Keep outside the audio benchmark and Field Companion. See `content/research.json` and the three `common-endophyte-networks-*` resource records.
+
 
 ## October 13 research checkpoint — WhAM
 
@@ -226,3 +230,16 @@ The WhAM paper is now summarized in `content/research.json` with separate paper,
 The strongest lesson for our evaluation infrastructure is procedural: the paper describes an 80/20 stratified train/test split and selecting the best classifier checkpoint by test-set performance. Its reviewed description does not document an untouched validation/test workflow or grouping by animal/recording/session. Future Talk2Nature experiments must keep validation-based model selection separate from a frozen, grouped test set. WhAM’s classification embeddings also trail its listed AVES/BirdNET/CLAP comparisons on the reported tasks; the public DSWP card has no behavior labels.
 
 Next gate: specialist review, exact public-versus-training DSWP provenance, CETI and weight rights, and review of identity/source grouping. Do not download or execute WhAM weights/code for this project until those questions and a concrete scientific question are resolved. AutoResearch remains **NOT READY**.
+
+
+## October 13 checkpoint — parrot context without meaning claims
+
+The 2016 Lilac-crowned Amazon field study adds a concrete parrot comparator: it reports context-associated variation across nine observed settings and a note-type discrimination analysis. The latter is not a behavior-from-audio model, and observational association does not establish communicative function. Use the paper to improve the distinction between acoustic event, observer-coded context and interpretation in any future app workflow. Before considering a reproduction, obtain the exact XLSX and supplementary file manifest through an allowed route, resolve file-description mismatches and file-level rights, then seek independent avian-bioacoustics review. Do not train on the example sounds or treat the supplements as a complete 75-hour benchmark. AutoResearch remains **NOT READY**.
+
+## October 13 checkpoint — PteroSet detection, not communication
+
+PteroSet v5 is a useful strong-label detection and time-frequency annotation comparator, but it has no independent behavior, interaction, receiver-response or communicative-meaning target. Its five project folds span two named landscapes; only the Pivijay/MAP1 fold holds out a distinct named landscape. Time-lapse files concatenate 10-second samples from 30-minute intervals, and unannotated windows are not confirmed silence. The exact Zenodo v5 data record and MIT code repository are separate from the CC BY preprint; checkpoint lineage remains unresolved. All four catalog components stay metadata-only.
+
+**October 13 evidence update:** compared the exact Zenodo v5 API manifest against the catalog: all 12 names, byte sizes and provider MD5 strings match. A 4,096-byte HTTP 206 range of `metadata_v2.csv` was streamed transiently; only its header was inspected, revealing recorder/date and latitude/longitude fields. Row values were not reviewed or saved; no dataset files were saved and no file bytes were hashed. Static review of the pinned downloader confirms its default follows the concept DOI's latest version; the reader has an interactive `breakpoint()`, and the README manifest example still uses `metadata.csv`.
+
+Next gate: obtain independent bioacoustics review of the value of a detection-only reproduction and of safe location handling. Only if that review supports the question should we prepare a version-pinned workflow, resolve the debugger and stale example, and consider inspecting the minimum annotation/manifest join needed under an explicit privacy plan. Do not acquire the archives, expose coordinates, or run AutoResearch for this candidate yet.

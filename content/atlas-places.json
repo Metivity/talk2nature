@@ -190,6 +190,20 @@
       "precision": "country",
       "latitude": 39.8,
       "longitude": -98.6
+    },
+    {
+      "id": "lyon-region",
+      "label": "Lyon region, France",
+      "precision": "region",
+      "latitude": 45.8,
+      "longitude": 4.5
+    },
+    {
+      "id": "chamela-cuixmala",
+      "label": "Chamela–Cuixmala region, Jalisco, Mexico",
+      "precision": "region",
+      "latitude": 19.5,
+      "longitude": -105.0
     }
   ]
 }

@@ -90,3 +90,13 @@ Local verification: the workflow parses as YAML; all 92 Python and 98 Node tests
 The researcher kit was rechecked from a fresh source archive of public `main` at `156ad928db3bc49baa200fc31e46f580efef64ac`. The synthetic annotation and grouped-split commands matched their recorded results; 103 Python tests, 105 Node tests, 82 resource validations, the 96-page local build and the 97-HTML/4,539-link site check passed. The temporary source came from an exact shallow public clone and excluded ignored/private workspace data. A macOS CRLF mismatch affected only the Windows Gradle wrapper in the clone; test execution used a `git archive HEAD` extraction and left the wrapper unchanged.
 
 This increases confidence that the published software instructions match the current public source. It remains maintainer-run. The project still has zero independently verified reproductions and has not received a scientific specialist review. See the detailed outputs and checksums in [`RESEARCHER_START.md`](RESEARCHER_START.md).
+
+## October 13 follow-up: recheck the moving public main branch
+
+Public `main` advanced to `c03a928738a3b8d1086426025df1680e86308972` after the prior `156ad928` check. Repeated the researcher workflow, all Python and Node tests, catalog validation and both noindex/public-origin build checks from an exact archive of the new public commit. The tests passed (104 Python, 107 Node), 90 resources validated, and the public-origin checker found all 99 generated routes reachable. The synthetic split output remained internally consistent; the exact revision and hashes are recorded in `docs/RESEARCHER_START.md`.
+
+The depth-one macOS clone again marked only the Windows wrapper dirty because of CRLF handling; it was left unchanged. This is a maintainer-run check, not independent reproduction. The count remains zero until a non-maintainer report is reviewed. Local worktree metadata is ahead of public `main`; do not conflate the local 112-record catalog with the 90-record published revision. No outreach or deployment occurred.
+
+### Clone hygiene follow-up
+
+Tested an attribute-only fix in a disposable two-clone flow: `native-android/gradlew.bat -text whitespace=cr-at-eol` makes a fresh clone clean while preserving all 94 CRLF lines. Applied the same `.gitattributes` change locally; the wrapper itself remains byte-for-byte unchanged. The change has not been published, so current public `main` still has the false dirty status on macOS. This closes a local onboarding friction only after the change is reviewed and released; it does not count as an independent reproduction.
