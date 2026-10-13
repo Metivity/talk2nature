@@ -34,6 +34,14 @@
 
 Built the current local source candidate for the exact GitHub Pages origin with public indexing enabled. The build produced 106 pages plus 404; `scripts/check_site.py` validated 107 HTML documents, 5,309 links and all 106 public pages reachable from the homepage. The resource catalog validated 127 records, all 122 Python tests and 109 Node tests passed, and all four changed JSON catalogs parsed. These checks cover the candidate artifact, not the deployed site or Google indexing. This verification did not acquire or run any data, recordings, weights or third-party code; AutoResearch remains **NOT READY**. After a separately reviewed release, compare the live routes, canonicals, robots and sitemap with this candidate; Search Console's sitemap report remains unresolved.
 
+## October 14 verified release — fungal evidence and funding records
+
+PR [#138](https://github.com/Metivity/talk2nature/pull/138) merged to `main` as [`7f30dbf`](https://github.com/Metivity/talk2nature/commit/7f30dbf0858c5ec759391c0bb6cf82e55d95313) after public checks [#38486274275](https://github.com/Metivity/talk2nature/actions/runs/38486274275) passed. The manual Pages workflow [#38486538936](https://github.com/Metivity/talk2nature/actions/runs/38486538936) completed both build and deployment successfully.
+
+Live HTTPS checks returned HTTP 200 for the home page, both fungal research pages, the resource directory, funding page, `sitemap.xml` and `robots.txt`. The checked HTML routes serve a title, self-canonical URL and `index,follow`. The valid live sitemap contains 106 URLs and includes both fungal pages; `robots.txt` names that sitemap. This verifies delivery and crawl configuration, not Google indexing, impressions or ranking. Search Console's prior URL Inspection still reported the resource directory as unknown, its indexing request was queued, and its sitemap report still said “Couldn't fetch”; sitemap processing remains unresolved, so no sitemap endpoint change or repeat submission was made.
+
+The release contains 127 validated resource records. No third-party dataset, recording, code or model was downloaded or run; no research result or independent review is claimed. AutoResearch remains **NOT READY**.
+
 ## October 14 Android permission-free first step
 
 **Question:** can a new Android Station user inspect the workflow before encountering a microphone permission prompt? The public Field Companion already offers a “Try without a microphone” route using a synthetic example, but the native preview opened directly on recording setup.
