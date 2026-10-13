@@ -187,3 +187,21 @@ Reconstructed the current 232-file source candidate from committed base `4b606c0
 On Python 3.12.5, Node v22.22.1 and Git 2.53.0, the documented annotation command returned the expected 8-second synthetic fixture, two marked events and 2 seconds of interval-union coverage. The split command returned 10 connected groups and 12/4/4 records, with policy SHA-256 `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`. The generated split matched the documented complete-file hash `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`; a second run was byte-identical. All 89 Python tests, 93 Node tests and 57 resource validations passed. The public-origin build generated 88 pages plus 404; the site checker passed 89 HTML files, 4,120 links and all 88 public pages reachable from the homepage.
 
 This is a maintainer-run clean-source rehearsal of the uncommitted candidate, not a remote clone, independent researcher reproduction, biological result or release. The public reproduction instructions remain pinned to the deployed revision until a separately reviewed release.
+
+## October 13 public-main clean-clone recheck
+
+A fresh depth-one public clone of `main` at [`41606cdb6dc76795e2b5c9e3e907e371bb3461cd`](https://github.com/Metivity/talk2nature/commit/41606cdb6dc76795e2b5c9e3e907e371bb3461cd) exercised the current README workflow with Python 3.12.5 and Node v22.22.1. No packages were installed and no ignored or private workspace state was used. The commands completed successfully from that clone:
+
+```sh
+python3 web/build.py
+python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/demo-split.json
+python3 -m talk2nature.annotations examples/annotations.synthetic.json
+python3 -m unittest discover -s tests -v
+node --test tests/*.test.mjs
+python3 -m talk2nature.collection validate
+python3 scripts/check_site.py
+```
+
+The annotation report described the synthetic 8-second fixture, two marked events and 2 seconds of interval-union coverage. The metadata split contained 10 declared connected groups and 12/4/4 records; the generated JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`, and the policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`. All 97 Python tests and 105 Node tests passed; the resource catalog validated 74 records. The local noindex build produced 95 pages plus 404, and the site checker passed 96 HTML pages and 4,433 links.
+
+This is a maintainer-run clean public clone, not an independent researcher reproduction, biological result, data-rights review or release validation. The independent reproduction count remains zero. The separately pinned historical exact-output baseline is unchanged.
