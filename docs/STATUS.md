@@ -1,5 +1,17 @@
 # Project status
 
+## October 13 Japanese-tit independent-review brief
+
+**Question:** can a qualified reader evaluate the reported receiver-response evidence and competing explanations from a clear, bounded invitation at the point of reading?
+
+**Evidence and change:** reused the current source-linked `bird-call-syntax` record and its stated review depth to add [`JAPANESE_TIT_REVIEW.md`](JAPANESE_TIT_REVIEW.md), then linked the brief and the public methods-review form directly from that research page. The guide distinguishes the 2016 order experiment, the 2017 novel-sequence controls, the 2022 one/two-speaker follow-up and the 2024 theoretical comparison; it states exactly which sources/artifacts were and were not inspected and asks reviewers to name the smallest evidence check. Direct publisher retrieval remained limited in this turn, so the underlying review depth is unchanged. No article, dataset, code or recording was acquired or run; no external reviewer was contacted and none has reviewed the note.
+
+**Mobile usability:** the review links now render as separate stacked actions with 44 px minimum height below 600 px. Chromium emulation at 320 × 740 and 390 × 844 CSS pixels measured document widths of 320 and 390 px respectively, with no horizontal overflow. The link boxes were 184 × 56 px at 320 and 213/215 × 44 px at 390. This is emulation, not physical-device or first-time-reader validation.
+
+**Validation:** the focused research-page test passed; the full suite passed 114 Python and 107 Node tests. The local public build produced 104 pages plus 404; the site checker passed 105 HTML documents, 5,132 links and all 104 public routes reachable. AutoResearch remains **NOT READY**; this literature review is not a dataset admission, reproduction or communication result.
+
+**Release:** local candidate; PR and Pages deployment pending. No independent review, outreach or indexing result is claimed.
+
 ## October 13 university-facing scientific review path
 
 **Question:** can a researcher find a specific, safe way to critique the science separately from testing the software?

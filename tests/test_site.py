@@ -868,6 +868,11 @@ class SiteTests(unittest.TestCase):
         note=next(n for n in load('research') if n['slug']=='bird-call-syntax')
         comparison=note['theory_comparison']
         self.assertEqual([item['name'] for item in comparison['items']],['Minimal Compositionality','Bird Implicatures'])
+        self.assertEqual(len(note['review_request']['questions']),4)
+        guide=(project_root/'docs'/'JAPANESE_TIT_REVIEW.md').read_text()
+        self.assertIn('Mendeley record exposes no file rows',guide)
+        self.assertIn('No independent specialist review has been received',guide)
+        self.assertIn('not a ready-to-run playback protocol',guide)
         sources={source['id']:source for source in load('sources')}
         source=sources[266]
         self.assertEqual(source['review_url'],'https://cnrs.hal.science/hal-04840821v1')
@@ -885,6 +890,12 @@ class SiteTests(unittest.TestCase):
         self.assertIn('Bird Implicatures',page)
         self.assertIn('separate Wiley supporting-information PDF returned HTTP 403',page)
         self.assertIn('https://cnrs.hal.science/hal-04840821v1',page)
+        self.assertIn('OPEN METHODS QUESTION',page)
+        self.assertIn('Which 2016 and 2017 contrasts best support an order-sensitive receiver response',page)
+        self.assertIn('class="review-actions" role="group"',page)
+        self.assertIn('Submit a public methods review',page)
+        self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/JAPANESE_TIT_REVIEW.md',page)
+        self.assertIn('scientific-review.yml',page)
 
     def test_lilac_crowned_amazon_context_note_preserves_evidence_and_rights_boundaries(self):
         note=next(n for n in load('research') if n['slug']=='lilac-crowned-amazon-vocal-context-2016')
