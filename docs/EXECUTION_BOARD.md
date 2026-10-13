@@ -1,18 +1,18 @@
 # Execution board: software to a credible pilot
 
-Updated October 13, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
+Updated October 14, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
 
 ## Current priority: earn an independent use
 
 The website and tools have advanced; the bottleneck is external scientific and workflow validation. The October 1 board below is retained as a historical plan, including funding dates that must be rechecked before use. These priorities govern the next work. They do not promise completion of human-dependent milestones by a fixed date.
 
-| Priority / proposed window | Deliverable | Evidence of completion | Status October 13 |
+| Priority / proposed window | Deliverable | Evidence of completion | Status / last evidence |
 | --- | --- | --- | --- |
-| 1 / next week | Independent researcher completes or challenges the synthetic workflow evaluation | Tested revision/environment, exact result and help level; no media needed | Entry paths now start with a no-setup browser comparison and offer the Audacity handoff as an optional deeper check; no independent reproduction yet |
-| 2 / next two weeks | Six focused workflow conversations from the earlier 12-conversation target | Dated, permissioned notes: current task/tool, observed problem, desired export, willingness to test; select one priority from findings | None documented; one-person-at-a-time outreach draft is ready; no message sent |
-| 3 / next two weeks | One independent evaluator runs the kit; actual Android and iPhone workflow rehearsals | Exact revision/device, steps, failures and assistance recorded; complete/partial save and reopening checked | Browser route is ready; experimental Android source passes API 34 emulator QA, but no independent evaluator or physical-phone result is documented |
-| 4 / next month, conditional | One export bridge to a tool the evaluator already uses | Pinned format, synthetic round-trip/target validation, explicit information-loss report and evaluator feedback | Audacity one-way handoff and AOEF 1.1 are implemented; a synthetic Whombat 0.9.0 UI import passed. Independent evaluator feedback remains open; Safe & Sound session mapping remains proposed |
-| 5 / next month, conditional | One accountable avian reviewer revises the passive parrot protocol | Agreed role, species/access, codebook, independent-label criteria, welfare/consent and evaluation controls | Reviewer and carer access unconfirmed; intake closed |
+| 1 / next week | Independent researcher completes or challenges the synthetic workflow evaluation | Tested revision/environment, exact result and help level; no media needed | Oct 14: current public `main` passed a maintainer clean-clone run of the synthetic workflow, 120 Python and 109 Node tests, resource validation and both site builds; independent reproduction still zero |
+| 2 / next two weeks | Six focused workflow conversations from the earlier 12-conversation target | Dated, permissioned notes: current task/tool, observed problem, desired export, willingness to test; select one priority from findings | Last recorded Oct 13: none documented; one-person-at-a-time outreach draft is ready; no message sent |
+| 3 / next two weeks | One independent evaluator runs the kit; actual Android and iPhone workflow rehearsals | Exact revision/device, steps, failures and assistance recorded; complete/partial save and reopening checked | Last recorded Oct 13: browser route is ready; experimental Android source passes API 34 emulator QA, but no independent evaluator or physical-phone result is documented |
+| 4 / next month, conditional | One export bridge to a tool the evaluator already uses | Pinned format, synthetic round-trip/target validation, explicit information-loss report and evaluator feedback | Last recorded Oct 13: Audacity one-way handoff and AOEF 1.1 are implemented; a synthetic Whombat 0.9.0 UI import passed. Independent evaluator feedback remains open; Safe & Sound session mapping remains proposed |
+| 5 / next month, conditional | One accountable avian reviewer revises the passive parrot protocol | Agreed role, species/access, codebook, independent-label criteria, welfare/consent and evaluation controls | Last recorded Oct 13: reviewer and carer access unconfirmed; intake closed |
 | 6 / after the preceding evidence | An openly inspectable methods release | Exact code, permitted fixtures/results, limitations, authorship and independent report; archive/DOI after scope review | Future; no dataset, biological benchmark or DOI released |
 
 The development lead can prepare software, evidence reviews, test fixtures, adapters, release materials and tailored outreach drafts. Independent reviewers, carers and research organizations must actually agree and do their part; automation cannot supply that evidence. No messages are sent by this plan.

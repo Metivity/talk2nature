@@ -1,6 +1,6 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 13, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 14, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
 ## Choose one route
 
@@ -230,3 +230,11 @@ Checked public `main` at [`9a48c6509f2f52f504190ee4663b678732bc6139`](https://gi
 With Python 3.12.5, Node v22.22.1 and Git 2.53.0, the documented annotation example returned an 8-second synthetic fixture, two events, 2 seconds of marked intervals and 0 seconds of independently observed context. The metadata splitter returned 10 declared groups and 12/4/4 records; the generated JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. All 114 Python tests and 107 Node tests passed; the resource validator accepted 112 records. The local noindex build produced 104 pages plus 404 and passed 105 HTML documents / 5,022 links. The public-origin build produced 104 pages plus 404 and passed 105 HTML documents / 5,128 links / all 104 public pages reachable.
 
 This is a maintainer-run clean-clone check, not an independent reproduction, scientific validation or biological result. No packages, third-party media, datasets or model weights were installed or acquired. Independent reproductions remain zero; report the commit actually evaluated.
+
+## October 14 latest-main clean-clone recheck — 0e27f33
+
+A fresh depth-one HTTPS clone of public `main` at [`0e27f3336cb855bedabaadbf896c1ee685d3fb79`](https://github.com/Metivity/talk2nature/commit/0e27f3336cb855bedabaadbf896c1ee685d3fb79) ran the documented synthetic annotation and split commands, `python3 -m talk2nature.collection validate`, the complete Python and Node suites, and both local noindex and public-origin builds. Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. The annotation report again showed an 8-second synthetic fixture, two marked events, 2 seconds of interval-union coverage and 0 seconds of observed context. The split produced 10 declared groups and 12/4/4 records; both declared labels appeared in each partition. Its policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the complete split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`.
+
+All 120 Python tests and 109 Node tests passed; 122 catalog resources validated. The local noindex build produced 106 pages plus 404 and passed 107 HTML documents / 5,173 links. The public-origin build produced 106 pages plus 404 and passed 107 HTML documents / 5,281 links / all 106 public pages reachable. The clone's tracked working tree remained clean after both builds.
+
+This is a maintainer-run setup and software check, not an independent reproduction, usability study, scientific validation or biological result. No research media, datasets or model weights were acquired, and no third-party models or research-code repositories were executed. Independently verified reproductions remain zero; report the commit actually evaluated.
