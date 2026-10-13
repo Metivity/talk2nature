@@ -146,8 +146,8 @@
     "title": "Fungal language critique",
     "description": "Blatt et al. Does electrical activity in fungi function as a language? Fungal Ecology (2024). Methodological commentary challenging linguistic claims.",
     "url": "https://www.sciencedirect.com/science/article/pii/S1754504823001034",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-14",
+    "origin": "Publisher page abstract and visible introduction/section snippets were reviewed October 14, 2026. Full text was unavailable; the note records this review limit."
   },
   {
     "id": 19,
@@ -909,8 +909,8 @@
     "title": "Fungal spike patterns and the language analogy",
     "description": "Adamatzky, preprint (2021), subsequently published in Royal Society Open Science (2022). The analysis groups electrical spikes using a linguistic analogy.",
     "url": "https://arxiv.org/abs/2112.09907",
-    "checked": "2026-10-02",
-    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+    "checked": "2026-10-14",
+    "origin": "Full arXiv HTML preprint methods, grouping rules, results and discussion reviewed October 14, 2026. The peer-reviewed publication and linked Zenodo data record were checked separately."
   },
   {
     "id": 95,
@@ -1659,9 +1659,9 @@
     "id": 165,
     "title": "Detection of electrical signals in fungal mycelia in response to external stimuli (2025)",
     "url": "https://doi.org/10.1016/j.isci.2025.113484",
-    "description": "Buffi et al. develop an extracellular fungal-potential-card method and test voltage/frequency changes in Fusarium oxysporum under controlled conditions. The paper does not establish semantic communication.",
-    "checked": "2026-10-12",
-    "origin": "Publisher/PMC indexed article reviewed for abstract, setup, selected results, discussion, data statement and CC BY 4.0 license; supplementary Method S1 and raw data were not inspected.",
+    "description": "Buffi et al. report extracellular fungal-potential-card recordings in Fusarium oxysporum, including a growth-associated PSD difference and nonsignificant treatment contrasts. The paper does not establish semantic communication.",
+    "checked": "2026-10-14",
+    "origin": "Full PMC article text, including Methods, Results/Table 1, figures, Discussion, data statement and CC BY 4.0 license, reviewed. Supplementary Document S1 and raw data files were not inspected; no result reproduced.",
     "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12483595/",
     "review_url_label": "Open full-text article record"
   },
@@ -1669,9 +1669,9 @@
     "id": 166,
     "title": "Raw voltage data for the fungal-potential-card study (Mendeley Data v1)",
     "url": "https://doi.org/10.17632/srkxbkh6sp.1",
-    "description": "Mendeley describes raw voltage-potential data from Fusarium oxysporum before and after external stimuli and displays CC BY 4.0. File-level contents and analysis suitability have not been checked.",
-    "checked": "2026-10-12",
-    "origin": "Official Mendeley Data version 1 landing page and reuse declaration reviewed; its visible page did not expose a file manifest and no files were downloaded.",
+    "description": "Mendeley describes raw voltage-potential data from Fusarium oxysporum before and after external stimuli and displays CC BY 4.0. The visible Files section contains no file entries, so file-level contents and analysis suitability remain unchecked.",
+    "checked": "2026-10-14",
+    "origin": "Official Mendeley Data version 1 page reviewed; its visible Files section contained no file entries. No files were downloaded.",
     "review_url": "https://data.mendeley.com/datasets/srkxbkh6sp/1",
     "review_url_label": "Mendeley Data record and license"
   },
@@ -1896,24 +1896,24 @@
     "title": "European Commission portal record: BiodivFuture 2026–2027",
     "description": "The European Commission Research and Innovation portal lists the BiodivFuture call with a November 2, 2026 deadline, which conflicts with the Biodiversa+ call page and formal announcement that give November 10, 2026.",
     "url": "https://projects.research-and-innovation.ec.europa.eu/en/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/restore-our-ocean-and-waters/horizon-europe-european-biodiversity-partnership-biodivfuture-novel-ecosystems-biodiversity-socio",
-    "checked": "2026-10-12",
-    "origin": "Official European Commission Research and Innovation portal listing reviewed October 12, 2026. Its displayed date differs from the call-organizer page and formal call document; preserve as a discrepancy and verify with the call secretariat before relying on either date."
+    "checked": "2026-10-14",
+    "origin": "Rechecked the European Commission portal record on October 14, 2026. It still lists November 2, 2026, which conflicts with the Biodiversa+ call-owner page and formal Announcement of Opportunity specifying November 10 at 12:00 CET. This is a live source discrepancy; no submission was made."
   },
   {
     "id": 182,
     "title": "Biodiversa+ 2026–2027 BiodivFuture joint-call page",
     "description": "Official call-organizer page for the transnational BiodivFuture call on novel ecosystems, biodiversity and socio-ecological trajectories. It lists the mandatory pre-proposal deadline as November 10, 2026 at 12:00 CET.",
     "url": "https://www.biodiversa.eu/2026/06/09/2026-2027-joint-call/",
-    "checked": "2026-10-12",
-    "origin": "Reviewed the official Biodiversa+ call page on October 12, 2026 for scope, two-stage schedule, deadline, consortium requirements and partner-search route."
+    "checked": "2026-10-14",
+    "origin": "Rechecked the official Biodiversa+ call-owner page on October 14, 2026. It states that the mandatory EPSS pre-proposal is due November 10, 2026 at 12:00 CET (11:00 UTC), and the pre-proposal submission platform is open. The official call-owner date conflicts with the Commission portal record, which lists November 2."
   },
   {
     "id": 183,
     "title": "BiodivFuture Document 1: Announcement of Opportunity",
     "description": "Formal 2026–2027 call document. It confirms the November 10, 2026 noon CET pre-proposal deadline, mandatory five-page first-stage description and per-partner budgets, plus the three-country and three-funding-organisation consortium rule.",
     "url": "https://www.biodiversa.eu/wp-content/uploads/2026/09/BiodivFuture_Doc1_Announcement-opportunity.pdf",
-    "checked": "2026-10-12",
-    "origin": "Reviewed the official 20-page Biodiversa+ Announcement of Opportunity, version published September 2026, for call scope, deadline, pre-proposal requirements and consortium eligibility."
+    "checked": "2026-10-14",
+    "origin": "Reopened the official 20-page Announcement of Opportunity on October 14, 2026. It confirms a mandatory five-page Step 1 pre-proposal due November 10, 2026 at 12:00 CET; only invited applicants may submit a full proposal, and entry at Step 2 is not possible without the pre-proposal. It requires at least three participating countries and funding organisations, including two EU Member or Associated Countries. The official Commission portal record lists November 2, creating a date discrepancy."
   },
   {
     "id": 184,
@@ -3078,5 +3078,51 @@
     "url": "https://lit.eecs.umich.edu/crowdbark/",
     "checked": "2026-10-14",
     "origin": "Official project landing page reviewed October 14, 2026 for the stated research aims, requested participant observations, team and visible links. The linked form was not opened or submitted; no data or code release was located on the page."
+  },
+  {
+    "id": 301,
+    "title": "Published fungal spike-pattern and language-analogy paper",
+    "description": "Adamatzky (2022), Royal Society Open Science 9:211926. Peer-reviewed analysis of extracellular voltage recordings from four fungal species; its language interpretation is a hypothesis, not a semantic decoding result.",
+    "url": "https://doi.org/10.1098/rsos.211926",
+    "checked": "2026-10-14",
+    "origin": "Official Royal Society publication metadata and the publisher-linked 2021 Zenodo data citation were reviewed. The full preprint HTML was reviewed for methods and discussion; the article-level CC BY 4.0 notice was checked in the official UWE Bristol repository record. No article, data or code files were downloaded."
+  },
+  {
+    "id": 302,
+    "title": "Fungal electrical signaling methods review (FEMS, 2025)",
+    "description": "Schintke et al., Electrical signaling in fungi: past and present challenges. FEMS Microbiology Reviews 49 (2025), fuaf009, DOI 10.1093/femsre/fuaf009.",
+    "url": "https://doi.org/10.1093/femsre/fuaf009",
+    "checked": "2026-10-14",
+    "origin": "The full Oxford Academic review was inspected for its evidence summary, fungal recording methods, controls, authors' Pleurotus pulmonarius method-replication observations and future directions. The publisher's CC BY-NC-ND 4.0 article notice was checked. Supplementary file bytes were not acquired."
+  },
+  {
+    "id": 303,
+    "title": "Recordings of electrical activity of four species of fungi (Zenodo v1)",
+    "description": "Adamatzky's Zenodo dataset linked from the fungal-spiking paper: four compressed recordings for Omphalotus nidiformis, Flammulina velutipes, Schizophyllum commune and Cordyceps militaris.",
+    "url": "https://zenodo.org/records/5790768",
+    "checked": "2026-10-14",
+    "origin": "The official Zenodo v1 record was reviewed October 14, 2026. It lists four ZIP files totaling 84.6 MB with provider MD5 values; no license is displayed in the record's Rights section. No files were downloaded, locally hashed or inspected."
+  },
+  {
+    "id": 304,
+    "title": "UNEP: 2026 Kunming Biodiversity Fund call for proposals",
+    "description": "Official call page for the 2026 KBF project call, including stages, themes, caps, deadlines and links to the application guidelines.",
+    "url": "https://www.unep.org/events/award/2026-call-proposals-kunming-biodiversity-fund",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the official UNEP call page. Stage 2 submissions are due November 15, 2026; the page describes the call as developing-country and NBSAP focused and links to the full-size application guidelines. No application or contact was made.",
+    "rights": {
+      "page": "Official UNEP call information; summarized and linked, not reproduced."
+    }
+  },
+  {
+    "id": 305,
+    "title": "UNEP/Kunming Biodiversity Fund: 2026 full-size project application guidelines",
+    "description": "Official 13-page guidelines for scope, stage deadlines, budgets, UN-agency funding route and required country endorsement.",
+    "url": "https://wedocs.unep.org/handle/20.500.11822/49815",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the official English PDF. It confirms Stage 2 closes November 15, 2026 at 23:59 on the deadline date; projects are co-developed by the country and a UN Participating Organization; only UN agencies receive funds directly; non-UN organizations may be sub-partners; and a CBD national focal point or Lead Ministry endorsement is required. The call is for developing-country NBSAP implementation, with single-country and multi-country caps of USD 500,000 and USD 800,000 respectively and 12–24 month duration.",
+    "rights": {
+      "page": "Official UNEP/KBF application guidance; summarized and linked, not reproduced."
+    }
   }
 ]

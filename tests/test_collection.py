@@ -157,6 +157,9 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(paper['rights']['license'], 'CC-BY-4.0 for the article as stated in the published paper')
         self.assertEqual(dataset['rights']['license'], 'CC-BY-4.0 as displayed on the Mendeley Data v1 record')
         self.assertIn('Unresolved', code['rights']['license'])
+        self.assertIn('Method S1', code['version'])
+        self.assertIn('Document S2', code['version'])
+        self.assertIn('not inspected or executed', code['review_depth'])
         for record in (paper, dataset, code):
             with self.subTest(resource=record['id']):
                 self.assertEqual(record['acquisition'], 'metadata_only')

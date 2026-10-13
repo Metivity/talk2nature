@@ -1,5 +1,25 @@
 # Project status
 
+## October 14 funding-route audit — BiodivFuture and UN KBF
+
+**Question:** is there a credible near-term funding route through the open BiodivFuture call or a United Nations biodiversity fund?
+
+**BiodivFuture:** rechecked the official Biodiversa+ call page and 20-page Announcement of Opportunity. Both set the mandatory five-page EPSS pre-proposal deadline at November 10, 2026, 12:00 CET (11:00 UTC). The European Commission portal still lists November 2, so the public opportunity record now preserves the disagreement rather than silently choosing a date. Full-proposal entry requires a submitted pre-proposal. Eligibility requires a transnational ecology-led consortium; the project's host, field study and consortium are not confirmed. No contact or application was made.
+
+**Kunming Biodiversity Fund:** reviewed UNEP's call page and its 13-page official guidelines. Stage 2 closes November 15 at 23:59 on the deadline date, but this is not a direct grant route for Talk2Nature: projects must be country/NBSAP aligned and co-developed with a UN Participating Organization; only UN agencies receive funds directly; non-UN entities may be sub-partners; and a CBD national focal point or Lead Ministry endorsement is required. The project has no confirmed eligible country program, UN partner, field evidence or invited work package. Recorded as a conditional partnership lead, not an application recommendation or an existing relationship.
+
+**Decision and limits:** preserve both opportunities in the public catalog with their deadlines, source links, role/eligibility constraints and explicit non-submission status. No outreach, proposal drafting, commitment, eligibility claim or funding request was made.
+
+## October 14 fungal electrophysiology library review
+
+**Question:** What does the “language of fungi” paper establish, and is there a reusable dataset for a careful replication?
+
+**Evidence reviewed:** expanded the fungal-language note using the full HTML preprint methods/results/discussion, the published Royal Society article metadata, the full 2025 FEMS methods review, the 2024 critique's abstract and visible selected sections, and the linked Zenodo v1 metadata. The critique's full text was not accessible. The note now distinguishes measured extracellular voltage, biological origin, stimulus-response prediction, and semantic communication; it does not claim that fungi have or lack a decoded language.
+
+**Resource library:** added separate records for the published paper, its linked four-archive dataset, the 2024 critique, and the 2025 methods review. Zenodo lists four ZIPs totaling 84.6 MB with provider MD5 values but shows no license in its Rights section. The data remain metadata-only: no files were downloaded, hashed locally, parsed, or admitted to training. Paper, dataset, and review rights are recorded separately.
+
+**Product and research decision:** keep fungal electrophysiology as a lab-based research direction, not a phone-microphone or consumer “fungal translator” feature. Any future replication needs a mycology/electrophysiology reviewer, resolved data terms, independent cultures, sterile/sham controls, environmental logging and frozen processing rules. AutoResearch remains **NOT READY**; no benchmark or model was run.
+
 ## October 14 Search Console discovery check
 
 **Finding:** URL Inspection for `https://metivity.github.io/talk2nature/research/resources/` reports “URL is not on Google” because the URL is unknown to Google; it lists no referring sitemap, no referring page and no recorded crawl. The submitted `/sitemap.xml` report still says “Couldn’t fetch” and shows zero discovered pages.
@@ -9,6 +29,10 @@
 **Action and limit:** After confirming the verified Search Console property and successful live test, requested indexing for the resources page. Search Console confirmed it was added to a priority crawl queue. This does not guarantee indexing or ranking. The sitemap was not resubmitted.
 
 **Next check:** recheck Search Console’s sitemap report after processing. If its fetch error persists, investigate the report/Google fetch path before changing a sitemap endpoint that currently responds and parses correctly.
+
+## October 14 production-origin candidate verification
+
+Built the current local source candidate for the exact GitHub Pages origin with public indexing enabled. The build produced 106 pages plus 404; `scripts/check_site.py` validated 107 HTML documents, 5,309 links and all 106 public pages reachable from the homepage. The resource catalog validated 127 records, all 122 Python tests and 109 Node tests passed, and all four changed JSON catalogs parsed. These checks cover the candidate artifact, not the deployed site or Google indexing. This verification did not acquire or run any data, recordings, weights or third-party code; AutoResearch remains **NOT READY**. After a separately reviewed release, compare the live routes, canonicals, robots and sitemap with this candidate; Search Console's sitemap report remains unresolved.
 
 ## October 14 Android permission-free first step
 
@@ -37,6 +61,16 @@
 **Change and limits:** updated the fungal research note and added the separate article/data records. No archive was downloaded, no checksum was computed locally, no data were analyzed, and no independent specialist reviewed the paper. Before any reproduction, resolve the file mapping and terms, then obtain mycology/electrophysiology review of independent biological replication, controls and environmental logging. AutoResearch remains **NOT READY** for this or any other biological benchmark.
 
 **Publication receipt (October 13):** [PR #118](https://github.com/Metivity/talk2nature/pull/118) merged as `1fa30b8`; the [manual Pages workflow](https://github.com/Metivity/talk2nature/actions/runs/38428567366) completed successfully. Live fetches confirmed HTTP 200 for the [fungal evidence page](https://metivity.github.io/talk2nature/research/fungal-propagation-2026/) and [resource directory](https://metivity.github.io/talk2nature/research/resources/); the new title and source links are served, the separate paper/data records appear with the dataset marked metadata-only, and the route is in the sitemap named by `robots.txt`. This verifies publication and crawl configuration, not Google indexing, impressions or ranking; Search Console was not inspected.
+
+## October 14 fungal-potential-card full-text review
+
+**Question:** what did the fungal-potential-card study actually establish, and do its linked dataset and analysis code qualify for reuse?
+
+**Finding:** full PMC article text and Table 1 report one *Fusarium oxysporum* strain (NEU 195) and a significant pre-induction PSD difference of about 1,604.752% between 24 fungal and 8 non-inoculated electrode-pair records (p<0.001). The main text reviewed does not establish that electrode-pair records are independent biological replicates. The post-induction drug/carrier comparisons each report n=3 and are nonsignificant (p=.327, .391, .580 and .116). DMSO reproduces the calcimycin pattern and is considered a likely electrode confound; the sodium-azide series has a water-control anomaly. This is specialized extracellular electrophysiology, not evidence of a fungal message or semantic code.
+
+**Rights and change:** updated the existing research note, source records and separate paper, dataset and code resources. The [Mendeley v1 record](https://data.mendeley.com/datasets/srkxbkh6sp/1) displays CC BY 4.0, but its visible Files section lists no file entries. The article identifies supplementary Method S1; its bytes and component-specific license remain unreviewed. No dataset, supplement or code was downloaded or executed, and no result was reproduced. AutoResearch remains **NOT READY**.
+
+**Next gate:** resolve the exact dataset manifest and independent-culture structure; review the supplement and reconcile its Method S1 data-statement pointer with the software table's Document S2 code reference and terms. Obtain mycology/electrophysiology review before any acquisition or reproduction. The evidence page remains an original summary with canonical metadata, sitemap inclusion and crawlability checks; this does not establish search indexing or ranking.
 
 ## October 13 update-ready notice for existing offline users
 

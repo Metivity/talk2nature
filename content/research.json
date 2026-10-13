@@ -567,18 +567,18 @@
       17,
       18
     ],
-    "reviewed": "2026-10-12",
-    "review_stage": "Targeted primary article and dataset metadata review",
-    "review_depth": "Reviewed the publisher/PMC indexed article abstract, experimental setup, selected Results and Figures 1–3, Discussion, license and data-availability statement; checked the Mendeley Data v1 landing-page description and license. The article and data pages were intermittently CAPTCHA/403 limited. Supplementary Method S1, the raw dataset files and the full per-treatment statistical tables were not inspected; no result was reproduced.",
-    "finding": "Buffi et al. tested a printed fungal-potential card with embedded differential electrodes, a controlled humid chamber and Faraday cage on one Fusarium oxysporum strain. The article reports a significant 1,604% power-spectral-density increase after fungal growth connected inoculated electrodes compared with non-inoculated controls. The authors argue the setup can detect fungal-associated electrical activity and report that some treatments alter the recorded frequency patterns.",
-    "limitations": "This is a laboratory sensor/method study on one strain, not an animal-style communication experiment. Extracellular voltage and frequency patterns do not identify a message, receiver, referent or semantic code. Treatment effects were mixed: the cycloheximide power change was not significant; voriconazole's increase was not significant; calcimycin's pattern matched its DMSO carrier, which likely interfered with the gold electrodes; sodium azide's temporary change also had a brief water-control anomaly. The 2024 critique and 2025 review describe unresolved measurement and interpretation challenges. The dataset page declares CC BY 4.0 but its file manifest and bytes were not reviewed; the analysis code is only identified as supplementary Method S1 and its component-specific terms were not confirmed.",
+    "reviewed": "2026-10-14",
+    "review_stage": "Full primary article and dataset metadata review; supplement and files unreviewed",
+    "review_depth": "Reviewed the full PMC article text, including Methods, Results and Table 1, figures, Discussion, data statement and article license, plus the Mendeley Data v1 description, displayed license and visible Files section. Table 1 reports electrode-pair counts, but the reviewed main text does not establish their independent culture-level replication. Supplementary Document S1 (including Method S1), raw dataset files and code bytes were not inspected or executed; no result was reproduced.",
+    "finding": "Buffi et al. tested a printed fungal-potential card on one Fusarium oxysporum strain (NEU 195). Table 1 reports a significant pre-induction power-spectral-density difference of about 1,604.752% between 24 fungal electrode-pair records and 8 non-inoculated control records (p<0.001). The study supports a specialized laboratory measurement of fungal-associated electrical activity; it does not decode a fungal language.",
+    "limitations": "This is a laboratory sensor/method study on one strain, not an animal-style communication experiment. Extracellular voltage and frequency patterns do not identify a message, receiver, referent or semantic code. For the post-induction drug/carrier comparisons, Table 1 lists n=3 and no contrast is statistically significant: cycloheximide −74.214% (p=.327), voriconazole +1,201.803% (p=.391), calcimycin +58.503% (p=.580), and sodium azide +1,358.933% (p=.116). The calcimycin pattern matched its DMSO carrier, which the authors consider likely electrode interference; the sodium-azide series also had a brief water-control anomaly. The main text does not establish whether electrode-pair counts are independent biological replicates. The 2024 critique and 2025 review describe unresolved measurement and interpretation challenges. Mendeley displays CC BY 4.0 but its visible Files section contains no file entries; no dataset files were reviewed. The article's data statement points to Method S1 for code, while its software table points to Document S2; the supplement, code bytes and component-specific terms remain unreviewed.",
     "lesson": "Treat fungal electrophysiology as a separate sensing channel that needs laboratory electrodes, environmental controls and biological controls. Evidence of stimulus-associated activity is not evidence of language or of a phone-mediated way to talk with mushrooms.",
-    "next_review": "Before any reuse, inspect the exact Mendeley file manifest and data, reproduce the documented preprocessing, and review supplementary Method S1 and its terms separately from the paper and dataset. Ask a qualified mycologist/electrophysiologist to assess replication, biological-replicate structure and electrode/solvent controls. Keep it outside the first animal benchmark and do not start model training.",
+    "next_review": "Before any reuse, obtain the exact Mendeley file manifest and data, reproduce the documented preprocessing, and review the supplementary files to reconcile the Method S1 and Document S2 code references and their terms separately from the paper and dataset. Ask a qualified mycologist/electrophysiologist to assess biological replication, controls and electrode/solvent effects. Keep it outside the first animal benchmark and do not start model training.",
     "expert_review": "Not independently reviewed by a mycologist or electrophysiologist.",
-    "review_locator": "Buffi et al. 2025, iScience 28:113484, DOI 10.1016/j.isci.2025.113484: Abstract; Introduction; Results, Development of an experimental setup, Validation and Evaluation of the biological origin; Figures 1–3; Discussion; Data Availability and license statement. Mendeley Data version 1 landing page, DOI 10.17632/srkxbkh6sp.1. For methodological context, Blatt et al. 2024 commentary and Buffi et al. 2025 FEMS review. Supplementary Method S1 and dataset files not inspected.",
+    "review_locator": "Buffi et al. 2025, iScience 28:113484, DOI 10.1016/j.isci.2025.113484: full PMC article text including Methods, Results/Table 1, figures, Discussion, data statement and license. Mendeley Data v1, DOI 10.17632/srkxbkh6sp.1: description, displayed license and visible Files section. For methodological context, Blatt et al. 2024 commentary and Buffi et al. 2025 FEMS review. Supplementary Document S1, raw dataset files and code bytes not inspected.",
     "reuse": {
       "status": "Metadata-only; article, dataset and supplementary code were not acquired",
-      "asset": "The Mendeley record describes raw voltage-potential data from F. oxysporum before and after external stimuli. The article says analysis code is in supplementary Method S1.",
+      "asset": "The Mendeley record describes raw voltage-potential data from F. oxysporum before and after external stimuli. The article data statement points to supplementary Method S1 for code, while its software table identifies Document S2; neither pointer's contents have been reviewed.",
       "rights": "The iScience article identifies CC BY 4.0 for the article. Mendeley Data v1 displays CC BY 4.0 for that dataset. These statements apply to separate components; Method S1's code terms were not independently verified. No files were downloaded or admitted to training.",
       "experiment": "A future methods replication would need exact file provenance, isolate and replicate metadata, carrier/electrode controls, and a preregistered separation of fungal growth/activity from abiotic voltage shifts. It would test a physiological measurement, not fungal language."
     },
@@ -586,15 +586,15 @@
     "study_snapshot": [
       [
         "Measurement",
-        "Printed circuit-board cards with embedded 2 mm gold-covered differential electrodes; humid incubation chamber, Faraday cage and time-frequency analysis. This is not a phone-microphone setup."
+        "Printed circuit-board cards with 2 mm gold-covered differential electrodes spaced 1 cm apart; shielded cable, humid incubation chamber, Faraday cage and time-frequency analysis. This is not a phone-microphone setup."
       ],
       [
         "Model",
-        "Fusarium oxysporum strain NEU 195. The inoculated electrodes developed frequency components above 1.5 Hz after the expected hyphal connection period; the reported PSD increase versus uninoculated controls was significant."
+        "One Fusarium oxysporum strain, NEU 195. After about four days, hyphae were expected to colonize the second electrode; recording continued for seven days. The main text does not establish whether the electrode-pair records represent independent cultures."
       ],
       [
         "Treatment controls",
-        "Cycloheximide reduced higher-frequency content, but its reported 74.21% PSD reduction was not significant. Voriconazole's reported PSD increase was not significant."
+        "Table 1 reports n=3 for each treatment contrast; none was significant: cycloheximide −74.214% (p=.327), voriconazole +1,201.803% (p=.391), calcimycin +58.503% (p=.580), and sodium azide +1,358.933% (p=.116)."
       ],
       [
         "Electrode confound",
@@ -1101,22 +1101,27 @@
   },
   {
     "slug": "fungal-words",
-    "title": "When “words” are an analogy",
+    "title": "Do fungi have a language? What electrical recordings show",
     "taxon": "Plants & fungi",
-    "kind": "Hypothesis & interpretation",
-    "year": "2021–2022",
+    "kind": "Measurement, hypothesis & critique",
+    "year": "2021–2025",
     "source_ids": [
       94,
-      18
+      301,
+      18,
+      302,
+      303
     ],
-    "review_depth": "Author preprint abstract and existing cataloged critique reviewed; full methods and data reanalysis pending.",
-    "finding": "An electrical-spike study applies word-like grouping and language statistics to fungal recordings.",
-    "limitations": "Statistical resemblance does not establish a vocabulary, a receiver, a referent or a conversation.",
-    "lesson": "Treat a proposed communication code as a hypothesis that needs functional tests.",
-    "next_review": "Ask whether a pattern predicts an independently measured outcome beyond environmental and measurement confounds.",
-    "reviewed": "2026-10-02",
+    "seo_description": "A fungal spike paper proposed word-like patterns. Later critique and methods review explain why signals, artifacts and meaning differ.",
+    "review_depth": "Reviewed the full arXiv HTML text of Adamatzky's 2021 preprint, including recording methods, event detection, grouping rules, results and discussion; checked the published 2022 Royal Society article metadata and institutional article-rights record. Reviewed the 2024 critique's publisher abstract and visible selected sections, not its full text. Reviewed the full 2025 FEMS review sections on fungal electrophysiology, macroscopic mushroom recordings, the authors' method-replication attempt, caveats and future methods, plus its article license. Inspected the official Zenodo v1 record and file metadata only. No files were downloaded, no analysis was reproduced, and no independent specialist review was received.",
+    "review_locator": "Adamatzky (2021 preprint; peer-reviewed article published 2022): Methods; Table 1; spike grouping and word-length comparison; Discussion and future directions. Blatt et al. (2024): publisher abstract and visible introduction/section snippets only. Schintke et al. (2025): full article, especially Table 1, extracellular electrode caveats, mushroom recording and replication sections, and license statement. Zenodo 10.5281/zenodo.5790768: v1 record, four-file inventory, checksums and Rights section.",
+    "finding": "Adamatzky's peer-reviewed 2022 paper reports extracellular voltage recordings from four fungal species. It sampled one value per second from differential electrode pairs placed 1–2 cm apart, recorded up to eight pairs at once, and reports about 1.5 days for Schizophyllum commune and about five days for each other species. The analysis used species-specific thresholds to identify spikes, then grouped them into proposed “words” using one or two times each species' mean inter-spike interval. The resulting spike-count distribution was compared with human-language word lengths. This is a published pattern-analysis hypothesis, not a decoded fungal vocabulary or conversation.",
+    "limitations": "The grouping threshold is an analyst-defined analogy, and similar word-length distributions do not identify a sender's message, a receiver, a referent or a semantic code. The 2024 Blatt et al. commentary argues that the language claim is premature and that non-biological voltage noise and artifacts may account for measured patterns; its full text was not accessible in this review. The 2025 FEMS review describes an attempted method replication in Pleurotus pulmonarius: it reports disturbance-associated spikes from opening the incubator, nearby footsteps and automatic window shades in both fungal and control recordings, and calls for stronger environmental shielding and measurement controls. That is a methods warning, not a definitive disproof of all fungal electrical physiology. The linked 2021 Zenodo dataset lists four archives totaling 84.6 MB, but no license was displayed in its Rights section. No archive, code or weights were acquired, and no benchmark or model was run.",
+    "lesson": "Keep four questions separate: whether an electrode records a voltage; whether the voltage is biological; whether it reliably predicts a controlled physiological response; and whether a receiver uses it as information. The paper addresses the first and proposes analyses relevant to the latter questions, but does not establish a semantic language. A phone microphone cannot measure these electrical potentials.",
+    "next_review": "Before any reproduction, resolve the Zenodo dataset's reuse terms and file provenance, then ask a mycologist and electrophysiologist to review a preregistered, lab-based replication. It should include independently grown cultures, colonized and sterile-medium controls, sham/reference-electrode checks, continuous environmental logs, blinded condition labels and frozen signal-processing rules. Only test a stimulus-response prediction after those measurement controls pass; no training or consumer translation feature is proposed.",
+    "reviewed": "2026-10-14",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Initial source note",
+    "review_stage": "Full preprint methods and 2025 review; critique abstract/selected sections; dataset metadata only",
     "year_label": "Source year",
     "purpose": "Plants & fungi"
   },
