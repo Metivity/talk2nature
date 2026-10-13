@@ -3715,6 +3715,87 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "opensoundscape-paper-2023",
+      "kind": "paper",
+      "title": "OpenSoundscape: An open-source bioacoustics analysis package for Python",
+      "url": "https://doi.org/10.1111/2041-210X.14196",
+      "version": "Methods in Ecology and Evolution 14:2321-2328 (2023); describes OpenSoundscape v0.9.1",
+      "source_ids": [291],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Understand established bioacoustic observation, annotation and classification workflows before adding advanced research features to Talk2Nature.",
+      "review_depth": "Reviewed the publisher article abstract, software overview, annotation/localization functionality, examples and stated scope. The article page labels it Open Access but did not show an exact reuse license in the reviewed view. No article text, figures or supplementary files were copied.",
+      "access": "Publisher full-text page and DOI. Original summary and citation only; no full text stored.",
+      "decision": "Use as a methods reference for researcher workflows. It supports acoustic detection/classification/localization, not animal-language translation. Do not integrate code based on the paper alone.",
+      "limitations": "The paper describes version 0.9.1; the current repository release is recorded separately. Open Access status does not by itself identify a specific reuse license. No independent reproduction, package test or specialist review occurred.",
+      "attribution": "Lapp, S., Rhinehart, T., Freeland-Haynes, L., Khilnani, J., Syunkova, A., and Kitzes, J. (2023). OpenSoundscape: An open-source bioacoustics analysis package for Python. Methods in Ecology and Evolution, 14, 2321-2328. DOI 10.1111/2041-210X.14196.",
+      "rights": {
+        "license": "Publisher page labels the paper Open Access; the exact reuse license was not visible in the reviewed record",
+        "scope": "Article only. Software, dependencies, checkpoints, data, tutorial media and outputs are separate assets.",
+        "evidence_url": "https://doi.org/10.1111/2041-210X.14196",
+        "conditions": "No article text or figures are reproduced. Confirm the exact publisher license before reusing article content.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "opensoundscape-code-v0-13-2",
+      "kind": "code",
+      "title": "OpenSoundscape source code v0.13.2",
+      "url": "https://github.com/kitzeslab/opensoundscape/tree/v0.13.2",
+      "version": "v0.13.2; official release dated 2026-06-30; verified release commit begins 8b58215",
+      "source_ids": [292],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Possible reference implementation for researcher-side acoustic annotation and detection workflows; no current integration task selected.",
+      "review_depth": "Reviewed the official release page and LICENSE at the v0.13.2 tag and the tagged README. The release page identifies the latest release and verified commit; no source or package bytes were downloaded, installed, or executed.",
+      "access": "Public, version-tagged GitHub repository. The official v0.13.2 LICENSE declares MIT.",
+      "decision": "Keep as a separate optional research-software reference. Before any import, review the exact dependency tree and any selected model or checkpoint license; do not put this Python package into the public mobile app by default.",
+      "limitations": "MIT covers the tagged repository code, not its dependencies, Bioacoustics Model Zoo, pretrained checkpoints, training data, tutorial audio, or model outputs. The 2023 paper describes an older version; current documentation and APIs must be checked at the pinned tag.",
+      "attribution": "Kitzes Lab, University of Pittsburgh. OpenSoundscape v0.13.2, released 2026-06-30, repository tag v0.13.2.",
+      "rights": {
+        "license": "MIT (LICENSE at the official v0.13.2 tag)",
+        "scope": "OpenSoundscape repository code at v0.13.2 only; other assets and dependencies have separate terms.",
+        "evidence_url": "https://github.com/kitzeslab/opensoundscape/blob/v0.13.2/LICENSE",
+        "conditions": "Retain the MIT copyright and permission notices when redistributing covered code. Review every dependency and model/data asset independently before use.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "chronister-bird-soundscape-dryad-2021",
+      "kind": "dataset",
+      "title": "Strongly labeled Eastern North American bird soundscapes (Dryad)",
+      "url": "https://doi.org/10.5061/dryad.d2547d81z",
+      "version": "Dryad record published 2021-04-01, updated 2021-04-06; four listed files total 1.18 GB",
+      "source_ids": [293, 294, 295],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Potential strong-label detection/classification comparator for bird soundscape methods; not a communication or receiver-response benchmark.",
+      "review_depth": "Reviewed the official Dryad landing-page metadata and file inventory, the OpenSoundscape annotation tutorial's dataset reference, and Dryad's current repository-wide CC0 policy. The landing page reports 385 minutes across four days, 48 species and 16,052 annotations. No files, annotation rows, README contents or split scripts were downloaded or inspected.",
+      "access": "Public Dryad metadata and versioned file inventory; 1.18 GB listed for the April 6, 2021 version. No dataset bytes were acquired.",
+      "decision": "Metadata-only. Consider only after a bounded detection question and qualified review; confirm the exact archived version and item-level terms before any acquisition or training.",
+      "limitations": "The current landing page's abstract calls it free-use and Dryad's current policy states its datasets are CC0, but the item page view did not expose an explicit license field for this exact version. The short study period and single named reserve limit broad generalization. Species/time/frequency labels do not establish communicative meaning, behavioral context or receiver understanding. No file membership, row-level provenance, group splits or baseline was inspected.",
+      "attribution": "Chronister, L. M., Rhinehart, T. A., Place, A., and Kitzes, J. (2021). An annotated set of audio recordings of Eastern North American birds containing frequency, time, and species information [Dataset]. Dryad. DOI 10.5061/dryad.d2547d81z.",
+      "rights": {
+        "license": "Dryad's current repository policy states CC0; exact item-level license metadata for the reviewed archived version was not visible",
+        "scope": "The versioned Dryad dataset only. The associated paper, OpenSoundscape code, tutorial recordings, dependencies and any model weights are separate.",
+        "evidence_url": "https://datadryad.org/mission",
+        "conditions": "Reconfirm the specific version's license and file provenance before downloading, redistributing, training or using commercially. Keep all files out of Git and the public website.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
