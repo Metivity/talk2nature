@@ -1212,8 +1212,10 @@ class SiteTests(unittest.TestCase):
     def test_parrot_video_interface_note_preserves_reporting_and_rights_gates(self):
         note=next(n for n in load('research') if n['slug']=='parrot-video')
         self.assertIn('65 parrot-triggered live calls',note['finding'])
+        self.assertIn('live-minus-playback differences of +50, +17, +75, +17, +8, -8, -8, +33 and +25',note['finding'])
+        self.assertIn('The printed row is reversed for seven birds',note['finding'])
         self.assertIn('Table 3',note['limitations'])
-        self.assertIn('P3 and P5',note['limitations'])
+        self.assertIn('P3 and P5 also appear transposed',note['limitations'])
         self.assertIn('caregiver then placed the call',dict(note['study_snapshot'])['Interface'])
         resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
         resource=next(r for r in resources if r['id']=='parrot-live-playback-study-2024')
@@ -1226,7 +1228,8 @@ class SiteTests(unittest.TestCase):
             note_page=(root/'research/parrot-video/index.html').read_text()
             resource_page=(root/'research/resources/index.html').read_text()
             self.assertIn('duration magnitude remains unresolved',note_page)
-            self.assertIn('P3 and P5 entries also conflict',note_page)
+            self.assertIn('The printed row is reversed for seven birds',note_page)
+            self.assertIn('P3 and P5 also appear transposed',note_page)
             self.assertIn('Parrot choice in live and playback video calls',resource_page)
             self.assertIn('No study dataset, code or media were acquired',resource_page)
 
