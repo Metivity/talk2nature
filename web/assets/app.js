@@ -1,3 +1,4 @@
+import {watchWaitingWorker} from './app-update.mjs';
 const base = new URL('../app/', import.meta.url), $ = id => document.getElementById(id);
 const modes = {
   outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','outdoor-place','A bird moved to another branch. Its identity is uncertain.'],
@@ -75,21 +76,28 @@ window.addEventListener('appinstalled', () => { if ($('install-status')) $('inst
 if (matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
   if ($('install-status')) $('install-status').textContent='You are using the standalone app window.';
 }
+const watchedRegistrations = new WeakSet(), checkedRegistrations = new WeakSet();
+function updateReady() {
+  const message='Update ready. Nothing will reload now. Export work you want to keep, then close all Talk2Nature windows and reopen.';
+  const notice=$('app-update-status'), offline=$('offline-status');
+  if (notice) { notice.hidden=false; notice.textContent=message; }
+  if (offline) offline.textContent=message;
+}
 async function offlineState() {
-  if (!$('offline-status')) return;
-  if (!('serviceWorker' in navigator)) { $('offline-status').textContent='Offline setup is unavailable in this browser.'; $('app-offline').disabled=true; return; }
+  const offline=$('offline-status');
+  if (!offline && !$('app-update-status')) return;
+  if (!('serviceWorker' in navigator)) { if(offline) offline.textContent='Offline setup is unavailable in this browser.'; const button=$('app-offline'); if(button) button.disabled=true; return; }
   try {
     const registrations=await navigator.serviceWorker.getRegistrations();
     const registered=registrations.find(r=>r.scope===base.href);
-    if (registered?.active) {
+    if (offline && registered?.active) {
       const ready=await shellReady(registered.active);
-      $('offline-status').textContent=ready?'Offline tools are ready on this browser.':'Offline files are missing. Reconnect and use Enable offline tools to repair them.';
-      $('app-offline').textContent=ready?'Check for app updates':'Enable offline tools';
+      offline.textContent=ready?'Offline tools are ready on this browser.':'Offline files are missing. Reconnect and use Enable offline tools to repair them.';
+      const button=$('app-offline'); if(button) button.textContent=ready?'Check for app updates':'Enable offline tools';
     }
-    else $('offline-status').textContent='Offline tools are optional. Audio and notes stay temporary.';
-    if (registered?.waiting) $('offline-status').textContent='An update is ready. Export your work, then close every Talk2Nature app window and reopen.';
-    if (registered) watchWorker(registered);
-  } catch { $('offline-status').textContent='Offline status is unavailable. You can use the app online.'; }
+    else if (offline) offline.textContent='Offline tools are optional. Audio and notes stay temporary.';
+    if (registered) observeRegistration(registered);
+  } catch { if(offline) offline.textContent='Offline status is unavailable. You can use the app online.'; }
 }
 function shellReady(worker) {
   return new Promise(resolve=>{
@@ -100,11 +108,23 @@ function shellReady(worker) {
 }
 function watchWorker(registration) {
   const watch=worker=>worker?.addEventListener('statechange',()=>{
-    if (worker.state==='installed') $('offline-status').textContent=registration.active?'An update is ready. Export your work, then close all app windows and reopen.':'Offline files saved. Waiting for activation…';
-    if (worker.state==='activated') { $('offline-status').textContent='Offline tools are ready on this browser.'; $('app-offline').disabled=false; $('app-offline').textContent='Check for app updates'; }
-    if (worker.state==='redundant') { $('offline-status').textContent='Offline setup did not complete. Check your connection and storage, then try again.'; $('app-offline').disabled=false; }
+    const offline=$('offline-status'), button=$('app-offline');
+    if (worker.state==='installed') { if(registration.active) updateReady(); else if(offline) offline.textContent='Offline files saved. Waiting for activation…'; }
+    if (worker.state==='activated') { if(offline) offline.textContent='Offline tools are ready on this browser.'; if(button) {button.disabled=false; button.textContent='Check for app updates';} }
+    if (worker.state==='redundant') { if(offline) offline.textContent='Offline setup did not complete. Check your connection and storage, then try again.'; if(button) button.disabled=false; }
   });
   watch(registration.installing); registration.addEventListener('updatefound',()=>watch(registration.installing));
+}
+function observeRegistration(registration, checkForUpdates=true) {
+  if (!watchedRegistrations.has(registration)) {
+    watchedRegistrations.add(registration);
+    watchWaitingWorker(registration,updateReady);
+    watchWorker(registration);
+  }
+  if (checkForUpdates && !checkedRegistrations.has(registration) && typeof registration.update==='function') {
+    checkedRegistrations.add(registration);
+    registration.update().catch(()=>{});
+  }
 }
 $('app-offline')?.addEventListener('click', async()=>{
   $('app-offline').disabled=true; $('offline-status').textContent='Saving only public app pages and code…';
@@ -112,7 +132,7 @@ $('app-offline')?.addEventListener('click', async()=>{
     let r=(await navigator.serviceWorker.getRegistrations()).find(item=>item.scope===base.href);
     if (r?.active && !(await shellReady(r.active))) { await r.unregister(); r=null; }
     r=await navigator.serviceWorker.register(new URL('sw.js',base),{scope:base.href,updateViaCache:'none'});
-    watchWorker(r); await r.update(); if(r.active) await offlineState();
+    observeRegistration(r,false); await r.update(); checkedRegistrations.add(r); if(r.active) await offlineState();
   }
   catch { $('offline-status').textContent='Offline setup failed. You can keep using the app online; try again when connected.'; }
   finally { $('app-offline').disabled=false; }

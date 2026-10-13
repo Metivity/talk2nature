@@ -33,6 +33,12 @@ Offline setup is optional and user-triggered on the app home. Only the three pub
 
 Exports are still essential: offline availability does not make a journal persistent. Browser storage can be evicted. Public research pages linked outside the app's cached routes require connectivity. Clear the site's browser storage to remove the optional public cache; removing a home-screen icon may leave it. Cached app updates wait for existing app windows to close. A failed cache installation removes the incomplete new cache, preserving the previous version and unrelated caches.
 
+### October 13 follow-up: update notice on every app screen
+
+The original update-ready message appeared only on the app home page. An opted-in offline user already on Station, Review or Compare could keep using an older cached shell without seeing that notice. All Field Companion routes now include one polite status region. On opening an app route, the app checks the existing app-scoped registration; if an update is waiting or finishes installing, it explains that the current session will not reload, asks the user to export anything they want to keep, and explains that closing all Talk2Nature windows and reopening applies the update. The app does not register a worker unless the user previously enabled offline tools, call `skipWaiting`, reload, or cache audio and notes.
+
+The new watcher is part of the exact offline asset allowlist. Unit tests cover an already-waiting worker and a newly installed waiting worker; build tests check the notice on all six app routes. A 390 × 844 CSS-pixel preview reviewed the notice's fit on the synthetic Station screen. Existing-client update propagation and installed-device behavior remain unverified; no physical device or real capture was used.
+
 ## Release checks and unresolved gates
 
 Run all Python repository tests, `node --test tests/*.test.mjs`, public/local build checks, and a real browser walkthrough. Meaningful checks include offline navigation after network disconnection, a synthetic audio session offline, source review, UUID/checksum export, a WAV opened in Sound desk, phone/desktop layout, installation manifest diagnostics and public deployment equality. Record actual outcomes in STATUS.md rather than interpreting this checklist as completed.
