@@ -117,6 +117,10 @@ public final class MainActivity extends Activity {
         TextView title = text("A little field station\nfor a big question.",31,INK,true);
         page.addView(title,space(0,0,0,10));
         page.addView(text("Notice sounds and context. Let the evidence stay bigger than the guess.",16,MUTED,false),space(0,0,0,20));
+        Button browserDemo = button("Try the example first · no microphone",PANEL,INK);
+        page.addView(browserDemo,space(0,0,0,14));
+        browserDemo.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://metivity.github.io/talk2nature/app/"))));
 
         LinearLayout setup = card();
         page.addView(setup,space(0,0,0,14));
