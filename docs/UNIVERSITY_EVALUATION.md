@@ -1,6 +1,6 @@
 # University evaluation brief
 
-Updated October 12, 2026. This is an invitation to evaluate an early research-software workflow. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
+Updated October 13, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
 
 ## Start with the browser; go deeper only if useful
 
@@ -19,6 +19,12 @@ For a deeper, roughly 20-minute export review, the [Sound Handoff Lab](https://m
 4. Report the tested revision and software versions, how much help was needed, what happened, and whether this is a workflow the group would use.
 
 The [researcher starter kit](RESEARCHER_START.md) also provides a reproducible Python route. The evaluation requires no animal recording, model download, data upload or study data. Browser-review time is a project estimate; independent first-use timing has not yet been measured. The current native import check covers Audacity 4.0.1 on macOS arm64 only; it is not a claim of cross-platform conformance.
+
+## Separate literature-review route
+
+For comparative-communication or avian-behavior readers, there is a separate, bounded scientific review: **what do the cited Japanese great-tit receiver-response experiments support about call sequence and order, and which competing explanations remain unresolved?** Start with the source-linked [Japanese-tit evidence note](https://metivity.github.io/talk2nature/research/bird-call-syntax/). Check one claim against the exact paper section, table or figure; identify one alternative explanation or generalization limit; then describe the smallest additional public-evidence check that could change your assessment. Use the [scientific-methods review form](https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml). Expertise is optional to describe, and the form does not require contact details.
+
+This route reviews a public literature summary only. It does not ask anyone to conduct playback, collect animal data, share unpublished work, endorse the project or establish that an animal communication claim is true. Public reports should omit personal details, participant data and sensitive locations. Any substantive correction will be checked against the source and recorded with its review depth; a submitted issue alone is not independent validation.
 
 The question is deliberately modest: **does this help a researcher preserve and inspect an observation record, and what does it fail to represent?** It does not test whether a call has a meaning, identify an animal, measure a model, or demonstrate conversation with wildlife.
 
