@@ -2748,12 +2748,12 @@
   {
     "id": 263,
     "title": "Japanese-tit core-Merge study data and analysis code deposit",
-    "description": "The 2022 article identifies a Figshare deposit for its study data and R analysis code: DOI 10.6084/m9.figshare.18007046. The deposit contents and license have not yet been verified.",
+    "description": "The 2022 article points to Figshare item 18007046 v1 (DOI 10.6084/m9.figshare.18007046.v1) for its data and R code. The official API lists two 2,058-byte text files and two R scripts (1,382 and 1,566 bytes) under a record-level CC BY 4.0 license; no provider MD5 values are listed.",
     "url": "https://doi.org/10.6084/m9.figshare.18007046",
     "checked": "2026-10-13",
-    "origin": "The 2022 article's data and code availability statements point to this deposit. The DOI landing-page request returned HTTP 403 in this review; no file list, license or file bytes were inspected.",
+    "origin": "The publisher article identifies Figshare DOI 10.6084/m9.figshare.18007046. The official Figshare v2 API at https://api.figshare.com/v2/articles/18007046 returned item 18007046, version 1, DOI 10.6084/m9.figshare.18007046.v1, public status, publication date 2022-09-04, the record-level CC BY 4.0 license and four file names, sizes and download IDs. Its file MD5 fields are null and it exposes no separate per-file license fields. The four small files were downloaded to ignored local storage and structurally reviewed; the R scripts were read as text only and not run. Local SHA-256 receipts identify the received bytes, not upstream integrity. The item-level license does not establish a standalone software license or authorize model training.",
     "rights": {
-      "data_and_code": "Unverified. Do not download, execute, redistribute or use for training until the deposit record, exact files and their terms are reviewed."
+      "data_and_code": "The official Figshare v1 record declares CC BY 4.0 at item level. No file-specific license fields or provider checksums are listed. The two text data files and two R scripts are separately scoped in the resource catalog; inspect in-file notices, privacy, dependencies and attribution before reuse. This license does not apply to the paper or authorize training admission."
     }
   },
   {

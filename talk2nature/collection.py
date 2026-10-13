@@ -2,8 +2,8 @@
 
 License/admission fields are human-reviewed declarations, not legal or scientific
 verification. Adapters support immutable GitHub files, reviewed Mendeley files
-with deposit SHA-256 checksums, and bounded Springer Nature Figshare files with
-item metadata and MD5 verification. Downloads are not training releases and
+with deposit SHA-256 checksums, and bounded Figshare files with item metadata
+and optional provider MD5 verification. Downloads are not training releases and
 never enter the private admin or website build.
 """
 import argparse
@@ -23,6 +23,10 @@ DESTINATION = ROOT / 'data/external'
 MAX_FILE_BYTES = 5 * 1024 * 1024
 MAX_BATCH_BYTES = 20 * 1024 * 1024
 PERMITTED_LICENSES = {'MIT', 'Apache-2.0', 'CC-BY-4.0', 'CC0-1.0'}
+FIGSHARE_STORAGE_PREFIXES = {
+    'figshare_springernature': 'pstorage-npg-968563215',
+    'figshare_public': 'pfigshare-u-files',
+}
 
 
 def require_text(record, field):
@@ -93,7 +97,7 @@ def validate(catalog):
                 if not deposit or resource['url'] != f'https://data.mendeley.com/datasets/{deposit[1]}/{deposit[2]}':
                     raise ValueError('Mendeley sample requires a versioned deposit.')
                 require_text(resource, 'license_notice')
-            elif adapter == 'figshare_springernature':
+            elif adapter in FIGSHARE_STORAGE_PREFIXES:
                 item_id = resource.get('figshare_item_id')
                 if (type(item_id) is not int or item_id <= 0
                         or resource['url'] != f'https://api.figshare.com/v2/articles/{item_id}'
@@ -132,10 +136,15 @@ def validate(catalog):
                 else:
                     file_id = artifact.get('figshare_file_id')
                     md5 = artifact.get('md5')
+                    expected_prefix = FIGSHARE_STORAGE_PREFIXES[adapter]
+                    prefix = artifact.get('figshare_storage_prefix', expected_prefix)
                     if (type(file_id) is not int or file_id <= 0
                             or parsed.hostname != 'ndownloader.figshare.com'
                             or parsed.path != f'/files/{file_id}' or parsed.query or parsed.fragment
                             or require_text(artifact, 'source_url') != resource['url']
+                            or prefix != expected_prefix
+                            or (adapter == 'figshare_public'
+                                and artifact.get('figshare_storage_prefix') != expected_prefix)
                             or 'md5' not in artifact
                             or (md5 is not None and (not isinstance(md5, str)
                                 or not re.fullmatch('[a-f0-9]{32}', md5)))
@@ -178,8 +187,8 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ValueError('Redirect refused; review and pin the final source URL.')
 
 
-class FigshareSpringerNatureRedirect(urllib.request.HTTPRedirectHandler):
-    """Allow one Figshare downloader redirect to its reviewed S3 object only."""
+class FigshareRedirect(urllib.request.HTTPRedirectHandler):
+    """Allow one Figshare redirect to a provider-specific, reviewed S3 path."""
     def __init__(self, artifact):
         super().__init__()
         self.artifact = artifact
@@ -189,14 +198,18 @@ class FigshareSpringerNatureRedirect(urllib.request.HTTPRedirectHandler):
         target = urlsplit(newurl)
         file_id = self.artifact['figshare_file_id']
         expected_source = f'https://ndownloader.figshare.com/files/{file_id}'
-        expected_path = f"/pstorage-npg-968563215/{file_id}/{self.artifact['name']}"
+        prefix = self.artifact.get(
+            'figshare_storage_prefix', FIGSHARE_STORAGE_PREFIXES['figshare_springernature'])
+        if prefix not in FIGSHARE_STORAGE_PREFIXES.values():
+            raise ValueError('Figshare storage prefix is not approved.')
+        expected_path = f"/{prefix}/{file_id}/{self.artifact['name']}"
         if (code != 302 or req.full_url != expected_source
                 or source.scheme != 'https' or source.hostname != 'ndownloader.figshare.com'
                 or source.query or source.fragment
                 or target.scheme != 'https' or target.hostname != 's3-eu-west-1.amazonaws.com'
                 or target.port not in (None, 443) or target.username or target.password
                 or target.path != expected_path or target.fragment or not target.query):
-            raise ValueError('Figshare redirect did not match the reviewed Springer Nature S3 object.')
+            raise ValueError('Figshare redirect did not match a reviewed provider S3 object.')
         # A second redirect is refused because req.full_url will no longer be the
         # exact ndownloader URL checked above.
         return super().redirect_request(req, fp, code, msg, headers, newurl)
@@ -210,7 +223,11 @@ def read_artifact(artifact, opener):
         if response.status != 200:
             raise ValueError('Unexpected response status.')
         if 'figshare_file_id' in artifact:
-            expected_path = f"/pstorage-npg-968563215/{artifact['figshare_file_id']}/{artifact['name']}"
+            prefix = artifact.get(
+                'figshare_storage_prefix', FIGSHARE_STORAGE_PREFIXES['figshare_springernature'])
+            if prefix not in FIGSHARE_STORAGE_PREFIXES.values():
+                raise ValueError('Unapproved Figshare storage prefix.')
+            expected_path = f"/{prefix}/{artifact['figshare_file_id']}/{artifact['name']}"
             if (final_url.scheme != 'https' or final_url.hostname != 's3-eu-west-1.amazonaws.com'
                     or final_url.port not in (None, 443) or final_url.username or final_url.password
                     or final_url.path != expected_path or final_url.fragment or not final_url.query):
@@ -265,7 +282,7 @@ def acquire(catalog, identifiers, destination=DESTINATION, max_bytes=MAX_BATCH_B
             for artifact in resource['files']:
                 artifact_opener = opener
                 if artifact_opener is None:
-                    redirect_handler = (FigshareSpringerNatureRedirect(artifact)
+                    redirect_handler = (FigshareRedirect(artifact)
                         if 'figshare_file_id' in artifact else NoRedirect())
                     artifact_opener = urllib.request.build_opener(redirect_handler, https_handler)
                 data = read_artifact(artifact, artifact_opener)

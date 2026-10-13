@@ -12,6 +12,14 @@ Every evidence note and resource must reference at least one existing integer `s
 
 Reviewed the official Darwin Core Data Package guide issued May 26, 2026, the Darwin Core conceptual model, and the current Audubon Core term list. Added source records 255–259, an indexable synthesis, and separate metadata-only resource records for the guide, Audubon Core terms, and the pre-review schema snapshot. The candidate use is biodiversity-package structure and multimedia description; this does not establish animal-call meaning, consent or field-level conformance. No schema files, datasets or media were stored. Documentation and schema-repository reuse rights remain unresolved. See [the interoperability decision](DATA_INTEROPERABILITY.md); any mapping is deferred until released versioned schemas and a protocol-defined sampling event can be reviewed.
 
+## October 13 Japanese-tit data and code follow-up
+
+The publisher's 2022 core-Merge study links to [Figshare item 18007046 v1](https://api.figshare.com/v2/articles/18007046), whose record-level metadata declares CC BY 4.0 and lists two tabular files plus two R scripts. The official item API reports no file MD5 values. The bounded collector now supports the public Figshare storage path in addition to its existing Springer Nature path, and rejects redirects that do not match the pinned provider, file ID and filename. Signed download query strings are never written to receipts.
+
+The four files total 7,064 bytes and were fetched to ignored `data/external/` for a local-only review. Each data table has 64 rows and eight fields (`date`, `caller_ID`, `trt`, `2m`, `wing`, `flock_size`, `shrike`, `call_source`); the tables share row order and design fields, while the binary and proportion outcomes differ. They include behavioral outcomes, not audio; no location fields were present. The two scripts use `lme4` and `emmeans` for mixed-effects binomial models and adjusted treatment contrasts. They provide no package versions or lockfile. The scripts were read as text only and not executed; no published result was reproduced. Local SHA-256 receipts establish received-byte identity only, not upstream integrity. The date and caller fields remain in the ignored files and are not reproduced here.
+
+The resource catalog keeps paper, data and code rights separate. The item-level license does not provide a standalone software license or establish training admission. Keep the files out of Git, the website and `examples/`; the receipts record `training_admitted=false`. A future reproduction needs versioned dependencies, a data-to-table linkage check and independent analysis review.
+
 ## Collected and checked
 
 The existing library had 54 source records and 15 evidence notes. This pass adds four sources and one original evidence note, and organizes eight priority resources in `research/resources.json`. Existing same-day reviews are labeled as reused; this is not an exhaustive literature survey.
