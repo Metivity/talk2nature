@@ -1,5 +1,13 @@
 # Project status
 
+## October 14 Android saved-session review stability
+
+**Question:** can a person review an already-saved Android session without the app interrupting keyboard or assistive-technology focus? Source inspection found that the foreground screen polls session state every two seconds and rebuilt the stopped-session event and note list on each refresh. Replacing those child views could interrupt review actions; this is a code-path finding, not user-study evidence.
+
+**Change:** the event list now keeps its existing views while serialized events and notes are unchanged. It rerenders when an event or note changes and clears its snapshot when a session is deleted. A focused core regression check covers the unchanged, changed and reset states. No recording, microphone permission, participant data or external media was used.
+
+**Validation:** the Android core suite and both browser importer/schedule tests pass; the full repository suite passes 121 Python and 109 Node tests. The local noindex build and site checker pass with 106 public pages, 107 HTML files and 5,176 checked links. This host has Java but no Android SDK or `adb`, so Gradle lint/package checks and emulator review are not available locally. These checks do not prove TalkBack behavior or physical-device usability. Next, verify the Android CI build and review the saved-session controls with TalkBack and keyboard navigation on a named device before field use. AutoResearch remains **NOT READY**.
+
 ## October 13 fungal electrophysiology source and rights follow-up
 
 **Question:** what did the 2026 oyster-fungus propagation paper measure, and can its linked data be safely reused or reproduced?
