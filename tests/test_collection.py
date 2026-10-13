@@ -10,7 +10,7 @@ from pathlib import Path
 from unittest.mock import Mock
 
 from talk2nature.collection import (CATALOG, MAX_BATCH_BYTES,
-                                    FigshareSpringerNatureRedirect, NoRedirect,
+                                    FigshareRedirect, NoRedirect,
                                     acquire, plan, read_artifact, validate)
 from scripts.inspect_bat_annotations import inspect as inspect_bat
 from scripts.inspect_parrot_annotations import inspect
@@ -55,8 +55,30 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual({r['id'] for r in selected}, {
             'monk-parakeet-code', 'monk-parakeet-annotations',
             'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
-            'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf'})
+            'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf',
+            'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code'})
         self.assertLess(size, MAX_BATCH_BYTES)
+
+    def test_coremerge_data_and_code_keep_component_rights_separate(self):
+        by_id = {r['id']: r for r in self.catalog['resources']}
+        data = by_id['japanese-tit-core-merge-2022-data']
+        code = by_id['japanese-tit-core-merge-2022-code']
+        self.assertEqual(data['kind'], 'dataset')
+        self.assertEqual(code['kind'], 'code')
+        self.assertEqual(data['source_ids'], [263])
+        self.assertEqual(code['source_ids'], [263])
+        self.assertEqual(data['rights']['license'], 'CC-BY-4.0')
+        self.assertEqual(code['rights']['license'], 'CC-BY-4.0')
+        self.assertIn('data files only', data['rights']['scope'])
+        self.assertIn('analysis scripts only', code['rights']['scope'])
+        self.assertEqual(
+            [f['name'] for f in data['files']],
+            ['merge_proportion.txt', 'merge_binary.txt'])
+        self.assertEqual(
+            [f['name'] for f in code['files']],
+            ['merge_binary.R', 'merge_proportion.R'])
+        self.assertTrue(all(f['md5'] is None for r in (data, code) for f in r['files']))
+        self.assertEqual(plan(self.catalog, [data['id'], code['id']])[1], 7064)
 
     def test_metadata_only_data_standards_are_catalogable_but_not_acquired(self):
         records = {r['id']: r for r in self.catalog['resources']}
@@ -173,7 +195,7 @@ class CollectionTests(unittest.TestCase):
 
         target = ('https://s3-eu-west-1.amazonaws.com/pstorage-npg-968563215/'
                   '7379008/Annotations.csv?X-Amz-Signature=fixture')
-        handler = FigshareSpringerNatureRedirect(artifact)
+        handler = FigshareRedirect(artifact)
         request = urllib.request.Request(artifact['url'])
         redirected = handler.redirect_request(request, None, 302, 'Found', {}, target)
         self.assertEqual(redirected.full_url, target)
@@ -206,6 +228,66 @@ class CollectionTests(unittest.TestCase):
             self.assertFalse(receipt['training_admitted'])
             self.assertEqual(receipt['files'][0]['md5'], artifact['md5'])
             self.assertEqual(receipt['files'][0]['sha256'], hashlib.sha256(data).hexdigest())
+            self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
+
+    def test_public_figshare_sample_pins_its_provider_path_without_upstream_md5(self):
+        data = b'flock\torder\tresponse\n1\talert-recruitment\tmobbing\n'
+        item_url = 'https://api.figshare.com/v2/articles/18007046'
+        artifact = {
+            'name': 'merge_binary.txt',
+            'url': 'https://ndownloader.figshare.com/files/35870855',
+            'source_url': item_url,
+            'figshare_file_id': 35870855,
+            'figshare_storage_prefix': 'pfigshare-u-files',
+            'bytes': len(data),
+            'md5': None,
+            'md5_unavailable_reason': 'The official Figshare API returned md5=null.',
+        }
+        resource = {
+            'id': 'figshare-public-test', 'kind': 'dataset', 'title': 'Synthetic Figshare public item',
+            'url': item_url, 'figshare_item_id': 18007046,
+            'version': 'Figshare item 18007046 v1',
+            'reviewed': '2026-10-13', 'priority': 1,
+            'review_depth': 'Synthetic public-Figshare path fixture.',
+            'task': 'Test an explicitly reviewed provider path.', 'access': 'Synthetic only.',
+            'decision': 'Test only.', 'limitations': 'No real data.', 'attribution': 'Fixture.',
+            'rights': {'license': 'CC-BY-4.0', 'scope': 'Synthetic item.',
+                       'evidence_url': item_url, 'conditions': 'Fixture.',
+                       'research_use': 'conditional', 'commercial_use': 'conditional',
+                       'redistribution': 'conditional'},
+            'license_notice': 'Synthetic item metadata declares CC BY 4.0.',
+            'acquisition': 'sample_approved', 'adapter': 'figshare_public',
+            'admission_reason': 'Synthetic path, size and local-hash verification only.',
+            'files': [artifact],
+        }
+        catalog = {'schema_version': 1, 'resources': [resource]}
+        validate(catalog)
+        self.assertEqual(plan(catalog, ['figshare-public-test'])[1], len(data))
+
+        target = ('https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/'
+                  '35870855/merge_binary.txt?X-Amz-Signature=fixture')
+        handler = FigshareRedirect(artifact)
+        request = urllib.request.Request(artifact['url'])
+        self.assertEqual(
+            handler.redirect_request(request, None, 302, 'Found', {}, target).full_url,
+            target)
+        with self.assertRaisesRegex(ValueError, 'redirect'):
+            handler.redirect_request(
+                request, None, 302, 'Found', {},
+                target.replace('pfigshare-u-files', 'pstorage-npg-968563215'))
+
+        opener = Mock()
+        opener.open.side_effect = lambda request, timeout: Response(
+            data, target, {'Content-Length': str(len(data))})
+        self.assertEqual(read_artifact(artifact, opener), data)
+        with tempfile.TemporaryDirectory() as temp:
+            result = acquire(catalog, ['figshare-public-test'], Path(temp).resolve(), opener=opener)
+            receipt = json.loads(Path(result['receipts'][0]).read_text())
+            file_receipt = receipt['files'][0]
+            self.assertFalse(receipt['training_admitted'])
+            self.assertIsNone(file_receipt['md5'])
+            self.assertFalse(file_receipt['source_checksum_verified'])
+            self.assertEqual(file_receipt['sha256'], hashlib.sha256(data).hexdigest())
             self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
 
     def test_figshare_missing_upstream_md5_is_explicit_and_receipt_does_not_overclaim(self):

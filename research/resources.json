@@ -2959,59 +2959,109 @@
       "id": "japanese-tit-core-merge-2022-data",
       "kind": "dataset",
       "title": "Japanese-tit core-Merge study data deposit",
-      "url": "https://doi.org/10.6084/m9.figshare.18007046",
-      "version": "Figshare DOI 10.6084/m9.figshare.18007046; cited in the 2022 paper",
+      "url": "https://api.figshare.com/v2/articles/18007046",
+      "version": "Figshare item 18007046 v1; DOI 10.6084/m9.figshare.18007046.v1; published 2022-09-04",
+      "figshare_item_id": 18007046,
       "source_ids": [
         263
       ],
       "priority": 2,
       "reviewed": "2026-10-13",
-      "task": "Potential source-data and reproducibility reference for the 2022 playback study.",
-      "review_depth": "The article's data-availability statement was checked. The DOI landing page returned HTTP 403; files, manifest, data license, privacy and data structure were not inspected.",
-      "access": "Paper declares the data are available in this Figshare deposit; deposit contents and current access remain unverified.",
-      "decision": "Metadata only. Do not acquire, analyze, redistribute or admit for training until the exact files, license, participant/wildlife privacy implications and scientific fit are reviewed.",
-      "limitations": "A citation to a deposit is not file-level rights clearance, an independent reproduction, a verified manifest or proof that its labels support a new prediction task.",
+      "task": "Local inspection of the small source-data tables and their relationship to the 2022 receiver-response analysis.",
+      "review_depth": "Downloaded both v1 data files through the bounded Figshare collector. Each contains 64 tab-delimited rows and eight columns: date, caller_ID, trt, 2m, wing, flock_size, shrike and call_source. Both tables share row order and design fields; binary outcomes are 0/1, while the proportion table contains flock counts. No location columns are present. Local SHA-256 values are in ignored receipts; the provider API returned md5=null for both files.",
+      "access": "Public Figshare item v1 API record; two files fetched into ignored data/external for local inspection and are not part of the website build or Git.",
+      "decision": "Keep the sample local for structural and provenance review. It contains behavioral outcome tables but no audio, so it is not an acoustic training corpus. It remains excluded from training and public redistribution; no statistical reproduction has been attempted or claimed.",
+      "limitations": "The provider supplies no MD5 checksum; local SHA-256 values establish only the bytes received. The files include dates and caller_ID values but no coordinates. The item-level license does not resolve any unseen notices or establish that these labels generalize beyond the experiment.",
       "attribution": "Suzuki, T. N. & Matsumoto, Y. K. (2022), linked Figshare deposit for Nature Communications 13, 5605.",
       "rights": {
-        "license": "Unverified; no deposit record or file terms reviewed.",
-        "scope": "Dataset only. Article text and analysis code have separate rights.",
-        "evidence_url": "https://www.nature.com/articles/s41467-022-33360-3#data-availability",
-        "conditions": "Verify the deposit metadata, exact file list and file-level terms before any retrieval or reuse.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "CC-BY-4.0",
+        "scope": "The two .txt data files only. The R scripts and article have separately cataloged rights.",
+        "evidence_url": "https://api.figshare.com/v2/articles/18007046",
+        "conditions": "Attribute Suzuki and Matsumoto and the Figshare DOI, link CC BY 4.0, indicate any changes, and review the received files for embedded notices or sensitive details before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
-      "acquisition": "metadata_only",
-      "files": []
+      "license_notice": "Official Figshare v1 item metadata declares CC BY 4.0; no file-level license or provider MD5 is listed.",
+      "acquisition": "sample_approved",
+      "adapter": "figshare_public",
+      "admission_reason": "Four-file deposit totals 7,064 bytes. These two tabular files are approved for local structure, provenance and privacy inspection only; the collector retains attribution, a local SHA-256 receipt, and training_admitted=false.",
+      "files": [
+        {
+          "name": "merge_proportion.txt",
+          "url": "https://ndownloader.figshare.com/files/35870864",
+          "source_url": "https://api.figshare.com/v2/articles/18007046",
+          "figshare_file_id": 35870864,
+          "figshare_storage_prefix": "pfigshare-u-files",
+          "bytes": 2058,
+          "md5": null,
+          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+        },
+        {
+          "name": "merge_binary.txt",
+          "url": "https://ndownloader.figshare.com/files/35870855",
+          "source_url": "https://api.figshare.com/v2/articles/18007046",
+          "figshare_file_id": 35870855,
+          "figshare_storage_prefix": "pfigshare-u-files",
+          "bytes": 2058,
+          "md5": null,
+          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+        }
+      ]
     },
     {
       "id": "japanese-tit-core-merge-2022-code",
       "kind": "code",
       "title": "Japanese-tit core-Merge study analysis code deposit",
-      "url": "https://doi.org/10.6084/m9.figshare.18007046",
-      "version": "R analysis code, cited in the 2022 paper; Figshare DOI 10.6084/m9.figshare.18007046",
+      "url": "https://api.figshare.com/v2/articles/18007046",
+      "version": "Figshare item 18007046 v1; DOI 10.6084/m9.figshare.18007046.v1; published 2022-09-04",
+      "figshare_item_id": 18007046,
       "source_ids": [
         263
       ],
       "priority": 2,
       "reviewed": "2026-10-13",
-      "task": "Potential reproduction of the paper's reported statistical analyses after exact code and dependency review.",
-      "review_depth": "The article's code-availability statement was checked. The DOI landing page returned HTTP 403; source files, license, dependencies and execution environment were not inspected.",
-      "access": "Paper declares that R analysis code is available at the linked Figshare deposit; exact files and current access remain unverified.",
-      "decision": "Metadata only. Do not execute or reuse until code, license, dependencies, data linkage and reproducibility conditions are checked.",
-      "limitations": "A code citation does not prove that the current deposit is complete, executable or sufficient to reproduce the results. No code was run.",
+      "task": "Static review of the two deposited R scripts for data linkage, analysis steps, dependencies and reproducibility boundaries.",
+      "review_depth": "Read both deposited R scripts as text without executing them. They use lme4 and emmeans for mixed-effects binomial models of 2m and wing outcomes, compare nested models with likelihood-ratio tests, and request adjusted treatment contrasts. The scripts do not specify package versions or an execution environment. Local SHA-256 values are in ignored receipts; provider MD5 fields are null.",
+      "access": "Public Figshare item v1 API record; two scripts fetched into ignored data/external for static review and are not part of the website build or Git.",
+      "decision": "Keep the scripts to static methods review for now. Do not execute or port them in this review cycle, or describe the analysis as reproduced. The item-level CC BY 4.0 notice is recorded separately from the paper; no standalone software license is identified.",
+      "limitations": "The provider supplies no MD5 checksum; local SHA-256 values establish only the bytes received. No dependency lock, README, package versions, run log or reproduction was provided or created. The exact correspondence between scripts and published tables has not been tested.",
       "attribution": "Suzuki, T. N. & Matsumoto, Y. K. (2022), linked Figshare deposit for Nature Communications 13, 5605.",
       "rights": {
-        "license": "Unverified; no deposit record or file terms reviewed.",
-        "scope": "Analysis code only. The data and article have separate rights.",
-        "evidence_url": "https://www.nature.com/articles/s41467-022-33360-3#code-availability",
-        "conditions": "Verify the repository record, license and dependencies before retrieval or execution.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "CC-BY-4.0",
+        "scope": "The two .R analysis scripts only. The .txt data and article have separately cataloged rights.",
+        "evidence_url": "https://api.figshare.com/v2/articles/18007046",
+        "conditions": "Attribute Suzuki and Matsumoto and the Figshare DOI, link CC BY 4.0, indicate any changes, and inspect embedded notices and dependencies before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
-      "acquisition": "metadata_only",
-      "files": []
+      "license_notice": "Official Figshare v1 item metadata declares CC BY 4.0 for the deposit; no separate code license or provider MD5 is listed.",
+      "acquisition": "sample_approved",
+      "adapter": "figshare_public",
+      "admission_reason": "Four-file deposit totals 7,064 bytes. These two scripts are approved for local static source review only; the collector retains attribution, a local SHA-256 receipt, and training_admitted=false.",
+      "files": [
+        {
+          "name": "merge_binary.R",
+          "url": "https://ndownloader.figshare.com/files/36445725",
+          "source_url": "https://api.figshare.com/v2/articles/18007046",
+          "figshare_file_id": 36445725,
+          "figshare_storage_prefix": "pfigshare-u-files",
+          "bytes": 1382,
+          "md5": null,
+          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+        },
+        {
+          "name": "merge_proportion.R",
+          "url": "https://ndownloader.figshare.com/files/36445728",
+          "source_url": "https://api.figshare.com/v2/articles/18007046",
+          "figshare_file_id": 36445728,
+          "figshare_storage_prefix": "pfigshare-u-files",
+          "bytes": 1566,
+          "md5": null,
+          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+        }
+      ]
     },
     {
       "id": "japanese-tit-ordering-novel-sequences-2017-paper",

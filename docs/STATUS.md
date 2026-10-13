@@ -1,5 +1,17 @@
 # Project status
 
+## October 13 Japanese-tit Figshare data/code inspection
+
+**Question:** does the 2022 core-Merge paper expose a small, reviewable data/code deposit that can sharpen the evidence note and future reproduction requirements?
+
+**Evidence:** the official Figshare v2 API identifies public item 18007046 v1, published 2022-09-04, with a record-level CC BY 4.0 declaration and four files totaling 7,064 bytes. Its file MD5 fields are null. After verifying the redirect path and file sizes, the two text tables and two R scripts were fetched through the bounded collector into ignored local storage. Each table has 64 rows and eight columns; the tables share design-field order, while binary outcomes and flock-count outcomes differ. No audio or location columns are present. The scripts use `lme4`/`emmeans` mixed-effects binomial models, likelihood-ratio comparisons and adjusted contrasts. They specify no package versions or locked environment.
+
+**Decision:** updated the source, research note, resource catalog, collection guide and prioritized backlog; added an allowlisted public-Figshare redirect path and synthetic collector tests. The data and code remain local-only, outside Git, public builds, examples and training. The R scripts were read as text but not run; this is structural inspection, not statistical reproduction or independent scientific review. The item-level license does not resolve a standalone code license. Local SHA-256 receipts identify the retrieved bytes; without a provider checksum they do not establish upstream integrity.
+
+**Validation:** 113 repository Python tests and 107 Node tests pass; the resource catalog validates 112 entries. The owner-only suite passes 104 tests, with 49 PostgreSQL integration tests skipped because no disposable PostgreSQL test database is configured. The owner-only catalog now contains 471 public metadata records: the initial sync changed nine, a later scope-wording correction changed two, and the final repeat was idempotent with no retirements. Local noindex build/check passes (104 pages plus 404; 105 HTML documents and 5,021 links); public-origin build/check passes (104 pages plus 404; 105 HTML documents, 5,127 links and all 104 public pages reachable). The note has a self-canonical and `index,follow`; sample rows and raw identifiers are not included in the public summary. No live deployment or Search Console check occurred in this milestone.
+
+**Next:** obtain the 2017 Mendeley artifact manifest only through an authorized route, review the 2024 competing-theory paper and supplement when lawful access is available, and seek a comparative-communication specialist to review the competing predictions. Keep AutoResearch **NOT READY**.
+
 ## October 13 PR #95 release and live verification
 
 PR [#95](https://github.com/Metivity/talk2nature/pull/95) merged to `main` as [`6cf1a6e27c0cb8d59a50509667c20708e66dd764`](https://github.com/Metivity/talk2nature/commit/6cf1a6e27c0cb8d59a50509667c20708e66dd764). The manual Pages workflow run [#38379506257](https://github.com/Metivity/talk2nature/actions/runs/38379506257) completed with both `build` and `deploy` jobs successful.
