@@ -2726,5 +2726,38 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "coarse-soundscape",
+    "title": "CoarseSoundNet: soundscape context, not animal language",
+    "seo_description": "CoarseSoundNet classifies broad animal, human and environmental soundscape layers; it does not identify a species or decode animal meaning.",
+    "taxon": "Ecoacoustics · machine learning",
+    "kind": "Soundscape classification and model-evaluation evidence",
+    "year": "2026",
+    "year_label": "arXiv v2 posted May 21, 2026; paper described as under review in the pinned code-repository README checked October 13, 2026",
+    "source_ids": [
+      247,
+      248,
+      249,
+      250,
+      251
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Full preprint review and official code/model/dataset metadata inspection; no independent reproduction",
+    "review_depth": "Reviewed the full arXiv v2 HTML: data composition, model comparison, transfer to BEsound, silence handling, threshold/duration post-processing, error analysis and ecological-index case study. Reviewed the pinned GitHub repository/README/license, Hugging Face revision and file/rights metadata, and the Zenodo record plus read-only API metadata. No code, model weights, dataset archive, audio, figures or supplementary files were downloaded or run.",
+    "finding": "CoarseSoundNet targets broad, potentially co-occurring soundscape layers: anthropophony (human-made sounds), biophony (animal sounds), geophony (natural abiotic sounds) and an explicitly handled silence condition. The manuscript reports strong EDANSA-2019 test performance but a marked drop on the different BEsound recording domain, especially for human and geophysical sounds. Its best BEsound macro-F1 of 0.799 applies class-specific thresholds and window-count settings selected on BEsound itself; it should be treated as a tuned evaluation result rather than an untouched holdout estimate. The ecological case study uses model predictions to pre-filter audio before calculating conventional acoustic indices. This can help characterize recording context, but it does not say which species vocalized or what a call means. The paper uses public EDANSA together with BEsound and other collections that are not all directly accessible. Code, weights, article and data have distinct licenses: the pinned training repository declares MIT, the Hub model declares CC BY-NC-SA 4.0, the arXiv paper declares CC BY-NC-SA 4.0, and Zenodo's API declares CC BY 4.0 for the EDANSA record while the rendered license field is blank.",
+    "limitations": "The paper remains a preprint in the records reviewed: the author-group GitHub README says it is under review, and an author's publication list places it under preprints; a peer-reviewed version was not verified. The BEsound evaluation data also informed selection of post-processing thresholds/counts, which limits the interpretation of the best reported score as independent generalization. Domain, recorder and annotation differences matter; reported errors include insect sounds confused with biophony, wind/background noise around silence/geophony, and masking when classes co-occur. Some training collections are private or available only on request. The code repository is marked under construction. Model weight reuse is non-commercial under its declared CC BY-NC-SA terms; underlying encoder, dependencies and all dataset components need separate review. No Talk2Nature result is reproduced.",
+    "lesson": "This is a useful context-layer reference for later ecological analysis, not a conversation system. Keep any eventual app context optional, human-reviewed and multi-label; preserve co-occurrence and unknowns, and do not silently convert broad soundscape predictions into a focal animal identity or behavioral explanation. For model evaluation, never tune thresholds or window-count rules on the same set presented as an untouched test result. The current Field Companion remains a passive, user-led observation tool; this evidence does not justify adding an automatic prediction feature.",
+    "next_review": "After a peer-reviewed version or independent review is available, compare its evaluation protocol with Talk2Nature's leakage-safe benchmark checklist. Ask an ecoacoustics reviewer whether one narrow context-label task would help the existing human annotation workflow. Before any acquisition or model run, resolve exact EDANSA license display and file/label provenance, review all component rights, define grouped splits and freeze the test set. Keep AutoResearch NOT READY.",
+    "expert_review": "No independent ecoacoustic specialist review, author verification or Talk2Nature reproduction has occurred.",
+    "review_locator": "arXiv v2: Sections 3.1–3.4 (data and evaluation), Tables 4–10 (in-domain, transfer, silence and post-processing results), Sections 4.5–4.7 (errors and ecological-index case study), Discussion and Conclusion. Official pinned GitHub README/LICENSE; Hugging Face revision e8217024a9b69d2af76e031db8eec03bbcdd7a33; Zenodo DOI 10.5281/zenodo.6824272 and record API; University of Freiburg author profile lists the paper under preprints.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews a model, datasets and evaluation method rather than a verified observation or study-site record.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

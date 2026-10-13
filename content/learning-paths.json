@@ -65,7 +65,8 @@
         "fruit-bat-context-ml-2024",
         "monk-parakeet-population-identity-2023",
         "shared-bioacoustic-dataset-loader",
-        "animal-spot-parrot-detection-2022"
+        "animal-spot-parrot-detection-2022",
+        "coarse-soundscape"
       ],
       "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
       "gate": "No Talk2Nature animal model has been trained or benchmarked. Language-like output is not verified meaning."
