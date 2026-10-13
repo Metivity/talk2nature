@@ -10,6 +10,8 @@
 
 **Validation and limits:** all 116 Python tests and 107 Node tests passed; the local noindex build produced 104 pages plus 404 and passed the checker across 105 HTML documents and 5,035 links. The production-origin candidate also reached 104 pages and passed the checker across 105 HTML documents and 5,141 links. The final local preview visibly exposed “End rehearsal” in the synthetic session at 390 × 844. This is browser emulation and a maintainer-run synthetic workflow, not physical-phone testing, novice testing or evidence of field readiness. No microphone permission was requested. AutoResearch remains **NOT READY**.
 
+**Release evidence:** PR [#109](https://github.com/Metivity/talk2nature/pull/109) merged as [`182cd6b`](https://github.com/Metivity/talk2nature/commit/182cd6b7e386dcf8074fe26e4469b38ec777ef9f); the manual Pages run [#38399652341](https://github.com/Metivity/talk2nature/actions/runs/38399652341) succeeded. The live station HTML references revision `1ce3511b8121695d`; its published `station.js` contains the “End rehearsal” branch. In a Chrome tab, a microphone-free synthetic start displayed “End rehearsal,” and stopping produced a local-only synthetic recap. No microphone permission was requested. An older, already-open in-app browser view initially retained the previous “Stop recording” label. Existing offline/service-worker client update behavior remains a follow-up; this does not establish how quickly installed devices refresh. No forced update or physical-device test was made.
+
 ## October 13 dog-bark context-classification methods review
 
 **Question:** what does the 2024 dog-bark study's context score establish, and which grouping, label and rights limits matter before treating it as a reusable benchmark?
