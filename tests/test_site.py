@@ -576,6 +576,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('No Talk2Nature animal-communication model',university)
             self.assertIn('without permission',university)
             self.assertIn('id="evaluation-boundary"',university)
+            self.assertIn('A SEPARATE SCIENCE REVIEW',university)
+            self.assertIn('What do the cited receiver-response experiments support',university)
+            self.assertIn('href="/talk2nature/research/bird-call-syntax/"',university)
+            self.assertIn('template=scientific-review.yml',university)
+            self.assertIn('This is a literature critique, not a request to plan or conduct playback',university)
             self.assertNotIn('blob/main/docs/UNIVERSITY_EVALUATION.md',university)
             self.assertTrue((root/'assets/university.css').is_file())
             project_root=Path(__file__).resolve().parents[1]

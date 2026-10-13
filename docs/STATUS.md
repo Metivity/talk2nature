@@ -1,5 +1,17 @@
 # Project status
 
+## October 13 university-facing scientific review path
+
+**Question:** can a researcher find a specific, safe way to critique the science separately from testing the software?
+
+**Evidence and change:** the university page already offered a synthetic workflow evaluation, and the repository already had a structured scientific-methods issue form, but the page did not link readers to it. Added a focused literature-review route around the source-linked Japanese great-tit note: check one claim at its precise source locator, flag an alternative or limitation, and name a small evidence check that could change the assessment. Updated the university evaluation brief and search description. The route explicitly excludes playback plans, animal-data collection, private material, endorsement and implied partnership. No researcher has submitted a review and no outreach was sent.
+
+**SEO access limit:** the existing Google Search Console tab now stops at an account re-verification screen; the report itself was not visible or inspected. No password, verification code or other credential was entered. Previously stored indexing and sitemap numbers remain dated snapshots, not current status.
+
+**Validation:** 114 Python tests and 107 Node tests pass. The local noindex build and site checker pass with 105 HTML documents and 5,024 checked links. At 320 × 740 and 390 × 844 CSS-pixel emulated viewports, the document width matched the viewport with no horizontal overflow; the 320-pixel screenshot showed the review question and both links fully visible. This is browser emulation, not a physical-phone or first-time researcher study. No scientific review or indexing result is claimed.
+
+**Release:** local candidate only; PR and public deployment pending. If checks pass, verify the university page’s live title, description, source link and scientific-review form after the authorized Pages deployment. Search Console remains a separate re-verification gate.
+
 ## October 13 Android Station capture-deadline hardening
 
 **Question:** does the Android prototype's selected 1-, 4- or 8-hour cap still get checked if the microphone stops delivering audio frames?
@@ -8,7 +20,9 @@
 
 **Validation:** Android core checks pass; all 107 Node tests and 114 Python tests pass; `git diff --check` passes. This host has no Android SDK, emulator or `adb`, so Gradle package/lint checks and physical-device behavior are not locally verified; the repository pull-request workflow runs Android lint and debug/release assembly. No microphone, recording, deployment or research data was used.
 
-**Next:** let pull-request CI perform the Android builds and release-boundary check. If those pass, keep physical-phone timing, interruption and screen-lock behavior on the device-validation list. The broad evidence, app, open-source, SEO and resources goal remains active.
+**Release:** PR [#102](https://github.com/Metivity/talk2nature/pull/102) merged as [`7552b6d`](https://github.com/Metivity/talk2nature/commit/7552b6d2ee7247a689d4d239b9b60eb467ab4709). The public-checks workflow passed, including Android lint, debug/release assembly, release-boundary checks and the site build/check. No Pages deployment occurred because the change is Android-only.
+
+**Next:** test limit timing, screen lock, calls and interruption on a named physical device before describing this as field-ready. The broad evidence, app, open-source, SEO and resources goal remains active.
 
 ## October 13 current-main clean clone and contributor-path verification
 
