@@ -1,5 +1,11 @@
 # Project status
 
+## October 13 PR #97 deployment and live verification
+
+PR [#97](https://github.com/Metivity/talk2nature/pull/97), “Review Japanese-tit study data and code deposit,” merged to `main` as [`77d8db29bf111e9f420b2cf8e709dd284f739a4b`](https://github.com/Metivity/talk2nature/commit/77d8db29bf111e9f420b2cf8e709dd284f739a4b). Public checks passed. The manual Pages workflow [#38383912571](https://github.com/Metivity/talk2nature/actions/runs/38383912571) completed successfully for both build and deploy.
+
+Live checks returned HTTP 200 for `/research/bird-call-syntax/`, `sitemap.xml` and `robots.txt`. The research page has a self-canonical URL, `index,follow`, and the Figshare v1 DOI in its content; the sitemap lists 104 URLs and includes this page. `robots.txt` allows crawling and names the sitemap. These checks verify publication and technical crawlability, not search-engine indexing, impressions, clicks or ranking; Search Console remains unverified.
+
 ## October 13 Japanese-tit Figshare data/code inspection
 
 **Question:** does the 2022 core-Merge paper expose a small, reviewable data/code deposit that can sharpen the evidence note and future reproduction requirements?
