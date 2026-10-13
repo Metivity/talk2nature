@@ -116,12 +116,12 @@
   {
     "id": 15,
     "title": "Plant acoustic emissions",
-    "description": "Khait et al. Sounds emitted by plants under stress are airborne and informative. Cell (2023). Primary research abstract indexed by PubMed.",
+    "description": "Khait et al. (2023), Cell primary study of airborne ultrasonic emissions and plant-condition classification. Full article and STAR Methods reviewed; the paper does not test receiver behavior or translation.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/37001499/",
-    "checked": "2026-10-04",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
-    "review_url": "https://www.plant-ditech.com/wp-content/uploads/2024/10/Sounds_article_-_Khait_et_al_2023.pdf",
-    "review_url_label": "Published paper copy used to check the recording protocol"
+    "checked": "2026-10-13",
+    "origin": "Read the main published article and its full STAR Methods, including the relevant recording, preprocessing, evaluation and results sections, with figure legends and selected supporting captions. The publisher article endpoint was inaccessible in this review; the linked full-paper copy was used. The Dryad and Zenodo records were checked separately. No data, code or model was acquired or run.",
+    "review_url": "https://www.plant-ditech.com/images/pdf/Sounds_article_-_Khait_et_al_2023.pdf",
+    "review_url_label": "Full published paper copy and STAR Methods used for review"
   },
   {
     "id": 16,
@@ -2100,8 +2100,8 @@
     "title": "European Research Executive Agency: Transformative change towards a nature-positive economy and society",
     "description": "Official REA call overview for Horizon Europe HORIZON-NATURE-2027-02. It lists an opening date of 13 October 2026, the 14 January 2027 deadline, €108 million across five topics, and the 16 October information day and 19 October brokerage event.",
     "url": "https://rea.ec.europa.eu/funding-and-grants/horizon-europe-cluster-6-food-bioeconomy-natural-resources-agriculture-and-environment/transformative-change-towards-nature-positive-economy-and-society_en",
-    "checked": "2026-10-12",
-    "origin": "Reviewed the official European Research Executive Agency call overview on October 12, 2026. The page lists the call schedule and five topic areas; it directs applicants to the work programme and Funding & Tenders Portal for binding details.",
+    "checked": "2026-10-13",
+    "origin": "Rechecked the official European Research Executive Agency call overview on October 13, 2026. It lists the HORIZON-NATURE-2027-02 schedule and five topic areas; it directs applicants to the work programme and Funding & Tenders Portal for binding details. The scheduled opening date does not confirm live submission status.",
     "rights": {
       "page": "Official European Commission information page; summarized and linked, not reproduced. The work programme and final topic conditions take precedence."
     }
@@ -2111,8 +2111,8 @@
     "title": "Horizon Europe Work Programme 2026–2027, Part 14: HORIZON-NATURE-2027-02-05",
     "description": "The official work programme defines the cost-effective biodiversity-monitoring topic for EU policies: three areas cover pollinator monitoring, soil biodiversity and the Water Framework Directive. It calls for operational monitoring methods, demonstrations, species identification/quantification and FAIR-by-design data; the topic is a €16 million RIA with expected EU contributions of €5–6 million for three projects, using lump-sum funding.",
     "url": "https://research-and-innovation.ec.europa.eu/document/download/01964d0c-a8eb-4f23-baa4-87d96812dca6_en",
-    "checked": "2026-10-12",
-    "origin": "Reviewed pages 144–147 and the call overview on pages 13–15 of the official Horizon Europe Work Programme 2026–2027, Part 14, Horizontal Activities. No document pages or text are reproduced.",
+    "checked": "2026-10-13",
+    "origin": "Reviewed pages 144–147 and the call overview on pages 13–15 of the official Horizon Europe Work Programme 2026–2027, Part 14, Horizontal Activities, including opening/deadline schedule, areas, demonstration requirements and FAIR data expectations. No document pages or text are reproduced.",
     "rights": {
       "work_programme": "Official EU work-programme source; linked and summarized. Topic-specific conditions and the live Funding & Tenders Portal remain authoritative."
     }
@@ -2122,8 +2122,8 @@
     "title": "European Research Executive Agency: who should apply to Horizon Europe",
     "description": "Official REA guidance says most Horizon Europe calls require at least three partner organisations from three different EU or associated countries, with at least one EU country. Call-specific pages may set additional conditions or exceptions.",
     "url": "https://rea.ec.europa.eu/horizon-europe-who-should-apply_en",
-    "checked": "2026-10-12",
-    "origin": "Reviewed the official European Research Executive Agency guidance on general Horizon Europe applicant and consortium conditions on October 12, 2026.",
+    "checked": "2026-10-13",
+    "origin": "Rechecked the official European Research Executive Agency guidance on general Horizon Europe applicant and consortium conditions on October 13, 2026.",
     "rights": {
       "page": "Official European Commission information page; summarized and linked. Topic-specific eligibility rules take precedence."
     }
@@ -2483,5 +2483,76 @@
     "url": "https://github.com/bioacoustic-ai/bioacoustics-datasets/tree/c412c5c3fd65552d17e492dac35f2be2c30349a4",
     "checked": "2026-10-13",
     "origin": "Reviewed the README and root file inventory at commit c412c5c3fd65552d17e492dac35f2be2c30349a4 (commit date 2026-05-26) and GitHub repository API metadata. The README describes its scope, metadata schema and contribution route; the API reports no recognized repository license and the pinned root inventory has no LICENSE file. No dataset rows or files were acquired or audited."
+  },
+  {
+    "id": 240,
+    "title": "European Research Executive Agency: Horizon Europe Cluster 6 call schedule",
+    "description": "Official REA Cluster 6 information page listing the HORIZON-NATURE-2027-02 call schedule and directing applicants to the Funding & Tenders Portal and work programme for authoritative details.",
+    "url": "https://rea.ec.europa.eu/funding-and-grants/horizon-europe-cluster-6-food-bioeconomy-natural-resources-agriculture-and-environment_en",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official REA page and its HORIZON-NATURE-2027-02 schedule entry on October 13, 2026. The page lists the planned opening date as October 13; the Funding & Tenders topic page was not retrievable in this review, so live submission status remains unverified.",
+    "rights": {
+      "page": "Official European Commission information page; summarized and linked, not reproduced. The live Funding & Tenders topic and work programme take precedence."
+    }
+  },
+  {
+    "id": 241,
+    "title": "Nardini, Cochard and Mayr: Talk is cheap: rediscovering sounds made by plants",
+    "description": "2024 Trends in Plant Science Opinion. It places plant acoustic emissions in a long physiological research history, discusses cavitation and other passive physical mechanisms, and says receiver use needs experimental evidence. It is a critical synthesis, not a new experiment.",
+    "url": "https://doi.org/10.1016/j.tplants.2023.11.023",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the Opinion's historical framing, mechanisms, receiver-evidence conclusion and open questions from the University of Trieste institutional PDF. Its cited experiments were not independently reanalysed.",
+    "review_url": "https://arts.units.it/retrieve/3ee15482-f017-4673-8d4e-a7f3cae5571d/1-s2.0-S1360138523003825-main.pdf",
+    "review_url_label": "Institutional repository full-text copy"
+  },
+  {
+    "id": 242,
+    "title": "Khait et al. plant recordings, Dryad dataset",
+    "description": "The exact Dryad page lists a 10 MB PlantSounds.zip and an 806-byte README. The README describes two-millisecond WAV clips sampled at 500 kHz and labels for dry/cut tomato and tobacco, empty pots and greenhouse noise.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.jwstqjqf7",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the exact Dryad dataset landing page and its public dated version/file list. The README description was read on the landing page; archive contents and file checksums were not inspected, and nothing was downloaded."
+  },
+  {
+    "id": 243,
+    "title": "Dryad good data practices and CC0 dataset policy",
+    "description": "Dryad's official guidance says data files submitted to its repository must meet CC0 terms and be free of conflicting copyright or terms; software may be hosted separately under other licenses.",
+    "url": "https://datadryad.org/help/guides/best_practices",
+    "checked": "2026-10-13",
+    "origin": "Reviewed Dryad's live Good data practices page. It states that submitted dataset files must comply with CC0 and that software may be linked or hosted separately under other terms. This repository-wide guidance is recorded separately from the exact dataset and classifier records."
+  },
+  {
+    "id": 244,
+    "title": "Khait et al. CNN plant-sound classifier training function, Zenodo v1",
+    "description": "The linked Zenodo software record describes a 2.4 kB binary CNN training function, published February 6, 2023. Its License field is blank.",
+    "url": "https://zenodo.org/records/7612742",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official Zenodo v1 metadata, file listing and rights section. The record displayed no license. The source file was not downloaded, inspected or executed."
+  },
+  {
+    "id": 245,
+    "title": "BEANS-Zero dataset card and live file inventory",
+    "description": "The pinned card describes 91,965 examples in a single test split, says the composite is not intended for commercial use, and documents per-sample license metadata. The live Hugging Face file listing reports 50.5 GB.",
+    "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero/commit/e9e45ffff7500867c885ef74c245c07e66677084",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official card at its visible commit e9e45ffff7500867c885ef74c245c07e66677084 and the live file tree on October 13, 2026. The card says there is only a test split, reports 91,965 examples, provides a per-sample license field and says the composite is not intended for commercial use. It lists 50.5 GB total. No shards, sample rows or license values were downloaded or inspected.",
+    "review_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero/tree/main",
+    "review_url_label": "Live file inventory",
+    "rights": {
+      "dataset": "The dataset card says individual samples carry source-specific license values and warns against commercial use. The hub-level SPDX-style field is “other”; no sample-level terms or redistribution permissions were independently checked."
+    }
+  },
+  {
+    "id": 246,
+    "title": "BEANS-Zero evaluation code at pinned GitHub main",
+    "description": "The official README says a full non-streaming download is about 100 GB and requires Java 8 for caption evaluation; pyproject.toml identifies package version 1.0.0 and Python >=3.10 but declares no license.",
+    "url": "https://github.com/earthspecies/beans-zero/tree/31d4487ee6452ae6c31853d45fd38b7d4150372d",
+    "checked": "2026-10-13",
+    "origin": "Pinned the current main ref to commit 31d4487ee6452ae6c31853d45fd38b7d4150372d with a read-only ls-remote check. Reviewed the official README and pyproject.toml at that commit and the root file inventory. The repository lists about 100 GB for a full download and Java 8 for captioning; the project metadata declares version 1.0.0 and Python >=3.10 but no license field, and the root inventory has no LICENSE. No code was cloned, downloaded or executed.",
+    "review_url": "https://raw.githubusercontent.com/earthspecies/beans-zero/31d4487ee6452ae6c31853d45fd38b7d4150372d/pyproject.toml",
+    "review_url_label": "Pinned pyproject.toml",
+    "rights": {
+      "software": "No explicit repository license was found in the pinned root inventory or project metadata. Do not copy, install or execute on the assumption of permission."
+    }
   }
 ]
