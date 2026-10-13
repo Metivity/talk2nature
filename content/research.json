@@ -76,6 +76,19 @@
       ],
       "takeaway": "The reported one-speaker versus two-speaker result is compatible with both accounts under different auxiliary assumptions. A useful follow-up must test their distinctive predictions, with independent behavioral outcomes and qualified animal-welfare review."
     },
+    "review_request": {
+      "title": "Independent review of receiver-response evidence",
+      "summary": "We invite comparative-communication, avian-behavior or animal-cognition researchers to assess what the cited Japanese-tit experiments support about call order and source linkage, and whether the competing explanations are distinguishable. This is a literature critique, not a Talk2Nature model claim or an animal experiment.",
+      "questions": [
+        "Which 2016 and 2017 contrasts best support an order-sensitive receiver response, and what alternatives remain after the reported component, reversal, novelty and call-type controls?",
+        "What does the 2022 one/two-speaker comparison establish about source linkage, and what does it leave open about mechanism or independent replication?",
+        "Do the 2024 Minimal Compositionality and Bird Implicatures accounts make distinct predictions for the cited experiments, or can both fit the reported results under different assumptions?",
+        "What is the smallest public-source check that could change your assessment? If a new animal study is needed, what outcome/control matters and which welfare review would be required before protocol design?"
+      ],
+      "status": "No independent specialist review has been received. The 2017 publisher page and data-file inventory, the 2022 analysis reproduction, and the complete 2024 formal supplement remain unavailable or unreviewed as described in the evidence note.",
+      "guide_path": "docs/JAPANESE_TIT_REVIEW.md",
+      "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml"
+    },
     "review_locator": "Suzuki et al. 2016: Methods, Experiments 1–2; Results; Figures 3–4; ethics. Suzuki et al. 2017: publisher-indexed Results, STAR Methods, statistics and data availability; direct page inaccessible. Suzuki & Matsumoto 2022: selected Methods/Results; Figures 3–4; data/code availability; rights. Figshare item 18007046 v1: two data tables inspected structurally; two R scripts read as text only. Phillips & Wilson 2016: discussion of systematicity. Schlenker et al. 2024: main text Sections I–VII in the HAL v1 author-accepted manuscript; appendices inspected selectively, formal derivations not independently audited; publisher supplement not retrieved.",
     "purpose": "Behavior & communication",
     "atlas": {
