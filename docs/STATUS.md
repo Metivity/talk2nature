@@ -10,6 +10,8 @@
 
 **Validation:** all 114 repository Python tests and 107 Node tests pass; the resource catalog validates 112 records. The owner-only suite passes 104 tests, with 49 PostgreSQL integration tests skipped because no disposable database is configured. The catalog sync reports 471 records and is idempotent on repeat. The local noindex build produces 104 pages plus 404; the site checker passes for 105 HTML documents and 5,022 links. The comparison and HAL source link render in the local research page. No physical-phone or independent-user review occurred in this milestone.
 
+**Release:** PR [#99](https://github.com/Metivity/talk2nature/pull/99) merged as [`324e6d1745875bd2b3639198505e621021599888`](https://github.com/Metivity/talk2nature/commit/324e6d1745875bd2b3639198505e621021599888). Pages run [#38386643812](https://github.com/Metivity/talk2nature/actions/runs/38386643812) completed successfully. After deployment, the research page, sitemap and `robots.txt` each returned HTTP 200. The live page contains the comparison and HAL link, uses a self-canonical URL and `index,follow`, and appears in the sitemap; `robots.txt` allows crawling and names that sitemap. This verifies publication and technical crawlability, not search-engine indexing, impressions, clicks or ranking.
+
 **Next:** seek independent comparative-communication review of the two theories and a welfare-reviewed discriminator. Keep AutoResearch **NOT READY**; this literature synthesis supplies no training data or benchmark evidence.
 
 ## October 13 PR #97 deployment and live verification
