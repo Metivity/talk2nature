@@ -1,17 +1,17 @@
 # Execution board: software to a credible pilot
 
-Updated October 12, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
+Updated October 13, 2026. Deliverables from the [90-day plan](SUCCESS_AND_GROWTH_PLAN.md). Dates are targets, not completed work or new spending approval.
 
 ## Current priority: earn an independent use
 
 The website and tools have advanced; the bottleneck is external scientific and workflow validation. The October 1 board below is retained as a historical plan, including funding dates that must be rechecked before use. These priorities govern the next work. They do not promise completion of human-dependent milestones by a fixed date.
 
-| Priority / proposed window | Deliverable | Evidence of completion | Status October 12 |
+| Priority / proposed window | Deliverable | Evidence of completion | Status October 13 |
 | --- | --- | --- | --- |
 | 1 / next week | Independent researcher completes or challenges the synthetic workflow evaluation | Tested revision/environment, exact result and help level; no media needed | Entry paths now start with a no-setup browser comparison and offer the Audacity handoff as an optional deeper check; no independent reproduction yet |
 | 2 / next two weeks | Six focused workflow conversations from the earlier 12-conversation target | Dated, permissioned notes: current task/tool, observed problem, desired export, willingness to test; select one priority from findings | None documented; one-person-at-a-time outreach draft is ready; no message sent |
-| 3 / next two weeks | One independent evaluator runs the kit; actual Android and iPhone workflow rehearsals | Exact revision/device, steps, failures and assistance recorded; complete/partial save and reopening checked | The quick browser route is ready for external use; no independent evaluator or physical-phone result documented |
-| 4 / next month, conditional | One export bridge to a tool the evaluator already uses | Pinned format, synthetic round-trip/target validation, explicit information-loss report and evaluator feedback | Audacity one-way prototype added October 5; native and external-evaluator checks remain open. Safe & Sound session mapping remains proposed |
+| 3 / next two weeks | One independent evaluator runs the kit; actual Android and iPhone workflow rehearsals | Exact revision/device, steps, failures and assistance recorded; complete/partial save and reopening checked | Browser route is ready; experimental Android source passes API 34 emulator QA, but no independent evaluator or physical-phone result is documented |
+| 4 / next month, conditional | One export bridge to a tool the evaluator already uses | Pinned format, synthetic round-trip/target validation, explicit information-loss report and evaluator feedback | Audacity one-way handoff and AOEF 1.1 are implemented; a synthetic Whombat 0.9.0 UI import passed. Independent evaluator feedback remains open; Safe & Sound session mapping remains proposed |
 | 5 / next month, conditional | One accountable avian reviewer revises the passive parrot protocol | Agreed role, species/access, codebook, independent-label criteria, welfare/consent and evaluation controls | Reviewer and carer access unconfirmed; intake closed |
 | 6 / after the preceding evidence | An openly inspectable methods release | Exact code, permitted fixtures/results, limitations, authorship and independent report; archive/DOI after scope review | Future; no dataset, biological benchmark or DOI released |
 
@@ -31,7 +31,7 @@ The near-term public-benefit hypothesis is lower effort and cost for trustworthy
 
 Lead with one useful artifact and an accurate claim: an externally checked workflow, a working adapter or a reproducible failure that others can avoid. Prepare a short demo and practical guide, then seek permission for a focused contribution to WILDLABS or a relevant research group. Safe & Sound is a concrete standards lead, not a partner. A scientist-agreed methods release can support funding and specialist coverage; broad advertising should follow usefulness and name clearance.
 
-The next software candidate is the interoperability work above, chosen after feedback. Invite a small number of independent reviewers first; add discussion channels or broad contribution calls only when moderation capacity and a real science task exist. Pause new native platforms, unattended capture, conversational-model training and expansion across species until a demonstrated workflow need justifies them. The general observation app can still welcome different animals.
+The interoperability experiment is implemented and passed a synthetic target-application sequence; wait for independent review before expanding it. A source-only Android Station preview is now available, but wider use depends on physical-device and independent workflow checks. Invite a small number of reviewers first; add discussion channels or broad contribution calls only when moderation capacity and a real science task exist. Do not add more native platforms, animal playback or conversational-model training without a demonstrated need and the relevant evidence gates. The general observation app can still welcome different animals.
 
 ## Historical October 1 execution board
 
@@ -39,7 +39,7 @@ The next software candidate is the interoperability work above, chosen after fee
 | --- | --- | --- | --- |
 | First tools | Listen, portable labels, Python report; automated and desktop/mobile checks; deployment | Codex, founder review | Released October 1; 41 automated checks and live workflow verified |
 | Nature Station | Bounded local capture, encounter markers, clip review/export, synthetic browser checks | Codex | Released October 1; 51 automated checks, 49 live files and synthetic workflow verified |
-| Dedicated phone | Native Android service, visible controls, bounded offline storage, 1/8/24-hour device trials | Codex, Raviv device selection | Next proposed milestone; no native app or unattended validation yet |
+| Dedicated phone | Native Android foreground service, visible controls, encrypted bounded local storage, manual review/export and 1/4/8-hour limits | Codex, Raviv device selection | Experimental source preview added October 13; API 34 emulator checks and debug/release build-boundary checks pass. Physical-device, endurance and field validation remain outstanding |
 | Mobile Field Companion | Three workflows, install metadata, glass design, public-only offline cache, export provenance and browser verification | Codex | Released October 1; 58 automated checks, offline browser workflow and 62 live files verified; physical-phone tests pending |
 | App discovery | Public install/share page, reproducible feedback form, founder demo and launch copy | Codex preparation; Raviv distribution | Prepared; no social/community posting or new outreach sent |
 | Scientific direction | Concept, interview script, five tailored outreach drafts | Codex | Prepared; outreach private and unsent |

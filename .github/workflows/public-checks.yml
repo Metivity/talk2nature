@@ -16,7 +16,7 @@ concurrency:
 jobs:
   checks:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -25,6 +25,13 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Browser-tool logic checks
         run: node --test tests/*.test.mjs
+      - name: Native Android station checks
+        run: |
+          bash native-android/scripts/test-core.sh
+          cd native-android
+          ./gradlew --no-daemon :app:lintDebug :app:assembleDebug :app:assembleRelease
+          cd ..
+          bash native-android/scripts/check-release-boundaries.sh
       - name: Check the preview site
         run: |
           python3 web/build.py

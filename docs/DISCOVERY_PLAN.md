@@ -69,7 +69,7 @@ Reusing pretraining is plausible, as in human-language ML; the essential missing
 
 Use a phone web app for visible short capture first; retain the existing local mode. A separate consented camera prototype should pair frame timestamps with audio, show a live indicator and stop on interruption. Evaluate camera permission denial, thermal load, orientation changes, dropped frames and actual iOS/Android behavior before release. Auto-identification returns candidates with uncertainty; pose and gestures need species-specific labels. Ordinary images do not reveal internal physiology or guarantee individual identity. Infrared/thermal claims require the corresponding hardware.
 
-For spare-phone operation, a native Android pilot is the next practical engineering candidate, after physical-device tests. Foreground-service/battery/privacy requirements need a current platform review at implementation time. TV is initially a paired display for reviewed results, not an assumed ultrasonic microphone. Smart-speaker integrations are later, separately assessed distribution channels.
+For spare-phone operation, an experimental native Android source preview now exists. The next step is a controlled, owner-operated physical-device evaluation of permissions, screen lock, interruptions, stop/recovery behavior, battery and storage before expanding the prototype or inviting field use. Recheck current foreground-service and privacy requirements as part of that evaluation. TV is initially a paired display for reviewed results, not an assumed ultrasonic microphone. Smart-speaker integrations are later, separately assessed distribution channels.
 
 ## Plants, fungi and the water question
 

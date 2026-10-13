@@ -46,10 +46,12 @@ export function readBundleFiles(buffer) {
 }
 
 export function validateSessionJournal(r) {
-  check(object(r) && ['talk2nature.station.v1','talk2nature.observation-window.v1'].includes(r.schema),'Choose a Station Save session ZIP. Sound desk notebooks and loose recordings use Review.');
+  check(object(r) && ['talk2nature.station.v1','talk2nature.station.v2','talk2nature.observation-window.v1'].includes(r.schema),'Choose a Station Save session ZIP. Sound desk notebooks and loose recordings use Review.');
   const window=r.schema==='talk2nature.observation-window.v1';
+  const native=r.schema==='talk2nature.station.v2';
+  const maxSession=native?28800:window?30:300.2;
   check(r.status==='stopped' && ['synthetic','microphone'].includes(r.origin) && uuid.test(r.session_id) && short(r.station_alias,80) && r.station_alias.trim() && short(r.started_at_utc,40) && /^\d{4}-\d\d-\d\dT/.test(r.started_at_utc) && Number.isFinite(Date.parse(r.started_at_utc)) && short(r.clock,200) && short(r.tool_version,40) && short(r.stop_reason,80),'The saved session details are incomplete or unsupported.');
-  check(integer(r.sample_rate,8000,96000) && finite(r.duration_seconds,0,window?30:300.2) && finite(r.near_full_scale_fraction,0,1) && object(r.audio_settings),'The session recording settings are invalid.');
+  check(integer(r.sample_rate,8000,96000) && finite(r.duration_seconds,0,maxSession) && finite(r.near_full_scale_fraction,0,1) && object(r.audio_settings),'The session recording settings are invalid.');
   if (r.animal_context!==undefined) validateAnimal(r.animal_context);
   check(Array.isArray(r.events) && r.events.length<=(window?1:24) && Array.isArray(r.discarded_events) && r.discarded_events.length<=(window?1:1000) && Array.isArray(r.markers) && r.markers.length<=100,'The session has too many or missing observations.');
   const ids=new Set(); let audioBytes=0;
@@ -74,7 +76,7 @@ export function validateSessionJournal(r) {
     check(r.events.length+r.discarded_events.length===(s.processed_samples?1:0),'The window is missing its retained or discarded record.');
   } else {
     const d=r.detector;
-    check(object(d) && d.type==='energy_threshold' && d.calibration_seconds===3 && finite(d.margin_db,6,24) && (d.threshold_dbfs===null||finite(d.threshold_dbfs,-50,-3)) && d.pre_roll_seconds===1 && d.max_clip_seconds_approx===6 && d.max_session_seconds===300,'The sound-highlights settings are unsupported.');
+    check(object(d) && d.type==='energy_threshold' && d.calibration_seconds===3 && finite(d.margin_db,6,24) && (d.threshold_dbfs===null||finite(d.threshold_dbfs,-50,-3)) && d.pre_roll_seconds===1 && d.max_clip_seconds_approx===6 && (native?integer(d.max_session_seconds,1,28800) && r.duration_seconds<=d.max_session_seconds:d.max_session_seconds===300),'The sound-highlights settings are unsupported.');
   }
   return r;
 }
