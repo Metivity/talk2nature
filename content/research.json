@@ -3234,5 +3234,39 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "opensoundscape-bioacoustic-workflow",
+    "title": "OpenSoundscape: bioacoustic tools, not animal translation",
+    "seo_description": "OpenSoundscape supports audio analysis, Raven annotations, detection and localization. These tools can organize evidence, but they do not decode animal meaning.",
+    "taxon": "Cross-species bioacoustics",
+    "kind": "Research software and strongly labeled bird-soundscape dataset",
+    "purpose": "Data & annotation",
+    "year": "2023",
+    "year_label": "Software paper (2023); current code release reviewed separately",
+    "source_ids": [291, 292, 293, 294, 295],
+    "reviewed": "2026-10-13",
+    "review_stage": "Selected paper sections, versioned repository/license, annotation tutorial, dataset record and Dryad policy reviewed; no code or data executed",
+    "review_depth": "Reviewed the paper abstract, software overview, annotation and localization functionality, examples, and stated scope; the official v0.13.2 release and tagged MIT license; the official annotation tutorial; and the Dryad dataset landing page and repository-wide license policy. The article describes v0.9.1, the repository lists v0.13.2 as its latest release, while the stable annotation tutorial still pins 0.13.1. No package, code, model, recording, archive, or annotation row was downloaded, installed, or run. The publisher marks the article Open Access, but its exact reuse license was not visible in the reviewed page. No independent software or biological review occurred.",
+    "finding": "OpenSoundscape is a Python research toolkit for manipulating audio and spectrograms, working with Raven time-frequency annotations, preparing labels, training or applying acoustic classifiers, detecting periodic calls, and localizing sounds from synchronized recorders. Its 2023 paper describes version 0.9.1; the current official release page lists v0.13.2. This is useful infrastructure for acoustic observation and researcher workflows, not a model that translates animal communication. The linked Dryad dataset is a distinct resource: its current landing page reports 385 minutes of bird soundscape recordings across four days, 48 species and 16,052 strong annotations. These labels support bounded detection or classification tasks; they do not establish call meaning or receiver understanding.",
+    "limitations": "The tool is a Python analysis package, not a beginner mobile app, persistent recording service, or general animal-language system. The tutorial's pinned package version trails the newest release, so any reproduction must pin and verify the version actually used. The tagged MIT code license does not license dependencies, model-zoo code, checkpoints, tutorial media, or datasets. Dryad's current policy says repository data are CC0, but the reviewed item page did not expose an item-level license field; reconfirm the exact version terms before reuse. The dataset's four recording days and one named reserve do not demonstrate broad geographic or individual-level generalization. No files, labels, or data splits were independently inspected.",
+    "lesson": "Keep the Field Companion simple and human-led. If researchers identify a real need, an advanced export/review path could exchange human-marked acoustic intervals with established annotation tools while preserving observers' notes separately from model predictions. Do not add OpenSoundscape or its models to the mobile app merely because the package is open source; first validate a synthetic, version-pinned workflow and review every dependency and data component.",
+    "next_review": "Only after an independent researcher identifies a concrete workflow gap, test a small synthetic Talk2Nature WAV and human annotation through the exact OpenSoundscape release and a documented Raven-compatible export/import path. Record dependency versions and data-rights boundaries. Do not acquire the 1.18 GB Dryad package or train a model until a bounded task, exact file terms, leakage-safe split and qualified review are in place. AutoResearch remains NOT READY.",
+    "expert_review": "No independent bioacoustic, research-software, or animal-communication specialist has reviewed this assessment.",
+    "review_locator": "Lapp et al. (2023): abstract, software overview, Raven integration, examples, and scope; official repository v0.13.2 README/LICENSE; stable audio-annotation tutorial; Chronister et al. Dryad record and Dryad mission page.",
+    "study_snapshot": [
+      ["Tool purpose", "Python toolkit for audio/spectrogram handling, annotations, acoustic detection/classification and synchronized-recorder localization."],
+      ["Annotation model", "The tutorial represents human labels as time-frequency boxes and shows Raven import/export and label preparation; an annotated event is not automatically a communicative meaning."],
+      ["Version trail", "The paper describes v0.9.1; the official repository lists v0.13.2; the stable annotation tutorial currently installs v0.13.1. Pin the tested version."],
+      ["Dataset lead", "Dryad version updated 2021-04-06 lists 4 files totaling 1.18 GB; the landing page reports 385 minutes across four days, 48 species and 16,052 annotations."],
+      ["Current decision", "Keep paper, software and dataset as separate metadata-only components. No code, model, recording or dataset bytes were acquired or run."]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews software and a dataset landing page, not verified participant or field-observation coordinates.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

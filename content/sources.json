@@ -2998,5 +2998,45 @@
     "url": "https://uwe-repository.worktribe.com/output/16046067/propagation-of-electrical-spike-trains-in-substrates-colonised-by-oyster-fungi",
     "checked": "2026-10-13",
     "origin": "Official UWE Bristol repository record reviewed October 13, 2026. It identifies the article and lists repository PDF files with a CC BY 4.0 license URL. This supports the article-rights record only; it does not grant rights to the separate Zenodo dataset."
+  },
+  {
+    "id": 291,
+    "title": "OpenSoundscape: An open-source bioacoustics analysis package for Python",
+    "description": "Lapp et al. describe an open-source Python toolkit for detecting, classifying, annotating, and localizing biological sounds.",
+    "url": "https://doi.org/10.1111/2041-210X.14196",
+    "checked": "2026-10-13",
+    "origin": "Publisher full text reviewed for the abstract, software overview, supported workflows, examples, and scope. The article describes version 0.9.1 and is marked Open Access, but the exact article reuse license was not visible in the page reviewed. No article text, figures, or supplementary files were copied."
+  },
+  {
+    "id": 292,
+    "title": "OpenSoundscape official v0.13.2 release and license",
+    "description": "Versioned OpenSoundscape repository release and its MIT license, checked October 13, 2026.",
+    "url": "https://github.com/kitzeslab/opensoundscape/releases/tag/v0.13.2",
+    "checked": "2026-10-13",
+    "origin": "Official GitHub release page identifies v0.13.2 as the latest release, dated June 30, 2026; the release points to verified commit 8b58215 and describes an installation fix. The LICENSE at the v0.13.2 tag is MIT. No source code was downloaded, installed, or executed. The license does not cover dependencies, model-zoo assets, checkpoints, or datasets."
+  },
+  {
+    "id": 293,
+    "title": "OpenSoundscape official audio annotation tutorial",
+    "description": "Official tutorial for Raven annotation import, box editing, label preparation, and example audio.",
+    "url": "https://opensoundscape.org/en/stable/tutorials/annotations.html",
+    "checked": "2026-10-13",
+    "origin": "Official stable documentation reviewed October 13, 2026. It explains time-frequency annotation boxes, Raven file import/export, and preparing species or call-type labels for ML. The tutorial currently pins opensoundscape 0.13.1 although the GitHub release page lists v0.13.2 as latest. Its example-media terms are separate; the page identifies the example Xeno-Canto recordings as CC BY-NC-ND 2.5."
+  },
+  {
+    "id": 294,
+    "title": "Dryad dataset of strongly labeled Eastern North American bird soundscapes",
+    "description": "Chronister et al.'s versioned Dryad dataset contains bird soundscape recordings and time-frequency-species annotations.",
+    "url": "https://doi.org/10.5061/dryad.d2547d81z",
+    "checked": "2026-10-13",
+    "origin": "Official Dryad landing page reviewed October 13, 2026. Its April 6, 2021 version lists four files totaling 1.18 GB. The page describes 385 minutes collected on four days, 48 species and 16,052 annotations. The abstract calls the dataset free-use; the item page does not expose a separate license field in the reviewed view. No files or row values were acquired or inspected."
+  },
+  {
+    "id": 295,
+    "title": "Dryad repository-wide data license policy",
+    "description": "Dryad states that it publishes research datasets under the Creative Commons Public Domain License (CC0).",
+    "url": "https://datadryad.org/mission",
+    "checked": "2026-10-13",
+    "origin": "Official Dryad mission page reviewed October 13, 2026. It states that Dryad publishes data exclusively under CC0. This is repository-wide policy evidence, not an item-level license field; the exact archived version's reuse terms should be reconfirmed before acquisition or training."
   }
 ]
