@@ -8,11 +8,13 @@ An early-stage project documenting the science of nonhuman communication and bui
 
 Website: https://metivity.github.io/talk2nature/
 
-**Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). The observation-practice exercise and its limits are documented in [its project record](docs/OBSERVATION_PRACTICE.md). Optional offline support saves public app files only; export your audio and notes before leaving. Native unattended capture is not released.
+**Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). The observation-practice exercise and its limits are documented in [its project record](docs/OBSERVATION_PRACTICE.md). Optional offline support saves public app files only; export your audio and notes before leaving. An experimental [Android Station source preview](native-android/README.md) now builds locally; it is not a store release or a validated field recorder.
 
 **First tools:** [Nature Station](https://metivity.github.io/talk2nature/tools/station/) captures user-started, foreground-only sound observations and optional encounter markers. [Compare](https://metivity.github.io/talk2nature/app/compare/) reviews a saved session ZIP; [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs or notebooks and can open that ZIP locally to select one clip. The notebook keeps the complete session journal as source context—not annotation labels—and is unencrypted, so review it before sharing. A [Python report](docs/LISTEN.md) examines labels and a metadata splitter groups declared related animals/sessions. Start with synthetic examples; no animal meaning is inferred. Read the [station, device and AI architecture](docs/NATURE_STATION.md).
 
 **Use another sound editor:** [Continue in Audacity](docs/AUDACITY_EXPORT.md) packages a local WAV, timed labels and complete original annotations with a conversion report. This is a one-way prototype for evaluation; Audacity edits do not update the Talk2Nature notebook.
+
+**Research annotation exchange:** Listen has an experimental one-way [AOEF 1.1 export](docs/INTEROPERABILITY.md) for a separate annotation workbench. Synthetic serialization passed with soundevent 2.10.0; Whombat application import is still untested. The export is local-only and preserves a full, unencrypted provenance sidecar.
 
 **Research atlas:** [Explore places and historical work](https://metivity.github.io/talk2nature/research/atlas/) alongside our evidence connections. All library notes remain visible; pins require cited locations. Read the [coverage, provenance and contribution guide](docs/RESEARCH_ATLAS.md).
 
@@ -49,6 +51,10 @@ python3 scripts/check_site.py
 
 The example is invented metadata for testing software behavior. It is not a dataset, experiment or model result. The split tool prevents shared individuals, sessions and exact source hashes from appearing in different partitions. It cannot detect unrecorded identities, near-duplicate audio or foundation-model training overlap.
 
+## Android source preview
+
+The native Android project is a separate, experimental phone-station prototype. Read its [scope, build and test instructions](native-android/README.md) before installing it. The source preview is not published in an app store and has not passed physical-phone or field validation.
+
 ## Public release
 
 ```sh
@@ -62,6 +68,7 @@ Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/G
 
 - `content/`: public evidence notes, opportunity records and source inventory.
 - `web/`: static website builder and assets.
+- `native-android/`: experimental Android Station source project; see its README for platform and release limits.
 - `talk2nature/`: reproducible research utilities.
 - `research/resources.json`: versioned research/code/dataset catalog; see [collection decisions and commands](docs/COLLECTION.md).
 - `data/external/`: ignored third-party samples and acquisition receipts; never website assets.

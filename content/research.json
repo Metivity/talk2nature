@@ -1079,18 +1079,20 @@
     "year": "2022",
     "source_ids": [
       98,
-      99
+      99,
+      228
     ],
-    "review_depth": "Abstract, selected results and data-collection methods; no supplement or raw-table analysis.",
-    "finding": "An owner survey covered 877 parrots from 73 species and found variation in reported mimicry.",
-    "limitations": "Owner reports and recruitment bias limit inference. Learned human sounds are not a decoded natural vocabulary.",
-    "lesson": "Our proposal: retain species and individual identity; distinguish observed behavior from owner interpretation.",
-    "next_review": "Review the questionnaire and deposited table, then test a small species-specific observation codebook.",
-    "reviewed": "2026-10-03",
+    "review_depth": "Full main article text, including methods, results, discussion, data-availability and rights statements, reviewed through the Europe PMC full-text XML. Official Figshare v4 API metadata and its single-file manifest were checked. The supplementary questionnaire (Appendix 1), workbook, and raw responses were not inspected or acquired.",
+    "finding": "The authors received 898 voluntary survey responses and retained a cleaned sample of 877 companion parrots across 33 genera and 73 species after quality checks and excluding birds not reported to mimic human sounds. Respondents said sampled parrots sometimes (36%) or frequently (53%) used mimicked vocalizations in appropriate human contexts without prompting. These are caregiver reports, not independently observed events or receiver tests.",
+    "limitations": "Recruitment used email and social media with parrot advocacy, care, and interest groups and was explicitly biased toward birds that mimic human sounds. The survey asked respondents for their names and email addresses; although the published data item declares CC BY 4.0, the XLSX has not been inspected, so presence or absence of identifiers, consent scope, and privacy suitability are unknown. The contextual-use measure is owner-assessed, not a timestamped recording or controlled behavioral response. This dataset is not an acoustic corpus, decoded vocabulary, or validated training set.",
+    "lesson": "A community survey can expose the kinds of context people notice, but it should not collapse caregiver interpretation into scientific labels. A Talk2Nature observation flow should preserve a time-stamped observation, the caregiver's interpretation, the source recording, and any later independent review as separate fields, with species and individual uncertainty explicit.",
+    "next_review": "Inspect the supplementary questionnaire and exact workbook schema for field definitions, respondent identifiers, consent/privacy limits, and missingness before deciding whether any secondary use is appropriate. Seek qualified parrot-communication review of a prospective observer codebook; do not admit this owner-survey table to audio-model training.",
+    "reviewed": "2026-10-13",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Selected evidence reviewed",
+    "review_stage": "Full main-text review and metadata-only dataset/privacy assessment",
     "year_label": "Source year",
-    "purpose": "Data & annotation"
+    "purpose": "Data & annotation",
+    "seo_description": "A volunteer survey reports companion parrots’ human-mimicry and context use. Results are caregiver reports, not direct observation or receiver tests."
   },
   {
     "slug": "companion-parrot-name-use-2026",
@@ -2507,21 +2509,22 @@
       221,
       222,
       223,
-      224
+      224,
+      227
     ],
     "reviewed": "2026-10-13",
     "review_stage": "Targeted primary article, dataset metadata, and code-provenance review; no file acquisition or reproduction",
-    "review_depth": "Reviewed the PLOS article’s sampling, methods, results, discussion, ethics, and linked-resource sections. Also reviewed the Figshare v2 item/API/README from October 12, GitHub README/license/repository status, and Zenodo v1.0.0 metadata. The PLOS supplement and complete code/dependency workflow were not audited. No dataset files, audio, or code were acquired or run.",
-    "review_locator": "PLOS Methods 2.2, 2.4–2.10; Results 3.1–3.5; Discussion 4.1–4.3; Ethics and Data Availability. Figshare v2 record and README; GitHub repository README/license; Zenodo v1.0.0 API metadata.",
+    "review_depth": "Reviewed the PLOS article’s sampling, methods, results, discussion, ethics, and linked-resource sections. Refreshed the Figshare v2 API and streamed its README.md file 41233869 for review; it was not retained. Resolved the GitHub v1.0.0 tag to commit 1f7031dc996c79914ccf5d042181f947793fb459 and read the site-scale selection R Markdown file at that revision without retaining or executing it. The code explains the 14-row selection difference. The PLOS supplement, remaining code/dependency workflow, selection CSV, and audio were not reviewed. No dataset files or audio were acquired; no code was executed.",
+    "review_locator": "PLOS Methods 2.2, 2.4–2.10; Results 3.1–3.5; Discussion 4.1–4.3; Ethics and Data Availability. Figshare v2 API and README.md file 41233869. GitHub v1.0.0 commit 1f7031dc996c79914ccf5d042181f947793fb459, IdentityEncoding_Code_05_SiteScaleDatasets.Rmd, lines 129–175; repository MIT LICENSE. Zenodo v1.0.0 API metadata.",
     "finding": "The authors report stronger acoustic convergence at the individual than site scale in native-range Uruguay and introduced U.S. monk parakeet populations. Their yellow-naped amazon comparator showed stronger convergence at the regional-dialect scale. This is evidence about acoustic identity structure and a proposed identity-signaling framework, not decoded call meaning or demonstrated receiver comprehension.",
-    "limitations": "The article’s supervised random forest was trained on 156 calls from 8 known monk parakeets using 114 selected features. The reported 97.44% accuracy (95% CI 93.57–99.30) is training accuracy. The remaining 73 individual-scale calls from 9 other birds were used to produce proximity matrices and inspect clustering patterns; the paper does not report that 97.44% as held-out unseen-caller accuracy. The study reports 229 individual-scale monk-parakeet calls from 17 individuals and 1,353 site-scale calls from 63 sites. The Figshare README/selection inventory lists 1,596 clips, leaving 14 records to reconcile against the article’s monk-parakeet counts and comparator material. The full supplement, exact file-level rights/provenance, and code were not audited. Acoustic similarity cannot by itself show what a caller intends or what a receiver understands.",
+    "limitations": "The article’s supervised random forest was trained on 156 calls from 8 known monk parakeets using 114 selected features. The reported 97.44% accuracy (95% CI 93.57–99.30) is training accuracy. The remaining 73 individual-scale calls from 9 other birds were used to produce proximity matrices and inspect clustering patterns; the paper does not report that 97.44% as held-out unseen-caller accuracy. The study reports 229 individual-scale calls and 1,353 site-scale calls. The Figshare README says its monk-parakeet selection table contains 1,596 rows, of which 1,582 were used in the paper. The pinned v1.0.0 site-scale script explains the difference: 14 site-scale calls from birds also represented in the individual-scale set are removed before the scale comparison. This source-level reconciliation was not independently recomputed from the selection CSV or WAVs. The full supplement, exact file-level rights/provenance, remaining code and dependencies were not audited. Acoustic similarity cannot by itself show what a caller intends or what a receiver understands.",
     "lesson": "For Talk2Nature, separate known-individual identification, population/site similarity, call categories, independently observed behavior, receiver response, and meaning. This is a valuable parrot-specific methods reference and a reminder to report exactly what a validation set tests. A receiver-use claim needs an appropriately reviewed behavioral experiment; the authors point to playback work for that question.",
-    "next_review": "If a caller-identity reproduction is selected, reconcile the 1,596-record inventory with the article and supplement, verify exact source files and rights, inspect the pinned code and dependencies, and have a qualified bioacoustics reviewer assess the analysis and animal/session grouping. Keep all assets metadata-only until that bounded case is justified. Do not use this dataset as a context or meaning benchmark.",
+    "next_review": "If a caller-identity reproduction is selected, independently verify the 14-row exclusion against the exact selection CSV and audio filenames, review the full supplement and code/dependency environment, confirm file-level provenance and rights, and have a qualified bioacoustics reviewer assess the grouping and analysis. Keep all dataset assets metadata-only until that bounded case is justified. Do not use this dataset as a context or meaning benchmark.",
     "expert_review": "Not independently reviewed by a bioacoustics or animal-communication specialist.",
     "reuse": {
       "status": "Metadata-only original summary with links; no article passages, figures, dataset files, audio, code, or weights copied.",
       "asset": "PLOS displays CC BY 4.0 for the article; Figshare declares CC BY 4.0 for its item; GitHub identifies its code repository as MIT; the related Zenodo archive uses separate other-open metadata. These license statements apply to different assets and were not treated as interchangeable.",
-      "rights": "Cite each source and follow its own terms. The data files and code remain unacquired; provider checksums are not locally verified and the archived Zenodo snapshot license is unresolved.",
+      "rights": "Cite each source and follow its own terms. No dataset file was acquired or retained; one MIT-identified R Markdown source file was read without being retained or executed. Provider checksums are not locally verified and the archived Zenodo snapshot license is unresolved.",
       "experiment": "A literature and metadata review only. No Talk2Nature model was trained, run, or evaluated; no animal communication or context inference was attempted."
     },
     "study_snapshot": [
@@ -2544,6 +2547,10 @@
       [
         "Score boundary",
         "97.44% (95% CI 93.57–99.30) is reported as training classification accuracy. It is not a held-out accuracy for identifying unseen callers and does not measure call meaning."
+      ],
+      [
+        "Inventory reconciliation",
+        "The README reports 1,596 monk-parakeet selection rows, with 1,582 used in the paper. At pinned GitHub v1.0.0, the site-scale script identifies and removes 14 calls from birds already represented in the individual-scale sample before comparing scales. The row-level CSV/audio mapping has not been independently recomputed."
       ],
       [
         "Rights and reproducibility",
@@ -2584,6 +2591,103 @@
         "source_id": 221,
         "locator": "Methods 2.2 and 2.10"
       }
+    }
+  },
+  {
+    "slug": "whombat-annotation-workbench",
+    "title": "Whombat: learn from an existing bioacoustic annotation workbench",
+    "seo_description": "An experimental AOEF 1.1 export connects Talk2Nature observations to bioacoustic annotation workflows while preserving provenance and privacy limits.",
+    "taxon": "Cross-species bioacoustics",
+    "kind": "Annotation software",
+    "purpose": "Data & annotation",
+    "year": "2025",
+    "year_label": "Methods in Ecology and Evolution 16:19–28; version of record online 2024",
+    "source_ids": [
+      229,
+      230,
+      231,
+      232
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Article and guides reviewed; synthetic AOEF 1.1 export loaded with soundevent 2.10.0 and imported through Whombat 0.9.0 desktop UI; specialist review pending",
+    "review_depth": "Reviewed the complete primary article through the publisher/UCL open-access record and the pinned Whombat README/license and PyPI release metadata. Read the official import, dataset, annotation-project, evaluation and installation guides. Verified the temporary Whombat 0.9.0 wheel SHA-256 against PyPI and inspected the separate Whombat GPL v3 and soundevent MIT licenses. In an isolated Python 3.12.5 environment on macOS 26.4, the exact current Listen export passed Whombat's dataset-then-project UI import. The app created one recording, two TimeInterval annotations, two notes, one task and four project tags; checksum, sample rate and duration matched, the tag table showed both sound events, and both imported creator IDs remained null. Core resolved versions were FastAPI 0.112.2, fastapi-users 12.1.3, Starlette 0.38.6 and SQLAlchemy 2.0.54. The test used only an invented WAV and a temporary SQLite database; the wheel, environment and test outputs were removed. No animal audio, participant record or model weight was tested.",
+    "finding": "Whombat is a browser-based workbench for managing bioacoustic projects, reviewing recordings and human annotations, and visualizing or exchanging machine-learning predictions. The paper describes bat and avian applications. Its guide imports an AOEF dataset with an audio directory first, then its annotation project; evaluation sets and model runs are separate, and predictions are distinct from human annotations. Talk2Nature now offers an optional experimental one-way AOEF 1.1 package. The exact export imported into Whombat 0.9.0 with one recording, intervals [1, 2] and [4, 5] seconds, four visible namespaced project tags, and two notes. A missing AOEF project_tags list and a macOS canonical-path issue were identified and fixed/documented during this synthetic compatibility test.",
+    "limitations": "This is annotation and model-assisted review infrastructure, not a decoder of animal intent or a general animal-language translator. The app-level check establishes format interoperability only for Whombat 0.9.0 and the recorded test stack; other dependency versions, mobile behavior, real recordings, label quality and research suitability remain unverified. The test used invented audio only. Full Talk2Nature IDs, declared animal context and any Station journal stay in an unencrypted provenance sidecar; inspect it before sharing. Whombat's path check requires one canonical absolute audio-root path; on macOS /tmp may resolve to /private/tmp. No reverse import exists, and the sidecar is still the source of truth. The Whombat v0.9.0 code is GPL v3; the soundevent library is MIT; the article is CC BY 4.0. These licenses cover separate assets.",
+    "lesson": "Do not build a second full research annotation editor before proving a distinct user need. Keep the novice field companion focused on bounded observation and local review; investigate an optional research-workbench exchange path, with model suggestions preserved separately from accepted human labels.",
+    "next_review": "Have an independent bioacoustics or research-software specialist review the AOEF field mapping before recommending it for a study. Consider other Whombat/dependency versions only in a fresh synthetic test. Keep the feature experimental; real recordings, participant intake and model-training admission require separate rights, consent, privacy and scientific-protocol gates.",
+    "expert_review": "Not yet independently reviewed by a bioacoustics or research-software specialist.",
+    "review_locator": "Primary article: software design principles and annotation/model-prediction workflow; Supporting Information: tool comparison and software design appendices.",
+    "reuse": {
+      "status": "Evaluate as a separate interoperability candidate",
+      "asset": "Whombat v0.9.0 annotation and model-prediction exchange workflow",
+      "rights": "Article: CC BY 4.0. Pinned source code: GNU GPL v3. Sample audio, dependencies, and model artifacts have separate terms. No code or sample assets copied.",
+      "experiment": "The synthetic export passes soundevent 2.10.0 save/load and Whombat 0.9.0 desktop UI import with one recording, two intervals, four project tags and two notes. Human labels remain separate from model predictions and the original record remains in a sidecar. Next obtain specialist review; do not infer biological meaning from an exchange test."
+    },
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews annotation software and published use cases, not a location-specific observation study.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "shared-bioacoustic-dataset-loader",
+    "title": "A shared bioacoustic dataset loader, with rights kept separate",
+    "seo_description": "Earth Species Project alp-data offers a shared Python route into many animal-sound datasets. Its MIT code license does not clear each dataset.",
+    "taxon": "Cross-species bioacoustics",
+    "kind": "Dataset access software",
+    "purpose": "Data & annotation",
+    "year": "2026",
+    "year_label": "alp-data 1.11.1, released July 31, 2026",
+    "source_ids": [
+      233,
+      234
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Official repository overview and exact PyPI release metadata reviewed; integration and individual dataset rights not audited",
+    "review_depth": "Read the public alp-data README and project configuration and reviewed the exact PyPI 1.11.1 release page and MIT license declaration. No package, dependencies or datasets were downloaded, installed or run. No individual dataset entry was cleared for use.",
+    "finding": "The project describes a shared Python interface for more than 35 bioacoustic datasets across several animal groups, with streaming, configurable transforms and per-dataset metadata. Its README explicitly leaves each dataset under its original creator’s terms.",
+    "limitations": "The software license covers alp-data code, not the datasets, recordings, annotations, model weights or dependencies. Dataset-specific rights, consent, privacy, provenance, labels and animal/session splits were not examined. The repository overview is mutable and its “35+” count is the project’s own current claim. This review does not establish a Talk2Nature integration or a benchmark of communication or meaning.",
+    "lesson": "Use dataset aggregators to discover existing infrastructure and reduce duplicate loader work; then review one specific source and version before any acquisition or evaluation. A common programming interface does not make underlying data interchangeable or uniformly reusable.",
+    "next_review": "Choose one dataset tied to a bounded research question. Inspect its exact deposit version, component terms, label provenance and animal/session grouping before considering a compatible, isolated adapter or any data access.",
+    "expert_review": "Not yet reviewed by a bioacoustics, data-rights or research-software specialist.",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews a multi-dataset software tool, not a location-specific animal study.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "animal-spot-parrot-detection-2022",
+    "title": "ANIMAL-SPOT: parrot call detection is not translation",
+    "seo_description": "ANIMAL-SPOT reports parrot sound detection and monk-parakeet call classification. Those outputs identify acoustic classes, not what an animal means.",
+    "taxon": "Monk parakeet; cross-species bioacoustics method",
+    "kind": "Bioacoustic detection and classification",
+    "purpose": "Models & evaluation",
+    "year": "2022",
+    "year_label": "Scientific Reports 12:21966; published 2022-12-19",
+    "source_ids": [
+      235,
+      236,
+      237
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Selected article sections and repository guide reviewed; dataset terms, exact split files and specialist review remain open",
+    "review_depth": "Reviewed the paper abstract, methods relevant to task and data setup, Tables 1 and 3, and selected results/discussion. Read the official repository overview, split guide and license statement, plus the repository pointer to its Edmond example corpus. Did not inspect the complete supplementary materials, acquire or run code/data, reproduce the reported metrics, or verify individual-level grouping.",
+    "finding": "ANIMAL-SPOT separates target-versus-noise detection from later species or call-type classification. For monk parakeets, the paper reports 6,745 target/noise segments and a separate 3,251-example call-type set (alarm, contact, other, plus noise); it reports 92.7% accuracy on human-labeled call-type test examples and 88.4% on the preceding detector’s machine-selected segments. These are the paper’s reported results, not Talk2Nature measurements.",
+    "limitations": "“Animal-independent” describes a framework evaluated with multiple animal-specific datasets/configurations; the paper does not demonstrate one zero-shot model that translates across species. The repository guide says excerpts from one year/tape should stay together in splits, but exact split files and animal/session identity groups were not reviewed. Call-type classification is not behavior prediction, receiver comprehension or meaning. The monk-parakeet corpus is not evidence of performance on companion parrots or phone microphones.",
+    "lesson": "For an app, treat any future detector or call-type output as a reviewable hypothesis and keep it separate from what the person observed. A staged detector can help find candidate sounds; it cannot answer what the animal is communicating.",
+    "next_review": "Verify the exact Edmond deposit version, manifest, access terms and rights for the specific audio and annotation components. Then ask a qualified parrot/bioacoustics reviewer to assess the label definitions and whether tape/year grouping protects the intended generalization unit before designing any bounded reproduction.",
+    "expert_review": "Not independently reviewed by a parrot-communication or bioacoustics specialist.",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This is a software and evaluation-method review; it does not establish a verified study location for a single animal cohort.",
+      "locations": [],
+      "observation_period": null
     }
   }
 ]

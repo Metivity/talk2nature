@@ -2,6 +2,7 @@ import {animalPicker} from './animal-picker.mjs';
 import {VERSION, MAX_BYTES, readWav, syntheticWav, validateDocument, eventCsv} from './listen-model.mjs';
 import {MAX_NOTEBOOK_BYTES, makeNotebook, readNotebook} from './notebook.mjs';
 import {audacityPackage} from './audacity-export.mjs';
+import {aoefPackage} from './aoef-export.mjs';
 import {MAX_BUNDLE_BYTES, openSessionBundle, sessionSummary} from './session-import.mjs';
 
 const $ = id => document.getElementById(id);
@@ -207,6 +208,19 @@ $('export-audacity').addEventListener('click', async () => {
     status($('export-status').textContent);
   } catch (error) { if (current === generation) exportError(error); }
   finally { $('export-audacity').disabled = false; }
+});
+$('export-aoef').addEventListener('click', async () => {
+  if (!recording || !readyToExport() || $('export-aoef').disabled) return;
+  const current = generation;
+  try {
+    $('export-aoef').disabled = true;
+    const bundle = await aoefPackage(audioBytes, documentValue());
+    if (current !== generation) return;
+    download(bundle, 'talk2nature-aoef.zip', 'application/zip');
+    $('export-status').textContent = 'AOEF package download requested. Unzip it, import the dataset with this folder as the audio directory, then import the annotation project. Keep the original notebook; Whombat UI import is untested.';
+    status($('export-status').textContent);
+  } catch (error) { if (current === generation) exportError(error); }
+  finally { $('export-aoef').disabled = false; }
 });
 $('labels-file').addEventListener('change', async event => {
   const file = event.target.files[0]; event.target.value = '';

@@ -585,6 +585,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('/talk2nature/app/check/',assets)
             self.assertTrue(any('/assets/session-import.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/audacity-export.mjs?' in a for a in assets))
+            self.assertTrue(any('/assets/aoef-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/practice.js?' in a for a in assets))
             self.assertTrue(any('/assets/practice-model.mjs?' in a for a in assets))
             for name in ('device-check.css','device-check.js','device-check-model.mjs'):
@@ -595,6 +596,21 @@ class SiteTests(unittest.TestCase):
                 self.assertTrue((path/'index.html' if asset.endswith('/') else path).is_file())
             self.assertNotIn('__REVISION__',source)
             self.assertIn('class="app-body"',(root/'app/index.html').read_text())
+
+    def test_android_source_preview_is_discoverable_and_not_claimed_as_a_release(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
+            mobile=(root/'mobile/index.html').read_text()
+            station=(root/'tools/station/index.html').read_text()
+            source_url='https://github.com/Metivity/talk2nature/tree/main/native-android'
+            self.assertIn('experimental Android Station source preview',mobile)
+            self.assertIn('there is no signed APK or store release',mobile)
+            self.assertIn('physical-phone and field validation are still open',mobile)
+            self.assertIn(source_url,mobile)
+            self.assertIn('Android source preview',station)
+            self.assertIn('1-, 4- and 8-hour limits',station)
+            self.assertIn('not a signed APK or field-tested release',station)
+            self.assertIn(source_url,station)
 
     def test_phone_rehearsal_is_discoverable_and_truthful_about_temporary_measurements(self):
         with tempfile.TemporaryDirectory() as d:
@@ -714,6 +730,31 @@ class SiteTests(unittest.TestCase):
                 if note['review_stage']=='Methods reviewed':
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
+
+    def test_whombat_aoef_bridge_is_indexable_with_verified_scope_and_limits(self):
+        note=next(n for n in load('research') if n['slug']=='whombat-annotation-workbench')
+        self.assertEqual(note['source_ids'],[229,230,231,232])
+        self.assertIn('imported through Whombat 0.9.0 desktop UI',note['review_stage'])
+        self.assertIn('other dependency versions',note['limitations'])
+        self.assertIn('independent bioacoustics or research-software specialist',note['next_review'])
+        self.assertIn('not a decoder',note['limitations'])
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        soundevent=next(r for r in resources if r['id']=='soundevent-aoef-2-10-0')
+        self.assertEqual(soundevent['rights']['license'],'MIT')
+        self.assertEqual(soundevent['acquisition'],'metadata_only')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research/whombat-annotation-workbench/index.html').read_text()
+            self.assertIn('content="index,follow"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/whombat-annotation-workbench/',page)
+            self.assertIn('https://mbsantiago.github.io/whombat/user_guide/guides/import/',page)
+            self.assertIn('https://pypi.org/project/soundevent/2.10.0/',page)
+            self.assertIn('format interoperability only',page)
+            self.assertIn('whombat-annotation-workbench/',(root/'sitemap.xml').read_text())
+            review=(root/'app/review/index.html').read_text()
+            self.assertIn('id="export-aoef"',review)
+            self.assertIn('sidecar',review)
 
     def test_parrot_annotation_note_links_current_edmond_terms(self):
         with tempfile.TemporaryDirectory() as d:

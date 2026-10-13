@@ -61,6 +61,8 @@ Next candidates: independent reviewer comparison, species-specific codebooks, ex
 
 October 5: [Continue in Audacity](AUDACITY_EXPORT.md) exports one unchanged WAV with standard timed labels, original metadata and explicit conversion limits in a local ZIP. Save notebook remains the reopening path. Audacity edits cannot be imported back, and Station session journals stay separate.
 
+Advanced research exchange is experimental: Listen can export a one-way AOEF 1.1.0 package for a separate annotation workbench. It preserves the original Talk2Nature record in an unencrypted sidecar. The soundevent library's synthetic save/load check passed; importing into Whombat itself remains untested. See [INTEROPERABILITY.md](INTEROPERABILITY.md) for the mapping, privacy notice and next acceptance check.
+
 Station saves its retained WAV clips and session journal in one ZIP. To annotate a clip, choose **Annotate a clip from a saved session** in Review and open the original ZIP; the tool checks the WAV hashes, lets you choose one retained clip, and copies the full journal into the resulting notebook as source context. It does not turn Station notes or sound highlights into annotation labels. Keep the original ZIP: the notebook contains only the selected clip's audio, is unencrypted, and may carry private notes or declarations.
 
 

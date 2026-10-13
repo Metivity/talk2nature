@@ -2001,18 +2001,19 @@
       "kind": "dataset",
       "title": "Smith-Vidaurre et al. identity-encoding calls and selection table",
       "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
-      "version": "Figshare DOI 10.6084/m9.figshare.22582099.v2; version 2 record reviewed October 12, 2026",
+      "version": "Figshare DOI 10.6084/m9.figshare.22582099.v2; API and README refreshed October 13, 2026",
       "source_ids": [
         221,
-        222
+        222,
+        227
       ],
       "priority": 1,
-      "reviewed": "2026-10-12",
+      "reviewed": "2026-10-13",
       "task": "Potential source for a separately scoped acoustic identity/convergence reproduction; not a behavior/context-labelled corpus.",
-      "review_depth": "Public item metadata and README reviewed. The API reports 22 files totaling 187,820,138 bytes and the item-level license CC BY 4.0. Provider checksums were not verified locally; no audio, selection table, or archive was acquired.",
-      "access": "Public Figshare v2 record and metadata only. Its README lists pre-processed WAV calls and a selection table. No files are in Talk2Nature storage.",
-      "decision": "Keep metadata-only. Consider a bounded caller-identity reproduction only after reconciling the file inventory with article counts, reviewing exact audio provenance and rights, and obtaining qualified methods review. Exclude from context/meaning training by default.",
-      "limitations": "The README/selection inventory reports 1,596 call clips, while the article main text describes 229 individual-scale plus 1,353 site-scale monk-parakeet calls (1,582 total) and separately includes yellow-naped amazon comparator calls recorded in Costa Rica in 1994. The extra 14 inventory records have not been reconciled to exact source files. No file-level audit, license-scope verification, animal/session grouping, or independent reproduction was performed. Metadata availability and an item-level CC BY 4.0 declaration do not establish that any proposed model task is scientifically valid.",
+      "review_depth": "Public Figshare v2 API and README.md file 41233869 reviewed by a read-only stream that was not retained. The API reports 22 files totaling 187,820,138 bytes and item-level CC BY 4.0. The README states 1,596 selection rows and 1,582 used in the paper; a pinned, MIT-identified GitHub source file inspected separately explains the 14-row exclusion. Provider checksums were not verified locally; no audio, selection CSV, or archive was acquired or retained.",
+      "access": "Public Figshare v2 record and API. The README was streamed from the official file endpoint and not retained. Dataset media and tables remain unacquired and metadata-only.",
+      "decision": "Keep metadata-only. The count difference is explained by the pinned analysis script, but a bounded identity reproduction would still require independent row/file verification, exact audio provenance and rights review, and qualified methods review. Exclude from context/meaning training by default.",
+      "limitations": "The README's 1,596 monk-parakeet selection rows include 14 site-scale calls from birds also represented in the individual-scale set; the pinned v1.0.0 site-scale script removes those 14 before the paper's scale comparison, leaving 1,582 (229 individual-scale plus 1,353 site-scale). This was reconciled from the README, article and code, not independently recomputed from the selection CSV or WAVs. No file-level rights/provenance audit, animal/session grouping audit, full-code audit, or independent reproduction was performed. Metadata availability and item-level CC BY 4.0 do not establish that any proposed model task is scientifically valid.",
       "attribution": "Smith-Vidaurre G, Pérez-Marrufo V, Hobson EA, Salinas-Melgoza A, Wright TF (2023). Figshare v2, DOI 10.6084/m9.figshare.22582099.v2.",
       "rights": {
         "license": "CC BY 4.0 declared by the Figshare record at item level.",
@@ -2035,21 +2036,259 @@
       "source_ids": [
         221,
         223,
-        224
+        224,
+        227
       ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Reproducibility reference for R Markdown analyses of acoustic identity and social-scale convergence.",
-      "review_depth": "GitHub README, file listing, archived status, and MIT license indicator reviewed. Zenodo v1.0.0 metadata reports a 12,413,376-byte archive and the license field other-open. No code file or archive was acquired, inspected, or executed.",
+      "review_depth": "GitHub README, file listing, archived status, and MIT LICENSE reviewed. Resolved v1.0.0 to commit 1f7031dc996c79914ccf5d042181f947793fb459 and read one site-scale selection R Markdown file without retaining or executing it. Zenodo v1.0.0 metadata reports a 12,413,376-byte archive and the license field other-open; that separate archive was not acquired or inspected. The rest of the repository and dependencies were not audited.",
       "access": "Public archived GitHub repository and Zenodo metadata. GitHub README describes ten R Markdown analyses plus custom functions and rendered HTML outputs.",
-      "decision": "Keep metadata-only. If reproduction becomes justified, pin the exact commit/archive, resolve the Zenodo artifact license metadata, inspect code and dependencies, then run only in a bounded environment with the corresponding permitted data.",
-      "limitations": "The GitHub repository is archived. Its MIT license and Zenodo artifact license field other-open are distinct records; the snapshot license was not independently resolved. The code and dependency graph were not audited or executed, so no runnable or reproduced result is claimed.",
+      "decision": "Keep metadata-only. If reproduction becomes justified, resolve the Zenodo artifact license metadata, review the full code/dependency graph and corresponding permitted data, then use a bounded environment.",
+      "limitations": "The GitHub repository is archived. Its MIT license and Zenodo artifact license field other-open are distinct records; the snapshot license was not independently resolved. Only the count-exclusion portion of one source file was reviewed. The remaining code and dependency graph were not audited or executed; no runnable or reproduced result is claimed.",
       "attribution": "Smith-Vidaurre G et al. (2023), analysis code accompanying PLoS Comput Biol 19(7): e1011231; archived GitHub repository and Zenodo v1.0.0.",
       "rights": {
         "license": "GitHub identifies the repository as MIT; Zenodo metadata for the linked archive says other-open.",
         "scope": "GitHub repository and Zenodo archive have distinct license metadata. Neither determines the rights for the article or linked recordings.",
-        "evidence_url": "https://github.com/gsvidaurre/identity-information-post-introduction",
+        "evidence_url": "https://github.com/gsvidaurre/identity-information-post-introduction/tree/v1.0.0",
         "conditions": "Use the GitHub repository under its MIT notice. Do not assume the archived Zenodo artifact has identical terms until its exact license is resolved; audit dependencies and embedded materials before execution or reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "companion-parrot-mimicry-survey-data-2022",
+      "kind": "dataset",
+      "title": "Data from A Survey of Vocal Mimicry in Companion Parrots",
+      "url": "https://doi.org/10.6084/m9.figshare.19674330.v4",
+      "figshare_item_id": 19674330,
+      "version": "Figshare v4; DOI 10.6084/m9.figshare.19674330.v4; published 2022-12-12",
+      "source_ids": [
+        98,
+        99,
+        228
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Understand the scope and limits of a caregiver-reported companion-parrot vocal-learning survey; not an audio corpus or communication benchmark.",
+      "review_depth": "Reviewed the full main article text through Europe PMC XML and the official Figshare v4 API record. API metadata reports one XLSX file of 186,629 bytes and item-level CC BY 4.0. The survey questionnaire and workbook were not inspected; no data bytes were acquired.",
+      "access": "Public Figshare metadata for version 4 only. The article says the questionnaire requested respondent names and email addresses. No workbook or supplementary file was downloaded, inspected, or retained.",
+      "decision": "Keep metadata-only. Use the article to design distinctions between directly observed context and caregiver interpretation; do not use the survey table as audio training or a context benchmark. Review privacy, consent, and exact fields before considering secondary use.",
+      "limitations": "The authors received 898 voluntary responses and retained 877 parrots across 73 species after quality checks and exclusion of birds not reported to mimic human sounds. Recruitment through email, social media, and parrot-interest groups favors mimicry reports. Contextual use is caregiver-assessed rather than independently observed or tested against receiver response. The workbook has not been inspected for respondent identifiers or consent scope; the item-level license declaration does not resolve that privacy question. There is no audio in the cataloged item metadata.",
+      "attribution": "Benedict L, Charles A, Brockington A, Dahlin CR (2022). A survey of vocal mimicry in companion parrots. Scientific Reports 12, 20271. Dataset v4, Figshare, DOI 10.6084/m9.figshare.19674330.v4.",
+      "rights": {
+        "license": "Figshare declares CC BY 4.0 at the item level; the paper is separately CC BY 4.0.",
+        "scope": "The dataset item lists one XLSX file. Its contents, respondent identifiers, consent scope, and file-level notices were not inspected. Article text and any supplementary materials are separate assets.",
+        "evidence_url": "https://api.figshare.com/v2/articles/19674330",
+        "conditions": "No file acquisition, redistribution, or training until the workbook's fields, respondent privacy, consent scope, and applicable terms are reviewed. The API supplies no MD5 for the listed file.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "whombat-annotation-paper-2025",
+      "kind": "paper",
+      "title": "Whombat: An open-source audio annotation tool for machine learning assisted bioacoustics",
+      "url": "https://doi.org/10.1111/2041-210X.14468",
+      "version": "Methods in Ecology and Evolution 16:19–28 (2025); version of record online 2024",
+      "source_ids": [
+        229
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Learn from an established annotation and model-prediction review workflow before expanding Talk2Nature's own researcher-facing interface.",
+      "review_depth": "Complete primary article reviewed through the publisher and UCL open-access record, including the design rationale, bat and avian use cases, annotation and prediction workflow, and stated limits. Supporting information was reviewed only as described by the publisher; it was not separately downloaded or inspected.",
+      "access": "Peer-reviewed open-access article. The article declares CC BY 4.0. No text, figures, or supplementary files were copied or downloaded.",
+      "decision": "Use as an architecture and workflow reference. Evaluate Whombat as a separate optional research tool before building a second full annotation editor; do not treat annotation or model-assisted review as animal-language translation.",
+      "limitations": "The paper demonstrates bioacoustic annotation and model-prediction workflows in bat and avian applications. It does not establish suitability for Talk2Nature's capture app, data governance, accessibility, or species-specific science, and it is not a semantic-decoding result. No independent evaluation or integration test was performed.",
+      "attribution": "Martínez Balvanera S, Mac Aodha O, Weldy MJ, Pringle H, Browning E, Jones KE (2025). Methods in Ecology and Evolution 16:19–28. DOI 10.1111/2041-210X.14468.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "The article. The software, repository, dependencies, sample media, model outputs, and model weights are separate assets with separate terms.",
+        "evidence_url": "https://doi.org/10.1111/2041-210X.14468",
+        "conditions": "Attribute the authors and source and indicate changes if reusing article content. Talk2Nature publishes an original summary and link only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "whombat-code-v0-9-0",
+      "kind": "code",
+      "title": "Whombat source code v0.9.0",
+      "url": "https://github.com/mbsantiago/whombat/tree/6cc44a9ad788087ca5bfdd6cf6f22f464b94748e",
+      "version": "v0.9.0; commit 6cc44a9ad788087ca5bfdd6cf6f22f464b94748e; PyPI release 2026-05-13; Python >=3.12",
+      "source_ids": [
+        230
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Potential separate research-workbench candidate; evaluate a standards-based exchange path without importing GPL code.",
+      "review_depth": "Read only the README and LICENSE at the immutable commit and checked PyPI release metadata and publishing attestation. PyPI reports sdist SHA-256 dbb653fb94a7221134699dcb2a1ce5e28f63c1f86ae9ae7e34bd5adb214d7c79; that provider-reported digest was not locally verified. No code, package, dependencies, sample media, or weights were downloaded, installed, audited, or executed.",
+      "access": "Public GitHub repository and PyPI release metadata. No Whombat source or package bytes were acquired. The separate soundevent library test is described in its own record.",
+      "decision": "Keep Whombat as an optional external research workbench and the AOEF export experimental. Test the package in the pinned Whombat application before calling it compatible or recommending field use. Do not copy GPL code into Talk2Nature.",
+      "limitations": "The pinned root LICENSE is GNU GPL version 3, which requires a separate compatibility review before any combination or distribution with Talk2Nature. The paper's CC BY 4.0 license does not cover code, dependencies, sample data, or model assets. Whombat v0.9.0 itself was not installed or tested; its resolved dependency versions may differ from the separately tested soundevent release.",
+      "attribution": "Whombat contributors, mbsantiago/whombat, v0.9.0, commit 6cc44a9ad788087ca5bfdd6cf6f22f464b94748e.",
+      "rights": {
+        "license": "GNU GPL-3.0 (pinned repository LICENSE)",
+        "scope": "Repository source code at the pinned commit only. Article text is CC BY 4.0; dependencies, sample media, and model assets are separate.",
+        "evidence_url": "https://github.com/mbsantiago/whombat/blob/6cc44a9ad788087ca5bfdd6cf6f22f464b94748e/LICENSE",
+        "conditions": "Preserve GPL terms for any permitted redistribution of covered code and obtain a compatibility review before combining or distributing it with Talk2Nature. No covered code is copied here.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "soundevent-aoef-2-10-0",
+      "kind": "code",
+      "title": "soundevent library 2.10.0 (AOEF serialization)",
+      "url": "https://pypi.org/project/soundevent/2.10.0/",
+      "version": "2.10.0; AOEF 1.1.0; released 2025-12-08; wheel SHA-256 3d7af33206faa66056a445f1c69ddca3fd7ed696175e759acb1ad0565009854d",
+      "source_ids": [
+        232
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Provide an independent format-level check for a local Talk2Nature-to-AOEF export without adding a third-party application or runtime dependency.",
+      "review_depth": "Reviewed official PyPI release metadata and AOEF save/load documentation. Retrieved the exact wheel temporarily and verified its SHA-256 against the provider value. Inspected its MIT license and used its local save/load functions with an invented WAV and synthetic interval annotations; relative path, AOEF version, tags and time intervals survived. The temporary wheel was removed. This did not run Whombat or test real audio.",
+      "access": "One exact PyPI wheel was held temporarily for a synthetic compatibility check and is not retained in the repository or external collection. The resource catalog has no retained package files.",
+      "decision": "Use as an optional format-validation reference only. Do not vendor the package, install it in Talk2Nature, or claim Whombat UI compatibility based on this library test.",
+      "limitations": "The soundevent documentation says the library is under active development. Its exact serialization may change; the installed version resolved by Whombat may differ. The library test proves neither the Whombat application import path nor a scientific annotation workflow.",
+      "attribution": "soundevent contributors, soundevent 2.10.0, PyPI; MIT-licensed package. AOEF documentation: https://mbsantiago.github.io/soundevent/generated/gallery/1_saving_and_loading/.",
+      "rights": {
+        "license": "MIT",
+        "scope": "The soundevent 2.10.0 package only. Dependencies, Whombat, articles, audio fixtures and any models are separate assets.",
+        "evidence_url": "https://pypi.org/project/soundevent/2.10.0/",
+        "conditions": "Preserve the MIT notice if redistributing the package. Talk2Nature does not bundle or depend on it.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "alp-data-1-11-1",
+      "kind": "code",
+      "title": "Earth Species Project alp-data 1.11.1",
+      "url": "https://pypi.org/project/alp-data/1.11.1/",
+      "version": "1.11.1; released 2026-07-31; Python >=3.11",
+      "source_ids": [
+        233,
+        234
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Discover and access existing multi-taxon bioacoustic datasets through a shared Python interface.",
+      "review_depth": "Reviewed the repository README, project configuration, exact PyPI release metadata and MIT license statement. No package or dataset files were acquired or executed; individual dataset terms and code security were not reviewed.",
+      "access": "Public repository and PyPI metadata only. No package, data, credentials or access service was used.",
+      "decision": "Keep as a cross-species discovery and optional adapter candidate. Do not add it as a Talk2Nature dependency until one bounded use case justifies an isolated compatibility and maintenance review.",
+      "limitations": "MIT applies to alp-data code only. Each dataset retains separate terms and may have distinct provenance, privacy, consent and split limitations. Package declares Python >=3.11 and several cloud/storage, audio and data-frame dependencies; compatibility and operational behavior were not tested.",
+      "attribution": "Earth Species Project, alp-data 1.11.1; MIT license for package code only.",
+      "rights": {
+        "license": "MIT",
+        "scope": "alp-data 1.11.1 package code only. Datasets, recordings, annotations, model assets and dependencies have separate rights.",
+        "evidence_url": "https://pypi.org/project/alp-data/1.11.1/",
+        "conditions": "Preserve the MIT notice for any code redistribution. Review each dataset’s exact source terms independently before use.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal-spot-paper-2022",
+      "kind": "paper",
+      "title": "ANIMAL-SPOT: animal-independent bioacoustic detection and classification",
+      "url": "https://doi.org/10.1038/s41598-022-26429-y",
+      "version": "Scientific Reports 12:21966 (2022)",
+      "source_ids": [
+        235
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Separate acoustic target/noise detection from species and call-type classification across animal-specific datasets.",
+      "review_depth": "Targeted review of the article abstract, methods, Tables 1 and 3, selected results and MPG.PuRe article-license metadata. No model or analysis reproduced.",
+      "access": "Open article metadata and selected full-text sections; no article file retained.",
+      "decision": "Use as a methodological reference for staged acoustic detection and call-type evaluation, not evidence of translation or behavior meaning.",
+      "limitations": "Reported accuracy is paper-specific and not independently reproduced. Figure/image notices may differ; data and code have separate licenses.",
+      "attribution": "Bergler et al., Scientific Reports 12:21966 (2022), DOI 10.1038/s41598-022-26429-y.",
+      "rights": {
+        "license": "CC BY 4.0 for the article as identified by MPG.PuRe",
+        "scope": "Article text under its stated license; images or third-party material may have separate notices. Dataset, software and weights are excluded.",
+        "evidence_url": "https://pure.mpg.de/pubman/faces/ViewItemOverviewPage.jsp?itemId=item_3517591",
+        "conditions": "Attribute the article and indicate modifications; inspect any third-party figure/material notice before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal-spot-code-main",
+      "kind": "code",
+      "title": "ANIMAL-SPOT source code and user guide",
+      "url": "https://github.com/ChristianBergler/ANIMAL-SPOT",
+      "version": "Mutable default branch reviewed 2026-10-13; no commit pinned",
+      "source_ids": [
+        236
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Train and evaluate animal-specific target/noise, species or call-type classifiers using the published framework.",
+      "review_depth": "Read the official README, task overview, data-split guidance, package requirements and GPL-3.0 declaration. No code, environment or model was acquired or executed.",
+      "access": "Public GitHub metadata/README only.",
+      "decision": "Reference only; do not vendor or add as a Talk2Nature dependency without a pinned-code, license-compatibility, dependency-security and maintenance review.",
+      "limitations": "Repository code is GPL-3.0; the data and paper have separate terms. The README lists older dependencies, including PyTorch 1.11 and librosa 0.8. Actual compatibility and security were not tested.",
+      "attribution": "Christian Bergler et al., ANIMAL-SPOT repository, https://github.com/ChristianBergler/ANIMAL-SPOT.",
+      "rights": {
+        "license": "GNU GPL-3.0 as declared in repository root",
+        "scope": "Repository code only; paper, dataset, media, model outputs and dependencies are separate.",
+        "evidence_url": "https://github.com/ChristianBergler/ANIMAL-SPOT/blob/main/LICENSE",
+        "conditions": "Preserve GPL-3.0 terms for covered code. Obtain a separate compatibility review before combining or distributing code with Talk2Nature. No code copied.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal-spot-monk-parakeet-data-2022",
+      "kind": "dataset",
+      "title": "ANIMAL-SPOT monk-parakeet example corpus and split",
+      "url": "https://doi.org/10.17617/3.KQPPXF",
+      "version": "Edmond DOI cited by author README; MPG.PuRe lists a Version 2 handle; exact file inventory not verified",
+      "source_ids": [
+        236,
+        237
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Potential rights-cleared reproduction of monk-parakeet target/noise detection and call-type classification.",
+      "review_depth": "The author README’s deposit pointer and MPG.PuRe’s dataset-handle/version metadata were reviewed. The exact deposit manifest, file-level licenses, access terms, audio and split files were not inspected.",
+      "access": "Metadata-only. No audio or archive acquired, no checksum checked and no platform terms accepted.",
+      "decision": "Do not acquire or admit to training until the exact deposit version, component rights, access/retention terms, label provenance and animal/session grouping are verified and the bounded research question is approved.",
+      "limitations": "The linked README describes cropped audio, an unseen raw recording and a split, but the deposit’s current contents and reuse conditions remain unknown. Publication-level CC BY and code GPL-3.0 do not license the dataset.",
+      "attribution": "Dataset deposit DOI 10.17617/3.KQPPXF; cite the related ANIMAL-SPOT and monk-parakeet source studies as required by the dataset record.",
+      "rights": {
+        "license": "Unresolved; deposit-level and file-level dataset terms were not verified",
+        "scope": "Audio, annotations, split files and unseen recording in the dataset deposit only.",
+        "evidence_url": "https://doi.org/10.17617/3.KQPPXF",
+        "conditions": "Verify exact version, access terms, license, attribution and any restrictions before access or reuse.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

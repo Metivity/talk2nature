@@ -4,6 +4,9 @@ import {WindowSession} from '../web/assets/window-model.mjs';
 import {sessionFiles, zipFiles} from '../web/assets/station-export.mjs';
 import {readWav} from '../web/assets/listen-model.mjs';
 import {spawnSync} from 'node:child_process';
+import {mkdtempSync, writeFileSync, rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 
 test('a full window retains quiet samples, starts at zero and trims exactly at 30 seconds', async () => {
   const s = new WindowSession(8000, {animalContext:{group:'parrot',species:'budgerigar',basis:'observer-declared'}});
@@ -17,16 +20,24 @@ test('a full window retains quiet samples, starts at zero and trims exactly at 3
   assert.equal('marker_windows' in r,false);assert.deepEqual(s.markerWindows(),[]);
   assert.equal(s.events[0].pcm[0],0);assert.equal(s.events[0].pcm[1],8192);
   const files=await sessionFiles(s,'rehearsal',{}), archive=zipFiles(files);
-  const result=spawnSync('python3',['-c',`
+  const folder=mkdtempSync(join(tmpdir(),'talk2nature-window-test-'));
+  try {
+    const archivePath=join(folder,'session.zip');
+    writeFileSync(archivePath,Buffer.from(await archive.arrayBuffer()));
+    const result=spawnSync('python3',['-c',`
 import sys,io,zipfile,json,hashlib,wave
-z=zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read()));assert z.testzip() is None
+z=zipfile.ZipFile(sys.argv[1]);assert z.testzip() is None
 r=json.loads(z.read(next(n for n in z.namelist() if n.endswith('.json'))))
 e=r['events'][0];b=z.read(e['audio_filename'])
 assert hashlib.sha256(b).hexdigest()==e['audio_sha256']
 assert r['sampling']['complete'] and r['origin']=='synthetic'
 with wave.open(io.BytesIO(b)) as w: assert w.getnframes()==240000 and w.getframerate()==8000
-`],{input:Buffer.from(await archive.arrayBuffer())});assert.equal(result.status,0,result.stderr.toString());
-  assert.equal(readWav(files[1].bytes.buffer).duration,30);
+`,archivePath],{encoding:'utf8'});
+    assert.equal(result.status,0,result.stderr);
+    assert.equal(readWav(files[1].bytes.buffer).duration,30);
+  } finally {
+    rmSync(folder,{recursive:true,force:true});
+  }
 });
 
 test('digital silence is retained and is not mislabeled as a detected animal', () => {
