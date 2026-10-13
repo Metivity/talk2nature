@@ -68,6 +68,7 @@ public final class MainActivity extends Activity {
     private LinearLayout sessionPanel, eventList;
     private volatile AudioTrack playback;
     private boolean permissionRequestInFlight;
+    private final EventListSnapshot eventListSnapshot = new EventListSnapshot();
 
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
@@ -277,7 +278,7 @@ public final class MainActivity extends Activity {
                 sessionHeading.setText("Ready when you are");
                 sessionDetail.setText("Nothing is recording. Nothing has been uploaded.");
                 setSessionControls(false,false,false);
-                eventList.removeAllViews();
+                if (eventListSnapshot.reset()) eventList.removeAllViews();
                 return;
             }
             if ("running".equals(record.optString("status")) && !CaptureService.isCapturing()) {
@@ -295,7 +296,15 @@ public final class MainActivity extends Activity {
             if(!active && "service_interrupted".equals(record.optString("stop_reason"))) detail+="\nThe service ended unexpectedly; the partial session is marked stopped.";
             sessionDetail.setText(detail);
             setSessionControls(active,!active,!active);
-            if(!active)renderEvents(events,record.optJSONArray("markers"));
+            if(!active) {
+                JSONArray markers=record.optJSONArray("markers");
+                String eventsJson=events==null?null:events.toString();
+                String markersJson=markers==null?null:markers.toString();
+                if(eventListSnapshot.needsRender(eventsJson,markersJson)) {
+                    renderEvents(events,markers);
+                    eventListSnapshot.markRendered(eventsJson,markersJson);
+                }
+            }
         } catch (Exception error) {
             sessionHeading.setText("Session needs attention");
             sessionDetail.setText("Encrypted session data could not be read. Keep the app data intact and export is unavailable until this is resolved.");

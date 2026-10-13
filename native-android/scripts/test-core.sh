@@ -7,6 +7,7 @@ mkdir -p "$TEST_CLASSES"
 javac -d "$TEST_CLASSES" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/engine/CaptureDeadline.java" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/engine/CaptureEngine.java" \
+  "$APP_ROOT/src/main/java/org/talk2nature/station/EventListSnapshot.java" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/SessionZip.java" \
   "$APP_ROOT/src/testCore/java/org/talk2nature/station/engine/CaptureEngineSelfTest.java"
 java -cp "$TEST_CLASSES" org.talk2nature.station.engine.CaptureEngineSelfTest

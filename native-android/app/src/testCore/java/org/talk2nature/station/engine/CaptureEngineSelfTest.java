@@ -1,5 +1,6 @@
 package org.talk2nature.station.engine;
 
+import org.talk2nature.station.EventListSnapshot;
 import org.talk2nature.station.SessionZip;
 
 import java.io.ByteArrayOutputStream;
@@ -24,6 +25,20 @@ public final class CaptureEngineSelfTest {
     private static long u32(byte[] bytes,int at){return (u16(bytes,at)&0xffffL)|((u16(bytes,at+2)&0xffffL)<<16);}
 
     public static void main(String[] args){
+        EventListSnapshot eventList = new EventListSnapshot();
+        check(eventList.needsRender("[]", "[]"), "an unrendered session list needs an initial render");
+        eventList.markRendered("[]", "[]");
+        check(!eventList.needsRender("[]", "[]"), "unchanged session data must preserve existing review views and focus");
+        String oneEvent="[{\"id\":1}]";
+        check(eventList.needsRender(oneEvent, "[]"), "a new event must refresh the review list");
+        eventList.markRendered(oneEvent, "[]");
+        check(!eventList.needsRender(oneEvent, "[]"), "a rendered event list must remain stable across status polling");
+        String oneMarker="[{\"note\":\"bird\"}]";
+        check(eventList.needsRender(oneEvent, oneMarker), "a new observation note must refresh the review list");
+        eventList.markRendered(oneEvent, oneMarker);
+        check(eventList.reset(), "clearing a session with rendered content must clear its views");
+        check(eventList.needsRender("[]", "[]"), "a new empty session must receive its own initial render");
+
         CaptureDeadline deadline = new CaptureDeadline(1000L, 1000L);
         check(!deadline.isExpired(1000L), "a session deadline starts at the monotonic capture time");
         check(deadline.limitSamples(1000L, RATE, RATE/10) == RATE/10, "the deadline allows one normal audio frame");
