@@ -1,18 +1,18 @@
 # First model and dataset decision
 
-Reviewed September 30, 2026. This is a feasibility decision, not an installed environment, benchmark result or legal clearance. No model weights or animal recordings were downloaded.
+Reviewed September 30, 2026; updated October 14. This is a feasibility decision, not an installed environment, benchmark result or legal clearance. No model weights or animal recordings were downloaded.
 
 ## Decision
 
 Prefer a small classifier over frozen Perch embeddings for a first **acoustic context-association experiment**, conditional on a suitable species, question and dataset. Compare it with majority-class, simple acoustic-feature and background/context baselines. Do not build a new foundation model or natural-language animal persona. A voluntary parrot interface would require a different experiment and might not need an acoustic model at all.
 
-This choice keeps the initial implementation small and permits a future commercial route under the listed model terms. It does not establish task performance or an original research contribution. The existing Hoplite workflow already covers embedding search, annotation and classifiers; use or contribute to it where practical.
+This choice keeps the initial implementation small and leaves a possible commercial route if the exact artifact, training-data provenance and application terms are verified. It does not establish task performance or an original research contribution. The existing Hoplite workflow already covers embedding search, annotation and classifiers; use or contribute to it where practical.
 
 ## Candidate register
 
 | Candidate | Verified reference | Rights and role | Remaining check |
 | --- | --- | --- | --- |
-| Perch 2, TensorFlow CPU variant | `google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1`; version 1 is selected by the frozen official Hoplite configuration below | CPU candidate for embeddings. Parent model card lists Apache-2.0. | CPU-specific card did not render through the research tool. Inspect the downloaded bundle's terms, checksum and signature before adoption; local performance is untested. |
+| Perch 2, TensorFlow CPU variant | `google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1`; selected by the frozen official Hoplite configuration below | Exact variation card declares Apache-2.0 and CPU compatibility; it says weights match `perch_v2/2`. The listed package is 410.28 MB. | No package downloaded; bytes/checksum, additional terms, training-data provenance and local performance remain unverified. |
 | Perch 2, TensorFlow GPU variant | `google/bird-vocalization-classifier/tensorFlow2/perch_v2/2` | Official card lists Apache-2.0; TensorFlow >=2.20 and GPU required for this variant. | Use only if measured need justifies GPU work. |
 | Perch-Hoplite | Commit `050c57b5dac2f6d28ab1f562fa2000c8dcbc2302` | Apache-2.0 code; preferred inference/tooling route over the older Perch repository. | Reviewed README and model configuration, not a code audit or installation test. |
 | NatureLM-audio | Hugging Face revision `77855d9b0acd039f90798dcf0861f626bfefbd6f` | CC BY-NC-SA 4.0 model card; optional research comparator for audio descriptions. | Parent-model terms also matter. No permission for a paid service has been established. |
@@ -21,7 +21,9 @@ This choice keeps the initial implementation small and permits a future commerci
 
 Perch's listed input is five seconds of mono 32 kHz audio, with a 1,536-dimensional embedding. Preserve original timestamps and call boundaries when framing; do not assign five-second context labels blindly. Scores are not calibrated probabilities. Training-data overlap remains unresolved. The parent card also shows inconsistent spatial-embedding shapes in different sections, so inspect actual signatures if those outputs become relevant; the first baseline only needs pooled embeddings.
 
-Sources: [Perch model card](https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2), [older repository notice](https://github.com/google-research/perch), [Hoplite at reviewed commit](https://github.com/google-research/perch-hoplite/tree/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302), [frozen model configuration](https://github.com/google-research/perch-hoplite/blob/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/perch_hoplite/zoo/model_configs.py), [NatureLM revision](https://huggingface.co/EarthSpeciesProject/NatureLM-audio/tree/77855d9b0acd039f90798dcf0861f626bfefbd6f), [BirdNET](https://github.com/birdnet-team/birdnet), [STM32 terms](https://birdnet-team.github.io/birdnet-stm32/license/).
+**October 14 CPU artifact update:** the exact Kaggle `perch_v2_cpu/1` page now confirms the version-specific Apache-2.0 declaration, CPU compatibility, package size and weight equivalence with GPU `perch_v2/2`. The pinned Hoplite config independently selects CPU version 1 and specifies five-second, 32 kHz windows. Google lists Xeno-Canto, iNaturalist, Animal Sound Archive and FSD50k as training sources, but does not provide an item-level manifest in this reviewed card. Thus the model artifact's published license declaration is known; the training inputs' rights, exact binary integrity, target-data overlap, accuracy and mobile performance are not. Keep the resource metadata-only and the benchmark **NOT READY**.
+
+Sources: [Perch model card](https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2), [exact CPU variation v1](https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1), [older repository notice](https://github.com/google-research/perch), [Hoplite at reviewed commit](https://github.com/google-research/perch-hoplite/tree/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302), [frozen model configuration](https://github.com/google-research/perch-hoplite/blob/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/perch_hoplite/zoo/model_configs.py), [NatureLM revision](https://huggingface.co/EarthSpeciesProject/NatureLM-audio/tree/77855d9b0acd039f90798dcf0861f626bfefbd6f), [BirdNET](https://github.com/birdnet-team/birdnet), [STM32 terms](https://birdnet-team.github.io/birdnet-stm32/license/).
 
 ## Data feasibility
 
