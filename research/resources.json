@@ -3796,6 +3796,65 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "hyenaset-preprint-2026",
+      "kind": "paper",
+      "title": "HyenaSET: Hyena Sound Event Transcripts and benchmark animal2vec performance for parsing animal communication",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.14.732108v2",
+      "version": "bioRxiv version 2, posted June 19, 2026; DOI 10.64898/2026.06.14.732108",
+      "source_ids": [
+        296
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Methods comparator for continuous bioacoustic event labeling, individual-held-out evaluation and pretraining-data boundaries.",
+      "review_depth": "Read the abstract and targeted data-collection, annotation, split, benchmark and data/code-availability sections. The paper is a bioRxiv preprint, not peer-reviewed. No article text or figure was copied into Talk2Nature, and no cited data, code or model was acquired or run.",
+      "access": "Public bioRxiv preprint; the exact v2 record identifies a CC BY 4.0 license. Its dataset and the animal2vec code and weights have separate rights.",
+      "decision": "Use only as a linked methods reference. Do not describe its event labels or classifier as evidence of animal meaning, and do not treat the reported baseline as independent reproduction by Talk2Nature.",
+      "limitations": "The baseline pretrains on all available audio before fine-tuning on a split. This appears to expose the representation learner to held-out audio; treat the result as transductive unless clarified. This is a Talk2Nature methods interpretation. No independent specialist reviewed the preprint.",
+      "attribution": "Woerner, J. M., Angonin, C., Gersick, A. S., Holekamp, K. E., Jensen, F. H., Johnson, M. P., Onsare, M. H. M., Pioon, M. O., Schäfer-Zimmermann, J. C., Strandburg-Peshkin, A., and Strauss, E. D. (2026). HyenaSET: Hyena Sound Event Transcripts and benchmark animal2vec performance for parsing animal communication [Preprint v2]. bioRxiv. DOI 10.64898/2026.06.14.732108.",
+      "rights": {
+        "license": "CC BY 4.0 (bioRxiv version 2 record)",
+        "scope": "Preprint text only. Dataset, animal2vec code, checkpoints, dependencies and outputs are separate assets.",
+        "evidence_url": "https://www.biorxiv.org/content/10.64898/2026.06.14.732108v2",
+        "conditions": "Attribute the preprint and identify modifications if reusing the article itself. This record copies no article text or figures; verify the exact version and terms before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "hyenaset-dataset-v1",
+      "kind": "dataset",
+      "title": "HyenaSET: Hyena Sound Event Transcripts dataset v1",
+      "url": "https://doi.org/10.17617/3.8ZSP3J",
+      "version": "Edmond v1, released 2026-06-22; one 107,184,528,475-byte TAR.GZ; provider MD5 6b7523b755e1a284adc2be1b575c3930 (not locally verified)",
+      "source_ids": [
+        297,
+        298
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Metadata-only method reference for event labeling, animal-held-out splits and benchmark data-containment decisions.",
+      "review_depth": "Reviewed the official Edmond v1 API and DataCite DOI metadata for release status, file count, exact byte size, provider checksum and dataset-specific terms. The 107 GB archive, label files and split files were not downloaded or inspected; the checksum was not verified locally. No dataset rows, individual timestamps or precise coordinates were reviewed.",
+      "access": "Public DOI and Edmond metadata; the single archive is about 107 GB. The record's exact terms are Attribution-NonCommercial-ShareAlike 4.0 International.",
+      "decision": "Metadata-only methods comparator. Not admitted to the shared commercial-capable dataset or model path. Do not acquire unless a distinct non-commercial research question, data/privacy review, expert review and adequate isolated storage are approved.",
+      "limitations": "The reported categories are sound events and source attribution, not independent behavior or receiver-response labels. The dataset description lists a mapping from randomized audio names to identities and times for four individuals; location sensitivity has not been resolved. Five sample-stratified splits and a four-individual held-out split are described, but their files were not inspected. The paper's baseline pretrains on all available audio, so its evaluation may be transductive.",
+      "attribution": "Woerner et al. (2026), HyenaSET v1 [Dataset]. Edmond. DOI 10.17617/3.8ZSP3J.",
+      "rights": {
+        "license": "CC BY-NC-SA 4.0 (dataset-specific terms in the official Edmond API)",
+        "scope": "Edmond dataset v1 archive only. The preprint, animal2vec code, model weights, dependencies and outputs have separate rights.",
+        "evidence_url": "https://edmond.mpg.de/api/datasets/:persistentId?persistentId=doi%3A10.17617%2F3.8ZSP3J",
+        "conditions": "Non-commercial use only; share-alike terms apply to adapted material. This is not cleared for the shared commercial-capable project path. Confirm rights, privacy and wildlife-location handling before any separate research use.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

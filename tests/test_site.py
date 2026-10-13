@@ -1118,6 +1118,37 @@ class SiteTests(unittest.TestCase):
             self.assertIn('https://doi.org/10.5281/zenodo.21829388',page)
             self.assertIn(canonical,(root/'sitemap.xml').read_text())
 
+    def test_hyenaset_note_separates_event_labels_rights_and_baseline_exposure(self):
+        note=next(n for n in load('research') if n['slug']=='hyenaset-event-detection-benchmark')
+        self.assertEqual(note['source_ids'],[148,296,297,298])
+        self.assertIn('not independently observed receiver responses',note['finding'])
+        self.assertIn('pretrained on all available audio',note['limitations'])
+        self.assertIn('transductive',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        paper=next(r for r in resources if r['id']=='hyenaset-preprint-2026')
+        dataset=next(r for r in resources if r['id']=='hyenaset-dataset-v1')
+        self.assertEqual(paper['rights']['license'],'CC BY 4.0 (bioRxiv version 2 record)')
+        self.assertEqual(dataset['rights']['license'],'CC BY-NC-SA 4.0 (dataset-specific terms in the official Edmond API)')
+        self.assertEqual(dataset['rights']['commercial_use'],'not_admitted')
+        self.assertEqual(dataset['acquisition'],'metadata_only')
+        self.assertEqual(dataset['files'],[])
+        self.assertIn('107,184,528,475-byte',dataset['version'])
+        detect=next(p for p in load('learning-paths')['paths'] if p['id']=='detect')
+        self.assertIn(note['slug'],detect['notes'])
+        self.assertIn('pretrains on all available audio',detect['gate'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research/hyenaset-event-detection-benchmark/index.html').read_text()
+            canonical='https://fixture.github.io/talk2nature/research/hyenaset-event-detection-benchmark/'
+            self.assertIn('content="index,follow"',page)
+            self.assertIn(canonical,page)
+            self.assertIn('CC BY-NC-SA 4.0',page)
+            self.assertIn('all available audio',page)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+
     def test_whombat_aoef_bridge_is_indexable_with_verified_scope_and_limits(self):
         note=next(n for n in load('research') if n['slug']=='whombat-annotation-workbench')
         self.assertEqual(note['source_ids'],[229,230,231,232])
