@@ -24,6 +24,18 @@ public final class CaptureEngineSelfTest {
     private static long u32(byte[] bytes,int at){return (u16(bytes,at)&0xffffL)|((u16(bytes,at+2)&0xffffL)<<16);}
 
     public static void main(String[] args){
+        CaptureDeadline deadline = new CaptureDeadline(1000L, 1000L);
+        check(!deadline.isExpired(1000L), "a session deadline starts at the monotonic capture time");
+        check(deadline.limitSamples(1000L, RATE, RATE/10) == RATE/10, "the deadline allows one normal audio frame");
+        check(deadline.remainingMillis(1500L) == 500L, "remaining time uses monotonic elapsed milliseconds");
+        check(deadline.limitSamples(1999L, RATE, RATE) == 16, "the final read is limited to samples before expiry");
+        check(deadline.isExpired(2000L), "a stalled reader still reaches the wall-clock deadline");
+        check(deadline.limitSamples(3000L, RATE, RATE) == 0, "an expired session cannot request more audio");
+        try {
+            new CaptureDeadline(0L, 8L * 60 * 60 * 1000 + 1);
+            throw new AssertionError("capture deadlines cannot exceed eight hours");
+        } catch (IllegalArgumentException expected) { }
+
         CaptureEngine engine=new CaptureEngine(RATE);
         silence(engine,30);
         check(Math.abs(engine.thresholdDbfs()+50)<0.01,"quiet calibration must use the lower clamp");
