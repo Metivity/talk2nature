@@ -26,6 +26,8 @@ For comparative-communication or avian-behavior readers, there is a separate, bo
 
 This route reviews a public literature summary only. It does not ask anyone to conduct playback, collect animal data, share unpublished work, endorse the project or establish that an animal communication claim is true. Public reports should omit personal details, participant data and sensitive locations. Any substantive correction will be checked against the source and recorded with its review depth; a submitted issue alone is not independent validation.
 
+For bioacoustics, acoustics or mobile-audio readers, a second bounded route asks whether a small **no-animal phone-reference check** would answer a useful technical question. Start with the [phone-variability evidence note](https://metivity.github.io/talk2nature/research/smartphone-bioacoustics-device-variability/) and its [focused review brief](PHONE_RECORDING_REVIEW.md). The question is whether a bench test could distinguish phone, operating-system/browser and app-path effects without being misrepresented as microphone calibration or proof of field suitability. No test protocol, threshold or device recommendation is approved; the same public scientific-review form can be used for a critique.
+
 The question is deliberately modest: **does this help a researcher preserve and inspect an observation record, and what does it fail to represent?** It does not test whether a call has a meaning, identify an animal, measure a model, or demonstrate conversation with wildlife.
 
 ## Who can help now
