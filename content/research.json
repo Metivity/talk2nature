@@ -325,20 +325,21 @@
   {
     "slug": "dog-barks",
     "title": "What bark classification can tell us",
+    "seo_description": "A full methods review of a dog-bark study: dog-held-out context classification predicts associations with induced situations, not what dogs mean.",
     "taxon": "Companion animals",
     "kind": "Machine-learning study",
     "year": "2024",
     "source_ids": [
       21
     ],
-    "review_depth": "Primary abstract and selected Dataset/Experimental Setup passages reviewed, including recording regions; no reproduction or full data audit.",
-    "finding": "Human-speech-pretrained Wav2Vec2 improved performance on selected dog-vocalization classification tasks.",
-    "limitations": "Grounding uses four selected, stranger-related categories mixing vocal form and context. These results do not establish broad emotional or language translation.",
-    "lesson": "The paper groups dogs across folds for context, breed and sex tasks; individual-dog recognition uses a different split. Match each evaluation to its intended claim.",
-    "next_review": "Inspect household/session dependence and context labeling before treating this as a passive phone benchmark.",
-    "reviewed": "2026-10-04",
+    "review_depth": "Full seven-page ACL Anthology paper reviewed on 2026-10-13, including Dataset, segmentation/annotation, all four task sections, five results tables and Limitations. No data, code or weights were acquired or executed; no result was reproduced.",
+    "finding": "The study reports 62.18% accuracy for Wav2Vec2 pretrained on 960 hours of human LibriSpeech, versus a 56.37% majority baseline, on a selected four-class bark/context task. The result is prediction of association with induced study situations, not a test of what dogs understand or mean.",
+    "limitations": "The 74 dogs were recorded in owners’ homes in Tepic and Puebla during designed exposures such as stranger, play and owner-related situations. Sound segments were manually assigned one of 14 labels from information associated with the stimulus; 8,755 of 16,789 segments are non-dog sounds. The four-class grounding subset mixes vocal form (bark, squeal, grunt) with stranger-related exposure. Dog-held-out folds are reported, but the paper does not describe household, owner, session, stimulus-instance or recording-condition grouping. This is not proof that those groups leaked; their independence cannot be checked from the paper. The paper does not report an independently observer-coded behavior-label stream for these segments or a receiver-response test of the calls. No replication was performed. Results do not establish broad emotion inference, semantics or translation.",
+    "lesson": "Dog-held-out validation is a useful control for unseen-dog generalization, but it does not by itself show generalization across homes, sessions or stimulus instances. A phone-based passive-observation question would need naturally occurring, independently observed context labels and appropriate group keys; do not transfer this induced-stimulus score to parrots or other species.",
+    "next_review": "Treat this as a methods comparator. Before any future request for data or baselines, define the exact replication question and verify access, privacy, recording/session/household grouping, label provenance, model checkpoint identity and component rights. No author contact or acquisition has occurred.",
+    "reviewed": "2026-10-13",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Selected methods reviewed",
+    "review_stage": "Full paper methods reviewed",
     "year_label": "Source year",
     "study_snapshot": [
       [
@@ -347,7 +348,7 @@
       ],
       [
         "Evaluation",
-        "Ten-fold dog-grouped evaluation for context, breed and sex; identity recognition uses a different split."
+        "Ten-fold dog-grouped evaluation for context, breed and sex; session/household grouping is not described. Individual recognition places all dogs in both train and test by design."
       ],
       [
         "Context result",
@@ -355,13 +356,26 @@
       ],
       [
         "Availability",
-        "Paper offers dataset and baselines by request; redistribution permission is not established."
+        "Paper says dataset and baselines are available by request but does not link a versioned deposit; external repository searches were not part of this review."
       ]
     ],
-    "review_locator": "Published pages 16481–16484: Dataset, Experimental Setup, Grounding, Table 4 and Limitations.",
+    "review_locator": "Full seven-page paper; especially printed pages 16481–16484: stimulus protocol, segmentation and annotation, dog-grouped ten-fold setup, Table 4 and limitations.",
     "purpose": "Behavior & communication",
+    "review_request": {
+      "title": "Independent review of dog-held-out context classification",
+      "summary": "We invite canine-bioacoustics, animal-behavior or evaluation-methods researchers to assess the paper’s distinction between dog-held-out folds and unreported household/session grouping, and whether stimulus-derived labels justify the word ‘grounding’. This is a literature critique, not an animal experiment or Talk2Nature model claim.",
+      "questions": [
+        "What does the reported dog-held-out split support about generalization, given that the segments were labeled from induced stimulus situations?",
+        "Which household, owner, session, stimulus-instance or recording-condition identifiers would be necessary to assess the remaining grouping risks, and are these reported in the paper?",
+        "Does the four-class target measure context association, vocal-type discrimination, or a mixture? What wording best reflects the evidence without implying meaning?",
+        "What is the smallest public-source check that could change your assessment? Do not request or attach private data."
+      ],
+      "status": "No independent specialist review has been received. The study data and baseline implementations are described as available by request; no request, contact, data acquisition or reproduction has occurred.",
+      "guide_path": "docs/DOG_BARK_REVIEW.md",
+      "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml"
+    },
     "atlas": {
-      "reviewed": "2026-10-04",
+      "reviewed": "2026-10-13",
       "location_status": "mapped",
       "location_note": "Two recording regions in one study, not two independent datasets. Household locations are not published.",
       "locations": [

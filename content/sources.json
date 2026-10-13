@@ -168,12 +168,12 @@
   {
     "id": 21,
     "title": "Dog bark classification",
-    "description": "Abzaliev et al. Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification. LREC-COLING (2024). Classification tasks, not unrestricted translation.",
+    "description": "Abzaliev et al. Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification. Full LREC-COLING 2024 methods review; context classification, not unrestricted translation.",
     "url": "https://aclanthology.org/2024.lrec-main.1432/",
-    "checked": "2026-10-04",
+    "checked": "2026-10-13",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
     "review_url": "https://aclanthology.org/2024.lrec-main.1432.pdf",
-    "review_url_label": "Published paper used for the location and methods review"
+    "review_url_label": "Full published paper used for methods review"
   },
   {
     "id": 22,

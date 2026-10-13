@@ -1,5 +1,15 @@
 # Project status
 
+## October 13 dog-bark context-classification methods review
+
+**Question:** what does the 2024 dog-bark study's context score establish, and which grouping, label and rights limits matter before treating it as a reusable benchmark?
+
+**Evidence and change:** reviewed the full seven-page ACL Anthology paper: collection at owners' homes in Tepic and Puebla, designed stimulus situations, 0.3–5 second sound segmentation, stimulus-associated manual labels, dog-grouped ten-fold validation for context/breed/sex, the separate identity split and all reported task tables. The paper reports 62.18% accuracy versus a 56.37% majority baseline for its selected four-class task. The note now says this is an association with induced-study labels, not evidence of what a dog means; dog-held-out folds are reported, while household/session/stimulus-instance/recording-condition grouping is not described. That gap is unknown, not proof of leakage. Added separate paper, dataset and code metadata records, a reviewer brief, a direct methods-review route, and an entry in the model-evaluation reading path. The PDF says CC BY-NC 4.0 while the ACL Anthology page-level notice says CC BY 4.0; the article-specific conflict remains unresolved. The article says data and baselines are available by request, but does not link a versioned deposit or code repository; external repository searches were not part of this review.
+
+**Rights and limits:** all three resource records remain metadata-only; no data, code, weights or article files were acquired, and no model was run or result reproduced. No author contact or independent review occurred. The paper does not establish natural passive-phone generalization, independently observer-coded behavior labels for these segments, a receiver-response test of the calls, or cross-species transfer. See the [focused review brief](DOG_BARK_REVIEW.md) and [`dog-barks` evidence note](../content/research.json).
+
+**Validation:** all 116 Python tests and 107 Node tests passed; the resource catalog validates all 115 records. The local noindex build produced 104 pages plus 404 and passed the site checker across 105 HTML documents and 5,035 links. The public-origin candidate produced 104 pages plus 404 and passed across 105 HTML documents, 5,141 links and all 104 public pages reachable. Browser-emulated research-page checks at 320 × 740 and 390 × 844 CSS pixels measured matching viewport/document widths, stacked review actions and 44 px or larger links. This is responsive emulation, not physical-device testing. `git diff --check` passed. No deployment or Search Console inspection occurred; AutoResearch remains **NOT READY**.
+
 ## October 13 Japanese-tit independent-review brief
 
 **Question:** can a qualified reader evaluate the reported receiver-response evidence and competing explanations from a clear, bounded invitation at the point of reading?
