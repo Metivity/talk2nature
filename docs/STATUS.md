@@ -10,6 +10,8 @@
 
 **Change and limits:** updated the fungal research note and added the separate article/data records. No archive was downloaded, no checksum was computed locally, no data were analyzed, and no independent specialist reviewed the paper. Before any reproduction, resolve the file mapping and terms, then obtain mycology/electrophysiology review of independent biological replication, controls and environmental logging. AutoResearch remains **NOT READY** for this or any other biological benchmark.
 
+**Publication receipt (October 13):** [PR #118](https://github.com/Metivity/talk2nature/pull/118) merged as `1fa30b8`; the [manual Pages workflow](https://github.com/Metivity/talk2nature/actions/runs/38428567366) completed successfully. Live fetches confirmed HTTP 200 for the [fungal evidence page](https://metivity.github.io/talk2nature/research/fungal-propagation-2026/) and [resource directory](https://metivity.github.io/talk2nature/research/resources/); the new title and source links are served, the separate paper/data records appear with the dataset marked metadata-only, and the route is in the sitemap named by `robots.txt`. This verifies publication and crawl configuration, not Google indexing, impressions or ranking; Search Console was not inspected.
+
 ## October 13 update-ready notice for existing offline users
 
 **Question:** can an opted-in offline user see that a new app version is ready without interrupting a session?
