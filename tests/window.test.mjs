@@ -12,8 +12,10 @@ test('a full window retains quiet samples, starts at zero and trims exactly at 3
   const s = new WindowSession(8000, {animalContext:{group:'parrot',species:'budgerigar',basis:'observer-declared'}});
   // Irregular frames intentionally cross the exact boundary; no duplicated or trailing samples.
   for (let n=0;n<240000;n+=777) s.push(Float32Array.from({length:777},(_,i)=>(n+i)%2 ? .25 : 0));
+  s.setSoundscapeContext(['weather_or_water']);
   assert.equal(s.elapsed,30); assert.equal(s.stopReason,'window_complete'); assert.equal(s.events.length,1);
   const r=s.exportRecord();assert.equal(r.schema,'talk2nature.observation-window.v1');
+  assert.equal(r.soundscape_context.status,'observer_selected');assert.deepEqual(r.soundscape_context.categories,['weather_or_water']);
   assert.equal(r.sampling.complete,true);assert.equal(r.sampling.retained_samples,240000);
   assert.equal(r.events[0].onset_seconds,null);assert.equal(r.events[0].clip_start_seconds,0);
   assert.equal(r.animal_context.species,'budgerigar');assert.equal('detector' in r,false);

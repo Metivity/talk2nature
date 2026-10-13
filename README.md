@@ -16,6 +16,8 @@ Website: https://metivity.github.io/talk2nature/
 
 **Research annotation exchange:** Listen has an experimental one-way [AOEF 1.1 export](docs/INTEROPERABILITY.md) for a separate annotation workbench. The exact export passed a synthetic Whombat 0.9.0 desktop-UI import using invented audio; this verifies format compatibility only, not scientific suitability or real-recording behavior. The export is local-only and preserves a full, unencrypted provenance sidecar.
 
+**Biodiversity data exchange:** [Data interoperability notes](docs/DATA_INTEROPERABILITY.md) assess Darwin Core Data Package and Audubon Core as future metadata references. No Talk2Nature export currently claims conformance to either standard.
+
 **Research atlas:** [Explore places and historical work](https://metivity.github.io/talk2nature/research/atlas/) alongside our evidence connections. All library notes remain visible; pins require cited locations. Read the [coverage, provenance and contribution guide](docs/RESEARCH_ATLAS.md).
 
 ## Participate

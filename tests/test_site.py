@@ -31,7 +31,7 @@ class SiteTests(unittest.TestCase):
         )}
         expected={
             'mobile-check.yml':'mobile-check form',
-            'reproduction.yml':'reproduction form',
+            'reproduction.yml':'workflow report form',
             'research-source.yml':'source-review form',
             'scientific-review.yml':'scientific review form',
         }
@@ -47,7 +47,13 @@ class SiteTests(unittest.TestCase):
         unverified='- Not sure / not independently verified'
         independent='- Independent evaluator (no project or maintainer assistance)'
         self.assertLess(form.index(unverified),form.index(independent))
+        self.assertIn('name: Workflow report (browser or code)',form)
         self.assertIn('maintainers review reports',form)
+        self.assertIn("title: '[Workflow report] '",form)
+        self.assertIn('https://metivity.github.io/talk2nature/app/compare/',form)
+        self.assertIn('The browser route needs no code, account, recording or upload',form)
+        self.assertIn('If unsure, write “unknown.”',form)
+        self.assertIn('A blocked attempt is useful',form)
         self.assertIn('only a maintainer-reviewed run of the documented software commands counts toward independent reproduction',guide)
 
     def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
@@ -154,6 +160,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('A bounded sample path is approved by the collection rules',page)
             self.assertIn('<span class="resource-status">Metadata only</span>',page)
             self.assertIn('<span class="resource-status">Limited sample route</span>',page)
+            self.assertIn('<option value="standard">Standard</option>',page)
+            self.assertIn('data-kind="standard"',page)
+            self.assertIn('Papers, datasets, code, models and standards',page)
             self.assertNotIn('metadata_only</span>',page)
             self.assertNotIn('sample_approved</span>',page)
             self.assertIn('not a systematic review or legal clearance',page)
@@ -578,6 +587,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
             self.assertIn('Official track rules ↗',page)
             self.assertIn('Official open-source procedure ↗',page)
+            self.assertIn('Wildlife Acoustics · Q4 Scientific Product Grant',page)
+            self.assertIn('Deadline 2026-11-15',page)
+            self.assertIn('up to $4,000 per applicant from a quarterly pool of up to $12,000',page)
+            self.assertIn('charitable/educational tax-exempt status documentation',page)
+            self.assertIn('do not prepare an application now',page)
             self.assertIn('https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf',page)
             self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/',page)
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
@@ -619,12 +633,14 @@ class SiteTests(unittest.TestCase):
             self.assertIn('relevant genomic methods and FAIR-by-design data',page)
             self.assertIn('no validated statutory monitoring, identification/counting, DNA or Water Framework Directive method',page)
             self.assertIn('not a current bid fit',page)
-            self.assertIn('Scheduled to open 13 Oct 2026 · portal status unverified · consortium required',page)
-            self.assertIn('actual submission status is unverified',page)
+            self.assertIn('Official opening date 13 Oct 2026 · live portal status unverified · consortium required',page)
+            self.assertIn('Actual submission status is unverified',page)
             self.assertIn('do not call it open until the official portal confirms that',page)
             self.assertIn('Official topic details ↗',page)
+            self.assertIn('Funding &amp; Tenders live topic ↗',page)
+            self.assertIn('topic-details/HORIZON-NATURE-2027-02-05',page)
             self.assertIn('Applicant eligibility ↗',page)
-            for source_id in (201,202,203,240):
+            for source_id in (201,202,203,240,260):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):
@@ -880,7 +896,7 @@ class SiteTests(unittest.TestCase):
             for field in ('question','decision','next_step','gate'):
                 self.assertTrue(path[field])
         for note in notes.values():
-            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction','Vocal development'))
+            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction','Vocal development','Data standards & interoperability'))
             if 'reuse' in note:
                 for field in ('status','asset','rights','experiment'):
                     self.assertTrue(note['reuse'][field])

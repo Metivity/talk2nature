@@ -894,6 +894,36 @@
       "files": []
     },
     {
+      "id": "companion-parrot-name-use-s2-2026",
+      "kind": "dataset",
+      "title": "Coded name-phrase survey data for companion parrots (PLOS S2)",
+      "url": "https://doi.org/10.1371/journal.pone.0346830.s002",
+      "version": "PLOS ONE supporting information S2; DOI 10.1371/journal.pone.0346830.s002; associated article published 2026-04-17",
+      "source_ids": [
+        160,
+        261
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Interface-design reference for separating caregiver-reported context from recorded sound, researcher coding and model predictions.",
+      "review_depth": "PLOS describes S2 as an XLSX of coded parrot name phrases with de-identified supporting information. The NLM Dataset Catalog record links to PLOS Figshare item 32046233 and reports CC BY 4.0. The direct Figshare page/API could not be retrieved in this review; no workbook bytes or fields were inspected.",
+      "access": "PLOS S2 DOI and linked Figshare record; NLM catalog metadata reviewed. No file was downloaded, retained or opened.",
+      "decision": "Metadata-only. The paper is a useful example of coding human-reported context, not an audio dataset or validated benchmark. Do not acquire, redistribute or use for model training until the exact workbook, identifiers, consent scope and privacy conditions have been reviewed for a defined research need.",
+      "limitations": "The article says respondents were asked for respondent and parrot names and describes S2 as de-identified, but the spreadsheet itself and its de-identification were not checked. Its context originates in survey-taker accounts and observer coding, not direct acoustic inference or controlled receiver-response tests. The cataloged CC BY 4.0 declaration does not establish privacy clearance or consent for secondary uses.",
+      "attribution": "Benedict L, Groiss V, Hoeschele M, Reinisch E, Dahlin CR (2026). Name use by companion parrots. PLOS ONE 21(4): e0346830. Supporting Information S2, DOI 10.1371/journal.pone.0346830.s002.",
+      "rights": {
+        "license": "CC BY 4.0 as reported by the NLM Dataset Catalog for the linked PLOS Figshare S2 item; direct provider metadata was not retrievable in this review.",
+        "scope": "The S2 XLSX only. Article text, figures and participant-derived data have separate scope. The spreadsheet contents, de-identification, consent scope and privacy risk were not inspected or independently assessed.",
+        "evidence_url": "https://datasetcatalog.nlm.nih.gov/dataset?q=0003053856",
+        "conditions": "The cataloged license is not privacy or consent clearance. Keep metadata-only; do not download, redistribute or use for training until the exact file, consent scope, privacy risk and intended use have been reviewed for a defined question.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "yellow-naped-amazon-duets-2026-paper",
       "kind": "paper",
       "title": "Decoding parrot duets: complex communication in yellow-naped amazons",
@@ -2658,6 +2688,211 @@
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wham-sperm-whale-paper-2025",
+      "kind": "paper",
+      "title": "WhAM: Towards A Translative Model of Sperm Whale Vocalization",
+      "url": "https://arxiv.org/abs/2512.02206",
+      "version": "arXiv:2512.02206v1, posted 2025-12-01; NeurIPS 2025 per the official project repository",
+      "source_ids": [
+        78
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Methods reference for masked acoustic-token generation, acoustic style transfer, and evaluation of sperm-whale coda representations.",
+      "review_depth": "Full main text and targeted Appendix E methods reviewed, including data, model training, compute, downstream evaluation, expert perceptual design and limitations. Appendix D and supplementary artifacts were not fully reviewed; no independent reproduction.",
+      "access": "Public arXiv manuscript; no figures, article file or supplementary artifacts acquired.",
+      "decision": "Keep as a methods reference only. It does not establish semantic translation, and the reported downstream evaluation has test-set model selection with no verified animal/recording grouping.",
+      "limitations": "Five-expert perceptual study; test-set selection; grouping and untouched-holdout status not established in the reviewed description. Acoustic similarity is not comprehension or meaning.",
+      "attribution": "Paradise et al. (2025), “WhAM: Towards A Translative Model of Sperm Whale Vocalization,” arXiv:2512.02206v1; NeurIPS 2025 as identified by the official repository.",
+      "rights": {
+        "license": "CC BY-NC-ND 4.0, declared on the arXiv record.",
+        "scope": "Manuscript only. Code, DSWP/CETI data, model weights and pretrained components have separate rights.",
+        "evidence_url": "https://arxiv.org/abs/2512.02206",
+        "conditions": "Talk2Nature publishes an original summary and citation link; no article or figure reproduction.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wham-code-mit-2025",
+      "kind": "code",
+      "title": "WhAM source repository, pinned GitHub revision",
+      "url": "https://github.com/Project-CETI/wham/tree/00a8b787c040db23cd51ac4417481a09ac354985",
+      "version": "main resolved to 00a8b787c040db23cd51ac4417481a09ac354985 on 2026-10-13",
+      "source_ids": [
+        252
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Reference implementation for the paper’s audio generation, fine-tuning and downstream evaluation methods.",
+      "review_depth": "Reviewed official repository overview, README installation/training/reproduction instructions and displayed MIT license metadata at a revision resolved with read-only git ls-remote. No code download, dependency installation, execution or security audit.",
+      "access": "Public, pinned GitHub source.",
+      "decision": "Do not import or execute. Consider only as a future reproducibility reference after dependency, data and weight rights review.",
+      "limitations": "README requests Python 3.9, VampNet, madmom, ffmpeg and separate weights/data; dependencies and scripts have not been audited. The README says the full results require DSWP+CETI annotations and that only part of the data was public at publication. Repository code terms do not cover data or weights.",
+      "attribution": "Project CETI, WhAM code repository, commit 00a8b787c040db23cd51ac4417481a09ac354985.",
+      "rights": {
+        "license": "MIT per the official GitHub repository.",
+        "scope": "Repository source code only; pretrained VampNet components, WhAM weights, datasets and dependencies have separate terms.",
+        "evidence_url": "https://github.com/Project-CETI/wham/blob/00a8b787c040db23cd51ac4417481a09ac354985/LICENSE",
+        "conditions": "Retain the MIT notice if code is later used; inspect each dependency/artifact separately. No code was acquired.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wham-dswp-data-2025",
+      "kind": "dataset",
+      "title": "Dominica Sperm Whale Project (DSWP) public coda dataset card",
+      "url": "https://huggingface.co/datasets/orrp/DSWP",
+      "version": "Repository revision a2e5d6dd02fc60343e1288c33314e14e8b7aa5be; card lists 1,501 snippets, ~45 minutes and 585 MB",
+      "source_ids": [
+        253
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Potential acoustic-structure/representation methods data; not a behavior-context or semantic-translation dataset.",
+      "review_depth": "Reviewed official dataset-card metadata, size, row count, stated license, collection/method description and limitations. The public revision was resolved with read-only git ls-remote. No audio rows, archives or files were downloaded or inspected.",
+      "access": "Public metadata and download listing; audio remains unacquired.",
+      "decision": "Keep metadata-only. Do not admit to a context/meaning benchmark: the card says snippets lack behavioral context and per-file recorder metadata and all originate from one clan and region. Resolve why the current 1,501-row card differs from the paper’s 2,507 DSWP training count before any reproduction.",
+      "limitations": "The CC BY 4.0 declaration is from the dataset card and is not an independent source-rights audit. Exact file provenance, label construction, identity/session grouping and the relation to the training set in the paper remain unchecked. CETI data, article, code and model weights are separate components.",
+      "attribution": "Dominica Sperm Whale Project; dataset card maintained by Orr Paradise/project authors at Hugging Face, https://huggingface.co/datasets/orrp/DSWP.",
+      "rights": {
+        "license": "CC BY 4.0 per the current dataset card.",
+        "scope": "This public DSWP release only; the paper, code, CETI recordings and model weights are separate.",
+        "evidence_url": "https://huggingface.co/datasets/orrp/DSWP",
+        "conditions": "Retain attribution and verify exact release/file provenance and scientific suitability before reuse. No files were acquired.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wham-weights-zenodo-v1",
+      "kind": "model",
+      "title": "WhAM (Whale Acoustics Model) weights, Zenodo v1",
+      "url": "https://doi.org/10.5281/zenodo.17633708",
+      "version": "Zenodo v1, published 2025-12-02; four listed files totaling about 3.1 GB",
+      "source_ids": [
+        254
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Research checkpoint for WhAM inference; no Talk2Nature task or product use established.",
+      "review_depth": "Reviewed official Zenodo version metadata, file names/sizes and rights display only. The record lists four weight files (~3.1 GB) and MD5 values; no bytes were acquired and no checksum was verified locally.",
+      "access": "Public Zenodo record metadata; weights not acquired.",
+      "decision": "Do not download or use until an explicit weight license, source-data terms, dependencies and intended use are resolved. The MIT code license does not clear these weights.",
+      "limitations": "No license was visible in the reviewed Zenodo Rights/License field. No integrity verification, loading, inference or independent performance check.",
+      "attribution": "Orr Paradise, WhAM (Whale Acoustics Model) weights, Zenodo v1, DOI 10.5281/zenodo.17633708.",
+      "rights": {
+        "license": "Unspecified on the reviewed record; unresolved.",
+        "scope": "Listed model-weight files only; repository code and training data are separate.",
+        "evidence_url": "https://zenodo.org/records/17633708",
+        "conditions": "Do not acquire, redistribute, run or include in a product until exact weight rights and applicable data/dependency terms are resolved.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "darwin-core-data-package-standard",
+      "kind": "standard",
+      "title": "Darwin Core Data Package guide and profile",
+      "url": "https://dwc.tdwg.org/dp/",
+      "version": "Official guide issued 2026-05-26; uses Data Package specification v1 and the versioned DwC-DP 1.0 profile",
+      "source_ids": [
+        255,
+        256,
+        259
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Candidate packaging reference for sharing structured biodiversity data with a descriptor, tabular resources and explicit schemas.",
+      "review_depth": "Reviewed the official current guide sections on scope, required descriptor and data tables, schemas, field definitions and the versioned profile, plus the conceptual-model sections on Occurrence, Identification and Media. Also checked the versioned profile and event-schema URLs and the pinned source snapshot, which is marked pre-review. No package was generated or validated.",
+      "access": "Public official TDWG standard documentation.",
+      "decision": "Use as a design reference only. No current Talk2Nature export claims DwC-DP conformance. Wait for the exact released, versioned profile and schemas to resolve before drafting an adapter; then require validation, a loss report and specialist review.",
+      "limitations": "The standard does not define animal-call meaning, establish rights or consent, or make user-entered context an independently observed biological state. The profile and event-schema files visible in the source repository are unversioned and trace to a commit titled 'Initial pre-review DwC-DP schemas'; they are not treated as the released 1.0 profile. Talk2Nature's device clock is unverified and its public tools do not collect exact locations; do not invent missing fields to fill a biodiversity table.",
+      "attribution": "Darwin Core Maintenance Group. 2026. Darwin Core Data Package guide, issued 2026-05-26. Biodiversity Information Standards (TDWG).",
+      "rights": {
+        "license": "Reuse license for the reviewed documentation was not established.",
+        "scope": "This metadata record points to the standard documentation only; it does not convey rights in the standard text or any biodiversity data.",
+        "evidence_url": "https://dwc.tdwg.org/dp/",
+        "conditions": "Consult the current official standard and terms before reproducing documentation or asserting conformance.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "darwin-core-dp-prereview-schema-snapshot",
+      "kind": "standard",
+      "title": "TDWG Darwin Core Data Package pre-review schema snapshot",
+      "url": "https://github.com/tdwg/rs.tdwg.org/tree/e0cc2509953eeed24ad312b6e91e7bfcadd37a3b/dwc-dp",
+      "version": "Repository commit e0cc2509953eeed24ad312b6e91e7bfcadd37a3b; 2026-05-02; commit message: Initial pre-review DwC-DP schemas",
+      "source_ids": [
+        259
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Trace the guide's versioned profile/schema links and identify an authoritative, released artifact before any compatibility work.",
+      "review_depth": "Inspected the official GitHub tree and commit metadata, and read the profile and event-schema JSON from the pinned source paths without saving them to the repository. The commit is explicitly titled pre-review; no export was built or validated.",
+      "access": "Public GitHub repository. The GitHub license endpoint returned 404 during this review; no reuse or redistribution rights are assumed.",
+      "decision": "Metadata-only diagnostic reference. Do not use this unversioned pre-review snapshot as a conformance basis; wait for the versioned artifacts served by the official standard.",
+      "limitations": "The source snapshot is not the same as a released versioned profile. The profile URL and schema-index URL cited by the current guide returned HTTP 404 in this environment; this observation does not prove global unavailability. No Talk2Nature field mapping or biological interpretation follows from the schema files.",
+      "attribution": "TDWG rs.tdwg.org repository, pinned commit e0cc2509953eeed24ad312b6e91e7bfcadd37a3b, 2026-05-02.",
+      "rights": {
+        "license": "No license was returned by the GitHub license endpoint for this repository snapshot; rights unresolved.",
+        "scope": "This record points to source metadata only. No schema files are stored in Talk2Nature.",
+        "evidence_url": "https://github.com/tdwg/rs.tdwg.org/tree/e0cc2509953eeed24ad312b6e91e7bfcadd37a3b/dwc-dp",
+        "conditions": "Recheck the repository license and official release status before copying, adapting or redistributing any schema content.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "audubon-core-media-standard",
+      "kind": "standard",
+      "title": "Audubon Core biodiversity media metadata",
+      "url": "https://ac.tdwg.org/termlist/",
+      "version": "Current official term list; reviewed terms include updates through 2026-02-24",
+      "source_ids": [
+        257
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-13",
+      "task": "Candidate vocabulary for describing biodiversity-related sound and other media, including rights, access and resource-level metadata.",
+      "review_depth": "Reviewed the current official term list and targeted terms for license statements, media resources, service access points, hashes and expert-review metadata. No terms were mapped to or tested against a Talk2Nature export.",
+      "access": "Public official TDWG standard documentation.",
+      "decision": "Keep as a future media-metadata reference alongside, not in place of, the current Talk2Nature journal and annotation formats. Do not claim conformance or imply that media metadata verifies its biological labels.",
+      "limitations": "Audubon Core describes biodiversity media resources; it is not a behavioral codebook, consent workflow, research protocol or semantic communication model. Rights and access must still be checked for each recording and representation.",
+      "attribution": "Audubon Core Maintenance Group. Audiovisual Core List of Terms. Biodiversity Information Standards (TDWG).",
+      "rights": {
+        "license": "Reuse license for the reviewed documentation was not established.",
+        "scope": "This metadata record points to the standard term list only; media, annotations and source documents have separate rights.",
+        "evidence_url": "https://ac.tdwg.org/termlist/",
+        "conditions": "Consult the current official term list and documentation before reusing text or implementing a mapping.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
       },
       "acquisition": "metadata_only",
       "files": []

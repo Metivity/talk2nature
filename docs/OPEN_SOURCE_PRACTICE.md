@@ -26,6 +26,14 @@ A regression test now ties the three guide links to their expected GitHub issue-
 
 Next measure whether a first-time contributor can choose a task and submit a useful report without maintainer guidance. Keep the report self-declared as independent, assisted or maintainer-led; a passing form or CI run does not prove adoption or biological validity.
 
+## October 13 follow-up: make the evaluator report approachable
+
+**Question:** does the public report form make the no-code browser route legible to a non-programmer while keeping enough provenance to review a result?
+
+**Change:** renamed the default issue title from “Reproduction” to “Workflow report,” put the no-setup browser comparison first, linked the code route separately, and added plain-language examples for page/version, device/browser, actions and usefulness. An evaluator may enter “unknown” for a software version they cannot identify. The relationship choices still default to unverified; public-report privacy warnings and the boundary for counting an independent code reproduction remain.
+
+**Verification and limits:** a repository regression protects the visible browser route, no-code reassurance, unknown-version allowance, failure reporting and unverified default. The local issue-form YAML parses. This verifies source consistency, not GitHub-hosted rendering, first-time comprehension, screen-reader behavior or independent use. No issue was opened or submitted; independent reproduction remains zero. Next evidence must come from an outside person using the form and reporting what was confusing.
+
 ## October 12 maintainer check: source-suggestion draft flow
 
 **Question.** Can a visitor prepare a source suggestion without a GitHub account, understand what will be shared and stop before posting?
@@ -75,3 +83,10 @@ The last Pages release passed, but GitHub warned that the pinned publication act
 Updated the manual Pages workflow to those release commit SHAs and pinned both jobs to `ubuntu-24.04`, matching the existing public/private check workflows. The workflow remains manually dispatched, keeps its read-only build permissions and separate Pages deploy permissions, and uploads only the checked `dist/` artifact. This avoids an unplanned hosted-OS change and removes the known Node.js 20 action versions without relying on floating action tags. Sources: [configure-pages v6](https://github.com/actions/configure-pages/releases/tag/v6.0.0), [deploy-pages v5.0.1](https://github.com/actions/deploy-pages/releases/tag/v5.0.1), [upload-pages-artifact v5.0.0](https://github.com/actions/upload-pages-artifact/releases/tag/v5.0.0), [artifact action metadata at the pinned commit](https://github.com/actions/upload-artifact/blob/bbbca2ddaa5d8feaa63e36b76fdaad77386f024f/action.yml), and [runner migration notice](https://github.com/actions/runner-images/issues/14748).
 
 Local verification: the workflow parses as YAML; all 92 Python and 98 Node tests pass; the public build produces 91 pages plus 404; and the site checker validates 92 HTML documents, 4,306 links and 91 reachable public pages. PR [#65](https://github.com/Metivity/talk2nature/pull/65) passed the repository checks and merged as `d3f9b9e66e62d07296eaf2f508ac5b5ea8dd51a7`. Its manual Pages deployment [#38315358703](https://github.com/Metivity/talk2nature/actions/runs/38315358703) passed both build and deploy jobs. The run logs contained no Node.js 20, `ubuntu-latest`, Ubuntu 26 or deprecated-action matches; the two job check-runs had zero annotations. Live HTTPS checks returned 200 for the home page, Field Companion, parrot research note and sitemap. The Pages workflow maintenance acceptance check is met. These results do not establish search indexing, research validity or project adoption.
+
+
+## October 13 current-main source-archive rehearsal
+
+The researcher kit was rechecked from a fresh source archive of public `main` at `156ad928db3bc49baa200fc31e46f580efef64ac`. The synthetic annotation and grouped-split commands matched their recorded results; 103 Python tests, 105 Node tests, 82 resource validations, the 96-page local build and the 97-HTML/4,539-link site check passed. The temporary source came from an exact shallow public clone and excluded ignored/private workspace data. A macOS CRLF mismatch affected only the Windows Gradle wrapper in the clone; test execution used a `git archive HEAD` extraction and left the wrapper unchanged.
+
+This increases confidence that the published software instructions match the current public source. It remains maintainer-run. The project still has zero independently verified reproductions and has not received a scientific specialist review. See the detailed outputs and checksums in [`RESEARCHER_START.md`](RESEARCHER_START.md).

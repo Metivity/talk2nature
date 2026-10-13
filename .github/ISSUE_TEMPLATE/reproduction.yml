@@ -1,12 +1,15 @@
-name: Reproduction or workflow evaluation
-description: Report an independent run, an assisted run, or a useful failure with synthetic examples.
-title: '[Reproduction] '
+name: Workflow report (browser or code)
+description: Report a no-code browser walkthrough, a software run, or a useful failure.
+title: '[Workflow report] '
 body:
   - type: markdown
     attributes:
       value: >-
-        Start with docs/RESEARCHER_START.md. This issue is public. Use synthetic
-        examples only; redact personal paths. Do not attach private recordings,
+        Try the no-setup browser comparison at
+        https://metivity.github.io/talk2nature/app/compare/ or follow the code
+        route in https://github.com/Metivity/talk2nature/blob/main/docs/RESEARCHER_START.md.
+        The browser route needs no code, account, recording or upload. This
+        issue is public. Use synthetic examples only; redact personal paths. Do not attach private recordings,
         participant details, exact sensitive locations, credentials or environment files.
         Passing software checks is not biological validation.
   - type: dropdown
@@ -28,28 +31,33 @@ body:
   - type: input
     id: revision
     attributes:
-      label: Exact commit, or public page URL and access date
-      description: For a local checkout, use git rev-parse HEAD. Do not include tokens or local paths.
+      label: Which page or code version did you try?
+      description: For the browser route, paste the public page URL and date. For a code run, use git rev-parse HEAD. Do not include tokens or local paths.
+      placeholder: Public page URL + date, or commit hash
     validations:
       required: true
   - type: input
     id: environment
     attributes:
-      label: Device, operating system and Python or browser version
+      label: What device and browser did you use?
+      description: For the browser route, give the device, operating system and browser if known. For code, include Python or Node version. If unsure, write “unknown.”
+      placeholder: e.g. iPhone + Safari; unknown is okay
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps and actual result
-      description: Include commands or UI actions, expected result, actual result and any help needed. Failure reports are welcome.
+      label: What did you try, and what happened?
+      description: Include the commands or screen actions, what you expected, what actually happened, and any help needed. A blocked attempt is useful.
+      placeholder: e.g. opened Compare moments → chose Try an example pair → closed one session
     validations:
       required: true
   - type: textarea
     id: usefulness
     attributes:
-      label: Scientific workflow and remaining gap
-      description: What would this help you do? What existing tool do you use? What was confusing or missing? Do not include confidential study details.
+      label: What task were you trying to do, and what was missing?
+      description: Say what helped, what was confusing, and which existing tool already works for you. Do not include confidential study details.
+      placeholder: I was trying to… The useful part was… I still needed…
     validations:
       required: true
   - type: checkboxes

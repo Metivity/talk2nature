@@ -58,6 +58,20 @@ class CollectionTests(unittest.TestCase):
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf'})
         self.assertLess(size, MAX_BATCH_BYTES)
 
+    def test_metadata_only_data_standards_are_catalogable_but_not_acquired(self):
+        records = {r['id']: r for r in self.catalog['resources']}
+        for identifier in ('darwin-core-data-package-standard', 'audubon-core-media-standard'):
+            with self.subTest(resource=identifier):
+                record = records[identifier]
+                self.assertEqual(record['kind'], 'standard')
+                self.assertEqual(record['acquisition'], 'metadata_only')
+                self.assertEqual(record['files'], [])
+                self.assertTrue(record['source_ids'])
+                self.assertTrue(all(record['rights'][field] == 'unresolved'
+                                    for field in ('research_use', 'commercial_use', 'redistribution')))
+                with self.assertRaisesRegex(ValueError, 'Not admitted'):
+                    plan(self.catalog, [identifier])
+
     def test_beans_zero_stays_a_metadata_only_comparison_not_commercial_input(self):
         records = {r['id']: r for r in self.catalog['resources']}
         dataset = records['beans-zero-benchmark-data']

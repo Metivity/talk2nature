@@ -21,7 +21,7 @@ Therefore the immediate integration is a project-specific agent protocol in [`re
 | Bound experiment time and complexity | Fix a compute/data-exposure budget and record hardware, time, memory and seeds. A five-minute run is not automatically fair or comparable for a different task or machine. Prefer simpler methods when evidence is comparable. |
 | Repeat a loop autonomously | Keep autonomous work inside a disposable local branch and approved data boundary. No network upload, animal playback, permissions changes, data/label/split/evaluation edits, automatic merge, publication or deployment. Human review decides what counts as a scientific finding. |
 
-For scientific evaluation, training and validation may guide development, but a separate locked test set must stay unseen until the protocol, model and analysis are frozen. A final test result should not feed another optimization cycle. Report results at the animal/session/site unit appropriate to the question, include uncertainty and failures, and distinguish prediction from association, meaning and communication.
+For scientific evaluation, training and validation may guide development, but a separate locked test set must stay unseen until the protocol, model and analysis are frozen. Checkpoint, epoch, hyperparameter, threshold, early-stopping and seed selection must use training/validation data only. Run the frozen final pipeline on the locked test only after all choices and the reporting plan are fixed; do not use that result to select among candidates or launch another optimization cycle. If anyone inspects test results and changes the pipeline, treat that set as development data and obtain a new independent test set before making a generalization claim. Record final-test access and any deviation in the run ledger. The WhAM review is a concrete caution: its paper describes best-checkpoint selection using test-set performance, so those reported scores are not an untouched final holdout estimate ([review note](../content/research.json)). Report results at the animal/session/site unit appropriate to the question, include uncertainty and failures, and distinguish prediction from association, meaning and communication.
 
 ## Readiness gates
 
@@ -31,7 +31,7 @@ The agent program stays inactive until a qualified reviewer and project owner co
 2. Recording and annotation rights, consent or a documented reason it is not required, allowed use, retention and access are verified for the exact dataset release.
 3. Labels come from independent observation, not from audio/model output; label definitions, missingness and reviewer agreement are documented.
 4. Exact source hashes and a frozen release are available. Split groups prevent the relevant individual, session, original recording and site/device/household leakage; near-duplicates and likely pretraining overlap have been assessed.
-5. The evaluation harness and locked test set are independent of the agent. Metric, uncertainty method, seed schedule, compute cap and success/stop criteria are registered before tuning.
+5. The evaluation harness and locked test set are independent of the agent. Checkpoint, hyperparameter, threshold, early-stop and seed selection are validation-only; final-test access occurs only after the pipeline and report plan are frozen. Metric, uncertainty method, seed schedule, compute cap and success/stop criteria are registered before tuning.
 6. A permitted baseline and at least one appropriate existing-tool comparator have been reproduced. Exact code, checkpoint and dataset terms are reviewed separately.
 7. The run has a local-only environment with no credentials, no upload path, bounded disk/compute, recoverable checkpoints and a human reviewer. Any requirement for hosted processing gets a separate storage/security approval.
 
@@ -49,6 +49,8 @@ protocol_and_codebook_version:
 dataset_release_id_and_fingerprint:
 rights_consent_and_retention_review:
 train_validation_test_split_fingerprints:
+checkpoint_selection_rule: validation_only
+locked_test_access_policy: final_frozen_pipeline_only
 baseline_revisions:
 primary_metric_and_uncertainty:
 seed_schedule:
@@ -60,7 +62,7 @@ independent_reviewer:
 approval_date:
 ```
 
-After readiness, keep a durable ledger with one row per trial: experiment ID, trial ID, commit, dataset and split fingerprints, model/environment fingerprint, seed, hypothesis, change, metrics, baseline delta, runtime, peak memory, outcome (`keep`, `discard`, or `crash`), reason and reviewer. Preserve failed runs. Do not store private recording paths, participant identifiers or raw media in a public ledger.
+After readiness, keep a durable ledger with one row per trial: experiment ID, trial ID, commit, dataset and split fingerprints, model/environment fingerprint, seed, hypothesis, change, metrics, baseline delta, runtime, peak memory, outcome (`keep`, `discard`, or `crash`), reason and reviewer. Record whether the locked test was accessed; it must remain unopened during iteration, and no test-set metric may select a checkpoint, threshold, seed or candidate. Preserve failed runs. Do not store private recording paths, participant identifiers or raw media in a public ledger.
 
 ## Sources and scope
 

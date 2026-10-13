@@ -1,4 +1,5 @@
 import {validateAnimal, unknownAnimal} from './animal-model.mjs';
+import {SOUNDSCAPE_CONTEXT_CATEGORIES} from './station-model.mjs';
 
 export const MAX_BUNDLE_BYTES = 27 * 1048576;
 const fail = message => { throw Error(message); };
@@ -53,6 +54,10 @@ export function validateSessionJournal(r) {
   check(r.status==='stopped' && ['synthetic','microphone'].includes(r.origin) && uuid.test(r.session_id) && short(r.station_alias,80) && r.station_alias.trim() && short(r.started_at_utc,40) && /^\d{4}-\d\d-\d\dT/.test(r.started_at_utc) && Number.isFinite(Date.parse(r.started_at_utc)) && short(r.clock,200) && short(r.tool_version,40) && short(r.stop_reason,80),'The saved session details are incomplete or unsupported.');
   check(integer(r.sample_rate,8000,96000) && finite(r.duration_seconds,0,maxSession) && finite(r.near_full_scale_fraction,0,1) && object(r.audio_settings),'The session recording settings are invalid.');
   if (r.animal_context!==undefined) validateAnimal(r.animal_context);
+  if (r.soundscape_context!==undefined) {
+    const c=r.soundscape_context, allowed=new Set(SOUNDSCAPE_CONTEXT_CATEGORIES.map(category=>category.id));
+    check(object(c) && c.schema==='talk2nature.soundscape-context.v1' && c.scope==='whole_session' && ['not_recorded','observer_selected'].includes(c.status) && c.provenance==='user-entered' && Array.isArray(c.categories) && c.categories.length<=allowed.size && c.categories.every(category=>typeof category==='string'&&allowed.has(category)) && new Set(c.categories).size===c.categories.length && (c.status==='not_recorded'?c.categories.length===0:c.categories.length>0),'The setting notes have invalid values or provenance.');
+  }
   check(Array.isArray(r.events) && r.events.length<=(window?1:24) && Array.isArray(r.discarded_events) && r.discarded_events.length<=(window?1:1000) && Array.isArray(r.markers) && r.markers.length<=100,'The session has too many or missing observations.');
   const ids=new Set(); let audioBytes=0;
   for(const e of r.events) {

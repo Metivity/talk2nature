@@ -6,6 +6,14 @@ export const MAX_AUDIO_BYTES = 24 * 1024 * 1024;
 export const MAX_EVENTS = 24;
 export const MARKER_KINDS = ['person_voice', 'observation'];
 export const SOURCE_LABELS = ['unreviewed', 'person', 'animal', 'other', 'uncertain'];
+export const SOUNDSCAPE_CONTEXT_CATEGORIES = Object.freeze([
+  Object.freeze({id: 'people_or_machines', label: 'People or machines'}),
+  Object.freeze({id: 'other_animals', label: 'Other animals'}),
+  Object.freeze({id: 'weather_or_water', label: 'Weather or water'}),
+  Object.freeze({id: 'another_surrounding_sound', label: 'Another surrounding sound'}),
+  Object.freeze({id: 'mixed_or_uncertain', label: 'Mixed or uncertain'})
+]);
+const soundscapeContextIds = new Set(SOUNDSCAPE_CONTEXT_CATEGORIES.map(category => category.id));
 const rounded = value => Math.round(value * 10000) / 10000;
 export const dbfs = rms => Math.max(-100, 20 * Math.log10(Math.max(rms, 0.00001)));
 
@@ -24,6 +32,7 @@ export class StationSession {
   constructor(sampleRate, {origin = 'synthetic', margin = 12, maxBytes = MAX_AUDIO_BYTES, animalContext = unknownAnimal()} = {}) {
     if (!Number.isInteger(sampleRate) || sampleRate < 8000 || sampleRate > 96000 || !['synthetic', 'microphone'].includes(origin) || !Number.isFinite(margin) || margin < 6 || margin > 24 || !Number.isInteger(maxBytes) || maxBytes < 1 || maxBytes > MAX_AUDIO_BYTES) throw Error('Unsupported station settings.');
     this.animalContext = Object.freeze(validateAnimal(animalContext));
+    this.soundscapeContext = Object.freeze({schema: 'talk2nature.soundscape-context.v1', scope: 'whole_session', status: 'not_recorded', categories: Object.freeze([]), provenance: 'user-entered'});
     this.sampleRate = sampleRate; this.origin = origin; this.margin = margin; this.maxBytes = maxBytes;
     this.id = crypto.randomUUID(); this.startedAt = new Date().toISOString();
     this.samplesSeen = 0; this.events = []; this.discarded = []; this.markers = []; this.ring = []; this.active = null; this.calibration = [];
@@ -91,6 +100,12 @@ export class StationSession {
     if (!event || !SOURCE_LABELS.includes(source) || typeof notes !== 'string' || notes.length > 300) throw Error('Invalid review.');
     event.source_label = source; event.notes = notes.trim();
   }
+  setSoundscapeContext(categories) {
+    if (!this.stopped || !Array.isArray(categories) || categories.length > SOUNDSCAPE_CONTEXT_CATEGORIES.length || categories.some(category => typeof category !== 'string' || !soundscapeContextIds.has(category)) || new Set(categories).size !== categories.length) throw Error('Choose setting notes after stopping, using the listed options.');
+    const selected = [...categories];
+    this.soundscapeContext = Object.freeze({schema: 'talk2nature.soundscape-context.v1', scope: 'whole_session', status: selected.length ? 'observer_selected' : 'not_recorded', categories: Object.freeze(selected), provenance: 'user-entered'});
+    return {...this.soundscapeContext, categories: [...selected]};
+  }
   discard(id) {
     const index = this.events.findIndex(e => e.id === id); if (index < 0) return;
     const event = this.events[index]; this.discarded.push({id: event.id, onset_seconds: event.onset_seconds, discarded: true});
@@ -108,6 +123,6 @@ export class StationSession {
   }
   exportRecord(alias = 'station-001', settings = {}) {
     if (typeof alias !== 'string' || !alias.trim() || alias.trim().length > 80) throw Error('Use a station alias of 1–80 characters.');
-    return {schema: 'talk2nature.station.v1', animal_context: {...this.animalContext}, session_id: this.id, started_at_utc: this.startedAt, clock: 'device wall clock; event offsets use processed audio samples; not synchronized', tool_version: STATION_VERSION, station_alias: alias.trim(), origin: this.origin, sample_rate: this.sampleRate, duration_seconds: rounded(this.elapsed), status: this.stopped ? 'stopped' : 'running', stop_reason: this.stopReason, detector: {type: 'energy_threshold', calibration_seconds: 3, margin_db: this.margin, threshold_dbfs: this.threshold, pre_roll_seconds: 1, max_clip_seconds_approx: 6, max_session_seconds: SESSION_SECONDS}, audio_settings: settings, near_full_scale_fraction: this.totalSamples ? this.clippedSamples / this.totalSamples : 0, markers: this.markers.map(m => ({...m})), events: this.events.map(({pcm, ...event}) => ({...event, samples: pcm.length, audio_filename: this.audioFilename(event.id)})), discarded_events: this.discarded.map(e => ({...e})), marker_windows: this.markerWindows(), limitations: ['No animal, human speech or meaning classifier is running.', 'A sound following a marker is not evidence of a reply or causation.', 'Undetected sounds and discarded audio are absent; this is not unbiased continuous audio.', 'Discarded clips retain only event ID/onset so deletion is not misreported as silence.', 'No verified consent, identity, research admission or training permission is established.', 'Audio is separate from this JSON. Files remain local until you share them.']};
+    return {schema: 'talk2nature.station.v1', animal_context: {...this.animalContext}, soundscape_context: {...this.soundscapeContext, categories: [...this.soundscapeContext.categories]}, session_id: this.id, started_at_utc: this.startedAt, clock: 'device wall clock; event offsets use processed audio samples; not synchronized', tool_version: STATION_VERSION, station_alias: alias.trim(), origin: this.origin, sample_rate: this.sampleRate, duration_seconds: rounded(this.elapsed), status: this.stopped ? 'stopped' : 'running', stop_reason: this.stopReason, detector: {type: 'energy_threshold', calibration_seconds: 3, margin_db: this.margin, threshold_dbfs: this.threshold, pre_roll_seconds: 1, max_clip_seconds_approx: 6, max_session_seconds: SESSION_SECONDS}, audio_settings: settings, near_full_scale_fraction: this.totalSamples ? this.clippedSamples / this.totalSamples : 0, markers: this.markers.map(m => ({...m})), events: this.events.map(({pcm, ...event}) => ({...event, samples: pcm.length, audio_filename: this.audioFilename(event.id)})), discarded_events: this.discarded.map(e => ({...e})), marker_windows: this.markerWindows(), limitations: ['No animal, human speech or meaning classifier is running.', 'A sound following a marker is not evidence of a reply or causation.', 'Undetected sounds and discarded audio are absent; this is not unbiased continuous audio.', 'Discarded clips retain only event ID/onset so deletion is not misreported as silence.', 'Optional setting categories are observer-entered and may be incomplete; unselected context is not evidence of absence.', 'No verified consent, identity, research admission or training permission is established.', 'Audio is separate from this JSON. Files remain local until you share them.']};
   }
 }

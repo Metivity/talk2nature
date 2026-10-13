@@ -6,8 +6,8 @@ import {sessionFiles,zipFiles} from '../web/assets/station-export.mjs';
 import {MAX_BUNDLE_BYTES,readBundleFiles,openSessionBundle,sessionSummary,comparisonWarnings,SessionSlot} from '../web/assets/session-import.mjs';
 const feed=(s,seconds,value=0)=>{for(let i=0;i<seconds*10;i++)s.push(new Float32Array(s.sampleRate/10).fill(value));};
 const encode=x=>new TextEncoder().encode(JSON.stringify(x));
-async function fixture({window=true,seconds=30,discard=false,origin='synthetic'}={}){
-  const s=new (window?WindowSession:StationSession)(8000,{origin});feed(s,4);s.mark('observation','<img src=x onerror=alert(1)>');feed(s,1,.1);feed(s,seconds-5);s.stop();if(discard)s.discard(1);return sessionFiles(s,'Saved moment',{});
+async function fixture({window=true,seconds=30,discard=false,origin='synthetic',context=[]}={}){
+  const s=new (window?WindowSession:StationSession)(8000,{origin});feed(s,4);s.mark('observation','<img src=x onerror=alert(1)>');feed(s,1,.1);feed(s,seconds-5);s.stop();if(context.length)s.setSoundscapeContext(context);if(discard)s.discard(1);return sessionFiles(s,'Saved moment',{});
 }
 async function open(files){return openSessionBundle(await zipFiles(files).arrayBuffer());}
 const edit=(files,fn)=>{const r=JSON.parse(new TextDecoder().decode(files[0].bytes));fn(r);return [{...files[0],bytes:encode(r)},...files.slice(1)];};
@@ -18,8 +18,14 @@ test('reopen complete, interrupted, empty and discarded windows without upgradin
   const empty=new WindowSession(8000);empty.stop();const opened=await open(await sessionFiles(empty));assert.equal(opened.clips.length,0);assert.equal(opened.record.duration_seconds,0);
 });
 test('legacy highlights reopen without animal context and retain reviewed source, notes and origin declarations',async()=>{
-  const files=await fixture({window:false,origin:'microphone'}), changed=edit(files,r=>{delete r.animal_context;r.events[0].source_label='uncertain';r.events[0].notes='Caller unknown.';});
+  const files=await fixture({window:false,origin:'microphone'}), changed=edit(files,r=>{delete r.animal_context;delete r.soundscape_context;r.events[0].source_label='uncertain';r.events[0].notes='Caller unknown.';});
   const opened=await open(changed);assert.equal(sessionSummary(opened).kind,'Sound highlights');assert.equal(sessionSummary(opened).animal.group,'unknown');assert.equal(opened.record.origin,'microphone');assert.equal(opened.record.events[0].notes,'Caller unknown.');
+});
+test('setting context round-trips as observer input and rejects unsupported or contradictory labels',async()=>{
+  const files=await fixture({context:['people_or_machines','other_animals']}),opened=await open(files);
+  assert.equal(opened.record.soundscape_context.status,'observer_selected');assert.deepEqual(opened.record.soundscape_context.categories,['people_or_machines','other_animals']);
+  await assert.rejects(open(edit(files,r=>r.soundscape_context.categories.push('species_prediction'))),/setting notes/);
+  await assert.rejects(open(edit(files,r=>{r.soundscape_context.status='not_recorded';})),/setting notes/);
 });
 test('missing, unexpected and duplicate files, paths and recompressed ZIP flags are rejected',async()=>{
   const files=await fixture();await assert.rejects(open(files.filter(f=>!f.name.endsWith('.wav'))),/missing|unexpected/);

@@ -635,11 +635,16 @@
   },
   {
     "id": 78,
-    "title": "WhAM primary preprint",
-    "description": "Project CETI, arXiv:2512.02206. Abstract and code link located; full methods and experimental claims not reviewed.",
+    "title": "WhAM primary paper, full-text review",
+    "description": "Paradise et al., arXiv:2512.02206v1 (2025), NeurIPS 2025. Full main text and selected methods appendices reviewed. The paper explicitly defines “translation” as acoustic style transfer; semantic translation remains a distinct goal.",
     "url": "https://arxiv.org/abs/2512.02206",
-    "checked": "2026-10-01",
-    "origin": "Video-hub primary publisher context."
+    "checked": "2026-10-13",
+    "origin": "Reviewed the complete arXiv v1 main text and targeted Appendix E methods, including data composition, downstream split/model selection, compute, expert-perceptual study and limitations. Article rights are separate from code, data and model-weight terms.",
+    "review_url": "https://arxiv.org/html/2512.02206",
+    "review_url_label": "Full arXiv HTML manuscript",
+    "rights": {
+      "article": "arXiv record declares CC BY-NC-ND 4.0 for the manuscript; this does not license the code, datasets, weights or third-party material. Talk2Nature publishes an original summary and links only."
+    }
   },
   {
     "id": 79,
@@ -2231,10 +2236,10 @@
   {
     "id": 213,
     "title": "Wildlife Acoustics Scientific Grant Program · Q4 2026",
-    "description": "Official quarterly wildlife-research product program. Q4 applications are due November 15, 2026. Standard awards are equipment/software rather than cash; applicants may request up to $4,000 in products from a $12,000 quarterly pool. The current page requires proof of the applicant organization's charitable or educational tax-exempt status; a recommendation letter is waived for software-only requests.",
+    "description": "Official quarterly wildlife-research product program, open worldwide. Q4 applications are due November 15, 2026, with awards by December 30. Standard awards are eligible products rather than cash; applicants may request up to $4,000 in products from a quarterly pool of up to $12,000. Software-only awards are annual Kaleidoscope Pro licenses. The page requires proof of the applicant organization's charitable or educational tax-exempt status; a recommendation letter is waived for software-only requests. It says recipient projects may be featured on the company's website and social media.",
     "url": "https://www.wildlifeacoustics.com/grant-program",
     "checked": "2026-10-12",
-    "origin": "Direct HTTPS fetch of the official grant page reviewed October 12, 2026. Checked program purpose, worldwide scope, 2026 deadlines, eligible product categories, request limits and required application attachments. No application was started; detailed portal fields, taxes, shipping and applicant-specific eligibility were not reviewed."
+    "origin": "Re-fetched the official grant page over HTTPS on October 13, 2026 (HTTP 200; 65,000-byte HTML response). Verified worldwide scope; Q4 deadline/award dates; in-kind product and software-only award limits; English application requirement; recommendation-letter exception; mandatory organization charitable/educational tax-exempt document; publicity notice; and applicable-tax caveat. No grant portal was opened or application started. Applicant-specific legal status, detailed portal fields and any award agreement remain unreviewed."
   },
   {
     "id": 214,
@@ -2490,7 +2495,7 @@
     "description": "Official REA Cluster 6 information page listing the HORIZON-NATURE-2027-02 call schedule and directing applicants to the Funding & Tenders Portal and work programme for authoritative details.",
     "url": "https://rea.ec.europa.eu/funding-and-grants/horizon-europe-cluster-6-food-bioeconomy-natural-resources-agriculture-and-environment_en",
     "checked": "2026-10-13",
-    "origin": "Reviewed the official REA page and its HORIZON-NATURE-2027-02 schedule entry on October 13, 2026. The page lists the planned opening date as October 13; the Funding & Tenders topic page was not retrievable in this review, so live submission status remains unverified.",
+    "origin": "Reviewed the official REA page and its HORIZON-NATURE-2027-02 schedule entry on October 13, 2026. It confirms the scheduled October 13 opening, October 16 information day, October 19 brokerage event and January 14, 2027 deadline. The direct Funding & Tenders topic URL returned HTTP 200 but only a generic JavaScript shell; no topic-specific submission status was visible, so live status remains unverified.",
     "rights": {
       "page": "Official European Commission information page; summarized and linked, not reproduced. The live Funding & Tenders topic and work programme take precedence."
     }
@@ -2616,6 +2621,119 @@
     "origin": "Reviewed the official University of Freiburg author publication list, which places CoarseSoundNet under preprints. No external peer-reviewed publication record was identified in this bounded check.",
     "rights": {
       "page": "Public bibliographic metadata summarized and linked; no profile text or image reproduced."
+    }
+  },
+  {
+    "id": 252,
+    "title": "Project CETI WhAM code at pinned GitHub revision",
+    "description": "Official WhAM repository resolved to commit 00a8b787c040db23cd51ac4417481a09ac354985 on 2026-10-13. GitHub identifies the repository license as MIT.",
+    "url": "https://github.com/Project-CETI/wham/tree/00a8b787c040db23cd51ac4417481a09ac354985",
+    "checked": "2026-10-13",
+    "origin": "Read the official README and repository license metadata; resolved the main branch reference with read-only git ls-remote. No code was downloaded, installed or executed.",
+    "review_url": "https://github.com/Project-CETI/wham/blob/00a8b787c040db23cd51ac4417481a09ac354985/README.md",
+    "review_url_label": "Pinned official README",
+    "rights": {
+      "code": "MIT per the official repository. This applies to repository code; model weights, training data, pretrained VampNet components and dependencies have separate rights."
+    }
+  },
+  {
+    "id": 253,
+    "title": "Public DSWP dataset card used by the WhAM project",
+    "description": "The current Hugging Face card lists 1,501 Dominica sperm-whale codas (~45 minutes; 585 MB) and declares CC BY 4.0. The WhAM paper reports 2,507 DSWP codas in its training description; the relationship between these counts is unresolved.",
+    "url": "https://huggingface.co/datasets/orrp/DSWP/tree/a2e5d6dd02fc60343e1288c33314e14e8b7aa5be",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official dataset card and resolved the current main reference to commit a2e5d6dd02fc60343e1288c33314e14e8b7aa5be. Card metadata reports CC BY 4.0, 1,501 rows and 585 MB; no audio or files were downloaded or inspected.",
+    "review_url": "https://huggingface.co/datasets/orrp/DSWP",
+    "review_url_label": "Official dataset card",
+    "rights": {
+      "dataset": "The dataset card declares CC BY 4.0 for this dataset release. This is a recorded provider declaration, not an independent review of every recording or source; paper, code and weights have separate terms."
+    }
+  },
+  {
+    "id": 254,
+    "title": "WhAM model weights, Zenodo version 1",
+    "description": "Zenodo DOI 10.5281/zenodo.17633708, published 2025-12-02. The record lists four weight files totaling about 3.1 GB; its rendered Rights/License field is blank.",
+    "url": "https://doi.org/10.5281/zenodo.17633708",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official Zenodo record, file names/sizes and displayed rights metadata. No files were downloaded and provider MD5 values were not locally verified.",
+    "review_url": "https://zenodo.org/records/17633708",
+    "review_url_label": "Zenodo model record",
+    "rights": {
+      "weights": "No license is displayed on the reviewed record. Do not infer that the repository MIT license or paper license covers these weights; reuse and redistribution are unresolved."
+    }
+  },
+  {
+    "id": 255,
+    "title": "Darwin Core Data Package guide",
+    "description": "Darwin Core Maintenance Group. Data-package guide issued 2026-05-26. Version 1 Data Package profile and requirements for sharing structured biodiversity data.",
+    "url": "https://dwc.tdwg.org/dp/",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the current official guide, including its normative scope, required package descriptor, tabular resources, embedded schemas and versioned profile. No package was generated or validated.",
+    "review_url": "https://dwc.tdwg.org/dp/",
+    "review_url_label": "Official current guide"
+  },
+  {
+    "id": 256,
+    "title": "Darwin Core conceptual model",
+    "description": "Darwin Core Maintenance Group. Current conceptual model for biodiversity data entities and their relationships.",
+    "url": "https://dwc.tdwg.org/cm/",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official sections on Occurrence, Identification and Media, including the distinction between an organism, its occurrence and a media entity. No Talk2Nature mapping was tested.",
+    "review_url": "https://dwc.tdwg.org/cm/",
+    "review_url_label": "Official conceptual model"
+  },
+  {
+    "id": 257,
+    "title": "Audubon Core audiovisual metadata terms",
+    "description": "Audubon Core Maintenance Group. Current Audiovisual Core term list for biodiversity-related multimedia metadata.",
+    "url": "https://ac.tdwg.org/termlist/",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the current official term list, including resource rights, access points, media hashes and reviewer metadata. Individual terms were not applied to a Talk2Nature export.",
+    "review_url": "https://ac.tdwg.org/termlist/",
+    "review_url_label": "Official current term list"
+  },
+  {
+    "id": 258,
+    "title": "Darwin Core public review issue #759: schema strictness",
+    "description": "The TDWG issue discusses how strictly table schemas constrain field membership. GitHub now reports it closed; the visible thread points to guide section 3.4 as already explicit about field descriptors.",
+    "url": "https://github.com/tdwg/dwc/issues/759",
+    "checked": "2026-10-13",
+    "origin": "Inspected the current GitHub issue state and visible comments. GitHub reports the issue closed on 2026-06-25; a visible comment says section 3.4 already states the field-descriptor rule, and the original reporter later replied that a proposed clarification looked good. The public-review index still showed the item as open, so its listing is stale. Issue closure does not establish that the guide's versioned profile and table-schema URLs resolve.",
+    "review_url": "https://dwc.tdwg.org/dwcdp_review/dwc-dp-public-review-issues.html",
+    "review_url_label": "Official public-review index"
+  },
+  {
+    "id": 259,
+    "title": "TDWG Darwin Core Data Package profile and schema source snapshot",
+    "description": "The TDWG rs.tdwg.org GitHub repository contains the DwC-DP profile source and per-table schema files. The profile and event schema paths resolve to commit e0cc2509953eeed24ad312b6e91e7bfcadd37a3b, whose commit message is 'Initial pre-review DwC-DP schemas.'",
+    "url": "https://github.com/tdwg/rs.tdwg.org/tree/e0cc2509953eeed24ad312b6e91e7bfcadd37a3b/dwc-dp",
+    "checked": "2026-10-13",
+    "origin": "Inspected the official GitHub repository tree and commit metadata for dwc-dp/dwc-dp-profile.json and dwc-dp/table-schemas/event.json. The exact versioned URLs cited by the current guide returned HTTP 404 in this environment. The repository exposes an unversioned source snapshot with a pre-review commit message; it is not treated as the released 1.0 profile or a conformance basis. The GitHub license endpoint returned 404, and no files were copied.",
+    "review_url": "https://github.com/tdwg/rs.tdwg.org/blob/e0cc2509953eeed24ad312b6e91e7bfcadd37a3b/dwc-dp/dwc-dp-profile.json",
+    "review_url_label": "Pinned profile source snapshot"
+  },
+  {
+    "id": 260,
+    "title": "EU Funding & Tenders Portal: HORIZON-NATURE-2027-02-05 topic record",
+    "description": "Official topic-detail route for the biodiversity-monitoring call. A direct HTTP fetch on October 13, 2026 returned the portal's generic JavaScript application shell and did not expose the topic-specific submission state; check the live portal in a browser before relying on availability.",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NATURE-2027-02-05",
+    "checked": "2026-10-13",
+    "origin": "Requested the exact official topic-detail route on October 13, 2026. The route returned HTTP 200 and 59,960 bytes of HTML, but the returned shell contained no HORIZON-NATURE-2027-02-05 topic record, submission status or application form text. This observation is limited to a direct non-browser fetch and does not establish that the browser-rendered portal is unavailable.",
+    "rights": {
+      "page": "Official European Commission portal route; linked and described, not reproduced. The portal is authoritative for current submission status and topic conditions."
+    }
+  },
+  {
+    "id": 261,
+    "title": "NLM catalog record for the companion-parrot name-phrase S2 dataset",
+    "description": "PLOS identifies S2 as an XLSX of coded parrot name phrases with de-identified supporting information. The NLM Dataset Catalog links to PLOS Figshare item 32046233 and reports CC BY 4.0; the workbook itself has not been inspected.",
+    "url": "https://doi.org/10.1371/journal.pone.0346830.s002",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the PLOS article's supporting-information description and NLM Dataset Catalog metadata. The catalog links the S2 DOI to the official PLOS Figshare item and displays CC BY 4.0. The direct Figshare page and API could not be retrieved in this review. The workbook was not downloaded or inspected; its fields, de-identification, consent scope and privacy risk remain unverified.",
+    "review_url": "https://datasetcatalog.nlm.nih.gov/dataset?q=0003053856",
+    "review_url_label": "NLM Dataset Catalog record",
+    "rights": {
+      "dataset": "The NLM catalog reports CC BY 4.0 for the linked Figshare item. This cataloged license declaration does not establish consent scope, privacy clearance or the contents of the XLSX."
     }
   }
 ]
