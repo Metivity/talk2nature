@@ -13,8 +13,14 @@ body:
     id: relationship
     attributes:
       label: Relationship to this run
+      description: >-
+        This records project assistance, not scientific validation. An independent
+        walkthrough is not automatically a software reproduction. Use the unverified
+        option unless you can classify the run accurately; maintainers review reports
+        before counting any independent reproduction.
       options:
-        - Independent evaluator
+        - Not sure / not independently verified
+        - Independent evaluator (no project or maintainer assistance)
         - Evaluator with maintainer assistance
         - Maintainer or project-assisted rerun
     validations:
