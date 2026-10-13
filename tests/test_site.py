@@ -738,6 +738,7 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(any('/assets/session-import.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/audacity-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/aoef-export.mjs?' in a for a in assets))
+            self.assertTrue(any('/assets/app-update.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/practice.js?' in a for a in assets))
             self.assertTrue(any('/assets/practice-model.mjs?' in a for a in assets))
             for name in ('device-check.css','device-check.js','device-check-model.mjs'):
@@ -748,6 +749,12 @@ class SiteTests(unittest.TestCase):
                 self.assertTrue((path/'index.html' if asset.endswith('/') else path).is_file())
             self.assertNotIn('__REVISION__',source)
             self.assertIn('class="app-body"',(root/'app/index.html').read_text())
+            app_pages=('app/index.html','app/station/index.html','app/review/index.html','app/compare/index.html','app/practice/index.html','app/check/index.html')
+            for relative in app_pages:
+                page=(root/relative).read_text()
+                self.assertIn('id="app-update-status"',page)
+                self.assertIn('role="status"',page)
+            self.assertIn("from './app-update.mjs?v=",(root/'assets/app.js').read_text())
 
     def test_android_source_preview_is_discoverable_and_not_claimed_as_a_release(self):
         with tempfile.TemporaryDirectory() as d:

@@ -1,5 +1,15 @@
 # Project status
 
+## October 13 update-ready notice for existing offline users
+
+**Question:** can an opted-in offline user see that a new app version is ready without interrupting a session?
+
+**Finding and change:** update status was read only when the app home page's offline-status element existed, so Station, Review and Compare pages did not show a waiting worker. App routes now share a polite update notice. An already-waiting or newly installed worker is announced once, with clear instructions to export desired work and close/reopen all Talk2Nature windows. When an existing app-scoped registration is found, the page checks for a new version; it does not create a registration for users who have not enabled offline tools. The service worker still waits for app windows to close; no skipWaiting or forced reload was added. The small watcher module is in the exact public offline allowlist.
+
+**Validation:** 116 Python tests and 109 Node tests passed, including waiting-worker event tests and build assertions that all six app routes contain the status region and the watcher is cached. The local noindex build produced 104 pages plus 404 and passed 5,035 link checks; the production-origin candidate reached 104 pages and passed 5,141 checks. At a 390 × 844 CSS-pixel viewport, the notice fit above the synthetic Station setup without hiding the controls. For this visual check only, the generated local HTML was temporarily rendered with the notice visible; no service-worker upgrade was forced in the browser.
+
+**Limits and next check:** this proves the tested event handling and page placement, not update delivery on an installed phone or behavior in Safari/Android browsers. Verify an actual version update with an opted-in installation while preserving a partial unexported synthetic session; confirm it receives no forced reload and does not lose audio. Do not introduce telemetry or participant recordings into that test.
+
 ## October 13 microphone-free rehearsal wording and mobile workflow
 
 **Question:** does the phone rehearsal make clear that it is an invented, no-microphone exercise rather than a live recording?
