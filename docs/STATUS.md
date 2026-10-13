@@ -10,7 +10,7 @@
 
 **Validation:** 114 Python tests and 107 Node tests pass. The local noindex build and site checker pass with 105 HTML documents and 5,024 checked links. At 320 × 740 and 390 × 844 CSS-pixel emulated viewports, the document width matched the viewport with no horizontal overflow; the 320-pixel screenshot showed the review question and both links fully visible. This is browser emulation, not a physical-phone or first-time researcher study. No scientific review or indexing result is claimed.
 
-**Release:** local candidate only; PR and public deployment pending. If checks pass, verify the university page’s live title, description, source link and scientific-review form after the authorized Pages deployment. Search Console remains a separate re-verification gate.
+**Release:** PR [#103](https://github.com/Metivity/talk2nature/pull/103) merged on October 13 as [`7bd133f`](https://github.com/Metivity/talk2nature/commit/7bd133f28ea54c16300a2461eae7ebf31c05ae32). Public-checks passed; manual Pages workflow [#38391320165](https://github.com/Metivity/talk2nature/actions/runs/38391320165) built and deployed successfully. The live university page returns the new title and description, `index,follow`, and its self-canonical URL. The Japanese-tit evidence note and scientific-review form links are present and both targets returned HTTP 200. Live `robots.txt` names the sitemap, which contains 104 URLs including this page. This verifies delivery and crawl configuration, not Google indexing or ranking. Search Console remains a separate identity re-verification gate; no report was inspected.
 
 ## October 13 Android Station capture-deadline hardening
 
