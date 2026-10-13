@@ -779,6 +779,25 @@ class SiteTests(unittest.TestCase):
             self.assertIn('scientific suitability remain untested',listen)
             self.assertNotIn('import into the Whombat app itself has not been tested',listen)
 
+    def test_community_bioacoustic_dataset_directory_stays_a_metadata_only_lead(self):
+        note=next(n for n in load('research') if n['slug']=='community-bioacoustic-dataset-directory')
+        self.assertEqual(note['source_ids'],[239])
+        self.assertIn('not a dataset',note['limitations'])
+        self.assertIn('primary deposit',note['next_review'])
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='bioacoustic-ai-dataset-directory')
+        self.assertEqual(resource['version'],'c412c5c3fd65552d17e492dac35f2be2c30349a4; commit dated 2026-05-26')
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertTrue(all(resource['rights'][key]=='unresolved' for key in ('research_use','commercial_use','redistribution')))
+        self.assertIn('no LICENSE file',resource['rights']['license'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            page=(root/'research/community-bioacoustic-dataset-directory/index.html').read_text()
+            self.assertIn('rel="canonical" href="https://fixture.github.io/talk2nature/research/community-bioacoustic-dataset-directory/"',page)
+            self.assertIn('<meta name="robots" content="index,follow">',page)
+            self.assertIn('community-bioacoustic-dataset-directory/',(root/'sitemap.xml').read_text())
+
     def test_parrot_annotation_note_links_current_edmond_terms(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

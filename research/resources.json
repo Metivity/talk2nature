@@ -2296,6 +2296,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bioacoustic-ai-dataset-directory",
+      "kind": "code",
+      "title": "Bioacoustic dataset discovery directory",
+      "url": "https://github.com/bioacoustic-ai/bioacoustics-datasets/tree/c412c5c3fd65552d17e492dac35f2be2c30349a4",
+      "version": "c412c5c3fd65552d17e492dac35f2be2c30349a4; commit dated 2026-05-26",
+      "source_ids": [
+        239
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Discover candidate bioacoustic datasets and compare what metadata is available before selecting any species-specific research question.",
+      "review_depth": "Pinned README and root inventory plus GitHub repository API metadata reviewed. The catalog schema and contribution route were inspected; no individual dataset record, linked files or code were acquired or run.",
+      "access": "Public README and GitHub API metadata at the pinned commit. No dataset rows or files copied.",
+      "decision": "Metadata-only discovery reference. Use to find candidates and metadata gaps; verify each dataset at its original source before considering research use. Do not treat catalog inclusion as Talk2Nature admission or permission.",
+      "limitations": "The directory says its dataset information is progressively updated and may be incomplete. GitHub reports no recognized repository license and the pinned root inventory has no LICENSE file, so code permissions are unresolved. Dataset-level access, terms, rights, consent, privacy, sensitive locations, label quality and split integrity were not reviewed.",
+      "attribution": "bioacoustic-ai contributors, Bioacoustics datasets directory, commit c412c5c3fd65552d17e492dac35f2be2c30349a4; no affiliation is implied.",
+      "rights": {
+        "license": "No recognized repository license in GitHub API metadata; no LICENSE file in pinned root inventory. Treat code permissions as unresolved.",
+        "scope": "Upstream catalog code and metadata only; every linked dataset, recording, annotation and model retains separate terms.",
+        "evidence_url": "https://github.com/bioacoustic-ai/bioacoustics-datasets/tree/c412c5c3fd65552d17e492dac35f2be2c30349a4",
+        "conditions": "Do not copy, execute or redistribute the upstream code based on public visibility alone. Review each linked dataset's exact source terms independently before access or reuse. No code or data was copied.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

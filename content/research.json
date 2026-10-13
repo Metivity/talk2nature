@@ -2690,5 +2690,33 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "community-bioacoustic-dataset-directory",
+    "title": "A community directory for discovering bioacoustic datasets",
+    "seo_description": "A community-maintained directory can help researchers discover animal-sound datasets. Each linked dataset still needs its own rights, label and split review.",
+    "taxon": "Cross-taxon bioacoustics",
+    "kind": "Dataset discovery catalog",
+    "purpose": "Data & annotation",
+    "year": "2026",
+    "year_label": "Pinned repository snapshot c412c5c, commit dated 2026-05-26",
+    "source_ids": [
+      239
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Pinned repository README, root inventory and API metadata reviewed; individual dataset records and underlying rights not audited",
+    "review_depth": "Reviewed the README and root inventory at commit c412c5c3fd65552d17e492dac35f2be2c30349a4. The README describes a community list of online bioacoustic datasets intended for machine-learning use, its metadata fields, and how people can submit corrections or additions. GitHub API metadata reports no recognized software license, and the pinned root inventory has no LICENSE file. No dataset entry, linked file or model was acquired, installed, copied or run.",
+    "finding": "The directory is a useful cross-taxon discovery lead and a reminder to record dataset version, license, annotation level, recording type, geography and other metadata. The project says missing information is being added over time, so its entries should be treated as leads that require verification at the dataset's original source.",
+    "limitations": "This is a community-maintained catalog, not a dataset, a license-clearing service or a scientific validation. Its entries may be incomplete or change. At the reviewed commit, the repository has no recognized software license declaration; public visibility does not establish permission to copy or run its code. No individual dataset's terms, consent, privacy, sensitive locations, label quality, provenance or split integrity were reviewed. No files were acquired.",
+    "lesson": "Use catalogs to find candidate data and expose missing metadata, then verify one exact deposit and its component-specific terms before access or evaluation. A directory listing does not admit a dataset into Talk2Nature or make it suitable for studying meaning.",
+    "next_review": "When a qualified reviewer selects a bounded non-parrot question, choose one relevant catalog entry and review its exact primary deposit, component rights, consent and label provenance, spatial sensitivity, and animal/session split before considering acquisition. Keep this catalog and all candidates metadata-only until then.",
+    "expert_review": "Not independently reviewed by a bioacoustics, data-rights or research-software specialist.",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews a dataset discovery catalog, not a location-specific animal study.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
