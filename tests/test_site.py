@@ -599,8 +599,15 @@ class SiteTests(unittest.TestCase):
             page=root/'research/fungal-electrophysiology-stimuli-2025/index.html'
             html=page.read_text()
             self.assertIn('Fungal electrical activity: a sensor study, not a decoded language',html)
-            self.assertIn('significant 1,604% power-spectral-density increase',html)
-            self.assertIn('not significant',html)
+            self.assertIn('significant pre-induction power-spectral-density difference',html)
+            self.assertIn('1,604.752%',html)
+            self.assertIn('p=.327',html)
+            self.assertIn('p=.391',html)
+            self.assertIn('p=.580',html)
+            self.assertIn('p=.116',html)
+            self.assertIn('24 fungal electrode-pair records',html)
+            self.assertIn('8 non-inoculated control records',html)
+            self.assertIn('no contrast is statistically significant',html)
             self.assertIn('DMSO',html)
             self.assertIn('Method S1',html)
             self.assertIn('CC BY 4.0',html)
@@ -754,6 +761,26 @@ class SiteTests(unittest.TestCase):
             self.assertIn('ISF-recognized Israeli research institution',page)
             self.assertIn('No application is prepared',page)
             for source_id in (181,182,183,184,185):
+                self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
+
+    def test_kunming_biodiversity_fund_shows_un_only_funding_and_country_gates(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'opportunities/index.html').read_text()
+            self.assertIn('UNEP · Kunming Biodiversity Fund 2026 Call',page)
+            self.assertIn('Deadline 2026-11-15 · 23:59 on deadline date; timezone not stated in the guideline',page)
+            self.assertIn('Funds go directly only to UN agencies',page)
+            self.assertIn('developing-country, NBSAP-aligned project',page)
+            self.assertIn('CBD focal-point or Lead Ministry endorsement',page)
+            self.assertIn('Not a standalone grant for Talk2Nature',page)
+            self.assertIn('No country project, UN partner, field evidence, or sub-partner request is confirmed',page)
+            self.assertIn('No application or outreach is prepared',page)
+            self.assertIn('official date details',page)
+            self.assertIn('Official program ↗',page)
+            self.assertIn('Official track rules ↗',page)
+            for source_id in (304,305):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_horizon_biodiversity_monitoring_call_states_policy_fit_and_consortium_gates(self):
