@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.IBinder;
 
 import org.talk2nature.station.engine.CaptureEngine;
+import org.talk2nature.station.engine.CaptureDeadline;
 
 import java.time.Instant;
 
@@ -91,23 +92,39 @@ public final class CaptureService extends Service {
             audio.startRecording();
             if (audio.getRecordingState() != AudioRecord.RECORDSTATE_RECORDING) throw new IllegalStateException("The microphone did not start.");
             capturing = true;
+            CaptureDeadline deadline = new CaptureDeadline(android.os.SystemClock.elapsedRealtime(), maxSeconds * 1000L);
             int frameSamples = Math.max(1, sampleRate / 10);
             short[] buffer = new short[Math.max(frameSamples, AudioRecord.getMinBufferSize(sampleRate,
                     android.media.AudioFormat.CHANNEL_IN_MONO, android.media.AudioFormat.ENCODING_PCM_16BIT) / 2)];
             while (!stopRequested) {
+                long checkAt = android.os.SystemClock.elapsedRealtime();
+                long wallRemainingMillis = deadline.remainingMillis(checkAt);
                 double remaining = maxSeconds - engine.elapsedSeconds();
-                if (remaining <= 0.0001) { reason = "time_limit"; break; }
-                int requested = (int)Math.min(frameSamples, Math.max(1, Math.ceil(remaining * sampleRate)));
-                int count = audio.read(buffer, 0, requested, AudioRecord.READ_BLOCKING);
+                if (wallRemainingMillis == 0 || remaining <= 0.0001) { reason = "time_limit"; break; }
+                int requestedByAudio = (int)Math.min(frameSamples, Math.max(1, Math.ceil(remaining * sampleRate)));
+                int requested = deadline.limitSamples(checkAt, sampleRate, requestedByAudio);
+                if (requested == 0) { reason = "time_limit"; break; }
+                int count = audio.read(buffer, 0, requested, AudioRecord.READ_NON_BLOCKING);
                 if (count > 0) {
                     CaptureEngine.Result result = engine.accept(buffer, count);
                     persist(result);
                     if (result.storageLimit) { reason = "storage_limit"; break; }
-                    if (engine.elapsedSeconds() >= maxSeconds) { reason = "time_limit"; break; }
+                    if (deadline.isExpired(android.os.SystemClock.elapsedRealtime())
+                            || engine.elapsedSeconds() >= maxSeconds) { reason = "time_limit"; break; }
                     long now = android.os.SystemClock.elapsedRealtime();
                     if (now - lastProgressWrite >= 30000) {
                         store.updateProgress(engine.elapsedSeconds(), engine.thresholdDbfs(), engine.nearFullScaleFraction());
                         lastProgressWrite = now;
+                    }
+                } else if (count == 0 && !stopRequested) {
+                    long waitMillis = deadline.remainingMillis(android.os.SystemClock.elapsedRealtime());
+                    if (waitMillis == 0) { reason = "time_limit"; break; }
+                    try {
+                        Thread.sleep(Math.min(50L, waitMillis));
+                    } catch (InterruptedException interrupted) {
+                        Thread.currentThread().interrupt();
+                        reason = stopRequested ? requestedStopReason : "audio_interruption";
+                        break;
                     }
                 } else if (count < 0 && !stopRequested) {
                     reason = count == AudioRecord.ERROR_DEAD_OBJECT ? "audio_interruption" : "recording_failure";

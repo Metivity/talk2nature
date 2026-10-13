@@ -1,5 +1,15 @@
 # Project status
 
+## October 13 Android Station capture-deadline hardening
+
+**Question:** does the Android prototype's selected 1-, 4- or 8-hour cap still get checked if the microphone stops delivering audio frames?
+
+**Finding and change:** the capture loop previously used a blocking `AudioRecord.read()` and compared the limit only with processed audio duration. A stalled read could therefore postpone the app's next time-limit check. Added a monotonic `SystemClock.elapsedRealtime()` deadline, bounded each audio read to samples fitting before that deadline, and switched to non-blocking reads with a short idle wait. The [Android clock reference](https://developer.android.com/reference/android/os/SystemClock) documents that `elapsedRealtime()` is monotonic and includes sleep; the [AudioRecord reference](https://developer.android.com/reference/android/media/AudioRecord) documents that `READ_NON_BLOCKING` returns immediately and may return zero samples. Added deterministic deadline arithmetic and eight-hour maximum tests. This is a source-level safety improvement, not proof of an exact stop time on every device.
+
+**Validation:** Android core checks pass; all 107 Node tests and 114 Python tests pass; `git diff --check` passes. This host has no Android SDK, emulator or `adb`, so Gradle package/lint checks and physical-device behavior are not locally verified; the repository pull-request workflow runs Android lint and debug/release assembly. No microphone, recording, deployment or research data was used.
+
+**Next:** let pull-request CI perform the Android builds and release-boundary check. If those pass, keep physical-phone timing, interruption and screen-lock behavior on the device-validation list. The broad evidence, app, open-source, SEO and resources goal remains active.
+
 ## October 13 current-main clean clone and contributor-path verification
 
 **Question:** does the public source now give a macOS contributor a clean checkout, and do the documented synthetic workflow and site checks still work from that exact release?

@@ -5,6 +5,7 @@ APP_ROOT="$REPO_ROOT/native-android/app"
 TEST_CLASSES="$REPO_ROOT/native-android/build/core-test-classes"
 mkdir -p "$TEST_CLASSES"
 javac -d "$TEST_CLASSES" \
+  "$APP_ROOT/src/main/java/org/talk2nature/station/engine/CaptureDeadline.java" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/engine/CaptureEngine.java" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/SessionZip.java" \
   "$APP_ROOT/src/testCore/java/org/talk2nature/station/engine/CaptureEngineSelfTest.java"
