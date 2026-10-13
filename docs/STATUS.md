@@ -1,5 +1,15 @@
 # Project status
 
+## October 14 Search Console discovery check
+
+**Finding:** URL Inspection for `https://metivity.github.io/talk2nature/research/resources/` reports “URL is not on Google” because the URL is unknown to Google; it lists no referring sitemap, no referring page and no recorded crawl. The submitted `/sitemap.xml` report still says “Couldn’t fetch” and shows zero discovered pages.
+
+**Live validation:** Google’s live URL test says the resources page is available to Google and can be indexed. A fresh direct request to the production sitemap returned HTTP 200 with `application/xml`; the response parsed as valid sitemap XML containing 106 URLs, including the resources page. The mismatch is between the valid current endpoint and Search Console’s sitemap report; it does not prove Google has processed the sitemap.
+
+**Action and limit:** After confirming the verified Search Console property and successful live test, requested indexing for the resources page. Search Console confirmed it was added to a priority crawl queue. This does not guarantee indexing or ranking. The sitemap was not resubmitted.
+
+**Next check:** recheck Search Console’s sitemap report after processing. If its fetch error persists, investigate the report/Google fetch path before changing a sitemap endpoint that currently responds and parses correctly.
+
 ## October 14 Android permission-free first step
 
 **Question:** can a new Android Station user inspect the workflow before encountering a microphone permission prompt? The public Field Companion already offers a “Try without a microphone” route using a synthetic example, but the native preview opened directly on recording setup.
