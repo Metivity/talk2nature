@@ -63,7 +63,7 @@ def validate(catalog):
             require_text(resource, field)
         https_url(require_text(resource, 'url'))
         date.fromisoformat(require_text(resource, 'reviewed'))
-        if resource.get('kind') not in {'paper', 'code', 'dataset', 'model', 'standard'}:
+        if resource.get('kind') not in {'paper', 'code', 'dataset', 'model', 'standard', 'project'}:
             raise ValueError('Unknown resource kind.')
         if type(resource.get('priority')) is not int or resource['priority'] not in (1, 2, 3):
             raise ValueError('Priority must be 1, 2 or 3.')

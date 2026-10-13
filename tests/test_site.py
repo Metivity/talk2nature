@@ -120,6 +120,25 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Dog vocalization dataset described in the 2024 bark-classification paper',resource_page)
             self.assertIn('Dog-bark baseline implementations described in the 2024 paper',resource_page)
 
+    def test_crowdbark_project_is_discoverable_without_claiming_a_dataset_release(self):
+        project_root=Path(__file__).resolve().parents[1]
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        source=next(item for item in sources if item['id']==300)
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        resource=next(item for item in resources if item['id']=='crowdbark-project-page')
+        self.assertEqual(resource['kind'],'project')
+        self.assertEqual(resource['source_ids'],[source['id']])
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertEqual(resource['rights']['research_use'],'unresolved')
+        self.assertIn('no versioned data release linked',resource['version'])
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(Path(d)/'research'/'resources'/'index.html').read_text()
+        self.assertIn('<option value="project">Project</option>',page)
+        self.assertIn('CrowdBark: crowdsourced multimodal dog-communication study',page)
+        self.assertIn('future open research dataset',page)
+        self.assertIn('Unresolved; treat as not cleared.',page)
+
     def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')
@@ -266,8 +285,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('<span class="resource-status">Metadata only</span>',page)
             self.assertIn('<span class="resource-status">Limited sample route</span>',page)
             self.assertIn('<option value="standard">Standard</option>',page)
+            self.assertIn('<option value="project">Project</option>',page)
             self.assertIn('data-kind="standard"',page)
-            self.assertIn('Papers, datasets, code, models and standards',page)
+            self.assertIn('Papers, datasets, code, models, standards and research projects',page)
             self.assertNotIn('metadata_only</span>',page)
             self.assertNotIn('sample_approved</span>',page)
             self.assertIn('not a systematic review or legal clearance',page)
