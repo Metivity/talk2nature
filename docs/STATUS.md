@@ -12,6 +12,24 @@
 
 **Publication receipt (October 13):** [PR #111](https://github.com/Metivity/talk2nature/pull/111) merged as `4346102`; the [Pages workflow](https://github.com/Metivity/talk2nature/actions/runs/38403111812) completed successfully. Live fetches confirmed the shared update notice on the Station and companion home pages, the served app bundle includes the waiting-worker watcher, and the app-scoped worker includes its offline module. This verifies the deployed files, not a full update cycle on an already-installed phone; the device/browser test above remains open.
 
+## October 13 smartphone recording research page live crawl check
+
+**Question:** is the source-grounded phone-variability page public and technically discoverable after the approved Pages release?
+
+**Verification:** the live route [`/research/smartphone-bioacoustics-device-variability/`](https://metivity.github.io/talk2nature/research/smartphone-bioacoustics-device-variability/) returned HTTP 200 with its expected title and description, `index,follow`, and a self-canonical URL. The live sitemap contains that exact route, and `robots.txt` names the sitemap. The successful Pages run is [#38403111812](https://github.com/Metivity/talk2nature/actions/runs/38403111812).
+
+**Limits:** this proves publication and crawl configuration, not Google indexing, impressions or ranking; Search Console was not inspected. Independent specialist review and the cited Zenodo/Dryad file inventories, rights and privacy remain open. No audio, dataset or code was acquired.
+
+## October 13 candidate: focused phone-recording methods review
+
+**Question:** would a small, no-animal reference check meaningfully characterize phone and app-path variation for a future species-specific task, without being mistaken for microphone calibration or field validation?
+
+**Change:** added [`PHONE_RECORDING_REVIEW.md`](PHONE_RECORDING_REVIEW.md), a bounded reviewer brief based on the already-reviewed Jäckel et al. and Gili et al. papers. The phone evidence page now links to the brief and existing public methods-review form; the university page presents this as a second review route alongside the Japanese-tit literature critique. The brief asks specialists to define whether a test is useful, what reference chain and task-specific measurements would be defensible, how to avoid device fingerprinting, and whether a pass/fail threshold should exist. It does not prescribe or approve a protocol. No animal, participant or app audio is requested.
+
+**Validation:** all 117 Python tests and 109 Node tests pass. The local noindex build produced 104 pages plus 404 and passed 5,040 link checks; the public-origin candidate passed 5,145 links with all 104 public pages reachable. Desktop Chromium at 320 × 740, 390 × 844 and 1280 × 1000 CSS pixels showed no horizontal overflow on the university and phone-evidence pages, no failed requests or page errors, and the review cards stacked at phone widths. This is browser emulation, not physical-device or first-time researcher testing.
+
+**Limits and next decision:** the new reviewer invitation is still a local candidate until release. No independent specialist has responded, no device has been tested, and no participant-data intake or field protocol is approved. Keep AutoResearch **NOT READY**. If independent review cannot identify a useful test that changes a decision, retain the plain-language microphone-variability warning and do not add calibration-like UI.
+
 ## October 13 microphone-free rehearsal wording and mobile workflow
 
 **Question:** does the phone rehearsal make clear that it is an invented, no-microphone exercise rather than a live recording?
