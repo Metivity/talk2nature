@@ -14,7 +14,9 @@ def private_graph(store):
         rows = list(db.execute('''SELECT c.*,v.payload FROM evidence_catalog c JOIN evidence_versions v
             ON c.key=v.key AND c.fingerprint=v.fingerprint WHERE c.active=1'''))
         entries = [{'key': r['key'], 'kind': r['kind'], 'title': r['title'], 'payload': json.loads(r['payload'])} for r in rows]
-        graph = catalog_graph(entries)
+        # The owner graph also hosts synthetic and legacy reference records that
+        # may predate public source-edge requirements; keep them readable.
+        graph = catalog_graph(entries, require_source_edges=False)
         nodes, edges = graph['nodes'], graph['edges']
         known = {n['id'] for n in nodes}
         for row in db.execute('SELECT * FROM studies ORDER BY id'):

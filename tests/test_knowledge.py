@@ -40,6 +40,8 @@ class KnowledgeTests(unittest.TestCase):
             entry={'key':f'{kind}:orphan','kind':kind,'title':'Orphan','payload':{'title':'Orphan','source_ids':[]}}
             with self.subTest(kind=kind), self.assertRaisesRegex(ValueError,'at least one source'):
                 catalog_graph([source,entry])
+            historical=catalog_graph([source,entry],require_source_edges=False)
+            self.assertEqual(len(historical['nodes']),2)
 
     def test_public_catalog_rejects_dangling_resource_source_reference(self):
         repo = Path(__file__).resolve().parents[1]
