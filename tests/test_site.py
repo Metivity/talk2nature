@@ -315,6 +315,25 @@ class SiteTests(unittest.TestCase):
             self.assertIn('natural conspecific signals proposed as names',path)
             self.assertIn('A caregiver report about a human-created name differs',path)
 
+    def test_animal_spot_note_distinguishes_recording_holdout_from_animal_holdout(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            base='https://fixture.github.io/talk2nature'
+            build(root,base,True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=root/'research'/'animal-spot-parrot-detection-2022'/'index.html'
+            rendered=page.read_text()
+            self.assertIn('samples from a recording stay within one split',rendered)
+            self.assertIn('does not establish individual-animal holdout',rendered)
+            self.assertIn('70/15/15 train/validation/test split',rendered)
+            self.assertIn('97.9%',rendered)
+            self.assertIn('95.9%',rendered)
+            self.assertIn('animal-held-out claim',rendered)
+            self.assertIn('index,follow',rendered)
+            canonical=base+'/research/animal-spot-parrot-detection-2022/'
+            self.assertIn(canonical,rendered)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+
     def test_dupont_lark_note_is_discoverable_and_keeps_data_rights_separate(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
