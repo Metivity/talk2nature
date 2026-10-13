@@ -40,6 +40,22 @@ class SiteTests(unittest.TestCase):
             with self.subTest(template=filename):
                 self.assertTrue((project_root/'.github'/'ISSUE_TEMPLATE'/filename).is_file())
 
+    def test_contribute_page_surfaces_the_phone_first_task_without_data_intake(self):
+        project_root=Path(__file__).resolve().parents[1]
+        guide=(project_root/'CONTRIBUTING.md').read_text()
+        self.assertIn('https://github.com/Metivity/talk2nature/issues/115',guide)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(root/'contribute'/'index.html').read_text()
+            self.assertIn('GOOD FIRST TASK / PHONE',page)
+            self.assertIn('Try the Field Companion with the microphone off.',page)
+            self.assertIn('href="https://github.com/Metivity/talk2nature/issues/115"',page)
+            self.assertIn('No animal recording or upload is needed.',page)
+            self.assertIn('posting a public reply requires GitHub sign-in',page)
+            style=(root/'assets'/'style.css').read_text()
+            self.assertIn('.first-contribution .actions a{min-height:44px',style)
+
     def test_reproduction_form_defaults_to_unverified_and_defines_counting_boundary(self):
         project_root=Path(__file__).resolve().parents[1]
         form=(project_root/'.github'/'ISSUE_TEMPLATE'/'reproduction.yml').read_text()

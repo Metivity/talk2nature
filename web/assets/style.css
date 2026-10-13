@@ -15,4 +15,4 @@
 #main:focus:not(:focus-visible){outline:none}
 @media(max-width:800px){.header:not(.menu-ready){flex-wrap:wrap}.header:not(.menu-ready) nav{position:static;display:flex;flex-wrap:wrap;padding:0;box-shadow:none;border:0}.header:not(.menu-ready) .menu-toggle{display:none}}
 @media(max-width:580px){.hero h1{font-size:clamp(3.4rem,14vw,4.5rem)}.hero-note{font-size:12px}.hero-art{height:280px}.hero-copy{padding-top:0}}
-.connection-list{margin:24px 0}.connection-list>div{border-top:1px solid var(--line);padding:22px 0}.connection-list dt{font-weight:700;margin-bottom:8px}.connection-list dd{margin:0;color:var(--muted);font-size:16px;overflow-wrap:anywhere}.article a{overflow-wrap:anywhere}.article .review-box{overflow-wrap:anywhere}
+.connection-list{margin:24px 0}.connection-list>div{border-top:1px solid var(--line);padding:22px 0}.connection-list dt{font-weight:700;margin-bottom:8px}.connection-list dd{margin:0;color:var(--muted);font-size:16px;overflow-wrap:anywhere}.article a{overflow-wrap:anywhere}.article .review-box{overflow-wrap:anywhere}.first-contribution .actions a{min-height:44px;display:inline-flex;align-items:center}
