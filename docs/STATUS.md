@@ -1514,3 +1514,11 @@ This is maintainer-run desktop evidence with invented audio and zero sound event
 **Change and decision:** added a separate metadata-only dataset record and an indexable research page. The page documents the key interface lesson: preserve the sound event, caregiver-reported context, researcher coding and model prediction as distinct data with distinct provenance. The S2 item is not audio, has not been admitted for training or redistribution, and is not treated as independent ground truth. The active program goal remains open; this completes one research-library and SEO milestone, not the broader project.
 
 **Validation:** the catalog validates 90 resources; 104 Python tests and 107 Node tests pass. The explicit public-origin build generated 99 pages plus 404. The site checker verified 100 HTML documents, 4,811 links and all 99 public pages reachable from the homepage. The new page has a canonical URL, `index,follow`, both cited source links and sitemap inclusion. This is local build evidence only: the page is not deployed, and live crawling or indexing was not checked.
+
+## October 13 live release receipt — PR #92
+
+PR [#92](https://github.com/Metivity/talk2nature/pull/92) merged to `main` as `5a4a957fdde2c7900475e07c9d51206114ed3c07`. The manual Pages workflow [#38353279057](https://github.com/Metivity/talk2nature/actions/runs/38353279057) passed its Python tests, JavaScript tests, public build, SEO/link/publish-boundary checks and deployment job.
+
+Live HTTPS requests returned HTTP 200 for the new companion-parrot S2 research page, the resource directory, the Field Companion Station, `sitemap.xml` and `robots.txt`. The research page serves its expected title and description, `index,follow` and self-canonical URL. The live sitemap contains 99 unique URLs and includes this page; `robots.txt` names the project sitemap. The live Station page contains the new optional setting-note and download-acknowledgement controls. These are route and document checks, not physical-phone or touch validation.
+
+A targeted public search query returned no result for the new page. That is not proof that the page is absent from an index; Search Console was not inspected, so Google indexing remains **unverified**. The larger project goal stays active, and AutoResearch remains **NOT READY**.
