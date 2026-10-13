@@ -1,5 +1,15 @@
 # Project status
 
+## October 13 current-main clean clone and contributor-path verification
+
+**Question:** does the public source now give a macOS contributor a clean checkout, and do the documented synthetic workflow and site checks still work from that exact release?
+
+**Evidence:** cloned public `main` at `9a48c6509f2f52f504190ee4663b678732bc6139` with depth one. `git status --short` was empty. For `native-android/gradlew.bat`, Git reported `i/crlf w/crlf attr/-text`; its working-file object matched the committed blob, with 94 CRLF lines and no bare LF. The `.gitattributes` fix from PR #95 resolves the false dirty state recorded against older `c03a928`.
+
+**Checks:** with Python 3.12.5, Node v22.22.1 and Git 2.53.0, the annotation example reported an 8-second synthetic fixture, two marked events and zero seconds of observed context. The splitter returned 10 declared groups and 12/4/4 records; generated JSON SHA-256: `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. All 114 Python tests and 107 Node tests passed; the resource validator accepted 112 records. The local noindex build/check produced 104 pages plus 404 and passed 105 HTML documents / 5,022 links. The public-origin build/check produced 104 pages plus 404 and passed 105 HTML documents / 5,128 links / all 104 public pages reachable. Refreshed `RESEARCHER_START.md` and `OPEN_SOURCE_PRACTICE.md` to remove the stale unpublished-fix claim.
+
+**Limits and next decision:** this is maintainer-run software verification, not an independent reproduction, scientific validation or biological result. No packages or third-party media, data or model weights were acquired. Independent reproduction remains zero. Continue toward an outside researcher walkthrough; don't count this clone as independent evidence.
+
 ## October 13 Japanese-tit theory comparison
 
 **Question:** what do the competing 2024 explanations of Japanese-tit ABC–D call sequences claim, and what evidence would distinguish them?
