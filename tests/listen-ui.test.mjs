@@ -73,14 +73,15 @@ test('an unfinished draft cannot silently disappear from JSON or CSV export',asy
   let warned=false;h.windowEvents.beforeunload({preventDefault(){warned=true;}});assert.ok(warned);
 });
 
-test('AOEF export requires an accepted observation and reports the untested app-import boundary',async()=>{
+test('AOEF export requires an accepted observation and reports synthetic app-import evidence with limits',async()=>{
  const h=setup();await h.get('example').fire('click');
  await h.get('export-aoef').fire('click');assert.equal(h.downloads.length,0);
  assert.match(h.get('export-status').textContent,/at least one observation/);
  await h.get('event-form').fire('submit',{preventDefault(){}});
  await h.get('export-aoef').fire('click');assert.deepEqual(h.downloads,['talk2nature-aoef.zip']);
  assert.equal(h.get('export-aoef').disabled,false);
- assert.match(h.get('export-status').textContent,/Whombat UI import is untested/);
+ assert.match(h.get('export-status').textContent,/current format passed a synthetic Whombat 0\.9\.0 UI check/);
+ assert.match(h.get('export-status').textContent,/unencrypted and experimental/);
  const fail=setup({aoefPackage:async()=>{throw Error('Test AOEF failure');}});await fail.get('example').fire('click');
  await fail.get('event-form').fire('submit',{preventDefault(){}});await fail.get('export-aoef').fire('click');
  assert.equal(fail.downloads.length,0);assert.match(fail.get('export-status').textContent,/Test AOEF failure/);
