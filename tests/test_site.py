@@ -40,6 +40,16 @@ class SiteTests(unittest.TestCase):
             with self.subTest(template=filename):
                 self.assertTrue((project_root/'.github'/'ISSUE_TEMPLATE'/filename).is_file())
 
+    def test_reproduction_form_defaults_to_unverified_and_defines_counting_boundary(self):
+        project_root=Path(__file__).resolve().parents[1]
+        form=(project_root/'.github'/'ISSUE_TEMPLATE'/'reproduction.yml').read_text()
+        guide=(project_root/'CONTRIBUTING.md').read_text()
+        unverified='- Not sure / not independently verified'
+        independent='- Independent evaluator (no project or maintainer assistance)'
+        self.assertLess(form.index(unverified),form.index(independent))
+        self.assertIn('maintainers review reports',form)
+        self.assertIn('only a maintainer-reviewed run of the documented software commands counts toward independent reproduction',guide)
+
     def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')
