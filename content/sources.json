@@ -2554,5 +2554,68 @@
     "rights": {
       "software": "No explicit repository license was found in the pinned root inventory or project metadata. Do not copy, install or execute on the assumption of permission."
     }
+  },
+  {
+    "id": 247,
+    "title": "Gebhard et al. (2026), CoarseSoundNet arXiv v2",
+    "description": "Primary paper on coarse soundscape classification into anthropophony, biophony and geophony, with an explicit silence class. arXiv v2 dated May 21, 2026; original summary only.",
+    "url": "https://arxiv.org/abs/2605.21143",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the full arXiv v2 HTML manuscript, including data, model comparison, cross-domain results, post-processing/evaluation design, errors, ecological case study and conclusion. The official author-group GitHub README still describes the paper as under review; no peer-reviewed version was verified. No article files, figures, audio, code or weights were acquired.",
+    "review_url": "https://arxiv.org/html/2605.21143v2",
+    "review_url_label": "Full arXiv v2 HTML",
+    "rights": {
+      "article": "The arXiv page declares CC BY-NC-SA 4.0. Talk2Nature publishes an original summary and citation only; article, figures and supplementary material remain separate."
+    }
+  },
+  {
+    "id": 248,
+    "title": "CoarseSoundNet training/evaluation code at pinned GitHub commit",
+    "description": "Official CHI-TUM repository pinned to b699189392a901f28765614ec5083e8338616322. GitHub identifies the repository license as MIT; README says the repository is under construction.",
+    "url": "https://github.com/CHI-TUM/CoarseSoundNet/tree/b699189392a901f28765614ec5083e8338616322",
+    "checked": "2026-10-13",
+    "origin": "Pinned main to b699189392a901f28765614ec5083e8338616322 with a read-only git ls-remote check. Reviewed the official repository page, README, and root license metadata. GitHub reports MIT; README says the code is still under construction and refers users to Hugging Face for inference. No code was cloned, downloaded, installed or executed.",
+    "review_url": "https://github.com/CHI-TUM/CoarseSoundNet/blob/b699189392a901f28765614ec5083e8338616322/LICENSE",
+    "review_url_label": "Pinned repository license",
+    "rights": {
+      "software": "MIT per the repository license at the pinned commit. This does not grant rights to model weights, training datasets, base encoders, dependencies or paper content."
+    }
+  },
+  {
+    "id": 249,
+    "title": "CoarseSoundNet model card and weights at pinned Hugging Face revision",
+    "description": "Official HearTheSpecies model card at revision e8217024a9b69d2af76e031db8eec03bbcdd7a33. Hub metadata declares CC BY-NC-SA 4.0; the listed weight and optimizer files total about 336 MB.",
+    "url": "https://huggingface.co/HearTheSpecies/CoarseSoundNet/tree/e8217024a9b69d2af76e031db8eec03bbcdd7a33",
+    "checked": "2026-10-13",
+    "origin": "Read the official Hugging Face model page and metadata API at the pinned revision. The Hub lists CC BY-NC-SA 4.0 and model/optimizer files; no weight bytes were downloaded or run. The code repository and underlying encoder/dependencies retain separate rights.",
+    "review_url": "https://huggingface.co/HearTheSpecies/CoarseSoundNet/blob/e8217024a9b69d2af76e031db8eec03bbcdd7a33/README.md",
+    "review_url_label": "Pinned model card",
+    "rights": {
+      "weights": "CC BY-NC-SA 4.0 per the Hub card. Treat as non-commercial; base encoder, training data and dependencies have separate terms."
+    }
+  },
+  {
+    "id": 250,
+    "title": "EDANSA-2019 dataset record, Zenodo DOI 10.5281/zenodo.6824272",
+    "description": "Zenodo archive metadata: EDANSA-2019.zip, 7,924,056,990 bytes, provider checksum MD5 e6c62322baff56430c88e6323267a461. The Zenodo API declares CC BY 4.0; the landing page's visible license field is blank.",
+    "url": "https://doi.org/10.5281/zenodo.6824272",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the public Zenodo landing page and read-only record API metadata. The API reports CC BY 4.0, one 7,924,056,990-byte ZIP and a provider MD5; the rendered landing page leaves its Rights/License field blank. No archive or audio was downloaded, and the provider checksum was not independently verified.",
+    "review_url": "https://zenodo.org/api/records/6824272",
+    "review_url_label": "Zenodo record API metadata",
+    "rights": {
+      "dataset": "Zenodo record API declares CC BY 4.0 for this dataset record, while the rendered landing page shows a blank license field. Preserve this discrepancy and verify exact file terms before retrieval or reuse."
+    }
+  },
+  {
+    "id": 251,
+    "title": "University of Freiburg author publication list for Sandra Müller",
+    "description": "Official author profile categorizes Gebhard et al. (2026), CoarseSoundNet, under preprints; this is publication-status context, not independent review of the paper.",
+    "url": "https://uni-freiburg.de/bio-schererlorenzen/sandra-mueller/",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official University of Freiburg author publication list, which places CoarseSoundNet under preprints. No external peer-reviewed publication record was identified in this bounded check.",
+    "rights": {
+      "page": "Public bibliographic metadata summarized and linked; no profile text or image reproduced."
+    }
   }
 ]

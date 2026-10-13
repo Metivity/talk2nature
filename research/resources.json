@@ -2545,6 +2545,122 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "coarse-soundscape-paper-2026",
+      "kind": "paper",
+      "title": "CoarseSoundNet: Building a reliable model for ecological soundscape analysis",
+      "url": "https://arxiv.org/abs/2605.21143",
+      "version": "arXiv v2, 2026-05-21; paper status described as under review in the pinned code repository README checked 2026-10-13",
+      "source_ids": [
+        247
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Methods reference for multilabel coarse soundscape context and cross-domain evaluation; not an animal communication or species-identification benchmark.",
+      "review_depth": "Reviewed the full arXiv v2 HTML manuscript: datasets, architectures, evaluation strategy, results, errors and ecological case study. The authors report a large in-domain/cross-domain performance gap. Their best post-processed BEsound macro-F1 of 0.799 uses class thresholds and window-count settings selected on BEsound itself, so it is a tuned evaluation result, not an untouched held-out estimate. No Talk2Nature reproduction.",
+      "access": "Metadata and open manuscript reviewed; no article file, figure, audio, code or model artifact copied.",
+      "decision": "Use as a methods and product-boundary reference. Do not describe its output as species identity, animal message or conversation. Revisit quantitative claims if a peer-reviewed version or independent evaluation appears.",
+      "limitations": "The paper combines public and non-public datasets; BEsound and other collections are not all directly accessible. BEsound is used for cross-domain evaluation and also for selecting post-processing settings. Dataset annotation differences, domain transfer and insect/geophony/silence confusions remain material. Results are author-reported and not reproduced by Talk2Nature.",
+      "attribution": "Gebhard et al. (2026), CoarseSoundNet: Building a reliable model for ecological soundscape analysis, arXiv:2605.21143v2, https://doi.org/10.48550/arXiv.2605.21143.",
+      "rights": {
+        "license": "The arXiv record declares CC BY-NC-SA 4.0 for the article.",
+        "scope": "Paper text and figures only; code, weights and each training dataset have separate terms.",
+        "evidence_url": "https://arxiv.org/html/2605.21143v2",
+        "conditions": "Publish an original summary and citation; do not copy article text, figures or supplementary material.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "coarse-soundscape-code-mit-2026",
+      "kind": "code",
+      "title": "CoarseSoundNet training and evaluation code, pinned GitHub revision",
+      "url": "https://github.com/CHI-TUM/CoarseSoundNet/tree/b699189392a901f28765614ec5083e8338616322",
+      "version": "main at commit b699189392a901f28765614ec5083e8338616322, checked 2026-10-13",
+      "source_ids": [
+        248
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Reference implementation for the paper's soundscape experiments; potential later reproducibility candidate only after scientific and dataset review.",
+      "review_depth": "Pinned the public main ref and reviewed the repository README and license metadata. GitHub identifies MIT; the README says the repository is under construction and directs users to the model card for inference. No code or dependency was downloaded or run.",
+      "access": "Public metadata and source links only.",
+      "decision": "Keep as a linked external reference. Do not vendor or execute code as part of the current app or benchmark.",
+      "limitations": "Under-construction instructions limit reproducibility. MIT covers this repository's software only, not weights, base encoders, datasets or dependencies. No Talk2Nature environment or result reproduction.",
+      "attribution": "CHI-TUM, CoarseSoundNet repository, commit b699189392a901f28765614ec5083e8338616322, https://github.com/CHI-TUM/CoarseSoundNet.",
+      "rights": {
+        "license": "MIT per the pinned repository license.",
+        "scope": "Repository software only; model weights, encoders, dependencies, datasets and paper have separate terms.",
+        "evidence_url": "https://github.com/CHI-TUM/CoarseSoundNet/blob/b699189392a901f28765614ec5083e8338616322/LICENSE",
+        "conditions": "Review dependencies and dataset terms before any future execution or reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "coarse-soundscape-model-ncsa-2026",
+      "kind": "model",
+      "title": "CoarseSoundNet model card and weights, pinned Hugging Face revision",
+      "url": "https://huggingface.co/HearTheSpecies/CoarseSoundNet/tree/e8217024a9b69d2af76e031db8eec03bbcdd7a33",
+      "version": "Hub revision e8217024a9b69d2af76e031db8eec03bbcdd7a33, last modified 2026-07-10; listed weight/optimizer artifacts total about 336 MB",
+      "source_ids": [
+        249
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Author-provided model for broad soundscape-layer classification, not focal-animal detection, species identification or meaning inference.",
+      "review_depth": "Reviewed the pinned Hub card and API metadata for commit, declared license and file inventory only. No weight file was downloaded, installed, loaded or evaluated.",
+      "access": "Metadata-only.",
+      "decision": "Do not integrate into the public phone app or commercial-capable path. A later research evaluation would need exact encoder, dependency, data, hardware and evaluation-split review.",
+      "limitations": "CC BY-NC-SA weights are not a default commercial dependency. The card's own performance claims are author-reported. The model's broad classes do not identify which animal produced a sound or establish communication.",
+      "attribution": "HearTheSpecies, CoarseSoundNet model, revision e8217024a9b69d2af76e031db8eec03bbcdd7a33, https://huggingface.co/HearTheSpecies/CoarseSoundNet.",
+      "rights": {
+        "license": "CC BY-NC-SA 4.0 per the Hub card; non-commercial restriction applies to the listed model artifact.",
+        "scope": "Model repository revision and weights only; base encoder, training data, inference code and dependencies are separate.",
+        "evidence_url": "https://huggingface.co/HearTheSpecies/CoarseSoundNet/tree/e8217024a9b69d2af76e031db8eec03bbcdd7a33",
+        "conditions": "Do not integrate into a commercial product without resolving all component terms. No weights were acquired.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "edansa-2019-zenodo-v1",
+      "kind": "dataset",
+      "title": "EDANSA-2019, Zenodo dataset record",
+      "url": "https://doi.org/10.5281/zenodo.6824272",
+      "version": "Zenodo record dated 2022-07-14; EDANSA-2019.zip is 7,924,056,990 bytes; provider MD5 e6c62322baff56430c88e6323267a461",
+      "source_ids": [
+        250
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Potential ecoacoustic context-classification reference with labels for anthropophony, biophony, geophony and silence; not a focal-animal communication corpus.",
+      "review_depth": "Reviewed the Zenodo landing page and record API metadata only. API reports CC BY 4.0, one 7.9 GB ZIP and provider MD5; rendered landing page has a blank license field. No archive, audio, manifest or label rows were downloaded or inspected, and the checksum was not independently verified.",
+      "access": "Metadata-only; archive not acquired.",
+      "decision": "Retain as a linked discovery record. Do not attempt a full archive download through the current small-file collector. Any future targeted analysis needs a specific scientific question, file-level provenance, checksum and split/label review.",
+      "limitations": "A repository-level license does not prove all files are suitable or rights-cleared for a Talk2Nature task. The large archive and uninspected internal structure preclude an assumption of acquisition, training admission or reproduction. It is an ecoacoustic soundscape corpus, not a translation dataset.",
+      "attribution": "Çoban et al. (2022), EDANSA-2019: The Ecoacoustic Dataset from Arctic North Slope Alaska, Zenodo, https://doi.org/10.5281/zenodo.6824272.",
+      "rights": {
+        "license": "Zenodo API metadata declares CC BY 4.0, but the rendered record's license field is blank.",
+        "scope": "The exact Zenodo dataset record/archive only; the paper, model weights, code and every input source have separate terms.",
+        "evidence_url": "https://zenodo.org/api/records/6824272",
+        "conditions": "Resolve the metadata-display discrepancy and inspect exact file/label provenance before acquisition or reuse; retain attribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
