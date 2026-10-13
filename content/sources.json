@@ -2463,9 +2463,17 @@
   {
     "id": 237,
     "title": "ANIMAL-SPOT monk-parakeet example corpus and data split",
-    "description": "The author repository points to Edmond DOI 10.17617/3.KQPPXF for cropped recordings, an unseen raw recording, a data split, logs and instructions. The exact deposit manifest, file-level terms and access conditions were not verified in this review.",
+    "description": "Edmond's current record resolves to Version 2.0, published 2024-04-08, with one public 522.0 MB ANIMAL-SPOT_FILES.tar.gz archive and a dataset-level CC BY 4.0 license. The author README describes a 6,745-file monk-parakeet target/noise corpus and its split; archive contents and split files were not inspected.",
     "url": "https://doi.org/10.17617/3.KQPPXF",
     "checked": "2026-10-13",
-    "origin": "The ANIMAL-SPOT README identifies this DOI as the example-data deposit; the MPG.PuRe article record identifies a dataset handle and a Version 2 handle. The resolved dataset manifest and its terms were not accessible through the metadata surfaces used in this pass. No files were fetched, no platform terms were accepted and no checksum was checked."
+    "origin": "Reviewed Edmond's Version 2.0 landing page and metadata API, including the public file entry, dataset-level license and archive MD5; no archive was downloaded. Edmond's official access guide says downloads require acceptance of Edmond terms and the dataset license; neither was accepted here. The author repository README describes the example corpus and year/tape split rule, but that claim was not checked against archive contents."
+  },
+  {
+    "id": 238,
+    "title": "Edmond data access, license acceptance and versioning guidance",
+    "description": "Official Edmond user guidance says published dataset downloads require acceptance of Edmond terms and the dataset's stated license; a DOI resolves to the newest published version, while earlier versions remain selectable and should be cited explicitly.",
+    "url": "https://docs.edmond.mpg.de/Data_Access_Usage/",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official Edmond Data Access & Usage guide sections on access, license acceptance, versioning and exact-version citation. No dataset terms were accepted and no files were downloaded."
   }
 ]
