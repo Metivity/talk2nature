@@ -1,5 +1,13 @@
 # Project status
 
+## October 14 Android permission-free first step
+
+**Question:** can a new Android Station user inspect the workflow before encountering a microphone permission prompt? The public Field Companion already offers a “Try without a microphone” route using a synthetic example, but the native preview opened directly on recording setup.
+
+**Change:** added a clearly labeled button on the Android welcome screen linking to the public Field Companion; the native README explains that the example uses synthetic content and does not start recording. The link sends no session data, and recording still begins only after the user chooses Start and grants Android permission.
+
+**Validation:** confirmed the live Field Companion page serves its no-microphone option. The Android core checks, two native-session tests, 121 Python tests and 109 Node tests pass; the local noindex build/check passes with 106 pages, 107 HTML documents and 5,176 links. No microphone permission, audio, participant data or third-party media was used. This host has no Android SDK or `adb`, so the added button was not exercised in an emulator. Next, verify the tap-through and return path on the API 34 emulator and a named physical device; do not treat the browser example as native-device validation. AutoResearch remains **NOT READY**.
+
 ## October 14 Android saved-session review stability
 
 **Question:** can a person review an already-saved Android session without the app interrupting keyboard or assistive-technology focus? Source inspection found that the foreground screen polls session state every two seconds and rebuilt the stopped-session event and note list on each refresh. Replacing those child views could interrupt review actions; this is a code-path finding, not user-study evidence.
