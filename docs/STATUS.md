@@ -1,5 +1,13 @@
 # Project status
 
+## October 13 PR #95 release and live verification
+
+PR [#95](https://github.com/Metivity/talk2nature/pull/95) merged to `main` as [`6cf1a6e27c0cb8d59a50509667c20708e66dd764`](https://github.com/Metivity/talk2nature/commit/6cf1a6e27c0cb8d59a50509667c20708e66dd764). The manual Pages workflow run [#38379506257](https://github.com/Metivity/talk2nature/actions/runs/38379506257) completed with both `build` and `deploy` jobs successful.
+
+After deployment, the live sitemap contains 104 URLs and includes both `/research/pteroset-detection-benchmark-2026/` and `/research/common-endophyte-networks-resource-transfer/`. Both pages and `/tools/station/` returned HTTP 200; the two research pages expose `index,follow` and self-canonical URLs. `robots.txt` returns HTTP 200, allows crawling, and names the same sitemap. These are live publication and technical crawlability checks. Search Console indexing, impressions, clicks and rankings remain unverified; no Search Console connector is available here.
+
+PteroSet remains a source-grounded detection/annotation reference, not an animal-communication result. Its catalog entry remains metadata-only; no data or model files were acquired or run, and AutoResearch remains **NOT READY** pending the gates recorded below. The earlier pre-release candidate notes are historical snapshots and are superseded only for publication/deployment state, not for their research limitations.
+
 ## October 13 live SEO and release-parity check
 
 Rebuilt public `main` at [`c03a928738a3b8d1086426025df1680e86308972`](https://github.com/Metivity/talk2nature/commit/c03a928738a3b8d1086426025df1680e86308972) using the complete README release command, including `--repo-url`. Its homepage, Field Companion, `robots.txt` and sitemap were byte-identical to the live files (the homepage SHA-256 was `7e8e9c0cc8bd3e73aaf8dbe0aa2c70f263310e061559dbec1d41873aeccb8284`). Live robots and sitemap returned HTTP 200; robots allows crawling and names the exact sitemap. The sitemap contains 99 unique project URLs. The homepage and app each return HTTP 200 with distinct descriptions and correct self-canonical URLs.
