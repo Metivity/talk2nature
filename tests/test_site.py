@@ -936,7 +936,9 @@ class SiteTests(unittest.TestCase):
         self.assertIn('only the MAP1 test fold holds out a distinct named landscape',note['limitations'])
         self.assertEqual(note['atlas']['location_status'],'pending')
         self.assertEqual(note['atlas']['locations'],[])
-        self.assertIn('file bytes or metadata headers were checked',note['limitations'])
+        self.assertIn('All 12 names, sizes and provider MD5 strings in the exact v5 API manifest match this catalog',note['limitations'])
+        self.assertIn('4,096-byte HTTP 206 range request',note['limitations'])
+        self.assertIn('Row values were not reviewed or saved',note['limitations'])
         self.assertIn('record 21829388',note['next_review'])
         sources={s['id']:s for s in load('sources')}
         self.assertEqual({286,287,288} & sources.keys(),{286,287,288})
@@ -952,6 +954,11 @@ class SiteTests(unittest.TestCase):
         self.assertIn('CC BY 4.0',selected['pteroset-data-v5-2026']['rights']['license'])
         self.assertIn('MIT',selected['pteroset-code-2026']['rights']['license'])
         self.assertEqual(selected['pteroset-checkpoints-2026']['rights']['research_use'],'unresolved')
+        data_review=selected['pteroset-data-v5-2026']['review_depth']
+        self.assertIn('no dataset file bytes were hashed',data_review)
+        self.assertIn('only its header line',data_review)
+        self.assertIn('row values were not reviewed or saved',data_review)
+        self.assertEqual(selected['pteroset-data-v5-2026']['acquisition'],'metadata_only')
         code=selected['pteroset-code-2026']
         self.assertIn('record 21829388',code['decision'])
         self.assertIn('breakpoint()',code['limitations'])

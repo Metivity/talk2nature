@@ -2971,7 +2971,7 @@
     "description": "Zenodo version DOI 10.5281/zenodo.21829388, published August 6, 2026; concept DOI 10.5281/zenodo.18554918. The versioned record declares CC BY 4.0 and lists 12 files with sizes and provider MD5 checksums.",
     "url": "https://doi.org/10.5281/zenodo.21829388",
     "checked": "2026-10-13",
-    "origin": "Official Zenodo v5 landing page and record API reviewed October 13, 2026. The API confirms the version DOI, concept DOI, CC BY 4.0 and 12-file manifest; no data, annotations, checkpoints or audio bytes were downloaded."
+    "origin": "Official Zenodo v5 landing page and record API reviewed October 13, 2026. All 12 provider-reported names, byte sizes and MD5 strings match the local catalog; no dataset file bytes were hashed. A 4,096-byte HTTP 206 range of metadata_v2.csv was streamed transiently to inspect only the header; row values were not reviewed or saved. No annotation rows, checkpoints or audio were saved."
   },
   {
     "id": 288,
@@ -2979,6 +2979,6 @@
     "description": "The public microsoft/PteroSet repository provides the dataset-processing, annotation-conversion and baseline code; the reviewed master commit is b6aaf57ac32f93715e3570538f3580a78a80b741.",
     "url": "https://github.com/microsoft/PteroSet/tree/b6aaf57ac32f93715e3570538f3580a78a80b741",
     "checked": "2026-10-13",
-    "origin": "Official GitHub repository page and API metadata reviewed October 13, 2026. The repository exposes an MIT license; the reviewed commit is dated September 17, 2026 and its message says 'v5 dataset changes'. Code was not fetched, installed or executed, and its exact alignment with the August 6 Zenodo v5 record was not verified."
+    "origin": "Official GitHub repository page and API metadata reviewed October 13, 2026. The repository exposes an MIT license; the reviewed commit is dated September 17, 2026 and its message says 'v5 dataset changes'. Targeted raw source files at that commit were fetched transiently for static review, not stored, installed or executed. The reader pins record 21829388, its README lists the v5 filenames, and the metadata header contains fields used by the reader. This is documentation/schema compatibility evidence only; file-byte integrity and annotation joins were not verified."
   }
 ]
