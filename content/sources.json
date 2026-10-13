@@ -4,10 +4,8 @@
     "title": "Bird-call syntax",
     "description": "Suzuki, Wheatcroft & Griesser. Experimental evidence for compositional syntax in bird calls. Nature Communications (2016). Playback experiments in Japanese tits; species-specific evidence.",
     "url": "https://www.nature.com/articles/ncomms10986",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes.",
-    "review_url": "https://www.researchgate.net/publication/297568801_Experimental_evidence_for_compositional_syntax_in_bird_calls",
-    "review_url_label": "Author-uploaded full text used for the methods review"
+    "checked": "2026-10-13",
+    "origin": "Founding audit source inventory; publisher full text directly reviewed for methods, results, figures and ethics on October 13, 2026. Review depth is recorded separately in the research note."
   },
   {
     "id": 2,
@@ -154,9 +152,9 @@
   {
     "id": 19,
     "title": "2026 Coller Dolittle award",
-    "description": "Jeremy Coller Foundation. 2026 award announcement (26 June 2026). Organizational account of Julie Elie's zebra finch work; not a substitute for reading the underlying study.",
+    "description": "Jeremy Coller Foundation. Official 26 June 2026 award announcement. It says 2027 prize submissions close 30 August 2026; this conflicts with the Tel Aviv University challenge page, which states 30 September 2026.",
     "url": "https://www.jeremycollerfoundation.org/news-and-insights/press-releases/scientists-win-us100-000-in-2026-coller-dolittle-prize",
-    "checked": "2026-09-30",
+    "checked": "2026-10-13",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -204,9 +202,9 @@
   {
     "id": 25,
     "title": "Coller Dolittle current rules",
-    "description": "Tel Aviv University / Jeremy Coller Foundation. Current challenge page; checked 30 September 2026, 14:28 UTC.",
+    "description": "Tel Aviv University-hosted official challenge page. It says 2027 submissions close 30 September 2026 by noon CET and the award recognizes work already performed; the Foundation's June 2026 announcement states 30 August.",
     "url": "https://coller-dolittle-24.sites.tau.ac.il/",
-    "checked": "2026-09-30",
+    "checked": "2026-10-13",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -284,9 +282,9 @@
   {
     "id": 35,
     "title": "NLnet current call and GenAI policy notice",
-    "description": "NLnet's Restack and CodeSupply calls close November 3, 2026 at 12:00 CET. The call notice says mostly LLM-generated work is currently ineligible and the GenAI policy is being revised; it advises LLM-using projects to wait for the new policy.",
+    "description": "NLnet's Restack and CodeSupply calls close November 3, 2026 at 12:00 CET. The September 2026 notice says mostly LLM-generated work is ineligible, announces a planned GenAI policy revision, and advises LLM-using projects to wait before applying.",
     "url": "https://nlnet.nl/news/2026/20260903-call.html",
-    "checked": "2026-10-11",
+    "checked": "2026-10-13",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
@@ -1505,9 +1503,9 @@
     "id": 150,
     "title": "NLnet Restack program and current call",
     "url": "https://nlnet.nl/restack/",
-    "description": "Official program scope and November 3, 2026 call. Restack funds open internet infrastructure and foundational technologies, and explicitly excludes AI-related projects except for a narrowly defined exception.",
-    "checked": "2026-10-11",
-    "origin": "Official NLnet Restack program page reviewed October 11, 2026; the cited scope and exception are recorded in the opportunity assessment."
+    "description": "Official program scope and November 3, 2026 call. Restack supports open internet stack infrastructure, but excludes AI-related projects except those already used by more than one million active human users and directly relevant to the stack.",
+    "checked": "2026-10-13",
+    "origin": "Official NLnet Restack program page reviewed October 13, 2026; current scope and AI exception are recorded in the opportunity assessment."
   },
   {
     "id": 151,
@@ -1521,9 +1519,9 @@
     "id": 152,
     "title": "NLnet CodeSupply program and current call",
     "url": "https://nlnet.nl/codesupply/",
-    "description": "Official program page: November 3, 2026 deadline and €5,000–€50,000 proposals for open-source software supply-chain metadata work covering provenance, licensing, vulnerabilities, security and compliance.",
-    "checked": "2026-10-11",
-    "origin": "Official NLnet CodeSupply program page reviewed October 11, 2026; scope and proposal range are summarized."
+    "description": "Official program page: the first call closes November 3, 2026 at 12:00 CET; proposals are €5,000–€50,000 for free/open-source work contributing to software supply-chain metadata and infrastructure.",
+    "checked": "2026-10-13",
+    "origin": "Official NLnet CodeSupply page reviewed October 13, 2026; current deadline, range, objectives and open-source requirements were checked."
   },
   {
     "id": 153,
@@ -2735,5 +2733,252 @@
     "rights": {
       "dataset": "The NLM catalog reports CC BY 4.0 for the linked Figshare item. This cataloged license declaration does not establish consent scope, privacy clearance or the contents of the XLSX."
     }
+  },
+  {
+    "id": 262,
+    "title": "Japanese-tit call combination and source-linkage experiment",
+    "description": "Suzuki & Matsumoto (2022), Experimental evidence for core-Merge in the vocal communication system of a wild passerine. A field playback study tested whether Japanese tits' mobbing responses depended on call order and whether two call types came from one or two speaker locations.",
+    "url": "https://www.nature.com/articles/s41467-022-33360-3",
+    "checked": "2026-10-13",
+    "origin": "Directly reviewed the publisher full text: abstract, selected Methods and Results, ethics, data/code statements and rights. The study used 64 flocks across four playback treatments; no data or code files were downloaded or run.",
+    "rights": {
+      "article": "Publisher states CC BY 4.0 for the article. Data/code are separate resources and are not cleared by the article license."
+    }
+  },
+  {
+    "id": 263,
+    "title": "Japanese-tit core-Merge study data and analysis code deposit",
+    "description": "The 2022 article identifies a Figshare deposit for its study data and R analysis code: DOI 10.6084/m9.figshare.18007046. The deposit contents and license have not yet been verified.",
+    "url": "https://doi.org/10.6084/m9.figshare.18007046",
+    "checked": "2026-10-13",
+    "origin": "The 2022 article's data and code availability statements point to this deposit. The DOI landing-page request returned HTTP 403 in this review; no file list, license or file bytes were inspected.",
+    "rights": {
+      "data_and_code": "Unverified. Do not download, execute, redistribute or use for training until the deposit record, exact files and their terms are reviewed."
+    }
+  },
+  {
+    "id": 264,
+    "title": "Japanese-tit ordering rule for novel cross-species call sequences",
+    "description": "Suzuki, Wheatcroft & Griesser (2017), Wild Birds Use an Ordering Rule to Decode Novel Call Sequences. Japanese tits responded differently to a novel ABC–tää sequence and its reversal; ABC–zi controls tested whether ABC-first alone explained the pattern.",
+    "url": "https://doi.org/10.1016/j.cub.2017.06.031",
+    "checked": "2026-10-13",
+    "origin": "Reviewed publisher-indexed primary text for the abstract, selected Results, STAR Methods, statistical analysis and data statement, plus the PubMed bibliographic/abstract record. Direct ScienceDirect retrieval returned HTTP 403; the institutional repository was anti-bot blocked. No article PDF, figures, supplement, data or code files were downloaded.",
+    "rights": {
+      "article": "ScienceDirect describes an Elsevier user license; PubMed displays Elsevier copyright. Exact reuse scope was not retrieved. No article text or figures are reproduced here."
+    }
+  },
+  {
+    "id": 265,
+    "title": "Japanese-tit novel call-sequence experiment data",
+    "description": "Mendeley Data v1, DOI 10.17632/r7v96zf5pp.1. The record describes raw playback-experiment data and acoustic analyses and displays CC BY 4.0. The landing page exposes no file rows; an unauthenticated request to the documented public-dataset API returned HTTP 401.",
+    "url": "https://data.mendeley.com/datasets/r7v96zf5pp/1",
+    "checked": "2026-10-13",
+    "origin": "Read the official Mendeley Data v1 landing page and official Mendeley Datasets API guide. The page listed no file rows. An unauthenticated GET to https://api.mendeley.com/datasets/r7v96zf5pp?version=1 returned HTTP 401; the API guide's retrieval examples require a Bearer token. No credential, API client or data file was used.",
+    "rights": {
+      "dataset": "The Mendeley record displays CC BY 4.0. This applies to the deposit as represented by that record; exact included files, file-level notices, attribution details and any audio/privacy content remain unreviewed."
+    }
+  },
+  {
+    "id": 266,
+    "title": "Minimal Compositionality versus Bird Implicatures in Japanese tits",
+    "description": "Schlenker et al. (2024), Biological Reviews 99:1278–1297, DOI 10.1111/brv.13068. The article abstract compares a limited compositional-semantics account with a pragmatic-implicature account for ABC–D sequences.",
+    "url": "https://doi.org/10.1111/brv.13068",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the publisher abstract and citation metadata. The publisher lists a 211 KB supporting-information PDF with Appendix S1 and formal analyses in Appendix S2; direct retrieval returned HTTP 403, so neither the full article nor supplement was reviewed.",
+    "rights": {
+      "article": "Reuse license for the article and supplement not established in this abstract-only review. Link the publisher record; do not reproduce text or figures."
+    }
+  },
+  {
+    "id": 267,
+    "title": "Mendeley Data public-dataset API retrieval documentation",
+    "description": "Official API guidance for retrieving published datasets. The examples use Bearer-token authorization; an unauthenticated metadata request for the Japanese-tit v1 deposit returned HTTP 401 on 2026-10-13.",
+    "url": "https://dev.mendeley.com/code/datasets_quick_start_guides.html",
+    "checked": "2026-10-13",
+    "origin": "Reviewed Mendeley's official Datasets API quick-start and API reference. The documentation demonstrates an Authorization: Bearer header for published-dataset retrieval. Independently tested the target public-dataset endpoint without credentials and observed HTTP 401; no authentication flow was started.",
+    "rights": {
+      "documentation": "No reuse license was established in this review. Link to the official documentation; no text or code is reproduced."
+    }
+  },
+  {
+    "id": 268,
+    "title": "Carolina-wren mobbing sequences and great-tit receiver responses",
+    "description": "Coye & Dutour (2025), Mobbing sequences of American wrens elicit mobbing responses in European tits. Publisher-indexed Methods and Results describe a six-treatment playback with 96 wild great tits; direct publisher retrieval returned HTTP 403.",
+    "url": "https://doi.org/10.1016/j.anbehav.2024.12.006",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the publisher-indexed Methods, Results and Discussion passages for the 96-bird, six-treatment playback and the official University of Western Australia repository record for the abstract and access/license metadata. Direct ScienceDirect retrieval returned HTTP 403. No article file, stimulus, dataset or code was acquired.",
+    "rights": {
+      "article": "The UWA repository record links the published article under CC BY 4.0. This does not license the separate Macaulay Library or Xeno-Canto source recordings used to construct stimuli. No article file or third-party audio was copied."
+    }
+  },
+  {
+    "id": 269,
+    "title": "University of Western Australia record for the Carolina-wren playback study",
+    "description": "Institutional research-repository metadata and abstract for Coye & Dutour (2025), including the DOI, publication details and a CC BY 4.0 access-license link.",
+    "url": "https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the institutional record's authors, abstract, journal/volume/article number, early-online and publication dates, DOI, and Access to Document license link. The record links to the DOI rather than exposing an article file; no full text or underlying data was acquired.",
+    "rights": {
+      "repository_record": "The repository page carries its own copyright notice. Its Access to Document field links the article to CC BY 4.0; that license is scoped to the article and not the source recordings."
+    }
+  },
+  {
+    "id": 270,
+    "title": "Evidence for resource transfer via common endophyte networks",
+    "description": "Waschk et al. (2026), Scientific Reports 16, article 26111. A controlled Arabidopsis experiment reports isotope enrichment in receiver plants linked by common endophyte networks; it does not test plant-to-plant communication or signal interpretation.",
+    "url": "https://www.nature.com/articles/s41598-026-56653-9",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the full publisher article, including abstract, results, methods, statistical analysis, study limitations, data-availability statement and rights. The paper points to a separate GitLab project for data and R scripts; none of those files were acquired or run.",
+    "rights": {
+      "article": "The publisher identifies the article as CC BY 4.0. This applies to the article, subject to third-party credit lines; no article text or figures are reproduced here."
+    }
+  },
+  {
+    "id": 271,
+    "title": "Common endophyte network data and analysis repository",
+    "description": "The paper-linked public GitLab project fungalecology/cen, pinned to main commit 5b4ea51c038213e62feb6580daa5a48ccbfa32ff (2025-12-04). Its root metadata lists CEN.csv and two R scripts but no README or license file; the project API exposes no license declaration.",
+    "url": "https://gitlab.com/fungalecology/cen/-/tree/5b4ea51c038213e62feb6580daa5a48ccbfa32ff",
+    "checked": "2026-10-13",
+    "origin": "Reviewed the official GitLab project API, latest main commit, root tree and per-file metadata for CEN.csv and the two R scripts. File sizes came from API metadata only; no file bytes, code, README, dependency list or license text were retrieved or executed.",
+    "rights": {
+      "data": "No dataset license was declared in the project API or visible root files reviewed. Exact file terms and permitted reuse remain unresolved.",
+      "code": "No code license was declared in the project API or visible root files reviewed. Do not execute, adapt or redistribute the scripts until their terms are established."
+    }
+  },
+  {
+    "id": 272,
+    "title": "NLnet CodeSupply eligibility requirements",
+    "description": "The official eligibility page allows individuals and organizations but requires a strong European dimension; the usual route is a team from Horizon Europe-eligible countries receiving at least 60% of funds. Activities must have a clear link to CodeSupply objectives.",
+    "url": "https://nlnet.nl/codesupply/eligibility/",
+    "checked": "2026-10-13",
+    "origin": "Official NLnet CodeSupply eligibility page reviewed October 13, 2026; activity scope and geographic/funding conditions were checked."
+  },
+  {
+    "id": 273,
+    "title": "NLnet GenAI policy, version 1.1",
+    "description": "The policy page lists version 1.1 as valid from January 26, 2026. Proposal use of GenAI must be disclosed with a prompt provenance log; substantive generated code must be transparently attributed, and purely AI-generated work is not eligible to be presented as paid human work.",
+    "url": "https://nlnet.nl/foundation/policies/generativeAI/",
+    "checked": "2026-10-13",
+    "origin": "Official NLnet policy page reviewed October 13, 2026; current version, application disclosure, development transparency and licensing requirements were checked."
+  },
+  {
+    "id": 274,
+    "title": "NLnet current application form",
+    "description": "The official proposal form lists a November 3, 2026 noon CET deadline, a €5,000–€50,000 first-grant range, AI disclosure and prompt-log fields, and applicant country and European-dimension questions.",
+    "url": "https://nlnet.nl/propose/",
+    "checked": "2026-10-13",
+    "origin": "Official NLnet application form reviewed October 13, 2026; no form was started or submitted."
+  },
+  {
+    "id": 275,
+    "title": "Contextual flexibility in the vocal repertoire of an Amazon parrot",
+    "description": "Montes-Medina, Salinas-Melgoza and Renton. Frontiers in Zoology 13:40 (2016). Full-text field study of Lilac-crowned Amazon note types across nine behavioral contexts; context association and note-type discrimination are distinct outcomes.",
+    "url": "https://doi.org/10.1186/s12983-016-0169-6",
+    "checked": "2026-10-13",
+    "origin": "Publisher full text reviewed for methods, statistical analyses, results, discussion, data availability and rights. The additional-file list was inspected; selected binary fetches through the research viewer failed or timed out, and no article supplement was acquired."
+  },
+  {
+    "id": 276,
+    "title": "Digital Public Goods Standard",
+    "description": "The DPGA's current public Standard page lists criteria for SDG relevance, open licensing, ownership, platform independence, documentation, data extraction, privacy/law, standards and best practices, and safeguards for privacy/security, content and harassment.",
+    "url": "https://www.digitalpublicgoods.net/standard",
+    "checked": "2026-10-13",
+    "origin": "Official DPGA Standard page reviewed October 13, 2026; current indicators, component scope, standard license and registry process were checked. The page did not state a version number."
+  },
+  {
+    "id": 277,
+    "title": "Digital Public Goods Alliance application FAQ",
+    "description": "The DPGA FAQ describes a two-reviewer assessment, registry discovery benefits and one-year validity for recognized status, with annual review against the current Standard.",
+    "url": "https://www.digitalpublicgoods.net/digital-public-goods/faqs",
+    "checked": "2026-10-13",
+    "origin": "Official DPGA application FAQ reviewed October 13, 2026; review process and status duration were checked. No eligibility form was filled or submitted."
+  },
+  {
+    "id": 278,
+    "title": "United Nations Sustainable Development Goal 15",
+    "description": "UN Goal 15 targets include target 15.5 on reducing natural-habitat degradation, halting biodiversity loss and preventing species extinction; Talk2Nature relevance remains a hypothesis without measured conservation outcomes.",
+    "url": "https://sdgs.un.org/goals/goal15",
+    "checked": "2026-10-13",
+    "origin": "Official UN Department of Economic and Social Affairs Goal 15 page reviewed October 13, 2026; target 15.5 wording and context were checked."
+  },
+  {
+    "id": 279,
+    "title": "United Nations Sustainable Development Goal 4",
+    "description": "UN Goal 4 target 4.7 covers education for sustainable development; Talk2Nature relevance remains a hypothesis without learner-outcome evidence.",
+    "url": "https://sdgs.un.org/goals/goal4",
+    "checked": "2026-10-13",
+    "origin": "Official UN Department of Economic and Social Affairs Goal 4 page reviewed October 13, 2026; target 4.7 wording and context were checked."
+  },
+  {
+    "id": 280,
+    "title": "Citizen-science and expert nightingale recordings",
+    "description": "Jäckel et al. (2021), PLOS ONE 16:e0253763. A Berlin citizen-science study compared app recordings and professional recordings for nightingale song; it also tested device-specific acoustic deviations.",
+    "url": "https://doi.org/10.1371/journal.pone.0253763",
+    "checked": "2026-10-13",
+    "origin": "PLOS ONE full text reviewed for methods, results, discussion, data availability and rights. Article says the dataset is deposited in Zenodo; the deposit metadata and files were not reviewed or acquired."
+  },
+  {
+    "id": 281,
+    "title": "Nightingale citizen-science recording data",
+    "description": "Zenodo DOI 10.5281/zenodo.4817236, cited by the PLOS ONE article as the openly published study data.",
+    "url": "https://doi.org/10.5281/zenodo.4817236",
+    "checked": "2026-10-13",
+    "origin": "The dataset DOI was checked in the PLOS ONE data-availability statement. Zenodo record metadata, version, files, license and privacy were not independently verified. No files were accessed."
+  },
+  {
+    "id": 282,
+    "title": "Built-in mobile microphones for bat monitoring",
+    "description": "Gili, Bertolino & Rolando (2024), Biodiversity and Conservation 33:1623–1643. Field and participatory comparisons of built-in mobile microphones with a bat detector across selected low-frequency bat calls.",
+    "url": "https://doi.org/10.1007/s10531-024-02818-9",
+    "checked": "2026-10-13",
+    "origin": "Full publisher article reviewed for methods, results, discussion, data availability and rights. No recordings, code or supplementary files were acquired or reproduced."
+  },
+  {
+    "id": 283,
+    "title": "Bat recordings collected by mobile devices",
+    "description": "Dryad DOI 10.5061/dryad.2280gb5z4, cited by the 2024 bat-monitoring paper as the location of mobile-device recordings.",
+    "url": "https://doi.org/10.5061/dryad.2280gb5z4",
+    "checked": "2026-10-13",
+    "origin": "Dryad's version dated March 13, 2024 was reviewed on October 13, 2026, including the visible file inventory and embedded README. It lists 80 sampling-session folders and site-code-to-municipality mappings. The direct README download returned HTTP 403; no audio or archive was downloaded. The item page does not display a record-specific license."
+  },
+  {
+    "id": 284,
+    "title": "Dryad data reuse and CC0 policy",
+    "description": "Dryad's current reuse guide states that all datasets hosted by Dryad are published under CC0 1.0 and recommends scholarly citation. This platform policy does not replace inspection of a specific record's files, provenance, privacy or sensitive-species context.",
+    "url": "https://dev.datadryad.org/help/guides/reuse",
+    "checked": "2026-10-13",
+    "origin": "Official Dryad reuse guidance reviewed October 13, 2026. It states all Dryad datasets are CC0 and that the dedication permits reuse, modification, sharing and redistribution, including commercial use; citation is recommended."
+  },
+  {
+    "id": 285,
+    "title": "Dryad responsible data-sharing guidance",
+    "description": "Dryad's data-sharing guidance says to anonymize human-subject data and consider masking locations for vulnerable or endangered species; it also recommends complete READMEs and reproducible context.",
+    "url": "https://datadryad.org/help/guides/best_practices",
+    "checked": "2026-10-13",
+    "origin": "Official Dryad good-data-practices guidance reviewed October 13, 2026, including CC0 compatibility, human-subject privacy, sensitive-species location masking and README requirements."
+  },
+  {
+    "id": 286,
+    "title": "A strongly annotated passive acoustic dataset for tropical bird monitoring (arXiv v2)",
+    "description": "Ruiz et al. (2026), arXiv:2605.20578v2. Methods and evaluation for PteroSet, a strongly time-frequency-annotated Neotropical bird soundscape dataset and bird-presence baseline.",
+    "url": "https://arxiv.org/html/2605.20578v2",
+    "checked": "2026-10-13",
+    "origin": "Full arXiv v2 HTML reviewed October 13, 2026, including data collection, annotation, data-record structure, technical validation, project splits, results, discussion and rights. The manuscript states CC BY 4.0; it is a preprint, not independent Talk2Nature reproduction or expert review. No files were acquired."
+  },
+  {
+    "id": 287,
+    "title": "PteroSet version 5 dataset record",
+    "description": "Zenodo version DOI 10.5281/zenodo.21829388, published August 6, 2026; concept DOI 10.5281/zenodo.18554918. The versioned record declares CC BY 4.0 and lists 12 files with sizes and provider MD5 checksums.",
+    "url": "https://doi.org/10.5281/zenodo.21829388",
+    "checked": "2026-10-13",
+    "origin": "Official Zenodo v5 landing page and record API reviewed October 13, 2026. The API confirms the version DOI, concept DOI, CC BY 4.0 and 12-file manifest; no data, annotations, checkpoints or audio bytes were downloaded."
+  },
+  {
+    "id": 288,
+    "title": "Microsoft PteroSet code repository at reviewed commit",
+    "description": "The public microsoft/PteroSet repository provides the dataset-processing, annotation-conversion and baseline code; the reviewed master commit is b6aaf57ac32f93715e3570538f3580a78a80b741.",
+    "url": "https://github.com/microsoft/PteroSet/tree/b6aaf57ac32f93715e3570538f3580a78a80b741",
+    "checked": "2026-10-13",
+    "origin": "Official GitHub repository page and API metadata reviewed October 13, 2026. The repository exposes an MIT license; the reviewed commit is dated September 17, 2026 and its message says 'v5 dataset changes'. Code was not fetched, installed or executed, and its exact alignment with the August 6 Zenodo v5 record was not verified."
   }
 ]

@@ -73,6 +73,26 @@ class SiteTests(unittest.TestCase):
             self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/BAT_CONTEXT_REVIEW.md',page)
             self.assertIn('scientific-review.yml',page)
 
+    def test_nlnet_funding_page_links_current_scope_and_ai_policy_gates(self):
+        opportunities=load('opportunities')
+        sources={item['id']:item for item in load('sources')}
+        codesupply=next(item for item in opportunities if item['slug']=='nlnet-codesupply')
+        self.assertEqual(codesupply['status'],'Open · conditional fit not established')
+        self.assertEqual(codesupply['deadline'],'2026-11-03')
+        self.assertEqual(codesupply['terms_source_id'],272)
+        self.assertEqual(sources[codesupply['genai_policy_source_id']]['url'],'https://nlnet.nl/foundation/policies/generativeAI/')
+        self.assertIn('strong European dimension',codesupply['next_action'])
+        self.assertIn('No proposal has been drafted or submitted.',codesupply['next_action'])
+        restack=next(item for item in opportunities if item['slug']=='nlnet-restack')
+        self.assertIn('one million active human users',restack['fit'])
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d))
+            page=(Path(d)/'opportunities'/'index.html').read_text()
+            self.assertIn('Official GenAI policy ↗',page)
+            self.assertIn('https://nlnet.nl/foundation/policies/generativeAI/',page)
+            self.assertIn('Current application form ↗',page)
+            self.assertIn('conditional fit not established',page)
+
     def test_local_preview_is_complete_and_noindex(self):
         with tempfile.TemporaryDirectory() as d:
             build(Path(d))
@@ -582,7 +602,7 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(sum(source['id']==121 for source in load('sources')),1)
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
             self.assertIn('official date details',page)
-            self.assertIn('Checked 2026-10-11 · Not submitted; not recommended for current scope',page)
+            self.assertIn('Checked 2026-10-13 · Not submitted; not recommended for current scope',page)
             self.assertIn('No company or investor facts are confirmed',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
             self.assertIn('Official track rules ↗',page)
@@ -595,9 +615,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn('https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf',page)
             self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/',page)
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
-            self.assertIn('explicitly excludes AI-related projects',page)
-            self.assertIn('software supply-chain datasets',page)
-            for source_id in (150,151,152,154,155,158,159):
+            self.assertIn('excludes AI-related projects unless they already have more than one million active human users',page)
+            self.assertIn('software supply-chain metadata',page)
+            self.assertIn('conditional fit not established',page)
+            self.assertIn('Official GenAI policy ↗',page)
+            self.assertIn('Current call and policy notice ↗',page)
+            self.assertIn('Current application form ↗',page)
+            for source_id in (150,151,152,154,155,158,159,272,273,274):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_biodivfuture_call_links_rules_and_discloses_deadline_conflict(self):
@@ -717,6 +741,18 @@ class SiteTests(unittest.TestCase):
             about=(root/'about/index.html').read_text()
             self.assertIn('temporary aggregate readings, never saves or uploads sound',about)
 
+    def test_station_discloses_device_variability_before_capture_controls(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            page=(root/'app'/'station'/'index.html').read_text()
+            copy=re.search(r'<p id="station-device" class="station-footnote">(.*?)</p>',page)
+            self.assertIsNotNone(copy)
+            self.assertIn('Phone microphones may filter or change sounds.',copy.group(1))
+            self.assertIn('The level meter is not calibrated',copy.group(1))
+            self.assertIn('does not identify animals',copy.group(1))
+            self.assertLess(page.index('id="station-device"'),page.index('id="station-record-controls"'))
+            self.assertLess(page.index('id="station-record-controls"'),page.index('id="station-settings"'))
+
     def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -744,6 +780,22 @@ class SiteTests(unittest.TestCase):
             self.assertIn(guidance,station)
             self.assertLess(station.index('id="station-retention-guidance"'),station.index('id="station-start"'))
             self.assertIn('aria-describedby="station-retention-guidance"',station)
+
+    def test_companion_home_removes_duplicate_start_and_keeps_the_beginner_paths_clear(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            home=(root/'app/index.html').read_text()
+            self.assertIn('Notice one ordinary moment.',home)
+            self.assertIn('Thirty seconds is enough',home)
+            self.assertIn('the parrot did not prepare a TED talk',home)
+            self.assertIn('Record a moment',home)
+            self.assertIn('Try without a microphone',home)
+            self.assertNotIn('YOUR FIRST LITTLE FIELD NOTE',home)
+            self.assertNotIn('class="field-invitation"',home)
+            self.assertIn('Check your phone at home.',home)
+            self.assertIn('Same place. A different day.',home)
+            self.assertIn('Review a recording',home)
 
     def test_recording_stop_bar_leaves_phone_scroll_space_for_observation_notes(self):
         with tempfile.TemporaryDirectory() as d:
@@ -805,6 +857,123 @@ class SiteTests(unittest.TestCase):
                 if note['review_stage']=='Methods reviewed':
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
+
+    def test_lilac_crowned_amazon_context_note_preserves_evidence_and_rights_boundaries(self):
+        note=next(n for n in load('research') if n['slug']=='lilac-crowned-amazon-vocal-context-2016')
+        self.assertEqual(note['source_ids'],[275])
+        self.assertIn('not prediction of behavior from sound',note['finding'])
+        self.assertIn('playback evidence is needed',note['limitations'])
+        self.assertEqual(note['atlas']['locations'][0]['place_id'],'chamela-cuixmala')
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        paper=next(r for r in resources if r['id']=='lilac-crowned-amazon-context-paper-2016')
+        supplements=next(r for r in resources if r['id']=='lilac-crowned-amazon-context-supplements-2016')
+        self.assertIn('CC-BY-4.0',paper['rights']['license'])
+        self.assertIn('CC0',supplements['rights']['license'])
+        self.assertNotEqual(paper['rights']['license'],supplements['rights']['license'])
+        for resource in (paper,supplements):
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research'/'lilac-crowned-amazon-vocal-context-2016'/'index.html').read_text()
+            self.assertIn('content="index,follow"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/lilac-crowned-amazon-vocal-context-2016/',page)
+            self.assertIn('https://doi.org/10.1186/s12983-016-0169-6',page)
+            self.assertIn('note-type discrimination',page)
+            self.assertIn('lilac-crowned-amazon-vocal-context-2016/',(root/'sitemap.xml').read_text())
+
+    def test_mobile_bioacoustics_note_keeps_device_claims_bounded_and_data_metadata_only(self):
+        note=next(n for n in load('research') if n['slug']=='smartphone-bioacoustics-device-variability')
+        self.assertEqual(note['source_ids'],[280,282,283,284,285])
+        self.assertIn('53% of citizen recordings',note['finding'])
+        self.assertIn('35 phone models',note['finding'])
+        self.assertIn('does not establish general ultrasonic capture above that range',note['limitations'])
+        self.assertIn('not microphone calibration',note['lesson'])
+        self.assertIn('17.46 MB',note['study_snapshot'][-3][1])
+        self.assertIn('HTTP 403',note['study_snapshot'][-3][1])
+        self.assertEqual(note['atlas']['location_status'],'not_applicable')
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        ids={
+            'nightingale-smartphone-recordings-paper-2021',
+            'nightingale-smartphone-recordings-data-2021',
+            'mobile-bat-monitoring-paper-2024',
+            'mobile-bat-monitoring-data-2024',
+        }
+        selected=[r for r in resources if r['id'] in ids]
+        self.assertEqual({r['id'] for r in selected},ids)
+        for resource in selected:
+            self.assertTrue(resource['source_ids'])
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+        nightingale=next(r for r in selected if r['id']=='nightingale-smartphone-recordings-data-2021')
+        self.assertEqual(nightingale['rights']['license'],'Unverified at deposit level')
+        self.assertEqual(nightingale['rights']['research_use'],'unresolved')
+        bats=next(r for r in selected if r['id']=='mobile-bat-monitoring-data-2024')
+        self.assertIn('CC0 1.0',bats['rights']['license'])
+        self.assertEqual(bats['rights']['research_use'],'conditional')
+        self.assertIn('17.46 MB',bats['access'])
+        self.assertIn('3.89 GB',bats['access'])
+        self.assertIn(284,bats['source_ids'])
+        self.assertIn(285,bats['source_ids'])
+        self.assertIn('smartphone-bioacoustics-device-variability',next(p for p in load('learning-paths')['paths'] if p['id']=='first-animal')['notes'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research'/'smartphone-bioacoustics-device-variability'/'index.html').read_text()
+            station=(root/'app'/'station'/'index.html').read_text()
+            self.assertIn('content="index,follow"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/smartphone-bioacoustics-device-variability/',page)
+            self.assertIn('17.46 MB',page)
+            self.assertIn('https://dev.datadryad.org/help/guides/reuse',page)
+            self.assertIn('The level meter is not calibrated',station)
+            self.assertIn('smartphone-bioacoustics-device-variability/',(root/'sitemap.xml').read_text())
+
+    def test_pteroset_review_keeps_detection_scope_rights_and_file_provenance_separate(self):
+        note=next(n for n in load('research') if n['slug']=='pteroset-detection-benchmark-2026')
+        self.assertEqual(note['source_ids'],[286,287,288])
+        self.assertIn('not what a bird is communicating',note['finding'])
+        self.assertIn('only the MAP1 test fold holds out a distinct named landscape',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        self.assertIn('file bytes or metadata headers were checked',note['limitations'])
+        self.assertIn('record 21829388',note['next_review'])
+        sources={s['id']:s for s in load('sources')}
+        self.assertEqual({286,287,288} & sources.keys(),{286,287,288})
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        ids={'pteroset-paper-2026','pteroset-data-v5-2026','pteroset-code-2026','pteroset-checkpoints-2026'}
+        selected={r['id']:r for r in resources if r['id'] in ids}
+        self.assertEqual(set(selected),ids)
+        for resource in selected.values():
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+            self.assertTrue(resource['source_ids'])
+        self.assertIn('CC BY 4.0',selected['pteroset-paper-2026']['rights']['license'])
+        self.assertIn('CC BY 4.0',selected['pteroset-data-v5-2026']['rights']['license'])
+        self.assertIn('MIT',selected['pteroset-code-2026']['rights']['license'])
+        self.assertEqual(selected['pteroset-checkpoints-2026']['rights']['research_use'],'unresolved')
+        code=selected['pteroset-code-2026']
+        self.assertIn('record 21829388',code['decision'])
+        self.assertIn('breakpoint()',code['limitations'])
+        self.assertIn('latest Zenodo version',code['limitations'])
+        self.assertIn('latitude and longitude',code['limitations'])
+        manifest=selected['pteroset-data-v5-2026']['source_manifest']
+        self.assertEqual(len(manifest),12)
+        self.assertEqual(len({row['name'] for row in manifest}),12)
+        self.assertTrue(all(row['size']>0 and re.fullmatch(r'md5:[0-9a-f]{32}',row['checksum']) for row in manifest))
+        paths=load('learning-paths')['paths']
+        for path_id in ('detect','model'):
+            self.assertIn(note['slug'],next(p for p in paths if p['id']==path_id)['notes'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research'/'pteroset-detection-benchmark-2026'/'index.html').read_text()
+            canonical='https://fixture.github.io/talk2nature/research/pteroset-detection-benchmark-2026/'
+            self.assertIn('content="index,follow"',page)
+            self.assertIn(canonical,page)
+            self.assertIn('PteroSet',page)
+            self.assertIn('https://doi.org/10.5281/zenodo.21829388',page)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
 
     def test_whombat_aoef_bridge_is_indexable_with_verified_scope_and_limits(self):
         note=next(n for n in load('research') if n['slug']=='whombat-annotation-workbench')

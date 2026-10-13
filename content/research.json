@@ -7,36 +7,54 @@
     "year": "2016",
     "source_ids": [
       1,
-      50
+      50,
+      262,
+      263,
+      264,
+      265,
+      266
     ],
-    "review_depth": "Primary-paper methods, results and figure captions reviewed via author-uploaded text; interpretive commentary also consulted. No replication.",
-    "finding": "Japanese tit playback experiments link call combinations and order to distinct receiver responses.",
-    "limitations": "This supports a bounded interpretation in this species. Commentary distinguishes compositionality from stronger human-like systematicity; general language ability is not established.",
-    "lesson": "Test a proposed meaning against receiver behavior and carefully matched controls.",
-    "next_review": "Ask a qualified researcher which inference and controls could transfer to the chosen pilot.",
-    "reviewed": "2026-09-30",
+    "review_depth": "Direct publisher full text reviewed for the 2016 primary paper (Methods, Experiments 1–2, Results, figures and ethics) and 2022 follow-up (selected Methods, Results, ethics, data/code statements and rights). For the 2017 paper, publisher-indexed primary text exposed the abstract, selected Results, STAR Methods, statistics and data statement; its direct ScienceDirect page returned HTTP 403. The 2017 Mendeley Data v1 landing metadata and record-level license were reviewed, but its files were not. The 2024 alternative-theory paper was reviewed at abstract level only. No data/code inspection, reproduction or independent specialist review.",
+    "seo_description": "Research on Japanese great-tit call combinations, order and receiver behavior, with clear limits on claims about animal language and translation.",
+    "finding": "Japanese great tits showed different scanning and approach responses to component calls, natural versus reversed call order, and one bounded novel cross-species sequence: ABC followed by the willow tit recruitment call tää elicited stronger responses than tää–ABC. A matched ABC–zi control did not support the simpler rule that any sequence beginning with ABC elicits the response. A later field experiment also found mobbing responses depended on the alert–recruitment sequence being temporally ordered and broadcast from one source.",
+    "limitations": "These are species-, population- and task-bounded receiver-response results, not general animal-language or translation evidence. The 2017 novelty test combined a familiar heterospecific call type with Japanese-tit calls; it does not establish open-ended productivity. Its comparison with ABC–D used earlier data from another year. The 2022 study extends the same research line in the same species, not an independent replication. A 2024 theory paper's abstract contrasts limited compositional semantics with a pragmatic-implicature account, so the behavioral pattern does not settle its theoretical explanation. No Talk2Nature playback or animal-facing experiment is proposed by this summary.",
+    "lesson": "Use independently observable receiver behavior and matched component, order and source controls. Test whether a rule generalizes beyond one familiar call substitution, and compare explicit competing explanations. Report measured behavior rather than a verbal translation; transfer methods only under qualified scientific and animal-welfare oversight.",
+    "next_review": "Verify the 2017 Mendeley Data file inventory and exact file terms through an authorized route; determine whether it contains audio or only tabular outcomes, and whether published analyses can be reproduced. Then seek independent comparative-communication review of the competing explanations and any method relevant to passive Talk2Nature observations.",
+    "reviewed": "2026-10-13",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Methods reviewed",
+    "review_stage": "Primary evidence and alternative theory reviewed",
     "year_label": "Source year",
     "study_snapshot": [
       [
         "Study unit",
-        "21 birds in the first playback experiment; 34 in the ordering experiment."
+        "2016: 21 adult birds in the component experiment; 34 different birds in the order experiment (17 per treatment)."
       ],
       [
         "Design",
-        "First experiment: within-bird call components, combined calls and background control, with randomized treatment order."
+        "2016 component experiment: ABC, D, ABC–D and matched background control; call treatments used matched exemplars and randomized order."
       ],
       [
         "Ordering test",
-        "17 birds per condition: natural versus reversed sequences, with other acoustic features matched."
+        "2016 order test: natural ABC–D versus reversed D–ABC, with call exemplars and interval features balanced; one treatment per bird."
+      ],
+      [
+        "Novel sequence",
+        "2017: 56 birds, 14 per condition; ABC–tää responses were stronger than tää–ABC, while ABC–zi and zi–ABC responses were both weak and similar."
+      ],
+      [
+        "Call controls",
+        "2017 follow-up: 42 flocks, 14 per call type; D, tää and shortened-tää playbacks tested call category and acoustic-similarity alternatives."
+      ],
+      [
+        "Source-linkage test",
+        "2022 follow-up: 64 flocks, 16 per condition; one/two speakers crossed with natural/reversed order, with a shrike model present."
       ],
       [
         "Outcomes",
-        "Scanning and speaker approach, rather than an AI-generated verbal interpretation."
+        "Horizontal scanning, approach and wing-flicking displays, not an AI-generated verbal interpretation. A 2024 abstract outlines two theoretical accounts; its full analysis was not reviewed."
       ]
     ],
-    "review_locator": "Suzuki et al.: Methods, Experiments 1–2; Figures 3–4. Phillips & Wilson: opening argument on systematicity.",
+    "review_locator": "Suzuki et al. 2016: Methods, Experiments 1–2; Results; Figures 3–4; ethics. Suzuki et al. 2017: publisher-indexed Results, STAR Methods, statistics and data availability; direct page inaccessible. Suzuki & Matsumoto 2022: selected Methods/Results; Figures 3–4; data/code availability; rights. Phillips & Wilson 2016: discussion of systematicity. Schlenker et al. 2024: publisher abstract only.",
     "purpose": "Behavior & communication",
     "atlas": {
       "reviewed": "2026-10-03",
@@ -2862,6 +2880,291 @@
       "reviewed": "2026-10-13",
       "location_status": "not_applicable",
       "location_note": "This is a review of data standards, not a study-site or observation record.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "heterospecific-mobbing-sequences",
+    "title": "How great tits respond to a distant species’ mobbing calls",
+    "seo_description": "A 2025 playback study tests great-tit responses to Carolina wren mobbing calls, with limits on what receiver behavior proves about meaning.",
+    "taxon": "Birds",
+    "kind": "Playback experiment",
+    "year": "2025",
+    "source_ids": [
+      268,
+      269
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Publisher-indexed methods/results and institutional abstract reviewed; no article file, data, or independent specialist review",
+    "review_depth": "Reviewed the publisher-indexed Methods, Results and Discussion passages and the University of Western Australia repository abstract and publication/license metadata. The publisher states 96 wild great tits, six playback treatments with 16 birds each, and a single playback per bird. The indexed text exposes stimulus construction and behavioral outcomes; direct ScienceDirect retrieval returned HTTP 403, so figures, supplements, full statistical details, and article-level context were not reviewed.",
+    "finding": "Great tits approached the loudspeaker more often during call playbacks than during control playbacks, but approach did not significantly differ among call treatments. Wing-flicking was more likely after the complete two-part call sequence (labelled FME–D by the authors) than after D-only calls or controls for both great-tit and Carolina-wren stimuli. The study reports no significant difference between the two species’ sequence treatments (P=0.12; wide confidence interval), so it does not establish their equivalence.",
+    "limitations": "This is one field playback study of European great tits responding to unfamiliar Carolina wren calls, not a test of arbitrary call combinations or open-ended communication. The authors note that the alert/recruitment functions of the Carolina wren's FME and D parts were not confirmed. It did not include reversed-order Carolina-wren sequences, so it does not isolate call order as the cause. Carolina-wren stimuli came from four recorded individuals but were reduced to two constructed tracks per call treatment; the authors note that more stimulus diversity would be ideal. Similar behavior can reflect response to a mobbing-like acoustic pattern without demonstrating a shared semantic representation or receiver translation. No Talk2Nature model or app feature was tested.",
+    "lesson": "Treat receiver actions as the measured outcome. To test how a sequence is decoded, compare sequence and component calls, reverse order, control acoustic similarity and novelty, use diverse independent callers, and predefine a receiver-side behavioral measure. Cross-species response is a hypothesis-generating bridge, not evidence of unrestricted shared language.",
+    "next_review": "Review the full article and any trial-level data through an accessible lawful route; verify data availability and exact article terms; then ask an independent avian-communication specialist to assess whether the design distinguishes sequence structure from shared acoustic cues. Do not add animal-directed playback to the Field Companion.",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_locator": "Publisher-indexed Methods: Study Site and Field Procedure; Playback Stimuli; Results; Discussion. UWA repository abstract and Access to Document license metadata. Checked 2026-10-13.",
+    "purpose": "Behavior & communication",
+    "study_snapshot": [
+      [
+        "Study unit",
+        "96 wild great tits near Lyon, France; one playback per bird; 16 birds in each treatment."
+      ],
+      [
+        "Treatments",
+        "Background noise, southern house-wren song, Carolina-wren D, Carolina-wren FME–D, great-tit D, and great-tit FME–D."
+      ],
+      [
+        "Stimulus diversity",
+        "Sixteen great-tit FME–D tracks used one donor individual each. Carolina-wren stimuli drew on four recorded birds but used two constructed tracks per call treatment."
+      ],
+      [
+        "Behavior",
+        "Approach distinguished call from control playbacks, not the call treatments from one another. Wing-flicking was higher after sequence than D/control playbacks; great-tit and Carolina-wren sequence responses did not significantly differ."
+      ],
+      [
+        "Interpretation boundary",
+        "No reversed Carolina-wren sequence was tested. The response is behavioral evidence about this playback context, not a translation or general semantic result."
+      ]
+    ],
+    "year_label": "Publication year",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "mapped",
+      "location_note": "Publisher-indexed Methods place the playback work in mixed forests near Lyon; the public marker is rounded to a broad region and does not identify playback sites.",
+      "locations": [
+        {
+          "place_id": "lyon-region",
+          "role": "study_region",
+          "source_id": 268,
+          "locator": "Methods: Study Site and Field Procedure",
+          "basis": "The source reports mixed forests near Lyon, France; the map uses an editorially rounded regional locator."
+        }
+      ],
+      "observation_period": {
+        "label": "16 playback days in September 2022",
+        "start_year": 2022,
+        "end_year": 2022,
+        "source_id": 268,
+        "locator": "Methods: Study Site and Field Procedure"
+      }
+    }
+  },
+  {
+    "slug": "common-endophyte-networks-resource-transfer",
+    "title": "Common endophyte networks: resource transfer is not communication",
+    "seo_description": "A 2026 controlled study reports isotope transfer through common endophyte networks; it does not test plant-to-plant messages or signal interpretation.",
+    "taxon": "Plants & fungi",
+    "kind": "Controlled plant–fungus isotope experiment",
+    "year": "2026",
+    "year_label": "Published 8 June 2026; version of record 20 August 2026",
+    "source_ids": [
+      270,
+      271
+    ],
+    "reviewed": "2026-10-13",
+    "review_stage": "Full primary article and repository metadata reviewed; no artifact reproduction or independent specialist review",
+    "review_depth": "Full publisher article reviewed: abstract, introduction, results, materials and methods, statistical analysis, data-availability statement, limitations and rights. Official GitLab project metadata, current main commit, root tree and per-file metadata were checked; no dataset bytes, R code, README or supplementary file was retrieved or run.",
+    "finding": "In split-plate laboratory experiments with Arabidopsis thaliana, Waschk et al. report that three tested endophytes formed common endophyte networks and moved some isotope-labelled resources from donor-side soil into receiver plant tissues. The paper reports 55% higher amino-acid-derived 15N in receiver plants for Fusarium temperatum and a smaller 13C enrichment for Trichoderma viride (+2.83% over control); it also reports 38% greater plant biomass for F. temperatum in this setup. These are bounded physiological and isotope outcomes, not a decoded signal or a demonstrated plant conversation.",
+    "limitations": "The experiment used a controlled split-Petri-dish system, Arabidopsis hosts and three fungal endophytes, not a forest or natural field network. The design lacked a no-donor treatment and some no-receiver isotope controls; the authors could not distinguish direct hyphal 15N delivery from fungal exudate or necromass entering receiver soil. Deuterium appeared in plant isotope controls, indicating an abiotic transfer pathway. The paper says natural-system CEN involvement remains untested. It measured resource enrichment and plant physiology, not a sender-derived information signal, receiver behavior or interpretation; resource transfer cannot establish plant-to-plant communication. CENs are distinct from common mycorrhizal networks, so this study does not settle the forest mother-tree debate. The linked data and code have no declared license in the reviewed repository metadata and were not inspected.",
+    "lesson": "Keep fungal connection, isotope movement, plant physiological response, information transfer and receiver interpretation as separate claims. A measurable transfer route is not by itself a communication signal. Any claim about signaling needs a specified signal, controlled route, sender-side change and independent receiver response with alternatives tested.",
+    "next_review": "Ask a qualified plant–fungus ecologist to review the split-plate controls and interpretation. Separately establish exact data and code terms, contents and reproducibility before any artifact acquisition or run. Keep this as a non-acoustic methods reference, outside the current animal-audio benchmark and mobile-sensing capability.",
+    "expert_review": "No independent plant–fungus specialist has reviewed this Talk2Nature note.",
+    "review_locator": "Nature Scientific Reports 16, article 26111: Abstract; Results; Study limitations; Materials and Methods; Data availability; Rights and permissions. GitLab project API, main tree and file metadata at commit 5b4ea51c038213e62feb6580daa5a48ccbfa32ff. Checked 2026-10-13.",
+    "purpose": "Plants & fungi",
+    "study_snapshot": [
+      [
+        "System",
+        "Arabidopsis thaliana donor and receiver plants in a controlled split-Petri-dish setup; three endophytes tested separately: Trichoderma viride, Mucor hiemalis and Fusarium temperatum."
+      ],
+      [
+        "Replication",
+        "Six plates per endophyte and isotope treatment for donor–receiver trials; four no-receiver plates per species; five isotope-control replicates per treatment; ten natural-abundance controls."
+      ],
+      [
+        "Tracers",
+        "15N-labelled amino acids and ammonium, 13C-labelled amino acids, and deuterated water."
+      ],
+      [
+        "Reported outcomes",
+        "F. temperatum increased receiver-plant amino-acid-derived 15N by 55% and biomass by 38%; T. viride increased receiver-plant 13C by 2.83% over control. 15N-ammonium transfer was not detected."
+      ],
+      [
+        "Inference boundary",
+        "Some receiver isotope enrichment supports a bounded resource-transfer result; several transfer routes remain ambiguous, and communication or receiver understanding was not tested."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "Controlled laboratory study with no field collection or reported study-site location; author affiliations are not used as collection sites.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "lilac-crowned-amazon-vocal-context-2016",
+    "title": "Lilac-crowned Amazon calls vary with context; meaning remains a question",
+    "seo_description": "A 2016 Lilac-crowned Amazon study links call-note patterns with nine observed contexts; it does not decode call meaning or validate a context-prediction model.",
+    "taxon": "Lilac-crowned Amazon (Amazona finschi)",
+    "kind": "Field bioacoustic context study",
+    "year": "2016",
+    "year_label": "Publication year",
+    "source_ids": [275],
+    "reviewed": "2026-10-13",
+    "review_stage": "Full-text primary-source review",
+    "review_depth": "Reviewed the full publisher article for abstract, field methods, context definitions, acoustic measurements, statistical analyses, results, discussion, data availability, ethics and rights; reviewed the additional-file inventory. The research viewer failed or timed out on selected binary supplements. No article assets, audio, data or code were downloaded, opened, executed or redistributed; no independent reanalysis or specialist review was performed.",
+    "review_locator": "Frontiers in Zoology 13:40 (2016): Abstract; Methods—Vocal recording, Vocal analyses, Statistical analyses; Results—design characteristics and classification by note-type; Discussion; Availability of data and materials; Ethics approval and consent; Additional files; Rights and permissions.",
+    "finding": "Montes-Medina, Salinas-Melgoza and Renton analyzed 75 hours of non-continuous field recordings from 61 free-living Lilac-crowned Amazons. They report 8,622 notes classified into 152 note-types; after excluding single-occurrence types, 8,571 notes formed 101 note-types emitted at least twice. The researchers associated calls with nine behavioral contexts, and common note-types occurred in several contexts with different proportions. Context was associated with acoustic features and note-type frequency. Separately, a nested permuted discriminant analysis distinguished 28 note-types while accounting for repeated notes from individuals (46.9% observed classification versus 9.6% expected under the paper's permutation null, P=0.001). That is note-type discrimination, not prediction of behavior from sound and not evidence that calls have human-language meanings.",
+    "study_snapshot": [
+      [
+        "Study group",
+        "61 free-living Lilac-crowned Amazons (Amazona finschi), identified at nest sites or inferred as potentially distinct individuals from recording day and distance for some off-site contexts."
+      ],
+      [
+        "Recordings",
+        "75 hours of non-continuous recordings made at about 30 m with directional microphones and solid-state recorders; 44.1 or 48 kHz WAV, with 48 kHz material resampled to 44.1 kHz."
+      ],
+      [
+        "Observed contexts",
+        "Nesting, threat, alarm, foraging, perched, take-off, flight, landing and food soliciting. The study is observational; it did not test playback responses."
+      ],
+      [
+        "Acoustic units",
+        "Researchers classified 8,622 notes into 152 note-types. Acoustic-parameter analyses used 58 types meeting frequency and recording-quality criteria; the note-type pDFA used 28 types emitted by more than one individual."
+      ],
+      [
+        "Supplements and rights",
+        "Publisher lists a 116 kB XLSX of statistical-analysis data, context descriptions, a note-frequency table and sound examples. Article text is CC BY 4.0; the publisher says data made available with the article are CC0 unless otherwise stated. Supplement binaries and any file-specific exceptions were not checked."
+      ]
+    ],
+    "limitations": "This is a single-species field study with non-continuous recordings and researcher-assigned behavioral contexts, not a validated context classifier or modern ML benchmark. The article notes low sample sizes in some contexts and says playback evidence is needed to establish signal function. GLMM analyses excluded food soliciting; the pDFA classifies note types, not behavioral contexts, and its permutation comparison is not an untouched held-out-animal test. Some off-nest individual identities were inferred from day and distance. The paper does not report quantified independent context-label agreement. Supplement descriptions conflict with several linked file extensions; no data or example audio was opened, and the listed files do not describe a full 75-hour archive. The acoustic setup and wild species do not validate ordinary phone capture or household-parrot behavior.",
+    "lesson": "Keep the observation, acoustic event, behavioral context and interpretation as separate records. A call can be associated with multiple contexts, and a note-type classification result is not a behavior prediction or translation. Use this paper to design labels and confound checks, not as evidence that Talk2Nature can infer a call's meaning.",
+    "next_review": "Ask an independent avian-bioacoustics reviewer to assess the context definitions, individual assignment and nested pDFA. If a concrete reproduction need emerges, first retrieve the exact XLSX and supplement inventory through an authorized route, inspect columns and provenance, resolve the publisher's file-type mismatches, and verify the CC0 notice for each selected data file. Do not train or treat the sample sounds as a benchmark.",
+    "expert_review": "This Talk2Nature synthesis has not been independently reviewed by an avian-bioacoustics specialist.",
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "mapped",
+      "location_note": "The paper names the Chamela–Cuixmala Biosphere Reserve on the Jalisco coast and gives study-region bounds. This coarse marker represents the study region only, not nest sites or animal locations.",
+      "locations": [
+        {
+          "place_id": "chamela-cuixmala",
+          "role": "study_region",
+          "source_id": 275,
+          "locator": "Methods: study area and Vocal recording",
+          "basis": "The full methods name the reserve and provide the region's coordinate bounds; the public point is deliberately rounded to a broad regional centroid."
+        }
+      ],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "smartphone-bioacoustics-device-variability",
+    "title": "Phones can record wildlife, but they are not interchangeable sensors",
+    "seo_description": "Nightingale and bat field studies show where smartphone recordings can help—and why microphone models, call ranges and field validation matter.",
+    "taxon": "Multiple taxa: common nightingale and bats",
+    "kind": "Mobile bioacoustics methods comparison",
+    "year": "2021–2024",
+    "year_label": "Primary studies reviewed",
+    "source_ids": [280, 282, 283, 284, 285],
+    "reviewed": "2026-10-13",
+    "review_stage": "Selected full-text methods, results, discussion, data-availability and rights review",
+    "review_depth": "For Jäckel et al. (2021), reviewed the PLOS paper's methods, citizen-recording quality results, device playback comparison, discussion, rights and Zenodo data statement; the cited Zenodo deposit remains unreviewed. For Gili et al. (2024), reviewed the full publisher article and the March 13, 2024 Dryad record, visible file list and embedded README structure, as well as Dryad's CC0 and responsible-sharing policies. The separate README download returned HTTP 403. No audio archive, article supplement or code was acquired or reproduced, and no independent specialist review was completed.",
+    "finding": "Two different studies show that smartphones can support bounded wildlife-acoustic tasks, but they do not create a uniform sensor. Jäckel et al. compared 5,679 Berlin citizen-science nightingale recordings with expert recordings: 53% of citizen recordings were categorized as complete songs versus 100% of expert recordings, and signal-to-noise ratios were lower for citizen recordings. In a small controlled playback comparison, estimated frequency limits varied by device. The authors nevertheless considered the citizen recordings useful for questions based on relative song-type occurrence, while cautioning about exact acoustic measurements. Gili et al. tested built-in microphones for selected 8–24 kHz bat calls. Their field/pilot work covered 35 phone models and nine bat species, but found device-model variation, occasional aliasing and loss of calls near the upper detection limit; the authors recommend preliminary detectability checks and expert verification of at least some identifications.",
+    "limitations": "These studies cover different species, frequency ranges, devices, apps, protocols and outcomes; their results cannot be pooled into a general phone-quality score. The nightingale work is a Berlin project and its controlled device set was small. The bat work focuses on selected calls within 8–24 kHz at Italian and Spanish sites; it does not establish general ultrasonic capture above that range. Neither study validates current phones, current operating systems, browser capture or Talk2Nature's exact audio path. Acoustic recording or species-level detection does not demonstrate receiver comprehension or call meaning.",
+    "lesson": "Keep the phone as an accessible observation tool, but treat device and capture path as part of the measurement. A browser level check is not microphone calibration, and a WAV export does not make recordings comparable across phones. Any later scientific protocol should test the chosen phone models and app path against a reference recorder for the target species and frequency range, then preserve the untouched source and protocol metadata. Collect only the minimum device information needed, with consent; do not fingerprint participants. Keep detection, identification, behavior association and meaning as separate claims.",
+    "next_review": "Ask an independent bioacoustics/mobile-audio reviewer to define a small, no-animal device-characterization protocol for the exact Android and iOS capture paths: paired phone/reference recordings, target frequency ranges, browser audio processing, device/session grouping, and pass/fail limits. For the Dryad bat deposit, review the 17.46 MB Appendix S6 examples only if a concrete research question justifies it, with a recorded checksum and file-level privacy/location screen; defer the 3.89 GB archive. The linked Zenodo nightingale deposit remains unreviewed. Keep participant intake closed until protocol, consent, privacy, rights and withdrawal gates are approved.",
+    "expert_review": "No independent bioacoustics or mobile-audio specialist has reviewed this Talk2Nature synthesis or proposed device protocol.",
+    "review_locator": "Jäckel et al. 2021, PLOS ONE 16(6):e0253763: Materials and methods; citizen-science recording-quality results; device playback test; Discussion; data availability and rights. Gili et al. 2024, Biodiversity and Conservation 33:1623–1643: mobile-device protocol; results; Discussion; data availability and rights. Checked 2026-10-13.",
+    "purpose": "Data & annotation",
+    "study_snapshot": [
+      [
+        "Nightingale study",
+        "Citizen scientists used the Naturblick app; 5,679 recordings from Berlin in 2019 were compared with expert recordings. Recording instructions were intentionally limited, so the sample also reflects varied user behavior and context."
+      ],
+      [
+        "Nightingale quality result",
+        "53% of citizen-science recordings versus 100% of expert recordings were classified as complete songs. Citizen recordings had lower signal-to-noise ratios; frequency estimates varied among devices in the small playback comparison."
+      ],
+      [
+        "Bat device comparison",
+        "Selected built-in phone microphones were compared with a reference bat detector for calls in an 8–24 kHz range. The paper reports model-level differences and calls near the upper limit were more likely to become undetectable with distance."
+      ],
+      [
+        "Bat participation pilot",
+        "The pilot tested 35 phone models across 80 volunteer sessions and reported nine recorded species; some recordings remained unidentified and five tested models showed aliasing artifacts. The authors recommend preliminary device checks and expert validation."
+      ],
+      [
+        "Dryad deposit inspection",
+        "The versioned Dryad page lists an Appendix S6 examples archive (17.46 MB), a full mobile-recordings archive (3.89 GB), and a 6.49 KB README. Its embedded README describes 80 sessions with device model, operating system, date, species folders and site-code-to-municipality mappings. Dryad's current guidance says hosted datasets are CC0 1.0; the item page itself shows no record-specific license. The README download returned HTTP 403 and no audio was acquired."
+      ],
+      [
+        "Data-use boundary",
+        "CC0 per Dryad policy supports reuse, but metadata review does not establish archive contents, label quality, location masking, consent scope or benchmark fitness. Keep the record metadata-only; if justified, inspect the smaller examples archive first under a documented protocol."
+      ],
+      [
+        "Product decision",
+        "Make phone variability visible before recording. The existing eight-second check measures temporary browser input only; it does not calibrate microphones or establish species coverage. Preserve a simple local observation path while reserving comparative scientific claims for a reviewed device protocol."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "not_applicable",
+      "location_note": "This synthesis combines distinct field studies in Berlin, Northern Italy and Seville; no single point represents the evidence or validates global phone performance.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "pteroset-detection-benchmark-2026",
+    "title": "Strong bird-call labels can test detectors, not communication",
+    "seo_description": "PteroSet v5 labels bird calls for detection, but its time-lapse data, two-landscape split and lack of behavior labels do not test communication.",
+    "taxon": "Birds",
+    "kind": "Strong-label dataset and baseline review",
+    "year": "2026",
+    "year_label": "Versioned dataset and preprint reviewed",
+    "source_ids": [286, 287, 288],
+    "reviewed": "2026-10-13",
+    "review_stage": "Full preprint methods and evaluation; versioned dataset and pinned code metadata",
+    "review_depth": "Reviewed arXiv v2 methods, annotation design, dataset schema, technical validation, project-split evaluation, discussion and license; the exact Zenodo v5 record/API file manifest; and, statically, the pinned repository README, data_reader.py, prepare_dataset.py, segment_utils.py, segment_manifest.py and its implementation note. No data bytes, metadata headers, annotation tables, audio, checkpoints or code were downloaded or executed. No independent reproduction or specialist review occurred.",
+    "finding": "PteroSet v5 is a useful time-frequency bird-event detection comparator: its released record describes 563 time-lapse WAVs totaling 73.62 hours, 15,372 expert annotations and 6,702 species-level determinations across 168 species. It offers a binary bird-presence baseline. That target is whether a window overlaps an annotated bird vocalization, not what a bird is communicating. The dataset supplies no independently observed behavior, interaction, recipient response or communicative-meaning labels.",
+    "limitations": "The five reported projects cover two named landscapes: MAP1 at Pivijay, Magdalena, and PPA1–PPA4 at Puerto Asís, Putumayo. Therefore only the MAP1 test fold holds out a distinct named landscape; the four PPA folds test other projects while the same broad landscape remains in training. This is an audit inference from the paper's project/site table, not a reanalysis. Each time-lapse file concatenates 10-second clips sampled 30 minutes apart; its timeline is discontinuous, and the v5 segment manifest is needed to recover original segment mapping. Annotators retained clearly identifiable signals and excluded faint or ambiguous calls. The paper labels windows with no overlapping annotation as negative, which should not be equated automatically with confirmed biological silence. The pinned code declares Zenodo record 21829388 and its README lists metadata_v2.csv and segment_manifest.csv, supporting version alignment at the documentation level; no file bytes or metadata headers were checked. The README download example defaults to the latest record, and the manifest example still names metadata.csv. The pinned data_reader.py has a breakpoint() in initialization and emits latitude/longitude into annotation records. Treat code-to-file compatibility and location handling as unresolved; inspect exact headers, joins, coordinate sensitivity and the execution path before any reuse.",
+    "lesson": "Use event detection and species identification as bounded tool functions that can help a person review sound. Preserve continuous-sample boundaries, source-recording groups, site and season when designing splits. A detector score is not context, intent, or a conversation; any later meaning claim needs independent behavior and receiver-response evidence.",
+    "next_review": "Before considering even a baseline reproduction, verify the provider checksums and exact v5 metadata headers, confirm the downloader is pinned to record 21829388 rather than its latest-version default, review annotation-to-audio joins and location exposure, and determine how the debugger breakpoint is handled. Then ask an independent bioacoustics reviewer whether project-held-out bird detection answers a useful bounded question; it does not test animal-held-out or communication generalization. Freeze a grouped, non-overlapping test protocol before any permitted local run. Keep data, code and model weights metadata-only until their separate gates pass; AutoResearch remains NOT READY for the communication/context objective.",
+    "expert_review": "No independent bioacoustics or machine-learning specialist has reviewed this Talk2Nature assessment.",
+    "review_locator": "Ruiz et al., arXiv:2605.20578v2 (2026): data collection; annotation; data records; technical validation; cross-validation split; results and discussion. PteroSet Zenodo v5, DOI 10.5281/zenodo.21829388: record metadata/API. microsoft/PteroSet commit b6aaf57ac32f93715e3570538f3580a78a80b741: repository metadata only. Checked 2026-10-13.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Dataset scope",
+        "The v5 record describes 563 time-lapse recordings (73.62 hours), 15,372 broad bird-event annotations, 6,702 species-level determinations and 168 species. Data were collected with AudioMoth recorders in Colombia between 2023 and 2025."
+      ],
+      [
+        "Time structure",
+        "Each time-lapse file concatenates a 10-second sample from each 30-minute interval. PteroSet v5 adds a segment_manifest.csv to map those segments. A timestamp in the concatenated file is not evidence of continuous intervening behavior or an animal reply."
+      ],
+      [
+        "Annotation and task",
+        "Four experienced annotators used acoustic and spectrogram review and retained clearly identifiable signals. Strong labels mark time and frequency bounds; the binary baseline marks a five-second window positive when any bird annotation overlaps it. No independent behavior or receiver-response labels are included."
+      ],
+      [
+        "Split interpretation",
+        "The paper uses five leave-one-project-out folds and non-overlapping evaluation windows. Four projects are different seasons at Puerto Asís; MAP1 is at Pivijay. Thus only one fold holds out a distinct named landscape, while the other four share the broad Puerto Asís landscape between train and test."
+      ],
+      [
+        "Separate artifacts",
+      "The exact Zenodo v5 record declares CC BY 4.0 and lists 12 files (86.4 GB), including annotations and a checkpoint archive. The linked repository declares MIT. Its pinned reader hardcodes Zenodo record 21829388 and the README lists v5 metadata_v2.csv and segment_manifest.csv, but file bytes/headers were not verified. The downloader documentation defaults to the latest version; the manifest example names metadata.csv. The data reader also contains a debugger breakpoint and exports precise coordinates. Checkpoint lineage and upstream initialization terms remain unresolved. No files or code were acquired."
+      ],
+      [
+        "Project decision",
+      "Keep PteroSet as a detection-method comparator, not the first context/communication benchmark. Consider a reproducibility review only after exact file/checksum and metadata-header verification, location review, a frozen grouped split, the debugger/versioning issues are resolved and an independent specialist agrees the question is useful."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-13",
+      "location_status": "pending",
+      "location_note": "The paper names Pivijay (Magdalena) and Puerto Asís (Putumayo), while the dataset schema includes recording coordinates and dates. Do not publish sample-level points until location sensitivity and species-protection implications are reviewed.",
       "locations": [],
       "observation_period": null
     }

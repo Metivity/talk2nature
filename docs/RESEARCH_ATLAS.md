@@ -2,7 +2,7 @@
 
 The public [world atlas](https://metivity.github.io/talk2nature/research/atlas/) connects the literature library to approximate places and a source-year timeline. It is the first geographic layer, not a map of all published research or a live observation service.
 
-As of October 13, 2026, the local branch catalog contains **66 notes**, **29 mapped notes** across **27 approximate places**, **259 source records** and **89 collection resources**. These are current local-library counts, not 25 event-aligned datasets or independent replications; the local changes described here have not been deployed. The Costa Rica marker is country-scale because the study concerns a Critically Endangered wild parrot; it does not expose the field property or recording site. MammAlps remains mapped only to the Swiss National Park region because the authors withhold exact camera sites.
+As of October 13, 2026, the local branch catalog contains **69 notes**, **30 mapped notes** across **28 approximate places**, **270 source records** and **101 collection resources**. These are current local-library counts, not event-aligned datasets or independent replications; the local changes described here have not been deployed. The Carolina-wren and common-endophyte studies receive no precise site marker: the former is rounded to a broad Lyon region, and the latter is a controlled laboratory experiment with no field location. The Costa Rica marker is country-scale because the study concerns a Critically Endangered wild parrot; it does not expose the field property or recording site. MammAlps remains mapped only to the Swiss National Park region because the authors withhold exact camera sites.
 
 ## October 4 historical coverage snapshot
 
