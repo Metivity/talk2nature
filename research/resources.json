@@ -9,6 +9,9 @@
       "title": "Evidence for vocal signatures and voice-prints in a wild parrot",
       "url": "https://doi.org/10.1098/rsos.230835",
       "version": "Royal Society Open Science 10:230835 (2023)",
+      "source_ids": [
+        55
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Caller identity within and across call types; method comparator for evaluation splits, not a behavior/context dataset.",
@@ -35,6 +38,9 @@
       "title": "Monk parakeet vocal-signature analysis code",
       "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot",
       "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+      "source_ids": [
+        56
+      ],
       "priority": 1,
       "reviewed": "2026-09-30",
       "task": "Reproducible acoustic comparisons and identity analysis.",
@@ -88,6 +94,9 @@
       "title": "Monk parakeet 2020 annotation table",
       "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv",
       "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+      "source_ids": [
+        56
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Inspect labels and group keys; the sample is not yet suitable for a context-association benchmark.",
@@ -129,6 +138,9 @@
       "title": "Budgerigar vocal-learning and social-interaction data",
       "url": "https://doi.org/10.5061/dryad.fttdz08xr",
       "version": "Dryad deposit updated 2024-02-05; 68.14 MB",
+      "source_ids": [
+        125
+      ],
       "priority": 1,
       "reviewed": "2026-10-11",
       "task": "Near-match for group/day/block-level vocal-sociality analyses; not an event-aligned sound-to-behavior benchmark.",
@@ -155,6 +167,9 @@
       "title": "Perch-Hoplite embedding and model tooling",
       "url": "https://github.com/google-research/perch-hoplite",
       "version": "050c57b5dac2f6d28ab1f562fa2000c8dcbc2302",
+      "source_ids": [
+        52
+      ],
       "priority": 1,
       "reviewed": "2026-09-30",
       "task": "Embedding search, annotation and lightweight classifier workflows.",
@@ -202,6 +217,9 @@
       "title": "Perch 2 CPU model candidate",
       "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu",
       "version": "perch_v2_cpu/1 (official pinned Hoplite configuration)",
+      "source_ids": [
+        51
+      ],
       "priority": 1,
       "reviewed": "2026-09-30",
       "task": "Frozen acoustic representation candidate.",
@@ -228,6 +246,9 @@
       "title": "BirdVox-DCASE-20k",
       "url": "https://zenodo.org/records/1208080",
       "version": "v2 / DOI 10.5281/zenodo.1208080",
+      "source_ids": [
+        58
+      ],
       "priority": 2,
       "reviewed": "2026-09-30",
       "task": "Bird-vocalization presence detection; not observed behavior.",
@@ -254,6 +275,9 @@
       "title": "BEANS-Next",
       "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next",
       "version": "Metadata revision 2fc58150c9541698ffc82aaf1f5d5a44993c54bf; live card checked 2026-09-30",
+      "source_ids": [
+        53
+      ],
       "priority": 2,
       "reviewed": "2026-09-30",
       "task": "Multi-task animal-audio evaluation, including descriptions.",
@@ -280,6 +304,9 @@
       "title": "Experimental evidence for compositional syntax in bird calls",
       "url": "https://www.nature.com/articles/ncomms10986",
       "version": "Nature Communications 7:10986 (2016)",
+      "source_ids": [
+        1
+      ],
       "priority": 2,
       "reviewed": "2026-09-30",
       "task": "Behavioral playback controls for claims about meaning and call order.",
@@ -306,6 +333,9 @@
       "title": "Zhao (2023) budgerigar data",
       "url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
       "version": "10.17632/j8rpy4dc6c.1",
+      "source_ids": [
+        101
+      ],
       "priority": 1,
       "reviewed": "2026-10-03",
       "task": "Species-specific feasibility and future baseline design.",
@@ -343,6 +373,9 @@
       "title": "CatMeows data",
       "url": "https://zenodo.org/records/4008297",
       "version": "1.0.2 / record 4008297",
+      "source_ids": [
+        102
+      ],
       "priority": 2,
       "reviewed": "2026-10-03",
       "task": "Species-specific feasibility and future baseline design.",
@@ -369,6 +402,9 @@
       "title": "Soundwel pig calls",
       "url": "https://zenodo.org/records/8252482",
       "version": "1 / record 8252482",
+      "source_ids": [
+        105
+      ],
       "priority": 2,
       "reviewed": "2026-10-03",
       "task": "Species-specific feasibility and future baseline design.",
@@ -395,6 +431,9 @@
       "title": "AnuraSet frog calls and labels",
       "url": "https://zenodo.org/records/8342596",
       "version": "record 8342596",
+      "source_ids": [
+        107
+      ],
       "priority": 2,
       "reviewed": "2026-10-12",
       "task": "Species-specific feasibility and future baseline design.",
@@ -421,6 +460,9 @@
       "title": "AnuraSet baseline code sample",
       "url": "https://github.com/soundclim/anuraset/tree/0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4",
       "version": "0f8ec818fc961ee5b0eab0aec1afc4b51b01f9d4",
+      "source_ids": [
+        108
+      ],
       "priority": 2,
       "reviewed": "2026-10-12",
       "task": "Species-specific feasibility and future baseline design.",
@@ -468,6 +510,9 @@
       "title": "MammAlps v3 multimodal wildlife behavior benchmark",
       "url": "https://doi.org/10.5281/zenodo.15588220",
       "version": "v3 / record 15588220",
+      "source_ids": [
+        129
+      ],
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Noncommercial methods comparator for synchronized audio/video and observable behavior labels; modality-ablation design.",
@@ -494,6 +539,9 @@
       "title": "Green-rumped parrotlet vocal-babbling audio and measures",
       "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
       "version": "Dryad v6 (API version record 180872); published 2022-05-31; last modified 2022-06-01",
+      "source_ids": [
+        135
+      ],
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Potential species-specific vocal-development reference; not an event-context or semantic-translation benchmark.",
@@ -548,6 +596,9 @@
       "title": "MammAlps-S2 and Prompting-MammAlps camera-trap retrieval benchmark",
       "url": "https://huggingface.co/datasets/amathislab/Prompting-MammAlps",
       "version": "Dataset-card revision 04d96ea01312aab5727a39491ef1d736f1df2728",
+      "source_ids": [
+        139
+      ],
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Non-commercial methods comparator for retrieving camera-trap clips from human-written queries about visible, labeled behavior; it is not an audio-language or animal-meaning benchmark.",
@@ -574,6 +625,9 @@
       "title": "Prompting-MammAlps retrieval and SALMA code",
       "url": "https://github.com/amathislab/prompting-mammalps",
       "version": "main commit 9627d90b3917e9cc78e27fb08eba18d0fdaaa3c4",
+      "source_ids": [
+        140
+      ],
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Potential reference for transparent query parsing and evaluation over structured camera-trap behavior annotations.",
@@ -600,6 +654,9 @@
       "title": "Egyptian fruit bat audiovisual vocalization archive",
       "url": "https://springernature.figshare.com/articles/dataset/Egyptian_fruit_bat_vocalizations_files_210/4556074",
       "version": "Figshare item 4556074 (2017; collection DOI 10.6084/m9.figshare.c.3666502)",
+      "source_ids": [
+        145
+      ],
       "priority": 1,
       "reviewed": "2026-10-11",
       "task": "Candidate source for studying acoustic associations with caller, addressee and video-observed social context in Egyptian fruit bats.",
@@ -668,6 +725,9 @@
       "title": "Fruit-bat sequence encodings, annotations and example audio",
       "url": "https://data.mendeley.com/datasets/mjfv43zgtv/3",
       "version": "Mendeley Data v3, published 2022-10-20",
+      "source_ids": [
+        144
+      ],
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Methods comparator for sequence-level context classification and a possible source of derived encodings and annotations.",
@@ -694,6 +754,9 @@
       "title": "animal2vec and MeerKAT: rare-event bioacoustic learning",
       "url": "https://doi.org/10.1111/2041-210x.70218",
       "version": "Methods in Ecology and Evolution 17:875–888 (2026), DOI 10.1111/2041-210x.70218",
+      "source_ids": [
+        146
+      ],
       "priority": 1,
       "reviewed": "2026-10-11",
       "task": "Primary methods and benchmark reference for sparse event detection, call-type classification and event-level evaluation.",
@@ -720,6 +783,9 @@
       "title": "MeerKAT: Meerkat Kalahari Audio Transcripts",
       "url": "https://doi.org/10.17617/3.0J0DYB",
       "version": "Edmond v1; DOI 10.17617/3.0J0DYB (2024)",
+      "source_ids": [
+        147
+      ],
       "priority": 1,
       "reviewed": "2026-10-11",
       "task": "Non-commercial methods reference for rare-event detection and time-localized call-category labels in continuous audio.",
@@ -746,6 +812,9 @@
       "title": "animal2vec training and inference software",
       "url": "https://github.com/livingingroups/animal2vec",
       "version": "Official repository; archived release cited as Zenodo DOI 10.5281/zenodo.17640321 (2025); exact archive not inspected",
+      "source_ids": [
+        148
+      ],
       "priority": 1,
       "reviewed": "2026-10-11",
       "task": "Reference implementation for sparse, rare-event bioacoustic detection and call classification.",
@@ -772,6 +841,9 @@
       "title": "Pretrained and fine-tuned animal2vec model weights",
       "url": "https://doi.org/10.17617/3.ETPUKU",
       "version": "Edmond v1; DOI 10.17617/3.ETPUKU (2024)",
+      "source_ids": [
+        149
+      ],
       "priority": 2,
       "reviewed": "2026-10-11",
       "task": "Published model checkpoint reference for MeerKAT call/event classification.",
@@ -798,6 +870,9 @@
       "title": "Name use by companion parrots",
       "url": "https://doi.org/10.1371/journal.pone.0346830",
       "version": "PLOS ONE 21(4): e0346830 (2026); correction 21(5): e0349699",
+      "source_ids": [
+        160
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Method reference for studying reported use of learned human names by companion parrots; not an acoustic dataset or animal-language benchmark.",
@@ -824,6 +899,9 @@
       "title": "Decoding parrot duets: complex communication in yellow-naped amazons",
       "url": "https://doi.org/10.1002/jav.03552",
       "version": "Journal of Avian Biology 2026:e03552; DOI 10.1002/jav.03552",
+      "source_ids": [
+        162
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Methods reference for wild-parrot call categorization and sequence structure; not a translated-message or phone-recording benchmark.",
@@ -850,6 +928,9 @@
       "title": "Raven measurements for yellow-naped amazon warble duets",
       "url": "https://doi.org/10.5061/dryad.rn8pk0prb",
       "version": "Dryad v1, published 2026-01-27; DOI 10.5061/dryad.rn8pk0prb",
+      "source_ids": [
+        163
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Reference for call-event, speaker/pair, sequence-position and acoustic-measurement fields in a wild-parrot duet study.",
@@ -876,6 +957,9 @@
       "title": "Detection of electrical signals in fungal mycelia in response to external stimuli",
       "url": "https://doi.org/10.1016/j.isci.2025.113484",
       "version": "iScience 28:113484 (2025)",
+      "source_ids": [
+        165
+      ],
       "priority": 2,
       "reviewed": "2026-10-12",
       "task": "Methods reference for controlled extracellular recording of fungal electrical activity; not a biological-language or Talk2Nature model result.",
@@ -902,6 +986,9 @@
       "title": "Fusarium oxysporum raw voltage-potential data before and after stimuli",
       "url": "https://doi.org/10.17632/srkxbkh6sp.1",
       "version": "Mendeley Data v1, published 2025-10-10",
+      "source_ids": [
+        166
+      ],
       "priority": 2,
       "reviewed": "2026-10-12",
       "task": "Possible methods-reproduction input for extracellular fungal electrophysiology, not an animal behavior or communication benchmark.",
@@ -928,6 +1015,9 @@
       "title": "Analysis code identified as supplementary Method S1",
       "url": "https://doi.org/10.1016/j.isci.2025.113484",
       "version": "Method S1 referenced by the 2025 article; exact file/version not inspected",
+      "source_ids": [
+        165
+      ],
       "priority": 3,
       "reviewed": "2026-10-12",
       "task": "Potential implementation reference for reproducing the paper's STFT and power-spectral-density analysis.",
@@ -955,6 +1045,9 @@
       "url": "https://api.figshare.com/v2/articles/4555897",
       "figshare_item_id": 4555897,
       "version": "Figshare item 4555897 v1; collection DOI 10.6084/m9.figshare.c.3666502",
+      "source_ids": [
+        167
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Determine whether video-derived FileID annotations can be joined to recording time, channel, treatment and session for a leakage-safe grouping audit.",
@@ -1024,6 +1117,9 @@
       "title": "Vocal imitation in parrots: addressing specific individuals",
       "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049747",
       "version": "PLOS ONE 7(11): e49747 (2012)",
+      "source_ids": [
+        169
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Understand what a targeted contact-call playback can establish about receiver response and what it cannot establish about meaning.",
@@ -1050,6 +1146,9 @@
       "title": "Predicting interaction context in captive Egyptian fruit bats",
       "url": "https://doi.org/10.23919/EUSIPCO63174.2024.10715475",
       "version": "EUSIPCO 2024, pp. 1277–1281; arXiv author manuscript v1: 2406.06332",
+      "source_ids": [
+        170
+      ],
       "priority": 1,
       "reviewed": "2026-10-12",
       "task": "Reproducibility and evaluation-split comparator for context prediction from bat ultrasound calls.",

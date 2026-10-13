@@ -36,6 +36,8 @@ def read_catalog(root=ROOT):
     for kind, rows in (('Evidence note', notes), ('Resource', resources)):
         for row in rows:
             references = row.get('source_ids', [])
+            if not references:
+                raise ValueError(f'{kind} must reference at least one source.')
             if (not isinstance(references, list)
                     or any(type(source_id) is not int for source_id in references)
                     or not set(references) <= source_ids):

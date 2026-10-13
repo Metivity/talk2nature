@@ -2,6 +2,8 @@
 
 First bounded collection, September 30, 2026. Active project: Talk2Nature, Raviv's independent initiative, in `Metivity/talk2nature`. This work is independent of the unfinished Google Sign-In setup.
 
+Every evidence note and resource must reference at least one existing integer `source_ids` entry from `content/sources.json`. The public knowledge graph turns those references into citation/provenance edges; a missing link is a build/import error. An edge records traceability, not corroboration, endorsement, license transfer or research admission. Keep paper, data, code and model rights and access decisions separate in each resource record.
+
 ## Collected and checked
 
 The existing library had 54 source records and 15 evidence notes. This pass adds four sources and one original evidence note, and organizes eight priority resources in `research/resources.json`. Existing same-day reviews are labeled as reused; this is not an exhaustive literature survey.
