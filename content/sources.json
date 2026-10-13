@@ -2781,12 +2781,14 @@
   {
     "id": 266,
     "title": "Minimal Compositionality versus Bird Implicatures in Japanese tits",
-    "description": "Schlenker et al. (2024), Biological Reviews 99:1278–1297, DOI 10.1111/brv.13068. The article abstract compares a limited compositional-semantics account with a pragmatic-implicature account for ABC–D sequences.",
+    "description": "Schlenker et al. (2024), Biological Reviews 99:1278–1297, DOI 10.1111/brv.13068. The theory paper compares Minimal Compositionality with Bird Implicatures for Japanese-tit ABC–D sequences; it reports no new playback experiment.",
     "url": "https://doi.org/10.1111/brv.13068",
+    "review_url": "https://cnrs.hal.science/hal-04840821v1",
+    "review_url_label": "Read the author-accepted manuscript (HAL v1)",
     "checked": "2026-10-13",
-    "origin": "Reviewed the publisher abstract and citation metadata. The publisher lists a 211 KB supporting-information PDF with Appendix S1 and formal analyses in Appendix S2; direct retrieval returned HTTP 403, so neither the full article nor supplement was reviewed.",
+    "origin": "The official HAL API record identifies DOI 10.1111/brv.13068, open-access status, a single author-accepted manuscript file and a CC BY 4.0 license declaration. Reviewed the manuscript's main text (Sections I–VII); consulted its formal appendices selectively without recalculating derivations. The separate Wiley supporting-information PDF returned HTTP 403 and was not separately retrieved. No manuscript file or article text is retained in this repository.",
     "rights": {
-      "article": "Reuse license for the article and supplement not established in this abstract-only review. Link the publisher record; do not reproduce text or figures."
+      "article": "HAL declares CC BY 4.0 for the deposited author-accepted manuscript. This scope does not establish terms for the separate Wiley supporting-information file, which was not retrieved. Publish only an original summary and links."
     }
   },
   {

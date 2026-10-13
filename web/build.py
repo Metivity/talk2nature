@@ -190,6 +190,16 @@ def build(output, base_url='', public=False, repo_url=''):
         if n.get('study_snapshot'):
             rows = ''.join(f'<div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>' for label,value in n['study_snapshot'])
             study = f'<section class="study-snapshot"><h2>Study at a glance</h2><dl>{rows}</dl><p class="fine">Reading location: {esc(n["review_locator"])}</p></section>'
+        theory = ''
+        if n.get('theory_comparison'):
+            comparison = n['theory_comparison']
+            rows = ''.join(
+                f'<div><dt>{esc(item["name"])}</dt><dd><p><strong>Account:</strong> {esc(item["account"])}</p>'
+                f'<p><strong>Distinctive prediction:</strong> {esc(item["prediction"])}</p>'
+                f'<p><strong>Key assumption:</strong> {esc(item["assumption"])}</p></dd></div>'
+                for item in comparison['items']
+            )
+            theory = f'<section class="study-snapshot theory-comparison"><h2>Two explanations, one unresolved test</h2><p>{esc(comparison["intro"])}</p><dl>{rows}</dl><p class="fine">{esc(comparison["takeaway"])}</p></section>'
         reuse = ''
         if n.get('reuse'):
             r = n['reuse']
@@ -209,7 +219,7 @@ def build(output, base_url='', public=False, repo_url=''):
             ],
         }
         page(f'research/{n["slug"]}/', n['title'], n.get('seo_description', n['finding']), f'''
-<article class="article section field-note"><div class="note-topline"><a class="back-link" href="{url('research/')}">← Research library</a><span class="note-stamp"><svg viewBox="0 0 48 30" aria-hidden="true" focusable="false"><path d="M2 15h6m3-5v10m6-16v22m6-20v18m6-14v10m6-8v6m4-3h7"/></svg>Field notes</span></div><p class="eyebrow">{esc(n['taxon'])} / {esc(n['kind'])}</p><h1>{esc(n['title'])}</h1><p class="article-date">{esc(n['year_label'])} {esc(n['year'])} · Note reviewed {esc(n['reviewed'])}</p><p class="lede">{esc(n['finding'])}</p><aside class="review-box"><strong>What we reviewed · {esc(n['review_stage'])}</strong><p>{esc(n['review_depth'])}</p><p>{esc(n['expert_review'])}</p></aside>{study}<h2>What this does — and doesn’t — establish</h2><p>{esc(n['limitations'])}</p><h2>What we can build on</h2><p>{esc(n['lesson'])}</p>{reuse}{review_request}<p><a href="{url('research/starting-points/')}">See the related tools and reading paths →</a></p><h2>The next reading task</h2><p>{esc(n['next_review'])}</p><h2>Go to the sources</h2><ol class="source-list">{refs}</ol><p class="fine">Original editorial note by Talk2Nature contributors. AI-assisted, source-grounded synthesis; not a peer review or an independent replication. Linked works retain their own rights.</p></article>''', active='research/', structured_extra=structured_extra)
+<article class="article section field-note"><div class="note-topline"><a class="back-link" href="{url('research/')}">← Research library</a><span class="note-stamp"><svg viewBox="0 0 48 30" aria-hidden="true" focusable="false"><path d="M2 15h6m3-5v10m6-16v22m6-20v18m6-14v10m6-8v6m4-3h7"/></svg>Field notes</span></div><p class="eyebrow">{esc(n['taxon'])} / {esc(n['kind'])}</p><h1>{esc(n['title'])}</h1><p class="article-date">{esc(n['year_label'])} {esc(n['year'])} · Note reviewed {esc(n['reviewed'])}</p><p class="lede">{esc(n['finding'])}</p><aside class="review-box"><strong>What we reviewed · {esc(n['review_stage'])}</strong><p>{esc(n['review_depth'])}</p><p>{esc(n['expert_review'])}</p></aside>{study}{theory}<h2>What this does — and doesn’t — establish</h2><p>{esc(n['limitations'])}</p><h2>What we can build on</h2><p>{esc(n['lesson'])}</p>{reuse}{review_request}<p><a href="{url('research/starting-points/')}">See the related tools and reading paths →</a></p><h2>The next reading task</h2><p>{esc(n['next_review'])}</p><h2>Go to the sources</h2><ol class="source-list">{refs}</ol><p class="fine">Original editorial note by Talk2Nature contributors. AI-assisted, source-grounded synthesis; not a peer review or an independent replication. Linked works retain their own rights.</p></article>''', active='research/', structured_extra=structured_extra)
 
     levels = [('Detection','A signal occurred.'),('Identification','A model or observer identifies the source.'),('Association','A signal is associated with an observed context.'),('Meaning','Controlled receiver responses support a bounded interpretation.'),('Shared exchange','A specific two-way interaction is demonstrated.'),('General translation','An ambitious goal, not a capability established by this project.')]
     page('approach/', 'Our approach to animal communication AI', 'How Talk2Nature separates signal detection, association and meaning, and designs reproducible, welfare-conscious bioacoustic research.', f'''
