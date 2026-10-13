@@ -10,7 +10,7 @@
 
 **Validation:** the focused research-page test passed; the full suite passed 114 Python and 107 Node tests. The local public build produced 104 pages plus 404; the site checker passed 105 HTML documents, 5,132 links and all 104 public routes reachable. AutoResearch remains **NOT READY**; this literature review is not a dataset admission, reproduction or communication result.
 
-**Release:** local candidate; PR and Pages deployment pending. No independent review, outreach or indexing result is claimed.
+**Release:** PR [#105](https://github.com/Metivity/talk2nature/pull/105) merged as [`c398bce451605183465a95f21505d87d6c710b02`](https://github.com/Metivity/talk2nature/commit/c398bce451605183465a95f21505d87d6c710b02). Pages workflow [#38393722845](https://github.com/Metivity/talk2nature/actions/runs/38393722845) completed successfully. The live research page has the expected title and description, `index,follow`, and a self-canonical URL; the review brief and issue form both return HTTP 200. The sitemap contains 104 URLs and includes this page, and `robots.txt` names the sitemap. This verifies publication and technical crawlability, not Google indexing or ranking. No independent review or external outreach is claimed; Search Console was not inspected.
 
 ## October 13 university-facing scientific review path
 
