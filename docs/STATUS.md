@@ -1,5 +1,15 @@
 # Project status
 
+## October 13 fungal electrophysiology source and rights follow-up
+
+**Question:** what did the 2026 oyster-fungus propagation paper measure, and can its linked data be safely reused or reproduced?
+
+**Finding:** the primary paper reports approximately 15 days of 1 Hz recording from eight spatially ordered differential channels on one *Pleurotus ostreatus*-colonised substrate. Its lead–lag analysis is evidence reported by the paper for slow electrical propagation consistent with ionic waves. It is not a receiver-response experiment or evidence of decoded language. The eight channels are spatial subsamples of one specimen, and the Methods do not describe external stimulation or a sham/uncolonised-substrate comparison.
+
+**Provenance and rights:** the paper cites Zenodo DOI [10.5281/zenodo.4430968](https://zenodo.org/records/4430968). The official record is v1, created in 2021, lists one 413.2 MB ZIP and provider MD5 `ae00e6ace4114f8ca33572b4930c41b4`, and displays no dataset license. The record does not identify which archive member contains the paper's 15-day, eight-channel series. The article and dataset now have separate resource records; the UWE repository identifies the paper as CC BY 4.0, which does not grant rights to the dataset.
+
+**Change and limits:** updated the fungal research note and added the separate article/data records. No archive was downloaded, no checksum was computed locally, no data were analyzed, and no independent specialist reviewed the paper. Before any reproduction, resolve the file mapping and terms, then obtain mycology/electrophysiology review of independent biological replication, controls and environmental logging. AutoResearch remains **NOT READY** for this or any other biological benchmark.
+
 ## October 13 update-ready notice for existing offline users
 
 **Question:** can an opted-in offline user see that a new app version is ready without interrupting a session?

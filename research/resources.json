@@ -3661,6 +3661,60 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "fungal-propagation-2026-paper",
+      "kind": "paper",
+      "title": "Propagation of electrical spike trains in substrates colonised by oyster fungi",
+      "url": "https://doi.org/10.1038/s41598-026-47035-2",
+      "version": "Scientific Reports 16, article 16332 (2026); version of record dated 2026-05-27",
+      "source_ids": [93, 290],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Primary methods reference for multi-channel measurement and analysis of slow electrical activity in oyster-fungus-colonised substrate.",
+      "review_depth": "Full text, methods, discussion, limitations and data-availability statement reviewed. No analysis was reproduced and no figures or article text were copied.",
+      "access": "Open-access version of record; the University of the West of England repository identifies the article files under CC BY 4.0.",
+      "decision": "Metadata-only. Publish a short original summary and link. Do not describe this physiological propagation result as a decoded message or demonstrated exchange.",
+      "limitations": "The eight channels were recorded from one specimen for about fifteen days without external stimulation. Spatial channels are not biological replicates; no receiver response or semantic target was tested. The shuffled-spike control does not substitute for independent specimens or a sham/uncolonised-substrate comparison.",
+      "attribution": "Adamatzky, A. (2026), Propagation of electrical spike trains in substrates colonised by oyster fungi. Scientific Reports 16, 16332. DOI 10.1038/s41598-026-47035-2.",
+      "rights": {
+        "license": "CC-BY-4.0 as stated by the University of the West of England repository record",
+        "scope": "Published article only. The cited Zenodo dataset has a separate rights record.",
+        "evidence_url": "https://uwe-repository.worktribe.com/output/16046067/propagation-of-electrical-spike-trains-in-substrates-colonised-by-oyster-fungi",
+        "conditions": "Attribute the author and source and follow the CC BY 4.0 terms. Do not copy publisher figures or substantial text into this site.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "fungal-propagation-2026-data",
+      "kind": "dataset",
+      "title": "Electrical recordings of oyster-fungus-colonised substrates cited by the 2026 propagation paper",
+      "url": "https://doi.org/10.5281/zenodo.4430968",
+      "version": "Zenodo v1, created 2021-01-10; modified 2021-01-11",
+      "source_ids": [93, 289],
+      "priority": 3,
+      "reviewed": "2026-10-13",
+      "task": "Potential source data for reviewing the paper's electrophysiology analysis; not an animal-behavior dataset or communication benchmark.",
+      "review_depth": "Reviewed the official record metadata: one 413.2 MB ZIP with provider MD5 ae00e6ace4114f8ca33572b4930c41b4. The 2026 article cites this DOI, but the record does not map the paper's 15-day, eight-channel series to an archive member. No archive or data values were downloaded or inspected.",
+      "access": "Public Zenodo landing page and archive link. No license is displayed in the record's Rights section.",
+      "decision": "Metadata-only. Do not acquire, train on, redistribute or use commercially until the exact file mapping, provenance and applicable reuse terms are established.",
+      "limitations": "The record was published in 2021, names both P. ostreatus and P. djamor, and provides a single large ZIP. Its public metadata does not independently identify the subset used for the 2026 paper. The dataset is specialized electrical sensor data, not phone audio or a translation key.",
+      "attribution": "FUNGAR (2021), Datasets of recordings of electrical activity of substrates colonised by oyster fungi P. ostreatus and P. djamor [Data set]. Zenodo. DOI 10.5281/zenodo.4430968.",
+      "rights": {
+        "license": "No license displayed in the Zenodo v1 record's Rights section when reviewed on 2026-10-13",
+        "scope": "External dataset record and its ZIP archive only. The linked article has a separate CC BY 4.0 record.",
+        "evidence_url": "https://zenodo.org/records/4430968",
+        "conditions": "Do not download, redistribute, train on or use commercially until the rights holder or deposit terms establish permission.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

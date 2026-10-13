@@ -901,8 +901,8 @@
     "title": "Oyster-fungus electrical propagation study",
     "description": "Adamatzky (2026), Scientific Reports. Multi-channel recordings and temporal propagation analysis in colonised substrate.",
     "url": "https://www.nature.com/articles/s41598-026-47035-2",
-    "checked": "2026-10-02",
-    "origin": "Multimodal and non-animal research expansion; exact review depth is recorded in the linked evidence note."
+    "checked": "2026-10-13",
+    "origin": "Full primary article, methods, discussion, limitations and data statement reviewed October 13, 2026. It reports eight channels on one specimen and cites Zenodo record 4430968; exact analyzed archive member and dataset license remain unresolved. No data were downloaded or analysis reproduced; details and review limits are in the linked evidence note."
   },
   {
     "id": 94,
@@ -2982,5 +2982,21 @@
     "url": "https://github.com/microsoft/PteroSet/tree/b6aaf57ac32f93715e3570538f3580a78a80b741",
     "checked": "2026-10-13",
     "origin": "Official GitHub repository page and API metadata reviewed October 13, 2026. The repository exposes an MIT license; the reviewed commit is dated September 17, 2026 and its message says 'v5 dataset changes'. Targeted raw source files at that commit were fetched transiently for static review, not stored, installed or executed. The reader pins record 21829388, its README lists the v5 filenames, and the metadata header contains fields used by the reader. This is documentation/schema compatibility evidence only; file-byte integrity and annotation joins were not verified."
+  },
+  {
+    "id": 289,
+    "title": "Zenodo record cited by the 2026 oyster-fungus propagation paper",
+    "description": "Official Zenodo v1 record 10.5281/zenodo.4430968, titled Datasets of recordings of electrical activity of substrates colonised by oyster fungi P. ostreatus and P. djamor.",
+    "url": "https://zenodo.org/records/4430968",
+    "checked": "2026-10-13",
+    "origin": "Official Zenodo landing page reviewed October 13, 2026. It reports version v1 created January 10, 2021, one 413.2 MB ZIP archive and provider MD5 ae00e6ace4114f8ca33572b4930c41b4. No license is displayed in the record's Rights section. The 2026 paper cites this DOI, but the record does not identify which archive member or recording corresponds to its 15-day, eight-channel analysis. No file was downloaded or hashed locally."
+  },
+  {
+    "id": 290,
+    "title": "University of the West of England repository record for the 2026 oyster-fungus paper",
+    "description": "Official institutional repository record for Adamatzky's Scientific Reports article; its linked article files are labeled CC BY 4.0.",
+    "url": "https://uwe-repository.worktribe.com/output/16046067/propagation-of-electrical-spike-trains-in-substrates-colonised-by-oyster-fungi",
+    "checked": "2026-10-13",
+    "origin": "Official UWE Bristol repository record reviewed October 13, 2026. It identifies the article and lists repository PDF files with a CC BY 4.0 license URL. This supports the article-rights record only; it does not grant rights to the separate Zenodo dataset."
   }
 ]
