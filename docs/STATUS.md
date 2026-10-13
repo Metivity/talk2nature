@@ -10,6 +10,8 @@
 
 **Limits and next check:** this proves the tested event handling and page placement, not update delivery on an installed phone or behavior in Safari/Android browsers. Verify an actual version update with an opted-in installation while preserving a partial unexported synthetic session; confirm it receives no forced reload and does not lose audio. Do not introduce telemetry or participant recordings into that test.
 
+**Publication receipt (October 13):** [PR #111](https://github.com/Metivity/talk2nature/pull/111) merged as `4346102`; the [Pages workflow](https://github.com/Metivity/talk2nature/actions/runs/38403111812) completed successfully. Live fetches confirmed the shared update notice on the Station and companion home pages, the served app bundle includes the waiting-worker watcher, and the app-scoped worker includes its offline module. This verifies the deployed files, not a full update cycle on an already-installed phone; the device/browser test above remains open.
+
 ## October 13 microphone-free rehearsal wording and mobile workflow
 
 **Question:** does the phone rehearsal make clear that it is an invented, no-microphone exercise rather than a live recording?
