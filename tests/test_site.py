@@ -587,14 +587,18 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2027-01-14 · 17:00 Brussels time',page)
             self.assertIn('€16 million topic budget',page)
             self.assertIn('€5–6 million per project for three projects',page)
-            self.assertIn('pollinator monitoring under the Nature Restoration Regulation',page)
+            self.assertIn('EU Pollinators Monitoring Scheme under the Nature Restoration Regulation',page)
             self.assertIn('soil biodiversity under the Soil Monitoring Law',page)
             self.assertIn('Water Framework Directive',page)
-            self.assertIn('no validated species-identification or counting capability',page)
-            self.assertIn('not a stand-alone animal-communication or general software grant',page)
+            self.assertIn('relevant genomic methods and FAIR-by-design data',page)
+            self.assertIn('no validated statutory monitoring, identification/counting, DNA or Water Framework Directive method',page)
+            self.assertIn('not a current bid fit',page)
+            self.assertIn('Scheduled to open 13 Oct 2026 · portal status unverified · consortium required',page)
+            self.assertIn('actual submission status is unverified',page)
+            self.assertIn('do not call it open until the official portal confirms that',page)
             self.assertIn('Official topic details ↗',page)
             self.assertIn('Applicant eligibility ↗',page)
-            for source_id in (201,202,203):
+            for source_id in (201,202,203,240):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
     def test_mobile_manifest_icons_and_worker_stay_in_the_public_app_boundary(self):

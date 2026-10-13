@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-13",
-  "scope": "Animal-communication evidence and reuse candidates, plus selected methods tools for reproducible research; acquired external samples remain separate from research admission.",
+  "scope": "Animal-communication and selected plant-acoustics evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
       "id": "monk-parakeet-paper",
@@ -1707,26 +1707,27 @@
       "kind": "dataset",
       "title": "BEANS-Zero bioacoustic benchmark dataset",
       "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero",
-      "version": "Hub card checked 2026-10-12; 50.5 GB listed",
+      "version": "Dataset-card commit e9e45ffff7500867c885ef74c245c07e66677084 (2025-04-21); live file inventory checked 2026-10-13",
       "source_ids": [
         207,
-        204
+        204,
+        245
       ],
       "priority": 2,
-      "reviewed": "2026-10-12",
-      "task": "Zero-shot audio-plus-text evaluation across species classification, detection and other bioacoustic tasks.",
-      "review_depth": "Reviewed hub-level metadata and paper description; component file inventory, provenance and license terms were not audited.",
-      "access": "Public Hugging Face dataset card; no files acquired.",
-      "decision": "Do not download as a single bundle or admit to training; use only after a bounded component, terms and split review.",
-      "limitations": "The hub license value is “other”; the 50.5 GB composite contains components whose terms and evaluation-group structure may differ.",
+      "reviewed": "2026-10-13",
+      "task": "Zero-shot, audio-plus-text test-only tasks for species or sound classification, detection, life-stage/call-type classification and captioning; a broad method comparator, not a receiver-response or communication benchmark.",
+      "review_depth": "Reviewed the pinned official dataset card, live file inventory and the ICLR paper citation. The card reports 91,965 examples, one test split, a per-sample license field and no intended commercial use. The live Hugging Face tree lists 50.5 GB; the companion official code README says about 100 GB for a full download. No dataset files, sample rows or license values were inspected.",
+      "access": "Public Hugging Face card and file inventory; page lists 50.5 GB. The official code README estimates about 100 GB for non-streaming download, so the published sizes conflict. No files acquired.",
+      "decision": "Use as a cross-taxon classification/detection/captioning benchmark reference only. Do not use it as the first Talk2Nature communication benchmark, download the composite, or admit it to training. Consider a single task/component only after verifying its exact license, labels, split unit and intended research use.",
+      "limitations": "The evaluation card describes only a test split and 91,965 examples; it does not provide training examples. It is a composite with sample-level license metadata, but those values and the source files were not audited. The card says the collection is not intended for commercial use. Its task labels do not test message meaning or receiver comprehension. The Hub listing says 50.5 GB while the companion repository README says about 100 GB; the discrepancy is unresolved.",
       "attribution": "Earth Species Project, BEANS-Zero dataset; Robinson et al. (2025).",
       "rights": {
-        "license": "Hub record: other; component-specific terms unresolved",
-        "scope": "Composite evaluation dataset; each component remains separately licensed.",
-        "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero",
-        "conditions": "Review exact component provenance, reuse conditions, split construction and size before any acquisition or evaluation.",
+        "license": "Hub metadata: other. Dataset README: composite with a per-sample license field; not intended for commercial use.",
+        "scope": "The benchmark combines separately sourced component datasets; file-level terms and redistribution rights remain component-specific.",
+        "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero/commit/e9e45ffff7500867c885ef74c245c07e66677084",
+        "conditions": "Check the specific sample/component license, source terms, consent/privacy status and evaluation rules before any use. The public card explicitly says not for commercial use; no commercial use is admitted here.",
         "research_use": "unresolved",
-        "commercial_use": "unresolved",
+        "commercial_use": "not_admitted",
         "redistribution": "unresolved"
       },
       "acquisition": "metadata_only",
@@ -1737,23 +1738,24 @@
       "kind": "code",
       "title": "BEANS-Zero evaluation software",
       "url": "https://github.com/earthspecies/beans-zero",
-      "version": "Mutable main branch reviewed 2026-10-12; no commit pinned",
+      "version": "31d4487ee6452ae6c31853d45fd38b7d4150372d (main, checked 2026-10-13)",
       "source_ids": [
-        208
+        208,
+        246
       ],
       "priority": 2,
-      "reviewed": "2026-10-12",
+      "reviewed": "2026-10-13",
       "task": "Fetch/list/evaluate BEANS-Zero tasks and calculate reported benchmark metrics.",
-      "review_depth": "README and root inventory reviewed; direct root LICENSE URL returned 404. Code and dependencies were not cloned or run.",
-      "access": "Public GitHub repository; caption evaluation documentation states a Java 8 runtime requirement.",
-      "decision": "Do not reuse until an explicit code license and compatible component terms are verified.",
-      "limitations": "No code license was established; evaluation reproducibility, security, label validity and data permissions were not audited.",
+      "review_depth": "Reviewed the official README, root file inventory and pyproject.toml at the pinned commit. The project metadata says package version 1.0.0 and Python >=3.10 but has no license declaration; no root LICENSE was present. The README states about 100 GB for full download and Java 8 for caption evaluation. Code was not cloned, downloaded or run.",
+      "access": "Public GitHub source repository; no local copy or execution.",
+      "decision": "Do not copy, install or execute until an explicit code license is published or permission is otherwise established. Keep software, benchmark-data components and model rights separate.",
+      "limitations": "No explicit license was found at the pinned root or in pyproject metadata. The README full-download estimate (about 100 GB) conflicts with the live Hugging Face listing (50.5 GB). Dependencies, evaluator correctness, environment isolation and outputs were not tested.",
       "attribution": "Earth Species Project, BEANS-Zero repository.",
       "rights": {
-        "license": "Unresolved",
+        "license": "Unresolved; pinned repository root has no LICENSE and pyproject.toml declares no license.",
         "scope": "Benchmark evaluation code only; separate from benchmark data and model.",
-        "evidence_url": "https://github.com/earthspecies/beans-zero",
-        "conditions": "Confirm the exact repository revision and license before copying, installing or executing code.",
+        "evidence_url": "https://raw.githubusercontent.com/earthspecies/beans-zero/31d4487ee6452ae6c31853d45fd38b7d4150372d/pyproject.toml",
+        "conditions": "Confirm an explicit license and review dependencies/security before copying or execution. Do not assume public repository visibility grants reuse rights.",
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
@@ -2319,6 +2321,125 @@
         "scope": "Upstream catalog code and metadata only; every linked dataset, recording, annotation and model retains separate terms.",
         "evidence_url": "https://github.com/bioacoustic-ai/bioacoustics-datasets/tree/c412c5c3fd65552d17e492dac35f2be2c30349a4",
         "conditions": "Do not copy, execute or redistribute the upstream code based on public visibility alone. Review each linked dataset's exact source terms independently before access or reuse. No code or data was copied.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "plant-stress-ultrasound-paper-2023",
+      "kind": "paper",
+      "title": "Sounds emitted by plants under stress are airborne and informative",
+      "url": "https://doi.org/10.1016/j.cell.2023.03.009",
+      "version": "Cell 186, 1328-1336.e1-e4 (2023); DOI 10.1016/j.cell.2023.03.009",
+      "source_ids": [
+        15
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Reference for ultrasonic plant-emission measurement and stress-condition classification, not animal communication or translation.",
+      "review_depth": "Read the main published article and full STAR Methods, including recording hardware, preprocessing, plant-held-out evaluation, greenhouse results and data/code availability; checked relevant figure legends and selected supporting captions. Publisher article endpoint was inaccessible; the linked paper copy was used. Supplementary source files, dataset files and code were not inspected.",
+      "access": "Metadata and original-paper DOI linked; Talk2Nature publishes its own summary only.",
+      "decision": "Use as the primary measurement study in a separate plant-acoustics research branch. Do not interpret a stress-state classifier as decoding meaning; any phone feature would need a sensor capable of the documented ultrasonic range and sampling.",
+      "limitations": "The core experiments concern tomato and tobacco under controlled acoustic-box/greenhouse conditions, with a small exploratory species survey. No receiver response is tested in this paper; independent reproduction and field generalization are absent.",
+      "attribution": "Khait et al. (2023), Cell 186:1328-1336, https://doi.org/10.1016/j.cell.2023.03.009.",
+      "rights": {
+        "license": "CC BY 4.0 stated in the full published paper copy.",
+        "scope": "The journal article only; figures or other third-party material may have separate notices. The dataset, classifier code and model artifacts are separate components.",
+        "evidence_url": "https://www.plant-ditech.com/images/pdf/Sounds_article_-_Khait_et_al_2023.pdf",
+        "conditions": "Attribute the article when reusing its material and check individual figure notices. Talk2Nature links and paraphrases rather than reproducing the paper.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "plant-acoustic-emissions-critical-review-2024",
+      "kind": "paper",
+      "title": "Talk is cheap: rediscovering sounds made by plants",
+      "url": "https://doi.org/10.1016/j.tplants.2023.11.023",
+      "version": "Trends in Plant Science 29(6), 662-667 (2024); DOI 10.1016/j.tplants.2023.11.023",
+      "source_ids": [
+        241
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Critical context for distinguishing plant acoustic emissions and physiological cues from experimentally supported receiver communication.",
+      "review_depth": "Reviewed the Opinion's historical framing, mechanism discussion, receiver-evidence conclusion and open questions from an institutional repository copy. This is a critical synthesis, not a new experiment.",
+      "access": "Citation and institutional full-text link only; no article files or figures copied.",
+      "decision": "Use to bound claims and identify testable mechanism/receiver questions. Read alongside the 2026 moth behavioral study rather than treating this 2024 view as the final state of the literature.",
+      "limitations": "Opinion paper, not a new dataset or experimental replication. The article's exact reuse license was not verified in this review.",
+      "attribution": "Nardini, Cochard and Mayr (2024), Trends in Plant Science 29:662-667, https://doi.org/10.1016/j.tplants.2023.11.023.",
+      "rights": {
+        "license": "The article's reuse license was not verified; metadata and citation only.",
+        "scope": "This article only; cited papers and their data/code have separate rights.",
+        "evidence_url": "https://arts.units.it/retrieve/3ee15482-f017-4673-8d4e-a7f3cae5571d/1-s2.0-S1360138523003825-main.pdf",
+        "conditions": "Do not copy or redistribute the PDF, text or figures based on repository availability. Link to the record and publish original summaries only.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "plant-stress-ultrasound-dataset-dryad-v1",
+      "kind": "dataset",
+      "title": "Plant acoustic emissions under stress, Dryad dataset",
+      "url": "https://doi.org/10.5061/dryad.jwstqjqf7",
+      "version": "Dryad record dated 2023-04-03; PlantSounds.zip 10 MB plus README.md 806 B",
+      "source_ids": [
+        15,
+        242,
+        243
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Potential plant-sound event and stress-condition methods reference; not a dataset for animal communication or phone-microphone claims.",
+      "review_depth": "Reviewed the exact Dryad page, listed archive/README and Dryad's current CC0 reuse policy. The landing page describes 2 ms WAV clips sampled at 500 kHz across dry/cut tomato and tobacco, empty-pot and greenhouse-noise folders. The archive, internal manifest, labels, split membership and file-level checksums were not inspected.",
+      "access": "Metadata-only; no archive or audio downloaded.",
+      "decision": "Keep as a discovery/reference record. Consider a bounded analysis only after a qualified plant-acoustics reviewer selects a concrete sensor/method question and the exact archive manifest is checked. Current collection tooling does not have a Dryad adapter and individual-file cap is 5 MiB; no acquisition was attempted.",
+      "limitations": "One small controlled-study deposit, not a broad plant corpus. Public CC0 status does not establish scientific suitability, acquisition/admission, annotation quality, or generalization. Its 500 kHz recordings require specialized ultrasound equipment and cannot be represented by ordinary phone audio.",
+      "attribution": "Khait et al. (2023), Recorded plant sounds from: Sounds emitted by plants under stress are airborne and informative [Dataset], Dryad, https://doi.org/10.5061/dryad.jwstqjqf7.",
+      "rights": {
+        "license": "CC0 1.0 per Dryad's repository-wide dataset reuse policy; the dataset page does not display an item-specific license field.",
+        "scope": "Files in Dryad dataset DOI 10.5061/dryad.jwstqjqf7 only; paper, Zenodo code and any model artifacts are separate.",
+        "evidence_url": "https://datadryad.org/help/guides/best_practices",
+        "conditions": "Cite the dataset as scholarly practice. Inspect the exact archive manifest and intended analysis before acquisition or research admission; CC0 does not imply that the data are a valid benchmark.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "plant-stress-cnn-code-zenodo-v1",
+      "kind": "code",
+      "title": "CNN training function for plant sounds, Zenodo v1",
+      "url": "https://zenodo.org/records/7612742",
+      "version": "Zenodo v1, published 2023-02-06; one 2.4 kB Python file",
+      "source_ids": [
+        15,
+        244
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-13",
+      "task": "Metadata-only reference to the classifier training function cited by the plant acoustics paper.",
+      "review_depth": "Reviewed the exact Zenodo v1 record, file size and rights section. The License field is blank; the 2.4 kB Python file was not downloaded, inspected or run.",
+      "access": "Metadata-only official record.",
+      "decision": "Do not acquire, copy, execute, vendor or redistribute the code until a clear license is available. A future benchmark can use an independently implemented baseline if the scientific protocol is approved.",
+      "limitations": "A single training function is not a complete reproducibility package. Dependencies, preprocessing, versioned environment and exact relation to the published metrics have not been audited.",
+      "attribution": "Khait et al. (2023), CNN sounds classifier - training function, Zenodo v1, https://doi.org/10.5281/zenodo.7612742.",
+      "rights": {
+        "license": "No license is shown in the Zenodo v1 record; rights unresolved.",
+        "scope": "The deposited classifier code file only; the paper and Dryad dataset have separate terms.",
+        "evidence_url": "https://zenodo.org/records/7612742",
+        "conditions": "Do not acquire, copy, execute or redistribute the file based on public visibility. Resolve rights separately first.",
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"

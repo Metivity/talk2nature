@@ -58,6 +58,24 @@ class CollectionTests(unittest.TestCase):
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf'})
         self.assertLess(size, MAX_BATCH_BYTES)
 
+    def test_beans_zero_stays_a_metadata_only_comparison_not_commercial_input(self):
+        records = {r['id']: r for r in self.catalog['resources']}
+        dataset = records['beans-zero-benchmark-data']
+        code = records['beans-zero-evaluation-code']
+        self.assertEqual(dataset['rights']['commercial_use'], 'not_admitted')
+        self.assertIn('91,965 examples', dataset['review_depth'])
+        self.assertIn('50.5 GB', dataset['limitations'])
+        self.assertIn('about 100 GB', dataset['limitations'])
+        self.assertIn('Unresolved', code['rights']['license'])
+        self.assertIn('no LICENSE', code['rights']['license'])
+        self.assertIn('pyproject.toml declares no license', code['rights']['license'])
+        for record in (dataset, code):
+            with self.subTest(resource=record['id']):
+                self.assertEqual(record['acquisition'], 'metadata_only')
+                self.assertEqual(record['files'], [])
+                with self.assertRaisesRegex(ValueError, 'Not admitted'):
+                    plan(self.catalog, [record['id']])
+
     def test_bat_fileinfo_stays_metadata_only_and_pdf_has_explicit_missing_digest(self):
         by_id = {r['id']: r for r in self.catalog['resources']}
         fileinfo = by_id['egyptian-fruit-bat-fileinfo']

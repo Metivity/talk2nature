@@ -71,13 +71,13 @@
     "deadline_source_id": 201,
     "topic_source_id": 202,
     "eligibility_source_id": 203,
-    "status": "Upcoming · research consortium required",
+    "status": "Scheduled to open 13 Oct 2026 · portal status unverified · consortium required",
     "amount": "€16 million topic budget; expected €5–6 million per project for three projects. Lump-sum RIA; this is not funding available directly to Talk2Nature.",
-    "source_id": 201,
-    "fit": "A possible future methods contribution only. The topic is anchored to one of three EU policy areas: pollinator monitoring under the Nature Restoration Regulation, soil biodiversity under the Soil Monitoring Law, or biodiversity monitoring under the Water Framework Directive. It expects operational monitoring, demonstration cases, species identification/quantification and FAIR-by-design data. Talk2Nature currently has no validated species-identification or counting capability, policy monitoring evidence, confirmed research lead or eligible consortium; it is not a stand-alone animal-communication or general software grant.",
-    "next_action": "The call is scheduled to open October 13, 2026. Reassess only after the live Funding & Tenders topic is available and a qualified, eligible research consortium identifies a concrete need that Talk2Nature can meet with a tested open-source data or annotation workflow. The public information day is October 16 and brokerage event October 19; no registration or contact has been made.",
-    "verified": "2026-10-12",
-    "application_status": "Not pursued; no applicant, science lead, policy-ready method or consortium"
+    "source_id": 240,
+    "fit": "This is not a current bid fit, standalone opportunity or lead application. The topic requires a policy-facing demonstration in one of three specific areas: the EU Pollinators Monitoring Scheme under the Nature Restoration Regulation, soil biodiversity under the Soil Monitoring Law, or Water Framework Directive monitoring. It calls for scalable and cost-effective monitoring, demonstrations, species identification/quantification, relevant genomic methods and FAIR-by-design data. Talk2Nature is currently an experimental passive audio observation/annotation tool, with no validated statutory monitoring, identification/counting, DNA or Water Framework Directive method. At most, it could be a limited software or interoperability contribution inside an eligible consortium if a demonstrated need emerges. The applicant entity, scientific lead and consortium are unconfirmed.",
+    "next_action": "The official REA schedule and work programme list opening on October 13, 2026 and a January 14, 2027 deadline at 17:00 Brussels time. The Funding & Tenders topic page could not be retrieved during the October 13 review, so actual submission status is unverified; do not call it open until the official portal confirms that. Reassess only if the portal is available and a qualified, eligible consortium identifies a concrete need that matches a tested Talk2Nature workflow. The information day is October 16 and brokerage event October 19; no registration, outreach or application has been made.",
+    "verified": "2026-10-13",
+    "application_status": "Not pursued; portal status unverified; current fit, applicant and consortium not established"
   },
   {
     "slug": "wildlife-acoustics-q4-2026",
