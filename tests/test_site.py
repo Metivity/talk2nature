@@ -858,6 +858,29 @@ class SiteTests(unittest.TestCase):
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
 
+    def test_japanese_tit_note_renders_source_linked_competing_theories(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='bird-call-syntax')
+        comparison=note['theory_comparison']
+        self.assertEqual([item['name'] for item in comparison['items']],['Minimal Compositionality','Bird Implicatures'])
+        sources={source['id']:source for source in load('sources')}
+        source=sources[266]
+        self.assertEqual(source['review_url'],'https://cnrs.hal.science/hal-04840821v1')
+        self.assertIn('CC BY 4.0',source['rights']['article'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        theory=next(item for item in resources if item['id']=='japanese-tit-bird-implicatures-2024-paper')
+        self.assertIn('CC-BY-4.0',theory['rights']['license'])
+        self.assertEqual(theory['acquisition'],'metadata_only')
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(Path(d)/'research'/'bird-call-syntax'/'index.html').read_text()
+        self.assertIn('Two explanations, one unresolved test',page)
+        self.assertIn('Distinctive prediction:',page)
+        self.assertIn('Minimal Compositionality',page)
+        self.assertIn('Bird Implicatures',page)
+        self.assertIn('separate Wiley supporting-information PDF returned HTTP 403',page)
+        self.assertIn('https://cnrs.hal.science/hal-04840821v1',page)
+
     def test_lilac_crowned_amazon_context_note_preserves_evidence_and_rights_boundaries(self):
         note=next(n for n in load('research') if n['slug']=='lilac-crowned-amazon-vocal-context-2016')
         self.assertEqual(note['source_ids'],[275])

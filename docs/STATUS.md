@@ -1,5 +1,17 @@
 # Project status
 
+## October 13 Japanese-tit theory comparison
+
+**Question:** what do the competing 2024 explanations of Japanese-tit ABC–D call sequences claim, and what evidence would distinguish them?
+
+**Evidence reviewed:** the official HAL API record for Schlenker et al. (2024), DOI 10.1111/brv.13068, and its v1 author-accepted manuscript. HAL identifies the deposited manuscript as open access and declares CC BY 4.0. Reviewed the main text, Sections I–VII, and consulted the formal appendices selectively; derivations were not recalculated. The distinct Wiley supporting-information PDF returned HTTP 403 and was not reviewed.
+
+**Change:** expanded the Japanese-tit research note and resource record, added a plain-language, source-linked comparison of Minimal Compositionality and Bird Implicatures, and identified their unresolved predictions and assumptions. Updated the reading backlog. The manuscript remains metadata-only in the catalog; no article file, copied passage, figure, data or code was added. The comparison is a Talk2Nature summary, not a new playback result, independent replication or specialist review.
+
+**Validation:** all 114 repository Python tests and 107 Node tests pass; the resource catalog validates 112 records. The owner-only suite passes 104 tests, with 49 PostgreSQL integration tests skipped because no disposable database is configured. The catalog sync reports 471 records and is idempotent on repeat. The local noindex build produces 104 pages plus 404; the site checker passes for 105 HTML documents and 5,022 links. The comparison and HAL source link render in the local research page. No physical-phone or independent-user review occurred in this milestone.
+
+**Next:** seek independent comparative-communication review of the two theories and a welfare-reviewed discriminator. Keep AutoResearch **NOT READY**; this literature synthesis supplies no training data or benchmark evidence.
+
 ## October 13 PR #97 deployment and live verification
 
 PR [#97](https://github.com/Metivity/talk2nature/pull/97), “Review Japanese-tit study data and code deposit,” merged to `main` as [`77d8db29bf111e9f420b2cf8e709dd284f739a4b`](https://github.com/Metivity/talk2nature/commit/77d8db29bf111e9f420b2cf8e709dd284f739a4b). Public checks passed. The manual Pages workflow [#38383912571](https://github.com/Metivity/talk2nature/actions/runs/38383912571) completed successfully for both build and deploy.
