@@ -3543,5 +3543,56 @@
     },
     "review_locator": "Wario et al. 2017: PLOS ONE abstract and Introduction; Materials and Methods, Hive and recording setup, Target features, Software modules, Experimental validation and results, and Discussion. Repository: README, API license metadata and recursive tree at commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d. Wario et al. 2015: Frontiers system motivation, hive setup, validation design, runtime and license sections.",
     "purpose": "Multimodal methods"
+  },
+  {
+    "slug": "barkopedia-context-benchmark-2025",
+    "title": "Barkopedia: context labels do not show call meaning",
+    "seo_description": "Barkopedia's dog activity and environment task predicts video-assisted labels from audio; source-media rights, annotation and split details remain unresolved.",
+    "taxon": "Dogs",
+    "kind": "Audio benchmark challenge",
+    "year": "2025",
+    "year_label": "Challenge year",
+    "source_ids": [
+      316,
+      317
+    ],
+    "reviewed": "2026-10-14",
+    "review_stage": "Official challenge and one task-specific dataset card reviewed; metadata-only",
+    "review_depth": "Reviewed the official Barkopedia README and MIT LICENSE at GitHub commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d; opened the linked task Spaces; reviewed the Activity and Environment dataset card and Hugging Face revision/tree at 60a721a7f9477634971f6b3df29dc2a5e56994d8. The README says source audio was collected from YouTube and Reddit and lists eight tasks. Only the Activity and Environment task card was examined; no academic challenge-results paper or final leaderboard report was reviewed. No archive, CSV, audio, code or model was downloaded or executed, and no independent reproduction or specialist review occurred.",
+    "finding": "Barkopedia was an IJCAI 2025 challenge with eight dog-audio tasks: age, sex, breed, individual recognition, activity/environment, emotion, vocal separation and vocal detection. Its README describes the corpus as real-world clips sourced from YouTube and Reddit. The reviewed Activity and Environment card lists 12,480 training clips and 3,120 test clips, with eight activity categories and six environment categories. It says labels were initially generated through video-assisted inference with Janus-Pro-7B and later manually verified. This is a useful context-label classification comparator, but it does not show that an audio prediction represents an animal's intended message, subjective state or a validated welfare outcome. The pinned Hugging Face tree includes train, validation and test directories, although the card still says the test set will be released later. Its Dataset Viewer reports incompatible audiofolder/CSV formats across splits. The Barkopedia GitHub repository is the MIT-licensed challenge site/documentation; its inspected root tree did not include a training or evaluation implementation.",
+    "limitations": "The challenge timeline ended in 2025. No final leaderboard, peer-reviewed benchmark report, baseline implementation or seven other task-specific dataset cards were reviewed. The card does not specify per-recording source permissions, consent/privacy, annotator qualifications, blinded review, inter-annotator agreement, animal/session/site grouping or an untouched locked-test protocol. Its MIT metadata and the GitHub site's MIT LICENSE do not independently establish rights to source-platform recordings. The Viewer format error and card's future-tense test-set text show that the public metadata is not fully synchronized, but do not prove the audio files are unusable. No data, labels or sound were inspected, so no model performance or dataset quality conclusion is claimed.",
+    "lesson": "Keep three claims separate: an audio classifier can predict a dataset's context labels; labels may be derived with video and human review; neither alone demonstrates call meaning or independently observed behavior. For Talk2Nature, retain observer-entered behavior and model predictions as separate records. Do not use this dataset in a model run until the exact recordings' rights, annotation process, grouping and evaluation splits are resolved.",
+    "next_review": "If this benchmark becomes a candidate, first verify the exact source-media terms and consent basis, the complete annotation workflow and agreement, and individual/session/site membership in train, validation and test. Pin a reproducible baseline and compare against context-only and simple acoustic controls before any model run. If these records are unavailable, retain this as a metadata-only comparator and use a separately rights-cleared, independently labeled question for Talk2Nature.",
+    "expert_review": "No independent dog-behavior, bioacoustics or benchmark-methods specialist has reviewed this Talk2Nature assessment; no author or organizer was contacted.",
+    "review_locator": "Official Barkopedia README at GitHub commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d: Updates, Overview, Important Dates, Tasks and Data sections; pinned MIT LICENSE. Hugging Face Activity and Environment card at revision 60a721a7f9477634971f6b3df29dc2a5e56994d8: dataset description, counts, label categories, video-assisted labeling note and submission section; Hugging Face revision API and top-level tree. Dataset Viewer reported FileFormatMismatchBetweenSplitsError for audiofolder versus CSV formats.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Challenge scope",
+        "Eight tasks spanning dog age, sex, breed, individual identity, activity/environment, emotion, vocal separation and vocal detection. The challenge site lists a 2025 submission and announcement timeline."
+      ],
+      [
+        "Reviewed task",
+        "Activity and Environment only: eight activity labels and six environment labels; 12,480 training and 3,120 test clips according to its dataset card."
+      ],
+      [
+        "Label origin",
+        "The card says initial labels were generated using video-assisted Janus-Pro-7B inference and then manually verified; reviewer qualifications, blinding and agreement were not described in the reviewed card."
+      ],
+      [
+        "Version and split metadata",
+        "Hugging Face revision 60a721a7f9477634971f6b3df29dc2a5e56994d8, modified 2025-07-08; tree contains train, validation and test directories. The card's future-tense test-release text is stale, and its viewer cannot reconcile audiofolder and CSV split formats."
+      ],
+      [
+        "Rights and reuse",
+        "The HF card declares MIT and the challenge-site repository has an MIT LICENSE. The challenge README says recordings came from YouTube and Reddit; rights and consent for the individual source recordings were not established. The audio remains metadata-only."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only project and task comparator; not a released Talk2Nature training dataset or translation benchmark.",
+      "asset": "Pinned Barkopedia challenge README and Activity/Environment dataset card; no archive, labels, audio, baseline code or model weights acquired.",
+      "rights": "Repository MIT applies to the challenge site/software component. The dataset card's MIT field and project-level source description do not resolve the permissions, consent, privacy or license scope for individual YouTube/Reddit recordings.",
+      "experiment": "Do not run a model until the exact audio rights, independently reviewed labels, dog/session/site groups and locked-test boundary are established. Compare audio predictions against context-only and simple acoustic baselines; retain human observations separately from model outputs."
+    }
   }
 ]

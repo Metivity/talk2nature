@@ -3241,5 +3241,29 @@
       "page": "Open-access article distributed under the Creative Commons Attribution License (CC BY); cite the original if reusing article material.",
       "scope": "Article only. The paper's software and data artifacts were not reviewed or acquired."
     }
+  },
+  {
+    "id": 316,
+    "title": "Barkopedia: A Canine Vocalization Understanding Challenge (pinned README)",
+    "description": "Official IJCAI 2025 challenge README describing eight dog-audio tasks, competition dates, platform provenance and the Hugging Face dataset route.",
+    "url": "https://raw.githubusercontent.com/UTA-ACL2/Barkopedia/ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d/README.md",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the official README and repository tree at commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d, plus its MIT LICENSE. The README names YouTube and Reddit as source platforms and documents the 2025 challenge timeline and eight task categories. The repository contains the challenge website, not a training/evaluation codebase. No other task's dataset card, model code, audio, labels or result report was reviewed.",
+    "rights": {
+      "page": "The pinned repository LICENSE declares MIT for the repository software and documentation.",
+      "scope": "The MIT notice does not establish rights, consent or privacy terms for source-platform recordings, Hugging Face dataset files, model weights or competition submissions."
+    }
+  },
+  {
+    "id": 317,
+    "title": "Barkopedia Activity and Environment dataset card (pinned Hugging Face revision)",
+    "description": "Official task card for the dog activity/environment classification track, pinned to Hugging Face revision 60a721a7f9477634971f6b3df29dc2a5e56994d8.",
+    "url": "https://huggingface.co/datasets/ArlingtonCL2/Barkopedia_Dog_Act_Env/tree/60a721a7f9477634971f6b3df29dc2a5e56994d8",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the official dataset card, revision metadata and top-level file tree at revision 60a721a7f9477634971f6b3df29dc2a5e56994d8 (last modified 2025-07-08). The card lists 12,480 training and 3,120 test clips, eight activity labels, six environment labels and video-assisted Janus-Pro-7B pre-labeling followed by manual verification. The revision includes train, validation and test directories, while the card still says the test set will be released later. The Dataset Viewer reports incompatible audiofolder/CSV split formats. No archive, CSV, audio or model was fetched.",
+    "rights": {
+      "page": "The Hugging Face card metadata declares MIT for this dataset revision.",
+      "scope": "The card and competition README identify YouTube/Reddit-sourced media, but the exact source-video permissions, consent, privacy basis and license coverage were not verified. The card's MIT field alone does not clear those underlying recordings for Talk2Nature use."
+    }
   }
 ]

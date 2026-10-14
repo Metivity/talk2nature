@@ -1,5 +1,15 @@
 # Project status
 
+## October 14 — Barkopedia context labels and source rights
+
+**Question:** does a large dog-audio challenge provide an appropriate route from bark classification toward communication research?
+
+**Evidence reviewed:** the official Barkopedia README and MIT LICENSE at GitHub commit `ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d`; the Activity and Environment Hugging Face card and revision `60a721a7f9477634971f6b3df29dc2a5e56994d8`; and the Hugging Face revision/tree metadata. The challenge README says recordings came from YouTube and Reddit and lists eight tasks. Only the Activity and Environment dataset card was examined; no challenge-results paper, other task cards, archives, labels or audio were reviewed.
+
+**Finding and decision:** the selected card lists 12,480 training and 3,120 test clips, eight activity classes and six environment classes. It says labels began with video-assisted Janus-Pro-7B inference and were then manually verified. The Hugging Face tree contains train, validation and test directories, but the card still describes the test set as forthcoming and the dataset viewer reports incompatible audiofolder/CSV split formats. This can inform a context-classification methods comparison; it does not establish call meaning, independently observed behavior or animal welfare. Added one source-linked research note, two official source records and three separately scoped project/code/data resources. Keep audio metadata-only: the GitHub MIT license and Hugging Face MIT card field do not establish the rights and consent basis for each third-party source recording. No audio, archive, label file or model was downloaded or run; no contact or application occurred. AutoResearch remains **NOT READY**.
+
+**Validation:** all four edited JSON files parsed successfully and the catalog validator accepted 138 resources. The full Python suite passed (129 tests), the Node suite passed (109 tests), and the local noindex build produced 110 pages plus 404. The explicit-origin public candidate produced 110 pages plus 404; `scripts/check_site.py` passed with 111 HTML pages, 5,526 checked links and all 110 public pages reachable. The generated note has a unique title/description, `index,follow`, self-canonical, structured citations, reading-path links and a sitemap entry. Live publication and search indexing have not yet been verified. AutoResearch remains **NOT READY**.
+
 ## October 14 — expand the Japanese-tit reviewer packet with an adjacent receiver study
 
 **Question:** does the 2025 Carolina-wren/great-tit playback add evidence about cross-family receiver responses, and can it support claims about call-order decoding?

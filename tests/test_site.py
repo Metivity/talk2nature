@@ -120,6 +120,44 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Dog vocalization dataset described in the 2024 bark-classification paper',resource_page)
             self.assertIn('Dog-bark baseline implementations described in the 2024 paper',resource_page)
 
+    def test_barkopedia_context_note_is_discoverable_and_keeps_rights_and_meaning_separate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='barkopedia-context-benchmark-2025')
+        self.assertEqual(note['purpose'],'Models & evaluation')
+        self.assertEqual(note['source_ids'],[316,317])
+        self.assertIn('video-assisted',note['finding'])
+        self.assertIn('does not show that an audio prediction represents',note['finding'])
+        self.assertIn('per-recording source permissions',note['limitations'])
+        self.assertIn('No archive, CSV, audio, code or model was downloaded or executed',note['review_depth'])
+        model_path=next(path for path in load('learning-paths')['paths'] if path['id']=='model')
+        self.assertIn('barkopedia-context-benchmark-2025',model_path['notes'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('barkopedia-')}
+        self.assertEqual(set(selected),{
+            'barkopedia-challenge-2025',
+            'barkopedia-challenge-site-code-2025',
+            'barkopedia-dog-activity-environment-data-2025',
+        })
+        self.assertEqual(selected['barkopedia-challenge-2025']['rights']['license'],'MIT declared in the pinned GitHub repository LICENSE')
+        self.assertEqual(selected['barkopedia-dog-activity-environment-data-2025']['rights']['research_use'],'unresolved')
+        for resource in selected.values():
+            with self.subTest(resource=resource['id']):
+                self.assertEqual(resource['acquisition'],'metadata_only')
+                self.assertEqual(resource['files'],[])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'barkopedia-context-benchmark-2025'/'index.html').read_text()
+            self.assertIn('Barkopedia: context labels do not show call meaning',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/barkopedia-context-benchmark-2025/',page)
+            self.assertIn('video-assisted inference',page)
+            self.assertIn('source recordings',page)
+            self.assertIn('/research/barkopedia-context-benchmark-2025/',(root/'sitemap.xml').read_text())
+            paths=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn('/research/barkopedia-context-benchmark-2025/',paths)
+
     def test_crowdbark_project_is_discoverable_without_claiming_a_dataset_release(self):
         project_root=Path(__file__).resolve().parents[1]
         sources=json.loads((project_root/'content'/'sources.json').read_text())
