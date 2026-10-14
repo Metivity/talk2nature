@@ -964,9 +964,9 @@
     "id": 101,
     "title": "Budgerigar study data deposit",
     "url": "https://data.mendeley.com/datasets/j8rpy4dc6c/1",
-    "description": "Zhao (2023), version 1, CC BY 4.0. Deposit inventory and one pinned 1.49 MB MAT container inspected: 15 call structures; biological labels and full methods remain unverified.",
-    "checked": "2026-10-03",
-    "origin": "October 3 multi-animal expansion; review depth and limits are recorded in evidence notes."
+    "description": "Zhao (2023), version 1, CC BY 4.0. The landing page says the MATLAB struct-array deposit includes raw audio, with Figure 2 data in ColonyNoiseCalls and Figures 3–5 data in acoustiSAT_MAO.mat.",
+    "checked": "2026-10-14",
+    "origin": "Rechecked the official version-1 landing page on October 14, 2026. The existing checksum-pinned sample report identifies the selected file as a smallest-file item from ColonyNoiseCalls, but the file is not linked to a verified caller/session/condition. The separate API documentation and authentication result are recorded as source 319."
   },
   {
     "id": 102,
@@ -3279,5 +3279,13 @@
       "article": "The publisher/PMC page identifies this open-access article as CC BY. Attribute the authors and original article and indicate changes if reusing material.",
       "scope": "This article only. Its cited primary-study data, code, audio and any third-party material have separate rights. Talk2Nature publishes an original summary and source link; no article text or figure is copied."
     }
+  },
+  {
+    "id": 319,
+    "title": "Mendeley Data API documentation",
+    "description": "Official documentation for public dataset file-list and file-detail endpoints, with OAuth2 authentication; OAI-PMH is documented for public-record metadata harvesting.",
+    "url": "https://data.mendeley.com/api/docs/",
+    "checked": "2026-10-14",
+    "origin": "Checked October 14, 2026. The public dataset file-list endpoint documents OAuth2. A no-token request for the version-1 budgerigar file list returned HTTP 401; no file manifest or file bytes were retrieved in this check."
   }
 ]
