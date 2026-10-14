@@ -5,10 +5,10 @@ Raviv approved publication and deployment on September 30, 2026 using the accoun
 - Repository: https://github.com/Metivity/talk2nature (public; default branch main).
 - GitHub Pages returned origin: https://metivity.github.io/talk2nature/ (HTTPS enforced).
 - Workflow: `.github/workflows/pages.yml`, manually dispatched. Source pushes alone do not deploy.
-- Build uses the origin supplied by `actions/configure-pages`, runs tests and the generated-site checker, then uploads only `dist/`.
+- Build uses the origin supplied by `actions/configure-pages`, runs tests and the generated-site checker, then uploads only `dist/`. After deployment, the workflow retries a live HTTPS check of the homepage, Field Companion and resource directory, their index/canonical metadata, the sitemap entries and the robots sitemap line. It does not verify Google indexing or ranking.
 - Current release outcome is recorded in `docs/STATUS.md`.
 
-For an authorized future release, push reviewed changes, dispatch `pages.yml` on main, and inspect the completed deployment. Check home, an evidence note, live search, mobile navigation, 404, canonical URLs and sitemap. Keep funding drafts, audit, recordings, screenshots and credentials outside the published artifact.
+For an authorized future release, push reviewed changes and dispatch `pages.yml` on main. The workflow verifies core live routes and crawl metadata after deployment; then inspect a representative evidence note, mobile navigation and 404 as appropriate. Keep funding drafts, audit, recordings, screenshots and credentials outside the published artifact.
 
 Local public-build check:
 
