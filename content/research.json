@@ -3430,5 +3430,49 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "budgerigar-playback-context",
+    "title": "Playback can shape the call you measure",
+    "seo_description": "A five-budgerigar experiment found playback context changed conditioned call intensity and variation; it did not test call meaning or a consumer app.",
+    "taxon": "Birds",
+    "kind": "Operant playback study",
+    "year": "2016",
+    "source_ids": [
+      312
+    ],
+    "review_depth": "PubMed citation/abstract and selected PMC author-manuscript sections surfaced by the article index—subjects, apparatus, stimuli, procedures, analyses, and results/discussion—reviewed 2026-10-14. The listed supplement, raw data, and code were not inspected; no reanalysis, replication, or independent review. Reuse terms were not verified.",
+    "finding": "Five individually housed budgerigars had been trained to call after a visual LED cue, with food reinforcement. In a call-plus-flock condition, calls were louder than in silent, call-only, flock-only, and pure-tone conditions. Among the three birds that produced non-primary calls, these calls were more likely in the call-plus-flock and call-only conditions than in silent, flock-only, and tone conditions. The result shows acoustic context can modulate a trained vocal response in this laboratory setup; it does not decode a message.",
+    "limitations": "The study involved five birds (one male, four females), not a household population or a held-out-individual test. The animals were trained in an operant setup and the experimental conditions followed a fixed sequence; this was not passive observation of spontaneous calls. The call-variation result applied to three birds. Vocal intensity and call form are not measures of comprehension, welfare benefit, or semantic meaning, and no receiver-response test was reported. The paper describes maintaining birds at 85–90% of free-feeding weight during the experiment and reports institutional animal-care approval; this protocol should not be copied as consumer-app guidance. The PMC record lists supplementary material, but it was not inspected. Raw data/code and their rights were not established in this review.",
+    "lesson": "Playback is an intervention: it can change the vocal output being measured, even when the emitted call is already trained. Keep Talk2Nature's public observation tools passive and silent. Any future playback or receiver experiment needs its own specialist-led welfare and protocol review; this result is not evidence that an app can talk to or translate a parrot.",
+    "next_review": "Inspect the supplement and complete analysis details, verify applicable article reuse terms, and obtain independent avian-behavior and statistical review before using this as more than a bounded methods comparator. Keep playback out of the public app.",
+    "reviewed": "2026-10-14",
+    "expert_review": "Not independently reviewed by an avian-behavior or statistical specialist.",
+    "review_stage": "Selected methods and results reviewed",
+    "year_label": "Published online 2015; issue",
+    "study_snapshot": [
+      [
+        "Study unit",
+        "Five budgerigars: one male and four females, individually housed."
+      ],
+      [
+        "Training",
+        "A visual LED cue signaled a trained vocal response reinforced with brief food access."
+      ],
+      [
+        "Sound conditions",
+        "Silence, conspecific call plus flock sound, call only, flock sound only, and a pure tone."
+      ],
+      [
+        "Observed outcome",
+        "Call-plus-flock trials had louder calls; three birds also showed more non-primary calls in call-rich conditions."
+      ],
+      [
+        "Welfare and interpretation",
+        "The article reports institutional animal-care approval and a restricted-weight protocol. It tested conditioned vocal output, not message meaning or receiver comprehension."
+      ]
+    ],
+    "review_locator": "PMC author-manuscript sections: Subjects, Apparatus, Stimulus, Procedures, Analyses, Results and Discussion; PubMed record for citation/date/DOI. The listed supplement was not reviewed.",
+    "purpose": "Behavior & communication"
   }
 ]

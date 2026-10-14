@@ -345,6 +345,28 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(mapped['locations'][0]['place_id'],'costa-rica')
             self.assertEqual(mapped['observation_period']['start_year'],2007)
 
+    def test_budgerigar_playback_note_bounds_trained_vocal_output(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/budgerigar-playback-context/index.html').read_text()
+            self.assertIn('Five individually housed budgerigars',page)
+            self.assertIn('conditioned vocal output',page)
+            self.assertIn('not evidence that an app can talk to or translate a parrot',page)
+            self.assertIn('Keep playback out of the public app',page)
+            self.assertIn('Published online 2015; issue 2016',page)
+            self.assertIn('index,follow',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/budgerigar-playback-context/',page)
+            self.assertIn('https://pmc.ncbi.nlm.nih.gov/articles/PMC4696898/',page)
+            note=next(n for n in load('research') if n['slug']=='budgerigar-playback-context')
+            self.assertEqual(note['source_ids'],[312])
+            resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+            resource=next(r for r in resources if r['id']=='budgerigar-conditioned-vocal-output-seki-dooling-2016')
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['rights']['research_use'],'unresolved')
+            self.assertEqual(resource['rights']['redistribution'],'unresolved')
+
     def test_all_pages_have_unique_concise_search_descriptions(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
