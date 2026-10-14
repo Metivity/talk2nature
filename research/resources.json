@@ -4590,6 +4590,66 @@
         "evidence_url": "https://github.com/gsvidaurre/amazon-vocal-culture/blob/1399b7a2de6354d27b5227bb75de7e285fe3d636/LICENSE"
       },
       "acquisition": "metadata_only"
+    },
+    {
+      "id": "emotionalcanines-paper-acmmm-2025",
+      "kind": "paper",
+      "title": "EmotionalCanines: A Dataset for Analysis of Arousal and Valence in Dog Vocalization",
+      "url": "https://doi.org/10.1145/3746027.3758286",
+      "version": "ACM Multimedia 2025, pp. 13281–13288; DOI 10.1145/3746027.3758286; author-hosted full text checked 2026-10-14",
+      "source_ids": [
+        325
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Methods reference for video-derived affect labels, per-dog test separation and audio classification baselines.",
+      "review_depth": "Targeted full-text review of dataset construction, annotation, pilot reliability, dog-separated test, baselines, results and limitations; no independent reproduction.",
+      "access": "Author-hosted eight-page PDF available; the ACM DOI page returned HTTP 403 in this review.",
+      "decision": "Use as a linked research/methods reference. Do not present its audio classifier as emotion diagnosis, welfare advice or translation.",
+      "limitations": "Human labels were assigned from video context and visible behavior; the pilot reported Fleiss kappa 0.30 for arousal and 0.42 for valence. No independently validated internal-state ground truth or receiver-response test is reported here. Dataset rights are a separate component.",
+      "attribution": "Tuan M. Dang, Theron S. Wang, Hridayesh Lekhak and Kenny Q. Zhu, ACM Multimedia 2025.",
+      "rights": {
+        "license": "CC BY-NC-SA 4.0, as stated in the paper PDF.",
+        "scope": "Article only; does not grant rights to datasets, source videos, code or model weights.",
+        "evidence_url": "https://kenzhu2000.github.io/papers/acmmm25-dogemo.pdf",
+        "conditions": "Attribution, non-commercial use and share-alike conditions apply to covered article material.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "emotionalcanines-dataset-2025",
+      "kind": "dataset",
+      "title": "EmotionalCanines dog-bark arousal and valence dataset",
+      "url": "https://github.com/tmdang1101/EmotionalCanines/tree/6b73c5fce55fc132e97db6a76899f8594a955f59",
+      "version": "GitHub commit 6b73c5fce55fc132e97db6a76899f8594a955f59; associated Hugging Face card revision c0617b15562882b9eee4cc1bcb8e6aa80e51bd34",
+      "source_ids": [
+        325,
+        326,
+        327
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Audio classification against human video-derived three-class arousal and valence labels for two dog breeds.",
+      "review_depth": "Reviewed the associated paper, exact Hugging Face card commit/diff, and pinned GitHub README/LICENSE; no audio, label CSV or archive bytes were fetched or inspected.",
+      "access": "Public paper and dataset repository metadata. No dataset files were acquired.",
+      "decision": "Metadata-only. Do not admit this non-commercial dataset to the shared collection or training path until exact source-media rights, consent/privacy, file lineage and the intended research protocol are independently established.",
+      "limitations": "CC BY-NC-SA 4.0 is declared for the dataset. Original internet-video permissions and consent are unresolved. Labels are human interpretations of video behavior/context, not independent measurements of subjective emotion or call meaning. The historical Hugging Face Task 6 card and current EmotionalCanines repository have not been shown to contain identical files.",
+      "attribution": "Tuan M. Dang, Theron S. Wang, Hridayesh Lekhak and Kenny Q. Zhu, EmotionalCanines dataset, GitHub commit 6b73c5fce55fc132e97db6a76899f8594a955f59.",
+      "rights": {
+        "license": "CC BY-NC-SA 4.0 in the pinned GitHub LICENSE and associated Hugging Face card.",
+        "scope": "Dataset repository/card declaration only; it does not verify rights, consent or privacy terms for original source videos, or license any separate baseline code or model weights.",
+        "evidence_url": "https://huggingface.co/datasets/ArlingtonCL2/BarkopediaDogEmotionClassification_Data/commit/c0617b15562882b9eee4cc1bcb8e6aa80e51bd34",
+        "conditions": "Non-commercial use and share-alike conditions; verify original media permissions and consent independently.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
