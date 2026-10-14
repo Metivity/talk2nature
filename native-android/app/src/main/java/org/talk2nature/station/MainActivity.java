@@ -139,6 +139,7 @@ public final class MainActivity extends Activity {
         observationLimit = text("The detector keeps up to 24 short sound highlights (24 MB max). Quiet audio is not saved, so this is not continuous or unbiased monitoring.",13,MUTED,false);
         setup.addView(observationLimit,space(0,2,0,10));
         setup.addView(text("A regular phone microphone is not a bat-ultrasound, underwater or vibration sensor. Frequency response and device processing are not calibrated.",13,MUTED,false),space(0,0,0,6));
+        setup.addView(text(getString(R.string.permission_disclosure),13,MUTED,false),space(0,0,0,10));
 
         consent = new CheckBox(this);
         consent.setText("I can record here, nearby people know the microphone may be active, and I will observe without provoking or playing sounds to animals.");

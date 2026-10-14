@@ -221,3 +221,13 @@ Temporary local screenshots were visually inspected but are not project assets. 
 The current source builds both debug and release APK variants with Android lint passing. The pure-Java capture-core checks, browser import/eight-hour-limit tests, and release-package boundary script all pass. The release APK contains the required recording permissions and intended notification/foreground-service declarations; the boundary check confirms no `INTERNET`/`DUMP` permission or debug receiver, with backup disabled. See `docs/STATUS.md` for the exact commands and results.
 
 No device was connected for this run. Build success does not verify microphone behavior, screen lock, calls, permission revocation, notification controls, one- or eight-hour endurance, battery/thermal behavior, accessibility or first-time-user comprehension. The local release APK is unsigned and was not distributed. Physical-device review and release signing/store requirements remain open; this prototype is not ready for field-study recruitment. Gradle emitted deprecation warnings that should be reviewed before a Gradle 9 upgrade.
+
+## October 14 follow-up: explain Android permissions before the first prompt
+
+**Question:** does a first-time Station user learn why Android asks for microphone and notification permissions before the system prompt appears?
+
+**Change:** the setup card now says that Android asks for microphone access, may ask to show notifications, keeps a Stop action in the listening notification, and does not start a session until the user taps Start and grants access. This places the permission purpose alongside the recording limits and wildlife-care consent.
+
+**Check:** built debug and release APKs with Android lint passing; `testDebugUnitTest` is configured but has no test sources. The Android core checks and release-package boundary check passed. Installed the debug build in a temporary Android 14 emulator configured to 320 dp width. Visual inspection showed the disclosure, consent checkbox and Start button readable and reachable by scrolling, without horizontal overflow. The emulator displayed Android's notification permission prompt; after denying it, Station reported that nothing started or was saved. Microphone permission was not granted, and no recording was made. The temporary AVDs and emulator were removed afterward.
+
+This is an emulator UI and permission-flow check, not physical-phone, microphone, screen-lock, battery, vendor-specific or first-time-user validation. Real-device readiness remains open.
