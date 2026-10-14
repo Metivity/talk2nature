@@ -231,3 +231,13 @@ No device was connected for this run. Build success does not verify microphone b
 **Check:** built debug and release APKs with Android lint passing; `testDebugUnitTest` is configured but has no test sources. The Android core checks and release-package boundary check passed. Installed the debug build in a temporary Android 14 emulator configured to 320 dp width. Visual inspection showed the disclosure, consent checkbox and Start button readable and reachable by scrolling, without horizontal overflow. The emulator displayed Android's notification permission prompt; after denying it, Station reported that nothing started or was saved. Microphone permission was not granted, and no recording was made. The temporary AVDs and emulator were removed afterward.
 
 This is an emulator UI and permission-flow check, not physical-phone, microphone, screen-lock, battery, vendor-specific or first-time-user validation. Real-device readiness remains open.
+
+## October 14 follow-up: simplify Android microphone limits
+
+**Question:** can a first-time observer see the practical limits quickly, with specialist calibration detail available when wanted?
+
+**Change:** shortened the always-visible limit to the 24-clip/24 MB cap, unsaved quiet moments, and the fact that the station is not continuous or unbiased monitoring. Kept the warning that an ordinary phone may miss bat ultrasound, underwater sounds or vibrations. Moved microphone/device-processing calibration and sensitivity caveats into a collapsed “Phone microphone details” control; its label changes between show and hide.
+
+**Check:** Android lint plus debug and release APK assembly passed. The capture-core checks, native-session import/schedule tests, and release-boundary check passed. Installed the debug APK in a fresh Android 14 emulator at 320 dp width. The initial screen showed the practical caveats with the detail text hidden; tapping Show exposed the calibration caveat and changed the control to Hide; tapping Hide removed it again. The visible text fit the narrow layout without horizontal overflow. No microphone permission was granted, no audio was accessed and no session was started. The temporary Talk2Nature AVD and emulator were removed after the check.
+
+This verifies a maintainer-run emulator interaction only. It is not a physical-phone, TalkBack, screen-lock, battery, vendor-specific or first-time-user comprehension test. Those remain open, as do release signing and field-readiness gates.

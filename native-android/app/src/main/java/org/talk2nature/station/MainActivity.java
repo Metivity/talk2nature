@@ -136,9 +136,20 @@ public final class MainActivity extends Activity {
         scheduleSpinner = spinner(new String[]{"Observe for 1 hour","Observe for 4 hours","Observe for 8 hours"});
         setup.addView(labelFor("Choose a stop time",scheduleSpinner));
         setup.addView(scheduleSpinner,space(0,5,0,10));
-        observationLimit = text("The detector keeps up to 24 short sound highlights (24 MB max). Quiet audio is not saved, so this is not continuous or unbiased monitoring.",13,MUTED,false);
+        observationLimit = text("Stores up to 24 short sound highlights (24 MB). Quiet moments are not saved, so this is not continuous or unbiased monitoring.",13,MUTED,false);
         setup.addView(observationLimit,space(0,2,0,10));
-        setup.addView(text("A regular phone microphone is not a bat-ultrasound, underwater or vibration sensor. Frequency response and device processing are not calibrated.",13,MUTED,false),space(0,0,0,6));
+        setup.addView(text("A regular phone may miss bat ultrasound, underwater sounds or vibrations.",13,MUTED,false),space(0,0,0,6));
+        Button microphoneDetailsToggle = button("Phone microphone details · show",PANEL,INK);
+        microphoneDetailsToggle.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+        setup.addView(microphoneDetailsToggle,space(0,0,0,6));
+        TextView microphoneDetails = text("Phone microphones and built-in processing have not been calibrated for these sounds. This station cannot establish device sensitivity or suitability.",13,MUTED,false);
+        microphoneDetails.setVisibility(View.GONE);
+        setup.addView(microphoneDetails,space(0,0,0,8));
+        microphoneDetailsToggle.setOnClickListener(v -> {
+            boolean showDetails = microphoneDetails.getVisibility() != View.VISIBLE;
+            microphoneDetails.setVisibility(showDetails ? View.VISIBLE : View.GONE);
+            microphoneDetailsToggle.setText(showDetails ? "Phone microphone details · hide" : "Phone microphone details · show");
+        });
         setup.addView(text(getString(R.string.permission_disclosure),13,MUTED,false),space(0,0,0,10));
 
         consent = new CheckBox(this);
