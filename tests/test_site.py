@@ -425,6 +425,21 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(resource['rights']['research_use'],'unresolved')
             self.assertEqual(resource['rights']['redistribution'],'unresolved')
 
+    def test_budgerigar_dataset_mapping_stays_separate_from_sample_identity(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            note=(root/'research/budgerigar-starting-point/index.html').read_text()
+            catalog=(root/'research/resources/index.html').read_text()
+            self.assertIn('Figure 2 data in ColonyNoiseCalls',note)
+            self.assertIn('Figures 3–5 data in acoustiSAT_MAO.mat',note)
+            self.assertIn('no verified mapping to a specific bird, session or condition',note)
+            self.assertIn('44,101 value remains unexplained',note)
+            self.assertIn('https://data.mendeley.com/api/docs/',note)
+            self.assertIn('HTTP 401',catalog)
+            self.assertIn('no current file manifest',catalog)
+            self.assertIn('No training, model evaluation or public audio publication',catalog)
+
     def test_all_pages_have_unique_concise_search_descriptions(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
