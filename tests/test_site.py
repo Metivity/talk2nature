@@ -1212,6 +1212,42 @@ class SiteTests(unittest.TestCase):
             self.assertIn('all available audio',page)
             self.assertIn(canonical,(root/'sitemap.xml').read_text())
 
+    def test_cowrumia_note_rejects_reused_test_set_and_keeps_component_rights_separate(self):
+        slug='cowrumia-bovine-audio-app-2026'
+        note=next(n for n in load('research') if n['slug']==slug)
+        self.assertEqual(note['source_ids'],[306,307,308])
+        self.assertIn('not an untouched final-test estimate',note['finding'])
+        self.assertIn('does not group by animal, session or site',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        sources={s['id']:s for s in load('sources')}
+        self.assertIn('validation_data',sources[307]['origin'])
+        resources={r['id']:r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']}
+        code=resources['cowrumia-android-ml-code-2026']
+        model=resources['cowrumia-bovine-model-assets-2026']
+        data=resources['cowrumia-bovine-vocalization-data-2026']
+        self.assertIn('MIT',code['rights']['license'])
+        self.assertEqual(model['rights']['research_use'],'unresolved')
+        self.assertEqual(data['rights']['research_use'],'unresolved')
+        for resource in (code,model,data):
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+        model_path=next(p for p in load('learning-paths')['paths'] if p['id']=='model')
+        self.assertIn(slug,model_path['notes'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research'/slug/'index.html').read_text()
+            library=(root/'research/resources/index.html').read_text()
+            canonical=f'https://fixture.github.io/talk2nature/research/{slug}/'
+            self.assertIn('<meta name="robots" content="index,follow">',page)
+            self.assertIn(f'rel="canonical" href="{canonical}"',page)
+            self.assertIn('CowRumIA',page)
+            self.assertIn('not an untouched final-test estimate',page)
+            self.assertIn('https://zenodo.org/records/20406266',page)
+            self.assertIn('CowRumIA bovine vocalization dataset v1.0.0',library)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+
     def test_whombat_aoef_bridge_is_indexable_with_verified_scope_and_limits(self):
         note=next(n for n in load('research') if n['slug']=='whombat-annotation-workbench')
         self.assertEqual(note['source_ids'],[229,230,231,232])

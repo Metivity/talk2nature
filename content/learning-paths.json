@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "paths": [
     {
       "id": "first-animal",
@@ -71,10 +71,11 @@
         "shared-bioacoustic-dataset-loader",
         "animal-spot-parrot-detection-2022",
         "coarse-soundscape",
-        "pteroset-detection-benchmark-2026"
+        "pteroset-detection-benchmark-2026",
+        "cowrumia-bovine-audio-app-2026"
       ],
       "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
-      "gate": "The dog-bark result concerns induced stimulus-associated labels and does not establish cross-species transfer or meaning. No Talk2Nature animal model has been trained or benchmarked."
+      "gate": "The dog-bark result concerns induced stimulus-associated labels and does not establish cross-species transfer or meaning. No Talk2Nature animal model has been trained or benchmarked. CowRumIA reports 85.6%, but its pinned training script reuses the test split for validation callbacks; treat this as a software/method comparator, not an untouched performance estimate or welfare diagnostic."
     },
     {
       "id": "meaning",

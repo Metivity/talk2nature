@@ -1,5 +1,17 @@
 # Project status
 
+## October 14 CowRumIA mobile-audio app and evaluation review
+
+**Question:** is CowRumIA a useful mobile app and data comparator for Talk2Nature, and does its reported 85.6% result support an independent performance claim?
+
+**Evidence reviewed:** pinned the GitHub default-branch snapshot to 44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac; read its README and MIT LICENSE; statically reviewed model/train_model.py around the split, validation callbacks and final evaluation; and checked the Zenodo v1.0.0 record, file listing and Rights section. New sources 306–308 and three separate resource records distinguish code, model assets and dataset.
+
+**Finding:** the README describes a Flutter Android app and a 624-WAV, four-class cattle corpus. It reports 85.6% on 125 test audios. The pinned script creates a random stratified utterance split, passes the same test subset to model.fit as validation data, uses its validation metrics for early stopping and learning-rate scheduling, and then evaluates on that same subset. The score is therefore not an untouched final-test estimate; the direction or size of bias is unknown. The four labels combine beef/dairy type with stress/calm and have counts from 39 to 350. The reviewed materials do not establish animal/session/site holdout, the annotation protocol, inter-rater agreement or an independent welfare reference.
+
+**Rights and product decision:** GitHub's pinned LICENSE declares MIT for repository software; Zenodo displays a copyright notice but no explicit dataset reuse license. The README-listed TFLite weights and upstream recording rights are separate and unresolved. Keep audio and weights metadata-only, outside the training path. Treat the app as a mobile implementation comparator, not a welfare diagnostic, first-species recommendation or communication result. Add the evidence note to the Models & evaluation learning path. The README setup command's model/cow_rumia_train_v2.py path returned 404 at the pinned commit; no code, app, data or weights were executed or acquired.
+
+**Validation:** all 125 repository Python tests passed; python3 -m talk2nature.collection validate accepted 130 resources. Local noindex build and explicit-origin public candidate each generated 107 pages plus 404. scripts/check_site.py passed on the public candidate with 108 HTML pages, 5,363 links and all 107 public pages reachable. The CowRumIA page has a unique title/description, index,follow, a self-canonical URL and a sitemap entry. The owner-only SQLite metadata catalog synced 512 records (38 created, 23 changed, none retired); an immediate repeat made no changes. This is a local candidate only: it was not deployed and no Search Console or Google indexing result was checked. AutoResearch remains **NOT READY**.
+
 ## October 14 Android Station build and release-boundary verification
 
 **Question:** does the tracked native Android Station source still build as both debug and release variants, and do its release package boundaries hold?

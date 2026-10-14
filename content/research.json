@@ -3331,5 +3331,64 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "cowrumia-bovine-audio-app-2026",
+    "title": "CowRumIA: a cattle-audio app and a test-set caution",
+    "seo_description": "CowRumIA pairs cattle vocalization labels with a Flutter Android app. A pinned review explains why its reported 85.6% score is not an untouched test result.",
+    "taxon": "Cattle",
+    "kind": "Mobile app, dataset and machine-learning methods review",
+    "year": "2026",
+    "year_label": "GitHub repository snapshot at pinned commit; Zenodo dataset v1.0.0",
+    "source_ids": [
+      306,
+      307,
+      308
+    ],
+    "reviewed": "2026-10-14",
+    "review_stage": "Pinned GitHub README, LICENSE and training-script static review; official Zenodo v1 metadata review",
+    "review_depth": "Read the pinned CowRumIA README and LICENSE, statically inspected model/train_model.py around its split, callbacks and final evaluation, and reviewed the Zenodo v1 record description, file listing, dates and Rights section. The repository snapshot was pinned to commit 44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac. No dataset or model files were downloaded, no code was run, no app was built, no thesis full text was reviewed, and no independent specialist review or reproduction occurred.",
+    "finding": "CowRumIA is a 2026 undergraduate project pairing a Flutter Android app with YAMNet embeddings and a dense classifier for four cattle vocalization categories. The Zenodo v1 record describes 624 labeled WAVs; the README reports 194 stressed beef, 39 calm beef, 350 stressed dairy and 41 calm dairy samples and advertises 85.6% accuracy on 125 test audios. In the pinned training script, a random stratified 80/20 utterance split creates X_test, then the same X_test and y_test are supplied to training as validation data while callbacks select epochs and adjust the learning rate; predictions are later evaluated on that same set. The reported score therefore is not an untouched final-test estimate. The size or direction of any resulting optimism cannot be determined from this review. This is a useful mobile-implementation comparator and a strong evaluation-design lesson, not evidence of animal communication or a validated welfare diagnostic.",
+    "limitations": "The four output classes jointly encode cattle production type and stress/calm category, and the README class counts are imbalanced (350 in the largest class versus 39 in the smallest). The split code is utterance-level and does not group by animal, session or site; the reviewed materials do not establish whether repeated animals or recording conditions cross splits. Zenodo states expert validation but the reviewed record does not provide the annotation protocol, inter-rater agreement or independent operational welfare ground truth. The dataset contains mixed-source material, but upstream, file-level reuse terms are unresolved; Zenodo shows only a copyright notice. GitHub declares MIT for repository software, while the packaged TFLite assets and underlying YAMNet/model-weight provenance and terms were not separately verified. The README describes an intensity-weighted stress-level output and a confidence threshold, but the relationship to independently measured welfare severity is not established here. Its documented training command points to a file that returned 404 at the pinned commit. No effect size, clinical/welfare utility, device reliability, field performance or cross-site generalization was reproduced. These are limits of the reviewed evidence, not proof that the project authors have no additional records.",
+    "lesson": "For mobile animal-audio tools, keep capture and review flows distinct from a diagnostic claim. Reserve validation data for model selection and protect a separate locked test set; group splits by the biological and recording units that could carry shared signal. Evaluate class-specific errors, calibration and simple context/background baselines, and define behavior labels with qualified domain reviewers. A phone interface and an accuracy number do not establish welfare value, message meaning or transfer to another species.",
+    "next_review": "Keep the Zenodo audio and all model assets metadata-only. Before considering any dataset or model use, resolve dataset and upstream file-level rights, inspect the annotation protocol and available animal/session/site grouping fields, and obtain cattle-welfare and bioacoustics review. For a separately justified benchmark, define an independently observed target, compare majority/context/background/acoustic baselines, select group-held-out validation and a locked test, and report macro-F1, per-class recall, calibration and clustered uncertainty. Resolve the missing documented training path before claiming an exact reproduction. No Talk2Nature training or welfare-facing output is recommended from the materials reviewed.",
+    "expert_review": "No independent cattle-welfare, bioacoustics or machine-learning specialist has reviewed this Talk2Nature assessment.",
+    "review_locator": "CowRumIA README: result table, class counts, architecture, mobile inference, dataset, setup and license sections; pinned LICENSE; pinned model/train_model.py lines 93–98, 159–178 and 187–194. Zenodo record v1.0.0: description, file inventory and Rights section. Checked October 14, 2026; no audio, weights or code acquired or run.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Corpus",
+        "Zenodo v1 describes 624 labeled WAV recordings in four beef/dairy cattle stress/calm categories from two Aguascalientes sites, supplemented by external archive and open-platform recordings."
+      ],
+      [
+        "Class balance",
+        "README counts: 194 stressed beef, 39 calm beef, 350 stressed dairy and 41 calm dairy; annotation protocol and independent welfare reference were not established in this review."
+      ],
+      [
+        "Reported score and split",
+        "README reports 85.6% on 125 test audios. The pinned script reuses that split for validation callbacks and final evaluation; it is not an untouched test estimate."
+      ],
+      [
+        "Mobile design",
+        "README describes a Flutter Android flow using six-second mono audio, YAMNet embeddings and a dense classifier. The app was not built or tested here."
+      ],
+      [
+        "Separate component rights",
+        "Repository code: MIT per pinned LICENSE. Dataset: Zenodo shows copyright without a reuse license. Bundled model weights and upstream audio terms remain unresolved."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only app and methods comparator; not a Talk2Nature benchmark or a verified animal-welfare tool",
+      "asset": "GitHub code repository (MIT declaration); Zenodo v1 dataset (no explicit reuse license located); bundled TFLite/YAMNet model assets separately unresolved",
+      "rights": "The MIT code license does not clear the Zenodo audio, upstream source recordings or model binaries. The dataset record shows a copyright notice only. No component is admitted to the Talk2Nature training path.",
+      "experiment": "No dataset, model weight or third-party code was acquired or run. Any future use requires component-specific rights review, qualified cattle-welfare/bioacoustics review and an untouched group-held-out evaluation."
+    },
+    "atlas": {
+      "reviewed": "2026-10-14",
+      "location_status": "pending",
+      "location_note": "Zenodo names two Aguascalientes collection sites, but the reviewed metadata does not map individual recordings to sites or establish locations for mixed-source additions. No atlas marker is added.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
