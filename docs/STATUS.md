@@ -2138,6 +2138,15 @@ Android lint, debug/release assembly, capture-core checks, the two native-sessio
 AutoResearch remains **NOT READY** pending rights and data provenance, qualified independent review, and the existing benchmark/evaluation gates.
 
 
+## October 14 — crawler-compatible social preview
+
+**Question:** will the site's link previews render reliably when researchers share a Talk2Nature page? The live homepage pointed Open Graph at an SVG image with media type image/svg+xml and had no Twitter large-image card. The Open Graph Protocol recommends an image description and dimensions; LinkedIn's current sharing guidance accepts JPG, PNG or GIF and recommends a 1.91:1 image of at least 1200 × 627 pixels.
+
+**Change:** redesigned the original Talk2Nature vector card and generated a 1200 × 627 PNG from it. Public pages now include the image URL, type, dimensions and alt text, plus matching Open Graph and summary_large_image metadata. Extended scripts/check_site.py to check every public route, metadata consistency, PNG signature and dimensions; a regression test confirms a missing card tag fails the build. No third-party art or image was used.
+
+**Validation:** all 128 Python tests passed. The local noindex build produced 109 pages plus 404; the checker validated 110 HTML documents and 5,365 links. The explicit-origin public candidate produced 109 public pages plus 404; the checker validated 110 HTML documents, 5,475 links and 109 reachable public pages. This is a checked local candidate, not yet a deployed change. Social crawlers and their cache/rendering behavior have not been verified; Search Console indexing and rankings remain unknown.
+
+
 ## October 14 — honeybee vision and the camera-app boundary
 
 Added a source-linked note on Wario et al. (2017), plus a pinned GitHub code/data review and a separate 2015 BeesBook engineering comparator. The 2017 system measures a known honeybee waggle-run signal in a high-speed infrared observation hive and maps it against a calibrated feeder. Its 90.07% figure is validation accuracy from one colony, not a general gesture or phone-camera result. Distance requires known-location calibration. GitHub reports no recognized license for the pinned code/data repository, and the inspected tree contains no LICENSE/COPYING file.

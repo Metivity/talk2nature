@@ -84,7 +84,23 @@ def build(output, base_url='', public=False, repo_url=''):
         if public and not path and base_url == publication['base_url']:
             meta += f'<meta name="google-site-verification" content="{esc(publication["google_site_verification"])}">'
         if base_url:
-            meta += f'<meta property="og:url" content="{esc(canonical)}"><meta property="og:image" content="{esc(base_url)}/assets/social.svg">'
+            social_image = f'{base_url}/assets/social.png'
+            social_alt = 'Talk2Nature social preview: “Listen closely. Learn carefully.” beside connected acoustic rings.'
+            secure_image = f'<meta property="og:image:secure_url" content="{esc(social_image)}">' if social_image.startswith('https://') else ''
+            meta += (
+                f'<meta property="og:url" content="{esc(canonical)}">'
+                f'<meta property="og:image" content="{esc(social_image)}">'
+                f'{secure_image}'
+                '<meta property="og:image:type" content="image/png">'
+                '<meta property="og:image:width" content="1200">'
+                '<meta property="og:image:height" content="627">'
+                f'<meta property="og:image:alt" content="{esc(social_alt)}">'
+                '<meta name="twitter:card" content="summary_large_image">'
+                f'<meta name="twitter:title" content="{esc(title)}">'
+                f'<meta name="twitter:description" content="{esc(description)}">'
+                f'<meta name="twitter:image" content="{esc(social_image)}">'
+                f'<meta name="twitter:image:alt" content="{esc(social_alt)}">'
+            )
         structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title, 'description': description, 'inLanguage': 'en'}
         if canonical:
             structured['url'] = canonical

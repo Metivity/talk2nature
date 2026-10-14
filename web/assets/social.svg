@@ -1,1 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#193f35"/><circle cx="1040" cy="200" r="240" fill="#6d805a"/><circle cx="1040" cy="200" r="175" fill="none" stroke="#d2d7b6"/><circle cx="1040" cy="200" r="115" fill="#e8bd56"/><text x="70" y="105" fill="#f7f5ed" font-family="Arial,sans-serif" font-size="34">Talk2Nature</text><text x="70" y="295" fill="#f7f5ed" font-family="Georgia,serif" font-size="85">Listen closely.</text><text x="70" y="395" fill="#f7f5ed" font-family="Georgia,serif" font-size="85">Understand carefully.</text><text x="75" y="550" fill="#d2d7b6" font-family="Arial,sans-serif" font-size="23">Research, people and open tools for a living world.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-labelledby="title desc">
+  <title id="title">Talk2Nature — listen closely, learn carefully</title>
+  <desc id="desc">Open research tools for observing the living world, represented by a soft green signal field and connected acoustic rings.</desc>
+  <defs>
+    <linearGradient id="ground" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#102b2b"/>
+      <stop offset=".58" stop-color="#193f35"/>
+      <stop offset="1" stop-color="#3a5d48"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#e8bd56" stop-opacity=".30"/>
+      <stop offset=".58" stop-color="#d2d7b6" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#d2d7b6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf0da" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#d2d7b6" stop-opacity=".025"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="627" fill="url(#ground)"/>
+  <path d="M0 493C174 427 283 555 455 500s249-161 411-104 230 49 334 1v230H0Z" fill="#102b2b" opacity=".25"/>
+  <circle cx="934" cy="304" r="314" fill="url(#halo)"/>
+  <circle cx="934" cy="304" r="237" fill="url(#glass)" stroke="#d2d7b6" stroke-opacity=".42" stroke-width="1.5"/>
+  <circle cx="934" cy="304" r="188" fill="none" stroke="#d2d7b6" stroke-opacity=".24" stroke-width="1.5"/>
+  <circle cx="934" cy="304" r="134" fill="none" stroke="#d2d7b6" stroke-opacity=".3" stroke-width="1.5" stroke-dasharray="2 10"/>
+  <path d="M748 322c24 0 24-38 48-38s24 64 48 64 24-92 48-92 24 114 48 114 24-64 48-64 24 34 48 34"
+        fill="none" stroke="#f1cf73" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M782 191C838 145 1018 139 1084 222M802 432c74 59 221 45 278-23" fill="none" stroke="#f7f5ed" stroke-opacity=".35" stroke-width="1.4"/>
+  <circle cx="789" cy="191" r="6" fill="#e8bd56"/>
+  <circle cx="1084" cy="222" r="5" fill="#f7f5ed"/>
+  <circle cx="1080" cy="409" r="7" fill="#d2d7b6"/>
+  <circle cx="802" cy="432" r="5" fill="#e8bd56"/>
+  <circle cx="934" cy="304" r="9" fill="#f7f5ed"/>
+  <circle cx="934" cy="304" r="20" fill="none" stroke="#f7f5ed" stroke-opacity=".3"/>
+  <g fill="#d2d7b6" opacity=".78">
+    <circle cx="872" cy="249" r="3"/><circle cx="989" cy="241" r="3"/>
+    <circle cx="1001" cy="366" r="3"/><circle cx="858" cy="370" r="3"/>
+  </g>
+  <circle cx="79" cy="78" r="5" fill="#e8bd56"/>
+  <text x="98" y="86" fill="#d2d7b6" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="4">TALK2NATURE</text>
+  <text x="76" y="276" fill="#f7f5ed" font-family="Georgia,serif" font-size="77" letter-spacing="-2">Listen closely.</text>
+  <text x="76" y="366" fill="#f7f5ed" font-family="Georgia,serif" font-size="77" letter-spacing="-2">Learn carefully.</text>
+  <path d="M78 414h78" stroke="#e8bd56" stroke-width="3" stroke-linecap="round"/>
+  <text x="78" y="463" fill="#edf0da" font-family="Arial,sans-serif" font-size="24">Open research tools for a living world.</text>
+  <text x="78" y="552" fill="#d2d7b6" font-family="Arial,sans-serif" font-size="15" letter-spacing="2.8">OBSERVE  ·  ANNOTATE  ·  QUESTION</text>
+</svg>

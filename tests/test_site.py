@@ -227,6 +227,26 @@ class SiteTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Duplicate public meta descriptions'):
                 check_site(root)
 
+    def test_public_social_cards_use_shareable_png_and_complete_metadata(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            preview=(root/'assets'/'social.png').read_bytes()
+            self.assertTrue(preview.startswith(b'\x89PNG\r\n\x1a\n'))
+            self.assertEqual(int.from_bytes(preview[16:20],'big'),1200)
+            self.assertEqual(int.from_bytes(preview[20:24],'big'),627)
+            about=root/'about'/'index.html'
+            page=about.read_text()
+            self.assertIn('property="og:image:type" content="image/png"',page)
+            self.assertIn('property="og:image:alt"',page)
+            self.assertIn('name="twitter:card" content="summary_large_image"',page)
+            self.assertIn('name="twitter:image" content="https://fixture.github.io/talk2nature/assets/social.png"',page)
+            page=page.replace('<meta name="twitter:card" content="summary_large_image">','',1)
+            about.write_text(page)
+            with self.assertRaisesRegex(ValueError,'social preview requires exactly one non-empty twitter:card'):
+                check_site(root)
+
     def test_public_structured_metadata_must_be_valid_json(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
