@@ -3158,5 +3158,38 @@
     "rights": {
       "page": "The reviewed Zenodo record displays a copyright notice but no explicit dataset reuse license. The audio and upstream sources are not reproduced."
     }
+  },
+  {
+    "id": 309,
+    "title": "BiodivFuture Funding Organisation Rules, version 5 (6 October 2026)",
+    "description": "Current official national funding rules for the 2026–2027 BiodivFuture call. Israel’s Ministry of Environmental Protection section states the eligible host, local-research and budget conditions.",
+    "url": "https://www.biodiversa.eu/wp-content/uploads/2026/10/BiodivFuture_Funding-Organisation_Rules_V5_06-10-2026.pdf",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the Israel/MoEP section (printed pages 56–57) of the official version 5 rules, dated October 6, 2026. It lists a €120,000 Israeli contribution and maximum per project; applicants must be research institutions recognized by the Israel Science Foundation. Independent researchers, local authorities, NGOs and similar collaborators may participate through those institutions, and part of the project must be carried out in Israel. The rules direct Israeli applicants to the separate Ministry call. No funder was contacted and no applicant eligibility was confirmed.",
+    "rights": {
+      "page": "Official funding rules; summarized and linked, not reproduced."
+    }
+  },
+  {
+    "id": 310,
+    "title": "Israel MoEP BiodivFuture national call, public tender 2026/4",
+    "description": "Official Israeli procurement listing for the national BiodivFuture application route, with a listed opening date and national submission deadline.",
+    "url": "https://mr.gov.il/ilgstorefront/he/p/4000621848",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the Israeli Government Procurement Administration listing for public tender 2026/4. It reports the Ministry of Environmental Protection, status published, publication date September 10, opening date October 22 at 08:00, and last submission date November 15 at 12:00. The listing’s attachments were not retrievable in this review; substantive national conditions were checked against the separate official Biodiversa+ version 5 rules and MoEP information slides.",
+    "rights": {
+      "page": "Official procurement notice; summarized and linked, not reproduced."
+    }
+  },
+  {
+    "id": 311,
+    "title": "Israel MoEP applicant briefing for BiodivFuture",
+    "description": "Official national information slides explain that Israeli applicants submit to both the international EPSS and a separate Ministry digital tender box.",
+    "url": "https://www.biodiversa.eu/wp-content/uploads/2026/10/BiodivFuture-MoEP-slides.pdf",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the official eight-page Israel MoEP session linked from Biodiversa+’s call page. The slides say two submissions are required, one to Biodiversa+ via EPSS and one to MoEP via its digital tender box. They require a one-page Hebrew summary describing the project and Israeli work, and state that submitted data to the two bodies must be identical. No session participant or funding officer was contacted.",
+    "rights": {
+      "page": "Official public applicant briefing; summarized and linked, not reproduced."
+    }
   }
 ]
