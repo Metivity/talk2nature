@@ -1178,14 +1178,15 @@
     "id": 125,
     "title": "Budgerigar vocal-learning and social-interaction data",
     "url": "https://doi.org/10.5061/dryad.fttdz08xr",
-    "description": "Dryad deposit updated February 5, 2024. File inventory includes call-feature tables, social-behavior coding, an interobserver-assessment workbook, example interaction video and R scripts; it does not list original call-audio recordings. No files were downloaded.",
-    "checked": "2026-10-11",
-    "origin": "Dryad landing-page metadata and file inventory reviewed October 11, 2026.",
+    "description": "Dryad deposit updated February 5, 2024. Its README describes derived contact-call features and metadata, separate flock-video social-interaction and proximity coding, an interobserver workbook, example interaction video and R scripts. The file inventory lists no original call-audio recordings. No files were downloaded.",
+    "checked": "2026-10-14",
+    "origin": "Official Dryad landing-page version history, file inventory and README reviewed October 14, 2026; the associated primary article's animal-housing, experimental, audio and video methods were reviewed through PMC-indexed full text and a coauthor-hosted article PDF.",
     "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.fttdz08xr",
     "review_url_label": "Dryad dataset versions, files and README",
     "rights": {
-      "dataset": "Dryad's reuse guide states that Dryad datasets are published under CC0; item-level per-file terms were not separately inspected",
-      "included_code": "R scripts are present in the deposit; no separate software license was verified"
+      "dataset": "Dryad's reuse guide states that deposited datasets use CC0; individual files were not downloaded or separately inspected",
+      "included_code": "R scripts are listed in the deposit; no separate software license was verified",
+      "article": "The associated article is CC BY 4.0; this does not establish rights for the data deposit or included scripts"
     }
   },
   {

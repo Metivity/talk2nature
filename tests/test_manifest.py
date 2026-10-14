@@ -31,6 +31,20 @@ class ManifestTests(unittest.TestCase):
         parts={result['assignments'][self.records[i]['recording_id']] for i in (0,2,4,6)}
         self.assertEqual(len(parts),1)
 
+    def test_synthetic_multi_animal_fixture_keeps_each_participant_in_one_split(self):
+        fixture=json.loads((Path(__file__).resolve().parents[1]/'examples/interactions.dyadic.synthetic.json').read_text())
+        result=split_manifest(fixture)
+        self.assertTrue(result['synthetic'])
+        self.assertEqual(result['group_count'],10)
+        self.assertEqual(result['group_counts'],{'train':6,'validation':2,'test':2})
+        participant_partitions={}
+        for record in fixture:
+            partition=result['assignments'][record['recording_id']]
+            for individual in record['individual_ids']:
+                self.assertEqual(participant_partitions.setdefault(individual,partition),partition)
+        chain={result['assignments'][f'pair-event-{i:02d}'] for i in (1,2,3)}
+        self.assertEqual(len(chain),1)
+
     def test_optional_household_and_device_dimensions_are_transitive_and_frozen(self):
         for record in self.records:
             bird=int(record['recording_id'].split('-')[1])

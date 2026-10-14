@@ -1,5 +1,27 @@
 # Project status
 
+## October 14: reproducible multi-animal split example
+
+**Question:** does the public evaluation-manifest tool keep all participants in a multi-animal interaction together, including indirect links across events?
+
+**Change:** added an invented 12-event dyadic fixture in which the first three events form an A–B–C–D participant chain, a regression check that all identity assignments stay in one partition, and plain-language researcher instructions to list every known participant. The CLI reports 10 connected groups. The example includes no animals, people, media or observations.
+
+**Interpretation and next gate:** this demonstrates the declared-identity grouping behavior, not identity verification or a scientific benchmark. Three connected components in the full Egyptian-fruit-bat annotation table cannot support a useful three-way group-held-out evaluation; the table is not the paper's 35,074-row subset, and the paper's exact folds remain unknown. Keep bat data metadata-only and AutoResearch **NOT READY** pending qualified review and exact provenance/split reconstruction. No additional data, weights or code were acquired or run.
+
+**Validation:** all 124 repository Python tests and 109 Node tests passed; the resource validator accepted 127 records. The local noindex build generated 106 pages plus 404; the site checker verified 107 HTML files and 5,201 links. The explicit-origin public candidate also built 106 pages plus 404; the checker verified 107 HTML files, 5,309 links and all 106 public pages reachable. The direct CLI run reported 10 connected groups, with 6/2/2 groups and 6/2/4 records across train/validation/test. `git diff --check` passed. These are maintainer-run software/build checks, not an independent reproduction, search indexing result or biological result; nothing was deployed.
+
+## October 14: budgerigar dataset-alignment correction and evidence refresh
+
+**Question:** does the public Dryad deposit provide synchronized vocal events and observed social behavior, and did the earlier summary describe the recorded social group correctly?
+
+**Evidence reviewed:** the [primary article](https://pmc.ncbi.nlm.nih.gov/articles/PMC10265024/) Methods on animal housing, experimental outline, audio and video recording; the [official Dryad version history, file inventory and README](https://datadryad.org/dataset/doi:10.5061/dryad.fttdz08xr); and Dryad's [reuse policy](https://datadryad.org/help/guides/reuse). The Dryad README describes the interobserver workbook and its recoded subset. The workbook itself was not acquired or inspected.
+
+**Correction and finding:** an October 11 note incorrectly called the videos “home-flock” recordings. The paper describes separate video sessions of the newly formed experimental flocks. Contact calls were collected from an isolated focal bird in separate 55-minute sessions, with visual but not acoustic contact to flockmates; social videos were two 80-minute sessions per flock per recording block. The deposit lists derived call-feature tables and social/proximity coding with overlapping group/date/block fields, but no source call WAVs or shared call/event timestamps. It is a protocol/schema near-match, not an event-level sound-to-behavior benchmark. The README documents an interobserver recoding subset; no reliability value was calculated, and none is claimed. The paper reports age-bounded differences in vocal diversity and affiliative ties while measured plasticity/convergence were similar; these findings do not establish call meaning.
+
+**Rights and decision:** Dryad's policy states data deposits use CC0. The article separately declares CC BY 4.0; the included R scripts have no separately verified software license. No files were downloaded, no code was run, and the resource remains metadata-only. Corrected `content/research.json`, `content/sources.json`, `research/resources.json`, `docs/COLLECTION.md`, `docs/MODEL_DATA_DECISION.md` and `docs/RESEARCH_BACKLOG.md`; added a page-scope regression in `tests/test_site.py`. Next: prioritize a resource with source recordings and independently timed behavior labels; any aggregate analysis of this deposit would require an explicit unit, exact join/missingness audit and qualified review.
+
+**Validation:** all 123 repository Python tests passed; the owner-workbench suite passed 104 tests, with 49 PostgreSQL cases skipped because no disposable test database was configured. The resource validator accepts all 127 records. The local noindex build produced 106 pages plus 404, and the site checker passed on 107 HTML pages and 5,201 links. A public-origin candidate built against the confirmed GitHub Pages URL and passed with 107 HTML pages, 5,308 links and all 106 public pages reachable. The updated note's title, description, `index,follow`, canonical, source links and sitemap entry were verified in generated HTML. The public-origin build is a local candidate; no deployment or live Search Console/indexing result is claimed. The private metadata catalog ends at 505 records; the note edit updated one record, and a repeat sync changed none.
+
 ## October 14 funding-route audit — BiodivFuture and UN KBF
 
 **Question:** is there a credible near-term funding route through the open BiodivFuture call or a United Nations biodiversity fund?
@@ -33,6 +55,14 @@
 ## October 14 production-origin candidate verification
 
 Built the current local source candidate for the exact GitHub Pages origin with public indexing enabled. The build produced 106 pages plus 404; `scripts/check_site.py` validated 107 HTML documents, 5,309 links and all 106 public pages reachable from the homepage. The resource catalog validated 127 records, all 122 Python tests and 109 Node tests passed, and all four changed JSON catalogs parsed. These checks cover the candidate artifact, not the deployed site or Google indexing. This verification did not acquire or run any data, recordings, weights or third-party code; AutoResearch remains **NOT READY**. After a separately reviewed release, compare the live routes, canonicals, robots and sitemap with this candidate; Search Console's sitemap report remains unresolved.
+
+## October 14 verified release — fungal evidence and funding records
+
+PR [#138](https://github.com/Metivity/talk2nature/pull/138) merged to `main` as [`7f30dbf`](https://github.com/Metivity/talk2nature/commit/7f30dbf0858c5ec759391c0bb6cf82e55d95313) after public checks [#38486274275](https://github.com/Metivity/talk2nature/actions/runs/38486274275) passed. The manual Pages workflow [#38486538936](https://github.com/Metivity/talk2nature/actions/runs/38486538936) completed both build and deployment successfully.
+
+Live HTTPS checks returned HTTP 200 for the home page, both fungal research pages, the resource directory, funding page, `sitemap.xml` and `robots.txt`. The checked HTML routes serve a title, self-canonical URL and `index,follow`. The valid live sitemap contains 106 URLs and includes both fungal pages; `robots.txt` names that sitemap. This verifies delivery and crawl configuration, not Google indexing, impressions or ranking. Search Console's prior URL Inspection still reported the resource directory as unknown, its indexing request was queued, and its sitemap report still said “Couldn't fetch”; sitemap processing remains unresolved, so no sitemap endpoint change or repeat submission was made.
+
+The release contains 127 validated resource records. No third-party dataset, recording, code or model was downloaded or run; no research result or independent review is claimed. AutoResearch remains **NOT READY**.
 
 ## October 14 Android permission-free first step
 

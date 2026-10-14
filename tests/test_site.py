@@ -414,6 +414,22 @@ class SiteTests(unittest.TestCase):
             self.assertIn('https://fixture.github.io/talk2nature/research/egyptian-fruit-bat-data/',html)
             self.assertIn('https://fixture.github.io/talk2nature/research/egyptian-fruit-bat-data/',(root/'sitemap.xml').read_text())
 
+    def test_budgerigar_dataset_note_preserves_session_and_alignment_limits(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            html=(root/'research/budgerigar-vocal-sociality-data/index.html').read_text()
+            self.assertIn('newly formed experimental flocks, not home flocks',html)
+            self.assertIn('separate 80-minute sessions',html)
+            self.assertIn('no original call WAV files',html)
+            self.assertIn('no original call WAV files or shared call/event timestamps',html)
+            canonical='https://fixture.github.io/talk2nature/research/budgerigar-vocal-sociality-data/'
+            self.assertIn(canonical,html)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+            resource=next(r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources'] if r['id']=='budgerigar-vocal-social-dryad')
+            self.assertEqual(resource['acquisition'],'metadata_only')
+
     def test_meerkat_review_exposes_final_evidence_component_rights_and_canonical(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

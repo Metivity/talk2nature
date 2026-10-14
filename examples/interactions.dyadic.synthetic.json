@@ -1,0 +1,230 @@
+[
+  {
+    "recording_id": "pair-event-01",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-01",
+      "demo-animal-02"
+    ],
+    "session_id": "pair-session-01",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000001",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:01:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-02",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-02",
+      "demo-animal-03"
+    ],
+    "session_id": "pair-session-02",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000002",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:02:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-03",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-03",
+      "demo-animal-04"
+    ],
+    "session_id": "pair-session-03",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000003",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:03:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-04",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-05",
+      "demo-animal-06"
+    ],
+    "session_id": "pair-session-04",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000004",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:04:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-05",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-07",
+      "demo-animal-08"
+    ],
+    "session_id": "pair-session-05",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000005",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:05:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-06",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-09",
+      "demo-animal-10"
+    ],
+    "session_id": "pair-session-06",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000006",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:06:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-07",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-11",
+      "demo-animal-12"
+    ],
+    "session_id": "pair-session-07",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000007",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:07:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-08",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-13",
+      "demo-animal-14"
+    ],
+    "session_id": "pair-session-08",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000008",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:08:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-09",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-15",
+      "demo-animal-16"
+    ],
+    "session_id": "pair-session-09",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000009",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:09:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-10",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-17",
+      "demo-animal-18"
+    ],
+    "session_id": "pair-session-10",
+    "source_sha256": "000000000000000000000000000000000000000000000000000000000000000a",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:10:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-11",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-19",
+      "demo-animal-20"
+    ],
+    "session_id": "pair-session-11",
+    "source_sha256": "000000000000000000000000000000000000000000000000000000000000000b",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:11:00+00:00"
+  },
+  {
+    "recording_id": "pair-event-12",
+    "species": "Synthetic multi-animal example",
+    "individual_ids": [
+      "demo-animal-21",
+      "demo-animal-22"
+    ],
+    "session_id": "pair-session-12",
+    "source_sha256": "000000000000000000000000000000000000000000000000000000000000000c",
+    "context_label": "synthetic-interaction",
+    "license": "CC0-1.0 (synthetic metadata only; no media exist)",
+    "provenance": "Invented example for testing participant-connected splits. No animals, people, recordings or observed behavior exist.",
+    "annotator_id": "synthetic-fixture",
+    "consent_status": "not_required",
+    "label_source": "direct_observation",
+    "sensitive_location": false,
+    "synthetic": true,
+    "recorded_at": "2026-09-02T10:12:00+00:00"
+  }
+]

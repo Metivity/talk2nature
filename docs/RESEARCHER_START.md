@@ -32,6 +32,18 @@ The two fixtures exercise **separate** tools. The annotation report is not conve
 
 The default seed is `talk2nature-v1`. Repeating the splitter with unchanged input and seed should produce the same file. Record the commit if a future fixture changes. At the pinned release, the splitter groups declared individual IDs, sessions and exact source hashes transitively. Ten fixture groups are not a sample-size recommendation.
 
+### Multi-animal interactions
+
+For an event involving more than one animal, list **every known participant** in `individual_ids`, regardless of caller, recipient or observer role. The splitter connects records transitively: if A interacts with B and B later interacts with C, all records for A, B and C stay in one partition. Omitting a participant defeats that safeguard. Do not invent an identity or use one shared placeholder such as `unknown`; this manifest rejects unresolved identity values. Resolve identities from an appropriate source, or keep the record out of this individual-holdout evaluation until a reviewer approves a different policy.
+
+Try the invented dyadic example:
+
+```sh
+python3 -m talk2nature.manifest examples/interactions.dyadic.synthetic.json --output tmp/reproduction/dyadic-split.json
+```
+
+It should report 10 connected groups. The first three events form a transitive chain and must receive one split assignment. The example has no animal, person, recording or observed interaction; it tests software behavior only. Grouping can enforce only declared identities and other selected dimensions. It cannot discover omitted participants, validate biological identity, establish label quality, or determine whether treatment, site, device, time or pretrained-model overlap also needs to be held out.
+
 Optional software checks:
 
 ```sh
