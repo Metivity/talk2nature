@@ -329,6 +329,35 @@
       "files": []
     },
     {
+      "id": "budgerigar-neural-vocal-signatures-paper",
+      "kind": "paper",
+      "title": "Anterior forebrain pathway in parrots is necessary for producing learned vocalizations with individual signatures",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799565/",
+      "version": "Current Biology 33(24), 5415–5426.e4; published online 2023-12-08; DOI 10.1016/j.cub.2023.11.014; PMCID PMC10799565",
+      "source_ids": [
+        100
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-14",
+      "task": "Methods comparator for within-cohort caller identification, contact-call convergence and receiver response; not a semantic or phone-audio benchmark.",
+      "review_depth": "Full article text accessed through NCBI PMC E-utilities and reviewed for abstract, call-elicitation paradigm, VAE/SVM methods, results, discussion, animal-care statement and data/code availability. No article PDF or additional data was retained; no reanalysis or independent review was performed.",
+      "access": "PMC hosts the article text and NCBI E-utilities provides its full-text XML. The article says the Mendeley data deposit can be accessed separately and custom scripts are available from the lead contact.",
+      "decision": "Metadata-only. Publish a short original summary and link; do not redistribute article text, figures or custom code. Keep the Mendeley dataset as a separate component with its own license and acquisition decision.",
+      "limitations": "The reported caller-identification score uses a random call-level split among the same known birds, not an unseen-bird holdout. The controlled paradigm uses captive birds, loudspeaker playback and specialized microphones; a separate five-bird neural-inactivation experiment is invasive and does not establish call meaning or consumer-app performance.",
+      "attribution": "Zhao et al. (2023). Anterior forebrain pathway in parrots is necessary for producing learned vocalizations with individual signatures. Current Biology 33(24):5415–5426.e4. DOI 10.1016/j.cub.2023.11.014.",
+      "rights": {
+        "license": "No open redistribution license was established for the article. PMC states that its text is available for text mining and may be used consistently with fair-use principles; this is not a Creative Commons license.",
+        "scope": "Journal article text only. The linked Mendeley dataset and custom scripts have separate rights and are not covered by this record.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799565/",
+        "conditions": "Cite and link; publish only an original summary. Do not redistribute the article, figures or code without confirming their terms.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "budgerigar-vocal-signature-data",
       "kind": "dataset",
       "title": "Zhao (2023) budgerigar data",
