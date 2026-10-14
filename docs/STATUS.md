@@ -1,5 +1,13 @@
 # Project status
 
+## October 14 Android Station build and release-boundary verification
+
+**Question:** does the tracked native Android Station source still build as both debug and release variants, and do its release package boundaries hold?
+
+**Evidence and checks:** the user-started foreground microphone service, visible persistent Stop notification, bounded event/audio storage and encrypted on-device working session are documented in [`native-android/README.md`](../native-android/README.md). `bash native-android/scripts/test-core.sh` passed the capture-engine and ZIP-format checks; `node --test tests/native-session.test.mjs` passed both browser-import and eight-hour-bound tests; Gradle 8.14.3 completed `:app:lintDebug`, `:app:assembleDebug` and `:app:assembleRelease`; and `scripts/check-release-boundaries.sh` confirmed required recording permissions, absence of `INTERNET`/`DUMP` and the debug receiver, and disabled Android backup. The manifest's notification and foreground-service declarations remain present.
+
+**Limits and decision:** no Android device or emulator was connected during this check. It does not verify real microphone behavior, notification/permission recovery on hardware, long-duration operation, battery/thermal limits, accessibility or first-use comprehension. The locally built release APK is unsigned and was not distributed; the prototype remains outside field research and app stores. Gradle emitted deprecation warnings for future Gradle 9 compatibility. Next: complete the named-device checklist and resolve release/signing/store requirements before inviting field use. No recordings or third-party model/data/code were acquired or run; this is software/package validation, not scientific evidence.
+
 ## October 14: reproducible multi-animal split example
 
 **Question:** does the public evaluation-manifest tool keep all participants in a multi-animal interaction together, including indirect links across events?
