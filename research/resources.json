@@ -3991,6 +3991,95 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "cowrumia-android-ml-code-2026",
+      "kind": "code",
+      "title": "CowRumIA Flutter Android app and training code",
+      "url": "https://github.com/Dantsls22/CowRumIA/tree/44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac",
+      "version": "44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac",
+      "source_ids": [
+        306,
+        307
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Mobile bioacoustics implementation and training-evaluation methods comparator for four cattle vocalization classes.",
+      "review_depth": "Pinned README and LICENSE reviewed; the training script was inspected statically for its split, validation callbacks and final evaluation. No code was acquired or executed; no Android build or runtime test was performed.",
+      "access": "Public pinned GitHub repository. The README describes a Flutter Android app and references included TFLite model files; only repository metadata and the specified text files were reviewed.",
+      "decision": "Keep as a metadata-only design and methods reference. Do not import code or imply the reported score is an untouched evaluation.",
+      "limitations": "The README training command targets model/cow_rumia_train_v2.py, which returned 404 at the pinned commit. No dependency, complete app, model, training-data or device audit was performed.",
+      "attribution": "Daniel Alejandro Tena Salas, CowRumIA repository, pinned commit 44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac.",
+      "rights": {
+        "license": "MIT (pinned repository LICENSE)",
+        "scope": "Repository software source and associated documentation only. The dataset and bundled model files are separate components with unresolved terms.",
+        "evidence_url": "https://github.com/Dantsls22/CowRumIA/blob/44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac/LICENSE",
+        "conditions": "Retain the MIT copyright and permission notices if code is reused. No code is copied into Talk2Nature; review dependency and bundled-artifact terms separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "cowrumia-bovine-model-assets-2026",
+      "kind": "model",
+      "title": "CowRumIA bundled YAMNet and cattle classifier assets",
+      "url": "https://github.com/Dantsls22/CowRumIA/tree/44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac",
+      "version": "44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac",
+      "source_ids": [
+        306,
+        307
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Mobile inference model files listed by the CowRumIA README; no Talk2Nature use approved.",
+      "review_depth": "The pinned README lists yamnet_embeddings.tflite and cowrumia_dense.tflite. Their bytes, hashes, provenance, licenses and runtime were not inspected.",
+      "access": "Model filenames are described by the pinned repository README. No model files were downloaded.",
+      "decision": "Metadata-only; exclude from Talk2Nature training, app bundling and public model claims until exact artifacts and all upstream rights are reviewed.",
+      "limitations": "Repository code licensing does not by itself establish the separate provenance, license or permitted redistribution of model weights; the README says YAMNet is used but no full dependency/weight audit was performed.",
+      "attribution": "CowRumIA model assets as described by Daniel Alejandro Tena Salas; underlying YAMNet and classifier-weight provenance requires separate verification.",
+      "rights": {
+        "license": "Model-weight license and provenance not separately established by the reviewed sources",
+        "scope": "The TFLite model artifacts listed in the CowRumIA README, including the YAMNet-related and custom cattle-classifier files.",
+        "evidence_url": "https://github.com/Dantsls22/CowRumIA/blob/44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac/README.md",
+        "conditions": "Verify exact artifact versions, hashes, source-model terms and redistribution permissions before download, execution, training or bundling.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "cowrumia-bovine-vocalization-data-2026",
+      "kind": "dataset",
+      "title": "CowRumIA bovine vocalization dataset v1.0.0",
+      "url": "https://doi.org/10.5281/zenodo.20406266",
+      "version": "Zenodo record 20406266, version 1.0.0; published 2026-05-27",
+      "source_ids": [
+        308
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Four-class cattle vocalization dataset described as stress/calm by beef/dairy category; candidate for metadata-level study-design review only.",
+      "review_depth": "Reviewed the official Zenodo v1 record metadata for collection description, named sites and external sources, file size/checksum listing, publication date and Rights section. No data file was acquired, downloaded, hashed or inspected.",
+      "access": "Public Zenodo landing page and a listed 152.0 MB archive. No explicit dataset reuse license appears in the reviewed Rights section.",
+      "decision": "Metadata-only and not admitted to research training or redistribution. Resolve dataset and upstream source terms and inspect annotation/group metadata before considering any use.",
+      "limitations": "The public record provides no explicit reuse license; its copyright notice is not a permission grant. The mixed-source audio has unresolved file-level provenance. Provider MD5 was not locally checked. Annotation protocol, independent welfare reference, per-recording site mapping and animal/session groups were not reviewed.",
+      "attribution": "Daniel Alejandro Tena Salas (2026), CowRumIA Bovine Vocalization Dataset, Zenodo v1.0.0, DOI 10.5281/zenodo.20406266.",
+      "rights": {
+        "license": "No explicit license displayed in the reviewed Zenodo Rights section; copyright notice only",
+        "scope": "The Zenodo v1.0.0 dataset archive. Code, model weights, article/thesis and external source recordings have separate rights.",
+        "evidence_url": "https://zenodo.org/records/20406266",
+        "conditions": "Do not download, analyze, train on or redistribute the archive until Zenodo terms and all contributing source-recording rights are clarified.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

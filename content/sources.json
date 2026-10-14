@@ -3125,5 +3125,38 @@
     "rights": {
       "page": "Official UNEP/KBF application guidance; summarized and linked, not reproduced."
     }
+  },
+  {
+    "id": 306,
+    "title": "CowRumIA cattle-audio app and repository (pinned GitHub snapshot)",
+    "description": "Pinned README and repository license describing a Flutter Android cattle-vocalization classifier, its reported results, class counts and listed model assets.",
+    "url": "https://github.com/Dantsls22/CowRumIA/tree/44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the pinned README and LICENSE at commit 44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac. The README describes a Flutter Android app, a YAMNet embedding plus dense classifier, four cattle vocalization classes and reports 85.6% accuracy on 125 test audios. It lists the class counts, six-second mobile input path and bundled TFLite filenames. The README setup command names model/cow_rumia_train_v2.py; that pinned path returned 404, while the README lists model/train_model.py. GitHub exposes a repository MIT LICENSE. No app build, complete code audit, model-file inspection or independent reproduction was performed.",
+    "rights": {
+      "page": "The pinned GitHub LICENSE declares MIT for repository software. Dataset and model-weight rights are separate."
+    }
+  },
+  {
+    "id": 307,
+    "title": "CowRumIA training split and evaluation script at pinned commit",
+    "description": "Static review of the exact training file at the pinned CowRumIA GitHub commit, focusing on splitting, callbacks and final evaluation.",
+    "url": "https://github.com/Dantsls22/CowRumIA/blob/44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac/model/train_model.py#L93-L98",
+    "checked": "2026-10-14",
+    "origin": "Static review of model/train_model.py at commit 44fdc5e5cf3f080457211bb87eb8cb2fc6b099ac. It makes an utterance-level random stratified 80/20 split, passes the same X_test and y_test to model.fit as validation_data while EarlyStopping monitors val_accuracy and ReduceLROnPlateau monitors val_loss, then evaluates predictions on that same X_test. The reviewed split code does not group by animal, session or site. No code was downloaded, executed or independently reproduced.",
+    "rights": {
+      "page": "Pinned third-party source code is linked for review only; no code is copied into Talk2Nature."
+    }
+  },
+  {
+    "id": 308,
+    "title": "CowRumIA bovine vocalization dataset (Zenodo v1.0.0)",
+    "description": "Official versioned Zenodo metadata for the CowRumIA cattle audio corpus, its described collection scope, file listing and rights statement.",
+    "url": "https://zenodo.org/records/20406266",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the Zenodo version 1.0.0 record published May 27, 2026. It describes 624 labeled WAV recordings across four beef/dairy cattle stress/calm categories, collected at two Aguascalientes sites in February–March 2026 and supplemented with Tierstimmenarchiv and open-platform recordings. The record says labels were validated by domain experts, lists a 152.0 MB ZIP and provider MD5, and shows a 2026 copyright notice without an explicit license in the Rights section. The annotation protocol and source-level terms were not established by this metadata review. No file was downloaded or checksum verified.",
+    "rights": {
+      "page": "The reviewed Zenodo record displays a copyright notice but no explicit dataset reuse license. The audio and upstream sources are not reproduced."
+    }
   }
 ]
