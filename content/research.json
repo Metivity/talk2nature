@@ -3576,13 +3576,14 @@
     "year_label": "Challenge year",
     "source_ids": [
       316,
-      317
+      317,
+      326
     ],
     "reviewed": "2026-10-14",
-    "review_stage": "Official challenge and one task-specific dataset card reviewed; metadata-only",
-    "review_depth": "Reviewed the official Barkopedia README and MIT LICENSE at GitHub commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d; opened the linked task Spaces; reviewed the Activity and Environment dataset card and Hugging Face revision/tree at 60a721a7f9477634971f6b3df29dc2a5e56994d8. The README says source audio was collected from YouTube and Reddit and lists eight tasks. Only the Activity and Environment task card was examined; no academic challenge-results paper or final leaderboard report was reviewed. No archive, CSV, audio, code or model was downloaded or executed, and no independent reproduction or specialist review occurred.",
+    "review_stage": "Official challenge and one task-specific dataset card reviewed; Task 6 card history checked only; metadata-only",
+    "review_depth": "Reviewed the official Barkopedia README and MIT LICENSE at GitHub commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d; opened the linked task Spaces; reviewed the Activity and Environment dataset card and Hugging Face revision/tree at 60a721a7f9477634971f6b3df29dc2a5e56994d8. The README says source audio was collected from YouTube and Reddit and lists eight tasks. Only the Activity and Environment task card was examined; no academic challenge-results paper or final leaderboard report was reviewed. No archive, CSV, audio, code or model was downloaded or executed, and no independent reproduction or specialist review occurred. On October 14, also inspected the exact Hugging Face Task 6 card revision and its README diff: the former Barkopedia emotion card was rewritten as EmotionalCanines and changed its license metadata, but this does not establish dataset-file continuity. No Task 6 audio, labels or archives were inspected; the Activity and Environment card remains the only Barkopedia task-specific dataset card reviewed.",
     "finding": "Barkopedia was an IJCAI 2025 challenge with eight dog-audio tasks: age, sex, breed, individual recognition, activity/environment, emotion, vocal separation and vocal detection. Its README describes the corpus as real-world clips sourced from YouTube and Reddit. The reviewed Activity and Environment card lists 12,480 training clips and 3,120 test clips, with eight activity categories and six environment categories. It says labels were initially generated through video-assisted inference with Janus-Pro-7B and later manually verified. This is a useful context-label classification comparator, but it does not show that an audio prediction represents an animal's intended message, subjective state or a validated welfare outcome. The pinned Hugging Face tree includes train, validation and test directories, although the card still says the test set will be released later. Its Dataset Viewer reports incompatible audiofolder/CSV formats across splits. The Barkopedia GitHub repository is the MIT-licensed challenge site/documentation; its inspected root tree did not include a training or evaluation implementation.",
-    "limitations": "The challenge timeline ended in 2025. No final leaderboard, peer-reviewed benchmark report, baseline implementation or seven other task-specific dataset cards were reviewed. The card does not specify per-recording source permissions, consent/privacy, annotator qualifications, blinded review, inter-annotator agreement, animal/session/site grouping or an untouched locked-test protocol. Its MIT metadata and the GitHub site's MIT LICENSE do not independently establish rights to source-platform recordings. The Viewer format error and card's future-tense test-set text show that the public metadata is not fully synchronized, but do not prove the audio files are unusable. No data, labels or sound were inspected, so no model performance or dataset quality conclusion is claimed.",
+    "limitations": "The challenge timeline ended in 2025. No final leaderboard, peer-reviewed benchmark report, baseline implementation or seven other task-specific dataset cards were reviewed. The card does not specify per-recording source permissions, consent/privacy, annotator qualifications, blinded review, inter-annotator agreement, animal/session/site grouping or an untouched locked-test protocol. Its MIT metadata and the GitHub site's MIT LICENSE do not independently establish rights to source-platform recordings. The Viewer format error and card's future-tense test-set text show that the public metadata is not fully synchronized, but do not prove the audio files are unusable. No data, labels or sound were inspected, so no model performance or dataset quality conclusion is claimed. The former Barkopedia Task 6 Hugging Face card was later rewritten to describe EmotionalCanines and now links a separate dataset repository. Its README history does not establish that the historical challenge files and the EmotionalCanines release are the same data; do not treat the current card as a verified Task 6 dataset review.",
     "lesson": "Keep three claims separate: an audio classifier can predict a dataset's context labels; labels may be derived with video and human review; neither alone demonstrates call meaning or independently observed behavior. For Talk2Nature, retain observer-entered behavior and model predictions as separate records. Do not use this dataset in a model run until the exact recordings' rights, annotation process, grouping and evaluation splits are resolved.",
     "next_review": "If this benchmark becomes a candidate, first verify the exact source-media terms and consent basis, the complete annotation workflow and agreement, and individual/session/site membership in train, validation and test. Pin a reproducible baseline and compare against context-only and simple acoustic controls before any model run. If these records are unavailable, retain this as a metadata-only comparator and use a separately rights-cleared, independently labeled question for Talk2Nature.",
     "expert_review": "No independent dog-behavior, bioacoustics or benchmark-methods specialist has reviewed this Talk2Nature assessment; no author or organizer was contacted.",
@@ -3608,12 +3609,16 @@
       [
         "Rights and reuse",
         "The HF card declares MIT and the challenge-site repository has an MIT LICENSE. The challenge README says recordings came from YouTube and Reddit; rights and consent for the individual source recordings were not established. The audio remains metadata-only."
+      ],
+      [
+        "Task 6 card continuity",
+        "At Hugging Face revision c0617b15562882b9eee4cc1bcb8e6aa80e51bd34 the README changed from the old Barkopedia emotion-task description to EmotionalCanines, with different license metadata and a link to a separate GitHub repository. No file continuity was verified."
       ]
     ],
     "reuse": {
       "status": "Metadata-only project and task comparator; not a released Talk2Nature training dataset or translation benchmark.",
       "asset": "Pinned Barkopedia challenge README and Activity/Environment dataset card; no archive, labels, audio, baseline code or model weights acquired.",
-      "rights": "Repository MIT applies to the challenge site/software component. The dataset card's MIT field and project-level source description do not resolve the permissions, consent, privacy or license scope for individual YouTube/Reddit recordings.",
+      "rights": "Repository MIT applies to the challenge site/software component. The dataset card's MIT field and project-level source description do not resolve the permissions, consent, privacy or license scope for individual YouTube/Reddit recordings. The historical emotion-task card path now describes EmotionalCanines; its transition does not establish that the files are unchanged or clear their source-media rights.",
       "experiment": "Do not run a model until the exact audio rights, independently reviewed labels, dog/session/site groups and locked-test boundary are established. Compare audio predictions against context-only and simple acoustic baselines; retain human observations separately from model outputs."
     }
   },
@@ -3690,6 +3695,58 @@
         "source_id": 321,
         "locator": "Dryad dataset abstract and README"
       }
+    }
+  },
+  {
+    "slug": "emotionalcanines-dog-arousal-valence-2025",
+    "title": "EmotionalCanines: video-derived labels are not a dog-reported emotion",
+    "seo_description": "EmotionalCanines predicts video-derived dog arousal and valence labels from bark audio; it does not show call meaning or a validated emotion readout.",
+    "taxon": "Domestic dog (Canis familiaris), Siberian Husky and Shiba Inu",
+    "kind": "Dataset and audio-classification study",
+    "year": "2025",
+    "year_label": "Publication year",
+    "source_ids": [
+      325,
+      326,
+      327
+    ],
+    "reviewed": "2026-10-14",
+    "review_stage": "Targeted full-text methods/results review; version-pinned dataset metadata review; no independent reproduction",
+    "review_depth": "Read the author-hosted eight-page ACM Multimedia paper sections on dataset generation, annotation, reliability, dog-separated splits, baselines, results and limitations. Reviewed the exact Hugging Face card commit c0617b15562882b9eee4cc1bcb8e6aa80e51bd34 and its README diff, plus the pinned GitHub README/LICENSE at 6b73c5fce55fc132e97db6a76899f8594a955f59. The paper reports 1,400 bark sequences (700 per breed; 600 train and 100 test per breed) from 199 dogs, with dog identities separated between train and test. Twelve annotators contributed; each sequence received three labels, and a 100-sample pilot reported Fleiss kappa 0.30 for arousal and 0.42 for valence. No recordings, labels, code or model weights were downloaded or run; no metrics were reproduced.",
+    "finding": "The paper predicts two three-class labels from audio: arousal (low/medium/high) and valence (negative/neutral/positive). Annotators first watched the associated video with surrounding context and used visible behavior and situation to assign the labels; samples were retained only when at least two of three raters agreed on both dimensions. These are human video-derived behavior/affect annotations, not an animal-reported state, an independently validated physiological measure, a receiver response, or evidence that a bark means a particular thing. The article reports dog-separated tests with best accuracies around 50–57% across breed and target combinations. It separately reports higher 10-fold cross-validation results, but the reviewed methods do not specify whether those folds were grouped by dog. The Hugging Face path formerly used for Barkopedia Task 6 was rewritten at the pinned revision as EmotionalCanines and its license metadata changed; no continuity of the underlying files was verified.",
+    "limitations": "The paper says its source pipeline began from internet video-derived bark sequences and acknowledges engagement-related sampling bias. The emotion labels depend on human interpretation of video behavior/context; the 100-sample pilot reports fair agreement, not external ground truth, and the authors discuss the difficulty of directly measuring subjective state from visible behavior. The dataset covers two breeds and only 35 minutes of bark sequences; each breed has 100 held-out test sequences. The reported 10-fold CV grouping is not clear from the reviewed methods, and no baseline code or results were independently reproduced. The dataset repositories declare CC BY-NC-SA 4.0, but permissions, consent and privacy terms for original source videos were not independently traced. Do not treat audio classification as emotion diagnosis, welfare advice or communication translation.",
+    "lesson": "For Talk2Nature, store a person’s directly observed behavior separately from model output and from any inferred affect. If an affect question is ever studied, predefine the behavioral/physiological evidence and independent validation; avoid presenting a video-derived human label as the animal’s inner state.",
+    "next_review": "Before considering any dataset use, resolve the original video/audio permissions, consent and privacy basis, identify whether the current GitHub and historical Hugging Face files are the same release, and obtain specialist review of the annotation construct. A future benchmark would need a frozen dog/session-grouped test and independent behavioral or physiological reference; the current record remains metadata-only.",
+    "expert_review": "No independent animal-affect, canine-behavior or bioacoustics review has been received.",
+    "review_locator": "Author-hosted PDF, pages 1–5: dataset construction, annotation, agreement, splits, baselines, reported test results and conclusion; Hugging Face README diff at revision c0617b15562882b9eee4cc1bcb8e6aa80e51bd34; GitHub README/LICENSE at commit 6b73c5fce55fc132e97db6a76899f8594a955f59.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Question and target",
+        "Audio classifiers predict human-assigned three-class arousal and valence labels; they do not test whether a receiver understood a call."
+      ],
+      [
+        "Dataset and split",
+        "Paper reports 1,400 sequences, 35:02 total, two breeds, 199 dogs, 600 training and 100 test sequences per breed, with no dog overlap between train and test."
+      ],
+      [
+        "Label procedure",
+        "Twelve annotators; three raters per sample; a 100-sample pilot reported Fleiss kappa 0.30 (arousal) and 0.42 (valence); retained samples required majority agreement."
+      ],
+      [
+        "Evaluation",
+        "Authors report dog-separated test accuracies around 50–57% for the best breed/target combinations. Higher 10-fold CV results are reported separately; dog grouping of those folds was not established in the reviewed methods."
+      ],
+      [
+        "Release lineage",
+        "The former Barkopedia Task 6 Hugging Face README was rewritten as EmotionalCanines at c0617b1 and now points to a separate GitHub release; file continuity was not checked."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only methods reference; not an admitted Talk2Nature training dataset, emotion detector or communication benchmark.",
+      "asset": "Author-hosted article, pinned Hugging Face card revision c0617b15562882b9eee4cc1bcb8e6aa80e51bd34, and pinned GitHub dataset repository commit 6b73c5fce55fc132e97db6a76899f8594a955f59. No files were acquired.",
+      "rights": "The article and dataset separately declare CC BY-NC-SA 4.0. The dataset terms do not establish rights or consent for original internet videos; this non-commercial dataset is not admitted to the shared commercial-capable collection.",
+      "experiment": "No experiment was run. Any future test must distinguish audio association with observer labels from animal emotion or meaning, and must establish the exact media rights, a qualified review, independent reference labels and grouped evaluation."
     }
   }
 ]

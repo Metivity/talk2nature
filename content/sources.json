@@ -3341,5 +3341,41 @@
       "code": "MIT License according to the pinned repository license file and GitHub license metadata.",
       "scope": "Repository code only. This license does not grant article or dataset rights."
     }
+  },
+  {
+    "id": 325,
+    "title": "EmotionalCanines: ACM Multimedia 2025 paper (author-hosted full text)",
+    "description": "Eight-page paper describing a video-annotated dog-bark arousal/valence dataset and audio-classification baselines.",
+    "url": "https://kenzhu2000.github.io/papers/acmmm25-dogemo.pdf",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the author-hosted eight-page PDF, focusing on the abstract, related work, dataset generation and annotation, pilot inter-rater reliability, dog-separated train/test design, baseline methods, results and limitations. The ACM DOI landing page returned HTTP 403 in this review; the author-hosted full text was accessible. No results were reproduced and no code or data were acquired.",
+    "rights": {
+      "paper": "The PDF states CC BY-NC-SA 4.0.",
+      "scope": "Article only. The paper license does not independently grant rights to dataset recordings, source videos, labels, code or model weights."
+    }
+  },
+  {
+    "id": 326,
+    "title": "EmotionalCanines dataset card and Barkopedia Task 6 card revision",
+    "description": "Hugging Face commit c0617b15562882b9eee4cc1bcb8e6aa80e51bd34 rewrites the former Barkopedia emotion-task card as EmotionalCanines.",
+    "url": "https://huggingface.co/datasets/ArlingtonCL2/BarkopediaDogEmotionClassification_Data/commit/c0617b15562882b9eee4cc1bcb8e6aa80e51bd34",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the exact commit and its README diff. The old card described a Barkopedia Challenge Dataset, declared MIT metadata, and listed 1,000 planned training plus 200 planned test clips. The commit changes one file: the current card names EmotionalCanines, declares CC BY-NC-SA 4.0, says train/test dog identities do not overlap, and points to a separate GitHub dataset repository and ACM paper. This card rewrite does not establish that files in the former and current datasets are identical. No archive, audio or label file was fetched or inspected.",
+    "rights": {
+      "metadata": "The card at this pinned revision declares CC BY-NC-SA 4.0.",
+      "scope": "Card metadata only. The declaration does not verify original source-video permissions, consent, privacy basis or rights to any files that may remain in the historical Hugging Face repository."
+    }
+  },
+  {
+    "id": 327,
+    "title": "EmotionalCanines dataset repository and license at a pinned GitHub commit",
+    "description": "Author repository for the dataset linked by the current Hugging Face card, pinned to commit 6b73c5fce55fc132e97db6a76899f8594a955f59.",
+    "url": "https://github.com/tmdang1101/EmotionalCanines/tree/6b73c5fce55fc132e97db6a76899f8594a955f59",
+    "checked": "2026-10-14",
+    "origin": "Resolved the public main ref to commit 6b73c5fce55fc132e97db6a76899f8594a955f59 and read its pinned README and LICENSE. The README identifies the repository as the dataset companion to the ACM MM 2025 paper; LICENSE states CC BY-NC-SA 4.0 for the dataset. No data files, labels or audio were downloaded, parsed or executed.",
+    "rights": {
+      "dataset": "The pinned LICENSE states CC BY-NC-SA 4.0 for the dataset.",
+      "scope": "Dataset repository only. The license does not establish rights, consent or privacy terms for the original source videos, and no separate baseline-code license was identified in the reviewed README/license."
+    }
   }
 ]

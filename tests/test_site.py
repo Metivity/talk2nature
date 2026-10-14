@@ -124,7 +124,7 @@ class SiteTests(unittest.TestCase):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='barkopedia-context-benchmark-2025')
         self.assertEqual(note['purpose'],'Models & evaluation')
-        self.assertEqual(note['source_ids'],[316,317])
+        self.assertEqual(note['source_ids'],[316,317,326])
         self.assertIn('video-assisted',note['finding'])
         self.assertIn('does not show that an audio prediction represents',note['finding'])
         self.assertIn('per-recording source permissions',note['limitations'])
@@ -157,6 +157,35 @@ class SiteTests(unittest.TestCase):
             self.assertIn('/research/barkopedia-context-benchmark-2025/',(root/'sitemap.xml').read_text())
             paths=(root/'research'/'starting-points'/'index.html').read_text()
             self.assertIn('/research/barkopedia-context-benchmark-2025/',paths)
+
+    def test_emotionalcanines_review_separates_video_labels_from_animal_meaning(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='emotionalcanines-dog-arousal-valence-2025')
+        self.assertEqual(note['source_ids'],[325,326,327])
+        self.assertIn('human video-derived behavior/affect annotations',note['finding'])
+        self.assertIn('not an animal-reported state',note['finding'])
+        self.assertIn('Fleiss kappa 0.30',note['review_depth'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('emotionalcanines-')}
+        self.assertEqual(set(selected),{'emotionalcanines-paper-acmmm-2025','emotionalcanines-dataset-2025'})
+        self.assertEqual(selected['emotionalcanines-paper-acmmm-2025']['rights']['scope'],'Article only; does not grant rights to datasets, source videos, code or model weights.')
+        dataset=selected['emotionalcanines-dataset-2025']
+        self.assertEqual(dataset['rights']['research_use'],'unresolved')
+        self.assertEqual(dataset['rights']['commercial_use'],'not_admitted')
+        self.assertEqual(dataset['acquisition'],'metadata_only')
+        self.assertEqual(dataset['files'],[])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'emotionalcanines-dog-arousal-valence-2025'/'index.html').read_text()
+            self.assertIn('EmotionalCanines: video-derived labels are not a dog-reported emotion',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/emotionalcanines-dog-arousal-valence-2025/',page)
+            self.assertIn('c0617b15562882b9eee4cc1bcb8e6aa80e51bd34',page)
+            self.assertIn('/research/emotionalcanines-dog-arousal-valence-2025/',(root/'sitemap.xml').read_text())
+            resources_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('EmotionalCanines dog-bark arousal and valence dataset',resources_page)
 
     def test_crowdbark_project_is_discoverable_without_claiming_a_dataset_release(self):
         project_root=Path(__file__).resolve().parents[1]
