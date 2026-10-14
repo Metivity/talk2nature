@@ -779,14 +779,25 @@ class SiteTests(unittest.TestCase):
             page=(root/'opportunities/index.html').read_text()
             self.assertIn('Biodiversa+ · BiodivFuture 2026–2027',page)
             self.assertIn('Deadline 2026-11-10 · 12:00 CET · 11:00 UTC',page)
-            self.assertIn('The Biodiversa+ call page and formal PDF give November 10; the Commission portal lists November 2',page)
+            self.assertIn('Israel national deadline 2026-11-15 · 12:00 local (MoEP tender listing)',page)
+            self.assertIn('European Commission portal lists November 2',page)
             self.assertIn('National funding rules ↗',page)
             self.assertIn('Call partner search ↗',page)
             self.assertIn('Other official listing (date differs) ↗',page)
-            self.assertIn('ISF-recognized Israeli research institution',page)
-            self.assertIn('No application is prepared',page)
-            for source_id in (181,182,183,184,185):
+            self.assertIn('Israel Science Foundation-recognized host institution',page)
+            self.assertIn('Israeli national call ↗',page)
+            self.assertIn('MoEP applicant briefing ↗',page)
+            self.assertIn('two separate submissions',page)
+            self.assertIn('opens October 22',page)
+            self.assertIn('no application, partner profile or outreach is prepared',page)
+            for source_id in (181,182,183,184,185,309,310,311):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
+            for source_url in (
+                'https://www.biodiversa.eu/wp-content/uploads/2026/10/BiodivFuture_Funding-Organisation_Rules_V5_06-10-2026.pdf',
+                'https://mr.gov.il/ilgstorefront/he/p/4000621848',
+                'https://www.biodiversa.eu/wp-content/uploads/2026/10/BiodivFuture-MoEP-slides.pdf',
+            ):
+                self.assertIn(f'href="{source_url}"',page)
 
     def test_kunming_biodiversity_fund_shows_un_only_funding_and_country_gates(self):
         with tempfile.TemporaryDirectory() as d:
