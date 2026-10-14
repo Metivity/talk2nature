@@ -1,5 +1,17 @@
 # Project status
 
+## October 14 — expand the Japanese-tit reviewer packet with an adjacent receiver study
+
+**Question:** does the 2025 Carolina-wren/great-tit playback add evidence about cross-family receiver responses, and can it support claims about call-order decoding?
+
+**Evidence reviewed:** source 268 was rechecked against the publisher-indexed Methods, Results and Discussion passages and the University of Western Australia repository abstract, publication record and article-license metadata. Direct ScienceDirect retrieval returned HTTP 403; full article files, figures, supplementary material and complete statistical details were not reviewed.
+
+**Finding and limits:** the study used 96 wild great tits across six treatments. Approach differed between calls and controls but not among call treatments; wing-flicking was more frequent after complete FME–D sequences than after D-only calls or controls. No reversed-order condition was tested, so the result is adjacent cross-family receiver-response evidence, not evidence of Japanese-tit order decoding or an independent replication. The authors note that the Carolina-wren component functions remain unconfirmed and that the D-only comparison was not duty-cycle matched; the stimulus set also reduces four callers to two constructed tracks per call treatment.
+
+**Change and rights:** added source 268 to the Japanese-tit evidence note as a separate comparator, expanded the five-question review request and updated `docs/JAPANESE_TIT_REVIEW.md` with the study and an internal link to its dedicated note. The UWA record identifies the article as CC BY; this does not license its separate Macaulay Library or Xeno-Canto recordings. No article file, audio, data or code was acquired. No reviewer was contacted, and no study, model or animal-facing protocol is proposed.
+
+**Validation:** all 125 repository Python tests passed; the catalog accepted 130 resources. The owner-only metadata catalog synced 512 records (two changed, none created or retired) and an immediate repeat made no changes. The local noindex build produced 107 pages plus 404; the checker validated 108 HTML pages and 5,257 links. The explicit-origin public candidate also produced 107 pages plus 404; the checker validated 108 HTML pages, 5,366 links and all 107 public pages reachable. The note's title, description, `index,follow`, self-canonical URL and sitemap inclusion were checked. This is a local candidate, not a deployment or Search Console/indexing result. AutoResearch remains **NOT READY**.
+
 ## October 14 CowRumIA mobile-audio app and evaluation review
 
 **Question:** is CowRumIA a useful mobile app and data comparator for Talk2Nature, and does its reported 85.6% result support an independent performance claim?
