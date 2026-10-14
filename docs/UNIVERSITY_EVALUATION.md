@@ -1,15 +1,15 @@
 # University evaluation brief
 
-Updated October 13, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
+Updated October 14, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
 
 ## Start with the browser; go deeper only if useful
 
-Talk2Nature is ready for a small **software and workflow evaluation with synthetic material**. Start with the [browser-only Compare moments review](https://metivity.github.io/talk2nature/app/compare/); no account, microphone, playback, download or Audacity installation is needed:
+Talk2Nature is ready for a small **software and workflow evaluation with synthetic material**. Start with the [browser-only Compare moments review](https://metivity.github.io/talk2nature/app/compare/); trying it needs no account, microphone, playback, download or Audacity installation:
 
 1. Choose **Try an example pair** and compare the two invented sessions and their observer-entered notes.
 2. Notice how the complete and partial sessions differ in sampling. Ask what the interface supports you in describing and what it does not establish about animal behavior.
 3. Close one session and confirm the other remains open.
-4. If a step is confusing or a field is missing, use the [public reproduction and workflow form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Include the page URL and access date; do not include recordings or confidential research details.
+4. If a step is confusing or a field is missing, use the [public reproduction and workflow form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Posting requires GitHub sign-in, and the resulting issue is public. Include the page URL and access date; do not include recordings or confidential research details.
 
 For a deeper, roughly 20-minute export review, the [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/) guides a synthetic Listen-to-Audacity check:
 

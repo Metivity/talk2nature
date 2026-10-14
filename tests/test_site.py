@@ -696,6 +696,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('One small test.',university)
             self.assertIn('A browser-only review of invented observation sessions',university)
             self.assertIn('no animal recording',university)
+            self.assertIn('no account to try',university)
+            self.assertIn('Posting a report through GitHub requires sign-in',university)
+            self.assertIn('reports are public',university)
             self.assertIn('href="/talk2nature/app/compare/"',university)
             self.assertIn('href="/talk2nature/tools/interop/"',university)
             self.assertIn('Start the browser review',university)
@@ -719,12 +722,15 @@ class SiteTests(unittest.TestCase):
             self.assertIn('not a partnership announcement',brief)
             self.assertIn('not an ethics determination',brief)
             self.assertIn('browser-only comparison of two invented observation sessions',brief)
+            self.assertIn('Posting requires GitHub sign-in, and the resulting issue is public.',brief)
             self.assertIn('https://metivity.github.io/talk2nature/app/compare/',brief)
             self.assertIn('optional, deeper Listen-to-Audacity check',brief)
             self.assertIn('no-animal phone-reference check',brief)
             self.assertIn('PHONE_RECORDING_REVIEW.md',brief)
             self.assertNotIn('try a short synthetic Listen-to-Audacity workflow',brief)
             self.assertIn('SUPPORT.md', (project_root/'README.md').read_text())
+            researcher_kit=(project_root/'docs/RESEARCHER_START.md').read_text()
+            self.assertIn('Trying the workflow needs no account; posting to GitHub requires sign-in and creates a public issue.',researcher_kit)
 
     def test_public_build_requires_real_origin(self):
         with tempfile.TemporaryDirectory() as d:
