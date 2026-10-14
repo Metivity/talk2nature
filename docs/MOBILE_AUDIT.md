@@ -255,3 +255,11 @@ This verifies a maintainer-run emulator interaction only. It is not a physical-p
 ## October 14: keep parrot-operated interfaces separate from the Field Companion
 
 The full text of the CHI 2024 tablet ergonomics study was reviewed for this distinction. Its 17 trained parrot completers used a 10.1-inch tablet in a caregiver-supported enrichment task; larger targets increased hit rate in that setup, but touch-point precision did not significantly differ by target width. The result is not a phone-layout specification, a communication test or evidence for adding sound playback. The Field Companion remains a human-operated passive-observation tool. A future animal-operated enrichment interface would need its own qualified avian/animal-computer-interaction review, hardware-specific study and welfare protocol with a voluntary exit. Full source and limits are recorded in the [research note](../content/research.json).
+
+## October 14 follow-up: validate the published first-use feedback path
+
+**Question:** can a visitor try the microphone-free rehearsal and prepare concise usability feedback without an account, upload or automatic submission?
+
+**Check:** opened the live `/mobile/` page in desktop Chrome mobile emulation at 320 × 740 and 390 × 844 CSS pixels. At both widths, the feedback helper produced a visible, reviewable report from invented QA entries; document width matched the viewport; and the email action remained a `mailto:` draft. The browser reported no page errors or non-GET requests. At 320 × 740, followed the practice link into Station, started the synthetic rehearsal, and confirmed the microphone-call stub stayed at zero. The page identified the session as synthetic; no recording, email, issue or upload was created.
+
+**Limit:** this verifies the published software path with maintainer-entered test text, not a first-time-user outcome, actual email-client behavior, screen-reader use or physical iPhone/Android behavior. No participant feedback was collected. Independent novice and physical-device review remain the next usability gates.
