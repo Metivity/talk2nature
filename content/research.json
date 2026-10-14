@@ -1760,7 +1760,7 @@
   {
     "slug": "budgerigar-vocal-sociality-data",
     "title": "Budgerigar vocal and social records are not event-aligned",
-    "seo_description": "A 48-bird study paired contact-call features with separate flock behavior labels; records do not align each call to an event.",
+    "seo_description": "A 48-bird budgerigar study paired call features with separate novel-flock videos; the deposit lacks synchronized call-level audio and behavior.",
     "taxon": "Parrots",
     "kind": "Vocal learning and sociality study",
     "year": "2023",
@@ -1771,14 +1771,14 @@
       126,
       127
     ],
-    "review_depth": "Targeted abstract and Methods passages from the primary PMC index, Dryad version/file metadata and README, official NMSU facility locator, and Dryad's reuse policy reviewed. Direct PMC page open encountered CAPTCHA. No Dryad files, raw audio, video, supplement or code were downloaded or executed.",
-    "finding": "A 48-bird budgerigar study paired longitudinal contact-call features with separately coded flock social behavior, but the deposited data do not align each call with a social event.",
-    "limitations": "The calls were recorded from one focal bird at a time in a sound-isolation chamber, visually but not acoustically connected to flockmates. Social interactions were recorded separately in home-flock video sessions. The Dryad file inventory lists derived call-feature tables, behavior coding, an interobserver workbook, example video and R scripts, but no original call audio. Shared group/date/block metadata may support a carefully bounded aggregate association, not event-level prediction or meaning. The design includes 12 flocks in two age classes; age and group-level confounding limit generalization. The reliability workbook and analysis scripts were not inspected.",
-    "lesson": "A dataset can be multimodal in the study design yet still lack the synchronized, independently labeled events a model needs. Require a shared clock and source-file linkage between sound and observed behavior; group or date overlap alone is not event alignment. Treat this Dryad deposit as a protocol/schema comparator, not the first Talk2Nature context benchmark.",
-    "next_review": "If aggregate vocal-learning/sociality analysis is considered, inspect the interobserver assessment, exact file/date/block joins and missingness, and predefine a flock-held-out question with a collaborator. For call-level context prediction, seek synchronized recordings with independent event annotations and access to the original audio.",
-    "reviewed": "2026-10-11",
+    "review_depth": "Reviewed the primary article's animal housing, experimental outline, audio recording and video recording Methods through PMC-indexed full text and a coauthor-hosted article PDF; the official Dryad version history, file inventory and README data dictionary; Dryad reuse guidance; and the official NMSU facility locator. Direct PMC page access encountered CAPTCHA. No Dryad files, raw audio, video, supplement or code were downloaded or executed. The README describes the interobserver workbook, but it was not inspected and agreement was not recalculated.",
+    "finding": "In a 48-bird study, older adults showed reduced vocal diversity over the experiment and older-age flocks had weaker/less dense affiliative ties; measured vocal plasticity and convergence were similar across age classes. The deposit pairs derived call features and social observations at flock/date/block scale, not at synchronized call-event scale.",
+    "limitations": "The experiment formed 12 novel flocks of four adult males in two age classes. Individual contact calls were collected in separate 55-minute sessions with each focal bird in a sound-isolation chamber, visually but not acoustically connected to flockmates. Social behavior was filmed in separate 80-minute sessions of these newly formed experimental flocks, not home flocks; early-morning video was sampled for affiliative and agonistic interactions after a 30-minute settling period, while proximity was assessed from snapshots. Dryad's 2024 deposit lists derived call features and social tables with overlapping flock/date/block fields but no original call WAV files or shared call/event timestamps. It cannot support event-level sound-to-behavior prediction. The 12-flock design and age treatment constrain generalization. The README documents an interobserver workbook with a subset recoded by a second observer; the workbook and R analysis scripts were not inspected, and no agreement statistic or reproduced result is claimed.",
+    "lesson": "A study can collect sound and behavior in the same experiment without producing synchronized audio–behavior labels. Require a shared clock and source-file linkage between the sound and observed behavior; flock/date overlap alone is not event alignment. Treat this Dryad deposit as a protocol and schema comparator, not the first Talk2Nature context benchmark.",
+    "next_review": "If aggregate vocal-learning/sociality analysis is considered, inspect the interobserver assessment, define the analysis unit, audit exact group/date/block joins and missingness, and obtain independent scientific review before any model. For call-level context prediction, seek rights-cleared synchronized recordings with independent event annotations and access to original audio.",
+    "reviewed": "2026-10-14",
     "expert_review": "Not yet independently reviewed by an avian bioacoustics or social-behavior specialist.",
-    "review_stage": "Targeted study and dataset-fit review",
+    "review_stage": "Primary methods and dataset-fit review; files remain metadata-only",
     "purpose": "Data & annotation",
     "study_snapshot": [
       [
