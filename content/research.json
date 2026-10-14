@@ -12,15 +12,16 @@
       263,
       264,
       265,
-      266
+      266,
+      268
     ],
-    "review_depth": "Direct publisher full text reviewed for the 2016 primary paper (Methods, Experiments 1–2, Results, figures and ethics) and 2022 follow-up (selected Methods, Results, ethics, data/code statements and rights). The linked 2022 Figshare v1 deposit was downloaded to ignored local storage: both data tables were structurally checked and both R scripts were read as text, not executed. For the 2017 paper, publisher-indexed primary text exposed the abstract, selected Results, STAR Methods, statistics and data statement; its direct ScienceDirect page returned HTTP 403. The 2017 Mendeley Data v1 landing metadata and record-level license were reviewed, but its files were not. For Schlenker et al. (2024), the main text (Sections I–VII) of the official HAL v1 author-accepted manuscript was reviewed; the formal appendices were inspected selectively, not recalculated. HAL declares CC BY 4.0 for its deposited manuscript. The separate Wiley supporting-information PDF returned HTTP 403 and was not reviewed. No analysis was reproduced and no independent specialist review has occurred.",
+    "review_depth": "Direct publisher full text reviewed for the 2016 primary paper (Methods, Experiments 1–2, Results, figures and ethics) and 2022 follow-up (selected Methods, Results, ethics, data/code statements and rights). The linked 2022 Figshare v1 deposit was downloaded to ignored local storage: both data tables were structurally checked and both R scripts were read as text, not executed. For the 2017 paper, publisher-indexed primary text exposed the abstract, selected Results, STAR Methods, statistics and data statement; its direct ScienceDirect page returned HTTP 403. The 2017 Mendeley Data v1 landing metadata and record-level license were reviewed, but its files were not. For Schlenker et al. (2024), the main text (Sections I–VII) of the official HAL v1 author-accepted manuscript was reviewed; the formal appendices were inspected selectively, not recalculated. HAL declares CC BY 4.0 for its deposited manuscript. The separate Wiley supporting-information PDF returned HTTP 403 and was not reviewed. No analysis was reproduced and no independent specialist review has occurred. For the adjacent Coye & Dutour (2025) study (source 268), publisher-indexed Methods, Results and Discussion passages and the University of Western Australia repository abstract/access record were reviewed; direct ScienceDirect retrieval returned HTTP 403, so the full article file, figures, supplement and complete statistical details were not reviewed.",
     "seo_description": "Research on Japanese great-tit call combinations, order and receiver behavior, with clear limits on claims about animal language and translation.",
     "finding": "Japanese great tits showed different scanning and approach responses to component calls, natural versus reversed call order, and one bounded novel cross-species sequence: ABC followed by the willow tit recruitment call tää elicited stronger responses than tää–ABC. A matched ABC–zi control did not support the simpler rule that any sequence beginning with ABC elicits the response. A later field experiment also found mobbing responses depended on the alert–recruitment sequence being temporally ordered and broadcast from one source.",
-    "limitations": "These are species-, population- and task-bounded receiver-response results, not general animal-language or translation evidence. The 2017 novelty test combined a familiar heterospecific call type with Japanese-tit calls; it does not establish open-ended productivity. Its comparison with ABC–D used earlier data from another year. The 2022 study extends the same research line in the same species, not an independent replication. Its inspected Figshare sample contains outcome tables but no audio; no location fields are present, but dates and caller_ID fields remain in ignored local files. The API reports no provider MD5, and local hashes do not establish upstream integrity. The two small R scripts lack a dependency lock and were not run, so the analysis was not reproduced. Schlenker et al. (2024) is a theoretical analysis, not a new playback experiment: the authors argue the existing Japanese-tit results support non-trivial combination, but offer two accounts of how it could work. Both fit the source-separation result under different assumptions, so the current evidence does not settle their debate. The paper also sketches chimpanzee and meerkat cases but does not test them. No Talk2Nature playback or animal-facing experiment is proposed by this summary.",
-    "lesson": "Use independently observable receiver behavior and matched component, order and source controls. A discriminating design should test whether a standalone recruitment call points to an independently observable event, and whether source-separated calls can still support a mobbing response when both are clearly tied to the same threat. Treat those as expert-reviewed hypotheses, not ready-to-run playback instructions. Report measured behavior rather than a verbal translation; any animal-facing study needs qualified scientific and welfare oversight.",
-    "next_review": "Ask an independent comparative-communication specialist to assess the two theories and propose a discriminating, welfare-reviewed receiver study. Seek the 2017 Mendeley Data file inventory and exact file terms only through an authorized route. Any later reproduction would need versioned dependencies, a data-to-table linkage check, independent analysis review and a protocol approved by the responsible scientific team.",
-    "reviewed": "2026-10-13",
+    "limitations": "These are species-, population- and task-bounded receiver-response results, not general animal-language or translation evidence. The 2017 novelty test combined a familiar heterospecific call type with Japanese-tit calls; it does not establish open-ended productivity. Its comparison with ABC–D used earlier data from another year. The 2022 study extends the same research line in the same species, not an independent replication. Its inspected Figshare sample contains outcome tables but no audio; no location fields are present, but dates and caller_ID fields remain in ignored local files. The API reports no provider MD5, and local hashes do not establish upstream integrity. The two small R scripts lack a dependency lock and were not run, so the analysis was not reproduced. Schlenker et al. (2024) is a theoretical analysis, not a new playback experiment: the authors argue the existing Japanese-tit results support non-trivial combination, but offer two accounts of how it could work. Both fit the source-separation result under different assumptions, so the current evidence does not settle their debate. The paper also sketches chimpanzee and meerkat cases but does not test them. No Talk2Nature playback or animal-facing experiment is proposed by this summary. An adjacent 2025 study tested 96 wild great tits in six playback treatments using conspecific and allopatric Carolina-wren calls. Approach did not differ among call treatments; wing-flicking was more frequent after complete FME–D sequences than after D-only calls or controls. It did not include reversed-order sequences, so it is a cross-family receiver-response comparator, not a test or replication of Japanese-tit call-order sensitivity. The authors note that the component functions were unconfirmed and that the D-only comparison was not matched for duty cycle.",
+    "lesson": "Use independently observable receiver behavior and matched component, order and source controls. A discriminating design should test whether a standalone recruitment call points to an independently observable event, and whether source-separated calls can still support a mobbing response when both are clearly tied to the same threat. Treat those as expert-reviewed hypotheses, not ready-to-run playback instructions. Report measured behavior rather than a verbal translation; any animal-facing study needs qualified scientific and welfare oversight. Treat the 2025 Carolina-wren/great-tit playback as adjacent evidence of a bounded receiver response across families. Because it did not reverse call order, it cannot establish sequence-order decoding or settle the Japanese-tit theories.",
+    "next_review": "Ask an independent comparative-communication specialist to assess the two theories and the limits of the 2025 Carolina-wren/great-tit comparator, then propose what evidence could distinguish the theories. Seek the 2017 Mendeley Data file inventory and exact file terms only through an authorized route. Any later reproduction would need versioned dependencies, a data-to-table linkage check, independent analysis review and a protocol approved by the responsible scientific team.",
+    "reviewed": "2026-10-14",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_stage": "Primary evidence and alternative theory reviewed",
     "year_label": "Source year",
@@ -54,6 +55,10 @@
         "The linked Figshare v1 item contains two matched 64-row, eight-column outcome tables and two R scripts. The tables contain behavioral outcomes, not audio; structural inspection only. The scripts were read but not executed or reproduced."
       ],
       [
+        "Adjacent cross-family comparator (2025)",
+        "Coye & Dutour: 96 great tits, six treatments, 16 per treatment; approach did not differ among call treatments, while wing-flicking was more frequent after complete Carolina-wren or great-tit FME–D sequences than after D calls or controls. No reversed-order condition was tested."
+      ],
+      [
         "Outcomes",
         "Horizontal scanning, approach and wing-flicking displays, not an AI-generated verbal interpretation. The 2024 paper proposes competing explanations; it adds no new playback result."
       ]
@@ -78,18 +83,19 @@
     },
     "review_request": {
       "title": "Independent review of receiver-response evidence",
-      "summary": "We invite comparative-communication, avian-behavior or animal-cognition researchers to assess what the cited Japanese-tit experiments support about call order and source linkage, and whether the competing explanations are distinguishable. This is a literature critique, not a Talk2Nature model claim or an animal experiment.",
+      "summary": "We invite comparative-communication, avian-behavior or animal-cognition researchers to assess what the cited Japanese-tit experiments support about call order and source linkage, whether the competing explanations are distinguishable, and how the separate 2025 Carolina-wren/great-tit result affects cross-species generalization. This is a literature critique, not a Talk2Nature model claim or an animal experiment.",
       "questions": [
         "Which 2016 and 2017 contrasts best support an order-sensitive receiver response, and what alternatives remain after the reported component, reversal, novelty and call-type controls?",
         "What does the 2022 one/two-speaker comparison establish about source linkage, and what does it leave open about mechanism or independent replication?",
         "Do the 2024 Minimal Compositionality and Bird Implicatures accounts make distinct predictions for the cited experiments, or can both fit the reported results under different assumptions?",
+        "How should the 2025 Carolina-wren/great-tit study affect cross-species generalization? Its sequence-versus-D-only comparison did not reverse order, so what does it add about receiver response, and what does it leave open about order or meaning?",
         "What is the smallest public-source check that could change your assessment? If a new animal study is needed, what outcome/control matters and which welfare review would be required before protocol design?"
       ],
-      "status": "No independent specialist review has been received. The 2017 publisher page and data-file inventory, the 2022 analysis reproduction, and the complete 2024 formal supplement remain unavailable or unreviewed as described in the evidence note.",
+      "status": "No independent specialist review has been received. The 2017 publisher page and data-file inventory, the 2022 analysis reproduction, the complete 2024 formal supplement, and a direct full-text review of the 2025 article remain unavailable or unreviewed as described in the evidence note.",
       "guide_path": "docs/JAPANESE_TIT_REVIEW.md",
       "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml"
     },
-    "review_locator": "Suzuki et al. 2016: Methods, Experiments 1–2; Results; Figures 3–4; ethics. Suzuki et al. 2017: publisher-indexed Results, STAR Methods, statistics and data availability; direct page inaccessible. Suzuki & Matsumoto 2022: selected Methods/Results; Figures 3–4; data/code availability; rights. Figshare item 18007046 v1: two data tables inspected structurally; two R scripts read as text only. Phillips & Wilson 2016: discussion of systematicity. Schlenker et al. 2024: main text Sections I–VII in the HAL v1 author-accepted manuscript; appendices inspected selectively, formal derivations not independently audited; publisher supplement not retrieved.",
+    "review_locator": "Suzuki et al. 2016: Methods, Experiments 1–2; Results; Figures 3–4; ethics. Suzuki et al. 2017: publisher-indexed Results, STAR Methods, statistics and data availability; direct page inaccessible. Suzuki & Matsumoto 2022: selected Methods/Results; Figures 3–4; data/code availability; rights. Figshare item 18007046 v1: two data tables inspected structurally; two R scripts read as text only. Phillips & Wilson 2016: discussion of systematicity. Schlenker et al. 2024: main text Sections I–VII in the HAL v1 author-accepted manuscript; appendices inspected selectively, formal derivations not independently audited; publisher supplement not retrieved. Coye & Dutour (2025): publisher-indexed Methods, Results and Discussion passages; direct ScienceDirect retrieval returned HTTP 403. University of Western Australia repository abstract, publication and article-access/license metadata. No article file or supplementary material inspected.",
     "purpose": "Behavior & communication",
     "atlas": {
       "reviewed": "2026-10-03",
@@ -3069,7 +3075,9 @@
     "kind": "Field bioacoustic context study",
     "year": "2016",
     "year_label": "Publication year",
-    "source_ids": [275],
+    "source_ids": [
+      275
+    ],
     "reviewed": "2026-10-13",
     "review_stage": "Full-text primary-source review",
     "review_depth": "Reviewed the full publisher article for abstract, field methods, context definitions, acoustic measurements, statistical analyses, results, discussion, data availability, ethics and rights; reviewed the additional-file inventory. The research viewer failed or timed out on selected binary supplements. No article assets, audio, data or code were downloaded, opened, executed or redistributed; no independent reanalysis or specialist review was performed.",
@@ -3126,7 +3134,13 @@
     "kind": "Mobile bioacoustics methods comparison",
     "year": "2021–2024",
     "year_label": "Primary studies reviewed",
-    "source_ids": [280, 282, 283, 284, 285],
+    "source_ids": [
+      280,
+      282,
+      283,
+      284,
+      285
+    ],
     "reviewed": "2026-10-13",
     "review_stage": "Selected full-text methods, results, discussion, data-availability and rights review",
     "review_depth": "For Jäckel et al. (2021), reviewed the PLOS paper's methods, citizen-recording quality results, device playback comparison, discussion, rights and Zenodo data statement; the cited Zenodo deposit remains unreviewed. For Gili et al. (2024), reviewed the full publisher article and the March 13, 2024 Dryad record, visible file list and embedded README structure, as well as Dryad's CC0 and responsible-sharing policies. The separate README download returned HTTP 403. No audio archive, article supplement or code was acquired or reproduced, and no independent specialist review was completed.",
@@ -3197,7 +3211,11 @@
     "kind": "Strong-label dataset and baseline review",
     "year": "2026",
     "year_label": "Versioned dataset and preprint reviewed",
-    "source_ids": [286, 287, 288],
+    "source_ids": [
+      286,
+      287,
+      288
+    ],
     "reviewed": "2026-10-13",
     "review_stage": "Full preprint methods and evaluation; versioned dataset manifest and header-only metadata schema; pinned code review",
     "review_depth": "Reviewed arXiv v2 methods, annotation design, dataset schema, technical validation, project-split evaluation, discussion and license; the exact Zenodo v5 API manifest; and pinned repository source. All 12 provider-reported filenames, byte sizes and MD5 strings match this catalog; no dataset file bytes were hashed. A 4,096-byte HTTP 206 range of metadata_v2.csv was streamed transiently and only its header line inspected; it names location_id, recorder_id, date_recorded, latitude and longitude. Raw GitHub source files were fetched read-only into a transient filter for static review; none were saved to the project, installed or executed. No data-row values were reviewed or saved; no annotation rows, manifest rows, audio or checkpoints were inspected. No independent reproduction or specialist review occurred.",
@@ -3251,7 +3269,13 @@
     "purpose": "Data & annotation",
     "year": "2023",
     "year_label": "Software paper (2023); current code release reviewed separately",
-    "source_ids": [291, 292, 293, 294, 295],
+    "source_ids": [
+      291,
+      292,
+      293,
+      294,
+      295
+    ],
     "reviewed": "2026-10-13",
     "review_stage": "Selected paper sections, versioned repository/license, annotation tutorial, dataset record and Dryad policy reviewed; no code or data executed",
     "review_depth": "Reviewed the paper abstract, software overview, annotation and localization functionality, examples, and stated scope; the official v0.13.2 release and tagged MIT license; the official annotation tutorial; and the Dryad dataset landing page and repository-wide license policy. The article describes v0.9.1, the repository lists v0.13.2 as its latest release, while the stable annotation tutorial still pins 0.13.1. No package, code, model, recording, archive, or annotation row was downloaded, installed, or run. The publisher marks the article Open Access, but its exact reuse license was not visible in the reviewed page. No independent software or biological review occurred.",
@@ -3262,11 +3286,26 @@
     "expert_review": "No independent bioacoustic, research-software, or animal-communication specialist has reviewed this assessment.",
     "review_locator": "Lapp et al. (2023): abstract, software overview, Raven integration, examples, and scope; official repository v0.13.2 README/LICENSE; stable audio-annotation tutorial; Chronister et al. Dryad record and Dryad mission page.",
     "study_snapshot": [
-      ["Tool purpose", "Python toolkit for audio/spectrogram handling, annotations, acoustic detection/classification and synchronized-recorder localization."],
-      ["Annotation model", "The tutorial represents human labels as time-frequency boxes and shows Raven import/export and label preparation; an annotated event is not automatically a communicative meaning."],
-      ["Version trail", "The paper describes v0.9.1; the official repository lists v0.13.2; the stable annotation tutorial currently installs v0.13.1. Pin the tested version."],
-      ["Dataset lead", "Dryad version updated 2021-04-06 lists 4 files totaling 1.18 GB; the landing page reports 385 minutes across four days, 48 species and 16,052 annotations."],
-      ["Current decision", "Keep paper, software and dataset as separate metadata-only components. No code, model, recording or dataset bytes were acquired or run."]
+      [
+        "Tool purpose",
+        "Python toolkit for audio/spectrogram handling, annotations, acoustic detection/classification and synchronized-recorder localization."
+      ],
+      [
+        "Annotation model",
+        "The tutorial represents human labels as time-frequency boxes and shows Raven import/export and label preparation; an annotated event is not automatically a communicative meaning."
+      ],
+      [
+        "Version trail",
+        "The paper describes v0.9.1; the official repository lists v0.13.2; the stable annotation tutorial currently installs v0.13.1. Pin the tested version."
+      ],
+      [
+        "Dataset lead",
+        "Dryad version updated 2021-04-06 lists 4 files totaling 1.18 GB; the landing page reports 385 minutes across four days, 48 species and 16,052 annotations."
+      ],
+      [
+        "Current decision",
+        "Keep paper, software and dataset as separate metadata-only components. No code, model, recording or dataset bytes were acquired or run."
+      ]
     ],
     "atlas": {
       "reviewed": "2026-10-13",

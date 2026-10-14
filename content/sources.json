@@ -2808,8 +2808,8 @@
     "title": "Carolina-wren mobbing sequences and great-tit receiver responses",
     "description": "Coye & Dutour (2025), Mobbing sequences of American wrens elicit mobbing responses in European tits. Publisher-indexed Methods and Results describe a six-treatment playback with 96 wild great tits; direct publisher retrieval returned HTTP 403.",
     "url": "https://doi.org/10.1016/j.anbehav.2024.12.006",
-    "checked": "2026-10-13",
-    "origin": "Reviewed the publisher-indexed Methods, Results and Discussion passages for the 96-bird, six-treatment playback and the official University of Western Australia repository record for the abstract and access/license metadata. Direct ScienceDirect retrieval returned HTTP 403. No article file, stimulus, dataset or code was acquired.",
+    "checked": "2026-10-14",
+    "origin": "Rechecked the publisher-indexed Methods, Results and Discussion passages and the official University of Western Australia repository abstract, publication and article-license metadata on 2026-10-14. Direct ScienceDirect retrieval returned HTTP 403; full article files, figures, supplementary material and complete statistical details were not reviewed. No article file, stimulus, dataset or code was acquired.",
     "rights": {
       "article": "The UWA repository record links the published article under CC BY 4.0. This does not license the separate Macaulay Library or Xeno-Canto source recordings used to construct stimuli. No article file or third-party audio was copied."
     }
