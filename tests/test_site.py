@@ -1564,6 +1564,38 @@ class SiteTests(unittest.TestCase):
             paths=(root/'research'/'starting-points'/'index.html').read_text()
             self.assertIn('/research/honeybee-waggle-vision-decoding-2017/',paths)
 
+    def test_yellow_naped_amazon_note_separates_component_rights_and_is_indexable(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='yellow-naped-amazon-vocal-culture-2024')
+        self.assertIn('dialect changes altered receiver behavior, fitness or call meaning',note['limitations'])
+        self.assertLessEqual(len(note['seo_description']),160)
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('yellow-naped-amazon-vocal-culture-') or r['id']=='amazon-vocal-culture-code-2024'}
+        self.assertEqual(set(selected),{
+            'yellow-naped-amazon-vocal-culture-paper-2024',
+            'yellow-naped-amazon-vocal-culture-data-v6',
+            'amazon-vocal-culture-code-2024',
+        })
+        for resource in selected.values():
+            with self.subTest(resource=resource['id']):
+                self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertIn('no alternate route was used',selected['yellow-naped-amazon-vocal-culture-data-v6']['access'])
+        self.assertIn('keep training admission false',selected['yellow-naped-amazon-vocal-culture-data-v6']['decision'])
+        self.assertIn('all rights reserved',selected['yellow-naped-amazon-vocal-culture-paper-2024']['rights']['license'])
+        self.assertIn('CC0-1.0',selected['yellow-naped-amazon-vocal-culture-data-v6']['rights']['license'])
+        self.assertIn('MIT',selected['amazon-vocal-culture-code-2024']['rights']['license'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'yellow-naped-amazon-vocal-culture-2024'/'index.html').read_text()
+            self.assertIn('The data deposit is CC0-1.0',page)
+            self.assertIn('all rights reserved',page)
+            self.assertIn('separately MIT-licensed',page)
+            self.assertIn('401',page)
+            self.assertIn('/research/yellow-naped-amazon-vocal-culture-2024/',(root/'sitemap.xml').read_text())
+            self.assertIn('/research/yellow-naped-amazon-vocal-culture-2024/',(root/'research'/'index.html').read_text())
+
     def test_video_sources_have_identity_context_fallbacks_and_no_initial_embeds(self):
         from html import escape
         sources=load('sources')

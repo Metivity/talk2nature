@@ -4504,6 +4504,92 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "yellow-naped-amazon-vocal-culture-paper-2024",
+      "kind": "paper",
+      "title": "Widespread cultural change in declining populations of Amazon parrots",
+      "url": "https://doi.org/10.1098/rspb.2024.0659",
+      "version": "Proceedings of the Royal Society B 291:20240659 (2024); PMCID PMC11335405",
+      "source_ids": [
+        320
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-14",
+      "task": "Longitudinal change in learned contact-call dialects; a cultural-evolution and conservation comparator, not call-meaning decoding.",
+      "review_depth": "Reviewed the article abstract and targeted methods/results passages surfaced in the PMC index. Direct publisher full-text retrieval was blocked and PMC direct access presented a bot check; the full article and supplements were not reviewed. No analysis was reproduced.",
+      "access": "DOI and PubMed Central bibliographic/abstract record. The article's PMC copyright statement says all rights reserved.",
+      "decision": "Include as a historical parrot-dialect evidence record and link to the separate Dryad dataset and MIT code. Do not treat the abstract-level review as a benchmark design or reproduce article content.",
+      "limitations": "The paper reports dialect shifts during a period of population decline; the abstract does not establish that decline caused the vocal changes or that the changes affect receiver behavior, fitness or communication meaning. This review did not inspect full methods or supplementary analyses.",
+      "attribution": "Dahlin, C. R., Smith-Vidaurre, G., Genes, M. & Wright, T. F. (2024). Proceedings of the Royal Society B 291:20240659. DOI 10.1098/rspb.2024.0659.",
+      "rights": {
+        "license": "The PMC record states all rights reserved; a permissive article-reuse license was not verified.",
+        "scope": "Article text and figures only. Dataset, code, audio and supplements have separate rights.",
+        "conditions": "Link and cite the article; publish only an original short summary. Do not copy its text, tables or figures.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11335405/"
+      },
+      "acquisition": "metadata_only"
+    },
+    {
+      "id": "yellow-naped-amazon-vocal-culture-data-v6",
+      "kind": "dataset",
+      "title": "Vocal culture in Amazon parrots: call measurements and site metadata",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.m905qfv6j",
+      "version": "Dryad v6; API version 305130; published 2024-07-15",
+      "source_ids": [
+        321,
+        322,
+        323
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-14",
+      "task": "Longitudinal dialect and call-type measurement reference; deposited tables do not include the raw audio needed for an audio model.",
+      "review_depth": "Reviewed the Dryad landing page and data dictionary, official current Dryad CC0 guidance, and TLS-verified v6 API metadata/file manifest. No dataset file bytes were retrieved or analyzed.",
+      "access": "Public record and version manifest. The API file-download route returned HTTP 401 and the public file-stream route HTTP 403 in this environment; no alternate route was used.",
+      "decision": "Metadata-only. Keep this as an evidence and schema reference. If official file access becomes available and a defined analysis is justified, inspect only the small measurement, selection-table and site-level files locally, preserve site-year grouping, and keep training admission false.",
+      "limitations": "The deposit contains processed call measurements and metadata, not raw audio or roost-count data. Its 2,461-call selection table and 2,461-row acoustic table use human-assigned call-type labels; BirdID is unique only within a site-year, so call-level random splits risk site/year leakage. The site-level file contains site names; Dryad says exact coordinates are not public. No receiver response or semantic labels are present.",
+      "attribution": "Dahlin, C., Smith-Vidaurre, G., Genes, M. & Wright, T. (2024). Vocal culture in Amazon parrots [Dataset]. Dryad v6. DOI 10.5061/dryad.m905qfv6j.",
+      "rights": {
+        "license": "CC0-1.0 per Dryad's version API and current reuse policy; the dataset README states no restrictions on reuse of deposited data.",
+        "scope": "The version-6 tabular deposit only. The article, GitHub code, publisher supplements, raw audio and roost counts are separate components.",
+        "conditions": "Cite the deposit as scholarly practice, preserve the exact version, do not publish site-level names or infer coordinates, and keep any local sample outside Git and the website.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional",
+        "evidence_url": "https://dev.datadryad.org/help/guides/reuse"
+      },
+      "acquisition": "metadata_only"
+    },
+    {
+      "id": "amazon-vocal-culture-code-2024",
+      "kind": "code",
+      "title": "Amazon vocal-culture analysis code (MIT, pinned commit)",
+      "url": "https://github.com/gsvidaurre/amazon-vocal-culture/tree/1399b7a2de6354d27b5227bb75de7e285fe3d636",
+      "version": "Git commit 1399b7a2de6354d27b5227bb75de7e285fe3d636",
+      "source_ids": [
+        324
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Reference implementation for spectrographic cross-correlation, unsupervised random-forest similarity and acoustic-space comparisons across dialects and years.",
+      "review_depth": "Reviewed the repository README, pinned commit tree and MIT license metadata, then statically inspected setup/input sections in the four R Markdown analyses. No code was executed.",
+      "access": "Public GitHub repository pinned to the reviewed commit.",
+      "decision": "Keep as a code reference; do not import or run it as a baseline until the full paper, required data/inputs and a reproducible environment are reviewed.",
+      "limitations": "The reviewed scripts contain author-specific absolute filesystem paths, install an unpinned latest warbleR revision, and note archived rgdal/rgeos dependencies; the pinned tree has no lockfile. The required original audio and intermediate random-sampling files are not in Dryad v6. A clean-clone reproduction is not established.",
+      "attribution": "gsvidaurre/amazon-vocal-culture, MIT-licensed code at commit 1399b7a2de6354d27b5227bb75de7e285fe3d636.",
+      "rights": {
+        "license": "MIT License.",
+        "scope": "Repository code only. It does not grant rights to the paper, dataset, raw recordings or supplements.",
+        "conditions": "Retain the MIT notice if code is reused; review any dependency licenses separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional",
+        "evidence_url": "https://github.com/gsvidaurre/amazon-vocal-culture/blob/1399b7a2de6354d27b5227bb75de7e285fe3d636/LICENSE"
+      },
+      "acquisition": "metadata_only"
     }
   ]
 }
