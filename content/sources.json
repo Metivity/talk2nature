@@ -2749,12 +2749,12 @@
   {
     "id": 263,
     "title": "Japanese-tit core-Merge study data and analysis code deposit",
-    "description": "The 2022 article points to Figshare item 18007046 v1 (DOI 10.6084/m9.figshare.18007046.v1) for its data and R code. The official API lists two 2,058-byte text files and two R scripts (1,382 and 1,566 bytes) under a record-level CC BY 4.0 license; no provider MD5 values are listed.",
+    "description": "The 2022 article points to Figshare item 18007046 v1 (DOI 10.6084/m9.figshare.18007046.v1) for two outcome tables and two R scripts. The official API currently lists a record-level CC BY 4.0 license, file sizes and MD5 checksums.",
     "url": "https://doi.org/10.6084/m9.figshare.18007046",
-    "checked": "2026-10-13",
-    "origin": "The publisher article identifies Figshare DOI 10.6084/m9.figshare.18007046. The official Figshare v2 API at https://api.figshare.com/v2/articles/18007046 returned item 18007046, version 1, DOI 10.6084/m9.figshare.18007046.v1, public status, publication date 2022-09-04, the record-level CC BY 4.0 license and four file names, sizes and download IDs. Its file MD5 fields are null and it exposes no separate per-file license fields. The four small files were downloaded to ignored local storage and structurally reviewed; the R scripts were read as text only and not run. Local SHA-256 receipts identify the received bytes, not upstream integrity. The item-level license does not establish a standalone software license or authorize model training.",
+    "checked": "2026-10-14",
+    "origin": "The publisher article identifies Figshare DOI 10.6084/m9.figshare.18007046. On 2026-10-14, the official Figshare v2 API returned item 18007046, version 1, DOI 10.6084/m9.figshare.18007046.v1, public status, publication date 2022-09-04, a record-level CC BY 4.0 license, and four file names, sizes, download IDs and MD5 values. The two locally retained data tables and two R scripts match the API-reported sizes and MD5 values. The data tables were paired by flock-trial metadata and summarized descriptively; the R scripts were read as text only and not run. The item-level license does not establish a separate software license, statistical validity or training admission.",
     "rights": {
-      "data_and_code": "The official Figshare v1 record declares CC BY 4.0 at item level. No file-specific license fields or provider checksums are listed. The two text data files and two R scripts are separately scoped in the resource catalog; inspect in-file notices, privacy, dependencies and attribution before reuse. This license does not apply to the paper or authorize training admission."
+      "data_and_code": "The official Figshare v1 record declares CC BY 4.0 at item level and its current API reports per-file MD5 values. The two text data files and two R scripts are separately scoped in the resource catalog. Attribute Suzuki and Matsumoto, link the DOI/license and indicate changes. This license does not apply to the paper or authorize training admission; no source rows or code are reproduced in the public summary."
     }
   },
   {
@@ -3264,6 +3264,20 @@
     "rights": {
       "page": "The Hugging Face card metadata declares MIT for this dataset revision.",
       "scope": "The card and competition README identify YouTube/Reddit-sourced media, but the exact source-video permissions, consent, privacy basis and license coverage were not verified. The card's MIT field alone does not clear those underlying recordings for Talk2Nature use."
+    }
+  },
+  {
+    "id": 318,
+    "title": "A critique of Core-Merge and language-syntax claims in songbird calls",
+    "description": "Beckers et al. (2024), No evidence for language syntax in songbird vocalizations. A published critique of the Japanese-tit call-order and source-linkage interpretation.",
+    "url": "https://doi.org/10.3389/fpsyg.2024.1393895",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11120967/",
+    "review_url_label": "Read the full text at PubMed Central",
+    "checked": "2026-10-14",
+    "origin": "Reviewed Sections 1–4 of the full text available through PubMed Central, including the account of the 2022 treatments and the alternative finite-list and finite-state/concatenation interpretations. The authors accept that the cited experiments show sensitivity to call order and source-related response differences but dispute that they establish Core-Merge, recursion or hierarchical language syntax. No data, code or new animal experiment is provided by this paper; no cited raw data or code was acquired or run.",
+    "rights": {
+      "article": "The publisher/PMC page identifies this open-access article as CC BY. Attribute the authors and original article and indicate changes if reusing material.",
+      "scope": "This article only. Its cited primary-study data, code, audio and any third-party material have separate rights. Talk2Nature publishes an original summary and source link; no article text or figure is copied."
     }
   }
 ]

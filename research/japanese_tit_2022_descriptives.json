@@ -1,0 +1,126 @@
+{
+  "aggregate_results": [
+    {
+      "approach_within_2m": {
+        "flock_rate": 0.8125,
+        "flocks_with_event": 13,
+        "individuals_with_event": 35,
+        "mean_of_flock_rates": 0.669792,
+        "pooled_individual_rate": 0.686275
+      },
+      "flock_members": 51,
+      "flock_trials": 16,
+      "treatment": "1A-R",
+      "wing_flick": {
+        "flock_rate": 0.9375,
+        "flocks_with_event": 15,
+        "individuals_with_event": 38,
+        "mean_of_flock_rates": 0.745833,
+        "pooled_individual_rate": 0.745098
+      }
+    },
+    {
+      "approach_within_2m": {
+        "flock_rate": 0.1875,
+        "flocks_with_event": 3,
+        "individuals_with_event": 6,
+        "mean_of_flock_rates": 0.079464,
+        "pooled_individual_rate": 0.109091
+      },
+      "flock_members": 55,
+      "flock_trials": 16,
+      "treatment": "2A-R",
+      "wing_flick": {
+        "flock_rate": 0.25,
+        "flocks_with_event": 4,
+        "individuals_with_event": 4,
+        "mean_of_flock_rates": 0.073512,
+        "pooled_individual_rate": 0.072727
+      }
+    },
+    {
+      "approach_within_2m": {
+        "flock_rate": 0.125,
+        "flocks_with_event": 2,
+        "individuals_with_event": 5,
+        "mean_of_flock_rates": 0.0625,
+        "pooled_individual_rate": 0.104167
+      },
+      "flock_members": 48,
+      "flock_trials": 16,
+      "treatment": "1R-A",
+      "wing_flick": {
+        "flock_rate": 0.0625,
+        "flocks_with_event": 1,
+        "individuals_with_event": 1,
+        "mean_of_flock_rates": 0.015625,
+        "pooled_individual_rate": 0.020833
+      }
+    },
+    {
+      "approach_within_2m": {
+        "flock_rate": 0.1875,
+        "flocks_with_event": 3,
+        "individuals_with_event": 5,
+        "mean_of_flock_rates": 0.089583,
+        "pooled_individual_rate": 0.104167
+      },
+      "flock_members": 48,
+      "flock_trials": 16,
+      "treatment": "2R-A",
+      "wing_flick": {
+        "flock_rate": 0.1875,
+        "flocks_with_event": 3,
+        "individuals_with_event": 4,
+        "mean_of_flock_rates": 0.09375,
+        "pooled_individual_rate": 0.083333
+      }
+    }
+  ],
+  "analysis": "Descriptive aggregation of the two deposited outcome tables; no inferential model or deposited R code was run.",
+  "input_files": {
+    "merge_binary.txt": {
+      "bytes": 2058,
+      "provider_md5": "0836e50688ef120cbfda07b3bfd1c839",
+      "provider_md5_match": true,
+      "sha256": "102565780d1d48ed9c7e2060f7c0c9bc118e05312c312b0009002cb953896979"
+    },
+    "merge_proportion.txt": {
+      "bytes": 2058,
+      "provider_md5": "9166f5fe7f7f2b07ec9f86bd2ba8abe0",
+      "provider_md5_match": true,
+      "sha256": "bafc9d74b5e636e86b1eb4c3e8c56eb52ca6d5e53eae4850a9df7aeeb10235c2"
+    }
+  },
+  "input_validation": {
+    "binary_and_count_outcomes_consistent": true,
+    "matching_trial_metadata": true,
+    "treatment_counts": {
+      "1A-R": 16,
+      "1R-A": 16,
+      "2A-R": 16,
+      "2R-A": 16
+    }
+  },
+  "limitations": [
+    "These are descriptive summaries of one species- and context-specific playback experiment.",
+    "They are not a reproduction of the paper's mixed-effects models or adjusted contrasts.",
+    "The results do not distinguish Core-Merge, finite-list, concatenation or other mechanisms.",
+    "The tables contain no audio and are not an acoustic training dataset.",
+    "No individual-level animal identities, locations, raw rows or audio are emitted by this report."
+  ],
+  "schema_version": 1,
+  "source": {
+    "attribution": "Suzuki, T. N. & Matsumoto, Y. K. (2022), Figshare item 18007046 v1",
+    "doi": "10.6084/m9.figshare.18007046.v1",
+    "license": "CC BY 4.0 (scope: the two deposited .txt outcome tables)",
+    "url": "https://doi.org/10.6084/m9.figshare.18007046.v1"
+  },
+  "treatment_key": {
+    "1A-R": "one speaker; natural alert-to-recruitment order",
+    "1R-A": "one speaker; reversed recruitment-to-alert order",
+    "2A-R": "two speakers; natural alert-to-recruitment order",
+    "2R-A": "two speakers; reversed recruitment-to-alert order"
+  },
+  "unit": "64 flock-trial rows, 16 per playback treatment; the two files describe the same trials."
+}

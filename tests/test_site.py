@@ -1139,8 +1139,13 @@ class SiteTests(unittest.TestCase):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='bird-call-syntax')
         comparison=note['theory_comparison']
-        self.assertEqual([item['name'] for item in comparison['items']],['Minimal Compositionality','Bird Implicatures'])
+        self.assertEqual([item['name'] for item in comparison['items']],[
+            'Minimal Compositionality',
+            'Bird Implicatures',
+            'Finite-list and finite-state/concatenation alternatives (Beckers et al., 2024)',
+        ])
         self.assertEqual(len(note['review_request']['questions']),5)
+        self.assertIn(318,note['source_ids'])
         guide=(project_root/'docs'/'JAPANESE_TIT_REVIEW.md').read_text()
         self.assertIn('Mendeley record exposes no file rows',guide)
         self.assertIn('Coye & Dutour (2025)',guide)
@@ -1149,6 +1154,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn('No independent specialist review has been received',guide)
         self.assertIn('not a ready-to-run playback protocol',guide)
         sources={source['id']:source for source in load('sources')}
+        critique=sources[318]
+        self.assertEqual(critique['url'],'https://doi.org/10.3389/fpsyg.2024.1393895')
+        self.assertIn('finite-state',critique['origin'])
+        self.assertIn('CC BY',critique['rights']['article'])
         source=sources[266]
         self.assertEqual(source['review_url'],'https://cnrs.hal.science/hal-04840821v1')
         self.assertIn('CC BY 4.0',source['rights']['article'])
@@ -1160,6 +1169,9 @@ class SiteTests(unittest.TestCase):
         resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
         theory=next(item for item in resources if item['id']=='japanese-tit-bird-implicatures-2024-paper')
         self.assertIn('CC-BY-4.0',theory['rights']['license'])
+        critique_paper=next(item for item in resources if item['id']=='songbird-syntax-critique-2024-paper')
+        self.assertEqual(critique_paper['source_ids'],[318])
+        self.assertEqual(critique_paper['acquisition'],'metadata_only')
         self.assertEqual(theory['acquisition'],'metadata_only')
         with tempfile.TemporaryDirectory() as d:
             build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')

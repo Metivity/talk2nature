@@ -2968,12 +2968,12 @@
         263
       ],
       "priority": 2,
-      "reviewed": "2026-10-13",
+      "reviewed": "2026-10-14",
       "task": "Local inspection of the small source-data tables and their relationship to the 2022 receiver-response analysis.",
-      "review_depth": "Downloaded both v1 data files through the bounded Figshare collector. Each contains 64 tab-delimited rows and eight columns: date, caller_ID, trt, 2m, wing, flock_size, shrike and call_source. Both tables share row order and design fields; binary outcomes are 0/1, while the proportion table contains flock counts. No location columns are present. Local SHA-256 values are in ignored receipts; the provider API returned md5=null for both files.",
-      "access": "Public Figshare item v1 API record; two files fetched into ignored data/external for local inspection and are not part of the website build or Git.",
-      "decision": "Keep the sample local for structural and provenance review. It contains behavioral outcome tables but no audio, so it is not an acoustic training corpus. It remains excluded from training and public redistribution; no statistical reproduction has been attempted or claimed.",
-      "limitations": "The provider supplies no MD5 checksum; local SHA-256 values establish only the bytes received. The files include dates and caller_ID values but no coordinates. The item-level license does not resolve any unseen notices or establish that these labels generalize beyond the experiment.",
+      "review_depth": "Downloaded both v1 data files through the bounded Figshare collector. On 2026-10-14 the current official API reported 2,058 bytes and MD5 for each; local files match both sizes and checksums. A standard-library audit verified that the two 64-row, eight-column tables match on trial metadata and agree on whether each flock had any approach/wing-flick event. It emitted treatment-level aggregates only; no inferential model or third-party R code was run.",
+      "access": "Public Figshare item v1 API record and files fetched into ignored data/external for local analysis. No raw table is in the website or Git; the committed report contains aggregate results and file checksums only.",
+      "decision": "Keep the raw sample local for structural and descriptive review. It contains behavioral outcome tables but no audio, so it is not an acoustic training corpus. The custom aggregate is not a reproduction of the paper's mixed-effects models or adjusted contrasts and does not identify a communication mechanism.",
+      "limitations": "The current API-reported MD5 values match the retained data bytes; checksums establish byte agreement with the provider manifest, not label validity or published-figure linkage. Tables include dates and caller_ID values but no coordinates. The item-level license does not establish that labels generalize beyond this experiment.",
       "attribution": "Suzuki, T. N. & Matsumoto, Y. K. (2022), linked Figshare deposit for Nature Communications 13, 5605.",
       "rights": {
         "license": "CC-BY-4.0",
@@ -2996,8 +2996,7 @@
           "figshare_file_id": 35870864,
           "figshare_storage_prefix": "pfigshare-u-files",
           "bytes": 2058,
-          "md5": null,
-          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+          "md5": "9166f5fe7f7f2b07ec9f86bd2ba8abe0"
         },
         {
           "name": "merge_binary.txt",
@@ -3006,8 +3005,7 @@
           "figshare_file_id": 35870855,
           "figshare_storage_prefix": "pfigshare-u-files",
           "bytes": 2058,
-          "md5": null,
-          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+          "md5": "0836e50688ef120cbfda07b3bfd1c839"
         }
       ]
     },
@@ -3022,12 +3020,12 @@
         263
       ],
       "priority": 2,
-      "reviewed": "2026-10-13",
+      "reviewed": "2026-10-14",
       "task": "Static review of the two deposited R scripts for data linkage, analysis steps, dependencies and reproducibility boundaries.",
-      "review_depth": "Read both deposited R scripts as text without executing them. They use lme4 and emmeans for mixed-effects binomial models of 2m and wing outcomes, compare nested models with likelihood-ratio tests, and request adjusted treatment contrasts. The scripts do not specify package versions or an execution environment. Local SHA-256 values are in ignored receipts; provider MD5 fields are null.",
+      "review_depth": "Read both deposited R scripts as text without executing them. The current official Figshare API reports file sizes and MD5 values; locally retained scripts match the reported values. The scripts use lme4 and emmeans for mixed-effects binomial models and adjusted contrasts but do not specify package versions or an execution environment.",
       "access": "Public Figshare item v1 API record; two scripts fetched into ignored data/external for static review and are not part of the website build or Git.",
       "decision": "Keep the scripts to static methods review for now. Do not execute or port them in this review cycle, or describe the analysis as reproduced. The item-level CC BY 4.0 notice is recorded separately from the paper; no standalone software license is identified.",
-      "limitations": "The provider supplies no MD5 checksum; local SHA-256 values establish only the bytes received. No dependency lock, README, package versions, run log or reproduction was provided or created. The exact correspondence between scripts and published tables has not been tested.",
+      "limitations": "The scripts have no dependency lock, README, package versions, run log or established file-to-figure mapping. They were not executed. The API now provides MD5 values, superseding the 2026-10-13 snapshot that reported null MD5; checksum agreement does not reproduce the analysis.",
       "attribution": "Suzuki, T. N. & Matsumoto, Y. K. (2022), linked Figshare deposit for Nature Communications 13, 5605.",
       "rights": {
         "license": "CC-BY-4.0",
@@ -3050,8 +3048,7 @@
           "figshare_file_id": 36445725,
           "figshare_storage_prefix": "pfigshare-u-files",
           "bytes": 1382,
-          "md5": null,
-          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+          "md5": "8f68296f905ec2edf11d1751f92d4869"
         },
         {
           "name": "merge_proportion.R",
@@ -3060,8 +3057,7 @@
           "figshare_file_id": 36445728,
           "figshare_storage_prefix": "pfigshare-u-files",
           "bytes": 1566,
-          "md5": null,
-          "md5_unavailable_reason": "The official Figshare v2 item API returned md5=null for this file."
+          "md5": "faa26e9876bf1dee7839ed7108b80885"
         }
       ]
     },
@@ -4417,6 +4413,35 @@
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "songbird-syntax-critique-2024-paper",
+      "kind": "paper",
+      "title": "No evidence for language syntax in songbird vocalizations",
+      "url": "https://doi.org/10.3389/fpsyg.2024.1393895",
+      "version": "Frontiers in Psychology 15, 1393895 (2024); DOI 10.3389/fpsyg.2024.1393895; PMCID PMC11120967",
+      "source_ids": [
+        318
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Published alternative interpretation of Japanese-tit receiver responses, call order and claims about Core-Merge or language syntax.",
+      "review_depth": "Read Sections 1–4 of the full text available through PubMed Central, including the 2022 source-linkage experiment and the proposed finite-list and finite-state/concatenation alternatives. No data or code were acquired or run.",
+      "access": "Open-access Frontiers article; full text reviewed through PubMed Central.",
+      "decision": "Include as a critical interpretation in the evidence map. It agrees that the experiments support sensitivity to call order and differences between one-source and two-source sequences; it disputes the inference to Core-Merge or hierarchical language syntax.",
+      "limitations": "This is a conceptual critique, not a new experiment or reanalysis. Its alternative accounts are not experimentally compared in this article. The cited studies remain subject to their own review depth, data rights and limitations.",
+      "attribution": "Beckers, G. J. L., Huybregts, M. A. C., Everaert, M. B. H. & Bolhuis, J. J. (2024). Frontiers in Psychology 15, 1393895. DOI 10.3389/fpsyg.2024.1393895.",
+      "rights": {
+        "license": "CC BY 4.0 per the open-access publisher/PMC statement.",
+        "scope": "Article only; cited data, code, audio, figures with third-party notices and other source materials retain separate rights.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11120967/",
+        "conditions": "Attribute the authors and source, link the license and indicate changes. The repository contains an original summary and source link only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
