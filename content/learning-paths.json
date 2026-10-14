@@ -64,6 +64,7 @@
         "naturelm",
         "speech-pretraining-transfer-2026",
         "dog-barks",
+        "barkopedia-context-benchmark-2025",
         "birb-generalization",
         "bioacoustic-benchmarks",
         "fruit-bat-context-ml-2024",
@@ -74,8 +75,8 @@
         "pteroset-detection-benchmark-2026",
         "cowrumia-bovine-audio-app-2026"
       ],
-      "next_step": "Pin one checkpoint and dataset version, review their separate rights and pretraining overlap, and freeze splits by animal and session before evaluation.",
-      "gate": "The dog-bark result concerns induced stimulus-associated labels and does not establish cross-species transfer or meaning. No Talk2Nature animal model has been trained or benchmarked. CowRumIA reports 85.6%, but its pinned training script reuses the test split for validation callbacks; treat this as a software/method comparator, not an untouched performance estimate or welfare diagnostic."
+      "next_step": "Choose a rights-cleared, independently labeled task; pin every data and model component; and freeze animal/session/site holdouts before evaluating simple baselines.",
+      "gate": "The dog-bark paper predicts labels tied to induced stimuli; Barkopedia's reviewed context labels were initially inferred from video and its source recordings' rights remain unresolved; CowRumIA reuses its test partition in validation callbacks. Treat each as a methods comparator, not evidence of meaning or a ready training set. No Talk2Nature animal model has been trained or benchmarked; AutoResearch remains NOT READY."
     },
     {
       "id": "meaning",

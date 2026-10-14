@@ -4332,6 +4332,94 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "barkopedia-challenge-2025",
+      "kind": "project",
+      "title": "Barkopedia: A Canine Vocalization Understanding Challenge",
+      "url": "https://github.com/UTA-ACL2/Barkopedia/tree/ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d",
+      "version": "IJCAI 2025 challenge; official repository pinned at ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d",
+      "source_ids": [
+        316
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Methods comparator for dog-vocalization demographics, identity, activity/environment, emotion, detection and source separation; not evidence of call meaning.",
+      "review_depth": "Reviewed the official challenge README and repository tree at the pinned commit. The README documents eight tasks, YouTube/Reddit source platforms and a 2025 competition timeline. The inspected root tree lists the competition site, static assets and documentation; no model training/evaluation implementation was visible there. No challenge result paper, baseline implementation or other task-specific dataset card was reviewed.",
+      "access": "Public challenge README and Hugging Face task links; the 2025 registration and submission schedule has passed.",
+      "decision": "Keep as a methods/project record. Do not treat this closed competition or its task names as evidence that vocal categories have independently validated biological meaning. The selected Activity and Environment release is a separate metadata-only dataset record.",
+      "limitations": "The competition README says the audio corpus was sourced from YouTube and Reddit. This review did not establish per-recording permission, participant consent/privacy terms, label provenance across all tasks, held-out identity/session/site grouping, code availability or the final challenge leaderboard/results. Only the Activity and Environment task card was examined.",
+      "attribution": "Arlington Computational Linguistic Lab (UTA-ACL2). Barkopedia: A Canine Vocalization Understanding Challenge. IJCAI 2025 project; repository commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d.",
+      "rights": {
+        "license": "MIT declared in the pinned GitHub repository LICENSE",
+        "scope": "Repository software and documentation only. The license does not establish the rights or consent basis of the linked third-party video/audio datasets.",
+        "evidence_url": "https://raw.githubusercontent.com/UTA-ACL2/Barkopedia/ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d/LICENSE",
+        "conditions": "Cite the official project; review each dataset, model, submission and media component under its own terms before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "barkopedia-challenge-site-code-2025",
+      "kind": "code",
+      "title": "Barkopedia challenge website source",
+      "url": "https://github.com/UTA-ACL2/Barkopedia/tree/ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d",
+      "version": "Commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d",
+      "source_ids": [
+        316
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-14",
+      "task": "Open-source project-structure comparator for a challenge landing page only; no dog-audio training or evaluation code was identified in the reviewed repository tree.",
+      "review_depth": "Inspected the pinned root tree, README and LICENSE. The root contains the challenge webpage, static assets and documentation; no model-training or evaluation implementation was listed. No file was cloned, downloaded or executed.",
+      "access": "Public GitHub repository at a fixed commit.",
+      "decision": "The MIT license is useful for the repository software/documentation component only. Do not present this site repository as a released Barkopedia baseline or as a license for datasets and linked media.",
+      "limitations": "Static image assets and their individual provenance were not inspected. The linked Hugging Face Spaces and their underlying source/model code are separate components and were not reviewed as executable code.",
+      "attribution": "Arlington Computational Linguistic Lab (UTA-ACL2), Barkopedia repository, commit ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d.",
+      "rights": {
+        "license": "MIT declared in the pinned repository LICENSE",
+        "scope": "Repository software and documentation. No blanket license for linked audio, data, model weights, Space applications or unreviewed static assets.",
+        "evidence_url": "https://raw.githubusercontent.com/UTA-ACL2/Barkopedia/ef8da9155e101cb76d4ee260bebb4d4fde4c2a1d/LICENSE",
+        "conditions": "Preserve the MIT notice when reusing covered repository software; assess all other components separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "barkopedia-dog-activity-environment-data-2025",
+      "kind": "dataset",
+      "title": "Barkopedia dog activity and environment audio dataset",
+      "url": "https://huggingface.co/datasets/ArlingtonCL2/Barkopedia_Dog_Act_Env/tree/60a721a7f9477634971f6b3df29dc2a5e56994d8",
+      "version": "Hugging Face dataset revision 60a721a7f9477634971f6b3df29dc2a5e56994d8; last modified 2025-07-08",
+      "source_ids": [
+        316,
+        317
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-14",
+      "task": "Context-label classification methods reference. Predicting activity/environment labels from bark audio is not a validated welfare measure, receiver response or animal-language translation.",
+      "review_depth": "Reviewed the official card and revision API/tree at the pinned hash. The card describes 12,480 training and 3,120 test clips; eight activity categories and six environment categories; and Janus-Pro-7B video-assisted initial label generation followed by manual verification. The tree lists train, validation and test directories. The current card text still describes the test set as forthcoming, and the Dataset Viewer reports mixed audiofolder/CSV split formats. No source archive, audio, labels or model was downloaded or executed.",
+      "access": "Public metadata and card on Hugging Face. The repository exposes archive names and a total size of about 746 MB; actual archive contents and their upstream provenance were not inspected.",
+      "decision": "Metadata-only. Do not add the clips to Talk2Nature training or the shared collection until source-media rights/consent, label verification, split grouping, file manifest and a relevant scientific question are independently established.",
+      "limitations": "The Barkopedia README says the source clips came from YouTube and Reddit, but the review did not locate per-clip permissions or a consent/privacy protocol. The card's MIT metadata does not independently establish rights to those source recordings. The card does not describe reviewer expertise, blinded verification, agreement statistics, animal/session/site split grouping or baseline code. Video-assisted pre-labeling makes this a context-association benchmark; it does not establish that audio-only predictions capture an animal's subjective emotion or intended meaning. Only this one of the eight task-specific datasets was reviewed.",
+      "attribution": "Arlington Computational Linguistic Lab (UTA-ACL2). Barkopedia Activity and Environment task dataset, Hugging Face revision 60a721a7f9477634971f6b3df29dc2a5e56994d8.",
+      "rights": {
+        "license": "Hugging Face card metadata declares MIT; underlying source-video/audio rights and the scope of that declaration remain unverified",
+        "scope": "Activity/environment dataset files and labels only. Repository website code, original platform media, label annotations, challenge baselines and model weights have separate or unresolved terms.",
+        "evidence_url": "https://huggingface.co/datasets/ArlingtonCL2/Barkopedia_Dog_Act_Env/tree/60a721a7f9477634971f6b3df29dc2a5e56994d8",
+        "conditions": "Do not acquire, train on, redistribute or commercially use the media until original source rights, consent/privacy, dataset license scope and label provenance are verified for the exact files.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
