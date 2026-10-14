@@ -105,6 +105,7 @@
       "decision": "Use separate evidence standards for animal behavior, plant physiology and fungal electrophysiology.",
       "notes": [
         "sound-and-movement",
+        "honeybee-waggle-vision-decoding-2017",
         "plant-chemical-signals",
         "moths-and-plants",
         "fungal-signals",
@@ -115,8 +116,8 @@
         "common-endophyte-networks-resource-transfer",
         "ice-crystals-and-evidence"
       ],
-      "next_step": "Test the notebook workflow now; recruit scientific review for one passive audio-video protocol before expanding sensors.",
-      "gate": "Current public apps do not capture video, identify species or upload data. Plant ultrasound and fungal electricity need suitable hardware."
+      "next_step": "Start with an already-defined visual or acoustic signal and an independently measured outcome. Compare human review and simple baselines before proposing a phone feature; keep device feasibility and privacy gates explicit.",
+      "gate": "The honeybee camera study is a calibrated decoder for one known signal, not general gesture translation. Its linked code and ground-truth data have no located reuse license; no files were acquired. The phone-camera use case remains untested."
     },
     {
       "id": "animal-interface",

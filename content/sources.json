@@ -3205,5 +3205,41 @@
       "page": "PMC-hosted author manuscript is linked for reading. Its applicable reuse license was not verified in this review; public access is not treated as redistribution permission.",
       "scope": "Article citation and original summary only. No study data, code, audio, figure, supplement or article text was copied."
     }
+  },
+  {
+    "id": 313,
+    "title": "Automatic detection and decoding of honey bee waggle dances",
+    "description": "Primary computer-vision study that detects waggle runs, estimates orientation and duration, and maps dances to a known feeder in a small observation-hive experiment.",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188626",
+    "checked": "2026-10-14",
+    "origin": "Reviewed targeted full-text sections of the PLOS ONE article: abstract and communication background; recording setup, target features and software modules; validation/results; discussion and article license. The supporting files, raw artifacts and implementation were not downloaded or reproduced.",
+    "rights": {
+      "page": "Article is distributed under CC BY 4.0; cite the original and indicate changes if reusing article material.",
+      "scope": "Article text only. The separate GitHub repository's code and data have their own unresolved terms; no figures, supporting files or article text were copied."
+    }
+  },
+  {
+    "id": 314,
+    "title": "WDD_paper honeybee waggle-dance code and ground-truth repository",
+    "description": "Author-linked repository for the 2017 paper, pinned to the default-branch HEAD inspected on 3 December 2017.",
+    "url": "https://github.com/BioroboticsLab/WDD_paper/tree/3aaa5099aac698bd08df1d55f4cd5183d32f7e7d",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the official repository README, GitHub API metadata and complete recursive tree at commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d. The API reports no recognized license; the tree contains no LICENSE or COPYING path. The README describes code modules and a 200-waggle-run ground-truth sample. No repository artifact was downloaded, executed or redistributed.",
+    "rights": {
+      "page": "Public repository access is not a reuse license. The pinned repository snapshot has no recognized license and no LICENSE/COPYING file in its inspected tree.",
+      "scope": "Code, data, compiled components and any dependencies are separate from the article license. No component is cleared for acquisition, execution, training or redistribution."
+    }
+  },
+  {
+    "id": 315,
+    "title": "Automatic methods for long-term tracking and decoding honeybee dances",
+    "description": "BeesBook system paper describing specialized hive imaging, tagged-bee tracking and the engineering cost of long-duration computer-vision analysis.",
+    "url": "https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2015.00103/full",
+    "checked": "2026-10-14",
+    "origin": "Reviewed selected sections of the Frontiers full text: vision-system motivation and hardware, observation-hive setup, validation design and runtime results, and article license. No code, data or supporting files were acquired or run.",
+    "rights": {
+      "page": "Open-access article distributed under the Creative Commons Attribution License (CC BY); cite the original if reusing article material.",
+      "scope": "Article only. The paper's software and data artifacts were not reviewed or acquired."
+    }
   }
 ]

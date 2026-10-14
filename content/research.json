@@ -3474,5 +3474,74 @@
     ],
     "review_locator": "PMC author-manuscript sections: Subjects, Apparatus, Stimulus, Procedures, Analyses, Results and Discussion; PubMed record for citation/date/DOI. The listed supplement was not reviewed.",
     "purpose": "Behavior & communication"
+  },
+  {
+    "slug": "honeybee-waggle-vision-decoding-2017",
+    "title": "A camera can decode a known bee signal—with calibration",
+    "seo_description": "A 2017 honeybee study decoded known waggle dances from calibrated infrared video, not arbitrary animal gestures or consumer-phone footage.",
+    "taxon": "Insects",
+    "kind": "Computer-vision signal-decoding study",
+    "year": "2017",
+    "source_ids": [
+      313,
+      314,
+      315
+    ],
+    "review_depth": "Targeted PLOS ONE full-text sections reviewed: abstract, communication background, recording setup, target features, software modules, validation/results, discussion and license. The official GitHub README, API metadata and complete recursive tree were reviewed at pinned commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d. Selected setup, validation, runtime and rights sections of the related 2015 Frontiers system paper were reviewed. No data, video, code, weights or supporting files were downloaded or executed; no reproduction or independent review.",
+    "finding": "Wario et al. built a pipeline to detect honeybee waggle runs from a one-frame observation hive, estimate run orientation and duration, and map dances back to the field. The experiment used a small colony of 2,000 Apis mellifera carnica and one modified high-speed camera on each side of the comb, with infrared illumination. The paper specifies about 100 frames per second and at least 1.5 pixels per millimeter. Its temporal CNN filtered candidate image sequences; 8,239 manually labeled detections from two days were used, with 20% reserved for validation. The authors report 90.07% validation accuracy, corresponding to 89.8% recall at 95% precision. Orientation was compared with eight human tracers on 200 waggle runs, with mean error −2.92° and SD 7.37°. In a five-hour illustration, 571 detected dances from bees trained to a feeder 342 m southwest of the hive clustered around the feeder direction. This decodes a predefined, previously studied signal against a known physical outcome; the algorithm does not discover what arbitrary animal movements mean.",
+    "limitations": "The 90.07% figure is validation performance, not an independent colony-, site-, camera- or season-held-out result in the reviewed account. The work concerns one species, a specialized observation hive, controlled illumination and a known feeder; translating waggle duration to distance required empirical calibration with known locations. The map aggregates dances and their run measurements; it is not a natural-language exchange with a bee. The author-linked repository is pinned to commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d, but GitHub reports no recognized license and its inspected tree has no LICENSE/COPYING file, so the code, compiled module and ground-truth data remain metadata-only. A separate 2015 BeesBook system paper describes a more elaborate tracking setup; its image-analysis pipeline took about 500 times real time on one processor for that paper's long-term dataset, while its supercomputer run used about 1,000 processors. That figure is not a runtime measurement of the 2017 waggle-run detector, but it illustrates why camera claims must be tied to the exact task and hardware.",
+    "lesson": "For Talk2Nature, start visual work with a signal whose features and external reference are already defined. A useful first camera workflow would preserve time, device/setup, human-reviewed event markers and uncertainty; model outputs must remain separate from observations. Ordinary-phone suitability is an open measurement question. Do not describe the Field Companion as a general gesture translator or add animal-directed playback based on this result.",
+    "next_review": "Ask independent insect-behavior and computer-vision reviewers whether the validation and manual-angle comparison support the bounded detection/orientation claims, which colony/day/camera holdout would test transfer, and what minimum capture setup is needed. Before any app camera pilot, define a passive question, privacy/retention and consent rules, animal-welfare review, a known external criterion and a device feasibility test. Keep linked code and data metadata-only until component terms and provenance are resolved.",
+    "reviewed": "2026-10-14",
+    "expert_review": "No independent insect-behavior or computer-vision specialist has reviewed this Talk2Nature assessment.",
+    "review_stage": "Primary paper, pinned artifact metadata and separate system comparator reviewed",
+    "year_label": "Publication year",
+    "study_snapshot": [
+      [
+        "Study unit",
+        "One small colony of 2,000 Apis mellifera carnica in a one-frame observation hive."
+      ],
+      [
+        "Image capture",
+        "Two modified PS3eye cameras, one per comb side; approximately 100 Hz, QVGA video, infrared illumination and at least 1.5 pixels/mm."
+      ],
+      [
+        "Prediction target",
+        "Detect candidate waggle runs and estimate their duration and orientation; a separate mapping stage uses known solar azimuth and feeder-distance calibration."
+      ],
+      [
+        "Reported validation",
+        "The CNN used 8,239 manually labeled detections from two days; 20% was reserved for validation. Reported accuracy was 90.07%, or 89.8% recall at 95% precision."
+      ],
+      [
+        "Human comparison and field check",
+        "Eight coworkers supplied reference angles for 200 waggle runs. In a five-hour demonstration, 571 mapped dances clustered around a known feeder 342 m southwest."
+      ],
+      [
+        "Reuse status",
+        "The article is CC BY 4.0. The pinned GitHub code/data repository has no recognized license or LICENSE/COPYING file in the inspected tree; no files were acquired."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only computer-vision methods reference; not a general gesture translator or a phone feature",
+      "asset": "2017 PLOS paper plus its author-linked code and ground-truth repository at commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d; 2015 BeesBook system paper as an engineering comparator.",
+      "rights": "The 2017 article and 2015 Frontiers article declare CC BY reuse for the articles. The 2017 GitHub code and data do not have a located reuse license in the pinned repository snapshot. Article licensing does not clear code, data, compiled components, video or model artifacts.",
+      "experiment": "A future camera study should measure a narrow, passively observed event against a separately recorded physical or behavioral criterion, preserve raw observations and device uncertainty, and test held-out colonies or settings. Do not store or upload video until privacy, consent, retention and welfare review is approved."
+    },
+    "review_request": {
+      "title": "Independent review of honeybee vision evidence",
+      "summary": "We invite an insect-behavior or computer-vision specialist to assess the performance interpretation, calibration requirements and transfer limits of this known-signal decoding study.",
+      "questions": [
+        "Does the reviewed validation and eight-person angle reference support the limited detection and orientation claims stated here? What uncertainty should be made clearer?",
+        "Which held-out unit (colony, day, hive, camera or site) would be necessary before claiming transfer beyond this setup?",
+        "Which capture constraints are essential, and what would a valid phone-camera feasibility test need to measure?",
+        "What minimal passive camera question would be useful to animal-communication science while protecting welfare, privacy and sensitive locations?"
+      ],
+      "status": "No independent specialist review has been received. No researcher was contacted; this is a public invitation, not an existing collaboration or endorsement.",
+      "guide_path": "docs/HONEYBEE_VISION_REVIEW.md",
+      "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml"
+    },
+    "review_locator": "Wario et al. 2017: PLOS ONE abstract and Introduction; Materials and Methods, Hive and recording setup, Target features, Software modules, Experimental validation and results, and Discussion. Repository: README, API license metadata and recursive tree at commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d. Wario et al. 2015: Frontiers system motivation, hive setup, validation design, runtime and license sections.",
+    "purpose": "Multimodal methods"
   }
 ]

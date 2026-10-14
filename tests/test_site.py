@@ -1404,7 +1404,7 @@ class SiteTests(unittest.TestCase):
             for field in ('question','decision','next_step','gate'):
                 self.assertTrue(path[field])
         for note in notes.values():
-            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction','Vocal development','Data standards & interoperability'))
+            self.assertIn(note['purpose'],('Models & evaluation','Data & annotation','Behavior & communication','Plants & fungi','Animal-computer interaction','Vocal development','Data standards & interoperability','Multimodal methods'))
             if 'reuse' in note:
                 for field in ('status','asset','rights','experiment'):
                     self.assertTrue(note['reuse'][field])
@@ -1415,6 +1415,44 @@ class SiteTests(unittest.TestCase):
             for path in paths:
                 for slug in path['notes']:
                     self.assertIn(f'/research/{slug}/',page)
+
+    def test_honeybee_vision_note_keeps_signal_claims_rights_and_seo_bounded(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='honeybee-waggle-vision-decoding-2017')
+        self.assertIn('not an independent colony-',note['limitations'])
+        self.assertIn('distance required empirical calibration',note['limitations'])
+        self.assertIn('general gesture translator',note['lesson'])
+        self.assertIn('No independent insect-behavior',note['expert_review'])
+        guide=(project_root/'docs'/'HONEYBEE_VISION_REVIEW.md').read_text()
+        self.assertIn('no recognized license',guide)
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('honeybee-')}
+        self.assertEqual(set(selected),{
+            'honeybee-waggle-vision-paper-2017',
+            'honeybee-waggle-vision-code-2017',
+            'honeybee-waggle-ground-truth-data-2017',
+            'honeybee-beesbook-longterm-paper-2015',
+        })
+        for resource in selected.values():
+            with self.subTest(resource=resource['id']):
+                self.assertEqual(resource['acquisition'],'metadata_only')
+                self.assertEqual(resource['files'],[])
+        self.assertEqual(selected['honeybee-waggle-vision-code-2017']['rights']['research_use'],'unresolved')
+        self.assertEqual(selected['honeybee-waggle-ground-truth-data-2017']['rights']['redistribution'],'unresolved')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'honeybee-waggle-vision-decoding-2017'/'index.html').read_text()
+            self.assertIn('A camera can decode a known bee signal',page)
+            self.assertIn('no recognized license',page)
+            self.assertIn('scientific-review.yml',page)
+            self.assertIn('/research/honeybee-waggle-vision-decoding-2017/',(root/'sitemap.xml').read_text())
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('WDD_paper honeybee waggle-dance analysis code',resource_page)
+            self.assertIn('WDD_paper 200-waggle-run ground-truth sample',resource_page)
+            paths=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn('/research/honeybee-waggle-vision-decoding-2017/',paths)
 
     def test_video_sources_have_identity_context_fallbacks_and_no_initial_embeds(self):
         from html import escape
