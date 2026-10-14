@@ -1,6 +1,7 @@
 """Check generated pages for broken local links, metadata and accidental exposure."""
 import argparse
 import json
+import struct
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -13,6 +14,7 @@ class PageParser(HTMLParser):
         self.links=[]; self.ids=set(); self.h1=0; self.title=''; self.in_title=False; self.in_head=False
         self.title_count=0; self.description_count=0; self.robots_count=0; self.canonical_count=0
         self.description=''; self.robots=''; self.canonical=''; self.lang=''
+        self.meta={}
         self.structured_data=[]; self.in_structured_data=False
     def handle_starttag(self,tag,attrs):
         attrs=dict(attrs)
@@ -26,6 +28,10 @@ class PageParser(HTMLParser):
             self.description_count+=1; self.description=attrs.get('content','')
         if tag=='meta' and self.in_head and attrs.get('name')=='robots':
             self.robots_count+=1; self.robots=attrs.get('content','')
+        if tag=='meta' and self.in_head:
+            key=attrs.get('property') or attrs.get('name')
+            if key:
+                self.meta.setdefault(key,[]).append(attrs.get('content',''))
         if tag=='link' and self.in_head and attrs.get('rel')=='canonical':
             self.canonical_count+=1; self.canonical=attrs.get('href','')
         if tag=='script' and self.in_head and attrs.get('type')=='application/ld+json':
@@ -65,9 +71,52 @@ def check_site(root):
             expected=info['base_url']+'/'+(rel[:-10] if rel.endswith('index.html') else rel)
             if doc.canonical!=expected: errors.append(f'{path}: incorrect canonical URL')
         if public_page and not doc.structured_data: errors.append(f'{path}: missing JSON-LD structured metadata')
+        if public_page:
+            expected_image=f'{info["base_url"]}/assets/social.png'
+            required_social={
+                'og:type':'website',
+                'og:site_name':'Talk2Nature',
+                'og:title':None,
+                'og:description':doc.description,
+                'og:url':doc.canonical,
+                'og:image':expected_image,
+                'og:image:type':'image/png',
+                'og:image:width':'1200',
+                'og:image:height':'627',
+                'og:image:alt':None,
+                'twitter:card':'summary_large_image',
+                'twitter:title':None,
+                'twitter:description':doc.description,
+                'twitter:image':expected_image,
+                'twitter:image:alt':None,
+            }
+            if expected_image.startswith('https://'):
+                required_social['og:image:secure_url']=expected_image
+            for key,expected_value in required_social.items():
+                values=doc.meta.get(key,[])
+                if len(values)!=1 or not values[0].strip():
+                    errors.append(f'{path}: social preview requires exactly one non-empty {key} tag')
+                elif expected_value is not None and values[0]!=expected_value:
+                    errors.append(f'{path}: incorrect {key} social metadata')
+            open_graph_title=doc.meta.get('og:title',[])
+            twitter_title=doc.meta.get('twitter:title',[])
+            if len(open_graph_title)==1 and len(twitter_title)==1 and open_graph_title[0]!=twitter_title[0]:
+                errors.append(f'{path}: Twitter and Open Graph titles do not match')
         for structured in doc.structured_data:
             try: json.loads(structured)
             except json.JSONDecodeError: errors.append(f'{path}: invalid JSON-LD structured metadata')
+    if info['public']:
+        social_asset=root/'assets'/'social.png'
+        if not social_asset.is_file():
+            errors.append('Public social preview PNG is missing')
+        else:
+            try:
+                header=social_asset.read_bytes()[:24]
+                dimensions=struct.unpack('>II',header[16:24]) if header[:8]==b'\x89PNG\r\n\x1a\n' and header[12:16]==b'IHDR' else None
+                if dimensions!=(1200,627):
+                    errors.append('Public social preview PNG must be 1200x627')
+            except (OSError,struct.error):
+                errors.append('Public social preview PNG is unreadable')
     titles=[d.title for d in parsed.values()]
     if len(set(titles))!=len(titles): errors.append('Duplicate page titles')
     public_descriptions=[doc.description for path,doc in parsed.items() if info['public'] and path.relative_to(resolved_root).as_posix()!='404.html']
