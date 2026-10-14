@@ -1,5 +1,13 @@
 # Project status
 
+## October 14 — full review of parrot touchscreen ergonomics
+
+**Question:** what does the CHI 2024 parrot touchscreen paper support for Talk2Nature's mobile product, and what remains a separate animal-computer-interaction question?
+
+**Evidence reviewed:** read the full published article text, Sections 1–7, from the University of Glasgow record and PDF. The study enrolled 20 adult home-kept parrots and 17 completed its trained tablet task. On its 10.1-inch Galaxy Tab A setup, hit rate increased from 19.29% at 40 dp to 47.08% at 130 dp; target distance was not significant, and touch-point precision did not significantly differ by width. The paper's caregiver survey/pilot, participant screening, welfare procedures, task, analysis and limitations were reviewed. Figures were not visually reanalyzed; no raw data, code, supplements or independent analysis were inspected.
+
+**Product and rights decision:** this is tablet ergonomics evidence, not a phone specification, communication test or justification for automated playback. Keep the current Field Companion human-operated and passive. Any parrot-operated enrichment interface is a separate product/welfare project requiring qualified ACI and avian review. The repository lists CC BY-NC-ND 4.0 and “Data Availability Statement: No”; the catalog adds only an original summary and metadata-only paper record, with no article files or study data.
+
 ## October 14 — add a published counterinterpretation and check the 2022 outcome tables
 
 **Question:** what does the Japanese-tit source-linkage experiment support, and does it uniquely establish Core-Merge or hierarchical syntax?

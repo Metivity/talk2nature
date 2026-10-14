@@ -1138,9 +1138,9 @@
     "id": 122,
     "title": "No More Angry Birds: Investigating Touchscreen Ergonomics to Improve Tablet-Based Enrichment for Parrots",
     "url": "https://doi.org/10.1145/3613904.3642119",
-    "description": "Kleinberger et al. (2024), CHI 2024. Reviewed the University of Glasgow record and abstract, author-lab summary, and targeted indexed PDF passages; the 19 MB PDF could not be fetched directly. The record lists CC BY-NC-ND 4.0 and displays 'Data Availability Statement: No'. No raw dataset or code package was reviewed.",
-    "checked": "2026-10-11",
-    "origin": "October 11, 2026 primary-source review; targeted published-PDF text and official author-lab summary reviewed. Full PDF, remaining tables, supplements and raw data not reviewed.",
+    "description": "Kleinberger et al. (2024), CHI 2024. On October 14, the full article text from the official University of Glasgow published version was reviewed through its conclusion. The repository lists CC BY-NC-ND 4.0 and 'Data Availability Statement: No'; no raw data, code or supplements were acquired or inspected.",
+    "checked": "2026-10-14",
+    "origin": "October 14, 2026 review of the full article text in the University of Glasgow-hosted published PDF, Sections 1–7. Figures were not visually reanalyzed; no raw study data, code or supplements were inspected.",
     "review_url": "https://eprints.gla.ac.uk/323000/",
     "review_url_label": "University of Glasgow record and published-PDF access",
     "rights": {
