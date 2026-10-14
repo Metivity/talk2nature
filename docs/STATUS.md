@@ -1,5 +1,15 @@
 # Project status
 
+## October 14 — verify live routes after Pages deployment
+
+**Question:** can a successful static build and artifact upload be followed by a repeatable check of what the public site actually serves?
+
+**Change:** added `scripts/check_live_site.py` to verify the deployed HTTPS homepage, Field Companion and resource directory each return HTML with a unique title, description, self-canonical and `index,follow`; it also checks that the live XML sitemap contains those routes and that live `robots.txt` names the sitemap without blocking all crawlers. The manual Pages workflow now checks out the public source with persisted credentials disabled, deploys only the already-checked artifact, then runs this smoke check with bounded retries.
+
+**Validation:** six focused verifier tests cover a valid deployment, retry after propagation delay, stale noindex metadata, HTTPS-only URLs, standalone script execution and workflow ordering. All 140 repository Python tests and 109 Node tests passed. The explicit-origin public candidate produced 110 pages plus 404; `scripts/check_site.py` passed with 111 HTML pages, 5,534 checked links and all 110 public pages reachable. The verifier also passed against the current live site with certificate verification enabled: all three routes had expected metadata, the live sitemap contained 110 URLs, and robots named the sitemap.
+
+**Limit:** this confirms HTTP delivery and crawl configuration, not Google Search Console processing, indexing or ranking. Search Console's sitemap-fetch report remains unresolved. The post-deploy workflow step itself will be exercised by the next authorized Pages deployment.
+
 ## October 14 — full review of parrot touchscreen ergonomics
 
 **Question:** what does the CHI 2024 parrot touchscreen paper support for Talk2Nature's mobile product, and what remains a separate animal-computer-interaction question?
