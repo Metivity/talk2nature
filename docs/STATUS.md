@@ -1,5 +1,13 @@
 # Project status
 
+## October 14 — cross-species Field Companion first-use copy
+
+**Question:** does the first-use invitation read as a parrot-only app when the Field Companion supports many observer-declared animal groups?
+
+**Evidence and change:** the main mobile hero said “the parrot did not prepare a TED talk,” while the same app includes observer-entered dog, cat, other-bird, other-mammal, reptile, fish, amphibian, invertebrate, mixed and unknown groups, plus a separate parrot preset. Replaced that joke with “no big show needed—the quiet moments count, too.” The 30-second recording and microphone-free demo routes are unchanged; no identification or communication behavior was added.
+
+**Validation:** all 129 Python tests and 109 Node tests passed. The local noindex build produced 110 pages plus 404; `scripts/check_site.py` passed with 111 HTML pages and 5,414 links. The explicit-origin public candidate produced 110 pages plus 404; the checker passed with 111 HTML pages, 5,526 links and all 110 public pages reachable. Local desktop Chrome CDP mobile emulation at 320 × 740 and 390 × 844 CSS pixels confirmed the headline and both first-use actions fit above the fixed dock; document and body widths equal each viewport, with no horizontal overflow. Both CTA routes were present in the page. This is browser emulation, not physical-phone testing or evidence of independent user comprehension. No microphone, animal audio, camera or participant data was used. Live deployment remains pending.
+
 ## October 14 — Barkopedia context labels and source rights
 
 **Question:** does a large dog-audio challenge provide an appropriate route from bark classification toward communication research?
