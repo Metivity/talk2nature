@@ -3116,7 +3116,7 @@
         "license": "CC BY 4.0 as displayed on the Mendeley Data v1 landing page.",
         "scope": "Dataset record; the related article and any individual files or embedded third-party material retain their own terms.",
         "evidence_url": "https://data.mendeley.com/datasets/r7v96zf5pp/1",
-      "conditions": "Attribute the dataset creator and source, link the license and indicate changes. Review exact files, embedded notices and privacy before retrieval or reuse; do not infer permission to access gated API routes from the record-level license.",
+        "conditions": "Attribute the dataset creator and source, link the license and indicate changes. Review exact files, embedded notices and privacy before retrieval or reuse; do not infer permission to access gated API routes from the record-level license.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
@@ -3278,7 +3278,9 @@
       "title": "Contextual flexibility in the vocal repertoire of an Amazon parrot",
       "url": "https://doi.org/10.1186/s12983-016-0169-6",
       "version": "Frontiers in Zoology 13:40 (2016)",
-      "source_ids": [275],
+      "source_ids": [
+        275
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Primary-source method comparator for researcher-observed context, note-type categories and parrot vocal variation.",
@@ -3305,7 +3307,9 @@
       "title": "Behavioral-context and note-type supplements for the Lilac-crowned Amazon study",
       "url": "https://link.springer.com/article/10.1186/s12983-016-0169-6",
       "version": "Publisher additional-file listing for the 2016 version of record; binaries not inspected",
-      "source_ids": [275],
+      "source_ids": [
+        275
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Methods and annotation-schema comparator for how observed behavioral context relates to parrot note types and acoustic measurements.",
@@ -3332,7 +3336,10 @@
       "title": "Digital Public Goods Standard",
       "url": "https://www.digitalpublicgoods.net/standard",
       "version": "Current DPGA website statement reviewed 2026-10-13; the page does not show a version number",
-      "source_ids": [276, 277],
+      "source_ids": [
+        276,
+        277
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Self-assess readiness of a bounded open software component for possible Digital Public Goods Alliance review.",
@@ -3359,7 +3366,9 @@
       "title": "Opportunities and limitations: a comparative analysis of citizen science and expert recordings for bioacoustic research",
       "url": "https://doi.org/10.1371/journal.pone.0253763",
       "version": "PLOS ONE 16(6): e0253763 (2021)",
-      "source_ids": [280],
+      "source_ids": [
+        280
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Methods reference for when citizen-science smartphone audio can support a defined bioacoustic question and how device variability changes acoustic measurements.",
@@ -3386,7 +3395,9 @@
       "title": "Nightingale citizen-science recording data",
       "url": "https://doi.org/10.5281/zenodo.4817236",
       "version": "Zenodo DOI cited by the 2021 article; record version and files not reviewed",
-      "source_ids": [281],
+      "source_ids": [
+        281
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Potential reference for studying the provenance and acoustic usability of citizen-science nightingale recordings.",
@@ -3413,7 +3424,9 @@
       "title": "Using mobile device built-in microphones to monitor bats: a new opportunity for large-scale participatory science initiatives",
       "url": "https://doi.org/10.1007/s10531-024-02818-9",
       "version": "Biodiversity and Conservation 33, 1623–1643 (2024)",
-      "source_ids": [282],
+      "source_ids": [
+        282
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Cross-taxon field-method reference for model-specific microphone variability, detection limits and reference-device checks.",
@@ -3440,7 +3453,11 @@
       "title": "Bat recordings collected by mobile devices",
       "url": "https://doi.org/10.5061/dryad.2280gb5z4",
       "version": "Dryad version published 2024-03-13; DOI 10.5061/dryad.2280gb5z4",
-      "source_ids": [283, 284, 285],
+      "source_ids": [
+        283,
+        284,
+        285
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Potential reference for inspecting cross-device wildlife recordings after exact file, rights and privacy review.",
@@ -3467,7 +3484,9 @@
       "title": "A strongly annotated passive acoustic dataset for tropical bird monitoring",
       "url": "https://arxiv.org/html/2605.20578v2",
       "version": "arXiv v2, posted 2026-05-21",
-      "source_ids": [286],
+      "source_ids": [
+        286
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Primary methods reference for PteroSet's time-frequency annotation, bird-presence detection baseline and project-held-out evaluation.",
@@ -3494,7 +3513,9 @@
       "title": "PteroSet bird recordings, annotations and metadata",
       "url": "https://doi.org/10.5281/zenodo.21829388",
       "version": "Zenodo v5, published 2026-08-06; concept DOI 10.5281/zenodo.18554918",
-      "source_ids": [287],
+      "source_ids": [
+        287
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Candidate for a later reproducibility check of time-frequency bird detection; not a behavior or communication benchmark.",
@@ -3513,18 +3534,66 @@
         "redistribution": "conditional"
       },
       "source_manifest": [
-        {"name":"segment_manifest.csv","size":3203011,"checksum":"md5:78f95db6260750923c1dd7b8a3b56a8e"},
-        {"name":"PPA2.zip","size":21554212674,"checksum":"md5:42b4d4c7c27c821beab86dd51dc2204a"},
-        {"name":"species.csv","size":6630,"checksum":"md5:ab0dd4b6ecfd526c749b86bd6a5e71cc"},
-        {"name":"labels.zip","size":622629,"checksum":"md5:91457497ae9692708c51171de5a8237d"},
-        {"name":"annotations_identification.json","size":4919058,"checksum":"md5:7e7ed085752da3ae6fd126c608b3b966"},
-        {"name":"annotations_species.json","size":2310844,"checksum":"md5:fefae0bd5b9cad4ead154ebf4dfeaf37"},
-        {"name":"checkpoints.zip","size":619302933,"checksum":"md5:e66f6ad94a1bb2f992fd2753c4de6072"},
-        {"name":"PPA1.zip","size":15257785797,"checksum":"md5:d5fce3e9d743bad4988131b57aa1c9bc"},
-        {"name":"MAP1.zip","size":6932204445,"checksum":"md5:499ce381754892ebd8311433fd8bc99c"},
-        {"name":"PPA3.zip","size":23503142834,"checksum":"md5:c8e4d32ec0ccac4fd0928ee4dbc91abe"},
-        {"name":"PPA4.zip","size":18509793168,"checksum":"md5:aba69c06c5b6d8f749e56d1c85150898"},
-        {"name":"metadata_v2.csv","size":107983,"checksum":"md5:23ce32af48bf7af1e90bcd6bf5a18e94"}
+        {
+          "name": "segment_manifest.csv",
+          "size": 3203011,
+          "checksum": "md5:78f95db6260750923c1dd7b8a3b56a8e"
+        },
+        {
+          "name": "PPA2.zip",
+          "size": 21554212674,
+          "checksum": "md5:42b4d4c7c27c821beab86dd51dc2204a"
+        },
+        {
+          "name": "species.csv",
+          "size": 6630,
+          "checksum": "md5:ab0dd4b6ecfd526c749b86bd6a5e71cc"
+        },
+        {
+          "name": "labels.zip",
+          "size": 622629,
+          "checksum": "md5:91457497ae9692708c51171de5a8237d"
+        },
+        {
+          "name": "annotations_identification.json",
+          "size": 4919058,
+          "checksum": "md5:7e7ed085752da3ae6fd126c608b3b966"
+        },
+        {
+          "name": "annotations_species.json",
+          "size": 2310844,
+          "checksum": "md5:fefae0bd5b9cad4ead154ebf4dfeaf37"
+        },
+        {
+          "name": "checkpoints.zip",
+          "size": 619302933,
+          "checksum": "md5:e66f6ad94a1bb2f992fd2753c4de6072"
+        },
+        {
+          "name": "PPA1.zip",
+          "size": 15257785797,
+          "checksum": "md5:d5fce3e9d743bad4988131b57aa1c9bc"
+        },
+        {
+          "name": "MAP1.zip",
+          "size": 6932204445,
+          "checksum": "md5:499ce381754892ebd8311433fd8bc99c"
+        },
+        {
+          "name": "PPA3.zip",
+          "size": 23503142834,
+          "checksum": "md5:c8e4d32ec0ccac4fd0928ee4dbc91abe"
+        },
+        {
+          "name": "PPA4.zip",
+          "size": 18509793168,
+          "checksum": "md5:aba69c06c5b6d8f749e56d1c85150898"
+        },
+        {
+          "name": "metadata_v2.csv",
+          "size": 107983,
+          "checksum": "md5:23ce32af48bf7af1e90bcd6bf5a18e94"
+        }
       ],
       "acquisition": "metadata_only",
       "files": []
@@ -3535,7 +3604,9 @@
       "title": "PteroSet processing and baseline code",
       "url": "https://github.com/microsoft/PteroSet/tree/b6aaf57ac32f93715e3570538f3580a78a80b741",
       "version": "master commit b6aaf57ac32f93715e3570538f3580a78a80b741, 2026-09-17",
-      "source_ids": [288],
+      "source_ids": [
+        288
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Potential reproducibility reference for converting Raven annotations, segmenting time-lapse audio and building project-level splits.",
@@ -3562,7 +3633,10 @@
       "title": "PteroSet v5 baseline checkpoints",
       "url": "https://doi.org/10.5281/zenodo.21829388",
       "version": "checkpoints.zip in Zenodo v5 record, 619302933 bytes",
-      "source_ids": [286, 287],
+      "source_ids": [
+        286,
+        287
+      ],
       "priority": 3,
       "reviewed": "2026-10-13",
       "task": "Possible baseline comparison artifact only after its model and weight lineage is independently reviewed.",
@@ -3589,7 +3663,9 @@
       "title": "Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification",
       "url": "https://aclanthology.org/2024.lrec-main.1432/",
       "version": "LREC-COLING 2024, pages 16480–16486",
-      "source_ids": [21],
+      "source_ids": [
+        21
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Methods comparator for dog-held-out context classification and transfer from human-speech representations; not evidence of call meaning or cross-species transfer.",
@@ -3616,7 +3692,9 @@
       "title": "Dog vocalization dataset described in the 2024 bark-classification paper",
       "url": "https://aclanthology.org/2024.lrec-main.1432/",
       "version": "Paper-described dataset; no public versioned deposit identified",
-      "source_ids": [21],
+      "source_ids": [
+        21
+      ],
       "priority": 1,
       "reviewed": "2026-10-13",
       "task": "Historical methods reference for induced canine vocalizations and stimulus-associated labels; not admitted to Talk2Nature training.",
@@ -3643,7 +3721,9 @@
       "title": "Dog-bark baseline implementations described in the 2024 paper",
       "url": "https://aclanthology.org/2024.lrec-main.1432/",
       "version": "Unversioned; the paper says baselines are available by request",
-      "source_ids": [21],
+      "source_ids": [
+        21
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Potential reproducibility reference only if a specific code release and dependencies are lawfully obtained and reviewed.",
@@ -3670,7 +3750,10 @@
       "title": "Propagation of electrical spike trains in substrates colonised by oyster fungi",
       "url": "https://doi.org/10.1038/s41598-026-47035-2",
       "version": "Scientific Reports 16, article 16332 (2026); version of record dated 2026-05-27",
-      "source_ids": [93, 290],
+      "source_ids": [
+        93,
+        290
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Primary methods reference for multi-channel measurement and analysis of slow electrical activity in oyster-fungus-colonised substrate.",
@@ -3697,7 +3780,10 @@
       "title": "Electrical recordings of oyster-fungus-colonised substrates cited by the 2026 propagation paper",
       "url": "https://doi.org/10.5281/zenodo.4430968",
       "version": "Zenodo v1, created 2021-01-10; modified 2021-01-11",
-      "source_ids": [93, 289],
+      "source_ids": [
+        93,
+        289
+      ],
       "priority": 3,
       "reviewed": "2026-10-13",
       "task": "Potential source data for reviewing the paper's electrophysiology analysis; not an animal-behavior dataset or communication benchmark.",
@@ -3724,7 +3810,9 @@
       "title": "OpenSoundscape: An open-source bioacoustics analysis package for Python",
       "url": "https://doi.org/10.1111/2041-210X.14196",
       "version": "Methods in Ecology and Evolution 14:2321-2328 (2023); describes OpenSoundscape v0.9.1",
-      "source_ids": [291],
+      "source_ids": [
+        291
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Understand established bioacoustic observation, annotation and classification workflows before adding advanced research features to Talk2Nature.",
@@ -3751,7 +3839,9 @@
       "title": "OpenSoundscape source code v0.13.2",
       "url": "https://github.com/kitzeslab/opensoundscape/tree/v0.13.2",
       "version": "v0.13.2; official release dated 2026-06-30; verified release commit begins 8b58215",
-      "source_ids": [292],
+      "source_ids": [
+        292
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Possible reference implementation for researcher-side acoustic annotation and detection workflows; no current integration task selected.",
@@ -3778,7 +3868,11 @@
       "title": "Strongly labeled Eastern North American bird soundscapes (Dryad)",
       "url": "https://doi.org/10.5061/dryad.d2547d81z",
       "version": "Dryad record published 2021-04-01, updated 2021-04-06; four listed files total 1.18 GB",
-      "source_ids": [293, 294, 295],
+      "source_ids": [
+        293,
+        294,
+        295
+      ],
       "priority": 2,
       "reviewed": "2026-10-13",
       "task": "Potential strong-label detection/classification comparator for bird soundscape methods; not a communication or receiver-response benchmark.",
@@ -3864,7 +3958,9 @@
       "title": "CrowdBark: crowdsourced multimodal dog-communication study",
       "url": "https://lit.eecs.umich.edu/crowdbark/",
       "version": "Project landing page accessed 2026-10-14; no versioned data release linked",
-      "source_ids": [300],
+      "source_ids": [
+        300
+      ],
       "priority": 2,
       "reviewed": "2026-10-14",
       "task": "Potential comparison for multimodal, owner-contributed canine observations and project-level open-data plans; not a released dataset or validated communication model.",
@@ -3891,7 +3987,10 @@
       "title": "Language of fungi derived from their electrical spiking activity",
       "url": "https://doi.org/10.1098/rsos.211926",
       "version": "Royal Society Open Science 9(4):211926 (2022); DOI 10.1098/rsos.211926",
-      "source_ids": [94, 301],
+      "source_ids": [
+        94,
+        301
+      ],
       "priority": 2,
       "reviewed": "2026-10-14",
       "task": "Primary method and hypothesis reference for extracellular voltage-spike analysis in four fungal species; not a decoded-language result.",
@@ -3918,7 +4017,9 @@
       "title": "Recordings of electrical activity of four species of fungi",
       "url": "https://zenodo.org/records/5790768",
       "version": "Zenodo v1, created 2021-12-18; four ZIP files, 84.6 MB total",
-      "source_ids": [303],
+      "source_ids": [
+        303
+      ],
       "priority": 1,
       "reviewed": "2026-10-14",
       "task": "Potential raw-signal resource for a rights-cleared, expert-reviewed replication of fungal electrical measurement and signal-processing methods.",
@@ -3945,7 +4046,9 @@
       "title": "Does electrical activity in fungi function as a language?",
       "url": "https://www.sciencedirect.com/science/article/pii/S1754504823001034",
       "version": "Fungal Ecology 68:101326 (2024), DOI 10.1016/j.funeco.2023.101326",
-      "source_ids": [18],
+      "source_ids": [
+        18
+      ],
       "priority": 2,
       "reviewed": "2026-10-14",
       "task": "Methodological and linguistic critique of interpreting fungal extracellular voltage patterns as a language.",
@@ -3972,7 +4075,9 @@
       "title": "Electrical signaling in fungi: past and present challenges",
       "url": "https://doi.org/10.1093/femsre/fuaf009",
       "version": "FEMS Microbiology Reviews 49 (2025), fuaf009; DOI 10.1093/femsre/fuaf009",
-      "source_ids": [302],
+      "source_ids": [
+        302
+      ],
       "priority": 1,
       "reviewed": "2026-10-14",
       "task": "Methods and evidence review for fungal electrophysiology, extracellular measurement artifacts and study-design controls.",
@@ -4088,7 +4193,9 @@
       "title": "Playback effects on conditioned budgerigar vocal output",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4696898/",
       "version": "Behavioural Processes 122 (2016), 87–89; published online 2015-11-17; DOI 10.1016/j.beproc.2015.11.002; PMC author manuscript PMCID PMC4696898.",
-      "source_ids": [312],
+      "source_ids": [
+        312
+      ],
       "priority": 2,
       "reviewed": "2026-10-14",
       "task": "Bounded methods comparator for how playback/social acoustic context can alter trained parrot vocal output; not a decoding or consumer-app benchmark.",
@@ -4105,6 +4212,123 @@
         "research_use": "unresolved",
         "commercial_use": "not_admitted",
         "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-waggle-vision-paper-2017",
+      "kind": "paper",
+      "title": "Automatic detection and decoding of honey bee waggle dances",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188626",
+      "version": "PLOS ONE 12(12): e0188626 (2017); DOI 10.1371/journal.pone.0188626",
+      "source_ids": [
+        313
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Computer-vision reference for detecting and measuring a known, structured animal signal against a feeder-location outcome.",
+      "review_depth": "Targeted article sections reviewed: setup, signal features, software modules, validation/results, discussion and license. No supplementary files or study artifacts were acquired or reproduced.",
+      "access": "Open-access article. The paper links its separate code and data repository; those assets have distinct rights.",
+      "decision": "Use an original summary and link. Article CC BY 4.0 does not license the linked code/data by implication.",
+      "limitations": "One 2,000-bee colony and specialized observation-hive setup; 90.07% is validation accuracy, not an external transfer estimate. Distance mapping needs empirical calibration. The study decodes waggle runs, not arbitrary gestures or language.",
+      "attribution": "Wario F, Wild B, Rojas R, Landgraf T (2017). Automatic detection and decoding of honey bee waggle dances. PLOS ONE 12(12): e0188626. DOI 10.1371/journal.pone.0188626.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Published article only; code, data, compiled module, video and any model artifacts are separate components.",
+        "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188626",
+        "conditions": "Credit the authors and source, link the license and indicate changes if reusing article material. Talk2Nature publishes an original summary and link only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-waggle-vision-code-2017",
+      "kind": "code",
+      "title": "WDD_paper honeybee waggle-dance analysis code",
+      "url": "https://github.com/BioroboticsLab/WDD_paper/tree/3aaa5099aac698bd08df1d55f4cd5183d32f7e7d",
+      "version": "3aaa5099aac698bd08df1d55f4cd5183d32f7e7d",
+      "source_ids": [
+        314
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Historical implementation reference for camera-based waggle-run detection, orientation estimation and mapping.",
+      "review_depth": "Official repository README, API metadata, pinned commit and complete recursive tree reviewed. No source file or binary was downloaded, executed or audited.",
+      "access": "Public GitHub repository at a pinned commit; GitHub reports no recognized license, and the inspected tree contains no LICENSE/COPYING file.",
+      "decision": "Metadata-only. Do not acquire, execute, modify, bundle or redistribute until the authors' code terms and compiled-component provenance are resolved.",
+      "limitations": "The paper describes multiple modules and the README mentions a compiled attention module. Repository visibility is not permission; dependencies and artifact-level provenance were not audited.",
+      "attribution": "BioroboticsLab, WDD_paper, default branch master at commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d.",
+      "rights": {
+        "license": "No recognized license in the repository API; no LICENSE/COPYING file in the inspected tree",
+        "scope": "Code repository, compiled module and dependencies; the linked article has a separate CC BY 4.0 license.",
+        "evidence_url": "https://github.com/BioroboticsLab/WDD_paper/tree/3aaa5099aac698bd08df1d55f4cd5183d32f7e7d",
+        "conditions": "Obtain explicit reuse terms and review dependency/binary provenance before any acquisition, execution, adaptation or redistribution.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-waggle-ground-truth-data-2017",
+      "kind": "dataset",
+      "title": "WDD_paper 200-waggle-run ground-truth sample",
+      "url": "https://github.com/BioroboticsLab/WDD_paper/tree/3aaa5099aac698bd08df1d55f4cd5183d32f7e7d/GroundTruthData",
+      "version": "3aaa5099aac698bd08df1d55f4cd5183d32f7e7d",
+      "source_ids": [
+        313,
+        314
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Potential reference sample for inspecting detector duration/orientation labels after resolving data rights and provenance.",
+      "review_depth": "The paper states that experiment data are publicly available at the repository; its README describes GTRuns.tar with 200 extracted waggle runs and GTAverage.csv with angles averaged across eight manual traces. No files were acquired, hashed or inspected.",
+      "access": "The author-linked GitHub repository describes the sample; exact file inventory, checksums, annotator protocol and per-file terms were not independently verified.",
+      "decision": "Metadata-only; not admitted as a Talk2Nature benchmark, training input or validated ground-truth set.",
+      "limitations": "Averages of eight tracers do not by themselves establish inter-rater reliability or an independent biological criterion. The repository has no located reuse license, and the sample is tied to a narrow hive/camera setup.",
+      "attribution": "BioroboticsLab, WDD_paper GroundTruthData directory at commit 3aaa5099aac698bd08df1d55f4cd5183d32f7e7d; related article by Wario et al. (2017), DOI 10.1371/journal.pone.0188626.",
+      "rights": {
+        "license": "No dataset license located in the pinned repository snapshot",
+        "scope": "Ground-truth image snippets and labels; code and article rights are separate.",
+        "evidence_url": "https://github.com/BioroboticsLab/WDD_paper/tree/3aaa5099aac698bd08df1d55f4cd5183d32f7e7d/GroundTruthData",
+        "conditions": "Resolve dataset reuse terms, image provenance and annotation conditions before download, inspection, training or redistribution.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-beesbook-longterm-paper-2015",
+      "kind": "paper",
+      "title": "Automatic methods for long-term tracking and decoding honeybee dances",
+      "url": "https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2015.00103/full",
+      "version": "Frontiers in Ecology and Evolution 3:103 (2015); DOI 10.3389/fevo.2015.00103",
+      "source_ids": [
+        315
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-14",
+      "task": "Engineering comparator for long-duration colony tracking and realistic camera/compute requirements.",
+      "review_depth": "Selected full-text sections reviewed: system motivation, hive/camera design, validation sampling, runtime results and article license. No code, data or supporting files were acquired or run.",
+      "access": "Open-access Frontiers article; original article linked and summarized, not reproduced.",
+      "decision": "Methods and infrastructure context only; this is a distinct long-term tracking/tag system, not the 2017 waggle-run detector or a phone app.",
+      "limitations": "The reported 500-times-real-time single-processor analysis and 1,000-processor supercomputer run concern the article's own long-term tracking data and pipeline, not the runtime of the 2017 detector.",
+      "attribution": "Wario F, Wild B, Couvillon MJ, Rojas R, Landgraf T (2015). Frontiers in Ecology and Evolution 3:103. DOI 10.3389/fevo.2015.00103.",
+      "rights": {
+        "license": "CC-BY (version not stated on the article page reviewed)",
+        "scope": "Published article only; associated implementation and data were not reviewed or acquired.",
+        "evidence_url": "https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2015.00103/full",
+        "conditions": "Credit the authors and source, link the license and indicate changes if reusing article material. Talk2Nature publishes an original summary and link only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
