@@ -2079,3 +2079,9 @@ Validation: 125 repository Python tests and 109 Node tests passed; Android core 
 **Release:** the first disclosure version merged in PR [#147](https://github.com/Metivity/talk2nature/pull/147) as `fcc0c4432f08273d6007dee24e346821fd87bc50`. Manual [Pages run #38499311051](https://github.com/Metivity/talk2nature/actions/runs/38499311051) passed the tests, public build and deployment. Live HTTPS checks returned HTTP 200 for the university page, sitemap and `robots.txt`; the page contains the account-free trial and public-report disclosure, its canonical URL and `index,follow`, and the sitemap lists the route. `robots.txt` names that sitemap.
 
 **Follow-up:** the live mobile review showed that the original disclosure was too small in a metadata line. This branch presents it as a compact callout; at the time of this entry, that visual refinement is still under review and has not been deployed. These checks establish crawl configuration, not Google Search Console indexing, impressions or ranking.
+
+## October 14 release receipt — university feedback callout
+
+The refinement merged in PR [#148](https://github.com/Metivity/talk2nature/pull/148) as `eb7ef2eda3fd239b78975c45988c0c6b4b88ffcb`. Public checks passed before merge. Manual [Pages run #38500059180](https://github.com/Metivity/talk2nature/actions/runs/38500059180) passed both the checked public build and deploy jobs.
+
+Live HTTPS checks returned HTTP 200 for the university route, its stylesheet, `sitemap.xml` and `robots.txt`. A fresh 390 × 844 mobile view showed the public-feedback callout separately from the account-free trial note. Canonical URL, `index,follow`, sitemap inclusion and the robots sitemap directive were verified. This establishes deployment and technical crawl setup only; Google Search Console discovery, indexing, impressions and ranking remain unverified. No independent researcher or physical-phone evaluation is claimed.
