@@ -77,7 +77,18 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(
             [f['name'] for f in code['files']],
             ['merge_binary.R', 'merge_proportion.R'])
-        self.assertTrue(all(f['md5'] is None for r in (data, code) for f in r['files']))
+        self.assertEqual(
+            {f['name']: f['md5'] for f in data['files']},
+            {
+                'merge_proportion.txt': '9166f5fe7f7f2b07ec9f86bd2ba8abe0',
+                'merge_binary.txt': '0836e50688ef120cbfda07b3bfd1c839',
+            })
+        self.assertEqual(
+            {f['name']: f['md5'] for f in code['files']},
+            {
+                'merge_binary.R': '8f68296f905ec2edf11d1751f92d4869',
+                'merge_proportion.R': 'faa26e9876bf1dee7839ed7108b80885',
+            })
         self.assertEqual(plan(self.catalog, [data['id'], code['id']])[1], 7064)
 
     def test_dog_bark_paper_data_and_code_keep_conflicting_or_missing_rights_unadmitted(self):

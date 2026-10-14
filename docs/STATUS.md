@@ -1,5 +1,15 @@
 # Project status
 
+## October 14 — add a published counterinterpretation and check the 2022 outcome tables
+
+**Question:** what does the Japanese-tit source-linkage experiment support, and does it uniquely establish Core-Merge or hierarchical syntax?
+
+**Evidence reviewed:** added Beckers et al. (2024), *No evidence for language syntax in songbird vocalizations* (Frontiers in Psychology 15:1393895; source 318). Read Sections 1–4 of its open full text through PubMed Central and compared its interpretation with the already-reviewed 2016, 2017 and 2022 primary studies and Schlenker et al. (2024). The critique agrees the experiments show receiver sensitivity to call order and different responses to one-source versus two-source AR, but disputes the Core-Merge/hierarchical-syntax inference. It offers finite-list and finite-state/concatenation accounts and flags the 2017 cross-species sequence as a result a unified account must explain. This is a published conceptual critique, not a new experiment or a consensus statement.
+
+**Data check:** rechecked the official Figshare v2 API for item 18007046 v1. It currently returns CC BY 4.0 and per-file MD5 values for the two 2,058-byte tables and two R scripts. The locally retained files match those sizes and MD5s; this supersedes the October 13 snapshot that reported null provider checksums. Added a standard-library descriptive audit and synthetic tests. It verified the two 64-row tables align on all flock-trial metadata and agree on whether each trial has any outcome event. For the binary table, the natural one-source 1A-R treatment had approach in 13/16 flock trials and wing-flicking in 15/16; the other treatments had 2–3/16 and 1–4/16 respectively. The aggregate report emits no rows, dates, caller IDs, locations or audio. It does not fit the deposited mixed-effects models, reproduce adjusted contrasts, or identify a communication mechanism.
+
+**Change and limits:** updated the Japanese-tit source note and reviewer packet, added a separate metadata-only paper resource, and recorded the aggregate report at `research/japanese_tit_2022_descriptives.json` with its script at `research/japanese_tit_2022_descriptives.py`. No original files or third-party code were added to Git, no model was trained, and no external reviewer was contacted. AutoResearch remains **NOT READY**; the full independent review and inferential reproduction gates remain open.
+
 ## October 14 — cross-species Field Companion first-use copy
 
 **Question:** does the first-use invitation read as a parrot-only app when the Field Companion supports many observer-declared animal groups?

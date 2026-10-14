@@ -18,7 +18,23 @@ The publisher's 2022 core-Merge study links to [Figshare item 18007046 v1](https
 
 The four files total 7,064 bytes and were fetched to ignored `data/external/` for a local-only review. Each data table has 64 rows and eight fields (`date`, `caller_ID`, `trt`, `2m`, `wing`, `flock_size`, `shrike`, `call_source`); the tables share row order and design fields, while the binary and proportion outcomes differ. They include behavioral outcomes, not audio; no location fields were present. The two scripts use `lme4` and `emmeans` for mixed-effects binomial models and adjusted treatment contrasts. They provide no package versions or lockfile. The scripts were read as text only and not executed; no published result was reproduced. Local SHA-256 receipts establish received-byte identity only, not upstream integrity. The date and caller fields remain in the ignored files and are not reproduced here.
 
-The resource catalog keeps paper, data and code rights separate. The item-level license does not provide a standalone software license or establish training admission. Keep the files out of Git, the website and `examples/`; the receipts record `training_admitted=false`. A future reproduction needs versioned dependencies, a data-to-table linkage check and independent analysis review.
+The resource catalog keeps paper, data and code rights separate. It records the item-level CC BY 4.0 notice against the data tables and analysis scripts separately; it does not establish training admission. Keep the files out of Git, the website and `examples/`; the receipts record `training_admitted=false`. A future reproduction needs versioned dependencies, a data-to-table linkage check and independent analysis review.
+
+## October 14 Japanese-tit table checksum and descriptive audit
+
+The October 13 note above is a dated snapshot. A fresh read of the official Figshare v2 API for item 18007046 v1 on October 14 now returns CC BY 4.0 and per-file MD5 values for all four files; this supersedes the earlier statement that the API returned null checksums. The locally retained files match the current API sizes and MD5 values. The catalog keeps the two data files and two analysis scripts as separate resource records and licenses.
+
+Added `research/japanese_tit_2022_descriptives.py`, a standard-library audit that reads the two local TSV files without running the deposited R code. It checked that both tables contain the same 64 flock-trial keys, that all four treatments have 16 rows, and that each binary outcome matches whether the corresponding count-table value is nonzero. The natural single-source 1A-R treatment had approach within 2 m in 13/16 flocks and wing-flicking in 15/16; the other treatments had approach in 2–3/16 and wing-flicking in 1–4/16. The equal-flock and pooled individual rates are in the aggregate-only `research/japanese_tit_2022_descriptives.json` report. It contains no dates, caller IDs, location fields or raw rows. The script's tests use synthetic fixtures only.
+
+This verifies the descriptive pattern in the received tables, not the paper's mixed-effects models, adjusted contrasts, table/figure correspondence, or the Core-Merge interpretation. The R scripts still lack a pinned environment and were not executed; no inferential reproduction or independent review is claimed. The tables contain behavior counts rather than audio and remain excluded from model training. AutoResearch remains **NOT READY**.
+
+To reproduce the aggregate from a clean checkout, download only the two data files from the versioned Figshare item: [`merge_binary.txt`](https://ndownloader.figshare.com/files/35870855) and [`merge_proportion.txt`](https://ndownloader.figshare.com/files/35870864). Place them together in a local directory, then run:
+
+```sh
+python3 research/japanese_tit_2022_descriptives.py /path/to/local-data-directory
+```
+
+The script checks each file against the byte size and provider MD5 recorded in `research/resources.json`, validates the table pairing and outcome consistency, and prints aggregate JSON. It makes no network request, writes no data files, and does not run the deposited R scripts. Raw files stay local and are never needed in a pull request.
 
 ## Collected and checked
 
