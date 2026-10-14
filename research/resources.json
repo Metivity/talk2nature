@@ -4081,6 +4081,33 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "budgerigar-conditioned-vocal-output-seki-dooling-2016",
+      "kind": "paper",
+      "title": "Playback effects on conditioned budgerigar vocal output",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4696898/",
+      "version": "Behavioural Processes 122 (2016), 87–89; published online 2015-11-17; DOI 10.1016/j.beproc.2015.11.002; PMC author manuscript PMCID PMC4696898.",
+      "source_ids": [312],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Bounded methods comparator for how playback/social acoustic context can alter trained parrot vocal output; not a decoding or consumer-app benchmark.",
+      "review_depth": "PubMed citation/abstract and selected PMC author-manuscript methods and results/discussion sections reviewed. No supplement, raw data or code inspection; no reanalysis, replication or independent review.",
+      "access": "PMC links an author manuscript for reading and lists a supplemental PDF. The supplement was not inspected or downloaded. No public raw-data or code deposit was identified in the reviewed article record.",
+      "decision": "Metadata-only. Use an original summary and source link; do not redistribute the manuscript, supplement, figures, data or audio. Keep animal playback disabled in the public app.",
+      "limitations": "Five individually housed, trained birds; fixed condition sequence; only three produced non-primary calls. The experiment measures conditioned output under controlled stimuli, not natural household behavior, receiver understanding, welfare benefit or call meaning. Article, data, code and media rights are separate; article reuse terms and data/code rights were not verified.",
+      "attribution": "Seki Y, Dooling RJ (2016). Effect of auditory stimuli on conditioned vocal behavior of budgerigars. Behavioural Processes, 122, 87–89. Published online 2015-11-17. DOI 10.1016/j.beproc.2015.11.002.",
+      "rights": {
+        "license": "Article reuse license not verified in this review.",
+        "scope": "Published article only; no separate study-data, code or media license was established.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4696898/",
+        "conditions": "Cite and link; publish an original summary only. Do not redistribute the article, supplement, figures, study data or recordings without checking their applicable terms.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

@@ -92,7 +92,8 @@
         "parrot-vocal-imitation-addressing-2012",
         "elephant-calls-controls",
         "sperm-whale-structure",
-        "dog-buttons"
+        "dog-buttons",
+        "budgerigar-playback-context"
       ],
       "next_step": "Ask a scientific reviewer to assess one bounded hypothesis and its controls before designing any intervention.",
       "gate": "A caregiver report about a human-created name differs from evidence about natural conspecific calls. Neither an individual acoustic signature nor a receiver response alone establishes shared meaning. Public tools remain passive; no automated playback or general translation claim."

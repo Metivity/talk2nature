@@ -3191,5 +3191,19 @@
     "rights": {
       "page": "Official public applicant briefing; summarized and linked, not reproduced."
     }
+  },
+  {
+    "id": 312,
+    "title": "Budgerigar playback and conditioned vocal output",
+    "description": "Primary operant-conditioning study: conspecific-call and flock-sound context changed the intensity and variation of trained budgerigar calls.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4696898/",
+    "review_url": "https://pubmed.ncbi.nlm.nih.gov/26598232/",
+    "review_url_label": "PubMed citation/DOI record; the full-text author manuscript is linked from PMC.",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the PubMed citation/abstract and selected methods and results/discussion sections surfaced by the PMC author-manuscript index. The supplement, raw data and code were not inspected. No experiment was reproduced and no author was contacted.",
+    "rights": {
+      "page": "PMC-hosted author manuscript is linked for reading. Its applicable reuse license was not verified in this review; public access is not treated as redistribution permission.",
+      "scope": "Article citation and original summary only. No study data, code, audio, figure, supplement or article text was copied."
+    }
   }
 ]
