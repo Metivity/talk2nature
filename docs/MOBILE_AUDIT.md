@@ -241,3 +241,11 @@ This is an emulator UI and permission-flow check, not physical-phone, microphone
 **Check:** Android lint plus debug and release APK assembly passed. The capture-core checks, native-session import/schedule tests, and release-boundary check passed. Installed the debug APK in a fresh Android 14 emulator at 320 dp width. The initial screen showed the practical caveats with the detail text hidden; tapping Show exposed the calibration caveat and changed the control to Hide; tapping Hide removed it again. The visible text fit the narrow layout without horizontal overflow. No microphone permission was granted, no audio was accessed and no session was started. The temporary Talk2Nature AVD and emulator were removed after the check.
 
 This verifies a maintainer-run emulator interaction only. It is not a physical-phone, TalkBack, screen-lock, battery, vendor-specific or first-time-user comprehension test. Those remain open, as do release signing and field-readiness gates.
+
+## October 14 follow-up: make the first-use invitation fit every animal
+
+**Finding:** the mobile app's main first-use invitation joked specifically about a parrot, even though the same companion offers observer-declared groups for dogs, cats, many other animal groups, mixed scenes and unknown sources. On the narrow phone layout, this is the first explanatory copy beside the two main actions, so the parrot reference could make a cross-species tool feel parrot-only.
+
+**Change:** replaced the species-specific joke with a short, playful line about quiet moments counting and no big show being needed. The 30-second whole-moment path and the explicit microphone-free demo are unchanged; the app still leaves species identity to the observer.
+
+**Check:** rendered the local noindex build in desktop Chrome with CDP mobile metrics at 320 × 740 and 390 × 844 CSS pixels. The headline and both first-use actions fit above the fixed dock; document and body widths equal the viewport, and both routes remain present. The repository suite, local and explicit-origin public builds, and site checker passed. No microphone, animal audio, camera or participant data was used. This is browser emulation only; physical phones, screen readers and first-time-user comprehension remain unverified. Live deployment remains pending.
