@@ -3287,5 +3287,59 @@
     "url": "https://data.mendeley.com/api/docs/",
     "checked": "2026-10-14",
     "origin": "Checked October 14, 2026. The public dataset file-list endpoint documents OAuth2. A no-token request for the version-1 budgerigar file list returned HTTP 401; no file manifest or file bytes were retrieved in this check."
+  },
+  {
+    "id": 320,
+    "title": "Widespread cultural change in declining populations of Amazon parrots",
+    "description": "Dahlin et al. (2024), Proceedings of the Royal Society B 291:20240659, DOI 10.1098/rspb.2024.0659.",
+    "url": "https://doi.org/10.1098/rspb.2024.0659",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11335405/",
+    "review_url_label": "Article abstract and bibliographic record at PubMed Central",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the abstract and targeted Methods/Results passages surfaced in the PMC full-text index. Direct publisher retrieval returned HTTP 403; the PMC page presented a bot check, and NCBI E-utilities returned article front matter and abstract only. This is not a full-text review. PMC metadata says the article is published by the Royal Society and all rights reserved. No article text or figures were reproduced.",
+    "rights": {
+      "article": "The PMC record states that the article is all rights reserved; no permissive article reuse license was verified.",
+      "scope": "Article text and figures only. The Dryad dataset and GitHub code have separate rights records."
+    }
+  },
+  {
+    "id": 321,
+    "title": "Vocal culture in Amazon parrots, Dryad dataset record",
+    "description": "Versioned Dryad record for call measurements and metadata associated with the 22-year yellow-naped Amazon dialect study.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.m905qfv6j",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the visible Dryad landing-page metadata and data-dictionary sections. The record identifies multiple Pacific-coast Costa Rica sites and three survey periods (1994, 2005, 2016). Its README says no restrictions are placed on the data made available, while raw audio and roost counts are available from authors on request and exact coordinates are not made public.",
+    "rights": {
+      "dataset": "CC0-1.0 is reported by the official version API and Dryad reuse policy; the dataset README also states no reuse restrictions on the deposited data.",
+      "scope": "Deposited tabular data only. Article text, publisher supplements, raw audio, roost-count data and analysis code are separate components."
+    }
+  },
+  {
+    "id": 322,
+    "title": "Dryad v6 file manifest for the Amazon parrot culture dataset",
+    "description": "Official Dryad API version and file metadata for version 6 of DOI 10.5061/dryad.m905qfv6j.",
+    "url": "https://datadryad.org/api/v2/versions/305130/files",
+    "checked": "2026-10-14",
+    "origin": "The TLS-verified API reported version 6, API version ID 305130, publication date 2024-07-15, CC0-1.0 and seven files totaling 9,970,731 bytes. It supplied sizes and SHA-256 digests, including 1,136,510-byte acoustic_measurements.csv, 477,106-byte AmazonVocalCulture_SelectionTableMetadata_31May2023.csv and 4,118-byte AmazonVocalCulture_SiteLevelMetadata_31May2023.csv. The API file download returned HTTP 401 and the public file-stream URL returned HTTP 403 in this environment; no file bytes were acquired."
+  },
+  {
+    "id": 323,
+    "title": "Dryad data reuse policy",
+    "description": "Official Dryad guidance states datasets are released under the CC0 public-domain dedication and recommends scholarly citation.",
+    "url": "https://dev.datadryad.org/help/guides/reuse",
+    "checked": "2026-10-14",
+    "origin": "Reviewed the current official guidance. It says Dryad datasets are published under CC0; this applies to data, not automatically to linked articles, code, audio or third-party components."
+  },
+  {
+    "id": 324,
+    "title": "Amazon vocal-culture analysis code at a pinned GitHub commit",
+    "description": "MIT-licensed R Markdown analyses and helper functions for the yellow-naped Amazon dialect study.",
+    "url": "https://github.com/gsvidaurre/amazon-vocal-culture/tree/1399b7a2de6354d27b5227bb75de7e285fe3d636",
+    "checked": "2026-10-14",
+    "origin": "Reviewed official GitHub repository metadata, MIT license, README and recursive file tree at commit 1399b7a2de6354d27b5227bb75de7e285fe3d636. The tree includes four R Markdown analyses, functions and parallel scripts. Static inspection found absolute author-machine paths, installation of the latest unpinned warbleR from GitHub, and comments about archived rgdal/rgeos packages. No scripts were executed; the reviewed tree has no lockfile.",
+    "rights": {
+      "code": "MIT License according to the pinned repository license file and GitHub license metadata.",
+      "scope": "Repository code only. This license does not grant article or dataset rights."
+    }
   }
 ]

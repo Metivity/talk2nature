@@ -3616,5 +3616,80 @@
       "rights": "Repository MIT applies to the challenge site/software component. The dataset card's MIT field and project-level source description do not resolve the permissions, consent, privacy or license scope for individual YouTube/Reddit recordings.",
       "experiment": "Do not run a model until the exact audio rights, independently reviewed labels, dog/session/site groups and locked-test boundary are established. Compare audio predictions against context-only and simple acoustic baselines; retain human observations separately from model outputs."
     }
+  },
+  {
+    "slug": "yellow-naped-amazon-vocal-culture-2024",
+    "title": "Amazon parrot dialects across 22 years: cultural change, not call meaning",
+    "seo_description": "A 22-year yellow-naped Amazon call study reports shifting dialects. Its Dryad data contains measurements, not raw audio or receiver-response tests.",
+    "taxon": "Yellow-naped amazon (Amazona auropalliata)",
+    "kind": "Longitudinal contact-call dialect study and data review",
+    "year": "2024",
+    "year_label": "Publication year",
+    "source_ids": [
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "reviewed": "2026-10-14",
+    "review_stage": "Abstract-level paper review plus Dryad dataset/API and pinned-code metadata review",
+    "review_depth": "Reviewed the article abstract and targeted Methods/Results passages surfaced through the PMC search index; direct publisher retrieval returned HTTP 403 and the PMC page presented a bot check, so the full article and supplements were not reviewed. Reviewed the Dryad v6 landing-page data dictionary and rights statement, current Dryad reuse guide, TLS-verified API version/file manifest, and the GitHub README, license metadata, pinned tree and setup/input sections of four R Markdown analyses. No dataset bytes were acquired; no code or model was executed.",
+    "finding": "The paper's abstract reports that learned yellow-naped Amazon contact-call dialects shifted between 2005 and 2016: more sites used multiple call types, formerly distinct northern and southern regions became more acoustically similar, and new variants and greater acoustic variation appeared. The authors place these observations alongside a period of population decline. The version-6 Dryad deposit documents measurements and metadata for surveys in 1994, 2005 and 2016, but not the underlying audio.",
+    "limitations": "The reported temporal association does not show that population decline caused the vocal changes, nor that dialect changes altered receiver behavior, fitness or call meaning. This review is not full text: detailed statistical methods and supplements were not inspected. Dryad v6 lists 2,461 selected calls, 2,461 acoustic-measurement rows and 56 site-year rows; the selection table uses human visual/aural call-type labels, and BirdID is unique only within a site-year, not a stable cross-year identity. Raw audio and roost-count data are not in the deposit. The author README says exact site coordinates are withheld, while site names appear in the metadata; the atlas therefore uses only the existing country-scale Costa Rica locator. The code is MIT-licensed but its current reproducibility is limited by author-specific paths, unpinned dependencies and absent input files. File download failed with HTTP 401/403 in this environment; no bytes were acquired.",
+    "lesson": "This is a useful longitudinal example of vocal culture and dialect structure, not evidence of translation. Preserve call type, recording year, site-year, within-site-year caller ID, acoustic quality/overlap and provenance as distinct fields. Do not randomly split individual calls and claim unseen-site, unseen-year or meaning generalization. A future receiver-response question would need separate behavioral labels and experimental evidence.",
+    "next_review": "If the official Dryad download becomes accessible through the documented public route, first verify the three small tabular files against the v6 SHA-256 manifest and run only a local structure/grouping audit. Before any baseline, obtain full-text/supplement review and qualified independent parrot-bioacoustics and statistical review; keep raw audio, exact sites and training admission out of scope.",
+    "expert_review": "Not independently reviewed by a parrot bioacoustics, conservation or statistical specialist.",
+    "review_locator": "Dahlin et al. (2024), article abstract and targeted Methods/Results passages surfaced by the PMC index; Dryad dataset v6 landing page and data dictionary; API version 305130 and file manifest; Dryad CC0 reuse guide; GitHub README, MIT license and pinned commit 1399b7a2de6354d27b5227bb75de7e285fe3d636. Full paper, publisher supplements and dataset bytes not reviewed.",
+    "reuse": {
+      "status": "Metadata-only; no dataset files acquired",
+      "asset": "Dryad v6 API manifest lists seven files totaling 9,970,731 bytes. The planned structure-only subset is acoustic_measurements.csv (1,136,510 bytes; provider SHA-256 0b84e604399a4af08f2b80da32a8359e2f36fa48c22bd3d34f900c8fa1a11e8d), AmazonVocalCulture_SelectionTableMetadata_31May2023.csv (477,106 bytes; provider SHA-256 11f4e07fb08b35b846488076e0fa2e3ca457050391d43fc1fa3d65ff0d34a9a0) and AmazonVocalCulture_SiteLevelMetadata_31May2023.csv (4,118 bytes; provider SHA-256 da1301dd24e08d54d5d4abec10c5dfd55f68daef94b4abdf5582a479b584e973). The API download returned 401 and the public file stream returned 403; no file bytes were received.",
+      "rights": "The data deposit is CC0-1.0 under Dryad policy and its v6 API; its README says no restrictions on the deposited tables. The article is stated as all rights reserved. The analysis code is separately MIT-licensed. These rights do not extend from one component to another.",
+      "experiment": "Do not treat the deposit as an audio, context, receiver-response or meaning benchmark. If table access later succeeds, perform only a source-checksum and schema/grouping review, protect exact site names, and preserve the exclusion from model training until the independent-review gates pass."
+    },
+    "purpose": "Behavior & communication",
+    "study_snapshot": [
+      [
+        "Question",
+        "Did yellow-naped Amazon contact-call dialect structure change across three surveys spanning 22 years?"
+      ],
+      [
+        "Recording context",
+        "Communal night-roost calls in Costa Rica; the Dryad README identifies surveys in 1994, 2005 and 2016."
+      ],
+      [
+        "Public dataset",
+        "Dryad v6 contains call measurements and metadata. The README reports 2,461 selected calls and 56 site-year rows; original recordings are not included."
+      ],
+      [
+        "Identity and labels",
+        "Call type was assigned by visual/aural classification; BirdID is unique within each site-year, so it cannot serve as a stable individual identifier across survey years."
+      ],
+      [
+        "Code reproducibility",
+        "Pinned MIT R Markdown repository has absolute author-machine paths, unpinned package installation and missing input files; no run was attempted."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-14",
+      "location_status": "mapped",
+      "location_note": "The article and dataset README place the study at multiple sites along Costa Rica's Pacific coast; the README says exact coordinates are not public. Reuse the existing country-scale Costa Rica point and omit site names and recording coordinates.",
+      "locations": [
+        {
+          "place_id": "costa-rica",
+          "role": "study_region",
+          "source_id": 321,
+          "locator": "Dryad dataset abstract and README; article abstract",
+          "basis": "The primary dataset source identifies multiple Pacific-coast Costa Rica sites and explicitly says exact site coordinates are not made public. The public atlas uses only the existing country-scale point."
+        }
+      ],
+      "observation_period": {
+        "label": "Contact-call surveys: 1994, 2005 and 2016",
+        "start_year": 1994,
+        "end_year": 2016,
+        "source_id": 321,
+        "locator": "Dryad dataset abstract and README"
+      }
+    }
   }
 ]
