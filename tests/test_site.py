@@ -515,10 +515,20 @@ class SiteTests(unittest.TestCase):
             self.assertIn('97.9%',rendered)
             self.assertIn('95.9%',rendered)
             self.assertIn('animal-held-out claim',rendered)
+            self.assertIn('current Terms of Use gives an MPS-associated research-service restriction',rendered)
+            self.assertIn('does not separately explain its application to external downloaders',rendered)
+            self.assertIn('https://www.edmond.mpg.de/Terms_of_Use/',rendered)
             self.assertIn('index,follow',rendered)
             canonical=base+'/research/animal-spot-parrot-detection-2022/'
             self.assertIn(canonical,rendered)
             self.assertIn(canonical,(root/'sitemap.xml').read_text())
+            note=next(n for n in load('research') if n['slug']=='animal-spot-parrot-detection-2022')
+            self.assertIn(225,note['source_ids'])
+            resources=json.loads((Path(__file__).resolve().parents[1]/'research'/'resources.json').read_text())['resources']
+            data=next(r for r in resources if r['id']=='animal-spot-monk-parakeet-data-2022')
+            self.assertEqual(data['acquisition'],'metadata_only')
+            self.assertEqual(data['files'],[])
+            self.assertIn('No terms were accepted',data['access'])
 
     def test_dupont_lark_note_is_discoverable_and_keeps_data_rights_separate(self):
         with tempfile.TemporaryDirectory() as d:
