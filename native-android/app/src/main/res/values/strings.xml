@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Talk2Nature Station</string>
+    <string name="permission_disclosure">Before listening, Android asks for microphone access and may ask to show notifications. The ongoing notification includes a Stop button. A session starts only after you tap Start and grant the required access.</string>
 </resources>
