@@ -1467,6 +1467,29 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Parrot choice in live and playback video calls',resource_page)
             self.assertIn('No study dataset, code or media were acquired',resource_page)
 
+    def test_parrot_touchscreen_full_text_review_keeps_phone_and_communication_boundaries(self):
+        note=next(n for n in load('research') if n['slug']=='parrot-touchscreen-ergonomics')
+        self.assertIn('full article text',note['review_depth'])
+        self.assertIn('not a communication test',note['finding'])
+        self.assertIn('not phones',note['limitations'])
+        self.assertIn('does not justify adding playback',note['lesson'])
+        resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='parrot-touchscreen-ergonomics-2024-paper')
+        self.assertEqual(resource['source_ids'],[122])
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertEqual(resource['files'],[])
+        self.assertIn('CC BY-NC-ND 4.0',resource['rights']['license'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research/parrot-touchscreen-ergonomics/index.html').read_text()
+            resources_page=(root/'research/resources/index.html').read_text()
+            self.assertIn('What parrot touchscreen research can—and cannot—tell us',page)
+            self.assertIn('rel="canonical" href="https://fixture.github.io/talk2nature/research/parrot-touchscreen-ergonomics/"',page)
+            self.assertIn('<meta name="robots" content="index,follow">',page)
+            self.assertIn('10.1-inch tablet',page)
+            self.assertIn('No More Angry Birds: Investigating Touchscreen Ergonomics',resources_page)
+
     def test_learning_paths_have_actionable_reviewable_dependencies(self):
         notes={n['slug']:n for n in load('research')}
         paths=load('learning-paths')['paths']

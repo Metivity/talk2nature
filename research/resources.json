@@ -1686,6 +1686,35 @@
       "files": []
     },
     {
+      "id": "parrot-touchscreen-ergonomics-2024-paper",
+      "kind": "paper",
+      "title": "No More Angry Birds: Investigating Touchscreen Ergonomics to Improve Tablet-Based Enrichment for Parrots",
+      "url": "https://eprints.gla.ac.uk/323000/",
+      "version": "CHI 2024; DOI 10.1145/3613904.3642119; published version hosted by the University of Glasgow.",
+      "source_ids": [
+        122
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-14",
+      "task": "Tablet interaction ergonomics and welfare-aware design questions for parrot-operated enrichment; not communication decoding or an acoustic ML benchmark.",
+      "review_depth": "Full published article text, Sections 1–7, reviewed through the conclusion, including participant criteria, ethics, protocol, analysis, results, limitations and design guidelines. Figures were not visually reanalyzed; no data, code, supplements or independent analysis were inspected.",
+      "access": "The University of Glasgow record lists CC BY-NC-ND 4.0 and 'Data Availability Statement: No'. No study data, code or media were acquired; a separate software license was not verified.",
+      "decision": "Metadata-only. Use as a tablet ergonomics and methods comparator for a possible future animal-operated enrichment question. Keep the current Field Companion human-operated and passive; do not infer communication or an acoustic benchmark from touch behavior.",
+      "limitations": "Twenty adult pet parrots entered and 17 completed the trained task. The 10.1-inch tablet and perch setup does not establish phone or universal target-size requirements. Larger targets increased hit rate in this setup, while touch-point precision did not significantly vary by width. The paper does not establish preference, comprehension, call meaning, welfare benefit or communication.",
+      "attribution": "Kleinberger et al. (2024). No More Angry Birds: Investigating Touchscreen Ergonomics to Improve Tablet-Based Enrichment for Parrots. CHI 2024. DOI 10.1145/3613904.3642119.",
+      "rights": {
+        "license": "CC BY-NC-ND 4.0 as listed by the University of Glasgow repository for the published article.",
+        "scope": "Published article only. Study data and code are separate; the repository says no data availability statement and no separate code license was verified.",
+        "evidence_url": "https://eprints.gla.ac.uk/323000/",
+        "conditions": "This catalog contains an original summary and link only. Do not redistribute the PDF or infer rights for study data, code, figures or media.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "cmn-network-response-simard-2025",
       "kind": "paper",
       "title": "Response to questions about common mycorrhizal networks",

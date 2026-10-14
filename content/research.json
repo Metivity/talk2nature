@@ -1728,7 +1728,8 @@
   },
   {
     "slug": "parrot-touchscreen-ergonomics",
-    "title": "Parrot touchscreen design must account for the bird",
+    "title": "What parrot touchscreen research can—and cannot—tell us",
+    "seo_description": "A full review of a CHI 2024 parrot touchscreen study: ergonomics and welfare insights, with limits on animal-facing apps.",
     "taxon": "Parrots",
     "kind": "Animal-computer interaction study",
     "year": "2024",
@@ -1736,14 +1737,14 @@
       122,
       123
     ],
-    "review_depth": "Reviewed the University of Glasgow repository record and abstract, the author lab's project summary, and targeted Methods, Results and Discussion passages surfaced from the repository-hosted published PDF. The 19 MB PDF could not be fetched directly; this is not a full-paper review. Tables beyond the surfaced passages, supplements, raw data and code were not inspected.",
-    "finding": "Seventeen trained pet parrots frequently multi-tapped; larger targets mattered more than spacing in a touchscreen enrichment task, not a communication test.",
-    "limitations": "This was a touchscreen enrichment and motor-task study, not vocal communication, passive recording or a test of semantic understanding. Recruitment selected adult pet parrots comfortable with screens and objects and familiar with balloon-pop-style games; caregivers needed animal-training experience and time. Three birds did not reach testing within the protocol: two did not progress to stable engagement within six weeks and one showed slight aggression. The task involved training, treats, caregiver support and a specific tablet/perch setup. Outcomes and multitapping varied by bird; the pressure comparison included one bird–caregiver pair. The institutional record displays 'Data Availability Statement: No'; raw data/code access was not verified. No independent specialist review or replication has been completed.",
-    "lesson": "If a future Talk2Nature tool is deliberately operated by a parrot, treat it as a separate animal-computer-interaction and welfare project. Candidate design questions include larger adjustable targets, tolerance for repeated taps, short optional tasks and a reliable voluntary exit, evaluated with qualified animal-computer-interaction and avian review. Do not infer preference, comprehension or communication from a touch pattern. This paper does not justify changing the current human-operated passive recorder or serve as an acoustic ML dataset.",
-    "next_review": "Obtain a directly reviewable full paper and inspect the remaining tables and statistical details; verify whether any data or code are available and their terms. Before an animal-operated prototype, request independent animal-computer-interaction and avian-welfare review. Do not use this study as training or evaluation data for the proposed acoustic benchmark.",
-    "reviewed": "2026-10-11",
+    "review_depth": "On October 14, reviewed the full article text from the 16-page published PDF hosted by the University of Glasgow, from the abstract through the conclusion, including the caregiver survey/pilot, participant criteria, ethics, protocol, data cleaning, results, limitations and design guidelines. Figures were not visually reanalyzed; no raw data, code, supplements or independent analysis were available or inspected.",
+    "finding": "In the study's specific 10.1-inch tablet task, 17 trained pet parrots completed 4,720 selected target touches (8,995 counting follow-on taps). Hit rate increased with target width from 19.29% at 40 dp to 47.08% at 130 dp; the study found no significant effect of target distance and no detected difference in touch-point precision by target width. The authors' 300 ms rule classified 45.73% of taps as multi-taps. This is touchscreen-ergonomics evidence, not a communication test.",
+    "limitations": "Twenty adult home-kept parrots entered and 17 completed testing after gradual training; eligibility required prior comfort with screens/objects and balloon-pop-style games, and caregivers needed animal-training experience and time. Two birds did not reach stable engagement within six weeks and one showed slight aggression. Testing used a 10.1-inch Galaxy Tab A at a fixed angle and size-specific perch distances, not phones or an ordinary untrained interaction. Hit-rate differences may reflect larger target area, not improved precision; the exact-width comparison found no precision difference. The proposed touch-and-retreat account is an interpretation of video observations, not a separately quantified mechanism. Caregiver survey responses are self-report. The University of Glasgow record lists CC BY-NC-ND 4.0 and 'Data Availability Statement: No'; raw data and a separate code license were not established. No independent specialist review or replication has been completed.",
+    "lesson": "Keep the current Field Companion human-operated and passive. A future parrot-operated enrichment interface would be a separate animal-computer-interaction project requiring qualified avian/ACI and welfare review, individual and species-aware testing, a voluntary exit, short flexible sessions and caregiver support. The 100–130 dp target range is specific to this tablet/perch setup and must not be treated as a phone or universal species specification. Do not infer preference, comprehension, call meaning or communication from a touch; this paper is not an acoustic ML dataset and does not justify adding playback to the current app.",
+    "next_review": "Seek independent avian and animal-computer-interaction review of the study's design implications and welfare requirements. Check for a later correction or newly released data/code record before any reuse; contact authors only with separate authorization. Do not prototype an animal-operated interface without an approved welfare protocol, hardware-specific feasibility work and a safe voluntary-exit design.",
+    "reviewed": "2026-10-14",
     "expert_review": "Not yet independently reviewed by an animal-computer-interaction or avian specialist.",
-    "review_stage": "Targeted methods and results reviewed",
+    "review_stage": "Full published article text reviewed",
     "year_label": "Source year",
     "purpose": "Animal-computer interaction",
     "study_snapshot": [
@@ -1752,8 +1753,12 @@
         "20 adult home-kept pet parrots were recruited; 17 reached testing after gradual training. Eligibility included screen/object comfort and prior balloon-pop-style app experience; caregivers had animal-training experience and time."
       ],
       [
+        "Device and setting",
+        "A 10.1-inch Galaxy Tab A was set at a 70-degree angle on a stand in the bird's familiar home setting. Perch distance varied by bird-size category; this was a tablet study, not a phone test."
+      ],
+      [
         "Protocol",
-        "A 12-caregiver survey and five-bird pilot informed a three-month study. Birds learned a stable target-touch task over up to six weeks; two did not engage enough to progress and one showed slight aggression."
+        "A 12-caregiver survey and five-bird pilot informed a three-month study. Gradual training lasted up to six weeks. Caregivers limited work to at most three sessions per day and 30 minutes per day; the 17 completers were those who reached stable engagement."
       ],
       [
         "Task",
@@ -1765,14 +1770,18 @@
       ],
       [
         "Observed result",
-        "The authors report 4,720 target touches (8,995 including follow-on taps) across 892 series; 45.73% met their 300 ms multi-tap definition. Larger targets mattered more than spacing; the paper reports an approximate threshold near 100 pd / 26 mm on this setup, not a universal standard."
+        "Across 892 series, hit rate rose from 19.29% at 40 dp to 47.08% at 130 dp, while target distance was not significant and touch-point precision did not differ by target width. The study's 300 ms rule classified 45.73% as multi-taps. A larger touch target improved hit rate in this setup; it did not establish a universal 100–130 dp phone requirement."
+      ],
+      [
+        "Interpretation and limits",
+        "The authors propose a touch-and-retreat explanation for low Fitts-law fit based on video observations; this behavior was not separately quantified. A caregiver survey and perceived enrichment are not independent measures of animal preference or communication."
       ],
       [
         "Data and rights",
-        "The Glasgow record lists the paper as CC BY-NC-ND 4.0 and displays 'Data Availability Statement: No'. No raw dataset or software package was inspected; separate availability is unverified."
+        "The University of Glasgow record lists CC BY-NC-ND 4.0 and 'Data Availability Statement: No'. No raw data, separate software package or code license was identified or inspected."
       ]
     ],
-    "review_locator": "University of Glasgow abstract and author-lab project summary; targeted indexed passages from the published PDF, including Methods 4.1–4.5, Results 5.1–5.2 and Discussion. The full PDF was not directly opened."
+    "review_locator": "University of Glasgow published 16-page version: article Sections 1–7, including survey and pilot, Methods 4.1–4.5, analysis/results 5.1–5.5, limitations and design guidelines in Section 6, and conclusion. Full article text was reviewed; figures were not visually reanalyzed and no raw data or code were inspected."
   },
   {
     "slug": "budgerigar-vocal-sociality-data",
