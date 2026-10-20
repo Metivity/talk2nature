@@ -1,6 +1,6 @@
 # University evaluation brief
 
-Updated October 14, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
+Updated October 20, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
 
 ## Start with the browser; go deeper only if useful
 
@@ -40,6 +40,12 @@ The question is deliberately modest: **does this help a researcher preserve and 
 | Student or class | Complete a bounded, supervised evaluation or a well-scoped issue with a learning objective | Do not treat students as unpaid substitute maintainers; agree supervision and appropriate credit before work starts |
 
 An independent evaluator can report a failure without endorsing the project. Public issue reports must contain only information suitable for public release; keep private institutional information out of them. No lab, university or contributor will be named as a partner or quoted without permission.
+
+## If you are asking about a network of phones and labs
+
+There is no shared Talk2Nature recording network or university cloud workspace today. The public tools are local-first, and the private metadata workbench is owner-only and synthetic-only. The project is inviting workflow review, not research-data intake. We have written a staged proposal for keeping real study files under institutional control and considering a shared discovery catalog only if several groups demonstrate the same need: [Talk2Nature network and outreach plan](NETWORK_AND_OUTREACH.md).
+
+Bird-sound identification, archival media submission and biodiversity metadata publishing already have established tools and communities. A university conversation should therefore start by comparing one existing workflow and finding a concrete gap in context, provenance, annotation or reproducibility—not by asking a lab to move its recordings to a new service. This remains a product hypothesis to test.
 
 ## Plausible first conversations
 
