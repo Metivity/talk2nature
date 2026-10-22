@@ -2,7 +2,7 @@
 
 Updated October 23, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
-The current research decision is recorded in the [candidate run card](BENCHMARK_CANDIDATE_RUN_CARD.md): CEB detection and parrot caller-identity are separate reproduction candidates, and neither is currently approved as a communication benchmark. AutoResearch remains **NOT READY**.
+The current research decision is recorded in the [candidate run card](BENCHMARK_CANDIDATE_RUN_CARD.md): bat interaction-context prediction is the closest current ML candidate to a communication question, while CEB detection and parrot caller-identity remain separate tasks. The bat candidate is not ready for reproduction until data joins/groups and rights are verified and independent reviewers approve the design. AutoResearch remains **NOT READY**.
 
 ## Choose one route
 

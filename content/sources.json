@@ -1763,10 +1763,10 @@
   {
     "id": 173,
     "title": "Andreas Triantafyllopoulos public GitHub profile and repository list",
-    "description": "Author-linked GitHub account checked as a bounded search for the promised EUSIPCO bat-context code and split files.",
+    "description": "Author-linked GitHub profile and owner repository inventory rechecked as a bounded search for the promised EUSIPCO bat-context code and split files.",
     "url": "https://github.com/ATriantafyllopoulos?tab=repositories",
-    "checked": "2026-10-12",
-    "origin": "The author's personal website links to this public GitHub account. The visible repository page lists 13 public repositories; none visibly matched the EUSIPCO 2024 bat-context paper. This limited profile check does not establish that code is absent from coauthor, lab, organization, archival or unindexed locations.",
+    "checked": "2026-10-23",
+    "origin": "The author’s personal website links to this public GitHub account. On 2026-10-23 the live owner-repository API listed 13 public repositories, newest updated 2025-10-20; a GitHub repository search for the exact paper title returned no match. This does not rule out coauthor, lab, archival or unindexed releases, and a Zenodo API search was inaccessible from this environment.",
     "review_url": "https://atriantafyllopoulos.github.io/",
     "review_url_label": "Author personal site linking to public GitHub profile"
   },
