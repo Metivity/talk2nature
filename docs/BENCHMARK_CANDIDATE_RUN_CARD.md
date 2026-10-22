@@ -1,12 +1,12 @@
-# Candidate run card: bird detection or parrot identity?
+# Candidate run card: bat context, bird detection, or parrot identity?
 
-**Status: review proposal only. No data acquisition, model execution, or AutoResearch run is approved.** This card compares two distinct research exercises; it does not claim they measure the same task.
+**Status: review proposal only. No new data acquisition, model execution, or AutoResearch run is approved.** This card compares three distinct research exercises; it does not claim they measure the same task.
 
 ## Decision
 
-Do not treat either candidate as a first animal-communication benchmark. CEB can support a narrow bird sound-event detection reproduction and help validate research software. The monk-parakeet work is a closer communication-science comparator, but its published analysis concerns acoustic identity/convergence and does not test listener comprehension or call meaning. The project's behavior-context question still needs a rights-cleared dataset with independently observed, time-linked behavior and suitable animal-held-out evaluation.
+For the first communication-adjacent ML study, **Egyptian fruit-bat interaction-context prediction is the best fit currently documented in the resource library**. Its labels come from video-observed social context and its 2024 paper reports subject-independent test folds. This is a context-prediction task, not a test of receiver comprehension or call meaning. It is not ready to reproduce: Talk2Nature has not verified the paper's exact folds or the audio-to-annotation/session joins, and it still needs a bat-behavior specialist and independent ML/evaluation review.
 
-If the independent scientific reviewer endorses a small engineering exercise, **CEB soundscape detection is the better candidate to assess first**: the soundscape component has a clear dataset-level CC BY 4.0 declaration and strong event labels in the published evaluation subset. This is a provisional engineering recommendation, not a claim that its data, split or baseline are ready. Keep the parrot study as a separate method-reproduction candidate.
+Keep the other candidates separate. CEB is a useful bird sound-event detection and research-software exercise, subject to its group and rights checks; it is not the best dataset for a communication question. The monk-parakeet work is a caller-identity/convergence reproduction, not a meaning test. For the public phone-based observation experience, the separate provisional plan remains one parrot species (budgerigars if access and an avian researcher are available); a lab bat dataset does not make bats a suitable first phone cohort.
 
 ## Candidate A — CEB sound-event detection
 
@@ -36,23 +36,38 @@ If the independent scientific reviewer endorses a small engineering exercise, **
 
 **Proposed resource ceiling.** If rights and code scope are cleared, CPU only, no cloud or GPU, at most 2 CPU-hours, 8 GB RAM and 5 GB scratch space. This cap is provisional and cannot override a data/rights or scientific stop condition.
 
+## Candidate C — Egyptian-fruit-bat interaction-context prediction
+
+**Question.** Can audio predict video-coded interaction context for held-out bats, and does it add information beyond class frequency and recording-condition baselines? This would reproduce or challenge a published context-prediction result. It would not test whether a bat understood a signal or what a call “means.”
+
+**Exact source and current inspection.** Prat et al.'s 2017 dataset descriptor reports 293,238 short WAV files recorded at 250 kHz and 91,080 annotations derived from video. The labels include emitter, addressee, context and actions before and after the vocal interaction. Talk2Nature has an aggregate-only audit of the complete annotation-table item: counts match the paper's table, but the table contains 87,986 distinct file IDs for 91,080 rows, so rows are not independent recordings. The associated `Metadata.pdf` was reviewed. The 3.05 GB audio archive and the separate 31.6 MB `FileInfo.csv` are not acquired; file-to-recording/session joins and the study's filtered subset remain unverified.
+
+**Published result and split.** Triantafyllopoulos et al. (EUSIPCO 2024) retain 35,074 vocalizations across 11 context classes. They report three subject-independent development/test folds; within each development fold, their 70/30 training/validation split is stratified by label but not identity. Pooled unweighted average recall is 22.4% for an SVM, 27.7% for ResNet-50 and 33.3% for EfficientNet-B0, versus about 9% chance for 11 classes. The reported intervals bootstrap individual examples, not animal or session clusters. These are published results, not a Talk2Nature reproduction. The exact partitions and any matching code/model release have not been verified.
+
+**Rights and boundaries.** The Figshare API declares CC0 for the individual annotation item and for the separate audio archive item; this records repository declarations, not independent legal advice or a review of archive contents. Keep the paper, annotations, metadata PDF, audio archive, code and weights as separate assets. The arXiv v1 paper manuscript has its own CC BY-NC-ND terms; do not republish it. No bat audio or model weights have been acquired, and the existing annotation receipt explicitly keeps `training_admitted` false. The source dataset used specialized ultrasonic microphones at 250 kHz, so it is not a drop-in dataset for ordinary phone microphones.
+
+**Main validity risks.** The full annotation audit finds marked class imbalance; the paper reports zero grooming recall and discusses possible annotation ambiguity, pup development and chamber acoustics. Some contexts are associated with different chamber setups. A subject-independent split is a useful safeguard, but its adequacy cannot be verified without the exact fold membership and joins. Because an interaction can contain both an emitter and addressee, any new split must check both roles, animal pairs, sessions, dates, channels, treatments and chamber conditions. A metadata-only model and shuffled-label controls are needed to test nuisance shortcuts.
+
+**Evaluation proposal.** First verify provenance, rights, file IDs and the paper's exact filtered population without opening test audio or labels beyond the documented release. Ask an independent bat-bioacoustics/behavior reviewer and an ML evaluation reviewer to assess the estimand and grouping. If they approve a bounded reproduction, compare class-prior and recording-condition baselines with a simple acoustic baseline and the published model family; report per-class recall, macro UAR, clustered uncertainty and all exclusions. Keep the published folds as a historical reproduction target, not a new locked test. A new claim needs an animal/pair/session-held-out set that remains unopened until the analysis is frozen. Define a compute and storage cap only after the selected, rights-cleared audio subset and splits are known; do not fetch the full archive by default.
+
 ## Shared readiness gates
 
 No run begins until all applicable gates have evidence:
 
-1. An independent avian-bioacoustics reviewer and a statistical/ML evaluation reviewer approve the exact question, sampling unit and claim boundary. For the parrot candidate, reviewer experience should include parrot vocal behavior or the specific convergence method.
+1. A species-appropriate independent reviewer and a statistical/ML evaluation reviewer approve the exact question, sampling unit and claim boundary. Candidate A needs passive-acoustics expertise; Candidate B needs parrot vocal-behavior or convergence expertise; Candidate C needs bat-bioacoustics/behavior expertise.
 2. The exact versioned files, source checksums, item/file terms, attribution, privacy, retention and permitted-use scope are documented. Dataset, paper, code, dependencies and model weights remain separate assets.
 3. The annotation guide, missingness, source provenance and any reliability evidence are reviewed. A model prediction is never used to create its own evaluation label.
 4. The acquisition groups and near-duplicate/source-overlap risks are reviewed. Train/validation/test memberships are frozen and hashed before tuning; test access is controlled and logged. If no defensible independent holdout exists, the result is labeled a reproduction or exploratory analysis, not a benchmark.
 5. A baseline, primary/secondary metrics, uncertainty procedure, seed schedule, compute cap, success/stop criteria and report template are registered before any model choice.
 6. A local-only environment is reviewed for bounded data access, no credentials, no upload path and no animal playback. Preserve all failures and discarded trials if a later run is approved.
 
-**Reviewer needed:** an independent avian bioacoustics researcher with passive-acoustic evaluation experience; add a parrot vocal-communication specialist for Candidate B. No reviewer is currently assigned and no outreach has been sent.
+**Reviewer needed:** a bat-bioacoustics or animal-behavior specialist plus an independent ML/statistical-evaluation reviewer for Candidate C; an avian passive-acoustics reviewer for Candidate A; add a parrot vocal-communication specialist for Candidate B. No reviewer is currently assigned and no outreach has been sent.
 
-**Current result:** none. No CEB or parrot media were acquired, no model or paper analysis was executed, no independent reproduction occurred, and AutoResearch remains **NOT READY**. The next safe action is a metadata/grouping review of the CEB soundscape tables under their stated CC BY terms, followed by independent review of whether the resulting group structure supports this limited detection exercise. This card does not authorize that acquisition or any model run.
+**Current result:** the bat paper and aggregate annotation metadata have been reviewed, and the annotation table is held locally outside Git; no bat audio was acquired, no model was executed and no result was reproduced. No independent reviewer has been contacted. The next highest-value gate is independent review of the bat estimand and the minimum artifacts needed to verify joins and groups, before any additional acquisition. CEB's metadata/grouping audit remains a separate detector-engineering task. AutoResearch remains **NOT READY**. This card authorizes no new acquisition or model run.
 
 ## Sources and project records
 
 - [CEB v1.1 official record](https://zenodo.org/records/21821133) and [Talk2Nature's metadata-only CEB assessment](https://metivity.github.io/talk2nature/research/central-european-birds-dataset-v1-1/).
 - [Monk-parakeet paper](https://doi.org/10.1371/journal.pcbi.1011231), [Figshare v2 dataset](https://doi.org/10.6084/m9.figshare.22582099.v2), and [pinned GitHub analysis release](https://github.com/gsvidaurre/identity-information-post-introduction/tree/v1.0.0).
+- [2017 Egyptian-fruit-bat dataset descriptor](https://doi.org/10.1038/sdata.2017.143), [EUSIPCO 2024 context-prediction paper](https://doi.org/10.23919/EUSIPCO63174.2024.10715475), [Talk2Nature's bat-context review](https://metivity.github.io/talk2nature/research/fruit-bat-context-ml-2024/), and [focused methods-review request](BAT_CONTEXT_REVIEW.md).
 - [Talk2Nature AutoResearch readiness protocol](AUTORESEARCH_ADAPTATION.md), [current model/data decision](MODEL_DATA_DECISION.md), and [collection/rights log](COLLECTION.md).

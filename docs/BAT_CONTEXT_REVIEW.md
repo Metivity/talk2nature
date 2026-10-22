@@ -1,6 +1,6 @@
 # Focused methods review: bat interaction-context prediction
 
-Updated October 13, 2026. This is a bounded request for independent scientific review of a published evaluation design. It is not a claim that Talk2Nature has translated an animal call, reproduced the paper, or received expert approval.
+Updated October 23, 2026. This is a bounded request for independent scientific review of a published evaluation design. It is not a claim that Talk2Nature has translated an animal call, reproduced the paper, or received expert approval.
 
 ## The question
 
@@ -11,6 +11,7 @@ Talk2Nature has not inspected the paper's exact fold files. The training/validat
 ## Evidence available for this review
 
 - The peer-reviewed [EUSIPCO 2024 paper](https://doi.org/10.23919/EUSIPCO63174.2024.10715475) and its [arXiv v1 author manuscript](https://arxiv.org/abs/2406.06332v1) were reviewed. The paper reports 35,074 retained calls, 11 context classes, three subject-independent development/test folds, and pooled unweighted average recall of 33.3% for EfficientNet-B0. These are reported results, not a Talk2Nature reproduction.
+- A bounded public-code check on October 23 re-read the first author's live GitHub owner-repository inventory (13 repositories; newest updated October 20, 2025) and searched GitHub repositories for the exact paper title; no matching repository appeared. A Zenodo API search was inaccessible in this environment, not a negative result. This does not rule out a coauthor, lab, archive or unindexed release; no code or split files were acquired.
 - The original [2017 dataset descriptor](https://www.nature.com/articles/sdata2017143), five-page metadata PDF, and aggregate-only audit of the separate video-derived annotation table were reviewed. The full annotation table has 91,080 rows; it is not the paper's filtered 35,074-call subset. The aggregate report contains no raw rows or subject IDs and cannot verify the paper's folds.
 - The separately cataloged [FileInfo.csv API record](https://api.figshare.com/v2/articles/4555897) describes a 31,574,701-byte file with no upstream MD5. That file has not been acquired. Its necessity for a particular split audit has not been established.
 - The exact paper partitions, audiovisual archive, model weights and paper-specific code have not been verified or run. A pinned 2021 Earth Species Library notebook is relevant historical preprocessing documentation, not a reproduction of the 2024 paper.
