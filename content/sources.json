@@ -3377,5 +3377,53 @@
       "dataset": "The pinned LICENSE states CC BY-NC-SA 4.0 for the dataset.",
       "scope": "Dataset repository only. The license does not establish rights, consent or privacy terms for the original source videos, and no separate baseline-code license was identified in the reviewed README/license."
     }
+  },
+  {
+    "id": 328,
+    "title": "El Silencio labeled multi-taxonomic dataset, Zenodo record",
+    "description": "Version 1 deposit of 770 one-minute multi-taxonomic soundscapes and strong acoustic-event labels from the Middle Magdalena region, Colombia.",
+    "url": "https://zenodo.org/records/17064353",
+    "checked": "2026-10-22",
+    "origin": "Queried the official Zenodo API metadata on 2026-10-22. It identifies publication date 2025-09-05, the v1 landing page, a record-level CC BY 4.0 license, nine files totaling 3,546,609,904 bytes, and provider-reported MD5 values. No file bytes were downloaded or locally hashed. The rendered Zenodo page reports a 109.8 GB data-volume statistic, which does not match the listed-file API total; this discrepancy is unresolved.",
+    "rights": {
+      "dataset": "The official Zenodo API declares CC BY 4.0 at record level.",
+      "scope": "The record-level declaration covers the deposited dataset as represented by the provider. It does not independently verify rights, consent, privacy or sensitive-location conditions for source recordings."
+    }
+  },
+  {
+    "id": 329,
+    "title": "El Silencio unlabeled soundscapes, Zenodo record",
+    "description": "Separate Zenodo deposit linked by the dataset repository for the broader, unlabeled soundscape collection.",
+    "url": "https://zenodo.org/records/17122738",
+    "checked": "2026-10-22",
+    "origin": "Queried the official Zenodo API metadata on 2026-10-22. It identifies publication date 2025-09-15, record-level CC BY 4.0, 61 ZIP files totaling 49,620,235,222 bytes, and provider-reported MD5 values. No audio file was downloaded or locally hashed. The repository README at its reviewed commit describes 10,980 one-minute soundscapes across 61 sites.",
+    "rights": {
+      "dataset": "The official Zenodo API declares CC BY 4.0 at record level.",
+      "scope": "The record-level declaration covers the deposited dataset as represented by the provider. It does not independently verify rights, consent, privacy or sensitive-location conditions for source recordings."
+    }
+  },
+  {
+    "id": 330,
+    "title": "El Silencio dataset repository at a pinned GitHub commit",
+    "description": "Dataset README and license pinned to commit 5e2f7826c908fec3018740068bbdeda6c6977f35.",
+    "url": "https://github.com/redecoacustica/elsilencio-dataset/tree/5e2f7826c908fec3018740068bbdeda6c6977f35",
+    "checked": "2026-10-22",
+    "origin": "Resolved the public main reference to commit 5e2f7826c908fec3018740068bbdeda6c6977f35, then read the README and LICENSE at that exact revision. The README describes 10,980 unlabeled soundscapes at 61 sites and links the separate Zenodo record 17122738; the LICENSE is MIT. The visible repository inventory contains a README, Spanish annotation protocol, image and license, not an executable analysis package. The Spanish protocol PDF was not inspected.",
+    "rights": {
+      "repository": "MIT at the pinned repository revision.",
+      "scope": "Repository materials covered by its LICENSE only. This MIT declaration does not license the separately deposited Zenodo recordings or labels."
+    }
+  },
+  {
+    "id": 331,
+    "title": "BirdCLEF+ 2025 multi-taxonomic overview paper",
+    "description": "Conference overview of the BirdCLEF+ 2025 sound-identification challenge and El Silencio dataset.",
+    "url": "https://ceur-ws.org/Vol-4038/paper_232.pdf",
+    "checked": "2026-10-22",
+    "origin": "Reviewed the primary paper citation and indexed dataset excerpt. The full PDF was not reviewed because the available reader rejected its 24 MB payload. The excerpt describes about 15,000 strong labels and 11,340 unlabeled soundscapes across 63 sites; the current pinned repository README and separate Zenodo deposit describe 10,980 across 61 sites. The difference is not explained by the records reviewed.",
+    "rights": {
+      "paper": "Not independently verified in this review; no article text or figures were copied.",
+      "scope": "Paper only. It does not grant rights to separate dataset recordings, annotations, code or model weights."
+    }
   }
 ]

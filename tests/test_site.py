@@ -438,6 +438,48 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(mapped['locations'][0]['place_id'],'costa-rica')
             self.assertEqual(mapped['observation_period']['start_year'],2007)
 
+    def test_el_silencio_stays_a_metadata_only_detection_candidate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='el-silencio-multitaxon-dataset-2025')
+        self.assertEqual(note['source_ids'],[328,329,330,331])
+        self.assertIn('not a communication or meaning benchmark',note['finding'])
+        self.assertIn('11,340',note['limitations'])
+        self.assertIn('10,980',note['limitations'])
+        self.assertIn('3,546,609,904 bytes',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+
+        resources={r['id']:r for r in json.loads((project_root/'research/resources.json').read_text())['resources']}
+        ids={'elsilencio-birdclefplus-overview-2025','elsilencio-labeled-audio-v1','elsilencio-unlabeled-soundscapes-2025'}
+        self.assertEqual({key for key in resources if key.startswith('elsilencio-')},ids)
+        for key in ids:
+            self.assertEqual(resources[key]['acquisition'],'metadata_only')
+            self.assertEqual(resources[key]['files'],[])
+        labeled=resources['elsilencio-labeled-audio-v1']
+        self.assertIn('CC BY 4.0',labeled['rights']['license'])
+        self.assertIn('not independently establish source-recording rights',labeled['rights']['scope'])
+        self.assertEqual(resources['elsilencio-unlabeled-soundscapes-2025']['version'],
+                         'DOI 10.5281/zenodo.17122738; published 2025-09-15')
+        self.assertEqual(resources['elsilencio-birdclefplus-overview-2025']['rights']['research_use'],'unresolved')
+
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/el-silencio-multitaxon-dataset-2025/index.html').read_text()
+            self.assertIn('do not supply independently observed behavior',page)
+            self.assertIn('https://zenodo.org/records/17064353',page)
+            self.assertIn('https://zenodo.org/records/17122738',page)
+            self.assertIn('content=\"index,follow\"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/el-silencio-multitaxon-dataset-2025/',page)
+            self.assertIn('/talk2nature/research/el-silencio-multitaxon-dataset-2025/',(root/'sitemap.xml').read_text())
+            reading=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('el-silencio-multitaxon-dataset-2025',reading)
+            atlas=json.loads((root/'research/atlas/catalog.json').read_text())
+            mapped=next(r for r in atlas['records'] if r['id']==note['slug'])
+            self.assertEqual(mapped['location_status'],'pending')
+            self.assertEqual(mapped['locations'],[])
+
     def test_budgerigar_playback_note_bounds_trained_vocal_output(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

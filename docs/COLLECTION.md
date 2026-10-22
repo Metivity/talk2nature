@@ -369,3 +369,15 @@ The pinned GitHub repository's MIT license covers its challenge-site software/do
 ## October 14 — Dryad v6 metadata-only review
 
 The official API identifies dataset version 6 (version record 305130; publication date 2024-07-15), reports CC0-1.0, and lists seven files totaling 9,970,731 bytes with provider SHA-256 digests. The small acoustic-measurement, selection-table and site-level CSVs total about 1.62 MB and are candidates only for a future local structure/grouping audit. The API file-download endpoint returned HTTP 401 and the public file-stream route returned HTTP 403 in this environment. No workaround was used and no file bytes were retrieved. The files remain metadata-only and outside data/external/; the deposit has no raw audio. See yellow-naped-amazon-vocal-culture-data-v6 in the resource catalog.
+
+## October 22 — El Silencio multi-taxonomic dataset fit and release reconciliation
+
+**Question:** is there a useful public multi-animal recording set for Talk2Nature, and can it answer a communication question?
+
+**Evidence reviewed:** the official Zenodo API metadata for labeled record 17064353 and its separate unlabeled record 17122738; the repository README and MIT LICENSE pinned to commit 5e2f7826c908fec3018740068bbdeda6c6977f35; and the indexed dataset excerpt from the 2025 CEUR overview paper. The full 24 MB paper and Spanish annotation protocol were not reviewed. No recording, label table, protocol PDF or code was downloaded; no provider MD5 was checked against local bytes.
+
+**Finding:** the labeled record describes 770 one-minute soundscapes (12.8 hours) and about 15,000 acoustic-event boxes across birds, mammals, amphibians and insects. It is a credible candidate for testing multi-taxonomic event ingestion and detection. It does not contain independently reviewed behavior or receiver-response evidence in this catalog review, so it is not a context, meaning or communication benchmark.
+
+**Release and rights decision:** the 2025 overview excerpt says 11,340 unlabeled soundscapes across 63 sites. The current pinned README points to a separate Zenodo record with 10,980 recordings at 61 sites. The records do not explain the difference; keep the releases separate. Zenodo API metadata declares CC BY 4.0 for each deposit. The labeled API file manifest contains nine files totaling 3,546,609,904 bytes, while the rendered Zenodo page reports 109.8 GB; this discrepancy is unresolved. The separate unlabeled record contains 61 ZIP files totaling 49,620,235,222 bytes. The GitHub MIT notice applies to repository materials, not automatically to Zenodo media. No data were admitted or acquired.
+
+**Next gate:** review the annotation protocol, source-media provenance/privacy, event-label method and site-level split with a qualified bioacoustics reviewer. Only then decide whether a bounded, site-held-out detector baseline answers a useful engineering question. The first context/communication benchmark remains subject to its separate independently observed behavior, reviewer, grouped split, baseline and locked-test gates. The source-linked note and three resource records are metadata-only.
