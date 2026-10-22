@@ -263,3 +263,13 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Check:** opened the live `/mobile/` page in desktop Chrome mobile emulation at 320 × 740 and 390 × 844 CSS pixels. At both widths, the feedback helper produced a visible, reviewable report from invented QA entries; document width matched the viewport; and the email action remained a `mailto:` draft. The browser reported no page errors or non-GET requests. At 320 × 740, followed the practice link into Station, started the synthetic rehearsal, and confirmed the microphone-call stub stayed at zero. The page identified the session as synthetic; no recording, email, issue or upload was created.
 
 **Limit:** this verifies the published software path with maintainer-entered test text, not a first-time-user outcome, actual email-client behavior, screen-reader use or physical iPhone/Android behavior. No participant feedback was collected. Independent novice and physical-device review remain the next usability gates.
+
+## October 23 follow-up: progressive disclosure on the Field Companion home
+
+**Question:** can a first-time visitor choose a simple observation path before encountering researcher-oriented utilities?
+
+**Change:** kept the two hero actions and three direct observation paths together—outdoor, familiar animal and companion parrot. Moved the phone rehearsal, saved-moment comparison, audio review and invented-scene practice into a native, closed-by-default “More tools” disclosure. All four remain reachable; this changes their order and visibility, not their underlying behavior.
+
+**Check:** all 144 Python tests and 115 Node tests passed. The local noindex build produced 114 pages plus 404; the site checker passed 115 HTML pages and 5,655 links. In the local browser preview, the 480 × 844 CSS-pixel viewport had no horizontal overflow, displayed three core paths before the collapsed disclosure, and exposed all four optional routes when expanded. The disclosure was keyboard-accessible through native `<details>/<summary>` semantics. No microphone was opened and no animal or participant data was used.
+
+**Limit:** this browser backend enforced a 480-pixel minimum for the measured preview, so this pass does not establish 320- or 390-pixel behavior, physical-device usability, screen-reader output or independent novice comprehension. Those remain open. This is a local candidate; it has not been deployed.
