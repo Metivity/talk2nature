@@ -2469,3 +2469,13 @@ Moved four optional workflows—phone rehearsal, moment comparison, audio review
 **Unverified and limits:** the browser bridge did not activate the native “More tools” disclosure with click, Enter, Space or its exposed accessibility Expand action. This is inconclusive and not a confirmed product defect; verify it on a supported browser/device. The pass is emulated Chromium only and does not validate a physical phone, screen reader, microphone capture, interruption recovery, export/reopen, or first-time-user comprehension. No code or deployment changed; no animal or participant data was used.
 
 **Next step:** check the disclosure and export/reopen path on a physical iOS or Android device, then obtain a first-time-user walkthrough. Keep those usability gates open until observed. AutoResearch remains **NOT READY**.
+
+## October 23 — live non-bird setup check
+
+At 320 × 740 CSS pixels on the deployed Station page, the observer-declared species-group menu accepted “Other mammal”; the selection appeared in the setup summary and the document stayed 320 pixels wide. The page remained Ready, with no microphone permission, session, recording or saved data. This confirms one non-bird setup path in browser emulation only; it does not test animal identification, screen readers, physical devices or novice comprehension.
+
+## October 23 — add the latest bioacoustic benchmark resource
+
+Added a source-grounded research note and metadata-only resource records for the October 7 BEANS-Next/ROOTS preprint. The note separates the held-out evaluation benchmark (real recordings with existing annotations) from the training resource (curated archives, metadata-derived text, audio-derived information and synthetic scenes), and records the paper's limits, rights uncertainty and no-translation boundary. Updated the model/data decision and collection guide. No audio, code or model was downloaded or run; this is a targeted review, not an independent reproduction. AutoResearch remains **NOT READY**.
+
+**Candidate checks:** 144 Python tests, 115 Node tests and 151-resource catalog validation passed. The explicit-origin public build produced 115 pages plus 404; the site checker passed 116 HTML pages, 5,815 links and 115 reachable public pages. The generated note has its research title/description, self-canonical, `index,follow` and sitemap entry. Browser review showed the page at 2,560-pixel desktop and 480 × 844 CSS-pixel responsive viewports without horizontal overflow. This browser backend enforces a 480-pixel minimum, so narrower, physical-device and assistive-technology behavior remain unverified. This is a local release candidate; live deployment and Search Console processing were not checked in this pass.

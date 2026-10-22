@@ -246,6 +246,36 @@
     "review_locator": "ICLR 2025 paper: model and training sections; BEANS-Zero dataset/evaluation; Tables 3–6; comparison with BirdNET/Perch; conclusion and risk discussion. Marincione et al. arXiv v2: Sections 2–4 and “Limitations and Future Work.” Official documentation: April 9, 2026 v1.1 demo update and Quick Start “Experimental Tasks”/“Limitations.” Hugging Face cards: row count, schema, dataset license labels and listed size. GitHub: README/root inventory and LICENSE status as recorded in sources 208–211. BEANS-Zero: pinned dataset README composition/licensing, live Hugging Face file inventory; official beans-zero README and pyproject.toml at pinned repository commit."
   },
   {
+    "slug": "beans-next-roots",
+    "title": "BEANS-Next and ROOTS: a broad bioacoustics benchmark, not a translation dataset",
+    "taxon": "Machine learning · bioacoustics",
+    "kind": "Benchmark and training resource",
+    "year": "2026",
+    "source_ids": [
+      53,
+      334
+    ],
+    "review_depth": "Targeted review of the October 2026 primary preprint: abstract, task taxonomy, data construction, benchmark split description, reported results/limitations, risks and reproducibility statement; also the official project page and Hugging Face cards. Full appendices, individual data rows, source licenses, code and model artifacts were not audited or acquired. No benchmark was run.",
+    "finding": "BEANS-Next evaluates 45 tasks with 37,718 examples across acoustic perception, biological-category recognition, scene understanding and in-context learning. ROOTS is a separate training resource reported to contain 44 million audio-language pairs from 6.5 million distinct audio clips. The authors describe BEANS-Next evaluation examples as real recordings paired with human- or dataset-provided annotations; text templates and LLMs format the supported annotations into prompts rather than creating new benchmark labels. They state the benchmark audio and derivatives are disjoint from ROOTS and use held-out species where applicable. ROOTS combines curated recordings and structured/free-text metadata with audio-derived information and synthetic audio scenes. The paper reports capability gains after tier-specific fine-tuning, while its overview still identifies weaknesses in open-ended description, counting and transfer to real-world recordings.",
+    "limitations": "This is a new arXiv preprint; review and reproduction status were not independently established. It benchmarks predictions against annotations, not whether an animal understood a signal or what it meant. ROOTS includes metadata-grounded LLM-generated text and synthetic scenes; those are useful supervision but not additional observed animal conversations. The authors flag taxonomic/geographic bias and possible hallucinated species, behavior or counts. ROOTS' Hugging Face card reports license `other`, and its source audio is not redistributed; each input's rights and provenance need separate review. No resource is admitted to Talk2Nature training or commercial use.",
+    "lesson": "The useful ML lesson is to broaden supervision beyond species names while keeping each claim tied to the evidence that produced its label. A metadata-generated question can teach a model to retrieve or predict a documented fact; it cannot by itself validate a biological message. For Talk2Nature, use BEANS-Next as a capability map and ROOTS as a methods reference, then test one narrow, source-cleared task with controls and independent biological review.",
+    "next_review": "Audit the current BEANS-Next and ROOTS component-level data and code terms before any execution. For the project's communication-adjacent study, preserve the separately documented bat context candidate and resolve its specialist, file-join and grouped-evaluation gates; do not substitute a broad audio-language benchmark for receiver-response evidence. Keep AutoResearch NOT READY until the existing admission, reviewer, split, metric and locked-test gates pass.",
+    "reviewed": "2026-10-23",
+    "expert_review": "No independent Talk2Nature reproduction or specialist review of this preprint or its underlying artifacts has occurred.",
+    "review_stage": "Targeted primary-paper and official metadata review; no data acquisition, model run or independent reproduction",
+    "year_label": "October 2026 arXiv preprint; review status not independently checked",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-10-23",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a benchmark and training resource rather than a verified observation site.",
+      "locations": [],
+      "observation_period": null
+    },
+    "seo_description": "BEANS-Next evaluates broad bioacoustic tasks; ROOTS adds metadata and synthetic supervision, not proof of animal translation.",
+    "review_locator": "arXiv:2610.10663, abstract and Sections 1, 3.2–3.4, 5, risks and reproducibility statement; official BEANS-Next/ROOTS project page; official BEANS-Next and ROOTS Hugging Face cards."
+  },
+  {
     "slug": "birdnet",
     "title": "BirdNET: identification before interpretation",
     "taxon": "Machine learning",

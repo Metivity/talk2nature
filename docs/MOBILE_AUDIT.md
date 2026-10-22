@@ -276,6 +276,14 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 
 **Release receipt — October 23:** PR [#198](https://github.com/Metivity/talk2nature/pull/198) merged as [`0f3efe1`](https://github.com/Metivity/talk2nature/commit/0f3efe126293ebcdb28f608ab69efd0c12ce3d1c). Pages run [#39863744940](https://github.com/Metivity/talk2nature/actions/runs/39863744940) passed tests, public build, link/SEO/publish-boundary checks, deployment and live-route/crawl-metadata verification. A direct live fetch confirmed the new closed-by-default disclosure markup and the versioned app stylesheet returned HTTP 200. An already-open browser view showed the service worker's “Update ready” notice with older cached markup; no reload or cache clearing was forced. Existing app windows should follow the visible save/export and close/reopen guidance before receiving the update. Physical-device and independent-novice testing remain open.
 
+## October 23 live multi-species setup check
+
+**Question:** can an observer choose a non-bird animal group before a session starts on a narrow phone layout?
+
+**Check:** on the deployed Station route in Chromium emulation at 320 × 740 CSS pixels, selected “Other mammal” in the observer-declared “Who was there?” menu. The choice appeared in the setup summary, document width remained 320 pixels, and the page stayed Ready. No microphone permission was requested and no session, recording, export or saved data was created.
+
+**Limit:** this checks the setup control only. The app does not identify the animal; the selection is the observer’s note. Emulation does not establish physical-device, screen-reader or independent-novice usability, nor any biological result.
+
 ## October 23 live phone-width rehearsal
 
 **Question:** does the deployed simplified home and microphone-free rehearsal remain usable at narrow phone widths?
