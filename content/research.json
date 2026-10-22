@@ -3823,5 +3823,64 @@
       "rights": "The two Zenodo API records declare CC BY 4.0; the paper is CC BY 4.0 and the pinned repository declares MIT. Each applies only to its stated asset. Verify source-media rights, consent, privacy, human-audio and sensitive-location conditions before dataset use; neither document license resolves those questions.",
       "experiment": "No data were downloaded or inspected, no code was run and no model was trained. Any future detection baseline must use a documented, rights-cleared release and site-grouped evaluation. It cannot satisfy the independent behavior-label or receiver-response requirements for a communication claim."
     }
+  },
+  {
+    "slug": "central-european-birds-dataset-v1-1",
+    "title": "CEB can benchmark bird sound detection, not what a call means",
+    "seo_description": "Central European Birds provides labeled sound events for bird detection and call-type research; it does not test animal meaning or receiver response.",
+    "taxon": "Birds",
+    "kind": "Passive acoustic dataset",
+    "year": "2026",
+    "year_label": "Dataset version publication year",
+    "source_ids": [333],
+    "reviewed": "2026-10-22",
+    "review_stage": "Official Zenodo v1.1 record, version notes, file inventory and schema review; no media acquisition or model run",
+    "review_depth": "Reviewed the official Zenodo v1.1 landing page, published file inventory, component-specific rights statement and schema.json browser preview. The v1.1 notes identify annotation and taxonomy corrections. The prior v1 record 20762099 is superseded. No audio, annotation CSV, code or weights were downloaded, played, parsed or executed; no detector was evaluated.",
+    "review_locator": "Zenodo record 21821133, v1.1, published 2026-08-06; DOI 10.5281/zenodo.21821133; schema.json preview and Changes in v1.1. Prior version: Zenodo record 20762099.",
+    "finding": "CEB v1.1 is a large library of bird recordings with human-marked sound events: 20,826 audio files and 92,857 annotations across 256 eBird species codes and 21 vocalization types. It can help test whether software finds and sorts labeled calls in recordings. It contains no independent observations of a listener's response or ground truth about what a bird meant, so it cannot test translation. The field soundscape recordings are more relevant to passive-monitoring workflows than the separate focal Xeno-Canto recordings.",
+    "limitations": "The full collection is 49.7 GB. train_soundscape uses weak point-centered labels with a fixed +/-2.5 second window; many rows have no vocalization type. The public test labels are not a concealed locked test; if we use them for exploration or model selection, we need a separate untouched evaluation. The data are mostly from Germany with a smaller Greek subset and are not a parrot-specific context corpus. The record gives CC BY 4.0 for soundscape audio and all dataset metadata/annotations, while train_xenocanto retains per-record Xeno-Canto licenses; the schema says some of those license fields are empty. The schema also identifies 40 zero-area boxes that must be excluded from localization tasks and one truncated Xeno-Canto audio file whose annotations extend beyond its duration. No project/site leakage, source overlap, annotation reliability or source-media privacy audit has been performed.",
+    "lesson": "Use a large bird collection to test whether software can find and organize labeled sounds. Keep these acoustic categories separate from independently observed behavior, a receiver's response and any claim of meaning. The best species for a later communication-focused study may still be a companion parrot, but CEB does not answer that question.",
+    "next_review": "Before any sample or model run, choose a specific permitted subset, inspect its exact row-level rights and provenance, check duplicate/source overlap and group structure, exclude degenerate boxes, and establish a group-held-out evaluation. Treat the published test subset as exposed if examined; obtain a separate untouched evaluation and qualified bioacoustic review before treating results as a Talk2Nature benchmark.",
+    "expert_review": "Not independently reviewed by a qualified bioacoustics or animal-communication specialist.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Scale",
+        "The official v1.1 record lists 20,826 audio files, 92,857 event annotations, 256 eBird species codes and 21 vocalization types. The packaged collection is 49.7 GB."
+      ],
+      [
+        "Soundscape subsets",
+        "train_soundscape has 18,469 field recordings and 62,298 weak annotations that mark an approximate time point; test_soundscape has 147 field recordings and 15,064 stronger labels with event boundaries."
+      ],
+      [
+        "Focal recordings",
+        "train_xenocanto has 2,210 foreground recordings and 15,495 annotations, re-labeled with event boundaries and vocalization types. Each recording retains its own upstream license."
+      ],
+      [
+        "Label meaning",
+        "Labels include sound/vocalization categories such as song, contact call, alarm call and interaction call. These dataset labels are not independent tests of receiver comprehension or semantic meaning."
+      ],
+      [
+        "Release quality notes",
+        "Version 1.1 flags 40 marks with no time or frequency span (18 in test_soundscape and 22 in train_xenocanto); exclude them when training or checking event boundaries. It also documents one short audio file whose four labeled events extend past the file's end."
+      ],
+      [
+        "Rights",
+        "The record declares CC BY 4.0 for soundscape audio and all metadata/annotations. The Xeno-Canto subset keeps per-record terms; some license fields are empty. No files were acquired."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-22",
+      "location_status": "pending",
+      "location_note": "The record describes mostly Germany and a smaller Greek subset; its published soundscape coordinates are rounded to whole degrees. No point locations were reviewed or copied, so this dataset is not mapped.",
+      "locations": [],
+      "observation_period": null
+    },
+    "reuse": {
+      "status": "Metadata-only candidate for bird event-detection engineering; not admitted to Talk2Nature training or a communication benchmark.",
+      "asset": "Zenodo CEB v1.1 record 21821133 and its schema.json preview. No audio, annotation CSV, code or weights were acquired.",
+      "rights": "The record declares CC BY 4.0 for soundscape audio, metadata and annotations. train_xenocanto keeps its per-record source license, and the schema notes some missing license values. Select only rows with verified rights; the record's top-level license does not clear every audio file for reuse.",
+      "experiment": "No media was downloaded or analyzed and no model was trained. If a detector trial is justified, exclude zero-area boxes, verify file/license metadata and group structure, and treat the already-published test labels as exposed if examined; reserve a separate untouched evaluation. Detection performance would not establish behavior, intent or meaning."
+    }
   }
 ]
