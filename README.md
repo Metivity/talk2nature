@@ -2,46 +2,52 @@
 
 **Listen closely. Understand carefully.**
 
-An early-stage project documenting the science of nonhuman communication and building tools for reproducible animal-sound research. No general animal translator or trained Talk2Nature model exists yet.
+Talk2Nature documents research on nonhuman communication and builds tools for careful, reproducible animal-sound observation. It is an early-stage independent project: **there is no general animal translator or trained Talk2Nature model.**
 
-**Current source release:** [v0.1.0](https://github.com/Metivity/talk2nature/releases/tag/v0.1.0), an early pre-1.0 version whose interfaces and formats may change. Cite the software with [`CITATION.cff`](CITATION.cff) and record the exact commit used.
+Current source release: [v0.1.0](https://github.com/Metivity/talk2nature/releases/tag/v0.1.0), an early pre-1.0 version whose interfaces and formats may change. Cite the software with [`CITATION.cff`](CITATION.cff) and record the exact commit used.
 
-Website: https://metivity.github.io/talk2nature/
+Website: [metivity.github.io/talk2nature](https://metivity.github.io/talk2nature/)
 
-**Mobile:** [Open the Field Companion](https://metivity.github.io/talk2nature/app/) for outdoor listening, companion observations and WAV review. [Install guide and share page](https://metivity.github.io/talk2nature/mobile/) · [Product audit](docs/MOBILE_AUDIT.md). The observation-practice exercise and its limits are documented in [its project record](docs/OBSERVATION_PRACTICE.md). Optional offline support saves public app files only; export your audio and notes before leaving. An experimental [Android Station source preview](native-android/README.md) now builds locally; it is not a store release or a validated field recorder.
+## Start here
 
-**First tools:** [Nature Station](https://metivity.github.io/talk2nature/tools/station/) captures user-started, foreground-only sound observations and optional encounter markers. [Compare](https://metivity.github.io/talk2nature/app/compare/) reviews a saved session ZIP; [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs or notebooks and can open that ZIP locally to select one clip. The notebook keeps the complete session journal as source context—not annotation labels—and is unencrypted, so review it before sharing. A [Python report](docs/LISTEN.md) examines labels and a metadata splitter groups declared related animals/sessions. Start with synthetic examples; no animal meaning is inferred. Read the [station, device and AI architecture](docs/NATURE_STATION.md).
+- **Just curious?** Open the [Field Companion](https://metivity.github.io/talk2nature/app/) and choose **Try without a microphone**. The invented practice session needs no account, microphone permission, recording or upload. The [install guide](https://metivity.github.io/talk2nature/mobile/) explains the optional public-only offline shell.
+- **Want to try one small contribution?** Follow the [good first phone task](https://github.com/Metivity/talk2nature/issues/115), or read [CONTRIBUTING.md](CONTRIBUTING.md) for other no-recording tasks. Trying the app does not require GitHub; posting an issue does. The task also offers email as an alternative.
+- **Researcher or research-software engineer?** Start with the [evaluation kit](docs/RESEARCHER_START.md): a no-setup browser walkthrough or reproducible synthetic command-line example. Then see the [candidate run card](docs/BENCHMARK_CANDIDATE_RUN_CARD.md) for current research questions and the evidence still missing before any model run.
+- **Scientific reviewer?** The [bat-context methods brief](docs/BAT_CONTEXT_REVIEW.md) asks for bounded feedback on one published evaluation design. Public-source review only; it does not request recordings or claim a partnership.
+- **Need help or found a problem?** Choose the right route in [SUPPORT.md](SUPPORT.md). Keep private recordings, sensitive locations, credentials and participant information out of public reports.
 
-**Use another sound editor:** [Continue in Audacity](docs/AUDACITY_EXPORT.md) packages a local WAV, timed labels and complete original annotations with a conversion report. This is a one-way prototype for evaluation; Audacity edits do not update the Talk2Nature notebook.
+## What is available
 
-**Research annotation exchange:** Listen has an experimental one-way [AOEF 1.1 export](docs/INTEROPERABILITY.md) for a separate annotation workbench. The exact export passed a synthetic Whombat 0.9.0 desktop-UI import using invented audio; this verifies format compatibility only, not scientific suitability or real-recording behavior. The export is local-only and preserves a full, unencrypted provenance sidecar.
+The [Field Companion](https://metivity.github.io/talk2nature/app/) guides outdoor listening, familiar-animal observation and WAV review. Its browser audio workflow is user-started and foreground-only; sessions require deliberate export. It does not promise background recording, animal identification or general translation. Audio and notes stay local, and exports may be unencrypted; inspect them before sharing. Read the [mobile audit](docs/MOBILE_AUDIT.md) for limits and open device checks.
 
-**Biodiversity data exchange:** [Data interoperability notes](docs/DATA_INTEROPERABILITY.md) assess Darwin Core Data Package and Audubon Core as future metadata references. No Talk2Nature export currently claims conformance to either standard.
+[Nature Station](https://metivity.github.io/talk2nature/tools/station/) records bounded, foreground observations and optional encounter notes. [Compare](https://metivity.github.io/talk2nature/app/compare/) reviews invented or user-selected session exports. [Listen](https://metivity.github.io/talk2nature/tools/listen/) annotates WAVs and local notebooks and can open a session ZIP locally. A notebook keeps the full session journal as source context, not as annotation labels. These tools do not upload recordings. Start with the [station and AI architecture](docs/NATURE_STATION.md) and [Listen guide](docs/LISTEN.md) for technical details.
 
-**Research atlas:** [Explore places and historical work](https://metivity.github.io/talk2nature/research/atlas/) alongside our evidence connections. All library notes remain visible; pins require cited locations. Read the [coverage, provenance and contribution guide](docs/RESEARCH_ATLAS.md).
+The public [research atlas](https://metivity.github.io/talk2nature/research/atlas/) connects literature to cited, coarse locations. The evidence library records what was reviewed, what each source supports and where uncertainty remains. Source links do not mean that Talk2Nature has read every paper or partnered with listed organizations.
 
-## Participate
+Several advanced exchange paths are prototypes, not general integrations:
 
-**For researchers:** use the [evaluation starter pack](docs/RESEARCHER_START.md) for a browser walkthrough or reproducible synthetic command-line example, expected outputs and an honest failure-report route. The [current benchmark candidate run card](docs/BENCHMARK_CANDIDATE_RUN_CARD.md) compares bat interaction-context prediction with bird detection and parrot caller-identity, and records what must be reviewed before a run. [CITATION.cff](CITATION.cff) provides software citation metadata; record the exact commit used and cite underlying papers/data separately. No archival DOI or scientific validation is implied.
+- [Audacity export](docs/AUDACITY_EXPORT.md) is a one-way local package for a WAV, timed labels and provenance.
+- [AOEF 1.1 export](docs/INTEROPERABILITY.md) was imported into Whombat using invented audio; this verifies one synthetic format path, not scientific suitability or compatibility with every dataset.
+- [Darwin Core and Audubon Core notes](docs/DATA_INTEROPERABILITY.md) are future metadata references; Talk2Nature does not claim conformance to either standard.
+- The [Field Notes demo](https://metivity.github.io/talk2nature/field-notes/demo/) rehearses permission and withdrawal steps with invented entries stored only in browser memory; it does not connect to the private database.
+- The [Android Station source preview](native-android/README.md) is experimental, not an app-store release or validated field recorder.
 
-Start with a small [contribution](CONTRIBUTING.md). See [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md), [security reports](SECURITY.md) and the [open-science/community map](https://metivity.github.io/talk2nature/community/). We have no confirmed institutional partners or DPG recognition.
+## Current research boundaries
 
-For a future agent-assisted ML study, read the [AutoResearch adaptation](docs/AUTORESEARCH_ADAPTATION.md) and its [not-ready agent program](research/autoresearch/program.md). These define experiment safeguards; they do not start model training or approve real-data use.
+The first communication-adjacent ML candidate is Egyptian fruit-bat interaction-context prediction; bird sound detection and parrot caller identity are separate tasks. All remain research candidates. Dataset joins, rights, reviewer input and leakage-safe evaluation still need review. [Read the candidate run card](docs/BENCHMARK_CANDIDATE_RUN_CARD.md).
 
-Our [open-source health and adoption plan](docs/OPEN_SOURCE_PRACTICE.md) explains how we make contributions useful, measure progress without vanity metrics and keep the project maintainable.
+The [AutoResearch adaptation](docs/AUTORESEARCH_ADAPTATION.md) and [agent program](research/autoresearch/program.md) describe safeguards for a possible future experiment. The program is **NOT READY**; the documents do not start training or authorize real-data use. We have no confirmed institutional partners or DPG recognition.
 
-Need help? See [SUPPORT.md](SUPPORT.md). University and research-software groups can start with the [synthetic evaluation brief](docs/UNIVERSITY_EVALUATION.md); it makes a narrow request for independent workflow feedback and sets out what is not yet ready for a real research pilot.
+## Develop locally
 
-## Start locally
-
-Python 3.10+; no third-party package required for the website or research toolkit.
+Python 3.10+; the static website and research toolkit use the standard library. Node is only needed for browser-module tests.
 
 ```sh
 python3 web/build.py
 python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 ```
 
-Open http://127.0.0.1:4173. Local builds are marked noindex.
+Open http://127.0.0.1:4173. Local builds are marked noindex. Synthetic examples are invented metadata for checking software behavior, not datasets, experiments or model results.
 
 ```sh
 python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/demo-split.json
@@ -51,46 +57,29 @@ node --test tests/*.test.mjs
 python3 scripts/check_site.py
 ```
 
-The example is invented metadata for testing software behavior. It is not a dataset, experiment or model result. The split tool prevents shared individuals, sessions and exact source hashes from appearing in different partitions. It cannot detect unrecorded identities, near-duplicate audio or foundation-model training overlap.
-
-## Android source preview
-
-The native Android project is a separate, experimental phone-station prototype. Read its [scope, build and test instructions](native-android/README.md) before installing it. The source preview is not published in an app store and has not passed physical-phone or field validation.
-
-## Public release
+For a public build, provide the actual site origin explicitly and publish only `dist/`:
 
 ```sh
 python3 web/build.py --public --base-url https://metivity.github.io/talk2nature --repo-url https://github.com/Metivity/talk2nature
 python3 scripts/check_site.py
 ```
 
-Publish only `dist/`. See [deployment notes](docs/DEPLOYMENT.md), [scope](docs/GOAL.md), [current status](docs/STATUS.md), the [project audit](docs/PROJECT_AUDIT.md) and [contribution guide](CONTRIBUTING.md).
+See [deployment notes](docs/DEPLOYMENT.md), [current status](docs/STATUS.md) and [project scope](docs/GOAL.md). Passing software checks does not establish a scientific result or authorize deployment.
 
 ## Repository map
 
-- `content/`: public evidence notes, opportunity records and source inventory.
+- `content/`: public research summaries, opportunity records and source inventory.
 - `web/`: static website builder and assets.
-- `native-android/`: experimental Android Station source project; see its README for platform and release limits.
 - `talk2nature/`: reproducible research utilities.
-- `research/resources.json`: versioned research/code/dataset catalog; see [collection decisions and commands](docs/COLLECTION.md).
-- `data/external/`: ignored third-party samples and acquisition receipts; never website assets.
+- `research/resources.json`: versioned research, code and dataset catalog; see [collection and rights decisions](docs/COLLECTION.md).
 - `examples/`: clearly labeled synthetic examples.
-- `tests/`: validation, leakage and website tests.
-- `research/build_audit.py`: local-only earlier audit builder; requires ReportLab if regenerated and is excluded from the public repository.
+- `tests/`: validation, split and website tests.
+- `data/external/`: ignored third-party samples and receipts; never website assets.
 - `funding/`: ignored local application drafts; never included in the website.
+- `admin/`: separate owner-only local prototype; real observations and uploads remain disabled. See [setup](admin/README.md), [private architecture](docs/PRIVATE_ARCHITECTURE.md) and [Field Notes gates](docs/FIELD_NOTES.md).
 
-## Licensing
+## Licensing and reuse
 
-Original software: Apache-2.0 (see `LICENSE`). Original public summaries in `content/`: CC BY 4.0, attributed to Talk2Nature contributors. Source titles, bibliographic facts, linked articles, recordings, model weights and third-party material retain their own terms. No third-party audio or weights are distributed. See `NOTICE`.
+Original software: Apache-2.0 (`LICENSE`). Original public summaries in `content/`: CC BY 4.0, attributed to contributors. Linked papers, source recordings, datasets, model weights and other third-party material retain their own terms; no third-party audio or weights are distributed. See [`NOTICE`](NOTICE) and the [open-source reuse guide](docs/OPEN_SOURCE.md).
 
-Read the [open-source scope and reuse guide](docs/OPEN_SOURCE.md) for commercial reuse, forks, contributor rights, model-license checks and the distinction between open code and permission to publish data. See the [preliminary name-risk review](docs/BRAND_REVIEW.md) before using or promoting the Talk2Nature name. Talk2Nature is a working name; no trademark clearance or registered nonprofit status is claimed.
-
-## Private research workspace (phase two)
-
-The local `admin/` prototype provides owner-only Google identity verification, a responsive observation form, review gates, synthetic metadata releases and withdrawal. Local owner Google sign-in and wrong-account denial have been verified; hosted provider setup remains pending. Real observations and audio uploads are disabled. See [setup](admin/README.md), [mobile and AI plan](docs/PHASE_TWO_PLAN.md), and [private architecture](docs/PRIVATE_ARCHITECTURE.md). This code and its private runtime data are separate from the public static build.
-
-[Field Notes](https://metivity.github.io/talk2nature/field-notes/) introduces the app publicly. The local study planner connects protocols, sessions and observations to versioned research evidence in the database; see the [implemented workflow and next gates](docs/FIELD_NOTES.md).
-
-[Try the interactive demo](https://metivity.github.io/talk2nature/field-notes/demo/): invented observations, separate permissions, practice review, simulated release and withdrawal. Choices stay in browser memory; no connection to the private database. Run its checks with `node --test tests/demo.test.mjs`.
-
-The private database has a [local recovery rehearsal](admin/README.md#local-recovery-rehearsal) that restores a separate verified copy without activating it or copying live login sessions.
+Talk2Nature is a working name; no trademark clearance or nonprofit registration is claimed. See the [preliminary name-risk review](docs/BRAND_REVIEW.md). The Metivity repository does not establish a separate funding applicant or scientific institution. Our [open-source health and adoption plan](docs/OPEN_SOURCE_PRACTICE.md) tracks how we build sustainable, useful participation.
