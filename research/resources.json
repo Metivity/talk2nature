@@ -1110,12 +1110,12 @@
         167
       ],
       "priority": 1,
-      "reviewed": "2026-10-12",
+      "reviewed": "2026-10-23",
       "task": "Determine whether video-derived FileID annotations can be joined to recording time, channel, treatment and session for a leakage-safe grouping audit.",
-      "review_depth": "The 2017 Scientific Data descriptor was reviewed for Data Records and Usage Notes. The direct public Figshare item API was read over verified TLS and reported a CC0 item declaration, one 31,574,701-byte FileInfo.csv and md5=null. The file contents were not retrieved.",
+      "review_depth": "The 2017 Scientific Data descriptor was reviewed for Data Records and Usage Notes. On 2026-10-23 the direct public Figshare item API was re-read and returned a CC0 item declaration, one 31,574,701-byte FileInfo.csv and md5=null. No file contents or rows were retrieved.",
       "access": "Public item API lists FileInfo.csv, file ID 8900695. The article says it carries exact recording time, recording channel and voiced-segment sample positions for each file.",
       "decision": "Keep metadata-only. The 31.6 MB file exceeds the collector’s 5 MiB per-file limit and has no upstream MD5. Do not fetch until an independently reviewed, bounded integrity plan establishes that this join is needed.",
-      "limitations": "The file, schema, row coverage, identifiers, timing and joins were not inspected. Its existence makes a FileID/time/channel join plausible, not verified; no animal/session split or benchmark is established.",
+      "limitations": "The file, schema, row coverage, identifiers, timing and joins were not inspected. The 2017 article says the table includes exact recording time, channel and voiced-segment positions, making a FileID/time/channel join plausible but unverified. The item exceeds the collector's 5 MiB per-file cap and has no upstream MD5; no animal/session split or benchmark is established.",
       "attribution": "Prat et al. (2017), Egyptian fruit bat vocalization data descriptor; Figshare item 4555897 and collection DOI 10.6084/m9.figshare.c.3666502.",
       "rights": {
         "license": "CC0-1.0",
