@@ -1,6 +1,6 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 14, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 22, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
 ## Choose one route
 
@@ -250,3 +250,13 @@ A fresh depth-one HTTPS clone of public `main` at [`0e27f3336cb855bedabaadbf896c
 All 120 Python tests and 109 Node tests passed; 122 catalog resources validated. The local noindex build produced 106 pages plus 404 and passed 107 HTML documents / 5,173 links. The public-origin build produced 106 pages plus 404 and passed 107 HTML documents / 5,281 links / all 106 public pages reachable. The clone's tracked working tree remained clean after both builds.
 
 This is a maintainer-run setup and software check, not an independent reproduction, usability study, scientific validation or biological result. No research media, datasets or model weights were acquired, and no third-party models or research-code repositories were executed. Independently verified reproductions remain zero; report the commit actually evaluated.
+
+## October 22 current public-main clean-clone recheck — f13335f
+
+Cloned public `main` at [`f13335f4a1def93492159c26d4eae61358af7597`](https://github.com/Metivity/talk2nature/commit/f13335f4a1def93492159c26d4eae61358af7597) with `--depth 1 --no-tags`. The tracked worktree was clean before and after the checks. Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed and no private or ignored project state was copied into the clone.
+
+The documented synthetic annotation report described an invented 8-second clip, two events and 2 seconds of marked-interval coverage, with 0 seconds of independently observed context. The metadata splitter returned 10 declared groups and 12/4/4 train/validation/test records; both declared labels appeared in every partition. The split-policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the generated JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The resource validator accepted 149 records. All 144 Python tests and 115 Node tests passed.
+
+The local noindex build produced 113 pages plus 404; the site checker passed 114 HTML documents and 5,614 links. The explicit public-origin build also produced 113 pages plus 404; the checker passed 114 HTML documents, 5,729 links and all 113 public routes reachable. The README's annotation, split, catalog-validation, test and build paths were run from the fresh clone.
+
+This is maintainer-run software verification, not an independent reproduction, user study, scientific validation or biological result. The fixtures are synthetic. No third-party research media, labels, code or model weights were acquired or run. Independent reproductions remain zero; cite the exact commit actually evaluated.
