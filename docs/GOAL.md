@@ -541,3 +541,7 @@ Added a source-grounded research note on El Silencio/BirdCLEF+ as a possible mul
 ## October 22 — current public-main clean-clone verification
 
 Re-ran the researcher-kit path from a fresh depth-one clone of public `main`, exact revision [`f13335f4a1def93492159c26d4eae61358af7597`](https://github.com/Metivity/talk2nature/commit/f13335f4a1def93492159c26d4eae61358af7597). The synthetic examples, 149-record catalog, all 144 Python and 115 Node tests, local noindex build and explicit public-origin build passed; the clone remained clean. Detailed environment, commands, split hashes and page/link counts are in `docs/RESEARCHER_START.md`. This closes the stale maintainer-checkpoint gap, but independent reproductions remain zero and no science or biological performance is validated. The five-track program remains active.
+
+## October 22 — Search Console status checked against the live sitemap
+
+Verified the current Search Console Web performance baseline (Sep 29–Oct 20: 37 impressions, no clicks) and inspected the deployed El Silencio route. The route is in the live 113-URL sitemap and is currently crawlable/indexable in Google's live test, but the Google index still reports it unknown; Search Console's sitemap and coverage reports remain stale or inconsistent. An indexing-request attempt did not complete because reCAPTCHA could not connect. Exact evidence and the next owner-side retry gate are recorded in docs/STATUS.md. No indexing, click growth or worldwide reach is claimed; the SEO track remains active.

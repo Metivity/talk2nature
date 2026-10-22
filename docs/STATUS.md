@@ -2357,3 +2357,15 @@ Updated the public note, source record 331, added pinned protocol source 332, co
 **Jev fit:** no Talk2Nature API call or product integration is justified now. A future, bounded metadata-only suggestion queue could be tested against human-reviewed source records if triage volume becomes a real bottleneck; typed outputs do not establish scientific correctness. Source access, rights and expert review remain the current constraints. See `docs/MODEL_DATA_DECISION.md`; no provider call was made.
 
 **Limit:** this is maintainer-run software verification, not an independent reproduction, first-time user test, scientific review or biological result. Fixtures are synthetic. No third-party research media, labels, code or model was acquired or run. The independent reproduction count remains zero. No research benchmark gate changed; AutoResearch remains **NOT READY**.
+
+## October 22 — Search Console discovery and indexing baseline
+
+**Question:** is the newly released research note discoverable in Google, and what does Search Console say about current reach?
+
+**Live website checks:** HTTPS requests to /sitemap.xml and /robots.txt returned HTTP 200. The sitemap parsed as valid XML with 113 URLs, includes the El Silencio research page, and the robots file names that sitemap.
+
+**Search Console evidence:** the verified Talk2Nature property’s Web performance report, last updated about 4.5 hours before inspection, covers Sep 29–Oct 20, 2026: 37 impressions, 0 clicks, 0% CTR and average position 6.7. The top-page table shows 29 impressions for /research/resources/, 7 for /research/ and 1 for the homepage. This is a small current baseline, not proof of broad discovery or growth.
+
+The sitemap report still says /sitemap.xml was last read Oct 20, status “Couldn't fetch,” with zero discovered pages. The separate live sitemap and robots checks above pass. URL Inspection for the El Silencio note reports “URL is not on Google” and “URL is unknown to Google,” with no referring sitemap detected. Its Oct 22 live test says the page is available to Google, crawl allowed, page fetch successful, indexing allowed, and the user-declared canonical matches the public URL. Discovery was explicitly “Not checked in live tests.” The Pages coverage report is stale (last update Oct 16) and internally inconsistent: it shows 5 indexed / 0 not indexed in one summary, while listing a one-page “Crawled - currently not indexed” reason whose drilldown shows 0 affected pages. Do not treat that report as a current page-by-page census.
+
+**Action and limit:** attempted the URL Inspection indexing request for the public El Silencio page after the successful live test. Search Console reported it could not connect to its reCAPTCHA service; no request confirmation appeared, so no indexing request is claimed as submitted. No CAPTCHA was solved or bypassed. The page remains unindexed in the available index report. Retry only when the owner UI can complete its verification, then recheck the sitemap report and URL status; do not infer indexing from a successful live fetch. Search Console reporting and request state are separate from the verified deployment.
