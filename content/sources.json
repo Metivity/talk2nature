@@ -3437,5 +3437,17 @@
       "license": "MIT in the LICENSE file at the pinned repository commit.",
       "scope": "Protocol.pdf as repository documentation only. This does not license the separate Zenodo recordings or annotation data; embedded third-party interface imagery was not reused."
     }
+  },
+  {
+    "id": 333,
+    "title": "Central European Birds (CEB) acoustic dataset, Zenodo v1.1",
+    "description": "Official Zenodo record and data dictionary for strongly and weakly labeled bird soundscapes and Xeno-Canto focal recordings.",
+    "url": "https://zenodo.org/records/21821133",
+    "checked": "2026-10-22",
+    "origin": "Reviewed the live official Zenodo v1.1 record, its version notes, component file inventory and schema.json browser preview. Confirmed that record 20762099 is superseded by v1.1 record 21821133. No audio, annotation CSV, model or code was downloaded or run.",
+    "rights": {
+      "license": "The record declares CC BY 4.0 for its soundscape audio, annotations and metadata. train_xenocanto retains each source recording's original license.",
+      "scope": "The record-level declaration does not relicense train_xenocanto recordings. Its schema says some Xeno-Canto license fields are empty; inspect exact rows before any use. No independent source-media or privacy review was performed."
+    }
   }
 ]

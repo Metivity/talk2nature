@@ -4742,6 +4742,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "central-european-birds-ceb-v1-1",
+      "kind": "dataset",
+      "title": "Central European Birds (CEB), Zenodo v1.1",
+      "url": "https://zenodo.org/records/21821133",
+      "version": "Zenodo v1.1; published 2026-08-06; DOI 10.5281/zenodo.21821133",
+      "source_ids": [
+        333
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-22",
+      "task": "Bird sound-event detection, species identification, vocalization-type classification and localization; not observed behavior or receiver response.",
+      "review_depth": "Reviewed official Zenodo v1.1 record metadata, version notes, file inventory, rights statement and schema.json browser preview. No audio, annotation CSV, code or weights downloaded or executed.",
+      "access": "49.7 GB collection. Metadata-only review; no media or annotation table acquired.",
+      "decision": "Metadata-only candidate for bird detector engineering. Not a behavior/context or communication benchmark; treat the published test labels as exposed if examined and reserve a separate untouched evaluation.",
+      "limitations": "train_soundscape annotations are weak point-centered labels with a fixed +/-2.5 second window and often no vocalization-type label. The schema identifies 40 zero-area boxes to exclude from event localization and one truncated focal recording with annotations past the audio end. Soundscape audio and metadata are declared CC BY 4.0, while train_xenocanto retains per-record Xeno-Canto licenses and some license fields are empty. Group leakage, source overlap, annotation reliability and source-media privacy remain unaudited.",
+      "attribution": "Martin et al., Central European Birds (CEB), Zenodo v1.1, DOI 10.5281/zenodo.21821133.",
+      "rights": {
+        "license": "Component-specific: CC BY 4.0 for soundscape audio and dataset metadata/annotations; original per-record Xeno-Canto licenses for train_xenocanto.",
+        "scope": "The record-level CC BY declaration does not replace upstream licenses for focal recordings. The schema reports some empty Xeno-Canto license fields; inspect each row before reuse.",
+        "evidence_url": "https://zenodo.org/records/21821133",
+        "conditions": "Provide CC BY attribution where it applies; preserve each focal recording's own license and attribution. Resolve blank rights fields and verify privacy/source provenance before use, redistribution or commercial work.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
