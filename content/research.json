@@ -3761,16 +3761,17 @@
       328,
       329,
       330,
-      331
+      331,
+      332
     ],
     "reviewed": "2026-10-22",
-    "review_stage": "Dataset metadata and benchmark-fit review; overview paper not fully reviewed",
-    "review_depth": "Queried official Zenodo API metadata for labeled record 17064353 and unlabeled record 17122738, including publication dates, record-level licenses, file counts, byte totals and provider MD5 values. Read the dataset repository README and MIT LICENSE at commit 5e2f7826c908fec3018740068bbdeda6c6977f35. Reviewed only the citation and indexed dataset excerpt for the 2025 CEUR overview paper; its 24 MB PDF was not retrievable through the available reader. No data bytes, annotation files, protocol PDF or code were downloaded, and no checksum or model result was reproduced.",
-    "review_locator": "Zenodo records 17064353 and 17122738, API metadata queried 2026-10-22; pinned repository README and LICENSE at commit 5e2f7826c908fec3018740068bbdeda6c6977f35; CEUR paper citation and indexed dataset excerpt.",
-    "finding": "El Silencio is a useful broad sound-detection candidate: its labeled deposit describes 770 one-minute soundscapes (12.8 hours) and about 15,000 strongly labeled acoustic-event boxes across four taxonomic groups. The labels identify sound events, taxa or sonotypes; they do not supply independently observed behavior or receiver-response labels. It can help us test a multi-species ingestion and detection workflow, but it is not a communication or meaning benchmark.",
-    "limitations": "The 2025 overview excerpt describes 11,340 unlabeled soundscapes across 63 sites. The current pinned repository README links a separate Zenodo release and describes 10,980 across 61 sites; the records do not explain the 360-record difference, so do not silently combine these releases. The labeled Zenodo page displays a 109.8 GB data-volume statistic while its official API file list totals 3,546,609,904 bytes; the discrepancy is unresolved. The separate unlabeled record lists 61 files totaling 49,620,235,222 bytes. Both Zenodo APIs declare CC BY 4.0 at record level, but source-recording rights, privacy and sensitive-location conditions were not independently reviewed. The warning that UNKNOWN is not a stable class appears in the Zenodo description. No audio or labels were inspected, no group split was checked, and no baseline was run. Species or event detection, acoustic association and animal communication remain separate claims.",
+    "review_stage": "Full overview paper, pinned annotation protocol and dataset/benchmark-fit review",
+    "review_depth": "Queried official Zenodo API metadata for labeled record 17064353 and unlabeled record 17122738, including publication dates, record-level licenses, file counts, byte totals and provider MD5 values. Read the dataset repository README and MIT LICENSE at commit 5e2f7826c908fec3018740068bbdeda6c6977f35; reviewed all extractable Spanish text on pages 2-18 of its pinned protocol and the full 11-page CEUR overview paper. Local review copies of only the paper and protocol are excluded from the public site. No dataset audio, label table, code or model weights were acquired or run; no baseline was reproduced.",
+    "review_locator": "Zenodo records 17064353 and 17122738, API metadata queried 2026-10-22; pinned repository README, LICENSE and Protocol.pdf at commit 5e2f7826c908fec3018740068bbdeda6c6977f35; full CEUR-WS Vol. 4038 paper 232.",
+    "finding": "El Silencio is a useful multi-taxon sound-event detection candidate: the paper describes 770 one-minute soundscapes (12.8 hours) and about 15,000 event boxes across birds, mammals, amphibians and insects. The manual protocol labels acoustic group, call/sonotype and sound form; it groups same-species signals separated by no more than one second. These acoustic/taxonomic labels do not supply independently observed behavior, caller intent or receiver-response labels. The paper's BirdCLEF+ competition dataset is a separate sound-identification task, so its classification score is not a result on this El Silencio subset and does not measure communication. This can help test a multi-species detection/data workflow, but it is not a communication or meaning benchmark.",
+    "limitations": "The paper's unlabeled snapshot is 11,340 recordings at 63 sites; the later pinned README and separate Zenodo deposit describe 10,980 recordings at 61 sites (360 fewer across two sites), with no explanation in reviewed sources. The protocol's explicit group codes are birds, anurans and insects, while the paper describes four taxa including mammals; the mapping needs specialist clarification. No inter-annotator reliability statistic was reported in the reviewed paper/protocol. The labeled Zenodo page displays 109.8 GB while its nine-file API inventory totals 3,546,609,904 bytes; unresolved. The unlabeled API inventory lists 61 ZIPs totaling 49,620,235,222 bytes. Zenodo declares CC BY 4.0 at record level; source-media rights, consent/privacy, human-audio handling and sensitive-location conditions remain unreviewed. UNKNOWN is not a stable class. No audio, annotations or split were inspected, and no baseline was run. Event detection, acoustic association and communication meaning remain different claims.",
     "lesson": "Use multi-taxonomic soundscapes to check whether the tool can locate and organize candidate events across animal groups. Keep a human-reviewed event label separate from behavior observed in context, model predictions and any claim about meaning. A pretrained encoder may organize acoustic patterns; grounded communication claims still require independent behavioral observations and receiver-side tests.",
-    "next_review": "Review the Spanish annotation protocol with a qualified bioacoustics reviewer and inspect the full overview paper through an accessible lawful route. Reconcile the 11,340/63 versus 10,980/61 releases and the Zenodo page/API size difference; verify exact event-label provenance, site grouping, human-audio/privacy risks and applicable terms. If a concrete detection engineering question remains, freeze a small rights-cleared evaluation with site-held-out splits and compare a simple baseline before any model run. This dataset does not satisfy the first context/meaning benchmark gates.",
+    "next_review": "Ask a qualified bioacoustics reviewer to resolve the protocol's taxonomic-label scope, annotation consistency and appropriate use. Seek provider clarification for the 11,340/63 versus 10,980/61 release change and the labeled record page/API size discrepancy; review source-media rights, privacy, human-audio and location safeguards before acquiring any sample. If a concrete detector question remains, pre-register a small rights-cleared evaluation with site-held-out splits and a simple baseline before running a model. This dataset does not satisfy the first context/meaning benchmark gates.",
     "expert_review": "Not yet independently reviewed by a bioacoustics or animal-communication specialist.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -3787,16 +3788,20 @@
         "About 15,000 strong acoustic-event boxes across birds, mammals, amphibians and insects. UNKNOWN is not a stable species class."
       ],
       [
+        "Annotation method",
+        "The Spanish protocol describes manual RavenPro Group/Label/SongType annotations. Same-species signals separated by no more than one second are grouped. The protocol's visible group codes cover birds, anurans and insects; alignment to the four taxa in the paper needs expert review."
+      ],
+      [
         "Separate unlabeled release",
         "Zenodo record 17122738; published 2025-09-15; 61 ZIP files totaling 49,620,235,222 bytes; CC BY 4.0. The pinned README describes 10,980 soundscapes at 61 sites."
       ],
       [
         "Count reconciliation",
-        "The overview excerpt reports 11,340 unlabeled soundscapes at 63 sites. The current repository and separate unlabeled Zenodo release report 10,980 at 61 sites; the reason for the difference is not documented in the sources reviewed."
+        "The overview paper reports 11,340 unlabeled soundscapes at 63 sites. The current repository and separate unlabeled Zenodo release report 10,980 at 61 sites; the reason for the difference is not documented in the sources reviewed."
       ],
       [
         "Task fit",
-        "A multi-taxonomic event-detection and species/sonotype-identification candidate, not independently observed behavior, caller intent, receiver response or semantic translation."
+        "A multi-taxonomic event-detection and species/sonotype-identification candidate, not independently observed behavior, caller intent, receiver response or semantic translation. The BirdCLEF+ competition score belongs to a separate task and dataset."
       ]
     ],
     "atlas": {
@@ -3814,8 +3819,8 @@
     },
     "reuse": {
       "status": "Metadata-only candidate for event-detection engineering; not admitted to Talk2Nature training or a communication benchmark.",
-      "asset": "Zenodo labeled record 17064353 and separate unlabeled record 17122738, plus the pinned dataset README/license and the 2025 overview citation. No media or article assets were acquired.",
-      "rights": "Both Zenodo API records declare CC BY 4.0; apply attribution and verify source-media rights, privacy and sensitive-location conditions before reuse. The pinned GitHub MIT license covers repository materials only, not the Zenodo recordings. The paper license was not verified.",
+      "asset": "Zenodo labeled record 17064353 and separate unlabeled record 17122738, plus the pinned dataset README/license, Spanish protocol and 2025 overview paper. Paper/protocol review copies remain local and are not public build assets. No recordings, labels, model weights or code were acquired.",
+      "rights": "The two Zenodo API records declare CC BY 4.0; the paper is CC BY 4.0 and the pinned repository declares MIT. Each applies only to its stated asset. Verify source-media rights, consent, privacy, human-audio and sensitive-location conditions before dataset use; neither document license resolves those questions.",
       "experiment": "No data were downloaded or inspected, no code was run and no model was trained. Any future detection baseline must use a documented, rights-cleared release and site-grouped evaluation. It cannot satisfy the independent behavior-label or receiver-response requirements for a communication claim."
     }
   }

@@ -441,8 +441,12 @@ class SiteTests(unittest.TestCase):
     def test_el_silencio_stays_a_metadata_only_detection_candidate(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='el-silencio-multitaxon-dataset-2025')
-        self.assertEqual(note['source_ids'],[328,329,330,331])
+        self.assertEqual(note['source_ids'],[328,329,330,331,332])
         self.assertIn('not a communication or meaning benchmark',note['finding'])
+        self.assertIn('no more than one second',note['finding'])
+        self.assertIn('separate sound-identification task',note['finding'])
+        self.assertIn('No inter-annotator reliability statistic',note['limitations'])
+        self.assertIn('protocol',note['study_snapshot'][3][1].lower())
         self.assertIn('11,340',note['limitations'])
         self.assertIn('10,980',note['limitations'])
         self.assertIn('3,546,609,904 bytes',note['limitations'])
@@ -460,7 +464,11 @@ class SiteTests(unittest.TestCase):
         self.assertIn('not independently establish source-recording rights',labeled['rights']['scope'])
         self.assertEqual(resources['elsilencio-unlabeled-soundscapes-2025']['version'],
                          'DOI 10.5281/zenodo.17122738; published 2025-09-15')
-        self.assertEqual(resources['elsilencio-birdclefplus-overview-2025']['rights']['research_use'],'unresolved')
+        paper=resources['elsilencio-birdclefplus-overview-2025']
+        self.assertEqual(paper['rights']['license'].split()[0:3],['CC','BY','4.0'])
+        self.assertEqual(paper['rights']['research_use'],'conditional')
+        self.assertIn('excluded from the public website',paper['access'])
+        self.assertIn(332,labeled['source_ids'])
 
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -470,6 +478,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('do not supply independently observed behavior',page)
             self.assertIn('https://zenodo.org/records/17064353',page)
             self.assertIn('https://zenodo.org/records/17122738',page)
+            self.assertIn('https://raw.githubusercontent.com/redecoacustica/elsilencio-dataset/5e2f7826c908fec3018740068bbdeda6c6977f35/Protocol.pdf',page)
+            self.assertIn('separate task and dataset',page)
+            self.assertIn('no more than one second',page)
             self.assertIn('content=\"index,follow\"',page)
             self.assertIn('https://fixture.github.io/talk2nature/research/el-silencio-multitaxon-dataset-2025/',page)
             self.assertIn('/talk2nature/research/el-silencio-multitaxon-dataset-2025/',(root/'sitemap.xml').read_text())

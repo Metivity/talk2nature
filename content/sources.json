@@ -3408,7 +3408,7 @@
     "description": "Dataset README and license pinned to commit 5e2f7826c908fec3018740068bbdeda6c6977f35.",
     "url": "https://github.com/redecoacustica/elsilencio-dataset/tree/5e2f7826c908fec3018740068bbdeda6c6977f35",
     "checked": "2026-10-22",
-    "origin": "Resolved the public main reference to commit 5e2f7826c908fec3018740068bbdeda6c6977f35, then read the README and LICENSE at that exact revision. The README describes 10,980 unlabeled soundscapes at 61 sites and links the separate Zenodo record 17122738; the LICENSE is MIT. The visible repository inventory contains a README, Spanish annotation protocol, image and license, not an executable analysis package. The Spanish protocol PDF was not inspected.",
+    "origin": "Resolved the public main reference to commit 5e2f7826c908fec3018740068bbdeda6c6977f35, then read the README and LICENSE at that exact revision. The README describes 10,980 unlabeled soundscapes at 61 sites and links the separate Zenodo record 17122738; the LICENSE is MIT. The visible repository inventory contains a README, Spanish annotation protocol, image and license, not an executable analysis package. The pinned protocol was separately downloaded and text-reviewed; see source 332.",
     "rights": {
       "repository": "MIT at the pinned repository revision.",
       "scope": "Repository materials covered by its LICENSE only. This MIT declaration does not license the separately deposited Zenodo recordings or labels."
@@ -3420,10 +3420,22 @@
     "description": "Conference overview of the BirdCLEF+ 2025 sound-identification challenge and El Silencio dataset.",
     "url": "https://ceur-ws.org/Vol-4038/paper_232.pdf",
     "checked": "2026-10-22",
-    "origin": "Reviewed the primary paper citation and indexed dataset excerpt. The full PDF was not reviewed because the available reader rejected its 24 MB payload. The excerpt describes about 15,000 strong labels and 11,340 unlabeled soundscapes across 63 sites; the current pinned repository README and separate Zenodo deposit describe 10,980 across 61 sites. The difference is not explained by the records reviewed.",
+    "origin": "Reviewed the full 11-page paper from the publisher PDF; the article identifies a 770-soundscape, 12.8-hour labeled subset and an 11,340-file/63-site unlabeled snapshot. The paper describes a separate BirdCLEF+ competition dataset with more than 38,000 labeled training clips and 705 test soundscapes. The subsequent Zenodo unlabeled record and pinned README describe 10,980 files/61 sites (180 per site); the 360-file/two-site reduction is not explained. Local review-copy SHA-256: 1a5266889ec89b0b8b1168973cf2c3ee58987f83a67c24c7ab528e7b46302db5. No dataset audio, labels, code or weights were acquired or run.",
     "rights": {
-      "paper": "Not independently verified in this review; no article text or figures were copied.",
-      "scope": "Paper only. It does not grant rights to separate dataset recordings, annotations, code or model weights."
+      "paper": "CC BY 4.0 stated on the CEUR-WS volume index and the paper's first page.",
+      "scope": "Article only. The paper license does not grant rights to the separate dataset recordings, annotations, challenge code or model weights. No article text or figures were copied into Talk2Nature."
+    }
+  },
+  {
+    "id": 332,
+    "title": "El Silencio manual multi-taxon annotation protocol",
+    "description": "Spanish-language Protocol.pdf for manual RavenPro annotation, pinned to the dataset repository commit.",
+    "url": "https://raw.githubusercontent.com/redecoacustica/elsilencio-dataset/5e2f7826c908fec3018740068bbdeda6c6977f35/Protocol.pdf",
+    "checked": "2026-10-22",
+    "origin": "Downloaded Protocol.pdf from the pinned repository commit after verifying the repository MIT license. Its 8,571,721-byte GitHub API blob SHA matches local Git blob d77a310dff96ae6ba671f8237e02dd35b6d20f3d; local SHA-256 is 0f591cc8d53cbfd7f9a044d836d0a1d2f3fd76cb6163c0b532c31bc1e745c2d6. Reviewed all extractable Spanish text on pages 2-18; page 1 is image-only. No recording or annotation table was downloaded.",
+    "rights": {
+      "license": "MIT in the LICENSE file at the pinned repository commit.",
+      "scope": "Protocol.pdf as repository documentation only. This does not license the separate Zenodo recordings or annotation data; embedded third-party interface imagery was not reused."
     }
   }
 ]

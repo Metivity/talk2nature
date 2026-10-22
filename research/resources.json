@@ -4663,19 +4663,19 @@
       "priority": 2,
       "reviewed": "2026-10-22",
       "task": "Published overview of a multi-taxonomic acoustic-identification challenge and its El Silencio dataset.",
-      "review_depth": "Reviewed the citation and indexed dataset excerpt only. The full 24 MB PDF was not retrieved through the available reader; no tables, complete methods, model entries or challenge scores were checked.",
-      "access": "Public CEUR PDF link; no article file was saved.",
-      "decision": "Metadata-only source for dataset and challenge provenance. Do not describe this as a full paper review, a reproduced benchmark or evidence of animal communication.",
-      "limitations": "The overview excerpt describes 11,340 unlabeled soundscapes across 63 sites, while the current pinned repository README and separate Zenodo deposit describe 10,980 across 61 sites. The reviewed source material does not explain the difference. This challenge targets sound identification, not behavioral context, receiver response or meaning.",
+      "review_depth": "Reviewed the full 11-page paper and its dataset/methods descriptions. No dataset audio, labels, code or model weights were acquired or run; no challenge result was reproduced.",
+      "access": "Public CEUR PDF; a local review copy is excluded from the public website.",
+      "decision": "Use as a source for dataset and challenge provenance, not as a reproduced benchmark or evidence of animal communication.",
+      "limitations": "The paper describes 11,340 unlabeled soundscapes across 63 sites, while the later pinned README and separate Zenodo deposit describe 10,980 across 61 sites; the 360-file/two-site change is unexplained. The paper's BirdCLEF+ competition dataset and classification metric are separate from the El Silencio labeled subset. The task concerns sound identification, not independently observed behavior, receiver response or meaning.",
       "attribution": "Cañas et al., Overview of BirdCLEF+ 2025: Multi-taxonomic sound identification in the Middle Magdalena, Colombia. CLEF 2025 Working Notes, Vol. 4038, paper 232.",
       "rights": {
-        "license": "Not verified in this review.",
-        "scope": "Article only; no article text or figures were copied. Paper terms do not transfer rights to the separate dataset, annotations, code or model weights.",
+        "license": "CC BY 4.0 stated on the CEUR-WS volume index and the paper's first page.",
+        "scope": "Article only. The paper license does not grant rights to the separate dataset recordings, annotations, challenge code or model weights. No article text or figures were copied into Talk2Nature.",
         "evidence_url": "https://ceur-ws.org/Vol-4038/paper_232.pdf",
-        "conditions": "Check the article's current terms before reusing article material.",
-        "research_use": "unresolved",
+        "conditions": "Attribute and link the paper, identify changes, and check third-party material exclusions before reuse.",
+        "research_use": "conditional",
         "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
@@ -4689,15 +4689,16 @@
       "source_ids": [
         328,
         330,
-        331
+        331,
+        332
       ],
       "priority": 1,
       "reviewed": "2026-10-22",
       "task": "Acoustic event and species/sonotype identification across birds, mammals, amphibians and insects.",
-      "review_depth": "Queried official Zenodo API metadata and its provider file manifest: 9 files, 3,546,609,904 bytes total, record-level CC BY 4.0. Read the pinned repository README and LICENSE. No file bytes, annotations, protocol PDF or code were downloaded, and no provider checksum was locally verified.",
+      "review_depth": "Queried official Zenodo API metadata and its provider file manifest: 9 files, 3,546,609,904 bytes total, record-level CC BY 4.0. Read the pinned repository README and LICENSE and reviewed the full overview paper and extractable text from the pinned Spanish protocol. No audio, annotation table, labels, code or weights were acquired or run, and no provider audio checksum was locally verified.",
       "access": "Public Zenodo record with a 9-file provider manifest. Record-level CC BY 4.0 is declared by the official API; a license declaration is not an independent source-media/privacy review.",
       "decision": "Metadata-only. Candidate for multi-taxonomic detection-pipeline engineering, not a communication, behavior-context or meaning benchmark. Keep outside training until source-media, privacy, annotation and evaluation requirements are reviewed.",
-      "limitations": "The record describes 770 one-minute recordings (12.8 hours) and about 15,000 strong acoustic-event boxes. It has no reviewed independent behavior or receiver-response labels. The rendered page reports 109.8 GB data volume while the nine-file API manifest totals about 3.55 GB; unresolved. The description warns that UNKNOWN is not a stable class. The linked paper and Spanish protocol were not fully reviewed.",
+      "limitations": "The paper describes 770 one-minute recordings (12.8 hours) and about 15,000 strong event boxes. The protocol describes manual Group/Label/SongType annotation and a one-second same-species event grouping rule; it provides acoustic-form labels, not independently observed behavior or receiver response. The paper discusses four taxonomic groups, while the protocol's visible group codes list birds, anurans and insects; the relationship to mammal labels needs specialist clarification. No inter-annotator reliability statistic was found in the reviewed paper/protocol. The rendered page reports 109.8 GB while the nine-file API manifest totals 3,546,609,904 bytes; unresolved. UNKNOWN is not a stable class.",
       "attribution": "Cañas, Toro Gómez, Benavides-Lopez, Rodriguez-Buritica, Ulloa and Caycedo-Rosales, El Silencio MT dataset, Zenodo v1, DOI 10.5281/zenodo.17064353.",
       "rights": {
         "license": "CC BY 4.0 declared by the official Zenodo API record.",
@@ -4728,7 +4729,7 @@
       "review_depth": "Queried official Zenodo API metadata and its provider file manifest: 61 ZIP files, 49,620,235,222 bytes total, record-level CC BY 4.0. Read the linked repository README at a pinned commit. No audio bytes, labels or code were downloaded or inspected.",
       "access": "Public Zenodo record; the pinned repository README describes 10,980 one-minute soundscapes at 61 sites. The official API supplies per-file sizes and MD5 strings; none were checked against downloaded files.",
       "decision": "Metadata-only. Possible future representation-learning or ingestion-scale candidate after the task, rights, privacy, site grouping and compute plan are justified. Unlabeled audio cannot test animal meaning by itself.",
-      "limitations": "The 2025 overview excerpt reports 11,340 soundscapes at 63 sites, unlike this separate 10,980-recording, 61-site release. The source records do not explain the difference. No event labels, behavior labels, animal identities, session joins, site split or human-audio review were checked. The archive is about 49.62 GB compressed according to the provider manifest.",
+      "limitations": "The 2025 overview paper reports 11,340 soundscapes at 63 sites, unlike this separate 10,980-recording, 61-site release. The source records do not explain the difference. No event labels, behavior labels, animal identities, session joins, site split or human-audio review were checked. The archive is about 49.62 GB compressed according to the provider manifest.",
       "attribution": "REDECOACUSTICA, El Silencio unlabeled soundscapes, Zenodo record 17122738, DOI 10.5281/zenodo.17122738.",
       "rights": {
         "license": "CC BY 4.0 declared by the official Zenodo API record.",
