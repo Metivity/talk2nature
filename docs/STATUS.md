@@ -2459,3 +2459,13 @@ Moved four optional workflows—phone rehearsal, moment comparison, audio review
 **Validation:** all 144 Python tests passed. The local noindex site build produced 114 pages plus 404; the site checker passed 115 HTML documents and 5,655 links. A local README-link check found no missing relative file targets. The contribution issue's open state was verified through GitHub's public API. This was a maintainer review, not an independent newcomer walkthrough or screen-reader study. No Node or UI tests were needed because no client code changed.
 
 **Next decision and limits:** obtain a first-time contributor walkthrough of the revised README and record where the person hesitates or abandons the path. No source push, PR, website deployment or outreach occurred in this local candidate. Keep search discovery and independent contribution success unclaimed until measured.
+
+## October 23 — live mobile rehearsal smoke check
+
+**Question:** does the deployed simplified Field Companion preserve its first-use path and microphone-free rehearsal at narrow phone widths?
+
+**Evidence:** on the live Pages app at `/app/`, Chromium viewport emulation measured matching viewport, document and body widths at 320 × 740 and 390 × 844 CSS pixels. The first two actions fit at both widths. At 320 × 740, “Try without a microphone” opened a labeled synthetic session; “End rehearsal” returned a partial-moment recap after 4.5 seconds with zero notes and temporary invented audio. The review screen remained 320 pixels wide, showed export/discard/new-moment controls, and reported that audio was temporary. No microphone permission prompt appeared; no session was saved or exported.
+
+**Unverified and limits:** the browser bridge did not activate the native “More tools” disclosure with click, Enter, Space or its exposed accessibility Expand action. This is inconclusive and not a confirmed product defect; verify it on a supported browser/device. The pass is emulated Chromium only and does not validate a physical phone, screen reader, microphone capture, interruption recovery, export/reopen, or first-time-user comprehension. No code or deployment changed; no animal or participant data was used.
+
+**Next step:** check the disclosure and export/reopen path on a physical iOS or Android device, then obtain a first-time-user walkthrough. Keep those usability gates open until observed. AutoResearch remains **NOT READY**.
