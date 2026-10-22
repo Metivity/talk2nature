@@ -1182,9 +1182,22 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Try without a microphone',home)
             self.assertNotIn('YOUR FIRST LITTLE FIELD NOTE',home)
             self.assertNotIn('class="field-invitation"',home)
-            self.assertIn('Check your phone at home.',home)
-            self.assertIn('Same place. A different day.',home)
-            self.assertIn('Review a recording',home)
+            panel_marker='<details class="app-more-tools-panel glass">'
+            self.assertIn(panel_marker,home)
+            self.assertNotIn('<details class="app-more-tools-panel glass" open>',home)
+            beginner_paths=home.split(panel_marker,1)[0]
+            more_tools=home.split(panel_marker,1)[1].split('</details>',1)[0]
+            self.assertEqual(beginner_paths.count('<a class="scenario-card glass'),3)
+            self.assertIn('href="/talk2nature/app/station/?mode=outdoor"',beginner_paths)
+            self.assertIn('href="/talk2nature/app/station/?mode=companion"',beginner_paths)
+            self.assertIn('href="/talk2nature/app/station/?mode=parrot"',beginner_paths)
+            self.assertIn('Check your phone at home.',more_tools)
+            self.assertIn('Same place. A different day.',more_tools)
+            self.assertIn('href="/talk2nature/app/review/"',more_tools)
+            self.assertIn('Review a recording',more_tools)
+            self.assertIn('href="/talk2nature/app/practice/"',more_tools)
+            self.assertNotIn('Check your phone at home.',beginner_paths)
+            self.assertNotIn('Same place. A different day.',beginner_paths)
 
     def test_recording_stop_bar_leaves_phone_scroll_space_for_observation_notes(self):
         with tempfile.TemporaryDirectory() as d:
