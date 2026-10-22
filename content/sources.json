@@ -3449,5 +3449,13 @@
       "license": "The record declares CC BY 4.0 for its soundscape audio, annotations and metadata. train_xenocanto retains each source recording's original license.",
       "scope": "The record-level declaration does not relicense train_xenocanto recordings. Its schema says some Xeno-Canto license fields are empty; inspect exact rows before any use. No independent source-media or privacy review was performed."
     }
+  },
+  {
+    "id": 334,
+    "title": "BEANS-Next and ROOTS: Broadening Audio-Language Capabilities for Bioacoustics",
+    "description": "Plachouras et al. (2026), arXiv:2610.10663. Benchmark and training-resource paper; preprint, not a Talk2Nature reproduction.",
+    "url": "https://arxiv.org/abs/2610.10663",
+    "checked": "2026-10-23",
+    "origin": "Targeted review of the primary preprint abstract, task taxonomy, data construction, benchmark split description, reported findings, risks and reproducibility statement, plus the official project page and Hugging Face benchmark/training-resource cards. No audio, dataset shards, code or model weights downloaded; no inference or benchmark run."
   }
 ]

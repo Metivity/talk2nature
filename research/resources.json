@@ -275,23 +275,53 @@
       "kind": "dataset",
       "title": "BEANS-Next",
       "url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next",
-      "version": "Metadata revision 2fc58150c9541698ffc82aaf1f5d5a44993c54bf; live card checked 2026-09-30",
+      "version": "Metadata revision 2fc58150c9541698ffc82aaf1f5d5a44993c54bf; benchmark scope updated from arXiv:2610.10663 on 2026-10-23",
       "source_ids": [
-        53
+        53,
+        334
       ],
       "priority": 2,
-      "reviewed": "2026-09-30",
-      "task": "Multi-task animal-audio evaluation, including descriptions.",
-      "review_depth": "Official card/visible schema rechecked; prior Croissant review reused. Full row-by-row audit not performed.",
+      "reviewed": "2026-10-23",
+      "task": "45-task, 37,718-example evaluation suite for acoustic perception, biological-category recognition, scene understanding and in-context learning.",
+      "review_depth": "Targeted preprint review: abstract, task taxonomy, data construction, benchmark split description, reported limitations and reproducibility statement; official project page and current Hugging Face card. No row-by-row audit or evaluation run.",
       "access": "Public dataset card; audio not downloaded.",
-      "decision": "Metadata only. Keep public test examples out of training for any independent benchmark claim.",
-      "limitations": "Mixed source licenses and heterogeneous tasks; descriptive text is not automatically independently observed behavioral ground truth.",
+      "decision": "Metadata only. Use as a capabilities/evaluation reference; keep public test examples out of training for any independent benchmark claim.",
+      "limitations": "The paper describes real benchmark audio with human- or dataset-provided annotations and says text construction does not introduce new labels. Those annotations still do not measure receiver comprehension or animal-reported meaning. Mixed source licenses and heterogeneous tasks remain.",
       "attribution": "Earth Species Project and the underlying source-dataset creators.",
       "rights": {
         "license": "CC-BY-NC-SA-4.0 plus mixed component licenses",
         "scope": "Dataset card and per-record license fields; not a uniform permissive corpus.",
         "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next",
         "conditions": "Audit each underlying source and preserve noncommercial/share-alike restrictions and benchmark splits.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "roots-bioacoustic-training",
+      "kind": "dataset",
+      "title": "ROOTS bioacoustic training resource",
+      "url": "https://huggingface.co/datasets/EarthSpeciesProject/ROOTS",
+      "version": "Described in arXiv:2610.10663 (2026-10-07); official card checked 2026-10-23",
+      "source_ids": [
+        334
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Training supervision across four bioacoustic capability tiers; paper reports 44 million audio-language pairs from 6.5 million distinct audio clips.",
+      "review_depth": "Targeted primary preprint and official project/Hugging Face card review. Public card preview and stated construction inspected; no training shards, source audio, code or weights acquired, and no run performed.",
+      "access": "Public card and preview; the paper says ROOTS does not redistribute source audio and supplies retrieval/preprocessing guidance. No data acquired.",
+      "decision": "Keep metadata-only. Treat as a methods reference; do not admit to Talk2Nature training or commercial assets until source-level rights, provenance and task-label construction are audited.",
+      "limitations": "Pairs combine curated archives, structured and free-text metadata, audio-derived information and synthetic audio. LLM-generated text can contain unsupported claims; synthetic scenes are not natural animal interaction records. Pair count is not a count of unique meanings or independent observations.",
+      "attribution": "Earth Species Project and the creators of each underlying source dataset; cite Plachouras et al. (2026), arXiv:2610.10663.",
+      "rights": {
+        "license": "Hugging Face card reports `other`; underlying audio and metadata have source-specific terms.",
+        "scope": "No uniform license or commercial reuse permission established by this metadata review.",
+        "evidence_url": "https://huggingface.co/datasets/EarthSpeciesProject/ROOTS",
+        "conditions": "Audit each source record and preserve source restrictions before any download, training, redistribution or product use.",
         "research_use": "unresolved",
         "commercial_use": "not_admitted",
         "redistribution": "unresolved"
