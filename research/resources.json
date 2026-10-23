@@ -4919,6 +4919,94 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "monk-parakeet-social-structure-paper-2025",
+      "kind": "paper",
+      "title": "The effect of social structure on vocal flexibility in monk parakeets",
+      "url": "https://doi.org/10.1098/rsos.241717",
+      "version": "Royal Society Open Science 12(5):241717 (2025); published May 7, 2025",
+      "source_ids": [
+        344
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Relates vocal diversity and contact-call similarity to social-network measures; useful as an observational context-design reference, not a call-meaning benchmark.",
+      "review_depth": "Reviewed the published abstract and targeted methods, results, discussion, data-access and rights passages via the primary article record and institutional copy. No article figures or full-text copy are reproduced.",
+      "access": "Open article via DOI and linked institutional/PMC records.",
+      "decision": "Include as a source-linked methods reference. Treat the 2025 result as a social-network analysis of an overlapping cohort already reported in the 2023 voiceprint paper, not independent replication.",
+      "limitations": "Associations between social measures and call variation do not establish message meaning, causal function or receiver understanding. The same 5,599-call, 229-bird, two-year cohort is reported in the 2023 voiceprint study.",
+      "attribution": "Smeele, Senar, McElreath and Aplin (2025), Royal Society Open Science 12:241717, https://doi.org/10.1098/rsos.241717.",
+      "rights": {
+        "license": "CC BY 4.0 declared for the article.",
+        "scope": "Article rights do not automatically apply to the separate data archive, code, audio or model outputs.",
+        "evidence_url": "https://doi.org/10.1098/rsos.241717",
+        "conditions": "Credit the authors and source; do not reproduce third-party data or figures under the article license assumption.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-social-structure-data-zenodo-v1",
+      "kind": "dataset",
+      "title": "Monk-parakeet social-structure data deposit, Zenodo v1",
+      "url": "https://zenodo.org/records/13906800",
+      "version": "Zenodo v1; DOI 10.5281/zenodo.13906800; published 2024-10-09",
+      "source_ids": [
+        345,
+        344
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Potential source for inspecting social-network and vocal-analysis data structure after overlap, rights and location review.",
+      "review_depth": "Reviewed the official Zenodo v1 record, listed archive size and record-level license declaration only. No archive or member file was downloaded or inspected.",
+      "access": "The record is marked open and lists one 129.5 MB ZIP. No local file or checksum was verified.",
+      "decision": "Keep metadata-only. Do not acquire until the exact relationship to the 2023 cohort, member-level contents and terms, missing input files, and location sensitivity are reviewed.",
+      "limitations": "The record-level MIT declaration does not establish the provenance, rights or privacy suitability of every archive member. Archive contents and joins are unknown. The author code README documents some UTM/nest-location fields and says some inputs are not shared.",
+      "attribution": "Smeele, Simeon Q. (2024), data associated with Smeele et al. (2025), Zenodo v1, DOI 10.5281/zenodo.13906800.",
+      "rights": {
+        "license": "Zenodo declares MIT at record level; archive members have not been inspected.",
+        "scope": "Do not infer that all embedded audio, annotations, locations or third-party elements share the record-level terms.",
+        "evidence_url": "https://zenodo.org/records/13906800",
+        "conditions": "No acquisition or reuse until file-level provenance, overlap, location sensitivity and the intended-use terms are reviewed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-social-structure-code-2025",
+      "kind": "code",
+      "title": "Analysis code for monk-parakeet social-structure study",
+      "url": "https://github.com/simeonqs/The_effect_of_social_structure_on_vocal_flexibility_in_monk_parakeets/tree/395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
+      "version": "GitHub commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
+      "source_ids": [
+        346
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Author R/Stan analyses and data-preparation scripts for social-network and acoustic-variation models.",
+      "review_depth": "Reviewed the pinned repository README and file tree. No LICENSE file was located at this revision. No code, dependencies or data were downloaded or executed.",
+      "access": "Public GitHub repository; commit pinned for provenance.",
+      "decision": "Keep metadata-only. Do not reuse or execute until a license is identified and missing inputs, data provenance, dependency setup and location fields are reviewed.",
+      "limitations": "The README states some required age, relatedness and other input data are not shared, so parts of the analyses cannot be rerun. It also documents UTM/nest-location fields. The Zenodo record-level license does not apply automatically to GitHub code.",
+      "attribution": "Simeon Q. Smeele and coauthors; repository snapshot 395a622b18f3f55fd4efdcb9a093cc214f6fdf67.",
+      "rights": {
+        "license": "No repository license was located in the pinned tree; reuse terms unresolved.",
+        "scope": "The Zenodo data-record license is not a code license.",
+        "evidence_url": "https://github.com/simeonqs/The_effect_of_social_structure_on_vocal_flexibility_in_monk_parakeets/tree/395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
+        "conditions": "Do not reuse or execute until the repository license and dependency/data terms are clarified.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

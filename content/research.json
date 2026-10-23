@@ -4088,5 +4088,71 @@
       "rights": "The paper says OpenWhistle is released under CC BY 4.0, but the dataset cards do not declare a license and the model card says the model license is unspecified. Confirm component-level terms before any use; commercial clearance is not established for the full stack.",
       "experiment": "No files were acquired or analyzed, no model was trained and no result was reproduced. Any future study needs independent review, a rights-cleared asset set, a defined extension beyond the published baseline, and evaluation that reports session and individual generalization separately. Whistle labels alone cannot establish semantics or translation."
     }
+  },
+  {
+    "slug": "monk-parakeet-social-structure-2025",
+    "title": "Parrot social ties track call variation, not call meaning",
+    "seo_description": "A 2025 monk-parakeet study links social networks with call variation, not meaning or receiver understanding.",
+    "taxon": "Parrots",
+    "kind": "Vocal variation and social networks",
+    "year": "2025",
+    "year_label": "Published May 7, 2025",
+    "source_ids": [
+      344,
+      345,
+      346,
+      55
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Targeted article, deposit-metadata and pinned-repository review; metadata only",
+    "review_depth": "Reviewed the published article abstract and targeted methods, results, discussion, data-access, ethics and rights passages using the primary full-text record and institutional copy; checked the 2023 voiceprint paper for sample overlap; reviewed the Zenodo record and the GitHub README/tree at a pinned revision. The archive, raw recordings, code and model outputs were not acquired or run.",
+    "review_locator": "Smeele et al. (2025), abstract and targeted Methods, Results, Discussion, Data accessibility, Ethics and copyright passages; Smeele et al. (2023), Results and study-sample description; Zenodo record 10.5281/zenodo.13906800; GitHub commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67.",
+    "finding": "This study combines social-network observations with monk-parakeet vocalizations. It reports networks for 337 birds, relatedness for 100, and 5,599 vocalizations from 229 individuals over two years. Call-diversity associations varied by year; close affiliates had more dissimilar calls. These are observational associations, not evidence that a specific call carries a known message.",
+    "limitations": "The exact 5,599-call and 229-bird totals match the 2023 monk-parakeet voiceprint paper, so this is a new analysis of an overlapping cohort, not an independent acoustic replication. The study does not test receiver responses or experimentally established meanings. The authors discuss active differentiation as an interpretation; the reported associations alone do not establish that cause. The Zenodo archive was not inspected, and the GitHub README says some required inputs are not shared. Its documented nest/UTM location fields make location review necessary before any mapping. No coordinates are reproduced here.",
+    "lesson": "This work shows why social relationships and sound should be recorded as separate, linked evidence. A useful next study could test whether carefully observed social context improves a bounded caller-identity or call-variation task, with whole-bird and whole-session holdouts. That would still be distinct from decoding message content or proving that a receiver understood a call.",
+    "next_review": "Ask an independent parrot-bioacoustics or social-network specialist to judge whether the paper’s network measures can be joined to call-level events and what missingness would mean. Before archive acquisition, verify the exact overlap with the 2023 release, inspect the manifest and member-level terms, and review the location fields and missing inputs. Keep the 2025 code metadata-only until a license and dependencies are reviewed; do not publish fine-grained locations.",
+    "expert_review": "Not yet independently reviewed by a parrot-bioacoustics, animal-behavior or machine-learning specialist.",
+    "purpose": "Behavior & communication",
+    "study_snapshot": [
+      [
+        "Question",
+        "How do social-network position and relationships relate to individual vocal diversity and contact-call similarity?"
+      ],
+      [
+        "Study sample",
+        "337 monk parakeets in social-network observations, relatedness for 100, and 5,599 vocalizations from 229 individually marked birds over two years in Barcelona."
+      ],
+      [
+        "Reported patterns",
+        "The paper reports year-specific relationships between call diversity, age and nest-mate counts, and more dissimilar calls among strongly affiliated birds. These patterns are associations, not causal estimates of what calls mean."
+      ],
+      [
+        "Overlap with prior work",
+        "The 2023 voiceprint paper reports the same 5,599 calls from 229 birds over two years. Treat this 2025 analysis as an extension of that cohort, not an independent replication."
+      ],
+      [
+        "Asset status",
+        "The article declares CC BY 4.0; Zenodo v1 declares MIT for its deposit; the pinned GitHub tree has no located license. No archive, code or audio was acquired or executed."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-23",
+      "location_status": "pending",
+      "location_note": "The paper identifies a Barcelona study area. Exact site-level mapping and sensitivity were not independently reviewed; no coordinates or nest-level locations are published here.",
+      "locations": [],
+      "observation_period": {
+        "label": "Two-year study period; calendar years reported as 2020 and 2021 in the companion study",
+        "start_year": 2020,
+        "end_year": 2021,
+        "source_id": 344,
+        "locator": "Methods and sample description; cross-checked against Smeele et al. 2023 source 55"
+      }
+    },
+    "reuse": {
+      "status": "Metadata-only; not admitted to Talk2Nature training or public app inference.",
+      "asset": "Article metadata and targeted text review, Zenodo record metadata and pinned GitHub README/tree only. No audio, dataset archive, code or model was acquired or run.",
+      "rights": "The article declares CC BY 4.0; the Zenodo deposit declares MIT at record level, but its member files and embedded-media provenance were not inspected; no GitHub repository license was located at the pinned revision. Keep these assets separate and resolve component-specific terms before use.",
+      "experiment": "No experiment or model was run. A future analysis would need a verified call/social-event join, overlap and missingness audit, independent specialist review, rights and location review, and animal/session-grouped evaluation. Social association does not establish call meaning or receiver comprehension."
+    }
   }
 ]
