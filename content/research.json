@@ -3938,7 +3938,7 @@
     "review_locator": "arXiv:2403.10380v6 abstract and version history; BirdSet card: dataset configuration table, metadata and licensing sections; DBD-research-group/BirdSet issue 337, May 2026 maintainer/contributor discussion.",
     "finding": "BirdSet is a large benchmark for recognizing bird species and related acoustic labels in recordings and soundscapes. The paper reports more than 6,800 recording hours, nearly 10,000 training classes and eight strongly labeled evaluation datasets totaling more than 400 hours. The live card lists a 528,434-recording XCL snapshot at 484 GB and recommends a regional HSN configuration with 5,460 training recordings, 10,296 test labels and 21 classes at 5.92 GB. These are upstream-reported benchmark figures, not a Talk2Nature reproduction. The task is acoustic classification; it does not test whether a receiver understood a call or what it meant.",
     "limitations": "BirdSet is not parrot-specific and does not contain the receiver-response or validated behavior labels needed for a communication claim. Its card declares CC BY-NC 4.0 at the collection level and limits the dataset to non-commercial research and education, while individual Xeno-Canto recordings carry mixed terms; the maintainer thread records corrected metadata and a mix that includes CC BY, CC0, SA and NC-SA entries. The interaction between collection-level limits and individual rights remains unresolved, so no subset is admitted for Talk2Nature training or commercial use. The card itself is not revision-pinned, its compatibility notes conflict, and the live dataset viewer cannot load its custom script. Location fields are present and would need careful treatment.",
-    "lesson": "A big dataset can help build and measure a perception layer—such as detecting a species or acoustic event—but that output is not a translation. Keep sound detection, caller identity, observed context and receiver-supported meaning as separate research targets. For this project, BirdSet is a valuable methods reference; the leading data-led communication-adjacent model question remains the separately gated fruit-bat context study, while a possible budgerigar cohort serves a different community-observation purpose.",
+    "lesson": "A big dataset can help build and measure a perception layer—such as detecting a species or acoustic event—but that output is not a translation. Keep sound detection, caller identity, observed context and receiver-supported meaning as separate research targets. For this project, BirdSet is a valuable methods reference; the separately gated fruit-bat context study and newly reviewed OpenWhistle dolphin benchmark are promising but distinct data-led candidates, while companion parrots remain a different community-observation and app-participation path.",
     "next_review": "Do not download or train on BirdSet now. If a future project needs a bird-classification baseline, first define whether the use is strictly non-commercial, pin the exact configuration and revision, get a component-level rights review, check any location fields, and compare it with a rights-cleared benchmark suited to the intended species. Keep biological communication claims dependent on independently observed context and receiver-response evidence.",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "purpose": "Models & evaluation",
@@ -4025,6 +4025,68 @@
       "asset": "Publisher article abstract and official Zenodo v4 record 20513304. No paper body, archive, audio, annotations, code or model was acquired.",
       "rights": "The publisher abstract reports CC BY 4.0 for the dataset, while current Zenodo v4 reports CC BY-NC 4.0. Resolve this discrepancy and review source-record/per-file conditions before acquisition. Commercial permission is not cleared.",
       "experiment": "No data were acquired or analyzed, no model was trained and no result was reproduced. A future detector test requires a rights-cleared version, inspected grouping and labels, an independent reviewer, a simple baseline and a locked site-held-out evaluation. Detection performance would not establish animal behavior, comprehension or meaning."
+    }
+  },
+  {
+    "slug": "openwhistle-dolphin-benchmark",
+    "title": "OpenWhistle: a strong dolphin sound benchmark, not a translator",
+    "seo_description": "OpenWhistle offers longitudinal dolphin audio and expert whistle labels. Its published tasks classify and detect whistle types, not communicative meaning.",
+    "taxon": "Bottlenose dolphins",
+    "kind": "Longitudinal bioacoustic benchmark",
+    "year": "2026",
+    "year_label": "arXiv v1, September 2026; reported accepted as a NeurIPS 2026 Datasets & Evaluations Spotlight",
+    "source_ids": [
+      340,
+      341,
+      342,
+      343
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Targeted paper, dataset-card and model-license review; metadata only",
+    "review_depth": "Reviewed the arXiv v1 paper's data collection, annotation, benchmark, evaluation, limitations and ethics sections; the current Hugging Face pretraining and classification dataset cards and file inventories; and the separate model card's license statement. No audio, labels, code or weights were acquired or run. No independent specialist reviewed this note.",
+    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10; OpenWhistle-Pretraining and OpenWhistle-Classification-Finetuning README dataset cards and repository inventories; OpenWhistle-Wav2Vec2.0 model card.",
+    "finding": "OpenWhistle is a timely single-species research candidate: its authors report about 114 hours of 96 kHz recordings collected over five years from five known dolphins at Dolphin Reef in Eilat, plus 8,354 expert-annotated whistles in 10 categories. The official Hugging Face cards list 31,780 unlabeled audio segments and a separate labeled set split into 5,848 training, 1,253 validation and 1,253 test examples. Published tasks detect whistle presence or classify whistle type. These are upstream descriptions, not a Talk2Nature reproduction.",
+    "limitations": "All recordings come from one site and a pod of five; the paper says results need validation on independent groups. Its labels cover whistle categories, including individual signature-whistle types, not experimentally established message meanings or receiver understanding. The main evaluation holds out recording sessions, not whole animals, and the expert labels cover only a short part of the five-year span; the labels are highly imbalanced. The paper states CC BY 4.0 for OpenWhistle, but the current dataset cards omit an explicit license field and the separate model card says its license is unspecified. Resolve component scope before reuse, especially commercial use.",
+    "lesson": "This is a strong newly reviewed large-data candidate for a bounded communication-adjacent benchmark, not evidence of dolphin translation. A useful contribution would need to go beyond repeating the published whistle classifier—for example, a carefully reviewed test of temporal and individual generalization if the available metadata and rights support it. Keep this research track distinct from a companion-parrot app: app participation and model training have different evidence, consent and welfare requirements.",
+    "next_review": "Before any data acquisition or training, reconcile the paper's CC BY 4.0 statement with the dataset-card omissions and confirm rights for each data, code and model component. Then obtain independent cetacean-bioacoustics and ML review of a concrete gap, especially whether a whole-individual holdout is possible and scientifically useful. Do not infer meaning from detection or classification, and do not create playback features from this dataset.",
+    "expert_review": "Not yet independently reviewed by a cetacean-bioacoustics or machine-learning specialist.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Reported corpus",
+        "About 114 hours, five years and five known dolphins at one site; the labeled subset contains 8,354 whistles across 10 categories."
+      ],
+      [
+        "Published tasks",
+        "Whistle-type detection and classification, not receiver response, communicative function or meaning."
+      ],
+      [
+        "Evaluation boundary",
+        "The paper reports a 70/15/15 session-level split. It does not report a whole-individual held-out test."
+      ],
+      [
+        "Rights boundary",
+        "The paper states CC BY 4.0 for OpenWhistle; the dataset cards omit a license field and the separate model card says its license is unspecified. No component is admitted for Talk2Nature use."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-23",
+      "location_status": "pending",
+      "location_note": "The paper names Dolphin Reef in Eilat. This note has not independently reviewed mapping precision or site-level sensitivity; no coordinates or animal-level positions are published here.",
+      "locations": [],
+      "observation_period": {
+        "label": "Recordings span 2019–2024",
+        "start_year": 2019,
+        "end_year": 2024,
+        "source_id": 340,
+        "locator": "Section 4.2, Scale and Coverage"
+      }
+    },
+    "reuse": {
+      "status": "Metadata-only candidate; not admitted to Talk2Nature training or public app inference.",
+      "asset": "arXiv v1 paper and official Hugging Face metadata/cards only. No audio, labels, code, checkpoint or video was acquired.",
+      "rights": "The paper says OpenWhistle is released under CC BY 4.0, but the dataset cards do not declare a license and the model card says the model license is unspecified. Confirm component-level terms before any use; commercial clearance is not established for the full stack.",
+      "experiment": "No files were acquired or analyzed, no model was trained and no result was reproduced. Any future study needs independent review, a rights-cleared asset set, a defined extension beyond the published baseline, and evaluation that reports session and individual generalization separately. Whistle labels alone cannot establish semantics or translation."
     }
   }
 ]
