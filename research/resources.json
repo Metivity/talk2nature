@@ -5127,6 +5127,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bat-reviewer-collaboration-paper-2025",
+      "kind": "paper",
+      "title": "Bat genomes illuminate adaptations to viral tolerance and disease resistance",
+      "url": "https://doi.org/10.1038/s41586-024-08471-0",
+      "version": "Nature 638, 449–458 (2025)",
+      "source_ids": [
+        354
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-23",
+      "task": "Disclose a separate coauthorship relationship between a possible bat-vocal-communication reviewer and an author of the source dataset.",
+      "review_depth": "Checked the official Nature author list and the official St Andrews group page only. The article's scientific content was not reviewed and is not used as evidence about vocal communication.",
+      "access": "Official Nature article record; only bibliographic author metadata used.",
+      "decision": "Keep metadata-only as a relationship disclosure. The coauthorship is not a finding of bias or automatic disqualification; assess it before describing any review as independent.",
+      "limitations": "This is a separate bat-genomics paper, not a paper about the Egyptian fruit-bat vocalization dataset or its 2024 prediction task. It establishes coauthorship only, not reviewer availability, interest or independence.",
+      "attribution": "Morales et al., Nature 638, 449–458 (2025), DOI 10.1038/s41586-024-08471-0.",
+      "rights": {
+        "license": "Full-article license not reviewed; only public author metadata was used.",
+        "scope": "No article text, figures, supplements or underlying data were acquired or reproduced. The paper record is separate from the bat vocalization dataset and prediction paper.",
+        "evidence_url": "https://doi.org/10.1038/s41586-024-08471-0",
+        "conditions": "Cite the original record. Do not reproduce article content unless the relevant license is checked.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

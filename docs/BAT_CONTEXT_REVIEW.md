@@ -19,6 +19,14 @@ Talk2Nature has not inspected the paper's exact fold files. The training/validat
 
 See the [research note and complete source list](https://metivity.github.io/talk2nature/research/fruit-bat-context-ml-2024/) for review depth, rights distinctions, limitations and the current evidence record.
 
+## Reviewer independence and disclosure
+
+The 2017 source-dataset descriptor lists Yossi Yovel among its authors. The 2024 EUSIPCO context-prediction paper has a separate author team. Replies from authors of either work can clarify provenance, files or methods, but they do not count as independent review of the work they authored.
+
+The Tel Aviv University Bat Lab is therefore a useful source-author path for clarification, not an independent review route for this corpus. The University of St Andrews Neurogenetics of Vocal Communication group describes research on bat vocal learning and communication behavior, making it a topical fit hypothesis. Its official publication list also shows Prof. Sonja Vernes and Yossi Yovel coauthored a separate 2025 Bat1K genomics paper. That collaboration must be disclosed and assessed before any review is described as independent; it is not by itself a finding of bias or automatic disqualification. The St Andrews profile for Vincent Janik cited in the broader network guide concerns dolphin communication and does not fill the bat-specialist role.
+
+No bat specialist or independent ML/statistical reviewer has been selected or contacted. The review requires separate subject-matter and evaluation expertise. A topical profile establishes neither interest nor availability.
+
 ## What an independent review should decide
 
 Please state which parts you can assess from the cited material and which require unavailable artifacts. A useful review may answer only one question.
@@ -40,6 +48,7 @@ Submit a public GitHub issue using the [scientific methods review form](https://
 - one clear judgment, such as supported, partly supported, unclear or not supported, with reasons and source locators;
 - the most important alternative explanation or leakage risk;
 - one bounded follow-up check and its required artifact.
+- whether you authored the source dataset or target 2024 result, or have a relevant recent collaboration with their authors; disclose this so the review can be characterized accurately.
 
 It is useful to say “cannot assess from the public evidence.” Please do not attach recordings, annotation rows, participant or animal identifiers, private correspondence, credentials, unpublished material or sensitive locations. Do not paste article text. This issue is public, and submitting it does not create a partnership, endorsement or reviewer relationship.
 
