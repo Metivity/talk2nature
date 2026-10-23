@@ -2537,6 +2537,18 @@ The Performance report was last updated about four hours before inspection and c
 
 **Next decision:** ask an independent bat-bioacoustics/behavior and ML-evaluation reviewer to select the estimand and say whether exact fold/retained-row metadata or a bounded session join is necessary. Do not train, fetch audio or acquire the 31.6 MB FileInfo file until that review establishes the smallest useful, rights-cleared check.
 
+## October 23 — BirdSet benchmark and rights review
+
+**Question:** can a large bird-audio database provide a credible first machine-learning step for Talk2Nature?
+
+**Finding:** Rauch et al.'s BirdSet is a substantial avian sound-classification benchmark: the paper reports over 6,800 hours and nearly 10,000 training classes, with eight strongly labeled evaluation datasets totaling over 400 hours. The current card lists the XCL snapshot at 528,434 recordings / 484 GB and recommends an HSN regional configuration at 5,460 training recordings / 10,296 test labels / 21 classes / 5.92 GB. The card dates its Xeno-Canto snapshot to 2024-03-10. These figures describe the upstream benchmark, not Talk2Nature results. Its labels address species and acoustic events; they do not establish animal comprehension or meaning.
+
+**Rights and implementation:** the dataset card carries a collection-level CC BY-NC 4.0 / non-commercial research-and-education restriction, while individual recordings carry varied licenses. The May 2026 maintainer thread documents a license-metadata correction and remaining format inconsistency. The relationship between the umbrella restriction and each component license remains unresolved. The new research page and separate paper/dataset resource records therefore remain metadata-only. No article body, audio, labels, code or weights were acquired or run. No training admission or commercial use is approved. The card also has conflicting dataset-version compatibility notes and its live viewer cannot load the custom dataset script; exact revision and location-field handling need review before any future acquisition.
+
+**Project decision:** retain BirdSet as a methods reference for an acoustic perception layer, not as the first communication benchmark and not as a parrot-context dataset. The current data-led communication-adjacent ML candidate remains the separately gated Egyptian fruit-bat context question; the possible budgerigar cohort remains a distinct community-observation path. Any bird benchmark should first have a defined task and component-level rights review. AutoResearch remains **NOT READY**.
+
+**Validation:** all 145 Python tests and 115 Node tests passed. The local noindex build produced 116 pages plus 404 and passed the site checker across 117 HTML pages / 5,754 links. The explicit-origin public candidate also produced 116 pages plus 404 and passed the checker across 117 HTML pages / 5,871 links / 116 reachable public pages. The new research page was visually inspected at 390 px and 320 px viewport widths; no horizontal overflow or broken layout was observed. `git diff --check` passed. This is a local candidate, not a deployment or independent specialist review.
+
 ## October 23 — Google live fetch check for the sitemap
 
 **Question:** is Search Console's current “Couldn't fetch” status explained by a broken or blocked sitemap on the live site?
