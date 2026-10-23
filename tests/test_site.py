@@ -29,8 +29,8 @@ class SiteTests(unittest.TestCase):
         self.assertIn('## Choose one route',guide)
         self.assertIn('## Three useful first contributions',guide)
         self.assertIn('[verification history](RESEARCHER_START_HISTORY.md)',guide)
-        self.assertNotIn('## October 23 latest public-main clean-clone recheck',guide)
-        self.assertIn('## October 23 latest public-main clean-clone recheck — 76c4c768',history)
+        self.assertNotIn('## October 24 current public-main clean-clone recheck',guide)
+        self.assertIn('## October 24 current public-main clean-clone recheck — c8d4700',history)
         self.assertIn('historical snapshots, not independent reproductions or scientific results',history)
 
     def test_contributor_first_steps_link_to_existing_issue_forms(self):
