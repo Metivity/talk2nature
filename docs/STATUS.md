@@ -2988,3 +2988,11 @@ A fresh comparison of the official project overview and current Hugging Face dat
 **Change:** clarified in the researcher guide that the exact-output example is historical and added explicit `git switch main`, `git pull --ff-only` and commit-recording steps before the current-main examples and optional suites. Updated the execution board and appended the detailed procedure to the researcher verification history.
 
 **Limits and next decision:** this is maintainer-run synthetic software verification, not an outside reproduction or usability study. No third-party data, media, labels, code or model weights were acquired or run. The guide no longer conflates the historical pin with current-main examples; independent reproduction remains zero and AutoResearch remains **NOT READY**. The next adoption gate is still an independently completed workflow review.
+
+## October 23 — clarify bat grouping limits and simplify the mobile note
+
+The bat-context research note now leads with the reported 33.3% context-prediction result and the key interpretation boundary, then summarizes both filtered-subset topology checks: file-plus-emitter grouping has 10 components with a 95.31% largest component; including known addressees has 9 components with a 95.56% largest component. The public reviewer request and run card ask whether any narrower estimand remains defensible. These aggregate diagnostics neither verify nor refute the published folds.
+
+The full review-depth disclosure is now collapsed behind a keyboard-accessible “What we reviewed” control, keeping source transparency available without pushing the study summary out of the first phone view. The 390-pixel mobile preview showed the concise finding and study-at-a-glance section with the audit closed.
+
+**Validation:** all 154 Python tests and 115 Node tests passed; 173 research resources validated. The local check covered 124 HTML pages and 6,162 links. The public-origin candidate build covered 124 HTML pages, 6,286 links and all 123 public routes. `git diff --check` passed. No audio, raw annotations, weights or new external data were acquired or used; no model or independent review was run; no outreach or deployment occurred. AutoResearch remains **NOT READY** while independent bat-behavior and ML/evaluation review and exact fold evidence are outstanding.
