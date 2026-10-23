@@ -3628,5 +3628,32 @@
     "url": "https://guides.dataverse.org/en/6.11/api/native-api.html#restrict-files",
     "checked": "2026-10-23",
     "origin": "Reviewed the official Dataverse 6.11 Native API section on restricted files. It says access-request settings are ignored when restrict=false and apply to restricted files. No Dataverse API write operation or access request was made."
+  },
+  {
+    "id": 353,
+    "title": "University of St Andrews Neurogenetics of Vocal Communication group",
+    "description": "The official group profile describes research on mammalian vocal communication and bat vocal-learning and communication behavior. Reviewed for possible subject-expertise fit only; it does not establish availability, interest or independent-review status.",
+    "url": "https://biology.st-andrews.ac.uk/research/research-group/neurogenetics-of-vocal-communication/",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current official group page for a bat-context reviewer-fit screen. No contact was made."
+  },
+  {
+    "id": 354,
+    "title": "Bat genomes illuminate adaptations to viral tolerance and disease resistance",
+    "description": "The Nature 2025 author list includes Sonja C. Vernes and Yossi Yovel. Checked only to disclose a separate coauthorship relationship during reviewer-independence screening; the genomics paper was not reviewed as evidence about vocal communication.",
+    "url": "https://doi.org/10.1038/s41586-024-08471-0",
+    "checked": "2026-10-23",
+    "origin": "Checked the official Nature article's author list only. This documents a relationship to disclose, not a finding of bias or disqualification.",
+    "rights": {
+      "article": "Only public author metadata was checked. No article text, figures or supplements were reproduced; full-content reuse terms were not reviewed."
+    }
+  },
+  {
+    "id": 355,
+    "title": "Tel Aviv University profile: Yossi Yovel",
+    "description": "The official university profile identifies Yossi Yovel as a zoology professor and describes research interests including vocal communication, bat behavior and neuro-ecology.",
+    "url": "https://www.tau.ac.il/profile/yossiy",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current official TAU profile for source-author and topical-fit context. This is not evidence of interest in Talk2Nature."
   }
 ]

@@ -209,11 +209,32 @@ class SiteTests(unittest.TestCase):
     def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')
-        self.assertEqual(len(note['review_request']['questions']),4)
+        self.assertEqual(len(note['review_request']['questions']),5)
+        self.assertIn(353,note['source_ids'])
+        self.assertIn(354,note['source_ids'])
+        self.assertIn(355,note['source_ids'])
+        self.assertIn('Please disclose authorship of the source dataset or target result',note['review_request']['summary'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        relationship=next(r for r in resources if r['id']=='bat-reviewer-collaboration-paper-2025')
+        self.assertEqual(relationship['source_ids'],[354])
+        self.assertEqual(relationship['acquisition'],'metadata_only')
+        self.assertEqual(relationship['files'],[])
+        self.assertEqual(relationship['rights']['research_use'],'conditional')
+        self.assertEqual(relationship['rights']['commercial_use'],'unresolved')
+        self.assertEqual(relationship['rights']['redistribution'],'not_admitted')
         guide=(project_root/'docs'/'BAT_CONTEXT_REVIEW.md').read_text()
         self.assertIn('The exact paper partitions',guide)
         self.assertIn("not the paper's filtered 35,074-call subset",guide)
+        self.assertIn('Replies from authors of either work can clarify provenance, files or methods, but they do not count as independent review',guide)
+        self.assertIn('a separate 2025 Bat1K genomics paper',guide)
         self.assertIn('No independent specialist review has been received',guide)
+        network=(project_root/'docs'/'NETWORK_AND_OUTREACH.md').read_text()
+        self.assertIn('Disclose and assess that collaboration before describing a review as independent',network)
+        self.assertIn('This is not bat-specialist evidence',network)
+        card=(project_root/'docs'/'BENCHMARK_CANDIDATE_RUN_CARD.md').read_text()
+        self.assertIn('Source-author replies are useful clarifications but do not satisfy the independent-review gate',card)
+        university=(project_root/'docs'/'UNIVERSITY_EVALUATION.md').read_text()
+        self.assertIn('it cannot count as independent review of them',university)
 
     def test_phone_recording_review_is_bounded_and_visible_from_evidence_page(self):
         project_root=Path(__file__).resolve().parents[1]
@@ -241,6 +262,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('OPEN METHODS QUESTION',page)
             self.assertIn('Submit a public methods review',page)
             self.assertIn('No independent specialist review has been received',page)
+            self.assertIn('Please disclose whether you authored the source dataset or 2024 prediction result',page)
+            self.assertIn('Neurogenetics of Vocal Communication group',page)
             self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/BAT_CONTEXT_REVIEW.md',page)
             self.assertIn('scientific-review.yml',page)
 
