@@ -311,11 +311,11 @@
       ],
       "priority": 2,
       "reviewed": "2026-10-23",
-      "task": "Training supervision across four bioacoustic capability tiers; paper reports 44 million audio-language pairs from 6.5 million distinct audio clips.",
+      "task": "Training supervision across four bioacoustic capability tiers; paper reports 43,922,135 audio-language conversations. The project overview says 6.5 million distinct audio clips; the current card's resolver index says 4,745,972 distinct references; definitions not reconciled.",
       "review_depth": "Targeted primary preprint and official project/Hugging Face card review. Public card preview and stated construction inspected; no training shards, source audio, code or weights acquired, and no run performed.",
       "access": "Public card and preview; the paper says ROOTS does not redistribute source audio and supplies retrieval/preprocessing guidance. No data acquired.",
       "decision": "Keep metadata-only. Treat as a methods reference; do not admit to Talk2Nature training or commercial assets until source-level rights, provenance and task-label construction are audited.",
-      "limitations": "Pairs combine curated archives, structured and free-text metadata, audio-derived information and synthetic audio. LLM-generated text can contain unsupported claims; synthetic scenes are not natural animal interaction records. Pair count is not a count of unique meanings or independent observations.",
+      "limitations": "Pairs combine curated archives, structured and free-text metadata, audio-derived information and synthetic audio. LLM-generated text can contain unsupported claims; synthetic scenes are not natural animal interaction records. Pair count is not a count of unique meanings or independent observations. Overview and resolver-index audio counts have different stated units and remain unreconciled.",
       "attribution": "Earth Species Project and the creators of each underlying source dataset; cite Plachouras et al. (2026), arXiv:2610.10663.",
       "rights": {
         "license": "Hugging Face card reports `other`; underlying audio and metadata have source-specific terms.",
