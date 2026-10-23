@@ -5163,7 +5163,10 @@
       "title": "V33DA: physically verified zebra-finch caller-attribution benchmark",
       "url": "https://huggingface.co/datasets/songbirdini/v33da/tree/975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913",
       "version": "Hugging Face repository commit 975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913; accessed 2026-10-23",
-      "source_ids": [356, 357],
+      "source_ids": [
+        356,
+        357
+      ],
       "priority": 1,
       "reviewed": "2026-10-23",
       "task": "Candidate first technical task: attribute a detected, isolated vocalization to one of the visible birds using audio/video/pose, with caller truth derived from on-body accelerometer data. This is caller attribution, not call meaning or reply detection.",
@@ -5190,7 +5193,9 @@
       "title": "V33DA caller-attribution benchmark code",
       "url": "https://github.com/marisbasha/v33da/tree/e988b985e38909b40b2705cdad994e3d9307181e",
       "version": "GitHub commit e988b985e38909b40b2705cdad994e3d9307181e",
-      "source_ids": [357],
+      "source_ids": [
+        357
+      ],
       "priority": 2,
       "reviewed": "2026-10-23",
       "task": "Reference implementation for caller-attribution loaders, date-based evaluation splits and baselines.",
@@ -5217,7 +5222,10 @@
       "title": "ZF-AIM: zebra-finch social vocal interactions and AI-driven acoustic exchanges",
       "url": "https://doi.org/10.64898/2026.02.12.705387",
       "version": "bioRxiv preprint v3 (2026)",
-      "source_ids": [358, 359],
+      "source_ids": [
+        358,
+        359
+      ],
       "priority": 1,
       "reviewed": "2026-10-23",
       "task": "A particularly relevant research lead for vocal turn timing, acoustic adaptation and next-call prediction from existing zebra-finch interactions.",
@@ -5244,7 +5252,9 @@
       "title": "Large-scale, Stratified, Fully Annotated Acoustic Forest Soundscape Dataset of Avian Vocalizations from Eastern North America",
       "url": "https://doi.org/10.1038/s41597-026-08226-8",
       "version": "Scientific Data Early Article; published 2026-09-11",
-      "source_ids": [360],
+      "source_ids": [
+        360
+      ],
       "priority": 2,
       "reviewed": "2026-10-23",
       "task": "Data descriptor for field bird-vocalization monitoring and acoustic classification.",
@@ -5271,26 +5281,101 @@
       "title": "Northeastern U.S. forest-bird soundscapes, Zenodo v2",
       "url": "https://doi.org/10.5281/zenodo.20038954",
       "version": "Zenodo v2; record 20038954; concept record 18041380; published 2025-12-24; reviewed 2026-10-23",
-      "source_ids": [360, 361, 362],
+      "source_ids": [
+        360,
+        361,
+        362
+      ],
       "priority": 2,
       "reviewed": "2026-10-23",
       "task": "Bird vocalization event detection, localization and species classification across field soundscapes; not caller identity or communication meaning.",
-      "review_depth": "Reviewed the publisher abstract and rights notice, official Zenodo v1/v2 record descriptions, and complete v2 API file metadata. File sizes and provider MD5 values are upstream declarations, not local checks. No archive, annotation rows, code or model was downloaded or run.",
-      "access": "The v2 record lists approximately 27.7 GB across recordings, annotation archives and metadata. No dataset file was acquired.",
-      "decision": "Metadata-only candidate for a future, site-aware bird-detection evaluation. Keep separate from the bat context, zebra-finch caller-attribution and parrot observation tracks. No acquisition or model run is authorized by this catalog record.",
-      "limitations": "The publisher abstract reports 88 species, Zenodo v1 reports about 176,000 annotations and 88 species, and Zenodo v2 reports about 183,000 and 96 species; the mismatch is unresolved. The v2 headline says 104 sites, but its opening park counts (31, 24, 20 and 25) sum to 100; the distinct-site inventory was not independently checked. Labels identify species and event bounds, not individual callers, social context or receiver response. Faint or unidentifiable events may remain unlabeled, some calls are grouped across pauses under two seconds, and sampling protocols differ by subset. The collection is regionally bounded and its metadata contains site coordinates. No site-held-out split, label-row distribution, source-media provenance or location-sensitivity review was completed.",
+      "review_depth": "Reviewed the publisher abstract and rights notice, official Zenodo v1/v2 record descriptions, and complete v2 API file metadata. Also inspected checksum-verified aggregates from a separate four-file metadata sample; no audio, annotation rows, code or model were acquired or run.",
+      "access": "The v2 record lists approximately 27.7 GB across recordings, annotation archives and metadata. Only four small metadata files (260,845 bytes total) were acquired into ignored local storage to reconcile counts; no audio or annotation rows were acquired.",
+      "decision": "Metadata-only candidate for a future site-aware bird-detection evaluation. A checksum-verified metadata review supports the 104-site total but leaves a KAWW park-count discrepancy and 88-versus-96 species difference unresolved. Keep separate from the bat context, zebra-finch caller-attribution and parrot observation tracks. No model run or training admission.",
+      "limitations": "The v2 README and publisher abstract report 88 species; the v2 species table has 96 IsBird=Yes rows with 182,633 annotations, so the difference remains unresolved. The README and two metadata tables support 104 sites; site_metadata.csv lists KAWW 24 while the landing-page opening summary says 20. Labels identify species and event bounds, not individual callers, social context or receiver response. Faint or unidentifiable events may remain unlabeled, some calls are grouped across pauses under two seconds, and sampling protocols differ by subset. The collection is regionally bounded and its metadata contains site coordinates; no coordinate values were exported. No site-held-out split, label-row distribution, source-media provenance or location-sensitivity review was completed.",
       "attribution": "Panwar et al. (2026), Zenodo v2 DOI 10.5281/zenodo.20038954; data descriptor DOI 10.1038/s41597-026-08226-8.",
       "rights": {
         "license": "CC BY 4.0 declared by the Zenodo v2 dataset record.",
         "scope": "Dataset record only; the associated article text is separately listed as CC BY-NC-ND 4.0. No independent source-media or component-level rights audit was performed.",
         "evidence_url": "https://zenodo.org/records/20038954",
-        "conditions": "Retain attribution and identify the exact v2 release if any later use is approved. Review source provenance, site coordinates and the annotation-version discrepancy before acquisition, redistribution or model training.",
+        "conditions": "Retain attribution and identify the exact v2 release if any later use is approved. Review the unresolved counts, source provenance, site coordinates and location conditions before acquiring or redistributing audio or annotations. Metadata sample is not training admission.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "northeastern-forest-bird-metadata-sample-v2",
+      "kind": "dataset",
+      "title": "Northeastern forest-bird soundscapes: bounded Zenodo v2 metadata sample",
+      "url": "https://zenodo.org/records/20038954",
+      "version": "Zenodo v2 record 20038954; DOI 10.5281/zenodo.20038954; reviewed 2026-10-23",
+      "source_ids": [
+        361
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Aggregate-only inspection of the README and site, recording and species metadata; no audio or annotation rows.",
+      "review_depth": "The exact Zenodo v2 record, API DOI, CC BY 4.0 declaration, file names, sizes, MD5 values and content endpoints were checked. Four small metadata files were acquired locally; provider MD5 values and local SHA-256 receipt values were verified. Aggregate counts were inspected without exporting site IDs or coordinate values.",
+      "access": "Four selected metadata files total 260,845 bytes. The deposit's approximately 27.7 GB audio and annotation archives are not part of this sample.",
+      "decision": "Approved only for aggregate reconciliation of the public record totals. The site total of 104 is corroborated; the KAWW park subtotal and 88-versus-96 species count remain unresolved. This metadata sample is not admitted to model training, species detection or communication research.",
+      "limitations": "Zenodo's record-level license is not an independent audit of every component. Site metadata contains coordinates; no coordinate values or raw site IDs are included in the aggregate report. Provider MD5 values were checked against received bytes and local SHA-256 values are recorded in the ignored receipt; neither is a cryptographic signature from the source. Any audio or annotation acquisition requires a separate decision.",
+      "attribution": "Panwar et al. (2026), Zenodo v2 DOI 10.5281/zenodo.20038954.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Zenodo v2 record-level CC BY 4.0 declaration applies to this bounded metadata sample; no independent component-level rights audit. The paper text has a separate CC BY-NC-ND 4.0 license.",
+        "evidence_url": "https://zenodo.org/records/20038954",
+        "conditions": "Retain attribution and exact record/version. Keep site coordinates and raw rows out of public summaries. The sample is not training admission.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "adapter": "zenodo_record",
+      "zenodo_record_id": 20038954,
+      "zenodo_doi": "10.5281/zenodo.20038954",
+      "license_notice": "CC BY 4.0 declared by the exact Zenodo v2 record; metadata is used for aggregate counts only.",
+      "admission_reason": "Reconcile site and species counts reported inconsistently by the paper and Zenodo v2 landing page using only the version-pinned README and metadata tables.",
+      "files": [
+        {
+          "name": "ReadMe.txt",
+          "zenodo_file_key": "ReadMe.txt",
+          "zenodo_record_id": 20038954,
+          "url": "https://zenodo.org/api/records/20038954/files/ReadMe.txt/content",
+          "source_url": "https://zenodo.org/records/20038954",
+          "bytes": 6588,
+          "md5": "384d74ffcd25bb9d84951fe2ea8e28ae"
+        },
+        {
+          "name": "recording_metadata.csv",
+          "zenodo_file_key": "recording_metadata.csv",
+          "zenodo_record_id": 20038954,
+          "url": "https://zenodo.org/api/records/20038954/files/recording_metadata.csv/content",
+          "source_url": "https://zenodo.org/records/20038954",
+          "bytes": 242869,
+          "md5": "6d2a0f9efe964ffd3a492144bb9e9fb3"
+        },
+        {
+          "name": "site_metadata.csv",
+          "zenodo_file_key": "site_metadata.csv",
+          "zenodo_record_id": 20038954,
+          "url": "https://zenodo.org/api/records/20038954/files/site_metadata.csv/content",
+          "source_url": "https://zenodo.org/records/20038954",
+          "bytes": 4701,
+          "md5": "775723415bb550883c187063f15e28b8"
+        },
+        {
+          "name": "species_metadata.csv",
+          "zenodo_file_key": "species_metadata.csv",
+          "zenodo_record_id": 20038954,
+          "url": "https://zenodo.org/api/records/20038954/files/species_metadata.csv/content",
+          "source_url": "https://zenodo.org/records/20038954",
+          "bytes": 6687,
+          "md5": "0810a872af9de18a2811410adf03051e"
+        }
+      ]
     }
   ]
 }

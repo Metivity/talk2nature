@@ -11,7 +11,8 @@ from unittest.mock import Mock
 
 from talk2nature.collection import (CATALOG, MAX_BATCH_BYTES,
                                     FigshareRedirect, NoRedirect,
-                                    acquire, plan, read_artifact, validate)
+                                    acquire, plan, read_artifact, validate,
+                                    verify_zenodo_record)
 from scripts.inspect_bat_annotations import inspect as inspect_bat
 from scripts.inspect_parrot_annotations import inspect
 
@@ -56,8 +57,57 @@ class CollectionTests(unittest.TestCase):
             'monk-parakeet-code', 'monk-parakeet-annotations',
             'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf',
-            'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code'})
+            'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code',
+            'northeastern-forest-bird-metadata-sample-v2'})
         self.assertLess(size, MAX_BATCH_BYTES)
+
+    def test_zenodo_metadata_sample_checks_record_license_manifest_and_file_md5(self):
+        resource = copy.deepcopy(next(r for r in self.catalog['resources']
+                                      if r['id'] == 'northeastern-forest-bird-metadata-sample-v2'))
+        artifact = resource['files'][0]
+        data = b'Park_ID,siteID\nACAD,ACAD1000\n'
+        artifact['bytes'] = len(data)
+        artifact['md5'] = hashlib.md5(data, usedforsecurity=False).hexdigest()
+        resource['files'] = [artifact]
+        catalog = {'schema_version': 1, 'resources': [resource]}
+        api_url = 'https://zenodo.org/api/records/20038954'
+        manifest = {
+            'id': 20038954,
+            'doi': '10.5281/zenodo.20038954',
+            'metadata': {'license': {'id': 'cc-by-4.0'}},
+            'files': [{'key': artifact['name'], 'size': len(data),
+                       'checksum': f'md5:{artifact["md5"]}',
+                       'links': {'self': artifact['url']}}],
+        }
+        api_bytes = json.dumps(manifest).encode()
+        opener = Mock()
+        opener.open.side_effect = [
+            Response(api_bytes, api_url, {'Content-Type': 'application/json',
+                                          'Content-Length': str(len(api_bytes))}),
+            Response(data, artifact['url'], {'Content-Type': 'text/csv',
+                                             'Content-Length': str(len(data))}),
+        ]
+        with tempfile.TemporaryDirectory() as temp:
+            result = acquire(catalog, [resource['id']], Path(temp).resolve() / 'external', opener=opener)
+            receipt = json.loads(Path(result['receipts'][0]).read_text())
+            collected = Path(temp) / 'external' / resource['id'] / artifact['name']
+            self.assertEqual(collected.read_bytes(), data)
+            self.assertEqual(receipt['files'][0]['sha256'], hashlib.sha256(data).hexdigest())
+            self.assertTrue(receipt['files'][0]['source_checksum_verified'])
+            self.assertFalse(receipt['training_admitted'])
+
+        for bad_record in [
+            {**manifest, 'id': 99},
+            {**manifest, 'metadata': {'license': {'id': 'cc-by-nc-4.0'}}},
+            {**manifest, 'files': [{**manifest['files'][0], 'checksum': 'md5:' + '0' * 32}]},
+        ]:
+            with self.subTest(record=bad_record):
+                bad_opener = Mock()
+                bad_bytes = json.dumps(bad_record).encode()
+                bad_opener.open.return_value = Response(
+                    bad_bytes, api_url, {'Content-Type': 'application/json'})
+                with self.assertRaises(ValueError):
+                    verify_zenodo_record(resource, bad_opener)
 
     def test_coremerge_data_and_code_keep_component_rights_separate(self):
         by_id = {r['id']: r for r in self.catalog['resources']}
