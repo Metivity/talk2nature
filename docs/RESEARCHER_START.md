@@ -280,3 +280,14 @@ The annotation example reported an invented 8-second recording, two marked event
 The local noindex build produced 119 pages plus 404; the checker verified 120 HTML documents and 5,909 links. The explicit public-origin build also produced 119 pages plus 404; the checker verified 120 HTML documents, 6,029 links and all 119 public routes reachable. Both site builds were run from the fresh clone.
 
 This is maintainer-run software verification, not an independent reproduction, user study, scientific validation or biological result. The fixtures are synthetic. No external media, labels, code or model weights were acquired or run; independent reproductions remain zero. AutoResearch remains **NOT READY**.
+
+
+## October 23 current-main clean-clone recheck — 7aa26df
+
+Repeated the documented researcher workflow from a fresh depth-one HTTPS clone of public `main` at [`7aa26dffdab431bfa2ed617ee12e6ab52649ee22`](https://github.com/Metivity/talk2nature/commit/7aa26dffdab431bfa2ed617ee12e6ab52649ee22). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed or private workspace state copied. The tracked clone was clean before and after the checks.
+
+The annotation fixture reported an invented 8-second recording, two marked events, 2 seconds of interval-union coverage and 0 seconds of independently observed context. The grouped synthetic manifest produced 10 connected groups and 12/4/4 train/validation/test records, with both declared labels in each partition. Its split-policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`; the generated split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The dyadic synthetic example also produced 10 connected groups. The resource validator accepted all 162 catalog resources. All 148 Python and 115 Node tests passed.
+
+The local noindex build produced 120 pages plus 404; the site checker verified 121 HTML documents and 5,972 links. The explicit public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,094 links and all 120 public routes reachable.
+
+This is maintainer-run software verification, not an independent researcher reproduction, usability study, scientific validation or biological result. No third-party media, labels, code or model weights were acquired or run. Independent reproductions remain zero, and AutoResearch remains **NOT READY**.
