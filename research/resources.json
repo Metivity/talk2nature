@@ -5007,6 +5007,125 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "inat-sounds-paper-neurips-2024",
+      "kind": "paper",
+      "title": "The iNaturalist Sounds Dataset, NeurIPS 2024",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ef3713b8d72266e803f9346088fed92d-Abstract-Datasets_and_Benchmarks_Track.html",
+      "version": "NeurIPS 2024 Datasets and Benchmarks Track; DOI 10.52202/079017-4213",
+      "source_ids": [
+        347
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Large-scale, file-level animal species classification and acoustic pretraining across five taxonomic classes.",
+      "review_depth": "Targeted review of the paper abstract and dataset, label, evaluation, downstream-test and asset/consent passages. No paper text or figures were copied; no experiments were reproduced.",
+      "access": "Official NeurIPS record and linked paper. A local paper copy was not retained.",
+      "decision": "Use as an important methods and dataset reference only. It is not admitted to Talk2Nature model training or commercial product inference; the linked paper does not itself supply rights to audio, code or weights.",
+      "limitations": "The dataset uses one species label per recording and the paper describes these labels as weak. A recording or short window may not contain the labeled species call. The paper cautions against evaluating models on iNatSounds alone and recommends strongly labeled downstream tests. Article reuse terms were not independently verified.",
+      "attribution": "Chasmai, Shepard, Maji and Van Horn, The iNaturalist Sounds Dataset, NeurIPS 2024 Datasets and Benchmarks Track, DOI 10.52202/079017-4213.",
+      "rights": {
+        "license": "Article reuse terms not independently verified.",
+        "scope": "Paper only. The article provides no automatic license to the dataset recordings, training code or model weights.",
+        "evidence_url": "https://doi.org/10.52202/079017-4213",
+        "conditions": "Cite and link to the original paper; do not reproduce its text, figures or tables until article reuse terms are checked.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "inat-sounds-dataset-2024",
+      "kind": "dataset",
+      "title": "iNatSounds 2024 multi-taxon audio dataset",
+      "url": "https://github.com/visipedia/inat_sounds/tree/bd52ecde5d9d7434f6167bbac823d152c3823ccd/2024",
+      "version": "2024 release; README pinned to commit bd52ecde5d9d7434f6167bbac823d152c3823ccd",
+      "source_ids": [
+        347,
+        348,
+        349
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "File-level species classification and representation/pretraining research across birds, insects, amphibians, mammals and reptiles.",
+      "review_depth": "Reviewed the NeurIPS paper’s targeted dataset/evaluation passages, the pinned official dataset README and the current iNaturalist media-license FAQ. Checked split totals, annotation fields, usage terms, archive-size claims and location metadata. No audio, annotation JSON or checksum was acquired or verified.",
+      "access": "The README lists train, validation and test audio archives as approximately 81 GB, 25 GB and 27 GB (about 133 GB combined), plus small annotation archives. These are provider-listed sizes, not locally verified files.",
+      "decision": "Metadata-only. It is a valuable broad species-classification/pretraining reference but is not admitted to the commercial-capable Talk2Nature data/model path. Any non-commercial research use remains conditional on the dataset terms and individual media licenses.",
+      "limitations": "One species label applies to each whole recording; labels do not mark call boundaries, behavior, interaction context or receiver response. The paper notes geographic sampling bias toward the United States and Europe and says iNatSounds-only evaluation is not a sufficient measure of downstream performance. The README exposes recording date, latitude, longitude and location uncertainty, so sensitive-species location handling needs review. Dataset terms restrict downloads to non-commercial research/education and prohibit redistribution of recordings; individual iNaturalist media licenses vary and can be all-rights-reserved. No item-level license filtering, location audit, source-overlap audit or Talk2Nature evaluation was performed.",
+      "attribution": "Chasmai, Shepard, Maji and Van Horn, iNatSounds 2024; original recordings contributed through iNaturalist.",
+      "rights": {
+        "license": "The dataset README permits non-commercial research and educational use only and prohibits redistribution of dataset recordings; the underlying recordings also carry contributor-selected, item-level licenses.",
+        "scope": "Dataset terms, source-media licenses and any derived model/embeddings are separate. The README’s prohibition on distributing recordings does not grant commercial rights to trained weights. No legal review was performed.",
+        "evidence_url": "https://github.com/visipedia/inat_sounds/blob/bd52ecde5d9d7434f6167bbac823d152c3823ccd/2024/README.md",
+        "conditions": "Do not acquire or train for a commercial Talk2Nature product under the reviewed terms. A separately scoped non-commercial research use would still need item-level license review, privacy/location safeguards, and a plan that respects the no-recording-redistribution condition.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "inat-sounds-code-2024",
+      "kind": "code",
+      "title": "iNatSounds training-code repository",
+      "url": "https://github.com/cvl-umass/iNatSounds/tree/78ff2a5850d6c2b364dd36422085033b5a0fa750",
+      "version": "GitHub commit 78ff2a5850d6c2b364dd36422085033b5a0fa750",
+      "source_ids": [
+        350
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Reference implementation for the iNatSounds species-classification experiments.",
+      "review_depth": "Reviewed the pinned repository README and training-command outline and verified GitHub’s MIT SPDX metadata. No code, dependencies or data were downloaded or run.",
+      "access": "Public GitHub repository at an immutable commit.",
+      "decision": "Metadata-only methods lead. MIT applies to repository code, not the dataset, linked model weights or third-party dependencies.",
+      "limitations": "The implementation README states that further hyperparameter and usage details are forthcoming. No dependency audit, fresh reproduction or code safety review was performed. The dataset’s own non-commercial/no-redistribution terms continue to apply independently.",
+      "attribution": "Chasmai et al., cvl-umass/iNatSounds, commit 78ff2a5850d6c2b364dd36422085033b5a0fa750.",
+      "rights": {
+        "license": "MIT reported by the official GitHub repository for code.",
+        "scope": "Repository code only; no extension to audio, dataset annotations, pretrained weights or dependencies.",
+        "evidence_url": "https://github.com/cvl-umass/iNatSounds/tree/78ff2a5850d6c2b364dd36422085033b5a0fa750",
+        "conditions": "Preserve the MIT notice if code is later reused; review dependencies and the data/model rights separately before any execution or integration.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "inat-sounds-model-weights-2024",
+      "kind": "model",
+      "title": "iNatSounds pretrained model weights (linked release folder)",
+      "url": "https://drive.google.com/drive/folders/1u8iqzP2WL2nkTMp9VZ5FCa3zveOrPj2X",
+      "version": "Author-linked Google Drive folder; exact checkpoint files and versions not reviewed",
+      "source_ids": [
+        350,
+        351
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Pretrained species-audio classification weights linked by the iNatSounds implementation README.",
+      "review_depth": "Followed the README link to the Google Drive folder; did not inspect a file manifest, model card, terms, training-data record or checkpoint contents.",
+      "access": "The author-linked folder is reachable, but individual file names and terms were not reviewed.",
+      "decision": "Unresolved metadata-only lead. Do not acquire, run, redistribute or integrate these weights until the exact checkpoint, license, training provenance and output-use terms are established.",
+      "limitations": "No weights were acquired or executed. Dataset non-commercial/no-redistribution restrictions and any source-media terms may affect derived weights; this relationship has not been resolved.",
+      "attribution": "iNatSounds authors; model-weight folder linked from cvl-umass/iNatSounds.",
+      "rights": {
+        "license": "Model-weight license not located or verified.",
+        "scope": "Weights are separate from the MIT-licensed code and the dataset README. Training-data, checkpoint and derived-output terms are unknown.",
+        "evidence_url": "https://drive.google.com/drive/folders/1u8iqzP2WL2nkTMp9VZ5FCa3zveOrPj2X",
+        "conditions": "No download, execution, redistribution or app use until the exact files and terms are reviewed and their training-data rights are resolved.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

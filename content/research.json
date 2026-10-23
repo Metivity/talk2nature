@@ -4154,5 +4154,66 @@
       "rights": "The article declares CC BY 4.0; the Zenodo deposit declares MIT at record level, but its member files and embedded-media provenance were not inspected; no GitHub repository license was located at the pinned revision. Keep these assets separate and resolve component-specific terms before use.",
       "experiment": "No experiment or model was run. A future analysis would need a verified call/social-event join, overlap and missingness audit, independent specialist review, rights and location review, and animal/session-grouped evaluation. Social association does not establish call meaning or receiver comprehension."
     }
+  },
+  {
+    "slug": "inat-sounds-2024",
+    "title": "iNatSounds scales species recognition, not animal meaning",
+    "seo_description": "iNatSounds offers broad animal-audio species labels for classification research; its weak labels and reuse terms limit Talk2Nature use.",
+    "taxon": "Birds, mammals, insects, reptiles and amphibians",
+    "kind": "Large-scale animal-audio classification dataset",
+    "year": "2024",
+    "year_label": "NeurIPS 2024 Datasets and Benchmarks Track",
+    "source_ids": [
+      347,
+      348,
+      349,
+      350,
+      351
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Targeted paper, pinned dataset README/terms, media-licensing guidance and implementation/model-release review; metadata only",
+    "review_depth": "Reviewed the paper abstract and targeted dataset-construction, evaluation, weak-label and assets/consent passages; the complete paper was not exhaustively reviewed. Reviewed the complete 2024 dataset README at commit bd52ecde5d9d7434f6167bbac823d152c3823ccd, including class counts, single-species file labels, location/license fields, ToU and provider-listed archive sizes; the current iNaturalist media-license FAQ; the pinned code repository README and MIT SPDX metadata; and the author-linked model folder pointer. No audio, annotation archive, source code, dependencies or weights were downloaded or run.",
+    "review_locator": "Chasmai et al., NeurIPS 2024 paper: abstract, Sections 1, 3 and 4, downstream evaluation discussion and Assets/Consent checklist; visipedia/inat_sounds 2024/README.md at commit bd52ecde5d9d7434f6167bbac823d152c3823ccd; iNaturalist media licensing FAQ; cvl-umass/iNatSounds README at commit 78ff2a5850d6c2b364dd36422085033b5a0fa750 and its linked weight folder.",
+    "finding": "iNatSounds is a substantial broad animal-audio resource: the paper reports about 230,000 recordings (around 1,200 hours) contributed by more than 27,000 recordists, covering over 5,500 species. The 2024 README reports 5,569 species across birds, insects, amphibians, mammals and reptiles. Its task is file-level species classification; every recording has a single species label. This makes it useful for studying acoustic recognition and pretraining, not event-level meaning, animal behavior or whether a receiver understood a call.",
+    "limitations": "The paper calls the labels weak: the target sound may be absent from a particular short window, and other taxa or background may be present. It advises evaluating on strongly labeled downstream datasets rather than relying on iNatSounds alone. The paper also notes geographic sampling bias toward the United States and Europe. The README lists roughly 133 GB of audio across the three archives and exposes date, latitude, longitude and location-uncertainty fields; sizes are provider-reported and no location audit was performed. Dataset download terms permit non-commercial research and education only and prohibit distributing recordings. Underlying iNaturalist media have contributor-selected licenses, including non-commercial, other Creative Commons and all-rights-reserved items. The code repository reports MIT for code only; linked model-weight terms and paper reuse terms remain unverified. No model, audio or annotation was inspected locally, and no Talk2Nature result exists.",
+    "lesson": "Use iNatSounds as a broad, rights-restricted species-classification reference, and test any representation on a separate strongly annotated soundscape dataset such as El Silencio. It is not suitable for the commercial-capable Talk2Nature model path under the reviewed dataset terms. Keep dataset audio, paper, code and pretrained weights under separate rights records. Species recognition does not establish a signal’s behavioral function or meaning.",
+    "next_review": "Do not acquire this archive for Talk2Nature product development under the reviewed terms. If a separately scoped non-commercial study is proposed, first obtain legal review of the complete dataset terms and item-level media licenses, confirm whether derived weights/embeddings are restricted, protect sensitive coordinates, and define a group-held-out strong-label evaluation. Prefer a rights-cleared commercial-compatible source for the shared model path; review the exact iNatSounds model weights only if that path changes.",
+    "expert_review": "Not independently reviewed by a bioacoustics, animal-behavior, copyright or ML-evaluation specialist.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Reported scale",
+        "About 230,000 recordings and 1,200 hours from over 27,000 recordists; the README reports 5,569 species. These are published dataset figures, not a local inventory."
+      ],
+      [
+        "Taxonomic coverage",
+        "Birds, insects, amphibians, mammals and reptiles; the dataset is not a plant/fungal corpus or a parrot-specific study."
+      ],
+      [
+        "Label target",
+        "One species label per whole recording; no call boundaries, independent behavior code, social-context label or receiver response."
+      ],
+      [
+        "Data-use terms",
+        "Non-commercial research/education only and no redistribution of recordings; underlying media licenses vary by contributor."
+      ],
+      [
+        "Separate components",
+        "Repository code is reported MIT; linked weight terms are unverified; article reuse terms were not independently checked."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-23",
+      "location_status": "pending",
+      "location_note": "The corpus combines records from many locations rather than one study site. Its schema includes latitude, longitude and location uncertainty; no locations or coordinates are reproduced here pending sensitive-species review.",
+      "locations": [],
+      "observation_period": null
+    },
+    "reuse": {
+      "status": "Metadata-only; not admitted to Talk2Nature training or commercial product inference.",
+      "asset": "NeurIPS paper metadata and targeted text review, pinned 2024 dataset README, iNaturalist licensing FAQ, pinned code-repository metadata and author-linked model-folder pointer. No audio, annotation JSON, code, dependencies or weights were acquired.",
+      "rights": "The dataset README limits use to non-commercial research/education and prohibits redistribution of recordings; underlying sounds retain contributor-selected licenses. The code repository reports MIT for code only. Model-weight and article reuse terms are unverified. No commercial permission was established.",
+      "experiment": "No model was run, no baseline was reproduced, and no audio or annotation archive was acquired. This is a source review, not a Talk2Nature scientific result or benchmark-readiness decision."
+    }
   }
 ]
