@@ -2598,3 +2598,23 @@ The Performance report was last updated about four hours before inspection and c
 **Check:** cloned public `main` at [`496558d8b58e7b131d2d08e98e49afffb736fb86`](https://github.com/Metivity/talk2nature/commit/496558d8b58e7b131d2d08e98e49afffb736fb86) with depth 1. On Python 3.12.5, Node v22.22.1 and Git 2.53.0, the synthetic annotation example returned an invented 8-second clip, two events, 2 seconds of marked intervals and 0 seconds of independently observed context. The synthetic split produced 10 connected groups and 12/4/4 train/validation/test records, with both declared labels in each partition; policy SHA-256 `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`; full split SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The catalog validator accepted 155 records. All 146 Python and 115 Node tests passed. The local noindex build checked 118 HTML documents and 5,800 links; the public-origin build checked 118 documents, 5,919 links and all 117 public routes. The clone remained clean after checks; no packages, third-party media, labels, code or model weights were acquired.
 
 **Limit and next decision:** this is a maintainer-run reproducibility check, not an independent researcher reproduction, usability study, biological result or scientific validation. The independently verified reproduction count remains zero, and AutoResearch remains **NOT READY**. Keep the onboarding path available for an outside walkthrough; do not treat this check as clearing any data, reviewer, split or model gate.
+
+## October 23 — make the advanced journal export identifiable to assistive technology
+
+**Question and evidence:** can a keyboard/screen-reader user find the optional journal-only export after completing the microphone-free practice? On the deployed `/app/station/?mode=demo`, the synthetic task started, accepted a `Movement` note, stopped, and produced a partial recap labelled invented audio, local-only, with one note. In the browser accessibility tree, the visible “Save journal only · JSON” control appeared as an unnamed button; a role query by its visible label could not find it.
+
+**Change:** added a matching explicit `aria-label` to the export button and a generated-page regression check that its accessible label stays aligned with its visible text. The control remains inside the optional “Advanced · research export” disclosure.
+
+**Validation:** all 147 Python and 115 Node tests passed. The local noindex build produced 117 pages plus 404; the site checker validated 118 HTML pages and 5,800 links. The explicit-origin public candidate also produced 117 pages plus 404; its checker validated 118 HTML pages, 5,919 links and all 117 public routes. The required Android checks also passed: core boundary tests, debug lint, debug/release assembly, and release-boundary checks. In the rebuilt browser flow, the disclosure opened and the export was discoverable by its accessible name and reported visible and enabled. The practice remained synthetic and local; no microphone or export/download was used.
+
+**Limits and next decision:** this is browser accessibility-query evidence, not VoiceOver, TalkBack, physical-phone or independent novice testing. The fix is a local, unpushed and undeployed candidate. Run the screen-reader path on iOS and Android before claiming assistive-technology validation. AutoResearch remains **NOT READY**.
+
+## October 23 — Google live crawl and indexing request for the bat research note
+
+**URL inspected:** `https://metivity.github.io/talk2nature/research/fruit-bat-context-ml-2024/` in the verified Metivity Search Console property. Its indexed-version report said “URL is not on Google,” with “URL is unknown to Google,” no referring sitemap, and no recorded crawl.
+
+**Live test:** Google’s inspection tool fetched the current public page successfully on a smartphone crawler. It reports crawl allowed, indexing allowed, and the expected self-canonical URL. Discovery is not checked in live tests; the Google-selected canonical remains unknown until indexing.
+
+**Action and receipt:** submitted this one URL once for indexing. Search Console confirmed it was added to the priority crawl queue and states that repeat submissions do not change queue position or priority. The sitemap was not resubmitted.
+
+**Limits and next check:** this is a crawl request, not proof of indexing, ranking, or search traffic. Check the Google-index report later; do not repeatedly submit while the request is pending. No source, website, or deployment change was made for this Search Console action.
