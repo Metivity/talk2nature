@@ -3696,14 +3696,14 @@
   {
     "id": 359,
     "title": "ZF-AIM code, checkpoints and next-call metadata release",
-    "description": "The Zenodo record lists one 26.6 GB archive, describes code, checkpoints and metadata for next-call prediction, and states that code and model weights are MIT-licensed. The record-level MIT field does not make the exact archive contents or audio/data rights clear.",
+    "description": "The Zenodo API lists one top-level archive, zf_aim_release.zip (26,633,934,601 bytes; provider MD5 c4726cebb2b57e28a832725e8999731e), describes code, checkpoints and next-call benchmark metadata, and states that code and model weights are MIT-licensed. The top-level listing does not establish the archive's inner contents or audio/data rights.",
     "url": "https://zenodo.org/records/23024019",
     "checked": "2026-10-23",
-    "origin": "Reviewed the official Zenodo landing-page and API metadata, including the archive size, provider checksum, record-level MIT field and described directory contents. The 26.6 GB archive, internal manifest, recordings, annotations, code and checkpoints were not downloaded or inspected.",
+    "origin": "Queried the official Zenodo landing page and API over HTTPS with certificate verification. Recorded the complete top-level file list in research/zf_aim_zenodo_manifest_2026-10-23.json. No ZIP payload was downloaded; the provider checksum was not verified locally, and archive-internal files and rights were not inspected.",
     "rights": {
       "record_metadata": "Zenodo API record-level license is MIT; the description specifically states MIT for code and model weights.",
       "data": "The reviewed record does not clearly identify the license and scope for audio recordings, annotations or benchmark metadata. The article's license is separate.",
-      "scope": "Archive contents, embedded notices and file-level provenance were not inspected. Do not infer that one record-level field resolves component rights.",
+      "scope": "The top-level archive inventory is recorded separately; archive contents, embedded notices, source-media provenance and file-level data rights remain unverified. Do not infer that a record-level MIT field resolves them.",
       "conditions": "Keep all archive components metadata-only pending exact manifest and component-level rights review."
     }
   },

@@ -1856,6 +1856,38 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(source['checked'],'2026-10-23')
         self.assertIn('not locally verified',source['origin'])
 
+    def test_zf_aim_release_manifest_keeps_unresolved_data_rights_out_of_training(self):
+        project_root=Path(__file__).resolve().parents[1]
+        manifest=json.loads((project_root/'research'/'zf_aim_zenodo_manifest_2026-10-23.json').read_text())
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        release=next(r for r in resources if r['id']=='zebra-finch-zf-aim-zenodo-release-2026')
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        source=next(s for s in sources if s['id']==359)
+        note=next(n for n in load('research') if n['slug']=='zf-aim-zebra-finch-turn-taking-2026')
+        self.assertEqual(manifest['file_manifest_scope'],'Zenodo record top-level files only; the ZIP archive\'s internal manifest and contents were not inspected.')
+        self.assertEqual(manifest['files'],[{
+            'key':'zf_aim_release.zip',
+            'bytes':26633934601,
+            'provider_checksum':'md5:c4726cebb2b57e28a832725e8999731e',
+        }])
+        self.assertFalse(manifest['integrity']['payload_downloaded'])
+        self.assertFalse(manifest['integrity']['checksum_verified_locally'])
+        self.assertEqual(release['source_ids'],[359])
+        self.assertEqual(release['acquisition'],'metadata_only')
+        self.assertEqual(release['files'],[])
+        self.assertEqual(release['rights']['research_use'],'unresolved')
+        self.assertEqual(release['rights']['commercial_use'],'unresolved')
+        self.assertEqual(release['rights']['redistribution'],'not_admitted')
+        self.assertIn('inner manifest and contents',release['review_depth'])
+        self.assertIn('top-level archive inventory',source['rights']['scope'])
+        self.assertIn('one ZIP',note['reuse']['asset'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn(release['title'],page)
+            self.assertIn('metadata-only',page)
+
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')

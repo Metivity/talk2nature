@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "reviewed_date": "2026-10-23",
+  "retrieved_at_utc": "2026-10-23T20:29:29Z",
+  "provider_api": "https://zenodo.org/api/records/23024019",
+  "record": {
+    "id": 23024019,
+    "doi": "10.5281/zenodo.23024019",
+    "title": "ZF-AIM Acoustic Interaction Model",
+    "publication_date": "2026",
+    "record_updated": "2026-09-29T17:58:24.776870+00:00",
+    "explicit_version": null,
+    "record_license_identifier": "mit-license",
+    "related_publication": {
+      "doi": "10.64898/2026.02.12.705387",
+      "relation": "isDescribedBy"
+    },
+    "description_summary": [
+      "The record describes a release of code, checkpoints and data.",
+      "The listed zf_aim_data directory is described as containing metadata needed for next-call prediction benchmarking.",
+      "The record description states that code and model weights are MIT-licensed."
+    ]
+  },
+  "file_manifest_scope": "Zenodo record top-level files only; the ZIP archive's internal manifest and contents were not inspected.",
+  "files": [
+    {
+      "key": "zf_aim_release.zip",
+      "bytes": 26633934601,
+      "provider_checksum": "md5:c4726cebb2b57e28a832725e8999731e"
+    }
+  ],
+  "integrity": {
+    "checksum_is_provider_reported": true,
+    "checksum_verified_locally": false,
+    "payload_downloaded": false
+  },
+  "rights_observations": {
+    "record_level_license": "MIT",
+    "description_explicitly_covers": [
+      "code",
+      "model weights"
+    ],
+    "recording_annotation_benchmark_data_terms": "Not clearly specified in the reviewed record metadata.",
+    "research_use": "unresolved",
+    "commercial_use": "unresolved",
+    "redistribution": "not_admitted"
+  },
+  "decision": "Metadata-only. The outer file list does not establish archive contents, source-media provenance or component-level data rights. Do not acquire or execute the archive until these are resolved."
+}

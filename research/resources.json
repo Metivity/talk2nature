@@ -5229,16 +5229,45 @@
       "priority": 1,
       "reviewed": "2026-10-23",
       "task": "A communication-relevant study of turn timing and acoustic adaptation; suitable as a literature/evaluation-design lead, not as a ready-to-use training corpus.",
-      "review_depth": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and license, plus official Zenodo landing-page/API metadata. Supplemental analyses and the archive's internal manifest/content were not inspected. No archive, audio, code or weights were acquired or run.",
-      "access": "The preprint reports more than 1,000 hours of interactions. Zenodo lists a 26.6 GB archive and provider checksum; these metadata do not verify its contents or audio rights.",
+      "review_depth": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license, plus official Zenodo landing-page/API metadata and its complete top-level file list. The Zenodo list has one ZIP; its internal manifest and contents, supplemental analyses and audio/data rights were not reviewed. No archive, audio, code or weights were acquired or run.",
+      "access": "The preprint reports more than 1,000 hours of interactions. Zenodo's API lists one 26,633,934,601-byte ZIP with a provider-reported MD5; the payload and its internal contents were not downloaded or verified.",
       "decision": "High-relevance metadata-only literature lead for acoustic exchange and next-call prediction. Do not acquire or train from the archive until its exact manifest, component-level recording/data rights, individual-level split and independent review are resolved. Talk2Nature remains passive; do not reproduce the paper's playback experiments.",
-      "limitations": "The study is a preprint. A Results passage reports 20 birds while Methods reports 21. Training/evaluation is described by pair, but individual-bird disjointness across pairs is not established in the reviewed text. A call within one second is an operational response measure, not a semantic label. Reported prediction metrics do not establish general animal-language ability. The article's version-specific data availability statement and later Zenodo release are not reconciled. Zenodo's record-level MIT field and description do not clearly license the recordings and benchmark data.",
+      "limitations": "The study is a preprint. A Results passage reports 20 birds while Methods reports 21. Training/evaluation is described by pair, but individual-bird disjointness across pairs is not established in the reviewed text. A call within one second is an operational response measure, not a semantic label. Reported prediction metrics do not establish general animal-language ability. The article's version-specific data-availability statement and later Zenodo release are not reconciled. The Zenodo record-level MIT field and description do not clearly license audio, annotations or benchmark metadata; its top-level API manifest identifies one ZIP but does not reveal its internal contents or provenance.",
       "attribution": "James et al. (2026), Zebra finch females flexibly communicate with each other and with AI-driven acoustic interaction models, bioRxiv 2026.02.12.705387 v3.",
       "rights": {
         "license": "bioRxiv lists CC BY-NC-ND 4.0 for the v3 manuscript. Zenodo API metadata lists MIT at record level; its description specifically states code and model weights are MIT.",
         "scope": "Manuscript, code, checkpoints, recordings, annotations and benchmark metadata are separate components. The exact release manifest and data/audio rights remain unresolved.",
         "evidence_url": "https://zenodo.org/records/23024019",
         "conditions": "No archive acquisition, execution, redistribution or commercial use until exact contents, provenance and component-level rights are verified. Preserve the preprint status and version/date distinction.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "zebra-finch-zf-aim-zenodo-release-2026",
+      "kind": "dataset",
+      "title": "ZF-AIM acoustic interaction release archive (Zenodo record)",
+      "url": "https://zenodo.org/records/23024019",
+      "version": "Zenodo record 23024019; published 2026; no explicit version field",
+      "source_ids": [
+        359
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Metadata-only candidate release associated with zebra-finch call-timing and next-call prediction research; not admitted for training or app inference.",
+      "review_depth": "Queried the official Zenodo API over HTTPS with certificate verification and inspected the complete top-level file list. It contains one ZIP (26,633,934,601 bytes) with provider-reported MD5; no payload was downloaded and the checksum was not verified locally. The archive's inner manifest and contents were not inspected.",
+      "access": "Public record metadata lists one 26.6 GB ZIP and describes code, checkpoints and data, including next-call benchmark metadata. This does not verify which recordings, annotations or other files are inside the archive.",
+      "decision": "Keep metadata-only. The MIT record field and description's code/model license statement do not establish rights for recordings, annotations or benchmark data. Do not acquire, execute, train, redistribute or commercialize archive contents until exact contents, provenance and component-level terms are resolved and reviewed.",
+      "limitations": "This is a release metadata record, not an inspected dataset. The preprint v3 data-availability statement and the later Zenodo release are not reconciled. The provider MD5 is not locally verified. Exact data/audio licensing, source-media provenance, bird-level split disjointness, independent review and benchmark readiness remain unresolved.",
+      "attribution": "James et al. (2026), ZF-AIM Acoustic Interaction Model, Zenodo record 23024019, DOI 10.5281/zenodo.23024019; related preprint DOI 10.64898/2026.02.12.705387.",
+      "rights": {
+        "license": "Zenodo API record-level identifier is MIT; the record description explicitly says code and model weights are MIT-licensed. No clear license for recordings, annotations or benchmark metadata was identified.",
+        "scope": "Top-level record metadata only. The 26.6 GB ZIP's internal files, provenance, embedded notices and data rights were not inspected. The article, code, weights, audio, annotations and metadata are separate components.",
+        "evidence_url": "https://zenodo.org/records/23024019",
+        "conditions": "Resolve component-level provenance and terms before any archive acquisition, execution, training, redistribution or commercial use. No contact or terms acceptance occurred.",
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "not_admitted"
