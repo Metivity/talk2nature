@@ -3754,10 +3754,12 @@
   {
     "id": 364,
     "title": "Wytham Great Tit Song Dataset and documentation",
-    "description": "Authors’ dataset website and documentation for song files, note annotations, bird/breeding-attempt IDs, metadata, package size and processing. Supports a song-structure description, not a behavior or receiver-response label claim.",
+    "description": "Authors’ dataset website and documentation for song files, note annotations, bird/breeding-attempt IDs, metadata, package size, processing and nestbox-location fields. Supports a song-structure description, not a behavior or receiver-response label claim.",
     "url": "https://nilomr.github.io/great-tit-hits/",
-    "checked": "2026-10-23",
-    "origin": "Reviewed authors’ introduction and song-file, song-metadata and processing documentation. No WAV, JSON, CSV, figure or example media was downloaded or reproduced."
+    "checked": "2026-10-24",
+    "origin": "Reviewed authors’ introduction, song-file, song-metadata, processing and nestbox-metadata documentation. The nestbox page specifies British National Grid coordinates and says those data are also present in main.csv; no coordinate values, WAV, JSON, CSV, figure or example media was downloaded or reproduced.",
+    "review_url": "https://nilomr.github.io/great-tit-hits/site/metadata/nestboxes/",
+    "review_url_label": "Author documentation for nestbox location fields"
   },
   {
     "id": 365,
@@ -3778,10 +3780,10 @@
   {
     "id": 367,
     "title": "The demographic drivers of cultural evolution in bird song: a multilevel study",
-    "description": "Merino Recalde et al., Current Biology (2025). Publisher summary reports a deep-learning analysis of more than 100,000 songs from the Wytham corpus. Prior-art screen only; methods and deposited analysis files were not reviewed.",
+    "description": "Merino Recalde et al., Current Biology (2025). The full article reports a ViT metric-learning analysis of all 109,963 Wytham songs for repertoire similarity and cultural-demographic questions. This is material prior art for any new embedding, re-identification or song-culture task.",
     "url": "https://doi.org/10.1016/j.cub.2025.02.016",
-    "checked": "2026-10-23",
-    "origin": "Reviewed primary publisher summary and data/code availability statement only. Full methods, exact model configuration, analysis repository and Zenodo files were not inspected or run."
+    "checked": "2026-10-24",
+    "origin": "Reviewed the complete primary publisher article, including STAR Methods on ViT metric learning, 384-dimensional feature vectors, AMED repertoire similarity, automated clustering, manual categorization and a separate ResNet50 validation procedure, plus its data/code availability statement. No analysis code, deposited files, data, audio or weights were acquired or run; the published validation split was not independently audited."
   },
   {
     "id": 368,
@@ -3852,5 +3854,22 @@
     "url": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
     "checked": "2026-10-23",
     "origin": "Queried the OSF public JSON:API recursively over verified TLS. The associated snapshot is research/wytham_osf_manifest_2026-10-23.json; file hash values are provider metadata, not locally recomputed checksums."
+  },
+  {
+    "id": 373,
+    "title": "ZF-AIM zebra-finch data release, Zenodo record",
+    "description": "Separate dataset record for the ZF-AIM study. Its API lists 11 files, including four raw example recordings, processed-data and detector archives, and metadata. The API license field says CC BY-SA 4.0 while the record description says CC BY-NC, so the terms conflict.",
+    "url": "https://zenodo.org/records/23047646",
+    "checked": "2026-10-24",
+    "origin": "Queried the official Zenodo records API over verified TLS and recorded the title, DOI, dates, license metadata, description and complete top-level filename/size/checksum inventory in research/zf_aim_data_zenodo_manifest_2026-10-24.json. No file payload was downloaded, archive contents were not inspected and provider checksums were not locally verified.",
+    "rights": {
+      "license": "The API metadata field declares CC BY-SA 4.0; the same record description says the data are under a CC BY-NC license. These statements conflict.",
+      "scope": "The record includes raw recordings, processed data, detector data/weights and software. The record-level license may not resolve the distinct rights of each component; archive internals and source-media provenance were not reviewed.",
+      "evidence_url": "https://zenodo.org/records/23047646",
+      "conditions": "Do not acquire, train, redistribute or commercialize any data component until the deposit maintainers clarify the conflicting terms and identify the scope. Code and model weights require separate license review.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "not_admitted"
+    }
   }
 ]

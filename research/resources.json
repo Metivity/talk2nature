@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -5448,18 +5448,18 @@
         372
       ],
       "priority": 2,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-10-24",
       "task": "Acoustic note segmentation, sequence/repertoire structure, individual song variation and vocal-culture research within one wild population.",
-      "review_depth": "Reviewed the peer-reviewed paper abstract/data-availability statement and author documentation. On 2026-10-23, queried the public OSF JSON:API node, its record-level license and the recursively listed 23-file osfstorage manifest over verified TLS; preserved provider-reported file sizes and SHA-256 values in research/wytham_osf_manifest_2026-10-23.json. No file payloads were downloaded and hashes were not recomputed.",
+      "review_depth": "Reviewed the peer-reviewed paper abstract/data-availability statement and author documentation. On 2026-10-23, queried the public OSF JSON:API node, its record-level license and the recursively listed 23-file osfstorage manifest over verified TLS; preserved provider-reported file sizes and SHA-256 values in research/wytham_osf_manifest_2026-10-23.json. On 2026-10-24, reviewed the author nestbox-metadata documentation, which specifies British National Grid X/Y coordinates and says these are also included in main.csv. No file payloads or coordinate values were downloaded or inspected; hashes were not recomputed.",
       "access": "The public OSF record reports CC BY 4.0 and was last modified 2023-07-10. Its 23 files total 12,184,678,510 bytes: four song-archive parts total 11,380,411,540 bytes; metadata files total 804,241,099 bytes; documentation files total 25,871 bytes. The approximately 9 TB original continuous recordings are not in this shared package. No data, audio or annotations were downloaded.",
       "decision": "Keep as a metadata-only song-structure candidate. It is not a behavior-context, receiver-response or meaning dataset and does not replace the first communication-adjacent candidate.",
-      "limitations": "One U.K. population. Bird identity associated with breeding attempts may be uncertain or a proxy for uncaught birds. The manifest includes nestbox metadata and a Wytham perimeter shapefile, but their contents and location sensitivity were not reviewed. Provider hashes were not verified against downloaded bytes; annotation values, grouping keys and the split were not inspected. The 2025 study already analyzes this corpus for demographic drivers of song culture. No Talk2Nature reproduction exists.",
+      "limitations": "One U.K. population. Bird identity associated with breeding attempts may be uncertain or a proxy for uncaught birds. Author documentation specifies British National Grid nestbox coordinates in nestboxes.csv and says these data are also included in main.csv; the manifest separately lists a Wytham perimeter shapefile. Only field descriptions were reviewed, not coordinate values or file contents. Treat precise locations as potentially sensitive wildlife-location information; keep public geography coarse and exclude coordinates from derivatives unless an appropriate review establishes a need and safe handling. Provider hashes were not verified against downloaded bytes; annotation values, grouping keys and the split were not inspected. The 2025 paper already trains a ViT metric-learning model on this corpus and uses embeddings for repertoire similarity and demographic culture analysis; no distinct Talk2Nature task has been approved. No reproduction exists.",
       "attribution": "Merino Recalde et al. (2024), Wytham Great Tit Song Dataset, OSF DOI 10.17605/OSF.IO/N8AC9; dataset paper DOI 10.1016/j.anbehav.2024.02.008.",
       "rights": {
         "license": "The OSF node declares CC BY 4.0, consistent with the 2024 paper's statement that dataset input/output files use CC BY 4.0.",
         "scope": "The node-level dataset declaration applies to the dataset record; nested provenance and any third-party components were not independently reviewed. Article text is separately CC BY 4.0; setup code is separately MIT; 2025 analysis files and model weights were not reviewed.",
         "evidence_url": "https://doi.org/10.1016/j.anbehav.2024.02.008",
-        "conditions": "Retain dataset attribution and exact OSF DOI. Before acquisition, training or redistribution, review field definitions, identity/location sensitivity, nested provenance and intended file scope. The saved API hashes are provider-reported and were not recomputed.",
+        "conditions": "Retain dataset attribution and exact OSF DOI. Before acquisition, training or redistribution, review field definitions, identity/location sensitivity, nested provenance and intended file scope. Do not expose precise nestbox coordinates in public maps or derivatives unless a wildlife-location review establishes a need and safe handling. The saved API hashes are provider-reported and were not recomputed.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
@@ -5506,12 +5506,12 @@
         367
       ],
       "priority": 2,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-10-24",
       "task": "Related prior analysis of more than 100,000 Wytham great-tit songs and demographic change in song culture.",
-      "review_depth": "Reviewed primary publisher summary/data availability only. Full methods, model configuration, analysis files and code were not inspected or run.",
+      "review_depth": "Reviewed the full primary publisher article, including STAR Methods on ViT metric learning, 384-dimensional embeddings for all 109,963 songs, AMED repertoire similarity, clustering/manual song categorization and the reported ResNet50 validation procedure, plus data/code availability. Analysis files and code were not acquired or run; split independence was not independently audited.",
       "access": "Open-access publisher record; article points to a separately deposited dataset and analysis/code archive.",
-      "decision": "Use as prior-art context when considering Wytham song-structure analysis. Do not present generic classification as novel.",
-      "limitations": "This review does not reproduce the 2025 findings or assess statistical methods. The article's code/data archive and license scope were not inspected; article rights do not automatically extend to those materials.",
+      "decision": "Use as substantive prior art: deep song embeddings, repertoire similarity and demographic cultural change on this corpus have already been studied. Do not present those tasks as a new Talk2Nature contribution without a clearly distinct question.",
+      "limitations": "This review does not reproduce the 2025 findings or independently validate its models. The ViT embeddings were generated for all songs in the same corpus, so reusing them would not provide a strict independent held-out-individual evaluation; this is an evaluation-design inference from the methods. The reported ResNet50 validation is described on a random subset; the reviewed text did not establish bird-disjoint separation. The article's separately deposited code/data archive and their license scope were not inspected; article rights do not automatically extend to those materials.",
       "attribution": "Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016.",
       "rights": {
         "license": "CC BY 4.0 for article text as stated by publisher; no inference about separately deposited analysis files.",
@@ -5667,6 +5667,36 @@
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "zebra-finch-zf-aim-data-release-2026",
+      "kind": "dataset",
+      "title": "ZF-AIM zebra-finch data release (separate Zenodo record)",
+      "url": "https://zenodo.org/records/23047646",
+      "version": "Zenodo record 23047646; published 2026-09-30; no explicit version field",
+      "source_ids": [
+        358,
+        373
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Candidate source of selected zebra-finch interaction recordings and processed outputs for acoustic call-timing research; not a verified copy of the complete study corpus and not admitted for training.",
+      "review_depth": "Queried the official Zenodo API over verified TLS. The top-level inventory lists 11 files, including four raw example FLAC recordings, processed_data.zip, voxaboxen_data.zip, two model archives, a pipeline ZIP and metadata. No file payloads or archive internals were downloaded or inspected; provider checksums were not locally verified.",
+      "access": "Public API metadata lists four raw recordings totaling approximately 43.5 GB plus processed-data, detector-data and model archives. The file description calls these four raw tracks examples. It does not establish that the complete 1.5-million-call study corpus is present.",
+      "decision": "Keep metadata-only. The Zenodo API license field declares CC BY-SA 4.0, but the record description says the data are under a CC BY-NC license. Do not acquire, train, redistribute or commercialize the data until the terms conflict and component scope are clarified.",
+      "limitations": "This record is separate from the 26.6 GB code/model ZIP at Zenodo record 23024019. Its inventory does not expose archive contents or prove the processed tables cover the full study. The record includes third-party model components; source-media provenance, annotation semantics, birds/session mapping and individual-disjoint split remain unreviewed. No independent review or reproduction exists.",
+      "attribution": "James et al. (2026), Data for ZF-AIM, Zenodo DOI 10.5281/zenodo.23047646; related preprint DOI 10.64898/2026.02.12.705387.",
+      "rights": {
+        "license": "Conflicting declarations: Zenodo API metadata field cc-by-sa-4.0; record description says CC-BY-NC. Resolve before use.",
+        "scope": "Raw recordings and processed/detector data are distinct from the included code and model weights. The record also lists BirdMixIT checkpoints with a separate Apache-2.0 notice. No embedded per-file terms were inspected.",
+        "evidence_url": "https://zenodo.org/records/23047646",
+        "conditions": "No acquisition or execution until the deposit maintainers clarify the license conflict, exact component scope and provenance. Preserve source DOI and a separate license record for each artifact if later admitted.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
       },
       "acquisition": "metadata_only",
       "files": []
