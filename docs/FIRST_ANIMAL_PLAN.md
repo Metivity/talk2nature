@@ -23,6 +23,8 @@ The October 3 recommendation concerns a possible **phone-based companion-animal 
 
 There is no single “largest dataset” that answers all four questions. Broad soundscape collections such as [El Silencio](https://zenodo.org/records/17064353) are useful for event/species detection, but their labels do not by themselves reveal social meaning. Start with existing, rights-described data to test a narrow task; do not train a general-purpose animal-language model on a pile of recordings. Use audio models for segmentation and acoustic patterns, then add video/pose or observer-coded context only where the labels support it. Evaluate on held-out animals, households, groups or sessions, and keep predictions separate from observed labels.
 
+The bounded V33DA intake and caller-attribution proposal is documented in the [V33DA sample run card](V33DA_SAMPLE_RUN_CARD.md). It remains metadata-only and authorizes no acquisition or model run.
+
 ## Comparison
 
 | Candidate | Practical opportunity | Main obstacle | Decision |
