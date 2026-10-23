@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -4795,6 +4795,65 @@
         "scope": "The record-level CC BY declaration does not replace upstream licenses for focal recordings. The schema reports some empty Xeno-Canto license fields; inspect each row before reuse.",
         "evidence_url": "https://zenodo.org/records/21821133",
         "conditions": "Provide CC BY attribution where it applies; preserve each focal recording's own license and attribution. Resolve blank rights fields and verify privacy/source provenance before use, redistribution or commercial work.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdset-paper",
+      "kind": "paper",
+      "title": "BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics",
+      "url": "https://arxiv.org/abs/2403.10380",
+      "version": "arXiv:2403.10380v6 (2025-05-18); accepted as an ICLR 2025 spotlight",
+      "source_ids": [
+        335
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Multi-label avian acoustic/species classification across several evaluation soundscapes; not call meaning or receiver response.",
+      "review_depth": "Reviewed the primary paper abstract and version history plus the linked current dataset card. The full paper body, supplement and training code were not audited; no data, code or model weights were acquired or run.",
+      "access": "Public arXiv record and linked project card. No local copy retained.",
+      "decision": "Use as a large-scale methods benchmark reference only. It cannot answer the first Talk2Nature communication question, and the linked data are not admitted for training.",
+      "limitations": "The task labels bird taxa and acoustic events, not behavior, receiver comprehension or meaning. Published scale figures are benchmark descriptions, not an independent reproduction. Do not transfer its results to parrots or other animal groups without a task-specific test.",
+      "attribution": "Rauch et al. (2025), arXiv:2403.10380v6; spotlight at ICLR 2025.",
+      "rights": {
+        "license": "Paper reuse terms not independently verified.",
+        "scope": "Article only; no automatic license for the separate dataset, code or model weights.",
+        "evidence_url": "https://arxiv.org/abs/2403.10380",
+        "conditions": "Talk2Nature publishes an original short summary and link only. Recheck the article license before reproducing text, figures or tables.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdset-dataset",
+      "kind": "dataset",
+      "title": "BirdSet avian sound classification benchmark",
+      "url": "https://huggingface.co/datasets/DBD-research-group/BirdSet",
+      "version": "Current dataset card reviewed 2026-10-23; source Xeno-Canto snapshot dated 2024-03-10; dataset revision not pinned",
+      "source_ids": [
+        336,
+        337
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Multi-label bird-species and soundscape classification; potentially a methods reference for an acoustic-detection layer only.",
+      "review_depth": "Reviewed the current card’s task, configuration sizes, metadata fields, rights statements and code/viewer notes, and the complete May 2026 maintainer license-clarification thread. No recording, label file, code or weight was acquired, loaded or executed.",
+      "access": "The card lists XCL at 528,434 recordings / 484 GB and recommends the HSN configuration at 5,460 training recordings / 10,296 test labels / 5.92 GB / 21 classes. These are upstream card figures, not locally verified files. No dataset files were downloaded.",
+      "decision": "Keep metadata-only and out of Talk2Nature model training. BirdSet is useful background for evaluating sound-classification methods, but it is not a parrot-context or animal-communication benchmark. Reconsider only after a component-level rights review and a clearly scoped, appropriately licensed task.",
+      "limitations": "The dataset card’s top-level license is CC BY-NC 4.0 and limits use to non-commercial research and education, while Xeno-Canto recordings carry mixed record-level terms, including NC, SA, CC BY and CC0 entries. The maintainer thread documents a metadata correction and inconsistent license-string formats; exact terms for a usable subset and their compatibility with the umbrella restriction remain unresolved. The card’s compatibility statements are inconsistent (datasets <=3.6.0 versus a later <4.0.0 changelog entry), and the live viewer reports that it cannot load the custom dataset script. The card does not provide receiver-response or experimentally supported meaning labels. Metadata include latitude and longitude, so any future handling also needs location-sensitivity review.",
+      "attribution": "Rauch et al., BirdSet (2025); dataset card and license clarification by DBD-research-group contributors.",
+      "rights": {
+        "license": "Dataset card states CC BY-NC 4.0 at the collection level and non-commercial research/education only; source recordings have per-record CC terms.",
+        "scope": "The umbrella statement, per-record terms and test-set component terms must be reviewed together. The card and maintainer discussion do not establish Talk2Nature’s right to train, redistribute, or use a resulting model commercially.",
+        "evidence_url": "https://huggingface.co/datasets/DBD-research-group/BirdSet",
+        "conditions": "No acquisition or model use. Before any subset is considered, pin its dataset revision, inspect each included recording’s license and provenance, resolve the umbrella-versus-record-level terms, and separately review code, weights, derived artifacts and location handling.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
