@@ -3457,5 +3457,29 @@
     "url": "https://arxiv.org/abs/2610.10663",
     "checked": "2026-10-23",
     "origin": "Targeted review of the primary preprint abstract, task taxonomy, data construction, benchmark split description, reported findings, risks and reproducibility statement, plus the official project page and Hugging Face benchmark/training-resource cards. No audio, dataset shards, code or model weights downloaded; no inference or benchmark run."
+  },
+  {
+    "id": 335,
+    "title": "BirdSet classification benchmark paper",
+    "description": "Rauch et al. (2025), BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics. arXiv:2403.10380, version 6; accepted as an ICLR 2025 spotlight. This is a species/acoustic classification benchmark, not an animal-meaning study.",
+    "url": "https://arxiv.org/abs/2403.10380",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the primary arXiv abstract and version history. The paper reports over 6,800 hours, nearly 10,000 training classes and eight strongly labeled evaluation datasets totaling over 400 hours. No paper body, data, code or weights were downloaded or executed."
+  },
+  {
+    "id": 336,
+    "title": "BirdSet dataset card and component inventory",
+    "description": "Maintainer dataset card for BirdSet. It lists regional benchmark configurations, a 2024-03-10 Xeno-Canto snapshot, per-recording license metadata and species/call labels. The live card also reports dataset-viewer/script compatibility limitations.",
+    "url": "https://huggingface.co/datasets/DBD-research-group/BirdSet",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current card, its published configuration sizes, field definitions and licensing section. No audio or other dataset file was acquired; the dataset was not loaded or run."
+  },
+  {
+    "id": 337,
+    "title": "BirdSet maintainers’ license-metadata clarification",
+    "description": "Closed maintainer/contributor thread on missing and mixed per-record license metadata in BirdSet. The May 2026 discussion records a metadata conversion correction, clarifies that CC-ND files were excluded, and notes remaining inconsistent license-string formats across splits.",
+    "url": "https://github.com/DBD-research-group/BirdSet/issues/337",
+    "checked": "2026-10-23",
+    "origin": "Read the complete public clarification thread, including contributor checks and maintainer responses. This is provenance for a license uncertainty, not legal advice or a blanket permission grant."
   }
 ]
