@@ -3063,3 +3063,9 @@ The full review-depth disclosure is now collapsed behind a keyboard-accessible �
 ## October 23 — clean current-main verification
 
 Checked a clean detached worktree at public `main` commit `c2b0d4ca75de0dfd468786535a4cd991ead84c90`. The repository suite passed: 154 Python tests and 115 Node tests. The owner-workbench suite passed 104 tests; 49 PostgreSQL integration tests were skipped because no disposable local database URL was configured. A public build using the confirmed GitHub Pages origin generated 125 pages plus the 404 page; `scripts/check_site.py` found 126 HTML documents, checked 6,378 links, and confirmed all 125 public routes were reachable. This is a maintainer-run clean-worktree check, not an independent reproduction, hosted Postgres validation, physical-device test, Google indexing result or biological benchmark. No site deployment or external message occurred.
+
+## October 23 — simplify the phone review context prompt
+
+A narrow mobile review found the long context question and inline “Optional · whole session” label crowded each other. The fieldset now uses the short heading “Sounds around you,” with the optional/session scope moved into its explanatory text. The full distinction remains: these are observer-noticed setting sounds, not clip identifications, and unchecked means “not recorded,” not “absent.”
+
+The local phone-width browser rehearsal at 390 CSS pixels reached review successfully using invented synthetic audio; the prompt text and options remain available, and the clip is clearly marked synthetic, unreviewed and temporary. This emulates a browser viewport, not a physical phone or real-microphone test. Validation: 154 Python tests, 25 focused Station/Listen/demo Node tests, local build of 125 pages plus 404, and `scripts/check_site.py` (126 HTML documents / 6,252 links) passed. No audio was uploaded, no research data was admitted and no deployment occurred.
