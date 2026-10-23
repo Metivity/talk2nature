@@ -3703,5 +3703,41 @@
       "code_and_weights": "MIT as stated by the Zenodo record.",
       "data": "The reviewed record does not clearly state a license for the included data or recordings. Treat data rights and scope as unresolved; the preprint's license does not grant rights to separate media."
     }
+  },
+  {
+    "id": 360,
+    "title": "Panwar et al. Eastern North American forest-bird soundscape data descriptor",
+    "description": "Scientific Data Early Article, published 11 September 2026. Its abstract reports 217 hours and about 183,000 annotated vocalizations across 88 bird species. The publisher states CC BY-NC-ND 4.0 for the article text.",
+    "url": "https://doi.org/10.1038/s41597-026-08226-8",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the publisher's article title, abstract, publication notice and rights statement. The page identifies this as an early article version subject to later edits. The full article body and supplements were not reviewed; no article file, dataset file, code or model was acquired.",
+    "rights": {
+      "article_text": "Publisher states CC BY-NC-ND 4.0 for the article. This does not grant rights to the separately deposited dataset.",
+      "dataset": "The linked Zenodo v2 record separately declares CC BY 4.0; a version-count discrepancy remains between the publisher abstract and current deposit."
+    }
+  },
+  {
+    "id": 361,
+    "title": "Northeastern forest-bird soundscapes, Zenodo v2",
+    "description": "Current dataset record, Zenodo 20038954 / DOI 10.5281/zenodo.20038954. The record describes 1,302 ten-minute recordings from 104 sites in four parks and about 183,000 annotations across 96 bird species; it declares CC BY 4.0.",
+    "url": "https://zenodo.org/records/20038954",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the full current v2 landing-page description and the official Zenodo API metadata, including the record-level license, file names, upstream sizes and provider MD5 values. These values were not checked against local bytes. No annotation rows, recordings, README file, code or model were downloaded or inspected.",
+    "rights": {
+      "dataset": "Zenodo v2 metadata declares CC BY 4.0 at the dataset-record level.",
+      "scope": "The record-level declaration is separate from the article's CC BY-NC-ND 4.0 license. No independent component-level provenance, location-sensitivity or legal review was performed."
+    }
+  },
+  {
+    "id": 362,
+    "title": "Northeastern forest-bird soundscapes, Zenodo v1",
+    "description": "Superseded v1 dataset record, Zenodo 18041381. It reports approximately 176,000 vocalizations across 88 bird species; the current v2 record reports about 183,000 across 96 species.",
+    "url": "https://zenodo.org/records/18041381",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official v1 landing-page summary and file inventory to compare it with the current v2 record. No files or annotations were acquired, and the v1 provider checksums were not checked against local bytes.",
+    "rights": {
+      "dataset": "The v1 license was not separately verified in this screen; do not infer v1 permissions from the current v2 record.",
+      "scope": "This is a prior version, not a substitute for the v2 record. No independent component-level rights or provenance audit was performed."
+    }
   }
 ]

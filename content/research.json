@@ -4275,5 +4275,68 @@
         "Metadata-only; no sample bytes downloaded, no code or model run, and no Talk2Nature benchmark result."
       ]
     ]
+  },
+  {
+    "slug": "northeastern-forest-bird-soundscapes-2026",
+    "title": "A large forest-bird soundscape set can test detection, not conversation",
+    "seo_description": "A 217-hour Northeastern U.S. bird dataset offers strong event labels for detection and species classification, with version counts still to reconcile.",
+    "taxon": "Birds of northeastern North America",
+    "kind": "Strongly annotated passive-acoustic dataset",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Scientific Data Early Article and Zenodo dataset v2",
+    "source_ids": [
+      360,
+      361,
+      362
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Publisher abstract and rights notice plus complete Zenodo v1/v2 record metadata reviewed; data files uninspected",
+    "review_depth": "Reviewed the publisher's article title, abstract, publication notice and rights statement; the full article and supplement were not reviewed. Read the official Zenodo v1 and v2 record descriptions and the complete v2 file inventory through the landing page and API, including the record-level license, sizes and provider checksums. No recording, annotation row, README file, code or model was downloaded, inspected or run. Provider checksums were not verified against local files.",
+    "review_locator": "Scientific Data DOI 10.1038/s41597-026-08226-8; current Zenodo v2 record 20038954 / DOI 10.5281/zenodo.20038954; superseded v1 record 18041381.",
+    "finding": "The latest Zenodo v2 record describes 1,302 ten-minute forest soundscapes—about 217 hours—from 104 sites in four northeastern U.S. parks, with approximately 183,000 vocalization annotations across 96 bird species. Labels give time/frequency boxes and species codes, and recording metadata includes date and site fields. The v2 figure of 96 species differs from the publisher's current abstract, which says 88; the previous Zenodo v1 record also reports 88 species but about 176,000 annotations. Treat the version/count discrepancy as unresolved rather than combining the records. This is a promising field-acoustics resource for sound-event detection, localization and species classification, not a communication dataset.",
+    "limitations": "The annotations identify vocalization events and species, not individual callers, observed social behavior, receiver response or call meaning. The current record says annotators may combine consecutive same-species calls when pauses are under two seconds, and faint or unidentifiable events may remain unlabeled. Sampling differs by subset: SIMR is tied to point-count surveys across sites, while ACAD and MABI use selected clear mornings during peak breeding season. These choices matter for event recall, class balance and site/time holdouts. The archive is concentrated in four parks in one region and does not establish performance on household parrots, phones or other taxa. Site coordinates appear in the record; no coordinates were copied or mapped. The dataset record declares CC BY 4.0, while the article text is CC BY-NC-ND 4.0; neither statement is an independent audit of every component or source-media provenance.",
+    "lesson": "A large, strongly annotated bird collection can help test whether software finds and classifies vocalizations across field recordings. It cannot show what a bird meant or whether another bird understood it. Keep this detection track separate from the Egyptian-fruit-bat context question, V33DA caller attribution and the provisional parrot observation workflow.",
+    "next_review": "Reconcile the current Zenodo v2 species/annotation counts with the publisher's early abstract and confirm which data version the paper analyzed. Before any acquisition, obtain independent bioacoustics and ML/statistical review of the minimum useful task, site/park/year grouping, class coverage, coordinate handling and a separate locked test. Keep the release metadata-only until that review and a bounded rights/privacy plan pass; no Talk2Nature model run is authorized by this screen.",
+    "expert_review": "Not independently reviewed by an ornithologist, bioacoustics specialist or ML/statistical-evaluation reviewer.",
+    "study_snapshot": [
+      [
+        "Latest release scale",
+        "Zenodo v2 reports 1,302 ten-minute recordings, approximately 183,000 annotated vocalizations and 96 species across 104 northeastern U.S. sites."
+      ],
+      [
+        "Version reconciliation",
+        "The publisher abstract says 88 species; Zenodo v1 says about 176,000 annotations and 88 species; current Zenodo v2 says about 183,000 and 96 species. No explanation for the mismatch was found in the reviewed records."
+      ],
+      [
+        "Annotation target",
+        "Expert-reviewed time/frequency boxes with bird-species codes; not caller identity, behavior, addressee or receiver response."
+      ],
+      [
+        "Collection scope",
+        "Four parks in the northeastern United States; recording metadata includes site and date, and the public record includes site coordinates."
+      ],
+      [
+        "Separate rights",
+        "Zenodo v2 declares CC BY 4.0 for the dataset record; the publisher states CC BY-NC-ND 4.0 for the article text."
+      ],
+      [
+        "Talk2Nature status",
+        "Metadata-only. No media, annotation rows, software or models acquired or run; no benchmark result."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-23",
+      "location_status": "pending",
+      "location_note": "The study covers four northeastern U.S. parks and the public record includes site coordinates. No coordinates were copied or mapped; assess species and site sensitivity before any atlas entry.",
+      "locations": [],
+      "observation_period": null
+    },
+    "reuse": {
+      "status": "Metadata-only candidate for bird event-detection research; not admitted to Talk2Nature training or a communication benchmark.",
+      "asset": "Publisher abstract and rights metadata plus Zenodo v1/v2 record descriptions and v2 API file metadata. No audio, annotation rows, code or model files were acquired.",
+      "rights": "The current Zenodo v2 record declares CC BY 4.0 for the dataset; the article text separately carries a publisher-stated CC BY-NC-ND 4.0 license. Verify exact version, source-media provenance and location conditions before use. Record-level terms are not an independent component audit.",
+      "experiment": "A future detection study could evaluate event localization or species labels with site/park/year-separated groups and an untouched holdout, after expert review. No data were acquired, no model was run and no detector performance is claimed. Detection output would not establish communication or meaning."
+    }
   }
 ]
