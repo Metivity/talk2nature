@@ -5610,6 +5610,36 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "zebra-finch-v33da-plus-overlap-context",
+      "kind": "dataset",
+      "title": "V33DA++ overlapping-call and long-context companion dataset",
+      "url": "https://huggingface.co/datasets/songbirdini/v33da_pp/tree/bb31f73e2191278dd4965af01502c42380cd597d",
+      "version": "Hugging Face dataset revision bb31f73e2191278dd4965af01502c42380cd597d; provider last-modified date 2026-05-06; reviewed 2026-10-23",
+      "source_ids": [
+        357,
+        371
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Methods candidate for vocal-activity detection, overlapping-call source separation, audio-visual synchronization or active-speaker attribution using verified zebra-finch vocal events.",
+      "review_depth": "Reviewed the pinned provider card, API metadata, bucket schemas/counts, task suggestions, rights notice, linked code/split documentation and current pinned Git tree as text/metadata. No media, Parquet, executable code or model weights were acquired or run.",
+      "access": "Public dataset card lists 41,193 bucket rows and 167 GB total. The overlap_padded bucket repeats overlap events with additional context. No files were downloaded or inspected.",
+      "decision": "Metadata-only candidate for narrowly defined signal-processing tasks. It is not a meaning, receiver-response or independently observed social-context dataset, and it is not ready for a Talk2Nature run because the linked training imports are absent from the reviewed code tree and the advertised bird-held-out path remains unaudited.",
+      "limitations": "Same ten zebra finches and three experiments as V33DA; no independent cohort expansion. Overlap includes 3,784 rows, padded includes 33,625 events, and overlap_padded repeats the 3,784 overlap events. The controlled recording setup does not establish phone/home generalization. Accelerometer channels provide oracle caller labels and are not valid model inputs. Provider license is a declaration, not independent clearance; reference code, preprocessing tools, weights and manuscript have separate terms.",
+      "attribution": "V33DA author team, V33DA++: Overlapping-Call and Long-Context Companion to V33DA, Hugging Face dataset revision bb31f73e2191278dd4965af01502c42380cd597d; associated 2026 V33DA manuscript listed as under review.",
+      "rights": {
+        "license": "CC BY 4.0 declared on the pinned Hugging Face dataset card.",
+        "scope": "Dataset card declaration only. The GitHub reference code is MIT-licensed; preprocessing tools, manuscript, model weights and third-party components are separate.",
+        "evidence_url": "https://huggingface.co/datasets/songbirdini/v33da_pp/tree/bb31f73e2191278dd4965af01502c42380cd597d",
+        "conditions": "Preserve attribution and identify changes if later reuse is approved. Review component provenance and intended use separately; this metadata record authorizes no acquisition, training or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
