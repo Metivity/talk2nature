@@ -3684,24 +3684,27 @@
   {
     "id": 358,
     "title": "ZF-AIM zebra-finch interaction study, bioRxiv preprint",
-    "description": "The v3 preprint abstract reports more than 1,000 hours of female zebra-finch vocal interactions, analysis of timing and acoustic structure, and live interaction experiments using a generative audio model. The paper is a preprint, not a general animal-translation result.",
+    "description": "Full-text-reviewed v3 preprint reporting female zebra-finch call timing and acoustic modulation during natural interactions, plus controlled tests with an AI-driven interactive audio model. It measures contingent acoustic exchange, not translated semantic content.",
     "url": "https://doi.org/10.64898/2026.02.12.705387",
     "checked": "2026-10-23",
-    "origin": "Reviewed the bioRxiv v3 title, abstract, author list and posted license only. Full methods, supplements and data contents were not reviewed; no paper content beyond short factual metadata is reproduced.",
+    "origin": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license. Supplemental figures/analyses and the later Zenodo archive were not inspected; no data, code or model was acquired or run.",
     "rights": {
-      "preprint": "bioRxiv reports CC BY-NC-ND 4.0 for this preprint; this is separate from the dataset, code and weights."
+      "preprint": "bioRxiv lists CC BY-NC-ND 4.0 for v3. This covers the manuscript under its stated terms; it does not independently clear recordings, annotations, code or checkpoints.",
+      "version_scope": "The v3 article's data-availability statement is time-specific. The later Zenodo record describes a code/checkpoint/data release; the relationship and component-level terms have not been reconciled."
     }
   },
   {
     "id": 359,
     "title": "ZF-AIM code, checkpoints and next-call metadata release",
-    "description": "The Zenodo record lists a 26.6 GB release and describes code, checkpoints and metadata for next-call prediction. It states that code and model weights are MIT-licensed; the data components' license is not clearly specified in the reviewed record.",
+    "description": "The Zenodo record lists one 26.6 GB archive, describes code, checkpoints and metadata for next-call prediction, and states that code and model weights are MIT-licensed. The record-level MIT field does not make the exact archive contents or audio/data rights clear.",
     "url": "https://zenodo.org/records/23024019",
     "checked": "2026-10-23",
-    "origin": "Reviewed the official Zenodo record metadata and its described directory contents. The archive, file manifest, recordings and checkpoint files were not downloaded or inspected.",
+    "origin": "Reviewed the official Zenodo landing-page and API metadata, including the archive size, provider checksum, record-level MIT field and described directory contents. The 26.6 GB archive, internal manifest, recordings, annotations, code and checkpoints were not downloaded or inspected.",
     "rights": {
-      "code_and_weights": "MIT as stated by the Zenodo record.",
-      "data": "The reviewed record does not clearly state a license for the included data or recordings. Treat data rights and scope as unresolved; the preprint's license does not grant rights to separate media."
+      "record_metadata": "Zenodo API record-level license is MIT; the description specifically states MIT for code and model weights.",
+      "data": "The reviewed record does not clearly identify the license and scope for audio recordings, annotations or benchmark metadata. The article's license is separate.",
+      "scope": "Archive contents, embedded notices and file-level provenance were not inspected. Do not infer that one record-level field resolves component rights.",
+      "conditions": "Keep all archive components metadata-only pending exact manifest and component-level rights review."
     }
   },
   {

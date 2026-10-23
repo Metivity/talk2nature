@@ -4580,5 +4580,64 @@
       "rights": "The provider declares CC BY 4.0 for V33DA++; code is separately MIT-licensed, and preprocessing tools retain their original licenses. This review is not independent legal clearance and does not cover every component or intended commercial use.",
       "experiment": "No experiment or model run was performed. A future test should choose one task such as vocal-activity detection or source separation, exclude accelerometer oracle inputs, freeze a leakage-safe animal/session split and obtain independent scientific and evaluation review."
     }
+  },
+  {
+    "slug": "zf-aim-zebra-finch-turn-taking-2026",
+    "title": "Zebra-finches exchange calls with an interactive audio model",
+    "seo_description": "A 2026 zebra-finch preprint tests call timing and acoustic adaptation with AI-driven audio. It does not translate animal language.",
+    "taxon": "Zebra finch (Taeniopygia guttata)",
+    "kind": "Vocal interaction and model study",
+    "year": "2026",
+    "year_label": "bioRxiv preprint v3; not peer reviewed",
+    "source_ids": [
+      358,
+      359
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Primary preprint full text reviewed; release metadata reviewed; no archive inspection or reproduction",
+    "review_depth": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license, plus the official Zenodo landing page/API metadata. Supplemental analyses and the 26.6 GB archive's manifest and contents were not inspected. No audio, code, model weights or data were acquired or run; no independent specialist reviewed this Talk2Nature assessment.",
+    "review_locator": "James et al., bioRxiv 2026.02.12.705387 v3, posted March 23, 2026, DOI 10.64898/2026.02.12.705387; Zenodo record 23024019, DOI 10.5281/zenodo.23024019.",
+    "finding": "Female zebra-finches changed the timing and acoustic structure of their calls during exchanges. The paper reports more than 1,000 hours of recordings and analyzes 834,309 calls from 21 birds across 40 pair interactions in Methods; one Results passage says 20 birds, so the count is inconsistent. The authors define a response as a first call within one second after a partner's call ends. They report responses after about 44% of partner calls, compared with an estimated 10% chance level, and describe birds responding to live sounds from an interactive audio model in a controlled lab study. The model predicts patterns such as which bird may call next and when; this is evidence about acoustic timing and contingency, not a translation of calls into human language.",
+    "limitations": "This is a preprint, not peer-reviewed evidence. The paper describes a pair-level split with 34 pairs for training and pairs 35–40 for validation/evaluation, but the reviewed article does not establish that individual birds are disjoint across these pairs; pair-held-out results therefore are not verified as bird-held-out generalization. The response window is an operational timing rule, not a semantic label. The text reports n=20 in one Results passage and 21 birds in the Methods, a discrepancy not resolved here. The article's v3 data-availability statement and the later Zenodo release are not reconciled: the preprint states that analysis data would be available upon acceptance and that code/weights were not released at that time, while the later record describes a release. Zenodo lists MIT at record level and states code/weights are MIT, but the audio, annotation and benchmark-data terms remain unclear. Supplemental analyses, archive contents and independent reanalysis were not reviewed.",
+    "lesson": "Sequence models can learn who tends to vocalize next, when a call occurs and how acoustic features covary. That is a valuable first step for animal communication research, but prediction is not translation. Start with measurable acoustic patterns and independently observed context; require held-out-animal tests and a human review path. Do not turn the controlled playback experiment into a feature of Talk2Nature's passive app.",
+    "next_review": "Keep the release metadata-only. Before considering any reuse, inspect a bounded authoritative archive manifest, establish exact audio/annotation provenance and component-specific rights, resolve the reported 20-versus-21 bird count and whether train/evaluation pairs share individuals, and ask independent avian-communication and ML/evaluation reviewers whether the study supports a useful non-duplicative question. No archive acquisition, model run or playback is proposed by this note.",
+    "expert_review": "No independent specialist review has been received.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Question",
+        "How do zebra-finches time and acoustically adapt their vocal exchanges, and can an interactive audio model predict parts of that pattern?"
+      ],
+      [
+        "Natural interactions",
+        "Methods reports 834,309 calls from 21 birds and 40 pair interactions; one Results passage says n=20 birds."
+      ],
+      [
+        "Response definition",
+        "First partner call initiated within one second after the preceding call ends; this is a timing measure, not a meaning label."
+      ],
+      [
+        "Model",
+        "A sequence model predicts the next caller, a call token and wait time."
+      ],
+      [
+        "Reported model metrics",
+        "Next-caller accuracy 0.632 vs 0.496 chance; next-token accuracy 0.056 vs 0.010; wait-time RMSE 976 s vs 1,126.4 s for a random-distribution baseline. These are task-specific preprint results, not semantic accuracy."
+      ],
+      [
+        "Evaluation boundary",
+        "34 pairs used for training and pairs 35–40 for validation/evaluation; disjointness of individual birds across pairs is not established in the reviewed text."
+      ],
+      [
+        "Rights and release",
+        "Preprint is listed CC BY-NC-ND 4.0. Zenodo describes MIT code and weights in a 26.6 GB archive; exact audio/data terms and manifest remain unresolved."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only communication-research lead; not admitted to Talk2Nature training, app inference or playback.",
+      "asset": "Full main-text review of bioRxiv v3 and official Zenodo record/API metadata only. No data, audio, archive, code or model was acquired or run.",
+      "rights": "Keep the manuscript, code, checkpoints, annotations, audio and benchmark metadata as separate components. The preprint lists CC BY-NC-ND 4.0; Zenodo's record-level MIT field and description address code and weights, while data/audio terms are not clear. Exact file inventory and provenance remain unreviewed.",
+      "experiment": "No result was reproduced. The preprint supports a controlled study of acoustic contingency, timing and adaptation, not an animal-language translator. Any future task must verify group splits by individual bird, compare simple baselines and retain independently observed labels."
+    }
   }
 ]
