@@ -3213,3 +3213,23 @@ Reproduced the public guide's historical synthetic split checksum from a fresh c
 **Change:** updated the Wytham public note, dataset resource, first-animal comparison and source record to distinguish known field descriptions from uninspected values. The atlas remains at coarse Wytham study-region scope, with no nestbox or perimeter pin. Future derivatives must omit precise coordinates unless a qualified wildlife-location review establishes a need and safe handling. This is a data-minimization recommendation; CC BY 4.0 does not make exact coordinates necessary for an acoustic-structure question.
 
 **Validation and limits:** all 156 repository Python tests and 115 Node tests passed. The local build and checker validated 128 HTML documents and 6,358 links; the explicit-origin public candidate build validated 128 documents, 6,487 links and all 127 public routes. Local Chromium review at 390×844 and 320×740 displayed the updated note and direct metadata citation; no physical-device or screen-reader test was performed. Automated checks confirm the note states only what the source documents, says coordinate values were not inspected and retains an empty precise-location list. No dataset table, coordinates, audio, code or model was acquired or run. This does not establish that every derived identifier is non-sensitive; identity/grouping fields and any proposed task still need review. The candidate build was not deployed. Keep Wytham as a possible song-structure methods resource, not a communication benchmark. AutoResearch remains **NOT READY**.
+
+## October 24 — prepared an independent zebra-finch review brief
+
+**Question:** can an outside avian-communication or ML/statistical reviewer make a bounded go/narrow/defer decision on ZF-AIM without receiving data or assuming any license?
+
+**Evidence basis:** the current source note and candidate plan document the v3 preprint, its 20-versus-21 bird count discrepancy, pair-based evaluation with bird-disjointness unverified, four raw example tracks in the separate data record, and conflicting CC BY-SA / CC BY-NC statements. Code/model and data releases are separate records. No archive, audio, code or weights were acquired or executed.
+
+**Change:** added `docs/ZF_AIM_INDEPENDENT_REVIEW.md` with separate subject-matter, evaluation-design and data-scope questions; linked it from priority 5 on the execution board. The brief asks for a proceed/narrow/defer judgment and states the independence, public-issue and no-data boundaries.
+
+**Validation and limits:** checked every cited source and repository-relative link against the existing source records and review template; `git diff --check` passed. This is a prepared review artifact, not external review: no reviewer was selected or contacted, no permission was obtained and no benchmark became ready. Keep the goal active and AutoResearch **NOT READY**.
+
+## October 24 — identified zebra-finch reviewer-fit paths
+
+**Question:** can we prepare for a credible independent review of the zebra-finch candidate by identifying public research groups whose stated work matches separate scientific, computational and ecological review needs?
+
+**Evidence reviewed:** official profiles for the Max Planck Institute for Biological Intelligence's Neural Circuits for Vocal Communication group, the University of Zurich Birdsong and Natural Language Group, and Wageningen's active wild zebra-finch social-communication project; the primary Benichov and Vallentin turn-taking study. Their public records establish topical fit only. None appears on the ZF-AIM v3 author list, but a complete recent-collaboration screen has not been done.
+
+**Change:** added a three-path reviewer-fit table to `docs/NETWORK_AND_OUTREACH.md` and linked it from the benchmark execution board. It proposes bounded behavioral-timing, computational/data-evaluation and ecological-generalization questions. Every path is explicitly unconfirmed; no individual was selected or contacted. The note says candidate reviewers cannot resolve data rights for the rights holder.
+
+**Validation and limits:** all three official profiles and the primary paper were source-checked; local reference targets and the review issue template exist. No message, invitation, partner claim, reviewer consent or data access occurred. The scientific benchmark remains **NOT READY** pending conflict disclosure, external review, rights and corpus clarification, and a defensible grouped split.
