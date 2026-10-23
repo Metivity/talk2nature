@@ -291,3 +291,13 @@ The annotation fixture reported an invented 8-second recording, two marked event
 The local noindex build produced 120 pages plus 404; the site checker verified 121 HTML documents and 5,972 links. The explicit public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,094 links and all 120 public routes reachable.
 
 This is maintainer-run software verification, not an independent researcher reproduction, usability study, scientific validation or biological result. No third-party media, labels, code or model weights were acquired or run. Independent reproductions remain zero, and AutoResearch remains **NOT READY**.
+
+## October 23 current public-main clean-clone recheck — eeeffbb
+
+Rechecked the newest public `main` after the `7aa26df` run using a fresh depth-one HTTPS clone at [`eeeffbbeb3ac2cc06967110d488048c06c9d4dec`](https://github.com/Metivity/talk2nature/commit/eeeffbbeb3ac2cc06967110d488048c06c9d4dec). Environment: macOS 25.4 arm64, Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed or private workspace files copied; the tracked clone remained clean after the checks.
+
+The annotation fixture again showed 8 seconds, two marked events, 2 seconds of interval-union coverage and 0 seconds of independently observed context. The grouped recording manifest returned 10 connected groups and 12/4/4 train/validation/test records; the dyadic fixture returned 10 connected groups. The policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the recording split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The resource validator accepted 162 records; all 148 Python and 115 Node tests passed.
+
+The local noindex build produced 120 pages plus 404; the site checker verified 121 HTML documents and 5,972 links. The explicit public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,094 links and all 120 public routes reachable. This newer commit produced the same software results as the preceding `7aa26df` check.
+
+This is a maintainer-run software check, not an independent reproduction, usability study, scientific validation or biological result. No third-party media, labels, code or model weights were acquired or run; independent reproductions remain zero and AutoResearch remains **NOT READY**.

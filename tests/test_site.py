@@ -698,8 +698,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('97.9%',rendered)
             self.assertIn('95.9%',rendered)
             self.assertIn('animal-held-out claim',rendered)
-            self.assertIn('current Terms of Use gives an MPS-associated research-service restriction',rendered)
-            self.assertIn('does not separately explain its application to external downloaders',rendered)
+            self.assertIn('fileAccessRequest=true',rendered)
+            self.assertIn('file is marked restricted=false',rendered)
+            self.assertIn('the flag is ignored for unrestricted files',rendered)
+            self.assertIn('does not separately explain the external-downloader scope',rendered)
+            self.assertIn('https://guides.dataverse.org/en/6.11/api/native-api.html#restrict-files',rendered)
             self.assertIn('https://www.edmond.mpg.de/Terms_of_Use/',rendered)
             self.assertIn('index,follow',rendered)
             canonical=base+'/research/animal-spot-parrot-detection-2022/'
@@ -711,6 +714,8 @@ class SiteTests(unittest.TestCase):
             data=next(r for r in resources if r['id']=='animal-spot-monk-parakeet-data-2022')
             self.assertEqual(data['acquisition'],'metadata_only')
             self.assertEqual(data['files'],[])
+            self.assertIn(352,data['source_ids'])
+            self.assertIn('ignored when unrestricted',data['access'])
             self.assertIn('No terms were accepted',data['access'])
 
     def test_dupont_lark_note_is_discoverable_and_keeps_data_rights_separate(self):
@@ -943,6 +948,13 @@ class SiteTests(unittest.TestCase):
                 with self.subTest(origin=origin),self.assertRaises(ValueError): build(Path(d),origin,True)
 
     def test_funding_deadlines_show_fresh_check_and_official_cutoff_source(self):
+        opportunities=load('opportunities')
+        sources={source['id']:source for source in load('sources')}
+        preseed=next(item for item in opportunities if item['slug']=='preseed')
+        self.assertEqual(preseed['verified'],'2026-10-23')
+        self.assertEqual(sources[27]['checked'],'2026-10-23')
+        for requirement in ('NIS 3 million','NIS 300,000','at least 15%','at least 75%','unconfirmed'):
+            self.assertIn(requirement,preseed['next_action'])
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True)
@@ -952,8 +964,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
             self.assertIn('official date details',page)
             self.assertIn('Checked 2026-10-13 · Not submitted; not recommended for current scope',page)
-            self.assertIn('No company or investor facts are confirmed',page)
+            self.assertIn('The applicant entity, investor commitment and program fit are unconfirmed.',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
+            self.assertIn('60% of an eligible Pre-Seed investment round, up to a NIS 2 million grant',page)
+            self.assertIn('NIS 3 million',page)
+            self.assertIn('NIS 300,000',page)
+            self.assertIn('at least 15%',page)
+            self.assertIn('at least 75%',page)
             self.assertIn('Official track rules ↗',page)
             self.assertIn('Official open-source procedure ↗',page)
             self.assertIn('Wildlife Acoustics · Q4 Scientific Product Grant',page)
@@ -1773,6 +1790,23 @@ class SiteTests(unittest.TestCase):
             self.assertIn('iNatSounds 2024 multi-taxon audio dataset',resource_page)
             paths=(root/'research'/'starting-points'/'index.html').read_text()
             self.assertIn('/research/inat-sounds-2024/',paths)
+
+    def test_ceb_api_inventory_keeps_annotation_tables_metadata_only(self):
+        project_root=Path(__file__).resolve().parents[1]
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='central-european-birds-ceb-v1-1')
+        self.assertEqual(resource['reviewed'],'2026-10-23')
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertEqual(resource['files'],[])
+        self.assertIn('8,559,233 bytes',resource['review_depth'])
+        self.assertIn('5 MiB per-file limit',resource['review_depth'])
+        self.assertIn('No CSV rows',resource['review_depth'])
+        self.assertIn('left uninspected',resource['access'])
+        self.assertIn('cannot serve as a concealed locked holdout',resource['access'])
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        source=next(s for s in sources if s['id']==333)
+        self.assertEqual(source['checked'],'2026-10-23')
+        self.assertIn('not locally verified',source['origin'])
 
 
 if __name__=='__main__': unittest.main()
