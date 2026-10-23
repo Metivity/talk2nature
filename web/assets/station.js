@@ -29,6 +29,7 @@ function controls() {
   const busy = pending || active || exporting;
   const phase = pending ? 'starting' : active ? 'recording' : session ? 'review' : 'setup';
   $('station-console').dataset.phase = phase;
+  $('station-headline').textContent = pending ? 'Getting ready.' : active ? session?.origin === 'synthetic' ? 'A rehearsal in listening.' : 'This place has a rhythm.' : session ? session.origin === 'synthetic' ? 'Review your rehearsal.' : 'Review this moment.' : 'Begin with curiosity.';
   $('station-status').setAttribute('aria-live', active ? 'off' : 'polite');
   const unaddedNote = Boolean($('station-note').value.trim());
   $('station-free-note').hidden = phase === 'review' && !unaddedNote;
@@ -104,7 +105,6 @@ async function start(synthetic) {
     if (token !== run || !result) return;
     session = new (windowMode ? WindowSession : StationSession)(result.sampleRate, {origin: synthetic ? 'synthetic' : 'microphone', margin: Number($('station-margin').value), animalContext});
     settings = result.settings; active = true; pending = false; pendingSynthetic = false; lastFrameAt = performance.now();
-    $('station-headline').textContent = synthetic ? 'A rehearsal in listening.' : 'This place has a rhythm.';
     const setting = value => value === null ? 'unreported' : value ? 'on' : 'off';
     $('station-device').textContent = synthetic ? `Synthetic tones · ${result.sampleRate.toLocaleString()} Hz processing · no microphone, no speaker output.` : `${result.sampleRate.toLocaleString()} Hz processing · gain control ${setting(settings.auto_gain_control)} · noise suppression ${setting(settings.noise_suppression)} · echo cancellation ${setting(settings.echo_cancellation)}. Device settings are reported, not calibrated.`;
     controls(); renderEvents(); $('station-stop').focus({preventScroll: true});
