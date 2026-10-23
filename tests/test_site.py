@@ -1140,6 +1140,17 @@ class SiteTests(unittest.TestCase):
             self.assertLess(page.index('id="station-device"'),page.index('id="station-record-controls"'))
             self.assertLess(page.index('id="station-record-controls"'),page.index('id="station-settings"'))
 
+    def test_station_journal_export_has_a_name_that_matches_its_visible_label(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            page=(root/'app'/'station'/'index.html').read_text()
+            button=re.search(r'<button id="station-export"([^>]*)>(.*?)</button>',page)
+            self.assertIsNotNone(button)
+            aria_label=re.search(r'\baria-label="([^"]+)"',button.group(1))
+            self.assertIsNotNone(aria_label)
+            visible_label=re.sub(r'<[^>]+>','',button.group(2))
+            self.assertEqual(html.unescape(aria_label.group(1)),html.unescape(visible_label))
+
     def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
