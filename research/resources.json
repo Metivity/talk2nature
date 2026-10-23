@@ -5581,6 +5581,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "budgerigar-edge-vocal-activity-paper-2026",
+      "kind": "paper",
+      "title": "Edge-Based Long-Term Automated Monitoring of Budgerigar Vocal Activity Using YAMNet",
+      "url": "https://doi.org/10.3390/ani16203246",
+      "version": "Animals 16(20), 3246; publisher lists publication date 2026-10-15 and early-access status",
+      "source_ids": [
+        370
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Prior-art reference for local edge-based detection and long-term quantification of budgerigar vocal activity; not a communication-meaning task.",
+      "review_depth": "Reviewed publisher early-access record and abstract only. Direct full-page request was rate-limited; detailed methods, validation, ethics, data availability and model artifacts were not inspected.",
+      "access": "Publisher record is public and displays an Open Access label; the complete article was not accessible in this review. No study data, code or model files were acquired.",
+      "decision": "Use as evidence that long-duration local vocal-activity monitoring is prior art. Do not claim the recording-station concept itself as novel; require a clearly distinct and validated contribution before building a model comparison.",
+      "limitations": "The abstract does not establish event-level accuracy, false-positive rates, caller identity, independently observed behavior, receiver response, comprehension or meaning. Article, data, code and model-weight rights are separate; only the abstract was reviewed and the exact article reuse license was not confirmed.",
+      "attribution": "Agishev, A. et al. (2026), Animals 16(20), 3246; DOI 10.3390/ani16203246.",
+      "rights": {
+        "license": "Publisher displays Open Access; exact article reuse license not verified. No data/code/model license established.",
+        "scope": "Citation/abstract only; recordings, labels, code, pretrained YAMNet assets and custom weights were not reviewed.",
+        "evidence_url": "https://www.mdpi.com/2076-2615/16/20/3246",
+        "conditions": "Cite and link only. Review exact component terms before any reuse or execution.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

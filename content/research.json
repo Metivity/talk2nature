@@ -4466,5 +4466,59 @@
       "rights": "The article states CC BY 4.0 for its text; the GIN landing page declares CC BY-SA 4.0 for the 5.8 GiB repository archive. The archive is described as containing neural and acoustic data, and the paper points to the same repository for analysis code. No member list, embedded notices, dependencies or file-level rights were checked. Keep these components separately tracked and metadata-only.",
       "experiment": "No data or code were run and no model result was reproduced. This is not a communication-meaning benchmark. Any future use needs an exact manifest, component-level rights review, a bounded storage and compute plan, and independent domain and evaluation review."
     }
+  },
+  {
+    "slug": "budgerigar-edge-vocal-activity-monitoring-2026",
+    "title": "A year of budgerigar vocal activity is not a conversation",
+    "taxon": "Budgerigars",
+    "kind": "Edge-based acoustic monitoring study",
+    "year": "2026",
+    "year_label": "Publication year",
+    "source_ids": [
+      370
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Primary publisher abstract reviewed",
+    "review_depth": "Reviewed the publisher early-access record and abstract only. The page identifies the article as an early-access version and says complete PDF/HTML/XML versions will follow. A direct full-page request was rate-limited. Detailed methods, model validation, ethics, data availability, code, weights and supplements were not reviewed; no files were acquired or run.",
+    "review_locator": "Agishev et al., Animals 16(20), 3246 (2026), DOI 10.3390/ani16203246; publisher early-access record and abstract, published 2026-10-15.",
+    "seo_description": "A 2026 study reports year-long local monitoring of budgerigar vocal activity. It measures when birds vocalize, not what their calls mean.",
+    "finding": "The publisher abstract describes ten budgerigars monitored under stable housing from June 2025 through May 2026. A Raspberry Pi system processed audio locally using a pretrained YAMNet feature extractor and a task-specific binary classifier. The study defined a vocal-activity second as a one-second interval containing at least one detected vocalization and reports daily and seasonal patterns. This is prior art for long-duration, edge-based vocal-activity monitoring.",
+    "limitations": "Only the publisher record and abstract were reviewed. The reported activity measure is not caller identity, observed social context, receiver response, comprehension or call meaning. The accessible abstract does not establish event-level accuracy, false-positive rates, the locked evaluation design, detailed welfare/ethics procedures, data availability, code or model-weight terms. No independent review or reproduction was performed. The publisher displays an Open Access label, but the article's exact reuse license was not verified here; no license for recordings, code or model weights was established.",
+    "lesson": "Do not present dedicated-device or edge-based continuous vocal-activity monitoring as a new Talk2Nature capability. A useful contribution would need a distinct, validated task—for example, transparent human observation of context alongside sound—while keeping predictions separate from observations and from any claim about meaning. This abstract does not establish that a phone app can identify meaningful exchanges or diagnose welfare.",
+    "next_review": "When the complete article is accessible, review the sampling schedule, classifier labels, held-out evaluation, event-level performance, human/noise handling, ethics statement, data/code availability and component licenses. Compare the exact task with the locally operated Field Companion before proposing an extension; do not acquire or run the study's assets without a separate rights and scope review.",
+    "expert_review": "No independent avian-behavior, bioacoustics or ML/statistical review has been received.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Study population",
+        "Ten budgerigars under stable housing conditions."
+      ],
+      [
+        "Reported monitoring period",
+        "June 2025 to May 2026."
+      ],
+      [
+        "Processing setup",
+        "Raspberry Pi-based local audio processing; pretrained YAMNet features plus a task-specific binary classifier."
+      ],
+      [
+        "Reported measure",
+        "A vocal-activity second is a one-second interval with at least one detected vocalization."
+      ],
+      [
+        "Evidence boundary",
+        "Daily and seasonal activity patterns are reported; the abstract does not report a message, receiver-response or meaning test."
+      ],
+      [
+        "Access checked",
+        "Publisher early-access record and abstract only; data, code and model availability remain unreviewed."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only prior-art record; not admitted as a dataset, model or benchmark for Talk2Nature.",
+      "asset": "Publisher early-access record and abstract only. No audio, labels, code, model weights or full article file was acquired.",
+      "rights": "The publisher marks the article Open Access, but the exact article license was not confirmed. Data, code and model weights were not located or reviewed and must be assessed separately.",
+      "experiment": "No data or model was run and no performance result was reproduced. This is not a communication-meaning benchmark. Any future comparison needs the full paper, permitted assets, an independently reviewed task and a leakage-safe evaluation."
+    }
   }
 ]
