@@ -2622,3 +2622,9 @@ The Performance report was last updated about four hours before inspection and c
 **Action and receipt:** submitted this one URL once for indexing. Search Console confirmed it was added to the priority crawl queue and states that repeat submissions do not change queue position or priority. The sitemap was not resubmitted.
 
 **Limits and next check:** this is a crawl request, not proof of indexing, ranking, or search traffic. Check the Google-index report later; do not repeatedly submit while the request is pending. No source, website, or deployment change was made for this Search Console action.
+
+## October 23 follow-up — narrow-phone observer note and review continuity
+
+**Question and check:** on the deployed Field Companion at 320 × 740 CSS pixels, does a human-entered observation persist from the microphone-free rehearsal into review, and is Save reachable? A synthetic session accepted a “Movement” note at 00:03, then End rehearsal produced a partial recap showing invented practice audio, 7.2 seconds observed and one note. The timeline retained the note, and scrolling to the lower review section exposed Save session.
+
+**Decision and limits:** no code change was indicated. The authoritative state was “Stopped · local only” / “Stopped by you,” despite the page’s static “A rehearsal in listening” heading. This is desktop-Chromium viewport emulation, not physical-phone, Safari, screen-reader or novice testing. No microphone was opened, and no real data were captured, downloaded or uploaded. The audit did not alter the deployed app.
