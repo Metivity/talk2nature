@@ -2607,7 +2607,11 @@ The Performance report was last updated about four hours before inspection and c
 
 **Validation:** all 147 Python and 115 Node tests passed. The local noindex build produced 117 pages plus 404; the site checker validated 118 HTML pages and 5,800 links. The explicit-origin public candidate also produced 117 pages plus 404; its checker validated 118 HTML pages, 5,919 links and all 117 public routes. The required Android checks also passed: core boundary tests, debug lint, debug/release assembly, and release-boundary checks. In the rebuilt browser flow, the disclosure opened and the export was discoverable by its accessible name and reported visible and enabled. The practice remained synthetic and local; no microphone or export/download was used.
 
-**Limits and next decision:** this is browser accessibility-query evidence, not VoiceOver, TalkBack, physical-phone or independent novice testing. The fix is a local, unpushed and undeployed candidate. Run the screen-reader path on iOS and Android before claiming assistive-technology validation. AutoResearch remains **NOT READY**.
+**Release:** PR [#217](https://github.com/Metivity/talk2nature/pull/217) merged to `main` as [`14481f4`](https://github.com/Metivity/talk2nature/commit/14481f4423c3939577a708c6fbc0402df53a7dcc). Public checks [39894405770](https://github.com/Metivity/talk2nature/actions/runs/39894405770) passed. Pages run [39894591870](https://github.com/Metivity/talk2nature/actions/runs/39894591870) completed successfully, including the live-route and crawl-metadata verifier.
+
+**Live verification:** `/app/station/` returned HTTP 200, and the deployed export button carries `aria-label="Save journal only · JSON"`, matching its visible text. Android core, lint, debug/release assembly and release-boundary checks also passed as required by the repository workflow.
+
+**Limits and next decision:** this is browser accessibility-query evidence, not VoiceOver, TalkBack, physical-phone or independent novice testing. Run the screen-reader path on iOS and Android before claiming assistive-technology validation. No recording or download was made during verification. AutoResearch remains **NOT READY**.
 
 ## October 23 — Google live crawl and indexing request for the bat research note
 
