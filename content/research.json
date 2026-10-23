@@ -3964,5 +3964,67 @@
         "Metadata-only. No dataset file or code acquired; component rights and collection-level terms not reconciled."
       ]
     ]
+  },
+  {
+    "slug": "wabad-global-bird-acoustic-dataset",
+    "title": "WABAD maps bird calls at scale; it does not map meaning",
+    "seo_description": "WABAD reports 91,931 expert-labeled bird vocalizations across 1,192 species and 72 sites. It can inform sound detection, not animal translation.",
+    "taxon": "Birds",
+    "kind": "Global multi-site passive acoustic dataset",
+    "year": "2026",
+    "year_label": "Journal paper and latest Zenodo archive version",
+    "source_ids": [
+      338,
+      339
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Primary publisher abstract and current Zenodo v4 metadata review; no archive acquisition or reproduction",
+    "review_depth": "Reviewed the publisher abstract and data-availability statement, plus the official current Zenodo v4 record, version history and file inventory. The full article body, supporting-information PDF, archive contents, metadata schema, labels, evaluation split and code were not inspected; no data or models were acquired or run.",
+    "review_locator": "Pérez-Granados et al. (2026), DOI 10.1002/ecy.70317; Zenodo DOI 10.5281/zenodo.20513304, v4, published 2026-06-02. The publisher data statement points to the earlier Zenodo DOI 10.5281/zenodo.17293588.",
+    "finding": "WABAD is a promising large-scale bird-acoustic reference. The publisher reports 5,047 minutes of audio with 91,931 species-level annotated vocalizations from 1,192 species, 72 recording sites, 29 locations and 13 biomes. The latest Zenodo record lists 21.3 GB. This scale could help researchers test whether a sound model detects and identifies bird vocalizations across sites. The reviewed task description concerns vocalization occurrence and species labels; it does not test a receiver's response or what a call means.",
+    "limitations": "The journal abstract states that the dataset is CC BY 4.0, but the current Zenodo v4 record states CC BY-NC 4.0. The archive's version history and publisher data statement point to different versions; the reuse discrepancy is unresolved. Source-recording provenance and per-file conditions were not audited. We did not inspect the underlying audio, annotations, metadata, label quality, grouping keys or any train/test split. WABAD therefore remains a metadata-only research candidate, not an admitted training set or a Talk2Nature benchmark.",
+    "lesson": "A large, multi-site bird dataset can teach us how well software finds and sorts vocalizations, and whether that skill travels across places. It cannot by itself teach us what a bird is communicating. Keep detected sound, human-observed context, an animal's measured response and any model prediction in separate records. Start with a small, rights-cleared detection question before attempting a meaning or conversation claim.",
+    "next_review": "Resolve the article/archive license mismatch against the exact versions and obtain an authoritative reuse statement; inspect the supporting metadata and schema, label definitions, site/device/session grouping and evaluation split; then ask an independent bioacoustics reviewer whether a bounded bird-detection test would answer a useful question. If those gates pass, predefine a simple baseline and site-held-out evaluation before any model run. Do not use WABAD to claim call meaning or commercial readiness.",
+    "expert_review": "Not yet independently reviewed by a bioacoustics or animal-communication specialist.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Scale reported by publisher",
+        "5,047 minutes of audio and 91,931 species-level annotated vocalizations."
+      ],
+      [
+        "Coverage reported by publisher",
+        "1,192 bird species from 72 recording sites and 29 recording locations across 13 biomes."
+      ],
+      [
+        "Current archive record",
+        "Zenodo v4, published 2026-06-02; 21.3 GB listed across audio, annotations and metadata. No files downloaded or verified."
+      ],
+      [
+        "What this could test",
+        "Bird-vocalization detection/identification and, after split review, generalization across sites or regions."
+      ],
+      [
+        "What it does not test",
+        "Independent behavioral context, receiver response, comprehension or call meaning."
+      ],
+      [
+        "Rights status",
+        "Publisher abstract says dataset CC BY 4.0; current Zenodo v4 says CC BY-NC 4.0. Unresolved; metadata-only."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-23",
+      "location_status": "pending",
+      "location_note": "The publisher describes 29 recording locations and 72 sites, but this review did not inspect or map the site metadata. Do not infer precise points or publish sensitive locations from this coverage summary.",
+      "locations": [],
+      "observation_period": null
+    },
+    "reuse": {
+      "status": "Metadata-only candidate for bird-vocalization detection; not admitted to Talk2Nature training or a communication benchmark.",
+      "asset": "Publisher article abstract and official Zenodo v4 record 20513304. No paper body, archive, audio, annotations, code or model was acquired.",
+      "rights": "The publisher abstract reports CC BY 4.0 for the dataset, while current Zenodo v4 reports CC BY-NC 4.0. Resolve this discrepancy and review source-record/per-file conditions before acquisition. Commercial permission is not cleared.",
+      "experiment": "No data were acquired or analyzed, no model was trained and no result was reproduced. A future detector test requires a rights-cleared version, inspected grouping and labels, an independent reviewer, a simple baseline and a locked site-held-out evaluation. Detection performance would not establish animal behavior, comprehension or meaning."
+    }
   }
 ]

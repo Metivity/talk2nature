@@ -2568,3 +2568,25 @@ The Performance report was last updated about four hours before inspection and c
 **Live verification:** `https://metivity.github.io/talk2nature/research/birdset-avian-sound-classification/` returned HTTP 200 with its own title, canonical URL, indexing directive and structured data. The sitemap returned HTTP 200, parsed as valid XML and contained 116 URLs including the BirdSet route; `robots.txt` returned HTTP 200 and declares that sitemap. The live verifier confirmed the homepage, app and resource directory plus sitemap/robots configuration.
 
 **Limits:** this verifies publication and crawl configuration, not Google indexing, search performance, outside scientific review or research adoption. No BirdSet recording, label file, code or weight was acquired or run, and no Talk2Nature model was trained. Its data remain metadata-only; AutoResearch remains **NOT READY**.
+
+## October 23 — fail closed on placeholder split identities
+
+**Question:** can the research manifest splitter distinguish a missing animal/session key from a valid pseudonymous ID before it creates grouped partitions?
+
+**Finding and change:** the current validator already rejected `unknown`, `na` and `n/a` for animal IDs, and it used a broader placeholder set for optional grouping dimensions. It still accepted `none`, `null`, `tbd` and `pending` as animal IDs, and accepted any nonempty placeholder as a session ID. These values could silently merge unrelated rows under a shared key. Reused the same placeholder set for animal IDs and now reject placeholder session IDs. Added regression coverage and documented the current-main behavior in the researcher guide, while clarifying that the older exact-output pin predates the stricter check.
+
+**Provenance and limits:** this change uses only the committed synthetic manifests and tests; no third-party recordings or metadata were acquired or inspected. It verifies declared strings only. It cannot establish that pseudonyms represent distinct animals/sessions, discover omitted relationships, validate rights or labels, or make any dataset benchmark-ready. AutoResearch remains **NOT READY**.
+
+**Validation:** all 146 Python tests and 115 Node tests passed. The local noindex build produced 116 pages plus 404; the site checker passed 117 HTML files and 5,754 links. `git diff --check` passed. This is a local source change, not a deployment, independent reproduction or real-data validation.
+
+**Next decision:** apply this current-main validator to any future clean-source rehearsal, but do not admit a real manifest or run a model until the source rights, label provenance, independent reviewer and full grouping policy are resolved.
+
+## October 23 — WABAD candidate added to the research library
+
+**Finding:** the 2026 WABAD paper reports 5,047 minutes of audio and 91,931 species-level vocalization annotations from 1,192 bird species, 72 sites, 29 recording locations and 13 biomes. The latest Zenodo v4 record lists 21.3 GB. This is a promising scale and geographic-coverage reference for bird-call detection and site-held-out evaluation, but the reviewed description does not establish behavior, receiver response or call meaning.
+
+**Rights and limits:** the publisher abstract says the dataset is CC BY 4.0, while the current Zenodo v4 record says CC BY-NC 4.0. This remains unresolved. The full article methods, supporting metadata, archive contents, split, source-recording provenance and per-file terms were not inspected. The article and current dataset version are now separately documented in the source/resource catalog and a new source-linked research page. They remain metadata-only; no recording, annotation, code or model was acquired or run.
+
+**Decision:** consider WABAD only for a narrowly defined bird-detection task after the rights discrepancy, data schema, grouping structure and labels are reviewed by an independent bioacoustics specialist. Do not treat it as a communication benchmark or commercial-ready corpus. AutoResearch remains **NOT READY**.
+
+**Validation:** all 146 Python repository tests and 115 Node tests passed. The public-origin build produced 117 pages plus 404; the site checker validated 118 HTML pages and 5,919 links; `git diff --check` passed. The new note was inspected in a browser at desktop and 390 px mobile viewport widths. This is a verified release candidate, not yet a public deployment; no physical-phone check, archive analysis or independent reviewer check was performed.
