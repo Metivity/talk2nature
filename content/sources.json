@@ -3666,5 +3666,40 @@
     "rights": {
       "dataset": "The pinned dataset card declares CC BY 4.0. Verify exact file-level rights before acquisition or intended commercial use; code, manuscript and companion releases are separate."
     }
+  },
+  {
+    "id": 357,
+    "title": "V33DA benchmark code and sample, pinned GitHub revision",
+    "description": "The repository provides split preparation and caller-attribution baselines. Its top-level LICENSE is MIT for software; the nested 100-event real-media sample README declares CC BY 4.0 separately.",
+    "url": "https://github.com/marisbasha/v33da/tree/e988b985e38909b40b2705cdad994e3d9307181e",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the pinned LICENSE, README, nested data/v33da_sample/README.md, prepare_v33da_splits.py and the training entry point at commit e988b985e38909b40b2705cdad994e3d9307181e. The code README describes a 100-event sample of about 60 MB with real audio, accelerometer, video and calibration assets. The split generator's exact date mappings were reviewed; no code or sample was acquired or run.",
+    "rights": {
+      "software": "The repository top-level LICENSE is MIT for code.",
+      "sample_data": "The sample's nested README declares CC BY 4.0, matching the dataset card. Preserve attribution and review individual file notices before reuse; this declaration does not cover software dependencies or separate model assets."
+    }
+  },
+  {
+    "id": 358,
+    "title": "ZF-AIM zebra-finch interaction study, bioRxiv preprint",
+    "description": "The v3 preprint abstract reports more than 1,000 hours of female zebra-finch vocal interactions, analysis of timing and acoustic structure, and live interaction experiments using a generative audio model. The paper is a preprint, not a general animal-translation result.",
+    "url": "https://doi.org/10.64898/2026.02.12.705387",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the bioRxiv v3 title, abstract, author list and posted license only. Full methods, supplements and data contents were not reviewed; no paper content beyond short factual metadata is reproduced.",
+    "rights": {
+      "preprint": "bioRxiv reports CC BY-NC-ND 4.0 for this preprint; this is separate from the dataset, code and weights."
+    }
+  },
+  {
+    "id": 359,
+    "title": "ZF-AIM code, checkpoints and next-call metadata release",
+    "description": "The Zenodo record lists a 26.6 GB release and describes code, checkpoints and metadata for next-call prediction. It states that code and model weights are MIT-licensed; the data components' license is not clearly specified in the reviewed record.",
+    "url": "https://zenodo.org/records/23024019",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official Zenodo record metadata and its described directory contents. The archive, file manifest, recordings and checkpoint files were not downloaded or inspected.",
+    "rights": {
+      "code_and_weights": "MIT as stated by the Zenodo record.",
+      "data": "The reviewed record does not clearly state a license for the included data or recordings. Treat data rights and scope as unresolved; the preprint's license does not grant rights to separate media."
+    }
   }
 ]
