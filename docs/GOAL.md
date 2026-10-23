@@ -585,3 +585,7 @@ The existing aggregate-only filtered-table report contains a second grouping res
 ### October 24 continuation — verify the researcher kit from a clean clone
 
 Rechecked the historical synthetic split and current researcher examples from a fresh clone of current public `main` at `c8d4700`. The pinned historical hash matched; the current annotation, standard split and dyadic examples, all 155 Python / 115 Node tests, and local/public builds passed, with all 127 public routes reachable. The guide, execution board, status and dated verification history now show this current maintainer-run evidence and its limits. No animal data or model was used; independent researcher reproduction remains zero and AutoResearch remains **NOT READY**.
+
+### October 24 continuation — verify Google discovery against the live research page
+
+Search Console now confirms the V33DA caller-attribution research page is indexed and was fetched by Googlebot smartphone, while still reporting no referring sitemap and “Couldn't fetch” for the submitted sitemap. A fresh TLS-verified check returned HTTP 200 for the page, 127-URL sitemap and `robots.txt`, which names that sitemap. Updated the execution board and status with this distinction. No reindex request, sitemap resubmission, SEO copy change or deployment was made; recheck after Google's next processing cycle. Search visibility and qualified use remain unproven.
