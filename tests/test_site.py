@@ -1839,5 +1839,43 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(source['checked'],'2026-10-23')
         self.assertIn('not locally verified',source['origin'])
 
+    def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')
+        self.assertEqual(note['source_ids'],[363,364,365,366,367])
+        self.assertIn('109,963 annotated songs',note['finding'])
+        self.assertIn('do not supply independently observed interaction context',note['finding'])
+        self.assertIn('2025 cultural-evolution analysis',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('wytham-great-tit-')}
+        self.assertEqual(set(selected),{
+            'wytham-great-tit-song-paper-2024',
+            'wytham-great-tit-song-dataset-osf',
+            'wytham-great-tit-song-setup-code',
+            'wytham-great-tit-culture-paper-2025',
+        })
+        dataset=selected['wytham-great-tit-song-dataset-osf']
+        self.assertEqual(dataset['acquisition'],'metadata_only')
+        self.assertIn('CC BY 4.0',dataset['rights']['license'])
+        self.assertEqual(dataset['files'],[])
+        self.assertEqual(selected['wytham-great-tit-song-setup-code']['rights']['license'],'MIT as declared by official GitHub repository.')
+        meaning=next(p for p in json.loads((project_root/'content'/'learning-paths.json').read_text())['paths'] if p['id']=='meaning')
+        self.assertIn(note['slug'],meaning['notes'])
+        plan=(project_root/'docs'/'FIRST_ANIMAL_PLAN.md').read_text()
+        self.assertIn('not a replacement for the bat context-prediction candidate',plan)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('109,963 annotated songs',page)
+            self.assertIn('not a conversation model',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn(f'/research/{note["slug"]}/',(root/'sitemap.xml').read_text())
+            paths=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn(f'/research/{note["slug"]}/',paths)
+
 
 if __name__=='__main__': unittest.main()

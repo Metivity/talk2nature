@@ -5376,6 +5376,124 @@
           "md5": "0810a872af9de18a2811410adf03051e"
         }
       ]
+    },
+    {
+      "id": "wytham-great-tit-song-paper-2024",
+      "kind": "paper",
+      "title": "A densely sampled and richly annotated acoustic data set from a wild bird population",
+      "url": "https://doi.org/10.1016/j.anbehav.2024.02.008",
+      "version": "Animal Behaviour 211 (2024), 111–122; published 2024-03-25",
+      "source_ids": [
+        363
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Peer-reviewed description of a dense wild great-tit song corpus and candidate questions about song structure, repeatability, repertoire and culture.",
+      "review_depth": "Reviewed primary publisher abstract/data-availability statement and Oxford Research Archive bibliographic/article-rights record. Complete methods and analyses were not independently reviewed; no article file was retained or reproduced.",
+      "access": "Open-access publisher and institutional records; article points to dataset at OSF DOI 10.17605/OSF.IO/N8AC9.",
+      "decision": "Use as a source for the song-structure dataset record. The paper does not establish receiver response, interaction meaning or a Talk2Nature model result.",
+      "limitations": "Review was limited to abstract, data availability and rights metadata. The 2025 Current Biology paper already analyzes the same corpus; assess prior work before proposing a new model task.",
+      "attribution": "Merino Recalde, N. R., Estandia, A., Pichot, L., Vansse, A., Cole, E. F. and Sheldon, B. C. (2024), Animal Behaviour 211:111–122, DOI 10.1016/j.anbehav.2024.02.008.",
+      "rights": {
+        "license": "CC BY 4.0 as stated by publisher/Oxford repository.",
+        "scope": "Article text only; dataset and related code are separate assets.",
+        "evidence_url": "https://doi.org/10.1016/j.anbehav.2024.02.008",
+        "conditions": "Attribute authors, link license and identify changes if reusing article text. This site publishes an original summary and links only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wytham-great-tit-song-dataset-osf",
+      "kind": "dataset",
+      "title": "Wytham Great Tit Song Dataset, OSF",
+      "url": "https://osf.io/n8ac9/",
+      "version": "OSF DOI 10.17605/OSF.IO/N8AC9; described in 2024 article; current file manifest/version not independently retrieved",
+      "source_ids": [
+        363,
+        364,
+        365
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Acoustic note segmentation, sequence/repertoire structure, individual song variation and vocal-culture research within one wild population.",
+      "review_depth": "Reviewed peer-reviewed paper abstract/data availability and author documentation for dataset, file structure, labels, package size and processing. Exact OSF record contents, manifest, current version, audio and annotations were not inspected or downloaded.",
+      "access": "Authors’ docs list about 11.4 GB of processed WAV/JSON data. The approximately 9 TB original continuous recordings are not in the normal shared package. No files or checksums were acquired.",
+      "decision": "Keep as a metadata-only song-structure candidate. It is not a behavior-context, receiver-response or meaning dataset and does not replace the first communication-adjacent candidate.",
+      "limitations": "One U.K. population. Bird identity associated with breeding attempts may be uncertain or a proxy for uncaught birds. OSF file inventory/version, metadata sensitivity, label quality, grouping keys and split were not reviewed. The 2025 study already analyzes this corpus for demographic drivers of song culture. No Talk2Nature reproduction exists.",
+      "attribution": "Merino Recalde et al. (2024), Wytham Great Tit Song Dataset, OSF DOI 10.17605/OSF.IO/N8AC9; dataset paper DOI 10.1016/j.anbehav.2024.02.008.",
+      "rights": {
+        "license": "CC BY 4.0 for dataset input/output files as stated in the 2024 paper; exact OSF file inventory and nested terms were not independently checked.",
+        "scope": "Dataset files only. Article text is separately CC BY 4.0; setup code is separately MIT; 2025 analysis files and model weights were not reviewed.",
+        "evidence_url": "https://doi.org/10.1016/j.anbehav.2024.02.008",
+        "conditions": "Retain dataset attribution and exact OSF DOI. Before acquisition, training or redistribution, verify current manifest, file/version scope, identity/location sensitivity and nested terms.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wytham-great-tit-song-setup-code",
+      "kind": "code",
+      "title": "Wytham Great Tit Song Dataset setup code",
+      "url": "https://github.com/nilomr/great-tit-hits-setup/tree/c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7",
+      "version": "GitHub main commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7; checked 2026-10-23",
+      "source_ids": [
+        366
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-23",
+      "task": "Author scripts for preparing/exporting the shared great-tit song dataset.",
+      "review_depth": "Reviewed repository description/license declaration and resolved main commit. No files were cloned, inspected or executed.",
+      "access": "Public GitHub repository, pinned to observed commit for citation.",
+      "decision": "Record code separately from dataset and learned models. No dependency or pipeline is imported into Talk2Nature.",
+      "limitations": "MIT declaration applies to this code repository. It does not grant rights to OSF data, external packages, source media or weights. Related open-metric-learning code and trained weights were not reviewed.",
+      "attribution": "Nilo Merino Recalde, great-tit-hits-setup, commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7.",
+      "rights": {
+        "license": "MIT as declared by official GitHub repository.",
+        "scope": "Pinned setup-code repository only; data and learned models are separate assets.",
+        "evidence_url": "https://github.com/nilomr/great-tit-hits-setup/tree/c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7",
+        "conditions": "Retain copyright and permission notice if code is later reused. No code was acquired or executed.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wytham-great-tit-culture-paper-2025",
+      "kind": "paper",
+      "title": "The demographic drivers of cultural evolution in bird song: a multilevel study",
+      "url": "https://doi.org/10.1016/j.cub.2025.02.016",
+      "version": "Current Biology; published 2025-03-07",
+      "source_ids": [
+        367
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Related prior analysis of more than 100,000 Wytham great-tit songs and demographic change in song culture.",
+      "review_depth": "Reviewed primary publisher summary/data availability only. Full methods, model configuration, analysis files and code were not inspected or run.",
+      "access": "Open-access publisher record; article points to a separately deposited dataset and analysis/code archive.",
+      "decision": "Use as prior-art context when considering Wytham song-structure analysis. Do not present generic classification as novel.",
+      "limitations": "This review does not reproduce the 2025 findings or assess statistical methods. The article's code/data archive and license scope were not inspected; article rights do not automatically extend to those materials.",
+      "attribution": "Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016.",
+      "rights": {
+        "license": "CC BY 4.0 for article text as stated by publisher; no inference about separately deposited analysis files.",
+        "scope": "Article text only; data, code and weights have separate rights.",
+        "evidence_url": "https://doi.org/10.1016/j.cub.2025.02.016",
+        "conditions": "Use an original summary and link; review data/code terms separately before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

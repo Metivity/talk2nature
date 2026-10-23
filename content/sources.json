@@ -3739,5 +3739,45 @@
       "dataset": "The v1 license was not separately verified in this screen; do not infer v1 permissions from the current v2 record.",
       "scope": "This is a prior version, not a substitute for the v2 record. No independent component-level rights or provenance audit was performed."
     }
+  },
+  {
+    "id": 363,
+    "title": "A densely sampled and richly annotated acoustic data set from a wild bird population",
+    "description": "Merino Recalde et al. Animal Behaviour 211 (2024), 111–122. Peer-reviewed dataset paper describing more than 109,000 wild great-tit songs and over 1.1 million acoustic units from one U.K. population. Publisher abstract/data availability reviewed; complete methods not audited.",
+    "url": "https://doi.org/10.1016/j.anbehav.2024.02.008",
+    "checked": "2026-10-23",
+    "origin": "Reviewed primary publisher abstract and data-availability statement plus Oxford Research Archive bibliographic/article-rights record. No article file retained or reproduced; complete methods and analyses not reviewed."
+  },
+  {
+    "id": 364,
+    "title": "Wytham Great Tit Song Dataset and documentation",
+    "description": "Authors’ dataset website and documentation for song files, note annotations, bird/breeding-attempt IDs, metadata, package size and processing. Supports a song-structure description, not a behavior or receiver-response label claim.",
+    "url": "https://nilomr.github.io/great-tit-hits/",
+    "checked": "2026-10-23",
+    "origin": "Reviewed authors’ introduction and song-file, song-metadata and processing documentation. No WAV, JSON, CSV, figure or example media was downloaded or reproduced."
+  },
+  {
+    "id": 365,
+    "title": "Wytham Great Tit Song Dataset, OSF record",
+    "description": "The dataset paper and authors’ site point to OSF DOI 10.17605/OSF.IO/N8AC9 as the complete dataset and metadata record. Its exact current file inventory and version were not reviewed.",
+    "url": "https://osf.io/n8ac9/",
+    "checked": "2026-10-23",
+    "origin": "Followed the dataset link from the primary paper and author documentation. Direct record retrieval was blocked in this review, so no manifest, file bytes, checksum or version metadata were inspected."
+  },
+  {
+    "id": 366,
+    "title": "Wytham Great Tit dataset setup code, pinned main revision",
+    "description": "Author-maintained scripts for preparing the shared Wytham song dataset. GitHub declares MIT for this code repository; that license does not automatically apply to data or model weights.",
+    "url": "https://github.com/nilomr/great-tit-hits-setup/tree/c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official GitHub repository description/license declaration and resolved main to commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7. No code was cloned, acquired or executed."
+  },
+  {
+    "id": 367,
+    "title": "The demographic drivers of cultural evolution in bird song: a multilevel study",
+    "description": "Merino Recalde et al., Current Biology (2025). Publisher summary reports a deep-learning analysis of more than 100,000 songs from the Wytham corpus. Prior-art screen only; methods and deposited analysis files were not reviewed.",
+    "url": "https://doi.org/10.1016/j.cub.2025.02.016",
+    "checked": "2026-10-23",
+    "origin": "Reviewed primary publisher summary and data/code availability statement only. Full methods, exact model configuration, analysis repository and Zenodo files were not inspected or run."
   }
 ]
