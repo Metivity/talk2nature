@@ -4403,5 +4403,64 @@
       "rights": "The 2024 paper states dataset input/output files use CC BY 4.0; the separate setup repository declares MIT. Exact OSF file inventory and nested component terms were not independently checked. Article text, dataset, analysis code and model weights have separate rights.",
       "experiment": "No files were analyzed and no model was run. A future question must extend existing 2025 work, pass independent scientific/evaluation review, use inspected labels and rights, and freeze individual/time-aware groups before any model choice. Acoustic structure or identity prediction would not establish receiver understanding or meaning."
     }
+  },
+  {
+    "slug": "bat-auditory-cortex-predictive-vocal-coding-2026",
+    "title": "Bat auditory cortex anticipates call patterns, not their meaning",
+    "taxon": "Seba’s short-tailed bat",
+    "kind": "Neurophysiology study",
+    "year": "2026",
+    "year_label": "Publication year",
+    "source_ids": [
+      368,
+      369
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Primary article full text reviewed; data/code repository metadata only",
+    "review_depth": "Reviewed the full main article through PMC, including its question, sample, acoustic and neural recording methods, category definitions, results, discussion, data/code availability and article license. Read the GIN DOI landing-page metadata only. The 5.8 GiB archive, repository file list, README, scripts, supplementary information and peer-review file were not inspected or acquired. No independent specialist reviewed this Talk2Nature assessment.",
+    "review_locator": "Babl, Röhrig & Hechavarría, Communications Biology 9:699 (2026), DOI 10.1038/s42003-026-10319-4; PMC13197462, main text; GIN DOI 10.12751/g-node.44wmeq, public landing page.",
+    "seo_description": "A 2026 bat neuroscience study reports auditory-cortex patterns before calls. It examines call class and sequence structure, not what calls mean to another bat.",
+    "finding": "In ten awake Seba’s short-tailed bats, the authors report auditory-cortex firing patterns associated with whether the animal produced an echolocation pulse or a social communication call, and whether some calls occurred singly or in short sequences. Neural activity tracked the number of social-call syllables before vocal onset; the corresponding relationship for echolocation-pulse count appeared after onset. This is evidence about neural activity around the animal’s own vocal production, not a decoded message or receiver response.",
+    "limitations": "The study used invasive, synchronized neural and ultrasonic recordings from a small captive cohort. Its acoustic classes differ in frequency as well as behavioral role, so those factors are not fully separated by the headline comparison. The reported SVM analysis uses randomized call-event-by-neuron activity instances; the reviewed methods do not establish performance on held-out bats or recording sessions. The paper does not test receiver comprehension or communicative meaning. No analysis was reproduced, and the 5.8 GiB GIN archive and analysis code were not inspected.",
+    "lesson": "Keep self-produced call patterns, external acoustic events and receiver responses as separate evidence types. This study supports modeling timing and sequence structure as useful signals; it does not justify mapping a bat call to an English phrase. Its specialized neurophysiology is a comparative-science reference, not a capture design for ordinary phones.",
+    "next_review": "Before considering any archive work, inspect the exact GIN manifest, file-level content and component terms, then define a bounded research question and storage plan. Ask an independent bat-neurobiology reviewer whether call class and spectral content are adequately separated and whether the instance-level decoding supports any across-animal inference. Do not acquire the large archive or execute deposited code without that need and review.",
+    "expert_review": "No independent specialist review has been received.",
+    "purpose": "Multimodal methods",
+    "study_snapshot": [
+      [
+        "Animals and sessions",
+        "Ten awake bats (four male, six female); 32 recording sessions."
+      ],
+      [
+        "Recorded events",
+        "631 selected vocal events across four categories; 396 neuronal units identified across sessions."
+      ],
+      [
+        "Recording",
+        "Auditory-cortex spike activity synchronized with ultrasonic vocal recordings in a head-fixed chamber."
+      ],
+      [
+        "Call labels",
+        "Echolocation versus social communication; single calls versus sequences of at least three pulses or syllables within 500 ms."
+      ],
+      [
+        "Main reported result",
+        "Neural firing patterns preceded some call categories; pre-vocal activity tracked social-call syllable count, while the echolocation-pulse-count relation was post-vocal."
+      ],
+      [
+        "Evaluation boundary",
+        "SVM decoding used randomized event-by-neuron instances; an animal-held-out or session-held-out test was not established in the reviewed methods."
+      ],
+      [
+        "Separate assets",
+        "The article is CC BY 4.0. GIN describes a 5.8 GiB combined data/code archive under CC BY-SA 4.0; its file manifest and components were not inspected."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only comparative research record; not admitted to Talk2Nature training or app inference.",
+      "asset": "Primary article main text and GIN DOI landing-page metadata only. No audio, neural recordings, code, weights, archive contents or supplementary materials were acquired.",
+      "rights": "The article states CC BY 4.0 for its text; the GIN landing page declares CC BY-SA 4.0 for the 5.8 GiB repository archive. The archive is described as containing neural and acoustic data, and the paper points to the same repository for analysis code. No member list, embedded notices, dependencies or file-level rights were checked. Keep these components separately tracked and metadata-only.",
+      "experiment": "No data or code were run and no model result was reproduced. This is not a communication-meaning benchmark. Any future use needs an exact manifest, component-level rights review, a bounded storage and compute plan, and independent domain and evaluation review."
+    }
   }
 ]
