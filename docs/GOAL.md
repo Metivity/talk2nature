@@ -208,7 +208,9 @@ Use Apache-2.0 for new original software and CC BY 4.0 for original public resea
 
 ## First scientific direction
 
-Focus on observed bird communication, with a parrot feasibility study as a candidate once usable data access and a qualified scientific collaborator are confirmed. First question: can acoustic features improve prediction of a pre-defined observable context on genuinely held-out recordings, compared with context-only and background baselines?
+Keep the first ML question and first phone-based observation cohort separate. As of October 23, Egyptian fruit-bat interaction-context prediction is the leading data-based, communication-adjacent ML candidate because an existing paper pairs calls with video-coded social context. It remains **NOT READY**: the exact joins and folds need verification, and independent bat-behavior and ML-evaluation review is outstanding. This predicts annotated context, not receiver comprehension or meaning.
+
+For a future voluntary household observation cohort, one parrot species—provisionally budgerigars—remains a candidate if several independent households, an avian researcher, and approved consent, rights, privacy, retention and withdrawal arrangements are available. This is a mobile-product feasibility choice, not a claim that budgerigars have the best or largest communication dataset. Broad bird and multi-species corpora remain engineering references for sound detection and classification, not communication benchmarks.
 
 The first code milestone validates recording metadata and constructs grouped evaluation splits. It does not decode animal language. Native-call studies and voluntarily learned interfaces are distinct research directions; choose one protocol before collecting training data. Trees and fungi remain in the evidence library, outside the first experiment.
 

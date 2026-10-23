@@ -2495,3 +2495,27 @@ The existing sitemap was resubmitted once and Search Console acknowledged submis
 **Check:** inspected the live `/app/` page in a separate browser tab. The native `<details>` began closed. Activating its `<summary>` changed `details.open` to true and exposed all four optional route links in the accessibility tree. Pressing Space closed it; pressing Enter reopened it. No microphone permission, recording session or saved data was used.
 
 **Correction and limits:** the previous browser-bridge attempt was inconclusive because its button-role locator did not match the DOM `<summary>` trigger. The native control works in the checked browser session; no UI code change or deployment is warranted. This does not establish physical-phone behavior, Safari/Android behavior, synthesized screen-reader output, or first-time-user comprehension. The separate physical-device and independent-novice gates remain open.
+
+## October 23 follow-up — Search Console index and discovery check
+
+**Question:** did the new ROOTS research note become indexable, and what discovery evidence is available so far?
+
+**Search Console evidence:** in the verified `https://metivity.github.io/talk2nature/` property, Overview reported 5 indexed pages and 0 not indexed. URL Inspection for `/research/beans-next-roots/` reported “URL is on Google” and “Page is indexed.” This confirms Google-reported index status for that URL; it does not guarantee a result for every query or any traffic.
+
+The Performance report was last updated about four hours before inspection and covered September 29–October 20, 2026. It reported 37 impressions, 0 clicks, 0% CTR and average position 6.7. Its page table showed 29 impressions for `/research/resources/`, 7 for `/research/`, and 1 for the homepage; no query rows were available. The ROOTS note was published October 23, after the report window, so this report cannot measure its search performance.
+
+**Sitemap status:** Search Console still listed `/sitemap.xml` as “Couldn't fetch,” with no last-read timestamp and 0 discovered pages. A same-day direct HTTPS check returned HTTP 200 with `application/xml`; XML parsing confirmed the ROOTS and bat-context routes are present. `robots.txt` returned HTTP 200, allows crawling, and names the sitemap. This establishes public reachability, not why Google's report has not processed it.
+
+**Decision and limits:** no site change or repeat submission was made. Do not resubmit the unchanged sitemap while the previous request is pending. Recheck Search Console after processing; if “Couldn't fetch” persists, inspect its detailed failure state before changing the sitemap or server. Recheck page impressions only after a report window includes October 23 onward. Search Console reports impressions, not visits, human understanding, research adoption or project success.
+
+## October 23 — align first-animal guidance with the current research choices
+
+**Question:** does the public explanation distinguish the first ML question from a possible phone-based participant cohort?
+
+**Evidence and decision:** the current benchmark candidate card and bat-context review rank Egyptian fruit-bat interaction-context prediction as the leading data-led, communication-adjacent ML candidate, conditional on independent review and unresolved join/split checks. This uses specialist laboratory recordings and does not test receiver comprehension. The budgerigar option remains a provisional household-app cohort only if access, avian review and participant/data safeguards are established. Broad bird soundscape datasets are an engineering path for detection, not a substitute for behavior or receiver-response evidence.
+
+**Change:** revised the public first-animal page, its title/description and the homepage step to explain the two different choices. Preserved the existing parrot, dog, cat, pig, frog, bat and bird research paths. Updated the active goal and October 3 first-animal decision record so they do not imply that the phone cohort also determines the first ML benchmark.
+
+**Acceptance checks:** 144 Python tests and 115 Node tests passed. The local noindex build produced 115 pages plus 404; the site checker passed 116 HTML pages and 5,704 links. An explicit-origin public build produced 115 pages plus 404; its publish-boundary/link check passed 116 HTML pages, 5,820 links and 115 reachable pages. The route's revised title, description, `index,follow`, canonical and sitemap entry were verified in generated output. Browser inspection at the backend's 480-CSS-pixel minimum showed the candidate cards stacking and document width matching the viewport. It could not test 320/390 CSS pixels; physical phones, screen-reader output and independent novice comprehension remain unverified.
+
+**Limits and next decision:** this is a local release candidate, not a deployment or external review. No new data, model run, recruitment or animal playback occurred. Keep AutoResearch **NOT READY**; the independent bat/ML review and source-join gates remain open.
