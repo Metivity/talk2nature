@@ -22,6 +22,17 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
+    def test_researcher_start_guide_keeps_quick_start_separate_from_history(self):
+        project_root=Path(__file__).resolve().parents[1]
+        guide=(project_root/'docs'/'RESEARCHER_START.md').read_text()
+        history=(project_root/'docs'/'RESEARCHER_START_HISTORY.md').read_text()
+        self.assertIn('## Choose one route',guide)
+        self.assertIn('## Three useful first contributions',guide)
+        self.assertIn('[verification history](RESEARCHER_START_HISTORY.md)',guide)
+        self.assertNotIn('## October 23 latest public-main clean-clone recheck',guide)
+        self.assertIn('## October 23 latest public-main clean-clone recheck — 76c4c768',history)
+        self.assertIn('historical snapshots, not independent reproductions or scientific results',history)
+
     def test_contributor_first_steps_link_to_existing_issue_forms(self):
         project_root=Path(__file__).resolve().parents[1]
         guide=(project_root/'CONTRIBUTING.md').read_text()
