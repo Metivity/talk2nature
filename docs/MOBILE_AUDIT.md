@@ -303,3 +303,11 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Check:** on the deployed Field Companion at 320 × 740 CSS pixels, opened the microphone-free synthetic rehearsal, added the “Movement” observation at 00:03 and ended the rehearsal. The app reported “Stopped · local only” and “Stopped by you”; the timeline and partial recap retained one note. Scrolling to the lower review area exposed the “Save session” control. The page heading still says “A rehearsal in listening” after stopping, but the state label and recap clearly report the stopped state.
 
 **Decision and limits:** no code change was indicated. This was desktop-Chromium viewport emulation with invented audio, not physical-phone, Safari, screen-reader or first-time-user testing. No microphone permission was requested, and no download, upload or real recording was made.
+
+## October 23 live Station setup review at narrow phone widths
+
+**Question:** can a visitor reach the Station's listening controls on a narrow phone layout, and does the fixed navigation obscure the primary action?
+
+**Check:** inspected the deployed `/app/station/?mode=companion#station-console` in Chromium viewport emulation at 320 × 740 and 390 × 844 CSS pixels. At both widths, the document and body matched the viewport with no horizontal overflow. At 320 pixels, the setup card needed a short scroll before “Start listening” and “Try without a microphone” were visible. At 390 pixels, “Start listening” was visible at the top; the fixed bottom navigation sat over the lower edge of the setup card while the page was at its initial scroll position. Scrolling the card/page brought the consent and listening actions into view and moved the fixed navigation out of the way. The silent synthetic route and advanced settings remained reachable.
+
+**Decision and limits:** the main action is reachable, but the fixed navigation makes the initial card feel crowded at the smaller width; consider a focused UI adjustment only if a physical-device or novice check confirms that friction. This was browser viewport emulation, not a physical phone, Safari/Android home-screen, screen-reader or first-time-user test. No microphone, playback, export or save action was used, and no recording was created.
