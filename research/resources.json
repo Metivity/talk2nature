@@ -5156,6 +5156,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "zebra-finch-v33da-vocalizer-attribution",
+      "kind": "dataset",
+      "title": "V33DA: physically verified zebra-finch caller-attribution benchmark",
+      "url": "https://huggingface.co/datasets/songbirdini/v33da/tree/975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913",
+      "version": "Hugging Face repository commit 975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913; accessed 2026-10-23",
+      "source_ids": [
+        356
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-23",
+      "task": "Candidate first technical task: attribute a detected, isolated vocalization to one of the visible birds using audio/video/pose, with caller truth derived from on-body accelerometer data. This is caller attribution, not call meaning or reply detection.",
+      "review_depth": "Reviewed the complete dataset card and pinned Hugging Face repository revision. The card reports event counts, modalities, caller labels, evaluation regimes and limits; the cited manuscript is marked under review. No dataset files, code or model were acquired, inspected or run.",
+      "access": "Public dataset record; the provider lists 18.8 GB for the pinned repository. This is a provider-reported size; no local file inventory or checksums were verified.",
+      "decision": "Keep metadata-only. This is a strong candidate for the first narrowly scoped technical benchmark if component rights and group-split design pass review. Exclude accelerometer channels from model inputs; preserve them only as oracle ground truth. Freeze an unseen-bird test, and report held-out-experiment results as a bundled shift test rather than attributing its cause to one factor.",
+      "limitations": "The card describes 33,625 events from 10 birds across 3 experiments, 16 recording days and one aviary/recording geometry. This is many events but only 10 independent animal identities. The released benchmark excludes overlapping vocalizations and filters samples for geometric quality. Held-out-experiment evaluation combines changes in bird identity, group composition, date and cage; it cannot isolate any one source of generalization. Labels identify the caller only; they do not supply independently observed behavior, receiver response, intent or meaning. The associated paper is listed as under review.",
+      "attribution": "Basha, M. et al. (2026), Who Called? V33DA: A Physically Verified Multimodal Benchmark for Vocal Attribution in Zebra Finch Groups; associated manuscript listed as under review in the dataset card.",
+      "rights": {
+        "license": "CC BY 4.0 as declared by the Hugging Face dataset card and repository metadata; component-level rights have not been independently audited.",
+        "scope": "The dataset repository's stated license only. The manuscript, companion data releases, code and any model weights are separate components and were not audited.",
+        "evidence_url": "https://huggingface.co/datasets/songbirdini/v33da/blob/975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913/README.md",
+        "conditions": "Before acquisition, verify notices and rights for the specific audio, video, pose and telemetry files and review intended commercial use. Preserve attribution and the exact revision. No training or redistribution is admitted by this metadata review.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
