@@ -13,7 +13,7 @@ This is useful infrastructure research, not animal-language translation. The lab
 - Dataset card: [V33DA at the reviewed Hugging Face revision](https://huggingface.co/datasets/songbirdini/v33da/tree/975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913).
 - Reference code and included sample: [repository at commit `e988b985e38909b40b2705cdad994e3d9307181e`](https://github.com/marisbasha/v33da/tree/e988b985e38909b40b2705cdad994e3d9307181e).
 - The pinned dataset card declares CC BY 4.0; the nested README separately declares CC BY 4.0 for its 100-event media sample, described as about 60 MB. The repository's top-level MIT license applies to software, not that sample. Dependencies, manuscript, model weights and the V33DA++ companion release are separate components.
-- Talk2Nature's catalog remains metadata-only. The exact sample file inventory, per-file sizes/checksums and media provenance have not been verified locally. No data files, code or model weights were acquired or run.
+- Talk2Nature's catalog remains metadata-only. The pinned Git tree verifies paths, sizes and Git blob IDs; SHA-256 checks are recorded for the three small text files only. No Parquet or media bytes, per-media checksums or media provenance were reviewed. The three text files were fetched into memory, hashed and discarded; no media, Parquet, code or model weights were acquired or run.
 
 These are upstream license declarations, not independent legal clearance. Keep attribution and change notices if a later approved reuse occurs. A permissive declaration does not establish that every modality, third-party element or intended commercial use has been cleared.
 
@@ -32,7 +32,15 @@ The complete Git tree below `data/v33da_sample/` at the pinned code commit is re
 
 The root README describes 100 events stratified across BP01/BP02/BP05. Path-derived event keys match across the 100 audio, 100 accelerometer and 100 video files, with 34/33/33 keys across those experiments. That checks filenames only; no Parquet row, timestamp join, media content or calibration was inspected. The largest listed file is 1,345,906 bytes, so each file is below the current 5 MiB collector cap; the complete sample exceeds its 20 MiB per-invocation cap and has not been acquired.
 
-The sample's `metadata.json` and `split_summary.json` report the **full release's** 33,625 rows and split counts. The root README says `v33da_sample.parquet` contains 100 rows, but the Parquet was not read. The split summary is therefore not a sample-specific partition and the 100-event convenience sample is not a locked test set. A further metadata discrepancy remains: the sample metadata lists four BP05 color names under `bird_names`, while its event-count groups and the dataset card describe three BP05 caller individuals; `red` has no event-count group in that metadata. Do not interpret that color entry as a released caller until the source definition is verified.
+Three small text files were fetched from the pinned code commit over verified TLS and hashed in memory. Their hashes match the Git blob IDs in the pinned tree; no copies were retained. The Parquet and media remain untouched.
+
+| Text file | Bytes | SHA-256 | Git blob SHA-1 |
+| --- | ---: | --- | --- |
+| `README.md` | 5,025 | `28ed4902b9478954d2ef657008a422862fa34941e5feb7039357b121174cd882` | `54373063fbfa71de14da4aa40406f6750651f1ac` |
+| `metadata.json` | 2,214 | `6f2173f6a3fdfbdef04a19f7194dda025e0b6078bc9bf167f7970f2810027dbd` | `768c45a07706559a2b13d7a19bdbd12160f9ad82` |
+| `split_summary.json` | 823 | `885d448c71875e4e4b56849eeedb6dfec14076515a55de366a1a2e7ace1d185e` | `4d9b8586690763592a2c657201af39ce5bff9969` |
+
+The sample's `metadata.json` and `split_summary.json` report the **full release's** 33,625 rows and split counts. The root README says `v33da_sample.parquet` contains 100 rows, but the Parquet was not read. The split summary is therefore not a sample-specific partition and the 100-event convenience sample is not a locked test set. The pinned card says color names are experiment-local and all 10 released birds are distinct. Its caller table lists three BP05 callers (brown, purple, yellow), while sample metadata also includes red under `bird_names` without an event-count group. Red could be a visible non-caller candidate or stale metadata; its role and per-event candidate membership are unverified. Do not infer a fourth caller, and do not calculate a chance baseline until candidate sets are verified.
 
 The full-release generalization split described in the sample's summary metadata is:
 
@@ -42,7 +50,17 @@ The full-release generalization split described in the sample's summary metadata
 | Validation | 3,338 | 2,967 | 0 | 6,305 |
 | Test | 0 | 0 | 5,829 | 5,829 |
 
-The test is a bundled experiment shift: BP05 changes birds, group composition, year/date and cage/recording conditions together. It cannot isolate which change explains an outcome. The session-disjoint regime uses the same birds in different sessions and answers a narrower in-domain question. Leave-one-bird-out support is advertised, but exact fold membership and implementation remain unverified. No split from these summaries is adopted for Talk2Nature.
+The pinned card says colors are local to each experiment and all 10 released physical birds are distinct. The event counts by physical caller are:
+
+| Experiment | Physical caller (experiment-local color) | Events | Split role |
+| --- | --- | ---: | --- |
+| BP01 | blue / peach / red / white | 5,735 / 2,277 / 3,963 / 4,244 | Train + validation (exact per-bird allocation not verified) |
+| BP02 | blue / peach / red | 4,923 / 4,589 / 2,065 | Train + validation (exact per-bird allocation not verified) |
+| BP05 | brown / purple / yellow | 56 / 2,140 / 3,633 | All three held out in experiment test |
+
+Thus BP05 contains three unseen physical callers in the reported experiment-held-out split. It is still a bundled shift: experiment, group composition, year/date and cage/recording conditions change together, so the split cannot isolate which factor explains an outcome. One held-out bird contributes only 56 events. These are event counts, not independent sample sizes.
+
+The session-disjoint counts are BP01 train/validation/test 12,881/1,008/2,330; BP02 4,455/4,155/2,967; BP05 2,029/1,706/2,094. That regime uses the same birds on different sessions and does not test unseen-bird generalization. Leave-one-bird-out support is advertised, but exact fold membership and implementation remain unverified. No split from these summaries is adopted for Talk2Nature.
 
 ## Bounded sequence
 
