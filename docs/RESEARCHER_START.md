@@ -4,7 +4,7 @@ Updated October 23, 2026. For researchers, research software engineers and prosp
 
 The current research decision is recorded in the [candidate run card](BENCHMARK_CANDIDATE_RUN_CARD.md): bat interaction-context prediction is the closest current ML candidate to a communication question, while CEB detection and parrot caller-identity remain separate tasks. The bat candidate is not ready for reproduction until data joins/groups and rights are verified and independent reviewers approve the design. AutoResearch remains **NOT READY**.
 
-**Latest full software check:** on October 23, a fresh public clone of [`main` at `66000fdd`](https://github.com/Metivity/talk2nature/commit/66000fdd67053ab08063a720d49f620633020025) passed the synthetic annotation/split examples, 149 Python tests, 115 Node tests, validation of 163 catalog resources, and local plus public-origin site builds. Full outputs and limitations are recorded at the end of this guide. This was maintainer-run; independent reproductions remain zero.
+**Latest full software check:** on October 23, a fresh public clone of [`main` at `0be6912a`](https://github.com/Metivity/talk2nature/commit/0be6912a9e113d43769200e7660efc8a80c3b57a) passed the synthetic annotation/split examples, 149 Python tests, 115 Node tests, validation of 166 catalog resources, and local plus public-origin site builds. Full outputs and limitations are recorded at the end of this guide. This was maintainer-run; independent reproductions remain zero.
 
 ## Choose one route
 
@@ -313,3 +313,13 @@ The annotation fixture reported an invented 8-second recording, two marked event
 The local noindex build produced 120 pages plus 404; the checker verified 121 HTML documents and 5,990 links. The public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,112 links and all 120 public routes reachable.
 
 This is a maintainer-run software check, not an independent reproduction, usability study, scientific validation or biological result. Only committed synthetic fixtures were exercised; no third-party media, labels, code or model weights were acquired or run. Search indexing, external use and biological performance remain unverified; AutoResearch remains **NOT READY**.
+
+## October 23 latest public-main clean-clone recheck — 0be6912
+
+After PR [#250](https://github.com/Metivity/talk2nature/pull/250), rechecked public `main` from a fresh depth-one HTTPS clone at [`0be6912a9e113d43769200e7660efc8a80c3b57a`](https://github.com/Metivity/talk2nature/commit/0be6912a9e113d43769200e7660efc8a80c3b57a). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed or private workspace state copied. The tracked clone was clean after the checks.
+
+The synthetic annotation report described an invented 8-second clip, two events, 2 seconds of marked-interval coverage and 0 seconds of independently observed context. The grouped synthetic manifest returned 10 connected groups and 12/4/4 train/validation/test records; output SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The synthetic dyadic example returned 10 connected groups and output SHA-256 `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`. The resource validator accepted all 166 records. All 149 Python tests and 115 Node tests passed.
+
+The local noindex build produced 120 pages plus 404; the checker verified 121 HTML documents and 6,001 links. The explicit public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,122 links and all 120 public routes reachable. A verified-TLS fetch of the deployed resource directory returned HTTP 200 and contained both the V33DA and ZF-AIM records and the 166-record directory count. PR #250's manual Pages workflow [#39949415844](https://github.com/Metivity/talk2nature/actions/runs/39949415844) completed successfully.
+
+This is maintainer-run software and publication verification, not an independent reproduction, usability study, scientific validation, biological result or search-indexing result. Only committed synthetic fixtures and public metadata were used; no third-party media, labels, code or weights were acquired or run. Independent reproductions remain zero, and AutoResearch remains **NOT READY**.

@@ -89,3 +89,13 @@ Suggested post, ready to adapt after publication:
 > What can parrot social relationships tell us about their calls? A two-year monk-parakeet study linked social networks with vocal diversity across 5,599 calls from 229 birds. The results add context for studying call variation, but they do not decode call meanings or show what receivers understand. Talk2Nature has added a source-linked review that also tracks dataset/code rights and the overlap with earlier work. We welcome a focused methods review from parrot-bioacoustics, animal-behavior or research-data specialists: https://metivity.github.io/talk2nature/research/monk-parakeet-social-structure-2025/
 
 Use the existing university evaluation page as the call to action for a bounded synthetic-workflow review. Start with a few individually relevant reviewers, log responses privately, and assess success by an independent reviewer completing a useful task—not likes, traffic or endorsements. This is a draft only; no invitation or post has been sent.
+
+## October 23 share draft: choosing a dataset by its question
+
+PR #250 adds a carefully bounded comparison of zebra-finch resources. The shareable point is that different datasets support different questions: V33DA is a caller-attribution candidate, ZF-AIM is a literature lead on vocal exchanges whose data rights are still unclear, bat recordings are a separate context-prediction candidate, and parrots remain the provisional companion-app discovery path. These are not interchangeable datasets, and none establishes animal-language translation. The public resource directory is live; the catalog records are metadata-only and no new audio or weights were acquired.
+
+Suggested post, ready to adapt:
+
+> “Big animal-sound datasets do not all answer the same question. Talk2Nature’s updated research library now separates caller attribution, vocal-exchange research, behavior-linked context and companion-animal observation—and records what each source still cannot show. For example, identifying which zebra finch called is a different task from learning what a call means. We reviewed the new leads as metadata only; no animal-language model or translation result is claimed. Researchers and research-software folks: what evidence or workflow gap should we review next? https://metivity.github.io/talk2nature/research/resources/”
+
+For a more actionable invitation, pair the post with the no-account [synthetic researcher workflow](RESEARCHER_START.md) and ask for one reproducibility report or one specific correction. Keep the public claim to the documented review and software check; do not ask people to upload recordings. This is a draft only. No social post or invitation has been published or sent.
