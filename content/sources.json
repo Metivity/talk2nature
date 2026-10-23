@@ -3541,5 +3541,35 @@
     "url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/985ac11bc6939af5e41383143aad5a0ae6993f68",
     "checked": "2026-10-23",
     "origin": "Reviewed the model-card license and usage note at immutable revision 985ac11bc6939af5e41383143aad5a0ae6993f68. The Hugging Face API cardData.license field was null at this revision. No model weights or code were downloaded or executed."
+  },
+  {
+    "id": 344,
+    "title": "The effect of social structure on vocal flexibility in monk parakeets (2025)",
+    "description": "Smeele et al., Royal Society Open Science 12(5):241717. The published study relates social-network measures to vocal diversity and contact-call similarity in wild monk parakeets.",
+    "url": "https://doi.org/10.1098/rsos.241717",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the published article abstract and targeted methods, results, discussion, data-access, ethics and rights passages using the primary full-text record and the institutional repository copy. Cross-checked the 2023 voiceprint paper, which reports the same 5,599-call, 229-bird, two-year cohort. This is a new social-network analysis of an overlapping cohort, not independent acoustic replication. No article media, data archive or code was acquired or run.",
+    "rights": {
+      "article": "The article declares Creative Commons Attribution 4.0. This applies to the article, not automatically to the separate Zenodo data deposit or GitHub analysis code."
+    }
+  },
+  {
+    "id": 345,
+    "title": "Monk-parakeet social-structure data deposit, Zenodo v1",
+    "description": "Official Zenodo record 10.5281/zenodo.13906800 lists one 129.5 MB ZIP and declares the MIT License at record level.",
+    "url": "https://zenodo.org/records/13906800",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official Zenodo v1 landing page and metadata. It lists one 129.5 MB archive and declares MIT. The archive was not downloaded; its member files, contents, provenance, privacy implications and any embedded-media terms were not inspected."
+  },
+  {
+    "id": 346,
+    "title": "Pinned analysis repository for monk-parakeet social structure (commit 395a622)",
+    "description": "Author GitHub repository at immutable commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67. Its README describes R/Stan analyses and notes that some input data are not shared.",
+    "url": "https://github.com/simeonqs/The_effect_of_social_structure_on_vocal_flexibility_in_monk_parakeets/tree/395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
+    "checked": "2026-10-23",
+    "origin": "Resolved the repository main branch to commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67 and reviewed the pinned README and repository tree. No LICENSE file was present in the inspected tree. The README documents UTM/nest-location fields and says some raw age, relatedness and other input data are not shared, so parts of the analysis cannot be rerun. No code or data was downloaded or executed.",
+    "rights": {
+      "repository": "No repository license was located at the pinned revision. Code reuse terms are unresolved. The Zenodo record license is separate and does not establish the GitHub code license."
+    }
   }
 ]

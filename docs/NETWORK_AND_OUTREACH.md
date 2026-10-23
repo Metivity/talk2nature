@@ -60,3 +60,13 @@ The current invitation and contact boundaries are in [UNIVERSITY_EVALUATION.md](
 - [BirdNET-Analyzer](https://birdnet.cornell.edu/analyzer/), official research and software overview, checked October 20, 2026.
 - [Macaulay Library: audio preparation and upload guidelines](https://support.ebird.org/en/support/solutions/articles/48001064341-audio-preparation-and-upload-guidelines), checked October 20, 2026. The guidance emphasizes preserving original recordings and limiting edits.
 - [GBIF technical documentation: occurrence download formats](https://techdocs.gbif.org/en/data-use/download-formats), checked October 20, 2026. The documented Darwin Core Archive download includes associated multimedia information; GBIF is a discovery/publishing layer, not a substitute for local study governance.
+
+## Next shareable research update: monk-parakeet social structure
+
+The new [field note](https://metivity.github.io/talk2nature/research/monk-parakeet-social-structure-2025/) is a concrete, modest outreach item: it explains how social-network evidence relates to vocal variation, calls out reuse of the 2023 cohort, and separates article, data and code rights. Lead with the useful method and the scientific boundary. Invite one targeted methods critique or workflow review; do not market it as a translation result, a new dataset release or an independent replication.
+
+Suggested post, ready to adapt after publication:
+
+> What can parrot social relationships tell us about their calls? A two-year monk-parakeet study linked social networks with vocal diversity across 5,599 calls from 229 birds. The results add context for studying call variation, but they do not decode call meanings or show what receivers understand. Talk2Nature has added a source-linked review that also tracks dataset/code rights and the overlap with earlier work. We welcome a focused methods review from parrot-bioacoustics, animal-behavior or research-data specialists: https://metivity.github.io/talk2nature/research/monk-parakeet-social-structure-2025/
+
+Use the existing university evaluation page as the call to action for a bounded synthetic-workflow review. Start with a few individually relevant reviewers, log responses privately, and assess success by an independent reviewer completing a useful task—not likes, traffic or endorsements. This is a draft only; no invitation or post has been sent.
