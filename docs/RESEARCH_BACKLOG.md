@@ -290,6 +290,12 @@ Rechecked the official Edmond Terms of Use and data-access guide for the monk-pa
 
 Decision: this review resolves the previous “terms page inaccessible” evidence gap, but it does not clear data access or use. Keep the archive metadata-only; no account, agreement, request, download, checksum, archive inspection or model run occurred. The deposit's CC BY 4.0 declaration remains distinct from Edmond's download conditions and from ANIMAL-SPOT software/model rights. Before any retrieval, resolve whether the current terms permit this intended external use, with explicit owner approval before accepting them; then verify archive membership, label provenance, split/identity leakage and qualified avian-bioacoustics fit. AutoResearch remains **NOT READY**.
 
+## October 23 follow-up — interpret Edmond's ANIMAL-SPOT access flags
+
+Re-read the official Edmond V2.0 API metadata over verified TLS. It still lists one 547,403,503-byte archive (provider MD5 `5443c6564c377d19576f5ea74b2bd061`) and declares CC BY 4.0. The outer file metadata says `restricted=false`; both version/file metadata also expose `fileAccessRequest=true`. Dataverse 6.11 documentation says the access-request flag is ignored when `restrict=false`, so the API flag alone does not make this file request-gated. Edmond's separate download guide still requires acceptance of Edmond's terms and the dataset license, and the current Terms still do not clearly scope the MPS project-registration clause to external downloaders of existing public datasets.
+
+Updated sources 237, 238 and 352, the ANIMAL-SPOT research note, and its resource record. This resolves the interpretation of the API flag, not the permitted-use question or the archive's internal contents. No account, terms acceptance, request, download, checksum, archive inspection, model run or external contact occurred. Keep the resource metadata-only and AutoResearch **NOT READY**. Next: resolve whether the terms permit Talk2Nature's intended external use before any retrieval; if cleared and still useful, inspect the archive manifest, label provenance and identity/session grouping, then obtain qualified bioacoustics review.
+
 
 ## October 14 checkpoint — playback-context boundary
 
@@ -334,7 +340,11 @@ For a parrot-focused research question, the existing monk-parakeet population-id
 
 Added [`BENCHMARK_CANDIDATE_RUN_CARD.md`](BENCHMARK_CANDIDATE_RUN_CARD.md) to make the next review concrete. It recommends CEB only as a possible small soundscape-detection engineering reproduction, subject to confirming what its anonymized project groups represent and arranging an independent test-label custodian. It preserves the 2023 monk-parakeet deposit as a separate acoustic-convergence reproduction; the published 97.44% is training accuracy, and the reviewed paper does not report held-out caller-classification accuracy. Neither candidate measures independently observed behavior or receiver response, so neither satisfies the project's core communication question.
 
-The card records candidate-specific release/version and component rights, proposed group-aware evaluation, baseline/metric choices, compute ceilings and the reviewer roles still needed. It authorizes no data retrieval or model run. Next: inspect only the CEB soundscape metadata necessary to verify group structure under its stated CC BY terms, then seek qualified independent review through an authorized route. If the groups or reviewer gate fail, defer the detector benchmark and keep searching for behavior-aligned data; AutoResearch remains **NOT READY**.
+The card records candidate-specific release/version and component rights, proposed group-aware evaluation, baseline/metric choices, compute ceilings and the reviewer roles still needed. It authorizes no data retrieval or model run. A subsequent official API inventory check found that the CEB training annotation CSV is 8,559,233 bytes, above the collector's 5 MiB per-file cap; do not bypass the cap. The smaller public test-label CSV remains uninspected and cannot be treated as a concealed holdout. Keep CEB metadata-only unless a bounded, rights/privacy-reviewed intake plan under an explicitly reviewed limit is justified. If the grouping or reviewer gate fails, defer the detector benchmark and keep the bat context question first; AutoResearch remains **NOT READY**.
+
+### October 23 follow-up — CEB annotation-table intake limit
+
+The official Zenodo v1.1 API lists `train_soundscape.csv` at 8,559,233 bytes and `test_soundscape.csv` at 2,401,049 bytes, with provider-supplied MD5 values recorded in the source/resource entries. The training table exceeds the current 5 MiB collection limit; the test table contains public labels and its rows were deliberately not inspected. No CSV, audio, model or code was acquired or run. This is a stop at metadata, not an invitation to fetch the file by another route. CEB remains a separate sound-event-detection exercise, not evidence for call meaning or the first communication-adjacent benchmark.
 
 ### October 23 follow-up — prioritize behavior-context evidence
 

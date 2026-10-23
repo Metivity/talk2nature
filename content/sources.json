@@ -218,10 +218,10 @@
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Current Pre-Seed track: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
+    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 23, 2026: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-12",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-23",
+    "origin": "Official Israel Innovation Authority Pre-Seed page reviewed October 23, 2026 for the current deadline, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
   },
   {
     "id": 28,
@@ -2467,18 +2467,18 @@
   {
     "id": 237,
     "title": "ANIMAL-SPOT monk-parakeet example corpus and data split",
-    "description": "Edmond's current record resolves to Version 2.0, published 2024-04-08, with one public 522.0 MB ANIMAL-SPOT_FILES.tar.gz archive and a dataset-level CC BY 4.0 license. The author README describes a 6,745-file monk-parakeet target/noise corpus and its split; archive contents and split files were not inspected.",
+    "description": "Edmond V2.0 was published 2024-04-08. Its public API lists one 547,403,503-byte ANIMAL-SPOT_FILES.tar.gz archive (provider MD5 5443c6564c377d19576f5ea74b2bd061), dataset-level CC BY 4.0, file restricted=false and fileAccessRequest=true. Dataverse documentation says access-request settings are ignored for unrestricted files; Edmond's separate terms/license acceptance for download still applies. The author README describes 6,745 monk-parakeet target/noise clips; archive contents and split files remain uninspected.",
     "url": "https://doi.org/10.17617/3.KQPPXF",
-    "checked": "2026-10-13",
-    "origin": "Reviewed Edmond's Version 2.0 landing page and metadata API, including the public file entry, dataset-level license and archive MD5; no archive was downloaded. Edmond's official access guide says downloads require acceptance of Edmond terms and the dataset license; neither was accepted here. The author repository README describes the example corpus and year/tape split rule, but that claim was not checked against archive contents."
+    "checked": "2026-10-23",
+    "origin": "Re-read the official Edmond V2 API over verified TLS on October 23, 2026. It reports the released version, exact file size and provider MD5, CC BY 4.0, restricted=false and fileAccessRequest=true. Reviewed the official Edmond download guidance and Dataverse 6.11 API documentation: the access-request flag is ignored when a file is unrestricted, but Edmond separately requires acceptance of its terms and dataset license for downloads. Neither was accepted; no account, access request or archive download occurred. The author repository README describes the example corpus and year/tape split rule; neither claim was checked against archive contents."
   },
   {
     "id": 238,
     "title": "Edmond data access, license acceptance and versioning guidance",
     "description": "Official Edmond user guidance says published dataset downloads require acceptance of Edmond terms and the dataset's stated license; a DOI resolves to the newest published version, while earlier versions remain selectable and should be cited explicitly.",
     "url": "https://docs.edmond.mpg.de/Data_Access_Usage/",
-    "checked": "2026-10-14",
-    "origin": "Rechecked the official Edmond Data Access & Usage guide sections on public access, license acceptance, versioning and exact-version citation. It says public datasets are accessible without an account, while downloading requires acceptance of Edmond terms and the dataset-specific license. No account was created, terms were accepted or files were downloaded."
+    "checked": "2026-10-23",
+    "origin": "Rechecked the official Edmond Data Access & Usage guide on October 23, 2026. It says published datasets are accessible without an account, but downloading requires acceptance of Edmond terms and the dataset-specific license. Version-specific citation guidance remains relevant. No account was created, terms were accepted or files were downloaded."
   },
   {
     "id": 239,
@@ -3441,10 +3441,10 @@
   {
     "id": 333,
     "title": "Central European Birds (CEB) acoustic dataset, Zenodo v1.1",
-    "description": "Official Zenodo record and data dictionary for strongly and weakly labeled bird soundscapes and Xeno-Canto focal recordings.",
+    "description": "Official Zenodo record and data dictionary for strongly and weakly labeled bird soundscapes and Xeno-Canto focal recordings. Its API lists train_soundscape.csv at 8,559,233 bytes and test_soundscape.csv at 2,401,049 bytes; neither table's rows were inspected.",
     "url": "https://zenodo.org/records/21821133",
-    "checked": "2026-10-22",
-    "origin": "Reviewed the live official Zenodo v1.1 record, its version notes, component file inventory and schema.json browser preview. Confirmed that record 20762099 is superseded by v1.1 record 21821133. No audio, annotation CSV, model or code was downloaded or run.",
+    "checked": "2026-10-23",
+    "origin": "Re-read the official Zenodo v1.1 API record over verified TLS on October 23, 2026. It reports provider MD5 55b5e3f99566c5bb3ba4fb5b833424da for train_soundscape.csv (8,559,233 bytes) and f572155ae41714e17b218e95d97b1ce9 for test_soundscape.csv (2,401,049 bytes). These are repository-provided checksums, not locally verified. The training table exceeds the collection tool's 5 MiB per-file limit; the public test-label table was not inspected. No audio, annotation CSV, model or code was downloaded or run.",
     "rights": {
       "license": "The record declares CC BY 4.0 for its soundscape audio, annotations and metadata. train_xenocanto retains each source recording's original license.",
       "scope": "The record-level declaration does not relicense train_xenocanto recordings. Its schema says some Xeno-Canto license fields are empty; inspect exact rows before any use. No independent source-media or privacy review was performed."
@@ -3620,5 +3620,13 @@
     "url": "https://drive.google.com/drive/folders/1u8iqzP2WL2nkTMp9VZ5FCa3zveOrPj2X",
     "checked": "2026-10-23",
     "origin": "Followed the model-weights link from the official iNatSounds implementation README at source 350. The folder opened, but its contents, exact checkpoint versions, license, training provenance and usage conditions were not verified. No file was downloaded."
+  },
+  {
+    "id": 352,
+    "title": "Dataverse Native API documentation: restricted-file access flags",
+    "description": "Dataverse 6.11 API documentation states that enableAccessRequest and termsOfAccess are ignored when restrict=false. This explains API field semantics; it does not override a repository's separate download terms or determine how those terms apply to an external user.",
+    "url": "https://guides.dataverse.org/en/6.11/api/native-api.html#restrict-files",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official Dataverse 6.11 Native API section on restricted files. It says access-request settings are ignored when restrict=false and apply to restricted files. No Dataverse API write operation or access request was made."
   }
 ]
