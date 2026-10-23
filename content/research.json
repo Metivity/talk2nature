@@ -3918,5 +3918,51 @@
       "rights": "The record declares CC BY 4.0 for soundscape audio, metadata and annotations. train_xenocanto keeps its per-record source license, and the schema notes some missing license values. Select only rows with verified rights; the record's top-level license does not clear every audio file for reuse.",
       "experiment": "No media was downloaded or analyzed and no model was trained. If a detector trial is justified, exclude zero-area boxes, verify file/license metadata and group structure, and treat the already-published test labels as exposed if examined; reserve a separate untouched evaluation. Detection performance would not establish behavior, intent or meaning."
     }
+  },
+  {
+    "slug": "birdset-avian-sound-classification",
+    "title": "BirdSet: a large bird-sound benchmark, not animal translation",
+    "seo_description": "BirdSet is a large bird-sound classification benchmark. It tests acoustic recognition, not animal meaning or conversation.",
+    "taxon": "Birds",
+    "kind": "Bioacoustic classification benchmark",
+    "year": "2025",
+    "year_label": "arXiv v6, 2025; ICLR 2025 spotlight",
+    "source_ids": [
+      335,
+      336,
+      337
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Targeted primary paper, live dataset-card and maintainer license-thread review; no data acquisition or reproduction",
+    "review_depth": "Reviewed the primary arXiv abstract and version history, the current BirdSet dataset card and its configuration/metadata/license descriptions, and the complete maintainer clarification thread on mixed per-record licenses. No paper body, audio, labels, code or weights were acquired or run; no independent specialist reviewed this note.",
+    "review_locator": "arXiv:2403.10380v6 abstract and version history; BirdSet card: dataset configuration table, metadata and licensing sections; DBD-research-group/BirdSet issue 337, May 2026 maintainer/contributor discussion.",
+    "finding": "BirdSet is a large benchmark for recognizing bird species and related acoustic labels in recordings and soundscapes. The paper reports more than 6,800 recording hours, nearly 10,000 training classes and eight strongly labeled evaluation datasets totaling more than 400 hours. The live card lists a 528,434-recording XCL snapshot at 484 GB and recommends a regional HSN configuration with 5,460 training recordings, 10,296 test labels and 21 classes at 5.92 GB. These are upstream-reported benchmark figures, not a Talk2Nature reproduction. The task is acoustic classification; it does not test whether a receiver understood a call or what it meant.",
+    "limitations": "BirdSet is not parrot-specific and does not contain the receiver-response or validated behavior labels needed for a communication claim. Its card declares CC BY-NC 4.0 at the collection level and limits the dataset to non-commercial research and education, while individual Xeno-Canto recordings carry mixed terms; the maintainer thread records corrected metadata and a mix that includes CC BY, CC0, SA and NC-SA entries. The interaction between collection-level limits and individual rights remains unresolved, so no subset is admitted for Talk2Nature training or commercial use. The card itself is not revision-pinned, its compatibility notes conflict, and the live dataset viewer cannot load its custom script. Location fields are present and would need careful treatment.",
+    "lesson": "A big dataset can help build and measure a perception layer—such as detecting a species or acoustic event—but that output is not a translation. Keep sound detection, caller identity, observed context and receiver-supported meaning as separate research targets. For this project, BirdSet is a valuable methods reference; the leading data-led communication-adjacent model question remains the separately gated fruit-bat context study, while a possible budgerigar cohort serves a different community-observation purpose.",
+    "next_review": "Do not download or train on BirdSet now. If a future project needs a bird-classification baseline, first define whether the use is strictly non-commercial, pin the exact configuration and revision, get a component-level rights review, check any location fields, and compare it with a rights-cleared benchmark suited to the intended species. Keep biological communication claims dependent on independently observed context and receiver-response evidence.",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Paper-reported scale",
+        "Over 6,800 recording hours, nearly 10,000 training classes and eight strongly labeled evaluation datasets totaling over 400 hours."
+      ],
+      [
+        "Card-listed full snapshot",
+        "XCL: 528,434 recordings, 484 GB and 9,735 classes; underlying snapshot dated 2024-03-10."
+      ],
+      [
+        "Card-recommended regional configuration",
+        "HSN: 5,460 training recordings, 10,296 test labels, 21 classes and 5.92 GB."
+      ],
+      [
+        "What the labels address",
+        "Species/acoustic classification and soundscape vocalization labels; not animal comprehension or meaning."
+      ],
+      [
+        "Reuse status",
+        "Metadata-only. No dataset file or code acquired; component rights and collection-level terms not reconciled."
+      ]
+    ]
   }
 ]
