@@ -5700,6 +5700,98 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "zebra-finch-call-category-perception-paper-2025",
+      "kind": "paper",
+      "title": "Categorical and semantic perception of the meaning of call-types in zebra finches",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12721838/",
+      "version": "Science 389(6766):1210–1215 (2025); DOI 10.1126/science.ads8482",
+      "source_ids": [
+        374,
+        375
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Primary source for a behavioral discrimination study of zebra-finch call categories; useful for framing a bounded comparison between acoustic models and animal responses.",
+      "review_depth": "Full PMC-indexed article text, figure captions and data-availability statement reviewed, plus the UC Berkeley institutional-copy record. Supplementary methods and analysis were not audited or reproduced.",
+      "access": "Public peer-reviewed article and an institutional repository copy. The two copies cite different Zenodo record numbers for behavioral data and code.",
+      "decision": "Keep as a high-value literature lead. Any computational reproduction must distinguish trained call-type recognition from natural communication and check the study's existing analysis before claiming novelty.",
+      "limitations": "The task is trained, closed-set discrimination of researcher-defined call types, not open conversation or translation. The paper's interpretation of semantic organization is stronger than the directly observed response measure. The data-version citation discrepancy and exact stimulus-to-trial joins remain unresolved.",
+      "attribution": "Elie et al. (2025), Science 389(6766):1210–1215, DOI 10.1126/science.ads8482.",
+      "rights": {
+        "license": "Article license not audited; Talk2Nature publishes an original summary and links only.",
+        "scope": "Published article and supplementary material; no article text or figures reproduced.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12721838/",
+        "conditions": "Use the source links and citation. Review any article or supplementary-material reuse separately.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "zebra-finch-call-category-behavior-and-code-2025",
+      "kind": "dataset",
+      "title": "Behavioral data and analysis code for zebra-finch call-category perception",
+      "url": "https://zenodo.org/records/15795568",
+      "version": "Zenodo DOI 10.5281/zenodo.15795568, July 2025 resubmission; the paper copies cite 13623969 and 13623968",
+      "source_ids": [
+        374,
+        375,
+        377,
+        378
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Potential source for reported behavioral responses, acoustic features and analysis code; exact stimulus-level joins and final-paper version must be confirmed before any reproduction.",
+      "review_depth": "Official Zenodo API metadata queried over verified TLS for 13623969 and 13623968. The initial record and July 2025 resubmission metadata were compared; no files or archive internals were inspected.",
+      "access": "Public Zenodo metadata describes a 30.9 MB initial-submission ZIP at 13623969 and a 99.3 MB resubmission ZIP at 15795568. Zenodo record-level metadata declares CC BY 4.0.",
+      "decision": "Metadata-only. Confirm which version corresponds to the published Science analysis, inspect the archive manifest and component rights, and verify the behavioral-trial/audio joins before considering an isolated local reproduction.",
+      "limitations": "The Science article's PMC data statement cites 13623969, while the UC Berkeley copy cites 13623968. The official API identifies 13623969 as the initial-submission record and resolves the 13623968 request to record 15795568, titled Resubmission July 2025. This audit does not establish which archive generated the final published figures, whether all source stimuli are included or whether every embedded component shares the record-level license.",
+      "attribution": "Elie et al. (2025), data and code for the call-type perception study, Zenodo DOI 10.5281/zenodo.15795568; see the paper for citation and version reconciliation.",
+      "rights": {
+        "license": "CC BY 4.0 declared at Zenodo record level.",
+        "scope": "The described data-and-code archive; contents and component provenance were not inspected.",
+        "evidence_url": "https://zenodo.org/records/15795568",
+        "conditions": "Verify the final-analysis version, archive contents and per-component rights; preserve attribution and version identifiers if later reuse is approved.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "zebra-finch-vocal-repertoire-figshare-2020",
+      "kind": "dataset",
+      "title": "Vocal repertoires from adult and chick, male and female zebra finches",
+      "url": "https://figshare.com/articles/dataset/Vocal_repertoires_from_adult_and_chick_male_and_female_zebra_finches_Taeniopygia_guttata_/11905533",
+      "version": "Figshare version v1; DOI 10.6084/m9.figshare.11905533.v1; posted 2020-02-26",
+      "source_ids": [
+        376,
+        378
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Public zebra-finch audio library with age, individual, date and manually assigned vocal-type information in filenames; potentially suitable for a small call-category inventory and bounded classification study after exact sample linkage review.",
+      "review_depth": "Figshare landing page and public API metadata reviewed. The record lists 3,433 WAV files, two age-group archives and 182.05 MB total. No audio payload, archive manifest or call-level contents were inspected.",
+      "access": "Public Figshare deposit collected at UC Berkeley between 2011 and 2014. The record says files may contain one vocalization or a sequence and notes expected filename discrepancies.",
+      "decision": "Best small audio archive to inspect next if the Zenodo version and paper linkage are clarified. Do not assume all 8,000-plus paper renditions map one-to-one to files; no dataset payload was acquired.",
+      "limitations": "Captive colony recordings do not represent all zebra-finches or ordinary phone recordings. Labels are manually assigned call types, not direct meanings. Exact coverage of the 2025 discrimination stimuli, sequence boundaries, recording conditions and subject overlap were not verified.",
+      "attribution": "Julie Elie and Frédéric E. Theunissen, Vocal repertoires from adult and chick, male and female zebra finches, Figshare DOI 10.6084/m9.figshare.11905533.v1.",
+      "rights": {
+        "license": "CC BY 4.0 declared by Figshare.",
+        "scope": "The dataset files listed on the record; no file-level provenance or embedded material was inspected.",
+        "evidence_url": "https://figshare.com/articles/dataset/Vocal_repertoires_from_adult_and_chick_male_and_female_zebra_finches_Taeniopygia_guttata_/11905533",
+        "conditions": "Preserve attribution, link the license, identify changes and confirm exact files and components before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

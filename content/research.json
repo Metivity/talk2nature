@@ -4649,5 +4649,71 @@
       "rights": "Keep the manuscript, code, checkpoints, annotations, audio and benchmark metadata as separate components. For the data record, Zenodo's API says CC BY-SA 4.0 while its description says CC BY-NC, so no reuse is admitted. The separate code/model record's description says code and weights are MIT but its opaque ZIP contents were not inspected.",
       "experiment": "No result was reproduced. The preprint supports a controlled study of acoustic contingency, timing and adaptation, not an animal-language translator. Any future task must verify group splits by individual bird, compare simple baselines and retain independently observed labels."
     }
+  },
+  {
+    "slug": "zebra-finch-call-categories-2025",
+    "title": "Zebra finches categorize call types; translation remains a bigger question",
+    "seo_description": "A peer-reviewed study tests how zebra finches learn call categories, with public audio and analysis deposits that need careful version and coverage checks.",
+    "taxon": "Zebra finch (Taeniopygia guttata)",
+    "kind": "Call-category perception study",
+    "purpose": "Behavior & communication",
+    "year": "2025",
+    "year_label": "Peer-reviewed Science paper",
+    "source_ids": [
+      374,
+      375,
+      376,
+      377,
+      378
+    ],
+    "reviewed": "2026-10-24",
+    "review_stage": "Peer-reviewed article text and public release metadata reviewed; archive contents and analyses not reproduced",
+    "review_depth": "Reviewed the full PMC-indexed article text, including the abstract, reported results, figure captions and data statement, plus the UC Berkeley institutional-copy record, Figshare dataset page and metadata API, Zenodo version metadata/API responses, and the authors' GitHub README and root listing. Supplementary methods, audio files and archive contents were not reviewed. No code or model was run and no independent specialist reviewed this note.",
+    "review_locator": "Elie et al., Science 389(6766):1210–1215 (2025), DOI 10.1126/science.ads8482. PMC article: PMC12721838. Figshare audio record: DOI 10.6084/m9.figshare.11905533.v1. The PMC article cites Zenodo 13623969; the UC Berkeley copy cites 13623968. Official API metadata identifies 13623969 as the initial submission and resolves 13623968 to the July 2025 resubmission at DOI 10.5281/zenodo.15795568.",
+    "finding": "The paper reports that 12 adult zebra finches learned to discriminate all 11 researcher-defined call types in an operant Go/No-Go task. The stimuli came from a library described as more than 8,000 call renditions by 45 vocalizers, and the birds generalized to unfamiliar renditions. Errors between call types assigned to similar behavioral-use categories were more frequent than the paper's acoustic-similarity comparison predicted. This is evidence about learned discrimination and the structure of the birds' responses; the authors' claim about a mental representation of meaning is an interpretation, not a direct measurement of a human-like concept.",
+    "limitations": "The task was trained, closed-set discrimination of human-defined call categories, not spontaneous conversation, receiver behavior in a natural exchange or open-ended translation. The linked Figshare record describes 3,433 WAV files, some containing sequences; the exact mapping from those files to the paper's reported renditions and experimental stimuli was not checked. The article and institutional copy cite different Zenodo identifiers: the official API exposes an initial-submission record for 13623969 and a July 2025 resubmission at 15795568 when 13623968 is requested. Which version corresponds to the final published analysis, exact archive contents and data-to-trial joins remain to be verified. Both Figshare and Zenodo record metadata declare CC BY 4.0, but component coverage has not been independently reviewed. The authors' GitHub root listing has no displayed license file.",
+    "lesson": "This is a strong evidence-grounded species and paper to study because it connects acoustic categories to measured animal discrimination. A bounded computational exercise could test call-type recognition on held-out vocalizers and, if exact stimuli and trial joins are confirmed, compare model errors with the birds' recorded confusions. First inspect the paper's existing analyses so any work is a transparent reproduction or a distinct extension. Neither classifier accuracy nor similar error patterns would by itself decode meaning or prove translation.",
+    "next_review": "Keep all files metadata-only. Reconcile the published Zenodo references with the versioned July 2025 record, inspect archive manifests and component terms, confirm how Figshare sequences map to analyzed call renditions and behavioral trials, and examine the published split/statistical analysis. Ask an independent avian-communication and ML/statistical reviewer to assess the task and novelty before any model run. Do not add playback or new animal collection to this first analysis.",
+    "expert_review": "No independent avian-communication, animal-behavior or ML/statistical review has been received.",
+    "study_snapshot": [
+      [
+        "Species and repertoire",
+        "Zebra finch; approximately 11 researcher-defined Etho call types."
+      ],
+      [
+        "Behavioral subjects",
+        "Twelve adult birds, six males and six females, in a trained operant discrimination task."
+      ],
+      [
+        "Stimulus library in the paper",
+        "More than 8,000 call renditions from 45 vocalizers, according to the paper; exact file-level linkage was not checked."
+      ],
+      [
+        "Reported behavioral pattern",
+        "Birds discriminated the call types; confusions between types in similar behavioral-use categories exceeded what the paper's acoustic-similarity comparison predicted."
+      ],
+      [
+        "Audio archive",
+        "Figshare lists 3,433 manually annotated WAV files totaling 182.05 MB. Some files may contain sequences; no audio was acquired."
+      ],
+      [
+        "Data and code release",
+        "Zenodo API lists a 30.9 MB initial-submission archive at 13623969 and a 99.3 MB July 2025 resubmission at 15795568. The paper copies disagree on the linked identifier; neither archive was acquired."
+      ],
+      [
+        "Rights metadata",
+        "Figshare and the Zenodo records declare CC BY 4.0 at record level. This metadata review is not component-level legal clearance."
+      ],
+      [
+        "Talk2Nature status",
+        "Literature and metadata review only; no data acquisition, model execution, result reproduction, animal playback or specialist review."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only literature lead; not admitted to Talk2Nature's private store, training data or model benchmark.",
+      "asset": "Original short summary, citations, public record metadata and rights notes only. No paper file, audio, Zenodo archive, code or model was added to the repository.",
+      "rights": "The Figshare and Zenodo records declare CC BY 4.0, but the exact Zenodo version intended by the paper, archive contents and component coverage remain unresolved. The GitHub repository listing has no displayed license file. Do not redistribute article text or third-party audio; use the original source links and verify each component before reuse.",
+      "experiment": "No model was trained and no results were reproduced. Any later computational analysis should begin with a frozen, per-vocalizer evaluation plan and compare against the published analyses; animal-label predictions must remain distinct from observed behavioral trial responses."
+    }
   }
 ]

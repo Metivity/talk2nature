@@ -3213,3 +3213,35 @@ Reproduced the public guide's historical synthetic split checksum from a fresh c
 **Change:** updated the Wytham public note, dataset resource, first-animal comparison and source record to distinguish known field descriptions from uninspected values. The atlas remains at coarse Wytham study-region scope, with no nestbox or perimeter pin. Future derivatives must omit precise coordinates unless a qualified wildlife-location review establishes a need and safe handling. This is a data-minimization recommendation; CC BY 4.0 does not make exact coordinates necessary for an acoustic-structure question.
 
 **Validation and limits:** all 156 repository Python tests and 115 Node tests passed. The local build and checker validated 128 HTML documents and 6,358 links; the explicit-origin public candidate build validated 128 documents, 6,487 links and all 127 public routes. Local Chromium review at 390×844 and 320×740 displayed the updated note and direct metadata citation; no physical-device or screen-reader test was performed. Automated checks confirm the note states only what the source documents, says coordinate values were not inspected and retains an empty precise-location list. No dataset table, coordinates, audio, code or model was acquired or run. This does not establish that every derived identifier is non-sensitive; identity/grouping fields and any proposed task still need review. The candidate build was not deployed. Keep Wytham as a possible song-structure methods resource, not a communication benchmark. AutoResearch remains **NOT READY**.
+
+## October 24 — prepared an independent zebra-finch review brief
+
+**Question:** can an outside avian-communication or ML/statistical reviewer make a bounded go/narrow/defer decision on ZF-AIM without receiving data or assuming any license?
+
+**Evidence basis:** the current source note and candidate plan document the v3 preprint, its 20-versus-21 bird count discrepancy, pair-based evaluation with bird-disjointness unverified, four raw example tracks in the separate data record, and conflicting CC BY-SA / CC BY-NC statements. Code/model and data releases are separate records. No archive, audio, code or weights were acquired or executed.
+
+**Change:** added `docs/ZF_AIM_INDEPENDENT_REVIEW.md` with separate subject-matter, evaluation-design and data-scope questions; linked it from priority 5 on the execution board. The brief asks for a proceed/narrow/defer judgment and states the independence, public-issue and no-data boundaries.
+
+**Validation and limits:** checked every cited source and repository-relative link against the existing source records and review template; `git diff --check` passed. This is a prepared review artifact, not external review: no reviewer was selected or contacted, no permission was obtained and no benchmark became ready. Keep the goal active and AutoResearch **NOT READY**.
+
+## October 24 — identified zebra-finch reviewer-fit paths
+
+**Question:** can we prepare for a credible independent review of the zebra-finch candidate by identifying public research groups whose stated work matches separate scientific, computational and ecological review needs?
+
+**Evidence reviewed:** official profiles for the Max Planck Institute for Biological Intelligence's Neural Circuits for Vocal Communication group, the University of Zurich Birdsong and Natural Language Group, and Wageningen's active wild zebra-finch social-communication project; the primary Benichov and Vallentin turn-taking study. Their public records establish topical fit only. None appears on the ZF-AIM v3 author list, but a complete recent-collaboration screen has not been done.
+
+**Change:** added a three-path reviewer-fit table to `docs/NETWORK_AND_OUTREACH.md` and linked it from the benchmark execution board. It proposes bounded behavioral-timing, computational/data-evaluation and ecological-generalization questions. Every path is explicitly unconfirmed; no individual was selected or contacted. The note says candidate reviewers cannot resolve data rights for the rights holder.
+
+**Validation and limits:** all three official profiles and the primary paper were source-checked; local reference targets and the review issue template exist. No message, invitation, partner claim, reviewer consent or data access occurred. The scientific benchmark remains **NOT READY** pending conflict disclosure, external review, rights and corpus clarification, and a defensible grouped split.
+
+## October 24 — zebra-finch call-category perception study added
+
+**Question:** is there a tractable existing bird study that connects machine-readable sound labels with a measured animal discrimination task?
+
+**Evidence reviewed:** the full PMC-indexed text of Elie et al., Science 389 (2025), the UC Berkeley paper-copy record, the Figshare audio-library page and API metadata, Zenodo version metadata/API responses, and the authors' public repository README and root listing. The paper reports trained discrimination of 11 researcher-defined call types by 12 adult zebra finches, using more than 8,000 renditions from 45 vocalizers; call-type confusions were related to the researchers' behavioral-use categories beyond the acoustic-similarity comparison. The paper's interpretation about mental representation of meaning remains an inference from discrimination behavior.
+
+**Change:** added a source-linked research note and separate paper, behavioral-data/code, and audio-library records. Updated the first-animal comparison to distinguish this behavior-linked zebra-finch lead from the larger Wytham song-structure corpus and from the parrot app cohort.
+
+**Rights and version limits:** Figshare declares CC BY 4.0 for its 3,433-file, 182.05 MB audio deposit. The Zenodo API declares CC BY 4.0 for both relevant record-level deposits: 13623969 is an initial submission, while a request for 13623968 resolves to the 99.3 MB July 2025 resubmission at 15795568. The PMC paper and Berkeley copy cite different identifiers. The exact version used for the final published analyses, archive contents and audio-to-trial joins remain unresolved; no media, archive or code was acquired or run.
+
+**Validation and limits:** JSON parsed, all new source references resolve, 156 repository Python tests passed, and the local build plus site checker validated 129 HTML documents and 6,419 links. A separate explicit-origin public candidate build validated all 128 public routes and 6,549 links. The new route has a distinct title and description, exact self-canonical, index/follow directive, structured data and a sitemap entry. The candidate has not been deployed. No independent avian or ML/statistical review occurred. This is not a benchmark, model result or language-translation claim. Keep all assets metadata-only pending version, join, rights and specialist review.
