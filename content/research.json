@@ -4357,16 +4357,17 @@
       364,
       365,
       366,
-      367
+      367,
+      372
     ],
     "reviewed": "2026-10-23",
-    "review_stage": "Primary-source summary, author documentation and code-license metadata review; no archive acquisition or reproduction",
-    "review_depth": "Reviewed the primary publisher abstract/data-availability statement, Oxford Research Archive bibliographic/article-rights record, authors’ dataset documentation for file structure, labels and package size, official setup-code repository license and pinned main revision, and publisher summary/data statement for the related 2025 analysis. The full 2024 methods, OSF file inventory, 2025 methods and code archive were not inspected. No dataset files, code, model or weights were acquired or run.",
-    "review_locator": "Merino Recalde et al. (2024), Animal Behaviour 211:111–122, DOI 10.1016/j.anbehav.2024.02.008; OSF DOI 10.17605/OSF.IO/N8AC9; author docs for song files/metadata; setup code commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7; Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016 (publisher summary/data availability only).",
-    "finding": "The Wytham Great Tit Song Dataset is an unusually dense wild-population resource: its authors report 109,963 annotated songs and 1,161,033 acoustic notes from more than 400 individual birds, collected in Wytham Woods, Oxfordshire, from 2020 to 2023. The authors’ documentation lists a processed WAV/JSON package of about 11.4 GB, with note onsets/offsets, durations, song-type classes and bird/breeding-attempt metadata. It can support study of acoustic segmentation, song sequences, repertoire variation and vocal culture. A 2025 paper has already analyzed the same corpus to study demographic drivers of song culture. These data describe vocal structure and associated metadata; they do not supply independently observed interaction context, receiver response or a label for what a song means.",
-    "limitations": "This is one wild population and dawn-singing research system, so its labels do not establish transfer to other sites, species, household phones or general communication. Dataset documentation says bird identity associated with a breeding attempt can be uncertain or a proxy when the bird was not caught. The ordinary shared package is not the approximately 9 TB of original continuous soundscapes used in preparation. The OSF record’s exact current file inventory/version was not retrieved; group structure, label quality or train/test split were not audited. The 2025 cultural-evolution analysis is relevant prior work, so a basic song classifier would not by itself be a novel Talk2Nature contribution. No independent specialist assessed this note.",
+    "review_stage": "Primary-source summary, author documentation, OSF API manifest and record-level rights review; no archive acquisition or reproduction",
+    "review_depth": "Reviewed the primary publisher abstract/data-availability statement, Oxford Research Archive bibliographic/article-rights record, authors’ dataset documentation for file structure, labels and package size, official setup-code repository license and pinned main revision, and publisher summary/data statement for the related 2025 analysis. On 2026-10-23, queried the public OSF JSON:API node and recursively listed its 23-file osfstorage manifest over verified TLS; captured record license, last-modified date, provider-reported sizes and SHA-256 values in research/wytham_osf_manifest_2026-10-23.json. No file payloads were downloaded and hashes were not recomputed. The full 2024 methods, 2025 methods and code archive were not inspected; no dataset files, code, model or weights were acquired or run.",
+    "review_locator": "Merino Recalde et al. (2024), Animal Behaviour 211:111–122, DOI 10.1016/j.anbehav.2024.02.008; OSF DOI 10.17605/OSF.IO/N8AC9 and public API node n8ac9; author docs for song files/metadata; setup code commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7; Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016 (publisher summary/data availability only).",
+    "finding": "The Wytham Great Tit Song Dataset is an unusually dense wild-population resource: its authors report 109,963 annotated songs and 1,161,033 acoustic notes from more than 400 individual birds, collected in Wytham Woods, Oxfordshire, from 2020 to 2023. A read-only OSF API manifest check found 23 files totaling 12,184,678,510 bytes, including four song-archive parts totaling 11,380,411,540 bytes and 804,241,099 bytes of metadata. The public OSF node declares CC BY 4.0 and reports last modification on 2023-07-10; no explicit dataset version label was present in the inspected node response. The authors’ documentation describes note onsets/offsets, durations, song-type classes and bird/breeding-attempt metadata. It can support study of acoustic segmentation, song sequences, repertoire variation and vocal culture. A 2025 paper has already analyzed the same corpus to study demographic drivers of song culture. These data describe vocal structure and associated metadata; they do not supply independently observed interaction context, receiver response or a label for what a song means.",
+    "limitations": "This is one wild population and dawn-singing research system, so its labels do not establish transfer to other sites, species, household phones or general communication. Dataset documentation says bird identity associated with a breeding attempt can be uncertain or a proxy when the bird was not caught. The ordinary shared package is not the approximately 9 TB of original continuous soundscapes used in preparation. The manifest includes nestbox metadata and a Wytham perimeter shapefile, but their contents and location sensitivity were not inspected. Provider-reported hashes were not checked against bytes; annotation values, grouping keys, label quality and train/test split remain unaudited. The 2025 cultural-evolution analysis is relevant prior work, so a basic song classifier would not by itself be a novel Talk2Nature contribution. No independent specialist assessed this note.",
     "lesson": "A large corpus can teach us to measure patterns in animal sound before we try to interpret them. This dataset is a candidate for note, sequence and repertoire questions, not a conversation model. Keep it separate from the Egyptian-fruit-bat context-prediction candidate and provisional household-parrot app cohort. Any future model result should use whole-individual and time-aware grouping, compare simple acoustic baselines, and state that it predicts acoustic structure rather than meaning.",
-    "next_review": "Before considering analysis, retrieve an authoritative versioned OSF manifest and check exact file/license scope; review whether metadata exposes sensitive nest, location or individual information; inspect annotation definitions/grouping keys; and compare the proposed question with the 2025 demographic analysis. Ask independent avian-bioacoustics and ML/evaluation reviewers whether a non-duplicative held-out-individual question is useful. Only then decide whether a small rights-cleared intake is justified. Do not describe the corpus as a communication benchmark or run AutoResearch before shared readiness gates pass.",
+    "next_review": "Review the metadata field definitions and full 2024 methods, compare the proposed question with the 2025 demographic analysis, and have independent avian-bioacoustics and ML/evaluation reviewers assess whether a non-duplicative held-out-individual or time-aware question is useful. Before any bounded intake, inspect only permitted metadata values for location/identity sensitivity and confirm the target files' provenance and grouping keys. Do not describe the corpus as a communication benchmark or run AutoResearch before shared readiness gates pass.",
     "expert_review": "No independent specialist review has been received.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -4380,7 +4381,7 @@
       ],
       [
         "Shared package",
-        "Authors’ docs list about 11.4 GB of processed WAV/JSON files. The approximately 9 TB original continuous soundscape archive is not included in the normal share."
+        "OSF API lists four song archive parts totaling 11.38 GB, plus 804 MB of metadata and 26 KB of documentation. The approximately 9 TB original continuous soundscape archive is not included in the normal share. No payload was acquired."
       ],
       [
         "Useful questions",
@@ -4392,20 +4393,20 @@
       ],
       [
         "Separate rights",
-        "The 2024 paper says dataset input/output files are CC BY 4.0; setup-code repository declares MIT. The 2025 analysis files and model weights were not reviewed."
+        "The OSF node declares CC BY 4.0, consistent with the 2024 paper; setup-code repository declares MIT. Nested provenance, 2025 analysis files and model weights were not reviewed."
       ]
     ],
     "atlas": {
       "reviewed": "2026-10-23",
       "location_status": "pending",
-      "location_note": "Authors describe one study population at Wytham Woods, Oxfordshire, U.K. No map point was added; exact OSF metadata and location sensitivity were not reviewed.",
+      "location_note": "Authors describe one study population at Wytham Woods, Oxfordshire, U.K. The OSF manifest includes a perimeter shapefile and nestbox metadata; their contents and location sensitivity were not reviewed, so no map point was added.",
       "locations": [],
       "observation_period": null
     },
     "reuse": {
       "status": "Metadata-only song-structure candidate; not admitted to Talk2Nature training or the first communication-adjacent benchmark.",
-      "asset": "Peer-reviewed 2024 dataset paper, author documentation, OSF dataset link and pinned setup-code repository. No audio, data table, code, model or weights were acquired.",
-      "rights": "The 2024 paper states dataset input/output files use CC BY 4.0; the separate setup repository declares MIT. Exact OSF file inventory and nested component terms were not independently checked. Article text, dataset, analysis code and model weights have separate rights.",
+      "asset": "Peer-reviewed 2024 dataset paper, author documentation, a dated OSF API manifest snapshot and pinned setup-code repository. No audio, data table, code, model or weights were acquired.",
+      "rights": "The OSF node declares CC BY 4.0, consistent with the 2024 paper's statement for dataset input/output files; the separate setup repository declares MIT. Nested provenance and the 2025 analysis code/model rights were not reviewed. Article text, dataset, analysis code and model weights have separate rights.",
       "experiment": "No files were analyzed and no model was run. A future question must extend existing 2025 work, pass independent scientific/evaluation review, use inspected labels and rights, and freeze individual/time-aware groups before any model choice. Acoustic structure or identity prediction would not establish receiver understanding or meaning."
     }
   },

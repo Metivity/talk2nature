@@ -1,0 +1,56 @@
+{
+  "schema_version": "talk2nature.osf_manifest_snapshot.v1",
+  "retrieved_date": "2026-10-23",
+  "retrieval": {
+    "method": "OSF public JSON:API; recursively enumerated folder relationships over verified TLS",
+    "node_endpoint": "https://api.osf.io/v2/nodes/n8ac9/",
+    "files_endpoint": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
+    "payload_bytes_downloaded": false
+  },
+  "node": {
+    "id": "n8ac9",
+    "doi": "10.17605/OSF.IO/N8AC9",
+    "title": "Wytham Great Tit Song Dataset",
+    "public": true,
+    "last_modified": "2023-07-10T15:22:56.881573",
+    "declared_license": "CC-By Attribution 4.0 International",
+    "explicit_dataset_version": null
+  },
+  "summary": {
+    "file_count": 23,
+    "total_bytes": 12184678510,
+    "song_archive_parts": 4,
+    "song_archive_bytes": 11380411540,
+    "metadata_file_count": 10,
+    "metadata_bytes": 804241099,
+    "documentation_file_count": 9,
+    "documentation_bytes": 25871,
+    "hash_provenance": "SHA-256 values below were reported by the OSF API and were not recomputed because file payloads were not acquired.",
+    "location_review": "The manifest includes nestbox metadata and a Wytham perimeter shapefile. Their contents and coordinate sensitivity were not inspected; no location values are reproduced here."
+  },
+  "files": [
+    {"path": "/data/metadata/feature_vectors.csv", "bytes": 516094703, "sha256": "c422dcb8f89a66db02942bbd69db9de9051b428cb06aa0c370587ac408f5c861"},
+    {"path": "/data/metadata/great-tit-hits-crowsetta.csv", "bytes": 172126877, "sha256": "4cb40f3b15b515c9824881ac040580758b4ac8a754538b37bf361dd5d8724dba"},
+    {"path": "/data/metadata/great-tit-hits.csv", "bytes": 111502303, "sha256": "580fee8440d7e213b7c8507903818d7748efaf4052ed94740a25ec8c1e5ccb80"},
+    {"path": "/data/metadata/main.csv", "bytes": 710595, "sha256": "497cc05221f93cef597f95390ea7a8122cd42d7da5dba6cc9ed0dab3d475f4d9"},
+    {"path": "/data/metadata/morphometrics.csv", "bytes": 3716332, "sha256": "67953ccd0a54dcd7a786b64bd0ab9ec347e40a4ef34a4c356ea2d12d7588ec4d"},
+    {"path": "/data/metadata/nestboxes.csv", "bytes": 78446, "sha256": "dfa8adfdd99865ffa58ec983d59916f7e36932cac587d3e463426f26d9233a44"},
+    {"path": "/data/metadata/wytham_map/perimeter.dbf", "bytes": 125, "sha256": "98050f0f98276cd2e8861ce9d59d36c31025078f405abdd979715bd525f39a73"},
+    {"path": "/data/metadata/wytham_map/perimeter.prj", "bytes": 398, "sha256": "884fc5e27844afb733cdc20774784f2ff9f95fefaf28d8509708f3792023279e"},
+    {"path": "/data/metadata/wytham_map/perimeter.shp", "bytes": 11180, "sha256": "2731e12d68afb49905bcbb5c43dc4bbc2f1bf20e4fe073cb687063b8cb2c426e"},
+    {"path": "/data/metadata/wytham_map/perimeter.shx", "bytes": 140, "sha256": "da99c84de6460a9d6459573895c26e1b17f037b162fd86534cb19c9df83a093b"},
+    {"path": "/data/songs/song-files.zip.part1", "bytes": 3655144225, "sha256": "b10173d9810aba0049755c7cb0167ebfe3903b95dfb08984d9a7c6556357037c"},
+    {"path": "/data/songs/song-files.zip.part2", "bytes": 3735396385, "sha256": "ad9aab5253bf7a8f70c32db17b3e92f5dfb3df18581a080c7f29e01bb6b36ec5"},
+    {"path": "/data/songs/song-files.zip.part3", "bytes": 3741555821, "sha256": "caaa0a78de733ac83ababa1b9d8e1cc977ee34abc9e442b0aaf609bb28261bb9"},
+    {"path": "/data/songs/song-files.zip.part4", "bytes": 248315109, "sha256": "2cc2fdc7da1e76ed60d3217a251404e916b810973620de7cbdd3a570bd2d444d"},
+    {"path": "/docs/index.md", "bytes": 775, "sha256": "7d29f134c189054767f559361a321ca71f25f5c9c923f516a8f2ad1be45fd8b9"},
+    {"path": "/docs/metadata/feature_vectors.md", "bytes": 785, "sha256": "427024cbd863f78129f38df1aed314e84ce8282cbfda4352c880cdec453f2a2b"},
+    {"path": "/docs/metadata/great-tit-hits.md", "bytes": 2215, "sha256": "dcdd2d182916fb3b94208e4fd5a2ca4a8d3e5da312d270a5ec4b07c7356e55e2"},
+    {"path": "/docs/metadata/main.md", "bytes": 6426, "sha256": "1f45e3898b7091af1d07ac2b397e42bbcebacedab3fba9eb0377b331a067e54"},
+    {"path": "/docs/metadata/morphometrics.md", "bytes": 2797, "sha256": "986dc1a9f2b2f8ccdb5cc8d5c3a37b031a879b4004ef501a40cac35ed1447c71"},
+    {"path": "/docs/metadata/nestboxes.md", "bytes": 2097, "sha256": "0059bde19ef167967bc65c3098f72d7a606bf23da8171f5a7576fdae16ee40cb"},
+    {"path": "/docs/metadata/wytham_map.md", "bytes": 733, "sha256": "8210d07ada55fd548234c6c5c8e053ac1e66b21241a0c0d10213d33d7e475463"},
+    {"path": "/docs/pipeline.md", "bytes": 6714, "sha256": "760030c4975f507d4822e02505625ad9cc434dd333e6bc4f49b21c96bc848dc0"},
+    {"path": "/docs/songs/song-files.md", "bytes": 3329, "sha256": "aa0c7303098b99a36eb3da3452a10a48991090ec658b0716192dd937257ce8be"}
+  ]
+}
