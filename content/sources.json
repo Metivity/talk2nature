@@ -3655,5 +3655,16 @@
     "url": "https://www.tau.ac.il/profile/yossiy",
     "checked": "2026-10-23",
     "origin": "Reviewed the current official TAU profile for source-author and topical-fit context. This is not evidence of interest in Talk2Nature."
+  },
+  {
+    "id": 356,
+    "title": "V33DA zebra-finch caller-attribution dataset card, pinned revision",
+    "description": "The dataset card describes 33,625 physically verified caller events from 10 zebra finches in three experiments, with synchronized audio, video, pose and telemetry. The repository declares CC BY 4.0; the associated manuscript is listed as under review. Reviewed for a bounded caller-attribution task only; no files, code or model were acquired or run, and no call meaning is demonstrated.",
+    "url": "https://huggingface.co/datasets/songbirdini/v33da/blob/975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913/README.md",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the full dataset card and repository revision page at commit 975ddf36a1f0c0bffc512bf2c2e6aa40bb2a1913. The repository page reports 18.8 GB. This is metadata review only; component-level rights, files and checksums were not independently verified.",
+    "rights": {
+      "dataset": "The pinned dataset card declares CC BY 4.0. Verify exact file-level rights before acquisition or intended commercial use; code, manuscript and companion releases are separate."
+    }
   }
 ]
