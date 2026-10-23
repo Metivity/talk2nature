@@ -2568,3 +2568,15 @@ The Performance report was last updated about four hours before inspection and c
 **Live verification:** `https://metivity.github.io/talk2nature/research/birdset-avian-sound-classification/` returned HTTP 200 with its own title, canonical URL, indexing directive and structured data. The sitemap returned HTTP 200, parsed as valid XML and contained 116 URLs including the BirdSet route; `robots.txt` returned HTTP 200 and declares that sitemap. The live verifier confirmed the homepage, app and resource directory plus sitemap/robots configuration.
 
 **Limits:** this verifies publication and crawl configuration, not Google indexing, search performance, outside scientific review or research adoption. No BirdSet recording, label file, code or weight was acquired or run, and no Talk2Nature model was trained. Its data remain metadata-only; AutoResearch remains **NOT READY**.
+
+## October 23 — fail closed on placeholder split identities
+
+**Question:** can the research manifest splitter distinguish a missing animal/session key from a valid pseudonymous ID before it creates grouped partitions?
+
+**Finding and change:** the current validator already rejected `unknown`, `na` and `n/a` for animal IDs, and it used a broader placeholder set for optional grouping dimensions. It still accepted `none`, `null`, `tbd` and `pending` as animal IDs, and accepted any nonempty placeholder as a session ID. These values could silently merge unrelated rows under a shared key. Reused the same placeholder set for animal IDs and now reject placeholder session IDs. Added regression coverage and documented the current-main behavior in the researcher guide, while clarifying that the older exact-output pin predates the stricter check.
+
+**Provenance and limits:** this change uses only the committed synthetic manifests and tests; no third-party recordings or metadata were acquired or inspected. It verifies declared strings only. It cannot establish that pseudonyms represent distinct animals/sessions, discover omitted relationships, validate rights or labels, or make any dataset benchmark-ready. AutoResearch remains **NOT READY**.
+
+**Validation:** all 146 Python tests and 115 Node tests passed. The local noindex build produced 116 pages plus 404; the site checker passed 117 HTML files and 5,754 links. `git diff --check` passed. This is a local source change, not a deployment, independent reproduction or real-data validation.
+
+**Next decision:** apply this current-main validator to any future clean-source rehearsal, but do not admit a real manifest or run a model until the source rights, label provenance, independent reviewer and full grouping policy are resolved.

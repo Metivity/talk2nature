@@ -117,6 +117,17 @@ class ManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'Duplicate group dimension'):
             split_manifest(self.records,group_dimensions=['household','household'])
 
+    def test_common_placeholder_tokens_rejected_for_individual_and_session_groups(self):
+        for placeholder in ('unknown','NA','N/A','none','null','tbd','pending'):
+            records=copy.deepcopy(self.records)
+            records[0]['individual_ids']=[placeholder]
+            with self.subTest(field='individual_ids',value=placeholder),self.assertRaisesRegex(ValueError,'individual_ids'):
+                validate(records)
+            records=copy.deepcopy(self.records)
+            records[0]['session_id']=placeholder
+            with self.subTest(field='session_id',value=placeholder),self.assertRaisesRegex(ValueError,'session_id'):
+                validate(records)
+
     def test_reordering_does_not_change_split_or_provenance(self):
         first=split_manifest(self.records)
         random.Random(71).shuffle(self.records)
