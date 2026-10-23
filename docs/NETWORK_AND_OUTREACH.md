@@ -1,6 +1,6 @@
 # Talk2Nature network and outreach plan
 
-Updated October 20, 2026. This document describes a possible research-infrastructure direction, not a deployed service, approved protocol, partnership, or promise to accept data.
+Updated October 23, 2026. This document describes a possible research-infrastructure direction, not a deployed service, approved protocol, partnership, or promise to accept data.
 
 ## What a university can use today
 
@@ -53,6 +53,20 @@ The first outreach goal is independent workflow feedback, not press coverage or 
 
 The first outreach cycle can be small: up to five tailored invitations over a month, followed by a pause to learn from replies and failures. A successful cycle is at least one independent person completing or critically evaluating a task and identifying a specific next action. It does not require endorsement, partnership or a real-data pilot.
 
+## Candidate reviewer paths checked October 23, 2026
+
+These are fit hypotheses drawn from current public institutional pages, not prospects who have expressed interest. The same bounded ask applies to each: review a cited method or try the synthetic Compare exercise, then report one useful distinction and one missing field or unclear step. Do not send a generic invitation or describe any group as a partner.
+
+| Candidate path | Public basis for fit | What the present project can ask | Boundary |
+| --- | --- | --- | --- |
+| **Cornell Lab of Ornithology — K. Lisa Yang Center for Conservation Bioacoustics / BioacousTalks (United States; open international forum)** | The Center describes work across computational bioacoustics, vocal communication, community science and terrestrial/marine monitoring. BioacousTalks describes a biweekly Zoom forum for passive-acoustic-monitoring practitioners, open to interested participants; its Fall 2026 schedule is still being planned. [Team](https://www.birds.cornell.edu/ccb/meet-our-team/) · [BioacousTalks](https://www.birds.cornell.edu/ccb/bioacoustalks/) | First learn from an open session. If a focused methods demo fits a future program, ask whether a short synthetic workflow review would be useful. | The current app is not a passive-acoustic monitoring or species-identification platform. The event page's schedule is incomplete; no registration or proposal has been made. |
+| **Bar-Ilan University — Wildlife Behavioral Ecology and Endocrinology (Israel)** | The official profile describes individually marked wildlife observations joining vocalizations with social behavior and proximity, and names a project question about hyrax counter-songs. [Profile](https://dsai.biu.ac.il/team/prof-lee-koren/) | Ask whether the project's separation of signal, human observation, uncertainty and context matches the kinds of fields researchers need to review. | This is a metadata/workflow critique only. No group data or study participation is requested. |
+| **Tel Aviv University — Bat Lab for Neuro-Ecology (Israel)** | The university profile describes vocal communication and field behavior, including wearable audio/video sensors and synchronized ultrasonic microphones with high-speed video. [University profile](https://www.tau.ac.il/profile/yossiy) | Ask for requirements-level feedback on which contextual and synchronization details matter when annotating animal sounds. | Talk2Nature has not validated ultrasonic audio or synchronized audio-video workflows; the current tool is not ready for bat-study data. |
+| **University of St Andrews — Bioacoustics / vocal-communication research (United Kingdom)** | The School of Biology profile describes research on communication complexity and social interaction, including bottlenose dolphin vocal communication. [Profile](https://www.st-andrews.ac.uk/biology/people/vj/) | Invite a critique of one source-linked literature summary or of the project's distinction between acoustic patterns, context and experimentally supported meaning. | This is not evidence that the current phone workflow suits dolphin research; no field deployment or animal-data request is proposed. |
+| **Software Sustainability Institute community (United Kingdom; research-software network)** | The Institute describes a community for researchers and developers, workshops, and routes for sharing research-software work. [Community](https://www.software.ac.uk/community) | After an independent reviewer completes one task, consider sharing a short methods note or demo proposal about the reproducible workflow and its limits. | This is a community channel, not scientific validation or an endorsement. No blog or workshop proposal has been submitted. |
+
+**First-wave decision:** prioritize learning from one open bioacoustics forum and seeking at most two individually tailored workflow reviews: one researcher who works with behavior-linked vocal data and one research-software/data-stewardship reviewer. Check the current fit again immediately before any invitation. Keep the public synthetic task separate from any request for a real-data pilot.
+
 The current invitation and contact boundaries are in [UNIVERSITY_EVALUATION.md](UNIVERSITY_EVALUATION.md). Contact notes belong in the ignored private `funding/` workspace. No message has been sent by this plan.
 
 ## Sources reviewed
@@ -60,6 +74,9 @@ The current invitation and contact boundaries are in [UNIVERSITY_EVALUATION.md](
 - [BirdNET-Analyzer](https://birdnet.cornell.edu/analyzer/), official research and software overview, checked October 20, 2026.
 - [Macaulay Library: audio preparation and upload guidelines](https://support.ebird.org/en/support/solutions/articles/48001064341-audio-preparation-and-upload-guidelines), checked October 20, 2026. The guidance emphasizes preserving original recordings and limiting edits.
 - [GBIF technical documentation: occurrence download formats](https://techdocs.gbif.org/en/data-use/download-formats), checked October 20, 2026. The documented Darwin Core Archive download includes associated multimedia information; GBIF is a discovery/publishing layer, not a substitute for local study governance.
+- [Cornell K. Lisa Yang Center for Conservation Bioacoustics team](https://www.birds.cornell.edu/ccb/meet-our-team/) and [BioacousTalks](https://www.birds.cornell.edu/ccb/bioacoustalks/), checked October 23, 2026. The forum is an open online passive-acoustics community; the fall 2026 schedule was still being planned.
+- [Bar-Ilan University profile for Lee Koren](https://dsai.biu.ac.il/team/prof-lee-koren/), [Tel Aviv University profile for Yossi Yovel](https://www.tau.ac.il/profile/yossiy), and [University of St Andrews profile for Vincent Janik](https://www.st-andrews.ac.uk/biology/people/vj/), checked October 23, 2026. These establish topical fit only, not interest or availability.
+- [Software Sustainability Institute community](https://www.software.ac.uk/community), checked October 23, 2026. Its community and workshop routes may suit a future reproducible software case; they do not evaluate animal-communication claims.
 
 ## Next shareable research update: monk-parakeet social structure
 

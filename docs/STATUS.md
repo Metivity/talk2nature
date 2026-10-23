@@ -2783,6 +2783,16 @@ Re-read the official Zenodo v1.1 API inventory. It reports `train_soundscape.csv
 
 **Decision and limits:** the live desktop flow has no obvious stop-to-review dead end and keeps uncertainty and synthetic provenance visible. No UI change was justified by this check. The separate narrow-phone emulation evidence remains in `docs/MOBILE_AUDIT.md`; this walkthrough does not establish physical-phone, iOS Safari, screen-reader, actual microphone-path or first-time-user usability. No microphone prompt appeared; no animal, participant or real recording data was used.
 
+## October 23 — source-checked international reviewer paths
+
+**Question:** what is the smallest credible first audience for sharing Talk2Nature beyond its existing local and university guidance?
+
+**Evidence reviewed:** current official pages for Cornell's K. Lisa Yang Center for Conservation Bioacoustics and its open BioacousTalks forum; Bar-Ilan University's Wildlife Behavioral Ecology and Endocrinology profile; Tel Aviv University's Bat Lab profile; the University of St Andrews' bioacoustics/vocal-communication profile; and the Software Sustainability Institute community. These sources describe topical research or public community routes, not interest in Talk2Nature.
+
+**Change and decision:** added a dated candidate-path table to `docs/NETWORK_AND_OUTREACH.md`. Start by learning from one open bioacoustics forum and, if outreach is approved, ask at most two individually selected reviewers to inspect the synthetic Compare task or one source-linked method note. The Cornell forum is the broadest international channel; Bar-Ilan is the clearest fit for behavior-linked vocal context; St Andrews is a fit for literature critique. TAU feedback would be requirements-level because ultrasonic and synchronized audio-video workflows are not validated. The Software Sustainability Institute is a possible later software-story route, after independent use. The proposed outreach remains unsent; no group is a prospect, partner or endorser.
+
+**Validation and limits:** 149 Python tests pass. The explicit public-origin build/check covers 121 HTML documents, 6,098 links and 120 reachable routes. This milestone improves targeting and accuracy, not project reach: no registration, invitation, talk proposal or partner contact was made, and no independent workflow review has been completed. Recheck each public page immediately before any future invitation.
+
 ## October 23 — clean-clone reproduction of current public main
 
 **Question:** can a researcher clone the newest public revision and reproduce the documented synthetic examples, catalog validation, tests and site checks without private workspace state?
