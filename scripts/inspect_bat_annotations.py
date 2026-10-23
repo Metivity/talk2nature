@@ -4,12 +4,13 @@ The source file must match its bounded Figshare acquisition receipt. The report
 never includes row values, file IDs, animal IDs, or free-text labels.
 """
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 import csv
 import hashlib
 import io
 import json
 from pathlib import Path
+from statistics import median
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FOLDER = ROOT / 'data/external/egyptian-fruit-bat-annotations'
@@ -45,6 +46,161 @@ PUBLISHED_POST_ACTION_COUNTS = {
     'Unknown': 13437, 'Cower': 77, 'Fly away': 6745, 'Stay': 155485,
     'Crawl away': 6416,
 }
+PAPER_SAMPLE_RATE_HZ = 250_000
+PAPER_MAX_CALL_SECONDS = 3
+PUBLISHED_PAPER_FILTERED_ROWS = 35_074
+
+
+def _connected_group_summary(rows, participant_fields):
+    """Summarize file/participant components without returning identifiers."""
+    parent = {}
+    rank = {}
+
+    def find(node):
+        parent.setdefault(node, node)
+        rank.setdefault(node, 0)
+        root = node
+        while parent[root] != root:
+            root = parent[root]
+        while parent[node] != node:
+            next_node = parent[node]
+            parent[node] = root
+            node = next_node
+        return root
+
+    def union(left, right):
+        left_root, right_root = find(left), find(right)
+        if left_root == right_root:
+            return
+        if rank[left_root] < rank[right_root]:
+            left_root, right_root = right_root, left_root
+        parent[right_root] = left_root
+        if rank[left_root] == rank[right_root]:
+            rank[left_root] += 1
+
+    for row in rows:
+        file_node = ('file', row['file_id'])
+        find(file_node)
+        for field in participant_fields:
+            identity = row[field]
+            if identity > 0:
+                union(file_node, ('animal', identity))
+
+    components = {}
+    for row in rows:
+        root = find(('file', row['file_id']))
+        component = components.setdefault(root, {'files': set(), 'animals': set(), 'rows': 0})
+        component['files'].add(row['file_id'])
+        component['rows'] += 1
+        for field in participant_fields:
+            identity = row[field]
+            if identity > 0:
+                component['animals'].add(identity)
+
+    sizes = [component['rows'] for component in components.values()]
+    largest = max(components.values(), key=lambda component: component['rows'], default=None)
+    return {
+        'connected_groups': len(components),
+        'largest_group_annotations': largest['rows'] if largest else 0,
+        'largest_group_annotation_share': round(largest['rows'] / len(rows), 4) if largest and rows else 0,
+        'largest_group_files': len(largest['files']) if largest else 0,
+        'largest_group_known_animals': len(largest['animals']) if largest else 0,
+        'groups_with_one_annotation': sum(size == 1 for size in sizes),
+        'median_group_annotations': median(sizes) if sizes else 0,
+        'smallest_group_annotations': min(sizes, default=0),
+    }
+
+
+def summarize_paper_subset(rows):
+    """Reconstruct the paper's described sample filter; return aggregate counts only."""
+    maximum_samples = PAPER_SAMPLE_RATE_HZ * PAPER_MAX_CALL_SECONDS
+    selected = []
+    excluded_context = excluded_emitter = excluded_duration = 0
+    for row in rows:
+        try:
+            context_code = row['Context'].strip()
+            emitter = int(row['Emitter'].strip())
+            addressee = int(row['Addressee'].strip())
+            start = int(row['Start sample'].strip())
+            end = int(row['End sample'].strip())
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError('Paper subset reconstruction requires the reviewed integer annotation columns.') from error
+        if context_code not in CONTEXT_CODES:
+            raise ValueError('Paper subset reconstruction encountered an unmapped context code.')
+        if start < 0 or end <= start:
+            raise ValueError('Paper subset reconstruction encountered an invalid sample interval.')
+        if context_code in ('0', '8'):
+            excluded_context += 1
+            continue
+        if emitter <= 0:
+            excluded_emitter += 1
+            continue
+        if end - start > maximum_samples:
+            excluded_duration += 1
+            continue
+        selected.append({
+            'file_id': row['FileID'].strip(),
+            'emitter': emitter,
+            'addressee': addressee,
+            'context': CONTEXT_CODES[context_code],
+        })
+
+    file_counts = Counter(row['file_id'] for row in selected)
+    context_counts = Counter(row['context'] for row in selected)
+    emitters = {row['emitter'] for row in selected}
+    addressees = {row['addressee'] for row in selected if row['addressee'] > 0}
+    participants = emitters | addressees
+    known_pairs = {
+        tuple(sorted((row['emitter'], row['addressee'])))
+        for row in selected if row['addressee'] > 0 and row['addressee'] != row['emitter']
+    }
+    addressee_status = Counter(
+        'identified' if row['addressee'] > 0 else 'unknown' if row['addressee'] == 0 else 'ambiguous'
+        for row in selected
+    )
+    multi_context_files = defaultdict(set)
+    for row in selected:
+        multi_context_files[row['file_id']].add(row['context'])
+
+    return {
+        'filter': {
+            'excluded_context_codes': ['0 (Unknown)', '8 (Landing)'],
+            'required_emitter_code': 'positive integer; zero is unknown and negative codes are ambiguous',
+            'maximum_duration_samples_inclusive': maximum_samples,
+            'sample_rate_hz': PAPER_SAMPLE_RATE_HZ,
+            'maximum_duration_seconds': PAPER_MAX_CALL_SECONDS,
+        },
+        'source_rows': sum((excluded_context, excluded_emitter, excluded_duration, len(selected))),
+        'excluded_for_context': excluded_context,
+        'excluded_for_emitter_identity': excluded_emitter,
+        'excluded_for_duration': excluded_duration,
+        'retained_annotations': len(selected),
+        'published_retained_annotations': PUBLISHED_PAPER_FILTERED_ROWS,
+        'matches_published_count': len(selected) == PUBLISHED_PAPER_FILTERED_ROWS,
+        'unique_file_ids': len(file_counts),
+        'annotations_beyond_unique_files': len(selected) - len(file_counts),
+        'files_with_multiple_annotations': sum(count > 1 for count in file_counts.values()),
+        'files_with_multiple_contexts': sum(len(contexts) > 1 for contexts in multi_context_files.values()),
+        'unique_positive_emitters': len(emitters),
+        'unique_positive_addressees': len(addressees),
+        'unique_positive_participants_across_roles': len(participants),
+        'rows_by_context': dict(sorted(context_counts.items())),
+        'addressee_status_rows': dict(sorted(addressee_status.items())),
+        'unique_distinct_participant_pairs': len(known_pairs),
+        'grouping_feasibility': {
+            'source_file_only': _connected_group_summary(selected, ()),
+            'source_file_plus_emitter': _connected_group_summary(selected, ('emitter',)),
+            'source_file_plus_all_known_participants': _connected_group_summary(selected, ('emitter', 'addressee')),
+        },
+        'training_admitted': False,
+        'limitations': [
+            'A matching filtered row count is not a row-by-row comparison with the paper\'s unavailable retained-row manifest or fold files.',
+            'The grouping summaries keep each source FileID and each positive participant identifier together; they are aggregate topology diagnostics, not validated splits.',
+            'Unknown or ambiguous participant roles may hide additional grouping links; sessions, dates, channels, treatments and chambers require other source metadata.',
+            'No audio, video, model code, model weights or model predictions were used.',
+            'Context remains video-derived observer annotation, not listener-validated meaning or comprehension.',
+        ],
+    }
 
 
 def inspect(folder=DEFAULT_FOLDER):
@@ -185,6 +341,7 @@ def inspect(folder=DEFAULT_FOLDER):
         'combined_pre_action_counts_match_paper_table_4': pre_actions == PUBLISHED_PRE_ACTION_COUNTS,
         'combined_post_action_counts_match_paper_table_4': post_actions == PUBLISHED_POST_ACTION_COUNTS,
     }
+    paper_subset = summarize_paper_subset(csv.DictReader(io.StringIO(data.decode('utf-8-sig'))))
     return {
         'resource_id': receipt['resource_id'],
         'source_version': receipt['resource']['version'],
@@ -214,6 +371,7 @@ def inspect(folder=DEFAULT_FOLDER):
             'largest_pair_component_ids': max(component_sizes, default=0),
             'known_ids_without_a_pair_edge': len(all_known_ids - set(adjacency)),
         },
+        'paper_subset_reconstruction': paper_subset,
         'published_category_counts': {
             'context': contexts,
             'pre_vocalization_action_across_both_roles': pre_actions,

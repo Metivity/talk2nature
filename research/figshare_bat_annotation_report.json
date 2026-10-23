@@ -55,6 +55,90 @@
     "largest_pair_component_ids": 31,
     "known_ids_without_a_pair_edge": 13
   },
+  "paper_subset_reconstruction": {
+    "filter": {
+      "excluded_context_codes": [
+        "0 (Unknown)",
+        "8 (Landing)"
+      ],
+      "required_emitter_code": "positive integer; zero is unknown and negative codes are ambiguous",
+      "maximum_duration_samples_inclusive": 750000,
+      "sample_rate_hz": 250000,
+      "maximum_duration_seconds": 3
+    },
+    "source_rows": 91080,
+    "excluded_for_context": 656,
+    "excluded_for_emitter_identity": 51512,
+    "excluded_for_duration": 3838,
+    "retained_annotations": 35074,
+    "published_retained_annotations": 35074,
+    "matches_published_count": true,
+    "unique_file_ids": 34603,
+    "annotations_beyond_unique_files": 471,
+    "files_with_multiple_annotations": 418,
+    "files_with_multiple_contexts": 99,
+    "unique_positive_emitters": 41,
+    "unique_positive_addressees": 31,
+    "unique_positive_participants_across_roles": 46,
+    "rows_by_context": {
+      "Biting": 1245,
+      "Feeding": 1518,
+      "Fighting": 401,
+      "General": 11375,
+      "Grooming": 206,
+      "Isolation": 1958,
+      "Kissing": 195,
+      "Mating protest": 1374,
+      "Separation": 430,
+      "Sleeping": 15957,
+      "Threat-like": 415
+    },
+    "addressee_status_rows": {
+      "identified": 27981,
+      "unknown": 7093
+    },
+    "unique_distinct_participant_pairs": 127,
+    "grouping_feasibility": {
+      "source_file_only": {
+        "connected_groups": 34603,
+        "largest_group_annotations": 6,
+        "largest_group_annotation_share": 0.0002,
+        "largest_group_files": 1,
+        "largest_group_known_animals": 0,
+        "groups_with_one_annotation": 34185,
+        "median_group_annotations": 1,
+        "smallest_group_annotations": 1
+      },
+      "source_file_plus_emitter": {
+        "connected_groups": 10,
+        "largest_group_annotations": 33430,
+        "largest_group_annotation_share": 0.9531,
+        "largest_group_files": 32963,
+        "largest_group_known_animals": 29,
+        "groups_with_one_annotation": 0,
+        "median_group_annotations": 215.0,
+        "smallest_group_annotations": 11
+      },
+      "source_file_plus_all_known_participants": {
+        "connected_groups": 9,
+        "largest_group_annotations": 33516,
+        "largest_group_annotation_share": 0.9556,
+        "largest_group_files": 33048,
+        "largest_group_known_animals": 35,
+        "groups_with_one_annotation": 0,
+        "median_group_annotations": 232,
+        "smallest_group_annotations": 11
+      }
+    },
+    "training_admitted": false,
+    "limitations": [
+      "A matching filtered row count is not a row-by-row comparison with the paper's unavailable retained-row manifest or fold files.",
+      "The grouping summaries keep each source FileID and each positive participant identifier together; they are aggregate topology diagnostics, not validated splits.",
+      "Unknown or ambiguous participant roles may hide additional grouping links; sessions, dates, channels, treatments and chambers require other source metadata.",
+      "No audio, video, model code, model weights or model predictions were used.",
+      "Context remains video-derived observer annotation, not listener-validated meaning or comprehension."
+    ]
+  },
   "published_category_counts": {
     "context": {
       "Biting": 1788,
