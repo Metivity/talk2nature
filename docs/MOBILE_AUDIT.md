@@ -295,3 +295,11 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Follow-up live-browser check:** in a separate tab on the deployed `/app/` page, activating the native `<summary>` opened the disclosure; the DOM's `details.open` state changed from false to true and all four optional routes appeared in the accessibility tree. Space closed it and Enter reopened it. The control is now verified with pointer and keyboard input in this browser session.
 
 **Limits:** this check does not establish physical-phone behavior, Safari/Android home-screen behavior, screen-reader output, microphone capture quality, interrupted-session recovery, export/reopen success or first-time-user understanding. No microphone was opened, no animal or participant data was used, and no code or deployment changed.
+
+## October 23 follow-up: observer note through narrow-phone review
+
+**Question:** does a manually entered observation survive the synthetic Stop-to-review path at a narrow phone width, and can the user reach Save afterward?
+
+**Check:** on the deployed Field Companion at 320 × 740 CSS pixels, opened the microphone-free synthetic rehearsal, added the “Movement” observation at 00:03 and ended the rehearsal. The app reported “Stopped · local only” and “Stopped by you”; the timeline and partial recap retained one note. Scrolling to the lower review area exposed the “Save session” control. The page heading still says “A rehearsal in listening” after stopping, but the state label and recap clearly report the stopped state.
+
+**Decision and limits:** no code change was indicated. This was desktop-Chromium viewport emulation with invented audio, not physical-phone, Safari, screen-reader or first-time-user testing. No microphone permission was requested, and no download, upload or real recording was made.
