@@ -3779,5 +3779,35 @@
     "url": "https://doi.org/10.1016/j.cub.2025.02.016",
     "checked": "2026-10-23",
     "origin": "Reviewed primary publisher summary and data/code availability statement only. Full methods, exact model configuration, analysis repository and Zenodo files were not inspected or run."
+  },
+  {
+    "id": 368,
+    "title": "Bat auditory cortex encodes upcoming vocal class and sequence complexity",
+    "description": "Babl, Röhrig and Hechavarría (2026), Communications Biology 9:699. Reviewed the full main article through PMC, including methods, results, discussion, data/code statement and article license; no data or code were acquired or run.",
+    "url": "https://doi.org/10.1038/s42003-026-10319-4",
+    "checked": "2026-10-23",
+    "origin": "Full main-text review through the PMC article record. Supplementary information and peer-review files were not reviewed.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13197462/",
+    "review_url_label": "Primary full-text article",
+    "rights": {
+      "license": "CC BY 4.0 for the article",
+      "scope": "Article text only; linked data, code and any excluded third-party material have separate terms.",
+      "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13197462/",
+      "conditions": "Use an original summary and link. No article text or figures are reproduced."
+    }
+  },
+  {
+    "id": 369,
+    "title": "GIN neural and acoustic data/code archive for bat vocal production",
+    "description": "The GIN DOI page describes a 5.8 GiB archive containing spike data and acoustic recordings, and declares CC BY-SA 4.0 at the repository level. The member list, code, data files and per-file terms were not inspected or acquired.",
+    "url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the public GIN DOI landing page and the article’s data/code availability statement only. No archive or repository files were downloaded, opened or executed.",
+    "rights": {
+      "license": "CC BY-SA 4.0 declared on the GIN repository record",
+      "scope": "Repository-level declaration for the 5.8 GiB archive; archive members, code, dependencies and any embedded notices were not reviewed.",
+      "evidence_url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
+      "conditions": "Keep metadata-only until the exact manifest and component terms are reviewed; no archive acquisition or code execution is approved by this record."
+    }
   }
 ]

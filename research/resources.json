@@ -5494,6 +5494,93 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bat-auditory-cortex-vocal-production-paper-2026",
+      "kind": "paper",
+      "title": "Bat auditory cortex encodes class and complexity of future vocalizations",
+      "url": "https://doi.org/10.1038/s42003-026-10319-4",
+      "version": "Communications Biology 9:699 (2026); version of record published 2026-05-22",
+      "source_ids": [
+        368
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Comparative evidence on neural activity around bat vocal production; not a phone-audio or receiver-response benchmark.",
+      "review_depth": "Reviewed the full main article through PMC, including methods, results, discussion, data/code availability and article license. Supplementary files and analysis code were not reviewed or run.",
+      "access": "Open-access article via publisher and PMC. No files were acquired.",
+      "decision": "Use as a source for distinguishing vocal-production signals from receiver comprehension and communicative meaning.",
+      "limitations": "Ten captive bats and 32 sessions; invasive head-fixed neural recording; the SVM methods do not establish animal- or session-held-out performance. No receiver response or meaning target.",
+      "attribution": "Babl, S.S., Röhrig, D. & Hechavarría, J.C. (2026), Communications Biology 9, 699; DOI 10.1038/s42003-026-10319-4.",
+      "rights": {
+        "license": "CC BY 4.0 for the article",
+        "scope": "Article text only; the linked dataset/code archive has a separate repository-level license declaration.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13197462/",
+        "conditions": "Publish an original summary and citation; do not reuse figures or assume rights to linked files.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bat-auditory-cortex-neural-data-2026",
+      "kind": "dataset",
+      "title": "Bat auditory-cortex spike and vocal recordings (GIN archive)",
+      "url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
+      "version": "GIN DOI record published 2026-04-24; public archive listed at 5.8 GiB",
+      "source_ids": [
+        369
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Paired neural and acoustic measurements supporting a bat vocal-production study.",
+      "review_depth": "Reviewed the public GIN DOI landing-page description, archive size and record-level license plus the article’s data statement. No manifest or archive member was opened.",
+      "access": "Public GIN DOI page; archive is listed at 5.8 GiB. No download was attempted.",
+      "decision": "Keep metadata-only as comparative neuroscience material; not admitted to the first audio/context benchmark or mobile app.",
+      "limitations": "The published study has ten bats and 32 sessions and uses invasive neural recording with specialized ultrasonic audio. The archive manifest, file-level content, code and exact reuse terms were not reviewed.",
+      "attribution": "Babl, Röhrig & Hechavarría (2026), G-Node Open Data, DOI 10.12751/g-node.44wmeq.",
+      "rights": {
+        "license": "CC BY-SA 4.0 declared at GIN repository level",
+        "scope": "Repository-level declaration for an archive described as containing neural spike and acoustic data; individual files, code, dependencies and embedded notices were not inspected.",
+        "evidence_url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
+        "conditions": "Before any use, inspect the exact archive manifest and component-specific terms, set a bounded storage plan and retain source attribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bat-auditory-cortex-analysis-code-2026",
+      "kind": "code",
+      "title": "Analysis code for bat auditory-cortex vocal production study",
+      "url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
+      "version": "GIN DOI record published 2026-04-24; repository file list not inspected",
+      "source_ids": [
+        369
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-23",
+      "task": "Author analysis and figure-generation code associated with the 2026 bat neurophysiology paper.",
+      "review_depth": "The article states the code is in the GIN repository. The repository landing page was reviewed, but code files, dependencies, license files and execution environment were not inspected or run.",
+      "access": "Public GIN DOI page; the specific code files and versions remain unidentified.",
+      "decision": "Do not execute or adopt until a specific bounded task, exact file manifest, component-level rights and dependency/safety review are completed.",
+      "limitations": "No code revision, runtime, environment or test suite was recorded in the reviewed metadata. The repository page declares CC BY-SA 4.0 at record level, which has not been verified file by file.",
+      "attribution": "Babl, Röhrig & Hechavarría (2026), G-Node Open Data, DOI 10.12751/g-node.44wmeq.",
+      "rights": {
+        "license": "CC BY-SA 4.0 declared at GIN repository level; file-level scope unverified",
+        "scope": "No individual script or dependency was inspected; the record may bundle code with data under one repository declaration.",
+        "evidence_url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
+        "conditions": "Verify exact script, dependencies and license notices before reuse or execution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
