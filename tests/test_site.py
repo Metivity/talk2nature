@@ -1737,5 +1737,42 @@ class SiteTests(unittest.TestCase):
                     self.assertRegex(m['video_id'],r'^[A-Za-z0-9_-]{11}$')
                     self.assertEqual(video['url'],'https://www.youtube.com/watch?v='+m['video_id'])
 
+    def test_inat_sounds_is_linked_as_a_restricted_species_classification_reference(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='inat-sounds-2024')
+        self.assertEqual(note['source_ids'],[347,348,349,350,351])
+        self.assertIn('not event-level meaning',note['finding'])
+        self.assertIn('prohibit distributing recordings',note['limitations'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('inat-sounds-')}
+        self.assertEqual(set(selected),{
+            'inat-sounds-paper-neurips-2024',
+            'inat-sounds-dataset-2024',
+            'inat-sounds-code-2024',
+            'inat-sounds-model-weights-2024',
+        })
+        dataset=selected['inat-sounds-dataset-2024']
+        self.assertEqual(dataset['acquisition'],'metadata_only')
+        self.assertEqual(dataset['rights']['research_use'],'conditional')
+        self.assertEqual(dataset['rights']['commercial_use'],'not_admitted')
+        self.assertEqual(dataset['rights']['redistribution'],'not_admitted')
+        self.assertEqual(selected['inat-sounds-code-2024']['rights']['license'],'MIT reported by the official GitHub repository for code.')
+        weights=selected['inat-sounds-model-weights-2024']
+        self.assertTrue(all(weights['rights'][field]=='unresolved' for field in ('research_use','commercial_use','redistribution')))
+        self.assertEqual(weights['acquisition'],'metadata_only')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'inat-sounds-2024'/'index.html').read_text()
+            self.assertIn('not event-level meaning',page)
+            self.assertIn('non-commercial research and education only',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn('/research/inat-sounds-2024/',(root/'sitemap.xml').read_text())
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('iNatSounds 2024 multi-taxon audio dataset',resource_page)
+            paths=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn('/research/inat-sounds-2024/',paths)
+
 
 if __name__=='__main__': unittest.main()

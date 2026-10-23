@@ -3571,5 +3571,54 @@
     "rights": {
       "repository": "No repository license was located at the pinned revision. Code reuse terms are unresolved. The Zenodo record license is separate and does not establish the GitHub code license."
     }
+  },
+  {
+    "id": 347,
+    "title": "The iNaturalist Sounds Dataset (NeurIPS 2024)",
+    "description": "Chasmai et al. introduce a large, weakly labeled species-audio collection spanning birds, mammals, insects, reptiles and amphibians; it is a classification and pretraining resource, not a communication-meaning dataset.",
+    "url": "https://doi.org/10.52202/079017-4213",
+    "checked": "2026-10-23",
+    "origin": "Targeted review of the official NeurIPS paper abstract, dataset construction, file-level evaluation, weak-label caveats, downstream evaluation and assets/consent checklist. The full paper was not exhaustively reviewed; no dataset or model result was reproduced.",
+    "rights": {
+      "article": "Article reuse terms were not independently verified. Talk2Nature links and cites the paper without reproducing its text, figures or tables."
+    }
+  },
+  {
+    "id": 348,
+    "title": "iNatSounds 2024 dataset README and terms (pinned repository revision)",
+    "description": "The official versioned README reports class counts, file-level labels, per-record license and location metadata, archive sizes, and terms limiting use to non-commercial research/education and prohibiting distribution of recordings.",
+    "url": "https://github.com/visipedia/inat_sounds/blob/bd52ecde5d9d7434f6167bbac823d152c3823ccd/2024/README.md",
+    "checked": "2026-10-23",
+    "origin": "Resolved the official repository main branch to commit bd52ecde5d9d7434f6167bbac823d152c3823ccd and reviewed its complete 2024 README, including class counts, annotation schema, location fields, usage terms and provider-listed file sizes. No audio, annotation archive or checksum was acquired or verified.",
+    "rights": {
+      "dataset": "The README states non-commercial research and educational use only and prohibits distribution of dataset recordings. It also provides per-record license identifiers; source-item licenses and the dataset-level terms must both be considered."
+    }
+  },
+  {
+    "id": 349,
+    "title": "iNaturalist guidance on media licensing",
+    "description": "Official guidance explains that uploaded audio belongs to contributors and that individual sounds may have different Creative Commons licenses or no license.",
+    "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169918-can-i-use-the-photos-and-sounds-that-are-posted-on-inaturalist-",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current iNaturalist help page on uploaded media ownership, default CC BY-NC licensing, alternate uploader choices and all-rights-reserved media. This source explains underlying media rights and does not replace the separate iNatSounds dataset terms."
+  },
+  {
+    "id": 350,
+    "title": "iNatSounds implementation repository (pinned revision)",
+    "description": "The authors’ repository links the paper, data and model-weight folder and provides training code. GitHub reports MIT for repository code; this does not license audio or model weights.",
+    "url": "https://github.com/cvl-umass/iNatSounds/tree/78ff2a5850d6c2b364dd36422085033b5a0fa750",
+    "checked": "2026-10-23",
+    "origin": "Resolved the official code repository main branch to commit 78ff2a5850d6c2b364dd36422085033b5a0fa750; reviewed its README links and training-command overview and checked GitHub API SPDX metadata (MIT). No source files or dependencies were downloaded, audited or run.",
+    "rights": {
+      "repository_code": "MIT is reported for repository code only. The data, pretrained weights and third-party dependencies have separate rights."
+    }
+  },
+  {
+    "id": 351,
+    "title": "iNatSounds pretrained-model folder linked by the authors",
+    "description": "The official implementation README links a Google Drive folder for released weights. The folder’s file inventory and model-specific terms were not reviewed.",
+    "url": "https://drive.google.com/drive/folders/1u8iqzP2WL2nkTMp9VZ5FCa3zveOrPj2X",
+    "checked": "2026-10-23",
+    "origin": "Followed the model-weights link from the official iNatSounds implementation README at source 350. The folder opened, but its contents, exact checkpoint versions, license, training provenance and usage conditions were not verified. No file was downloaded."
   }
 ]

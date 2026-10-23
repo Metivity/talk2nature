@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "paths": [
     {
       "id": "first-animal",
@@ -76,10 +76,11 @@
         "animal-spot-parrot-detection-2022",
         "coarse-soundscape",
         "pteroset-detection-benchmark-2026",
-        "cowrumia-bovine-audio-app-2026"
+        "cowrumia-bovine-audio-app-2026",
+        "inat-sounds-2024"
       ],
       "next_step": "Choose a rights-cleared, independently labeled task; pin every data and model component; and freeze animal/session/site holdouts before evaluating simple baselines.",
-      "gate": "The dog-bark paper predicts labels tied to induced stimuli; Barkopedia's reviewed context labels were initially inferred from video and its source recordings' rights remain unresolved; CowRumIA reuses its test partition in validation callbacks. Treat each as a methods comparator, not evidence of meaning or a ready training set. No Talk2Nature animal model has been trained or benchmarked; AutoResearch remains NOT READY."
+      "gate": "The dog-bark paper predicts labels tied to induced stimuli; Barkopedia's reviewed context labels were initially inferred from video and its source recordings' rights remain unresolved; CowRumIA reuses its test partition in validation callbacks. Treat each as a methods comparator, not evidence of meaning or a ready training set. No Talk2Nature animal model has been trained or benchmarked; AutoResearch remains NOT READY. iNatSounds is a weakly labeled file-level species-classification/pretraining reference, not a context or meaning set; its download terms restrict use to non-commercial research/education and prohibit audio redistribution, so it is not admitted to the commercial-capable Talk2Nature path."
     },
     {
       "id": "meaning",
