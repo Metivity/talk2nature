@@ -1859,7 +1859,7 @@ class SiteTests(unittest.TestCase):
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')
-        self.assertEqual(note['source_ids'],[363,364,365,366,367])
+        self.assertEqual(note['source_ids'],[363,364,365,366,367,372])
         self.assertIn('109,963 annotated songs',note['finding'])
         self.assertIn('do not supply independently observed interaction context',note['finding'])
         self.assertIn('2025 cultural-evolution analysis',note['limitations'])
@@ -1874,6 +1874,7 @@ class SiteTests(unittest.TestCase):
             'wytham-great-tit-culture-paper-2025',
         })
         dataset=selected['wytham-great-tit-song-dataset-osf']
+        self.assertEqual(dataset['source_ids'],[363,364,365,372])
         self.assertEqual(dataset['acquisition'],'metadata_only')
         self.assertIn('CC BY 4.0',dataset['rights']['license'])
         self.assertEqual(dataset['files'],[])

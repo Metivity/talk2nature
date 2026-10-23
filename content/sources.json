@@ -3762,10 +3762,10 @@
   {
     "id": 365,
     "title": "Wytham Great Tit Song Dataset, OSF record",
-    "description": "The dataset paper and authors’ site point to OSF DOI 10.17605/OSF.IO/N8AC9 as the complete dataset and metadata record. Its exact current file inventory and version were not reviewed.",
+    "description": "The dataset paper and authors’ site point to OSF DOI 10.17605/OSF.IO/N8AC9 as the complete dataset and metadata record. Its public JSON:API manifest was inspected on 2026-10-23; see the separate manifest snapshot for file sizes and provider-reported hashes.",
     "url": "https://osf.io/n8ac9/",
     "checked": "2026-10-23",
-    "origin": "Followed the dataset link from the primary paper and author documentation. Direct record retrieval was blocked in this review, so no manifest, file bytes, checksum or version metadata were inspected."
+    "origin": "Followed the dataset link from the primary paper and author documentation, then queried the public JSON:API node, record-level license and recursively listed osfstorage file manifest over verified TLS. No file bytes were retrieved; provider-reported hashes were not recomputed."
   },
   {
     "id": 366,
@@ -3844,5 +3844,13 @@
       "evidence_url": "https://huggingface.co/datasets/songbirdini/v33da_pp/tree/bb31f73e2191278dd4965af01502c42380cd597d",
       "conditions": "This is an upstream declaration, not independent legal clearance. Keep metadata-only until component provenance and intended-use terms are reviewed; this record admits no Talk2Nature download, training or redistribution."
     }
+  },
+  {
+    "id": 372,
+    "title": "Wytham Great Tit dataset public OSF JSON:API manifest",
+    "description": "Read-only JSON:API endpoint for the public OSF node and its osfstorage file tree. The 2026-10-23 metadata audit listed 23 files totaling 12,184,678,510 bytes and captured the OSF-reported CC BY 4.0 node license and file hashes; no file payloads or location values were retrieved.",
+    "url": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
+    "checked": "2026-10-23",
+    "origin": "Queried the OSF public JSON:API recursively over verified TLS. The associated snapshot is research/wytham_osf_manifest_2026-10-23.json; file hash values are provider metadata, not locally recomputed checksums."
   }
 ]
