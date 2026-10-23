@@ -2580,3 +2580,13 @@ The Performance report was last updated about four hours before inspection and c
 **Validation:** all 146 Python tests and 115 Node tests passed. The local noindex build produced 116 pages plus 404; the site checker passed 117 HTML files and 5,754 links. `git diff --check` passed. This is a local source change, not a deployment, independent reproduction or real-data validation.
 
 **Next decision:** apply this current-main validator to any future clean-source rehearsal, but do not admit a real manifest or run a model until the source rights, label provenance, independent reviewer and full grouping policy are resolved.
+
+## October 23 — WABAD candidate added to the research library
+
+**Finding:** the 2026 WABAD paper reports 5,047 minutes of audio and 91,931 species-level vocalization annotations from 1,192 bird species, 72 sites, 29 recording locations and 13 biomes. The latest Zenodo v4 record lists 21.3 GB. This is a promising scale and geographic-coverage reference for bird-call detection and site-held-out evaluation, but the reviewed description does not establish behavior, receiver response or call meaning.
+
+**Rights and limits:** the publisher abstract says the dataset is CC BY 4.0, while the current Zenodo v4 record says CC BY-NC 4.0. This remains unresolved. The full article methods, supporting metadata, archive contents, split, source-recording provenance and per-file terms were not inspected. The article and current dataset version are now separately documented in the source/resource catalog and a new source-linked research page. They remain metadata-only; no recording, annotation, code or model was acquired or run.
+
+**Decision:** consider WABAD only for a narrowly defined bird-detection task after the rights discrepancy, data schema, grouping structure and labels are reviewed by an independent bioacoustics specialist. Do not treat it as a communication benchmark or commercial-ready corpus. AutoResearch remains **NOT READY**.
+
+**Validation:** all 146 Python repository tests and 115 Node tests passed. The public-origin build produced 117 pages plus 404; the site checker validated 118 HTML pages and 5,919 links; `git diff --check` passed. The new note was inspected in a browser at desktop and 390 px mobile viewport widths. This is a verified release candidate, not yet a public deployment; no physical-phone check, archive analysis or independent reviewer check was performed.
