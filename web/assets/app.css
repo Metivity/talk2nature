@@ -49,7 +49,7 @@
 @media(max-width:620px){.app-update-notice{margin:10px 18px 0;padding:11px 14px;font-size:12px}}
 .station-retention-guidance{max-width:56ch;margin:0 0 2px;padding:6px 10px;border:1px solid #c4e8d62b;border-radius:10px;background:#ccece50a;color:#d1e3d8;font-size:12px;line-height:1.5}
 
-@media(max-width:360px){.app-hero h1{font-size:2.5rem;line-height:1.04;margin:16px 0}}
+@media(max-width:360px){.app-hero{padding-top:24px}.app-actions{margin-top:16px}.app-hero h1{font-size:2.5rem;line-height:1.04;margin:16px 0}}
 
 .app-scenarios>.scenario-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .app-more-tools-panel{margin-top:20px;overflow:hidden}
