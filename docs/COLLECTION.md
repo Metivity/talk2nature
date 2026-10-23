@@ -85,6 +85,12 @@ The three Edmond archives total **100,498,691,932 bytes** (about 100.5 GB decima
 
 Next acquisition order: selection-table/linkage metadata; a modest matched audio subset with a stated byte budget and privacy/location review; exact model artifact/license; frozen execution dependencies. Expand to other species only when they answer a defined question. A user-created parrot-app prototype has been located and statically reviewed; source and bundled-media rights and research-data access remain unresolved. No prototype assets were imported.
 
+### October 23, 2026 — pinned monk-parakeet selection-table inventory
+
+A read-only request to the recursive Git tree for the pinned GitHub commit `293b2c8d0c3b8e21a4eaa0511fe563207095765a` returned 756 selection-table paths: 317 dated 2020 (639,830 bytes total) and 439 dated 2021 (373,603 bytes total). The local 2020 annotation CSV has 808 populated, unique `annotation_ref` values. The pinned README says the 2020 Raven selection-table `Annotation` column links to those references, each selection appears twice for waveform/spectrogram views, and more than one selection can share a reference. This suggests a small metadata join audit may be possible without obtaining the 100.5 GB Edmond archives, but it must deduplicate view rows and preserve one-to-many annotation links.
+
+This is structural evidence only: no selection-table contents were fetched, no references were matched, and no recording coverage or behavioral-label reliability was established. The README's repository license does not itself settle data-file rights. Edmond v1 declares MIT at record level but requires acceptance of separate download terms; neither the exact GitHub-to-archive file identity nor privacy/location handling is resolved. No terms were accepted and no data was acquired in this check. Keep the source metadata-only; any Edmond retrieval still requires the documented rights/privacy review and explicit approval before accepting terms.
+
 ## Reproduce
 
 All commands below run from the repository root. Python 3.10+ standard library is sufficient for the collection tool.
