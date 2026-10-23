@@ -18,6 +18,8 @@ The main bottleneck is independent scientific and workflow validation. Current s
 
 **Oct 24 follow-up — zebra-finch page:** PR [#288](https://github.com/Metivity/talk2nature/pull/288) merged as `fd5e313`; Pages run [#40037459389](https://github.com/Metivity/talk2nature/actions/runs/40037459389) passed. A fresh verified-TLS check returned HTTP 200 and confirmed the page's title, description, `index,follow`, self-canonical and structured data; it appears in the 128-URL sitemap, and `robots.txt` names that sitemap. Search Console indexing for this specific page remains unverified. Technical publication does not make the dataset or benchmark ready; see the release receipt in `docs/STATUS.md`.
 
+**Oct 24 sitemap recheck:** Search Console accepted resubmission of the existing sitemap and now shows “Submitted Oct 24”; its “Last read” cell is blank, status remains “Couldn't fetch,” and discovered pages/videos remain zero. Independent normal-UA and Googlebot-UA TLS-verified requests return HTTP 200 with valid XML; 128 unique routes parse and `robots.txt` names the sitemap. Cause remains unresolved; see `docs/STATUS.md`.
+
 The development lead can prepare software, evidence reviews, test fixtures, adapters, release materials and tailored outreach drafts. Independent reviewers, carers and research organizations must actually agree and do their part; automation cannot supply that evidence. This board does not authorize messages or submissions.
 
 ## What we measure
