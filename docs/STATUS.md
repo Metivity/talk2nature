@@ -2640,3 +2640,9 @@ Reviewed the OpenWhistle bottlenose-dolphin preprint, its live Hugging Face pret
 Merged the public research note and narrow-phone workflow audit through [PR #219](https://github.com/Metivity/talk2nature/pull/219), squash commit [`1067346`](https://github.com/Metivity/talk2nature/commit/1067346bd1346c2e80754f2acb288e18beb132c2). Public checks [39897888036](https://github.com/Metivity/talk2nature/actions/runs/39897888036) and the manual Pages deployment [39898200367](https://github.com/Metivity/talk2nature/actions/runs/39898200367) completed successfully.
 
 Live verification on October 23: `/research/openwhistle-dolphin-benchmark/` returned HTTP 200 with its expected title, self-canonical and `index,follow`; `/sitemap.xml` returned 118 URLs including the note; and `/robots.txt` returned the sitemap location. This confirms publication and crawl configuration, not Google indexing, ranking or traffic. No dolphin data or model was acquired or run, and no scientific meaning claim is supported by the release.
+
+## October 23 follow-up — narrow-phone More tools disclosure
+
+Resolved the earlier inconclusive interaction check on the deployed Field Companion at a 320 × 740 CSS-pixel Chromium viewport. The disclosure expanded through its visible label and through keyboard input; Enter collapsed it and Space reopened it. The accessibility tree reported the collapsed/expanded state and exposed all four optional links when open. The page, document and body widths remained 320 pixels. The disclosure spans x=22–298 and each optional link x=41–279, so neither introduces horizontal overflow. The bottom app dock moves away on downward scroll and returns on upward scroll.
+
+No app change was indicated. This verifies browser-emulated layout and interaction only, not a physical phone, VoiceOver/TalkBack, or first-time-user comprehension. No microphone, recording, audio export or participant data was used.
