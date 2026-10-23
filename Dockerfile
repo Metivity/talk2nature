@@ -1,4 +1,4 @@
-FROM python:3.15-slim@sha256:044d5bd747976e21f8bc4d746c3479b19a84bb8ae6261b802acdd26b29036c93
+FROM python:3.14-slim@sha256:0514bc76712d64f8bb48adcb95b1ab0d88c69fee95d62fe4c18ee948bee9b1e1
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 T2N_HOSTED=1 PORT=8080
 WORKDIR /app
 RUN --mount=type=bind,source=.,target=/context python -c 'from pathlib import Path; p=Path("/context"); forbidden=[p/"data",p/"funding",p/"tmp",p/".git",p/"admin/tests",*p.rglob(".env*")]; assert not any(f.exists() for f in forbidden), [str(f) for f in forbidden if f.exists()]; print("Build context excludes private files")'
