@@ -4,7 +4,7 @@ Updated October 23, 2026. For researchers, research software engineers and prosp
 
 The current research decision is recorded in the [candidate run card](BENCHMARK_CANDIDATE_RUN_CARD.md): bat interaction-context prediction is the closest current ML candidate to a communication question, while CEB detection and parrot caller-identity remain separate tasks. The bat candidate is not ready for reproduction until data joins/groups and rights are verified and independent reviewers approve the design. AutoResearch remains **NOT READY**.
 
-**Latest maintainer check:** on October 23, a fresh public clone of [`main` at `76c4c768`](https://github.com/Metivity/talk2nature/commit/76c4c7687a83db3f057fd0b601b9019465f7f8bc) passed the synthetic examples, 153 Python and 115 Node tests, validation of 173 catalog resources, and local plus public-origin site checks. The Wytham page and sitemap were also checked. This does not count as an independent reproduction; dated checks are preserved in the [verification history](RESEARCHER_START_HISTORY.md), and current evidence and limits are in [project status](STATUS.md).
+**Latest maintainer check:** on October 23, a fresh clone of current public [`main` at `59f3443`](https://github.com/Metivity/talk2nature/commit/59f3443201ad082cafa3ca5ec6dfef32bc99e144) reproduced the pinned synthetic annotation/split outputs, including the documented split-file hash. After returning to `main`, the dyadic example reported 10 connected groups and all 154 Python and 115 Node tests passed. The historical commit's 51 Python and 79 Node tests also passed. This is maintainer-run synthetic software verification, not an independent reproduction or biological result; full dated details are in the [verification history](RESEARCHER_START_HISTORY.md) and [project status](STATUS.md).
 
 ## Choose one route
 
@@ -35,6 +35,18 @@ The two fixtures exercise **separate** tools. The annotation report is not conve
 | Generated split-file SHA-256 | `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4` | Checksum of the entire JSON output in this software revision and environment. |
 
 The default seed is `talk2nature-v1`. Repeating the splitter with unchanged input and seed should produce the same file. Record the commit if a future fixture changes. At the pinned release, the splitter groups declared individual IDs, sessions and exact source hashes transitively. Ten fixture groups are not a sample-size recommendation.
+
+### Current-main follow-up
+
+The command block above deliberately checks historical commit `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` so its expected output and checksum stay fixed. The stricter placeholder check and dyadic example below were added later; they are not available at that historical revision. After recording the pinned result, return to the current branch before continuing:
+
+```sh
+git switch main
+git pull --ff-only
+git rev-parse HEAD
+```
+
+Record the commit printed by `git rev-parse`. Run the multi-animal, dyadic and optional software checks below from that current-main checkout. If you only want to reproduce the exact historical baseline, you can stop after the pinned checks above.
 
 ### Multi-animal interactions
 
