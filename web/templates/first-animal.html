@@ -1,14 +1,14 @@
 <article class="article section">
 <a class="back-link" href="{{base}}/research/">← Research library</a>
 <p class="eyebrow">CHOOSING OUR FIRST STUDY</p>
-<h1>Many animals.<br><em>Two careful starts.</em></h1>
-<p class="lede">Talk2Nature is built for observations across species. The first model question and the first phone-based study need not use the same animal.</p>
+<h1>Many animals.<br><em>Different questions.</em></h1>
+<p class="lede">Talk2Nature is built for observations across species. A caller-attribution benchmark, a communication-adjacent context question and a phone-based feasibility study may each use a different animal.</p>
 
-<aside class="review-box"><strong>Both choices remain provisional.</strong><p>Existing evidence makes Egyptian fruit-bat interaction-context prediction our leading ML candidate. A separate, voluntary companion-animal cohort could start with budgerigars if household access and avian research support are available. Neither choice has passed the review, rights and protocol gates for new data collection or model training.</p></aside>
+<aside class="review-box"><strong>Three tracks; none is animal-language translation.</strong><p>V33DA is a strong technical candidate for caller attribution; Egyptian fruit-bat interaction-context prediction is the leading communication-adjacent behavior question; and budgerigars are a provisional phone-cohort candidate if household access and avian research support are available. None has passed every review, rights and protocol gate for a Talk2Nature model run or new data collection.</p></aside>
 
 <div class="animal-options">
 <section>
-<p class="eyebrow">DATA-LED ML CANDIDATE</p>
+<p class="eyebrow">COMMUNICATION-ADJACENT CONTEXT CANDIDATE</p>
 <h2>Egyptian fruit bats</h2>
 <p>A 2024 paper reports predicting video-coded interaction context from bat calls. It reports 35,074 vocalizations across 11 classes and 33.3% unweighted average recall for its best model. These are published results, not a Talk2Nature reproduction, and they do not show that bats understood a message.</p>
 <p>The data came from a specialized 250 kHz laboratory recording system, not ordinary phones. A metadata-only reconstruction now matches the paper's reported 35,074 filtered examples, but does not confirm the exact rows or folds. Keeping each file and every positive known participant together leaves one group with 95.6% of examples, so a defensible split needs specialist review and additional session/context metadata. We have not trained a model.</p>
@@ -23,6 +23,8 @@
 </section>
 </div>
 
+<section class="section paper-panel"><p class="eyebrow">SEPARATE TECHNICAL BENCHMARK</p><h2>Zebra finches: who called?</h2><p>V33DA reports 33,625 physically verified call events from 10 zebra finches. Its labels support caller attribution among visible birds, not behavior, receiver response or call meaning. A read-only inventory of its pinned 100-event code sample lists 334 files totaling 62,503,976 bytes; the sample-specific split and several metadata joins remain unverified.</p><p>This is the clearest candidate for a small caller-attribution methods exercise, provided independent avian and ML reviewers approve the estimand and grouping. No sample data or model has been acquired or run.</p><a href="{{base}}/research/v33da-caller-attribution-2026/">Read the V33DA dataset and sample audit →</a></section>
+
 <h2>Keep sound detection separate from communication</h2>
 <p>Large bird and multi-species archives can help test whether software detects sound events or recognizes annotated species and call types. Those labels do not tell us what an animal meant. For example, Central European Birds is a candidate for sound-event detection; it is not a behavior or receiver-response dataset. Dogs, cats, frogs and other animals remain welcome in the observation tools, without a claim that the app identifies every species.</p>
 <p><a href="{{base}}/research/central-european-birds-dataset-v1-1/">Read the Central European Birds dataset review →</a> · <a href="{{base}}/research/resources/">Browse the evidence and dataset catalog →</a></p>
@@ -34,6 +36,7 @@
 <h2>Read the evidence and its limits</h2>
 <ul class="readable-list">
 <li><a href="{{base}}/research/fruit-bat-context-ml-2024/">Egyptian fruit-bat context prediction: the reported result and unresolved joins</a></li>
+<li><a href="{{base}}/research/v33da-caller-attribution-2026/">V33DA zebra finches: caller attribution, not call meaning</a></li>
 <li><a href="{{base}}/research/budgerigar-starting-point/">Budgerigar contact calls and the available data</a></li>
 <li><a href="{{base}}/research/companion-parrot-name-use-2026/">2026 companion-parrot survey: name use and its evidence limits</a></li>
 <li><a href="{{base}}/research/wild-parrot-duet-structure-2026/">Wild yellow-naped amazon duets: sequence patterns, not decoded meaning</a></li>

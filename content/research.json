@@ -4220,5 +4220,60 @@
       "rights": "The dataset README limits use to non-commercial research/education and prohibits redistribution of recordings; underlying sounds retain contributor-selected licenses. The code repository reports MIT for code only. Model-weight and article reuse terms are unverified. No commercial permission was established.",
       "experiment": "No model was run, no baseline was reproduced, and no audio or annotation archive was acquired. This is a source review, not a Talk2Nature scientific result or benchmark-readiness decision."
     }
+  },
+  {
+    "slug": "v33da-caller-attribution-2026",
+    "title": "V33DA: a zebra-finch caller benchmark, not a translation model",
+    "seo_description": "V33DA tests who called among visible zebra finches. Its sample and split limits show why caller identity is not call meaning.",
+    "taxon": "Zebra finches",
+    "kind": "Multimodal caller-attribution dataset audit",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Dataset-card revision and code sample reviewed",
+    "source_ids": [
+      356,
+      357
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Pinned dataset-card, code and sample metadata reviewed; media uninspected",
+    "review_depth": "Reviewed the pinned V33DA dataset card, code/sample README, split-preparation script, training entry point and read-only Git-tree inventory. The inventory covers only data/v33da_sample/ at the pinned code revision. No Parquet, audio, accelerometer, video, calibration, executable code or model bytes were acquired or run. This is a maintainer metadata audit, not specialist review.",
+    "review_locator": "Pinned Hugging Face README: Task, Modalities, Ground-truth labels, Evaluation regimes and Limitations. Pinned GitHub README: Sample data and License. Read-only data/v33da_sample/ Git-tree inventory and included metadata.json/split_summary.json; exact path/size/Git-blob manifest linked from source 357.",
+    "finding": "V33DA is a carefully bounded caller-attribution task: given an already-detected zebra-finch vocalization and the birds visible at that moment, identify the bird that produced it. The pinned card reports 33,625 verified events from 10 birds across three experiments, with synchronized audio, video and pose; caller labels derive from on-body accelerometer vibration. A separate 100-event repository sample is described by its README. Talk2Nature's read-only tree inventory found 334 files totaling 62,503,976 bytes, including 100 path-matched audio, accelerometer and video files. This is a useful engineering benchmark candidate, not a communication-meaning result.",
+    "limitations": "Caller identity is not behavior, addressee, receiver response, intent or meaning. The full release comes from one aviary and recording geometry and excludes overlapping calls; 10 birds, not 33,625 events, are the independent animals. The reported generalization split holds out BP05, bundling bird, group, year/date and cage changes. Its included split_summary.json reports full-release counts, not a partition for the 100-event sample; the root README says the sample Parquet has 100 rows, which was not verified. Sample metadata lists an extra BP05 color without an event-count group, whose role is unclear. Path-name matching does not verify Parquet joins, timestamps or calibration. The manuscript is listed as under review, and no independent scientific or ML review has occurred.",
+    "lesson": "Use V33DA only if the first question is caller attribution. A future baseline should compare candidate-count chance with a simple candidate-aware model, exclude accelerometer/oracle labels and stable identity shortcuts, and keep complete physical birds and shared sessions out of the test training groups. Treat the experiment-held-out score as a bundled shift test. Do not call caller prediction a translation model.",
+    "next_review": "Ask an independent avian-bioacoustics reviewer and an ML/statistical-evaluation reviewer to assess candidate identity mapping, the BP05 color entry, sample-to-full-release joins, group boundaries and a proposed baseline. Before any intake, verify per-file provenance and attribution, then separately decide whether a bounded subset is useful. No data acquisition or model run is approved by this note.",
+    "expert_review": "Not independently reviewed by an avian, bioacoustics or ML/statistical-evaluation specialist.",
+    "reuse": {
+      "status": "Metadata-only original summary; not admitted to Talk2Nature training or the private database.",
+      "asset": "Pinned dataset-card text, repository documentation and a public Git-tree path/size/Git-blob inventory. No third-party media, Parquet, software or weights were acquired.",
+      "rights": "The dataset card and nested sample README declare CC BY 4.0; the code repository's MIT license applies to software. These are separate upstream declarations, not independent legal clearance. Review dependencies, any individual media terms and intended use before reuse.",
+      "experiment": "A later, separately approved experiment could compare a simple candidate-ranker against candidate-count chance on a reviewed unseen-bird split. The convenience sample is not a locked test, no baseline has been run, and no performance result is claimed."
+    },
+    "study_snapshot": [
+      [
+        "Question",
+        "Among the birds visible at an already-detected, isolated call, which individual produced it?"
+      ],
+      [
+        "Label source",
+        "Caller labels are derived from on-body accelerometer vibration; accelerometer data must not be a model input."
+      ],
+      [
+        "Full-release scale",
+        "33,625 events, 10 birds, 3 experiments, 16 recording days and about 74 hours as reported by the pinned card."
+      ],
+      [
+        "Repository sample inventory",
+        "100 audio WAVs, 100 accelerometer WAVs, 100 MP4 clips, 30 calibration files and 4 root files; 62,503,976 bytes total in pinned Git metadata."
+      ],
+      [
+        "Reported generalization split",
+        "Train: BP01 12,881 + BP02 8,610; validation: BP01 3,338 + BP02 2,967; test: BP05 5,829. This is the full-release split summary, not the sample's partition."
+      ],
+      [
+        "Review state",
+        "Metadata-only; no sample bytes downloaded, no code or model run, and no Talk2Nature benchmark result."
+      ]
+    ]
   }
 ]

@@ -143,6 +143,7 @@
       "decision": "Treat overlap separation as an upstream preprocessing candidate, then evaluate caller attribution and independently observed context as separate tasks. Preserve unknown and mixed-source cases.",
       "notes": [
         "biocppnet-source-separation-2021",
+        "v33da-caller-attribution-2026",
         "budgerigar-vocal-sociality-data",
         "parrot-data-feasibility",
         "parrotlet-vocal-babbling-development",

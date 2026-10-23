@@ -10,6 +10,8 @@ OpenWhistle is a strong new candidate for a **within-pod acoustic-structure repr
 
 Keep the tracks distinct. CEB is a useful bird sound-event detection and research-software exercise, subject to its group and rights checks; it is not the best dataset for a communication question. The monk-parakeet work is a caller-identity/convergence reproduction, not a meaning test. For the public phone-based observation experience, the separate provisional plan remains one parrot species (budgerigars if access and an avian researcher are available); none of these laboratory or archive datasets makes that cohort decision for us.
 
+V33DA is a separate candidate for caller attribution, with an explicit sample, leakage and review gate in the [V33DA run card](V33DA_SAMPLE_RUN_CARD.md). It does not replace the bat context-prediction question or make a communication-meaning claim.
+
 **Related high-scale resource, not a context candidate:** iNatSounds reports about 230,000 recordings across 5,569 species and is useful as a species-classification/pretraining reference. Its labels are weak and file-level, with no independently observed behavior or receiver response. The pinned dataset README limits use to non-commercial research/education and prohibits redistribution of recordings; source-media licenses vary. It is therefore not admitted to the shared commercial-capable Talk2Nature benchmark path. See [the source-linked assessment](https://metivity.github.io/talk2nature/research/inat-sounds-2024/); no iNatSounds audio or weights were acquired or run.
 
 ## Candidate A — CEB sound-event detection

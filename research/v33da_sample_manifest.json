@@ -1,0 +1,2410 @@
+{
+  "files": [
+    {
+      "bytes": 5025,
+      "component": "sample_root_file",
+      "git_blob_sha1": "54373063fbfa71de14da4aa40406f6750651f1ac",
+      "path": "data/v33da_sample/README.md",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/README.md"
+    },
+    {
+      "bytes": 45016,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "9fad42968c32472714942ad3c1a241d0359e96dd",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_10-53-38_336025_0840000_16533.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_10-53-38_336025_0840000_16533.wav"
+    },
+    {
+      "bytes": 48936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "c9440b71571cc0412ad014ed6e6fe1a93f2a115e",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_12-17-31_336025_1080000_18876.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_12-17-31_336025_1080000_18876.wav"
+    },
+    {
+      "bytes": 48936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "4f2e3114366af0cf5ff35d99a035de897dc3e196",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_13-27-26_336025_1280000_8116.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_13-27-26_336025_1280000_8116.wav"
+    },
+    {
+      "bytes": 33704,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "010741eda8754028b66a5887aed5b99d6fa85dbf",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_13-41-24_336025_1320000_18183.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_13-41-24_336025_1320000_18183.wav"
+    },
+    {
+      "bytes": 36040,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "0d383fc4a1795482227491335afb515c79955e2e",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_17-46-05_336025_2020000_350.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_17-46-05_336025_2020000_350.wav"
+    },
+    {
+      "bytes": 46200,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "740fb5432984593b577ab9d7dbb325510da7260d",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_19-44-55_336025_2360000_12381.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-07-31_19-44-55_336025_2360000_12381.wav"
+    },
+    {
+      "bytes": 132920,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "82c4c2f7ecb597e469b189a9d468ce0911eca87c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_07-51-53_798997_0320000_6627.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_07-51-53_798997_0320000_6627.wav"
+    },
+    {
+      "bytes": 45432,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "3d821d10742f16dba6a87535fcbfb33cd5c51faa",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_08-33-50_798997_0440000_123.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_08-33-50_798997_0440000_123.wav"
+    },
+    {
+      "bytes": 39160,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "fb840112d85b1a320b80ab213a095905f4ce210d",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_09-36-44_798997_0620000_9167.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_09-36-44_798997_0620000_9167.wav"
+    },
+    {
+      "bytes": 42680,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "a8a4ed6db016e051ae94ed0cc7fa577921d1954c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_10-25-40_798997_0760000_4412.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-01_10-25-40_798997_0760000_4412.wav"
+    },
+    {
+      "bytes": 40728,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "1ae2448bee2e53b8a621cc8c40bce998946366b5",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_07-44-53_339267_0300000_12987.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_07-44-53_339267_0300000_12987.wav"
+    },
+    {
+      "bytes": 104408,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "d899627d7f6ce970d924b071792e5365a12604aa",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_10-25-40_339267_0760000_5041.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_10-25-40_339267_0760000_5041.wav"
+    },
+    {
+      "bytes": 105560,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "2298c4d0d80bee98ce6992fcba87bade02adbb52",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_12-10-32_339267_1060000_1852.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_12-10-32_339267_1060000_1852.wav"
+    },
+    {
+      "bytes": 41896,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "f181d4bce78083319624e670230ddb07c35113f6",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_13-34-25_339267_1300000_13334.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_13-34-25_339267_1300000_13334.wav"
+    },
+    {
+      "bytes": 54792,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "425938f53aa8a84ff1c007ea93e57cc591d2fc6f",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_15-19-16_339267_1600000_10060.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_15-19-16_339267_1600000_10060.wav"
+    },
+    {
+      "bytes": 48936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b126b3edf2dbf29aa3dff8fa968bb4b109f59141",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_15-40-15_339267_1660000_19555.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_15-40-15_339267_1660000_19555.wav"
+    },
+    {
+      "bytes": 52840,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "75d81bd488373a930512c9c5e93f32c4c1bde29b",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_19-37-55_339267_2340000_5749.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-02_19-37-55_339267_2340000_5749.wav"
+    },
+    {
+      "bytes": 117688,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "e902003086b68a4aa78e4476b40163713af2f6ea",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-03_07-23-55_796988_0240000_19159.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-03_07-23-55_796988_0240000_19159.wav"
+    },
+    {
+      "bytes": 52456,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "935f98bc9a7e084e73ab9fdeb0290379ae8e9954",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-04_08-33-49_714275_0440000_5943.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-04_08-33-49_714275_0440000_5943.wav"
+    },
+    {
+      "bytes": 106360,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b109401980179a3616dae5df62be24a93325d38f",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-05_08-40-49_416952_0460000_3571.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-05_08-40-49_416952_0460000_3571.wav"
+    },
+    {
+      "bytes": 55176,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "afc3beafe07b5fbdce4bf2a6b3a90a54253ed94c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_14268.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_14268.wav"
+    },
+    {
+      "bytes": 51672,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "0e09316c865541348cc8bcff63511447c8393a50",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_1759.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_1759.wav"
+    },
+    {
+      "bytes": 62600,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "0a565220fd40bb91b9471cdb9c6f492a1572272e",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_06-55-58_024871_0160000_1712.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_06-55-58_024871_0160000_1712.wav"
+    },
+    {
+      "bytes": 40744,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b255c79fe23f1ce8dde909eb6501674392bc7f8c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_09-29-45_024871_0600000_1508.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_09-29-45_024871_0600000_1508.wav"
+    },
+    {
+      "bytes": 33704,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "4f5e9bea40291069ff6c127904c5c510be0e46c4",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_09-57-43_024871_0680000_3096.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_09-57-43_024871_0680000_3096.wav"
+    },
+    {
+      "bytes": 49704,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "02e79e4c87ede318ee9cfba23c06ea0ae5d0d213",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_10-04-42_024871_0700000_5002.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-06_10-04-42_024871_0700000_5002.wav"
+    },
+    {
+      "bytes": 45032,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "522beecbb1b75abb6ff7a0cad8bbc7012d7a71a7",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-07_08-54-48_584350_0500000_18795.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-07_08-54-48_584350_0500000_18795.wav"
+    },
+    {
+      "bytes": 43064,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "4c3bd0728d2d348e797cc8b909594ec866604140",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-07_09-22-45_584350_0580000_1457.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-07_09-22-45_584350_0580000_1457.wav"
+    },
+    {
+      "bytes": 48536,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "656e5e5848685d999f7b6023dd076b90ef629055",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-07_09-36-44_584350_0620000_8941.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-07_09-36-44_584350_0620000_8941.wav"
+    },
+    {
+      "bytes": 97752,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "ef0018154fb558d140b2979c63c9772a67b845fa",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_12-38-30_377038_1140000_1954.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_12-38-30_377038_1140000_1954.wav"
+    },
+    {
+      "bytes": 29016,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "c848f8e621357186442e166c66aa120f678037d3",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_14-16-22_377038_1420000_1456.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_14-16-22_377038_1420000_1456.wav"
+    },
+    {
+      "bytes": 52440,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "81e2aa3e91668898f6a8174092570fc579075c74",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_17-18-07_377038_1940000_15992.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_17-18-07_377038_1940000_15992.wav"
+    },
+    {
+      "bytes": 46200,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "728023523813aad1db402f9c4fe9989243193f8b",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_17-25-06_377038_1960000_14215.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-08_17-25-06_377038_1960000_14215.wav"
+    },
+    {
+      "bytes": 32536,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "5a8acf197e557da3c9c4d369a545c855eee0fa6e",
+      "path": "data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-09_10-11-42_504687_0720000_16745.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP01/BP_2021-08-09_10-11-42_504687_0720000_16745.wav"
+    },
+    {
+      "bytes": 38760,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "1036ae0b6a132a2ec152eeb9f917364567c0e17b",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_06-14-02_430286_0040000_10591.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_06-14-02_430286_0040000_10591.wav"
+    },
+    {
+      "bytes": 183204,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "70f035db4d39c4ae41ae6057dba171e17cd875e6",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_08-19-51_430286_0400000_13435.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_08-19-51_430286_0400000_13435.wav"
+    },
+    {
+      "bytes": 49608,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "4df63081a3e9007c30ce6de418c64804d10e8331",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_09-43-45_430286_0640000_6312.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_09-43-45_430286_0640000_6312.wav"
+    },
+    {
+      "bytes": 25284,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "8f81810e0f748263b2e56b9908582d54ec788dd8",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_10-04-43_430286_0700000_8672.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_10-04-43_430286_0700000_8672.wav"
+    },
+    {
+      "bytes": 47556,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b05939c00a269fdd9877dfdbcfd3937dfe383e5a",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_10-39-40_430286_0800000_14286.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_10-39-40_430286_0800000_14286.wav"
+    },
+    {
+      "bytes": 44628,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "7cfa659d88ea82e90dc2a5563de264eb2ce8545a",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_11-28-36_430286_0940000_4753.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_11-28-36_430286_0940000_4753.wav"
+    },
+    {
+      "bytes": 68352,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b9cb3ccdd7d11faca33bef3b53cd72aaf5f7f0d1",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_14-51-19_430286_1520000_15444.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_14-51-19_430286_1520000_15444.wav"
+    },
+    {
+      "bytes": 100584,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "70f51ecb09a5ca910da870d705ef0039945af222",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_15-54-14_430286_1700000_13934.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_15-54-14_430286_1700000_13934.wav"
+    },
+    {
+      "bytes": 31152,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "c2fad18f227f3b22bce54f7bfc56258164f71bb7",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_16-01-14_430286_1720000_944.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_16-01-14_430286_1720000_944.wav"
+    },
+    {
+      "bytes": 107904,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "00b3e2552bb345e25737c4b6442545b19d1c1bfe",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_16-22-12_430286_1780000_788.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_16-22-12_430286_1780000_788.wav"
+    },
+    {
+      "bytes": 39936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "f61f6919c57aaac17ec010ad5c8f2faed7c700af",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_17-18-07_430286_1940000_12771.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_17-18-07_430286_1940000_12771.wav"
+    },
+    {
+      "bytes": 48432,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "9660bcf04dbe3997483c4d18ea9e7a6fcbc6cac0",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_18-42-01_430286_2180000_9292.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_18-42-01_430286_2180000_9292.wav"
+    },
+    {
+      "bytes": 32328,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "d7296fba6eac8e0e75f67ec8499f0193b300a8eb",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_19-02-59_430286_2240000_8416.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-24_19-02-59_430286_2240000_8416.wav"
+    },
+    {
+      "bytes": 32028,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "9bf104308f774b6a7ea1195f31a2375df6e9cd18",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_06-21-01_024712_0060000_18492.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_06-21-01_024712_0060000_18492.wav"
+    },
+    {
+      "bytes": 26460,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "9709bcbf117fc041b0aac1858243303af00426ca",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_07-30-55_024712_0260000_321.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_07-30-55_024712_0260000_321.wav"
+    },
+    {
+      "bytes": 24996,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "2b0f25b2e5602c24b9af5ad660809fb2d080d966",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_07-37-55_024712_0280000_12933.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_07-37-55_024712_0280000_12933.wav"
+    },
+    {
+      "bytes": 19140,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "6569a95fc92b5572d21926eac5167230e437a739",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_08-33-50_024712_0440000_4358.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_08-33-50_024712_0440000_4358.wav"
+    },
+    {
+      "bytes": 69528,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "c815bd40673504f7eb2cdda67389d8468ad99797",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_09-01-48_024712_0520000_3211.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_09-01-48_024712_0520000_3211.wav"
+    },
+    {
+      "bytes": 41400,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "97a6130ae451f3e1fd5bf2ea1fb035657f847170",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_10-39-40_024712_0800000_2227.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_10-39-40_024712_0800000_2227.wav"
+    },
+    {
+      "bytes": 54588,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "69913b13532a1bb20f6afc4b27562fb9a500301a",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_11-00-38_024712_0860000_3958.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_11-00-38_024712_0860000_3958.wav"
+    },
+    {
+      "bytes": 52248,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b5010eff3cd5ffb9dd2ca41b0e0fa616877a962f",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_11-49-34_024712_1000000_3978.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_11-49-34_024712_1000000_3978.wav"
+    },
+    {
+      "bytes": 42576,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "5ea669b966b77a87b5fef4c72bcff4c81a6b635b",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_12-24-32_024712_1100000_5617.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_12-24-32_024712_1100000_5617.wav"
+    },
+    {
+      "bytes": 55764,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "a1192b16804c9ae228e5eee6cca118f552afb512",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_13-06-28_024712_1220000_16321.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_13-06-28_024712_1220000_16321.wav"
+    },
+    {
+      "bytes": 19140,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "63c76cdcd9d3ed9a71bd94a4e4c4bfb34d089a31",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_13-13-28_024712_1240000_15218.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_13-13-28_024712_1240000_15218.wav"
+    },
+    {
+      "bytes": 167964,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "6001d2201300b750ad827766bd53076c0c763443",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_17-46-05_024712_2020000_1952.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_17-46-05_024712_2020000_1952.wav"
+    },
+    {
+      "bytes": 17964,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "aa4246100030bbc7bfe1cb79d82a48feeb70d1ec",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_18-28-02_024712_2140000_14850.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-25_18-28-02_024712_2140000_14850.wav"
+    },
+    {
+      "bytes": 161820,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "12763221cae2262cb365ac2addfe12c192f973c2",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_06-00-02_062743_0000000_9730.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_06-00-02_062743_0000000_9730.wav"
+    },
+    {
+      "bytes": 19140,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "5739ec1d587a6f01040a38d2f33ff85d9e5b0f36",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_06-35-00_062743_0100000_8319.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_06-35-00_062743_0100000_8319.wav"
+    },
+    {
+      "bytes": 48444,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "8273909871a7bf9c46b3edeb2e410f4985db2145",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_07-37-54_062743_0280000_8076.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_07-37-54_062743_0280000_8076.wav"
+    },
+    {
+      "bytes": 34080,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "1fdd55024f179434c2b495ded27b548720bd3ce4",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_08-54-48_062743_0500000_8831.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_08-54-48_062743_0500000_8831.wav"
+    },
+    {
+      "bytes": 40812,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "4c77da53513e49ee89d566b1cb8fc5a41808dddc",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_09-29-45_062743_0600000_1851.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_09-29-45_062743_0600000_1851.wav"
+    },
+    {
+      "bytes": 51648,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "cb548d9c5dbcf2af27d21ccd8e4e17bcdfb2fb18",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_09-50-44_062743_0660000_402.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_09-50-44_062743_0660000_402.wav"
+    },
+    {
+      "bytes": 39936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "77d0ee619bcf06dac4b9f8e3b4853257ae4d78bc",
+      "path": "data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_12-03-33_062743_1040000_16962.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP02/BP_2022-05-26_12-03-33_062743_1040000_16962.wav"
+    },
+    {
+      "bytes": 46200,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "cf3a2f980ad64dd912e2c13ddfda3d19c3a8f486",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_08-12-51_528576_0380000_19258.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_08-12-51_528576_0380000_19258.wav"
+    },
+    {
+      "bytes": 56344,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "e7d7471f17410ca43fa7170384d938d2cc26ddf3",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_08-47-49_528576_0480000_12960.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_08-47-49_528576_0480000_12960.wav"
+    },
+    {
+      "bytes": 105176,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "13050755f379205610a402a9fd30335505c6d551",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_09-01-48_528576_0520000_18070.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_09-01-48_528576_0520000_18070.wav"
+    },
+    {
+      "bytes": 31352,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "aa934de2fdd576c2aa23c32074a2ebcbba252070",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_09-43-44_528576_0640000_19470.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_09-43-44_528576_0640000_19470.wav"
+    },
+    {
+      "bytes": 50888,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "5168ce184ac876a1f5a85902a0703652048ff68a",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_12-52-29_528576_1180000_18258.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_12-52-29_528576_1180000_18258.wav"
+    },
+    {
+      "bytes": 230968,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "65c9759943d0f6453e017341e2a2f4a57e68fd22",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_13-48-24_528576_1340000_6790.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_13-48-24_528576_1340000_6790.wav"
+    },
+    {
+      "bytes": 50504,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "637ddbf8ae2ecdd6579e3a054ede6d2286ab4871",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_14-16-22_528576_1420000_11392.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_14-16-22_528576_1420000_11392.wav"
+    },
+    {
+      "bytes": 50888,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "f0b1d2810a871748e20a732ce97dec36b3e867ab",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_15-47-14_528576_1680000_3311.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_15-47-14_528576_1680000_3311.wav"
+    },
+    {
+      "bytes": 48936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "f9d5807aa13aa7290ad8813e21800b24defcbebf",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_16-01-13_528576_1720000_226.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_16-01-13_528576_1720000_226.wav"
+    },
+    {
+      "bytes": 48920,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "56b9765892b80d92fd49afc169f9e1a749f855d7",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_17-39-05_528576_2000000_6359.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_17-39-05_528576_2000000_6359.wav"
+    },
+    {
+      "bytes": 29400,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "dcfab98cbaa00ddb12991ef04731d4cd127b12e2",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_17137.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_17137.wav"
+    },
+    {
+      "bytes": 52840,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "57f0f747bbfcf27d4517ae404c43a3021ccb62ee",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_1764.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_1764.wav"
+    },
+    {
+      "bytes": 94632,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "ea9c08b85f5a20b891b7ccea7936d72b703b346c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_08-26-51_520826_0420000_3241.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_08-26-51_520826_0420000_3241.wav"
+    },
+    {
+      "bytes": 42296,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "a31f5326c5d41828b05e594280513ff2f5261198",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_10-53-39_520826_0840000_4527.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_10-53-39_520826_0840000_4527.wav"
+    },
+    {
+      "bytes": 66904,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "d8e64c59f1e156bf6db87661172a1f35509766d9",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_11-49-34_520826_1000000_19607.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_11-49-34_520826_1000000_19607.wav"
+    },
+    {
+      "bytes": 52440,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "19fe79c7e042a70ec6cd834669720fc42e1938ea",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_14-58-19_520826_1540000_10668.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_14-58-19_520826_1540000_10668.wav"
+    },
+    {
+      "bytes": 48552,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "9f57784c392a2482d59b310a63735ea65fd966f9",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_15-19-17_520826_1600000_18262.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_15-19-17_520826_1600000_18262.wav"
+    },
+    {
+      "bytes": 39944,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "85c34eff65370f4e8490c8176eda55505849e523",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_17-39-06_520826_2000000_4394.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_17-39-06_520826_2000000_4394.wav"
+    },
+    {
+      "bytes": 35256,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "c1d33f4db53ac9545ffb33cbc9cea2179fc7034d",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_18-14-03_520826_2100000_5381.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-11_18-14-03_520826_2100000_5381.wav"
+    },
+    {
+      "bytes": 23928,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "3c19f2b246e46a2617d8547d39a944a4f1f8fee1",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_06-41-59_935957_0120000_18609.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_06-41-59_935957_0120000_18609.wav"
+    },
+    {
+      "bytes": 37208,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "ac82d8307024b094b10e2be2a0908101398a1452",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_06-48-59_935957_0140000_497.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_06-48-59_935957_0140000_497.wav"
+    },
+    {
+      "bytes": 52840,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "b0985a9134d6c54ac718c51a2e7b813380724a2c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_07-23-56_935957_0240000_17142.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_07-23-56_935957_0240000_17142.wav"
+    },
+    {
+      "bytes": 46984,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "352908fc9d1ad6ccdf02d4af6d68e88950966be2",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_09-57-43_935957_0680000_17190.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_09-57-43_935957_0680000_17190.wav"
+    },
+    {
+      "bytes": 65736,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "f713fc88f51cafcc5dcc24997da20af588f1861a",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_11-00-38_935957_0860000_10541.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_11-00-38_935957_0860000_10541.wav"
+    },
+    {
+      "bytes": 43848,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "0cb5d35883aacf36b70734f79ca2dc24aaada0dc",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_11-28-36_935957_0940000_2190.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_11-28-36_935957_0940000_2190.wav"
+    },
+    {
+      "bytes": 34088,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "bad5a34b436177d6178479542a528519f393770c",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_12-31-31_935957_1120000_19496.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_12-31-31_935957_1120000_19496.wav"
+    },
+    {
+      "bytes": 48920,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "0c8ec2e0a461bf824ecc689b7f40ebecad4c2507",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_13-41-25_935957_1320000_7923.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_13-41-25_935957_1320000_7923.wav"
+    },
+    {
+      "bytes": 98920,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "5425c1ca479e5f54a9e332726a9ba773dc672c51",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_14-02-24_935957_1380000_14287.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_14-02-24_935957_1380000_14287.wav"
+    },
+    {
+      "bytes": 231352,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "a6e1b5943016a4561b4a00b6b3805d20fa912f5e",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_15-19-17_935957_1600000_1790.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_15-19-17_935957_1600000_1790.wav"
+    },
+    {
+      "bytes": 25496,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "639702ae52777882772a8382d67fd78f5f69b80e",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_15-26-17_935957_1620000_2623.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_15-26-17_935957_1620000_2623.wav"
+    },
+    {
+      "bytes": 30568,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "12e420aa326e311d601303a559f5967cdf4bc586",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_16-15-13_935957_1760000_8511.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_16-15-13_935957_1760000_8511.wav"
+    },
+    {
+      "bytes": 48936,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "92d328843299760643f031f45449a5ca602ceeea",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_17-18-08_935957_1940000_16191.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_17-18-08_935957_1940000_16191.wav"
+    },
+    {
+      "bytes": 49320,
+      "component": "accelerometer_oracle",
+      "git_blob_sha1": "bd3709373722a7d432d4a06447116dcf83411fe9",
+      "path": "data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_17-25-07_935957_1960000_15642.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/accelerometer/juvExpBP05/BP_2023-07-12_17-25-07_935957_1960000_15642.wav"
+    },
+    {
+      "bytes": 56252,
+      "component": "microphone_audio",
+      "git_blob_sha1": "afe6b6626ace57bbaf1e8f88a4037ed22c00eb22",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_10-53-38_336025_0840000_16533.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_10-53-38_336025_0840000_16533.wav"
+    },
+    {
+      "bytes": 61152,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f028f83cba9db816d34228d0ae13c33881438028",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_12-17-31_336025_1080000_18876.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_12-17-31_336025_1080000_18876.wav"
+    },
+    {
+      "bytes": 61152,
+      "component": "microphone_audio",
+      "git_blob_sha1": "10994f097e6f98d1a27cde9af66b4afbfd519b3e",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_13-27-26_336025_1280000_8116.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_13-27-26_336025_1280000_8116.wav"
+    },
+    {
+      "bytes": 42112,
+      "component": "microphone_audio",
+      "git_blob_sha1": "68ac406818c396fe2e362a1e076dc70e0d06c37e",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_13-41-24_336025_1320000_18183.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_13-41-24_336025_1320000_18183.wav"
+    },
+    {
+      "bytes": 45032,
+      "component": "microphone_audio",
+      "git_blob_sha1": "05452f1d3e648a1d0d86e1008e9b5fcca8b5825c",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_17-46-05_336025_2020000_350.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_17-46-05_336025_2020000_350.wav"
+    },
+    {
+      "bytes": 57732,
+      "component": "microphone_audio",
+      "git_blob_sha1": "3396a5a6b03ebe6709ec8f7996e8cabce7b76304",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_19-44-55_336025_2360000_12381.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-07-31_19-44-55_336025_2360000_12381.wav"
+    },
+    {
+      "bytes": 166132,
+      "component": "microphone_audio",
+      "git_blob_sha1": "06ef5ffdfaf807f74a596667e133fe211eb57f39",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_07-51-53_798997_0320000_6627.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_07-51-53_798997_0320000_6627.wav"
+    },
+    {
+      "bytes": 56772,
+      "component": "microphone_audio",
+      "git_blob_sha1": "6300fe87dc4930ed6ab5be937b92d8a78e0f1b95",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_08-33-50_798997_0440000_123.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_08-33-50_798997_0440000_123.wav"
+    },
+    {
+      "bytes": 48932,
+      "component": "microphone_audio",
+      "git_blob_sha1": "047c0c29ab9cdc30d99c10fd451fe641589181fb",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_09-36-44_798997_0620000_9167.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_09-36-44_798997_0620000_9167.wav"
+    },
+    {
+      "bytes": 53332,
+      "component": "microphone_audio",
+      "git_blob_sha1": "29e5c56d4c53a17307c5128b6e90a0005e14e1ef",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_10-25-40_798997_0760000_4412.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-01_10-25-40_798997_0760000_4412.wav"
+    },
+    {
+      "bytes": 50892,
+      "component": "microphone_audio",
+      "git_blob_sha1": "28fee47ae576c386080badf7ab2766e0f7e55688",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_07-44-53_339267_0300000_12987.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_07-44-53_339267_0300000_12987.wav"
+    },
+    {
+      "bytes": 130492,
+      "component": "microphone_audio",
+      "git_blob_sha1": "efd2cdf9b9c751a69c6de9b1da310365ceb711bf",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_10-25-40_339267_0760000_5041.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_10-25-40_339267_0760000_5041.wav"
+    },
+    {
+      "bytes": 131932,
+      "component": "microphone_audio",
+      "git_blob_sha1": "6f1db4b69882f601091a16ed63c62bb49b8e03e9",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_12-10-32_339267_1060000_1852.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_12-10-32_339267_1060000_1852.wav"
+    },
+    {
+      "bytes": 52352,
+      "component": "microphone_audio",
+      "git_blob_sha1": "2b76ec8b7749558f018766cf1949a650548bc05a",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_13-34-25_339267_1300000_13334.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_13-34-25_339267_1300000_13334.wav"
+    },
+    {
+      "bytes": 68472,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f510a25ca01200621c83fd77e4ce9dafec414a20",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_15-19-16_339267_1600000_10060.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_15-19-16_339267_1600000_10060.wav"
+    },
+    {
+      "bytes": 61152,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f6099560f500b27ba522724b5373b2290f2087f7",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_15-40-15_339267_1660000_19555.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_15-40-15_339267_1660000_19555.wav"
+    },
+    {
+      "bytes": 66032,
+      "component": "microphone_audio",
+      "git_blob_sha1": "cb8089e9426e55974242599926752572a9f876f0",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_19-37-55_339267_2340000_5749.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-02_19-37-55_339267_2340000_5749.wav"
+    },
+    {
+      "bytes": 147092,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f0803339f9644904fed803067d1b6b60fe3e7c80",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-03_07-23-55_796988_0240000_19159.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-03_07-23-55_796988_0240000_19159.wav"
+    },
+    {
+      "bytes": 65552,
+      "component": "microphone_audio",
+      "git_blob_sha1": "75f6f1763b115c9bb873ca1608e6af70d0583434",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-04_08-33-49_714275_0440000_5943.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-04_08-33-49_714275_0440000_5943.wav"
+    },
+    {
+      "bytes": 132932,
+      "component": "microphone_audio",
+      "git_blob_sha1": "1d0a070c505d65146225b08ce9c3922612fc53fd",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-05_08-40-49_416952_0460000_3571.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-05_08-40-49_416952_0460000_3571.wav"
+    },
+    {
+      "bytes": 68952,
+      "component": "microphone_audio",
+      "git_blob_sha1": "db959ad230f4de063af0bd071c6a746a43bb5cdb",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_14268.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_14268.wav"
+    },
+    {
+      "bytes": 64572,
+      "component": "microphone_audio",
+      "git_blob_sha1": "9ca41f433870c4e19bde8b59b7c1e2fe3db3e078",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_1759.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000_1759.wav"
+    },
+    {
+      "bytes": 78232,
+      "component": "microphone_audio",
+      "git_blob_sha1": "e1c3e85c468cd4671a10cd15c08a85b5d858a290",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_06-55-58_024871_0160000_1712.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_06-55-58_024871_0160000_1712.wav"
+    },
+    {
+      "bytes": 50912,
+      "component": "microphone_audio",
+      "git_blob_sha1": "179831c7a4fbab7ef3675dfaaa5886ec1058da17",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_09-29-45_024871_0600000_1508.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_09-29-45_024871_0600000_1508.wav"
+    },
+    {
+      "bytes": 42112,
+      "component": "microphone_audio",
+      "git_blob_sha1": "9b7b65e3bef076ddfeeff466ef655eea0d6ce508",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_09-57-43_024871_0680000_3096.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_09-57-43_024871_0680000_3096.wav"
+    },
+    {
+      "bytes": 62112,
+      "component": "microphone_audio",
+      "git_blob_sha1": "5793f9118d468a30ed5c94480accd32ed95d805d",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_10-04-42_024871_0700000_5002.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-06_10-04-42_024871_0700000_5002.wav"
+    },
+    {
+      "bytes": 56272,
+      "component": "microphone_audio",
+      "git_blob_sha1": "62468a480672fc02aab9b48d6c9c8c30e903ba5a",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-07_08-54-48_584350_0500000_18795.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-07_08-54-48_584350_0500000_18795.wav"
+    },
+    {
+      "bytes": 53812,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f06408685a625978e20ad325b65faa4c66af62ed",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-07_09-22-45_584350_0580000_1457.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-07_09-22-45_584350_0580000_1457.wav"
+    },
+    {
+      "bytes": 60652,
+      "component": "microphone_audio",
+      "git_blob_sha1": "91557d20c8365a1e9779ef192e029437495baf2a",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-07_09-36-44_584350_0620000_8941.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-07_09-36-44_584350_0620000_8941.wav"
+    },
+    {
+      "bytes": 122172,
+      "component": "microphone_audio",
+      "git_blob_sha1": "bc7269622545975fb7b6aac2946d9b2c8620f5db",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_12-38-30_377038_1140000_1954.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_12-38-30_377038_1140000_1954.wav"
+    },
+    {
+      "bytes": 36252,
+      "component": "microphone_audio",
+      "git_blob_sha1": "c0511ccfe53cd3b348d3c0f10b351250b50657e6",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_14-16-22_377038_1420000_1456.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_14-16-22_377038_1420000_1456.wav"
+    },
+    {
+      "bytes": 65532,
+      "component": "microphone_audio",
+      "git_blob_sha1": "074487b8a885f7994b8ad0220b93ca0b0b750908",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_17-18-07_377038_1940000_15992.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_17-18-07_377038_1940000_15992.wav"
+    },
+    {
+      "bytes": 57732,
+      "component": "microphone_audio",
+      "git_blob_sha1": "8db9caec04695ba5f5a8a71246564259b3f9ce44",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_17-25-06_377038_1960000_14215.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-08_17-25-06_377038_1960000_14215.wav"
+    },
+    {
+      "bytes": 40652,
+      "component": "microphone_audio",
+      "git_blob_sha1": "537c802571864131c67857ddd5458ee70ff6f200",
+      "path": "data/v33da_sample/audio/juvExpBP01/BP_2021-08-09_10-11-42_504687_0720000_16745.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP01/BP_2021-08-09_10-11-42_504687_0720000_16745.wav"
+    },
+    {
+      "bytes": 64552,
+      "component": "microphone_audio",
+      "git_blob_sha1": "dbadb667a9b9b8e2735847e1c9279240b5fc3f70",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_06-14-02_430286_0040000_10591.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_06-14-02_430286_0040000_10591.wav"
+    },
+    {
+      "bytes": 305292,
+      "component": "microphone_audio",
+      "git_blob_sha1": "971d77b73d6d7412f97bda693a233b35befd5c94",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_08-19-51_430286_0400000_13435.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_08-19-51_430286_0400000_13435.wav"
+    },
+    {
+      "bytes": 82632,
+      "component": "microphone_audio",
+      "git_blob_sha1": "6d675ebe4d9f358232677fc05feec6d202a5d78e",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_09-43-45_430286_0640000_6312.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_09-43-45_430286_0640000_6312.wav"
+    },
+    {
+      "bytes": 42092,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f3517f3dd0cf5c1e825a9f91d29f730681d72e54",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_10-04-43_430286_0700000_8672.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_10-04-43_430286_0700000_8672.wav"
+    },
+    {
+      "bytes": 79212,
+      "component": "microphone_audio",
+      "git_blob_sha1": "8b783422f2b347fae480fba87cee7350dae2c944",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_10-39-40_430286_0800000_14286.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_10-39-40_430286_0800000_14286.wav"
+    },
+    {
+      "bytes": 74332,
+      "component": "microphone_audio",
+      "git_blob_sha1": "c0c29ff26454a484040ec28be5f4213d2e1507e4",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_11-28-36_430286_0940000_4753.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_11-28-36_430286_0940000_4753.wav"
+    },
+    {
+      "bytes": 113872,
+      "component": "microphone_audio",
+      "git_blob_sha1": "c875ad87eb06975fe860f23c05a4b66c52f00f14",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_14-51-19_430286_1520000_15444.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_14-51-19_430286_1520000_15444.wav"
+    },
+    {
+      "bytes": 167592,
+      "component": "microphone_audio",
+      "git_blob_sha1": "02b05fe7d2ef52cc9138c9a9787c8f42876ce616",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_15-54-14_430286_1700000_13934.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_15-54-14_430286_1700000_13934.wav"
+    },
+    {
+      "bytes": 51872,
+      "component": "microphone_audio",
+      "git_blob_sha1": "23752976ba9f77ab6e139870859ec23e33e887e1",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_16-01-14_430286_1720000_944.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_16-01-14_430286_1720000_944.wav"
+    },
+    {
+      "bytes": 179792,
+      "component": "microphone_audio",
+      "git_blob_sha1": "1d05ec7e6ad4f0d4348b15e18d0dabbfff167bfb",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_16-22-12_430286_1780000_788.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_16-22-12_430286_1780000_788.wav"
+    },
+    {
+      "bytes": 66512,
+      "component": "microphone_audio",
+      "git_blob_sha1": "afe232b84595721710d05bac3fb9c64081a6c834",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_17-18-07_430286_1940000_12771.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_17-18-07_430286_1940000_12771.wav"
+    },
+    {
+      "bytes": 80672,
+      "component": "microphone_audio",
+      "git_blob_sha1": "363e3e2f43d20cdcf67f669cc58f68adba4e5716",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_18-42-01_430286_2180000_9292.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_18-42-01_430286_2180000_9292.wav"
+    },
+    {
+      "bytes": 53832,
+      "component": "microphone_audio",
+      "git_blob_sha1": "7ea86a851120640b1287e64cdc97d469e941420a",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_19-02-59_430286_2240000_8416.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-24_19-02-59_430286_2240000_8416.wav"
+    },
+    {
+      "bytes": 53332,
+      "component": "microphone_audio",
+      "git_blob_sha1": "2ae97e8a68c116251249d3409de443f7a8aca198",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_06-21-01_024712_0060000_18492.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_06-21-01_024712_0060000_18492.wav"
+    },
+    {
+      "bytes": 44052,
+      "component": "microphone_audio",
+      "git_blob_sha1": "2e42367367a86e427cf97beaa0f4b0eb65e4bd8a",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_07-30-55_024712_0260000_321.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_07-30-55_024712_0260000_321.wav"
+    },
+    {
+      "bytes": 41612,
+      "component": "microphone_audio",
+      "git_blob_sha1": "39463b5b0201801d401764cb89fb7a14cc261a97",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_07-37-55_024712_0280000_12933.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_07-37-55_024712_0280000_12933.wav"
+    },
+    {
+      "bytes": 31852,
+      "component": "microphone_audio",
+      "git_blob_sha1": "7d8f5494c5d3cdcc21fb19407fce886625815578",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_08-33-50_024712_0440000_4358.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_08-33-50_024712_0440000_4358.wav"
+    },
+    {
+      "bytes": 115832,
+      "component": "microphone_audio",
+      "git_blob_sha1": "87be2577295e473196bc35f90abdcdddd807716c",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_09-01-48_024712_0520000_3211.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_09-01-48_024712_0520000_3211.wav"
+    },
+    {
+      "bytes": 68952,
+      "component": "microphone_audio",
+      "git_blob_sha1": "660c1d4891d4145b1751b9a942a028679a9bfab3",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_10-39-40_024712_0800000_2227.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_10-39-40_024712_0800000_2227.wav"
+    },
+    {
+      "bytes": 90932,
+      "component": "microphone_audio",
+      "git_blob_sha1": "8541d8bba6d9d53cbad1aecff1982db295270490",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_11-00-38_024712_0860000_3958.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_11-00-38_024712_0860000_3958.wav"
+    },
+    {
+      "bytes": 87032,
+      "component": "microphone_audio",
+      "git_blob_sha1": "44674698c9c72686f0dd10c39c1ab06036466a23",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_11-49-34_024712_1000000_3978.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_11-49-34_024712_1000000_3978.wav"
+    },
+    {
+      "bytes": 70912,
+      "component": "microphone_audio",
+      "git_blob_sha1": "fdc25e02406aea58a3dd7c59765dc3933572fd26",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_12-24-32_024712_1100000_5617.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_12-24-32_024712_1100000_5617.wav"
+    },
+    {
+      "bytes": 92892,
+      "component": "microphone_audio",
+      "git_blob_sha1": "c0cb3c495fbdd7237f4d0e2dbc942b4f2b490164",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_13-06-28_024712_1220000_16321.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_13-06-28_024712_1220000_16321.wav"
+    },
+    {
+      "bytes": 31852,
+      "component": "microphone_audio",
+      "git_blob_sha1": "c9df0630639eccdc671e229d8a0ebecab5f8feff",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_13-13-28_024712_1240000_15218.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_13-13-28_024712_1240000_15218.wav"
+    },
+    {
+      "bytes": 279892,
+      "component": "microphone_audio",
+      "git_blob_sha1": "44ee9921df663ec955c18fc33ad49236f6df6981",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_17-46-05_024712_2020000_1952.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_17-46-05_024712_2020000_1952.wav"
+    },
+    {
+      "bytes": 29892,
+      "component": "microphone_audio",
+      "git_blob_sha1": "0a6bd36c104ada61637e493162eb06200f42e4a6",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_18-28-02_024712_2140000_14850.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-25_18-28-02_024712_2140000_14850.wav"
+    },
+    {
+      "bytes": 269652,
+      "component": "microphone_audio",
+      "git_blob_sha1": "9dbdbf6ed5827302ffaeefcf619b41b7adb6a8a1",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_06-00-02_062743_0000000_9730.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_06-00-02_062743_0000000_9730.wav"
+    },
+    {
+      "bytes": 31852,
+      "component": "microphone_audio",
+      "git_blob_sha1": "6835bf57f10c0e9e15b369158acc2da300b10492",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_06-35-00_062743_0100000_8319.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_06-35-00_062743_0100000_8319.wav"
+    },
+    {
+      "bytes": 80692,
+      "component": "microphone_audio",
+      "git_blob_sha1": "3f8b04b95c22218aa740e0e0cac63a7945abef6a",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_07-37-54_062743_0280000_8076.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_07-37-54_062743_0280000_8076.wav"
+    },
+    {
+      "bytes": 56752,
+      "component": "microphone_audio",
+      "git_blob_sha1": "151aec11ecea57e7abe45ff0c88c5eee24a7b8a2",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_08-54-48_062743_0500000_8831.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_08-54-48_062743_0500000_8831.wav"
+    },
+    {
+      "bytes": 67972,
+      "component": "microphone_audio",
+      "git_blob_sha1": "00c92d597ff6bcd16b7d99a09ed6c3e4960dacc4",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_09-29-45_062743_0600000_1851.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_09-29-45_062743_0600000_1851.wav"
+    },
+    {
+      "bytes": 86032,
+      "component": "microphone_audio",
+      "git_blob_sha1": "8fbd9ccdb9b47867e7e4b8384d595d092763ee2f",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_09-50-44_062743_0660000_402.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_09-50-44_062743_0660000_402.wav"
+    },
+    {
+      "bytes": 66512,
+      "component": "microphone_audio",
+      "git_blob_sha1": "f3f688eb26a13f4e53c199ab153629cafdb561fd",
+      "path": "data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_12-03-33_062743_1040000_16962.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP02/BP_2022-05-26_12-03-33_062743_1040000_16962.wav"
+    },
+    {
+      "bytes": 57732,
+      "component": "microphone_audio",
+      "git_blob_sha1": "c18ebfaf51008cab9fd1fa3a610537790627dae8",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_08-12-51_528576_0380000_19258.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_08-12-51_528576_0380000_19258.wav"
+    },
+    {
+      "bytes": 70412,
+      "component": "microphone_audio",
+      "git_blob_sha1": "4b0b82c90e3bed269539704e818933298e31b120",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_08-47-49_528576_0480000_12960.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_08-47-49_528576_0480000_12960.wav"
+    },
+    {
+      "bytes": 131452,
+      "component": "microphone_audio",
+      "git_blob_sha1": "0def67d763e9d9e71011e40f931bfb03ac63d251",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_09-01-48_528576_0520000_18070.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_09-01-48_528576_0520000_18070.wav"
+    },
+    {
+      "bytes": 39172,
+      "component": "microphone_audio",
+      "git_blob_sha1": "9f1478200f94b566e0aea1fa9d49888f5a2e9335",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_09-43-44_528576_0640000_19470.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_09-43-44_528576_0640000_19470.wav"
+    },
+    {
+      "bytes": 63592,
+      "component": "microphone_audio",
+      "git_blob_sha1": "ff19fd2ef796b801f92c6d78f2fd71e1c2ac3554",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_12-52-29_528576_1180000_18258.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_12-52-29_528576_1180000_18258.wav"
+    },
+    {
+      "bytes": 288692,
+      "component": "microphone_audio",
+      "git_blob_sha1": "888aad30d138c71c9d25cc1b12014cf1dcd78d09",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_13-48-24_528576_1340000_6790.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_13-48-24_528576_1340000_6790.wav"
+    },
+    {
+      "bytes": 63112,
+      "component": "microphone_audio",
+      "git_blob_sha1": "b1771b08737e4bb1936c49fac1ed0ad56e45dd33",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_14-16-22_528576_1420000_11392.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_14-16-22_528576_1420000_11392.wav"
+    },
+    {
+      "bytes": 63592,
+      "component": "microphone_audio",
+      "git_blob_sha1": "1ad64c3a55e46c4375f35f263333ce111e10f8cb",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_15-47-14_528576_1680000_3311.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_15-47-14_528576_1680000_3311.wav"
+    },
+    {
+      "bytes": 61152,
+      "component": "microphone_audio",
+      "git_blob_sha1": "3d9fec7b59c32bc5afdeeab78b4992b745c969d6",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_16-01-13_528576_1720000_226.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_16-01-13_528576_1720000_226.wav"
+    },
+    {
+      "bytes": 61132,
+      "component": "microphone_audio",
+      "git_blob_sha1": "a1a470ab54755c79b58bed6436072b51246b1845",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_17-39-05_528576_2000000_6359.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_17-39-05_528576_2000000_6359.wav"
+    },
+    {
+      "bytes": 36732,
+      "component": "microphone_audio",
+      "git_blob_sha1": "3179f40a1a03a6f881b63da1f130e68366bfd565",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_17137.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_17137.wav"
+    },
+    {
+      "bytes": 66032,
+      "component": "microphone_audio",
+      "git_blob_sha1": "aca5d8f232342c8309450b2c0bea98c2f1ed1694",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_1764.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000_1764.wav"
+    },
+    {
+      "bytes": 118272,
+      "component": "microphone_audio",
+      "git_blob_sha1": "8a705aeb10f8bf2d4edeff5e93682613446d1460",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_08-26-51_520826_0420000_3241.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_08-26-51_520826_0420000_3241.wav"
+    },
+    {
+      "bytes": 52852,
+      "component": "microphone_audio",
+      "git_blob_sha1": "aeacc55a4ae897d8f020131c14549e32a63781de",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_10-53-39_520826_0840000_4527.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_10-53-39_520826_0840000_4527.wav"
+    },
+    {
+      "bytes": 83612,
+      "component": "microphone_audio",
+      "git_blob_sha1": "23a67827a83e1bc01897871781ea8970177de3c2",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_11-49-34_520826_1000000_19607.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_11-49-34_520826_1000000_19607.wav"
+    },
+    {
+      "bytes": 65532,
+      "component": "microphone_audio",
+      "git_blob_sha1": "9efd3678e9f00c97da828abf8ac15b836f2a3240",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_14-58-19_520826_1540000_10668.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_14-58-19_520826_1540000_10668.wav"
+    },
+    {
+      "bytes": 60672,
+      "component": "microphone_audio",
+      "git_blob_sha1": "568259e9878c2c243871a37450e6a39904faf142",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_15-19-17_520826_1600000_18262.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_15-19-17_520826_1600000_18262.wav"
+    },
+    {
+      "bytes": 49912,
+      "component": "microphone_audio",
+      "git_blob_sha1": "1481c4ce525050172415f6aa3cddea008cbefc63",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_17-39-06_520826_2000000_4394.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_17-39-06_520826_2000000_4394.wav"
+    },
+    {
+      "bytes": 44052,
+      "component": "microphone_audio",
+      "git_blob_sha1": "fba47a482b759d2c7c1aded04b477bdfdcee4e53",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_18-14-03_520826_2100000_5381.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-11_18-14-03_520826_2100000_5381.wav"
+    },
+    {
+      "bytes": 29892,
+      "component": "microphone_audio",
+      "git_blob_sha1": "7ed3f3a2ef52d4179a07272d1600373daba6f279",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_06-41-59_935957_0120000_18609.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_06-41-59_935957_0120000_18609.wav"
+    },
+    {
+      "bytes": 46492,
+      "component": "microphone_audio",
+      "git_blob_sha1": "9ed83aaf388c02716280ffd537a9f5e952b81aca",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_06-48-59_935957_0140000_497.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_06-48-59_935957_0140000_497.wav"
+    },
+    {
+      "bytes": 66032,
+      "component": "microphone_audio",
+      "git_blob_sha1": "b3df0fd6789e5e5e823802e72c2c1677f8c7e975",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_07-23-56_935957_0240000_17142.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_07-23-56_935957_0240000_17142.wav"
+    },
+    {
+      "bytes": 58712,
+      "component": "microphone_audio",
+      "git_blob_sha1": "b126c441d6886de0574ff468d49c547304036ff1",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_09-57-43_935957_0680000_17190.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_09-57-43_935957_0680000_17190.wav"
+    },
+    {
+      "bytes": 82152,
+      "component": "microphone_audio",
+      "git_blob_sha1": "b892359ca7610ddec700d534c66928d9384dfc82",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_11-00-38_935957_0860000_10541.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_11-00-38_935957_0860000_10541.wav"
+    },
+    {
+      "bytes": 54792,
+      "component": "microphone_audio",
+      "git_blob_sha1": "feff2e807a43dacdfd2713a428fff614589e0e71",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_11-28-36_935957_0940000_2190.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_11-28-36_935957_0940000_2190.wav"
+    },
+    {
+      "bytes": 42592,
+      "component": "microphone_audio",
+      "git_blob_sha1": "a95f4de53ceb75e2ef6979caaa148c9de6ee1aa9",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_12-31-31_935957_1120000_19496.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_12-31-31_935957_1120000_19496.wav"
+    },
+    {
+      "bytes": 61132,
+      "component": "microphone_audio",
+      "git_blob_sha1": "68dab01e947239cf270b01c5eac86c295e4ab04d",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_13-41-25_935957_1320000_7923.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_13-41-25_935957_1320000_7923.wav"
+    },
+    {
+      "bytes": 123632,
+      "component": "microphone_audio",
+      "git_blob_sha1": "74033fadbd807dee6989a135b707ab2362004a7c",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_14-02-24_935957_1380000_14287.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_14-02-24_935957_1380000_14287.wav"
+    },
+    {
+      "bytes": 289172,
+      "component": "microphone_audio",
+      "git_blob_sha1": "d024b44e334b1f5b656ad0f331cfd56ce93b565c",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_15-19-17_935957_1600000_1790.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_15-19-17_935957_1600000_1790.wav"
+    },
+    {
+      "bytes": 31852,
+      "component": "microphone_audio",
+      "git_blob_sha1": "fdeb49169ceeb5260450656c9ef180fab4d92d2d",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_15-26-17_935957_1620000_2623.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_15-26-17_935957_1620000_2623.wav"
+    },
+    {
+      "bytes": 38192,
+      "component": "microphone_audio",
+      "git_blob_sha1": "270929422218a764c770c55baf2d0948809f81b2",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_16-15-13_935957_1760000_8511.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_16-15-13_935957_1760000_8511.wav"
+    },
+    {
+      "bytes": 61152,
+      "component": "microphone_audio",
+      "git_blob_sha1": "d1e665a1e5652f5007b9dfd03e39077f3d35f7c6",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_17-18-08_935957_1940000_16191.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_17-18-08_935957_1940000_16191.wav"
+    },
+    {
+      "bytes": 61632,
+      "component": "microphone_audio",
+      "git_blob_sha1": "d367e7797ff00baf2754d5de2b643f7b9ad35301",
+      "path": "data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_17-25-07_935957_1960000_15642.wav",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/audio/juvExpBP05/BP_2023-07-12_17-25-07_935957_1960000_15642.wav"
+    },
+    {
+      "bytes": 1519,
+      "component": "camera_calibration",
+      "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "path": "data/v33da_sample/calibrations/.gitattributes",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/.gitattributes"
+    },
+    {
+      "bytes": 918,
+      "component": "camera_calibration",
+      "git_blob_sha1": "d6b7f089f6b89babfe2f38f030f90f8605663c24",
+      "path": "data/v33da_sample/calibrations/README.md",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/README.md"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "239b79ba63b1338932a9c485f53e7df0c8a49d2c",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/calibration_back.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/calibration_back.npz"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "38fc979a01c4d4b6b34fca09d826224433dcbb8e",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/calibration_side.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/calibration_side.npz"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "43887e7c03a0d1a52e9e8f0f703ddad2f1b040fe",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/calibration_top.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/calibration_top.npz"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "94047d53a813def5fa26f6ede12788ced644c5e4",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/camera_pose_back.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/camera_pose_back.pkl"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "1d3d1e955bb821367536bd870834d5c0db117e9a",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/camera_pose_side.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/camera_pose_side.pkl"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "117f716371a76c8c6b9dea307e3fd26a9101d3c4",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/camera_pose_top.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/camera_pose_top.pkl"
+    },
+    {
+      "bytes": 262,
+      "component": "camera_calibration",
+      "git_blob_sha1": "c7c7fd2e944d088e68239fcd89d743177ebd16ab",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/coordinates_back.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/coordinates_back.pkl"
+    },
+    {
+      "bytes": 224,
+      "component": "camera_calibration",
+      "git_blob_sha1": "0cd0da407161a4fcc1258c3877b292e1eb018a04",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/coordinates_side.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/coordinates_side.pkl"
+    },
+    {
+      "bytes": 399,
+      "component": "camera_calibration",
+      "git_blob_sha1": "4b70c9fd950844b37882b1ac9f0e44982b76ba81",
+      "path": "data/v33da_sample/calibrations/juvExpBP01/coordinates_top.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP01/coordinates_top.pkl"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "99469e4f5ae1606da5d1226ebe80582a6a111241",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/calibration_back.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/calibration_back.npz"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "d17fa5a53a1918df88612428dd362b469fb07a41",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/calibration_side.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/calibration_side.npz"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "29cdd3df3ed733b909b2eab30b0b7e810fde4210",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/calibration_top.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/calibration_top.npz"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "6fa038a8dd0c1d3eea631cc839130d7d83114b95",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/camera_pose_back.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/camera_pose_back.pkl"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "72af059606656d5e365461efb898775ee4c0ec84",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/camera_pose_side.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/camera_pose_side.pkl"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "c246c775b1654d96a952f6f39081f3b841336863",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/camera_pose_top.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/camera_pose_top.pkl"
+    },
+    {
+      "bytes": 262,
+      "component": "camera_calibration",
+      "git_blob_sha1": "ed54a0522e5415ee0f8e8d56ed375d21893e109f",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/coordinates_back.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/coordinates_back.pkl"
+    },
+    {
+      "bytes": 224,
+      "component": "camera_calibration",
+      "git_blob_sha1": "bcad0ea0ee04f46f123361db3e739558b9fce0ae",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/coordinates_side.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/coordinates_side.pkl"
+    },
+    {
+      "bytes": 363,
+      "component": "camera_calibration",
+      "git_blob_sha1": "31e099f9d3a1cd67d1e02e6a7848b136fdb60d4a",
+      "path": "data/v33da_sample/calibrations/juvExpBP02/coordinates_top.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP02/coordinates_top.pkl"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "982a074ff9fb5442482c3450a75e50ec169fa02f",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/calibration_back.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/calibration_back.npz"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "54fd681625be33b6afaa88925eaa31b6c362342a",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/calibration_side.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/calibration_side.npz"
+    },
+    {
+      "bytes": 612,
+      "component": "camera_calibration",
+      "git_blob_sha1": "1967a795c3185bc900a50ebd7b757ca0cce37fa5",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/calibration_top.npz",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/calibration_top.npz"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "23f65f5d45e5bd2a8c216dd3cef9dfd431b9d033",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/camera_pose_back.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/camera_pose_back.pkl"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "66f0be7e3de353c050d7563d1f13dd0047ab7f99",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/camera_pose_side.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/camera_pose_side.pkl"
+    },
+    {
+      "bytes": 248,
+      "component": "camera_calibration",
+      "git_blob_sha1": "0145d85940fc42b9941a12967c52ab31dad628c7",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/camera_pose_top.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/camera_pose_top.pkl"
+    },
+    {
+      "bytes": 262,
+      "component": "camera_calibration",
+      "git_blob_sha1": "da5d832c1286ad752494b8fc4205169105180bc9",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/coordinates_back.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/coordinates_back.pkl"
+    },
+    {
+      "bytes": 212,
+      "component": "camera_calibration",
+      "git_blob_sha1": "b86edd9ab8246b716063b0b064b8dedf78f30625",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/coordinates_side.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/coordinates_side.pkl"
+    },
+    {
+      "bytes": 375,
+      "component": "camera_calibration",
+      "git_blob_sha1": "938a3fa73e10177be3a011dd3e73a8358867b3c7",
+      "path": "data/v33da_sample/calibrations/juvExpBP05/coordinates_top.pkl",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/juvExpBP05/coordinates_top.pkl"
+    },
+    {
+      "bytes": 3078,
+      "component": "camera_calibration",
+      "git_blob_sha1": "5475947fafbc4fb5f879cfe72e7b2650b4cd9759",
+      "path": "data/v33da_sample/calibrations/reference_points.csv",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/calibrations/reference_points.csv"
+    },
+    {
+      "bytes": 332261,
+      "component": "video_clips",
+      "git_blob_sha1": "5f47a9d30d33207b52ec20ea4efd4d032b8b3eeb",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_10-53-38_336025_0840000/16533.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_10-53-38_336025_0840000/16533.mp4"
+    },
+    {
+      "bytes": 339978,
+      "component": "video_clips",
+      "git_blob_sha1": "b7806301bf23e36900992c89fe9c5fd4b6fac59c",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_12-17-31_336025_1080000/18876.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_12-17-31_336025_1080000/18876.mp4"
+    },
+    {
+      "bytes": 341951,
+      "component": "video_clips",
+      "git_blob_sha1": "9fa84d42a72836621a3f5a45ae941840f88ef0ee",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_13-27-26_336025_1280000/8116.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_13-27-26_336025_1280000/8116.mp4"
+    },
+    {
+      "bytes": 327422,
+      "component": "video_clips",
+      "git_blob_sha1": "af2f54ceca7ebfdf4d59b4af67bffdcb1e7d27df",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_13-41-24_336025_1320000/18183.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_13-41-24_336025_1320000/18183.mp4"
+    },
+    {
+      "bytes": 326782,
+      "component": "video_clips",
+      "git_blob_sha1": "dc1096d06aeb12dfee23709e5e6dbf6d9943bfda",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_17-46-05_336025_2020000/350.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_17-46-05_336025_2020000/350.mp4"
+    },
+    {
+      "bytes": 338081,
+      "component": "video_clips",
+      "git_blob_sha1": "ae2a1c85e24cbc334a1882945fb9e6941ad60a66",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_19-44-55_336025_2360000/12381.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-07-31_19-44-55_336025_2360000/12381.mp4"
+    },
+    {
+      "bytes": 729152,
+      "component": "video_clips",
+      "git_blob_sha1": "be3449b5b3b10486195c978da2f9eaeb9c0626d2",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_07-51-53_798997_0320000/6627.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_07-51-53_798997_0320000/6627.mp4"
+    },
+    {
+      "bytes": 338482,
+      "component": "video_clips",
+      "git_blob_sha1": "a9bebde6cef53103012046108f22d348635b40d9",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_08-33-50_798997_0440000/123.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_08-33-50_798997_0440000/123.mp4"
+    },
+    {
+      "bytes": 361416,
+      "component": "video_clips",
+      "git_blob_sha1": "f32528c46a148a42c09f738c0d280045266377ca",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_09-36-44_798997_0620000/9167.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_09-36-44_798997_0620000/9167.mp4"
+    },
+    {
+      "bytes": 334892,
+      "component": "video_clips",
+      "git_blob_sha1": "6839302b0fe938ad1073de0d969ccc5897f8cae7",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_10-25-40_798997_0760000/4412.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-01_10-25-40_798997_0760000/4412.mp4"
+    },
+    {
+      "bytes": 350036,
+      "component": "video_clips",
+      "git_blob_sha1": "7e74f9d3834a25dba2cdc541152edade38707d7f",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_07-44-53_339267_0300000/12987.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_07-44-53_339267_0300000/12987.mp4"
+    },
+    {
+      "bytes": 729978,
+      "component": "video_clips",
+      "git_blob_sha1": "3bccf77ac72924121c3116cc4459d45f16ee1c12",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_10-25-40_339267_0760000/5041.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_10-25-40_339267_0760000/5041.mp4"
+    },
+    {
+      "bytes": 715250,
+      "component": "video_clips",
+      "git_blob_sha1": "1e341ee4a7653e5780f47002ae26e13009e67085",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_12-10-32_339267_1060000/1852.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_12-10-32_339267_1060000/1852.mp4"
+    },
+    {
+      "bytes": 342822,
+      "component": "video_clips",
+      "git_blob_sha1": "d3e3dff3796f09e84fabe2daba75261707a7f6a0",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_13-34-25_339267_1300000/13334.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_13-34-25_339267_1300000/13334.mp4"
+    },
+    {
+      "bytes": 366326,
+      "component": "video_clips",
+      "git_blob_sha1": "1cb70628dac99c8dce46c7dab588723a69fd1486",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_15-19-16_339267_1600000/10060.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_15-19-16_339267_1600000/10060.mp4"
+    },
+    {
+      "bytes": 363859,
+      "component": "video_clips",
+      "git_blob_sha1": "6a06541568ae63d155a5e0b87cb3d2fe75c32ff3",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_15-40-15_339267_1660000/19555.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_15-40-15_339267_1660000/19555.mp4"
+    },
+    {
+      "bytes": 511578,
+      "component": "video_clips",
+      "git_blob_sha1": "133f926fa54910e5cdfdff0d40a352c4ceb876e1",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_19-37-55_339267_2340000/5749.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-02_19-37-55_339267_2340000/5749.mp4"
+    },
+    {
+      "bytes": 757422,
+      "component": "video_clips",
+      "git_blob_sha1": "143a408f6e23e3a4a9cc80e8f5cc188a59308f58",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-03_07-23-55_796988_0240000/19159.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-03_07-23-55_796988_0240000/19159.mp4"
+    },
+    {
+      "bytes": 362477,
+      "component": "video_clips",
+      "git_blob_sha1": "ee20f439bbb608f6ee03e891115e6b757a695485",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-04_08-33-49_714275_0440000/5943.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-04_08-33-49_714275_0440000/5943.mp4"
+    },
+    {
+      "bytes": 734487,
+      "component": "video_clips",
+      "git_blob_sha1": "e72270d7652f8c63af0daf2b109263b9f53f165e",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-05_08-40-49_416952_0460000/3571.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-05_08-40-49_416952_0460000/3571.mp4"
+    },
+    {
+      "bytes": 395806,
+      "component": "video_clips",
+      "git_blob_sha1": "2d76a990ffff80bb2978a0fe6980fb107d56f7e9",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000/14268.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000/14268.mp4"
+    },
+    {
+      "bytes": 405496,
+      "component": "video_clips",
+      "git_blob_sha1": "dc5ad1f8c17ce77a5f90643cfa0cbd19bda2ce80",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000/1759.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-05_10-18-41_416952_0740000/1759.mp4"
+    },
+    {
+      "bytes": 386614,
+      "component": "video_clips",
+      "git_blob_sha1": "a518197d3f654c8dd2702690510cbbc6d27e7580",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_06-55-58_024871_0160000/1712.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_06-55-58_024871_0160000/1712.mp4"
+    },
+    {
+      "bytes": 390970,
+      "component": "video_clips",
+      "git_blob_sha1": "90ab0a7a3804811a4dfe5b6ee216a2b5434778cf",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_09-29-45_024871_0600000/1508.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_09-29-45_024871_0600000/1508.mp4"
+    },
+    {
+      "bytes": 342800,
+      "component": "video_clips",
+      "git_blob_sha1": "db8b9d03178e3df407fd91a096deaf22a50c2d36",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_09-57-43_024871_0680000/3096.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_09-57-43_024871_0680000/3096.mp4"
+    },
+    {
+      "bytes": 514858,
+      "component": "video_clips",
+      "git_blob_sha1": "1b33b44130935e35090ea361105b0756ec33e99d",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_10-04-42_024871_0700000/5002.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-06_10-04-42_024871_0700000/5002.mp4"
+    },
+    {
+      "bytes": 380934,
+      "component": "video_clips",
+      "git_blob_sha1": "07179db23e0e06424076441fad82933b18d33c4d",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-07_08-54-48_584350_0500000/18795.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-07_08-54-48_584350_0500000/18795.mp4"
+    },
+    {
+      "bytes": 390568,
+      "component": "video_clips",
+      "git_blob_sha1": "ae52a8887db8c0874bf1449fb8207eb3aa0c0a4b",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-07_09-22-45_584350_0580000/1457.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-07_09-22-45_584350_0580000/1457.mp4"
+    },
+    {
+      "bytes": 350381,
+      "component": "video_clips",
+      "git_blob_sha1": "09fb5765d2df481dc0ff1b7d63f9ce7623d0dcca",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-07_09-36-44_584350_0620000/8941.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-07_09-36-44_584350_0620000/8941.mp4"
+    },
+    {
+      "bytes": 741376,
+      "component": "video_clips",
+      "git_blob_sha1": "08f58465710e3d15599193b859e08cfe076a6043",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_12-38-30_377038_1140000/1954.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_12-38-30_377038_1140000/1954.mp4"
+    },
+    {
+      "bytes": 330848,
+      "component": "video_clips",
+      "git_blob_sha1": "79b0db3572c5e19831bf549c1fb5ee1dafbd0c41",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_14-16-22_377038_1420000/1456.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_14-16-22_377038_1420000/1456.mp4"
+    },
+    {
+      "bytes": 355931,
+      "component": "video_clips",
+      "git_blob_sha1": "55ce6e029669696b241301bdc0ab089ed80a7300",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_17-18-07_377038_1940000/15992.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_17-18-07_377038_1940000/15992.mp4"
+    },
+    {
+      "bytes": 383090,
+      "component": "video_clips",
+      "git_blob_sha1": "d7ce2df0a5d5c5263ce21d052657ccdb86002f6f",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_17-25-06_377038_1960000/14215.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-08_17-25-06_377038_1960000/14215.mp4"
+    },
+    {
+      "bytes": 347717,
+      "component": "video_clips",
+      "git_blob_sha1": "f28ebad2bca42b78a153d0f646afcd01d1b6b831",
+      "path": "data/v33da_sample/clips/juvExpBP01/BP_2021-08-09_10-11-42_504687_0720000/16745.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP01/BP_2021-08-09_10-11-42_504687_0720000/16745.mp4"
+    },
+    {
+      "bytes": 451019,
+      "component": "video_clips",
+      "git_blob_sha1": "6f697e8920dc6f3fd939b38fcc2bfcba2770bfb8",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_06-14-02_430286_0040000/10591.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_06-14-02_430286_0040000/10591.mp4"
+    },
+    {
+      "bytes": 1256023,
+      "component": "video_clips",
+      "git_blob_sha1": "d9394679041976d0187d07c168ec0550ed768e76",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_08-19-51_430286_0400000/13435.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_08-19-51_430286_0400000/13435.mp4"
+    },
+    {
+      "bytes": 432805,
+      "component": "video_clips",
+      "git_blob_sha1": "43fe7869b7cbd5173c43c58df5d2243ab6da2e05",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_09-43-45_430286_0640000/6312.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_09-43-45_430286_0640000/6312.mp4"
+    },
+    {
+      "bytes": 377533,
+      "component": "video_clips",
+      "git_blob_sha1": "f27442b7791bfd0f02d929c44fe813abb2a41b9e",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_10-04-43_430286_0700000/8672.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_10-04-43_430286_0700000/8672.mp4"
+    },
+    {
+      "bytes": 419421,
+      "component": "video_clips",
+      "git_blob_sha1": "a897dadd4316bda95ec3cadfc247157d7def4477",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_10-39-40_430286_0800000/14286.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_10-39-40_430286_0800000/14286.mp4"
+    },
+    {
+      "bytes": 550819,
+      "component": "video_clips",
+      "git_blob_sha1": "85d70f70c50adb03654914bf328f3a70d72929c9",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_11-28-36_430286_0940000/4753.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_11-28-36_430286_0940000/4753.mp4"
+    },
+    {
+      "bytes": 762475,
+      "component": "video_clips",
+      "git_blob_sha1": "adc3216db5782e0690a2078c6345b4a6759be8af",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_14-51-19_430286_1520000/15444.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_14-51-19_430286_1520000/15444.mp4"
+    },
+    {
+      "bytes": 826349,
+      "component": "video_clips",
+      "git_blob_sha1": "e8ce55f164299a766db878f438a4e89b4f39b1ad",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_15-54-14_430286_1700000/13934.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_15-54-14_430286_1700000/13934.mp4"
+    },
+    {
+      "bytes": 376976,
+      "component": "video_clips",
+      "git_blob_sha1": "94f551b206678e4c553b2ca903ebd17924e6fd4a",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_16-01-14_430286_1720000/944.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_16-01-14_430286_1720000/944.mp4"
+    },
+    {
+      "bytes": 856423,
+      "component": "video_clips",
+      "git_blob_sha1": "de3a4cc3c358490601e6d91e1a8147aca9ed4a6f",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_16-22-12_430286_1780000/788.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_16-22-12_430286_1780000/788.mp4"
+    },
+    {
+      "bytes": 419808,
+      "component": "video_clips",
+      "git_blob_sha1": "cc6fd445a88217eda098b6d2ae8445c710cf5ad9",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_17-18-07_430286_1940000/12771.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_17-18-07_430286_1940000/12771.mp4"
+    },
+    {
+      "bytes": 418710,
+      "component": "video_clips",
+      "git_blob_sha1": "0c81b728b6e383ab10a9be079f7ebeeae3444edb",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_18-42-01_430286_2180000/9292.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_18-42-01_430286_2180000/9292.mp4"
+    },
+    {
+      "bytes": 375112,
+      "component": "video_clips",
+      "git_blob_sha1": "da615a8334a98569658d57f8ab9b62937cbf362a",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_19-02-59_430286_2240000/8416.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-24_19-02-59_430286_2240000/8416.mp4"
+    },
+    {
+      "bytes": 412287,
+      "component": "video_clips",
+      "git_blob_sha1": "dfaa9bfcb03da6346fa2e4716bff24148a7410e7",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_06-21-01_024712_0060000/18492.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_06-21-01_024712_0060000/18492.mp4"
+    },
+    {
+      "bytes": 393731,
+      "component": "video_clips",
+      "git_blob_sha1": "0cd1194a22cd962e12111136baff9a8630b0a3e4",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_07-30-55_024712_0260000/321.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_07-30-55_024712_0260000/321.mp4"
+    },
+    {
+      "bytes": 378529,
+      "component": "video_clips",
+      "git_blob_sha1": "57d839b3018e3be6d3b282c04e0754396751330b",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_07-37-55_024712_0280000/12933.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_07-37-55_024712_0280000/12933.mp4"
+    },
+    {
+      "bytes": 368959,
+      "component": "video_clips",
+      "git_blob_sha1": "573e9d2a3ef148355df7a0a71b4e6722316832d0",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_08-33-50_024712_0440000/4358.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_08-33-50_024712_0440000/4358.mp4"
+    },
+    {
+      "bytes": 773879,
+      "component": "video_clips",
+      "git_blob_sha1": "dd0611fae342edbae5514a6dfee5c6fb57ee6832",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_09-01-48_024712_0520000/3211.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_09-01-48_024712_0520000/3211.mp4"
+    },
+    {
+      "bytes": 390712,
+      "component": "video_clips",
+      "git_blob_sha1": "8bdae7d074845d3a9247dd5d40daa81cfc711d37",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_10-39-40_024712_0800000/2227.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_10-39-40_024712_0800000/2227.mp4"
+    },
+    {
+      "bytes": 456745,
+      "component": "video_clips",
+      "git_blob_sha1": "67698658c1b28a690f970145850b2ab20c86e5e2",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_11-00-38_024712_0860000/3958.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_11-00-38_024712_0860000/3958.mp4"
+    },
+    {
+      "bytes": 406590,
+      "component": "video_clips",
+      "git_blob_sha1": "b7fc32274cbce004dff071a105024c612820eb4b",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_11-49-34_024712_1000000/3978.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_11-49-34_024712_1000000/3978.mp4"
+    },
+    {
+      "bytes": 439332,
+      "component": "video_clips",
+      "git_blob_sha1": "feb5a7ce11a6008dc9c8876cd0f2ffb4cc4bbe2f",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_12-24-32_024712_1100000/5617.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_12-24-32_024712_1100000/5617.mp4"
+    },
+    {
+      "bytes": 436664,
+      "component": "video_clips",
+      "git_blob_sha1": "fa7c1367c8f023004e778ac7766598222e74c2a9",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_13-06-28_024712_1220000/16321.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_13-06-28_024712_1220000/16321.mp4"
+    },
+    {
+      "bytes": 353925,
+      "component": "video_clips",
+      "git_blob_sha1": "01baf746c966f0abc8d5ee7e6076e2244372a25a",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_13-13-28_024712_1240000/15218.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_13-13-28_024712_1240000/15218.mp4"
+    },
+    {
+      "bytes": 1230873,
+      "component": "video_clips",
+      "git_blob_sha1": "10c153000932a77176d873cb97d3a782c84445dd",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_17-46-05_024712_2020000/1952.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_17-46-05_024712_2020000/1952.mp4"
+    },
+    {
+      "bytes": 347491,
+      "component": "video_clips",
+      "git_blob_sha1": "60bc6c5b678c5b29862ced8adc3a2681320a6e07",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_18-28-02_024712_2140000/14850.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-25_18-28-02_024712_2140000/14850.mp4"
+    },
+    {
+      "bytes": 1345906,
+      "component": "video_clips",
+      "git_blob_sha1": "4aee453a2031f44ec9b3145bc9f38f9c7bca99a3",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_06-00-02_062743_0000000/9730.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_06-00-02_062743_0000000/9730.mp4"
+    },
+    {
+      "bytes": 371302,
+      "component": "video_clips",
+      "git_blob_sha1": "778de4e30b3ce9e5018f22dc11156f6acefd6b4d",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_06-35-00_062743_0100000/8319.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_06-35-00_062743_0100000/8319.mp4"
+    },
+    {
+      "bytes": 456152,
+      "component": "video_clips",
+      "git_blob_sha1": "9aab523197cf5989ae837bcd5a51f0981971741e",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_07-37-54_062743_0280000/8076.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_07-37-54_062743_0280000/8076.mp4"
+    },
+    {
+      "bytes": 389417,
+      "component": "video_clips",
+      "git_blob_sha1": "86cc721f3027bc0bd6089480c8aeaa4d0ccdc339",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_08-54-48_062743_0500000/8831.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_08-54-48_062743_0500000/8831.mp4"
+    },
+    {
+      "bytes": 423286,
+      "component": "video_clips",
+      "git_blob_sha1": "12f92fd3172c13fc6872b518e1fbec784e2a43e0",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_09-29-45_062743_0600000/1851.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_09-29-45_062743_0600000/1851.mp4"
+    },
+    {
+      "bytes": 437267,
+      "component": "video_clips",
+      "git_blob_sha1": "5fb95238d4908e6f07be4f880c80dcad48bd2007",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_09-50-44_062743_0660000/402.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_09-50-44_062743_0660000/402.mp4"
+    },
+    {
+      "bytes": 414199,
+      "component": "video_clips",
+      "git_blob_sha1": "0ab17988cecb86b1d7cfd4e9c0e593f1dd005de6",
+      "path": "data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_12-03-33_062743_1040000/16962.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP02/BP_2022-05-26_12-03-33_062743_1040000/16962.mp4"
+    },
+    {
+      "bytes": 403655,
+      "component": "video_clips",
+      "git_blob_sha1": "33802523d8bb9ebf8b450101862b56249e5fa05f",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_08-12-51_528576_0380000/19258.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_08-12-51_528576_0380000/19258.mp4"
+    },
+    {
+      "bytes": 377324,
+      "component": "video_clips",
+      "git_blob_sha1": "5a5d40c64df463bca9c5c38fe6e072cd03fbbc0c",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_08-47-49_528576_0480000/12960.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_08-47-49_528576_0480000/12960.mp4"
+    },
+    {
+      "bytes": 768783,
+      "component": "video_clips",
+      "git_blob_sha1": "8911fd7ea760acf3359172d3fe89b531ea96f76f",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_09-01-48_528576_0520000/18070.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_09-01-48_528576_0520000/18070.mp4"
+    },
+    {
+      "bytes": 356437,
+      "component": "video_clips",
+      "git_blob_sha1": "dccc19f1d90e5f33b51bb4adc18c79b58944f274",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_09-43-44_528576_0640000/19470.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_09-43-44_528576_0640000/19470.mp4"
+    },
+    {
+      "bytes": 428910,
+      "component": "video_clips",
+      "git_blob_sha1": "95cc846e2259e333ccdf12f5404cc5121a2e40b2",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_12-52-29_528576_1180000/18258.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_12-52-29_528576_1180000/18258.mp4"
+    },
+    {
+      "bytes": 1250136,
+      "component": "video_clips",
+      "git_blob_sha1": "1811666692cf3ab72c3c6efb6fcba240aecc9b6b",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_13-48-24_528576_1340000/6790.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_13-48-24_528576_1340000/6790.mp4"
+    },
+    {
+      "bytes": 387041,
+      "component": "video_clips",
+      "git_blob_sha1": "7bcba1c123b01cb5c816f8cba07922764cb69081",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_14-16-22_528576_1420000/11392.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_14-16-22_528576_1420000/11392.mp4"
+    },
+    {
+      "bytes": 386180,
+      "component": "video_clips",
+      "git_blob_sha1": "21c1f446a5fbcfb2c7bf16ac43da5df14698f5d8",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_15-47-14_528576_1680000/3311.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_15-47-14_528576_1680000/3311.mp4"
+    },
+    {
+      "bytes": 374756,
+      "component": "video_clips",
+      "git_blob_sha1": "b1d716e6181b1c1264dbb7ba825c38fdec939d03",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_16-01-13_528576_1720000/226.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_16-01-13_528576_1720000/226.mp4"
+    },
+    {
+      "bytes": 372300,
+      "component": "video_clips",
+      "git_blob_sha1": "39f0fb0730d4ecd9d6564a6cb8a1c0865e55bff7",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_17-39-05_528576_2000000/6359.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_17-39-05_528576_2000000/6359.mp4"
+    },
+    {
+      "bytes": 344185,
+      "component": "video_clips",
+      "git_blob_sha1": "ce6527b8e45da72ad06e6180dccd34d8043c88c1",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000/17137.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000/17137.mp4"
+    },
+    {
+      "bytes": 401320,
+      "component": "video_clips",
+      "git_blob_sha1": "4a9c940a2649d57daffe3f4b199b868e9921931f",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000/1764.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-10_18-07-03_528576_2080000/1764.mp4"
+    },
+    {
+      "bytes": 710767,
+      "component": "video_clips",
+      "git_blob_sha1": "e7c60a40663a182629fdeb6083d641f8c6b55007",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_08-26-51_520826_0420000/3241.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_08-26-51_520826_0420000/3241.mp4"
+    },
+    {
+      "bytes": 378131,
+      "component": "video_clips",
+      "git_blob_sha1": "e48f6906556f1b8d946cd56eefb6d36e84a4f704",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_10-53-39_520826_0840000/4527.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_10-53-39_520826_0840000/4527.mp4"
+    },
+    {
+      "bytes": 405838,
+      "component": "video_clips",
+      "git_blob_sha1": "78a91610ad00566fb082f28b3f40ff764fdfb5fa",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_11-49-34_520826_1000000/19607.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_11-49-34_520826_1000000/19607.mp4"
+    },
+    {
+      "bytes": 378649,
+      "component": "video_clips",
+      "git_blob_sha1": "4ee5409a9f3d1346cc9774d6a6cec9c8bae2ec02",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_14-58-19_520826_1540000/10668.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_14-58-19_520826_1540000/10668.mp4"
+    },
+    {
+      "bytes": 410272,
+      "component": "video_clips",
+      "git_blob_sha1": "6d72064f1584239958eb3586a09e96cb34684a4a",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_15-19-17_520826_1600000/18262.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_15-19-17_520826_1600000/18262.mp4"
+    },
+    {
+      "bytes": 352939,
+      "component": "video_clips",
+      "git_blob_sha1": "a8baef3725b9909499e9f17a6389315501d76808",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_17-39-06_520826_2000000/4394.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_17-39-06_520826_2000000/4394.mp4"
+    },
+    {
+      "bytes": 348432,
+      "component": "video_clips",
+      "git_blob_sha1": "f0cb99d4739d6bbed3c62ecab91e32a16c383673",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_18-14-03_520826_2100000/5381.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-11_18-14-03_520826_2100000/5381.mp4"
+    },
+    {
+      "bytes": 328971,
+      "component": "video_clips",
+      "git_blob_sha1": "74bbc3ed41b4d682a55effe2b838144a71cb24f2",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_06-41-59_935957_0120000/18609.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_06-41-59_935957_0120000/18609.mp4"
+    },
+    {
+      "bytes": 447797,
+      "component": "video_clips",
+      "git_blob_sha1": "33b236c0de001f10a9bc68919f34e4e2ed47b936",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_06-48-59_935957_0140000/497.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_06-48-59_935957_0140000/497.mp4"
+    },
+    {
+      "bytes": 392718,
+      "component": "video_clips",
+      "git_blob_sha1": "3f3c50fcf76cb6bac657d115ca57865b7d188f16",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_07-23-56_935957_0240000/17142.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_07-23-56_935957_0240000/17142.mp4"
+    },
+    {
+      "bytes": 386426,
+      "component": "video_clips",
+      "git_blob_sha1": "fe11ccaf73e447b8fe0dcf5303b1a3cbbf8ba8a2",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_09-57-43_935957_0680000/17190.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_09-57-43_935957_0680000/17190.mp4"
+    },
+    {
+      "bytes": 405657,
+      "component": "video_clips",
+      "git_blob_sha1": "60f19de9da03070faa3d192e0a371b3b042dcbd7",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_11-00-38_935957_0860000/10541.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_11-00-38_935957_0860000/10541.mp4"
+    },
+    {
+      "bytes": 376436,
+      "component": "video_clips",
+      "git_blob_sha1": "e540bdd597252293c3f44721eb2285b3c2b068b9",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_11-28-36_935957_0940000/2190.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_11-28-36_935957_0940000/2190.mp4"
+    },
+    {
+      "bytes": 341484,
+      "component": "video_clips",
+      "git_blob_sha1": "cbb5069524c80f9d1a090c6defb5edf1397c0642",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_12-31-31_935957_1120000/19496.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_12-31-31_935957_1120000/19496.mp4"
+    },
+    {
+      "bytes": 384201,
+      "component": "video_clips",
+      "git_blob_sha1": "5e69a190456a1ff29092166ddb8379927b41daf7",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_13-41-25_935957_1320000/7923.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_13-41-25_935957_1320000/7923.mp4"
+    },
+    {
+      "bytes": 737080,
+      "component": "video_clips",
+      "git_blob_sha1": "251bdc14d6181e0e49fece70ecb972ea48181e8b",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_14-02-24_935957_1380000/14287.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_14-02-24_935957_1380000/14287.mp4"
+    },
+    {
+      "bytes": 1254140,
+      "component": "video_clips",
+      "git_blob_sha1": "48033380b58a88eedbf9b49315dfba417e4d1f08",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_15-19-17_935957_1600000/1790.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_15-19-17_935957_1600000/1790.mp4"
+    },
+    {
+      "bytes": 320874,
+      "component": "video_clips",
+      "git_blob_sha1": "4b3fb047fb49e11aec3864e6d83da982db92ff63",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_15-26-17_935957_1620000/2623.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_15-26-17_935957_1620000/2623.mp4"
+    },
+    {
+      "bytes": 365241,
+      "component": "video_clips",
+      "git_blob_sha1": "99d715efbbb2ef2668f8228ca63b8cca6e1acd1d",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_16-15-13_935957_1760000/8511.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_16-15-13_935957_1760000/8511.mp4"
+    },
+    {
+      "bytes": 413228,
+      "component": "video_clips",
+      "git_blob_sha1": "bdd908e1d470266cab7055c5abccfd2bb1c600fc",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_17-18-08_935957_1940000/16191.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_17-18-08_935957_1940000/16191.mp4"
+    },
+    {
+      "bytes": 368651,
+      "component": "video_clips",
+      "git_blob_sha1": "b0c4c763b1507cbd22338498ef3bc7a88c571130",
+      "path": "data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_17-25-07_935957_1960000/15642.mp4",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/clips/juvExpBP05/BP_2023-07-12_17-25-07_935957_1960000/15642.mp4"
+    },
+    {
+      "bytes": 2214,
+      "component": "sample_root_file",
+      "git_blob_sha1": "768c45a07706559a2b13d7a19bdbd12160f9ad82",
+      "path": "data/v33da_sample/metadata.json",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/metadata.json"
+    },
+    {
+      "bytes": 823,
+      "component": "sample_root_file",
+      "git_blob_sha1": "4d9b8586690763592a2c657201af39ce5bff9969",
+      "path": "data/v33da_sample/split_summary.json",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/split_summary.json"
+    },
+    {
+      "bytes": 856145,
+      "component": "sample_root_file",
+      "git_blob_sha1": "0570fe398688b8d677fb9d8cc754799a65902e64",
+      "path": "data/v33da_sample/v33da_sample.parquet",
+      "pinned_source_url": "https://github.com/marisbasha/v33da/blob/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/v33da_sample.parquet"
+    }
+  ],
+  "integrity_notes": {
+    "parquet_or_media_inspected": false,
+    "per_file_identifier": "git_blob_sha1 is the Git blob object ID returned by the pinned Git tree API; it is not a SHA-256 digest.",
+    "raw_sample_bytes_downloaded": false,
+    "sample_code_executed": false,
+    "sha256": "Not returned by the Git tree API and not independently computed because no file contents were downloaded."
+  },
+  "inventory_summary": {
+    "components": {
+      "accelerometer_oracle": {
+        "bytes": 5790852,
+        "files": 100
+      },
+      "camera_calibration": {
+        "bytes": 15838,
+        "files": 30
+      },
+      "microphone_audio": {
+        "bytes": 8001360,
+        "files": 100
+      },
+      "sample_root_file": {
+        "bytes": 864207,
+        "files": 4
+      },
+      "video_clips": {
+        "bytes": 47831719,
+        "files": 100
+      }
+    },
+    "event_file_counts_by_experiment": {
+      "accelerometer_oracle": {
+        "juvExpBP01": 34,
+        "juvExpBP02": 33,
+        "juvExpBP05": 33
+      },
+      "microphone_audio": {
+        "juvExpBP01": 34,
+        "juvExpBP02": 33,
+        "juvExpBP05": 33
+      },
+      "video_clips": {
+        "juvExpBP01": 34,
+        "juvExpBP02": 33,
+        "juvExpBP05": 33
+      }
+    },
+    "file_count": 334,
+    "files_over_5_mib": 0,
+    "matched_path_event_keys_across_audio_accelerometer_video": 100,
+    "max_file_bytes": 1345906,
+    "total_bytes": 62503976
+  },
+  "repository": "marisbasha/v33da",
+  "repository_commit": "e988b985e38909b40b2705cdad994e3d9307181e",
+  "repository_root_tree_sha": "f7d865dcc79047819781e696c53dbb72a7e3b18b",
+  "retrieved_on": "2026-10-23",
+  "schema_version": 1,
+  "scope": "Only Git blobs below data/v33da_sample/ at the pinned repository commit; no full-release files.",
+  "source_api": "https://api.github.com/repos/marisbasha/v33da/git/trees/f7d865dcc79047819781e696c53dbb72a7e3b18b?recursive=1",
+  "source_disclosure": {
+    "metadata_discrepancy": "The included metadata.json and split_summary.json report 33,625 full-release rows/counts; they do not provide a verified sample-specific split. Do not use those full-release counts as the sample split.",
+    "path_inventory": "Contains 100 microphone WAVs, 100 accelerometer WAVs and 100 MP4 clips. Path-derived event keys match across all three modality sets; this does not verify joins inside the Parquet content.",
+    "rights": "The nested sample README declares CC BY 4.0. This is an upstream declaration, not independent per-file rights or commercial-use clearance.",
+    "root_readme": "Describes a self-contained 100-event sample, stratified across BP01/BP02/BP05, about 60 MB, including Parquet, WAV, MP4 and camera-calibration files.",
+    "sample_rows": "The root README says the sample Parquet has 100 rows. Parquet bytes were not retrieved or inspected."
+  },
+  "tree_response_truncated": false
+}
