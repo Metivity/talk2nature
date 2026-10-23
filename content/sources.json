@@ -3809,5 +3809,21 @@
       "evidence_url": "https://doi.gin.g-node.org/10.12751/g-node.44wmeq/",
       "conditions": "Keep metadata-only until the exact manifest and component terms are reviewed; no archive acquisition or code execution is approved by this record."
     }
+  },
+  {
+    "id": 370,
+    "title": "Edge-Based Long-Term Automated Monitoring of Budgerigar Vocal Activity Using YAMNet",
+    "description": "Agishev et al. (2026), Animals 16(20), 3246; publisher abstract describes ten budgerigars monitored from June 2025 to May 2026 using local Raspberry Pi processing with a pretrained YAMNet feature extractor and a task-specific binary vocalization classifier.",
+    "url": "https://doi.org/10.3390/ani16203246",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the publisher early-access record and abstract only. A direct full-page request was rate-limited; the complete article, detailed methods, validation statistics, data statement, code/model artifacts and supplements were not reviewed. No recordings or weights were acquired or run.",
+    "review_url": "https://www.mdpi.com/2076-2615/16/20/3246",
+    "review_url_label": "Primary publisher page and abstract",
+    "rights": {
+      "license": "The publisher record displays Open Access; the exact article reuse license was not confirmed in this review.",
+      "scope": "Article citation and abstract only. Recordings, annotations, code, YAMNet/checkpoint and custom model weights are separate assets.",
+      "evidence_url": "https://www.mdpi.com/2076-2615/16/20/3246",
+      "conditions": "Cite and link only. No article text, figures, data or model assets were copied or acquired."
+    }
   }
 ]
