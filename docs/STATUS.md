@@ -2519,3 +2519,11 @@ The Performance report was last updated about four hours before inspection and c
 **Acceptance checks:** 144 Python tests and 115 Node tests passed. The local noindex build produced 115 pages plus 404; the site checker passed 116 HTML pages and 5,704 links. An explicit-origin public build produced 115 pages plus 404; its publish-boundary/link check passed 116 HTML pages, 5,820 links and 115 reachable pages. The route's revised title, description, `index,follow`, canonical and sitemap entry were verified in generated output. Browser inspection at the backend's 480-CSS-pixel minimum showed the candidate cards stacking and document width matching the viewport. It could not test 320/390 CSS pixels; physical phones, screen-reader output and independent novice comprehension remain unverified.
 
 **Limits and next decision:** this is a local release candidate, not a deployment or external review. No new data, model run, recruitment or animal playback occurred. Keep AutoResearch **NOT READY**; the independent bat/ML review and source-join gates remain open.
+
+## October 23 — first-animal guidance published
+
+**Release:** PR [#208](https://github.com/Metivity/talk2nature/pull/208) merged to `main` as `af02f6617091c4ad854dc71436bd2914aa2d3bdc`. GitHub Pages workflow [39881164615](https://github.com/Metivity/talk2nature/actions/runs/39881164615) completed successfully, including the full Python and Node suites, public build, publish-boundary checks and live-route verifier.
+
+**Live verification:** `https://metivity.github.io/talk2nature/research/first-animal/` returned HTTP 200. The deployed HTML has the expected title, `index,follow`, and canonical URL; both the fruit-bat benchmark and budgerigar cohort paths are present. The route appears in `sitemap.xml`, and `robots.txt` names that sitemap.
+
+**Remaining limits:** Search Console's earlier “Couldn't fetch” report remains unresolved; public reachability and the successful deployment verifier do not show that Google has processed the sitemap. No repeat submission was made. The biological review, exact source-join/split checks and all recruitment/data-collection gates remain open.
