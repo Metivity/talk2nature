@@ -2342,9 +2342,10 @@
   "integrity_notes": {
     "parquet_or_media_inspected": false,
     "per_file_identifier": "git_blob_sha1 is the Git blob object ID returned by the pinned Git tree API; it is not a SHA-256 digest.",
-    "raw_sample_bytes_downloaded": false,
     "sample_code_executed": false,
-    "sha256": "Not returned by the Git tree API and not independently computed because no file contents were downloaded."
+    "sha256": "Computed for the three text files listed in content_checks after in-memory fetches over verified TLS; no local copies were retained. Parquet and media bytes and their hashes remain unverified.",
+    "binary_sample_bytes_downloaded": false,
+    "text_metadata_fetched_in_memory": true
   },
   "inventory_summary": {
     "components": {
@@ -2400,11 +2401,44 @@
   "scope": "Only Git blobs below data/v33da_sample/ at the pinned repository commit; no full-release files.",
   "source_api": "https://api.github.com/repos/marisbasha/v33da/git/trees/f7d865dcc79047819781e696c53dbb72a7e3b18b?recursive=1",
   "source_disclosure": {
-    "metadata_discrepancy": "The included metadata.json and split_summary.json report 33,625 full-release rows/counts; they do not provide a verified sample-specific split. Do not use those full-release counts as the sample split.",
+    "metadata_discrepancy": "The README says the sample Parquet contains 100 rows; metadata.json and split_summary.json contain full-release counts and do not define a verified sample split. BP05 metadata lists four colors (brown, purple, yellow, red), while the pinned card and caller count table describe three released BP05 callers (brown, purple, yellow); red has no event-count group. It may be a visible non-caller or stale metadata, but its role and per-event candidate membership are unknown. Do not infer a fourth caller or candidate-set size.",
     "path_inventory": "Contains 100 microphone WAVs, 100 accelerometer WAVs and 100 MP4 clips. Path-derived event keys match across all three modality sets; this does not verify joins inside the Parquet content.",
     "rights": "The nested sample README declares CC BY 4.0. This is an upstream declaration, not independent per-file rights or commercial-use clearance.",
     "root_readme": "Describes a self-contained 100-event sample, stratified across BP01/BP02/BP05, about 60 MB, including Parquet, WAV, MP4 and camera-calibration files.",
-    "sample_rows": "The root README says the sample Parquet has 100 rows. Parquet bytes were not retrieved or inspected."
+    "sample_rows": "The root README says the sample Parquet has 100 rows. Parquet bytes were not retrieved or inspected.",
+    "text_metadata_checks": "README.md, metadata.json and split_summary.json were fetched from the pinned code commit over verified TLS, hashed in memory and matched to Git blob SHA-1 values. No text copies were retained; no Parquet or media content was fetched."
   },
-  "tree_response_truncated": false
+  "tree_response_truncated": false,
+  "content_checks": [
+    {
+      "path": "data/v33da_sample/README.md",
+      "source_url": "https://raw.githubusercontent.com/marisbasha/v33da/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/README.md",
+      "http_status": 200,
+      "bytes": 5025,
+      "git_blob_sha1": "54373063fbfa71de14da4aa40406f6750651f1ac",
+      "sha256": "28ed4902b9478954d2ef657008a422862fa34941e5feb7039357b121174cd882",
+      "retained_locally": false,
+      "verification": "Fetched over verified TLS and hashed in memory; Git blob SHA-1 matched the pinned tree."
+    },
+    {
+      "path": "data/v33da_sample/metadata.json",
+      "source_url": "https://raw.githubusercontent.com/marisbasha/v33da/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/metadata.json",
+      "http_status": 200,
+      "bytes": 2214,
+      "git_blob_sha1": "768c45a07706559a2b13d7a19bdbd12160f9ad82",
+      "sha256": "6f2173f6a3fdfbdef04a19f7194dda025e0b6078bc9bf167f7970f2810027dbd",
+      "retained_locally": false,
+      "verification": "Fetched over verified TLS and hashed in memory; Git blob SHA-1 matched the pinned tree."
+    },
+    {
+      "path": "data/v33da_sample/split_summary.json",
+      "source_url": "https://raw.githubusercontent.com/marisbasha/v33da/e988b985e38909b40b2705cdad994e3d9307181e/data/v33da_sample/split_summary.json",
+      "http_status": 200,
+      "bytes": 823,
+      "git_blob_sha1": "4d9b8586690763592a2c657201af39ce5bff9969",
+      "sha256": "885d448c71875e4e4b56849eeedb6dfec14076515a55de366a1a2e7ace1d185e",
+      "retained_locally": false,
+      "verification": "Fetched over verified TLS and hashed in memory; Git blob SHA-1 matched the pinned tree."
+    }
+  ]
 }
