@@ -1,17 +1,53 @@
 <article class="article section">
-<a class="back-link" href="{{base}}/research/">← Research library</a><p class="eyebrow">OUR FIRST ANIMAL · A PROPOSED START</p><h1>Many animals.<br><em>One careful beginning.</em></h1>
-<p class="lede">Parrots, dogs, cats, frogs… the tools welcome them all. For our first study, we propose one parrot species: the budgerigar.</p>
-<aside class="review-box"><strong>A candidate, not a settled scientific verdict.</strong><p>This is an editorial recommendation, conditional on access to existing companion-animal households and an avian research collaborator. No participants have been recruited. A cockatiel cohort could be more practical if that is where we have access; dogs are a fallback.</p></aside>
-<h2>Why start with a small parrot?</h2><p>Repeated observations of a familiar animal could help connect sounds with independently observed behavior. Budgerigars also have a research starting point in learned contact calls and individual vocal signatures. That gives us a narrower question than “translate every animal.”</p><p>Parrots’ ability to imitate people is fascinating, but learned human words and natural calls need separate labels. A sound resembling “hello” does not establish what a parrot intends.</p>
+<a class="back-link" href="{{base}}/research/">← Research library</a>
+<p class="eyebrow">CHOOSING OUR FIRST STUDY</p>
+<h1>Many animals.<br><em>Two careful starts.</em></h1>
+<p class="lede">Talk2Nature is built for observations across species. The first model question and the first phone-based study need not use the same animal.</p>
+
+<aside class="review-box"><strong>Both choices remain provisional.</strong><p>Existing evidence makes Egyptian fruit-bat interaction-context prediction our leading ML candidate. A separate, voluntary companion-animal cohort could start with budgerigars if household access and avian research support are available. Neither choice has passed the review, rights and protocol gates for new data collection or model training.</p></aside>
+
 <div class="animal-options">
-<section><p class="eyebrow">PROVISIONAL FIRST CHOICE</p><h3>Budgerigars</h3><p>One species, repeat observations and published contact-call research. We still need usable household access, independent behavior labels and a specialist-reviewed protocol. Overlapping flock calls will be a challenge.</p></section>
-<section><p class="eyebrow">ACCESS COULD DECIDE</p><h3>Cockatiels or other parrots</h3><p>A strong existing community could make a separate cockatiel study more feasible. Do not pool parrot species simply because they are parrots. African greys would need their own study and evidence review.</p></section>
-<section><p class="eyebrow">PRACTICAL ALTERNATIVES</p><h3>Dogs and cats</h3><p>Both deserve support in the app. Dog research offers a speech-model transfer baseline; cat recordings illustrate useful context labels and reuse restrictions. Breed, individual, household and recording conditions can confound results.</p></section>
-<section><p class="eyebrow">A WIDER RESEARCH HORIZON</p><h3>Frogs, farm animals and beyond</h3><p>Existing corpora help us study mixed callers and context labels. Fish, insects and bats may need underwater, vibration or ultrasonic equipment. A phone microphone cannot measure every animal’s signals.</p></section>
+<section>
+<p class="eyebrow">DATA-LED ML CANDIDATE</p>
+<h2>Egyptian fruit bats</h2>
+<p>A 2024 paper reports predicting video-coded interaction context from bat calls. It reports 35,074 vocalizations across 11 classes and 33.3% unweighted average recall for its best model. These are published results, not a Talk2Nature reproduction, and they do not show that bats understood a message.</p>
+<p>The data came from a specialized 250 kHz laboratory recording system, not ordinary phones. A metadata-only reconstruction now matches the paper's reported 35,074 filtered examples, but does not confirm the exact rows or folds. Keeping each file and every positive known participant together leaves one group with 95.6% of examples, so a defensible split needs specialist review and additional session/context metadata. We have not trained a model.</p>
+<a href="{{base}}/research/fruit-bat-context-ml-2024/">Read the bat study review and open questions →</a>
+</section>
+<section>
+<p class="eyebrow">PROVISIONAL PHONE-COHORT CANDIDATE</p>
+<h2>Budgerigars</h2>
+<p>Budgerigars have published research on learned contact calls and social interaction, making them a useful candidate for repeated, passive observations with existing carers. The available public data are not a ready-made, event-aligned phone-audio-to-behavior training set.</p>
+<p>A household study would need multiple independent homes, a small behavior codebook reviewed by an avian specialist, consent and privacy safeguards, and a clear retention and withdrawal plan. No cohort has been recruited.</p>
+<a href="{{base}}/research/budgerigar-starting-point/">See what the budgerigar data can and cannot support →</a>
+</section>
 </div>
-<h2>The first useful question</h2><p><strong>Does a sound add information about visible behavior on an animal and household the model has never seen?</strong> Begin by checking whether independent people can agree on a few observable labels. If they cannot, model training is premature.</p>
-<ol class="readable-list"><li>Agree on one species, a small behavior codebook and an approved passive observation protocol.</li><li>Observe normal routines. Keep uncertain identity, overlapping callers and unknown behavior explicit. Never provoke calls, isolate an animal or play sounds to elicit a response.</li><li>Keep related animals, households, devices and sessions together when separating training and evaluation data. Compare simple baselines before larger models.</li><li>Publish limitations and unsuccessful results too. A behavior prediction does not by itself demonstrate meaning or conversation.</li></ol>
-<h2>Keep the quiet parts, too.</h2><p>The companion-animal station now offers <strong>Whole moment · 30 seconds</strong>: one continuous window, rather than only louder sound highlights. Try the invented example first. Your start time is still a choice, not random sampling, and the app records audio rather than video.</p><div class="actions"><a class="button" href="{{base}}/app/station/?mode=companion#station-console">Try a whole moment ↗</a></div><h2>What you can do today</h2><p>In the field companion, open <strong>Who was there?</strong>, choose an animal group and optionally add a species. This is your observation; the app does not identify the animal. Saved notebooks and station journals retain that context. Use “Not sure yet” or “Several animal groups” when appropriate.</p><div class="actions"><a class="button" href="{{base}}/app/">Open the field companion ↗</a><a class="text-link" href="{{base}}/research/starting-points/#first-animal">Follow the reading path →</a></div>
-<h2>Read the evidence and its limits</h2><ul class="readable-list"><li><a href="{{base}}/research/companion-parrot-name-use-2026/">2026 companion-parrot survey: name use and its evidence limits</a></li><li><a href="{{base}}/research/wild-parrot-duet-structure-2026/">Wild yellow-naped amazon duets: sequence patterns, not decoded meaning</a></li><li><a href="{{base}}/research/parrot-community-data/">What the earlier companion-parrot survey can tell us</a></li><li><a href="{{base}}/research/budgerigar-starting-point/">Budgerigar contact calls and the available data</a></li><li><a href="{{base}}/research/dog-barks/">Learning from the dog-bark baseline</a></li><li><a href="{{base}}/research/catmeows-context/">Cat context labels and reuse rights</a></li><li><a href="{{base}}/research/pig-context-data/">Pig calls and the released subset</a></li><li><a href="{{base}}/research/frog-chorus-data/">Frog choruses and mixed callers</a></li></ul>
-<p class="quiet">Updated October 12, 2026. Selected evidence review; no external specialist review or Talk2Nature biological result yet. One small licensed budgerigar container has now been acquired and structurally inspected locally; it is not admitted training data. Real-data intake to the private research database remains closed.</p>
+
+<h2>Keep sound detection separate from communication</h2>
+<p>Large bird and multi-species archives can help test whether software detects sound events or recognizes annotated species and call types. Those labels do not tell us what an animal meant. For example, Central European Birds is a candidate for sound-event detection; it is not a behavior or receiver-response dataset. Dogs, cats, frogs and other animals remain welcome in the observation tools, without a claim that the app identifies every species.</p>
+<p><a href="{{base}}/research/central-european-birds-dataset-v1-1/">Read the Central European Birds dataset review →</a> · <a href="{{base}}/research/resources/">Browse the evidence and dataset catalog →</a></p>
+
+<h2>The first useful model question</h2>
+<p><strong>Do naturally produced calls add information about an independently observed interaction context on animals and recording sessions the model has not seen?</strong> Test simple class-prior and recording-condition baselines first. Then compare audio-only predictions with context-only and combined models, using whole animals, pairs and sessions as the held-out units where the source data support them.</p>
+<p>A prediction is a candidate association. A separate, ethically reviewed study measuring a receiver’s response would be needed to test a bounded communication claim. The Field Companion uses passive, user-started observation; it does not play calls to animals.</p>
+
+<h2>Read the evidence and its limits</h2>
+<ul class="readable-list">
+<li><a href="{{base}}/research/fruit-bat-context-ml-2024/">Egyptian fruit-bat context prediction: the reported result and unresolved joins</a></li>
+<li><a href="{{base}}/research/budgerigar-starting-point/">Budgerigar contact calls and the available data</a></li>
+<li><a href="{{base}}/research/companion-parrot-name-use-2026/">2026 companion-parrot survey: name use and its evidence limits</a></li>
+<li><a href="{{base}}/research/wild-parrot-duet-structure-2026/">Wild yellow-naped amazon duets: sequence patterns, not decoded meaning</a></li>
+<li><a href="{{base}}/research/parrot-community-data/">What the earlier companion-parrot survey can tell us</a></li>
+<li><a href="{{base}}/research/central-european-birds-dataset-v1-1/">Central European Birds: a sound-detection candidate, not a communication dataset</a></li>
+<li><a href="{{base}}/research/dog-barks/">Learning from the dog-bark baseline</a></li>
+<li><a href="{{base}}/research/catmeows-context/">Cat context labels and reuse rights</a></li>
+<li><a href="{{base}}/research/pig-context-data/">Pig calls and the released subset</a></li>
+<li><a href="{{base}}/research/frog-chorus-data/">Frog choruses and mixed callers</a></li>
+</ul>
+
+<h2>What you can do today</h2>
+<p>The Field Companion welcomes observations of many animal groups. Species choices are entered by the observer; the app does not identify an animal. Try the invented, microphone-free rehearsal first, or read the research plan before contributing to any future study.</p>
+<div class="actions"><a class="button" href="{{base}}/app/">Open the Field Companion ↗</a><a class="text-link" href="{{base}}/research/starting-points/">Follow the reading paths →</a></div>
+
+<p class="quiet">Updated October 23, 2026. Evidence-led candidate choices only: no Talk2Nature animal cohort, independent specialist review, model training or translation result is claimed. Real-data intake to the private research database remains closed.</p>
 </article>

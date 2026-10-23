@@ -209,11 +209,32 @@ class SiteTests(unittest.TestCase):
     def test_bat_methods_review_is_visible_and_preserves_evidence_boundaries(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')
-        self.assertEqual(len(note['review_request']['questions']),4)
+        self.assertEqual(len(note['review_request']['questions']),5)
+        self.assertIn(353,note['source_ids'])
+        self.assertIn(354,note['source_ids'])
+        self.assertIn(355,note['source_ids'])
+        self.assertIn('Please disclose authorship of the source dataset or target result',note['review_request']['summary'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        relationship=next(r for r in resources if r['id']=='bat-reviewer-collaboration-paper-2025')
+        self.assertEqual(relationship['source_ids'],[354])
+        self.assertEqual(relationship['acquisition'],'metadata_only')
+        self.assertEqual(relationship['files'],[])
+        self.assertEqual(relationship['rights']['research_use'],'conditional')
+        self.assertEqual(relationship['rights']['commercial_use'],'unresolved')
+        self.assertEqual(relationship['rights']['redistribution'],'not_admitted')
         guide=(project_root/'docs'/'BAT_CONTEXT_REVIEW.md').read_text()
         self.assertIn('The exact paper partitions',guide)
         self.assertIn("not the paper's filtered 35,074-call subset",guide)
+        self.assertIn('Replies from authors of either work can clarify provenance, files or methods, but they do not count as independent review',guide)
+        self.assertIn('a separate 2025 Bat1K genomics paper',guide)
         self.assertIn('No independent specialist review has been received',guide)
+        network=(project_root/'docs'/'NETWORK_AND_OUTREACH.md').read_text()
+        self.assertIn('Disclose and assess that collaboration before describing a review as independent',network)
+        self.assertIn('This is not bat-specialist evidence',network)
+        card=(project_root/'docs'/'BENCHMARK_CANDIDATE_RUN_CARD.md').read_text()
+        self.assertIn('Source-author replies are useful clarifications but do not satisfy the independent-review gate',card)
+        university=(project_root/'docs'/'UNIVERSITY_EVALUATION.md').read_text()
+        self.assertIn('it cannot count as independent review of them',university)
 
     def test_phone_recording_review_is_bounded_and_visible_from_evidence_page(self):
         project_root=Path(__file__).resolve().parents[1]
@@ -241,6 +262,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('OPEN METHODS QUESTION',page)
             self.assertIn('Submit a public methods review',page)
             self.assertIn('No independent specialist review has been received',page)
+            self.assertIn('Please disclose whether you authored the source dataset or 2024 prediction result',page)
+            self.assertIn('Neurogenetics of Vocal Communication group',page)
             self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/BAT_CONTEXT_REVIEW.md',page)
             self.assertIn('scientific-review.yml',page)
 
@@ -437,6 +460,59 @@ class SiteTests(unittest.TestCase):
             mapped=next(r for r in atlas['records'] if r['id']=='parrot-vocal-imitation-addressing-2012')
             self.assertEqual(mapped['locations'][0]['place_id'],'costa-rica')
             self.assertEqual(mapped['observation_period']['start_year'],2007)
+
+    def test_el_silencio_stays_a_metadata_only_detection_candidate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='el-silencio-multitaxon-dataset-2025')
+        self.assertEqual(note['source_ids'],[328,329,330,331,332])
+        self.assertIn('not a communication or meaning benchmark',note['finding'])
+        self.assertIn('no more than one second',note['finding'])
+        self.assertIn('separate sound-identification task',note['finding'])
+        self.assertIn('No inter-annotator reliability statistic',note['limitations'])
+        self.assertIn('protocol',note['study_snapshot'][3][1].lower())
+        self.assertIn('11,340',note['limitations'])
+        self.assertIn('10,980',note['limitations'])
+        self.assertIn('3,546,609,904 bytes',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+
+        resources={r['id']:r for r in json.loads((project_root/'research/resources.json').read_text())['resources']}
+        ids={'elsilencio-birdclefplus-overview-2025','elsilencio-labeled-audio-v1','elsilencio-unlabeled-soundscapes-2025'}
+        self.assertEqual({key for key in resources if key.startswith('elsilencio-')},ids)
+        for key in ids:
+            self.assertEqual(resources[key]['acquisition'],'metadata_only')
+            self.assertEqual(resources[key]['files'],[])
+        labeled=resources['elsilencio-labeled-audio-v1']
+        self.assertIn('CC BY 4.0',labeled['rights']['license'])
+        self.assertIn('not independently establish source-recording rights',labeled['rights']['scope'])
+        self.assertEqual(resources['elsilencio-unlabeled-soundscapes-2025']['version'],
+                         'DOI 10.5281/zenodo.17122738; published 2025-09-15')
+        paper=resources['elsilencio-birdclefplus-overview-2025']
+        self.assertEqual(paper['rights']['license'].split()[0:3],['CC','BY','4.0'])
+        self.assertEqual(paper['rights']['research_use'],'conditional')
+        self.assertIn('excluded from the public website',paper['access'])
+        self.assertIn(332,labeled['source_ids'])
+
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/el-silencio-multitaxon-dataset-2025/index.html').read_text()
+            self.assertIn('do not supply independently observed behavior',page)
+            self.assertIn('https://zenodo.org/records/17064353',page)
+            self.assertIn('https://zenodo.org/records/17122738',page)
+            self.assertIn('https://raw.githubusercontent.com/redecoacustica/elsilencio-dataset/5e2f7826c908fec3018740068bbdeda6c6977f35/Protocol.pdf',page)
+            self.assertIn('separate task and dataset',page)
+            self.assertIn('no more than one second',page)
+            self.assertIn('content=\"index,follow\"',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/el-silencio-multitaxon-dataset-2025/',page)
+            self.assertIn('/talk2nature/research/el-silencio-multitaxon-dataset-2025/',(root/'sitemap.xml').read_text())
+            reading=(root/'research/starting-points/index.html').read_text()
+            self.assertIn('el-silencio-multitaxon-dataset-2025',reading)
+            atlas=json.loads((root/'research/atlas/catalog.json').read_text())
+            mapped=next(r for r in atlas['records'] if r['id']==note['slug'])
+            self.assertEqual(mapped['location_status'],'pending')
+            self.assertEqual(mapped['locations'],[])
 
     def test_budgerigar_playback_note_bounds_trained_vocal_output(self):
         with tempfile.TemporaryDirectory() as d:
@@ -645,8 +721,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('97.9%',rendered)
             self.assertIn('95.9%',rendered)
             self.assertIn('animal-held-out claim',rendered)
-            self.assertIn('current Terms of Use gives an MPS-associated research-service restriction',rendered)
-            self.assertIn('does not separately explain its application to external downloaders',rendered)
+            self.assertIn('fileAccessRequest=true',rendered)
+            self.assertIn('file is marked restricted=false',rendered)
+            self.assertIn('the flag is ignored for unrestricted files',rendered)
+            self.assertIn('does not separately explain the external-downloader scope',rendered)
+            self.assertIn('https://guides.dataverse.org/en/6.11/api/native-api.html#restrict-files',rendered)
             self.assertIn('https://www.edmond.mpg.de/Terms_of_Use/',rendered)
             self.assertIn('index,follow',rendered)
             canonical=base+'/research/animal-spot-parrot-detection-2022/'
@@ -658,6 +737,8 @@ class SiteTests(unittest.TestCase):
             data=next(r for r in resources if r['id']=='animal-spot-monk-parakeet-data-2022')
             self.assertEqual(data['acquisition'],'metadata_only')
             self.assertEqual(data['files'],[])
+            self.assertIn(352,data['source_ids'])
+            self.assertIn('ignored when unrestricted',data['access'])
             self.assertIn('No terms were accepted',data['access'])
 
     def test_dupont_lark_note_is_discoverable_and_keeps_data_rights_separate(self):
@@ -872,6 +953,14 @@ class SiteTests(unittest.TestCase):
             self.assertIn('This is enough for a software/workflow review, not for a field study.',network)
             self.assertIn('Keep raw audio at the institution by default.',network)
             self.assertIn('No message has been sent by this plan.',network)
+            self.assertIn('Candidate reviewer paths checked October 23, 2026',network)
+            self.assertIn('not prospects who have expressed interest',network)
+            self.assertIn('https://www.birds.cornell.edu/ccb/bioacoustalks/',network)
+            self.assertIn('https://www.st-andrews.ac.uk/biology/people/vj/',network)
+            self.assertIn('no registration or proposal has been made',network)
+            status=(project_root/'docs/STATUS.md').read_text()
+            self.assertIn('source-checked international reviewer paths',status)
+            self.assertIn('no group is a prospect, partner or endorser',status)
             self.assertIn('browser-only comparison of two invented observation sessions',brief)
             self.assertIn('Posting requires GitHub sign-in, and the resulting issue is public.',brief)
             self.assertIn('https://metivity.github.io/talk2nature/app/compare/',brief)
@@ -890,6 +979,13 @@ class SiteTests(unittest.TestCase):
                 with self.subTest(origin=origin),self.assertRaises(ValueError): build(Path(d),origin,True)
 
     def test_funding_deadlines_show_fresh_check_and_official_cutoff_source(self):
+        opportunities=load('opportunities')
+        sources={source['id']:source for source in load('sources')}
+        preseed=next(item for item in opportunities if item['slug']=='preseed')
+        self.assertEqual(preseed['verified'],'2026-10-23')
+        self.assertEqual(sources[27]['checked'],'2026-10-23')
+        for requirement in ('NIS 3 million','NIS 300,000','at least 15%','at least 75%','unconfirmed'):
+            self.assertIn(requirement,preseed['next_action'])
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True)
@@ -899,8 +995,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
             self.assertIn('official date details',page)
             self.assertIn('Checked 2026-10-13 · Not submitted; not recommended for current scope',page)
-            self.assertIn('No company or investor facts are confirmed',page)
+            self.assertIn('The applicant entity, investor commitment and program fit are unconfirmed.',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
+            self.assertIn('60% of an eligible Pre-Seed investment round, up to a NIS 2 million grant',page)
+            self.assertIn('NIS 3 million',page)
+            self.assertIn('NIS 300,000',page)
+            self.assertIn('at least 15%',page)
+            self.assertIn('at least 75%',page)
             self.assertIn('Official track rules ↗',page)
             self.assertIn('Official open-source procedure ↗',page)
             self.assertIn('Wildlife Acoustics · Q4 Scientific Product Grant',page)
@@ -1087,6 +1188,17 @@ class SiteTests(unittest.TestCase):
             self.assertLess(page.index('id="station-device"'),page.index('id="station-record-controls"'))
             self.assertLess(page.index('id="station-record-controls"'),page.index('id="station-settings"'))
 
+    def test_station_journal_export_has_a_name_that_matches_its_visible_label(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            page=(root/'app'/'station'/'index.html').read_text()
+            button=re.search(r'<button id="station-export"([^>]*)>(.*?)</button>',page)
+            self.assertIsNotNone(button)
+            aria_label=re.search(r'\baria-label="([^"]+)"',button.group(1))
+            self.assertIsNotNone(aria_label)
+            visible_label=re.sub(r'<[^>]+>','',button.group(2))
+            self.assertEqual(html.unescape(aria_label.group(1)),html.unescape(visible_label))
+
     def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -1129,9 +1241,22 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Try without a microphone',home)
             self.assertNotIn('YOUR FIRST LITTLE FIELD NOTE',home)
             self.assertNotIn('class="field-invitation"',home)
-            self.assertIn('Check your phone at home.',home)
-            self.assertIn('Same place. A different day.',home)
-            self.assertIn('Review a recording',home)
+            panel_marker='<details class="app-more-tools-panel glass">'
+            self.assertIn(panel_marker,home)
+            self.assertNotIn('<details class="app-more-tools-panel glass" open>',home)
+            beginner_paths=home.split(panel_marker,1)[0]
+            more_tools=home.split(panel_marker,1)[1].split('</details>',1)[0]
+            self.assertEqual(beginner_paths.count('<a class="scenario-card glass'),3)
+            self.assertIn('href="/talk2nature/app/station/?mode=outdoor"',beginner_paths)
+            self.assertIn('href="/talk2nature/app/station/?mode=companion"',beginner_paths)
+            self.assertIn('href="/talk2nature/app/station/?mode=parrot"',beginner_paths)
+            self.assertIn('Check your phone at home.',more_tools)
+            self.assertIn('Same place. A different day.',more_tools)
+            self.assertIn('href="/talk2nature/app/review/"',more_tools)
+            self.assertIn('Review a recording',more_tools)
+            self.assertIn('href="/talk2nature/app/practice/"',more_tools)
+            self.assertNotIn('Check your phone at home.',beginner_paths)
+            self.assertNotIn('Same place. A different day.',beginner_paths)
 
     def test_recording_stop_bar_leaves_phone_scroll_space_for_observation_notes(self):
         with tempfile.TemporaryDirectory() as d:
@@ -1659,6 +1784,60 @@ class SiteTests(unittest.TestCase):
                 if m['provider']=='youtube':
                     self.assertRegex(m['video_id'],r'^[A-Za-z0-9_-]{11}$')
                     self.assertEqual(video['url'],'https://www.youtube.com/watch?v='+m['video_id'])
+
+    def test_inat_sounds_is_linked_as_a_restricted_species_classification_reference(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='inat-sounds-2024')
+        self.assertEqual(note['source_ids'],[347,348,349,350,351])
+        self.assertIn('not event-level meaning',note['finding'])
+        self.assertIn('prohibit distributing recordings',note['limitations'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('inat-sounds-')}
+        self.assertEqual(set(selected),{
+            'inat-sounds-paper-neurips-2024',
+            'inat-sounds-dataset-2024',
+            'inat-sounds-code-2024',
+            'inat-sounds-model-weights-2024',
+        })
+        dataset=selected['inat-sounds-dataset-2024']
+        self.assertEqual(dataset['acquisition'],'metadata_only')
+        self.assertEqual(dataset['rights']['research_use'],'conditional')
+        self.assertEqual(dataset['rights']['commercial_use'],'not_admitted')
+        self.assertEqual(dataset['rights']['redistribution'],'not_admitted')
+        self.assertEqual(selected['inat-sounds-code-2024']['rights']['license'],'MIT reported by the official GitHub repository for code.')
+        weights=selected['inat-sounds-model-weights-2024']
+        self.assertTrue(all(weights['rights'][field]=='unresolved' for field in ('research_use','commercial_use','redistribution')))
+        self.assertEqual(weights['acquisition'],'metadata_only')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'inat-sounds-2024'/'index.html').read_text()
+            self.assertIn('not event-level meaning',page)
+            self.assertIn('non-commercial research and education only',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn('/research/inat-sounds-2024/',(root/'sitemap.xml').read_text())
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('iNatSounds 2024 multi-taxon audio dataset',resource_page)
+            paths=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn('/research/inat-sounds-2024/',paths)
+
+    def test_ceb_api_inventory_keeps_annotation_tables_metadata_only(self):
+        project_root=Path(__file__).resolve().parents[1]
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='central-european-birds-ceb-v1-1')
+        self.assertEqual(resource['reviewed'],'2026-10-23')
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertEqual(resource['files'],[])
+        self.assertIn('8,559,233 bytes',resource['review_depth'])
+        self.assertIn('5 MiB per-file limit',resource['review_depth'])
+        self.assertIn('No CSV rows',resource['review_depth'])
+        self.assertIn('left uninspected',resource['access'])
+        self.assertIn('cannot serve as a concealed locked holdout',resource['access'])
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        source=next(s for s in sources if s['id']==333)
+        self.assertEqual(source['checked'],'2026-10-23')
+        self.assertIn('not locally verified',source['origin'])
 
 
 if __name__=='__main__': unittest.main()

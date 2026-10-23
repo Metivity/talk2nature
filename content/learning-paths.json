@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-23",
   "paths": [
     {
       "id": "first-animal",
@@ -32,7 +32,8 @@
         "egyptian-fruit-bat-data",
         "das-annotation",
         "annotation-tools",
-        "parrot-data-feasibility"
+        "parrot-data-feasibility",
+        "monk-parakeet-social-structure-2025"
       ],
       "next_step": "A synthetic file-exchange check, followed by a species-specific codebook and a reviewer-agreement exercise on approved data.",
       "gate": "Real observations require an approved protocol, rights and consent. Public clips are not automatically research data."
@@ -48,7 +49,9 @@
         "das-annotation",
         "animal-spot-parrot-detection-2022",
         "pteroset-detection-benchmark-2026",
-        "hyenaset-event-detection-benchmark"
+        "hyenaset-event-detection-benchmark",
+        "el-silencio-multitaxon-dataset-2025",
+        "central-european-birds-dataset-v1-1"
       ],
       "next_step": "Specify a rights-cleared continuous-audio evaluation with quiet intervals, event recall, false alarms per hour and review time. Use MeerKAT for metric/schema guidance only unless a separately scoped non-commercial reproduction passes its rights and animal/session split review.",
       "gate": "Triggered clips alone cannot establish recall. MeerKAT's non-commercial data and checkpoint terms exclude them from the shared commercial-capable path; its public sample names do not expose animal/session groups. HyenaSET's dataset is CC BY-NC-SA 4.0, and its individual-held-out split is useful only as a methods reference until group files and location sensitivity are reviewed. Its reported animal2vec baseline pretrains on all available audio, so treat it as transductive unless clarified. Specialized recorders do not establish phone performance."
@@ -73,10 +76,11 @@
         "animal-spot-parrot-detection-2022",
         "coarse-soundscape",
         "pteroset-detection-benchmark-2026",
-        "cowrumia-bovine-audio-app-2026"
+        "cowrumia-bovine-audio-app-2026",
+        "inat-sounds-2024"
       ],
       "next_step": "Choose a rights-cleared, independently labeled task; pin every data and model component; and freeze animal/session/site holdouts before evaluating simple baselines.",
-      "gate": "The dog-bark paper predicts labels tied to induced stimuli; Barkopedia's reviewed context labels were initially inferred from video and its source recordings' rights remain unresolved; CowRumIA reuses its test partition in validation callbacks. Treat each as a methods comparator, not evidence of meaning or a ready training set. No Talk2Nature animal model has been trained or benchmarked; AutoResearch remains NOT READY."
+      "gate": "The dog-bark paper predicts labels tied to induced stimuli; Barkopedia's reviewed context labels were initially inferred from video and its source recordings' rights remain unresolved; CowRumIA reuses its test partition in validation callbacks. Treat each as a methods comparator, not evidence of meaning or a ready training set. No Talk2Nature animal model has been trained or benchmarked; AutoResearch remains NOT READY. iNatSounds is a weakly labeled file-level species-classification/pretraining reference, not a context or meaning set; its download terms restrict use to non-commercial research/education and prohibit audio redistribution, so it is not admitted to the commercial-capable Talk2Nature path."
     },
     {
       "id": "meaning",

@@ -1,6 +1,8 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 14, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 23, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+
+The current research decision is recorded in the [candidate run card](BENCHMARK_CANDIDATE_RUN_CARD.md): bat interaction-context prediction is the closest current ML candidate to a communication question, while CEB detection and parrot caller-identity remain separate tasks. The bat candidate is not ready for reproduction until data joins/groups and rights are verified and independent reviewers approve the design. AutoResearch remains **NOT READY**.
 
 ## Choose one route
 
@@ -35,6 +37,8 @@ The default seed is `talk2nature-v1`. Repeating the splitter with unchanged inpu
 ### Multi-animal interactions
 
 For an event involving more than one animal, list **every known participant** in `individual_ids`, regardless of caller, recipient or observer role. The splitter connects records transitively: if A interacts with B and B later interacts with C, all records for A, B and C stay in one partition. Omitting a participant defeats that safeguard. Do not invent an identity or use one shared placeholder such as `unknown`; this manifest rejects unresolved identity values. Resolve identities from an appropriate source, or keep the record out of this individual-holdout evaluation until a reviewer approves a different policy.
+
+The current-main validator rejects common placeholder tokens (`unknown`, `na`, `n/a`, `none`, `null`, `tbd`, `pending`) in animal IDs and session IDs. A placeholder is not a pseudonymous identity: if a required grouping key is unresolved, fix the source manifest or exclude those records under a documented rule before making a split. The historical exact-output revision above predates this added validation; use the current source for the stricter check.
 
 Try the invented dyadic example:
 
@@ -250,3 +254,50 @@ A fresh depth-one HTTPS clone of public `main` at [`0e27f3336cb855bedabaadbf896c
 All 120 Python tests and 109 Node tests passed; 122 catalog resources validated. The local noindex build produced 106 pages plus 404 and passed 107 HTML documents / 5,173 links. The public-origin build produced 106 pages plus 404 and passed 107 HTML documents / 5,281 links / all 106 public pages reachable. The clone's tracked working tree remained clean after both builds.
 
 This is a maintainer-run setup and software check, not an independent reproduction, usability study, scientific validation or biological result. No research media, datasets or model weights were acquired, and no third-party models or research-code repositories were executed. Independently verified reproductions remain zero; report the commit actually evaluated.
+
+## October 22 current public-main clean-clone recheck — f13335f
+
+Cloned public `main` at [`f13335f4a1def93492159c26d4eae61358af7597`](https://github.com/Metivity/talk2nature/commit/f13335f4a1def93492159c26d4eae61358af7597) with `--depth 1 --no-tags`. The tracked worktree was clean before and after the checks. Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed and no private or ignored project state was copied into the clone.
+
+The documented synthetic annotation report described an invented 8-second clip, two events and 2 seconds of marked-interval coverage, with 0 seconds of independently observed context. The metadata splitter returned 10 declared groups and 12/4/4 train/validation/test records; both declared labels appeared in every partition. The split-policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the generated JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The resource validator accepted 149 records. All 144 Python tests and 115 Node tests passed.
+
+The local noindex build produced 113 pages plus 404; the site checker passed 114 HTML documents and 5,614 links. The explicit public-origin build also produced 113 pages plus 404; the checker passed 114 HTML documents, 5,729 links and all 113 public routes reachable. The README's annotation, split, catalog-validation, test and build paths were run from the fresh clone.
+
+This is maintainer-run software verification, not an independent reproduction, user study, scientific validation or biological result. The fixtures are synthetic. No third-party research media, labels, code or model weights were acquired or run. Independent reproductions remain zero; cite the exact commit actually evaluated.
+
+## October 23 current-main recheck — 496558d
+
+Repeated the documented synthetic researcher workflow from a fresh depth-one clone of public `main` at [`496558d8b58e7b131d2d08e98e49afffb736fb86`](https://github.com/Metivity/talk2nature/commit/496558d8b58e7b131d2d08e98e49afffb736fb86). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed. The annotation example again reported an invented 8-second clip, two events, 2 seconds of marked-interval coverage and 0 seconds of independently observed context. The grouped synthetic split returned 10 connected groups and 12/4/4 train/validation/test records, with both declared labels in each partition. Policy SHA-256: `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`; output SHA-256: `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The catalog validator accepted 155 records. All 146 Python and 115 Node tests passed. The local noindex build checked 118 HTML documents and 5,800 links; the public-origin build checked 118 documents, 5,919 links and all 117 public routes. The tracked clone remained clean after checks.
+
+This is a maintainer-run reproducibility check, not an independent researcher reproduction, usability study, biological result or scientific validation. No external media, labels, code or model weights were acquired. The independent reproduction count remains zero; AutoResearch remains **NOT READY**. It does not clear any rights, reviewer, grouping or model-readiness gate.
+
+## October 23 current-main recheck — 92e8a3c
+
+Repeated the documented synthetic researcher workflow from a fresh depth-one public clone at [`92e8a3c96c7aec338e8b29d8dd79d229fc6cb056`](https://github.com/Metivity/talk2nature/commit/92e8a3c96c7aec338e8b29d8dd79d229fc6cb056). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed or private workspace state copied. The clone was clean before and after the checks.
+
+The annotation example reported an invented 8-second recording, two marked events, 2 seconds of interval-union coverage and 0 seconds of independently observed context. The synthetic manifest produced 10 declared connected groups and 12/4/4 train/validation/test records, with both declared labels in every partition. The split-policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the generated split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The resource validator accepted all 158 records. All 147 Python and 115 Node tests passed.
+
+The local noindex build produced 119 pages plus 404; the checker verified 120 HTML documents and 5,909 links. The explicit public-origin build also produced 119 pages plus 404; the checker verified 120 HTML documents, 6,029 links and all 119 public routes reachable. Both site builds were run from the fresh clone.
+
+This is maintainer-run software verification, not an independent reproduction, user study, scientific validation or biological result. The fixtures are synthetic. No external media, labels, code or model weights were acquired or run; independent reproductions remain zero. AutoResearch remains **NOT READY**.
+
+
+## October 23 current-main clean-clone recheck — 7aa26df
+
+Repeated the documented researcher workflow from a fresh depth-one HTTPS clone of public `main` at [`7aa26dffdab431bfa2ed617ee12e6ab52649ee22`](https://github.com/Metivity/talk2nature/commit/7aa26dffdab431bfa2ed617ee12e6ab52649ee22). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed or private workspace state copied. The tracked clone was clean before and after the checks.
+
+The annotation fixture reported an invented 8-second recording, two marked events, 2 seconds of interval-union coverage and 0 seconds of independently observed context. The grouped synthetic manifest produced 10 connected groups and 12/4/4 train/validation/test records, with both declared labels in each partition. Its split-policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`; the generated split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The dyadic synthetic example also produced 10 connected groups. The resource validator accepted all 162 catalog resources. All 148 Python and 115 Node tests passed.
+
+The local noindex build produced 120 pages plus 404; the site checker verified 121 HTML documents and 5,972 links. The explicit public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,094 links and all 120 public routes reachable.
+
+This is maintainer-run software verification, not an independent researcher reproduction, usability study, scientific validation or biological result. No third-party media, labels, code or model weights were acquired or run. Independent reproductions remain zero, and AutoResearch remains **NOT READY**.
+
+## October 23 current public-main clean-clone recheck — eeeffbb
+
+Rechecked the newest public `main` after the `7aa26df` run using a fresh depth-one HTTPS clone at [`eeeffbbeb3ac2cc06967110d488048c06c9d4dec`](https://github.com/Metivity/talk2nature/commit/eeeffbbeb3ac2cc06967110d488048c06c9d4dec). Environment: macOS 25.4 arm64, Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed or private workspace files copied; the tracked clone remained clean after the checks.
+
+The annotation fixture again showed 8 seconds, two marked events, 2 seconds of interval-union coverage and 0 seconds of independently observed context. The grouped recording manifest returned 10 connected groups and 12/4/4 train/validation/test records; the dyadic fixture returned 10 connected groups. The policy SHA-256 was `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`, and the recording split JSON SHA-256 was `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`. The resource validator accepted 162 records; all 148 Python and 115 Node tests passed.
+
+The local noindex build produced 120 pages plus 404; the site checker verified 121 HTML documents and 5,972 links. The explicit public-origin build also produced 120 pages plus 404; the checker verified 121 HTML documents, 6,094 links and all 120 public routes reachable. This newer commit produced the same software results as the preceding `7aa26df` check.
+
+This is a maintainer-run software check, not an independent reproduction, usability study, scientific validation or biological result. No third-party media, labels, code or model weights were acquired or run; independent reproductions remain zero and AutoResearch remains **NOT READY**.

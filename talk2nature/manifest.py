@@ -50,10 +50,12 @@ def validate(records, group_dimensions=()):
             raise ValueError(f'Duplicate recording_id: {record["recording_id"]}')
         seen.add(record['recording_id'])
         individuals = record.get('individual_ids')
-        if not isinstance(individuals, list) or not individuals or any(not isinstance(x, str) or not x.strip() or x != x.strip() or x.lower() in ('unknown','na','n/a') for x in individuals):
+        if not isinstance(individuals, list) or not individuals or any(not isinstance(x, str) or not x.strip() or x != x.strip() or x.lower() in UNKNOWN_GROUP_IDS for x in individuals):
             raise ValueError(f'Record {i}: individual_ids must list known pseudonymous individuals; unknown identities cannot support an individual holdout.')
         if len(set(individuals)) != len(individuals):
             raise ValueError(f'Record {i}: duplicate individual IDs.')
+        if record['session_id'].lower() in UNKNOWN_GROUP_IDS:
+            raise ValueError(f'Record {i}: session_id must be a known pseudonymous session; placeholders cannot support a session holdout.')
         group_ids = record.get('group_ids', {})
         if not isinstance(group_ids, dict):
             raise ValueError(f'Record {i}: group_ids must map grouping dimensions to pseudonymous ID lists.')

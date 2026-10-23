@@ -8,6 +8,10 @@ Build a general observation app. Start the first scientific feasibility study wi
 
 This is an operational recommendation, not a demonstrated ranking of animal intelligence or scientific promise. No new animal should be acquired, isolated or provoked for this project. Existing carers, ordinary routines and voluntary participation are the intended setting.
 
+### October 23 clarification: two different starting choices
+
+The October 3 recommendation concerns a possible **phone-based companion-animal feasibility cohort**. It does not select the first ML benchmark. The current data-led, communication-adjacent ML candidate is Egyptian fruit-bat context prediction, subject to independent bat-behavior and ML-evaluation review and verification of the source joins and group boundaries. The bat recordings require specialized ultrasonic equipment and are not a phone cohort. Budgerigars remain a provisional household-app cohort only if real access, an avian reviewer and the required participant/data safeguards are established. Neither track authorizes recruitment, new data collection, model training or animal playback.
+
 ## Comparison
 
 | Candidate | Practical opportunity | Main obstacle | Decision |

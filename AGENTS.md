@@ -7,6 +7,11 @@
 - No sub-agents unless Raviv or applicable instructions explicitly request them.
 - Follow Raviv's CX rules for supported read-only commands. Do not use CX for edits or credentials.
 
+## Local research-provider credential
+- Raviv authorized Talk2Nature access to his shared Jev/TypeSafe API credential. The secret is in the macOS Keychain generic-password item with service `ai.typesafe.jev` and account `metivity-and-raviv-personal`; never copy its value into this repository, shell arguments, logs, tool output, browser/client code or public configuration.
+- This is a local credential reference, not evidence of a configured client or API-verified integration. No provider launcher or adapter currently exists here. Do not make API calls or incur usage merely because the key exists; use it only for a separately scoped Talk2Nature task, retrieving it directly into process memory/environment through a reviewed secure handoff if needed.
+- The shared credential does not authorize moving code, data, recordings, customer information or business strategy between Talk2Nature and other projects. Never put this server credential in a public app, static build or browser bundle.
+
 ## Current goal and continuity
 - Read `docs/GOAL.md` and `docs/STATUS.md` for the current scope and next actions.
 - Existing evidence baseline: `research/build_audit.py` and `output/pdf/talk2nature-audit-and-plan.pdf` (September 30, 2026).

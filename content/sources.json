@@ -218,10 +218,10 @@
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Current Pre-Seed track: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
+    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 23, 2026: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-12",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-23",
+    "origin": "Official Israel Innovation Authority Pre-Seed page reviewed October 23, 2026 for the current deadline, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
   },
   {
     "id": 28,
@@ -1763,10 +1763,10 @@
   {
     "id": 173,
     "title": "Andreas Triantafyllopoulos public GitHub profile and repository list",
-    "description": "Author-linked GitHub account checked as a bounded search for the promised EUSIPCO bat-context code and split files.",
+    "description": "Author-linked GitHub profile and owner repository inventory rechecked as a bounded search for the promised EUSIPCO bat-context code and split files.",
     "url": "https://github.com/ATriantafyllopoulos?tab=repositories",
-    "checked": "2026-10-12",
-    "origin": "The author's personal website links to this public GitHub account. The visible repository page lists 13 public repositories; none visibly matched the EUSIPCO 2024 bat-context paper. This limited profile check does not establish that code is absent from coauthor, lab, organization, archival or unindexed locations.",
+    "checked": "2026-10-23",
+    "origin": "The author’s personal website links to this public GitHub account. On 2026-10-23 the live owner-repository API listed 13 public repositories, newest updated 2025-10-20; a GitHub repository search for the exact paper title returned no match. This does not rule out coauthor, lab, archival or unindexed releases, and a Zenodo API search was inaccessible from this environment.",
     "review_url": "https://atriantafyllopoulos.github.io/",
     "review_url_label": "Author personal site linking to public GitHub profile"
   },
@@ -2467,18 +2467,18 @@
   {
     "id": 237,
     "title": "ANIMAL-SPOT monk-parakeet example corpus and data split",
-    "description": "Edmond's current record resolves to Version 2.0, published 2024-04-08, with one public 522.0 MB ANIMAL-SPOT_FILES.tar.gz archive and a dataset-level CC BY 4.0 license. The author README describes a 6,745-file monk-parakeet target/noise corpus and its split; archive contents and split files were not inspected.",
+    "description": "Edmond V2.0 was published 2024-04-08. Its public API lists one 547,403,503-byte ANIMAL-SPOT_FILES.tar.gz archive (provider MD5 5443c6564c377d19576f5ea74b2bd061), dataset-level CC BY 4.0, file restricted=false and fileAccessRequest=true. Dataverse documentation says access-request settings are ignored for unrestricted files; Edmond's separate terms/license acceptance for download still applies. The author README describes 6,745 monk-parakeet target/noise clips; archive contents and split files remain uninspected.",
     "url": "https://doi.org/10.17617/3.KQPPXF",
-    "checked": "2026-10-13",
-    "origin": "Reviewed Edmond's Version 2.0 landing page and metadata API, including the public file entry, dataset-level license and archive MD5; no archive was downloaded. Edmond's official access guide says downloads require acceptance of Edmond terms and the dataset license; neither was accepted here. The author repository README describes the example corpus and year/tape split rule, but that claim was not checked against archive contents."
+    "checked": "2026-10-23",
+    "origin": "Re-read the official Edmond V2 API over verified TLS on October 23, 2026. It reports the released version, exact file size and provider MD5, CC BY 4.0, restricted=false and fileAccessRequest=true. Reviewed the official Edmond download guidance and Dataverse 6.11 API documentation: the access-request flag is ignored when a file is unrestricted, but Edmond separately requires acceptance of its terms and dataset license for downloads. Neither was accepted; no account, access request or archive download occurred. The author repository README describes the example corpus and year/tape split rule; neither claim was checked against archive contents."
   },
   {
     "id": 238,
     "title": "Edmond data access, license acceptance and versioning guidance",
     "description": "Official Edmond user guidance says published dataset downloads require acceptance of Edmond terms and the dataset's stated license; a DOI resolves to the newest published version, while earlier versions remain selectable and should be cited explicitly.",
     "url": "https://docs.edmond.mpg.de/Data_Access_Usage/",
-    "checked": "2026-10-14",
-    "origin": "Rechecked the official Edmond Data Access & Usage guide sections on public access, license acceptance, versioning and exact-version citation. It says public datasets are accessible without an account, while downloading requires acceptance of Edmond terms and the dataset-specific license. No account was created, terms were accepted or files were downloaded."
+    "checked": "2026-10-23",
+    "origin": "Rechecked the official Edmond Data Access & Usage guide on October 23, 2026. It says published datasets are accessible without an account, but downloading requires acceptance of Edmond terms and the dataset-specific license. Version-specific citation guidance remains relevant. No account was created, terms were accepted or files were downloaded."
   },
   {
     "id": 239,
@@ -3377,5 +3377,283 @@
       "dataset": "The pinned LICENSE states CC BY-NC-SA 4.0 for the dataset.",
       "scope": "Dataset repository only. The license does not establish rights, consent or privacy terms for the original source videos, and no separate baseline-code license was identified in the reviewed README/license."
     }
+  },
+  {
+    "id": 328,
+    "title": "El Silencio labeled multi-taxonomic dataset, Zenodo record",
+    "description": "Version 1 deposit of 770 one-minute multi-taxonomic soundscapes and strong acoustic-event labels from the Middle Magdalena region, Colombia.",
+    "url": "https://zenodo.org/records/17064353",
+    "checked": "2026-10-22",
+    "origin": "Queried the official Zenodo API metadata on 2026-10-22. It identifies publication date 2025-09-05, the v1 landing page, a record-level CC BY 4.0 license, nine files totaling 3,546,609,904 bytes, and provider-reported MD5 values. No file bytes were downloaded or locally hashed. The rendered Zenodo page reports a 109.8 GB data-volume statistic, which does not match the listed-file API total; this discrepancy is unresolved.",
+    "rights": {
+      "dataset": "The official Zenodo API declares CC BY 4.0 at record level.",
+      "scope": "The record-level declaration covers the deposited dataset as represented by the provider. It does not independently verify rights, consent, privacy or sensitive-location conditions for source recordings."
+    }
+  },
+  {
+    "id": 329,
+    "title": "El Silencio unlabeled soundscapes, Zenodo record",
+    "description": "Separate Zenodo deposit linked by the dataset repository for the broader, unlabeled soundscape collection.",
+    "url": "https://zenodo.org/records/17122738",
+    "checked": "2026-10-22",
+    "origin": "Queried the official Zenodo API metadata on 2026-10-22. It identifies publication date 2025-09-15, record-level CC BY 4.0, 61 ZIP files totaling 49,620,235,222 bytes, and provider-reported MD5 values. No audio file was downloaded or locally hashed. The repository README at its reviewed commit describes 10,980 one-minute soundscapes across 61 sites.",
+    "rights": {
+      "dataset": "The official Zenodo API declares CC BY 4.0 at record level.",
+      "scope": "The record-level declaration covers the deposited dataset as represented by the provider. It does not independently verify rights, consent, privacy or sensitive-location conditions for source recordings."
+    }
+  },
+  {
+    "id": 330,
+    "title": "El Silencio dataset repository at a pinned GitHub commit",
+    "description": "Dataset README and license pinned to commit 5e2f7826c908fec3018740068bbdeda6c6977f35.",
+    "url": "https://github.com/redecoacustica/elsilencio-dataset/tree/5e2f7826c908fec3018740068bbdeda6c6977f35",
+    "checked": "2026-10-22",
+    "origin": "Resolved the public main reference to commit 5e2f7826c908fec3018740068bbdeda6c6977f35, then read the README and LICENSE at that exact revision. The README describes 10,980 unlabeled soundscapes at 61 sites and links the separate Zenodo record 17122738; the LICENSE is MIT. The visible repository inventory contains a README, Spanish annotation protocol, image and license, not an executable analysis package. The pinned protocol was separately downloaded and text-reviewed; see source 332.",
+    "rights": {
+      "repository": "MIT at the pinned repository revision.",
+      "scope": "Repository materials covered by its LICENSE only. This MIT declaration does not license the separately deposited Zenodo recordings or labels."
+    }
+  },
+  {
+    "id": 331,
+    "title": "BirdCLEF+ 2025 multi-taxonomic overview paper",
+    "description": "Conference overview of the BirdCLEF+ 2025 sound-identification challenge and El Silencio dataset.",
+    "url": "https://ceur-ws.org/Vol-4038/paper_232.pdf",
+    "checked": "2026-10-22",
+    "origin": "Reviewed the full 11-page paper from the publisher PDF; the article identifies a 770-soundscape, 12.8-hour labeled subset and an 11,340-file/63-site unlabeled snapshot. The paper describes a separate BirdCLEF+ competition dataset with more than 38,000 labeled training clips and 705 test soundscapes. The subsequent Zenodo unlabeled record and pinned README describe 10,980 files/61 sites (180 per site); the 360-file/two-site reduction is not explained. Local review-copy SHA-256: 1a5266889ec89b0b8b1168973cf2c3ee58987f83a67c24c7ab528e7b46302db5. No dataset audio, labels, code or weights were acquired or run.",
+    "rights": {
+      "paper": "CC BY 4.0 stated on the CEUR-WS volume index and the paper's first page.",
+      "scope": "Article only. The paper license does not grant rights to the separate dataset recordings, annotations, challenge code or model weights. No article text or figures were copied into Talk2Nature."
+    }
+  },
+  {
+    "id": 332,
+    "title": "El Silencio manual multi-taxon annotation protocol",
+    "description": "Spanish-language Protocol.pdf for manual RavenPro annotation, pinned to the dataset repository commit.",
+    "url": "https://raw.githubusercontent.com/redecoacustica/elsilencio-dataset/5e2f7826c908fec3018740068bbdeda6c6977f35/Protocol.pdf",
+    "checked": "2026-10-22",
+    "origin": "Downloaded Protocol.pdf from the pinned repository commit after verifying the repository MIT license. Its 8,571,721-byte GitHub API blob SHA matches local Git blob d77a310dff96ae6ba671f8237e02dd35b6d20f3d; local SHA-256 is 0f591cc8d53cbfd7f9a044d836d0a1d2f3fd76cb6163c0b532c31bc1e745c2d6. Reviewed all extractable Spanish text on pages 2-18; page 1 is image-only. No recording or annotation table was downloaded.",
+    "rights": {
+      "license": "MIT in the LICENSE file at the pinned repository commit.",
+      "scope": "Protocol.pdf as repository documentation only. This does not license the separate Zenodo recordings or annotation data; embedded third-party interface imagery was not reused."
+    }
+  },
+  {
+    "id": 333,
+    "title": "Central European Birds (CEB) acoustic dataset, Zenodo v1.1",
+    "description": "Official Zenodo record and data dictionary for strongly and weakly labeled bird soundscapes and Xeno-Canto focal recordings. Its API lists train_soundscape.csv at 8,559,233 bytes and test_soundscape.csv at 2,401,049 bytes; neither table's rows were inspected.",
+    "url": "https://zenodo.org/records/21821133",
+    "checked": "2026-10-23",
+    "origin": "Re-read the official Zenodo v1.1 API record over verified TLS on October 23, 2026. It reports provider MD5 55b5e3f99566c5bb3ba4fb5b833424da for train_soundscape.csv (8,559,233 bytes) and f572155ae41714e17b218e95d97b1ce9 for test_soundscape.csv (2,401,049 bytes). These are repository-provided checksums, not locally verified. The training table exceeds the collection tool's 5 MiB per-file limit; the public test-label table was not inspected. No audio, annotation CSV, model or code was downloaded or run.",
+    "rights": {
+      "license": "The record declares CC BY 4.0 for its soundscape audio, annotations and metadata. train_xenocanto retains each source recording's original license.",
+      "scope": "The record-level declaration does not relicense train_xenocanto recordings. Its schema says some Xeno-Canto license fields are empty; inspect exact rows before any use. No independent source-media or privacy review was performed."
+    }
+  },
+  {
+    "id": 334,
+    "title": "BEANS-Next and ROOTS: Broadening Audio-Language Capabilities for Bioacoustics",
+    "description": "Plachouras et al. (2026), arXiv:2610.10663. Benchmark and training-resource paper; preprint, not a Talk2Nature reproduction.",
+    "url": "https://arxiv.org/abs/2610.10663",
+    "checked": "2026-10-23",
+    "origin": "Targeted review of the primary preprint abstract, task taxonomy, data construction, benchmark split description, reported findings, risks and reproducibility statement, plus the official project page and Hugging Face benchmark/training-resource cards. No audio, dataset shards, code or model weights downloaded; no inference or benchmark run."
+  },
+  {
+    "id": 335,
+    "title": "BirdSet classification benchmark paper",
+    "description": "Rauch et al. (2025), BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics. arXiv:2403.10380, version 6; accepted as an ICLR 2025 spotlight. This is a species/acoustic classification benchmark, not an animal-meaning study.",
+    "url": "https://arxiv.org/abs/2403.10380",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the primary arXiv abstract and version history. The paper reports over 6,800 hours, nearly 10,000 training classes and eight strongly labeled evaluation datasets totaling over 400 hours. No paper body, data, code or weights were downloaded or executed."
+  },
+  {
+    "id": 336,
+    "title": "BirdSet dataset card and component inventory",
+    "description": "Maintainer dataset card for BirdSet. It lists regional benchmark configurations, a 2024-03-10 Xeno-Canto snapshot, per-recording license metadata and species/call labels. The live card also reports dataset-viewer/script compatibility limitations.",
+    "url": "https://huggingface.co/datasets/DBD-research-group/BirdSet",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current card, its published configuration sizes, field definitions and licensing section. No audio or other dataset file was acquired; the dataset was not loaded or run."
+  },
+  {
+    "id": 337,
+    "title": "BirdSet maintainers’ license-metadata clarification",
+    "description": "Closed maintainer/contributor thread on missing and mixed per-record license metadata in BirdSet. The May 2026 discussion records a metadata conversion correction, clarifies that CC-ND files were excluded, and notes remaining inconsistent license-string formats across splits.",
+    "url": "https://github.com/DBD-research-group/BirdSet/issues/337",
+    "checked": "2026-10-23",
+    "origin": "Read the complete public clarification thread, including contributor checks and maintainer responses. This is provenance for a license uncertainty, not legal advice or a blanket permission grant."
+  },
+  {
+    "id": 338,
+    "title": "WABAD data paper, Ecology (2026)",
+    "description": "Pérez-Granados et al., WABAD: A World Annotated Bird Acoustic Dataset for Passive Acoustic Monitoring, Ecology 107(2), e70317. DOI 10.1002/ecy.70317.",
+    "url": "https://doi.org/10.1002/ecy.70317",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the publisher abstract and data-availability statement. The abstract reports 5,047 minutes of audio and 91,931 species-level annotated vocalizations across 1,192 bird species, 72 sites, 29 recording locations and 13 biomes. The full article body and supporting-information PDF were not reviewed; no data, code or models were acquired or run.",
+    "rights": {
+      "article": "The article body was not reproduced. Its article-specific reuse terms were not independently verified.",
+      "dataset_statement": "The publisher abstract says the dataset is CC BY 4.0 and links to Zenodo DOI 10.5281/zenodo.17293588. The current Zenodo v4 record reports CC BY-NC 4.0; reconcile the discrepancy before reuse."
+    }
+  },
+  {
+    "id": 339,
+    "title": "WABAD latest Zenodo dataset record, v4",
+    "description": "Official current version of the World Annotated Bird Acoustic Dataset, with 21.3 GB of audio and associated metadata/annotations listed on the record.",
+    "url": "https://zenodo.org/records/20513304",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official Zenodo v4 record, version history and file inventory. It is published 2026-06-02, lists 21.3 GB of data, 102 contributors and a CC BY-NC 4.0 declaration. No archive or file was downloaded, inspected or checksum-verified.",
+    "rights": {
+      "dataset": "Current Zenodo v4 record declares CC BY-NC 4.0. The linked journal abstract states CC BY 4.0 for the dataset; the discrepancy is unresolved.",
+      "scope": "The record-level statement has not been reconciled with the article, source-recording provenance, or any per-file restrictions. Do not infer commercial permission."
+    }
+  },
+  {
+    "id": 340,
+    "title": "OpenWhistle dolphin dataset and benchmark paper (arXiv v1, 2026)",
+    "description": "Mustun et al., OpenWhistle: A Large-Scale Longitudinal Dataset and Benchmark of Bottlenose Dolphin Vocalizations, arXiv:2609.34839v1. The preprint reports acceptance as a NeurIPS 2026 Datasets & Evaluations Spotlight.",
+    "url": "https://arxiv.org/abs/2609.34839v1",
+    "checked": "2026-10-23",
+    "origin": "Reviewed arXiv v1 (2609.34839v1): HTML abstract, data-collection and annotation sections, benchmark tasks and split, limitations, ethics statement and license statement. No dataset, code or model files were acquired or run.",
+    "rights": {
+      "article": "The arXiv version is marked CC BY 4.0; its ethics section also says OpenWhistle is released under CC BY 4.0.",
+      "scope": "The Hugging Face dataset cards do not declare their own license fields, and the separate model card says its license is unspecified. Confirm component-level coverage before acquiring or using data, code or weights, especially for commercial use."
+    }
+  },
+  {
+    "id": 341,
+    "title": "OpenWhistle pretraining audio dataset card and file inventory (revision eea3742)",
+    "description": "Official Hugging Face snapshot eea37423c7841b0f99a7c0380f945999c0a2c489 for the unlabeled 96 kHz dolphin-audio corpus. The pinned card lists 31,780 segments totaling 114.284 hours and a repository size of about 79.8 GB.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/eea37423c7841b0f99a7c0380f945999c0a2c489",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the README dataset card, schema, split counts, review-sample description and repository file inventory at immutable revision eea37423c7841b0f99a7c0380f945999c0a2c489. The Hugging Face API cardData.license field was null at this revision; no sample or full audio file was downloaded."
+  },
+  {
+    "id": 342,
+    "title": "OpenWhistle expert-labeled classification dataset card and file inventory (revision 2b7806e)",
+    "description": "Official Hugging Face snapshot 2b7806e3c5913c459c40b824ab7f944d494b3993 for the 8,354-example, 10-category expert-annotated whistle set; it lists train, validation and test splits and a repository size of about 6.65 GB.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/2b7806e3c5913c459c40b824ab7f944d494b3993",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the README dataset card, label definitions, split counts, review-sample configurations and repository file inventory at immutable revision 2b7806e3c5913c459c40b824ab7f944d494b3993. The Hugging Face API cardData.license field was null at this revision; no audio, labels or spectrogram files were downloaded."
+  },
+  {
+    "id": 343,
+    "title": "OpenWhistle Wav2Vec2 model card and license statement (revision 985ac11)",
+    "description": "Official Hugging Face snapshot 985ac11bc6939af5e41383143aad5a0ae6993f68 for the released dolphin-adapted Wav2Vec2 checkpoint. The pinned model card states that the model license has not been specified.",
+    "url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/985ac11bc6939af5e41383143aad5a0ae6993f68",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the model-card license and usage note at immutable revision 985ac11bc6939af5e41383143aad5a0ae6993f68. The Hugging Face API cardData.license field was null at this revision. No model weights or code were downloaded or executed."
+  },
+  {
+    "id": 344,
+    "title": "The effect of social structure on vocal flexibility in monk parakeets (2025)",
+    "description": "Smeele et al., Royal Society Open Science 12(5):241717. The published study relates social-network measures to vocal diversity and contact-call similarity in wild monk parakeets.",
+    "url": "https://doi.org/10.1098/rsos.241717",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the published article abstract and targeted methods, results, discussion, data-access, ethics and rights passages using the primary full-text record and the institutional repository copy. Cross-checked the 2023 voiceprint paper, which reports the same 5,599-call, 229-bird, two-year cohort. This is a new social-network analysis of an overlapping cohort, not independent acoustic replication. No article media, data archive or code was acquired or run.",
+    "rights": {
+      "article": "The article declares Creative Commons Attribution 4.0. This applies to the article, not automatically to the separate Zenodo data deposit or GitHub analysis code."
+    }
+  },
+  {
+    "id": 345,
+    "title": "Monk-parakeet social-structure data deposit, Zenodo v1",
+    "description": "Official Zenodo record 10.5281/zenodo.13906800 lists one 129.5 MB ZIP and declares the MIT License at record level.",
+    "url": "https://zenodo.org/records/13906800",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official Zenodo v1 landing page and metadata. It lists one 129.5 MB archive and declares MIT. The archive was not downloaded; its member files, contents, provenance, privacy implications and any embedded-media terms were not inspected."
+  },
+  {
+    "id": 346,
+    "title": "Pinned analysis repository for monk-parakeet social structure (commit 395a622)",
+    "description": "Author GitHub repository at immutable commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67. Its README describes R/Stan analyses and notes that some input data are not shared.",
+    "url": "https://github.com/simeonqs/The_effect_of_social_structure_on_vocal_flexibility_in_monk_parakeets/tree/395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
+    "checked": "2026-10-23",
+    "origin": "Resolved the repository main branch to commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67 and reviewed the pinned README and repository tree. No LICENSE file was present in the inspected tree. The README documents UTM/nest-location fields and says some raw age, relatedness and other input data are not shared, so parts of the analysis cannot be rerun. No code or data was downloaded or executed.",
+    "rights": {
+      "repository": "No repository license was located at the pinned revision. Code reuse terms are unresolved. The Zenodo record license is separate and does not establish the GitHub code license."
+    }
+  },
+  {
+    "id": 347,
+    "title": "The iNaturalist Sounds Dataset (NeurIPS 2024)",
+    "description": "Chasmai et al. introduce a large, weakly labeled species-audio collection spanning birds, mammals, insects, reptiles and amphibians; it is a classification and pretraining resource, not a communication-meaning dataset.",
+    "url": "https://doi.org/10.52202/079017-4213",
+    "checked": "2026-10-23",
+    "origin": "Targeted review of the official NeurIPS paper abstract, dataset construction, file-level evaluation, weak-label caveats, downstream evaluation and assets/consent checklist. The full paper was not exhaustively reviewed; no dataset or model result was reproduced.",
+    "rights": {
+      "article": "Article reuse terms were not independently verified. Talk2Nature links and cites the paper without reproducing its text, figures or tables."
+    }
+  },
+  {
+    "id": 348,
+    "title": "iNatSounds 2024 dataset README and terms (pinned repository revision)",
+    "description": "The official versioned README reports class counts, file-level labels, per-record license and location metadata, archive sizes, and terms limiting use to non-commercial research/education and prohibiting distribution of recordings.",
+    "url": "https://github.com/visipedia/inat_sounds/blob/bd52ecde5d9d7434f6167bbac823d152c3823ccd/2024/README.md",
+    "checked": "2026-10-23",
+    "origin": "Resolved the official repository main branch to commit bd52ecde5d9d7434f6167bbac823d152c3823ccd and reviewed its complete 2024 README, including class counts, annotation schema, location fields, usage terms and provider-listed file sizes. No audio, annotation archive or checksum was acquired or verified.",
+    "rights": {
+      "dataset": "The README states non-commercial research and educational use only and prohibits distribution of dataset recordings. It also provides per-record license identifiers; source-item licenses and the dataset-level terms must both be considered."
+    }
+  },
+  {
+    "id": 349,
+    "title": "iNaturalist guidance on media licensing",
+    "description": "Official guidance explains that uploaded audio belongs to contributors and that individual sounds may have different Creative Commons licenses or no license.",
+    "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169918-can-i-use-the-photos-and-sounds-that-are-posted-on-inaturalist-",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current iNaturalist help page on uploaded media ownership, default CC BY-NC licensing, alternate uploader choices and all-rights-reserved media. This source explains underlying media rights and does not replace the separate iNatSounds dataset terms."
+  },
+  {
+    "id": 350,
+    "title": "iNatSounds implementation repository (pinned revision)",
+    "description": "The authors’ repository links the paper, data and model-weight folder and provides training code. GitHub reports MIT for repository code; this does not license audio or model weights.",
+    "url": "https://github.com/cvl-umass/iNatSounds/tree/78ff2a5850d6c2b364dd36422085033b5a0fa750",
+    "checked": "2026-10-23",
+    "origin": "Resolved the official code repository main branch to commit 78ff2a5850d6c2b364dd36422085033b5a0fa750; reviewed its README links and training-command overview and checked GitHub API SPDX metadata (MIT). No source files or dependencies were downloaded, audited or run.",
+    "rights": {
+      "repository_code": "MIT is reported for repository code only. The data, pretrained weights and third-party dependencies have separate rights."
+    }
+  },
+  {
+    "id": 351,
+    "title": "iNatSounds pretrained-model folder linked by the authors",
+    "description": "The official implementation README links a Google Drive folder for released weights. The folder’s file inventory and model-specific terms were not reviewed.",
+    "url": "https://drive.google.com/drive/folders/1u8iqzP2WL2nkTMp9VZ5FCa3zveOrPj2X",
+    "checked": "2026-10-23",
+    "origin": "Followed the model-weights link from the official iNatSounds implementation README at source 350. The folder opened, but its contents, exact checkpoint versions, license, training provenance and usage conditions were not verified. No file was downloaded."
+  },
+  {
+    "id": 352,
+    "title": "Dataverse Native API documentation: restricted-file access flags",
+    "description": "Dataverse 6.11 API documentation states that enableAccessRequest and termsOfAccess are ignored when restrict=false. This explains API field semantics; it does not override a repository's separate download terms or determine how those terms apply to an external user.",
+    "url": "https://guides.dataverse.org/en/6.11/api/native-api.html#restrict-files",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the official Dataverse 6.11 Native API section on restricted files. It says access-request settings are ignored when restrict=false and apply to restricted files. No Dataverse API write operation or access request was made."
+  },
+  {
+    "id": 353,
+    "title": "University of St Andrews Neurogenetics of Vocal Communication group",
+    "description": "The official group profile describes research on mammalian vocal communication and bat vocal-learning and communication behavior. Reviewed for possible subject-expertise fit only; it does not establish availability, interest or independent-review status.",
+    "url": "https://biology.st-andrews.ac.uk/research/research-group/neurogenetics-of-vocal-communication/",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current official group page for a bat-context reviewer-fit screen. No contact was made."
+  },
+  {
+    "id": 354,
+    "title": "Bat genomes illuminate adaptations to viral tolerance and disease resistance",
+    "description": "The Nature 2025 author list includes Sonja C. Vernes and Yossi Yovel. Checked only to disclose a separate coauthorship relationship during reviewer-independence screening; the genomics paper was not reviewed as evidence about vocal communication.",
+    "url": "https://doi.org/10.1038/s41586-024-08471-0",
+    "checked": "2026-10-23",
+    "origin": "Checked the official Nature article's author list only. This documents a relationship to disclose, not a finding of bias or disqualification.",
+    "rights": {
+      "article": "Only public author metadata was checked. No article text, figures or supplements were reproduced; full-content reuse terms were not reviewed."
+    }
+  },
+  {
+    "id": 355,
+    "title": "Tel Aviv University profile: Yossi Yovel",
+    "description": "The official university profile identifies Yossi Yovel as a zoology professor and describes research interests including vocal communication, bat behavior and neuro-ecology.",
+    "url": "https://www.tau.ac.il/profile/yossiy",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the current official TAU profile for source-author and topical-fit context. This is not evidence of interest in Talk2Nature."
   }
 ]

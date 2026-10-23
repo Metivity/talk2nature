@@ -263,3 +263,59 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Check:** opened the live `/mobile/` page in desktop Chrome mobile emulation at 320 × 740 and 390 × 844 CSS pixels. At both widths, the feedback helper produced a visible, reviewable report from invented QA entries; document width matched the viewport; and the email action remained a `mailto:` draft. The browser reported no page errors or non-GET requests. At 320 × 740, followed the practice link into Station, started the synthetic rehearsal, and confirmed the microphone-call stub stayed at zero. The page identified the session as synthetic; no recording, email, issue or upload was created.
 
 **Limit:** this verifies the published software path with maintainer-entered test text, not a first-time-user outcome, actual email-client behavior, screen-reader use or physical iPhone/Android behavior. No participant feedback was collected. Independent novice and physical-device review remain the next usability gates.
+
+## October 23 follow-up: progressive disclosure on the Field Companion home
+
+**Question:** can a first-time visitor choose a simple observation path before encountering researcher-oriented utilities?
+
+**Change:** kept the two hero actions and three direct observation paths together—outdoor, familiar animal and companion parrot. Moved the phone rehearsal, saved-moment comparison, audio review and invented-scene practice into a native, closed-by-default “More tools” disclosure. All four remain reachable; this changes their order and visibility, not their underlying behavior.
+
+**Check:** all 144 Python tests and 115 Node tests passed. The local noindex build produced 114 pages plus 404; the site checker passed 115 HTML pages and 5,655 links. In the local browser preview, the 480 × 844 CSS-pixel viewport had no horizontal overflow, displayed three core paths before the collapsed disclosure, and exposed all four optional routes when expanded. The disclosure was keyboard-accessible through native `<details>/<summary>` semantics. No microphone was opened and no animal or participant data was used.
+
+**Limit:** this browser backend enforced a 480-pixel minimum for the measured preview, so this pass does not establish 320- or 390-pixel behavior, physical-device usability, screen-reader output or independent novice comprehension. Those remain open. This is a local candidate; it has not been deployed.
+
+**Release receipt — October 23:** PR [#198](https://github.com/Metivity/talk2nature/pull/198) merged as [`0f3efe1`](https://github.com/Metivity/talk2nature/commit/0f3efe126293ebcdb28f608ab69efd0c12ce3d1c). Pages run [#39863744940](https://github.com/Metivity/talk2nature/actions/runs/39863744940) passed tests, public build, link/SEO/publish-boundary checks, deployment and live-route/crawl-metadata verification. A direct live fetch confirmed the new closed-by-default disclosure markup and the versioned app stylesheet returned HTTP 200. An already-open browser view showed the service worker's “Update ready” notice with older cached markup; no reload or cache clearing was forced. Existing app windows should follow the visible save/export and close/reopen guidance before receiving the update. Physical-device and independent-novice testing remain open.
+
+## October 23 live multi-species setup check
+
+**Question:** can an observer choose a non-bird animal group before a session starts on a narrow phone layout?
+
+**Check:** on the deployed Station route in Chromium emulation at 320 × 740 CSS pixels, selected “Other mammal” in the observer-declared “Who was there?” menu. The choice appeared in the setup summary, document width remained 320 pixels, and the page stayed Ready. No microphone permission was requested and no session, recording, export or saved data was created.
+
+**Limit:** this checks the setup control only. The app does not identify the animal; the selection is the observer’s note. Emulation does not establish physical-device, screen-reader or independent-novice usability, nor any biological result.
+
+## October 23 live phone-width rehearsal
+
+**Question:** does the deployed simplified home and microphone-free rehearsal remain usable at narrow phone widths?
+
+**Check:** on the live Pages app at `/app/`, Chromium viewport emulation at 320 × 740 and 390 × 844 CSS pixels reported matching viewport, document and body widths. At 320 pixels, the two first-use actions measured 276 × 54 and 276 × 47 CSS pixels; at 390 pixels, both measured 346 pixels wide. At 320 pixels, “Try without a microphone” opened the clearly labeled synthetic session; “End rehearsal” produced a partial-moment recap after 4.5 seconds with zero notes and temporary invented audio. The review controls were visible and the document remained 320 pixels wide. No microphone permission prompt appeared; the session was not saved or exported.
+
+**Earlier automation result (superseded):** the initial browser bridge showed the native `<details>/<summary>` disclosure as a collapsed button, but its button-role locator did not match the DOM trigger. That no-op was a selector mismatch, not evidence of a broken disclosure.
+
+**Follow-up live-browser check:** in a separate tab on the deployed `/app/` page, activating the native `<summary>` opened the disclosure; the DOM's `details.open` state changed from false to true and all four optional routes appeared in the accessibility tree. Space closed it and Enter reopened it. The control is now verified with pointer and keyboard input in this browser session.
+
+**Limits:** this check does not establish physical-phone behavior, Safari/Android home-screen behavior, screen-reader output, microphone capture quality, interrupted-session recovery, export/reopen success or first-time-user understanding. No microphone was opened, no animal or participant data was used, and no code or deployment changed.
+
+## October 23 follow-up: observer note through narrow-phone review
+
+**Question:** does a manually entered observation survive the synthetic Stop-to-review path at a narrow phone width, and can the user reach Save afterward?
+
+**Check:** on the deployed Field Companion at 320 × 740 CSS pixels, opened the microphone-free synthetic rehearsal, added the “Movement” observation at 00:03 and ended the rehearsal. The app reported “Stopped · local only” and “Stopped by you”; the timeline and partial recap retained one note. Scrolling to the lower review area exposed the “Save session” control. The page heading still says “A rehearsal in listening” after stopping, but the state label and recap clearly report the stopped state.
+
+**Decision and limits:** no code change was indicated. This was desktop-Chromium viewport emulation with invented audio, not physical-phone, Safari, screen-reader or first-time-user testing. No microphone permission was requested, and no download, upload or real recording was made.
+
+## October 23 live Station setup review at narrow phone widths
+
+**Question:** can a visitor reach the Station's listening controls on a narrow phone layout, and does the fixed navigation obscure the primary action?
+
+**Check:** inspected the deployed `/app/station/?mode=companion#station-console` in Chromium viewport emulation at 320 × 740 and 390 × 844 CSS pixels. At both widths, the document and body matched the viewport with no horizontal overflow. At 320 pixels, the setup card needed a short scroll before “Start listening” and “Try without a microphone” were visible. At 390 pixels, “Start listening” was visible at the top; the fixed bottom navigation sat over the lower edge of the setup card while the page was at its initial scroll position. Scrolling the card/page brought the consent and listening actions into view and moved the fixed navigation out of the way. The silent synthetic route and advanced settings remained reachable.
+
+**Decision and limits:** the main action is reachable, but the fixed navigation makes the initial card feel crowded at the smaller width; consider a focused UI adjustment only if a physical-device or novice check confirms that friction. This was browser viewport emulation, not a physical phone, Safari/Android home-screen, screen-reader or first-time-user test. No microphone, playback, export or save action was used, and no recording was created.
+
+## October 23 live deployed synthetic-rehearsal walkthrough
+
+**Question:** does the deployed home page distinguish recording from no-microphone practice, and does the live rehearsal route end in a review state that identifies synthetic content as temporary?
+
+**Check:** inspected the live `/app/` and `/app/station/?mode=demo#station-console` in the in-app browser at its 1280 × 720 desktop viewport. The home page exposes separate “Record a moment” and “Try without a microphone” actions and explains the local/no-account/no-automatic-playback boundary. Opened the rehearsal route directly; this was not a home-to-Station clickthrough. Its setup shows the 30-second whole-moment default, the no-upload/no-auto-save/export reminder, and the phone-microphone/identification limitation. Pressing “Try without a microphone” entered a state labeled “Synthetic session”; the page said it used invented tones in the audio engine with no microphone access or audible playback. Selecting “I’m not sure” added one timeline note at 00:09. “End rehearsal” opened a local-only review of an 18.8-second partial moment, labeled invented practice audio, with one note and an explicit reminder to save before leaving. No session was saved or exported.
+
+**Decision and limits:** the observed live path is coherent and its synthetic, uncertain and temporary boundaries remain visible through review; no change was indicated by this check. This is a desktop accessibility-tree and screenshot walkthrough, not a phone-width recheck, physical-device, Safari, screen-reader, microphone-permission instrumentation or first-time-user study. No real recording, animal or participant data was used; no microphone prompt appeared.

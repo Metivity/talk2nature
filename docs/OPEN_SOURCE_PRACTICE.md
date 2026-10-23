@@ -74,7 +74,7 @@ Do not rank contributors by volume, equate issue closure with quality, or use st
 
 ## Current limits
 
-Raviv is the sole maintainer and sole recipient for private conduct and security reports. There is no independent appeal panel, response-time commitment, public data portal, archival DOI, independent scientific lead or external reproduction yet. The current policy states these limits rather than implying organizational capacity that does not exist. Improve the project by addressing a real gap with an accountable person and a tested procedure, not by adding empty committee titles or badges.
+Raviv is the sole maintainer and sole recipient for private conduct and security reports. The [continuity procedure](../GOVERNANCE.md#continuity-and-succession) documents a maintenance pause and a possible handoff, but no successor or independent appeal panel is appointed. There is no response-time commitment, public data portal, archival DOI, independent scientific lead or external reproduction yet. State these limits rather than implying organizational capacity that does not exist. Improve the project by addressing a real gap with an accountable person and a tested procedure, not by adding empty committee titles or badges.
 
 ## October 13 follow-up: pin the Pages runtime and runner image
 
