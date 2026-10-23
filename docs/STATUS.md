@@ -2646,3 +2646,11 @@ Live verification on October 23: `/research/openwhistle-dolphin-benchmark/` retu
 Resolved the earlier inconclusive interaction check on the deployed Field Companion at a 320 × 740 CSS-pixel Chromium viewport. The disclosure expanded through its visible label and through keyboard input; Enter collapsed it and Space reopened it. The accessibility tree reported the collapsed/expanded state and exposed all four optional links when open. The page, document and body widths remained 320 pixels. The disclosure spans x=22–298 and each optional link x=41–279, so neither introduces horizontal overflow. The bottom app dock moves away on downward scroll and returns on upward scroll.
 
 No app change was indicated. This verifies browser-emulated layout and interaction only, not a physical phone, VoiceOver/TalkBack, or first-time-user comprehension. No microphone, recording, audio export or participant data was used.
+
+## October 23 follow-up — keep Station heading aligned with review state
+
+**Question and evidence:** after a user ends the microphone-free rehearsal, does the main heading still describe the active listening phase? The live-browser follow-up found a mismatch: the status and recap said “Stopped · local only” and “A partial moment,” while the large heading still said “A rehearsal in listening.”
+
+**Change and check:** the Station now derives its main heading from the setup, starting, recording or review phase. In the local noindex preview, the synthetic rehearsal showed “A rehearsal in listening.” while active; after “End rehearsal,” it showed “Review your rehearsal.” The stopped status, “Stopped by you” notice and partial recap remained visible and accurate. No microphone, save, export or playback action was used.
+
+**Validation and limits:** all 147 Python tests and 115 Node tests passed; the local build produced 118 pages plus 404, the site checker validated 119 HTML pages and 5,851 links, JavaScript syntax checking and `git diff --check` passed. This was a local browser rehearsal, not physical-phone, Safari, screen-reader or first-time-user testing. The live microphone path was not exercised. AutoResearch remains **NOT READY**.
