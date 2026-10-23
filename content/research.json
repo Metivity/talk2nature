@@ -4291,38 +4291,34 @@
       362
     ],
     "reviewed": "2026-10-23",
-    "review_stage": "Publisher abstract and rights notice plus complete Zenodo v1/v2 record metadata reviewed; data files uninspected",
-    "review_depth": "Reviewed the publisher's article title, abstract, publication notice and rights statement; the full article and supplement were not reviewed. Read the official Zenodo v1 and v2 record descriptions and the complete v2 file inventory through the landing page and API, including the record-level license, sizes and provider checksums. No recording, annotation row, README file, code or model was downloaded, inspected or run. Provider checksums were not verified against local files.",
+    "review_stage": "Publisher abstract and rights notice, complete Zenodo v1/v2 metadata, and checksum-verified aggregate inspection of the four-file v2 metadata sample; no audio or annotation rows reviewed",
+    "review_depth": "Reviewed the publisher title, abstract, publication notice and rights statement; the full article and supplement remain unreviewed. Read the official Zenodo v1/v2 record descriptions and complete v2 API manifest. Acquired only ReadMe.txt, site_metadata.csv, recording_metadata.csv and species_metadata.csv from v2. Verified provider MD5 declarations against bytes and recorded local SHA-256 values in an ignored receipt. The aggregate script emits no raw site IDs or coordinates. No recordings, annotation rows, code or models were acquired or run.",
     "review_locator": "Scientific Data DOI 10.1038/s41597-026-08226-8; current Zenodo v2 record 20038954 / DOI 10.5281/zenodo.20038954; superseded v1 record 18041381.",
-    "finding": "The latest Zenodo v2 record describes 1,302 ten-minute forest soundscapes—about 217 hours—from 104 sites in four northeastern U.S. parks, with approximately 183,000 vocalization annotations across 96 bird species. Labels give time/frequency boxes and species codes, and recording metadata includes date and site fields. The v2 figure of 96 species differs from the publisher's current abstract, which says 88; the previous Zenodo v1 record also reports 88 species but about 176,000 annotations. The same v2 record's opening park breakdown lists counts of 31, 24, 20 and 25 sites, which sum to 100 rather than its stated 104. Treat both species and site-count differences as unresolved rather than combining or normalizing the records. This is a promising field-acoustics resource for sound-event detection, localization and species classification, not a communication dataset.",
-    "limitations": "The annotations identify vocalization events and species, not individual callers, observed social behavior, receiver response or call meaning. The public record's headline total of 104 sites conflicts with its opening park-level counts, which sum to 100; the exact site inventory has not been checked against local metadata bytes. The current record says annotators may combine consecutive same-species calls when pauses are under two seconds, and faint or unidentifiable events may remain unlabeled. Sampling differs by subset: SIMR is tied to point-count surveys across sites, while ACAD and MABI use selected clear mornings during peak breeding season. These choices matter for event recall, class balance and site/time holdouts. The archive is concentrated in four parks in one region and does not establish performance on household parrots, phones or other taxa. Site coordinates appear in the record; no coordinates were copied or mapped. The dataset record declares CC BY 4.0, while the article text is CC BY-NC-ND 4.0; neither statement is an independent audit of every component or source-media provenance.",
+    "finding": "The latest Zenodo v2 record describes 1,302 ten-minute forest soundscapes—about 217 hours—from 104 sites in four northeastern U.S. parks, with approximately 183,000 vocalization annotations. The version-pinned site_metadata.csv has 104 unique sites; recording_metadata.csv independently has the same 104 site IDs. Its site counts are ACAD 31, HBEF 24, KAWW 24 and MABI 25. The landing-page opening summary says KAWW has 20 sites, so the headline total is supported while that park breakdown remains inconsistent. The v2 README says 88 bird species, matching the publisher abstract and earlier v1; however, species_metadata.csv has 96 rows marked IsBird=Yes, all with nonzero annotation counts totaling 182,633. The species-count discrepancy therefore remains unresolved. This is a promising field-acoustics resource for event detection, localization and species classification, not a communication dataset.",
+    "limitations": "The annotations identify vocalization events and species, not individual callers, observed social behavior, receiver response or call meaning. The site total of 104 is corroborated by two metadata tables and the README, but the landing page lists KAWW as 20 while site_metadata.csv has 24. The v2 README/publisher abstract say 88 bird species while the species table marks 96 rows as birds; the annotation total for those rows is 182,633, and the discrepancy is unresolved. The current record says annotators may combine consecutive same-species calls when pauses are under two seconds, and faint or unidentifiable events may remain unlabeled. Sampling differs by subset: SIMR is tied to point-count surveys across sites, while ACAD and MABI use selected clear mornings during peak breeding season. These choices matter for event recall, class balance and site/time holdouts. The archive is concentrated in four parks in one region and does not establish performance on household parrots, phones or other taxa. Site coordinates are present in the metadata; no values were published or mapped. The dataset record declares CC BY 4.0, while the article text is CC BY-NC-ND 4.0; neither statement is an independent audit of every component or source-media provenance.",
     "lesson": "A large, strongly annotated bird collection can help test whether software finds and classifies vocalizations across field recordings. It cannot show what a bird meant or whether another bird understood it. Keep this detection track separate from the Egyptian-fruit-bat context question, V33DA caller attribution and the provisional parrot observation workflow.",
-    "next_review": "Reconcile the Zenodo v2 species/annotation counts with the publisher's early abstract, reconcile its headline site total with the park breakdown, and confirm which data version the paper analyzed. Before any acquisition, obtain independent bioacoustics and ML/statistical review of the minimum useful task, site/park/year grouping, class coverage, coordinate handling and a separate locked test. Keep the release metadata-only until that review and a bounded rights/privacy plan pass; no Talk2Nature model run is authorized by this screen.",
+    "next_review": "Ask the authors to clarify the README/species-table definition difference and the KAWW landing-page/site-table difference. Before any audio or annotation acquisition, obtain independent bioacoustics and ML/statistical review of the minimum useful task, site/park/year grouping, class coverage, coordinate handling and a separate locked test. The four metadata files remain local and are not admitted to training or biological inference. Keep the full release metadata-only until a bounded rights/privacy plan and independent review pass.",
     "expert_review": "Not independently reviewed by an ornithologist, bioacoustics specialist or ML/statistical-evaluation reviewer.",
     "study_snapshot": [
       [
         "Latest release scale",
-        "Zenodo v2 reports 1,302 ten-minute recordings, approximately 183,000 annotated vocalizations and 96 species across 104 northeastern U.S. sites."
+        "Zenodo v2 reports 1,302 ten-minute recordings and approximately 183,000 annotations across four northeastern U.S. parks."
       ],
       [
-        "Version reconciliation",
-        "The publisher abstract says 88 species; Zenodo v1 says about 176,000 annotations and 88 species; current Zenodo v2 says about 183,000 and 96 species. The v2 headline says 104 sites, but its opening park subtotals add to 100. Neither mismatch was explained in the reviewed records."
+        "Site-count reconciliation",
+        "The checksum-verified site table and recording table each contain the same 104 unique sites. Site-table counts are ACAD 31, HBEF 24, KAWW 24 and MABI 25; the landing-page opening breakdown lists KAWW 20. The total is corroborated; the KAWW subcount remains inconsistent."
+      ],
+      [
+        "Species-count reconciliation",
+        "The v2 README and publisher abstract report 88 bird species. The species table contains 96 IsBird=Yes rows with nonzero annotation counts totaling 182,633. The difference remains unresolved."
       ],
       [
         "Annotation target",
         "Expert-reviewed time/frequency boxes with bird-species codes; not caller identity, behavior, addressee or receiver response."
       ],
       [
-        "Collection scope",
-        "Four parks in the northeastern United States; recording metadata includes site and date, and the public record includes site coordinates. The exact number of distinct sites is unresolved: headline total 104 versus park subtotals totaling 100."
-      ],
-      [
-        "Separate rights",
-        "Zenodo v2 declares CC BY 4.0 for the dataset record; the publisher states CC BY-NC-ND 4.0 for the article text."
-      ],
-      [
-        "Talk2Nature status",
-        "Metadata-only. No media, annotation rows, software or models acquired or run; no benchmark result."
+        "Talk2Nature inspection",
+        "Only four small metadata files were acquired; their source MD5s and local SHA-256 receipt were verified. No audio or annotation rows were acquired. Coordinates and raw row-level identifiers were not exported."
       ]
     ],
     "atlas": {
@@ -4333,10 +4329,10 @@
       "observation_period": null
     },
     "reuse": {
-      "status": "Metadata-only candidate for bird event-detection research; not admitted to Talk2Nature training or a communication benchmark.",
-      "asset": "Publisher abstract and rights metadata plus Zenodo v1/v2 record descriptions and v2 API file metadata. No audio, annotation rows, code or model files were acquired.",
+      "status": "Four-file, checksum-verified metadata sample inspected for aggregate counts only; not admitted to Talk2Nature training, species detection or communication research.",
+      "asset": "Publisher abstract and rights metadata; Zenodo v1/v2 record descriptions; and the v2 ReadMe.txt, site_metadata.csv, recording_metadata.csv and species_metadata.csv files acquired to ignored local storage. No audio, annotation rows, code or model files were acquired.",
       "rights": "The current Zenodo v2 record declares CC BY 4.0 for the dataset; the article text separately carries a publisher-stated CC BY-NC-ND 4.0 license. Verify exact version, source-media provenance and location conditions before use. Record-level terms are not an independent component audit.",
-      "experiment": "A future detection study could evaluate event localization or species labels with site/park/year-separated groups and an untouched holdout, after expert review. No data were acquired, no model was run and no detector performance is claimed. Detection output would not establish communication or meaning."
+      "experiment": "Aggregates reconcile the 104-site total but leave a KAWW park-count difference and 88-versus-96 species discrepancy. No model was run, no labels were validated and no benchmark result is claimed. Any future detection study needs expert review and site/park/year-separated groups with an untouched holdout."
     }
   }
 ]

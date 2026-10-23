@@ -2,8 +2,8 @@
 
 License/admission fields are human-reviewed declarations, not legal or scientific
 verification. Adapters support immutable GitHub files, reviewed Mendeley files
-with deposit SHA-256 checksums, and bounded Figshare files with item metadata
-and optional provider MD5 verification. Downloads are not training releases and
+with deposit SHA-256 checksums, bounded Figshare files with item metadata and
+optional provider MD5 verification, and pinned Zenodo record files. Downloads are not training releases and
 never enter the private admin or website build.
 """
 import argparse
@@ -27,6 +27,7 @@ FIGSHARE_STORAGE_PREFIXES = {
     'figshare_springernature': 'pstorage-npg-968563215',
     'figshare_public': 'pfigshare-u-files',
 }
+ZENODO_ORIGIN = 'https://zenodo.org'
 
 
 def require_text(record, field):
@@ -104,6 +105,15 @@ def validate(catalog):
                         or str(item_id) not in resource['version']):
                     raise ValueError('Figshare sample requires a version-pinned public item API record.')
                 require_text(resource, 'license_notice')
+            elif adapter == 'zenodo_record':
+                record_id = resource.get('zenodo_record_id')
+                expected_doi = f'10.5281/zenodo.{record_id}' if type(record_id) is int else ''
+                if (type(record_id) is not int or record_id <= 0
+                        or resource['url'] != f'{ZENODO_ORIGIN}/records/{record_id}'
+                        or resource.get('zenodo_doi') != expected_doi
+                        or f'record {record_id}' not in resource['version'].lower()):
+                    raise ValueError('Zenodo sample requires an exact versioned public record and DOI.')
+                require_text(resource, 'license_notice')
             else:
                 raise ValueError('Unknown acquisition adapter.')
             require_text(resource, 'admission_reason')
@@ -133,6 +143,18 @@ def validate(catalog):
                         raise ValueError('Missing or ambiguous deposit SHA-256.')
                     if not re.fullmatch(re.escape(f'https://data.mendeley.com/public-files/datasets/{deposit[1]}/files/') + uuid + '/file_downloaded', require_text(artifact, 'source_url')):
                         raise ValueError('Artifact provenance must match the named deposit.')
+                elif adapter == 'zenodo_record':
+                    record_id = resource['zenodo_record_id']
+                    file_key = artifact.get('zenodo_file_key')
+                    md5 = artifact.get('md5')
+                    expected_path = f'/api/records/{record_id}/files/{name}/content'
+                    if (parsed.hostname != 'zenodo.org' or parsed.path != expected_path
+                            or parsed.query or parsed.fragment or file_key != name
+                            or artifact.get('zenodo_record_id') != record_id
+                            or artifact.get('source_url') != resource['url']
+                            or not isinstance(md5, str) or not re.fullmatch('[a-f0-9]{32}', md5)
+                            or 'sha256' in artifact or 'git_blob_sha1' in artifact):
+                        raise ValueError('Zenodo artifact must pin its record, file key, content URL and MD5.')
                 else:
                     file_id = artifact.get('figshare_file_id')
                     md5 = artifact.get('md5')
@@ -215,6 +237,52 @@ class FigshareRedirect(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+def verify_zenodo_record(resource, opener):
+    """Match the pinned Zenodo record, declared license and each file checksum."""
+    record_id = resource['zenodo_record_id']
+    api_url = f'{ZENODO_ORIGIN}/api/records/{record_id}'
+    request = urllib.request.Request(api_url, headers={
+        'User-Agent': 'Talk2Nature-research-collection/1',
+        'Accept': 'application/json', 'Accept-Encoding': 'identity'})
+    with opener.open(request, timeout=30) as response:
+        final_url = urlsplit(response.geturl())
+        if (response.status != 200 or response.geturl() != api_url
+                or final_url.scheme != 'https' or final_url.hostname != 'zenodo.org'
+                or final_url.port not in (None, 443) or final_url.query or final_url.fragment):
+            raise ValueError('Zenodo API response did not match the pinned record URL.')
+        if response.headers.get('Content-Encoding', 'identity') != 'identity':
+            raise ValueError('Encoded Zenodo API response refused.')
+        if 'json' not in response.headers.get('Content-Type', '').lower():
+            raise ValueError('Zenodo API response is not JSON.')
+        payload = response.read(MAX_FILE_BYTES + 1)
+    if len(payload) > MAX_FILE_BYTES:
+        raise ValueError('Zenodo API manifest exceeds the metadata size limit.')
+    try:
+        record = json.loads(payload)
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError('Zenodo API manifest is invalid JSON.') from exc
+    metadata = record.get('metadata', {})
+    license_entry = metadata.get('license') if isinstance(metadata, dict) else None
+    if (record.get('id') != record_id or record.get('doi') != resource['zenodo_doi']
+            or not isinstance(license_entry, dict) or license_entry.get('id') != 'cc-by-4.0'):
+        raise ValueError('Zenodo record identity, DOI or license changed.')
+    record_files = record.get('files')
+    if not isinstance(record_files, list):
+        raise ValueError('Zenodo record file manifest is missing.')
+    for artifact in resource['files']:
+        key = artifact['zenodo_file_key']
+        matches = [entry for entry in record_files
+                   if isinstance(entry, dict) and entry.get('key') == key]
+        if len(matches) != 1:
+            raise ValueError('Zenodo record does not contain exactly one pinned file.')
+        entry = matches[0]
+        expected_link = f'{ZENODO_ORIGIN}/api/records/{record_id}/files/{key}/content'
+        if (entry.get('size') != artifact['bytes']
+                or entry.get('checksum') != f'md5:{artifact["md5"]}'
+                or entry.get('links', {}).get('self') != expected_link):
+            raise ValueError('Zenodo file manifest changed from the pinned catalog record.')
+
+
 def read_artifact(artifact, opener):
     request = urllib.request.Request(artifact['url'], headers={
         'User-Agent': 'Talk2Nature-research-collection/1', 'Accept-Encoding': 'identity'})
@@ -248,6 +316,9 @@ def read_artifact(artifact, opener):
     if 'sha256' in artifact:
         if hashlib.sha256(data).hexdigest() != artifact['sha256']:
             raise ValueError('Downloaded deposit SHA-256 mismatch.')
+    elif 'zenodo_record_id' in artifact:
+        if hashlib.md5(data, usedforsecurity=False).hexdigest() != artifact['md5']:
+            raise ValueError('Downloaded Zenodo MD5 mismatch.')
     elif 'figshare_file_id' in artifact:
         if artifact.get('md5') is not None and hashlib.md5(data, usedforsecurity=False).hexdigest() != artifact['md5']:
             raise ValueError('Downloaded Figshare MD5 mismatch.')
@@ -276,6 +347,11 @@ def acquire(catalog, identifiers, destination=DESTINATION, max_bytes=MAX_BATCH_B
     # Stage the whole batch. A failed fetch/check publishes no partial sample.
     with tempfile.TemporaryDirectory(prefix='.collect-', dir=destination) as staging:
         for resource in selected:
+            resource_opener = opener
+            if resource_opener is None:
+                resource_opener = urllib.request.build_opener(NoRedirect(), https_handler)
+            if resource.get('adapter') == 'zenodo_record':
+                verify_zenodo_record(resource, resource_opener)
             folder = Path(staging) / resource['id']
             folder.mkdir(mode=0o700)
             entries = []
@@ -292,6 +368,7 @@ def acquire(catalog, identifiers, destination=DESTINATION, max_bytes=MAX_BATCH_B
                 entry = {**artifact, 'sha256': hashlib.sha256(data).hexdigest()}
                 entry['source_checksum_verified'] = (
                     'git_blob_sha1' in artifact or 'sha256' in artifact
+                    or ('zenodo_record_id' in artifact and 'md5' in artifact)
                     or ('figshare_file_id' in artifact and artifact.get('md5') is not None))
                 entries.append(entry)
             receipt = {'schema_version': 1, 'resource_id': resource['id'],
