@@ -405,3 +405,13 @@ The paper’s article license is CC BY 4.0; the linked GIN record describes a 5.
 A fresh read of the already-pinned V33DA repository found a concrete code-completeness gap: scripts/train.py imports v33da.data.collate, dataset, features and splits, but the public Git tree contains no v33da/data directory. The split-preparation script itself writes date-based session and held-out-experiment labels only. The README advertises leave-one-bird-out evaluation, but that path cannot be audited or reproduced from this snapshot. This refines the existing metadata-only V33DA candidate; it does not change its scientific task or claim any model result.
 
 Decision: do not install or execute this snapshot. Keep the caller-attribution benchmark **NOT READY** until a pinned complete code release and independently reviewable bird-held-out split are available, alongside the existing manuscript, rights, specialist-review and bounded-compute gates. No data or code were acquired or run.
+
+## October 23 — V33DA++ overlap and context companion
+
+**Question:** does the V33DA companion create a more useful first ML task by including overlapping calls and longer context?
+
+**Evidence reviewed:** pinned Hugging Face V33DA++ dataset card revision `bb31f73e2191278dd4965af01502c42380cd597d`, provider API metadata, and linked GitHub source/split text at `e988b985e38909b40b2705cdad994e3d9307181e`. The card reports 3,784 overlapping-call rows, 33,625 padded single-vocalizer events and 3,784 padded overlap events; it lists 41,193 total rows and 167 GB. The padded-overlap bucket repeats the overlap bucket with context. The same ten birds and recordings are used. The card declares CC BY 4.0; preprocessing-tool licenses remain separate. No data/media files, Parquet, code or models were acquired or run.
+
+**Decision:** catalog V33DA++ as a metadata-only methods candidate for vocal-activity detection, source separation or audio-visual synchronization. It supplies no independently observed behavior or receiver-response labels, adds no animal-level cohort, and does not establish meaning. The latest linked code tree remains incomplete: the trainer imports absent `v33da.data` modules, and the split script does not create the advertised leave-one-bird-out folds. AutoResearch remains **NOT READY**.
+
+**Next gate:** require a complete pinned code release, auditable splits, exact component-rights review and independent avian-bioacoustics and ML/statistical review before considering bounded acquisition or a run. See resource `zebra-finch-v33da-plus-overlap-context` and note `v33da-overlap-context-2026`.

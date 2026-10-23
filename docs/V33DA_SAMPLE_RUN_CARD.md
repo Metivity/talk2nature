@@ -62,6 +62,12 @@ Thus BP05 contains three unseen physical callers in the reported experiment-held
 
 The session-disjoint counts are BP01 train/validation/test 12,881/1,008/2,330; BP02 4,455/4,155/2,967; BP05 2,029/1,706/2,094. That regime uses the same birds on different sessions and does not test unseen-bird generalization. Leave-one-bird-out support is advertised, but exact fold membership and implementation remain unverified. No split from these summaries is adopted for Talk2Nature.
 
+## Companion dataset screen — V33DA++ (October 23)
+
+The pinned V33DA++ card (revision `bb31f73e2191278dd4965af01502c42380cd597d`) describes three buckets: 3,784 reviewer-verified overlapping-call rows; 33,625 single-vocalizer events with plus/minus two seconds of context; and 3,784 overlap events with the same context. The padded overlap bucket repeats the overlap events, so the provider's 41,193-row total is not a count of unique events. The release uses the same ten birds and recordings as V33DA. It is a method candidate for vocal-activity detection, source separation and audio-visual synchronization, not for receiver-response or call-meaning prediction. The provider lists 167 GB total.
+
+The dataset card declares CC BY 4.0; preprocessing tools, reference code, paper and weights retain separate terms. The current linked GitHub revision is still `e988b985e38909b40b2705cdad994e3d9307181e`. Its training entry point imports `v33da.data` modules absent from the tree, and its split-preparation script materializes session/experiment date splits but no independently auditable leave-one-bird-out assignment. No data, media or code were acquired or run. This screen adds no authorization to download or train; keep V33DA++ metadata-only and AutoResearch **NOT READY**. See the source-linked [V33DA++ evidence note](../content/research.json).
+
 ## Bounded sequence
 
 1. **Metadata preflight complete, no acquisition.** The pinned sample tree and README have been checked through source metadata and the complete sample-only inventory is recorded. The Parquet/media contents, sample-to-full-release membership and per-file media provenance remain unverified.

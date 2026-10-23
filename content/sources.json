@@ -3825,5 +3825,21 @@
       "evidence_url": "https://www.mdpi.com/2076-2615/16/20/3246",
       "conditions": "Cite and link only. No article text, figures, data or model assets were copied or acquired."
     }
+  },
+  {
+    "id": 371,
+    "title": "V33DA++ overlapping-call and long-context companion dataset",
+    "description": "The V33DA++ dataset card describes reviewer-verified overlapping zebra-finch calls and padded context windows for source separation, vocal-activity detection and audio-visual synchronization. It uses the same recordings and ten birds as V33DA.",
+    "url": "https://huggingface.co/datasets/songbirdini/v33da_pp/tree/bb31f73e2191278dd4965af01502c42380cd597d",
+    "checked": "2026-10-23",
+    "origin": "Reviewed the pinned Hugging Face dataset card at revision bb31f73e2191278dd4965af01502c42380cd597d, its provider API metadata, and the related public GitHub README, training-entry imports, split-preparation text and Git-tree metadata at commit e988b985e38909b40b2705cdad994e3d9307181e. No audio, video, accelerometer, Parquet or calibration bytes were fetched or inspected; no code was run.",
+    "review_url": "https://huggingface.co/datasets/songbirdini/v33da_pp/tree/bb31f73e2191278dd4965af01502c42380cd597d",
+    "review_url_label": "Pinned primary dataset card",
+    "rights": {
+      "license": "The V33DA++ dataset card declares CC BY 4.0.",
+      "scope": "The declaration applies to the dataset card's V33DA++ dataset scope. The manuscript, reference code, dependencies, preprocessing tools, model weights and any third-party components remain separate; preprocessing tools retain their original licenses.",
+      "evidence_url": "https://huggingface.co/datasets/songbirdini/v33da_pp/tree/bb31f73e2191278dd4965af01502c42380cd597d",
+      "conditions": "This is an upstream declaration, not independent legal clearance. Keep metadata-only until component provenance and intended-use terms are reviewed; this record admits no Talk2Nature download, training or redistribution."
+    }
   }
 ]

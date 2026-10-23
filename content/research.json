@@ -4232,15 +4232,16 @@
     "year_label": "Dataset-card revision and code sample reviewed",
     "source_ids": [
       356,
-      357
+      357,
+      371
     ],
     "reviewed": "2026-10-23",
     "review_stage": "Pinned dataset-card, code and sample metadata reviewed; media uninspected",
     "review_depth": "Reviewed the pinned V33DA dataset card, code/sample README, split-preparation script, training entry point and read-only Git-tree inventory. Fetched the sample README.md, metadata.json and split_summary.json over verified TLS; computed in-memory SHA-256 values matched the pinned Git blob IDs. See the manifest for checksums. No text copies were retained. No Parquet, audio, accelerometer, video, calibration, executable code or model bytes were acquired or run. Maintainer metadata review only; no specialist review. A follow-up static import/tree check confirmed that scripts/train.py imports v33da.data modules absent from the pinned public repository tree; the split-preparation script materializes only session and held-out-experiment assignments. No code was run.",
     "review_locator": "Pinned Hugging Face README: Task, Modalities, Ground-truth labels, Evaluation regimes and Limitations. Pinned GitHub README and included metadata.json/split_summary.json. Three text-file integrity checks and path/size/Git-blob manifest are linked from source 357. Follow-up: pinned scripts/train.py import lines, scripts/prepare_v33da_splits.py split mappings, and the complete Git tree for the v33da package.",
     "finding": "V33DA is a caller-attribution task: given an already-detected zebra-finch vocalization and the birds visible at that moment, identify the bird that produced it. The pinned card reports 33,625 verified events from 10 physically distinct birds across three experiments, with synchronized audio, video and pose; caller labels derive from on-body accelerometer vibration. In the experiment-held-out split, all 5,829 BP05 events from three callers (brown, purple, yellow) form the test set. That is a genuine unseen-bird group according to the card, but not a clean explanation of generalization because several cohort conditions shift together. This is an engineering benchmark candidate, not a communication-meaning result.",
-    "limitations": "Caller identity is not behavior, addressee, receiver response, intent or meaning. The full release comes from one aviary and recording geometry and excludes overlapping calls; 10 physical birds, not 33,625 events, are the independent animals. The BP05 test also changes experiment, group, year/date and cage; treat its outcome only as a bundled shift test. The session-disjoint split retains the same birds. The pinned GitHub tree lacks the v33da/data package imported by scripts/train.py, including dataset, feature and split modules; the split-preparation script writes date-based session and held-out-experiment labels only. The README advertises leave-one-bird-out, but that path and the trainer cannot be independently reproduced from this snapshot. Three small text files have verified hashes, but the sample Parquet says 100 rows while split JSON reports full-release totals; no sample-specific split or Parquet join has been verified. BP05 metadata names brown, purple, yellow and red, while the card and caller-count table list three callers. Red has no event-count group; whether it is a visible non-caller candidate or stale metadata is unknown. Candidate-set cardinality and chance baseline are therefore unknown. No media or Parquet bytes were inspected.",
-    "lesson": "Use V33DA only if the question is caller attribution. A future baseline should compare candidate-count chance with a simple candidate-aware model, exclude accelerometer/oracle labels and stable identity shortcuts, and keep complete physical birds and shared sessions out of train/test groups. The BP05 experiment-held-out score is a bundled shift test. Do not call caller prediction translation.",
+    "limitations": "Caller identity is not behavior, addressee, receiver response, intent or meaning. The full release comes from one aviary and recording geometry and excludes overlapping calls; 10 physical birds, not 33,625 events, are the independent animals. The BP05 test also changes experiment, group, year/date and cage; treat its outcome only as a bundled shift test. The session-disjoint split retains the same birds. The pinned GitHub tree lacks the v33da/data package imported by scripts/train.py, including dataset, feature and split modules; the split-preparation script writes date-based session and held-out-experiment labels only. The README advertises leave-one-bird-out, but that path and the trainer cannot be independently reproduced from this snapshot. Three small text files have verified hashes, but the sample Parquet says 100 rows while split JSON reports full-release totals; no sample-specific split or Parquet join has been verified. BP05 metadata names brown, purple, yellow and red, while the card and caller-count table list three callers. Red has no event-count group; whether it is a visible non-caller candidate or stale metadata is unknown. Candidate-set cardinality and chance baseline are therefore unknown. No media or Parquet bytes were inspected. The separate V33DA++ companion adds overlap and padded context buckets but still uses the same ten birds and supplies no independently observed receiver behavior; see the companion note.",
+    "lesson": "Use V33DA only if the question is caller attribution. A future baseline should compare candidate-count chance with a simple candidate-aware model, exclude accelerometer/oracle labels and stable identity shortcuts, and keep complete physical birds and shared sessions out of train/test groups. The BP05 experiment-held-out score is a bundled shift test. Do not call caller prediction translation. For overlap handling and longer context, see the separate V33DA++ review; its repeated bucket is not an independent cohort.",
     "next_review": "Before any run, require a pinned code snapshot containing the imported v33da.data modules and an independently auditable leave-one-bird-out split. Then ask independent avian-bioacoustics and ML/statistical reviewers to assess candidate identity mapping, the BP05 color entry, sample-to-full-release joins, grouping and baseline design. Keep all source media metadata-only until rights and a bounded protocol are separately approved.",
     "expert_review": "Not independently reviewed by an avian, bioacoustics or ML/statistical-evaluation specialist.",
     "reuse": {
@@ -4519,6 +4520,65 @@
       "asset": "Publisher early-access record and abstract only. No audio, labels, code, model weights or full article file was acquired.",
       "rights": "The publisher marks the article Open Access, but the exact article license was not confirmed. Data, code and model weights were not located or reviewed and must be assessed separately.",
       "experiment": "No data or model was run and no performance result was reproduced. This is not a communication-meaning benchmark. Any future comparison needs the full paper, permitted assets, an independently reviewed task and a leakage-safe evaluation."
+    }
+  },
+  {
+    "slug": "v33da-overlap-context-2026",
+    "title": "V33DA++ adds overlapping calls and context, not meaning",
+    "seo_description": "V33DA++ adds overlapping zebra-finch calls and two-second context windows for source-separation and vocal-activity tasks; it does not label call meaning.",
+    "taxon": "Zebra finches",
+    "kind": "Overlapping-call and context dataset review",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Pinned companion-dataset card reviewed",
+    "source_ids": [
+      357,
+      371
+    ],
+    "reviewed": "2026-10-23",
+    "review_stage": "Pinned dataset-card and public code/split metadata reviewed; media uninspected",
+    "review_depth": "Reviewed the V33DA++ Hugging Face dataset card at immutable revision bb31f73e2191278dd4965af01502c42380cd597d, including bucket counts, data-field definitions, suggested tasks and rights notice; checked the provider API revision/date/license metadata. Rechecked the linked GitHub repository's current main revision e988b985e38909b40b2705cdad994e3d9307181e, its training imports and split-preparation script as public text, and the Git tree. No dataset files, media, Parquet, code or weights were acquired or run; no specialist review occurred.",
+    "review_locator": "Pinned Hugging Face card sections: buckets, event timing, overlap metadata, suggested tasks and license; API metadata reports revision bb31f73e2191278dd4965af01502c42380cd597d, last modified 2026-05-06 and card license cc-by-4.0. Linked GitHub README and source commit e988b985e38909b40b2705cdad994e3d9307181e were checked for the advertised split and training path.",
+    "finding": "V33DA++ is a companion to the physically verified zebra-finch caller-attribution dataset. Its card describes 3,784 reviewer-verified overlapping-call rows, 33,625 single-vocalizer events with plus/minus two seconds of context, and 3,784 overlapping events with the same context. The overlap_padded bucket repeats the overlap events with padding, so the provider's 41,193-row total is not 41,193 unique events. The recordings and all ten birds are the same as V33DA. The card suggests source separation, vocal-activity detection, audio-visual synchronization and active-speaker detection; caller evidence is anchored by on-body accelerometers, which are an oracle label source rather than an admissible predictor.",
+    "limitations": "This is a signal-processing and attribution resource, not a communication or interaction dataset: the reviewed card does not supply independently observed behavior, addressee, receiver response, intent or call meaning labels. It adds temporal context and overlapping events, not new animals or an independent cohort; results remain bounded to the same ten finches and controlled recording setup. The provider lists 167 GB for the release. The linked code repository's current main is still commit e988b985e38909b40b2705cdad994e3d9307181e; scripts/train.py imports v33da.data modules absent from that tree, while the split-preparation script writes session and held-out-experiment date assignments but no auditable leave-one-bird-out folds. The code path is not reproducible from the reviewed snapshot. The dataset card declares CC BY 4.0, while preprocessing tools and code are separately licensed; these declarations are not independent clearance.",
+    "lesson": "V33DA++ makes a useful method candidate for testing vocal-activity detection, overlapping-call handling or audio-visual synchronization after an executable, reviewable pipeline and defensible grouped evaluation exist. It cannot establish animal-language translation or receiver understanding. Do not treat bucket row totals as independent calls or the repeated padded bucket as new evidence.",
+    "next_review": "Keep metadata-only. Before any acquisition or run, require an immutable code revision with the imported data package, exact V33DA++ evaluation splits, a non-oracle baseline, rights review for all components, and independent avian-bioacoustics and ML/statistical assessment. Choose one bounded task and locked evaluation; do not use accelerometer/oracle channels as predictors.",
+    "expert_review": "Not independently reviewed by an avian-bioacoustics, animal-behavior or ML/statistical-evaluation specialist.",
+    "study_snapshot": [
+      [
+        "Overlap bucket",
+        "3,784 reviewer-verified overlapping-call rows, with caller lists derived from on-body accelerometer verification."
+      ],
+      [
+        "Padded bucket",
+        "33,625 single-vocalizer events with two seconds of audio/video context on each side and original event boundaries preserved."
+      ],
+      [
+        "Overlap-padded bucket",
+        "The same 3,784 overlap events with two seconds of context; this repeats the overlap bucket rather than adding unique events."
+      ],
+      [
+        "Independent animals",
+        "Ten zebra finches across the same three experiments and recordings as V33DA; the larger row count does not increase animal-level sample size."
+      ],
+      [
+        "Provider size",
+        "41,193 rows and 167 GB listed by the provider; row count includes the repeated overlap-padded bucket."
+      ],
+      [
+        "Declared license",
+        "CC BY 4.0 on the dataset card; software, preprocessing tools, manuscript and model weights have separate terms."
+      ],
+      [
+        "Talk2Nature use",
+        "Metadata-only. No data or media acquired; no code or model run; no benchmark result."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only source review; not admitted to Talk2Nature training, private storage or redistribution.",
+      "asset": "Pinned dataset card, provider API metadata and public code/split source text only. No Parquet, audio, accelerometer, video, calibration, weights or executable code were acquired or run.",
+      "rights": "The provider declares CC BY 4.0 for V33DA++; code is separately MIT-licensed, and preprocessing tools retain their original licenses. This review is not independent legal clearance and does not cover every component or intended commercial use.",
+      "experiment": "No experiment or model run was performed. A future test should choose one task such as vocal-activity detection or source separation, exclude accelerometer oracle inputs, freeze a leakage-safe animal/session split and obtain independent scientific and evaluation review."
     }
   }
 ]
