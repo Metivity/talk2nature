@@ -3010,3 +3010,14 @@ The full review-depth disclosure is now collapsed behind a keyboard-accessible �
 **Change:** added one source-grounded research note, separate paper/data/code resource records and source records 368–369; added this reading to `docs/RESEARCH_BACKLOG.md`. All records remain metadata-only. AutoResearch remains **NOT READY**.
 
 **Validation:** all 154 Python repository tests passed. The production-origin build generated 124 public pages plus the 404 page; `scripts/check_site.py` found 125 HTML documents, 6,336 links and 124 reachable public pages. The new route has its canonical URL, `index,follow`, a unique description and a sitemap entry. Desktop and 390-pixel responsive browser previews showed the summary, study table and collapsed review-depth disclosure without horizontal clipping; the temporary viewport override was reset. `git diff --check` passed. These checks establish content/build behavior only, not external scientific review or Google indexing.
+
+
+## October 23 follow-up — V33DA trainer source gap
+
+**Question:** can the pinned public V33DA code snapshot reproduce its advertised leave-one-bird-out task?
+
+**Evidence reviewed:** read-only inspection of commit `e988b985e38909b40b2705cdad994e3d9307181e`: the public Git tree for the `v33da` package, `scripts/train.py`, and `scripts/prepare_v33da_splits.py`. The trainer imports `v33da.data.collate`, `dataset`, `features` and `splits`, but the pinned public tree contains no `v33da/data` directory. The split-preparation script writes date-based session and held-out-experiment labels; it does not generate a leave-one-bird-out assignment.
+
+**Decision and limits:** the code is not reproducible from this checked snapshot, and the README-advertised LOO path remains unverified. Update the existing V33DA note and code record; do not clone, install, run or acquire sample media. The dataset remains a metadata-only caller-attribution candidate, not a communication-meaning benchmark. No upstream contact, data use, model run or independent scientific review occurred. AutoResearch remains **NOT READY**.
+
+**Validation:** all 154 Python repository tests and 115 Node tests passed. The public-origin build generated 124 pages plus the 404 page; the checker found 125 HTML documents, 6,336 links and 124 reachable public routes. The existing V33DA route retains its canonical, `index,follow` directive and sitemap entry. Desktop and phone-width previews showed the updated study summary and code-snapshot caveat without horizontal overflow. `git diff --check` passed. These are content/build checks, not a reproduced model result or independent scientific review.
