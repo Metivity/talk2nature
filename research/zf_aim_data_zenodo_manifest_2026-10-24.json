@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "reviewed_date": "2026-10-24",
+  "retrieved_at_utc": "2026-10-23T21:53:57Z",
+  "provider_api": "https://zenodo.org/api/records/23047646",
+  "record": {
+    "id": 23047646,
+    "doi": "10.5281/zenodo.23047646",
+    "title": "Data for ZF-AIM",
+    "publication_date": "2026-09-30",
+    "explicit_version": null,
+    "resource_type": "dataset",
+    "related_publication": {
+      "doi": "10.64898/2026.02.12.705387",
+      "relation": "isDescribedBy"
+    },
+    "record_license_identifier": "cc-by-sa-4.0",
+    "description_license_statement": "These data are provided under a CC-BY-NC license."
+  },
+  "file_manifest_scope": "Official Zenodo record's complete top-level file list. ZIP contents and media payloads were not downloaded or inspected.",
+  "files": [
+    {"key": "README.md", "bytes": 2393, "provider_checksum": "md5:62072ddd8fbf676afd483ee9d44f209b"},
+    {"key": "voxaboxen_weights.zip", "bytes": 1343009760, "provider_checksum": "md5:b982df688aaa3fe19ece856a4a872f0c"},
+    {"key": "bird_mixit_model_checkpoints.zip", "bytes": 206434463, "provider_checksum": "md5:f01cf8e1f357e25796061eaef1d44bf4"},
+    {"key": "bl22gr2_gr20pi190_September_28_2023_59400000.flac", "bytes": 8150704895, "provider_checksum": "md5:143a5c68c637d5fa8c956cc037aeea7d"},
+    {"key": "OneSided008_gr20pi170_March_20_2024_59400000.flac", "bytes": 12495902000, "provider_checksum": "md5:2716c8a1358ee2ed3e2a3c9d21e8303c"},
+    {"key": "Interactive014_bl51gr31_May_13_2025_53760000.flac", "bytes": 11426497377, "provider_checksum": "md5:61413787f823a3091352b208ce68d00b"},
+    {"key": "processed_data.zip", "bytes": 1244555641, "provider_checksum": "md5:0827b4ff01f9f91669d2f0ba3cf8304f"},
+    {"key": "RandomCall031_gr20pi170_July_30_2025_53700000.flac", "bytes": 11429168792, "provider_checksum": "md5:0815b3ec92f415d43cb78c7464c30658"},
+    {"key": "voxaboxen_data.zip", "bytes": 1273316910, "provider_checksum": "md5:f20c1e94282cd14e5b6068a2934d6b9f"},
+    {"key": "zebra_finch_data_pipeline.zip", "bytes": 278386, "provider_checksum": "md5:ef489bbb85b1fa1d7f91435ba52a6eab"},
+    {"key": "zebra_finch_metadata.xlsx", "bytes": 14462, "provider_checksum": "md5:c477acc74628eb69bda26a95beb87f44"}
+  ],
+  "integrity": {
+    "provider_checksums_are_reported": true,
+    "checksums_verified_locally": false,
+    "payload_downloaded": false
+  },
+  "rights_observations": {
+    "record_license_field": "CC BY-SA 4.0",
+    "description_says_data_license": "CC BY-NC",
+    "status": "Conflicting record-level declarations; the license scope for each separate component is unresolved.",
+    "source_media_provenance": "Not reviewed",
+    "commercial_use": "unresolved",
+    "redistribution": "not_admitted"
+  },
+  "decision": "Metadata-only. Do not acquire, train, redistribute or commercialize until the deposit maintainers clarify the conflicting terms, the license scope, and whether the listed files represent a bounded subset or the full analysis corpus."
+}
