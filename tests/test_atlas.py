@@ -22,7 +22,7 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),32)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),33)
         self.assertEqual(records['great-green-macaw-vocal-development-2026']['locations'][0]['place_id'],'costa-rica')
         playback=records['parrot-vocal-imitation-addressing-2012']
         self.assertEqual(playback['group'],'birds')
@@ -79,7 +79,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('32 of 20',goals)
+            self.assertIn('33 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -95,6 +95,7 @@ class AtlasTests(unittest.TestCase):
                   'parrot-data-feasibility':{'barcelona'},'plant-sounds':{'tel-aviv'},
                   'reef-sound-recruitment':{'lizard-island'},'honeyguide-human-cooperation':{'niassa'},
                   'wild-parrot-duet-structure-2026':{'costa-rica'},
+                  'monk-parakeet-social-structure-2025':{'barcelona'},
                   'duponts-lark-vocal-types-2026':{'spain'},
                   'heterospecific-mobbing-sequences':{'lyon-region'}}
         for key,places in expected.items():
@@ -141,6 +142,15 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(wild_parrot['observation_period']['start_year'],2006)
         self.assertEqual(wild_parrot['observation_period']['end_year'],2008)
         self.assertEqual(wild_parrot['locations'][0]['role'],'study_region')
+        monk=rows['monk-parakeet-social-structure-2025']
+        self.assertEqual(monk['locations'][0]['source_id'],344)
+        self.assertEqual(monk['locations'][0]['role'],'study_region')
+        self.assertEqual(monk['locations'][0]['place_id'],'barcelona')
+        self.assertEqual(monk['observation_period']['locator'],'Methods section 2.1, Study system')
+        self.assertEqual((monk['observation_period']['start_year'],monk['observation_period']['end_year']),(2020,2021))
+        self.assertIn('does not plot a park, nest or UTM coordinate',monk['location_note'])
+        self.assertNotIn('Parc de la Ciutadella',json.dumps(monk))
+        self.assertEqual(next(p for p in self.atlas()['places'] if p['id']=='barcelona')['precision'],'region')
         identity=rows['monk-parakeet-population-identity-2023']
         self.assertEqual({l['place_id'] for l in identity['locations']},{'uruguay','united-states','costa-rica'})
         self.assertEqual((identity['observation_period']['start_year'],identity['observation_period']['end_year']),(1994,2019))
@@ -170,11 +180,11 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(32,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(33,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],27)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],28)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value

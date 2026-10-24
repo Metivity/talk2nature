@@ -4111,7 +4111,7 @@
     ],
     "reviewed": "2026-10-23",
     "review_stage": "Targeted article, deposit-metadata and pinned-repository review; metadata only",
-    "review_depth": "Reviewed the published article abstract and targeted methods, results, discussion, data-access, ethics and rights passages using the primary full-text record and institutional copy; checked the 2023 voiceprint paper for sample overlap; reviewed the Zenodo record and the GitHub README/tree at a pinned revision. The archive, raw recordings, code and model outputs were not acquired or run.",
+    "review_depth": "Reviewed the published article abstract and targeted methods, results, discussion, data-access, ethics and rights passages using the primary full-text record and institutional copy; checked the 2023 voiceprint paper for sample overlap; reviewed the Zenodo record and the GitHub README/tree at a pinned revision. On October 24, rechecked Methods section 2.1 and confirmed the Barcelona study region and field dates for the atlas. The archive, raw recordings, code and model outputs were not acquired or run.",
     "review_locator": "Smeele et al. (2025), abstract and targeted Methods, Results, Discussion, Data accessibility, Ethics and copyright passages; Smeele et al. (2023), Results and study-sample description; Zenodo record 10.5281/zenodo.13906800; GitHub commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67.",
     "finding": "This study combines social-network observations with monk-parakeet vocalizations. It reports networks for 337 birds, relatedness for 100, and 5,599 vocalizations from 229 individuals over two years. Call-diversity associations varied by year; close affiliates had more dissimilar calls. These are observational associations, not evidence that a specific call carries a known message.",
     "limitations": "The exact 5,599-call and 229-bird totals match the 2023 monk-parakeet voiceprint paper, so this is a new analysis of an overlapping cohort, not an independent acoustic replication. The study does not test receiver responses or experimentally established meanings. The authors discuss active differentiation as an interpretation; the reported associations alone do not establish that cause. The Zenodo archive was not inspected, and the GitHub README says some required inputs are not shared. Its documented nest/UTM location fields make location review necessary before any mapping. No coordinates are reproduced here.",
@@ -4142,16 +4142,24 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-23",
-      "location_status": "pending",
-      "location_note": "The paper identifies a Barcelona study area. Exact site-level mapping and sensitivity were not independently reviewed; no coordinates or nest-level locations are published here.",
-      "locations": [],
+      "reviewed": "2026-10-24",
+      "location_status": "mapped",
+      "location_note": "The public atlas places this study at the existing coarse Barcelona region and does not plot a park, nest or UTM coordinate. The article names a field site; archived spatial fields were not inspected.",
+      "locations": [
+        {
+          "place_id": "barcelona",
+          "role": "study_region",
+          "source_id": 344,
+          "locator": "Methods section 2.1, Study system",
+          "basis": "Methods describe fieldwork in Barcelona, Spain, during the 2020 and 2021 field seasons; the atlas uses a coarse city-region point."
+        }
+      ],
       "observation_period": {
-        "label": "Two-year study period; calendar years reported as 2020 and 2021 in the companion study",
+        "label": "27 October–19 November 2020 and 31 October–30 November 2021; 55 days total",
         "start_year": 2020,
         "end_year": 2021,
         "source_id": 344,
-        "locator": "Methods and sample description; cross-checked against Smeele et al. 2023 source 55"
+        "locator": "Methods section 2.1, Study system"
       }
     },
     "reuse": {
