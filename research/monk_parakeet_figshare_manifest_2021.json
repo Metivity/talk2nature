@@ -1,0 +1,45 @@
+{
+  "schema_version": "talk2nature.figshare_manifest.v1",
+  "reviewed_date": "2026-10-24",
+  "provider_api": "https://api.figshare.com/v2/articles/14811636",
+  "record": {
+    "id": 14811636,
+    "doi": "10.6084/m9.figshare.14811636.v1",
+    "title": "Simpler signatures post-invasion",
+    "version": 1,
+    "published_date": "2021-06-19T13:38:12Z",
+    "size_bytes": 11338100,
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "scope_note": "Provider-declared item-level license; file contents, source recordings and any embedded third-party material were not inspected."
+    }
+  },
+  "files": [
+    {"id": 28501248, "name": "acoustic_parameters.csv", "bytes": 759700, "provider_md5": "795722fefe31b70820b887f150e4eb46", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501251, "name": "freq_mod_df.csv", "bytes": 71107, "provider_md5": "5f288f4db381010cbaf9f73fe584608d", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501254, "name": "freq_mod_est_m2h.csv", "bytes": 401114, "provider_md5": "92d6f1abfb0be99cbd76269b86c0f8a6", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501257, "name": "Mel_freq_cepstral_coefficients.csv", "bytes": 2517531, "provider_md5": "9986bb7541100665e6eb2b93392002ae", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501260, "name": "nat_inv_indiv_site_seltbl.csv", "bytes": 439093, "provider_md5": "00657da0764afd9dec956509dfc14df7", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501263, "name": "NestEstimates.csv", "bytes": 4206, "provider_md5": "594f2521fec7390a272ba2650db97dd0", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501266, "name": "PCA_spectral_acoustic_measurements.csv", "bytes": 1019699, "provider_md5": "e5d420a9756aaf930e7c2c748e9066f4", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501269, "name": "peaks_troughs_df.csv", "bytes": 201453, "provider_md5": "0f575b6086e2409f8c33d0083dbfc438", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501275, "name": "SocialGroupSize_Observations.csv", "bytes": 1815, "provider_md5": "a6a8a70516697e8fdad2535ad9b067aa", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501278, "name": "sup_ML_fin.csv", "bytes": 5885841, "provider_md5": "6b9c65cfca7700471f7a6e7ea8936dbc", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501281, "name": "URY_US_Polygons.kml", "bytes": 17776, "provider_md5": "59a239e6d625d4746d512cae2b5cf187", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false},
+    {"id": 28501317, "name": "Simpler_signatures_post-invasion_README.txt", "bytes": 18765, "provider_md5": "6fff58a52a6ef2ba80dc3e829b6daf90", "payload_downloaded": false, "local_checksum_verified": false, "content_inspected": false}
+  ],
+  "decision": {
+    "use": "Metadata-only lineage record for a possible F0 feature-estimation study; not an audio corpus for a Talk2Nature model run.",
+    "not_established": [
+      "Which exact 2021 or 2023 recordings comprise the 233 monk-parakeet calls in the 2025 F0 release",
+      "Any file-to-waveform or row-to-source-recording mapping",
+      "Contents or geographic precision of the KML file",
+      "Rights and provenance for underlying recordings or embedded third-party material"
+    ],
+    "provider_checksums_recomputed": false,
+    "payload_downloaded": false,
+    "audio_training_or_model_run": false,
+    "training_admitted": false
+  }
+}

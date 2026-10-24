@@ -2322,12 +2322,12 @@
   {
     "id": 222,
     "title": "Smith-Vidaurre et al. identity-encoding calls and selection table (Figshare v2)",
-    "description": "Official Figshare dataset record for the paper. The October 13, 2026 API record reports 22 files totaling 187,820,138 bytes and item-level CC BY 4.0. Its README states the monk-parakeet selection table has 1,596 rows, of which 1,582 were used in the paper. The README was streamed for review, not retained; no audio, CSV selection table, or archive was retrieved.",
+    "description": "Official Figshare dataset record for the paper. Its 22-file inventory totals 187,820,138 bytes under an item-level CC BY 4.0 declaration. The README describes a 1,596-row selection table and a WAV archive with matching sound.file names; 1,582 calls were used in the paper. No table or audio was retrieved.",
     "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
-    "checked": "2026-10-13",
-    "origin": "Reviewed the public Figshare v2 record and API metadata, and streamed the listed README.md file (41233869) from the official Figshare file endpoint. It reports 1,596 selection-table rows and 1,582 calls used in the associated analysis. The file was not retained. Provider-reported checksums were not locally verified; no audio, CSV selection table, or archive was retrieved.",
+    "checked": "2026-10-24",
+    "origin": "Refreshed the official Figshare v2 API metadata over verified TLS and streamed README.md file 41233869 without retaining it. The API lists 22 files totaling 187,820,138 bytes; the README says filenames in the 1,596-row selection table correspond to the WAVs in pre-processed_calls.zip and that 1,582 were used in the article. Recorded API metadata in research/monk_parakeet_figshare_manifest_2023.json. No audio or selection table was acquired; provider MD5 values were not recomputed, rows were not inspected, and no location values were retained.",
     "rights": {
-      "dataset": "The Figshare record declares CC BY 4.0 at item level. The exact source and provenance of every recording and any third-party material were not independently audited; do not infer rights for the related article or code from this data record."
+      "dataset": "The Figshare record declares CC BY 4.0 at item level. Its README states no use restrictions and requests prior contact to discuss possible collaboration/co-authorship; this is not independent verification of every source recording or embedded third-party item. Do not infer rights for the related article or code from this data record."
     }
   },
   {
@@ -3925,10 +3925,10 @@
   {
     "id": 378,
     "title": "Zebra-finch call-type perception analysis repository, GitHub",
-    "description": "The authors' repository describes behavioral trial tables, acoustic features, confusion matrices and analysis notebooks for the 2025 study. Its displayed root file list does not include a license file; prefer the versioned Zenodo archive only after verifying which release and terms apply.",
+    "description": "The authors' README describes behavioral trial data, acoustic feature tables, and confusion matrices for the 2025 study. It identifies the spectrogram LDA matrices as leave-one-vocalizer-out results and points to the separate Figshare audio library for raw recordings. The displayed repository root has no license file; neither code nor data files were acquired or inspected.",
     "url": "https://github.com/theunissenlab/zebra-finch-semantic-category",
     "checked": "2026-10-24",
-    "origin": "Reviewed the public repository README and root file listing. No code was downloaded or executed."
+    "origin": "Reviewed the public GitHub README and displayed root file listing. The README names per-bird behavioral trial/confusion tables, acoustic feature files and leave-one-vocalizer-out LDA confusion matrices; it says raw sound files are in the separate Figshare record. No code, data file or audio was downloaded or executed."
   },
   {
     "id": 379,
@@ -4109,10 +4109,10 @@
   {
     "id": 401,
     "title": "F0 estimation for bioacoustics: Dryad dataset",
-    "description": "Version published May 8, 2025; Dryad lists a 27.86 GB release with more than 250,000 calls and waveforms plus annotated F0 contours for 13 taxa. Dolphin predictions are included without the waveform release.",
+    "description": "Dryad record for the F0 dataset: more than 250,000 calls, waveforms and annotated contours for 13 taxa, plus dolphin predictions without dolphin waveforms. The official API returned dataset version 9 with 15 files and a provider checksum for monk_parakeets.zip.",
     "url": "https://datadryad.org/dataset/doi:10.5061/dryad.prr4xgxw8",
     "checked": "2026-10-24",
-    "origin": "Reviewed the landing-page abstract, file inventory, data structure and access information. The displayed version totals 27.86 GB. No archive was downloaded; the individual monk-parakeet zip is listed as 5.08 MB."
+    "origin": "Reviewed the landing page and official Dryad dataset, version and file-manifest APIs over verified TLS. On 2026-10-24 the API reported record 139968, version 9, version id 363617, CC0-1.0, 27,863,357,661 bytes and 15 files. monk_parakeets.zip is 5,076,570 bytes with provider SHA-256 328f5ad50313da8d97d7a354a5cacb2ed44b5021772a2974011fdd85fc5bf780. No payload was downloaded and the provider checksum was not recomputed locally. The API download route required a bearer token; the public file-stream route returned HTTP 403 in this environment."
   },
   {
     "id": 402,
@@ -4129,5 +4129,27 @@
     "url": "https://github.com/mim-team/bioacoustic_F0_estimation/tree/b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea",
     "checked": "2026-10-24",
     "origin": "Reviewed the repository tree and README at commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea using read-only GitHub metadata. The tree has 75 entries and no LICENSE/COPYING file. No code or weights were downloaded or run; the paper_experiments/crepe_weights/model_all.pth file is listed as 88,988,786 bytes."
+  },
+  {
+    "id": 404,
+    "title": "Individual vocal signatures show reduced complexity following invasion",
+    "description": "Peer-reviewed 2021 monk-parakeet study of contact-call frequency-modulation structure and individual identity content across native and introduced populations.",
+    "url": "https://doi.org/10.1016/j.anbehav.2021.06.020",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the publisher page's abstract and Data Accessibility statement, and the 2025 F0 paper's table/reference list citing this study. The publisher statement links Figshare DOI 10.6084/m9.figshare.14811636.v1. Full methods and supplementary materials were not reviewed in this checkpoint.",
+    "rights": {
+      "paper": "No open article license was established in this review. Do not reproduce article text or figures; the linked Figshare data has separate terms."
+    }
+  },
+  {
+    "id": 405,
+    "title": "Simpler signatures post-invasion dataset (Figshare v1)",
+    "description": "Official Figshare v1 API record declares item-level CC BY 4.0 and lists 12 files totaling 11,338,100 bytes: CSV, KML and README files. The inventory lists no waveform file.",
+    "url": "https://figshare.com/articles/dataset/Simpler_signatures_post-invasion/14811636",
+    "checked": "2026-10-24",
+    "origin": "Queried the official Figshare API over verified TLS for record 14811636. Saved the provider-reported version, license, file names, sizes and MD5 values in research/monk_parakeet_figshare_manifest_2021.json. No payload was downloaded; provider checksums were not recomputed, rows and KML contents were not inspected, and no coordinates were retained.",
+    "rights": {
+      "dataset": "The Figshare record declares CC BY 4.0 at item level. This review did not inspect file contents or establish rights/provenance for underlying recordings or embedded third-party material; proposed use remains conditional."
+    }
   }
 ]

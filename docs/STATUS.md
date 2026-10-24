@@ -3472,3 +3472,58 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Evidence and change:** the newly published F0 note was available in the research library but was absent from both GitHub's README research boundary and the researcher-start overview. Added a concise link and plain-language distinction to those entry points, including the 13 waveform taxa and 233-call monk-parakeet subset. Kept the F0 path separate from the bat interaction-context lead and the parrot phone-app cohort.
 
 **Limits and next decision:** this is a documentation/discoverability improvement only. It does not resolve dataset provenance, rights, group keys or independent scientific review; no data, code or weights were acquired or run. No external researcher was contacted. AutoResearch remains **NOT READY**.
+
+## October 24 — trace the monk-parakeet F0 subset to its 2021 source deposit
+
+**Question:** does the 2025 cross-species pitch benchmark expose enough provenance for its 233 monk-parakeet calls to be a usable starting corpus?
+
+**Evidence reviewed:** Table 1 and the cited sources/data-availability references in Best et al. (2025); the publisher abstract and Data Accessibility statement for Smith-Vidaurre et al. (2021); and the official Figshare v1 API inventory for DOI 10.6084/m9.figshare.14811636.v1. The benchmark article identifies 233 semi-automatically annotated monk-parakeet calls and cites 2021/2023 work, but the reviewed main text does not map those calls to exact upstream files. The 2021 Figshare item declares CC BY 4.0 and lists 12 CSV/KML/README files totaling 11,338,100 bytes; no waveform appears in the inventory.
+
+**Decision and change:** added sources 404–405, separate metadata-only paper/data resource records, and an API-only file manifest at `research/monk_parakeet_figshare_manifest_2021.json`. Linked the lineage finding and next review gate from the F0 research note, collection record and backlog. The 2021 paper/data are useful prior work on frequency modulation and individual identity, but this deposit does not close audio provenance for the 233-call F0 subset. Keep the subset deferred pending an exact crosswalk in permitted public documentation; if none is available, do not use it for a Talk2Nature model run.
+
+**Limits:** no payload was downloaded; CSV rows and KML contents were not inspected; provider MD5 values were not recomputed; no audio, code or weights were acquired or run. Item-level CC BY 4.0 does not independently clear underlying recordings or third-party material. No independent reviewer was contacted, no data was admitted to training, and no deployment or external outreach occurred. AutoResearch remains **NOT READY**.
+
+**Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 records. The explicit-origin local public candidate produced 133 pages plus 404; the site checker validated 134 HTML documents, 6,894 links and all 133 public routes. The F0 page's title, source-lineage limitation, Figshare source link, self-canonical, `index,follow` directive and sitemap entry were checked. This is a local release candidate, not a deployment.
+
+## October 24 — trace the monk-parakeet F0 subset to the 2023 source deposit
+
+**Question:** does the second Figshare deposit expose a verifiable bridge from the 233 monk-parakeet F0 calls to upstream audio files?
+
+**Evidence reviewed:** queried the official Figshare v2 API for DOI 10.6084/m9.figshare.22582099.v2 and streamed only its README. The 22-file inventory totals 187,820,138 bytes and includes `pre-processed_calls.zip` (31,079,669 bytes) and the selection table (440,873 bytes). The README says the WAV filenames correspond to `sound.file` values in the table, which contains 1,596 rows, 1,582 used in the paper. This offers a possible filename bridge but does not identify which rows/files were used for the separate 233-call F0 subset.
+
+**Decision and change:** added a versioned API-only file manifest and updated the source, resource, research-note, collection, backlog and goal records. The Figshare item declares CC BY 4.0; the deposit README requests prior contact to discuss possible collaboration/co-authorship. These statements do not settle underlying source-recording rights or prove a usable crosswalk. Keep the F0 data metadata-only and the benchmark **NOT READY** pending a permitted exact-lineage check.
+
+**Limits:** no archive, selection-table payload, audio, code or weights were downloaded; no rows or coordinates were inspected; provider MD5 values were not recomputed; no model was run and no data entered training. No researcher was contacted, no deployment occurred and no public claim was added that the subset has been matched.
+
+**Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 resources. The explicit-origin public candidate produced 133 routes plus 404; the site checker validated 134 HTML documents, 6,900 links and all 133 public routes. The F0 route has the expected Figshare ID, metadata-only notice, self-canonical, `index,follow` directive and sitemap entry. It also renders the filename-bridge limitation. The build and checks are local; this candidate has not been deployed. AutoResearch remains **NOT READY**.
+
+## October 24 — pin Dryad's current F0 file inventory
+
+**Question:** can the current Dryad API provide exact file metadata for the F0 deposit and a safe route to the monk-parakeet archive's filename list?
+
+**Evidence reviewed:** queried the official Dryad dataset, version and file-manifest APIs over verified TLS, and rechecked the public dataset page. The API returned dataset id 139968, version 9 / version id 363617, CC0-1.0, 15 files, 27,863,357,661 bytes and provider SHA-256 values for each listed file. `monk_parakeets.zip` is 5,076,570 bytes with provider SHA-256 `328f5ad50313da8d97d7a354a5cacb2ed44b5021772a2974011fdd85fc5bf780`. Saved the complete API inventory in `research/dryad_f0_manifest_2026-10-24.json`.
+
+**Finding and decision:** this pins the metadata version and archive identity, but not its contents or the 233-call crosswalk. The official API file-download route returned 401 with a bearer-token requirement. The public file-stream URL returned HTTP 403 in this environment. No token was used or requested, and no alternate route was attempted. Keep the resource metadata-only; do not use an unreviewed credential or bypass collector controls. Resume filename comparison only through a documented, permitted public metadata route.
+
+**Limits:** no Dryad archive, archive member, file_list, selection CSV, audio, code or weights were acquired or inspected; the provider SHA-256 values remain unverified locally; no row/location data or source-file joins were inspected; no model ran and no data entered training. CC0 applies to the Dryad deposit and does not settle all upstream recording provenance or establish scientific suitability.
+
+**Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 resources, and the 15-file API snapshot sums to the provider's declared storage size. The local noindex build produced 133 routes plus 404; the checker validated 134 HTML pages and 6,766 links. The explicit-origin public candidate produced 133 routes plus 404; the checker validated 134 HTML pages, 6,900 links and all 133 public routes. The F0 page has the expected version-9 and archive-size details, metadata-only notice, self-canonical, `index,follow` directive and sitemap entry; the provider checksum is preserved in the repository manifest. `git diff --check` passed. AutoResearch remains **NOT READY**. No payload acquisition, external contact or deployment occurred.
+
+## October 24 — prioritize the zebra-finch call-perception review lead
+
+**Decision:** added the zebra-finch model/receiver-confusion comparison as Candidate E on the benchmark run card and made it the next independent-review lead. Its value is the possible comparison between held-out-vocalizer classifier errors and trained bird-discrimination confusions, beyond acoustic similarity; simple call-label prediction is already prior art. The card now includes candidate-specific avian and ML review needs and points to the primary study, audio record, versioned archive, author repository and classifier prior art.
+
+**Limits:** no benchmark is selected or training-ready. Exact archive version, recording manifest, vocalizer identities, audio-to-trial join and BirdAVES split/count reconciliation remain unresolved. No audio, archive, code or weights were acquired or run; no independent reviewer was contacted; no deployment occurred. The question is trained discrimination, not spontaneous communication or translation. AutoResearch remains **NOT READY**.
+
+**Validation:** 159 Python and 115 Node tests passed. The local noindex build produced 133 routes plus 404; the site checker validated 134 HTML documents and 6,766 links. The explicit-origin public build also produced 133 routes plus 404; the checker validated 134 HTML documents, 6,900 links and all 133 public routes. This is a local candidate, not a deployment.
+
+
+## October 24 — correct the zebra-finch benchmark novelty boundary
+
+**New evidence:** reviewed Figure 4 and its caption in Elie et al. (2025) and the authors' public repository README. The original paper already compares an acoustic-classifier confusion matrix with the finches' behavioral confusion matrix; the README describes spectrogram LDA confusion matrices from leave-one-vocalizer-out cross-validation. The 2026 BirdAVES paper classifies the call labels but, in the reviewed article, does not directly evaluate those predictions against the behavioral confusion matrix.
+
+**Correction and next decision:** updated Candidate E, the research note/resource records and first-animal decision table. Basic model-versus-bird confusion alignment is prior art. The only candidate extension is whether a modern pretrained audio representation adds alignment beyond the published LDA and acoustic-similarity baselines on the same verified calls. A matrix-only reproduction may not require a raw trial/audio join when the exact licensed matrices are available; a new audio-model comparison still needs a call-label/vocalizer map, exact version and separate rights review. Independent avian-perception and ML/statistical review remains necessary.
+
+**Limits:** no archive, audio, code or model weights were acquired; nothing was executed or reproduced; no reviewer was contacted and nothing was deployed. Zenodo archive contents and GitHub code rights remain unresolved. AutoResearch remains **NOT READY**.
+
+**Validation:** all 159 Python and 115 Node tests passed. The local noindex build produced 133 routes plus 404; the site checker validated 134 HTML pages and 6,769 links. The explicit-origin public candidate also produced 133 routes plus 404; the checker validated 134 pages, 6,903 links and all 133 public routes. The updated research page was inspected for its revised summary, title, description, `index,follow`, exact self-canonical and source links. The candidate is not deployed.
