@@ -2,6 +2,12 @@
 
 This file preserves the dated maintainer checks and unreleased candidate notes formerly appended to the [researcher start guide](RESEARCHER_START.md). They are historical snapshots, not independent reproductions or scientific results. Use [project status](STATUS.md) for the latest authoritative state.
 
+## Current-main onboarding check — October 25, 2026
+
+A fresh depth-one HTTPS clone of public `main` at [`d7c51c8`](https://github.com/Metivity/talk2nature/commit/d7c51c8dc557dfb7dfeeaac964fdf31571fb5c1e), using Python 3.12.5, ran the three current commands in the researcher start guide. The annotation example reported an 8-second synthetic record, two marked events, 2 seconds of interval-union coverage and zero seconds of observed context. The standard split reported 10 connected groups and 12/4/4 train/validation/test records; the dyadic split reported 10 groups and 6/2/4 records. Both generated files matched byte-for-byte on rerun, and the first three transitive dyadic events remained together. The 169-test Python and 117-test Node suites passed from a matching checkout of the same commit, with one intentional Python skip.
+
+This verifies the simplified current-main instructions and synthetic software behavior as maintained by the project. It is not an independent reproduction, user study, scientific validation or biological result. No animal media, dataset payload, model or model weights were acquired or run. Independent reproductions remain zero.
+
 ## Maintainer rehearsal — October 8, 2026
 
 The pinned revision was cloned into a fresh public checkout and exercised on Darwin 25.4.0 arm64 with Python 3.12.5, Node v22.22.1 and Git 2.53.0. The annotation command returned the expected 8-second fixture, two marked events, 2 seconds of interval-union coverage and zero seconds with observed context. The split returned 10 connected groups and 12/4/4 records; repeating it with the same input and seed produced a byte-identical JSON file. The Python suite passed 51 tests and the Node suite passed 79 tests.

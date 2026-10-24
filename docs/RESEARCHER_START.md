@@ -1,66 +1,47 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 24, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 25, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
 Choose by question, not by dataset size. The [cross-species F0 note](https://metivity.github.io/talk2nature/research/bioacoustic-f0-estimation-cross-species-2025/) describes a pitch-estimation candidate with 13 waveform taxa and 233 monk-parakeet calls; it measures a signal feature, not call meaning, and remains metadata-only. Great-tit song structure, zebra-finch turn-taking, bat context prediction and the parrot phone-app cohort are separate research paths with different open gates. See the [species and dataset decision](FIRST_ANIMAL_PLAN.md) for the evidence and limits. No current candidate establishes call meaning; the bat candidate run card is a review lead, not a ready benchmark. AutoResearch remains **NOT READY**.
 
-**Latest maintainer check:** on October 24, a fresh depth-one HTTPS clone checked public [`main` at `35a5941`](https://github.com/Metivity/talk2nature/commit/35a59413aec0c2d891a47c1013bbc25cc18bef63). The current annotation, standard split and dyadic examples passed; both split outputs were byte-identical when rerun. The standard example had 10 groups and 12/4/4 train/validation/test records; the dyadic example had 10 groups and 6/2/4 records, with its first transitive chain kept together. The resource catalog validated 212 records. All 159 Python and 115 Node tests passed. The local noindex build produced 134 pages plus 404; the checker verified 135 HTML documents and 6,833 links. The explicit public-origin build produced 134 pages plus 404; the checker verified 135 HTML documents, 6,968 links and all 134 public routes. This is maintainer-run synthetic software verification, not an independent reproduction or biological result; full dated details are in the [verification history](RESEARCHER_START_HISTORY.md) and [project status](STATUS.md).
+**Latest maintainer check:** on October 25, a fresh depth-one HTTPS clone checked public [`main` at `d7c51c8`](https://github.com/Metivity/talk2nature/commit/d7c51c8dc557dfb7dfeeaac964fdf31571fb5c1e) with Python 3.12.5. The annotation, standard-split and dyadic examples passed; both split files were byte-identical when rerun. The standard example produced 10 connected groups and 12/4/4 train/validation/test records. The dyadic example produced 10 groups and 6/2/4 records, with the first transitive chain kept together. The full suites passed on the same revision: 169 Python tests with one intentional skip, and 117 Node tests. This is maintainer-run synthetic software verification, not an independent reproduction or biological result; full dated details are in the [verification history](RESEARCHER_START_HISTORY.md) and [project status](STATUS.md).
 
 ## Choose one route
 
 **Quick browser route (a few minutes; no setup):** open [Compare moments](https://metivity.github.io/talk2nature/app/compare/) and choose **Try an example pair**. Compare the complete and partial sessions, their observer-entered notes and the sampling differences. Ask yourself: what does the interface let you describe, and what would be an unsupported claim about animal behavior? Close one session and confirm the other remains available. No microphone, playback or upload is needed. For a deeper file-format check, use the optional [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/); it takes about 20 minutes and Audacity is only needed for that route. To report a barrier or useful gap, use the [public workflow report form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml), include the page URL and access date, and keep private media and research details out of the report. Trying the workflow needs no account; posting to GitHub requires sign-in and creates a public issue. The time estimate is a project estimate; independent first-use timing has not yet been measured.
 
-**Research-code route:** use the public repository and the synthetic fixtures below. The code is standard-library Python 3.10+. Node is required only for the optional browser-module tests. The command block pins a historical exact-output baseline, `aa7119b7635aa3390bd1f7b3bb982e3b596f438d`; it does not claim that revision is the current deployed `main`. To reproduce the historical baseline and its expected checksum, check out that exact revision and verify the printed commit before running the commands:
+**Research-code route (optional):** use the current public repository and its synthetic fixtures. Git and Python 3.10+ are required; the Python tools use the standard library, so no extra packages or animal media are needed.
 
 ```sh
-git clone https://github.com/Metivity/talk2nature.git
+git clone --depth 1 --branch main https://github.com/Metivity/talk2nature.git
 cd talk2nature
-git checkout aa7119b7635aa3390bd1f7b3bb982e3b596f438d
 git rev-parse HEAD
 python3 --version
 python3 -m talk2nature.annotations examples/annotations.synthetic.json
-python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/reproduction/split.json
+python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/reproduction/standard.json
+python3 -m talk2nature.manifest examples/interactions.dyadic.synthetic.json --output tmp/reproduction/dyadic.json
 ```
 
-The two fixtures exercise **separate** tools. The annotation report is not converted or admitted into the evaluation manifest.
+Record the commit printed by `git rev-parse HEAD` with any report. These commands use current `main`; the generated split files are written under ignored `tmp/reproduction/`. The annotation and split fixtures exercise **separate** tools. The annotation report is not converted or admitted into either evaluation manifest.
 
 ## Expected observations
 
-| Check | Expected for these committed synthetic fixtures | Interpretation |
+| Check | Expected for these committed synthetic fixtures | What it does not establish |
 | --- | --- | --- |
-| Annotation report | 8-second declared duration; two marked events; 2 seconds of interval-union coverage; zero seconds with observed context | Marked coverage is not detection accuracy. |
-| Annotation warnings | Unknown context; unknown animal/session identity; synthetic origin | A valid file can still be unsuitable for a research claim. |
-| Metadata split | 10 connected groups; 12 train, 4 validation and 4 test records | These are invented declarations, not independent animals observed in a study. |
-| `manifest_sha256` in generated split | `4ce3aaa1f5ead99af3343d4baed5ac682e4862df9b65d4f08858d34aea93dd90` | Identifies the source metadata manifest; it does not authenticate recordings or consent. |
-| Generated split-file SHA-256 | `f2188833c5476cde4db5ec9a21198ad2483691d59264e795e0df9a9829e12bc4` | Checksum of the entire JSON output in this software revision and environment. |
+| Annotation report | 8-second declared duration; two marked events; 2 seconds of interval-union coverage; zero seconds with observed context | Marked coverage is not detection accuracy or a behavior label. |
+| Annotation warnings | Unknown context; unknown animal/session identity; synthetic origin | The fixture contains no biological observation. |
+| Standard metadata split | 10 connected groups; 12/4/4 train/validation/test records; 6/2/2 groups | The records and identities are invented, not independent animals from a study. |
+| Dyadic metadata split | 10 connected groups; 6/2/4 train/validation/test records; the first three linked events stay together | The fixture tests declared-participant grouping, not whether identities or links in real data are true or complete. |
 
-The default seed is `talk2nature-v1`. Repeating the splitter with unchanged input and seed should produce the same file. Record the commit if a future fixture changes. At the pinned release, the splitter groups declared individual IDs, sessions and exact source hashes transitively. Ten fixture groups are not a sample-size recommendation.
-
-### Current-main follow-up
-
-The command block above deliberately checks historical commit `aa7119b7635aa3390bd1f7b3bb982e3b596f438d` so its expected output and checksum stay fixed. The stricter placeholder check and dyadic example below were added later; they are not available at that historical revision. After recording the pinned result, return to the current branch before continuing:
-
-```sh
-git switch main
-git pull --ff-only
-git rev-parse HEAD
-```
-
-Record the commit printed by `git rev-parse`. Run the multi-animal, dyadic and optional software checks below from that current-main checkout. If you only want to reproduce the exact historical baseline, you can stop after the pinned checks above.
+The splitter uses seed `talk2nature-v1` by default. Repeating a split with unchanged input, code revision and seed should produce the same file. Ten synthetic groups are not a sample-size recommendation. For the checksums from the older pinned baseline, see the dated [verification history](RESEARCHER_START_HISTORY.md); use those only when reproducing that exact historical revision.
 
 ### Multi-animal interactions
 
 For an event involving more than one animal, list **every known participant** in `individual_ids`, regardless of caller, recipient or observer role. The splitter connects records transitively: if A interacts with B and B later interacts with C, all records for A, B and C stay in one partition. Omitting a participant defeats that safeguard. Do not invent an identity or use one shared placeholder such as `unknown`; this manifest rejects unresolved identity values. Resolve identities from an appropriate source, or keep the record out of this individual-holdout evaluation until a reviewer approves a different policy.
 
-The current-main validator rejects common placeholder tokens (`unknown`, `na`, `n/a`, `none`, `null`, `tbd`, `pending`) in animal IDs and session IDs. A placeholder is not a pseudonymous identity: if a required grouping key is unresolved, fix the source manifest or exclude those records under a documented rule before making a split. The historical exact-output revision above predates this added validation; use the current source for the stricter check.
+The validator rejects common placeholder tokens (`unknown`, `na`, `n/a`, `none`, `null`, `tbd`, `pending`) in animal IDs and session IDs. A placeholder is not a pseudonymous identity: if a required grouping key is unresolved, fix the source manifest or exclude those records under a documented rule.
 
-Try the invented dyadic example:
-
-```sh
-python3 -m talk2nature.manifest examples/interactions.dyadic.synthetic.json --output tmp/reproduction/dyadic-split.json
-```
-
-It should report 10 connected groups. The first three events form a transitive chain and must receive one split assignment. The example has no animal, person, recording or observed interaction; it tests software behavior only. Grouping can enforce only declared identities and other selected dimensions. It cannot discover omitted participants, validate biological identity, establish label quality, or determine whether treatment, site, device, time or pretrained-model overlap also needs to be held out.
+The dyadic example has no animal, person, recording or observed interaction; it tests software behavior only. Grouping can enforce only declared identities and other selected dimensions. It cannot discover omitted participants, validate biological identity, establish label quality, or determine whether treatment, site, device, time or pretrained-model overlap also needs to be held out.
 
 Optional software checks:
 

@@ -1,5 +1,15 @@
 # Project status
 
+## October 25 — simplify the researcher start path
+
+**Question:** can a researcher try the current synthetic tools without first checking out an older revision and then switching branches to reach the current checks?
+
+**Change:** the optional code route in [`RESEARCHER_START.md`](RESEARCHER_START.md) now starts from current public `main`, after the no-setup browser path. It runs the annotation, standard split and dyadic split examples together. Historical exact-output details remain in the separate verification history.
+
+**Validation:** a fresh depth-one HTTPS clone at public `main` [`d7c51c8`](https://github.com/Metivity/talk2nature/commit/d7c51c8dc557dfb7dfeeaac964fdf31571fb5c1e) ran all three commands on Python 3.12.5. The standard split produced 10 groups and 12/4/4 train/validation/test records; the dyadic split produced 10 groups and 6/2/4 records, with its first three transitive events together. Both split outputs repeated byte-for-byte. The full suites passed on a matching checkout: 169 Python tests with one intentional skip and all 117 Node tests.
+
+**Limit and next gate:** this verifies the maintainer's instructions and synthetic software only. It is not an outside reproduction, first-time user test, biological result or benchmark. The current public first-use issue [#115](https://github.com/Metivity/talk2nature/issues/115) remains open with zero comments as of this check; independent phone use remains unverified. The project goal stays active, with an outside workflow run and specialist scientific review still ahead. AutoResearch remains **NOT READY**.
+
 ## October 25 — simplify the first animal choice
 
 **Question:** can a new visitor see which species path fits their goal without first decoding the research taxonomy?
