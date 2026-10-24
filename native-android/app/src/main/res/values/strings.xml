@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Talk2Nature Station</string>
     <string name="permission_disclosure">Before listening, Android asks for microphone access and may ask to show notifications. The ongoing notification includes a Stop button. A session starts only after you tap Start and grant the required access.</string>
+    <string name="station_alias_default">field-station</string>
+    <string name="recording_consent_statement">I can record here, nearby people know the microphone may be active, and I will observe without provoking or playing sounds to animals.</string>
+    <string name="session_ready_heading">Ready when you are</string>
+    <string name="session_idle_detail">Nothing is recording. Nothing has been uploaded.</string>
+    <string name="session_attention_heading">Session needs attention</string>
+    <string name="session_read_error_detail">Encrypted session data could not be read. Keep the app data intact and export is unavailable until this is resolved.</string>
 </resources>

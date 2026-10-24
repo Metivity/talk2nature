@@ -170,8 +170,7 @@ public final class SessionStore {
         record.put("events", kept);
         record.getJSONArray("discarded_events").put(new JSONObject().put("id", id)
                 .put("onset_seconds", removed.getDouble("onset_seconds")).put("discarded", true));
-        eventFile(id).delete();
-        writeRecord(record);
+        DeleteAudioAfterManifestCommit.run(eventFile(id), () -> writeRecord(record));
     }
 
     public synchronized byte[] readEventWav(int id) throws Exception {

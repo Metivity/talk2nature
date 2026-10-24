@@ -2237,8 +2237,8 @@
     "title": "Wildlife Acoustics Scientific Grant Program · Q4 2026",
     "description": "Official quarterly wildlife-research product program, open worldwide. Q4 applications are due November 15, 2026, with awards by December 30. Standard awards are eligible products rather than cash; applicants may request up to $4,000 in products from a quarterly pool of up to $12,000. Software-only awards are annual Kaleidoscope Pro licenses. The page requires proof of the applicant organization's charitable or educational tax-exempt status; a recommendation letter is waived for software-only requests. It says recipient projects may be featured on the company's website and social media.",
     "url": "https://www.wildlifeacoustics.com/grant-program",
-    "checked": "2026-10-12",
-    "origin": "Re-fetched the official grant page over HTTPS on October 13, 2026 (HTTP 200; 65,000-byte HTML response). Verified worldwide scope; Q4 deadline/award dates; in-kind product and software-only award limits; English application requirement; recommendation-letter exception; mandatory organization charitable/educational tax-exempt document; publicity notice; and applicable-tax caveat. No grant portal was opened or application started. Applicant-specific legal status, detailed portal fields and any award agreement remain unreviewed."
+    "checked": "2026-10-25",
+    "origin": "Rechecked the official grant-program URL on October 25, 2026. The official indexed result still lists the Q4 2026 deadline (November 15), award date (December 30), worldwide program, product-only awards, request limit and organization-status requirement. The page reader exposed only navigation/contact text, so the detailed terms remain grounded in the full October 13 HTTPS review. The old FAQ URLs for foreign-organization and government eligibility now redirect to a generic knowledge-base landing page and were not used to make a current eligibility claim. No grant portal was opened or application started. Applicant-specific legal status, detailed portal fields, shipping/import costs and any award agreement remain unreviewed."
   },
   {
     "id": 214,
@@ -4257,11 +4257,102 @@
     "title": "Zenodo v1.0 honeybee waggle-drift data record",
     "description": "Official versioned data record for the 2023 waggle-drift and follower-behavior study; its API lists 11 files and declares CC BY 4.0.",
     "url": "https://zenodo.org/records/7928121",
-    "checked": "2026-10-24",
-    "origin": "Read the Zenodo v1.0 record and its official API metadata, including dataset license, file names, sizes and provider MD5 values. The listed payloads total about 4.9 GB; no payload was downloaded, hashed locally or inspected.",
+    "checked": "2026-10-25",
+    "origin": "Rechecked the Zenodo v1.0 record through its official API. The 11 listed file sizes sum to 4,870,358,178 bytes; Berlin2019_followers.csv is 9,171,824 bytes, above Talk2Nature's 5 MiB per-file collection cap. The API declares CC BY 4.0. No payload was downloaded, hashed locally or inspected.",
     "rights": {
       "dataset": "The Zenodo v1.0 API metadata declares CC BY 4.0 for this deposited data record.",
       "scope": "Dataset files only. The paper, linked acquisition/analysis code, dependencies and model artifacts have separate rights."
+    }
+  },
+  {
+    "id": 417,
+    "title": "GeoNames municipal point for Pivijay, Colombia",
+    "description": "The GeoNames gazetteer reference point for Pivijay in Magdalena, used only as a rounded one-decimal atlas marker for the PteroSet study region; it is not a recording coordinate.",
+    "url": "https://www.geonames.org/3672093/pivijay.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official GeoNames entry for Pivijay, feature 3672093, which identifies the municipality and lists its point as 10.46167, -74.61621. The atlas marker is rounded to 10.5, -74.6. This is a municipal reference point, not a study deployment coordinate; no dataset rows were accessed.",
+    "rights": {
+      "location": "GeoNames identifies its free gazetteer data as CC BY 4.0. Only the linked place reference is used; the atlas point is rounded and does not reproduce observation data."
+    }
+  },
+  {
+    "id": 418,
+    "title": "GeoNames municipal point for Puerto Asís, Colombia",
+    "description": "The GeoNames gazetteer reference point for Puerto Asís in Putumayo, used only as a rounded one-decimal atlas marker for the PteroSet study region; it is not a recording coordinate.",
+    "url": "https://www.geonames.org/3671549/puerto-asis.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official GeoNames entry for Puerto Asís, feature 3671549, which identifies the municipal seat and lists its point as 0.50514, -76.49571. The atlas marker is rounded to 0.5, -76.5. This is a municipal reference point, not a study deployment coordinate; no dataset rows were accessed.",
+    "rights": {
+      "location": "GeoNames identifies its free gazetteer data as CC BY 4.0. Only the linked place reference is used; the atlas point is rounded and does not reproduce observation data."
+    }
+  },
+  {
+    "id": 419,
+    "title": "MooLogue: a cross-platform mobile application for cow vocalization education and welfare monitoring",
+    "description": "SoftwareX article describing a Flutter-based educational app with a curated cattle-call library and a separate machine-learning reference workflow.",
+    "url": "https://doi.org/10.1016/j.softx.2026.102638",
+    "checked": "2026-10-25",
+    "origin": "Reviewed selected abstract, application design, dataset description, software release, data availability and license passages from an author-uploaded full-text copy at https://www.researchgate.net/publication/403661610_MooLogue_A_cross-platform_mobile_application_for_cow_vocalization_education_and_welfare_monitoring. The publisher landing page was not directly accessible in this review. No figures or article files were copied; no app, audio, code or model was acquired or run.",
+    "rights": {
+      "article": "The article identifies CC BY-NC-ND 4.0.",
+      "scope": "Article only. Dataset, app code and model artifacts have separate access and rights terms. Talk2Nature adds an original summary and links."
+    }
+  },
+  {
+    "id": 420,
+    "title": "MooLogue public app repository at pinned commit 8023dbd",
+    "description": "Pinned GitHub source snapshot whose README describes a Flutter app and cloud upload/inference workflow; exact relation to the later published app release is unresolved.",
+    "url": "https://github.com/mooanalytica/moologue-app/tree/8023dbdfed8587d07eeafa54accb68408ffaefbe",
+    "checked": "2026-10-25",
+    "origin": "Read the README and README_softwarex.md at commit 8023dbdfed8587d07eeafa54accb68408ffaefbe (commit date 2025-11-25). They describe recording/upload to AWS S3, Lambda/PyTorch inference and returned labels/advice. The repository metadata labels code MIT, but GitHub reports no detected license and this pinned tree has no root LICENSE file. The paper describes its v1.0 app as offline-first educational software; no exact artifact-to-paper version mapping was found. No repository archive was cloned, built or executed.",
+    "rights": {
+      "code": "Unresolved. Repository README metadata says MIT, but the pinned tree has no LICENSE file and GitHub reports no detected license. The article license does not settle code rights."
+    }
+  },
+  {
+    "id": 421,
+    "title": "MooLogue curated cattle-vocalization dataset (restricted Zenodo record)",
+    "description": "The paper reports a curated call library from three commercial dairy farms and points to a restricted-access Zenodo deposit under a data access agreement.",
+    "url": "https://doi.org/10.5281/zenodo.17764250",
+    "checked": "2026-10-25",
+    "origin": "The primary article states that the curated audio and metadata are deposited under restricted access, with a data access agreement intended to protect farm confidentiality. The Zenodo API metadata request returned HTTP 406 during this review, so the record metadata and file manifest were not independently inspected. No audio, metadata files or model weights were acquired.",
+    "rights": {
+      "dataset": "Restricted access by data access agreement per the article; no dataset reuse or redistribution license was verified.",
+      "scope": "Separate from article and code rights; metadata-only reference."
+    }
+  },
+  {
+    "id": 422,
+    "title": "BirdNET Live official getting-started and user guide",
+    "description": "Official app documentation for supported platforms, first-run permissions, recording modes and locally saved sessions.",
+    "url": "https://birdnet-team.github.io/birdnet-live-app/user/getting-started/",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official Getting Started guide for Android/iOS/experimental Windows availability, first-run sequence, required microphone permission, optional location, app modes and session-save behavior. This is product documentation, not an independent usability evaluation or a test of the installed app.",
+    "rights": {
+      "scope": "First-party documentation; Talk2Nature summarizes and links rather than reproducing it."
+    }
+  },
+  {
+    "id": 423,
+    "title": "BirdNET Live privacy policy",
+    "description": "First-party privacy policy for on-device inference, local session storage and opt-in third-party map, geocoding and weather lookups.",
+    "url": "https://birdnet-team.github.io/birdnet-live-app/privacy/",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official policy, last updated 2026-08-06. It states that audio and species analysis stay on-device; the app has no backend, accounts, analytics or telemetry; optional map/geocoding/weather calls are separate settings disabled by default and may disclose request details to named third parties. These are statements in the developer policy, not independently packet-captured or audited in this review.",
+    "rights": {
+      "scope": "First-party privacy policy; claims are attributed to the developer and not independently verified."
+    }
+  },
+  {
+    "id": 424,
+    "title": "BirdNET Live app v1.2.1 source and release",
+    "description": "Pinned Flutter source release at commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1; the release contains separate code and model licenses.",
+    "url": "https://github.com/birdnet-team/birdnet-live-app/tree/4aee47cd824873ffc9b3ca3462bf2415151a56d1",
+    "checked": "2026-10-25",
+    "origin": "Resolved tag v1.2.1 to commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1 (release page dated 2026-10-12). Reviewed README feature/platform/version claims and the LICENSE and MODEL_LICENSE files at the tag. The README names two bundled ONNX models; MODEL_LICENSE states Apache License 2.0 for trained weights, while LICENSE states MIT for app source. No repository archive, binary, model, audio or data was downloaded or executed.",
+    "rights": {
+      "code": "MIT in LICENSE at v1.2.1; dependencies and non-code assets keep their own terms.",
+      "model": "Apache License 2.0 in MODEL_LICENSE at v1.2.1; this statement covers the bundled trained weights, not training data, images, taxonomy assets or the BirdNET name."
     }
   }
 ]

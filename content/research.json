@@ -3276,7 +3276,9 @@
     "source_ids": [
       286,
       287,
-      288
+      288,
+      417,
+      418
     ],
     "reviewed": "2026-10-13",
     "review_stage": "Full preprint methods and evaluation; versioned dataset manifest and header-only metadata schema; pinned code review",
@@ -3315,11 +3317,32 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-13",
-      "location_status": "pending",
-      "location_note": "The paper names Pivijay (Magdalena) and Puerto Asís (Putumayo), while the dataset schema includes recording coordinates and dates. Do not publish sample-level points until location sensitivity and species-protection implications are reviewed.",
-      "locations": [],
-      "observation_period": null
+      "reviewed": "2026-10-25",
+      "location_status": "mapped",
+      "location_note": "The paper names two study municipalities and shows their deployment regions. The atlas uses rounded municipal reference points only, not recorder or sample coordinates. No dataset rows or species-specific locations were retrieved, reviewed or published; the markers do not imply that every recording is at the town center.",
+      "locations": [
+        {
+          "place_id": "pivijay-study-region",
+          "role": "study_region",
+          "source_id": 286,
+          "locator": "Methods, Data Collection and Table 1: Magdalena–Pivijay / MAP1; Figure 2 regional map",
+          "basis": "The primary paper names Pivijay in Magdalena as a study site. The marker uses the GeoNames municipal reference point rounded to one decimal degree; it is an editorial region anchor, not a recorder coordinate."
+        },
+        {
+          "place_id": "puerto-asis-study-region",
+          "role": "study_region",
+          "source_id": 286,
+          "locator": "Methods, Data Collection and Table 1: Putumayo–Puerto Asís / PPA1–PPA4; Figure 2 regional map",
+          "basis": "The primary paper names Puerto Asís in Putumayo as a study site. The marker uses the GeoNames municipal reference point rounded to one decimal degree; it is an editorial region anchor, not a recorder coordinate."
+        }
+      ],
+      "observation_period": {
+        "label": "Five monitoring seasons from April 2023 to July 2025",
+        "start_year": 2023,
+        "end_year": 2025,
+        "source_id": 286,
+        "locator": "Methods, Data Collection and Table 1: five project recording periods"
+      }
     }
   },
   {
@@ -5144,22 +5167,37 @@
     "taxon": "Insects",
     "kind": "Machine-learning and follower-response study",
     "year": "2023",
-    "source_ids": [415, 416],
-    "review_depth": "Targeted review of the PNAS Nexus abstract, communication background, colony and camera setup, annotation and hourly sample grouping, follower/feeder results, data statement and article license; the complete Zenodo v1.0 API file manifest and dataset license metadata were checked. No data, video, code or model was downloaded, locally hashed, inspected or executed.",
-    "finding": "Dormagen et al. combined waggle-phase detection, individual tracking, follower observations and feeder records. The paper reports more than 100,000 detected waggle phases. A manually annotated subset covers 176 videos, 3,278,121 detections from 28,873 tracks and 4,389 bee IDs, including 1,107 waggle phases and 279 follower events. The Zenodo publication record describes more than 46 million 2019 track detections across an 11-file, approximately 4.9 GB dataset. This is a rare data path connecting a well-defined sender signal to observed receiver behavior and known food-site outcomes.",
-    "limitations": "This is not a blank slate: the paper already analyzes waggle dance/follower relationships and feeder outcomes. It spans one observation-hive site across two seasons; the published sample-level cross-validation groups by hour rather than holding out bees or colonies. The 2021 recordings lack marked individual identities. The dataset is specialized tracking and video data, not an ordinary-phone audio corpus. The public record contains fine-scale feeder coordinates, which are not reproduced here. CC BY 4.0 in the Zenodo API covers the deposit, not linked software or model artifacts.",
+    "source_ids": [
+      415,
+      416
+    ],
+    "review_depth": "Targeted review of the PNAS Nexus abstract, communication background, colony and camera setup, annotation and hourly sample grouping, follower/feeder results, data statement and article license; on 2026-10-25, rechecked the complete Zenodo v1.0 API file manifest and dataset license. The 11 listed sizes sum to 4,870,358,178 bytes; the named follower CSV is 9,171,824 bytes. No data, video, code or model was downloaded, locally hashed, inspected or executed.",
+    "finding": "Dormagen et al. combined waggle-phase detection, individual tracking, follower observations and feeder records. The paper reports more than 100,000 detected waggle phases. A manually annotated subset covers 176 videos, 3,278,121 detections from 28,873 tracks and 4,389 bee IDs, including 1,107 waggle phases and 279 follower events. The Zenodo v1.0 API lists 11 deposited files totaling 4,870,358,178 bytes (4.87 decimal GB), alongside more than 46 million 2019 track detections. This is a rare data path connecting a well-defined sender signal to observed receiver behavior and known food-site outcomes.",
+    "limitations": "This is not a blank slate: the paper already analyzes waggle dance/follower relationships and feeder outcomes. It spans one observation-hive site across two seasons; the published sample-level cross-validation groups by hour rather than holding out bees or colonies. The 2021 recordings lack marked individual identities. The dataset is specialized tracking and video data, not an ordinary-phone audio corpus. The public record contains fine-scale feeder coordinates, which are not reproduced here. The separately named Berlin2019_followers.csv is 9,171,824 bytes, above the current 5 MiB per-file collector cap; smaller dance/feeder metadata files have not been shown to substitute for the follower outcome. No payload bytes were inspected. CC BY 4.0 in the Zenodo API covers the deposit, not linked software or model artifacts.",
     "lesson": "A useful communication study needs a defined signal, an observed receiver response and an independent outcome. Honeybees are a strong candidate for testing that chain, while existing claims and the single-site scope demand a narrow, independently reviewed question. This does not justify a general language model or claim that unknown animal speech has been translated.",
-    "next_review": "Ask independent insect-behavior and ML/statistical reviewers whether any non-duplicative question remains, whether the 2019 data support a bee-held-out evaluation, how to evaluate feeder/follower outcomes without leakage, and how to keep fine-scale location metadata out of public outputs. No payload acquisition or model run is authorized by this note.",
-    "reviewed": "2026-10-24",
+    "next_review": "Ask independent insect-behavior and ML/statistical reviewers whether any non-duplicative question remains and whether the relevant files support a bee-held-out evaluation. Any future follower-file intake needs a separately reviewed path that respects the 5 MiB per-file limit; do not bypass it with direct downloads, alternate tools or archive splitting. Keep fine-scale location metadata out of public outputs. No payload acquisition or model run is authorized by this note.",
+    "reviewed": "2026-10-25",
     "expert_review": "No independent Talk2Nature insect-behavior or ML/statistical specialist has reviewed this assessment.",
     "review_stage": "Targeted primary-paper and dataset-metadata review; no payload acquisition or reproduction",
     "year_label": "Publication year",
     "purpose": "Behavior & communication",
     "study_snapshot": [
-      ["Scale", "The Zenodo record lists more than 46 million 2019 track detections in an approximately 4.9 GB, 11-file release; the paper reports more than 100,000 waggle phases across the study."],
-      ["Observed response", "The paper links dance features to follower behavior and feeder experiments, giving the signal a measurable external outcome."],
-      ["Independent units", "The article’s sample split groups observations by hour; it does not establish transfer to held-out bees or a new colony."],
-      ["Current decision", "Promising communication-methods candidate, not a selected Talk2Nature benchmark. Published results, single-site scope, code rights and independent review remain gates."]
+      [
+        "Scale",
+        "The Zenodo v1.0 API lists 11 files totaling 4,870,358,178 bytes (4.87 decimal GB); Berlin2019_followers.csv is 9,171,824 bytes. The paper reports more than 46 million 2019 track detections and more than 100,000 waggle phases."
+      ],
+      [
+        "Observed response",
+        "The paper links dance features to follower behavior and feeder experiments, giving the signal a measurable external outcome."
+      ],
+      [
+        "Independent units",
+        "The article’s sample split groups observations by hour; it does not establish transfer to held-out bees or a new colony."
+      ],
+      [
+        "Current decision",
+        "Promising communication-methods candidate, not a selected Talk2Nature benchmark. Published results, single-site scope, the follower-file intake limit, code rights and independent review remain gates."
+      ]
     ],
     "atlas": {
       "reviewed": "2026-10-24",
@@ -5182,6 +5220,124 @@
         "locator": "Methods, Colony setup: Berlin 2019 and Berlin 2021"
       }
     },
-    "review_locator": "Dormagen et al. (2023), PNAS Nexus, DOI 10.1093/pnasnexus/pgad275: abstract, communication introduction, colony setup, sample-grouping method, Results, data availability and article license; Zenodo v1.0 record DOI 10.5281/zenodo.7928121 and official API metadata."
+    "review_locator": "Dormagen et al. (2023), PNAS Nexus, DOI 10.1093/pnasnexus/pgad275: abstract, communication introduction, colony setup, sample-grouping method, Results, data availability and article license; Zenodo v1.0 record DOI 10.5281/zenodo.7928121 and official API file sizes/license rechecked 2026-10-25."
+  },
+  {
+    "slug": "moologue-cattle-call-learning-app-2026",
+    "title": "MooLogue separates cattle-call learning from live analysis",
+    "seo_description": "A published cattle-vocalization app offers a mobile learning precedent. Its paper, repository and restricted dataset have different versions and rights.",
+    "taxon": "Cattle",
+    "kind": "Mobile app, curated audio library and machine-learning workflow review",
+    "year": "2026",
+    "year_label": "Publication year",
+    "source_ids": [
+      419,
+      420,
+      421
+    ],
+    "reviewed": "2026-10-25",
+    "review_stage": "Targeted article and pinned-repository review; metadata-only, no reproduction",
+    "review_depth": "Reviewed selected abstract, app design and release, curated-corpus description, dataset-access statement and article license in an author-uploaded article copy. Read the README and README_softwarex.md at pinned GitHub commit 8023dbdfed8587d07eeafa54accb68408ffaefbe. The Zenodo API metadata request returned HTTP 406, so its manifest was not independently inspected. No app was installed, no repository archive or dataset payload was acquired, and no code or model was run.",
+    "finding": "Kate and Neethirajan describe MooLogue as a Flutter mobile application for learning about cattle vocalizations. The paper reports a curated library built from 569 clips, 48 fine-grained behavioral classes and three commercial dairy farms, grouped into nine high-level learning categories. Its published v1.0 is described as an offline-first educational app with curated examples and metadata bundled for normal use. The pinned public repository README instead describes a cloud workflow that uploads recordings to AWS, runs PyTorch inference and returns a label, confidence and recommended action. The repository snapshot is dated 2025-11-25, and the paper does not establish that this exact snapshot is the implementation of the later v1.0. Treat the discrepancy as unresolved. This is a useful mobile-learning and version-control case study, not evidence that an app can translate cattle calls or provide validated welfare advice.",
+    "limitations": "The article was reviewed selectively from an author-uploaded copy, not in full through the publisher; figures and supplemental artifacts were not inspected. The paper says the audio and metadata are restricted under a data access agreement to protect farm confidentiality; the direct Zenodo API request failed, and no item manifest or file-level terms were checked. The pinned GitHub tree has no root LICENSE file although its README metadata says MIT and GitHub reports no detected license. No exact mapping from that 2025 source snapshot to the 2026 published app release was established. No app store installation, source build, upload, classifier, model weights or welfare recommendation was tested. The app paper is not an independent usability study or proof of interpretive accuracy, and the project does not validate open-ended communication or generalization to other farms/species.",
+    "lesson": "Separate human-facing education, user-started observation, automated prediction and any care recommendation into distinct product claims and data flows. A curated listen-and-learn mode can be useful without claiming live translation. For Talk2Nature, keep raw capture local by default until consent, data rights, storage, withdrawal and review are resolved; present model outputs as uncertain predictions with provenance, never as animal intent or treatment advice.",
+    "next_review": "Reconcile the exact published app version with a versioned source release and a real code license before considering reuse. Independently inspect current app-store behavior and privacy terms only if a specific product comparison needs them. Keep the restricted dataset metadata-only; do not request access, download media or reuse model assets without a defined protocol, permission and component-specific rights review. Obtain independent cattle-welfare/bioacoustics and ML review before making any accuracy or welfare claim.",
+    "expert_review": "No independent cattle-bioacoustics, welfare, mobile-product or ML specialist has reviewed this Talk2Nature assessment.",
+    "review_locator": "Kate and Neethirajan, SoftwareX 34 (2026), 102638, DOI 10.1016/j.softx.2026.102638: selected app design/release, dataset, data availability and license passages. GitHub README and README_softwarex.md at commit 8023dbdfed8587d07eeafa54accb68408ffaefbe. Zenodo DOI 10.5281/zenodo.17764250 was not independently retrievable through the API.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Mobile learning",
+        "The paper describes a Flutter app with a curated cattle-call library, nine high-level categories, call descriptions and quizzes; published v1.0 is described as offline-first."
+      ],
+      [
+        "Corpus described by the article",
+        "569 curated clips, 48 fine-grained classes and three commercial dairy farms; no audio or metadata files were inspected."
+      ],
+      [
+        "Version discrepancy",
+        "The pinned 2025 repository README describes cloud uploads and inference, unlike the paper’s offline-first v1.0 description; the exact release-to-commit mapping is unknown."
+      ],
+      [
+        "Separate rights",
+        "Article: CC BY-NC-ND 4.0. Dataset: restricted by data access agreement per article. Code: README says MIT, but pinned tree has no LICENSE and GitHub reports no detected license."
+      ],
+      [
+        "Current decision",
+        "Useful mobile/product comparator only. No code, app, audio, dataset or model is admitted for Talk2Nature use."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only mobile-learning and version-provenance comparator; not a validated translator or Talk2Nature benchmark",
+      "asset": "SoftwareX article, pinned GitHub source snapshot and separately restricted Zenodo dataset record",
+      "rights": "Article, data, source code and model assets have separate terms. Article is CC BY-NC-ND 4.0; the dataset is reported as DAA-restricted; code reuse remains unresolved because the pinned repository lacks a LICENSE file despite README MIT metadata.",
+      "experiment": "No third-party code, app, dataset, audio or weights were acquired or run. Keep all components metadata-only until exact versions, permissions, rights and a scientifically reviewed task are established."
+    },
+    "atlas": {
+      "reviewed": "2026-10-25",
+      "location_status": "pending",
+      "location_note": "The article names three commercial dairy farms but the locations and site-to-recording mapping were not established. No public map marker is supported.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "birdnet-live-local-first-mobile-app-2026",
+    "title": "BirdNET Live keeps bird identification on the phone",
+    "seo_description": "A source-based review of BirdNET Live v1.2.1: local bird-species detection, session export, opt-in network services and separate code/model licenses.",
+    "taxon": "Birds",
+    "kind": "Mobile app, privacy and model-rights review",
+    "year": "2026",
+    "year_label": "Pinned app release",
+    "source_ids": [
+      422,
+      423,
+      424
+    ],
+    "reviewed": "2026-10-25",
+    "review_stage": "Official app documentation/privacy policy and pinned GitHub release reviewed; no app install, model execution or independent validation",
+    "review_depth": "Reviewed official Getting Started and Privacy pages (policy updated 2026-08-06) plus the GitHub v1.2.1 release at commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1, including README, LICENSE and MODEL_LICENSE. Documentation describes app flows and developer data-handling claims; these were not independently runtime-tested. No app, source archive, model, audio or training data was acquired or run.",
+    "finding": "BirdNET Live is an open-source Flutter app for Android and iOS, with Windows described as experimental. The v1.2.1 release identifies bird species from sound using on-device BirdNET+ inference; the README describes 9,789 species, Live/Point Count/Survey/File Analysis/ARU modes, reviewable sessions and local exports. The official privacy policy says the app has no backend and does not send audio to external servers. The Getting Started guide says microphone permission is required across modes and completed sessions are saved automatically for review. Three optional network features—map tiles, reverse geocoding and weather—are separately gated and off by default; the policy says requests can reveal tile coordinates or session location/time and IP address to the respective provider. Source code is MIT and the exact bundled trained weights are declared Apache-2.0 in separate files at v1.2.1. This is a strong local-first field-recording and species-identification precedent, not evidence that an animal call has been translated or that the app understands a bird’s intent.",
+    "limitations": "This is a documentation and release review, not an install, device test, packet capture, code audit or independent evaluation. The app classifies bird species; no evidence was reviewed here for identifying individual household parrots, call function or meaning. The model license does not clear training data, bundled images/taxonomy, dependencies or the BirdNET trademark. No training corpus was examined, and no Talk2Nature use or model transfer was tested. The official onboarding requires a microphone grant before the app is ready; this may be a poor fit for a first visit by a curious beginner. Local session auto-save and optional third-party location/weather requests need distinct user disclosure. This note does not independently verify the developer’s privacy statements or model-accuracy claims.",
+    "lesson": "Separate a no-microphone learning exercise from actual observation and any species-classification feature. BirdNET Live demonstrates a mature local-first pattern: visible session review, explicit exports and deletion, model and code licenses tracked separately, and optional network integrations with individual controls. For Talk2Nature, keep the existing invented-scene practice easy to reach before asking for microphone access. Do not add BirdNET or another predictor to the observation flow until the intended species/task, model terms, runtime behavior, privacy, and held-out evaluation are reviewed. Species identification is not a statement about call meaning.",
+    "next_review": "If considering a BirdNET model integration, pin and inspect the exact current app/model release, separately review model/data/asset terms and expected-species coverage, and evaluate on consented, independently labeled, grouped recordings from the intended context. Independently verify actual network behavior and deletion/export on supported devices. No audio, code or model acquisition is authorized by this note.",
+    "expert_review": "No independent avian bioacoustics, privacy/security, mobile usability or ML specialist has reviewed this Talk2Nature assessment.",
+    "review_locator": "BirdNET Live Getting Started: First-Time App Flow, main modes, permissions and What Gets Saved. Privacy Policy (last updated 2026-08-06): On-Device Processing, External Resources, GPS & Location, Data Export and Data Deletion. GitHub release v1.2.1, commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1: README, LICENSE and MODEL_LICENSE.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Primary task",
+        "On-device classification of bird species in audio, supported by a separate geo-model; outputs are species candidates, not interpretations of animal intent."
+      ],
+      [
+        "First-use flow",
+        "The official guide requires a microphone grant before the app is ready and offers several survey/analysis modes. Completed sessions are automatically saved for review."
+      ],
+      [
+        "Privacy design",
+        "Developer policy says raw audio stays on-device and the app has no backend. Optional map, geocoding and weather calls are individually toggled off by default; location/IP details may reach third-party services when enabled."
+      ],
+      [
+        "Version and component rights",
+        "Pinned v1.2.1 commit: app code MIT; bundled trained model weights Apache-2.0. Training data, dependencies, species imagery/taxonomy assets and trademarks are separate."
+      ],
+      [
+        "Talk2Nature decision",
+        "Do not add species prediction or a new Learn product mode yet. Make the existing synthetic, microphone-free practice route easier to find; preserve passive observation as the primary action."
+      ]
+    ],
+    "reuse": {
+      "status": "Local-first field-app architecture comparator; species detector, not a communication or meaning model",
+      "asset": "BirdNET Live v1.2.1 Flutter app source and separately licensed bundled ONNX weights",
+      "rights": "Source code declares MIT and bundled trained weights declare Apache-2.0 at the pinned release. These do not license training data, all assets, dependencies, app branding or unreviewed external services.",
+      "experiment": "No app, code, audio, model or training data was acquired or run. Any future integration requires exact artifact review, permission/privacy review, and species/context-specific evaluation."
+    },
+    "atlas": {
+      "reviewed": "2026-10-25",
+      "location_status": "not_applicable",
+      "location_note": "This is a software and privacy review, not a study of one verified field site.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

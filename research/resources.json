@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -6688,7 +6688,9 @@
       "title": "Machine learning reveals the waggle drift’s role in the honey bee dance communication system",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516631/",
       "version": "PNAS Nexus 2(9): pgad275 (2023); DOI 10.1093/pnasnexus/pgad275",
-      "source_ids": [415],
+      "source_ids": [
+        415
+      ],
       "priority": 1,
       "reviewed": "2026-10-24",
       "task": "Prior-art and methods reference for the relationship between waggle-dance movement, follower behavior and observed feeder outcomes.",
@@ -6715,20 +6717,170 @@
       "title": "Honeybee waggle-phase, dance, follower and feeder dataset",
       "url": "https://zenodo.org/records/7928121",
       "version": "Zenodo v1.0; DOI 10.5281/zenodo.7928121; published 2023-05-17",
-      "source_ids": [415, 416],
+      "source_ids": [
+        415,
+        416
+      ],
       "priority": 1,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-25",
       "task": "Candidate for a narrowly specified reproduction or bee-held-out re-evaluation of an already published signal-to-follower/feeder analysis.",
-      "review_depth": "Zenodo v1.0 description and official API metadata reviewed for the 11-file inventory, sizes, provider MD5 values and CC BY 4.0 declaration. The primary article’s methods and results were reviewed selectively. No dataset payload was downloaded, hashed locally or inspected.",
-      "access": "Public Zenodo record; the listed files total about 4.9 GB. It includes more than 46 million 2019 track detections, dance/follower tables, feeder-experiment metadata and a 2021 classifier ground-truth archive. Fine-scale feeder coordinates are present in the source description; no coordinates are reproduced here.",
-      "decision": "Metadata-only communication-adjacent candidate, not a selected or training-ready benchmark. Invite independent insect-behavior and ML/statistical review of novelty, outcome definition, bee-held-out grouping and location handling before any analysis. Do not redistribute the media or linked model/code artifacts based on this dataset license.",
+      "review_depth": "On 2026-10-25, rechecked Zenodo v1.0 official API metadata: 11 file entries sum to 4,870,358,178 bytes and the API declares CC BY 4.0. Berlin2019_followers.csv is 9,171,824 bytes. The primary article’s methods and results were reviewed selectively. No dataset payload was downloaded, hashed locally or inspected.",
+      "access": "Public Zenodo record; its 11 deposited files total 4,870,358,178 bytes (4.87 decimal GB). It includes more than 46 million 2019 track detections, dance/follower tables, feeder-experiment metadata and a 2021 classifier ground-truth archive. The named Berlin2019_followers.csv file is 9,171,824 bytes, above the current collector's 5 MiB per-file limit. Fine-scale feeder coordinates are present in the source description; no coordinates are reproduced here.",
+      "decision": "Metadata-only communication-adjacent candidate, not a selected or training-ready benchmark. Its follower-outcome file exceeds the current 5 MiB per-file collection limit, and the smaller dance/feeder metadata files have not been shown to replace it for a receiver-outcome analysis. Do not bypass the limit with direct downloads, alternate tools or archive splitting. Before any future intake, require independent insect-behavior and ML/statistical review of novelty, outcome definition, bee-held-out grouping and location handling, plus a separately reviewed acquisition path.",
       "limitations": "The published study spans one Berlin observation-hive site across two seasons; its sample-level cross-validation groups observations by hour, not by held-out individual or colony. The 2021 cohort is unmarked, and the 2019 feeder and tracking setup is specialized. The signal’s relationship to direction/distance and follower behavior is established prior art, not a new translation result.",
       "attribution": "Dormagen DM, Wild B, Wario F, Landgraf T (2023). Data used in Machine learning reveals the waggle drift’s role in the honey bee dance communication system. Zenodo v1.0. DOI 10.5281/zenodo.7928121.",
       "rights": {
         "license": "Zenodo v1.0 record API metadata declares CC BY 4.0 for the deposited dataset.",
         "scope": "The dataset record only. Linked papers, code repositories, dependencies and model artifacts require their own rights review.",
-        "evidence_url": "https://zenodo.org/records/7928121",
-        "conditions": "Cite the deposit and retain attribution. Before any analysis, review the exact files, potential location exposure and task-specific suitability. Do not infer permission for linked code or model artifacts.",
+        "evidence_url": "https://zenodo.org/api/records/7928121",
+        "conditions": "Cite the deposit and retain attribution. Before any analysis, review the exact files, potential location exposure and task-specific suitability. Do not infer permission for linked code or model artifacts. No payload bytes were downloaded or inspected.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moologue-paper-2026",
+      "kind": "paper",
+      "title": "MooLogue: A cross-platform mobile application for cow vocalization education and welfare monitoring",
+      "url": "https://doi.org/10.1016/j.softx.2026.102638",
+      "version": "SoftwareX 34 (2026), article 102638",
+      "source_ids": [
+        419
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-25",
+      "task": "Mobile-learning product precedent and versioned methods reference; not a Talk2Nature benchmark.",
+      "review_depth": "Selected article passages reviewed through an author-uploaded copy: app design/release, corpus description, data statement and article license. No figures or supplemental files inspected.",
+      "access": "Open-access article; publisher landing page was not directly accessible in this review, and an author-uploaded copy was used for selected passages.",
+      "decision": "Publish an original summary and link only. Keep this separate from code and dataset reuse.",
+      "limitations": "Not a full article review, independent usability evaluation or validation of an animal-meaning claim. The paper describes v1.0 as offline-first educational software; its exact relationship to the pinned public code snapshot is unresolved.",
+      "attribution": "Kate M, Neethirajan S (2026). MooLogue: A cross-platform mobile application for cow vocalization education and welfare monitoring. SoftwareX 34:102638. DOI 10.1016/j.softx.2026.102638.",
+      "rights": {
+        "license": "CC-BY-NC-ND-4.0",
+        "scope": "Published article only; code, dataset and model assets have separate rights.",
+        "evidence_url": "https://doi.org/10.1016/j.softx.2026.102638",
+        "conditions": "Talk2Nature publishes an original summary and a link, not the article text, figures or files.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moologue-app-code-2025-snapshot",
+      "kind": "code",
+      "title": "MooLogue mobile application source (pinned GitHub snapshot)",
+      "url": "https://github.com/mooanalytica/moologue-app/tree/8023dbdfed8587d07eeafa54accb68408ffaefbe",
+      "version": "Commit 8023dbdfed8587d07eeafa54accb68408ffaefbe (2025-11-25); exact mapping to the 2026 paper release not established",
+      "source_ids": [
+        419,
+        420
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-25",
+      "task": "Compare mobile learning, versioning and possible cloud architecture patterns; do not import code.",
+      "review_depth": "Read README and README_softwarex.md at the pinned commit and checked GitHub repository license metadata/tree. No archive was cloned, built or executed.",
+      "access": "Public GitHub repository snapshot; the article describes a later v1.0 release, but no exact commit-to-release mapping was found.",
+      "decision": "Metadata-only. README says MIT, but GitHub reports no detected license and the pinned tree has no root LICENSE; obtain an explicit license/version reconciliation before any reuse.",
+      "limitations": "The README describes live recording uploads, AWS services and PyTorch inference; the article describes normal v1.0 use as an offline-first educational app. Runtime behavior and exact release provenance were not tested.",
+      "attribution": "MooAnalytica, moologue-app repository, commit 8023dbdfed8587d07eeafa54accb68408ffaefbe.",
+      "rights": {
+        "license": "Unresolved: README metadata says MIT; pinned tree has no LICENSE and GitHub reports no detected license.",
+        "scope": "Pinned source snapshot only; the article, dataset, dependencies and any model weights have separate terms.",
+        "evidence_url": "https://github.com/mooanalytica/moologue-app/tree/8023dbdfed8587d07eeafa54accb68408ffaefbe",
+        "conditions": "No copying or execution until a clear license and exact release mapping are verified.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moologue-cattle-audio-dataset-2026",
+      "kind": "dataset",
+      "title": "MooLogue curated cattle-vocalization audio and metadata",
+      "url": "https://doi.org/10.5281/zenodo.17764250",
+      "version": "Zenodo DOI 10.5281/zenodo.17764250; restricted access per article",
+      "source_ids": [
+        419,
+        421
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-25",
+      "task": "Prior-art and corpus-design reference for curated cattle call learning; not admitted for collection or training.",
+      "review_depth": "The paper reports 569 clips, 48 fine-grained classes and three commercial dairy farms and says access is restricted by a data access agreement. Zenodo API returned HTTP 406; no official manifest or payload was inspected.",
+      "access": "Restricted according to the paper; the direct Zenodo API metadata response could not be retrieved for independent confirmation.",
+      "decision": "Keep metadata-only. Do not request, download, redistribute or train on the dataset without explicit access approval, exact terms, defined protocol and independent review.",
+      "limitations": "The article-level corpus summary does not reveal the complete file manifest, recording/site mapping, participant/animal consent details, annotation protocol or cross-split grouping. Restricted farm data may not be redistributable.",
+      "attribution": "Data associated with Kate M, Neethirajan S (2026), MooLogue, SoftwareX 34:102638; Zenodo DOI 10.5281/zenodo.17764250.",
+      "rights": {
+        "license": "Unresolved; article reports restricted access under a data access agreement.",
+        "scope": "Dataset and metadata only; paper, repository code and model rights are separate.",
+        "evidence_url": "https://doi.org/10.5281/zenodo.17764250",
+        "conditions": "No intake or reuse until the official record, data access agreement, privacy/consent terms and intended use are reviewed.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdnet-live-app-code-v1-2-1",
+      "kind": "code",
+      "title": "BirdNET Live Flutter app source",
+      "url": "https://github.com/birdnet-team/birdnet-live-app/tree/4aee47cd824873ffc9b3ca3462bf2415151a56d1",
+      "version": "v1.2.1; commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1; released 2026-10-12",
+      "source_ids": [
+        424
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-25",
+      "task": "Reference for a local-first mobile recording, species-ID and session-review workflow; no import planned.",
+      "review_depth": "Reviewed the pinned README, LICENSE, app-mode summary, session/save/export description and documentation references. No code archive was downloaded, built, security-audited or run.",
+      "access": "Public GitHub source at a pinned release commit. The release identifies MIT for app source code; dependencies and bundled non-code assets have separate terms.",
+      "decision": "Metadata-only comparator. Do not import code until dependency, asset, privacy, trademark and app integration requirements are separately reviewed.",
+      "limitations": "BirdNET Live classifies bird species, not calls by intent. The app expects a microphone grant, saves completed sessions locally and includes modes beyond the Talk2Nature beginner workflow. Developer privacy claims were not independently runtime-tested.",
+      "attribution": "BirdNET-Team (2026). BirdNET Live app, release v1.2.1, commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1.",
+      "rights": {
+        "license": "MIT (LICENSE at pinned release)",
+        "scope": "Application source code only; dependencies, models, data, assets and trademarks are separate.",
+        "evidence_url": "https://github.com/birdnet-team/birdnet-live-app/blob/4aee47cd824873ffc9b3ca3462bf2415151a56d1/LICENSE",
+        "conditions": "Retain MIT copyright and permission notice; review each dependency and non-code asset before distribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdnet-live-model-weights-v1-2-1",
+      "kind": "model",
+      "title": "BirdNET Live bundled BirdNET+ ONNX weights",
+      "url": "https://github.com/birdnet-team/birdnet-live-app/blob/4aee47cd824873ffc9b3ca3462bf2415151a56d1/MODEL_LICENSE",
+      "version": "BirdNET+ V3.0-preview3.1 Global 10K-pruned FP16; geo-model V3.0.4; app release v1.2.1",
+      "source_ids": [
+        424
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-25",
+      "task": "Species-identification comparator only; no Talk2Nature inference or training run.",
+      "review_depth": "Reviewed the exact release README model filenames and MODEL_LICENSE declaration. No model bytes, card, training-data manifest or evaluations were acquired or inspected.",
+      "access": "Model files are described as bundled in release builds and tracked in source via Git LFS.",
+      "decision": "Metadata-only. Apache-2.0 applies to the bundled trained weights per MODEL_LICENSE; it does not grant rights to training audio, source recordings, ancillary app assets or trademarks.",
+      "limitations": "The app output is bird-species identification, not a call-function, individual, state or meaning label. No suitability for parrot household recordings or Talk2Nature tasks was established.",
+      "attribution": "BirdNET-Team (2026). BirdNET Live app v1.2.1 bundled model weights; MODEL_LICENSE at pinned commit 4aee47cd824873ffc9b3ca3462bf2415151a56d1.",
+      "rights": {
+        "license": "Apache-2.0 (MODEL_LICENSE at pinned release)",
+        "scope": "Bundled trained model weights only; training data, application code, taxonomy/images and trademarks are separate.",
+        "evidence_url": "https://github.com/birdnet-team/birdnet-live-app/blob/4aee47cd824873ffc9b3ca3462bf2415151a56d1/MODEL_LICENSE",
+        "conditions": "Preserve Apache-2.0 notices and review the exact model artifact and its upstream data provenance before any use.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

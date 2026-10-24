@@ -81,8 +81,8 @@ def build_resource_directory(root: Path, base: str, page):
 <section class="section paper-panel resource-note"><h2>How to read these records.</h2><p>“Catalog reviewed” is the date our record was checked; it does not mean the paper or artifact received independent peer review from Talk2Nature. The review-depth field says exactly what was inspected.</p><p>Rights declarations apply only to the component and scope named in that record. “Conditional” is not blanket permission; “unresolved” means we have not established the terms; “not admitted” means this project has not cleared that use. Check current upstream terms and seek rights-holder guidance before reuse.</p><p>Sample approval controls a bounded metadata-collection workflow. It does not establish biological labels, participant consent, model-training suitability or benchmark readiness. We keep these separate from scientific admission.</p><p><a href="{base}/research/starting-points/">Follow a reading path to the next experiment →</a></p></section>'''
     page(
         'research/resources/',
-        'Research resources: papers, datasets, code, models, standards and projects',
-        f'Browse {len(resources)} research resources—papers, datasets, software, models, standards and projects—for reproducible research, with review and rights notes.',
+        'Animal communication papers, datasets and methods',
+        'Browse papers, datasets, code, models and standards for reproducible research on animal communication, with review depth, limits and reuse-rights notes.',
         body,
         active='research/',
         extra_head=f'<link rel="stylesheet" href="{base}/assets/resources.css"><script defer src="{base}/assets/resources.js"></script>',

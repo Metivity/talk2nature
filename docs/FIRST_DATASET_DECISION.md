@@ -1,6 +1,6 @@
 # First dataset decision: match the corpus to the question
 
-**Status:** decision brief, October 24, 2026. This is a literature and metadata assessment. No animal recordings or model weights were acquired or run, and no candidate has been approved for a Talk2Nature benchmark.
+**Status:** decision brief, refreshed October 25, 2026. This is a literature and metadata assessment. No animal recordings or model weights were acquired or run, and no candidate has been approved for a Talk2Nature benchmark.
 
 ## Recommendation
 
@@ -27,6 +27,10 @@ For a bounded, already understood communication system, honeybee waggle-dance/fo
 | **Household budgerigars** | A practical candidate for a future passive, human-guided Field Companion workflow if carers and an avian researcher are available. | No reviewed large public household dataset supplies the needed phone recordings plus independently observed context. Do not recruit, collect or upload real observations without protocol, consent, rights, privacy, retention and withdrawal review. |
 
 Counts above describe the source records, not independent sample sizes for every proposed analysis. Files, clips, notes, annotations and animals are different units. Random clip splits can leak bird, household, session, device or site identity; a large record count does not cure that problem. For OpenWhistle, five animals do not support a broad claim about dolphin populations, and an individual-held-out analysis would have only five folds and needs specialist review before it is treated as a useful extension.
+
+## October 25 honeybee file-scope recheck
+
+The official Zenodo v1.0 API lists 11 files totaling **4,870,358,178 bytes** (4.87 decimal GB). This is the deposited file-size sum; the landing page's larger “data volume” figure appears with views/downloads statistics and is not the sum of the record's files. The named `Berlin2019_followers.csv` is **9,171,824 bytes**, above the collection tool's 5 MiB per-file cap. The smaller dance and feeder metadata files have not been shown to support the receiver-outcome question without that follower table. Keep the record metadata-only; do not bypass the cap with direct downloads, another tool or archive splitting. Any later path requires a distinct scientific reason, independent review and separately reviewed acquisition design. No dataset bytes were acquired or inspected.
 
 ## Household companion-data check (October 24, 2026)
 

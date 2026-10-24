@@ -218,6 +218,20 @@
       "precision": "region",
       "latitude": 52.5,
       "longitude": 13.4
+    },
+    {
+      "id": "pivijay-study-region",
+      "label": "Pivijay study region, Magdalena, Colombia",
+      "precision": "region",
+      "latitude": 10.5,
+      "longitude": -74.6
+    },
+    {
+      "id": "puerto-asis-study-region",
+      "label": "Puerto Asís study region, Putumayo, Colombia",
+      "precision": "region",
+      "latitude": 0.5,
+      "longitude": -76.5
     }
   ]
 }
