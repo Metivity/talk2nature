@@ -3636,3 +3636,11 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Change:** added a concise no-data review brief with one question, the known novelty limit, precise unresolved evidence, five bounded review prompts and four possible decisions. Linked it from Candidate E and the zebra-finch reviewer-path documentation, and added the candidate to the issue form's examples. The brief separates matrix-only reproduction from a raw-audio extension and keeps model predictions distinct from bird judgments.
 
 **Validation and limits:** `git diff --check` and the repository documentation/resource checks pass. The brief is a review invitation, not a completed external review. No reviewer was contacted; no animal media, archive, code or model was acquired or executed. Candidate E remains unselected and AutoResearch remains **NOT READY**.
+
+## October 24 — surface the zebra-finch review path on the species guide
+
+**Question:** can a scientist reach the bounded review brief directly from the public first-animal comparison, without finding it through repository documentation?
+
+**Change:** linked the no-data review brief and public scientific-methods form from the zebra-finch call-perception card. The page explicitly asks contributors not to attach recordings or private data.
+
+**Validation and limits:** the focused page test and all 159 repository Python tests pass. The local noindex build produced 133 pages plus 404; `scripts/check_site.py` passed with 134 HTML pages and 6,784 links. This is a local candidate only until merged and deployed. No reviewer was contacted, no files or data were acquired, and Candidate E remains unselected; AutoResearch remains **NOT READY**.
