@@ -34,7 +34,9 @@ Several advanced exchange paths are prototypes, not general integrations:
 
 ## Current research boundaries
 
-The first communication-adjacent ML candidate is Egyptian fruit-bat interaction-context prediction; bird sound detection and parrot caller identity are separate tasks. All remain research candidates. Dataset joins, rights, reviewer input and leakage-safe evaluation still need review. [Read the candidate run card](docs/BENCHMARK_CANDIDATE_RUN_CARD.md).
+**Feature estimation is a separate track:** the [cross-species F0 dataset](https://metivity.github.io/talk2nature/research/bioacoustic-f0-estimation-cross-species-2025/) can support pitch-contour evaluation, not call-meaning claims. Its waveform release covers 13 taxa, is strongly imbalanced, and has only 233 monk-parakeet calls. The resource remains metadata-only while provenance and component-specific reuse are reviewed.
+
+The communication-adjacent research lead is Egyptian fruit-bat interaction-context prediction, but it is not training-ready: group structure, data joins, rights, reviewer input and leakage-safe evaluation remain open. Bird-sound detection and parrot caller identity are separate tasks. No current candidate establishes call meaning. [Read the candidate run card](docs/BENCHMARK_CANDIDATE_RUN_CARD.md).
 
 The [AutoResearch adaptation](docs/AUTORESEARCH_ADAPTATION.md) and [agent program](research/autoresearch/program.md) describe safeguards for a possible future experiment. The program is **NOT READY**; the documents do not start training or authorize real-data use. We have no confirmed institutional partners or DPG recognition.
 
