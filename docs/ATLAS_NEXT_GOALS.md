@@ -13,7 +13,7 @@ These milestones describe the next program work. They are not claims of funding,
 
 ## October 24 catalog reconciliation
 
-Recomputed the counts from the validated research notes, source catalog, collection-resource catalog and atlas projection. The local projection contains 103 notes, 33 mapped notes, 29 approximate places and 329 cited sources; after the monk-parakeet location review below, it must be redeployed before it can be said to match the live atlas. The wider source and collection catalogs contain 409 and 212 records, respectively. The remaining 49 location-pending notes and 21 notes marked not applicable are not a reason to add unsupported pins. At this pre-release check, the deployed goals board still reports 32/20 mapped notes and 3/3 historical notes; the parrot-pilot and protected-observation goals still need their stated scientific, access, consent and hosting gates.
+Recomputed the counts from the validated research notes, source catalog, collection-resource catalog and atlas projection. The local projection contains 103 notes, 33 mapped notes, 29 approximate places and 329 cited sources. The wider source and collection catalogs contain 409 and 212 records, respectively. The remaining 49 location-pending notes and 21 notes marked not applicable are not a reason to add unsupported pins. At the pre-release check, the deployed goals board showed 32/20 mapped notes; PR #359 and Pages run #40108683528 then published and verified 33/20, while historical coverage remains 3/3. The live atlas fingerprint exactly matches the merged projection. The parrot-pilot and protected-observation goals still need their stated scientific, access, consent and hosting gates.
 
 ## October 24 location review — monk parakeet study region
 
