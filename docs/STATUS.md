@@ -4164,3 +4164,13 @@ The in-app browser showed its existing cached app and an “Update ready” noti
 **Evidence:** the current local noindex build produced 138 pages plus the 404 route. The companion Station HTML, CSS and JavaScript returned HTTP 200 on loopback. Its initial accessibility snapshot showed the whole-moment option, unchecked recording-consent box, disabled Start button and a “Try without a microphone” control. The focused Station/demo/window/observation/mobile Node suite passed all 38 tests.
 
 **Limits and decision:** this verifies static serving, initial rendered controls and module behavior, not a completed browser interaction or novice comprehension. The browser policy blocked a further click on the localhost page; I did not try another browser path. The deployed Pages app remains unchanged and its existing window showed an update-ready notice. No microphone was requested, no recording was made, and no animal data was involved. Continue to the independent no-command walkthrough and physical-device checks; do not claim those gates have passed.
+
+## October 25 — publish and verify the evidence and mobile-tool update
+
+**Question:** does the checked candidate publish the new evidence pages and app improvements with accurate crawl metadata?
+
+**Release:** PR [#386](https://github.com/Metivity/talk2nature/pull/386) merged as squash commit [`62ab6d1`](https://github.com/Metivity/talk2nature/commit/62ab6d12e00b19a7e1fffc43f0bdcd5f26e9c990). Manual Pages run [#40143594050](https://github.com/Metivity/talk2nature/actions/runs/40143594050) passed repository tests, public build, link/metadata/boundary checks, deployment and the workflow's live-route verifier.
+
+**Fresh read-back:** verified-TLS requests returned HTTP 200 for the homepage, Field Companion, resource directory and the new MooLogue and BirdNET Live notes. The resource page and both notes have self-canonicals and `index,follow`; both new notes appear in the live sitemap, and `robots.txt` names the sitemap. The released build contains public summaries and metadata only; no dataset, recording, code archive or model was acquired or executed.
+
+**Limits and next decision:** this verifies publication and crawl metadata, not Google indexing, ranking, clicks or user success. The Search Console performance snapshot in the earlier entry predates this release and must not be interpreted as a post-release result. Recheck indexing and page-level search performance after Google's next processing cycle before making another snippet change. Independent researcher/novice use and physical-phone validation remain open; the ML benchmark remains **NOT READY**.
