@@ -2064,5 +2064,45 @@ class SiteTests(unittest.TestCase):
             self.assertIn('BirdPark zebra-finch group recordings',resource_page)
             self.assertIn('In Copyright - Non-Commercial Use Permitted',resource_page)
 
+    def test_zebra_finch_human_guided_clustering_keeps_versions_and_asset_rights_separate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='zebra-finch-human-guided-clustering-2026')
+        self.assertEqual(note['source_ids'],[394,395,396,397,398,399])
+        self.assertIn('does not test unseen-bird',note['limitations'])
+        self.assertIn('acoustic clusters, not validated call meanings',note['finding'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('zebra-finch-vocal-clustering') or r['id'] in {
+            'zebra-finch-human-guided-clustering-paper-2026','semi-automated-clustering-tool-2026','whisperseg-animal-vad-ct2-weights'
+        }}
+        self.assertEqual(len(selected),6)
+        for resource in selected.values():
+            with self.subTest(resource=resource['id']):
+                self.assertEqual(resource['acquisition'],'metadata_only')
+                self.assertEqual(resource['files'],[])
+        v1=selected['zebra-finch-vocal-clustering-data-zenodo-v1-18156254']
+        v2=selected['zebra-finch-vocal-clustering-data-zenodo-v2-22657329']
+        separate=selected['zebra-finch-vocal-clustering-data-zenodo-18100613']
+        self.assertNotEqual(v1['id'],v2['id'])
+        self.assertIn('conceptrecid 18156253',v2['version'])
+        self.assertIn('different concept ID',v2['decision'])
+        self.assertIn('CC BY 4.0',v2['rights']['license'])
+        self.assertIn('18100612',separate['version'])
+        self.assertEqual(selected['semi-automated-clustering-tool-2026']['rights']['license'].split()[0],'MIT')
+        model=selected['whisperseg-animal-vad-ct2-weights']
+        self.assertEqual(model['rights']['research_use'],'unresolved')
+        self.assertIn('null license value',model['decision'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('Human-guided clustering helps label zebra-finch calls',page)
+            self.assertIn('not decode meaning',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn(f'/research/{note["slug"]}/',(root/'sitemap.xml').read_text())
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('Zebra Finch Vocalization Dataset for Semi-Automated Clustering, Zenodo v2',resource_page)
+            self.assertIn('MIT as declared by the pinned GitHub repository LICENSE file',resource_page)
+
 
 if __name__=='__main__': unittest.main()

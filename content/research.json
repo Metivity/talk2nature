@@ -4887,5 +4887,51 @@
       "rights": "The peer-reviewed article is listed as CC BY 4.0 in the ETH institutional publication record. Zenodo records 13144875 and 20608098 have no displayed dataset license field. The ETH dataset record states In Copyright - Non-Commercial Use Permitted. These declarations have different scopes; no dataset, code, model or media component is cleared for Talk2Nature commercial training or redistribution.",
       "experiment": "No experiment, data ingestion, training, playback or reproduction was performed. Any future task must define an observable acoustic target, exact permitted input files, an animal-held-out evaluation, baselines and reviewer approval before acquisition or execution. Predictions must remain separate from human observations and any interpretation of communication."
     }
+  },
+  {
+      "slug": "zebra-finch-human-guided-clustering-2026",
+      "title": "Human-guided clustering helps label zebra-finch calls, not decode meaning",
+      "seo_description": "A 2026 zebra-finch study found human-guided acoustic clustering approached expert agreement, but tested neither call meaning nor new birds.",
+      "taxon": "Zebra finch (Taeniopygia guttata)",
+      "kind": "Bioacoustic annotation workflow study",
+      "year": "2026",
+      "year_label": "Peer-reviewed Applied Sciences article",
+      "source_ids": [394, 395, 396, 397, 398, 399],
+      "review_depth": "Reviewed the full 15-page article text, including methods, reported ARI/NMI results, time comparison, split design, discussion, acknowledgments and data statement. Queried exact Zenodo record and version APIs for 18156254, 22657329 and 18100613; read the pinned GitHub README, root requirements and MIT license; and compared the exact WhisperSeg model page with pinned revision metadata. No data archive, code, model weights or supplement was downloaded or executed. Figures were not visually reanalyzed and no independent specialist reviewed this note.",
+      "reviewed": "2026-10-24",
+      "review_stage": "Full article and source metadata reviewed; no reproduction or third-party payload acquisition",
+      "purpose": "Models & evaluation",
+      "review_locator": "Lee, K., Basha, M., Zai, A. T. & Hahnloser, R. H. R. (2026). Benchmarking Automated and Semi-Automated Vocal Clustering Methods. Applied Sciences 16(2), 810. DOI 10.3390/app16020810. Dataset DOI cited by paper: 10.5281/zenodo.18156254; newer version: 10.5281/zenodo.22657329.",
+      "finding": "The article reports 1,454 randomly selected 44.1 kHz vocalizations from three isolated zebra finches recorded between 55 and 136 days post-hatch, with independent manual clusters from three experts for each bird. Mean ARI/NMI were 0.78/0.83 for expert-to-expert manual agreement, 0.73/0.81 for human-refined clusters and 0.62/0.71 for fully automated Whisper-based clustering. The authors also report about 90 minutes per bird for manual clustering versus 45 minutes for semi-automated proofreading. These are published results, not Talk2Nature reproductions. The method suggests that model proposals plus human correction may scale annotation while preserving expert review; its categories are acoustic clusters, not validated call meanings.",
+      "limitations": "The article's 80/20 split randomly holds out vocalizations within each bird-and-annotator combination and evaluates nine such combinations from only three birds; it does not test unseen-bird or cross-species generalization. The study analyzes acoustic similarity rather than receiver response, social context or semantics. Time savings and agreement were reported on this small task, not independently verified. The Zenodo API shows that paper-cited v1 record 18156254 and v2 record 22657329 share conceptrecid 18156253, with different archive sizes and checksums. The v2 record note also names 18100613 as an earlier publication, but that DOI has a different conceptrecid (18100612); its relationship to the article data is unresolved. The Zenodo APIs declare CC BY 4.0, but the paper acknowledges permission to use a subset from an external dataset, so source-audio rights and exact archive contents require reconciliation. The code repository is MIT at the pinned revision. The model card displays Apache-2.0 for WhisperSeg, while the pinned model API reports no license value; the paper's Whisper embedding model revision is not identified. No independent reviewer or reproduction exists.",
+      "lesson": "A useful Talk2Nature tool could let a model suggest acoustically similar clips while a person accepts, splits, merges, tags as uncertain or leaves them unclassified. Suggestions and human labels must remain separate and reviewable. The interface can simplify the task for new contributors while preserving an advanced expert view, annotation provenance and disagreement. UMAP clusters or acoustic embeddings must not be presented as behavioral categories or translations.",
+      "next_review": "First reconcile the Zenodo version chain, exact 1,454-item manifest and external source-audio permission with the authors' declarations. Preserve the article, dataset, repository code, WhisperSeg checkpoint and Whisper embedding weights as separate assets. Ask independent bioacoustics and ML/statistical reviewers whether a new annotation-efficiency or agreement question is useful beyond the published study. If rights and review gates pass, specify a bounded human task and hold out whole birds for any generalization claim; no training, data import or product integration is authorized by this note.",
+      "expert_review": "No independent avian-bioacoustics, animal-welfare, human-factors or ML/statistical review has been completed.",
+      "review_request": {
+        "title": "Independent review of human-guided acoustic annotation",
+        "summary": "We invite an avian bioacoustics or machine-learning specialist to assess whether this small zebra-finch clustering study offers a useful annotation workflow prior, and what a fresh evaluation would need to establish. This is a literature review, not a Talk2Nature model claim or new animal experiment.",
+        "questions": [
+          "Does the reported semi-automated agreement justify using model-suggested acoustic clusters as a human review aid, given the within-bird split and three-bird sample?",
+          "What whole-bird or whole-session holdout would be needed to test whether the workflow transfers to new zebra finches?",
+          "Which annotation-efficiency and expert-agreement measures would make a new evaluation useful beyond the published comparison?",
+          "How should disagreement and uncertain or unclassified clips be represented so that acoustic clusters are not mistaken for behavior or meaning?"
+        ],
+        "status": "No independent specialist review has been received. No researcher was contacted and no experiment, reproduction or model integration is claimed.",
+        "guide_path": "docs/ZEBRA_FINCH_CLUSTERING_REVIEW.md",
+        "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml"
+      },
+      "study_snapshot": [
+        ["Question", "Can human refinement of acoustic cluster suggestions reduce annotation effort while approaching expert-to-expert agreement?"],
+        ["Population", "1,454 zebra-finch vocalizations from three isolated birds; three experts annotated each bird's clips."],
+        ["Methods", "The paper compares manual clustering, Whisper-embedding-based automated clusters, and interactive human refinement. It reports ARI/NMI and a within-bird, within-annotator 80/20 vocalization split."],
+        ["Result", "Semi-automated ARI/NMI 0.73/0.81 versus manual 0.78/0.83 and automated 0.62/0.71; reported manual/semi-automated time 90/45 minutes per bird."],
+        ["Boundary", "A study of acoustic cluster annotation efficiency, not receiver-validated communication or unseen-bird generalization."]
+      ],
+      "reuse": {
+        "status": "Metadata-only workflow and dataset candidate; not admitted to Talk2Nature storage, training or a benchmark.",
+        "asset": "This page contains an original short summary and links. Article, each Zenodo concept/version, MIT code, WhisperSeg checkpoint, Whisper embedding weights and original audio have separate rights.",
+        "rights": "The article is CC BY 4.0; the Zenodo API declares CC BY 4.0 on the cited v1 and newer v2 records, but exact source-audio scope and a separate same-title Zenodo concept remain unresolved. The pinned GitHub code is MIT. The WhisperSeg model page says Apache-2.0 but its revision API has no license value. No third-party archive, code or weight was downloaded.",
+        "experiment": "No data was imported and no model, code or user interface was tested. Any future evaluation needs rights reconciliation, an independent reviewer, a defined human task, expert agreement targets and leakage-safe whole-bird splits for generalization. Predicted clusters must remain distinct from human annotations and behavioral observations."
+      }
   }
 ]

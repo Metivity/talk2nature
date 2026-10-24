@@ -4049,5 +4049,53 @@
     "url": "https://doi.org/10.3929/ethz-c-000788603",
     "checked": "2026-10-24",
     "origin": "Reviewed the institutional dataset record and its description, contributor metadata and displayed rights label. The dataset files and description PDF were not acquired or inspected; the displayed label is recorded as a provider statement, not legal advice."
+  },
+  {
+    "id": 394,
+    "title": "Lee et al., Benchmarking Automated and Semi-Automated Vocal Clustering Methods",
+    "description": "Peer-reviewed 2026 study compares expert manual, fully automated and human-refined clustering of zebra-finch vocalizations. The article is CC BY 4.0 according to the ETH Zurich Research Collection; this applies to the article only.",
+    "url": "https://doi.org/10.3390/app16020810",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the full 15-page article text, methods, results, discussion, data statement and ETH repository rights record. Reported metrics and times were not independently reproduced; figures were not visually reanalyzed, and no supplement or underlying data was acquired."
+  },
+  {
+    "id": 395,
+    "title": "Zebra Finch Vocalization Dataset for Semi-Automated Clustering, Zenodo v1",
+    "description": "The paper's data statement cites Zenodo record 18156254 v1, published 2026-01-05. Its API declares CC BY 4.0 and lists data.zip at 345,961,018 bytes with provider MD5 d35c7da497487d73079bf7d72821a1dd; the page links to a newer version.",
+    "url": "https://zenodo.org/records/18156254",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the exact record page, record API and version API. The API associates this DOI with concept record 18156253 and newer DOI 10.5281/zenodo.22657329. No archive was acquired or inspected; file size and checksum are provider metadata."
+  },
+  {
+    "id": 396,
+    "title": "Zebra Finch Vocalization Dataset for Semi-Automated Clustering, Zenodo v2",
+    "description": "Zenodo record 22657329 v2 describes 1,454 vocalizations across three juvenile male zebra finches and processed HDF5/audio files. Its API declares CC BY 4.0 and lists data.zip at 348,884,000 bytes with provider MD5 f152c8e64de140a8aabe458a7d7cfcc1.",
+    "url": "https://zenodo.org/records/22657329",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the exact v2 record page, record API and versions endpoint. The API places this DOI in the same concept series as the paper-cited v1 record 18156254. The record description also names 18100613 as a prior publication, but the API identifies 18100613 as a separate concept. No archive was downloaded; page/API lineage and source-audio scope need clarification before use."
+  },
+  {
+    "id": 397,
+    "title": "Zebra Finch Vocalization Dataset for Semi-Automated Clustering, separate Zenodo record",
+    "description": "Zenodo record 18100613 has the same title and is described in the newer record's notes as a first publication. Its API declares CC BY 4.0 and lists data.zip at 250,405,192 bytes with provider MD5 179e4814df2d0b42a10b5e8c3709df70, but assigns it a different concept record from the paper-cited v1/v2 series.",
+    "url": "https://zenodo.org/records/18100613",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the exact record page and API metadata, including conceptrecid, file inventory and declared license. Its relationship to the paper-cited data and later v2 is not established; no archive was acquired or compared."
+  },
+  {
+    "id": 398,
+    "title": "Semi-Automated Clustering tool, pinned GitHub revision",
+    "description": "The pinned MIT-licensed Python repository includes a preprocessing workflow and a human-in-the-loop interface for UMAP-based cluster selection, proofreading and HDF5 export. It is a workflow reference; dependencies and model assets have separate terms.",
+    "url": "https://github.com/hwiora/semi_automated_clustering/tree/5b6f8f0a9783546532e3a2bef76ad12930a2eb56",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the README, root requirements and LICENSE file at commit 5b6f8f0a9783546532e3a2bef76ad12930a2eb56. The code was not cloned, executed or integrated; preprocessing requirements and all transitive dependencies were not fully audited."
+  },
+  {
+    "id": 399,
+    "title": "WhisperSeg animal voice-activity segmentation model card",
+    "description": "The cited animal VAD model card identifies the CTranslate2 WhisperSeg checkpoint and displays Apache-2.0, while the pinned model API metadata returns no license value. Treat that discrepancy and model provenance separately from the MIT code and dataset licenses.",
+    "url": "https://huggingface.co/nccratliri/whisperseg-base-animal-vad-ct2/tree/9f873b8a37fe37eb7543de092d308950ceb96fc0",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the exact model page and queried its pinned revision metadata. The page displays Apache-2.0 but the model API license field is null. No checkpoint was downloaded or run; the paper's Whisper embedding model revision and terms are also not identified."
   }
 ]
