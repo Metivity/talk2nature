@@ -3981,10 +3981,10 @@
   {
     "id": 385,
     "title": "Global passerine song biogeography analysis repository, pinned main revision",
-    "description": "Authors’ public repository for the 2026 passerine-song study. The rendered README lists analysis scripts and processed acoustic/spatial data, but its Zenodo DOI is a placeholder and the repository root has no standalone LICENSE file; the README’s CC BY 4.0 statement has unresolved component scope.",
+    "description": "Authors’ public repository for the 2026 passerine-song study. A recursive API tree at the pinned commit lists 1,280 audio segments (185,758,300 bytes), but no payloads were fetched. Its Zenodo DOI is a placeholder, no standalone LICENSE file appears in the tree, and the README’s CC BY 4.0 statement has unresolved component scope.",
     "url": "https://github.com/quentinbacquele/birdsong_biogeography/tree/1629e665f902cad405ff2f7bf2a0e9dc8c09b47e",
     "checked": "2026-10-24",
-    "origin": "Reviewed the public repository root and README and pinned the main branch to commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e. No source code, audio or repository data files were downloaded or run; the README’s data DOI remains the literal placeholder 10.5281/zenodo.XXXXXXX."
+    "origin": "Reviewed the public repository root/README and the recursive GitHub API tree at commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e. Tree metadata lists 1,456 files, including 1,280 audio segments totaling 185,758,300 provider-reported bytes. No file contents, audio or source code were fetched or run; the README’s data DOI remains the literal placeholder 10.5281/zenodo.XXXXXXX."
   },
   {
     "id": 386,
