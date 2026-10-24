@@ -721,7 +721,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('/talk2nature/research/zebra-finch-call-categories-2025/',page)
             self.assertIn('/talk2nature/research/zf-aim-zebra-finch-turn-taking-2026/',page)
             self.assertIn('https://fixture.github.io/talk2nature/research/first-animal/',(root/'sitemap.xml').read_text())
-            self.assertIn('Great Tits offer a large song corpus',(root/'research/first-animal/index.html').read_text())
+            self.assertIn('OpenWhistle dolphins: whistle types',(root/'research/first-animal/index.html').read_text())
 
     def test_animal_name_criteria_review_is_abstract_limited_and_discoverable(self):
         with tempfile.TemporaryDirectory() as d:
