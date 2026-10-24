@@ -1,5 +1,17 @@
 # Project status
 
+## October 24 — include OpenWhistle in independent-review decision
+
+**Question:** do the candidate comparison, no-data review packet and public methods-review form include the newly cataloged dolphin corpus with its limits and rights boundaries?
+
+**Evidence reviewed:** the pinned arXiv v1 paper, author README and `LICENSE-DATA` describe about 180,000 whistles over 114 hours from one pod of five dolphins, with 8,354 expert labels for detection and whistle-type classification. The paper's evaluation is session-disjoint, but not animal-disjoint; expert labels cover five months and are imbalanced. Its own limitations state the benchmark does not assess semantic meaning.
+
+**Change:** added OpenWhistle as a distinct acoustic-classification route in the candidate decision and independent-review packet; added the route to the public review form and regression test. Kept Great Tit as the prepared-song methods path, bats/ZF-AIM as communication-adjacent questions, and budgerigars as a separate app/usability path.
+
+**Validation:** all 166 repository Python tests passed (one PostgreSQL integration test skipped); local noindex build produced 135 pages plus 404; `scripts/check_site.py` validated 136 HTML pages and 6,916 links. The issue form and packet are linked and regression-checked.
+
+**Limit and next decision:** no species or benchmark was selected, no reviewer was contacted, and no data, code or model weights were acquired or run. OpenWhistle's dataset license is limited to named releases; exact file membership, code/model terms and a useful evaluation beyond the published session split still require independent review. Keep AutoResearch **NOT READY**.
+
 ## October 24 — repair OpenWhistle source attribution
 
 **Question:** do OpenWhistle citations resolve to its own pinned author README and dataset license, while BirdPark remains attached to its own source record?
