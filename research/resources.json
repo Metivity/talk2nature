@@ -5245,13 +5245,13 @@
         359
       ],
       "priority": 1,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-10-24",
       "task": "A communication-relevant study of turn timing and acoustic adaptation; suitable as a literature/evaluation-design lead, not as a ready-to-use training corpus.",
       "review_depth": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license, plus official Zenodo landing-page/API metadata and its complete top-level file list. The Zenodo list has one ZIP; its internal manifest and contents, supplemental analyses and audio/data rights were not reviewed. No archive, audio, code or weights were acquired or run.",
       "access": "The preprint reports more than 1,000 hours of interactions. Zenodo's API lists one 26,633,934,601-byte ZIP with a provider-reported MD5; the payload and its internal contents were not downloaded or verified.",
       "decision": "High-relevance metadata-only literature lead for acoustic exchange and next-call prediction. Do not acquire or train from the archive until its exact manifest, component-level recording/data rights, individual-level split and independent review are resolved. Talk2Nature remains passive; do not reproduce the paper's playback experiments.",
       "limitations": "The study is a preprint. A Results passage reports 20 birds while Methods reports 21. Training/evaluation is described by pair, but individual-bird disjointness across pairs is not established in the reviewed text. A call within one second is an operational response measure, not a semantic label. Reported prediction metrics do not establish general animal-language ability. The article's version-specific data-availability statement and later Zenodo release are not reconciled. The Zenodo record-level MIT field and description do not clearly license audio, annotations or benchmark metadata; its top-level API manifest identifies one ZIP but does not reveal its internal contents or provenance.",
-      "attribution": "James et al. (2026), Zebra finch females flexibly communicate with each other and with AI-driven acoustic interaction models, bioRxiv 2026.02.12.705387 v3.",
+      "attribution": "James et al. (2026), Leveraging AI-powered interactive playbacks to decipher rules of communication in zebra finches, bioRxiv 2026.02.12.705387 v3, posted March 23, 2026. The official v3 page states that the title and abstract were updated.",
       "rights": {
         "license": "bioRxiv lists CC BY-NC-ND 4.0 for the v3 manuscript. Zenodo API metadata lists MIT at record level; its description specifically states code and model weights are MIT.",
         "scope": "Manuscript, code, checkpoints, recordings, annotations and benchmark metadata are separate components. The exact release manifest and data/audio rights remain unresolved.",

@@ -1989,9 +1989,13 @@ class SiteTests(unittest.TestCase):
         release=next(r for r in resources if r['id']=='zebra-finch-zf-aim-zenodo-release-2026')
         data_release=next(r for r in resources if r['id']=='zebra-finch-zf-aim-data-release-2026')
         sources=json.loads((project_root/'content'/'sources.json').read_text())
+        preprint_source=next(s for s in sources if s['id']==358)
         source=next(s for s in sources if s['id']==359)
         data_source=next(s for s in sources if s['id']==373)
         note=next(n for n in load('research') if n['slug']=='zf-aim-zebra-finch-turn-taking-2026')
+        self.assertEqual(preprint_source['url'],'https://www.biorxiv.org/content/10.64898/2026.02.12.705387v3')
+        self.assertEqual(preprint_source['title'],'Leveraging AI-powered interactive playbacks to decipher rules of communication in zebra finches')
+        self.assertIn('metadata-only refresh',preprint_source['origin'])
         self.assertEqual(manifest['file_manifest_scope'],'Zenodo record top-level files only; the ZIP archive\'s internal manifest and contents were not inspected.')
         self.assertEqual(manifest['files'],[{
             'key':'zf_aim_release.zip',
