@@ -1,9 +1,14 @@
+import json
 import tempfile
 import unittest
 import zipfile
 from pathlib import Path
 
 from research.inspect_moth_oviposition_sample import AuditError, read_rows, summarize, summarize_rows
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+PINNED_SAMPLE = REPO_ROOT / "data" / "external" / "moth-plant-oviposition-data" / "data.xlsx"
+AGGREGATE_REPORT = REPO_ROOT / "research" / "moth_plant_oviposition_sample_report.json"
 
 
 def _synthetic_xlsx(path: Path, unbalanced: bool = False) -> None:
@@ -81,12 +86,27 @@ class MothOvipositionSampleAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(AuditError, "balanced rows"):
             summarize_rows(rows, "a" * 64)
 
+    @unittest.skipUnless(PINNED_SAMPLE.is_file(), "third-party sample is intentionally not bundled in CI")
     def test_real_pinned_sample_matches_all_five_table1_aggregate_tuples(self):
         report = summarize()
         self.assertTrue(report["method"]["table1_conditions_match"])
         self.assertEqual(report["method"]["table1_conditions_checked"], 5)
         self.assertEqual(report["input"]["sha256"], "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6")
         self.assertTrue(all(item["matches_reported_table1_counts"] for item in report["aggregate_results"] if item["table1_reported"]))
+        bat = next(item for item in report["aggregate_results"] if item["workbook_condition"] == "Bat")
+        self.assertIsNone(bat["matches_reported_table1_counts"])
+        self.assertIn("not mapped", bat["mapping_review"])
+
+    def test_published_aggregate_report_is_checksum_pinned_and_row_free(self):
+        report = json.loads(AGGREGATE_REPORT.read_text(encoding="utf-8"))
+        self.assertEqual(report["input"]["sha256"], "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6")
+        self.assertTrue(report["input"]["source_checksum_match"])
+        self.assertTrue(report["method"]["table1_conditions_match"])
+        self.assertEqual(report["method"]["table1_conditions_checked"], 5)
+        checked = [item for item in report["aggregate_results"] if item["table1_reported"] is not None]
+        self.assertEqual(len(checked), 5)
+        self.assertTrue(all(item["matches_reported_table1_counts"] for item in checked))
+        self.assertTrue(all("rows" not in item for item in report["aggregate_results"]))
         bat = next(item for item in report["aggregate_results"] if item["workbook_condition"] == "Bat")
         self.assertIsNone(bat["matches_reported_table1_counts"])
         self.assertIn("not mapped", bat["mapping_review"])
