@@ -6,14 +6,18 @@ These milestones describe the next program work. They are not claims of funding,
 
 | Goal | Current state | Completion evidence | Next action |
 | --- | --- | --- | --- |
-| 20 notes with supported geography | 32 of 20; target reached and exceeded | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen abstract-only reviews and retain explicit unknowns in the remaining unmapped notes; do not optimize for pin count |
+| 20 notes with supported geography | 33 of 20; target reached and exceeded | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen abstract-only reviews and retain explicit unknowns in the remaining unmapped notes; do not optimize for pin count |
 | Three historical source notes | Three of three; coverage target reached | Three distinct notes with original source years before 2000, review depth and observation/source-date separation | Deepen methods review for the historical notes already counted and continue checking later reassessments |
 | One reviewed passive parrot pilot | Needs reviewer and access | Confirmed carers/species, avian specialist review, consent, independent labels, a successful physical-phone rehearsal | Resolve the access/reviewer checklist in `PILOT_PROTOCOL_DRAFT.md`; do not recruit or ingest real data prematurely |
 | First protected observation release | Needs consent and hosting review | Reviewed protocol/rights, private hosting, tested withdrawal, human review and an independently checked public location projection | Finish the existing hosting/consent gates before implementing public participant pins |
 
 ## October 24 catalog reconciliation
 
-Recomputed the counts from the validated research notes, source catalog, collection-resource catalog and atlas projection. The local projection contains 103 notes, 32 mapped notes, 29 approximate places and 329 cited sources; it exactly matches the currently deployed atlas catalog fingerprint. The wider source and collection catalogs contain 409 and 212 records, respectively. The remaining 50 location-pending notes and 21 notes marked not applicable are not a reason to add unsupported pins. The public goals board currently reports 32/20 mapped notes and 3/3 historical notes; the parrot-pilot and protected-observation goals still need their stated scientific, access, consent and hosting gates.
+Recomputed the counts from the validated research notes, source catalog, collection-resource catalog and atlas projection. The local projection contains 103 notes, 33 mapped notes, 29 approximate places and 329 cited sources; after the monk-parakeet location review below, it must be redeployed before it can be said to match the live atlas. The wider source and collection catalogs contain 409 and 212 records, respectively. The remaining 49 location-pending notes and 21 notes marked not applicable are not a reason to add unsupported pins. At this pre-release check, the deployed goals board still reports 32/20 mapped notes and 3/3 historical notes; the parrot-pilot and protected-observation goals still need their stated scientific, access, consent and hosting gates.
+
+## October 24 location review — monk parakeet study region
+
+Rechecked Smeele et al. (2025), Methods section 2.1, in the primary full-text article. It locates the wild monk-parakeet study in Barcelona and reports field periods of October 27–November 19, 2020, and October 31–November 30, 2021 (55 days total). Added a study-region link to the existing coarse Barcelona atlas point and corrected the observation-period source/locator. The public atlas adds no park-level pin or nest/UTM coordinates; archived spatial fields remain uninspected. This adds no new region and is a source-backed completion of one pending record, not a dataset acquisition or communication finding. See the [primary article's Methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC12077234/).
 
 ## How progress is maintained
 
