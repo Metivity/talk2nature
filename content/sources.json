@@ -3883,10 +3883,10 @@
   {
     "id": 375,
     "title": "Elie et al. 2025 zebra-finch paper, UC Berkeley eScholarship copy",
-    "description": "Institutional copy of the peer-reviewed Science article. Its data-availability section cites Zenodo record 13623968, one digit different from the PMC full text.",
+    "description": "Institutional copy of the peer-reviewed Science article. Its data-availability section cites concept DOI 10.5281/zenodo.13623968; the PMC full text cites versioned DOI 10.5281/zenodo.13623969. The different targets belong to the same Zenodo concept record, but do not establish which archive version supports the final analyses.",
     "url": "https://escholarship.org/content/qt1kf9f81c/qt1kf9f81c.pdf",
     "checked": "2026-10-24",
-    "origin": "Checked the indexed institutional repository record and data-availability excerpt. This copy establishes the conflicting citation, not which archive version the published analysis used."
+    "origin": "Checked the institutional repository copy and data-availability excerpt. Its concept DOI resolves to a later release in the same Zenodo record family; this does not establish which archive version supports the final published analyses."
   },
   {
     "id": 376,
@@ -3908,14 +3908,14 @@
   {
     "id": 377,
     "title": "Zebra-finch call-type behavioral data and analysis-code archive, Zenodo",
-    "description": "The Science paper cites Zenodo DOI 10.5281/zenodo.13623969, while the UC Berkeley copy cites 10.5281/zenodo.13623968. The official Zenodo API identifies .13623969 as an initial-submission archive and resolves the .13623968 request to record 15795568, titled Resubmission July 2025; that record lists a 99.3 MB ZIP and declares CC BY 4.0. The archive contents and exact intended version were not inspected.",
-    "url": "https://zenodo.org/records/15795568",
+    "description": "The final PMC-indexed Science paper directly cites versioned Zenodo DOI 10.5281/zenodo.13623969 (v1; 30,929,664-byte ZIP, described as the August 31, 2024 initial submission). The UC Berkeley copy cites concept DOI 10.5281/zenodo.13623968, whose later v3 resubmission is record 15795568 (99,341,119-byte ZIP, July 2025). Both records declare CC BY 4.0 at record level. Archive contents and which version supports the final published analyses remain unverified.",
+    "url": "https://zenodo.org/records/13623969",
     "checked": "2026-10-24",
-    "origin": "Queried the official Zenodo records API over verified TLS for records 13623969 and 13623968. Record 13623969 lists a 30.9 MB initial-submission ZIP under CC BY 4.0; the .13623968 request resolves to record 15795568, a July 2025 resubmission ZIP under CC BY 4.0. Provider metadata was read only; no archive payload was downloaded.",
+    "origin": "Queried the official Zenodo records API over verified TLS. Record 13623969 is version 1.0 and describes the August 31, 2024 initial-submission ZIP; concept DOI 13623968 resolves to the later version 3.0 resubmission at record 15795568. Both records declare CC BY 4.0 at record level. Provider metadata only; no archive payload was downloaded.",
     "rights": {
       "license": "CC BY 4.0 declared at the Zenodo record level for both API-resolved deposits.",
       "scope": "The versioned data-and-code archive as described in record metadata. Archive contents, embedded assets and component-level rights were not inspected.",
-      "evidence_url": "https://zenodo.org/records/15795568",
+      "evidence_url": "https://zenodo.org/records/13623969",
       "conditions": "Resolve which version corresponds to the final published analyses, inspect its manifest and component provenance, and preserve attribution before any reuse.",
       "research_use": "conditional",
       "commercial_use": "conditional",
