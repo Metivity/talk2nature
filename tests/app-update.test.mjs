@@ -2,19 +2,21 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {announceWaitingUpdate,watchWaitingWorker} from '../web/assets/app-update.mjs';
 
+const updateMessage='A new version is ready. Save any moment you want to keep, close all Talk2Nature tabs or windows, then reopen the app.';
+
 test('a waiting update uses the global notice without replacing offline readiness',()=>{
   const notice={hidden:true,textContent:''};
   const offline={textContent:'Offline tools are ready on this browser.'};
   announceWaitingUpdate(notice,offline);
   assert.equal(notice.hidden,false);
-  assert.match(notice.textContent,/Update ready/);
+  assert.equal(notice.textContent,updateMessage);
   assert.equal(offline.textContent,'Offline tools are ready on this browser.');
 });
 
 test('offline status is the fallback when no global update notice exists',()=>{
   const offline={textContent:'Checking offline availability…'};
   announceWaitingUpdate(null,offline);
-  assert.match(offline.textContent,/Update ready/);
+  assert.equal(offline.textContent,updateMessage);
 });
 
 test('an already-waiting worker is announced once without mutating registration state',()=>{
