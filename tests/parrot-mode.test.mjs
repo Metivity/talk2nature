@@ -8,7 +8,13 @@ test('parrot visit starts with a complete observer-declared moment, without iden
   assert.deepEqual(preset,{captureMode:'window',animalContext:{group:'parrot',species:'',basis:'observer-declared'}});
   preset.animalContext.species='budgerigar';
   assert.equal(stationPreset('parrot').animalContext.species,'');
-  assert.equal(stationPreset('companion'),null);
+  assert.deepEqual(stationPreset('companion'),{captureMode:'window'});
+});
+
+test('shared moments default to one whole 30-second observation without guessing an animal',()=>{
+  const preset=stationPreset('companion');
+  assert.deepEqual(preset,{captureMode:'window'});
+  assert.equal(preset.animalContext,undefined);
 });
 
 test('the app offers a parrot visit and wires it to the editable animal picker',async()=>{

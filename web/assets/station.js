@@ -13,7 +13,7 @@ const animal = animalPicker(document, 'station');
 const preset = stationPreset(new URL(location.href).searchParams.get('mode'));
 if (preset) {
   $('station-capture-mode').value = preset.captureMode;
-  animal.set(preset.animalContext);
+  if (preset.animalContext) animal.set(preset.animalContext);
 }
 const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 const status = text => { if ($('station-status').textContent !== text) $('station-status').textContent = text; };

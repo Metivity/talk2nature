@@ -1,5 +1,13 @@
 # Project status
 
+## October 25 — align the Shared moments route with its zero-command promise
+
+**Finding:** the Field Companion card described a whole 30-second observation, but its `mode=companion` route retained the default five-minute sound-highlights setting. A newcomer had to notice and change a technical capture choice before the advertised task matched the tool.
+
+**Change:** Shared moments now opens in whole-moment mode. It does not preselect an animal; only the explicitly chosen parrot route sets the observer-declared group. Sound highlights and advanced JSON export remain optional. Updated the automated preset regression check and added zero-command usability as a named active-goal milestone.
+
+**Validation and limits:** the focused preset test passes (3 tests); the full Node suite passes (118 tests); the Python suite passes (170 tests, one intentional skip); and the local noindex build generates 138 pages plus 404, with the site checker validating 139 HTML pages and 7,090 links. No microphone, recording or animal data was used. This fixes the default-path mismatch; it is not evidence of novice comprehension, a physical-phone test or independent review. No public release was made in this milestone. The five-track goal remains active.
+
 ## October 25 — clarify the scope of the historical completion audit
 
 **Question:** could a repository reader mistake the October 2 statement “the full stated goal is achieved” for completion of today's active five-track program?
