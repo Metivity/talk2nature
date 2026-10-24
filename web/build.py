@@ -274,7 +274,7 @@ def build(output, base_url='', public=False, repo_url=''):
             ('partner_search_source_id', 'Call partner search ↗'),
             ('conflicting_date_source_id', 'Other official listing (date differs) ↗'),
             ('topic_source_id', 'Official topic details ↗'),
-            ('portal_source_id', 'Funding &amp; Tenders live topic ↗'),
+            ('portal_source_id', 'Official call listing ↗'),
             ('eligibility_source_id', 'Applicant eligibility ↗'),
             ('payout_source_id', 'Payout and fees ↗'),
         ):
