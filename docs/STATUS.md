@@ -12,6 +12,8 @@
 
 **Next gate:** independent bat-behavior/bioacoustics and ML/statistical reviewers should assess whether caller-held-out whole-file evaluation adds value beyond the paper's already reported subject-independent folds, and which additional metadata or exact fold manifest would be necessary. Do not acquire the larger `FileInfo.csv` or media until that review establishes a bounded need and integrity plan.
 
+**Publication receipt (October 25):** PR [#377](https://github.com/Metivity/talk2nature/pull/377) merged as [`6133dfb`](https://github.com/Metivity/talk2nature/commit/6133dfb20ef9b06dd2598fe915c393aadb37150d). Pages run [#40132236172](https://github.com/Metivity/talk2nature/actions/runs/40132236172) passed the repository and browser-tool tests, public build, publish-boundary checks, deployment and live-route/crawl verifier. Fresh TLS-verified requests returned HTTP 200 for the [bat evidence page](https://metivity.github.io/talk2nature/research/fruit-bat-context-ml-2024/) and [sitemap](https://metivity.github.io/talk2nature/sitemap.xml). The live page's reviewed date, `index,follow`, self-canonical, caller-support summary and explicit no-split caveat were verified; the sitemap contains the route. This verifies publication and crawl configuration, not Google indexing or biological communication. No model was run and no independent reviewer has responded.
+
 ## October 24 — choose a first species by scientific task, not dataset size
 
 **Question:** which animal and existing resource give Talk2Nature the most useful first research foothold?
