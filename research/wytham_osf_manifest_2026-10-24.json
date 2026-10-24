@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "retrieved_at_utc": "2026-10-24T00:47:42Z",
+  "retrieval": {
+    "method": "OSF public JSON:API; recursively enumerated osfstorage folder relationships over verified TLS",
+    "node_endpoint": "https://api.osf.io/v2/nodes/n8ac9/",
+    "files_endpoint": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
+    "payload_bytes_downloaded": false,
+    "provider_hashes_recomputed": false,
+    "path_note": "Relative paths below are reconstructed from the folder names returned by OSF relationships."
+  },
+  "node": {
+    "id": "n8ac9",
+    "doi": "10.17605/OSF.IO/N8AC9",
+    "title": "Wytham Great Tit Song Dataset",
+    "public": true,
+    "last_modified": "2023-07-10T15:22:56.881573",
+    "declared_license": "CC-By Attribution 4.0 International",
+    "explicit_dataset_version": null
+  },
+  "summary": {
+    "current_api_file_count": 14,
+    "current_api_total_bytes": 12184652639,
+    "song_archive_parts": 4,
+    "song_archive_bytes": 11380411540,
+    "metadata_file_count": 10,
+    "metadata_bytes": 804241099,
+    "prior_snapshot_file_count": 23,
+    "prior_snapshot_extra_documentation_files": 9,
+    "prior_snapshot_extra_documentation_bytes": 25871,
+    "prior_snapshot_reconciliation": "The 2026-10-23 snapshot lists nine /docs/ paths that are absent from the current API tree. The 14 shared data-file entries match by basename, byte size and provider-reported SHA-256. The OSF node last-modified value is unchanged. The reason for the extra documentation entries in the prior snapshot is unresolved; retain that snapshot as historical and use this file for the current API inventory.",
+    "location_review": "The current manifest includes nestboxes.csv, main.csv and a Wytham perimeter shapefile. Author documentation identifies precise coordinate fields, but no location values or file payloads were inspected or reproduced.",
+    "hash_provenance": "SHA-256 and MD5 values below are reported by the OSF API and were not recomputed against file bytes."
+  },
+  "files": [
+    {
+      "path": "metadata/morphometrics.csv",
+      "bytes": 3716332,
+      "sha256": "67953ccd0a54dcd7a786b64bd0ab9ec347e40a4ef34a4c356ea2d12d7588ec4d",
+      "md5": "493a0c74a6a4812b522f6546fee34cf3"
+    },
+    {
+      "path": "metadata/nestboxes.csv",
+      "bytes": 78446,
+      "sha256": "dfa8adfdd99865ffa58ec983d59916f7e36932cac587d3e463426f26d9233a44",
+      "md5": "d99b5c104e9aaa8d0695b3a310ca27bf"
+    },
+    {
+      "path": "metadata/main.csv",
+      "bytes": 710595,
+      "sha256": "497cc05221f93cef597f95390ea7a8122cd42d7da5dba6cc9ed0dab3d475f4d9",
+      "md5": "280f5d21e98e935ed8e9f623f64618f8"
+    },
+    {
+      "path": "metadata/great-tit-hits.csv",
+      "bytes": 111502303,
+      "sha256": "580fee8440d7e213b7c8507903818d7748efaf4052ed94740a25ec8c1e5ccb80",
+      "md5": "56a21cc1433e9a3b20004e73ccb48246"
+    },
+    {
+      "path": "metadata/feature_vectors.csv",
+      "bytes": 516094703,
+      "sha256": "c422dcb8f89a66db02942bbd69db9de9051b428cb06aa0c370587ac408f5c861",
+      "md5": "3352b2fdd5cce73905c061fdc9120ffc"
+    },
+    {
+      "path": "metadata/great-tit-hits-crowsetta.csv",
+      "bytes": 172126877,
+      "sha256": "4cb40f3b15b515c9824881ac040580758b4ac8a754538b37bf361dd5d8724dba",
+      "md5": "c4781f2d3e83989616f5c75420d97c72"
+    },
+    {
+      "path": "songs/song-files.zip.part4",
+      "bytes": 248315109,
+      "sha256": "2cc2fdc7da1e76ed60d3217a251404e916b810973620de7cbdd3a570bd2d444d",
+      "md5": "ad19f7abd4fac9b88025373f0555fba9"
+    },
+    {
+      "path": "songs/song-files.zip.part2",
+      "bytes": 3735396385,
+      "sha256": "ad9aab5253bf7a8f70c32db17b3e92f5dfb3df18581a080c7f29e01bb6b36ec5",
+      "md5": "a4d40541c157df23b35c958384eccae0"
+    },
+    {
+      "path": "songs/song-files.zip.part3",
+      "bytes": 3741555821,
+      "sha256": "caaa0a78de733ac83ababa1b9d8e1cc977ee34abc9e442b0aaf609bb28261bb9",
+      "md5": "e6787027dfed54a40f70638b9fee48f1"
+    },
+    {
+      "path": "songs/song-files.zip.part1",
+      "bytes": 3655144225,
+      "sha256": "b10173d9810aba0049755c7cb0167ebfe3903b95dfb08984d9a7c6556357037c",
+      "md5": "801808a33839a833a3df25e32d4bc77d"
+    },
+    {
+      "path": "metadata/wytham_map/perimeter.shp",
+      "bytes": 11180,
+      "sha256": "2731e12d68afb49905bcbb5c43dc4bbc2f1bf20e4fe073cb687063b8cb2c426e",
+      "md5": "701e5f31882b3d8193c7cf39c2d25116"
+    },
+    {
+      "path": "metadata/wytham_map/perimeter.prj",
+      "bytes": 398,
+      "sha256": "884fc5e27844afb733cdc20774784f2ff9f95fefaf28d8509708f3792023279e",
+      "md5": "deede6d99f0126d796aa47002715170e"
+    },
+    {
+      "path": "metadata/wytham_map/perimeter.dbf",
+      "bytes": 125,
+      "sha256": "98050f0f98276cd2e8861ce9d59d36c31025078f405abdd979715bd525f39a73",
+      "md5": "a031076441d5b3e504c631dd7da930d4"
+    },
+    {
+      "path": "metadata/wytham_map/perimeter.shx",
+      "bytes": 140,
+      "sha256": "da99c84de6460a9d6459573895c26e1b17f037b162fd86534cb19c9df83a093b",
+      "md5": "519d58466acea52d0f3596c20d2ceecd"
+    }
+  ]
+}
