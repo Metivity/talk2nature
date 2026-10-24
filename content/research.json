@@ -4044,16 +4044,17 @@
       340,
       341,
       342,
-      343
+      343,
+      390
     ],
-    "reviewed": "2026-10-23",
-    "review_stage": "Targeted paper, dataset-card and model-license review; metadata only",
-    "review_depth": "Reviewed the arXiv v1 paper's data collection, annotation, benchmark, evaluation, limitations and ethics sections; revision-pinned Hugging Face pretraining and classification dataset cards and file inventories; and the separate revision-pinned model card's license statement. The Hugging Face API cardData.license field was null for all three checked revisions. No audio, labels, code or weights were acquired or run. No independent specialist reviewed this note.",
-    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10; OpenWhistle-Pretraining revision eea37423c7841b0f99a7c0380f945999c0a2c489; OpenWhistle-Classification-Finetuning revision 2b7806e3c5913c459c40b824ab7f944d494b3993; OpenWhistle-Wav2Vec2.0 revision 985ac11bc6939af5e41383143aad5a0ae6993f68.",
+    "reviewed": "2026-10-24",
+    "review_stage": "Targeted paper, pinned dataset cards, official dataset license, and separate code/model rights review; metadata only",
+    "review_depth": "Reviewed the arXiv v1 paper data-collection, annotation, benchmark, evaluation, limitations and ethics sections; revision-pinned Hugging Face pretraining and classification dataset cards and file inventories; the separate revision-pinned model card; and the official OpenWhistle README and LICENSE-DATA at commit ad715bb3cf24c36f85b3c3c8159077548134a39e. The repository README applies CC BY 4.0 to its four named dataset releases and LICENSE-DATA grants those terms; the dataset-card API license fields remain null. No audio, labels, code or weights were acquired or run. No independent specialist reviewed this note.",
+    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10; OpenWhistle-Pretraining revision eea37423c7841b0f99a7c0380f945999c0a2c489; OpenWhistle-Classification-Finetuning revision 2b7806e3c5913c459c40b824ab7f944d494b3993; OpenWhistle-Wav2Vec2.0 revision 985ac11bc6939af5e41383143aad5a0ae6993f68; official OpenWhistle README and LICENSE-DATA at commit ad715bb3cf24c36f85b3c3c8159077548134a39e.",
     "finding": "OpenWhistle is a timely single-species research candidate: its authors report about 114 hours of 96 kHz recordings collected over five years from five known dolphins at Dolphin Reef in Eilat, plus 8,354 expert-annotated whistles in 10 categories. The official Hugging Face cards list 31,780 unlabeled audio segments and a separate labeled set split into 5,848 training, 1,253 validation and 1,253 test examples. Published tasks detect whistle presence or classify whistle type. These are upstream descriptions, not a Talk2Nature reproduction.",
-    "limitations": "All recordings come from one site and a pod of five; the paper says results need validation on independent groups. Its labels cover whistle categories, including individual signature-whistle types, not experimentally established message meanings or receiver understanding. The main evaluation holds out recording sessions, not whole animals, and the expert labels cover only a short part of the five-year span; the labels are highly imbalanced. The paper states CC BY 4.0 for OpenWhistle, but the current dataset cards omit an explicit license field and the separate model card says its license is unspecified. Resolve component scope before reuse, especially commercial use.",
+    "limitations": "All recordings come from one site and a pod of five; the paper says results need validation on independent groups. Its labels cover whistle categories, including individual signature-whistle types, not experimentally established message meanings or receiver understanding. The main evaluation holds out recording sessions, not whole animals, and the expert labels cover only a short part of the five-year span; the labels are highly imbalanced. The official repository README and LICENSE-DATA declare CC BY 4.0 for the dataset releases, while the pinned Hugging Face dataset-card fields are null; code terms were not visible in the repository root and the separate model card says its license is unspecified. No files are admitted or acquired.",
     "lesson": "This is a strong newly reviewed large-data candidate for a bounded communication-adjacent benchmark, not evidence of dolphin translation. A useful contribution would need to go beyond repeating the published whistle classifier—for example, a carefully reviewed test of temporal and individual generalization if the available metadata and rights support it. Keep this research track distinct from a companion-parrot app: app participation and model training have different evidence, consent and welfare requirements.",
-    "next_review": "Before any data acquisition or training, reconcile the paper's CC BY 4.0 statement with the dataset-card omissions and confirm rights for each data, code and model component. Then obtain independent cetacean-bioacoustics and ML review of a concrete gap, especially whether a whole-individual holdout is possible and scientifically useful. Do not infer meaning from detection or classification, and do not create playback features from this dataset.",
+    "next_review": "The dataset-level license declaration is now documented. Before any data acquisition or training, ask independent cetacean-bioacoustics and ML reviewers whether a within-pod whistle-structure reproduction would be useful and whether a temporal or individual-generalization extension is defensible. If they approve, freeze a bounded dataset-only run card and consider a project-authored simple acoustic baseline; do not reuse the unlicensed/unclear source code or model weights unless their terms are clarified. Do not infer meaning from detection or classification, and do not create playback features from this dataset.",
     "expert_review": "Not yet independently reviewed by a cetacean-bioacoustics or machine-learning specialist.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -4071,7 +4072,7 @@
       ],
       [
         "Rights boundary",
-        "The paper states CC BY 4.0 for OpenWhistle; the dataset cards omit a license field and the separate model card says its license is unspecified. No component is admitted for Talk2Nature use."
+        "Official repository README and LICENSE-DATA at a pinned commit declare CC BY 4.0 for the datasets; Hugging Face card metadata is null. The separate model card says its license is unspecified, and no separate code license was visible. No files acquired."
       ]
     ],
     "atlas": {
@@ -4089,9 +4090,9 @@
     },
     "reuse": {
       "status": "Metadata-only candidate; not admitted to Talk2Nature training or public app inference.",
-      "asset": "arXiv v1 paper and official Hugging Face metadata/cards only. No audio, labels, code, checkpoint or video was acquired.",
-      "rights": "The paper says OpenWhistle is released under CC BY 4.0, but the dataset cards do not declare a license and the model card says the model license is unspecified. Confirm component-level terms before any use; commercial clearance is not established for the full stack.",
-      "experiment": "No files were acquired or analyzed, no model was trained and no result was reproduced. Any future study needs independent review, a rights-cleared asset set, a defined extension beyond the published baseline, and evaluation that reports session and individual generalization separately. Whistle labels alone cannot establish semantics or translation."
+      "asset": "Pinned arXiv paper, Hugging Face metadata/cards and official repository README/LICENSE-DATA only. The dataset release is declared CC BY 4.0 upstream; no audio, labels, code, checkpoint or video was acquired.",
+      "rights": "The official repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e explicitly declares CC BY 4.0 for the four listed OpenWhistle dataset releases; the Hugging Face card license fields are null. No separate code license was visible at the repository root, and the model card says the model license has not been specified. The dataset declaration does not cover code or weights; use attribution and verify exact scope before any acquisition or commercial use.",
+      "experiment": "No files were acquired or analyzed, no model was trained and no result was reproduced. Any future study needs independent review, a bounded approved run, a frozen session split, and a clear report of within-pod limits. Whistle labels alone cannot establish semantics or translation."
     }
   },
   {

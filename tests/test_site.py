@@ -749,6 +749,14 @@ class SiteTests(unittest.TestCase):
             self.assertIn('/talk2nature/research/zf-aim-zebra-finch-turn-taking-2026/',page)
             self.assertIn('https://fixture.github.io/talk2nature/research/first-animal/',(root/'sitemap.xml').read_text())
             self.assertIn('OpenWhistle dolphins: whistle types',(root/'research/first-animal/index.html').read_text())
+            self.assertIn('official repository declares CC BY 4.0 for its datasets',page)
+            self.assertIn('the Wav2Vec model license is unspecified',page)
+            resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
+            by_id={resource['id']:resource for resource in resources}
+            self.assertEqual(by_id['openwhistle-classification-dataset']['rights']['license'],'CC-BY-4.0')
+            self.assertEqual(by_id['openwhistle-classification-dataset']['acquisition'],'metadata_only')
+            self.assertEqual(by_id['openwhistle-wav2vec-model']['rights']['research_use'],'unresolved')
+            self.assertEqual(by_id['openwhistle-code']['rights']['research_use'],'unresolved')
 
     def test_animal_name_criteria_review_is_abstract_limited_and_discoverable(self):
         with tempfile.TemporaryDirectory() as d:

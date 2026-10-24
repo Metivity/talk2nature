@@ -3587,3 +3587,14 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Decision:** the outside-validation gap is participation, not a missing onboarding document or another species page. Keep issue #115 as the first independent phone walkthrough; record only information the tester chooses to share, and keep it separate from scientific reproduction. No contact was sent, no participant data was collected, and no repository permissions changed.
 
 **Next decision and limits:** when an outside report arrives, capture the exact device/browser, task outcome, point of confusion and help required, then fix a demonstrated issue before expanding the app. The issue being open is an available route, not evidence that anyone used the app. The page check was a maintainer inspection; no independent usability, scientific review or contribution occurred in this milestone.
+
+
+## October 24 — reconcile OpenWhistle dataset, code and model terms
+
+**Question:** do the dataset-card omissions mean that the OpenWhistle audio has no usable license statement, and do the same terms cover its code and model?
+
+**Evidence:** resolved the current official repository head as `ad715bb3cf24c36f85b3c3c8159077548134a39e`, then reviewed its `README.md` and `LICENSE-DATA`. The README names the four Hugging Face dataset repositories and explicitly says the OpenWhistle datasets are CC BY 4.0; `LICENSE-DATA` grants CC BY 4.0. The pinned Hugging Face dataset-card API fields remain null, so the dataset license is recorded as the upstream repository declaration, with attribution and artifact-scope checks retained. The separate model card still says its license is unspecified. The repository root showed no separate code license.
+
+**Change and decision:** added source 390 and five component-specific research-resource entries for the paper, pretraining corpus, labeled classification dataset, code and Wav2Vec checkpoint. Updated the OpenWhistle research note, first-animal guide and benchmark run card. The dataset release is no longer described as wholly rights-unresolved; the model and code remain unresolved, and all files remain metadata-only. A dataset license does not make the model, source code or a benchmark result ready.
+
+**Validation and limits:** the paper and cards remain upstream claims; no audio, labels, code or weights were acquired or executed. No independent cetacean or ML reviewer is assigned, so no model run or AutoResearch is authorized. All 159 repository Python tests passed; all 115 Node tests passed; the resource catalog validator accepted 211 records. The local noindex build produced 133 pages plus 404, and `scripts/check_site.py` passed with 134 HTML pages and 6,782 links checked. The first-animal page displays the revised dataset/code/model rights distinction. These are maintainer-run repository and build checks, not an independent reproduction, biological result, or public deployment. No push or deployment was performed.
