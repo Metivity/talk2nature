@@ -3644,3 +3644,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Change:** linked the no-data review brief and public scientific-methods form from the zebra-finch call-perception card. The page explicitly asks contributors not to attach recordings or private data.
 
 **Validation and limits:** the focused page test and all 159 repository Python tests pass. The local noindex build produced 133 pages plus 404; `scripts/check_site.py` passed with 134 HTML pages and 6,784 links. This is a local candidate only until merged and deployed. No reviewer was contacted, no files or data were acquired, and Candidate E remains unselected; AutoResearch remains **NOT READY**.
+
+## October 24 — clear the Compare example action on narrow phones
+
+**Question and evidence:** the deployed Compare route had a real 320 × 740 Chromium viewport overlap: its fixed navigation covered the bottom 30 pixels of “Try an example pair.” At 390 × 844 the action was clear.
+
+**Change:** reduced only the Compare heading size at widths up to 360 pixels, preserving its text and all wider layouts.
+
+**Validation:** all 115 Node tests and 159 Python tests pass. The local noindex build produced 133 pages plus 404, and `scripts/check_site.py` passed with 134 HTML pages and 6,784 links. In headless Chrome at 320 × 740, the CTA now clears the fixed dock by 22.8 pixels; at 390 × 844 it clears by 105.5 pixels. Both viewports have no horizontal overflow. The example pair opens at both sizes, labels the sessions as invented, and raises no page errors.
+
+**Limits and next decision:** this resolves the measured emulated viewport defect only; physical devices, mobile Safari/Android, screen readers and novice task success remain unverified. No real audio or animal data was used. Keep Compare usability in the phone QA backlog and validate the release workflow before publication.

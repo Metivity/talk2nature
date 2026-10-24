@@ -327,3 +327,13 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Check:** tested the local noindex build of `/app/station/?mode=parrot` in Chromium emulation at 390 × 844 CSS pixels. The document and body were both 390 pixels wide, with no horizontal overflow. During a microphone-free synthetic whole-moment rehearsal, the fixed Stop strip occupied y=758–832. At scroll position 766.5, all four quick-note buttons were visible at y=349–477, well above the strip. Keyboard activation of “Movement” added “I noticed movement” to the local timeline; stopping opened a local review showing one note and 14.5 seconds observed. A separate intermediate scroll frame showed the expected transient overlap while content passed beneath the fixed strip; continued scrolling brought the controls fully clear. The page reserves 112 CSS pixels below the fixed strip while recording.
 
 **Decision and limits:** no CSS change is justified by this check: the Stop action remains fixed and the note controls have a reachable, unobstructed scroll position. Keep first-time-user, pointer, screen-reader and physical-device checks open; this was keyboard-assisted desktop Chromium emulation, not a real phone or a usability study. No microphone permission, upload, save, download or real animal/participant data was involved. The synthetic session remained temporary and was discarded when the test tab closed.
+
+## October 24 Compare action clearance at narrow phone width
+
+**Question:** does the fixed app navigation cover the Compare page's first-use “Try an example pair” action on a 320-pixel phone viewport?
+
+**Evidence and change:** before the edit, Chromium emulation measured the button bottom at about y=696 and the dock top at y=666 at 320 × 740, covering the lower 30 pixels of the action. At 390 × 844 there was no overlap. Reduced only the Compare heading to 2.1rem inside its existing `max-width:360px` rule; wording and the wider-phone style remain unchanged.
+
+**Verification:** rebuilt the local noindex site and checked `/app/compare/` in headless Chrome at 320 × 740 and 390 × 844. The 320-pixel button now ends at y=643.2 with the dock starting at y=666 (22.8-pixel clearance); at 390 pixels the button ends at y=664.5 and the dock starts at y=770. At both sizes, document/body widths equal the viewport, the example pair opens with both sessions labeled “INVENTED EXAMPLE,” and no page errors occur.
+
+**Limits:** this is a local Chromium viewport-emulation check, not a physical-phone, Safari/Android, screen-reader or first-time-user study. It uses invented sessions only; no microphone, recording, upload, save or research admission occurred. The screenshot is a temporary local QA artifact and is not part of the site.
