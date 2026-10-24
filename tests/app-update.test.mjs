@@ -1,6 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {watchWaitingWorker} from '../web/assets/app-update.mjs';
+import {announceWaitingUpdate,watchWaitingWorker} from '../web/assets/app-update.mjs';
+
+test('a waiting update uses the global notice without replacing offline readiness',()=>{
+  const notice={hidden:true,textContent:''};
+  const offline={textContent:'Offline tools are ready on this browser.'};
+  announceWaitingUpdate(notice,offline);
+  assert.equal(notice.hidden,false);
+  assert.match(notice.textContent,/Update ready/);
+  assert.equal(offline.textContent,'Offline tools are ready on this browser.');
+});
+
+test('offline status is the fallback when no global update notice exists',()=>{
+  const offline={textContent:'Checking offline availability…'};
+  announceWaitingUpdate(null,offline);
+  assert.match(offline.textContent,/Update ready/);
+});
 
 test('an already-waiting worker is announced once without mutating registration state',()=>{
   const waiting={state:'installed'}, registration=new EventTarget(), ready=[];
