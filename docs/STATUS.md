@@ -3616,3 +3616,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Change and decision:** updated the public researcher guide's latest-check snapshot so it points to current main and reports current counts instead of the older `ff5d8be` check. Preserve the historical exact-output pin and all earlier verification entries. The guide still asks contributors to treat synthetic outputs as software checks, not evidence of animal communication.
 
 **Limits:** this is maintainer-run reproducibility evidence only. The clone contains invented fixtures; no independent researcher participated, no field app task was independently tested, and no dataset, model, or animal/participant recording was acquired or run. AutoResearch remains **NOT READY**.
+
+## October 24 — reconcile Requests Dependabot alerts
+
+**Question:** did GitHub's open Requests alerts remain because the patched version was absent from the repository, or because its dependency graph had not refreshed?
+
+**Evidence:** a fresh Metivity-authenticated Dependabot API check now reports both Requests advisories, GHSA-9hjg-9r4m-mvj7 and GHSA-gc5v-m9x4-r6x2, as `fixed`, with `fixed_at` 2026-10-20 10:51:20 UTC. The current `main` commit, `4d78f6af0bb88d29a10b542f2c263b3783690c0d`, pins `requests==2.34.2` in both `admin/requirements.txt` and `admin/requirements.lock`. GitHub's repository SBOM, generated 2026-10-24 08:46:31 UTC, also lists Requests 2.34.2.
+
+**Decision:** close the stale-alert reconciliation. The October 20 entry accurately records the then-current state and queued refresh; the API now confirms both alerts fixed and the SBOM matches the checked-in requirement and lock. No dependency change or alert dismissal was needed.
+
+**Limits:** this verifies GitHub's current repository graph/SBOM and source manifests, not the dependency inventory of a hosted private runtime. Automatic pip security-fix PRs remain disabled because the custom private lock still needs a supported update path. No hosted service was inspected or changed.
