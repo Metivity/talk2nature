@@ -1,15 +1,19 @@
 # Next atlas and observation goals
 
-Reviewed October 11, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
+Reviewed October 24, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
 
 These milestones describe the next program work. They are not claims of funding, recruitment, scientific approval, partnership or a release of participant data. The bounded October 4 software/research task is to expand geography and publish this board; completing it does not complete every future milestone.
 
 | Goal | Current state | Completion evidence | Next action |
 | --- | --- | --- | --- |
-| 20 notes with supported geography | 24 of 20; target reached and exceeded | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen abstract-only reviews and retain explicit unknowns in the remaining unmapped notes; do not optimize for pin count |
-| Three historical source notes | Three of three; coverage target reached | Three distinct notes with original source years before 2000, review depth and observation/source-date separation | Obtain full methods for the new historical notes and continue checking later reassessments |
+| 20 notes with supported geography | 32 of 20; target reached and exceeded | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen abstract-only reviews and retain explicit unknowns in the remaining unmapped notes; do not optimize for pin count |
+| Three historical source notes | Three of three; coverage target reached | Three distinct notes with original source years before 2000, review depth and observation/source-date separation | Deepen methods review for the historical notes already counted and continue checking later reassessments |
 | One reviewed passive parrot pilot | Needs reviewer and access | Confirmed carers/species, avian specialist review, consent, independent labels, a successful physical-phone rehearsal | Resolve the access/reviewer checklist in `PILOT_PROTOCOL_DRAFT.md`; do not recruit or ingest real data prematurely |
 | First protected observation release | Needs consent and hosting review | Reviewed protocol/rights, private hosting, tested withdrawal, human review and an independently checked public location projection | Finish the existing hosting/consent gates before implementing public participant pins |
+
+## October 24 catalog reconciliation
+
+Recomputed the counts from the validated research notes, source catalog, collection-resource catalog and atlas projection. The local projection contains 103 notes, 32 mapped notes, 29 approximate places and 329 cited sources; it exactly matches the currently deployed atlas catalog fingerprint. The wider source and collection catalogs contain 409 and 212 records, respectively. The remaining 50 location-pending notes and 21 notes marked not applicable are not a reason to add unsupported pins. The public goals board currently reports 32/20 mapped notes and 3/3 historical notes; the parrot-pilot and protected-observation goals still need their stated scientific, access, consent and hosting gates.
 
 ## How progress is maintained
 
@@ -20,7 +24,7 @@ Public literature notes and private studies use immutable evidence versions. New
 ## A practical next sequence
 
 1. Finish the remaining location review queue. For unresolved records, document whether the obstacle is missing geography, unavailable full text, ambiguous dataset linkage or multi-site scope. Do not create a place from an author's address.
-2. Add two historical notes only after obtaining suitable primary passages and reviewing later criticism or limitations. The recent reef/honeyguide additions do not count as pre-2000 history.
+2. The three-note historical target is reached. Deepen the original-methods review for those notes and check later criticism or reassessments; do not add history merely to raise the count.
 3. Confirm Raviv's access to one species of companion parrot and an appropriate independent reviewer. Keep the current budgerigar choice provisional; a wild monk-parakeet corpus does not validate a household budgerigar protocol.
 4. Rehearse capture on actual Android/iPhone hardware and independently annotate a bounded permitted sample. Do not report browser emulation as physical-device verification.
 5. Resolve hosted storage, consent and withdrawal before opening real-data admission. Review location sensitivity independently from coordinate rounding; public sharing is optional.
