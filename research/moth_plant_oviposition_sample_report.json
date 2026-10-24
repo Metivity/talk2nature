@@ -1,0 +1,112 @@
+{
+  "aggregate_results": [
+    {
+      "egg_clusters": 42,
+      "mapping_review": "not mapped to a Table 1 condition in this review",
+      "matches_reported_table1_counts": null,
+      "paired_observations": 18,
+      "repetitions": 14,
+      "table1_reported": null,
+      "workbook_condition": "Bat"
+    },
+    {
+      "egg_clusters": 39,
+      "mapping_review": "Table 1 condition label",
+      "matches_reported_table1_counts": true,
+      "paired_observations": 23,
+      "repetitions": 23,
+      "table1_reported": {
+        "egg_clusters": 39,
+        "paired_observations": 23,
+        "repetitions": 23
+      },
+      "workbook_condition": "Deaf females drought sounds_60 per minute"
+    },
+    {
+      "egg_clusters": 32,
+      "mapping_review": "not mapped to a Table 1 condition in this review",
+      "matches_reported_table1_counts": null,
+      "paired_observations": 20,
+      "repetitions": 10,
+      "table1_reported": null,
+      "workbook_condition": "Drought sounds _2 per minute"
+    },
+    {
+      "egg_clusters": 67,
+      "mapping_review": "Table 1 condition label",
+      "matches_reported_table1_counts": true,
+      "paired_observations": 45,
+      "repetitions": 38,
+      "table1_reported": {
+        "egg_clusters": 67,
+        "paired_observations": 45,
+        "repetitions": 38
+      },
+      "workbook_condition": "Drought sounds_60 per minute"
+    },
+    {
+      "egg_clusters": 48,
+      "mapping_review": "Table 1 condition label",
+      "matches_reported_table1_counts": true,
+      "paired_observations": 29,
+      "repetitions": 19,
+      "table1_reported": {
+        "egg_clusters": 48,
+        "paired_observations": 29,
+        "repetitions": 19
+      },
+      "workbook_condition": "Males"
+    },
+    {
+      "egg_clusters": 110,
+      "mapping_review": "Table 1 condition label",
+      "matches_reported_table1_counts": true,
+      "paired_observations": 39,
+      "repetitions": 29,
+      "table1_reported": {
+        "egg_clusters": 110,
+        "paired_observations": 39,
+        "repetitions": 29
+      },
+      "workbook_condition": "Plants_60 per minute"
+    },
+    {
+      "egg_clusters": 53,
+      "mapping_review": "Table 1 condition label",
+      "matches_reported_table1_counts": true,
+      "paired_observations": 17,
+      "repetitions": 17,
+      "table1_reported": {
+        "egg_clusters": 53,
+        "paired_observations": 17,
+        "repetitions": 17
+      },
+      "workbook_condition": "Wet-dry plant"
+    }
+  ],
+  "input": {
+    "bytes": 51160,
+    "file": "data.xlsx",
+    "sha256": "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6",
+    "source_checksum_match": true
+  },
+  "limits": [
+    "This is an aggregate source-table consistency check, not a reproduction of the paper's statistical models or adjusted contrasts.",
+    "The extra workbook condition labeled Bat is not mapped to a reported oviposition outcome in the reviewed article; do not interpret it as a published plant-sound result.",
+    "An aggregate count match does not verify all workbook files, code, model assumptions, ecological generalization, or the authors' conclusions.",
+    "No raw rows, dates, arena identifiers, or animal-level records are emitted; the sample is not admitted to model training or the private database."
+  ],
+  "method": {
+    "processing": "Standard-library XLSX ZIP/XML parsing of static cell values; no deposited code or spreadsheet formulas were executed.",
+    "table1_conditions_checked": 5,
+    "table1_conditions_match": true,
+    "unit": "One observation is one balanced pair of examined sides for a Season/Repetition/Observation date/Arena key; repeated balanced pairs under the same key count separately."
+  },
+  "schema_version": 1,
+  "source": {
+    "attribution": "Zer, G. (2025). Female Moths Incorporate Plant Acoustic Emissions into Their Oviposition Decision-Making Process. Mendeley Data v1.",
+    "doi": "10.17632/yg7ms8rn37.1",
+    "license": "CC0 1.0 (scope: the version-pinned Mendeley Data deposit; retained locally for this bounded review)",
+    "url": "https://data.mendeley.com/datasets/yg7ms8rn37/1"
+  }
+}
