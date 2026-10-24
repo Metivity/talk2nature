@@ -58,7 +58,7 @@ class CollectionTests(unittest.TestCase):
             'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf',
             'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code',
-            'northeastern-forest-bird-metadata-sample-v2'})
+            'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data'})
         self.assertLess(size, MAX_BATCH_BYTES)
 
     def test_zenodo_metadata_sample_checks_record_license_manifest_and_file_md5(self):

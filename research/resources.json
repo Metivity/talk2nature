@@ -1412,26 +1412,26 @@
       "id": "moth-plant-oviposition-data",
       "kind": "dataset",
       "title": "Moth oviposition tables and analysis code",
-      "url": "https://doi.org/10.17632/yg7ms8rn37.1",
-      "version": "Mendeley Data v1; published 2025-11-14",
+      "url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+      "version": "10.17632/yg7ms8rn37.1",
       "source_ids": [
         188,
         192,
         193
       ],
       "priority": 2,
-      "reviewed": "2026-10-12",
+      "reviewed": "2026-10-24",
       "task": "Potential reference for a bounded reproduction of receiver response to plant-like acoustic cues; not an audio corpus or animal-language training set.",
-      "review_depth": "Reviewed the Mendeley Data v1 metadata, public file tree and limited browser previews. The tree lists 32 files in three folders: 24 CSV, four R, two MATLAB and two XLSX. A data.xlsx preview exposes arena/repetition/date/treatment and egg-cluster fields; a partial run_stats_whole.m preview loads data.xlsx and separates experiment 3. File panels for data.xlsx, run_stats_whole.m and one XY-point CSV display CC0 1.0 and SHA-256 values. The Download All ZIP panel displays 1.22 MB and a SHA-256. The exact data.xlsx file UUID and public download link were observed. A direct request in the Codex in-app browser returned net::ERR_BLOCKED_BY_CLIENT; no file was returned. The official API reference marks public file-list/download routes OAuth2. No API client or token was used. No file was downloaded, full scripts/workbooks were not reviewed, code was not executed and no result was independently reproduced.",
-      "access": "Public version 1 file browser and Download All ZIP (displayed 1.22 MB; repository-displayed SHA-256 recorded in source 192). The data.xlsx file panel links to UUID 02812bb3-0cc2-4bbf-bf32-2781a054f937. Its exact public download URL is recorded in observed_inventory. The direct request was blocked by the browser client, which does not establish a Mendeley server denial. Official API file-list and download routes require OAuth2. Three folders contain 32 tabular/code files; no audio filename is listed. The eLife source-data ZIP is a separate artifact and was not compared.",
-      "decision": "Keep metadata-only. Resume a bounded local-only reproduction only if an allowed retrieval route returns the exact versioned artifact and its downloaded SHA-256 matches the repository value. Inspect data joins, repeated experimental units and code dependencies before any execution; do not admit this behavioral table/tracking deposit as an audio or model-training corpus. Leave the separate publisher ZIP metadata-only unless a specific comparison is needed and its terms are verified.",
-      "limitations": "The deposit concerns one controlled study of Egyptian cotton leafworm moths and tomato-plant playback. Its listed files are tables, analysis code and XY-point data, not listed audio recordings. A behavioral reanalysis would not establish general plant communication, animal translation or model readiness. Previewed metadata and hashes are not local file verification; Talk2Nature has not independently reproduced the reported effects or received specialist review.",
+      "review_depth": "Rechecked the official Mendeley Data v1 landing page on October 24: it remains version 1, published 2025-11-14, and declares CC0 1.0. The one approved 51,160-byte data.xlsx file was acquired to ignored local storage and its SHA-256 matches the exact value displayed in the Mendeley file panel. A standard-library, aggregate-only audit parsed static workbook values and matched all five main Table 1 repetition, paired-observation and egg-cluster totals. No formulas or deposited code were executed. The other 31 listed files and separate eLife source ZIP remain unacquired; no inferential model or independent review was completed. The workbook has two additional condition labels outside the five-condition Table 1 comparison; the Bat oviposition label remains unmapped to a reported result.",
+      "access": "The exact data.xlsx file UUID and public download URL are pinned in observed_inventory. A TLS-verified HEAD to the Mendeley URL returned 302 to the pinned public S3 object; a HEAD to that exact object returned HTTP 200, 51,160 bytes and XLSX MIME type. The local collector fetched only that file, verified its SHA-256 against the Mendeley file-panel value, and wrote a receipt under ignored local storage. The official API reference marks file-list/download APIs OAuth2-protected; no API client or token was used. This acquisition covers one spreadsheet only; the other 31 files and publisher ZIP remain separate and unacquired.",
+      "decision": "Retain only the version-pinned data.xlsx and receipt in ignored external storage for bounded local structure and aggregate-table review. The aggregate audit may be shared with its method and limitations, but do not publish raw rows, acquire the full archive, execute unreviewed code, use this behavioral table for model training or private storage, or treat it as evidence for general plant communication. Resolve the extra Bat workbook condition against the source before interpreting it.",
+      "limitations": "The deposit concerns one controlled study of Egyptian cotton leafworm moths and tomato-plant playback. The selected spreadsheet is behavioral/source data, not an audio corpus, and does not reproduce the paper's hierarchical models or adjusted contrasts. All five main Table 1 aggregate tuples match, but that is a source-table consistency check rather than independent reproduction. The workbook also contains a Bat oviposition condition not mapped to a reported oviposition result in the reviewed article; exclude it pending clarification. A bounded reanalysis would not establish plant intention, general communication, animal translation or model readiness. No Talk2Nature specialist review is established by acquisition.",
       "attribution": "Zer G. (2025). Female Moths Incorporate Plant Acoustic Emissions into Their Oviposition Decision-Making Process. Mendeley Data v1. DOI 10.17632/yg7ms8rn37.1.",
       "rights": {
-        "license": "CC0 1.0 as displayed on the Mendeley Data v1 item record.",
+        "license": "CC0-1.0",
         "scope": "The deposited Mendeley Data item only. The repository page and file-information panels for data.xlsx, run_stats_whole.m and 220310_01_xypts.csv display CC0 1.0. The CC0 notice applies only to rights the affirmer can grant and does not establish third-party or privacy rights. The eLife article is a separate CC BY 4.0 work; the publisher source-data ZIP and any audio/model weights have separate unresolved rights.",
         "evidence_url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
-        "conditions": "No files have been acquired. Cite the deposit as scholarly practice; if selected files are acquired, verify their downloaded SHA-256 against the repository display, review data/code contents and dependencies, and retain the exact version and rights notice. Do not infer scientific admission from CC0 or file availability.",
+        "conditions": "The Mendeley Data v1 landing page declares CC0 1.0, and the data.xlsx file panel separately displayed CC0 1.0. Verify the downloaded bytes against the file-panel SHA-256 and retain attribution and the exact version. This declaration applies only to the Mendeley deposit and does not change the separate eLife article/source-data terms or establish scientific suitability.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
@@ -1489,10 +1489,28 @@
           "file": "data.xlsx",
           "result": "The exact public download URL returned net::ERR_BLOCKED_BY_CLIENT in the Codex in-app browser. The web fetcher also could not access it. No file was returned and no checksum was verified locally.",
           "api_access": "The official Mendeley API reference marks public file-list and download routes OAuth2-protected; no client or token was used."
+        },
+        "live_recheck": {
+          "reviewed": "2026-10-24",
+          "file": "data.xlsx",
+          "license_displayed": "CC0 1.0 per the October 12 file-panel review; the versioned landing-page declaration was rechecked on October 24",
+          "head_result": "Mendeley public URL returned 302 to the pinned public S3 object; direct TLS-verified HEAD returned HTTP 200, 51,160 bytes, XLSX MIME type",
+          "payload_downloaded": false
         }
       },
-      "acquisition": "metadata_only",
-      "files": []
+      "license_notice": "Mendeley Data v1 (10.17632/yg7ms8rn37.1) declares CC0 1.0; the data.xlsx file panel displayed CC0 1.0 and SHA-256 on 2026-10-12. Rechecked the versioned deposit page on 2026-10-24: https://data.mendeley.com/datasets/yg7ms8rn37/1 .",
+      "acquisition": "sample_approved",
+      "adapter": "mendeley_sha256",
+      "admission_reason": "One 51,160-byte, checksum-pinned spreadsheet was fetched to ignored local storage and its received SHA-256 matches the Mendeley file-panel value. The deposited item and data.xlsx panel declare CC0 1.0. This supports only local structural and aggregate review; the collector receipt records verified bytes. Do not fetch the remaining archive, execute unreviewed code, publish raw rows, or admit this sample to training or private storage.",
+      "files": [
+        {
+          "name": "data.xlsx",
+          "url": "https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/a3d49901-5e46-4ead-acdf-6625559f918d",
+          "source_url": "https://data.mendeley.com/public-files/datasets/yg7ms8rn37/files/02812bb3-0cc2-4bbf-bf32-2781a054f937/file_downloaded",
+          "bytes": 51160,
+          "sha256": "c322198e05f3093fdd929e750db5f00a0b702402c3d4e8a86f666b0eb5a651b6"
+        }
+      ]
     },
     {
       "id": "elife-moth-source-data",
@@ -6132,7 +6150,9 @@
       "title": "Benchmarking Automated and Semi-Automated Vocal Clustering Methods",
       "url": "https://doi.org/10.3390/app16020810",
       "version": "Lee et al., Applied Sciences 16(2), 810; published 2026-01-13; DOI 10.3390/app16020810",
-      "source_ids": [394],
+      "source_ids": [
+        394
+      ],
       "priority": 1,
       "reviewed": "2026-10-24",
       "review_depth": "Full 15-page article and ETH repository rights record reviewed. Results, data statement, acknowledgments and split design recorded; no data, supplements or figures were reproduced or reanalyzed.",
@@ -6159,7 +6179,10 @@
       "title": "Zebra Finch Vocalization Dataset for Semi-Automated Clustering, Zenodo v1",
       "url": "https://zenodo.org/records/18156254",
       "version": "Zenodo record 18156254 v1; published 2026-01-05; later version 22657329 belongs to concept record 18156253",
-      "source_ids": [394, 395],
+      "source_ids": [
+        394,
+        395
+      ],
       "priority": 1,
       "reviewed": "2026-10-24",
       "task": "Potential sample for evaluating acoustic cluster labeling and human annotation workflow; not a behavior-context or communication-meaning dataset.",
@@ -6186,7 +6209,11 @@
       "title": "Zebra Finch Vocalization Dataset for Semi-Automated Clustering, Zenodo v2",
       "url": "https://zenodo.org/records/22657329",
       "version": "Zenodo record 22657329 v2; published 2026-09-08; API conceptrecid 18156253, same series as paper-cited 18156254 v1",
-      "source_ids": [395, 396, 397],
+      "source_ids": [
+        395,
+        396,
+        397
+      ],
       "priority": 1,
       "reviewed": "2026-10-24",
       "task": "Potential sample for annotation-efficiency and expert-clustering agreement methods; not a communication-meaning benchmark.",
@@ -6213,7 +6240,9 @@
       "title": "Zebra Finch Vocalization Dataset for Semi-Automated Clustering, separate Zenodo concept",
       "url": "https://zenodo.org/records/18100613",
       "version": "Zenodo record 18100613; published 2025-12-30; API conceptrecid 18100612, distinct from paper-cited concept 18156253",
-      "source_ids": [397],
+      "source_ids": [
+        397
+      ],
       "priority": 2,
       "reviewed": "2026-10-24",
       "task": "Related provenance lead; no task-specific equivalence to the paper-cited sample has been established.",
@@ -6240,7 +6269,10 @@
       "title": "Human-in-the-loop semi-automated clustering tool",
       "url": "https://github.com/hwiora/semi_automated_clustering/tree/5b6f8f0a9783546532e3a2bef76ad12930a2eb56",
       "version": "GitHub commit 5b6f8f0a9783546532e3a2bef76ad12930a2eb56, checked 2026-10-24",
-      "source_ids": [394, 398],
+      "source_ids": [
+        394,
+        398
+      ],
       "priority": 1,
       "reviewed": "2026-10-24",
       "review_depth": "Pinned README, root requirements and LICENSE reviewed. The repository was not cloned or executed, and transitive dependencies and referenced model assets were not fully audited.",
@@ -6267,7 +6299,10 @@
       "title": "WhisperSeg animal voice-activity detection checkpoint",
       "url": "https://huggingface.co/nccratliri/whisperseg-base-animal-vad-ct2/tree/9f873b8a37fe37eb7543de092d308950ceb96fc0",
       "version": "Hugging Face model revision 9f873b8a37fe37eb7543de092d308950ceb96fc0, checked 2026-10-24",
-      "source_ids": [394, 399],
+      "source_ids": [
+        394,
+        399
+      ],
       "priority": 2,
       "reviewed": "2026-10-24",
       "review_depth": "Exact pinned model page and revision API metadata reviewed. No checkpoint or training data was downloaded, and the separate Whisper embedding revision was not identified.",
@@ -6475,7 +6510,9 @@
       "title": "OpenWhistle dolphin vocalization benchmark paper",
       "url": "https://arxiv.org/abs/2609.34839v1",
       "version": "arXiv v1, 2026-09-28",
-      "source_ids": [340],
+      "source_ids": [
+        340
+      ],
       "priority": 2,
       "reviewed": "2026-10-24",
       "task": "Whistle-presence detection and expert-defined whistle-type classification; acoustic structure, not message interpretation.",
@@ -6502,7 +6539,10 @@
       "title": "OpenWhistle dolphin pretraining audio corpus",
       "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/eea37423c7841b0f99a7c0380f945999c0a2c489",
       "version": "Hugging Face revision eea37423c7841b0f99a7c0380f945999c0a2c489; data-license declaration at repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
-      "source_ids": [341, 390],
+      "source_ids": [
+        341,
+        390
+      ],
       "priority": 3,
       "reviewed": "2026-10-24",
       "task": "Unlabeled dolphin audio for self-supervised acoustic representation learning, not behavior or meaning labels.",
@@ -6529,7 +6569,10 @@
       "title": "OpenWhistle expert-labeled whistle classification dataset",
       "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/2b7806e3c5913c459c40b824ab7f944d494b3993",
       "version": "Hugging Face revision 2b7806e3c5913c459c40b824ab7f944d494b3993; data-license declaration at repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
-      "source_ids": [342, 390],
+      "source_ids": [
+        342,
+        390
+      ],
       "priority": 2,
       "reviewed": "2026-10-24",
       "task": "Whistle type and presence benchmark with expert labels; no behavior/context or receiver-response labels.",
@@ -6556,7 +6599,9 @@
       "title": "OpenWhistle detection, segmentation and benchmark code",
       "url": "https://github.com/sumbre-lab/OpenWhistle/tree/ad715bb3cf24c36f85b3c3c8159077548134a39e",
       "version": "Repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
-      "source_ids": [390],
+      "source_ids": [
+        390
+      ],
       "priority": 3,
       "reviewed": "2026-10-24",
       "task": "Reference implementation for dolphin whistle detection, segmentation and the published benchmark.",
@@ -6583,7 +6628,9 @@
       "title": "OpenWhistle Wav2Vec2.0 dolphin acoustic model",
       "url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/985ac11bc6939af5e41383143aad5a0ae6993f68",
       "version": "Hugging Face revision 985ac11bc6939af5e41383143aad5a0ae6993f68",
-      "source_ids": [343],
+      "source_ids": [
+        343
+      ],
       "priority": 3,
       "reviewed": "2026-10-24",
       "task": "Dolphin-specific acoustic representation model for whistle classification/detection; not a ready supervised translator.",

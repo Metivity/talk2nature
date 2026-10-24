@@ -489,6 +489,20 @@ class SiteTests(unittest.TestCase):
             self.assertIn('/talk2nature/research/resources/',research_index)
             self.assertIn('https://fixture.github.io/talk2nature/research/resources/',(root/'sitemap.xml').read_text())
 
+    def test_moth_note_reports_aggregate_check_and_keeps_unmapped_bat_condition_out(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            note=root/'research/moths-and-plants/index.html'
+            page=note.read_text()
+            self.assertIn('Note reviewed 2026-10-24',page)
+            self.assertIn('matched the five main Table 1 tuples',page)
+            self.assertIn('not a statistical-model reproduction',page)
+            self.assertIn('Bat oviposition group is not mapped to a reported oviposition outcome',page)
+            self.assertIn('flight-response validation',page)
+            self.assertIn('Although one workbook was checksum-verified and parsed, this does not verify the remaining files',page)
+            self.assertNotIn('data/external/',page)
+
     def test_parrot_playback_note_separates_receiver_response_from_translation(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
