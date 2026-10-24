@@ -1,0 +1,46 @@
+{
+  "title": "Global passerine song repository tree inventory",
+  "retrieved": "2026-10-24",
+  "scope": "Metadata-only recursive tree inspection. No repository payload, audio, source code, table content or dependency was fetched or executed.",
+  "repository": {
+    "url": "https://github.com/quentinbacquele/birdsong_biogeography",
+    "commit": "1629e665f902cad405ff2f7bf2a0e9dc8c09b47e",
+    "tree_url": "https://api.github.com/repos/quentinbacquele/birdsong_biogeography/git/trees/1629e665f902cad405ff2f7bf2a0e9dc8c09b47e?recursive=1",
+    "transport": "HTTPS with certificate verification enabled",
+    "tree_truncated": false
+  },
+  "inventory": {
+    "tracked_blobs": 1456,
+    "audio_segments": {
+      "path_prefix": "data/selected_data_8x8x20_top/",
+      "file_count": 1280,
+      "provider_reported_total_bytes": 185758300,
+      "unique_recording_count_verified": false
+    },
+    "selected_files": [
+      {
+        "path": "data/metadata_xeno_passerines.csv",
+        "provider_reported_bytes": 12796164,
+        "git_blob_sha": "3cd36dd96eccb5065b7aa2d4e9cf7f962da1707b",
+        "payload_fetched": false
+      },
+      {
+        "path": "data/traits_data.csv",
+        "provider_reported_bytes": 79543989,
+        "git_blob_sha": "04cf45688f4e3a97c4670d324e224272afbdecda",
+        "payload_fetched": false
+      }
+    ],
+    "license_or_copying_basename_found": false,
+    "readme_license_statement": "Creative Commons Attribution 4.0 International; component scope has not been established for third-party recordings and all repository contents.",
+    "readme_archive_doi": "10.5281/zenodo.XXXXXXX"
+  },
+  "limits": [
+    "File paths, provider-reported sizes and Git blob identifiers are repository metadata. No payload checksum was recomputed.",
+    "Audio-segment file count is not a verified count of unique source recordings.",
+    "No filename-to-Xeno-canto source mapping or item-level recording license was inspected.",
+    "The GBIF CC BY-NC 4.0 metadata declaration is not a blanket license for underlying Xeno-canto audio.",
+    "The README describes acoustic motifs and ecological pattern analysis; this inventory adds no receiver-behavior or call-meaning labels."
+  ],
+  "next_gate": "Determine whether filenames and permitted public metadata can identify source-recording IDs and their item-level terms without retrieving repository payloads or retaining sensitive coordinates. Resolve component-specific rights before any content retrieval, code execution, commercial-use review or model training."
+}
