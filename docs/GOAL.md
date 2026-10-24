@@ -14,6 +14,8 @@ The October 24 companion-cohort synthesis was merged in PR [#349](https://github
 
 **Search Console follow-up:** URL Inspection now says the new page is unknown to Google, while its live test says the page is available and can be indexed. The sitemap report still says it could not be read and shows zero discovered pages, although direct TLS-verified checks confirm a valid 135-URL sitemap and the page's inclusion. A request-indexing attempt failed because Google's reCAPTCHA service could not connect; no request-queued confirmation was received. Recheck after Google's next processing cycle; do not claim indexing or change the valid sitemap without new evidence.
 
+To improve reader and crawler discovery while that report is pending, PR [#351](https://github.com/Metivity/talk2nature/pull/351) added a contextual link from the first-animal guide to the companion-cohort evidence page. Pages run [#40101920744](https://github.com/Metivity/talk2nature/actions/runs/40101920744) deployed it, and a fresh live check confirms both routes return 200 and the guide includes the link. Google has not yet been rechecked after this change; the next SEO check is to look for a new referring page or crawl, not to infer that the link caused indexing.
+
 ### Current next milestone — obtain independent review before selecting a benchmark
 
 Do not choose a species just because a dataset is large. The current evidence separates these paths:
