@@ -6603,6 +6603,37 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "insectset459-v1-1-dataset",
+      "kind": "dataset",
+      "title": "InsectSet459 v1.1 insect sound dataset",
+      "url": "https://zenodo.org/records/18554693",
+      "version": "Zenodo v1.1; DOI 10.5281/zenodo.18554693; published 2026-02-09, record modified 2026-06-09",
+      "source_ids": [
+        406,
+        407,
+        408
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "task": "Engineering reference for insect species identification and sample-rate/device robustness; not a communication or behavior-context benchmark.",
+      "review_depth": "PubMed primary abstract, official Zenodo v1.1 record/file inventory and author repository root/README reviewed. Full article methods and annotation CSV rows were not inspected; no media, code or models were acquired or run.",
+      "access": "Public Zenodo v1.1 record. The provider lists 83.7 GB of package files and a 6.9 MB annotation CSV; neither is acquired. The CSV exceeds the project collector’s 5 MiB per-file limit.",
+      "decision": "Catalog as a metadata-only cross-taxa engineering reference. Do not treat it as a communication dataset, select it as the first Talk2Nature benchmark, or infer phone-microphone capability from its recordings.",
+      "limitations": "Species-level recording labels are weak and do not provide independently observed behavior or receiver response. The published split is balanced by file count and duration; held-out contributor/site/device grouping was not established in this review, and test data are publicly distributed. High sample-rate recordings may exceed ordinary phone capture. Exact per-file source licenses and the code repository’s reuse rights remain to be checked before any item is used.",
+      "attribution": "Faiß M, Ghani B, Stowell D (2026). A dataset of insect sounds from 459 species for bioacoustic machine learning. Scientific Data 13:499. DOI 10.1038/s41597-026-07123-4. Dataset v1.1 DOI 10.5281/zenodo.18554693.",
+      "rights": {
+        "license": "Zenodo v1.1 description states source recordings use Creative Commons 4.0 licenses or CC0; the article Data Record describes a CC 4.0 deposit. Exact per-file terms were not inspected.",
+        "scope": "Dataset media only, subject to each original source license and attribution. The author code repository has no located standalone license. No license for model weights was identified.",
+        "evidence_url": "https://zenodo.org/records/18554693",
+        "conditions": "Before use, inspect the exact file-level license and source attribution, check sensitive location metadata and cross-dataset duplicates, and verify the selected intended use. Do not redistribute media or reuse code based only on the article or dataset-level statement.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
