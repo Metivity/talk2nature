@@ -3697,3 +3697,17 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 ## October 24 — verify the deployed Field Companion update notice
 
 PR [#335](https://github.com/Metivity/talk2nature/pull/335) merged as [`ac9f6fd`](https://github.com/Metivity/talk2nature/commit/ac9f6fdb58f36d213c755c674c7e90a16840da91); Pages run [#40087965008](https://github.com/Metivity/talk2nature/actions/runs/40087965008) succeeded on that commit. A fresh TLS-verified fetch of `/app/` confirmed the deployed bundle imports the versioned update helper. The helper uses the global notice when available and falls back to offline status; the four focused unit tests pass. The fresh page showed offline readiness and no duplicate update-ready text, but no waiting-worker cycle was triggered. Physical-device, assistive-technology and previously installed-client update behavior remain open; the app does not force reload or activate updates during a session. See the detailed [mobile audit](MOBILE_AUDIT.md).
+
+## October 24 — refresh funding fit and readiness gates
+
+**Question:** which currently listed routes merit preparation, and what must be known before an application or public campaign is responsible?
+
+**Evidence reviewed:** the official [IIA Pre-Seed page](https://innovationisrael.org.il/programs/preseed/) and current Track 7/open-source policy records; Experiment's [FAQ](https://experiment.com/faq), [researcher payout guide](https://experiment.com/guide/extra) and existing campaign-creation guide; the current opportunity register for BiodivFuture, the Kunming Biodiversity Fund, the Coller Dolittle Prize and National Geographic calls.
+
+**Finding and decision:** Pre-Seed remains the only near-term conditional institutional financing lead identified, with a November 9, 2026 noon Israel-time deadline and hard company, finance, R&D allocation and investor gates. The IIA procedure webpage associates open-source rules with Pre-Seed, while its linked PDF identifies Track 1; Track 7 applicability and treatment of the project's component licenses remain unresolved. Experiment supports reviewed research campaigns and all-or-nothing funding, charges fees if funded, and says launched campaigns cannot be deleted. Its FAQ's bank-country list and researcher guide's non-US payout-pilot instructions differ; Israeli eligibility remains unknown. No campaign should launch before that route, research question, budget, endorser and initial audience are established.
+
+**Change:** refreshed source/opportunity dates and detail; added explicit payout-policy and fee links; added an ignored owner-only readiness worksheet. Updated the active goal with the next factual gates. Applicant entity, investor, finances, written IIA clarification, payout acceptance, scientific host and campaign audience all remain unverified.
+
+**Validation:** all 159 Python tests and 117 Node tests pass. The explicit-origin public build generated 134 routes plus 404; `scripts/check_site.py` passed with 135 HTML documents and 6,973 links, and all 134 public routes were reachable. The generated opportunities page contains the current cutoff, decision gates and payout links. The owner checklist is ignored by Git and absent from `dist/`.
+
+**Limits:** this is desk research and a local readiness checklist, not legal or financial advice. No funder was contacted; no applicant declarations, application, crowdfunding page or funding commitment was made. The private checklist is ignored and excluded from public builds. The broad five-track project goal remains active.

@@ -625,3 +625,9 @@ The 2023 Figshare v2 API and streamed README identify a possible filename bridge
 ### October 24 continuation — pin Dryad's current F0 file inventory
 
 Queried Dryad's official dataset, version and file-manifest APIs over verified TLS. The current v9 manifest pins all 15 file names, sizes and provider SHA-256 values, including the 5,076,570-byte monk-parakeet archive. Saved a metadata-only snapshot and updated the research/resource notes. The documented API download route required a bearer token, and the public file-stream URL returned HTTP 403 in this environment; no credential or alternate route was used. The file list and exact F0-to-source crosswalk remain unresolved, so the subset stays metadata-only. The broader program and benchmark-readiness gates remain active.
+
+## October 24 — active funding gate and next work
+
+Keep the five-track Talk2Nature goal active; this is a new dated milestone within it, not a duplicate goal. The next funding action is a factual readiness screen, not a speculative application: establish an eligible Israeli commercial-R&D company and signed qualifying investor commitment before investing in a Pre-Seed draft, and resolve in writing whether the IIA's open-source procedure applies to Track 7 and this project's separately licensed components. The owner-only checklist is in ignored `funding/PRESEED_READINESS_2026-10-24.md`; every applicant fact remains unknown.
+
+Experiment is a lower-priority future route, not a near-term grant. The official FAQ and researcher payout guide differ on non-US payout routes; Israeli eligibility must be confirmed before any campaign, and launched campaigns cannot be deleted. Prepare no campaign until there is a researcher-reviewed question, itemized budget, qualified endorser, initial audience and confirmed payout route. Do not message funders, make declarations or submit. Continue the other project tracks in bounded evidence/app improvements while this gate remains open.

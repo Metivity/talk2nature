@@ -276,6 +276,7 @@ def build(output, base_url='', public=False, repo_url=''):
             ('topic_source_id', 'Official topic details ↗'),
             ('portal_source_id', 'Funding &amp; Tenders live topic ↗'),
             ('eligibility_source_id', 'Applicant eligibility ↗'),
+            ('payout_source_id', 'Payout and fees ↗'),
         ):
             source = source_map.get(item.get(field))
             if source:

@@ -218,18 +218,18 @@
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 23, 2026: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
+    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 24, 2026: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-23",
-    "origin": "Official Israel Innovation Authority Pre-Seed page reviewed October 23, 2026 for the current deadline, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
+    "checked": "2026-10-24",
+    "origin": "Official Israel Innovation Authority Pre-Seed page rechecked October 24, 2026 for the current deadline, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
   },
   {
     "id": 28,
     "title": "Experiment crowdfunding",
-    "description": "Experiment. Researcher Guide - Create. Funding targets, platform fees and campaign design. Payout eligibility still needs applicant-specific verification.",
+    "description": "Experiment researcher guide for campaign setup, fees and campaign design. Current payout rules reviewed October 24, 2026; Israeli researcher payout eligibility still needs applicant-specific verification.",
     "url": "https://experiment.com/guide/create",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-24",
+    "origin": "Official Experiment researcher guide reviewed October 24, 2026 for campaign setup and fees. The platform FAQ and international payout guide were separately reviewed; neither establishes Talk2Nature-specific campaign or payout eligibility."
   },
   {
     "id": 29,
@@ -1606,9 +1606,9 @@
     "id": 159,
     "title": "Israel Innovation Authority open-source procedure",
     "url": "https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/",
-    "description": "The official rules page associates the open-source procedure with Pre-Seed; the linked PDF describes a committee-review process and names benefit track 1. Its applicability to Track 7 and this project's licenses needs written confirmation.",
-    "checked": "2026-10-11",
-    "origin": "Official Israel Innovation Authority procedure page and its linked PDF reviewed on October 11, 2026; the page's track associations and the PDF's stated scope are preserved separately.",
+    "description": "Rechecked October 24, 2026: the official procedure page associates this policy with Pre-Seed, while its linked PDF calls itself an appendix to benefit track 1 (R&D Fund). Applicability to Track 7 and this project's licenses remains unresolved; no legal conclusion is made.",
+    "checked": "2026-10-24",
+    "origin": "Official Israel Innovation Authority procedure page and linked PDF rechecked October 24, 2026. The page's track association and the PDF's stated scope conflict; Track 7 applicability and project-specific treatment need written confirmation.",
     "review_url": "https://innovationisrael.org.il/wp-content/uploads/2023/08/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97.pdf",
     "review_url_label": "Official open-source procedure PDF"
   },
@@ -4175,5 +4175,21 @@
     "url": "https://github.com/mariusfaiss/InsectSet459",
     "checked": "2026-10-24",
     "origin": "Reviewed the repository root and README through the public web page; the direct root LICENSE path returned 404. No code was downloaded, copied or executed, and code reuse rights remain unresolved."
+  },
+  {
+    "id": 409,
+    "title": "Experiment official FAQ",
+    "url": "https://experiment.com/faq",
+    "description": "Official FAQ reviewed October 24, 2026 for project review, all-or-nothing funding, platform and processing fees, campaign permanence, and bank-payout countries. Its country guidance differs from the separate researcher payout guide.",
+    "checked": "2026-10-24",
+    "origin": "Official Experiment FAQ. Country-specific eligibility and the payout path for an Israeli applicant remain unconfirmed."
+  },
+  {
+    "id": 410,
+    "title": "Experiment international researcher payouts",
+    "url": "https://experiment.com/guide/extra",
+    "description": "Official researcher payout guide reviewed October 24, 2026 for international payout routes, pilot acceptance, PayPal and the additional payout fee. Its country guidance differs from the separate FAQ.",
+    "checked": "2026-10-24",
+    "origin": "Official Experiment researcher guide. Its international-payout instructions do not confirm acceptance of a particular applicant or campaign."
   }
 ]
