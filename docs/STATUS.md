@@ -1,5 +1,25 @@
 # Project status
 
+## October 24 — reproduce the bat metadata audit and test a caller-specific estimand
+
+**Question:** does the bat corpus's large participant-pair graph rule out every useful held-out evaluation, or only a stricter unseen-pair/group target?
+
+**Evidence and action:** freshly checked the official Figshare API for item 4555903 v1. It still declares CC0 1.0 and lists the same 3,286,405-byte `Annotations.csv` with provider MD5 `7781a3725d6f2277de74da84b1383ce0`. The approved bounded collector restored that exact file to ignored `data/external/`; the report generator verified its receipt and hashes. The regenerated aggregate matches the 2024 paper's stated 35,074-row filter count. It finds 122 of 34,603 source files with multiple known callers (259 annotations). Excluding those files leaves 34,815 annotations (99.26%) and all 11 context labels represented across 8–41 known callers; the largest caller contributes 16.37% of retained annotations. No animal IDs or source rows are exported.
+
+**Interpretation:** the 95.31% caller/file and 95.56% participant-pair graph components remain serious for a strict whole-social-group holdout, but are too conservative to reject a narrowly defined new-caller estimand by themselves. The 2024 EUSIPCO paper reports subject-independent development/test folds; Talk2Nature has not verified their memberships. The new counts establish support only, not a valid split, baseline, novelty, label truth or performance. A caller appearing as an addressee in development, unknown co-vocalizations, and unjoined session/date/channel/treatment/chamber effects still need review. Context prediction remains distinct from receiver comprehension or message meaning.
+
+**Validation:** regenerated `research/figshare_bat_annotation_report.json`; all 169 repository Python tests passed (one intentional skip) and all 117 Node tests passed. The resource catalog validates 214 records. The local noindex build produced 136 pages plus 404; `scripts/check_site.py` validated 137 HTML pages and 6,971 links. Browser review of the generated evidence page confirmed the new caller-support finding, the explicit non-split caveat and the updated reviewer question. The report retains `training_admitted: false`. No audio, video, code, model or model weights were fetched or run; no reviewer was contacted. AutoResearch remains **NOT READY**.
+
+**Next gate:** independent bat-behavior/bioacoustics and ML/statistical reviewers should assess whether caller-held-out whole-file evaluation adds value beyond the paper's already reported subject-independent folds, and which additional metadata or exact fold manifest would be necessary. Do not acquire the larger `FileInfo.csv` or media until that review establishes a bounded need and integrity plan.
+
+## October 24 — choose a first species by scientific task, not dataset size
+
+**Question:** which animal and existing resource give Talk2Nature the most useful first research foothold?
+
+**Decision:** keep the Field Companion species-neutral. Prioritize the Egyptian fruit-bat corpus for vocal-context research because its primary descriptor reports 293,238 short recordings and 91,080 video-derived annotations with emitter/addressee and behavior/context information ([Prat et al., 2017](https://doi.org/10.1038/sdata.2017.143)). The strict participant graph has a 95.56% largest component. A new caller-specific aggregate check excludes 122 mixed-caller source files, retains 99.26% of the paper-filtered annotations, and leaves every context represented by at least eight callers. This makes a narrow new-caller question plausible for review, while exact paper fold membership and whole-animal independence remain unresolved. Honeybee waggle data are the clearest known signal-to-receiver candidate, but the signal is movement, its core association is already published, and the archive is one site ([Dormagen et al., 2023](https://doi.org/10.1093/pnasnexus/pgad275)). Budgerigars remain a possible usability cohort if access and qualified review become available; the reviewed household corpus search did not find a public parrot audio dataset with independent event-aligned context labels.
+
+**Next gate:** ask independent bat-behavior and ML/statistical reviewers whether a caller-held-out, whole-file split is a defensible new-caller test beyond the paper's reported subject-independent folds; determine whether role uncertainty and chamber/session/treatment effects change that conclusion. Verify exact paper folds or leave them explicitly unresolved. If no non-duplicative question survives review, record a no-go and use a non-semantic sound-identification task only to test the app/data pipeline. No audio acquisition, model training, recruitment or translator claim is authorized by this checkpoint. AutoResearch remains **NOT READY**.
+
 ## October 24 — add a bounded honeybee review route for research groups
 
 **Question:** can a research group inspect the honeybee signal/follower candidate through a clear, no-data review task?

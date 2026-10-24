@@ -64,6 +64,31 @@ class BatAnnotationSubsetTests(unittest.TestCase):
         for identifier in ('file-a', 'file-b', 'file-c', 'file-d', '9001', '9002', '9003', '9010', '9020', '9021'):
             self.assertNotIn(identifier, serialized)
 
+    def test_caller_holdout_support_excludes_multi_caller_files_without_exporting_ids(self):
+        rows = [
+            row('shared-file', 97001, 97002, 3),
+            row('shared-file', 97002, 97001, 4),
+            row('caller-a', 97001, 97003, 3),
+            row('caller-b', 97004, 97001, 4),
+            row('caller-c', 97005, 0, 4),
+        ]
+
+        support = summarize_paper_subset(rows)['caller_holdout_support']
+
+        self.assertEqual(support['selected_annotations'], 5)
+        self.assertEqual(support['selected_source_files'], 4)
+        self.assertEqual(support['multi_caller_source_files'], 1)
+        self.assertEqual(support['annotations_in_multi_caller_source_files'], 2)
+        self.assertEqual(support['annotations_after_excluding_multi_caller_files'], 3)
+        self.assertEqual(support['annotation_retention_fraction'], 0.6)
+        self.assertEqual(support['known_callers_after_file_exclusion'], 3)
+        self.assertEqual(support['minimum_callers_per_context'], 1)
+        self.assertFalse(support['all_contexts_have_three_or_more_callers'])
+
+        serialized = json.dumps(support)
+        for identifier in ('shared-file', 'caller-a', 'caller-b', 'caller-c', '97001', '97002', '97003', '97004', '97005'):
+            self.assertNotIn(identifier, serialized)
+
 
 if __name__ == '__main__':
     unittest.main()

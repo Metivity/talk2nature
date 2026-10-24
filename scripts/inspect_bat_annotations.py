@@ -162,6 +162,37 @@ def summarize_paper_subset(rows):
     for row in selected:
         multi_context_files[row['file_id']].add(row['context'])
 
+    # A strict caller-held-out question is different from holding out every
+    # caller/addressee pair as one social-network component. Keep source files
+    # with multiple known callers out of this descriptive feasibility summary
+    # so one recording cannot straddle caller groups. This does not create or
+    # validate a train/test split.
+    callers_by_file = defaultdict(set)
+    for row in selected:
+        callers_by_file[row['file_id']].add(row['emitter'])
+    multi_caller_files = {
+        file_id for file_id, callers in callers_by_file.items() if len(callers) > 1
+    }
+    caller_group_rows = [row for row in selected if row['file_id'] not in multi_caller_files]
+    caller_counts = Counter(row['emitter'] for row in caller_group_rows)
+    caller_contexts = defaultdict(lambda: {'annotations': 0, 'callers': set()})
+    for row in caller_group_rows:
+        support = caller_contexts[row['context']]
+        support['annotations'] += 1
+        support['callers'].add(row['emitter'])
+    caller_context_support = {
+        context: {
+            'annotations': values['annotations'],
+            'known_callers': len(values['callers']),
+        }
+        for context, values in sorted(caller_contexts.items())
+    }
+    caller_counts_sorted = sorted(caller_counts.values())
+    minimum_callers_per_context = min(
+        (values['known_callers'] for values in caller_context_support.values()),
+        default=0,
+    )
+
     return {
         'filter': {
             'excluded_context_codes': ['0 (Unknown)', '8 (Landing)'],
@@ -191,6 +222,30 @@ def summarize_paper_subset(rows):
             'source_file_only': _connected_group_summary(selected, ()),
             'source_file_plus_emitter': _connected_group_summary(selected, ('emitter',)),
             'source_file_plus_all_known_participants': _connected_group_summary(selected, ('emitter', 'addressee')),
+        },
+        'caller_holdout_support': {
+            'selected_annotations': len(selected),
+            'selected_source_files': len(file_counts),
+            'multi_caller_source_files': len(multi_caller_files),
+            'annotations_in_multi_caller_source_files': len(selected) - len(caller_group_rows),
+            'annotations_after_excluding_multi_caller_files': len(caller_group_rows),
+            'annotation_retention_fraction': round(len(caller_group_rows) / len(selected), 4) if selected else 0,
+            'known_callers_after_file_exclusion': len(caller_counts),
+            'annotations_per_caller': {
+                'minimum': min(caller_counts_sorted, default=0),
+                'median': median(caller_counts_sorted) if caller_counts_sorted else 0,
+                'maximum': max(caller_counts_sorted, default=0),
+                'largest_caller_share': round(max(caller_counts_sorted) / len(caller_group_rows), 4) if caller_group_rows else 0,
+            },
+            'context_support': caller_context_support,
+            'minimum_callers_per_context': minimum_callers_per_context,
+            'all_contexts_have_three_or_more_callers': bool(caller_context_support) and minimum_callers_per_context >= 3,
+            'limitations': [
+                'Descriptive support only; no fold assignment, model evaluation, or test-set lock is created.',
+                'A caller-held-out target still allows the same animal as an addressee in development data; it does not test unseen dyads or groups.',
+                'Unknown/ambiguous caller annotations and unobserved calls within a source file may affect voice isolation.',
+                'Sessions, dates, channels, treatments and chambers are not joined here and may confound generalization.',
+            ],
         },
         'training_admitted': False,
         'limitations': [
