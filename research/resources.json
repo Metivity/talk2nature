@@ -5952,15 +5952,16 @@
       "url": "https://github.com/quentinbacquele/birdsong_biogeography",
       "version": "main pinned to 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e on 2026-10-24",
       "source_ids": [
-        385
+        385,
+        389
       ],
       "priority": 2,
       "reviewed": "2026-10-24",
       "task": "Author-listed scripts for acoustic feature extraction, motif clustering, phylogenetic and spatial models, and figures for the 2026 paper.",
-      "review_depth": "Public root/README and recursive GitHub API tree metadata reviewed at the pinned commit. The non-truncated tree lists 1,456 tracked files, including 1,280 audio segments totaling 185,758,300 bytes, a 12,796,164-byte metadata_xeno_passerines.csv and a 79,543,989-byte traits_data.csv. No file contents, source code, audio or dependency code were fetched or run.",
+      "review_depth": "Public root/README and recursive GitHub API tree metadata reviewed at the pinned commit. The non-truncated tree lists 1,456 tracked files, including 1,280 audio segments totaling 185,758,300 bytes, a 12,796,164-byte metadata_xeno_passerines.csv and a 79,543,989-byte traits_data.csv. No file contents, source code, audio or dependency code were fetched or run. A follow-up filename-only screen matched all 1,280 audio paths to numeric-ID-like tokens and found 495 distinct candidates; three candidate record pages were spot-checked, with variable terms, but no complete join or license inventory. Official API documentation requires a key and warns of strict rate limits; no key or bulk API query was used.",
       "access": "Public GitHub repository. The pinned tree lists 1,280 audio-segment payloads in data/selected_data_8x8x20_top/ and processed acoustic/spatial files. README cites the literal placeholder Zenodo DOI 10.5281/zenodo.XXXXXXX.",
       "decision": "Reference only. Do not acquire the audio subset or execute/copy code until repository license scope, underlying recording-level terms, dependencies and source-data provenance are verified.",
-      "limitations": "The tree contains no standalone LICENSE file. README states CC BY 4.0 but does not define its scope across author code, derived files, metadata and third-party Xeno-canto audio. The 1,280 audio-file count is not a count of verified unique recordings; the source-ID joins and item-level licenses have not been inspected. The cited data DOI is unresolved.",
+      "limitations": "The tree contains no standalone LICENSE file. README states CC BY 4.0 but does not define its scope across author code, derived files, metadata and third-party Xeno-canto audio. The 1,280 audio-file count is not a count of verified unique recordings; the source-ID joins and item-level licenses have not been inspected. The cited data DOI is unresolved. Numeric filename tokens are not a verified full record manifest: only three pages and one filename/taxon match were checked, and study membership remains unknown. No location fields were extracted or retained.",
       "attribution": "Quentin Bacquelé et al., global passerine song biogeography analysis repository, pinned commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e.",
       "rights": {
         "license": "Repository README states CC BY 4.0; component scope remains unresolved and no standalone LICENSE file was visible in the root listing.",
@@ -5983,15 +5984,16 @@
       "source_ids": [
         386,
         387,
-        388
+        388,
+        389
       ],
       "priority": 2,
       "reviewed": "2026-10-24",
       "task": "Global bird-sound discovery and metadata reference; not a behavior or receiver-response benchmark.",
-      "review_depth": "Reviewed the GBIF dataset description and metadata record plus two unrelated Xeno-canto recording pages to verify that audio has record-level terms. No occurrence rows, recordings or source files acquired.",
+      "review_depth": "Reviewed the GBIF dataset description and metadata record plus two unrelated Xeno-canto recording pages to verify that audio has record-level terms. No occurrence rows, recordings or source files acquired. A separate metadata-only screen of the global passerine repository's filename tokens found 495 candidates among 1,280 paths; three public record pages showed two CC BY-NC-ND 4.0 and one CC BY-NC-SA 4.0. This sample does not establish corpus membership or a complete license distribution. The official API documentation requires a key and warns of strict rate limits.",
       "access": "GBIF describes a metadata subset of Xeno-canto; its page lists 924,259 occurrence records, 10,316 species and associated media. This count describes the GBIF metadata record, not a verified downloadable audio corpus.",
       "decision": "Use as a discovery/reference source. For any audio task, freeze exact Xeno-canto recording IDs, verify each license and attribution, and evaluate whether terms permit the intended research and commercial use.",
-      "limitations": "The GBIF CC BY-NC 4.0 dataset declaration applies to the GBIF metadata distribution, not automatically to the underlying recordings. Xeno-canto pages show different item-level licenses. The 2026 paper's exact source IDs and recording-level rights were not mapped.",
+      "limitations": "The GBIF CC BY-NC 4.0 dataset declaration applies to the GBIF metadata distribution, not automatically to the underlying recordings. Xeno-canto pages show different item-level licenses. The 2026 paper's exact source IDs and recording-level rights were not mapped. The study's 495 candidate filename IDs are not fully joined to XC records; only three examples were checked. Do not bulk-scrape or treat the sample as a rights census.",
       "attribution": "Vellinga WP, Planqué B, Vellinga W (2026). Xeno-canto – Bird sounds from around the world. Xeno-canto Foundation for Nature Sounds. GBIF dataset DOI 10.15468/qv0ksn.",
       "rights": {
         "license": "GBIF dataset metadata record declares CC BY-NC 4.0; source audio rights are governed by the terms displayed for each individual Xeno-canto recording.",
