@@ -6,7 +6,15 @@
 
 **Change:** Shared moments now opens in whole-moment mode. It does not preselect an animal; only the explicitly chosen parrot route sets the observer-declared group. Sound highlights and advanced JSON export remain optional. Updated the automated preset regression check and added zero-command usability as a named active-goal milestone.
 
-**Validation and limits:** the focused preset test passes (3 tests); the full Node suite passes (118 tests); the Python suite passes (170 tests, one intentional skip); and the local noindex build generates 138 pages plus 404, with the site checker validating 139 HTML pages and 7,090 links. No microphone, recording or animal data was used. This fixes the default-path mismatch; it is not evidence of novice comprehension, a physical-phone test or independent review. No public release was made in this milestone. The five-track goal remains active.
+**Validation and limits:** the focused preset test passes (3 tests); the full Node suite passes (118 tests); the Python suite passes (170 tests, one intentional skip); and the local noindex build generates 138 pages plus 404, with the site checker validating 139 HTML pages and 7,090 links. No microphone, recording or animal data was used. This fixes the default-path mismatch; it is not evidence of novice comprehension, a physical-phone test or independent review. At this checkpoint the candidate had not yet been published; see the release receipt below. The five-track goal remains active.
+
+## October 25 — publish the zero-command Shared moments default
+
+**Release:** PR [#388](https://github.com/Metivity/talk2nature/pull/388) merged to main as [1a49afd](https://github.com/Metivity/talk2nature/commit/1a49afd38b7a9771b58c7d140c2be15262baf8b8). Pages run [#40144475401](https://github.com/Metivity/talk2nature/actions/runs/40144475401) passed the repository and browser-tool tests, public build and publish-boundary checks, deployment and live-route verifier.
+
+**Live read-back:** fresh TLS-verified requests returned HTTP 200 for the Field Companion home, the mode=companion Station page, its Station module and the imported preset module. The live home links to Shared moments, the Station module applies the selected preset, and the published preset opens the complete-window mode without selecting an animal group.
+
+**Limits:** this verifies publication and the shipped startup configuration, not a completed browser interaction, novice comprehension, physical-phone behavior or recording quality. No animal or participant audio was collected. The independent first-use walkthrough and named-device checks remain open; the broader five-track goal remains active.
 
 ## October 25 — clarify the scope of the historical completion audit
 
