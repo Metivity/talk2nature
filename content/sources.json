@@ -3764,10 +3764,10 @@
   {
     "id": 365,
     "title": "Wytham Great Tit Song Dataset, OSF record",
-    "description": "The dataset paper and authors’ site point to OSF DOI 10.17605/OSF.IO/N8AC9 as the complete dataset and metadata record. Its public JSON:API manifest was inspected on 2026-10-23; see the separate manifest snapshot for file sizes and provider-reported hashes.",
+    "description": "The dataset paper and authors’ site point to OSF DOI 10.17605/OSF.IO/N8AC9 as the dataset and metadata record. A 2026-10-24 API recheck listed 14 current file items; the prior saved snapshot listed nine additional documentation paths not present in the current tree. See dated manifests for the discrepancy and provider-reported hashes.",
     "url": "https://osf.io/n8ac9/",
-    "checked": "2026-10-23",
-    "origin": "Followed the dataset link from the primary paper and author documentation, then queried the public JSON:API node, record-level license and recursively listed osfstorage file manifest over verified TLS. No file bytes were retrieved; provider-reported hashes were not recomputed."
+    "checked": "2026-10-24",
+    "origin": "Followed the dataset link from the primary paper and author documentation, then queried the public JSON:API node, record-level license and recursively listed osfstorage file manifest over verified TLS. The 14 current data-file entries match the previous snapshot by basename, byte size and provider-reported SHA-256; nine prior documentation paths are absent from the current tree, with cause unresolved. No file bytes were retrieved; provider-reported hashes were not recomputed."
   },
   {
     "id": 366,
@@ -3850,10 +3850,10 @@
   {
     "id": 372,
     "title": "Wytham Great Tit dataset public OSF JSON:API manifest",
-    "description": "Read-only JSON:API endpoint for the public OSF node and its osfstorage file tree. The 2026-10-23 metadata audit listed 23 files totaling 12,184,678,510 bytes and captured the OSF-reported CC BY 4.0 node license and file hashes; no file payloads or location values were retrieved.",
+    "description": "Read-only JSON:API endpoint for the public OSF node and its osfstorage file tree. The 2026-10-24 recheck lists 14 current files totaling 12,184,652,639 bytes and captures the OSF-reported CC BY 4.0 node license and file hashes. The prior saved manifest lists nine additional /docs/ entries absent from the current tree; the reason is unresolved. No file payloads or location values were retrieved.",
     "url": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
-    "checked": "2026-10-23",
-    "origin": "Queried the OSF public JSON:API recursively over verified TLS. The associated snapshot is research/wytham_osf_manifest_2026-10-23.json; file hash values are provider metadata, not locally recomputed checksums."
+    "checked": "2026-10-24",
+    "origin": "Queried the OSF public JSON:API recursively over verified TLS and matched the current 14 entries to the prior snapshot by basename, byte size and provider SHA-256. The 2026-10-24 snapshot is research/wytham_osf_manifest_2026-10-24.json; the 2026-10-23 snapshot remains preserved with its nine unmatched documentation entries. Provider hash values are metadata, not locally recomputed checksums."
   },
   {
     "id": 373,
@@ -3969,5 +3969,45 @@
     "url": "https://github.com/earthspecies/avex",
     "checked": "2026-10-24",
     "origin": "Reviewed the official repository README and file listing, including its MIT-license statement and model-loading/embedding functions. No code was downloaded or run; model-weight and dataset terms remain separate."
+  },
+  {
+    "id": 384,
+    "title": "The global biogeography of passerine songs",
+    "description": "Peer-reviewed Science article analyzing the acoustic architecture of songs from more than 3,000 passerine species and reporting eight recurring acoustic motifs associated with biological traits and sound-propagation conditions.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42490479/",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the PubMed article record and abstract. The full article methods, supplementary material, recording IDs and analyses were not independently reviewed or reproduced. DOI: 10.1126/science.aee6239."
+  },
+  {
+    "id": 385,
+    "title": "Global passerine song biogeography analysis repository, pinned main revision",
+    "description": "Authors’ public repository for the 2026 passerine-song study. The rendered README lists analysis scripts and processed acoustic/spatial data, but its Zenodo DOI is a placeholder and the repository root has no standalone LICENSE file; the README’s CC BY 4.0 statement has unresolved component scope.",
+    "url": "https://github.com/quentinbacquele/birdsong_biogeography/tree/1629e665f902cad405ff2f7bf2a0e9dc8c09b47e",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the public repository root and README and pinned the main branch to commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e. No source code, audio or repository data files were downloaded or run; the README’s data DOI remains the literal placeholder 10.5281/zenodo.XXXXXXX."
+  },
+  {
+    "id": 386,
+    "title": "Xeno-canto bird-sounds dataset record in GBIF",
+    "description": "GBIF’s Xeno-canto record describes a global metadata subset with occurrence records, species, locations and associated media. Its CC BY-NC 4.0 dataset-level listing applies to this GBIF dataset record and is not a blanket license for underlying audio recordings.",
+    "url": "https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the GBIF dataset description and metadata. It distinguishes the GBIF-shared subset from the wider Xeno-canto collection and says the subset includes only contributors who permitted metadata sharing. No occurrence rows or media were downloaded."
+  },
+  {
+    "id": 387,
+    "title": "Xeno-canto recording-level license example, XC102358",
+    "description": "A public bird recording page displaying Creative Commons Attribution-NonCommercial-NoDerivatives 2.5. This is an example of the license attached to an individual recording, not evidence that this recording was included in the 2026 passerine study.",
+    "url": "https://xeno-canto.org/102358",
+    "checked": "2026-10-24",
+    "origin": "Read the public record metadata and its displayed license only. No audio was downloaded or played. The recording’s source membership in the 2026 paper was not checked."
+  },
+  {
+    "id": 388,
+    "title": "Xeno-canto recording-level license example, XC991130",
+    "description": "A public bird recording page displaying Creative Commons Attribution-ShareAlike 4.0. This is an example of the license attached to an individual recording, not evidence that this recording was included in the 2026 passerine study.",
+    "url": "https://xeno-canto.org/991130",
+    "checked": "2026-10-24",
+    "origin": "Read the public record metadata and its displayed license only. No audio was downloaded or played. The recording’s source membership in the 2026 paper was not checked."
   }
 ]

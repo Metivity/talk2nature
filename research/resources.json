@@ -5440,7 +5440,7 @@
       "kind": "dataset",
       "title": "Wytham Great Tit Song Dataset, OSF",
       "url": "https://osf.io/n8ac9/",
-      "version": "OSF node n8ac9; record last modified 2023-07-10; public file manifest queried 2026-10-23; the inspected node response did not provide an explicit dataset version label",
+      "version": "OSF node n8ac9; record last modified 2023-07-10; current API file tree rechecked 2026-10-24; the inspected node response did not provide an explicit dataset version label",
       "source_ids": [
         363,
         364,
@@ -5450,10 +5450,10 @@
       "priority": 2,
       "reviewed": "2026-10-24",
       "task": "Acoustic note segmentation, sequence/repertoire structure, individual song variation and vocal-culture research within one wild population.",
-      "review_depth": "Reviewed the peer-reviewed paper abstract/data-availability statement and author documentation. On 2026-10-23, queried the public OSF JSON:API node, its record-level license and the recursively listed 23-file osfstorage manifest over verified TLS; preserved provider-reported file sizes and SHA-256 values in research/wytham_osf_manifest_2026-10-23.json. On 2026-10-24, reviewed the author nestbox-metadata documentation, which specifies British National Grid X/Y coordinates and says these are also included in main.csv. No file payloads or coordinate values were downloaded or inspected; hashes were not recomputed.",
-      "access": "The public OSF record reports CC BY 4.0 and was last modified 2023-07-10. Its 23 files total 12,184,678,510 bytes: four song-archive parts total 11,380,411,540 bytes; metadata files total 804,241,099 bytes; documentation files total 25,871 bytes. The approximately 9 TB original continuous recordings are not in this shared package. No data, audio or annotations were downloaded.",
+      "review_depth": "Reviewed the peer-reviewed paper abstract/data-availability statement and author documentation. On 2026-10-23, queried the public OSF JSON:API node, its record-level license and file tree; the saved snapshot lists 23 entries. A 2026-10-24 recursive recheck found 14 current file entries totaling 12,184,652,639 bytes. Those 14 entries match the prior snapshot by basename, byte size and provider SHA-256; nine prior /docs/ entries are absent from the current tree, with cause unresolved. Preserved the current and prior provider metadata in research/wytham_osf_manifest_2026-10-24.json and research/wytham_osf_manifest_2026-10-23.json, respectively. The author nestbox documentation specifies British National Grid coordinates in nestboxes.csv and says these also appear in main.csv. No file payloads or coordinate values were downloaded or inspected; hashes were not recomputed.",
+      "access": "The public OSF record reports CC BY 4.0 and was last modified 2023-07-10. The current API tree lists 14 files totaling 12,184,652,639 bytes: four song-archive parts total 11,380,411,540 bytes and ten metadata/map files total 804,241,099 bytes. The prior 2026-10-23 saved snapshot also lists nine /docs/ entries totaling 25,871 bytes that are absent from the current API tree; the discrepancy is unresolved. The approximately 9 TB original continuous recordings are not in this shared package. No data, audio or annotations were downloaded.",
       "decision": "Keep as a metadata-only song-structure candidate. It is not a behavior-context, receiver-response or meaning dataset and does not replace the first communication-adjacent candidate.",
-      "limitations": "One U.K. population. Bird identity associated with breeding attempts may be uncertain or a proxy for uncaught birds. Author documentation specifies British National Grid nestbox coordinates in nestboxes.csv and says these data are also included in main.csv; the manifest separately lists a Wytham perimeter shapefile. Only field descriptions were reviewed, not coordinate values or file contents. Treat precise locations as potentially sensitive wildlife-location information; keep public geography coarse and exclude coordinates from derivatives unless an appropriate review establishes a need and safe handling. Provider hashes were not verified against downloaded bytes; annotation values, grouping keys and the split were not inspected. The 2025 paper already trains a ViT metric-learning model on this corpus and uses embeddings for repertoire similarity and demographic culture analysis; no distinct Talk2Nature task has been approved. No reproduction exists.",
+      "limitations": "One U.K. population. Bird identity associated with breeding attempts may be uncertain or a proxy for uncaught birds. Author documentation specifies British National Grid nestbox coordinates in nestboxes.csv and says these data are also included in main.csv; the current API tree lists a Wytham perimeter shapefile. Only field descriptions and API metadata were reviewed, not coordinate values or file contents. Treat precise locations as potentially sensitive wildlife-location information; keep public geography coarse and exclude coordinates from derivatives unless an appropriate review establishes a need and safe handling. Provider hashes were not verified against downloaded bytes; annotation values, grouping keys and the split were not inspected. The 2026-10-23 saved manifest has nine documentation entries absent from the current API tree; cause unresolved. The 2025 paper already trains a ViT metric-learning model on this corpus and uses embeddings for repertoire similarity and demographic culture analysis; no distinct Talk2Nature task has been approved. No reproduction exists.",
       "attribution": "Merino Recalde et al. (2024), Wytham Great Tit Song Dataset, OSF DOI 10.17605/OSF.IO/N8AC9; dataset paper DOI 10.1016/j.anbehav.2024.02.008.",
       "rights": {
         "license": "The OSF node declares CC BY 4.0, consistent with the 2024 paper's statement that dataset input/output files use CC BY 4.0.",
@@ -5909,6 +5909,95 @@
         "scope": "The source code in the AVEX repository only; no pretrained model weights or source datasets are covered by this record.",
         "evidence_url": "https://github.com/earthspecies/avex",
         "conditions": "Retain the MIT copyright and license notice if redistributing covered code. Verify the pinned commit and component boundaries; inspect weights and training-data terms separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "global-passerine-song-biogeography-2026-paper",
+      "kind": "paper",
+      "title": "The global biogeography of passerine songs",
+      "url": "https://doi.org/10.1126/science.aee6239",
+      "version": "Bacquelé et al., Science 393(6809):381–386; published 2026-07-23; PMID 42490479",
+      "source_ids": [
+        384
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Describe shared acoustic structure across passerine songs and relate motif distributions to species traits and sound-propagation conditions.",
+      "review_depth": "PubMed abstract and bibliographic record reviewed. Full article methods, figures and supplement were not reviewed; no result was independently reproduced.",
+      "access": "PubMed abstract and publisher DOI record; no article PDF, supplementary material or study files acquired.",
+      "decision": "High-value prior art for large-scale cross-species acoustic structure. It does not test receiver comprehension or translate call meanings.",
+      "limitations": "The full sampling, methods, recording inventory, model details and evaluation splits remain unreviewed. The study is not a Talk2Nature result or semantic communication benchmark.",
+      "attribution": "Bacquelé Q, Barnagaud J-Y, Violle C, Theunissen F, Mathevon N (2026). Science 393(6809):381–386. DOI 10.1126/science.aee6239.",
+      "rights": {
+        "license": "Article license not checked in this metadata-only review.",
+        "scope": "Talk2Nature stores an original short summary and citation only; no article text, figures or supplement are copied.",
+        "evidence_url": "https://pubmed.ncbi.nlm.nih.gov/42490479/",
+        "conditions": "Verify publisher terms before any reuse of article content or figures. Treat code, derived data and source recordings separately.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "global-passerine-song-biogeography-2026-code",
+      "kind": "code",
+      "title": "Authors’ analysis repository for global passerine song biogeography",
+      "url": "https://github.com/quentinbacquele/birdsong_biogeography",
+      "version": "main pinned to 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e on 2026-10-24",
+      "source_ids": [
+        385
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "task": "Author-listed scripts for acoustic feature extraction, motif clustering, phylogenetic and spatial models, and figures for the 2026 paper.",
+      "review_depth": "Public root and README reviewed at the pinned commit. No source files, dependency code or data files were downloaded, inspected or run.",
+      "access": "Public GitHub repository; the README lists one commit, a data directory and scripts. It cites the literal placeholder Zenodo DOI 10.5281/zenodo.XXXXXXX.",
+      "decision": "Reference only. Do not copy or execute code until the license scope, dependencies and source-data provenance are verified.",
+      "limitations": "The root listing has no standalone LICENSE file. The README states CC BY 4.0 but does not clearly define whether this covers code, derived data or other components. The cited data DOI is unresolved.",
+      "attribution": "Quentin Bacquelé et al., global passerine song biogeography analysis repository, pinned commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e.",
+      "rights": {
+        "license": "Repository README states CC BY 4.0; component scope remains unresolved and no standalone LICENSE file was visible in the root listing.",
+        "scope": "The README lists source code, derived acoustic/geographic tables and a limited audio subset, but their exact contents and rights were not reviewed.",
+        "evidence_url": "https://github.com/quentinbacquele/birdsong_biogeography/tree/1629e665f902cad405ff2f7bf2a0e9dc8c09b47e",
+        "conditions": "Resolve a versioned data record and component-specific terms before acquisition, execution, commercial use or redistribution. No repository files were copied.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "xeno-canto-avian-sounds-gbif-metadata-2026",
+      "kind": "dataset",
+      "title": "Xeno-canto bird sounds, GBIF metadata distribution",
+      "url": "https://doi.org/10.15468/qv0ksn",
+      "version": "GBIF record doi:10.15468/qv0ksn; listing published 2026-09-24; metadata reviewed 2026-10-24",
+      "source_ids": [
+        386,
+        387,
+        388
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "task": "Global bird-sound discovery and metadata reference; not a behavior or receiver-response benchmark.",
+      "review_depth": "Reviewed the GBIF dataset description and metadata record plus two unrelated Xeno-canto recording pages to verify that audio has record-level terms. No occurrence rows, recordings or source files acquired.",
+      "access": "GBIF describes a metadata subset of Xeno-canto; its page lists 924,259 occurrence records, 10,316 species and associated media. This count describes the GBIF metadata record, not a verified downloadable audio corpus.",
+      "decision": "Use as a discovery/reference source. For any audio task, freeze exact Xeno-canto recording IDs, verify each license and attribution, and evaluate whether terms permit the intended research and commercial use.",
+      "limitations": "The GBIF CC BY-NC 4.0 dataset declaration applies to the GBIF metadata distribution, not automatically to the underlying recordings. Xeno-canto pages show different item-level licenses. The 2026 paper's exact source IDs and recording-level rights were not mapped.",
+      "attribution": "Vellinga WP, Planqué B, Vellinga W (2026). Xeno-canto – Bird sounds from around the world. Xeno-canto Foundation for Nature Sounds. GBIF dataset DOI 10.15468/qv0ksn.",
+      "rights": {
+        "license": "GBIF dataset metadata record declares CC BY-NC 4.0; source audio rights are governed by the terms displayed for each individual Xeno-canto recording.",
+        "scope": "Metadata distribution only for the GBIF license. This record does not grant a blanket license to audio or downstream model weights.",
+        "evidence_url": "https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24",
+        "conditions": "Do not assume all source recordings are commercially reusable or suitable for model training. Preserve per-record attribution and license conditions after exact membership is established.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
