@@ -1311,6 +1311,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn(guidance,station)
             self.assertLess(station.index('id="station-retention-guidance"'),station.index('id="station-start"'))
             self.assertIn('aria-describedby="station-retention-guidance"',station)
+            start_button=re.search(r'<button id="station-start"[^>]*>',station).group(0)
+            rehearsal_button=re.search(r'<button id="station-demo"[^>]*>',station).group(0)
+            self.assertRegex(start_button,r'\sdisabled(?:\s|>)')
+            self.assertNotRegex(rehearsal_button,r'\sdisabled(?:\s|>)')
 
     def test_companion_home_removes_duplicate_start_and_keeps_the_beginner_paths_clear(self):
         with tempfile.TemporaryDirectory() as d:
