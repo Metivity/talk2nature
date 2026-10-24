@@ -1,0 +1,86 @@
+{
+  "schema_version": "talk2nature.figshare_manifest.v1",
+  "reviewed_date": "2026-10-24",
+  "provider_api": "https://api.figshare.com/v2/articles/11905533",
+  "record": {
+    "id": 11905533,
+    "doi": "10.6084/m9.figshare.11905533.v1",
+    "title": "Vocal repertoires from adult and chick, male and female zebra finches (Taeniopygia guttata)",
+    "version": 1,
+    "published_date": "2020-02-26T23:49:36Z",
+    "size_bytes": 190889709,
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "scope_note": "Provider-declared item-level license; individual archive contents and embedded material were not independently reviewed."
+    }
+  },
+  "files": [
+    {
+      "id": 21833430,
+      "name": "AdultVocalizations.zip",
+      "bytes": 140645384,
+      "provider_md5": "696bb91ca90ea116468bbce85a67aa0f",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 21833436,
+      "name": "ChickVocalizations.zip",
+      "bytes": 50155507,
+      "provider_md5": "896d8b1a691c4ae7bd7bcdcf3880bf00",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 21833448,
+      "name": "Library_notes.pdf",
+      "bytes": 88818,
+      "provider_md5": "c4470e5563b4b4499fb7c8c0aaaf6c85",
+      "payload_downloaded": true,
+      "local_md5_verified": true,
+      "local_sha256": "093fc45593675ca7990398f33364e205c6b1fcb48a04f4e150366e19f3abea0c",
+      "receipt": "data/external/zebra-finch-library-notes-figshare-v1/receipt.json",
+      "content_inspected": true,
+      "visual_rendered": true
+    }
+  ],
+  "notes_review": {
+    "page_count": 1,
+    "collection_period": "2011-2014",
+    "setting": "Captive colony at the University of California, Berkeley",
+    "organism_groups": ["adult", "juvenile at approximately 30 days"],
+    "adult_sex_recorded": true,
+    "stated_wav_count": 3433,
+    "file_name_fields": ["individual code", "recording date", "vocalization-type code", "rendition number"],
+    "stated_vocalization_type_count": 11,
+    "vocalization_type_codes": {
+      "Ag": "aggressive call",
+      "Be": "begging call",
+      "DC": "distance call",
+      "Di": "distress call",
+      "LT": "long tonal call",
+      "Ne": "nest call",
+      "So": "song",
+      "Te": "tet call",
+      "Th": "thuk call",
+      "Tu": "tuck call",
+      "Wh": "whine call"
+    },
+    "unitization_limit": "A WAV may contain one vocalization or a sequence; the notes warn that filename discrepancies are known and expected."
+  },
+  "decision": {
+    "use": "Candidate for a bounded call-category methods audit after an independent avian/evaluation reviewer confirms a non-duplicative question and split plan.",
+    "not_established": [
+      "Audio archive integrity or exact internal file count",
+      "One-file-to-one-call mapping",
+      "Coverage of the later call-perception study stimuli or paper counts",
+      "Independent annotation reliability",
+      "Generalization to new birds, homes, microphones, behavior, receiver response or call meaning"
+    ],
+    "audio_training_or_model_run": false,
+    "training_admitted": false
+  }
+}
