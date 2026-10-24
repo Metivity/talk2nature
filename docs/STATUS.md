@@ -8,7 +8,9 @@
 
 **Validation:** all 166 repository Python tests passed (one PostgreSQL integration test skipped), as did all 117 Node tests. The noindex build produced 135 pages plus 404; the explicit-origin public build also produced 135 pages plus 404, and the site checker validated the public artifact with 136 HTML pages, 7,053 links and 135 reachable public pages. These checks use metadata only; no audio, code or model weights were acquired or run.
 
-**Limit and next decision:** the live Pages page remains unchanged until an isolated public release is reviewed and deployed. This fixes attribution only; it does not reproduce the benchmark or make it training-ready. Any data use still requires an independently reviewed question and exact artifact-level rights check.
+**Deployment:** PR [#366](https://github.com/Metivity/talk2nature/pull/366) merged to `main` as `aa7d47940d918947eaae010e3c28164bd95d9af1`; Pages run [#40120584497](https://github.com/Metivity/talk2nature/actions/runs/40120584497) passed its public build, full Python and Node suites, site audit, deployment and live-route verifier. The live verifier checked three routes, 135 sitemap URLs and the robots sitemap directive. A TLS-verified fetch of the OpenWhistle page returned HTTP 200, included both pinned repository links and omitted the BirdPark DOI.
+
+**Limit and next decision:** this fixes attribution only; it does not reproduce the benchmark or make it training-ready. The catalog remains metadata-only: no audio, code or model weights were acquired or run. Any data use still requires an independently reviewed question, grouping design and exact artifact-level rights check.
 
 ## October 14 — verify live routes after Pages deployment
 
