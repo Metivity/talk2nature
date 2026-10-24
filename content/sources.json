@@ -4009,5 +4009,13 @@
     "url": "https://xeno-canto.org/991130",
     "checked": "2026-10-24",
     "origin": "Read the public record metadata and its displayed license only. No audio was downloaded or played. The recording’s source membership in the 2026 paper was not checked."
+  },
+  {
+    "id": 389,
+    "title": "Official Xeno-canto API documentation",
+    "description": "The official API documentation requires an API key and warns of strict rate limits. It describes access rules only and does not grant rights to recording media or metadata.",
+    "url": "https://xeno-canto.org/explore/api",
+    "checked": "2026-10-24",
+    "origin": "Direct TLS-verified read of the official API documentation. No API key or recording payload was used."
   }
 ]

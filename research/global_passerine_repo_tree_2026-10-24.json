@@ -40,7 +40,34 @@
     "Audio-segment file count is not a verified count of unique source recordings.",
     "No filename-to-Xeno-canto source mapping or item-level recording license was inspected.",
     "The GBIF CC BY-NC 4.0 metadata declaration is not a blanket license for underlying Xeno-canto audio.",
-    "The README describes acoustic motifs and ecological pattern analysis; this inventory adds no receiver-behavior or call-meaning labels."
+    "The README describes acoustic motifs and ecological pattern analysis; this inventory adds no receiver-behavior or call-meaning labels.",
+    "The filename screen covers all 1,280 paths but validates only three candidate record pages and one filename/taxon match; it is not a complete join or item-level license census."
   ],
-  "next_gate": "Determine whether filenames and permitted public metadata can identify source-recording IDs and their item-level terms without retrieving repository payloads or retaining sensitive coordinates. Resolve component-specific rights before any content retrieval, code execution, commercial-use review or model training."
+  "next_gate": "The full filename-token inventory is metadata-only and identifies 495 candidate Xeno-canto IDs; three spot checks establish variable item-level terms, not complete rights. The official API requires a key and warns of strict rate limits. Do not scrape around those controls or retain location fields. Continue only through provider-permitted authenticated metadata access with an approved provenance/privacy scope; otherwise pivot to a cleaner task-matched dataset.",
+  "filename_id_screen": {
+    "checked": "2026-10-24",
+    "scope": "Filename tokens and three public recording-page metadata checks only; no repository payloads, media, or coordinate values inspected or retained.",
+    "audio_paths_matching_numeric_id_segment_pattern": 1280,
+    "distinct_numeric_id_candidates": 495,
+    "candidate_ids_verified_as_record_pages": 3,
+    "filename_taxon_matches_in_sample": 1,
+    "sample_record_license_terms": {
+      "CC BY-NC-ND 4.0": 2,
+      "CC BY-NC-SA 4.0": 1
+    },
+    "complete_record_id_join": false,
+    "complete_item_license_inventory": false,
+    "media_downloaded": false,
+    "coordinates_extracted_or_retained": false,
+    "interpretation": "The numeric filename tokens are plausible Xeno-canto IDs; three spot checks support that interpretation but do not validate all 495 candidates or establish that the sampled records belong to the study's analyzed corpus."
+  },
+  "official_api_access_screen": {
+    "source_id": 389,
+    "checked": "2026-10-24",
+    "api_key_required": true,
+    "strict_rate_limit_warning": true,
+    "api_key_used": false,
+    "bulk_api_queries_made": false,
+    "decision": "Do not scrape individual pages around the official API access requirements. Use only permitted authenticated API access or pivot to a cleaner source."
+  }
 }
