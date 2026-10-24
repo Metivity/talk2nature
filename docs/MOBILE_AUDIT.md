@@ -358,4 +358,14 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 
 **Test:** `node --test tests/app-update.test.mjs` passed all four cases, covering a global notice, offline-status fallback, an already-waiting worker and a newly installed worker. The update remains user-controlled: it does not force a reload or activate a waiting worker mid-session.
 
-**Limits and next decision:** the release and helper behavior are verified, but a full update cycle from an older installed shell remains unverified on a physical phone and with a screen reader. Keep the visible guidance to export wanted work, close all Talk2Nature windows and reopen. No microphone, recording, upload or animal/participant data was used.
+**Limits and next decision:** the release and helper behavior are verified, but a full update cycle from an older installed shell remains unverified on a physical phone and with a screen reader. Preserve the waiting-worker behavior while making its save/reopen guidance clear to nontechnical users; the October 25 wording change is recorded below. No microphone, recording, upload or animal/participant data was used.
+
+## October 25 — simplify the waiting-update notice
+
+**Question and evidence:** does the update notice tell an everyday app user what to do without internal browser language? The live Station accessibility tree showed “Nothing will reload now” and “Export work you want to keep,” followed by an instruction to close all Talk2Nature windows. Those phrases describe implementation details rather than the user's next action.
+
+**Change:** the notice now reads: “A new version is ready. Save any moment you want to keep, close all Talk2Nature tabs or windows, then reopen the app.” The worker still waits for the existing windows to close; no forced reload or mid-session activation was introduced. The focused unit test pins the exact text in both global-notice and fallback cases.
+
+**Verification:** PR [#381](https://github.com/Metivity/talk2nature/pull/381) merged as [`f1be81c`](https://github.com/Metivity/talk2nature/commit/f1be81cd62e40ba02ac4e9ab17ab86858ffdaa03). Pages run [#40134112457](https://github.com/Metivity/talk2nature/actions/runs/40134112457) passed Python and Node suites, public build, publish-boundary checks, deployment and live-route verification. A cache-bypassing live browser view at 390 × 844 CSS pixels displayed the new message in two lines; document and body widths were both 390 pixels, no page errors were reported, and the Station remained ready for its synthetic rehearsal. Starting then stopping a 4.7-second invented rehearsal left the page and waiting notice in place; the recap marked the audio synthetic and partial. No microphone was opened, and no save or upload action was initiated.
+
+**Limits:** this is in-app-browser emulation, not physical-phone or screen-reader evidence. It verifies message rendering and no interruption in the synthetic path; it does not verify installing an update on iOS or Android.

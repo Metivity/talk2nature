@@ -1,5 +1,11 @@
 # Project status
 
+## October 25 — make the mobile update notice easier to follow
+
+The live Station showed a waiting-update notice with browser/engineering wording. Rephrased it to tell users to save any moment they want to keep, close Talk2Nature tabs or windows, and reopen the app. The existing service-worker wait remains in place; the app does not force a reload during a session.
+
+Validation: all 169 Python tests passed with one intentional skip and all 117 Node tests passed. The public build generated 136 pages plus 404; the site checker validated 137 HTML pages, 7,108 links and 136 reachable public routes. PR [#381](https://github.com/Metivity/talk2nature/pull/381) merged as [`f1be81c`](https://github.com/Metivity/talk2nature/commit/f1be81cd62e40ba02ac4e9ab17ab86858ffdaa03). Pages run [#40134112457](https://github.com/Metivity/talk2nature/actions/runs/40134112457) passed its complete test/build/deploy and live-route checks. In a cache-bypassing 390 × 844 CSS-pixel browser view, the notice rendered in two lines, body/document width stayed at 390 pixels and the browser reported no page errors. A synthetic rehearsal stayed on screen until stopped and remained explicitly partial and synthetic; no microphone, save or upload action was initiated. Physical-phone and screen-reader behavior remain unverified.
+
 ## October 24 — reproduce the bat metadata audit and test a caller-specific estimand
 
 **Question:** does the bat corpus's large participant-pair graph rule out every useful held-out evaluation, or only a stricter unseen-pair/group target?
