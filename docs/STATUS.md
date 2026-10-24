@@ -3464,3 +3464,11 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Validation:** 159 Python tests and 115 Node tests passed; the collection catalog validates 204 records. The local noindex build produced 133 routes plus 404; the site checker validated 134 HTML pages and 6,748 links. The explicit-origin public candidate also produced 133 routes plus 404; the checker validated 134 pages, 6,882 links and all 133 public routes. The new page has the expected title, description, `index,follow`, self-canonical and sitemap entry. This is a local release candidate, not a deployment or evidence of Google indexing.
 
 **Publication receipt (October 24):** PR [#310](https://github.com/Metivity/talk2nature/pull/310) passed Public checks, including browser-tool logic, native Android station and preview-site checks, and merged as `6ffe37357b9cabf957fadc4a2cbd0be8f8fb5da8`. Pages workflow [#40064817705](https://github.com/Metivity/talk2nature/actions/runs/40064817705) built, checked and deployed successfully; its live-route and crawl-metadata verification passed. A separate verified-TLS request to the new research route returned HTTP 200 with the intended title, self-canonical, `index,follow` and key findings. The public sitemap parses as 133 URLs and `robots.txt` names it. This verifies publication and crawl configuration, not Google indexing or ranking.
+
+## October 24 — surface the feature-only benchmark in researcher onboarding
+
+**Question:** can a researcher see quickly that the new cross-species dataset is a pitch-measurement resource, not a communication dataset?
+
+**Evidence and change:** the newly published F0 note was available in the research library but was absent from both GitHub's README research boundary and the researcher-start overview. Added a concise link and plain-language distinction to those entry points, including the 13 waveform taxa and 233-call monk-parakeet subset. Kept the F0 path separate from the bat interaction-context lead and the parrot phone-app cohort.
+
+**Limits and next decision:** this is a documentation/discoverability improvement only. It does not resolve dataset provenance, rights, group keys or independent scientific review; no data, code or weights were acquired or run. No external researcher was contacted. AutoResearch remains **NOT READY**.
