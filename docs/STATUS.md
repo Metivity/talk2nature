@@ -1,5 +1,17 @@
 # Project status
 
+## October 24 — add honeybee dance/follower data as a research candidate
+
+**Question:** is there a large, existing animal dataset that connects a defined signal to an observed receiver and an external outcome?
+
+**Evidence reviewed:** selected methods/results passages from Dormagen et al. (2023) and the official Zenodo v1.0 record plus API metadata. The paper reports more than 100,000 waggle phases and links dance features, follower behavior and feeder observations. The Zenodo record lists 11 files totaling about 4.9 GB, including more than 46 million 2019 track detections; its API declares CC BY 4.0 for the dataset. No payload, code or model was acquired or run.
+
+**Finding and limits:** honeybees are now the clearest reviewed candidate for a bounded signal-to-receiver question. The paper already reports the key dance/follower associations, the archive spans one Berlin observation-hive site across two seasons, and the reported sample-level evaluation groups by hour rather than holding out bees or colonies. Fine-scale feeder coordinates are present; no exact location is reproduced.
+
+**Change:** added source/resource records, a source-grounded evidence page, a no-data candidate comparison, the scientific-review packet and candidate run-card entries, plus the first-animal guide link. The active project goal now distinguishes large-scale song-structure methods, known-signal/receiver research, acoustic-context prediction and the separate household-app cohort.
+
+**Next gate:** independent insect-behavior and ML/statistical review of novelty, event/animal unit, possible bee-held-out evaluation, outcome validity, linked code/model rights and location minimization. No reviewer was contacted. No benchmark was selected and AutoResearch remains **NOT READY**.
+
 ## October 24 — include OpenWhistle in independent-review decision
 
 **Question:** do the candidate comparison, no-data review packet and public methods-review form include the newly cataloged dolphin corpus with its limits and rights boundaries?
