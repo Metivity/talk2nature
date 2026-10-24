@@ -6541,7 +6541,7 @@
       "version": "Hugging Face revision eea37423c7841b0f99a7c0380f945999c0a2c489; data-license declaration at repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
       "source_ids": [
         341,
-        390
+        412
       ],
       "priority": 3,
       "reviewed": "2026-10-24",
@@ -6553,7 +6553,7 @@
       "attribution": "Mustun et al. (2026), OpenWhistle; cite the dataset and paper, credit source, and indicate changes.",
       "rights": {
         "license": "CC-BY-4.0",
-        "scope": "The official repository README and LICENSE-DATA at source 390 declare CC BY 4.0 for the listed OpenWhistle dataset releases; the Hugging Face card license field is null. This does not cover model weights or code.",
+        "scope": "The official repository README and LICENSE-DATA at source 412 declare CC BY 4.0 for the listed OpenWhistle dataset releases; the Hugging Face card license field is null. This does not cover model weights or code.",
         "evidence_url": "https://github.com/sumbre-lab/OpenWhistle/blob/ad715bb3cf24c36f85b3c3c8159077548134a39e/LICENSE-DATA",
         "conditions": "Attribute the authors/source, cite the paper, indicate changes and confirm the exact artifact is within the declared dataset scope before use.",
         "research_use": "conditional",
@@ -6571,7 +6571,7 @@
       "version": "Hugging Face revision 2b7806e3c5913c459c40b824ab7f944d494b3993; data-license declaration at repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
       "source_ids": [
         342,
-        390
+        412
       ],
       "priority": 2,
       "reviewed": "2026-10-24",
@@ -6583,7 +6583,7 @@
       "attribution": "Mustun et al. (2026), OpenWhistle; cite the dataset and paper, credit source, and indicate changes.",
       "rights": {
         "license": "CC-BY-4.0",
-        "scope": "The official repository README and LICENSE-DATA at source 390 declare CC BY 4.0 for the listed OpenWhistle dataset releases; the Hugging Face card license field is null. This does not cover model weights or code.",
+        "scope": "The official repository README and LICENSE-DATA at source 412 declare CC BY 4.0 for the listed OpenWhistle dataset releases; the Hugging Face card license field is null. This does not cover model weights or code.",
         "evidence_url": "https://github.com/sumbre-lab/OpenWhistle/blob/ad715bb3cf24c36f85b3c3c8159077548134a39e/LICENSE-DATA",
         "conditions": "Attribute the authors/source, cite the paper, indicate changes and confirm the exact artifact is within the declared dataset scope before use.",
         "research_use": "conditional",
@@ -6600,7 +6600,7 @@
       "url": "https://github.com/sumbre-lab/OpenWhistle/tree/ad715bb3cf24c36f85b3c3c8159077548134a39e",
       "version": "Repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
       "source_ids": [
-        390
+        411
       ],
       "priority": 3,
       "reviewed": "2026-10-24",

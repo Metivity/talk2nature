@@ -738,6 +738,31 @@ class SiteTests(unittest.TestCase):
             reading_path=(root/'research/starting-points/index.html').read_text()
             self.assertIn('/research/companion-parrot-name-use-2026/',reading_path)
 
+    def test_openwhistle_source_ids_link_to_its_pinned_repository_records(self):
+        project_root=Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research/openwhistle-dolphin-benchmark/index.html').read_text()
+            sources=json.loads((project_root/'content/sources.json').read_text())
+            by_id={source['id']:source for source in sources}
+            readme='https://github.com/sumbre-lab/OpenWhistle/blob/ad715bb3cf24c36f85b3c3c8159077548134a39e/README.md'
+            data_license='https://github.com/sumbre-lab/OpenWhistle/blob/ad715bb3cf24c36f85b3c3c8159077548134a39e/LICENSE-DATA'
+            self.assertEqual(by_id[390]['title'],'Rüttimann et al., multimodal BirdPark system for songbird behavior')
+            self.assertEqual(by_id[411]['url'],readme)
+            self.assertEqual(by_id[412]['url'],data_license)
+            self.assertIn(readme,page)
+            self.assertIn(data_license,page)
+            self.assertIn('NeurIPS 2026',page)
+            self.assertNotIn('https://doi.org/10.7717/peerj.20203',page)
+            resources=json.loads((project_root/'research/resources.json').read_text())['resources']
+            by_resource={resource['id']:resource for resource in resources}
+            self.assertEqual(by_resource['birdpark-multimodal-songbird-paper-2025']['source_ids'],[390])
+            self.assertEqual(by_resource['openwhistle-pretraining-audio']['source_ids'],[341,412])
+            self.assertEqual(by_resource['openwhistle-classification-dataset']['source_ids'],[342,412])
+            self.assertEqual(by_resource['openwhistle-code']['source_ids'],[411])
+
     def test_first_animal_page_distinguishes_dataset_interaction_and_phone_paths(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
