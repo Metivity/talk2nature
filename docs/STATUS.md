@@ -3671,4 +3671,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 
 **Validation:** all 159 repository Python tests and 115 Node tests passed before the final display-only date-label correction; the focused 80-test site suite passed after it. The resource catalog validates 212 records. The local noindex build produced 134 pages plus 404, and the site checker passed with 135 HTML documents and 6,833 links. The explicit-origin public candidate build produced 134 routes; 135 HTML documents and 6,968 links passed, all 134 public routes were reachable, and the new page's title, index directive, self-canonical, and sitemap entry were verified. The rendered page and mobile navigation were inspected in 390 × 844 browser emulation; no physical-device or screen-reader check was performed.
 
-**Limits:** these are source and software checks, not a dataset reproduction, insect-behavior result, microphone validation, or evidence of communication. AutoResearch remains **NOT READY**; independent insect-bioacoustics and audio-hardware review, source-level rights checks, and a leakage-safe task would be required before any data use. This remains a local candidate until merged and deployed.
+**Limits:** these are source and software checks, not a dataset reproduction, insect-behavior result, microphone validation, or evidence of communication. AutoResearch remains **NOT READY**; independent insect-bioacoustics and audio-hardware review, source-level rights checks, and a leakage-safe task would be required before any data use. At this checkpoint, this remained a local candidate; the release is recorded in the following entry.
+
+
+## October 24 — publish the InsectSet459 research assessment
+
+**Release receipt:** PR [#330](https://github.com/Metivity/talk2nature/pull/330) merged to `main` as [`5effc83`](https://github.com/Metivity/talk2nature/commit/5effc83f0c363b1e26f85731c4bde14d72b65913). Manual Pages run [#40084379299](https://github.com/Metivity/talk2nature/actions/runs/40084379299) passed repository tests, the explicit-origin build, link/SEO/publish-boundary checks, deployment and the live-route verifier.
+
+**Live verification:** the deployed page opened over HTTPS in the browser with the expected title, evidence summary, and all three source links. A 390 × 844 emulated viewport showed the mobile navigation and readable page layout. A separate local Python live-site check could not validate TLS because this machine's Python trust store lacks the issuer certificate; the GitHub Pages workflow's independent live verifier succeeded.
+
+**Limits:** this release publishes a literature assessment only. It does not validate the dataset, phone-microphone capability, insect behavior, communication meaning, or Google indexing. No dataset files or models were acquired or run; AutoResearch remains **NOT READY**. Physical devices and screen readers were not tested.
