@@ -4834,5 +4834,58 @@
       "rights": "The authors’ repository README states CC BY 4.0, but no standalone LICENSE file is visible in the root and its scope across code and derived files is unresolved; its cited Zenodo DOI is a placeholder. GBIF’s CC BY-NC 4.0 declaration applies to its metadata distribution, not automatically to source audio. Individual Xeno-canto recording terms vary and must be checked against exact recording IDs and intended use. No component is cleared for Talk2Nature commercial training or redistribution.",
       "experiment": "No reproduction was performed. Any future work requires the complete methods, a filename-to-source mapping, a per-recording rights manifest, field-quality and sampling review, a scientifically justified extension and group-aware evaluation. Keep predictions separate from observer-entered labels and do not infer semantic meaning from motif or species classification."
     }
+  },
+  {
+    "slug": "zebra-finch-birdpark-multimodal-segmentation-2025",
+    "title": "Synchronized finch recordings help locate calls, not translate them",
+    "seo_description": "BirdPark links zebra-finch audio, video and body-vibration sensors. The data can inform vocal-event and caller-labeling methods, not call meaning.",
+    "taxon": "Zebra finch (Taeniopygia guttata)",
+    "kind": "Multimodal bioacoustic methods and datasets",
+    "purpose": "Models & evaluation",
+    "year": "2025",
+    "year_label": "Peer-reviewed system paper; related dataset records span 2024–2026",
+    "source_ids": [
+      390,
+      391,
+      392,
+      393
+    ],
+    "reviewed": "2026-10-24",
+    "review_stage": "Paper abstract and selected searchable methods passages plus exact dataset-record metadata reviewed; no dataset, code or model acquired or run",
+    "review_depth": "Reviewed the PubMed bibliographic record and abstract, searchable PMC passages on shared-clock synchronization, multimodal vocal segmentation and channel-miss evaluation, the ETH Research Collection article-rights record, and exact Zenodo v2 descriptions and file inventories for records 13144875 and 20608098. The ETH Zurich dataset record was reviewed for its description and rights label. The complete paper, supplement, annotation guides, CSV contents, audio/video/accelerometer files, code and model weights were not inspected or acquired. No independent avian or ML/statistical reviewer assessed this note.",
+    "review_locator": "Rüttimann et al. (2025), PeerJ 13:e20203, DOI 10.7717/peerj.20203; Zenodo v2 DOI 10.5281/zenodo.13144875; Zenodo v2 DOI 10.5281/zenodo.20608098; ETH Zurich dataset DOI 10.3929/ethz-c-000788603.",
+    "finding": "BirdPark is a specialized synchronized recording system combining video, stationary microphones and animal-borne accelerometer transmitters. The paper uses redundant channels to help find vocal events and separate likely caller sources in freely behaving zebra-finch groups. The public records describe several related but distinct releases: a Zenodo v2 record claiming 112 minutes across four experiments, a later annotator-training pack with a 4.5 GB pair-example archive, and an ETH record describing ten mixed-sex pairs (20 birds) with annotated clean and overlapping vocalizations. These resources could inform bounded vocal-event, overlap and caller-attribution methods. Their labels do not establish what a call means or whether a bird understood a message.",
+    "limitations": "The article's searched Table 2 passage describes a 28-minute segmentation evaluation slice, while Zenodo v2 describes 112 minutes across four experiments; the relationship and exact common sample coverage were not reconciled, so these counts must not be combined. The Zenodo records show no dataset license field; the ETH record says In Copyright - Non-Commercial Use Permitted, which does not clear commercial training or redistribution. The separate releases may overlap and are not independent cohorts by default. The recording setup is a specialized lab system with microphones, cameras and body-worn sensors, not an ordinary phone workflow. The inspected labels concern event boundaries, signal visibility or source attribution, not independently established call meaning, receiver response or open-ended communication. Split membership, annotator agreement and component provenance remain unreviewed.",
+    "next_review": "Keep each dataset metadata-only. First reconcile the paper-to-deposit relationship, exact recording and annotation coverage, and rights for each component; do not retrieve payloads while dataset terms are absent or restrictive. Ask an independent avian-bioacoustics and ML/statistical reviewer whether a small, animal-held-out vocal-event or caller-attribution task is useful and whether the available annotations support it. If rights or independent units do not support a defensible test, retain BirdPark as a methods reference and keep zebra-finch behavioral categorization as a separate literature lead. Do not present this work as a meaning benchmark or use animal playback.",
+    "lesson": "Synchronized audio and video can help establish when an animal vocalized and which source may have produced the sound. That is a useful step toward studying interactions, but caller attribution and event segmentation are not evidence that a model understands the call.",
+    "study_snapshot": [
+      [
+        "Recording design",
+        "The article describes a central timing source synchronizing microphones, cameras and body-borne accelerometer transmitters; a custom animal lab setup supplied redundant views of vocal activity."
+      ],
+      [
+        "Zenodo group dataset",
+        "Record 13144875 v2 reports 112 minutes from four experiments, groups of two, four or eight birds, and a 12.3 GB package. Its page does not display a dataset license."
+      ],
+      [
+        "Annotator examples",
+        "Record 20608098 v2 describes a guide and example annotations; its 4.5 GB Pair_example_wav.zip is explicitly for annotator test files. The page does not display a dataset license."
+      ],
+      [
+        "ETH pair dataset",
+        "The institutional record describes ten mixed-sex pairs and 20 birds, with manually annotated examples of clean and overlapping vocalizations; its rights label is In Copyright - Non-Commercial Use Permitted."
+      ],
+      [
+        "Interpretation",
+        "These are candidate resources for segmentation and source attribution. Neither the paper nor the reviewed deposits provide a ground-truth label for what a call means to a receiver."
+      ]
+    ],
+    "expert_review": "No independent avian-bioacoustics, animal-welfare or ML/statistical review has been completed. The full methods and exact overlap between deposits remain unverified.",
+    "reuse": {
+      "status": "Metadata-only methods candidate; not admitted to Talk2Nature storage, training or a benchmark.",
+      "asset": "This page contains an original short summary and citations. The paper, Zenodo deposits, ETH dataset, annotation guide, media, software and weights are separate assets; no third-party payload was acquired.",
+      "rights": "The peer-reviewed article is listed as CC BY 4.0 in the ETH institutional publication record. Zenodo records 13144875 and 20608098 have no displayed dataset license field. The ETH dataset record states In Copyright - Non-Commercial Use Permitted. These declarations have different scopes; no dataset, code, model or media component is cleared for Talk2Nature commercial training or redistribution.",
+      "experiment": "No experiment, data ingestion, training, playback or reproduction was performed. Any future task must define an observable acoustic target, exact permitted input files, an animal-held-out evaluation, baselines and reviewer approval before acquisition or execution. Predictions must remain separate from human observations and any interpretation of communication."
+    }
   }
 ]

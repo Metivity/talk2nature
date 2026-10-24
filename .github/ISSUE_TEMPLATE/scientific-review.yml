@@ -7,6 +7,14 @@ body:
       value: |
         Public issue: do not include recordings, raw annotations, participant or animal identifiers, private correspondence, unpublished material, credentials, or sensitive locations. A review is not an endorsement or partnership.
   - type: input
+    id: review-target
+    attributes:
+      label: Candidate, claim, or decision you are reviewing
+      description: No first benchmark is selected. Name one bounded question or artifact, such as bat interaction-context prediction, zebra-finch turn-taking, V33DA caller attribution, or Great Tit song structure.
+      placeholder: The specific question or decision I reviewed is…
+    validations:
+      required: true
+  - type: input
     id: source-version
     attributes:
       label: Exact source and version reviewed

@@ -4017,5 +4017,37 @@
     "url": "https://xeno-canto.org/explore/api",
     "checked": "2026-10-24",
     "origin": "Direct TLS-verified read of the official API documentation. No API key or recording payload was used."
+  },
+  {
+    "id": 390,
+    "title": "Rüttimann et al., multimodal BirdPark system for songbird behavior",
+    "description": "PeerJ article describing synchronized video, microphones and animal-borne accelerometers for segmenting vocal activity and separating vocalizations among freely behaving songbirds. Article rights are separate from dataset rights.",
+    "url": "https://doi.org/10.7717/peerj.20203",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the PubMed bibliographic record and abstract, searchable PMC full-text passages on synchronized acquisition and vocal-segmentation evaluation, and the ETH Research Collection article record declaring CC BY 4.0 for the paper. The full supplement, code and data payloads were not inspected or acquired."
+  },
+  {
+    "id": 391,
+    "title": "BirdPark zebra-finch group recordings and vocal-segment annotations, Zenodo v2",
+    "description": "Zenodo record 13144875 v2 describes 112 minutes across four experiments, groups of two, four or eight birds, multimodal recordings and manually annotated vocal segments. The record page has no displayed dataset license.",
+    "url": "https://doi.org/10.5281/zenodo.13144875",
+    "checked": "2026-10-24",
+    "origin": "Read the exact Zenodo v2 record page and file inventory, including provider-reported file sizes and MD5 values. No payload was acquired or inspected; an absent license field was preserved as unresolved."
+  },
+  {
+    "id": 392,
+    "title": "BirdPark paired zebra-finch annotation examples, Zenodo v2",
+    "description": "Zenodo record 20608098 v2 contains an annotation guide, bird-list and vocalization CSVs, a sample WAV, and a 4.5 GB pair-example WAV archive described as test material for new annotators. The record page has no displayed dataset license.",
+    "url": "https://doi.org/10.5281/zenodo.20608098",
+    "checked": "2026-10-24",
+    "origin": "Read the exact Zenodo v2 record page and file inventory, including provider-reported sizes and MD5 values. No PDF, CSV, WAV or archive payload was acquired or inspected; an absent license field was preserved as unresolved."
+  },
+  {
+    "id": 393,
+    "title": "ETH Zurich zebra-finch mixed-sex pair vocal-segment dataset",
+    "description": "ETH Research Collection record describes ten freely behaving mixed-sex pairs (20 individuals), with manually annotated examples of clean and overlapping vocalizations and simultaneous microphone and accelerometer signals. Its rights field says In Copyright - Non-Commercial Use Permitted.",
+    "url": "https://doi.org/10.3929/ethz-c-000788603",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the institutional dataset record and its description, contributor metadata and displayed rights label. The dataset files and description PDF were not acquired or inspected; the displayed label is recorded as a provider statement, not legal advice."
   }
 ]
