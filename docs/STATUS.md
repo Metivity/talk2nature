@@ -3547,3 +3547,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Limits:** the tender listing’s attachment bundle was not retrieved; detailed Israeli requirements remain based on the previously reviewed official V5 rules and MoEP briefing. No funder was contacted. This is a funding-status update, not an application or a funding commitment.
 
 **Validation and release:** all 159 Python and 115 Node tests passed. The explicit-origin public build produced 133 routes plus 404; the site checker validated 134 HTML pages, 6,903 links and all 133 public routes. PR [#316](https://github.com/Metivity/talk2nature/pull/316) passed the public checks, including native Android checks, and merged to `main` as [`aa29bda`](https://github.com/Metivity/talk2nature/commit/aa29bdada0f79d57f700c2848be2dc215e382b4b). Manual Pages run [#40071811713](https://github.com/Metivity/talk2nature/actions/runs/40071811713) passed its repository tests, public build, SEO/publish-boundary check, deployment and live-route verifier. A direct verified-TLS request to the published opportunities page returned the expected title and the current status and deadlines. This confirms publication, not Google indexing or funding eligibility.
+
+## October 24 — clarify the Station microphone permission gate
+
+**Finding:** during a 390 × 844 mobile browser review, the microphone-permission checkbox was unchecked while “Start listening” looked available. The existing start handler already stopped before requesting microphone access, so this was a confusing control state rather than evidence of microphone access.
+
+**Change:** Start now begins disabled in the HTML and stays disabled until the user checks the explicit permission box; the checkbox immediately refreshes the control state. “Try without a microphone” remains available as a separate synthetic rehearsal.
+
+**Validation:** all 159 Python and 115 Node tests passed. The explicit-origin public build produced 133 routes plus 404; the site checker validated 134 HTML documents, 6,903 links and all 133 public routes. In a 390 × 844 local browser preview, accessibility inspection and visual review showed Start disabled and the synthetic rehearsal available. No microphone permission was granted or requested; physical-phone behavior and a fresh end-to-end rehearsal after this change were not tested.
+
+**Limit:** this improves consent clarity; it does not change local capture, storage, upload or research-admission behavior.

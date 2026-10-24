@@ -44,6 +44,7 @@ function controls() {
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
+  $('station-start').disabled = busy || !$('station-permission').checked;
   $('station-stop').disabled = !(pending || active);
   $('station-stop').textContent = pendingSynthetic || session?.origin === 'synthetic' ? 'End rehearsal' : 'Stop recording';
   $('station-voice').disabled = !active; $('station-observe').disabled = !active;
@@ -204,6 +205,7 @@ function modeGuidance() {
 }
 if (['companion', 'demo'].includes(new URL(location.href).searchParams.get('mode'))) $('station-capture-mode').value = 'window';
 $('station-capture-mode').addEventListener('change', modeGuidance); modeGuidance();
+$('station-permission').addEventListener('change', controls);
 $('station-start').addEventListener('click', () => start(false)); $('station-demo').addEventListener('click', () => start(true)); $('station-stop').addEventListener('click', () => stop());
 for (const button of document.querySelectorAll('[data-observation]')) button.addEventListener('click', () => {
   if (!active || exporting) return;
