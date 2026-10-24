@@ -3515,7 +3515,7 @@
     "origin": "Reviewed arXiv v1 (2609.34839v1): HTML abstract, data-collection and annotation sections, benchmark tasks and split, limitations, ethics statement and license statement. No dataset, code or model files were acquired or run.",
     "rights": {
       "article": "The arXiv version is marked CC BY 4.0; its ethics section also says OpenWhistle is released under CC BY 4.0.",
-      "scope": "The Hugging Face dataset cards do not declare their own license fields, and the separate model card says its license is unspecified. Confirm component-level coverage before acquiring or using data, code or weights, especially for commercial use."
+      "scope": "The official repository README and LICENSE-DATA at source 390 explicitly declare CC BY 4.0 for the OpenWhistle datasets, despite null license fields on the pinned Hugging Face dataset cards. This does not license the separate model or code; the model card says its terms are unspecified and no code license was visible at the reviewed repository root."
     }
   },
   {
@@ -3524,7 +3524,7 @@
     "description": "Official Hugging Face snapshot eea37423c7841b0f99a7c0380f945999c0a2c489 for the unlabeled 96 kHz dolphin-audio corpus. The pinned card lists 31,780 segments totaling 114.284 hours and a repository size of about 79.8 GB.",
     "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/eea37423c7841b0f99a7c0380f945999c0a2c489",
     "checked": "2026-10-23",
-    "origin": "Reviewed the README dataset card, schema, split counts, review-sample description and repository file inventory at immutable revision eea37423c7841b0f99a7c0380f945999c0a2c489. The Hugging Face API cardData.license field was null at this revision; no sample or full audio file was downloaded."
+    "origin": "Reviewed the README dataset card, schema, split counts, review-sample description and repository file inventory at immutable revision eea37423c7841b0f99a7c0380f945999c0a2c489. The Hugging Face API cardData.license field was null at this revision; no sample or full audio file was downloaded. The official repository data-license declaration is recorded separately in source 390."
   },
   {
     "id": 342,
@@ -3532,7 +3532,7 @@
     "description": "Official Hugging Face snapshot 2b7806e3c5913c459c40b824ab7f944d494b3993 for the 8,354-example, 10-category expert-annotated whistle set; it lists train, validation and test splits and a repository size of about 6.65 GB.",
     "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/2b7806e3c5913c459c40b824ab7f944d494b3993",
     "checked": "2026-10-23",
-    "origin": "Reviewed the README dataset card, label definitions, split counts, review-sample configurations and repository file inventory at immutable revision 2b7806e3c5913c459c40b824ab7f944d494b3993. The Hugging Face API cardData.license field was null at this revision; no audio, labels or spectrogram files were downloaded."
+    "origin": "Reviewed the README dataset card, label definitions, split counts, review-sample configurations and repository file inventory at immutable revision 2b7806e3c5913c459c40b824ab7f944d494b3993. The Hugging Face API cardData.license field was null at this revision; no audio, labels or spectrogram files were downloaded. The official repository data-license declaration is recorded separately in source 390."
   },
   {
     "id": 343,
