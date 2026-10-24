@@ -339,3 +339,11 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Limits:** this is a local Chromium viewport-emulation check, not a physical-phone, Safari/Android, screen-reader or first-time-user study. It uses invented sessions only; no microphone, recording, upload, save or research admission occurred. The screenshot is a temporary local QA artifact and is not part of the site.
 
 **Release receipt:** PR [#328](https://github.com/Metivity/talk2nature/pull/328) merged as [`b05bc55`](https://github.com/Metivity/talk2nature/commit/b05bc551ae36f4867722a388d1655dc621e7c5b8). Pages run [#40081911116](https://github.com/Metivity/talk2nature/actions/runs/40081911116) passed its public build, tests, publish-boundary checks, deployment and live-route verifier. A separate live Chromium check returned HTTP 200 and confirmed the same 22.8-pixel / 105.5-pixel clearances at 320 × 740 and 390 × 844, with working invented examples and no page errors. Physical devices and assistive technologies remain untested.
+
+## October 24 — keep the pending-update alert in one status region
+
+**Question and evidence:** does a waiting service-worker update create one clear, accessible notice? The live Field Companion's accessibility tree showed the identical “Update ready” message in both the global update banner and the offline-tools status after a new worker was waiting.
+
+**Change:** send the update message to the global banner when it exists, leaving the offline status focused on whether the public shell is ready; use the offline status only as a fallback on a page without the banner. Added checks for both cases.
+
+**Limits:** this removes duplicate status text by construction and tests the state helper; the live observation was a browser accessibility-tree check, not a phone-width, physical-device or screen-reader test. No microphone, recording, upload or animal/participant data was used. The change needs CI, a release and post-release browser verification before it is considered live.
