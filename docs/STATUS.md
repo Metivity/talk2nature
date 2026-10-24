@@ -1,5 +1,15 @@
 # Project status
 
+## October 24 — add a bounded honeybee review route for research groups
+
+**Question:** can a research group inspect the honeybee signal/follower candidate through a clear, no-data review task?
+
+**Change:** the university evaluation page and researcher brief now ask whether bee-held-out analysis could add value beyond published dance/follower/outcome associations, distinguish direct observations from inference, and assess limits of a two-season, single-site study. The route links the source-grounded evidence note, consolidated no-data review packet and existing public scientific-review form. It requests no recordings, archives, models or unpublished information.
+
+**Validation:** all 168 Python tests passed with one intentional external-sample skip. The explicit public build generated 136 pages plus 404; the site checker validated 137 HTML documents, 7,109 links and all 136 public routes. The styled local build and live page were inspected at desktop width. At an emulated 390 CSS-pixel width, the new review cards measured 312 pixels, their action links stacked, and document width matched the viewport; physical-phone use remains unverified.
+
+**Limit and next gate:** this is an invitation to critique, not independent review or benchmark selection. It does not establish colony/site generalization or animal translation. The next gate remains independent insect-behavior and ML/statistical review; AutoResearch remains **NOT READY**.
+
 ## October 24 — add honeybee dance/follower data as a research candidate
 
 **Question:** is there a large, existing animal dataset that connects a defined signal to an observed receiver and an external outcome?

@@ -702,6 +702,10 @@ The user asked whether Talk2Nature can start from an existing large animal datas
 
 The next science gate is independent insect-behavior and ML/statistical review of novelty, event/animal units, a possible bee-held-out split, outcome validity, separate code/model rights and safe location handling. The [candidate decision](FIRST_DATASET_DECISION.md), [no-data review packet](FIRST_DATASET_REVIEW_PACKET.md), [run card](BENCHMARK_CANDIDATE_RUN_CARD.md) and [public evidence note](../research/honeybee-dance-following-2023/) now capture the route. No reviewer has been contacted, and AutoResearch remains **NOT READY**.
 
+### October 24 continuation — make the honeybee candidate reviewable by research groups
+
+Added an optional, no-data honeybee methods-review route to the university evaluation page and brief. It asks whether a bee-held-out analysis could add value beyond the published signal/follower/outcome associations, what is directly observed versus inferred, and what the single-site/two-season design can support. The route links the public evidence note, consolidated candidate-review packet and public review form. It requests no recordings, archive files, models or unpublished data. This makes independent critique easier to find; it does not count as a review, select a benchmark or change AutoResearch's **NOT READY** status. The next scientific gate remains review by an independent insect-behavior specialist and ML/statistical reviewer.
+
 ### October 24 continuation — add a bee signal-and-response candidate
 
 The user asked whether Talk2Nature can start from an existing large animal dataset and apply machine learning. I reviewed selected methods and results from Dormagen et al. (2023) and the official Zenodo v1.0 record/API. The paper links a known honeybee waggle signal with followers and feeder outcomes; the deposit lists 11 files totaling about 4.9 GB, including more than 46 million 2019 track detections, and the API declares CC BY 4.0 for the dataset. The data also include fine-scale feeder locations; no payload, code or model was acquired or run.
