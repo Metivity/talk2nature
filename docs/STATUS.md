@@ -3598,3 +3598,21 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Change and decision:** added source 390 and five component-specific research-resource entries for the paper, pretraining corpus, labeled classification dataset, code and Wav2Vec checkpoint. Updated the OpenWhistle research note, first-animal guide and benchmark run card. The dataset release is no longer described as wholly rights-unresolved; the model and code remain unresolved, and all files remain metadata-only. A dataset license does not make the model, source code or a benchmark result ready.
 
 **Validation and limits:** the paper and cards remain upstream claims; no audio, labels, code or weights were acquired or executed. No independent cetacean or ML reviewer is assigned, so no model run or AutoResearch is authorized. All 159 repository Python tests passed; all 115 Node tests passed; the resource catalog validator accepted 211 records. The local noindex build produced 133 pages plus 404, and `scripts/check_site.py` passed with 134 HTML pages and 6,782 links checked. The first-animal page displays the revised dataset/code/model rights distinction. These are maintainer-run repository and build checks, not an independent reproduction, biological result, or public deployment. No push or deployment was performed.
+
+## October 24 — publish the OpenWhistle rights correction
+
+**Release receipt:** PR [#323](https://github.com/Metivity/talk2nature/pull/323) merged to `main` as [`e62df45`](https://github.com/Metivity/talk2nature/commit/e62df45003ee6a57f2feacba89e062700b425f9b). Manual Pages run [#40078037880](https://github.com/Metivity/talk2nature/actions/runs/40078037880) completed successfully, including public tests, build and publish-boundary checks, deployment, and its live-route verifier.
+
+**Independent live check:** over verified TLS, the OpenWhistle page returned HTTP 200 with the expected title, exact self-canonical and `index,follow`. The rendered text distinguishes the dataset CC BY 4.0 declaration from the unresolved code and model licenses. The 133-URL sitemap parsed successfully and includes the page.
+
+**Limits:** this verifies publication and crawl metadata, not Google indexing or ranking. The audio, labels, code and model were not acquired or run; AutoResearch remains **NOT READY**.
+
+## October 24 — refresh researcher-kit evidence on current main
+
+**Question:** do the public researcher's exact historical example, current synthetic examples, catalog and build checks still work after the latest catalog changes?
+
+**Evidence:** repeated the documented sequence from a fresh HTTPS clone of public `main` at [`e62df45003ee6a57f2feacba89e062700b425f9b`](https://github.com/Metivity/talk2nature/commit/e62df45003ee6a57f2feacba89e062700b425f9b). The historical split output still matched the guide's pinned SHA-256. Current annotation, standard split and dyadic examples passed; the dyadic transitive chain remained in one partition. All 159 Python and 115 Node tests passed, the resource catalog validated 211 entries, and both noindex and explicit-origin site builds/checks passed. Exact environment and counts are in [`RESEARCHER_START_HISTORY.md`](RESEARCHER_START_HISTORY.md).
+
+**Change and decision:** updated the public researcher guide's latest-check snapshot so it points to current main and reports current counts instead of the older `ff5d8be` check. Preserve the historical exact-output pin and all earlier verification entries. The guide still asks contributors to treat synthetic outputs as software checks, not evidence of animal communication.
+
+**Limits:** this is maintainer-run reproducibility evidence only. The clone contains invented fixtures; no independent researcher participated, no field app task was independently tested, and no dataset, model, or animal/participant recording was acquired or run. AutoResearch remains **NOT READY**.
