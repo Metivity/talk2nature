@@ -4039,18 +4039,19 @@
     "taxon": "Bottlenose dolphins",
     "kind": "Longitudinal bioacoustic benchmark",
     "year": "2026",
-    "year_label": "arXiv v1, September 2026; reported accepted as a NeurIPS 2026 Datasets & Evaluations Spotlight",
+    "year_label": "arXiv v1, September 2026; the authors’ pinned README lists it as a NeurIPS 2026 Datasets & Evaluations Spotlight.",
     "source_ids": [
       340,
       341,
       342,
       343,
-      390
+      411,
+      412
     ],
     "reviewed": "2026-10-24",
     "review_stage": "Targeted paper, pinned dataset cards, official dataset license, and separate code/model rights review; metadata only",
-    "review_depth": "Reviewed the arXiv v1 paper data-collection, annotation, benchmark, evaluation, limitations and ethics sections; revision-pinned Hugging Face pretraining and classification dataset cards and file inventories; the separate revision-pinned model card; and the official OpenWhistle README and LICENSE-DATA at commit ad715bb3cf24c36f85b3c3c8159077548134a39e. The repository README applies CC BY 4.0 to its four named dataset releases and LICENSE-DATA grants those terms; the dataset-card API license fields remain null. No audio, labels, code or weights were acquired or run. No independent specialist reviewed this note.",
-    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10; OpenWhistle-Pretraining revision eea37423c7841b0f99a7c0380f945999c0a2c489; OpenWhistle-Classification-Finetuning revision 2b7806e3c5913c459c40b824ab7f944d494b3993; OpenWhistle-Wav2Vec2.0 revision 985ac11bc6939af5e41383143aad5a0ae6993f68; official OpenWhistle README and LICENSE-DATA at commit ad715bb3cf24c36f85b3c3c8159077548134a39e.",
+    "review_depth": "Reviewed the arXiv v1 paper data-collection, annotation, benchmark, evaluation, limitations and ethics sections; revision-pinned Hugging Face pretraining and classification dataset cards and file inventories; the separate revision-pinned model card; and the pinned official OpenWhistle README (source 411) and LICENSE-DATA (source 412) at commit ad715bb3cf24c36f85b3c3c8159077548134a39e. The repository README applies CC BY 4.0 to its four named dataset releases and LICENSE-DATA grants those terms; the dataset-card API license fields remain null. No audio, labels, code or weights were acquired or run. No independent specialist reviewed this note.",
+    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10; OpenWhistle-Pretraining revision eea37423c7841b0f99a7c0380f945999c0a2c489; OpenWhistle-Classification-Finetuning revision 2b7806e3c5913c459c40b824ab7f944d494b3993; OpenWhistle-Wav2Vec2.0 revision 985ac11bc6939af5e41383143aad5a0ae6993f68; pinned official OpenWhistle README (source 411) and LICENSE-DATA (source 412) at commit ad715bb3cf24c36f85b3c3c8159077548134a39e.",
     "finding": "OpenWhistle is a timely single-species research candidate: its authors report about 114 hours of 96 kHz recordings collected over five years from five known dolphins at Dolphin Reef in Eilat, plus 8,354 expert-annotated whistles in 10 categories. The official Hugging Face cards list 31,780 unlabeled audio segments and a separate labeled set split into 5,848 training, 1,253 validation and 1,253 test examples. Published tasks detect whistle presence or classify whistle type. These are upstream descriptions, not a Talk2Nature reproduction.",
     "limitations": "All recordings come from one site and a pod of five; the paper says results need validation on independent groups. Its labels cover whistle categories, including individual signature-whistle types, not experimentally established message meanings or receiver understanding. The main evaluation holds out recording sessions, not whole animals, and the expert labels cover only a short part of the five-year span; the labels are highly imbalanced. The official repository README and LICENSE-DATA declare CC BY 4.0 for the dataset releases, while the pinned Hugging Face dataset-card fields are null; code terms were not visible in the repository root and the separate model card says its license is unspecified. No files are admitted or acquired.",
     "lesson": "This is a strong newly reviewed large-data candidate for a bounded communication-adjacent benchmark, not evidence of dolphin translation. A useful contribution would need to go beyond repeating the published whistle classifier—for example, a carefully reviewed test of temporal and individual generalization if the available metadata and rights support it. Keep this research track distinct from a companion-parrot app: app participation and model training have different evidence, consent and welfare requirements.",

@@ -1,5 +1,15 @@
 # Project status
 
+## October 24 — repair OpenWhistle source attribution
+
+**Question:** do OpenWhistle citations resolve to its own pinned author README and dataset license, while BirdPark remains attached to its own source record?
+
+**Change:** added separate pinned OpenWhistle sources 411 and 412, corrected the research page and resource references, and kept source 390 assigned to BirdPark. A regression test checks the rendered OpenWhistle page, dataset/code links, and BirdPark mapping.
+
+**Validation:** all 166 repository Python tests passed (one PostgreSQL integration test skipped), as did all 117 Node tests. The noindex build produced 135 pages plus 404; the explicit-origin public build also produced 135 pages plus 404, and the site checker validated the public artifact with 136 HTML pages, 7,053 links and 135 reachable public pages. These checks use metadata only; no audio, code or model weights were acquired or run.
+
+**Limit and next decision:** the live Pages page remains unchanged until an isolated public release is reviewed and deployed. This fixes attribution only; it does not reproduce the benchmark or make it training-ready. Any data use still requires an independently reviewed question and exact artifact-level rights check.
+
 ## October 14 — verify live routes after Pages deployment
 
 **Question:** can a successful static build and artifact upload be followed by a repeatable check of what the public site actually serves?
