@@ -4715,5 +4715,61 @@
       "rights": "The Figshare and Zenodo records declare CC BY 4.0, but the exact Zenodo version intended by the paper, archive contents and component coverage remain unresolved. The GitHub repository listing has no displayed license file. Do not redistribute article text or third-party audio; use the original source links and verify each component before reuse.",
       "experiment": "No model was trained and no results were reproduced. Any later computational analysis should begin with a frozen, per-vocalizer evaluation plan and compare against the published analyses; animal-label predictions must remain distinct from observed behavioral trial responses."
     }
+  },
+  {
+    "slug": "zebra-finch-call-classifier-multitask-2026",
+    "title": "A zebra-finch classifier is a baseline, not a translator",
+    "seo_description": "A 2026 zebra-finch study classifies call labels with BirdAVES. One split and unresolved dataset counts leave key reproduction questions.",
+    "taxon": "Zebra finch (Taeniopygia guttata)",
+    "kind": "Bioacoustic classification study",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Peer-reviewed Machine Learning and Knowledge Extraction article",
+    "source_ids": [
+      379,
+      380,
+      376,
+      374,
+      381,
+      382,
+      383
+    ],
+    "reviewed": "2026-10-24",
+    "review_stage": "Publisher article, journal license policy and version history reviewed; no reproduction",
+    "review_depth": "Reviewed publisher-hosted article sections covering the abstract, data and methods, bird-level partition, training and evaluation protocol, reported results, limitations, conclusion and data statement. Compared the dataset description with the Figshare record and foundational 2016 article; checked the journal license policy and article-specific version history. The article page and version history list no supplementary file; the nearby 285 KB ZIP belongs to a different article in the same issue. Reviewed current AVEX repository documentation and its MIT code-license statement. Figshare files, Zenodo archives, source code and BirdAVES weights were not acquired or run. No independent specialist reviewed this note.",
+    "review_locator": "Radočaj & Radočaj, Machine Learning and Knowledge Extraction 8(10), 318 (2026), DOI 10.3390/make8100318. Dataset record: Figshare DOI 10.6084/m9.figshare.11905533.v1. Earlier repertoire study: Elie & Theunissen, Animal Cognition 19 (2016), DOI 10.1007/s10071-015-0933-6. Model documentation: Earth Species Project AVES/BirdAVES repository.",
+    "finding": "The 2026 article reports using 3,433 zebra-finch recordings, 11 call-type labels and six broader categories from an existing functional taxonomy. It uses frozen BirdAVES audio embeddings and reports its best multi-task call-type result as 87.11% accuracy and 82.76% macro-F1, compared with 84.86% and 78.89% for its single-task call-type baseline. The authors report a 70:15:15 split by bird, but evaluate only one predefined partition. These are results reported by the paper, not reproduced by Talk2Nature. The six broader targets are supplied supervised labels; the classifier predicts them and does not independently discover or translate their meaning.",
+    "limitations": "The paper says 50 birds, while Elie & Theunissen (2016) report 45 birds and 8,136 segmented calls from 3,405 bouts; the Figshare record lists 3,433 WAV files. The 2026 paper says each input is a single isolated vocalization, whereas the Figshare record warns that files may contain a vocalization or sequence. These may reflect different processing or dataset versions, but the relationship and unitization are unresolved. The evaluation uses one split; only 3 DistressCall recordings appear in its test partition. The colony recordings do not establish performance on ordinary homes or field soundscapes. The study does not test receiver responses or align model errors with the 2025 behavioral-trial confusion data. Exact BirdAVES variant, weight terms, article authors’ experiment-code location and supplementary contents remain unresolved. AVEX declares MIT for its library code, which is a separate component and does not license pretrained weights or data. Dataset, article, code and model-weight rights are separate; the dataset record declares CC BY 4.0, the journal specifies CC BY 4.0 for the article, and no data/model asset has been cleared or admitted.",
+    "lesson": "Zebra finch is the strongest current literature-led candidate for a narrow ML reproduction because it combines an audio library, a recent published classifier and separate behavioral discrimination evidence. Plain call-type or six-category prediction is now prior art. A distinct contribution would first reconcile recordings, bird identities and versions; identify the exact model and code terms; and obtain specialist review. Only if trial-to-file joins are defensible should a later study ask whether classifier error patterns track the finches’ measured confusions. That would test correspondence with a learned discrimination task, not decode calls into human language.",
+    "next_review": "Keep this as metadata-only. Reconcile bird identities, file counts and single-call-versus-sequence unitization against versioned manifests. Check the data/code statements and published partition for reproducibility materials; no supplement is currently listed for this article. Identify the exact BirdAVES variant and weight terms; distinguish it from the MIT-licensed AVEX library and locate or confirm the availability status of the article authors’ experiment code. Then ask an independent avian-communication and ML/statistical reviewer whether a repeated bird-held-out reproduction and behavior-linked extension are worthwhile. Do not acquire model weights, train a model or begin animal collection before those gates pass.",
+    "expert_review": "No independent avian-communication, animal-behavior or ML/statistical review has been received.",
+    "study_snapshot": [
+      [
+        "Dataset used by 2026 article",
+        "3,433 recordings; article reports 50 birds. The Figshare record lists 3,433 WAV files, while the 2016 foundational article describes 45 birds, 3,405 vocalization bouts and 8,136 segmented calls. The 2026 article says each input is isolated; Figshare notes some files may contain sequences. Counts and units remain unreconciled."
+      ],
+      [
+        "Prediction targets",
+        "Eleven call types and six broader categories supplied from an existing taxonomy; these are classification targets, not independently discovered meanings."
+      ],
+      [
+        "Model and split",
+        "Frozen BirdAVES embeddings; the article reports a single predefined 70:15:15 split by bird and no repeated partition assessment. Only 3 DistressCall examples appear in the test partition. Exact model variant and weights license were not checked."
+      ],
+      [
+        "Reported call-type result",
+        "Best multi-task accuracy 87.11%, macro-F1 82.76%; single-task baseline 84.86%, macro-F1 78.89%, as reported by the article. Not independently reproduced."
+      ],
+      [
+        "Talk2Nature status",
+        "Source review only. No dataset, audio, archive, code or model weights acquired; no model run or animal interaction performed."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only literature and model lead; not admitted to private storage, training data or a benchmark.",
+      "asset": "Original short summary and citations only. The dataset, paper, code and BirdAVES model weights remain separate components; no third-party files were added.",
+      "rights": "The Figshare record declares CC BY 4.0 for its dataset files, subject to exact coverage and provenance review. The MAKE journal specifies CC BY 4.0 for the article; cite it and identify any adaptation. No article-specific experiment code was identified. The separate AVEX library declares MIT; its exact compatibility with the paper is not confirmed. The exact BirdAVES variant and weight terms were not resolved. No data or model component is cleared for acquisition or redistribution.",
+      "experiment": "Talk2Nature did not reproduce the published metrics or run any model. Any future work should start from a frozen repeated bird-held-out evaluation, reconcile source-file identity and counts, inspect model/data overlap and rights, and preserve observed behavioral responses separately from model predictions."
+    }
   }
 ]

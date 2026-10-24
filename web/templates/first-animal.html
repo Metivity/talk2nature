@@ -2,9 +2,9 @@
 <a class="back-link" href="{{base}}/research/">← Research library</a>
 <p class="eyebrow">CHOOSING OUR FIRST STUDY</p>
 <h1>Many animals.<br><em>One question.</em></h1>
-<p class="lede">Pick the animal to match the question: song structure, vocal exchange or a phone study.</p>
+<p class="lede">There is no one best animal for every goal. Match the species to the evidence you want to learn from.</p>
 
-<aside class="review-box"><strong>Quick answer</strong><ul class="animal-quick"><li><strong>Large song dataset:</strong> Great Tits.</li><li><strong>Vocal-exchange lead:</strong> zebra-finches.</li><li><strong>Phone cohort:</strong> budgerigars; access and review pending.</li></ul><p>No path yet establishes call meaning. Bats and V33DA are separate research leads.</p></aside>
+<aside class="review-box"><strong>Quick answer</strong><ul class="animal-quick"><li><strong>Large annotated song corpus:</strong> Great Tits; song structure, not meaning.</li><li><strong>Bird call-perception lead:</strong> zebra finches; behavioral and sound records still need reconciliation.</li><li><strong>Video-coded context task:</strong> Egyptian fruit bats; the current grouping does not support a balanced strict holdout.</li><li><strong>Phone observation study:</strong> budgerigars; access and specialist review are pending.</li></ul><p>No first ML benchmark is selected or training-ready. None of these paths establishes general animal translation.</p></aside>
 
 <div class="animal-options">
 <section>
@@ -15,7 +15,14 @@
 <a href="{{base}}/research/wytham-great-tit-song-structure-2024/">Read the Wytham dataset and prior-art review →</a>
 </section>
 <section>
-<p class="eyebrow">CONTROLLED EXCHANGE · RESEARCH LEAD</p>
+<p class="eyebrow">CALL CATEGORIES · MEASURED PERCEPTION</p>
+<h2>Zebra-finch calls</h2>
+<p>A promising bird-specific reading path connects machine call-label predictions with a controlled test of how finches distinguish labeled calls. The underlying sound-to-trial relationship still needs verification.</p>
+<details class="animal-detail"><summary>Research details</summary><p>A 2025 study tested 12 adult finches on 11 researcher-defined call types. A separate 2026 paper reports an 11-type classifier on an archive described as 3,433 recordings. The classifier predicts supplied labels; it does not translate calls. The papers and dataset descriptions differ on bird counts and whether files contain isolated calls or sequences.</p><p>Before a distinct follow-up, reconcile file versions, bird identities and unitization, resolve component rights, and determine whether the classifier recordings can be joined to the behavioral trials. Talk2Nature has not acquired the archive or reproduced either result.</p></details>
+<a href="{{base}}/research/zebra-finch-call-classifier-multitask-2026/">Read the classifier and dataset audit →</a> · <a href="{{base}}/research/zebra-finch-call-categories-2025/">Read the behavioral discrimination study →</a>
+</section>
+<section>
+<p class="eyebrow">LONG VOCAL EXCHANGES · SEPARATE PREPRINT</p>
 <h2>Zebra-finches in ZF-AIM</h2>
 <p>The closest reviewed lead for studying turn-taking and measurable responses in controlled vocal exchanges—not a translated conversation.</p>
 <details class="animal-detail"><summary>Research details</summary><p>A 2026 preprint reports extensive vocal-interaction experiments and changes in birds’ calling during interactive versus non-interactive playback. The separate data deposit has conflicting CC BY-SA and CC BY-NC declarations. Four raw example tracks do not establish that the complete analyzed corpus is available, and bird-level independence across splits remains unverified.</p><p>No data or model has been acquired or run.</p></details>
@@ -51,6 +58,8 @@
 <h2>Read the evidence and its limits</h2>
 <ul class="readable-list">
 <li><a href="{{base}}/research/wytham-great-tit-song-structure-2024/">Wytham Great Tits: a large song dataset and its prior art</a></li>
+<li><a href="{{base}}/research/zebra-finch-call-classifier-multitask-2026/">Zebra finch call classifier: labels, prior art and unresolved joins</a></li>
+<li><a href="{{base}}/research/zebra-finch-call-categories-2025/">Zebra finches: behavioral discrimination of call categories</a></li>
 <li><a href="{{base}}/research/zf-aim-zebra-finch-turn-taking-2026/">ZF-AIM zebra-finches: vocal exchange, data rights and evaluation limits</a></li>
 <li><a href="{{base}}/research/fruit-bat-context-ml-2024/">Egyptian fruit-bat context prediction: the reported result and unresolved joins</a></li>
 <li><a href="{{base}}/research/v33da-caller-attribution-2026/">V33DA zebra finches: caller attribution, not call meaning</a></li>

@@ -3929,5 +3929,45 @@
     "url": "https://github.com/theunissenlab/zebra-finch-semantic-category",
     "checked": "2026-10-24",
     "origin": "Reviewed the public repository README and root file listing. No code was downloaded or executed."
+  },
+  {
+    "id": 379,
+    "title": "Radočaj & Radočaj 2026 zebra-finch call-classification study",
+    "description": "Peer-reviewed article reports single-task and biologically informed multi-task classification of 11 zebra-finch call types and six broader categories using frozen BirdAVES embeddings. Its evaluation is one bird-level partition; this is prediction of supplied labels, not open-ended translation.",
+    "url": "https://www.mdpi.com/2504-4990/8/10/318",
+    "checked": "2026-10-24",
+    "origin": "Reviewed publisher-hosted article sections covering the abstract, data/methods, bird-level split, training and evaluation, results, limitations, conclusion and data statement, plus the article-specific version history. The article page and version history list no supplementary file; a nearby 285 KB ZIP belongs to a different article in the same issue. The article is listed as open access; the journal policy specifies CC BY 4.0. No audio, source code or BirdAVES weights were acquired or run."
+  },
+  {
+    "id": 380,
+    "title": "Elie & Theunissen 2016 zebra-finch vocal-repertoire study",
+    "description": "Foundational peer-reviewed study reports 45 zebra finches and 8,136 segmented calls and song syllables derived from 3,405 vocalization bouts. These counts provide context for reconciling later Figshare and 2026 classifier descriptions.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26581377/",
+    "checked": "2026-10-24",
+    "origin": "Reviewed PubMed abstract and indexed PMC methods excerpts for the number of birds, vocalization bouts and segmented calls. No supplemental audio or article file was added."
+  },
+  {
+    "id": 381,
+    "title": "Earth Species Project AVES and BirdAVES model documentation",
+    "description": "Official repository documents AVES/BirdAVES model families, pretrained weight availability, embedding dimensions, training-data sources, batching behavior and migration to AVEX. Exact 2026-paper variant and weight terms were not resolved.",
+    "url": "https://github.com/earthspecies/aves/blob/main/README.md",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the official README model-family table, BirdAVES description, migration notice and batching warning. No code or weights were downloaded; the exact model variant and component-specific terms remain unchecked."
+  },
+  {
+    "id": 382,
+    "title": "Machine Learning and Knowledge Extraction open-access and copyright policy",
+    "description": "The journal states that its articles are open access under a Creative Commons Attribution (CC BY) license. This establishes the article component license separately from the source audio, author code and pretrained model weights.",
+    "url": "https://www.mdpi.com/journal/make/about",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the journal-specific copyright/open-access policy, which specifies the Creative Commons Attribution license and standard CC BY 4.0 statement. The article is also listed as an Open Access Article. Third-party components remain separately governed."
+  },
+  {
+    "id": 383,
+    "title": "Earth Species Project AVEX library repository",
+    "description": "Current Animal Vocalization Encoder code repository. Its README identifies the project as a model-loading, embedding and training/evaluation library and the repository declares MIT for its code. That code license does not establish the license for any pretrained model weights or training data.",
+    "url": "https://github.com/earthspecies/avex",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the official repository README and file listing, including its MIT-license statement and model-loading/embedding functions. No code was downloaded or run; model-weight and dataset terms remain separate."
   }
 ]

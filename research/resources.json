@@ -5792,6 +5792,129 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "zebra-finch-call-classifier-paper-2026",
+      "kind": "paper",
+      "title": "Biologically informed multi-task learning for zebra-finch call-type classification",
+      "url": "https://www.mdpi.com/2504-4990/8/10/318",
+      "version": "Machine Learning and Knowledge Extraction 2026, 8(10), 318; published 2026-10-08; DOI 10.3390/make8100318",
+      "source_ids": [
+        379,
+        376,
+        380,
+        374,
+        382
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Published classifier baseline for 11 zebra-finch call types and six broader supervised categories, using frozen BirdAVES embeddings on the Figshare vocal-repertoire recordings.",
+      "review_depth": "Publisher article methods, split, results and limitations, journal policy and article-specific version history reviewed. The article page and version history list no supplementary file; the nearby 285 KB ZIP belongs to a different article in the same issue. No archive, code or audio acquired; no model reproduced.",
+      "access": "Public open-access publisher page; the MAKE journal specifies CC BY 4.0 for articles. It points to the Figshare vocal library; the article reports 3,433 recordings and 50 birds. The 2016 source paper reports different bird and bout/call counts. No article-specific supplementary file is listed.",
+      "decision": "Use as prior art and a possible reproducibility baseline only. A call-label classifier is not a translation system. Keep metadata-only pending count/version reconciliation, exact BirdAVES identification, rights review and independent scientific/statistical review.",
+      "limitations": "One predefined bird-level partition; only three DistressCall items in test; controlled-colony recordings; no naturalistic validation or direct receiver-response outcome. The six broader labels are supervised targets, not model-discovered semantics. Input-unit and bird-count differences across versions are unresolved. Article, dataset, code and model-weight rights are distinct.",
+      "attribution": "Petra Radočaj and Dorijan Radočaj, Machine Learning and Knowledge Extraction 8(10), 318 (2026), https://doi.org/10.3390/make8100318.",
+      "rights": {
+        "license": "CC BY 4.0 as stated in the MAKE journal publication policy.",
+        "scope": "The scholarly article and publisher-listed supplement. This does not grant rights to the source dataset, author code, BirdAVES weights or embedded third-party material.",
+        "evidence_url": "https://www.mdpi.com/journal/make/about",
+        "conditions": "Attribute the authors and publication and indicate changes. Verify third-party content separately; inspect code, source data and exact model weights under their own terms before use.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "zebra-finch-vocal-repertoire-study-2016",
+      "kind": "paper",
+      "title": "The vocal repertoire of the domesticated zebra finch",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26581377/",
+      "version": "Animal Cognition 19(2), 285–315 (2016); DOI 10.1007/s10071-015-0933-6",
+      "source_ids": [
+        380
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "task": "Foundational repertoire and acoustic-feature study used to contextualize the current dataset and call taxonomy.",
+      "review_depth": "PubMed abstract and indexed PMC excerpts on the sample and preprocessing counts reviewed; no supplementary media acquired.",
+      "access": "Public PubMed/PMC record; study reports 45 birds, 3,405 vocalization bouts and 8,136 segmented calls and song syllables.",
+      "decision": "Retain as count/provenance context. Do not assume it fully describes the later 3,433-file Figshare deposit or the 2026 classifier subset without a file-level reconciliation.",
+      "limitations": "Historical controlled-colony recordings and observer-assigned categories; this review did not inspect the full audio archive or reproduce the original analyses.",
+      "attribution": "Julie E. Elie and Frédéric E. Theunissen, Animal Cognition 19 (2016), DOI 10.1007/s10071-015-0933-6.",
+      "rights": {
+        "license": "Article reuse terms not checked; cite and link only.",
+        "scope": "The scholarly article. No article text or figures are reproduced.",
+        "evidence_url": "https://pubmed.ncbi.nlm.nih.gov/26581377/",
+        "conditions": "Verify publication reuse terms and the separate dataset rights before reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdaves-pretrained-weights",
+      "kind": "model",
+      "title": "Earth Species Project BirdAVES pretrained audio model weights",
+      "url": "https://github.com/earthspecies/aves/blob/main/README.md",
+      "version": "Official README reviewed 2026-10-24; repository notes migration to AVEX; exact 2026-paper variant unresolved.",
+      "source_ids": [
+        381,
+        379,
+        383
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Pretrained BirdAVES weights used as a frozen audio-embedding input in the 2026 zebra-finch classifier.",
+      "review_depth": "Official README model table, BirdAVES description, migration notice and batching warning reviewed; no code or weights downloaded.",
+      "access": "Official GitHub documentation points to downloadable model configurations and weights and says AVES/BirdAVES has moved to the actively maintained AVEX package. Exact variant used in the article was not established.",
+      "decision": "Do not acquire or run as part of this milestone. First identify the precise BirdAVES variant and weight revision, its pretrained-data provenance and independent weight terms.",
+      "limitations": "The paper’s author code, AVEX library code, pretrained weights and training corpora have distinct rights. The exact BirdAVES variant and its license were not resolved; generic repository availability is not permission to redistribute or use commercially.",
+      "attribution": "Earth Species Project, AVES/BirdAVES official repository documentation; see the current AVEX migration notice.",
+      "rights": {
+        "license": "Unresolved for the exact BirdAVES pretrained weights and configuration used in the 2026 paper.",
+        "scope": "Model checkpoint/weight files and associated model-specific terms. This record excludes AVEX source code, the paper and input audio data.",
+        "evidence_url": "https://github.com/earthspecies/aves/blob/main/README.md",
+        "conditions": "Resolve exact variant and revision, inspect the current model card and terms, and verify training-data and use restrictions before download or execution.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "avex-library-code",
+      "kind": "code",
+      "title": "Earth Species Project AVEX bioacoustics model-loading and embedding library",
+      "url": "https://github.com/earthspecies/avex",
+      "version": "Official repository reviewed 2026-10-24; pin a commit before any future reproduction.",
+      "source_ids": [
+        383,
+        381
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "task": "Provides code for loading animal-audio encoders, extracting embeddings and training/evaluating downstream probes; the AVES repository states that BirdAVES moved to AVEX.",
+      "review_depth": "Official README, repository file listing and MIT license statement reviewed. No code was downloaded or run; compatibility with the exact 2026-paper BirdAVES checkpoint was not tested.",
+      "access": "Public GitHub repository. The repository README declares MIT for its library code. Model weights and source datasets are separate resources with separate terms.",
+      "decision": "Potential code dependency for a future reproduction only after pinning the commit, verifying exact BirdAVES support and matching preprocessing to the paper. This is not the classifier authors’ training-code release.",
+      "limitations": "An MIT license on the AVEX code does not grant rights to pretrained checkpoints or the corpora used to train them. The paper’s own experiment code was not located during this review.",
+      "attribution": "Earth Species Project, AVEX Animal Vocalization Encoder Library; official GitHub repository.",
+      "rights": {
+        "license": "MIT declared by the AVEX repository for its code.",
+        "scope": "The source code in the AVEX repository only; no pretrained model weights or source datasets are covered by this record.",
+        "evidence_url": "https://github.com/earthspecies/avex",
+        "conditions": "Retain the MIT copyright and license notice if redistributing covered code. Verify the pinned commit and component boundaries; inspect weights and training-data terms separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

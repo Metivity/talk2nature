@@ -67,6 +67,7 @@
         "perch",
         "naturelm",
         "speech-pretraining-transfer-2026",
+        "zebra-finch-call-classifier-multitask-2026",
         "dog-barks",
         "barkopedia-context-benchmark-2025",
         "birb-generalization",
@@ -90,6 +91,7 @@
       "decision": "Study receiver behavior, matched comparisons and competing explanations. Distinguish companion parrots' learned human names from natural conspecific signals proposed as names; keep each critique connected to the original evidence.",
       "notes": [
         "bird-call-syntax",
+        "zebra-finch-call-categories-2025",
         "wytham-great-tit-song-structure-2024",
         "heterospecific-mobbing-sequences",
         "duponts-lark-vocal-types-2026",
