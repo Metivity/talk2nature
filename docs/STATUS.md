@@ -3662,3 +3662,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Live verification:** a new headless-Chrome context loaded `/app/compare/` over HTTPS with HTTP 200. At 320 × 740 the button clears the dock by 22.8 pixels; at 390 × 844 it clears by 105.5 pixels. Document and body widths match the viewport, the invented example pair opens at both sizes, and no page errors occurred.
 
 **Limits:** this verifies the deployed layout in Chromium emulation only. Physical devices, mobile Safari/Android, screen readers and novice comprehension remain unverified. No real recordings or participant data were used.
+
+## October 24 — add InsectSet459 as a cross-taxa engineering reference
+
+**Finding:** the 2026 InsectSet459 paper reports 26,298 audio files (226.6 hours) across 459 Orthoptera and Cicadidae species. Its file-level species labels and duration/file-balanced split can inform species-identification and audio-pipeline engineering, but do not supply independently observed behavior, receiver response, or call meaning.
+
+**Change:** added separate paper, dataset-version, and curation-code source records; a metadata-only research assessment; and links from the resource catalog, model-learning path, and benchmark run card. The resource is explicitly not selected as a communication benchmark. No audio, annotations, code, or weights were acquired or executed. The 83.7 GB archive was not downloaded; its 6.9 MB CSV exceeds the existing 5 MiB collection cap. Exact per-file media rights remain unreviewed, and the curation repository has no located standalone license.
+
+**Validation:** all 159 repository Python tests and 115 Node tests passed before the final display-only date-label correction; the focused 80-test site suite passed after it. The resource catalog validates 212 records. The local noindex build produced 134 pages plus 404, and the site checker passed with 135 HTML documents and 6,833 links. The explicit-origin public candidate build produced 134 routes; 135 HTML documents and 6,968 links passed, all 134 public routes were reachable, and the new page's title, index directive, self-canonical, and sitemap entry were verified. The rendered page and mobile navigation were inspected in 390 × 844 browser emulation; no physical-device or screen-reader check was performed.
+
+**Limits:** these are source and software checks, not a dataset reproduction, insect-behavior result, microphone validation, or evidence of communication. AutoResearch remains **NOT READY**; independent insect-bioacoustics and audio-hardware review, source-level rights checks, and a leakage-safe task would be required before any data use. This remains a local candidate until merged and deployed.

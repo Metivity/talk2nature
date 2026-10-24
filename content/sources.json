@@ -4151,5 +4151,29 @@
     "rights": {
       "dataset": "The Figshare record declares CC BY 4.0 at item level. This review did not inspect file contents or establish rights/provenance for underlying recordings or embedded third-party material; proposed use remains conditional."
     }
+  },
+  {
+    "id": 406,
+    "title": "A dataset of insect sounds from 459 species for bioacoustic machine learning",
+    "description": "Faiß, Ghani and Stowell describe InsectSet459, a weakly labeled insect audio dataset intended for acoustic species identification and monitoring, not communication decoding.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41896561/",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the PubMed record and primary abstract. Full article methods, supplement and annotation-file contents were not reviewed; no paper text or figures were copied. DOI: 10.1038/s41597-026-07123-4."
+  },
+  {
+    "id": 407,
+    "title": "InsectSet459 v1.1 Zenodo dataset record",
+    "description": "Official v1.1 record for the 26,298-file, 459-species InsectSet459 archive; the record lists 83.7 GB of files and a 6.9 MB annotation CSV.",
+    "url": "https://zenodo.org/records/18554693",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the official v1.1 description, file inventory and rights statement. Provider MD5 values were read but not verified against downloaded bytes. No archive or annotation CSV was acquired or inspected."
+  },
+  {
+    "id": 408,
+    "title": "InsectSet459 curation code repository",
+    "description": "Author repository describes the scripts used to curate and split InsectSet459; its visible root contains a README and Scripts directory but no standalone LICENSE file.",
+    "url": "https://github.com/mariusfaiss/InsectSet459",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the repository root and README through the public web page; the direct root LICENSE path returned 404. No code was downloaded, copied or executed, and code reuse rights remain unresolved."
   }
 ]

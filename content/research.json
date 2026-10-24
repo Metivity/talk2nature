@@ -4992,5 +4992,57 @@
       "rights": "Dryad states that its deposited data are CC0 and recommends citation. The separate 2021 and 2023 Figshare items declare CC BY 4.0; the 2021 inventory lists no waveforms, while the 2023 README describes the audio archive and selection-table filename relation. Neither source was matched to the exact 233 F0 calls, and upstream recording provenance was not independently reviewed. No explicit open license was found for the 2025 article; the pinned code tree has no LICENSE/COPYING file, so code and weights remain unresolved.",
       "experiment": "No dataset file was imported and no code or model was executed. A future pilot should compare F0 estimators against the supplied contours on a frozen, group-held-out subset and report per-taxon uncertainty. It must not present pitch estimation as communication decoding."
     }
+  },
+  {
+    "slug": "insectset459-sound-identification-2026",
+    "title": "A large insect sound dataset can test species recognition—not what a call means",
+    "seo_description": "InsectSet459 contains 26,298 recordings from 459 insect species. What its labels and frequency range can—and cannot—teach an animal-listening app.",
+    "taxon": "Insects (Orthoptera and Cicadidae)",
+    "kind": "Multi-species acoustic identification dataset",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Peer-reviewed Scientific Data article",
+    "source_ids": [
+      406,
+      407,
+      408
+    ],
+    "reviewed": "2026-10-24",
+    "review_stage": "PubMed primary abstract, official Zenodo v1.1 description and file list, and author repository root/README reviewed; full article methods and annotation CSV contents not reviewed; no media, code or model acquired or run",
+    "review_depth": "The paper abstract reports 26,298 recordings (226.6 hours) from 459 Orthoptera and Cicadidae species. The Zenodo v1.1 record lists an 83.7 GB package, including a 6.9 MB annotation CSV, and describes source recordings as CC licenses 4.0 or CC0. The record states a 60/20/20 split balanced by file number and duration. The paper describes broad recording sample rates, from 8 to 500 kHz. Approximately one third of files use sample rates above 44 kHz according to the paper. The full paper methods, split membership, original annotation rows, source-level license manifest, location values and code were not inspected.",
+    "review_locator": "Faiß, Ghani and Stowell (2026), Scientific Data 13:499, DOI 10.1038/s41597-026-07123-4; Zenodo v1.1 DOI 10.5281/zenodo.18554693.",
+    "finding": "InsectSet459 is a substantial, multi-species resource for insect sound identification and testing audio pipelines across varied sample rates. Its species labels do not identify behavior, caller intent, receiver response or message meaning. The recording diversity also means a phone microphone should not be assumed to capture every insect signal; high-frequency work may need a separately validated sensor.",
+    "limitations": "The dataset is weakly labeled at the recording level, and its published split is described as balanced by files and audio duration rather than as a held-out contributor, locality or device evaluation. The full test archive and annotations are published, so this is not a secret locked test set. The 6.9 MB annotation CSV exceeds Talk2Nature’s 5 MiB per-file collection limit; the 83.7 GB archive is not a bounded acquisition. The dataset description lists CC 4.0 or CC0 source recordings, but exact source-level terms and attributions still need to be retained for any selected file. The linked curation-code repository has no located standalone license. No Talk2Nature reproduction, hardware test or insect-behavior review has been performed.",
+    "lesson": "This is a useful engineering reference for a future insect-sound identification track and for explaining why different taxa may need different microphones. It is not a first communication benchmark and does not validate phone capture or a universal animal-listening app.",
+    "next_review": "Keep the v1.1 record metadata-only. Do not fetch the annotation CSV by splitting it around the collector limit or download the full archive. If insect recording becomes a prioritized product or research task, first obtain independent insect-bioacoustics and audio-hardware review, define a non-communicative species-identification question, resolve exact recording licenses and provenance, and design held-out recording-source/device groups or collect a new locked evaluation set.",
+    "expert_review": "No independent insect-bioacoustics, animal-behavior or audio-hardware specialist has reviewed this Talk2Nature assessment.",
+    "study_snapshot": [
+      [
+        "Dataset scale",
+        "26,298 audio files, 226.6 hours, 459 Orthoptera and Cicadidae species, as reported by the 2026 paper."
+      ],
+      [
+        "Labels",
+        "One weak species-level label per file; no independently observed behavior or receiver-response labels."
+      ],
+      [
+        "Signal capture",
+        "Sample rates range from 8 to 500 kHz; roughly one third of files use sample rates above 44 kHz, so ordinary phone capture cannot be presumed equivalent."
+      ],
+      [
+        "Evaluation split",
+        "Zenodo v1.1 describes train/validation/test splits balanced by file count and duration; contributor-, site-, device- and animal-held-out independence was not established in this review."
+      ],
+      [
+        "Rights and access",
+        "Zenodo lists 83.7 GB of artifacts and a 6.9 MB annotation CSV. The record describes source media as CC licenses 4.0 or CC0; the code repository has no located standalone license. No files were acquired."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only engineering reference; not admitted to Talk2Nature storage, model training or a communication benchmark.",
+      "asset": "Original short summary and source links only. No audio, annotation file, code or model was copied or acquired.",
+      "rights": "The Zenodo v1.1 description says the source recordings are licensed under CC 4.0 or CC0 and excludes no-derivatives recordings; the article Data Record identifies a CC 4.0 deposit. Preserve the source recording license and attribution for each exact file. This review did not inspect the file-level manifest. The author curation repository has no located standalone LICENSE file, so its code is not cleared for reuse. Paper text, data, code and any derived model weights remain separate assets.",
+      "experiment": "A future, separately reviewed engineering task could evaluate insect species identification or sample-rate robustness. The published test files are openly distributed and are not a secret locked set; any generalization claim needs appropriate source/device grouping or a new untouched evaluation set. Species identification would not establish behavior association, receiver understanding or communication meaning."
+    }
   }
 ]
