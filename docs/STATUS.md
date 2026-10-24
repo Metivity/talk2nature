@@ -3516,3 +3516,14 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Limits:** no benchmark is selected or training-ready. Exact archive version, recording manifest, vocalizer identities, audio-to-trial join and BirdAVES split/count reconciliation remain unresolved. No audio, archive, code or weights were acquired or run; no independent reviewer was contacted; no deployment occurred. The question is trained discrimination, not spontaneous communication or translation. AutoResearch remains **NOT READY**.
 
 **Validation:** 159 Python and 115 Node tests passed. The local noindex build produced 133 routes plus 404; the site checker validated 134 HTML documents and 6,766 links. The explicit-origin public build also produced 133 routes plus 404; the checker validated 134 HTML documents, 6,900 links and all 133 public routes. This is a local candidate, not a deployment.
+
+
+## October 24 — correct the zebra-finch benchmark novelty boundary
+
+**New evidence:** reviewed Figure 4 and its caption in Elie et al. (2025) and the authors' public repository README. The original paper already compares an acoustic-classifier confusion matrix with the finches' behavioral confusion matrix; the README describes spectrogram LDA confusion matrices from leave-one-vocalizer-out cross-validation. The 2026 BirdAVES paper classifies the call labels but, in the reviewed article, does not directly evaluate those predictions against the behavioral confusion matrix.
+
+**Correction and next decision:** updated Candidate E, the research note/resource records and first-animal decision table. Basic model-versus-bird confusion alignment is prior art. The only candidate extension is whether a modern pretrained audio representation adds alignment beyond the published LDA and acoustic-similarity baselines on the same verified calls. A matrix-only reproduction may not require a raw trial/audio join when the exact licensed matrices are available; a new audio-model comparison still needs a call-label/vocalizer map, exact version and separate rights review. Independent avian-perception and ML/statistical review remains necessary.
+
+**Limits:** no archive, audio, code or model weights were acquired; nothing was executed or reproduced; no reviewer was contacted and nothing was deployed. Zenodo archive contents and GitHub code rights remain unresolved. AutoResearch remains **NOT READY**.
+
+**Validation:** all 159 Python and 115 Node tests passed. The local noindex build produced 133 routes plus 404; the site checker validated 134 HTML pages and 6,769 links. The explicit-origin public candidate also produced 133 routes plus 404; the checker validated 134 pages, 6,903 links and all 133 public routes. The updated research page was inspected for its revised summary, title, description, `index,follow`, exact self-canonical and source links. The candidate is not deployed.

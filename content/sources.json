@@ -3925,10 +3925,10 @@
   {
     "id": 378,
     "title": "Zebra-finch call-type perception analysis repository, GitHub",
-    "description": "The authors' repository describes behavioral trial tables, acoustic features, confusion matrices and analysis notebooks for the 2025 study. Its displayed root file list does not include a license file; prefer the versioned Zenodo archive only after verifying which release and terms apply.",
+    "description": "The authors' README describes behavioral trial data, acoustic feature tables, and confusion matrices for the 2025 study. It identifies the spectrogram LDA matrices as leave-one-vocalizer-out results and points to the separate Figshare audio library for raw recordings. The displayed repository root has no license file; neither code nor data files were acquired or inspected.",
     "url": "https://github.com/theunissenlab/zebra-finch-semantic-category",
     "checked": "2026-10-24",
-    "origin": "Reviewed the public repository README and root file listing. No code was downloaded or executed."
+    "origin": "Reviewed the public GitHub README and displayed root file listing. The README names per-bird behavioral trial/confusion tables, acoustic feature files and leave-one-vocalizer-out LDA confusion matrices; it says raw sound files are in the separate Figshare record. No code, data file or audio was downloaded or executed."
   },
   {
     "id": 379,
