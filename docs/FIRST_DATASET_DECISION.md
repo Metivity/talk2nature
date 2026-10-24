@@ -1,0 +1,50 @@
+# First dataset decision: match the corpus to the question
+
+**Status:** decision brief, October 24, 2026. This is a literature and metadata assessment. No animal recordings or model weights were acquired or run, and no candidate has been approved for a Talk2Nature benchmark.
+
+## Recommendation
+
+Keep three goals separate:
+
+1. **Build the data and model workflow:** use Wytham Great Tit as the leading large-corpus *methods* candidate, if an independent reviewer identifies a non-duplicative task. A sensible scope is note/song structure or repertoire measurement with birds held out by individual. It is not a communication-meaning dataset.
+2. **Ask a communication-adjacent biological question:** review the Egyptian fruit-bat or zebra-finch candidates with an independent bioacoustics reviewer and an ML/statistical reviewer. Neither has a defensible, rights-cleared, leakage-resistant benchmark plan yet.
+3. **Serve companion-animal carers:** keep budgerigars as a provisional Field Companion cohort, conditional on genuine access, an avian researcher and an approved, non-invasive protocol. This is a product/user path, not a substitute for an open benchmark corpus.
+
+**Do not train a general animal-language model.** Large audio collections and language-model interfaces can help detect, cluster, describe or predict acoustic patterns. Those outputs do not establish what an animal intends or understands. A meaning claim needs independent behavioral evidence and a suitable receiver-response test.
+
+## Candidate fit
+
+| Candidate | What the data can help test | Why it is not a communication benchmark yet |
+| --- | --- | --- |
+| **Wytham Great Tit Song Dataset** | The authors report 109,963 annotated songs, more than 1.16 million acoustic notes and over 400 wild birds. Useful for a carefully scoped song-structure or repertoire methods exercise. | No receiver-response or meaning labels; one population and dawn-singing setting; published work already studies repertoire similarity and song culture. A new question must add value. The project catalog records the OSF node as CC BY 4.0, but the exact current manifest and wildlife-location handling still need confirmation before data use. |
+| **Egyptian fruit-bat vocalization corpus** | About 293,000 short recordings, around 91,000 annotations, and context/interaction fields derived from synchronized video. This is the closest reviewed large corpus for context association. | The recordings were made in a controlled colony setup with specialist ultrasonic microphones. The current Talk2Nature identity/file grouping audit connects about 95% of records into one component, so a strict held-out-group test is not currently supported. Recheck exact data-component terms and the proposed estimand with reviewers. |
+| **ZF-AIM zebra-finch release** | A large, controlled vocal-interaction resource with code/checkpoints and metadata for next-call prediction. Relevant to vocal contingency and turn-taking questions. | It is a 2026 preprint/release; the repository catalog records conflicting dataset-rights declarations, uncertain coverage of the analyzed corpus, and no verified bird-independent split. Prediction of a next call is not decoding its meaning. |
+| **El Silencio / BirdCLEF+ 2025** | 770 one-minute soundscapes from seven sites, with roughly 15,000 strongly labeled boxes across four taxonomic groups. Useful for multi-taxon event identification, annotation and soundscape pipeline work. | Labels identify calls/sonotypes, not observed behavior or receiver response. The Zenodo dataset record currently has no displayed license, so keep it metadata-only until component rights are resolved. |
+| **Household budgerigars** | A practical candidate for a future passive, human-guided Field Companion workflow if carers and an avian researcher are available. | No reviewed large public household dataset supplies the needed phone recordings plus independently observed context. Do not recruit, collect or upload real observations without protocol, consent, rights, privacy, retention and withdrawal review. |
+
+Counts above describe the source records, not independent sample sizes for every proposed analysis. Files, clips, notes, annotations and animals are different units. Random clip splits can leak bird, household, session, device or site identity; a large record count does not cure that problem.
+
+## What “start learning” should mean
+
+If Raviv wants one bird and one large corpus to explore first, the current provisional choice is **Great Tit song structure with Wytham**, not because great tits are known to be “more communicative,” but because the corpus has dense song and individual annotations that fit a bounded methods exercise. Before any analysis, an independent reviewer should state a question that improves on existing repertoire/culture studies; confirm the exact licensed files and manifest; keep location-sensitive fields out of public outputs; and approve a held-out-bird evaluation with suitable baselines.
+
+If the goal is a closer link to social context, **bats are the stronger biological-data lead**, but the current grouping audit means the first decision is to resolve the estimand and split, not to train a model. If the goal is to build an app that carers may use, **budgerigars remain the practical cohort hypothesis**, subject to real access and the safeguards above.
+
+## Next gate
+
+1. Prepare a short reviewer packet using the candidate run card and existing source notes.
+2. Ask an avian/bioacoustics reviewer to select or reject the biological question and label unit; ask a separate ML/statistical reviewer to check grouping, leakage, baselines and metrics.
+3. Reconcile the exact data and code/model rights for the chosen components and document the permitted purpose.
+4. Only if those checks pass, freeze the protocol, versioned inputs, grouped split and locked test before a bounded baseline run.
+
+Until then, continue metadata/rights review and synthetic software checks. No outreach is implied by this internal brief; external contact needs action-time authorization. The benchmark remains **NOT READY**.
+
+## Sources
+
+- [Wytham Great Tit Song Dataset and documentation](https://nilomr.github.io/great-tit-hits/)
+- [Merino Recalde et al. 2024, dataset article](https://doi.org/10.1016/j.anbehav.2024.02.008) · [OSF data record](https://osf.io/n8ac9/)
+- [Prat et al. 2017, Egyptian fruit-bat dataset paper](https://doi.org/10.1038/sdata.2017.143)
+- [ZF-AIM Zenodo release](https://doi.org/10.5281/zenodo.23024019) · [related bioRxiv preprint](https://doi.org/10.64898/2026.02.12.705387)
+- [El Silencio dataset record](https://doi.org/10.5281/zenodo.17064353) · [BirdCLEF+ 2025 overview](https://ceur-ws.org/Vol-4038/paper_232.pdf)
+
+The candidate review depths, rights findings and current split audits are detailed in [`FIRST_ANIMAL_PLAN.md`](FIRST_ANIMAL_PLAN.md), [`BENCHMARK_CANDIDATE_RUN_CARD.md`](BENCHMARK_CANDIDATE_RUN_CARD.md), [`EXECUTION_BOARD.md`](EXECUTION_BOARD.md) and the catalog under `research/resources.json`. This brief does not claim to replace those record-level reviews.
