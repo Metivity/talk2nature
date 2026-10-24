@@ -22,6 +22,8 @@ The main bottleneck is independent scientific and workflow validation. Current s
 
 The development lead can prepare software, evidence reviews, test fixtures, adapters, release materials and tailored outreach drafts. Independent reviewers, carers and research organizations must actually agree and do their part; automation cannot supply that evidence. This board does not authorize messages or submissions.
 
+**Oct 24 dataset follow-up:** the 2020 zebra-finch Figshare record is now documented at exact file level. Only its small notes PDF was acquired and reviewed under CC BY 4.0; its two WAV archives remain untouched. The notes describe 3,433 manually annotated files and 11 call-type codes but warn that filenames can be inconsistent and a WAV may contain a sequence. This advances source understanding, not benchmark readiness. The next gate remains independent review of one exact question, data scope, rights and bird/session grouping plan.
+
 ## What we measure
 
 - **Usefulness:** one external team completes a task with the tool; compare time and failures with their existing workflow on the same permitted task. A toy benchmark or self-reported enthusiasm alone is insufficient.
