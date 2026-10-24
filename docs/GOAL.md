@@ -8,6 +8,20 @@ Continue one verifiable cycle at a time: find a concrete research or user need; 
 
 The program has four release-facing outcomes: (1) a growing, traceable resource library with reviewed methods, data, code and models kept distinct; (2) a straightforward, reliable Field Companion flow for passive observation and export; (3) clear open-source onboarding and repeatable project checks; and (4) useful, crawlable research pages with verified deployment and honest Search Console reporting. A first ML benchmark is a gated research outcome, not a launch promise: it remains **NOT READY** until the existing data, reviewer, split, baseline and locked-test requirements pass. Current implementation progress and evidence limits are tracked in `docs/STATUS.md`; next research choices are in `docs/RESEARCH_BACKLOG.md`.
 
+### Current next milestone — choose the question before the animal
+
+Do not choose a species just because a dataset is large. The current evidence separates these paths:
+
+- **Great tits:** Wytham has 109,963 annotated songs and more than one million acoustic units for song-structure methods. It has no receiver-response or meaning labels, and published repertoire/culture analyses already exist.
+- **Egyptian fruit bats:** the corpus has roughly 293,000 recordings and 91,000 context annotations, but the current identity/file grouping audit leaves about 95% of records in one connected component; a strict held-out evaluation is not ready.
+- **Zebra finches:** the current ZF-AIM release offers a controlled vocal-interaction question, while its exact data rights and bird-independent splits remain unresolved.
+- **Budgerigars:** a provisional household-app cohort, conditional on real access and qualified avian review; not a large public benchmark.
+- **El Silencio/BirdCLEF:** a useful multi-taxon event-identification methods path, not communication meaning; its Zenodo dataset record does not display a license.
+
+The decision and reviewer-ready comparison are in `docs/FIRST_DATASET_DECISION.md`; record-level evidence remains in `docs/FIRST_ANIMAL_PLAN.md`, `docs/BENCHMARK_CANDIDATE_RUN_CARD.md` and `docs/EXECUTION_BOARD.md`.
+
+The immediate internal step is to prepare a short, reviewable candidate packet from these records. The research gate exits only when an independent avian/bioacoustics reviewer and a separate ML/statistical reviewer approve one narrow question, annotation unit, component-specific rights plan and leakage-resistant evaluation split—or document why none is ready. Until then, continue source and rights review and synthetic software validation; do not train on animal data, recruit participants or present any model as a translator. This is an internal research gate, not authorization to contact reviewers.
+
 **October 13 verified release checkpoint:** PR [#95](https://github.com/Metivity/talk2nature/pull/95) is merged as [`6cf1a6e`](https://github.com/Metivity/talk2nature/commit/6cf1a6e27c0cb8d59a50509667c20708e66dd764). The manual Pages build and deploy both succeeded. Live verification now finds 104 sitemap URLs, with the new PteroSet and endophyte research pages present and indexable; route-level and robots/sitemap evidence is recorded in `docs/STATUS.md`. Search Console indexing and ranking remain unverified. The earlier notes below describe checks made before this release and remain historical snapshots.
 
 **October 14 social-preview SEO checkpoint:** PR [#159](https://github.com/Metivity/talk2nature/pull/159) merged as [`efc8673`](https://github.com/Metivity/talk2nature/commit/efc867359c7f707830b29a1ffe4c8f8ff41c26b4) after public checks [#38511268576](https://github.com/Metivity/talk2nature/actions/runs/38511268576) passed; Pages run [#38511485235](https://github.com/Metivity/talk2nature/actions/runs/38511485235) deployed successfully. Live homepage, research route, 1200 × 627 PNG, `robots.txt` and sitemap returned HTTP 200; the sitemap contains the tested research route. This is a technical share-preview and crawlability improvement, not proof of social rendering or search indexing/ranking. The five-track goal remains active; the next source-led milestone is recorded below.
