@@ -2310,7 +2310,7 @@
       }
     }
   },
-      {
+  {
     "slug": "fruit-bat-context-ml-2024",
     "title": "A 2024 model study predicts bat context—with important limits",
     "seo_description": "Caller-held-out bat context evaluation may be feasible, but exact published folds, role leakage and chamber/session effects remain unverified.",
