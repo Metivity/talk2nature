@@ -1905,8 +1905,8 @@
     "title": "Biodiversa+ 2026–2027 BiodivFuture joint-call page",
     "description": "Official call-organizer page for the transnational BiodivFuture call on novel ecosystems, biodiversity and socio-ecological trajectories. It lists the mandatory pre-proposal deadline as November 10, 2026 at 12:00 CET.",
     "url": "https://www.biodiversa.eu/2026/06/09/2026-2027-joint-call/",
-    "checked": "2026-10-14",
-    "origin": "Rechecked the official Biodiversa+ call-owner page on October 14, 2026. It states that the mandatory EPSS pre-proposal is due November 10, 2026 at 12:00 CET (11:00 UTC), and the pre-proposal submission platform is open. The official call-owner date conflicts with the Commission portal record, which lists November 2."
+    "checked": "2026-10-24",
+    "origin": "Rechecked the official Biodiversa+ call-owner page on October 24, 2026. It still states that the mandatory EPSS pre-proposal is due November 10, 2026 at 12:00 CET (11:00 UTC), and that the submission platform is open. The formal announcement requires eligible partners from at least three participating countries and three funding organisations, including two EU Member or Associated Countries. The European Commission portal had listed November 2 when checked October 14; its page returned HTTP 403 in this refresh, so the date discrepancy remains unresolved. No applicant, consortium or submission was confirmed."
   },
   {
     "id": 183,
@@ -3175,8 +3175,8 @@
     "title": "Israel MoEP BiodivFuture national call, public tender 2026/4",
     "description": "Official Israeli procurement listing for the national BiodivFuture application route, with a listed opening date and national submission deadline.",
     "url": "https://mr.gov.il/ilgstorefront/he/p/4000621848",
-    "checked": "2026-10-14",
-    "origin": "Reviewed the Israeli Government Procurement Administration listing for public tender 2026/4. It reports the Ministry of Environmental Protection, status published, publication date September 10, opening date October 22 at 08:00, and last submission date November 15 at 12:00. The listing’s attachments were not retrievable in this review; substantive national conditions were checked against the separate official Biodiversa+ version 5 rules and MoEP information slides.",
+    "checked": "2026-10-24",
+    "origin": "Rechecked the Israeli Government Procurement Administration listing for public tender 2026/4 on October 24. The current listing reports an update date of October 21, an opening date of October 22 at 08:00, and a last submission date of November 15 at 12:00 local. The listing’s attachments were not retrievable in this review; substantive national conditions were checked against the separate official Biodiversa+ version 5 rules and MoEP information slides reviewed October 14.",
     "rights": {
       "page": "Official procurement notice; summarized and linked, not reproduced."
     }

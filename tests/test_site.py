@@ -1112,7 +1112,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Biodiversa+ · BiodivFuture 2026–2027',page)
             self.assertIn('Deadline 2026-11-10 · 12:00 CET · 11:00 UTC',page)
             self.assertIn('Israel national deadline 2026-11-15 · 12:00 local (MoEP tender listing)',page)
-            self.assertIn('European Commission portal lists November 2',page)
+            self.assertIn('European Commission portal had listed November 2',page)
+            self.assertIn('returned HTTP 403 in this refresh',page)
+            self.assertIn('no-go at this stage',page)
             self.assertIn('National funding rules ↗',page)
             self.assertIn('Call partner search ↗',page)
             self.assertIn('Other official listing (date differs) ↗',page)
@@ -1120,8 +1122,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Israeli national call ↗',page)
             self.assertIn('MoEP applicant briefing ↗',page)
             self.assertIn('two separate submissions',page)
-            self.assertIn('opens October 22',page)
-            self.assertIn('no application, partner profile or outreach is prepared',page)
+            self.assertIn('listing was updated October 21',page)
+            self.assertIn('opened October 22',page)
+            self.assertIn('No application, partner profile or outreach is prepared',page)
             for source_id in (181,182,183,184,185,309,310,311):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
             for source_url in (
