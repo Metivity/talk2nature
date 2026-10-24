@@ -6326,7 +6326,9 @@
       "source_ids": [
         401,
         402,
-        400
+        400,
+        404,
+        405
       ],
       "priority": 2,
       "reviewed": "2026-10-24",
@@ -6404,6 +6406,65 @@
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-vocal-signatures-paper-2021",
+      "kind": "paper",
+      "title": "Monk-parakeet individual vocal signatures across invaded populations",
+      "url": "https://doi.org/10.1016/j.anbehav.2021.06.020",
+      "version": "Animal Behaviour 179 (2021), 15–39; DOI 10.1016/j.anbehav.2021.06.020",
+      "source_ids": [
+        404
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "review_depth": "Publisher abstract and Data Accessibility statement reviewed; the full article methods and supplemental materials were not reviewed in this checkpoint.",
+      "task": "The study analyzes contact-call frequency modulation and individual identity content across native and introduced monk-parakeet populations; it does not test call meaning or receiver comprehension.",
+      "access": "Publisher article page and citation metadata; no article file acquired.",
+      "decision": "Use as prior work for individual-signature research only. The paper and its linked dataset are separate assets; the 2025 F0 paper's cited-source list does not establish a file-level map for its 233 monk-parakeet calls.",
+      "limitations": "This checkpoint did not review the full methods or supplementary materials. The paper's article reuse terms were not established; no raw recordings or audio-to-row provenance were verified.",
+      "attribution": "Smith-Vidaurre, G., Pérez-Marrufo, V., & Wright, T. F. (2021). Individual vocal signatures show reduced complexity following invasion. Animal Behaviour, 179, 15–39. DOI 10.1016/j.anbehav.2021.06.020.",
+      "rights": {
+        "license": "No open article license was established from the publisher page reviewed; unresolved.",
+        "scope": "Article only; excludes the Figshare dataset, code, source audio and model outputs.",
+        "evidence_url": "https://www.sciencedirect.com/science/article/pii/S0003347221002001",
+        "conditions": "Publish an original summary and citation; verify permission before reproducing article content or figures.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "monk-parakeet-vocal-signatures-data-2021",
+      "kind": "dataset",
+      "title": "Simpler signatures post-invasion acoustic data and derived measurements",
+      "url": "https://figshare.com/articles/dataset/Simpler_signatures_post-invasion/14811636",
+      "version": "Figshare DOI 10.6084/m9.figshare.14811636.v1; API inventory checked 2026-10-24",
+      "source_ids": [
+        405,
+        404
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "review_depth": "Official Figshare API metadata reviewed over verified TLS. The 12-file, 11,338,100-byte inventory and provider MD5 strings are recorded in research/monk_parakeet_figshare_manifest_2021.json; no payload was downloaded or inspected.",
+      "task": "Dataset deposited to reproduce a study of contact-call frequency modulation and individual signature complexity; it is not a ground-truth call-meaning dataset.",
+      "access": "Public Figshare record; metadata only. The inventory lists CSV, KML and README files and no waveform file.",
+      "decision": "Keep metadata-only. The item-level license is declared CC BY 4.0, but its contents and source-recording lineage were not audited. Do not infer that this inventory resolves the source audio for the 233-call F0 subset.",
+      "limitations": "The KML contents and all data rows remain uninspected; no file-to-waveform crosswalk was established. Provider-supplied checksums have not been recomputed against payloads.",
+      "attribution": "Smith-Vidaurre, G., Pérez-Marrufo, V., & Wright, T. F. (2021). Simpler signatures post-invasion. Figshare v1. DOI 10.6084/m9.figshare.14811636.v1.",
+      "rights": {
+        "license": "CC BY 4.0 declared by the Figshare record at item level.",
+        "scope": "Dataset item only; source recordings, embedded third-party material, paper, code and models are separate.",
+        "evidence_url": "https://api.figshare.com/v2/articles/14811636",
+        "conditions": "Attribute the deposit. Reconcile source-recording provenance, file contents and any location sensitivity before acquisition, redistribution or model use.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []

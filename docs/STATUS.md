@@ -3472,3 +3472,15 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Evidence and change:** the newly published F0 note was available in the research library but was absent from both GitHub's README research boundary and the researcher-start overview. Added a concise link and plain-language distinction to those entry points, including the 13 waveform taxa and 233-call monk-parakeet subset. Kept the F0 path separate from the bat interaction-context lead and the parrot phone-app cohort.
 
 **Limits and next decision:** this is a documentation/discoverability improvement only. It does not resolve dataset provenance, rights, group keys or independent scientific review; no data, code or weights were acquired or run. No external researcher was contacted. AutoResearch remains **NOT READY**.
+
+## October 24 — trace the monk-parakeet F0 subset to its 2021 source deposit
+
+**Question:** does the 2025 cross-species pitch benchmark expose enough provenance for its 233 monk-parakeet calls to be a usable starting corpus?
+
+**Evidence reviewed:** Table 1 and the cited sources/data-availability references in Best et al. (2025); the publisher abstract and Data Accessibility statement for Smith-Vidaurre et al. (2021); and the official Figshare v1 API inventory for DOI 10.6084/m9.figshare.14811636.v1. The benchmark article identifies 233 semi-automatically annotated monk-parakeet calls and cites 2021/2023 work, but the reviewed main text does not map those calls to exact upstream files. The 2021 Figshare item declares CC BY 4.0 and lists 12 CSV/KML/README files totaling 11,338,100 bytes; no waveform appears in the inventory.
+
+**Decision and change:** added sources 404–405, separate metadata-only paper/data resource records, and an API-only file manifest at `research/monk_parakeet_figshare_manifest_2021.json`. Linked the lineage finding and next review gate from the F0 research note, collection record and backlog. The 2021 paper/data are useful prior work on frequency modulation and individual identity, but this deposit does not close audio provenance for the 233-call F0 subset. Keep the subset deferred pending an exact crosswalk in permitted public documentation; if none is available, do not use it for a Talk2Nature model run.
+
+**Limits:** no payload was downloaded; CSV rows and KML contents were not inspected; provider MD5 values were not recomputed; no audio, code or weights were acquired or run. Item-level CC BY 4.0 does not independently clear underlying recordings or third-party material. No independent reviewer was contacted, no data was admitted to training, and no deployment or external outreach occurred. AutoResearch remains **NOT READY**.
+
+**Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 records. The explicit-origin local public candidate produced 133 pages plus 404; the site checker validated 134 HTML documents, 6,894 links and all 133 public routes. The F0 page's title, source-lineage limitation, Figshare source link, self-canonical, `index,follow` directive and sitemap entry were checked. This is a local release candidate, not a deployment.
