@@ -32,7 +32,7 @@ If the goal is a closer link to social context, **bats are the stronger biologic
 
 ## Next gate
 
-1. Prepare a short reviewer packet using the candidate run card and existing source notes.
+1. Use the [consolidated no-data review packet](FIRST_DATASET_REVIEW_PACKET.md) to keep the methods, communication-adjacent and app-cohort questions separate.
 2. Ask an avian/bioacoustics reviewer to select or reject the biological question and label unit; ask a separate ML/statistical reviewer to check grouping, leakage, baselines and metrics.
 3. Reconcile the exact data and code/model rights for the chosen components and document the permitted purpose.
 4. Only if those checks pass, freeze the protocol, versioned inputs, grouped split and locked test before a bounded baseline run.

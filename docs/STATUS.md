@@ -3727,3 +3727,15 @@ PR [#335](https://github.com/Metivity/talk2nature/pull/335) merged as [`ac9f6fd`
 ## October 24 — publish the prepared-song and wildlife-location caveats
 
 PR [#339](https://github.com/Metivity/talk2nature/pull/339) merged to `main` as [`7dc4f9e`](https://github.com/Metivity/talk2nature/commit/7dc4f9e8f9114f555f333e621eec549f7b08ba3e). The manual [Pages run #40093458191](https://github.com/Metivity/talk2nature/actions/runs/40093458191) passed Python and Node tests, built and checked the public site, deployed it, and passed its live-route/crawl-metadata verifier. A fresh live browser check of `/research/first-animal/` confirms the Wytham disclosure says the shared material is prepared song data, the authors' original ~9 TB continuous recordings are not included, and documented nestbox coordinates remain uninspected and potentially sensitive. The page retains its separate methods, meaning and phone-study paths. No animal data or model was acquired or run; independent review remains open and AutoResearch remains **NOT READY**.
+
+## October 24 — assemble the first-dataset independent review packet
+
+**Question:** can an outside scientist and a separate ML/statistical reviewer make a useful bounded recommendation without receiving recordings or private data?
+
+**Evidence and decision:** kept the Wytham prepared-song methods path distinct from the ZF-AIM controlled-vocal-exchange and Egyptian-fruit-bat context-prediction leads, and kept budgerigars in the separate phone-cohort lane. The packet states the exact question each route could support, the strongest known limitation, and the rights/split evidence that still needs review. No candidate is selected or training-ready.
+
+**Change:** added `docs/FIRST_DATASET_REVIEW_PACKET.md` with go/narrow/defer questions, separate biological and evaluation-review roles, source/evidence links, conflict disclosure and no-data boundaries. Linked it with the existing scientific review form from the public first-animal page. Updated `GOAL.md`, the candidate decision and execution board to record that internal packet assembly is complete; actual independent reviews remain the next human-dependent gate. No reviewer was contacted.
+
+**Validation:** 159 Python tests and 117 Node tests passed. The local build produced 134 pages plus 404; `scripts/check_site.py` passed with 135 HTML documents and 6,839 links. The explicit-origin build produced 134 public routes; its checker passed with 135 HTML documents, 6,974 links and all 134 routes reachable. A local browser preview at 480 CSS pixels confirmed the review path is visible above the mobile dock, the accessibility tree exposes both links, and the document has no horizontal overflow (`scrollWidth` 480, viewport 480). No screen reader or physical phone was tested.
+
+**Limits:** this makes the review easier to perform but does not supply a reviewer or validate the biology. No media, annotations, code or weights were acquired or run. Benchmark and AutoResearch status remain **NOT READY** until the separate rights, reviewer, split, baseline and locked-test gates pass.
