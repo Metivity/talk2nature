@@ -4933,5 +4933,54 @@
         "rights": "The article is CC BY 4.0; the Zenodo API declares CC BY 4.0 on the cited v1 and newer v2 records, but exact source-audio scope and a separate same-title Zenodo concept remain unresolved. The pinned GitHub code is MIT. The WhisperSeg model page says Apache-2.0 but its revision API has no license value. No third-party archive, code or weight was downloaded.",
         "experiment": "No data was imported and no model, code or user interface was tested. Any future evaluation needs rights reconciliation, an independent reviewer, a defined human task, expert agreement targets and leakage-safe whole-bird splits for generalization. Predicted clusters must remain distinct from human annotations and behavioral observations."
       }
+  },
+  {
+    "slug": "bioacoustic-f0-estimation-cross-species-2025",
+    "title": "Cross-species pitch benchmark helps estimate vocal pitch, not meaning",
+    "seo_description": "A 2025 cross-species dataset benchmarks vocal pitch contours across mammals and birds; its monk-parakeet results do not decode meaning.",
+    "taxon": "Multiple mammals and birds; monk parakeet subset",
+    "kind": "Cross-species bioacoustic methods benchmark",
+    "year": "2025",
+    "year_label": "Peer-reviewed article and Dryad dataset",
+    "source_ids": [
+      400,
+      401,
+      402,
+      403
+    ],
+    "review_depth": "Reviewed the full PMC article text, the Dryad dataset landing page and file inventory, Dryad reuse guidance, and the paper-linked GitHub tree at commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea. The repository tree was checked for a license file. No dataset archive, code or model weights were acquired or run.",
+    "reviewed": "2026-10-24",
+    "review_stage": "Full-text article and source metadata reviewed; metadata-only, with no reproduction or specialist review",
+    "purpose": "Models & evaluation",
+    "review_locator": "Best, P. et al. (2025). Bioacoustic fundamental frequency estimation: a cross-species dataset and deep learning baseline. Bioacoustics 34(4), 419–446. DOI: 10.1080/09524622.2025.2500380. Dryad dataset DOI: 10.5061/dryad.prr4xgxw8.",
+    "finding": "The article reports 250,670 calls from 14 taxa with annotated fundamental-frequency (F0) contours. The Dryad release lists waveforms and annotations for 13 taxa; it also includes F0 predictions for bottlenose dolphins whose waveforms could not be published. The listed release totals 27.86 GB. Rodents contribute 224,705/250,670 calls (about 89.6%), while monk parakeets contribute 233. In the paper’s target-trained CREPE comparison, monk-parakeet pitch accuracy is 0.30 under that study’s half-semitone metric. This is an acoustic-feature estimation score, not a communication or meaning score.",
+    "limitations": "The benchmark targets a single F0 contour and discards overlapping sections; it does not label call category, behavioral context, addressee, receiver response or meaning. It is highly imbalanced by taxon, combines manual, semi-automatic and automatic annotation procedures, and model performance varies with signal characteristics. The 14-taxa article count and 13-taxa waveform deposit differ because dolphin predictions are present without the dolphin waveforms. The paper, data, code and weights have separate reuse terms. The exact source-recording provenance and independent-unit split structure were not reconciled in this review. The pinned 75-entry GitHub tree has no LICENSE/COPYING file; code and checkpoint terms remain unresolved.",
+    "lesson": "This is a useful candidate for testing whether an acoustic pipeline can estimate a measurable feature such as pitch on non-human calls. It could support a carefully bounded feature benchmark after rights, provenance and grouping checks. It cannot train or validate a system that claims to understand what an animal said. Keep the 233-call monk-parakeet subset distinct from much larger taxa and report per-taxon results rather than a pooled headline score.",
+    "next_review": "Before any acquisition or model run, reconcile source-recording provenance for the proposed subset; confirm what individual, recording-session and source-study keys are available; freeze a group-held-out evaluation with simple pitch-tracking baselines; and obtain independent bioacoustics and ML/statistical review. Keep the article, dataset, code and weights as separate rights records.",
+    "expert_review": "No independent avian-bioacoustics, bioacoustic-methods or ML/statistical review has been completed for Talk2Nature.",
+    "study_snapshot": [
+      [
+        "Question",
+        "How well do acoustic methods estimate annotated fundamental-frequency contours in calls from different taxa?"
+      ],
+      [
+        "Data",
+        "250,670 calls across 14 taxa in the paper; Dryad lists waveform/annotation files for 13 taxa and a 27.86 GB release."
+      ],
+      [
+        "Parrot subset",
+        "233 monk-parakeet calls; reported target-trained CREPE pitch accuracy 0.30 under the paper’s specific metric."
+      ],
+      [
+        "Boundary",
+        "Single-F0 feature estimation with overlap excluded; no labels for interaction, receiver response or meaning."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only feature-benchmark candidate; no data, code or weights acquired, admitted or run.",
+      "asset": "The public note is an original summary with links. The article, Dryad data, GitHub code and model checkpoints have separate rights and lineage.",
+      "rights": "Dryad states that datasets in its repository are CC0 and recommends citation. This review did not reconcile every original recording source. No explicit open license was found for the article in the reviewed author-manuscript page; the pinned GitHub tree has no LICENSE/COPYING file, so code and weights remain unresolved.",
+      "experiment": "No dataset file was imported and no code or model was executed. A future pilot should compare F0 estimators against the supplied contours on a frozen, group-held-out subset and report per-taxon uncertainty. It must not present pitch estimation as communication decoding."
+    }
   }
 ]

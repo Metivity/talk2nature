@@ -6287,6 +6287,126 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bioacoustic-f0-estimation-paper-2025",
+      "kind": "paper",
+      "title": "Cross-species deep-learning benchmark for bioacoustic F0 estimation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12387860/",
+      "version": "Bioacoustics 34(4), 419–446 (2025); DOI 10.1080/09524622.2025.2500380",
+      "source_ids": [
+        400
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "review_depth": "Full article text reviewed for benchmark question, data composition, evaluation metrics and results. No paper figures or text beyond a short original summary were copied.",
+      "task": "Estimate single fundamental-frequency contours from animal vocalizations; not call meaning or receiver response.",
+      "access": "Open PMC author-manuscript page; no paper file acquired.",
+      "decision": "Useful feature-measurement prior art. No explicit open article license was found on the reviewed manuscript page; keep article reuse unresolved and publish links plus an original summary only.",
+      "limitations": "The article aggregates prior datasets and reports a pitch-estimation benchmark. It does not establish animal-language decoding; article rights are separate from Dryad data, code and weights.",
+      "attribution": "Best, Paul, et al. (2025), Bioacoustics 34(4), 419–446; DOI 10.1080/09524622.2025.2500380.",
+      "rights": {
+        "license": "No explicit open reuse license found on the reviewed author-manuscript page; unresolved.",
+        "scope": "Article text only; excludes data, software, checkpoints and source recordings.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12387860/",
+        "conditions": "Publish an original summary and citation; verify reuse permission before reproducing article content or figures.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bioacoustic-f0-estimation-data-2025",
+      "kind": "dataset",
+      "title": "Cross-species F0 estimation waveforms and contour annotations",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.prr4xgxw8",
+      "version": "Dryad release published 2025-05-08; DOI 10.5061/dryad.prr4xgxw8",
+      "source_ids": [
+        401,
+        402,
+        400
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "review_depth": "Dryad landing page, listed file sizes, taxon inventory, data description and official Dryad CC0 reuse guidance reviewed. No archive acquired.",
+      "task": "Evaluate acoustic fundamental-frequency estimation against supplied contours; the dataset has no communication-meaning labels.",
+      "access": "Public Dryad record; the full displayed release totals 27.86 GB. No files downloaded.",
+      "decision": "Metadata-only candidate. Dryad states its data are CC0; reconcile source-recording provenance and proposed subset/group keys before selecting files for a Talk2Nature evaluation.",
+      "limitations": "Paper reports 14 taxa, while the waveform release covers 13 and includes dolphin predictions without dolphin waveforms. Rodents dominate the call count; monk parakeets have 233 calls. The benchmark excludes overlapping sections and uses heterogeneous annotation procedures.",
+      "attribution": "Best, Paul; Araya-Salas, Marcelo; Ekström, Axel G.; et al. (2025). Dataset. Dryad. DOI 10.5061/dryad.prr4xgxw8.",
+      "rights": {
+        "license": "CC0 under Dryad’s published data-reuse guidance.",
+        "scope": "The deposited dataset only; does not license the associated article, code, model checkpoints or assets outside this deposit.",
+        "evidence_url": "https://dev.datadryad.org/help/guides/reuse",
+        "conditions": "Dryad recommends scholarly citation. Reconcile source-recording provenance, exact selected files and study context before use in a Talk2Nature experiment.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bioacoustic-f0-estimation-code-2025",
+      "kind": "code",
+      "title": "Bioacoustic F0 estimation experiment code",
+      "url": "https://github.com/mim-team/bioacoustic_F0_estimation/tree/b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea",
+      "version": "GitHub commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea, checked 2026-10-24",
+      "source_ids": [
+        403,
+        400
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-24",
+      "review_depth": "Pinned repository tree and README reviewed read-only. The code was not downloaded, executed or audited dependency-by-dependency.",
+      "task": "Paper-linked implementation for F0 estimator comparisons and training/inference workflows.",
+      "access": "Public GitHub repository at pinned commit; no code acquired.",
+      "decision": "Do not acquire, run, integrate or redistribute until authoritative code terms, dependency licenses and exact dataset/model lineage are resolved.",
+      "limitations": "The pinned 75-entry tree has no LICENSE/COPYING file. This code record excludes model checkpoints and the Dryad dataset, which are separate components.",
+      "attribution": "mim-team/bioacoustic_F0_estimation, commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea.",
+      "rights": {
+        "license": "No LICENSE/COPYING file located in the reviewed pinned tree; unresolved.",
+        "scope": "Repository code only; excludes model weights, dataset files, article and dependencies.",
+        "evidence_url": "https://github.com/mim-team/bioacoustic_F0_estimation/tree/b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea",
+        "conditions": "Confirm an authoritative license and review dependencies before download or use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bioacoustic-f0-estimation-weights-2025",
+      "kind": "model",
+      "title": "Bioacoustic F0 estimation model checkpoints",
+      "url": "https://github.com/mim-team/bioacoustic_F0_estimation/tree/b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea",
+      "version": "GitHub commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea, checked 2026-10-24",
+      "source_ids": [
+        403,
+        400
+      ],
+      "priority": 3,
+      "reviewed": "2026-10-24",
+      "review_depth": "Pinned repository tree checked for model paths and file sizes; checkpoint bytes and training provenance were not acquired or inspected.",
+      "task": "Pretrained/model-all F0 estimator weights listed by the paper-linked repository.",
+      "access": "The pinned GitHub tree lists paper_experiments/crepe_weights/model_all.pth (88,988,786 bytes); no weights downloaded.",
+      "decision": "Unresolved metadata-only candidate. Do not download or run until checkpoint license, training-data lineage and supported model configuration are documented.",
+      "limitations": "No separate model license or training-data manifest was located in the reviewed tree. Weight terms are separate from repository code and Dryad dataset rights.",
+      "attribution": "mim-team/bioacoustic_F0_estimation, commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea.",
+      "rights": {
+        "license": "No separate checkpoint license or training-data provenance found in the reviewed pinned tree; unresolved.",
+        "scope": "Model checkpoint only; excludes repository code, dataset, training inputs and article.",
+        "evidence_url": "https://github.com/mim-team/bioacoustic_F0_estimation/tree/b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea",
+        "conditions": "Establish checkpoint rights and training data provenance before download, execution, integration or redistribution.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

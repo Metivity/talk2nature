@@ -4097,5 +4097,37 @@
     "url": "https://huggingface.co/nccratliri/whisperseg-base-animal-vad-ct2/tree/9f873b8a37fe37eb7543de092d308950ceb96fc0",
     "checked": "2026-10-24",
     "origin": "Reviewed the exact model page and queried its pinned revision metadata. The page displays Apache-2.0 but the model API license field is null. No checkpoint was downloaded or run; the paper's Whisper embedding model revision and terms are also not identified."
+  },
+  {
+    "id": 400,
+    "title": "Bioacoustic fundamental frequency estimation: a cross-species dataset and deep learning baseline",
+    "description": "Best et al. report a cross-species benchmark for estimating single fundamental-frequency contours from non-human vocalizations. It evaluates pitch estimation, not call meaning.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12387860/",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the full article text available through PMC, including dataset composition, annotation approaches, model scenarios, evaluation metrics, results and limitations. No audio, code or model weights were acquired or run. No explicit article reuse license was identified on the reviewed manuscript page."
+  },
+  {
+    "id": 401,
+    "title": "F0 estimation for bioacoustics: Dryad dataset",
+    "description": "Version published May 8, 2025; Dryad lists a 27.86 GB release with more than 250,000 calls and waveforms plus annotated F0 contours for 13 taxa. Dolphin predictions are included without the waveform release.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.prr4xgxw8",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the landing-page abstract, file inventory, data structure and access information. The displayed version totals 27.86 GB. No archive was downloaded; the individual monk-parakeet zip is listed as 5.08 MB."
+  },
+  {
+    "id": 402,
+    "title": "Dryad reuse guidance and CC0 policy",
+    "description": "Dryad states that its datasets are published under CC0 and recommends scholarly attribution. This policy source does not license separately published papers, code, model weights or assets outside the deposited dataset.",
+    "url": "https://dev.datadryad.org/help/guides/reuse",
+    "checked": "2026-10-24",
+    "origin": "Reviewed Dryad reuse guidance, including its dataset-level CC0 statement and citation recommendation. This is not an independent audit of source-recording provenance or every upstream study."
+  },
+  {
+    "id": 403,
+    "title": "Bioacoustic F0 estimation code and model repository at pinned revision",
+    "description": "Pinned GitHub tree for the paper-linked implementation. The reviewed 75-entry tree contains code and model assets but no LICENSE or COPYING file; code and weights are separate components with unresolved terms.",
+    "url": "https://github.com/mim-team/bioacoustic_F0_estimation/tree/b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the repository tree and README at commit b57cc78f5b1c42b4eb61bdc4dc0f4430211c62ea using read-only GitHub metadata. The tree has 75 entries and no LICENSE/COPYING file. No code or weights were downloaded or run; the paper_experiments/crepe_weights/model_all.pth file is listed as 88,988,786 bytes."
   }
 ]
