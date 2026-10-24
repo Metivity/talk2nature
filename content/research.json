@@ -4414,10 +4414,18 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-23",
-      "location_status": "pending",
-      "location_note": "Authors describe one study population at Wytham Woods, Oxfordshire, U.K. Author metadata documentation confirms British National Grid coordinates in nestboxes.csv and says they also appear in main.csv; no coordinate values or data files were inspected. Keep this entry at coarse study-region scale, with no nestbox or perimeter pin.",
-      "locations": [],
+      "reviewed": "2026-10-24",
+      "location_status": "mapped",
+      "location_note": "Mapped to a coarse Wytham Woods study-region point from the published study-site description. The dataset documents nestbox coordinates; no coordinate values or data files were inspected or plotted.",
+      "locations": [
+        {
+          "place_id": "wytham-woods",
+          "role": "study_region",
+          "source_id": 367,
+          "locator": "STAR Methods: Experimental model and study participant details; key resources table",
+          "basis": "The primary article identifies its wild great-tit population at Wytham Woods, Oxford, UK."
+        }
+      ],
       "observation_period": null
     },
     "reuse": {

@@ -2059,8 +2059,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn('British National Grid',note['limitations'])
         self.assertIn('keep public geography coarse',note['limitations'])
         self.assertIn('as a held-out-individual baseline',note['limitations'])
-        self.assertEqual(note['atlas']['location_status'],'pending')
-        self.assertEqual(note['atlas']['locations'],[])
+        self.assertEqual(note['atlas']['location_status'],'mapped')
+        self.assertEqual(note['atlas']['locations'][0]['place_id'],'wytham-woods')
+        self.assertEqual(note['atlas']['locations'][0]['source_id'],367)
+        self.assertEqual(note['atlas']['locations'][0]['role'],'study_region')
         resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
         selected={r['id']:r for r in resources if r['id'].startswith('wytham-great-tit-')}
         self.assertEqual(set(selected),{
