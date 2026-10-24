@@ -68,6 +68,7 @@ class SiteTests(unittest.TestCase):
         self.assertIn('id: review-target',form)
         self.assertIn('No first benchmark is selected.',form)
         for candidate in (
+            'OpenWhistle dolphin whistle detection/type classification',
             'bat interaction-context prediction',
             'zebra-finch turn-taking',
             'zebra-finch call-perception comparison',
@@ -76,6 +77,17 @@ class SiteTests(unittest.TestCase):
         ):
             with self.subTest(candidate=candidate):
                 self.assertIn(candidate,form)
+        packet=(project_root/'docs'/'FIRST_DATASET_REVIEW_PACKET.md').read_text()
+        for evidence in (
+            'Bottlenose dolphin / OpenWhistle',
+            'session-disjoint, not animal-disjoint',
+            'five months',
+            'cetacean-bioacoustics',
+            'LICENSE-DATA',
+            'https://metivity.github.io/talk2nature/research/openwhistle-dolphin-benchmark/',
+        ):
+            with self.subTest(review_packet=evidence):
+                self.assertIn(evidence,packet)
         target_field=form.split('id: review-target',1)[1].split('  - type:',1)[0]
         self.assertIn('required: true',target_field)
         conflict_field=form.split('id: conflict-disclosure',1)[1].split('  - type:',1)[0]
