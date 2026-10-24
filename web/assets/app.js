@@ -1,4 +1,4 @@
-import {watchWaitingWorker} from './app-update.mjs';
+import {announceWaitingUpdate,watchWaitingWorker} from './app-update.mjs';
 const base = new URL('../app/', import.meta.url), $ = id => document.getElementById(id);
 const modes = {
   outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','outdoor-place','A bird moved to another branch. Its identity is uncertain.'],
@@ -78,10 +78,7 @@ if (matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
 }
 const watchedRegistrations = new WeakSet(), checkedRegistrations = new WeakSet();
 function updateReady() {
-  const message='Update ready. Nothing will reload now. Export work you want to keep, then close all Talk2Nature windows and reopen.';
-  const notice=$('app-update-status'), offline=$('offline-status');
-  if (notice) { notice.hidden=false; notice.textContent=message; }
-  if (offline) offline.textContent=message;
+  announceWaitingUpdate($('app-update-status'),$('offline-status'));
 }
 async function offlineState() {
   const offline=$('offline-status');
