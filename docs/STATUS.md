@@ -1,5 +1,13 @@
 # Project status
 
+## October 24 — choose a first species by scientific task, not dataset size
+
+**Question:** which animal and existing resource give Talk2Nature the most useful first research foothold?
+
+**Decision:** keep the Field Companion species-neutral. Prioritize the Egyptian fruit-bat corpus for a no-data audit of vocal-context research because its primary descriptor reports 293,238 short recordings and 91,080 video-derived annotations that include emitter/addressee and behavior/context information ([Prat et al., 2017](https://doi.org/10.1038/sdata.2017.143)). The existing Talk2Nature linkage audit places about 95% of records in one connected component, so this is a candidate to investigate, not a ready benchmark. Honeybee waggle data are the clearest known signal-to-receiver candidate, but the signal is movement, its core association is already published, and the archive is one site ([Dormagen et al., 2023](https://doi.org/10.1093/pnasnexus/pgad275)). Budgerigars remain a possible usability cohort if access and qualified review become available; the reviewed household corpus search did not find a public parrot audio dataset with independent event-aligned context labels.
+
+**Next gate:** assess whether any bat split can hold out independent animals or recording groups without leakage, verify component-specific reuse/rights and label provenance, and ask independent bat-behavior and ML/statistical reviewers whether a non-duplicative question exists. If not, record a no-go and use an explicitly non-semantic sound-identification task only to test the app/data pipeline. No additional data acquisition, training, recruitment or translator claim is authorized by this checkpoint. AutoResearch remains **NOT READY**.
+
 ## October 24 — add a bounded honeybee review route for research groups
 
 **Question:** can a research group inspect the honeybee signal/follower candidate through a clear, no-data review task?
