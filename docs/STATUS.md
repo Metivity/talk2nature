@@ -1,5 +1,15 @@
 # Project status
 
+## October 25 — simplify the first animal choice
+
+**Question:** can a new visitor see which species path fits their goal without first decoding the research taxonomy?
+
+**Change:** replaced the five-category “Quick answer” with three plain-language starting paths: use the phone app with a pet, practice on a large sound library, or study a known signal and its receivers. Each link jumps to the corresponding evidence section; the detailed species reviews and limitations remain below. The active goal now records the task-specific split: provisional budgerigar phone-usability cohort, Great Tit song-structure methods candidate, honeybee signal/follower prior art, and zebra-finch/bat questions behind their current gates.
+
+**Validation:** all 169 repository Python tests passed (one intentional skip) and all 117 Node tests passed. The local noindex build generated 136 pages plus 404; `scripts/check_site.py` validated 137 HTML pages and 6,974 links. A local browser accessibility-tree inspection exposed all three choices and their matching section anchors. The choices stack into one column below 620 CSS pixels. No physical-phone or independent visitor test occurred.
+
+**Limit and next gate:** this improves orientation only; it does not establish that newcomers understand the choices. The benchmark remains **NOT READY**. Continue toward independent review of the narrow candidate questions and a real usability check when an outside participant is available.
+
 ## October 25 — make the mobile update notice easier to follow
 
 The live Station showed a waiting-update notice with browser/engineering wording. Rephrased it to tell users to save any moment they want to keep, close Talk2Nature tabs or windows, and reopen the app. The existing service-worker wait remains in place; the app does not force a reload during a session.

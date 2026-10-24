@@ -4,11 +4,11 @@
 <h1>Many animals.<br><em>One question.</em></h1>
 <p class="lede">There is no one best animal for every goal. Match the species to the evidence you want to learn from.</p>
 
-<aside class="review-box"><strong>Quick answer</strong><ul class="animal-quick"><li><strong>Large audio resources:</strong> Great Tits for song structure; OpenWhistle dolphins for whistle detection and categories. Neither tests meaning.</li><li><strong>Known signal with observed followers:</strong> honeybee waggle dances; rich prior work, one observation-hive site, and no general translator.</li><li><strong>Bird call-perception lead:</strong> zebra finches; behavioral and sound records still need reconciliation.</li><li><strong>Video-coded context task:</strong> Egyptian fruit bats; the current grouping does not support a balanced strict holdout.</li><li><strong>Phone observation study:</strong> budgerigars; access and specialist review are pending.</li></ul><p>No first ML benchmark is selected or training-ready. None of these paths establishes general animal translation.</p></aside>
+<aside class="review-box"><strong>Choose what you want to do first</strong><div class="animal-start-choices" aria-label="Three evidence-led starting paths"><a href="#budgerigars"><strong>Use the phone app with a pet</strong><span>Start with a parrot-carer workflow; budgerigars are a provisional study cohort.</span></a><a href="#wytham-great-tit"><strong>Practice on a large sound library</strong><span>Use Great Tit song structure as a methods task, not call meaning.</span></a><a href="#honeybee-signal"><strong>Study a signal and its receivers</strong><span>Explore honeybee dances and followers; this is established prior work.</span></a></div><p>Zebra finches and fruit bats are also valuable research leads, with unresolved data and evaluation gates. No Talk2Nature benchmark is selected or ready for training, and none of these paths establishes general animal translation.</p></aside>
 <p><strong>Research review:</strong> <a href="https://github.com/Metivity/talk2nature/blob/main/docs/FIRST_DATASET_REVIEW_PACKET.md">read the no-data first-dataset review packet</a> · <a href="https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml">submit a methods critique ↗</a>. No recordings or private data are requested.</p>
 
 <div class="animal-options">
-<section>
+<section id="wytham-great-tit">
 <p class="eyebrow">LARGE DATASET · METHODS PATH</p>
 <h2>Great Tits at Wytham</h2>
 <p>Best large-data path for learning song-structure methods. The labels describe songs and notes; they do not explain what a call means.</p>
@@ -22,7 +22,7 @@
 <details class="animal-detail"><summary>Research details</summary><p>The preprint reports about 114 hours of audio across five years from five known dolphins, with 8,354 expert-labeled whistles. Its published evaluation separates recording sessions but keeps the same pod across partitions, so it does not establish generalization to new dolphins.</p><p>The official repository declares CC BY 4.0 for its datasets, though Hugging Face cards omit a license field. The code has no separate visible license, and the Wav2Vec model license is unspecified. No media has been acquired; independent cetacean and ML review is still required.</p></details>
 <a href="{{base}}/research/openwhistle-dolphin-benchmark/">Read the OpenWhistle rights and evaluation review →</a>
 </section>
-<section>
+<section id="honeybee-signal">
 <p class="eyebrow">KNOWN SIGNAL · OBSERVED RECEIVER</p>
 <h2>Honeybee waggle dances</h2>
 <p>A rare dataset connects a well-defined movement signal with follower behavior and feeder outcomes. The core dance–food relationship is established prior work, not an undiscovered animal language.</p>
@@ -51,7 +51,7 @@
 <details class="animal-detail"><summary>Research details</summary><p>A 2024 paper reports predicting video-coded interaction context from 35,074 vocalizations across 11 classes. These are published results, not a Talk2Nature reproduction, and do not show that bats understood a message.</p><p>The recordings used a specialized 250 kHz laboratory system, not ordinary phones. A metadata-only reconstruction matches the reported filtered count, not the exact rows or folds. Keeping each file and every positive known participant together leaves one group with 95.6% of examples. Specialist review and additional session/context metadata are needed; we have not trained a model.</p></details>
 <a href="{{base}}/research/fruit-bat-context-ml-2024/">Read the bat study review and open questions →</a>
 </section>
-<section>
+<section id="budgerigars">
 <p class="eyebrow">PROVISIONAL PHONE-COHORT CANDIDATE</p>
 <h2>Budgerigars</h2>
 <p>A practical candidate for testing the phone workflow with existing carers; the app records observations and does not identify the animal.</p>
@@ -96,5 +96,5 @@
 <p>The Field Companion welcomes observations of many animal groups. Species choices are entered by the observer; the app does not identify an animal. Try the invented, microphone-free rehearsal first, or read the research plan before contributing to any future study.</p>
 <div class="actions"><a class="button" href="{{base}}/app/">Open the Field Companion ↗</a><a class="text-link" href="{{base}}/research/starting-points/">Follow the reading paths →</a></div>
 
-<p class="quiet">Updated October 24, 2026. Evidence-led candidate choices only: no Talk2Nature animal cohort, independent specialist review, model training or translation result is claimed. Real-data intake to the private research database remains closed.</p>
+<p class="quiet">Updated October 25, 2026. Evidence-led candidate choices only: no Talk2Nature animal cohort, independent specialist review, model training or translation result is claimed. Real-data intake to the private research database remains closed.</p>
 </article>
