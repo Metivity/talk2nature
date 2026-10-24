@@ -683,3 +683,7 @@ Google's indexed-state report still marks the Wytham page unknown with no referr
 ### October 24 continuation — validate the live microphone-free first run
 
 The deployed Station's synthetic rehearsal was started and stopped in the browser. It retained a human-entered movement note, clearly marked the 2.5-second window partial and synthetic, and did not request microphone access or play sound. This is a useful software onboarding path, not a phone-device or biological validation. Keep the Field Companion's first-use path simple; do not add more workflow choices until a demonstrated need appears. The next app check is save-and-reopen of a synthetic session on a physical phone. The science gate remains independent review before selecting a communication-adjacent benchmark; no review has been received and AutoResearch stays **NOT READY**.
+
+### October 24 continuation — verify local save and reopen on narrow screens
+
+Completed the synthetic-only Station → ZIP download → Compare import workflow at 390 × 844 and 320 × 720 CSS pixels. The imported session retained its one human observation and one clip, remained explicitly partial and synthetic, and did not play automatically or upload. The page had no horizontal overflow at either tested width. This closes the current browser file-handoff check, not physical-phone compatibility. The next mobile gate remains actual Android/iPhone installation, saving and reopening; no device was connected for this turn. Keep the science benchmark **NOT READY** pending rights, grouped evaluation and independent review.
