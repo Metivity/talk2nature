@@ -3626,3 +3626,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Decision:** close the stale-alert reconciliation. The October 20 entry accurately records the then-current state and queued refresh; the API now confirms both alerts fixed and the SBOM matches the checked-in requirement and lock. No dependency change or alert dismissal was needed.
 
 **Limits:** this verifies GitHub's current repository graph/SBOM and source manifests, not the dependency inventory of a hosted private runtime. Automatic pip security-fix PRs remain disabled because the custom private lock still needs a supported update path. No hosted service was inspected or changed.
+
+## October 24 — make the zebra-finch perception review self-serve
+
+**Question:** can an independent reviewer assess Candidate E without first navigating the full candidate matrix or obtaining any audio?
+
+**Evidence:** the current run card identifies a conditional modern-representation extension, records the prior-art boundary and unresolved call/vocalizer/version/rights gates, and requires independent avian-perception and ML/statistical review. The public scientific-review issue form already accepts a bounded candidate and exact source version.
+
+**Change:** added a concise no-data review brief with one question, the known novelty limit, precise unresolved evidence, five bounded review prompts and four possible decisions. Linked it from Candidate E and the zebra-finch reviewer-path documentation, and added the candidate to the issue form's examples. The brief separates matrix-only reproduction from a raw-audio extension and keeps model predictions distinct from bird judgments.
+
+**Validation and limits:** `git diff --check` and the repository documentation/resource checks pass. The brief is a review invitation, not a completed external review. No reviewer was contacted; no animal media, archive, code or model was acquired or executed. Candidate E remains unselected and AutoResearch remains **NOT READY**.

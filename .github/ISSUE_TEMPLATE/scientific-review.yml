@@ -10,7 +10,7 @@ body:
     id: review-target
     attributes:
       label: Candidate, claim, or decision you are reviewing
-      description: No first benchmark is selected. Name one bounded question or artifact, such as bat interaction-context prediction, zebra-finch turn-taking, V33DA caller attribution, or Great Tit song structure.
+      description: No first benchmark is selected. Name one bounded question or artifact, such as bat interaction-context prediction, zebra-finch turn-taking, zebra-finch call-perception comparison, V33DA caller attribution, or Great Tit song structure.
       placeholder: The specific question or decision I reviewed is…
     validations:
       required: true

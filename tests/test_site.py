@@ -70,6 +70,7 @@ class SiteTests(unittest.TestCase):
         for candidate in (
             'bat interaction-context prediction',
             'zebra-finch turn-taking',
+            'zebra-finch call-perception comparison',
             'V33DA caller attribution',
             'Great Tit song structure',
         ):

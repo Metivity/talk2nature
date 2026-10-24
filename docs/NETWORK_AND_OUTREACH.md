@@ -72,7 +72,7 @@ The current invitation and contact boundaries are in [UNIVERSITY_EVALUATION.md](
 
 ## Zebra-finch reviewer-fit paths (checked October 24, 2026)
 
-The [ZF-AIM review brief](ZF_AIM_INDEPENDENT_REVIEW.md) now supports a focused, no-data methods review. These are public research-fit hypotheses, not selected reviewers or prospective partners. None is listed among the ZF-AIM v3 authors, but no complete coauthorship or recent-collaboration screen has been performed; do not describe any review as independent until that screen and the reviewer's disclosure are recorded.
+The [ZF-AIM review brief](ZF_AIM_INDEPENDENT_REVIEW.md) covers the controlled vocal-exchange candidate. The separate [zebra-finch perception brief](ZEBRA_FINCH_PERCEPTION_REVIEW.md) covers Candidate E's possible modern-representation extension. These are no-data review proposals for different tasks, not selected benchmarks. The fit paths below are public research-fit hypotheses, not selected reviewers or prospective partners. None is listed among the ZF-AIM v3 authors, but no complete coauthorship or recent-collaboration screen has been performed; do not describe any review as independent until that screen and the reviewer's disclosure are recorded.
 
 | Research path | Public evidence for fit | Bounded review that could help | Boundary |
 | --- | --- | --- | --- |
