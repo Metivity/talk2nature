@@ -3683,11 +3683,11 @@
   },
   {
     "id": 358,
-    "title": "ZF-AIM zebra-finch interaction study, bioRxiv preprint",
+    "title": "Leveraging AI-powered interactive playbacks to decipher rules of communication in zebra finches",
     "description": "Full-text-reviewed v3 preprint reporting female zebra-finch call timing and acoustic modulation during natural interactions, plus controlled tests with an AI-driven interactive audio model. It measures contingent acoustic exchange, not translated semantic content.",
-    "url": "https://doi.org/10.64898/2026.02.12.705387",
-    "checked": "2026-10-23",
-    "origin": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license. Supplemental figures/analyses and the later Zenodo archive were not inspected; no data, code or model was acquired or run.",
+    "url": "https://www.biorxiv.org/content/10.64898/2026.02.12.705387v3",
+    "checked": "2026-10-24",
+    "origin": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license. A metadata-only refresh of the official v3 page on October 24 confirmed its current title and that the title and abstract were updated; this was not a new full-text review. Supplemental figures/analyses and the later Zenodo archive were not inspected; no data, code or model was acquired or run.",
     "rights": {
       "preprint": "bioRxiv lists CC BY-NC-ND 4.0 for v3. This covers the manuscript under its stated terms; it does not independently clear recordings, annotations, code or checkpoints.",
       "version_scope": "The v3 article's data-availability statement is time-specific. The later Zenodo record describes a code/checkpoint/data release; the relationship and component-level terms have not been reconciled."

@@ -4,7 +4,7 @@
 
 ## Why this candidate
 
-ZF-AIM is a strong literature lead for studying the structure of vocal exchanges: its authors report more than 1,000 hours of zebra-finch vocal interactions and a model that predicts the next caller, call token and wait time. The work is a bioRxiv preprint, and its outcomes concern acoustic timing and contingency rather than decoded semantic meaning. See the versioned [v3 manuscript](https://doi.org/10.64898/2026.02.12.705387).
+ZF-AIM is a strong literature lead for studying the structure of vocal exchanges: its authors report more than 1,000 hours of zebra-finch vocal interactions and a model that predicts the next caller, call token and wait time. The work is a bioRxiv preprint, and its outcomes concern acoustic timing and contingency rather than decoded semantic meaning. The current [v3 page](https://www.biorxiv.org/content/10.64898/2026.02.12.705387v3) is titled “Leveraging AI-powered interactive playbacks to decipher rules of communication in zebra finches” and states that its title and abstract were updated; this bibliographic note does not change the review's findings or establish translation.
 
 This brief asks whether a bounded, independent reproduction or challenge is scientifically and practically justified. It does not assume that this is the best dataset for every Talk2Nature goal. Great tits remain a separate large song-structure methods path; budgerigars remain a possible phone-study cohort only if access and safeguards are established.
 
@@ -47,7 +47,7 @@ To respond, use the repository's [scientific methods review issue template](http
 
 ## Source trail
 
-- James et al. (2026), [bioRxiv v3 preprint](https://doi.org/10.64898/2026.02.12.705387), reviewed main text and methods; not peer reviewed.
+- James et al. (2026), [“Leveraging AI-powered interactive playbacks to decipher rules of communication in zebra finches,” bioRxiv v3](https://www.biorxiv.org/content/10.64898/2026.02.12.705387v3), reviewed main text and methods; not peer reviewed.
 - [ZF-AIM data release, Zenodo record 23047646](https://doi.org/10.5281/zenodo.23047646), record metadata only; license declarations conflict.
 - [ZF-AIM code/model release, Zenodo record 23024019](https://zenodo.org/records/23024019), top-level record only; 26.6 GB ZIP not inspected.
 - See the project's [source-grounded evidence note](../content/research.json) and [current candidate decision](FIRST_ANIMAL_PLAN.md) for the full review scope and alternatives.
