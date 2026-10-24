@@ -3653,4 +3653,12 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 
 **Validation:** all 115 Node tests and 159 Python tests pass. The local noindex build produced 133 pages plus 404, and `scripts/check_site.py` passed with 134 HTML pages and 6,784 links. In headless Chrome at 320 × 740, the CTA now clears the fixed dock by 22.8 pixels; at 390 × 844 it clears by 105.5 pixels. Both viewports have no horizontal overflow. The example pair opens at both sizes, labels the sessions as invented, and raises no page errors.
 
-**Limits and next decision:** this resolves the measured emulated viewport defect only; physical devices, mobile Safari/Android, screen readers and novice task success remain unverified. No real audio or animal data was used. Keep Compare usability in the phone QA backlog and validate the release workflow before publication.
+**Limits and next decision:** this resolves the measured emulated viewport defect only; physical devices, mobile Safari/Android, screen readers and novice task success remain unverified. No real audio or animal data was used. Keep Compare usability in the phone QA backlog and test with a physical device and a novice when available; the Pages release is recorded below.
+
+## October 24 — deploy the Compare narrow-phone fix
+
+**Release receipt:** PR [#328](https://github.com/Metivity/talk2nature/pull/328) merged as [`b05bc551ae36f4867722a388d1655dc621e7c5b8`](https://github.com/Metivity/talk2nature/commit/b05bc551ae36f4867722a388d1655dc621e7c5b8). Manual Pages run [#40081911116](https://github.com/Metivity/talk2nature/actions/runs/40081911116) completed successfully: public tests, explicit-origin build, link/SEO/publish-boundary checks, deploy and live-route verification all passed.
+
+**Live verification:** a new headless-Chrome context loaded `/app/compare/` over HTTPS with HTTP 200. At 320 × 740 the button clears the dock by 22.8 pixels; at 390 × 844 it clears by 105.5 pixels. Document and body widths match the viewport, the invented example pair opens at both sizes, and no page errors occurred.
+
+**Limits:** this verifies the deployed layout in Chromium emulation only. Physical devices, mobile Safari/Android, screen readers and novice comprehension remain unverified. No real recordings or participant data were used.
