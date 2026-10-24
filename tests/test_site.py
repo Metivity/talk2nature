@@ -756,6 +756,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('No recordings or private data are requested',page)
             self.assertIn('Bird call-perception lead:',page)
             self.assertIn('No first ML benchmark is selected or training-ready',page)
+            self.assertIn('Compare household-animal data and app fit',page)
+            self.assertIn('/talk2nature/research/companion-animal-cohort-evidence-2026/',page)
             self.assertIn('A 2025 study tested 12 adult finches on 11 researcher-defined call types',page)
             self.assertIn('archive described as 3,433 recordings',page)
             self.assertIn('The closest reviewed lead for studying turn-taking',page)
