@@ -1,121 +1,186 @@
 {
-  "schema_version": 1,
-  "retrieved_at_utc": "2026-10-24T00:47:42Z",
-  "retrieval": {
-    "method": "OSF public JSON:API; recursively enumerated osfstorage folder relationships over verified TLS",
-    "node_endpoint": "https://api.osf.io/v2/nodes/n8ac9/",
-    "files_endpoint": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
-    "payload_bytes_downloaded": false,
-    "provider_hashes_recomputed": false,
-    "path_note": "Relative paths below are reconstructed from the folder names returned by OSF relationships."
-  },
-  "node": {
-    "id": "n8ac9",
-    "doi": "10.17605/OSF.IO/N8AC9",
-    "title": "Wytham Great Tit Song Dataset",
-    "public": true,
-    "last_modified": "2023-07-10T15:22:56.881573",
-    "declared_license": "CC-By Attribution 4.0 International",
-    "explicit_dataset_version": null
-  },
-  "summary": {
-    "current_api_file_count": 14,
-    "current_api_total_bytes": 12184652639,
-    "song_archive_parts": 4,
-    "song_archive_bytes": 11380411540,
-    "metadata_file_count": 10,
-    "metadata_bytes": 804241099,
-    "prior_snapshot_file_count": 23,
-    "prior_snapshot_extra_documentation_files": 9,
-    "prior_snapshot_extra_documentation_bytes": 25871,
-    "prior_snapshot_reconciliation": "The 2026-10-23 snapshot lists nine /docs/ paths that are absent from the current API tree. The 14 shared data-file entries match by basename, byte size and provider-reported SHA-256. The OSF node last-modified value is unchanged. The reason for the extra documentation entries in the prior snapshot is unresolved; retain that snapshot as historical and use this file for the current API inventory.",
-    "location_review": "The current manifest includes nestboxes.csv, main.csv and a Wytham perimeter shapefile. Author documentation identifies precise coordinate fields, but no location values or file payloads were inspected or reproduced.",
-    "hash_provenance": "SHA-256 and MD5 values below are reported by the OSF API and were not recomputed against file bytes."
-  },
   "files": [
     {
-      "path": "metadata/morphometrics.csv",
-      "bytes": 3716332,
-      "sha256": "67953ccd0a54dcd7a786b64bd0ab9ec347e40a4ef34a4c356ea2d12d7588ec4d",
-      "md5": "493a0c74a6a4812b522f6546fee34cf3"
-    },
-    {
-      "path": "metadata/nestboxes.csv",
-      "bytes": 78446,
-      "sha256": "dfa8adfdd99865ffa58ec983d59916f7e36932cac587d3e463426f26d9233a44",
-      "md5": "d99b5c104e9aaa8d0695b3a310ca27bf"
-    },
-    {
-      "path": "metadata/main.csv",
-      "bytes": 710595,
-      "sha256": "497cc05221f93cef597f95390ea7a8122cd42d7da5dba6cc9ed0dab3d475f4d9",
-      "md5": "280f5d21e98e935ed8e9f623f64618f8"
-    },
-    {
-      "path": "metadata/great-tit-hits.csv",
-      "bytes": 111502303,
-      "sha256": "580fee8440d7e213b7c8507903818d7748efaf4052ed94740a25ec8c1e5ccb80",
-      "md5": "56a21cc1433e9a3b20004e73ccb48246"
-    },
-    {
-      "path": "metadata/feature_vectors.csv",
       "bytes": 516094703,
-      "sha256": "c422dcb8f89a66db02942bbd69db9de9051b428cb06aa0c370587ac408f5c861",
-      "md5": "3352b2fdd5cce73905c061fdc9120ffc"
+      "md5": "3352b2fdd5cce73905c061fdc9120ffc",
+      "path": "data/metadata/feature_vectors.csv",
+      "sha256": "c422dcb8f89a66db02942bbd69db9de9051b428cb06aa0c370587ac408f5c861"
     },
     {
-      "path": "metadata/great-tit-hits-crowsetta.csv",
       "bytes": 172126877,
-      "sha256": "4cb40f3b15b515c9824881ac040580758b4ac8a754538b37bf361dd5d8724dba",
-      "md5": "c4781f2d3e83989616f5c75420d97c72"
+      "md5": "c4781f2d3e83989616f5c75420d97c72",
+      "path": "data/metadata/great-tit-hits-crowsetta.csv",
+      "sha256": "4cb40f3b15b515c9824881ac040580758b4ac8a754538b37bf361dd5d8724dba"
     },
     {
-      "path": "songs/song-files.zip.part4",
-      "bytes": 248315109,
-      "sha256": "2cc2fdc7da1e76ed60d3217a251404e916b810973620de7cbdd3a570bd2d444d",
-      "md5": "ad19f7abd4fac9b88025373f0555fba9"
+      "bytes": 111502303,
+      "md5": "56a21cc1433e9a3b20004e73ccb48246",
+      "path": "data/metadata/great-tit-hits.csv",
+      "sha256": "580fee8440d7e213b7c8507903818d7748efaf4052ed94740a25ec8c1e5ccb80"
     },
     {
-      "path": "songs/song-files.zip.part2",
-      "bytes": 3735396385,
-      "sha256": "ad9aab5253bf7a8f70c32db17b3e92f5dfb3df18581a080c7f29e01bb6b36ec5",
-      "md5": "a4d40541c157df23b35c958384eccae0"
+      "bytes": 710595,
+      "md5": "280f5d21e98e935ed8e9f623f64618f8",
+      "path": "data/metadata/main.csv",
+      "sha256": "497cc05221f93cef597f95390ea7a8122cd42d7da5dba6cc9ed0dab3d475f4d9"
     },
     {
-      "path": "songs/song-files.zip.part3",
-      "bytes": 3741555821,
-      "sha256": "caaa0a78de733ac83ababa1b9d8e1cc977ee34abc9e442b0aaf609bb28261bb9",
-      "md5": "e6787027dfed54a40f70638b9fee48f1"
+      "bytes": 3716332,
+      "md5": "493a0c74a6a4812b522f6546fee34cf3",
+      "path": "data/metadata/morphometrics.csv",
+      "sha256": "67953ccd0a54dcd7a786b64bd0ab9ec347e40a4ef34a4c356ea2d12d7588ec4d"
     },
     {
-      "path": "songs/song-files.zip.part1",
-      "bytes": 3655144225,
-      "sha256": "b10173d9810aba0049755c7cb0167ebfe3903b95dfb08984d9a7c6556357037c",
-      "md5": "801808a33839a833a3df25e32d4bc77d"
+      "bytes": 78446,
+      "md5": "d99b5c104e9aaa8d0695b3a310ca27bf",
+      "path": "data/metadata/nestboxes.csv",
+      "sha256": "dfa8adfdd99865ffa58ec983d59916f7e36932cac587d3e463426f26d9233a44"
     },
     {
-      "path": "metadata/wytham_map/perimeter.shp",
-      "bytes": 11180,
-      "sha256": "2731e12d68afb49905bcbb5c43dc4bbc2f1bf20e4fe073cb687063b8cb2c426e",
-      "md5": "701e5f31882b3d8193c7cf39c2d25116"
-    },
-    {
-      "path": "metadata/wytham_map/perimeter.prj",
-      "bytes": 398,
-      "sha256": "884fc5e27844afb733cdc20774784f2ff9f95fefaf28d8509708f3792023279e",
-      "md5": "deede6d99f0126d796aa47002715170e"
-    },
-    {
-      "path": "metadata/wytham_map/perimeter.dbf",
       "bytes": 125,
-      "sha256": "98050f0f98276cd2e8861ce9d59d36c31025078f405abdd979715bd525f39a73",
-      "md5": "a031076441d5b3e504c631dd7da930d4"
+      "md5": "a031076441d5b3e504c631dd7da930d4",
+      "path": "data/metadata/wytham_map/perimeter.dbf",
+      "sha256": "98050f0f98276cd2e8861ce9d59d36c31025078f405abdd979715bd525f39a73"
     },
     {
-      "path": "metadata/wytham_map/perimeter.shx",
+      "bytes": 398,
+      "md5": "deede6d99f0126d796aa47002715170e",
+      "path": "data/metadata/wytham_map/perimeter.prj",
+      "sha256": "884fc5e27844afb733cdc20774784f2ff9f95fefaf28d8509708f3792023279e"
+    },
+    {
+      "bytes": 11180,
+      "md5": "701e5f31882b3d8193c7cf39c2d25116",
+      "path": "data/metadata/wytham_map/perimeter.shp",
+      "sha256": "2731e12d68afb49905bcbb5c43dc4bbc2f1bf20e4fe073cb687063b8cb2c426e"
+    },
+    {
       "bytes": 140,
-      "sha256": "da99c84de6460a9d6459573895c26e1b17f037b162fd86534cb19c9df83a093b",
-      "md5": "519d58466acea52d0f3596c20d2ceecd"
+      "md5": "519d58466acea52d0f3596c20d2ceecd",
+      "path": "data/metadata/wytham_map/perimeter.shx",
+      "sha256": "da99c84de6460a9d6459573895c26e1b17f037b162fd86534cb19c9df83a093b"
+    },
+    {
+      "bytes": 3655144225,
+      "md5": "801808a33839a833a3df25e32d4bc77d",
+      "path": "data/songs/song-files.zip.part1",
+      "sha256": "b10173d9810aba0049755c7cb0167ebfe3903b95dfb08984d9a7c6556357037c"
+    },
+    {
+      "bytes": 3735396385,
+      "md5": "a4d40541c157df23b35c958384eccae0",
+      "path": "data/songs/song-files.zip.part2",
+      "sha256": "ad9aab5253bf7a8f70c32db17b3e92f5dfb3df18581a080c7f29e01bb6b36ec5"
+    },
+    {
+      "bytes": 3741555821,
+      "md5": "e6787027dfed54a40f70638b9fee48f1",
+      "path": "data/songs/song-files.zip.part3",
+      "sha256": "caaa0a78de733ac83ababa1b9d8e1cc977ee34abc9e442b0aaf609bb28261bb9"
+    },
+    {
+      "bytes": 248315109,
+      "md5": "ad19f7abd4fac9b88025373f0555fba9",
+      "path": "data/songs/song-files.zip.part4",
+      "sha256": "2cc2fdc7da1e76ed60d3217a251404e916b810973620de7cbdd3a570bd2d444d"
+    },
+    {
+      "bytes": 775,
+      "md5": "78010b47d5dc542848dc242420fa67ee",
+      "path": "docs/index.md",
+      "sha256": "7d29f134c189054767f559361a321ca71f25f5c9c923f516a8f2ad1be45fd8b9"
+    },
+    {
+      "bytes": 785,
+      "md5": "5bb6fe09635ccff2fe7f5235352ce3ae",
+      "path": "docs/metadata/feature_vectors.md",
+      "sha256": "427024cbd863f78129f38df1aed314e84ce8282cbfda4352c880cdec453f2a2b"
+    },
+    {
+      "bytes": 2215,
+      "md5": "9fe3f4aba9af745f7e9fd748ae132528",
+      "path": "docs/metadata/great-tit-hits.md",
+      "sha256": "dcdd2d182916fb3b94208e4fd5a2ca4a8d3e5da312d270a5ec4b07c7356e55e2"
+    },
+    {
+      "bytes": 6426,
+      "md5": "a3c2e9b5b6191ff2eaaf495231165512",
+      "path": "docs/metadata/main.md",
+      "sha256": "1f45e3898b7091af1d07ac2b397e42bbcebacedab3fba9eb0377b331a0676e54"
+    },
+    {
+      "bytes": 2797,
+      "md5": "bfe1cfed2a952d8b7167c71eee79c641",
+      "path": "docs/metadata/morphometrics.md",
+      "sha256": "986dc1a9f2b2f8ccdb5cc8d5c3a37b031a879b4004ef501a40cac35ed1447c71"
+    },
+    {
+      "bytes": 2097,
+      "md5": "0bbde7deb69bd96d3213dd5edaef615a",
+      "path": "docs/metadata/nestboxes.md",
+      "sha256": "0059bde19ef167967bc65c3098f72d7a606bf23da8171f5a7576fdae16ee40cb"
+    },
+    {
+      "bytes": 733,
+      "md5": "24bcbbe4a8af85209cdbbb5d2fbd6623",
+      "path": "docs/metadata/wytham_map.md",
+      "sha256": "8210d07ada55fd548234c6c5c8e053ac1e66b21241a0c0d10213d33d7e475463"
+    },
+    {
+      "bytes": 6714,
+      "md5": "a002870a7af1c95240ad573ef4aa4249",
+      "path": "docs/pipeline.md",
+      "sha256": "760030c4975f507d4822e02505625ad9cc434dd333e6bc4f49b21c96bc848dc0"
+    },
+    {
+      "bytes": 3329,
+      "md5": "1bf92997bf4040fd844a707976b400dd",
+      "path": "docs/songs/song-files.md",
+      "sha256": "aa0c7303098b99a36eb3da3452a10a48991090ec658b0716192dd937257ce8be"
     }
-  ]
+  ],
+  "node": {
+    "declared_license": "CC-By Attribution 4.0 International",
+    "doi": "10.17605/OSF.IO/N8AC9",
+    "explicit_dataset_version": null,
+    "id": "n8ac9",
+    "last_modified": "2023-07-10T15:22:56.881573",
+    "license_id": "563c1cf88c5e4a3877f9e96a",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "public": true,
+    "title": "Wytham Great Tit Song Dataset"
+  },
+  "retrieval": {
+    "files_endpoint": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
+    "license_endpoint": "https://api.osf.io/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+    "method": "OSF public JSON:API; recursively enumerated the root, data and docs folder relationships over verified TLS",
+    "node_endpoint": "https://api.osf.io/v2/nodes/n8ac9/",
+    "path_note": "Current API paths include the data/ and docs/ root folders; leading slashes in the October 23 snapshot were normalized for comparison.",
+    "payload_bytes_downloaded": false,
+    "provider_hashes_recomputed": false,
+    "supersedes": "An earlier October 24 14-entry traversal listed only the data/ folder and omitted the separate docs/ folder; this complete root traversal corrects that partial inventory."
+  },
+  "retrieved_at_utc": "2026-10-24T13:27:29Z",
+  "schema_version": 1,
+  "summary": {
+    "current_api_file_count": 23,
+    "current_api_total_bytes": 12184678510,
+    "data_folder_file_count": 14,
+    "data_folder_total_bytes": 12184652639,
+    "data_metadata_bytes": 804241099,
+    "data_metadata_file_count": 10,
+    "docs_folder_file_count": 9,
+    "docs_folder_total_bytes": 25871,
+    "hash_provenance": "SHA-256 and MD5 values below are reported by the OSF API and were not recomputed against file bytes.",
+    "location_review": "The data folder includes nestboxes.csv, main.csv and a Wytham perimeter shapefile. Author documentation identifies coordinate fields, but no location values or file payloads were inspected.",
+    "prior_snapshot_file_count": 23,
+    "prior_snapshot_path_size_match_after_leading_slash_normalization": true,
+    "prior_snapshot_provider_hash_differences": [
+      "docs/metadata/main.md"
+    ],
+    "prior_snapshot_provider_hash_matches": 22,
+    "prior_snapshot_reconciliation": "The complete current root tree has the same 23 normalized paths and byte sizes as the October 23 snapshot. Provider-reported SHA-256 matches for 22 entries; docs/metadata/main.md has the same size but a different provider-reported SHA-256. The provider digest discrepancy is unresolved because no payload bytes were downloaded and hashes were not recomputed.",
+    "song_archive_bytes": 11380411540,
+    "song_archive_parts": 4
+  }
 }

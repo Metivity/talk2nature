@@ -3764,10 +3764,10 @@
   {
     "id": 365,
     "title": "Wytham Great Tit Song Dataset, OSF record",
-    "description": "The dataset paper and authors’ site point to OSF DOI 10.17605/OSF.IO/N8AC9 as the dataset and metadata record. A 2026-10-24 API recheck listed 14 current file items; the prior saved snapshot listed nine additional documentation paths not present in the current tree. See dated manifests for the discrepancy and provider-reported hashes.",
+    "description": "The OSF node declares CC BY 4.0. A complete 2026-10-24 recursive root inventory lists 23 entries (14 under data/ and nine under docs/). The earlier same-day 14-entry result omitted docs/ because it traversed only data/. The 23 normalized paths and byte sizes match the October 23 snapshot; one docs/metadata/main.md provider digest differs at the same size. See the corrected manifest.",
     "url": "https://osf.io/n8ac9/",
     "checked": "2026-10-24",
-    "origin": "Followed the dataset link from the primary paper and author documentation, then queried the public JSON:API node, record-level license and recursively listed osfstorage file manifest over verified TLS. The 14 current data-file entries match the previous snapshot by basename, byte size and provider-reported SHA-256; nine prior documentation paths are absent from the current tree, with cause unresolved. No file bytes were retrieved; provider-reported hashes were not recomputed."
+    "origin": "Followed the dataset link from the primary paper and author documentation; queried the OSF public JSON:API node, license relationship and full recursively linked osfstorage root over verified TLS. The current root has 23 entries totaling 12,184,678,510 bytes. After normalizing leading slashes, all paths and sizes match the October 23 snapshot; provider SHA-256 matches 22 of 23 entries, with a same-size digest difference for docs/metadata/main.md. The earlier same-day 14-entry traversal was partial and omitted the separate docs folder. No file payloads or coordinate values were retrieved, and provider-reported hashes were not recomputed."
   },
   {
     "id": 366,
@@ -3850,10 +3850,10 @@
   {
     "id": 372,
     "title": "Wytham Great Tit dataset public OSF JSON:API manifest",
-    "description": "Read-only JSON:API endpoint for the public OSF node and its osfstorage file tree. The 2026-10-24 recheck lists 14 current files totaling 12,184,652,639 bytes and captures the OSF-reported CC BY 4.0 node license and file hashes. The prior saved manifest lists nine additional /docs/ entries absent from the current tree; the reason is unresolved. No file payloads or location values were retrieved.",
+    "description": "Read-only JSON:API endpoint for the public OSF node and its osfstorage file tree. The complete 2026-10-24 root lists 23 files totaling 12,184,678,510 bytes (14 data files and nine documentation files) and the node-declared CC BY 4.0 license. One documentation-file provider digest differs from the prior snapshot at the same byte size. No payloads or location values were retrieved.",
     "url": "https://api.osf.io/v2/nodes/n8ac9/files/osfstorage/",
     "checked": "2026-10-24",
-    "origin": "Queried the OSF public JSON:API recursively over verified TLS and matched the current 14 entries to the prior snapshot by basename, byte size and provider SHA-256. The 2026-10-24 snapshot is research/wytham_osf_manifest_2026-10-24.json; the 2026-10-23 snapshot remains preserved with its nine unmatched documentation entries. Provider hash values are metadata, not locally recomputed checksums."
+    "origin": "Queried the OSF public JSON:API node, its license relationship, and the complete recursively linked file tree over verified TLS. The current 23-entry root contains a data/ folder and a separate docs/ folder; an earlier 14-entry traversal listed only data/. The normalized 23 paths and sizes match the October 23 snapshot; provider SHA-256 matches 22 entries and differs for docs/metadata/main.md with identical size. The corrected 2026-10-24 snapshot is research/wytham_osf_manifest_2026-10-24.json. Provider values were not recomputed against payload bytes."
   },
   {
     "id": 373,
