@@ -16,6 +16,8 @@ The October 24 companion-cohort synthesis was merged in PR [#349](https://github
 
 To improve reader and crawler discovery while that report is pending, PR [#351](https://github.com/Metivity/talk2nature/pull/351) added a contextual link from the first-animal guide to the companion-cohort evidence page. Pages run [#40101920744](https://github.com/Metivity/talk2nature/actions/runs/40101920744) deployed it, and a fresh live check confirms both routes return 200 and the guide includes the link. Google has not yet been rechecked after this change; the next SEO check is to look for a new referring page or crawl, not to infer that the link caused indexing.
 
+**October 24 mobile Station check:** tested the live Field Companion at 390 × 844 and 320 × 720 CSS pixels; both fit without horizontal overflow. The 320-pixel setup offers a visible “Open listening controls” shortcut, while the rehearsal button itself is below the first screen. At 390 pixels, the no-microphone rehearsal carried one clearly human-entered movement note through stop and recap, where the practice audio was marked synthetic and temporary. This was a maintainer-run browser check only. No microphone, real recording, download or research admission was used. A first-time-user check should confirm whether the shortcut makes the longer setup easy to navigate; physical-device testing also remains open.
+
 ### Current next milestone — obtain independent review before selecting a benchmark
 
 Do not choose a species just because a dataset is large. The current evidence separates these paths:
