@@ -18,7 +18,10 @@ Do not choose a species just because a dataset is large. The current evidence se
 - **Egyptian fruit bats:** the corpus has roughly 293,000 recordings and 91,000 context annotations, but the current identity/file grouping audit leaves about 95% of records in one connected component; a strict held-out evaluation is not ready.
 - **Zebra finches:** the current ZF-AIM release offers a controlled vocal-interaction question, while its exact data rights and bird-independent splits remain unresolved.
 - **Budgerigars:** a provisional household-app cohort, conditional on real access and qualified avian review; not a large public benchmark.
+
 - **El Silencio/BirdCLEF:** a useful multi-taxon event-identification methods path, not communication meaning; its Zenodo dataset record does not display a license.
+
+**October 24 household-cohort audit:** compared the reviewed cat, dog, parrot and budgerigar resources. Among these records, none combines natural household audio, independently timed behavior/receiver labels, verified grouping keys and reviewed reuse terms. CatMeows contains 440 sounds from 21 cats, with elicited contexts and CC BY-NC terms that do not grant general commercial reuse; the dog paper studies designed exposures and its data are not in a public versioned deposit; parrot surveys are caregiver reports rather than audio; budgerigar deposits do not provide an event-aligned household audio corpus. The conclusion is provisional and scoped to the reviewed library, not a systematic review. Keep the companion app species-neutral and budgerigars a usability hypothesis; do not treat that choice as a benchmark selection. The public synthesis is `content/research.json` record `companion-animal-cohort-evidence-2026`.
 
 The decision and candidate comparison are in `docs/FIRST_DATASET_DECISION.md`; a short, no-data handoff for independent scientific and ML/statistical review is now in `docs/FIRST_DATASET_REVIEW_PACKET.md`. Record-level evidence remains in `docs/FIRST_ANIMAL_PLAN.md`, `docs/BENCHMARK_CANDIDATE_RUN_CARD.md` and `docs/EXECUTION_BOARD.md`.
 

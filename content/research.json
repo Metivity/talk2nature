@@ -5066,5 +5066,58 @@
       "rights": "The Zenodo v1.1 description says the source recordings are licensed under CC 4.0 or CC0 and excludes no-derivatives recordings; the article Data Record identifies a CC 4.0 deposit. Preserve the source recording license and attribution for each exact file. This review did not inspect the file-level manifest. The author curation repository has no located standalone LICENSE file, so its code is not cleared for reuse. Paper text, data, code and any derived model weights remain separate assets.",
       "experiment": "A future, separately reviewed engineering task could evaluate insect species identification or sample-rate robustness. The published test files are openly distributed and are not a secret locked set; any generalization claim needs appropriate source/device grouping or a new untouched evaluation set. Species identification would not establish behavior association, receiver understanding or communication meaning."
     }
+  },
+  {
+    "slug": "companion-animal-cohort-evidence-2026",
+    "title": "Which companion animal is ready for a first study?",
+    "seo_description": "A source-based comparison of cat, dog and parrot datasets separates household-app fit from evidence that can support a scientific benchmark.",
+    "taxon": "Companion animals",
+    "kind": "Comparative evidence review",
+    "purpose": "Data & annotation",
+    "year": "2026",
+    "year_label": "Talk2Nature literature and metadata synthesis",
+    "source_ids": [
+      21,
+      98,
+      99,
+      102,
+      103,
+      124,
+      125,
+      160,
+      161,
+      370
+    ],
+    "reviewed": "2026-10-24",
+    "review_stage": "Synthesis of existing source-linked records; no new data, code or model inspected",
+    "review_depth": "Compared the existing full-paper review of dog-bark classification; CatMeows record and rights metadata; full-text review and deposit metadata for two companion-parrot surveys; primary methods and official deposit inventory for budgerigar vocal/sociality data; and the publisher abstract for a 2026 edge-monitoring study. Supporting survey workbooks and third-party media were not acquired or inspected. This is a library-bounded comparison, not a systematic review or independent specialist assessment.",
+    "finding": "Among the reviewed resources, no public companion-animal corpus combines naturally occurring household audio, independently time-aligned behavior or receiver-response labels, verified household/individual/session grouping, and fully reviewed reuse terms. CatMeows describes 440 sounds from 21 cats with context and owner/session identifiers, but its CC BY-NC 4.0 terms do not provide general commercial permission and the contexts are elicited. A dog-bark paper analyzes 16,789 segments from 74 dogs during designed home exposures; its reported classifier predicts associations with those situations, not what dogs mean. Parrot surveys describe caregiver reports about human-language mimicry and names, not an acoustic training corpus. A budgerigar research deposit contains derived call features and separate social observations without source call WAVs or event-aligned behavior; a separate 2026 abstract reports local vocal-activity monitoring, not a conversation model.",
+    "limitations": "The comparison covers only the named, already reviewed records and cannot establish that no other suitable dataset exists. Reported record counts are not independent sample counts. Dog contexts were linked to designed stimuli, CatMeows files were not acquired, parrot questionnaire workbooks were not inspected, and the budgerigar edge paper's full methods were unavailable in this review. No files, recordings, labels, code or weights were acquired or run; no animal-carer interviews or independent scientific review occurred.",
+    "lesson": "Keep two decisions separate. For a household Field Companion, use a species-neutral observation workflow and keep budgerigars as a provisional usability cohort only if genuine carer access and qualified avian input emerge. For a data-based ML exercise, select a narrow outcome from a corpus with suitable source files, independent labels, grouping keys and rights; a larger dataset does not make it a communication benchmark. Preserve the observer's account, recorded signal, reviewed behavior and model prediction as separate evidence.",
+    "next_review": "Ask an independent avian/bioacoustics and ML/statistical reviewer to challenge the existing first-dataset decision packet. Before selecting a household cohort, establish access to multiple willing carers and qualified species-specific advice; test the interface with synthetic sessions first. Do not recruit, collect or upload real observations under this literature comparison.",
+    "expert_review": "Not independently reviewed by a comparative animal-behavior, companion-animal or bioacoustics specialist.",
+    "study_snapshot": [
+      [
+        "Cats",
+        "CatMeows records 440 sounds from 21 cats with context and owner/session identifiers; elicited contexts and CC BY-NC 4.0 terms limit transfer to a commercial app. Files remain unacquired."
+      ],
+      [
+        "Dogs",
+        "The reviewed bark-classification paper reports 74 dogs and 16,789 segments from designed home exposures. Its selected task predicts stimulus-associated labels; the paper-described dataset has no public versioned deposit in the reviewed record."
+      ],
+      [
+        "Parrots",
+        "Two owner surveys describe reported phrase use across many companion-parrot species. They inform observation-interface design, but are not audio corpora or independent receiver-response tests; supporting workbooks remain uninspected."
+      ],
+      [
+        "Budgerigars",
+        "A public vocal/social deposit has derived features and separate social observations but no source call WAVs or shared event timestamps. A separate early-access study describes vocal-activity monitoring, not semantic interpretation."
+      ],
+      [
+        "Decision",
+        "Budgerigars remain a provisional household usability cohort; no companion species is selected as a training-ready communication benchmark."
+      ]
+    ],
+    "review_locator": "Cross-record synthesis of the source-linked Dog bark classification, CatMeows, companion-parrot survey, budgerigar vocal/sociality and budgerigar edge-monitoring records listed above. Individual notes contain the detailed source locators and review-depth boundaries."
   }
 ]
