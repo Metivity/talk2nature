@@ -6006,6 +6006,125 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "birdpark-multimodal-songbird-paper-2025",
+      "kind": "paper",
+      "title": "Multimodal system for recording individual-level behaviors in songbird groups",
+      "url": "https://doi.org/10.7717/peerj.20203",
+      "version": "PeerJ 13:e20203; published 2025-11-10",
+      "source_ids": [
+        390
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-24",
+      "task": "Describes synchronized multi-sensor recording and vocal-event/source-separation methods for songbird groups.",
+      "review_depth": "PubMed article metadata and abstract, selected searchable PMC passages on the shared-clock recording system and vocal segmentation, and the ETH publication record's article-rights statement reviewed. Full article and supplement, code and data were not inspected or acquired.",
+      "access": "Open-access article record; only citation and an original summary are retained in Talk2Nature.",
+      "decision": "Use as a methods reference for multimodal synchronization and event/source attribution, not as evidence of semantic decoding or receiver understanding.",
+      "limitations": "The article describes a specialized laboratory setup with cameras, multiple microphones and body-worn accelerometer transmitters. Its paper license does not grant rights to separate data deposits, software or model weights. Reported event-segmentation evaluation is not a meaning benchmark.",
+      "attribution": "Rüttimann, L. et al. (2025). PeerJ 13:e20203. DOI 10.7717/peerj.20203.",
+      "rights": {
+        "license": "CC BY 4.0 as listed for the article by the ETH Research Collection.",
+        "scope": "Article only. Dataset deposits, annotations, media, software and model weights have separate rights.",
+        "evidence_url": "https://www.research-collection.ethz.ch/entities/publication/ae722ae7-c8ce-44d8-be95-95b8106d4973",
+        "conditions": "Cite the article and identify adaptations if any article material is reused. Do not infer dataset or code permission from the paper license.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdpark-zebra-finch-groups-zenodo-v2-2024",
+      "kind": "dataset",
+      "title": "BirdPark zebra-finch group recordings and vocal-segment annotations, Zenodo v2",
+      "url": "https://doi.org/10.5281/zenodo.13144875",
+      "version": "Zenodo record 13144875 v2; published 2024-08-08; reviewed 2026-10-24",
+      "source_ids": [
+        390,
+        391
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Potential methods reference for multimodal vocal-event segmentation, overlap review and caller attribution in controlled zebra-finch groups.",
+      "review_depth": "Exact Zenodo v2 landing-page description and file inventory reviewed. The page reports 112 minutes from four experiments, group sizes of two, four and eight, and manually annotated vocal segments. No file payload, annotation, README, video or audio was acquired or inspected.",
+      "access": "The record lists Data.zip at 12.3 GB, Attachments.zip at 292.6 kB, README.pdf at 59.5 kB and segments.h5 at 1.9 MB. These are provider-listed files; no bytes were acquired or locally hashed.",
+      "decision": "Keep metadata-only. The Zenodo record page does not display a dataset license. No acquisition, training or redistribution is cleared. Treat this as a candidate for bounded event/source methods only, subject to rights, exact coverage and group-split review.",
+      "limitations": "The 112-minute record description is not reconciled with the 28-minute segmentation evaluation slice reported in a searchable passage of the peer-reviewed paper. The relationship to the separate 2026 annotator pack and ETH ten-pair record is unverified. The laboratory sensors and groups do not establish phone/home generalization or call meaning.",
+      "attribution": "BirdPark group-recording dataset, Zenodo record 13144875 v2; associated system paper Rüttimann et al. (2025), DOI 10.7717/peerj.20203.",
+      "rights": {
+        "license": "No dataset license is displayed on the exact Zenodo v2 record page reviewed on 2026-10-24.",
+        "scope": "Dataset record 13144875 v2 and its listed files only; absence of a displayed license is not a permission grant.",
+        "evidence_url": "https://zenodo.org/records/13144875",
+        "conditions": "Do not acquire or reuse until the rights holder or authoritative record clarifies permitted research use, commercial use, redistribution and component coverage.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdpark-paired-zebra-finch-annotation-examples-zenodo-v2-2026",
+      "kind": "dataset",
+      "title": "BirdPark paired zebra-finch annotation examples, Zenodo v2",
+      "url": "https://doi.org/10.5281/zenodo.20608098",
+      "version": "Zenodo record 20608098 v2; published 2026-06-09; reviewed 2026-10-24",
+      "source_ids": [
+        390,
+        392
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Annotation-training and vocalization-segmentation reference; not a complete behavioral-meaning corpus.",
+      "review_depth": "Exact Zenodo v2 record description and file inventory reviewed. The authors state that Pair_example_wav.zip contains test files for annotators using the guide. No PDF, CSV, audio or archive payload was acquired or inspected.",
+      "access": "The record lists Pair_example_wav.zip at 4.5 GB, a 41.0 MB ZF_pairs.wav, a 167.6 kB Vocalizations.csv, a 29.7 MB annotation guide PDF and a 1.5 kB BirdList_pair.csv. Sizes and MD5 values are provider-reported only.",
+      "decision": "Keep metadata-only. The record page has no displayed dataset license. The guide and annotations may help design a future human annotation workflow, but their use is not cleared and the listed pair files are not a locked independent benchmark.",
+      "limitations": "This is an annotator-training pack, not the full analyzed corpus. The record links to the 2025 PeerJ system paper and describes lab recordings with synchronized cameras, microphones and body-worn accelerometers. It does not label receiver comprehension or call meaning. Its relationship to the other BirdPark Zenodo and ETH records is not reconciled.",
+      "attribution": "BirdPark paired annotation examples, Zenodo record 20608098 v2; related system paper Rüttimann et al. (2025), DOI 10.7717/peerj.20203.",
+      "rights": {
+        "license": "No dataset license is displayed on the exact Zenodo v2 record page reviewed on 2026-10-24.",
+        "scope": "Dataset record 20608098 v2 and its listed files only; absence of a displayed license is not a permission grant.",
+        "evidence_url": "https://zenodo.org/records/20608098",
+        "conditions": "Do not acquire or reuse until authoritative terms clarify research use, commercial use, redistribution and the rights to each file component.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdpark-zebra-finch-pairs-eth-zurich-2025",
+      "kind": "dataset",
+      "title": "ETH Zurich zebra-finch mixed-sex pair vocal-segment dataset",
+      "url": "https://doi.org/10.3929/ethz-c-000788603",
+      "version": "ETH Research Collection dataset record; dated 2025-12-18; reviewed 2026-10-24",
+      "source_ids": [
+        390,
+        393
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Potential non-commercial methods reference for audio/accelerometer vocal segmentation and overlapping-call analysis across ten mixed-sex pairs.",
+      "review_depth": "Reviewed the institutional record's abstract, date, contributors and displayed rights label. No dataset-description PDF, media, annotations or recording payload was acquired or inspected.",
+      "access": "The institutional record describes 10 freely behaving pairs (20 individual birds) and manually annotated examples of clean and overlapping calls. Files are linked externally; their inventory and exact sample coverage were not inspected.",
+      "decision": "Metadata-only. The repository labels the data In Copyright - Non-Commercial Use Permitted. Do not treat this as an open license or permission for commercial model training, redistribution or product use; clarify exact conditions before any research reuse.",
+      "limitations": "This is an ETH dataset record distinct from the Zenodo deposits until exact overlap and version relationships are established. Annotated vocal segments support event/source tasks, not receiver response or semantic decoding. The recording system is specialized and laboratory-based.",
+      "attribution": "Akahoshi, M., Wang, Y. & Hahnloser, R. (2025). Zebra Finch Mixed-Sex Pair Recordings with Manually Annotated Clean Non-overlapping/Overlapping Vocal Segments. ETH Zurich Research Collection, DOI 10.3929/ethz-c-000788603.",
+      "rights": {
+        "license": "In Copyright - Non-Commercial Use Permitted as stated by the ETH Research Collection.",
+        "scope": "Dataset record only. The paper and related Zenodo records have separate rights declarations.",
+        "evidence_url": "https://www.research-collection.ethz.ch/items/a0edea4c-1f1e-4965-a9aa-608ff01d52db",
+        "conditions": "Clarify the exact non-commercial terms, access conditions and permitted research processing with the rights holder before use; do not redistribute or use in a commercial product without permission.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

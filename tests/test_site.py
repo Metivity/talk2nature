@@ -50,6 +50,33 @@ class SiteTests(unittest.TestCase):
         for filename in expected:
             with self.subTest(template=filename):
                 self.assertTrue((project_root/'.github'/'ISSUE_TEMPLATE'/filename).is_file())
+        self.assertIn('No first communication-adjacent ML benchmark is selected or training-ready.',guide)
+        for path in (
+            'docs/BENCHMARK_CANDIDATE_RUN_CARD.md',
+            'docs/BAT_CONTEXT_REVIEW.md',
+            'docs/ZF_AIM_INDEPENDENT_REVIEW.md',
+            'docs/V33DA_SAMPLE_RUN_CARD.md',
+        ):
+            with self.subTest(review_brief=path):
+                self.assertIn(f']({path})',guide)
+                self.assertTrue((project_root/path).is_file())
+        self.assertIn('not a receiver-response or meaning benchmark',guide)
+
+    def test_scientific_review_form_records_the_bounded_candidate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        form=(project_root/'.github'/'ISSUE_TEMPLATE'/'scientific-review.yml').read_text()
+        self.assertIn('id: review-target',form)
+        self.assertIn('No first benchmark is selected.',form)
+        for candidate in (
+            'bat interaction-context prediction',
+            'zebra-finch turn-taking',
+            'V33DA caller attribution',
+            'Great Tit song structure',
+        ):
+            with self.subTest(candidate=candidate):
+                self.assertIn(candidate,form)
+        target_field=form.split('id: review-target',1)[1].split('  - type:',1)[0]
+        self.assertIn('required: true',target_field)
 
     def test_contribute_page_surfaces_the_phone_first_task_without_data_intake(self):
         project_root=Path(__file__).resolve().parents[1]
@@ -1999,6 +2026,43 @@ class SiteTests(unittest.TestCase):
             self.assertIn(f'/research/{note["slug"]}/',(root/'sitemap.xml').read_text())
             paths=(root/'research'/'starting-points'/'index.html').read_text()
             self.assertIn(f'/research/{note["slug"]}/',paths)
+
+    def test_birdpark_zebra_finch_records_keep_event_tasks_and_rights_bounded(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='zebra-finch-birdpark-multimodal-segmentation-2025')
+        self.assertEqual(note['source_ids'],[390,391,392,393])
+        self.assertIn('do not establish what a call means',note['finding'])
+        self.assertIn('not an ordinary phone workflow',note['limitations'])
+        self.assertIn('28-minute segmentation evaluation slice',note['limitations'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('birdpark-')}
+        self.assertEqual(set(selected),{
+            'birdpark-multimodal-songbird-paper-2025',
+            'birdpark-zebra-finch-groups-zenodo-v2-2024',
+            'birdpark-paired-zebra-finch-annotation-examples-zenodo-v2-2026',
+            'birdpark-zebra-finch-pairs-eth-zurich-2025',
+        })
+        for resource in selected.values():
+            with self.subTest(resource=resource['id']):
+                self.assertEqual(resource['acquisition'],'metadata_only')
+                self.assertEqual(resource['files'],[])
+        self.assertEqual(selected['birdpark-zebra-finch-groups-zenodo-v2-2024']['rights']['research_use'],'unresolved')
+        self.assertEqual(selected['birdpark-paired-zebra-finch-annotation-examples-zenodo-v2-2026']['rights']['redistribution'],'unresolved')
+        self.assertEqual(selected['birdpark-zebra-finch-pairs-eth-zurich-2025']['rights']['commercial_use'],'not_admitted')
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        self.assertEqual([next(s for s in sources if s['id']==source_id)['checked'] for source_id in note['source_ids']],['2026-10-24']*4)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('not translate them',page)
+            self.assertIn('not an ordinary phone workflow',page)
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn(f'/research/{note["slug"]}/',(root/'sitemap.xml').read_text())
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('BirdPark zebra-finch group recordings',resource_page)
+            self.assertIn('In Copyright - Non-Commercial Use Permitted',resource_page)
 
 
 if __name__=='__main__': unittest.main()

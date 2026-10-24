@@ -3380,3 +3380,35 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Publication receipt (October 24):** PR [#302](https://github.com/Metivity/talk2nature/pull/302) passed repository, browser-tool, Android and preview-site checks in [run #40056562847](https://github.com/Metivity/talk2nature/actions/runs/40056562847), then merged to `main` as [`43b0e82`](https://github.com/Metivity/talk2nature/commit/43b0e82f9440f08858de7a8e3e5635e9a7d344e8). Pages run [#40056743384](https://github.com/Metivity/talk2nature/actions/runs/40056743384) passed both public-build and deploy/live-verifier jobs.
 
 **Live verification:** a fresh verified-TLS request to the [university evaluation page](https://metivity.github.io/talk2nature/community/university/) returned HTTP 200 with its expected title, description, `index,follow` and exact self-canonical. The live sitemap returned HTTP 200, parsed as 130 URLs and includes this route; `robots.txt` returned HTTP 200 and names that sitemap. Browser review at 390 CSS pixels found no horizontal overflow; both advanced disclosures began closed and expanded to their full content without overflow. This confirms delivery, crawl metadata and maintainer-run responsive behavior, not Search Console indexing, ranking, independent researcher evaluation or physical-device behavior.
+
+## October 24 — mobile Stop-bar reachability audit
+
+**Question:** does the fixed Stop control block the quick observation notes in the Field Companion during an active session?
+
+**Evidence:** in the local noindex build, Chromium emulation at 390 × 844 CSS pixels showed the page and body both at 390 pixels wide. During a microphone-free synthetic session, the fixed Stop strip was at y=758–832. At scroll position 766.5, all four quick-note buttons were fully visible above it (y=349–477). Keyboard activation added a correctly worded local “Movement” note to the timeline; Stop opened a local review with one note and 14.5 seconds of partial synthetic audio. An intermediate scroll frame had a temporary overlap as content moved behind the fixed strip, but a later scroll position exposed the controls clearly. No real microphone, participant or animal data was used.
+
+**Decision and limits:** no layout change is indicated because the Stop control remains available and the notes can be brought fully into view. Keep pointer, first-time-user, screen-reader and physical-device checks open. This is Chromium viewport emulation and keyboard interaction, not physical-phone or usability-study evidence. See the detailed geometry and boundary record in `docs/MOBILE_AUDIT.md`.
+
+## October 24 — scientific-review contribution path aligned with current evidence
+
+**Question:** does the contributor guide invite reviewers to assess the current research decision without implying that one species or benchmark is already selected?
+
+**Evidence and change:** the execution board and candidate records say no first ML benchmark is selected, but the contributor guide routed reviewers only to the Egyptian-fruit-bat brief. Updated it to begin with the current candidate comparison, offer bounded bat, zebra-finch interaction and V33DA caller-attribution review paths, and identify the large Wytham Great Tit corpus as a separate song-structure resource. The GitHub scientific-review form now requires the candidate, claim or decision being assessed; its existing public-data warnings remain.
+
+**Validation:** the referenced review briefs exist and the public Wytham research page returned HTTP 200. All 157 Python tests and 115 Node tests passed; the local noindex build produced 130 pages plus 404; the site checker validated 131 HTML pages and 6,560 links; `git diff --check` passed.
+
+**Limits:** this prepares a review request but does not constitute scientific review, hosted GitHub form rendering, an outside researcher test or any contact. No data was acquired and no model was run. Changes remain local to the review branch; nothing was deployed.
+
+## October 24 — BirdPark zebra-finch multimodal records added
+
+**Question:** can synchronized animal audio/video/motion records offer a useful first technology task while keeping call meaning out of scope?
+
+**Evidence reviewed:** PubMed article metadata and abstract; selected searchable PMC passages on shared-clock acquisition and multimodal vocal segmentation; the ETH publication record's CC BY 4.0 article statement; exact Zenodo v2 metadata for records 13144875 and 20608098; and the ETH dataset record 10.3929/ethz-c-000788603. The sources describe a specialized BirdPark system, a Zenodo group dataset described as 112 minutes, an annotator-example pack with 4.5 GB of test recordings, and a separate ETH record describing 10 pairs/20 birds. These are not assumed to be the same or independent samples. The paper's 28-minute evaluation slice and Zenodo's 112-minute description remain unreconciled.
+
+**Change:** added one original research note, four source records and four component-specific resources. Updated the species comparison and model decision log. The note distinguishes event detection/caller attribution from communication meaning and preserves absent or non-commercial dataset terms as gates.
+
+**Rights and data boundary:** Zenodo dataset records 13144875 and 20608098 show no displayed dataset license. The ETH dataset record says “In Copyright - Non-Commercial Use Permitted.” The article's CC BY 4.0 listing applies to that article, not automatically to datasets or model/code assets. No third-party file, audio, video, code or weights were acquired or run. No contact, deployment or training occurred.
+
+**Validation:** all 158 Python tests passed. The explicit public-origin build produced 131 pages plus 404; the site checker validated 132 HTML documents, 6,750 links and 131 reachable public pages. The generated BirdPark page has its own title, canonical and index directive and appears in the sitemap; the public resource directory includes the four records and their distinct rights states. `git diff --check` is clean. No live deployment or Google Search Console verification was performed.
+
+**Limits and next decision:** this is a metadata-only candidate, not benchmark readiness or independent validation. Next determine deposit overlap, exact annotation scope, and authoritative data permissions; then seek independent avian and ML/statistical review before selecting even a bounded event/caller task. AutoResearch remains **NOT READY**.
