@@ -3743,3 +3743,13 @@ PR [#339](https://github.com/Metivity/talk2nature/pull/339) merged to `main` as 
 ## October 24 — publish and verify the independent-review path
 
 PR [#341](https://github.com/Metivity/talk2nature/pull/341) merged to `main` as [`ac4533e`](https://github.com/Metivity/talk2nature/commit/ac4533efc77d52a579ff94fb86709290864d8332). Public checks [#40094126459](https://github.com/Metivity/talk2nature/actions/runs/40094126459) passed; Pages run [#40094292492](https://github.com/Metivity/talk2nature/actions/runs/40094292492) deployed successfully and passed its live-route/crawl-metadata verifier. A fresh browser check of `/research/first-animal/` confirmed the no-data packet, existing methods-review form and “No recordings or private data are requested” disclosure are visible together above the evidence map. The guide continues to state that no first benchmark is selected or training-ready and distinguishes detection/classification from communication claims. No reviewer was contacted and no media, code, annotations or model weights were acquired or run. The independent avian/bioacoustics and ML/statistical reviews remain the next human-dependent gate; AutoResearch remains **NOT READY**.
+
+## October 24 — require a conflict disclosure in scientific reviews
+
+**Gap:** the public scientific-review form requested a specific source, inspected sections, reasoning and risks, but did not collect the authorship or relationship disclosure required before a review can be described as independent.
+
+**Change:** added a required brief field for source authorship, collaboration with study authors or Talk2Nature, and relevant financial or other interests. The form accepts “none known” and “unable to assess” and asks reviewers not to include private contact details. A regression assertion keeps the disclosure required and specific; the existing warning against recordings, identifiers, private material and sensitive locations remains.
+
+**Validation:** the issue-form YAML parses; all 159 Python and 117 Node tests pass. The local site build produced 134 pages plus 404; the checker passed with 135 HTML documents and 6,839 links. This is form/source validation, not evidence that an independent review has been received.
+
+**Limits:** this improves review provenance but does not identify a reviewer or establish independence by itself. No reviewer was contacted; no data or model was acquired or run. The review and benchmark gates remain open.

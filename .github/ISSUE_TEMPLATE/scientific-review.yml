@@ -36,6 +36,14 @@ body:
       description: A short description is enough; affiliation and contact details are optional.
     validations:
       required: false
+  - type: textarea
+    id: conflict-disclosure
+    attributes:
+      label: Authorship, relevant relationships, and conflicts
+      description: Say whether you authored a reviewed source, work with its authors or Talk2Nature, or have a relevant financial or other interest. Write “none known” or “unable to assess” if applicable. Keep it brief; do not include private contact details.
+      placeholder: No known relevant conflicts; I reviewed the public source and have no relevant collaboration or financial interest.
+    validations:
+      required: true
   - type: checkboxes
     id: review-scope
     attributes:
