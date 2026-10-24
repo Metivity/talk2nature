@@ -8,6 +8,8 @@
 
 **Validation:** all 169 repository Python tests passed (one intentional skip) and all 117 Node tests passed. The local noindex build generated 136 pages plus 404; `scripts/check_site.py` validated 137 HTML pages and 6,974 links. A local browser accessibility-tree inspection exposed all three choices and their matching section anchors. The choices stack into one column below 620 CSS pixels. No physical-phone or independent visitor test occurred.
 
+**Publication:** PR [#383](https://github.com/Metivity/talk2nature/pull/383) merged as [`d9422cb`](https://github.com/Metivity/talk2nature/commit/d9422cb33527f5fb6c3746405c570faf7f6ae262). Pages run [#40135595484](https://github.com/Metivity/talk2nature/actions/runs/40135595484) passed the full build, repository and browser-tool checks, publish-boundary audit, deployment and live-route/crawl verification. Fresh TLS-verified requests returned HTTP 200 for the [live first-animal guide](https://metivity.github.io/talk2nature/research/first-animal/) and [sitemap](https://metivity.github.io/talk2nature/sitemap.xml). The guide contains the three new choices, no longer shows “Quick answer,” has `index,follow` and its self-canonical, and appears in the sitemap. This verifies publication and crawl configuration, not Google indexing or independent usability.
+
 **Limit and next gate:** this improves orientation only; it does not establish that newcomers understand the choices. The benchmark remains **NOT READY**. Continue toward independent review of the narrow candidate questions and a real usability check when an outside participant is available.
 
 ## October 25 — make the mobile update notice easier to follow
