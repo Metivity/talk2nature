@@ -2230,5 +2230,29 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Zebra Finch Vocalization Dataset for Semi-Automated Clustering, Zenodo v2',resource_page)
             self.assertIn('MIT as declared by the pinned GitHub repository LICENSE file',resource_page)
 
+    def test_zebra_finch_call_perception_names_paper_cited_zenodo_version(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='zebra-finch-call-categories-2025')
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        archive=next(r for r in resources if r['id']=='zebra-finch-call-category-behavior-and-code-2025')
+        self.assertIn('versioned Zenodo record 13623969 (v1)',note['review_locator'])
+        self.assertIn('concept DOI 13623968',note['review_locator'])
+        self.assertIn('later v3 resubmission is record 15795568',note['review_locator'])
+        self.assertEqual(archive['url'],'https://zenodo.org/records/13623969')
+        self.assertIn('Paper-cited Zenodo version 1.0',archive['version'])
+        self.assertIn('later version 3.0',archive['version'])
+        self.assertEqual(archive['acquisition'],'metadata_only')
+        self.assertEqual(archive['files'],[])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('13623969',page)
+            self.assertIn('15795568',page)
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('https://zenodo.org/records/13623969',resource_page)
+            self.assertIn('later version 3.0',resource_page)
+
 
 if __name__=='__main__': unittest.main()
