@@ -78,6 +78,10 @@ class SiteTests(unittest.TestCase):
                 self.assertIn(candidate,form)
         target_field=form.split('id: review-target',1)[1].split('  - type:',1)[0]
         self.assertIn('required: true',target_field)
+        conflict_field=form.split('id: conflict-disclosure',1)[1].split('  - type:',1)[0]
+        self.assertIn('required: true',conflict_field)
+        self.assertIn('authored a reviewed source',conflict_field)
+        self.assertIn('none known',conflict_field)
 
     def test_contribute_page_surfaces_the_phone_first_task_without_data_intake(self):
         project_root=Path(__file__).resolve().parents[1]
