@@ -4239,5 +4239,29 @@
     "rights": {
       "work_programme": "Official EU work-programme source; linked and summarized, not reproduced. Topic-specific eligibility rules take precedence."
     }
+  },
+  {
+    "id": 415,
+    "title": "Machine learning reveals waggle drift’s role in honeybee dance communication",
+    "description": "Primary study combining waggle-dance detection, individual tracking, dance followers and feeder observations in Apis mellifera.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516631/",
+    "checked": "2026-10-24",
+    "origin": "Targeted review of the abstract and introduction, colony setup, annotated behavior and model-evaluation methods, results on dance/follower behavior, data statement and license. No data, video, code or model was acquired or executed.",
+    "rights": {
+      "page": "The article is open access under CC BY 4.0.",
+      "scope": "Article only. The separately deposited dataset and linked code components have their own terms. Talk2Nature publishes an original summary and links."
+    }
+  },
+  {
+    "id": 416,
+    "title": "Zenodo v1.0 honeybee waggle-drift data record",
+    "description": "Official versioned data record for the 2023 waggle-drift and follower-behavior study; its API lists 11 files and declares CC BY 4.0.",
+    "url": "https://zenodo.org/records/7928121",
+    "checked": "2026-10-24",
+    "origin": "Read the Zenodo v1.0 record and its official API metadata, including dataset license, file names, sizes and provider MD5 values. The listed payloads total about 4.9 GB; no payload was downloaded, hashed locally or inspected.",
+    "rights": {
+      "dataset": "The Zenodo v1.0 API metadata declares CC BY 4.0 for this deposited data record.",
+      "scope": "Dataset files only. The paper, linked acquisition/analysis code, dependencies and model artifacts have separate rights."
+    }
   }
 ]

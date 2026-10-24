@@ -5136,5 +5136,52 @@
       ]
     ],
     "review_locator": "Cross-record synthesis of the source-linked Dog bark classification, CatMeows, companion-parrot survey, budgerigar vocal/sociality and budgerigar edge-monitoring records listed above. Individual notes contain the detailed source locators and review-depth boundaries."
+  },
+  {
+    "slug": "honeybee-dance-following-2023",
+    "title": "Honeybee dance records connect movement with followers and food sites",
+    "seo_description": "Honeybee dance data link waggle signals with followers and feeder outcomes. A bounded communication study, not a general animal translator.",
+    "taxon": "Insects",
+    "kind": "Machine-learning and follower-response study",
+    "year": "2023",
+    "source_ids": [415, 416],
+    "review_depth": "Targeted review of the PNAS Nexus abstract, communication background, colony and camera setup, annotation and hourly sample grouping, follower/feeder results, data statement and article license; the complete Zenodo v1.0 API file manifest and dataset license metadata were checked. No data, video, code or model was downloaded, locally hashed, inspected or executed.",
+    "finding": "Dormagen et al. combined waggle-phase detection, individual tracking, follower observations and feeder records. The paper reports more than 100,000 detected waggle phases. A manually annotated subset covers 176 videos, 3,278,121 detections from 28,873 tracks and 4,389 bee IDs, including 1,107 waggle phases and 279 follower events. The Zenodo publication record describes more than 46 million 2019 track detections across an 11-file, approximately 4.9 GB dataset. This is a rare data path connecting a well-defined sender signal to observed receiver behavior and known food-site outcomes.",
+    "limitations": "This is not a blank slate: the paper already analyzes waggle dance/follower relationships and feeder outcomes. It spans one observation-hive site across two seasons; the published sample-level cross-validation groups by hour rather than holding out bees or colonies. The 2021 recordings lack marked individual identities. The dataset is specialized tracking and video data, not an ordinary-phone audio corpus. The public record contains fine-scale feeder coordinates, which are not reproduced here. CC BY 4.0 in the Zenodo API covers the deposit, not linked software or model artifacts.",
+    "lesson": "A useful communication study needs a defined signal, an observed receiver response and an independent outcome. Honeybees are a strong candidate for testing that chain, while existing claims and the single-site scope demand a narrow, independently reviewed question. This does not justify a general language model or claim that unknown animal speech has been translated.",
+    "next_review": "Ask independent insect-behavior and ML/statistical reviewers whether any non-duplicative question remains, whether the 2019 data support a bee-held-out evaluation, how to evaluate feeder/follower outcomes without leakage, and how to keep fine-scale location metadata out of public outputs. No payload acquisition or model run is authorized by this note.",
+    "reviewed": "2026-10-24",
+    "expert_review": "No independent Talk2Nature insect-behavior or ML/statistical specialist has reviewed this assessment.",
+    "review_stage": "Targeted primary-paper and dataset-metadata review; no payload acquisition or reproduction",
+    "year_label": "Publication year",
+    "purpose": "Behavior & communication",
+    "study_snapshot": [
+      ["Scale", "The Zenodo record lists more than 46 million 2019 track detections in an approximately 4.9 GB, 11-file release; the paper reports more than 100,000 waggle phases across the study."],
+      ["Observed response", "The paper links dance features to follower behavior and feeder experiments, giving the signal a measurable external outcome."],
+      ["Independent units", "The article’s sample split groups observations by hour; it does not establish transfer to held-out bees or a new colony."],
+      ["Current decision", "Promising communication-methods candidate, not a selected Talk2Nature benchmark. Published results, single-site scope, code rights and independent review remain gates."]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-24",
+      "location_status": "mapped",
+      "location_note": "The primary article identifies Berlin as the observation-hive study region. This coarse marker does not expose the hive or feeder coordinates listed in the data record.",
+      "locations": [
+        {
+          "place_id": "berlin-study-region",
+          "role": "study_region",
+          "source_id": 415,
+          "locator": "Methods, Colony setup: Berlin 2019 and Berlin 2021",
+          "basis": "The primary article identifies both recording seasons as Berlin study campaigns; exact hive and feeder coordinates are intentionally omitted."
+        }
+      ],
+      "observation_period": {
+        "label": "2019 and 2021 recording seasons",
+        "start_year": 2019,
+        "end_year": 2021,
+        "source_id": 415,
+        "locator": "Methods, Colony setup: Berlin 2019 and Berlin 2021"
+      }
+    },
+    "review_locator": "Dormagen et al. (2023), PNAS Nexus, DOI 10.1093/pnasnexus/pgad275: abstract, communication introduction, colony setup, sample-grouping method, Results, data availability and article license; Zenodo v1.0 record DOI 10.5281/zenodo.7928121 and official API metadata."
   }
 ]

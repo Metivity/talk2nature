@@ -74,10 +74,12 @@ class SiteTests(unittest.TestCase):
             'zebra-finch call-perception comparison',
             'V33DA caller attribution',
             'Great Tit song structure',
+            'honeybee dance/follower evaluation',
         ):
             with self.subTest(candidate=candidate):
                 self.assertIn(candidate,form)
         packet=(project_root/'docs'/'FIRST_DATASET_REVIEW_PACKET.md').read_text()
+        self.assertIn('Honeybee / waggle dance and follower data',packet)
         for evidence in (
             'Bottlenose dolphin / OpenWhistle',
             'session-disjoint, not animal-disjoint',
@@ -817,6 +819,20 @@ class SiteTests(unittest.TestCase):
             self.assertIn('OpenWhistle dolphins: whistle types',(root/'research/first-animal/index.html').read_text())
             self.assertIn('official repository declares CC BY 4.0 for its datasets',page)
             self.assertIn('the Wav2Vec model license is unspecified',page)
+            self.assertIn('Known signal with observed followers:',page)
+            self.assertIn('Honeybee waggle dances',page)
+            self.assertIn('more than 46 million 2019 track detections',page)
+            self.assertIn('/talk2nature/research/honeybee-dance-following-2023/',page)
+            honeybee=(root/'research'/'honeybee-dance-following-2023'/'index.html').read_text()
+            self.assertIn('3,278,121 detections',honeybee)
+            self.assertIn('hour rather than holding out bees or colonies',honeybee)
+            self.assertIn('No data, video, code or model was downloaded',honeybee)
+            resources=json.loads((Path(__file__).resolve().parents[1]/'research'/'resources.json').read_text())['resources']
+            honeybee_data=next(row for row in resources if row['id']=='honeybee-dance-following-data-2023')
+            self.assertEqual(honeybee_data['acquisition'],'metadata_only')
+            self.assertEqual(honeybee_data['files'],[])
+            self.assertIn('CC BY 4.0',honeybee_data['rights']['license'])
+            self.assertEqual(honeybee_data['source_ids'],[415,416])
             resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
             by_id={resource['id']:resource for resource in resources}
             self.assertEqual(by_id['openwhistle-classification-dataset']['rights']['license'],'CC-BY-4.0')
@@ -1892,6 +1908,8 @@ class SiteTests(unittest.TestCase):
             'honeybee-waggle-vision-code-2017',
             'honeybee-waggle-ground-truth-data-2017',
             'honeybee-beesbook-longterm-paper-2015',
+            'honeybee-dance-following-paper-2023',
+            'honeybee-dance-following-data-2023',
         })
         for resource in selected.values():
             with self.subTest(resource=resource['id']):

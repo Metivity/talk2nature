@@ -6681,6 +6681,60 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "honeybee-dance-following-paper-2023",
+      "kind": "paper",
+      "title": "Machine learning reveals the waggle drift’s role in the honey bee dance communication system",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516631/",
+      "version": "PNAS Nexus 2(9): pgad275 (2023); DOI 10.1093/pnasnexus/pgad275",
+      "source_ids": [415],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Prior-art and methods reference for the relationship between waggle-dance movement, follower behavior and observed feeder outcomes.",
+      "review_depth": "Targeted review of the abstract, communication background, colony setup, behavior annotation, sample grouping, results, data statement and article rights. No data, video, code or model was acquired or run.",
+      "access": "Open-access article. The paper’s data citation points to a separate Zenodo v1.0 record; software components are linked separately.",
+      "decision": "Use an original source-grounded summary and link. CC BY 4.0 for the article does not automatically license separately linked data or code.",
+      "limitations": "The paper already reports waggle detection, dancer/follower tracking and associations with known feeders. Repeating those claims would not be a new Talk2Nature contribution. The study spans one observation-hive site across two seasons; the published hourly sample grouping is not a held-out-bee or held-out-colony evaluation.",
+      "attribution": "Dormagen DM, Wild B, Wario F, Landgraf T (2023). Machine learning reveals the waggle drift’s role in the honey bee dance communication system. PNAS Nexus 2(9): pgad275. DOI 10.1093/pnasnexus/pgad275.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Published article only; dataset and code rights are separate.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516631/",
+        "conditions": "Credit the authors and source, link the license and indicate changes if reusing article material. Talk2Nature publishes an original summary and link only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-dance-following-data-2023",
+      "kind": "dataset",
+      "title": "Honeybee waggle-phase, dance, follower and feeder dataset",
+      "url": "https://zenodo.org/records/7928121",
+      "version": "Zenodo v1.0; DOI 10.5281/zenodo.7928121; published 2023-05-17",
+      "source_ids": [415, 416],
+      "priority": 1,
+      "reviewed": "2026-10-24",
+      "task": "Candidate for a narrowly specified reproduction or bee-held-out re-evaluation of an already published signal-to-follower/feeder analysis.",
+      "review_depth": "Zenodo v1.0 description and official API metadata reviewed for the 11-file inventory, sizes, provider MD5 values and CC BY 4.0 declaration. The primary article’s methods and results were reviewed selectively. No dataset payload was downloaded, hashed locally or inspected.",
+      "access": "Public Zenodo record; the listed files total about 4.9 GB. It includes more than 46 million 2019 track detections, dance/follower tables, feeder-experiment metadata and a 2021 classifier ground-truth archive. Fine-scale feeder coordinates are present in the source description; no coordinates are reproduced here.",
+      "decision": "Metadata-only communication-adjacent candidate, not a selected or training-ready benchmark. Invite independent insect-behavior and ML/statistical review of novelty, outcome definition, bee-held-out grouping and location handling before any analysis. Do not redistribute the media or linked model/code artifacts based on this dataset license.",
+      "limitations": "The published study spans one Berlin observation-hive site across two seasons; its sample-level cross-validation groups observations by hour, not by held-out individual or colony. The 2021 cohort is unmarked, and the 2019 feeder and tracking setup is specialized. The signal’s relationship to direction/distance and follower behavior is established prior art, not a new translation result.",
+      "attribution": "Dormagen DM, Wild B, Wario F, Landgraf T (2023). Data used in Machine learning reveals the waggle drift’s role in the honey bee dance communication system. Zenodo v1.0. DOI 10.5281/zenodo.7928121.",
+      "rights": {
+        "license": "Zenodo v1.0 record API metadata declares CC BY 4.0 for the deposited dataset.",
+        "scope": "The dataset record only. Linked papers, code repositories, dependencies and model artifacts require their own rights review.",
+        "evidence_url": "https://zenodo.org/records/7928121",
+        "conditions": "Cite the deposit and retain attribution. Before any analysis, review the exact files, potential location exposure and task-specific suitability. Do not infer permission for linked code or model artifacts.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
