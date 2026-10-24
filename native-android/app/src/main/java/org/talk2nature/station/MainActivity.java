@@ -68,6 +68,8 @@ public final class MainActivity extends Activity {
     private LinearLayout sessionPanel, eventList;
     private volatile AudioTrack playback;
     private boolean permissionRequestInFlight;
+    private boolean sessionReadable;
+    private boolean sessionExists;
     private final EventListSnapshot eventListSnapshot = new EventListSnapshot();
 
     @Override protected void onCreate(Bundle state) {
@@ -131,7 +133,7 @@ public final class MainActivity extends Activity {
         setup.addView(groupSpinner,space(0,5,0,8));
         speciesField = field("Species, if known (optional)");
         setup.addView(speciesField,space(0,2,0,8));
-        aliasField = field("Station name"); aliasField.setText("field-station");
+        aliasField = field("Station name"); aliasField.setText(R.string.station_alias_default);
         setup.addView(aliasField,space(0,2,0,8));
         scheduleSpinner = spinner(new String[]{"Observe for 1 hour","Observe for 4 hours","Observe for 8 hours"});
         setup.addView(labelFor("Choose a stop time",scheduleSpinner));
@@ -153,11 +155,13 @@ public final class MainActivity extends Activity {
         setup.addView(text(getString(R.string.permission_disclosure),13,MUTED,false),space(0,0,0,10));
 
         consent = new CheckBox(this);
-        consent.setText("I can record here, nearby people know the microphone may be active, and I will observe without provoking or playing sounds to animals.");
+        consent.setText(R.string.recording_consent_statement);
         consent.setTextColor(INK); consent.setTextSize(14); consent.setButtonTintList(ColorStateList.valueOf(MINT));
         consent.setPadding(0,dp(8),0,dp(6));
         setup.addView(consent,space(0,4,0,6));
+        consent.setOnCheckedChangeListener((button, checked) -> updateStartButton());
         startButton = button("Start listening",MINT,Color.rgb(8,37,31));
+        startButton.setEnabled(false);
         setup.addView(startButton,space(0,4,0,0));
         startButton.setOnClickListener(v -> requestStart());
 
@@ -202,23 +206,35 @@ public final class MainActivity extends Activity {
         if (permissionRequestInFlight) return;
         try {
             JSONObject current = store.read();
+            sessionReadable=true;
+            sessionExists=current!=null;
+            updateStartButton();
             if (current != null) { toast("Export or delete the saved session before starting another."); return; }
-        } catch (Exception error) { toast("Could not read encrypted session storage."); return; }
+        } catch (Exception error) {
+            sessionReadable=false;
+            sessionExists=true;
+            updateStartButton();
+            toast("Could not read encrypted session storage.");
+            return;
+        }
         requestNextPermission();
     }
 
     private void requestNextPermission() {
         if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             permissionRequestInFlight=true;
+            updateStartButton();
             requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},REQUEST_NOTIFICATION_PERMISSION);
             return;
         }
         if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             permissionRequestInFlight=true;
+            updateStartButton();
             requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},REQUEST_AUDIO_PERMISSION);
             return;
         }
         permissionRequestInFlight=false;
+        updateStartButton();
         startSession();
     }
 
@@ -233,6 +249,7 @@ public final class MainActivity extends Activity {
             if (granted) startSession();
             else explainMicrophonePermissionDenied();
         }
+        updateStartButton();
     }
 
     private void explainMicrophonePermissionDenied() {
@@ -257,6 +274,9 @@ public final class MainActivity extends Activity {
         String alias=aliasField.getText().toString().trim(), species=speciesField.getText().toString().trim();
         if (alias.isEmpty() || alias.length()>80) { aliasField.setError("Use a station name of 1–80 characters."); return; }
         if (species.length()>80) { speciesField.setError("Use at most 80 characters."); return; }
+        sessionReadable=false;
+        sessionExists=false;
+        updateStartButton();
         int index=groupSpinner.getSelectedItemPosition(), schedule=scheduleSpinner.getSelectedItemPosition();
         Intent intent=new Intent(this,CaptureService.class).setAction(CaptureService.ACTION_START)
                 .putExtra(CaptureService.EXTRA_ALIAS,alias)
@@ -267,7 +287,12 @@ public final class MainActivity extends Activity {
             startForegroundService(intent);
             toast("Station starting. Stop is also in the ongoing notification.");
             refreshSession();
-        } catch (SecurityException error) { toast("Android did not allow microphone recording to start."); }
+        } catch (SecurityException error) {
+            sessionReadable=true;
+            sessionExists=false;
+            updateStartButton();
+            toast("Android did not allow microphone recording to start.");
+        }
     }
 
     private void addObservationNote() {
@@ -290,9 +315,12 @@ public final class MainActivity extends Activity {
         if (store==null || isFinishing()) return;
         try {
             JSONObject record=store.read();
+            sessionReadable=true;
+            sessionExists=record!=null;
+            updateStartButton();
             if (record==null) {
-                sessionHeading.setText("Ready when you are");
-                sessionDetail.setText("Nothing is recording. Nothing has been uploaded.");
+                sessionHeading.setText(R.string.session_ready_heading);
+                sessionDetail.setText(R.string.session_idle_detail);
                 setSessionControls(false,false,false);
                 if (eventListSnapshot.reset()) eventList.removeAllViews();
                 return;
@@ -322,8 +350,11 @@ public final class MainActivity extends Activity {
                 }
             }
         } catch (Exception error) {
-            sessionHeading.setText("Session needs attention");
-            sessionDetail.setText("Encrypted session data could not be read. Keep the app data intact and export is unavailable until this is resolved.");
+            sessionReadable=false;
+            sessionExists=true;
+            updateStartButton();
+            sessionHeading.setText(R.string.session_attention_heading);
+            sessionDetail.setText(R.string.session_read_error_detail);
             setSessionControls(false,false,false);
         }
     }
@@ -335,6 +366,14 @@ public final class MainActivity extends Activity {
         exportButton.setVisibility(stopped && hasSession?View.VISIBLE:View.GONE);
         compareButton.setVisibility(stopped && hasSession?View.VISIBLE:View.GONE);
         deleteButton.setVisibility(hasSession?View.VISIBLE:View.GONE);
+    }
+
+    private void updateStartButton() {
+        if(startButton==null || consent==null)return;
+        boolean canStart=StartButtonPolicy.canStart(consent.isChecked(),sessionReadable,sessionExists,
+                CaptureService.isCapturing(),permissionRequestInFlight);
+        startButton.setEnabled(canStart);
+        startButton.setAlpha(canStart?1f:0.48f);
     }
 
     private void renderEvents(JSONArray events,JSONArray markers) throws Exception {
@@ -372,6 +411,10 @@ public final class MainActivity extends Activity {
 
     private void deleteEvent(int id) {
         try { store.deleteEvent(id); toast("Clip deleted from encrypted local storage."); refreshSession(); }
+        catch (DeleteAudioAfterManifestCommit.CleanupPendingException pending) {
+            refreshSession();
+            toast("Clip removed from this session; encrypted cleanup is pending. Delete the whole session to clear local files.");
+        }
         catch (Exception error) { toast("The clip could not be deleted."); }
     }
 

@@ -1,5 +1,55 @@
 # Project status
 
+## October 25 — clarify the scope of the historical completion audit
+
+**Question:** could a repository reader mistake the October 2 statement “the full stated goal is achieved” for completion of today's active five-track program?
+
+**Change:** retitled the audit as historical, stated that it assesses only the bounded October 2 objective and named revisions, and linked it to the current goal and status records. Reworded its conclusion to preserve the earlier milestone without claiming today's open scientific, mobile-device, hosted-service or independent-review gates have passed.
+
+**Limit:** this is a documentation-scope correction. It does not change the October 2 artifacts or verify the current goal as complete; the five-track goal remains active.
+
+## October 25 — verify the no-command, no-microphone Station rehearsal
+
+**Question:** can a visitor try the mobile Field Companion without configuration or microphone access and understand what the result represents?
+
+**Live check:** opened a fresh public Station page. Its accessibility tree exposed “Try a no-microphone rehearsal” and “Try without a microphone.” Starting that path showed “Synthetic session” and stated that tones were invented in the audio engine, with no microphone access or audible playback. No microphone prompt appeared. Stopping after 3.1 seconds produced a recap labeled “Invented practice audio,” with zero sound candidates and no audio retained.
+
+**Decision and limits:** the no-command rehearsal path is usable in the checked browser. This was a maintainer-run in-app-browser check, not a physical-phone, screen-reader or independent first-use test. No real microphone, animal or participant data, export, upload or research admission was involved. Keep physical-phone save/reopen and independent first-time-user completion as open acceptance checks; keep this synthetic path separate from real observations.
+
+## October 25 — verify honeybee dataset file sizes against the intake limit
+
+**Question:** does the honeybee dance/follower deposit have a sufficiently small, task-relevant file for a bounded receiver-outcome review?
+
+**Evidence checked:** queried the official Zenodo v1.0 API over verified TLS and read the primary paper's methods/results. Its 11 listed files total 4,870,358,178 bytes. The separately named `Berlin2019_followers.csv` is 9,171,824 bytes, larger than the collection tool's 5 MiB per-file ceiling. The page's larger “data volume” display sits with views/downloads statistics and is not the sum of deposited file sizes.
+
+**Decision:** retain the dataset as metadata-only. The smaller dance/feeder metadata files have not been shown to replace the follower table for a receiver-outcome question. Do not bypass the collection ceiling with direct downloads, another tool or archive splitting. Any later path needs a distinct scientific question, independent insect-behavior and ML/statistical review, and a separately reviewed acquisition design. No data bytes, video, code or model were downloaded or run.
+
+**Validation:** 169 Python tests pass (one intentional skip), all 117 Node tests pass, and the collection validator accepts 214 resources. The local build generated 136 pages plus 404 and passed its check with 6,985 links. The explicit-origin public candidate also generated 136 pages plus 404 and passed with 7,123 checked links across 136 reachable routes. The candidate remains local; no public release or deployment occurred.
+
+## October 25 — add a coarse PteroSet study-region map entry
+
+**Question:** can the atlas represent PteroSet's geography without publishing its sample-level recorder coordinates?
+
+**Evidence reviewed:** rechecked Ruiz et al. (2026), arXiv v2, Methods: Data Collection, Table 1 and Figure 2. The paper names Pivijay (Magdalena) and Puerto Asís (Putumayo) as study regions and reports five project periods from April 2023 through July 2025. Checked the corresponding [GeoNames Pivijay](https://www.geonames.org/3672093/pivijay.html) and [Puerto Asís](https://www.geonames.org/3671549/puerto-asis.html) city reference entries to select display anchors. The dataset schema includes date and latitude/longitude fields, but no data rows or precise recorder points were re-opened for this review.
+
+**Change and location boundary:** added two one-decimal municipal reference markers, linked each to the primary paper's study-region passage, and recorded the observation period. The labels and notes say these are approximate literature regions, not the actual recorder locations; no sample-level or species-specific coordinates were added. Updated the atlas goals date and left the private observation layer and its consent/hosting gate unchanged.
+
+**Validation:** the atlas projection validates 104 notes, 36 mapped notes, 33 approximate places and 335 cited sources. It counts 47 location-pending notes and 21 without a single applicable field location. The resource catalog validates 214 records; the source catalog has 417 records. Python tests pass (169 tests, one intentional skip), Node tests pass (117), and the collection validator passes (214 resources). The local build generated 136 pages plus the 404 page; its link check passed with 6,985 links. The explicit-origin public candidate also built 136 pages plus 404 and passed its link check with 7,123 links across 136 reachable pages. No dataset data or audio was downloaded or inspected, no model was run and no reviewer was contacted. The generated public candidate remains local and was not deployed.
+
+**Next milestone:** compare candidate fit, independent labels, grouping/splits, rights, and code reproducibility for the narrow signal/context questions already in the research register. Keep the companion parrot path focused on usability until a reviewed protocol exists. Do not start a training run merely because a dataset is large; AutoResearch remains **NOT READY**.
+
+## October 25 — refresh Wildlife Acoustics grant readiness
+
+**Question:** does the Q4 2026 Wildlife Acoustics program offer a realistic, near-term funding path for Talk2Nature?
+
+**Evidence checked:** rechecked the official [grant program](https://www.wildlifeacoustics.com/grant-program) on October 25. Its indexed page still lists the November 15 deadline, awards by December 30, product-only standard grants up to $4,000 per applicant from a quarterly pool of up to $12,000, and annual Kaleidoscope Pro software-only awards. It requires English materials and an organization document showing charitable or educational tax-exempt status; standard applications also require a recommendation letter. The main page reader did not expose the full content in this pass, so those detailed terms remain grounded in the October 13 full-page review. The older official FAQs for non-US and government applicants now redirect to a generic help landing page; their current eligibility answers could not be revalidated and are not treated as current findings.
+
+**Decision and change:** this is an in-kind equipment/software opportunity, not cash for general app development. Talk2Nature still has no confirmed qualifying host, defined wildlife field study, scientific lead or concrete product need, so the opportunity remains conditional and not application-ready. Updated source 213 and the opportunity record with the current check date and a clearer watch-only decision. No portal was opened, application drafted or submitted, host contacted, or commitment made.
+
+**Validation:** the full suite passed (169 Python tests, one intentional skip; 117 Node tests), and `python3 -m talk2nature.collection validate` accepted 214 resources. The local noindex build generated 136 pages plus 404 and the checker validated 137 HTML pages / 6,974 links. A public-origin build candidate using the configured Pages URL generated the same 136 routes; the checker validated 137 HTML pages, 7,111 links and all 136 public routes reachable. This was a local build only; no deployment or live-page change was made.
+
+**Limits and next step:** detailed current portal fields, award terms, import costs and the redirected FAQ answers remain unverified. Reconsider only if a suitable organization and qualified scientific lead establish a passive, welfare-reviewed study and a specific product need; then verify eligibility and costs with that host before preparing an application. The five-track project goal stays active, with independent workflow use and specialist scientific review still the main gates. AutoResearch remains **NOT READY**.
+
 ## October 25 — simplify the researcher start path
 
 **Question:** can a researcher try the current synthetic tools without first checking out an older revision and then switching branches to reach the current checks?
@@ -4054,3 +4104,63 @@ The in-app browser showed its existing cached app and an “Update ready” noti
 **Publication receipt:** PR [#373](https://github.com/Metivity/talk2nature/pull/373) merged to `main` as [`55c7091`](https://github.com/Metivity/talk2nature/commit/55c7091259f2ddd94a30063dbd32c31966e22f87). Pages run [#40126607472](https://github.com/Metivity/talk2nature/actions/runs/40126607472) passed tests, public build and boundaries, deployment, and the live-route/crawl verifier. Fresh TLS-verified requests returned HTTP 200 for the zebra-finch research note and resource directory; both have self-canonicals and `index,follow`, and both display the v1 and v3 identifiers. The resource card links the paper-cited v1 record and states metadata-only access. This verifies the live content and crawl metadata, not Google indexing.
 
 **Limits and next decision:** no archive, audio, code or model was acquired or run, and no independent reviewer has responded. The exact analysis bundle and component-level rights remain unresolved; keep the benchmark **NOT READY** until independent avian and ML/statistical review and artifact-level provenance checks pass.
+
+## October 25 — add MooLogue as a version- and rights-bounded mobile precedent
+
+**Question:** what can a published animal-vocalization app teach the project, and do its article, code and dataset support reuse?
+
+**Evidence reviewed:** selected passages of Kate and Neethirajan (2026), *MooLogue: A cross-platform mobile application for cow vocalization education and welfare monitoring*, SoftwareX 34:102638, via an author-uploaded full-text copy; the pinned repository README and developer documentation at commit `8023dbdfed8587d07eeafa54accb68408ffaefbe`; and the article's data statement. The paper reports a curated library of 569 clips, 48 fine-grained classes and three commercial dairy farms, and describes published v1.0 as an offline-first learning app. The older pinned repository README describes recording uploads to AWS and cloud inference. The paper does not resolve that version mismatch. The paper identifies CC BY-NC-ND 4.0 for the article; repository README metadata says MIT, but GitHub reports no detected license and the pinned tree has no root LICENSE. The paper says the dataset is restricted by data access agreement. Zenodo's API returned HTTP 406, so its manifest was not independently reviewed.
+
+**Change and decision:** added research note `moologue-cattle-call-learning-app-2026`, source records 419–421, separate paper/software/dataset catalog entries and a link from the model learning path. Kept every component metadata-only and the cattle locations pending; no code, app, audio, dataset or model was acquired or run. This is a mobile-learning and version-provenance comparator, not a validated communication tool, welfare diagnostic or selected benchmark. The current five-track goal remains active; AutoResearch remains **NOT READY**. The next milestone is a source-linked comparison with one bird/parrot app, followed by a decision on whether a curated command-free Learn path belongs beside passive Observe in the Field Companion.
+
+**Validation:** all 170 repository Python tests passed (one intentional skip for an external sample not bundled in CI). The collection catalog validates 217 resources. The local noindex build produced 137 pages plus 404; the site checker validated 138 HTML files and 7,038 links. JSON parsing and `git diff --check` passed. These are local candidate checks only: no deployment, app installation, data acquisition, model run or independent review occurred.
+
+## October 25 — compare mobile-learning and bird-ID patterns; surface existing practice
+
+**Question:** should Talk2Nature add a separate Learn path beside passive Observe?
+
+**Evidence reviewed:** source-linked MooLogue review (SoftwareX 2026) and the BirdNET Live official guide, privacy policy and pinned app release v1.2.1 at commit `4aee47cd824873ffc9b3ca3462bf2415151a56d1`. BirdNET Live's docs state on-device bird-species classification, required microphone permission, local session review/export, and opt-in map/geocoding/weather calls; the privacy claims were not runtime-tested. Its code license is MIT and its bundled model weights are Apache-2.0 at that release. MooLogue is a curated call-learning app, but its dataset is DAA-restricted and its paper/repository runtime descriptions do not align. Neither app demonstrates translation or validates meanings.
+
+**Decision and change:** no separate Learn mode or animal-call library yet. Talk2Nature already has a two-minute invented-scene practice that needs no microphone, audio, account or data collection, but the home page placed it under a collapsed “More tools” section. Added a concise optional “Practice careful noticing” link to the first screen. Kept the two primary actions, three observation scenarios, passive-only recording and no-upload behavior intact. Added a regression assertion for the route and its plain-language disclosure. The research library now has a pinned BirdNET Live note, separate code/model entries and links to the model-reading path; no code/model files were acquired or executed.
+
+**Mobile check:** in a local browser preview, the home page rendered at 480 × 844 CSS pixels with `documentElement.scrollWidth` equal to the viewport width. The practice link follows all three observation scenarios; following it opened the invented-scene exercise and disclosed that no recordings, accounts, animal responses or data collection are involved. The browser clamps this environment to 480 CSS pixels, so a 390-pixel viewport, physical phone and independent novice were not tested.
+
+**Validation:** all 170 repository Python tests passed (one intentional skip for an external sample not bundled in CI); all 117 Node tests passed. `web/build.py` generated 138 pages plus 404 in local noindex mode, and `scripts/check_site.py` validated 139 HTML documents and 7,090 links. The resource catalog validates 219 records; JSON parsing and `git diff --check` passed. These are local candidate checks only: no deployment, app installation, data acquisition, model run or independent review occurred.
+
+**Next milestone:** follow the existing five-consenting-tester/two-platform target in `docs/MOBILE_AUDIT.md`. Start each walkthrough from `/app/` with no terminal, setup commands or facilitator; measure completion of the synthetic first-use flow and export/reopen success, then verify save/reopen/export on a physical phone. Keep the present practice link only if user feedback confirms it helps without competing with observation. No independent test is claimed.
+
+## October 25 — focus the next SEO iteration on the resource directory
+
+**Evidence:** Search Console's Sep 29–Oct 22 performance snapshot showed 56 impressions, 0 clicks and average position 8.7. `/research/resources/` accounted for 44 impressions and 0 clicks; the query report showed no data. The page is indexed according to URL Inspection. The Search Console sitemap report still says “Couldn't fetch” / “Sitemap could not be read” and shows 0 discovered pages or videos, while a verified-TLS live check returned HTTP 200 for `sitemap.xml` and `robots.txt`; the sitemap is valid XML with 136 URLs, and `robots.txt` allows crawling and names it. The page-indexing summary was last updated Oct 16 and its overview/list counts are inconsistent. URL Inspection reports the home page and V33DA research page as indexed; this does not establish broad indexing or explain the sitemap report.
+
+**Change:** because the resource directory holds most reported impressions, its title is now distinct from the main research hub (“Animal communication papers, datasets and methods”) and its description is a concise 152-character summary retaining “reproducible research,” review depth, limits and rights. Added a regression assertion for both fields.
+
+**Validation and limits:** all 170 Python tests passed with one intentional external-sample skip. The local noindex build produced 138 pages plus 404; `scripts/check_site.py` validated 139 HTML files and 7,090 links (`public: false`). The candidate is not deployed, no sitemap code or Search Console submission changed, and no indexing request was made. Search Console's impressions are pre-change; no CTR benefit is established. Recheck the page and sitemap after a separately authorized release and Google's next processing cycle before making another snippet change.
+
+## October 25 — harden native Station first-use and event deletion
+
+**Question:** does the dedicated Android Station make its consent/session gates clear, and can deleting a clip leave the encrypted session manifest pointing at missing audio?
+
+**Change:** Start now stays visibly disabled until the plain-language statement is checked, the private store is readable, permissions are settled and no session or capture is active. Event deletion commits its metadata tombstone before removing the encrypted clip; if cleanup fails, the session stays consistent and the UI explains that whole-session deletion can clear the leftover file. Added focused Java self-tests for both behaviors.
+
+**Validation:** the native core self-tests passed for detection, ZIP handling, safe event deletion and Start-button gating; both native-session Node tests passed. Android debug lint and debug/release APK assembly succeeded, and the release-boundary check confirmed the expected microphone-only/no-network/no-debug boundaries. The initial lint report contained six hard-coded UI strings plus one Gradle-version warning; the follow-up below clears the six UI findings. On an API 34 emulator, synthetic-only checks verified the disabled/enabled Start states, notification-denial recovery without microphone permission or session-file creation, event tombstone behavior, and whole-session cleanup. The test emulator was removed after testing.
+
+**Limits and next step:** no microphone permission was granted and no animal audio or field data was used. Physical-phone capture, interruption/lock behavior, endurance, accessibility and an independent command-free first-use walkthrough remain unverified. Keep the five-track goal active; next complete a bounded physical-device and novice workflow review before treating this native prototype as field-ready. No release, deployment or store submission occurred.
+
+## October 25 — make native first-use copy ready for localization
+
+**Question:** can the Android prototype's consent and session-state copy be maintained and translated without changing its behavior?
+
+**Change:** moved the six hard-coded strings flagged by Android lint—recording consent, the station-name default and idle/error session headings/details—into `strings.xml`. Text and behavior are unchanged; only the resource structure is now prepared for translated resource sets.
+
+**Validation:** Android debug lint and debug/release APK assembly passed; `lint-results-debug.txt` now reports zero errors and one remaining warning that Gradle 8.14.6 is newer than the pinned 8.14.3 wrapper. Native detector/deletion/start-policy self-tests and both native-session Node tests passed. The release-boundary check still confirms microphone-only permission, no network/debug permissions or debug receiver, and disabled backup. `git diff --check` passed.
+
+**Limits and next step:** no translation, physical-device use, microphone capture, release signing, distribution or deployment occurred. Review the Gradle update as a separate dependency change with its own wrapper and build checks. Continue with the independent command-free novice walkthrough and named-device validation before any field-use claim.
+
+## October 25 — verify the command-free, microphone-free companion entry
+
+**Question:** can a newcomer reach a no-microphone practice route from the companion Station without granting audio access or creating a recording?
+
+**Evidence:** the current local noindex build produced 138 pages plus the 404 route. The companion Station HTML, CSS and JavaScript returned HTTP 200 on loopback. Its initial accessibility snapshot showed the whole-moment option, unchecked recording-consent box, disabled Start button and a “Try without a microphone” control. The focused Station/demo/window/observation/mobile Node suite passed all 38 tests.
+
+**Limits and decision:** this verifies static serving, initial rendered controls and module behavior, not a completed browser interaction or novice comprehension. The browser policy blocked a further click on the localhost page; I did not try another browser path. The deployed Pages app remains unchanged and its existing window showed an update-ready notice. No microphone was requested, no recording was made, and no animal data was involved. Continue to the independent no-command walkthrough and physical-device checks; do not claim those gates have passed.

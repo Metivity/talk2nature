@@ -453,6 +453,8 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(page.count('<article class="resource-entry"'),len(resources))
             for resource in resources:
                 self.assertIn(html.escape(resource['title']),page)
+            self.assertIn('<title>Animal communication papers, datasets and methods · Talk2Nature</title>',page)
+            self.assertIn('name="description" content="Browse papers, datasets, code, models and standards for reproducible research on animal communication, with review depth, limits and reuse-rights notes."',page)
             self.assertIn('rel="canonical" href="https://fixture.github.io/talk2nature/research/resources/"',page)
             self.assertIn('<meta name="robots" content="index,follow">',page)
             self.assertIn('Conditional; check the license, scope and stated conditions',page)
@@ -840,10 +842,14 @@ class SiteTests(unittest.TestCase):
             self.assertIn('3,278,121 detections',honeybee)
             self.assertIn('hour rather than holding out bees or colonies',honeybee)
             self.assertIn('No data, video, code or model was downloaded',honeybee)
+            self.assertIn('4,870,358,178 bytes',honeybee)
+            self.assertIn('9,171,824 bytes, above the current 5 MiB per-file collector cap',honeybee)
             resources=json.loads((Path(__file__).resolve().parents[1]/'research'/'resources.json').read_text())['resources']
             honeybee_data=next(row for row in resources if row['id']=='honeybee-dance-following-data-2023')
             self.assertEqual(honeybee_data['acquisition'],'metadata_only')
             self.assertEqual(honeybee_data['files'],[])
+            self.assertIn('4,870,358,178 bytes',honeybee_data['access'])
+            self.assertIn('9,171,824 bytes',honeybee_data['access'])
             self.assertIn('CC BY 4.0',honeybee_data['rights']['license'])
             self.assertEqual(honeybee_data['source_ids'],[415,416])
             resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
@@ -1455,6 +1461,7 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn('the parrot did not prepare a TED talk',home)
             self.assertIn('Record a moment',home)
             self.assertIn('Try without a microphone',home)
+            self.assertIn('href="/talk2nature/app/practice/">Practice first: three invented scenes · no microphone',home)
             self.assertNotIn('YOUR FIRST LITTLE FIELD NOTE',home)
             self.assertNotIn('class="field-invitation"',home)
             panel_marker='<details class="app-more-tools-panel glass">'
@@ -1462,6 +1469,8 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn('<details class="app-more-tools-panel glass" open>',home)
             beginner_paths=home.split(panel_marker,1)[0]
             more_tools=home.split(panel_marker,1)[1].split('</details>',1)[0]
+            self.assertIn('Practice first: three invented scenes · no microphone',beginner_paths)
+            self.assertIn('.app-scenarios>.app-practice-prompt', (root/'assets/app.css').read_text())
             self.assertEqual(beginner_paths.count('<a class="scenario-card glass'),3)
             self.assertIn('href="/talk2nature/app/station/?mode=outdoor"',beginner_paths)
             self.assertIn('href="/talk2nature/app/station/?mode=companion"',beginner_paths)
@@ -1665,11 +1674,12 @@ class SiteTests(unittest.TestCase):
 
     def test_pteroset_review_keeps_detection_scope_rights_and_file_provenance_separate(self):
         note=next(n for n in load('research') if n['slug']=='pteroset-detection-benchmark-2026')
-        self.assertEqual(note['source_ids'],[286,287,288])
+        self.assertEqual(note['source_ids'],[286,287,288,417,418])
         self.assertIn('not what a bird is communicating',note['finding'])
         self.assertIn('only the MAP1 test fold holds out a distinct named landscape',note['limitations'])
-        self.assertEqual(note['atlas']['location_status'],'pending')
-        self.assertEqual(note['atlas']['locations'],[])
+        self.assertEqual(note['atlas']['location_status'],'mapped')
+        self.assertEqual({location['place_id'] for location in note['atlas']['locations']},{'pivijay-study-region','puerto-asis-study-region'})
+        self.assertIn('municipal reference points',note['atlas']['location_note'])
         self.assertIn('All 12 names, sizes and provider MD5 strings in the exact v5 API manifest match this catalog',note['limitations'])
         self.assertIn('4,096-byte HTTP 206 range request',note['limitations'])
         self.assertIn('Row values were not reviewed or saved',note['limitations'])
@@ -1781,6 +1791,44 @@ class SiteTests(unittest.TestCase):
             self.assertIn('not an untouched final-test estimate',page)
             self.assertIn('https://zenodo.org/records/20406266',page)
             self.assertIn('CowRumIA bovine vocalization dataset v1.0.0',library)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+
+    def test_moologue_review_separates_mobile_learning_versions_and_component_rights(self):
+        slug='moologue-cattle-call-learning-app-2026'
+        note=next(n for n in load('research') if n['slug']==slug)
+        self.assertEqual(note['source_ids'],[419,420,421])
+        self.assertIn('offline-first educational app',note['finding'])
+        self.assertIn('cloud workflow',note['finding'])
+        self.assertIn('569 clips',note['finding'])
+        self.assertIn('no root LICENSE file',note['limitations'])
+        self.assertIn('HTTP 406',note['review_depth'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        resources={r['id']:r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']}
+        paper=resources['moologue-paper-2026']
+        code=resources['moologue-app-code-2025-snapshot']
+        dataset=resources['moologue-cattle-audio-dataset-2026']
+        self.assertEqual(paper['rights']['license'],'CC-BY-NC-ND-4.0')
+        self.assertEqual(code['rights']['research_use'],'unresolved')
+        self.assertEqual(dataset['rights']['research_use'],'unresolved')
+        self.assertEqual(dataset['rights']['redistribution'],'not_admitted')
+        for resource in (paper,code,dataset):
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+            self.assertTrue(resource['source_ids'])
+        model_path=next(p for p in load('learning-paths')['paths'] if p['id']=='model')
+        self.assertIn(slug,model_path['notes'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'research'/slug/'index.html').read_text()
+            library=(root/'research/resources/index.html').read_text()
+            canonical=f'https://fixture.github.io/talk2nature/research/{slug}/'
+            self.assertIn('content="index,follow"',page)
+            self.assertIn(canonical,page)
+            self.assertIn('8023dbdfed8587d07eeafa54accb68408ffaefbe',page)
+            self.assertIn('https://doi.org/10.5281/zenodo.17764250',page)
+            self.assertIn('MooLogue',library)
             self.assertIn(canonical,(root/'sitemap.xml').read_text())
 
     def test_whombat_aoef_bridge_is_indexable_with_verified_scope_and_limits(self):

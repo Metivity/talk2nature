@@ -22,13 +22,17 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),35)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),36)
+        pteroset=records['pteroset-detection-benchmark-2026']
+        self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})
+        self.assertIn('municipal reference points',pteroset['location_note'])
+        self.assertTrue({417,418} <= set(pteroset['source_ids']))
         self.assertEqual(records['great-green-macaw-vocal-development-2026']['locations'][0]['place_id'],'costa-rica')
         playback=records['parrot-vocal-imitation-addressing-2012']
         self.assertEqual(playback['group'],'birds')
         self.assertEqual(playback['locations'][0]['place_id'],'costa-rica')
         self.assertEqual(playback['observation_period']['start_year'],2007)
-        self.assertEqual(len(atlas['places']),31)
+        self.assertEqual(len(atlas['places']),33)
         lark=records['duponts-lark-vocal-types-2026']
         self.assertEqual(lark['locations'][0]['place_id'],'spain')
         self.assertIn('country-level',lark['location_note'])
@@ -92,7 +96,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('35 of 20',goals)
+            self.assertIn('36 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -201,11 +205,11 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(35,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(36,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],30)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],31)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value

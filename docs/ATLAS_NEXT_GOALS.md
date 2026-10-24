@@ -1,6 +1,6 @@
 # Next atlas and observation goals
 
-Reviewed October 24, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
+Reviewed October 25, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
 
 These milestones describe the next program work. They are not claims of funding, recruitment, scientific approval, partnership or a release of participant data. The bounded October 4 software/research task is to expand geography and publish this board; completing it does not complete every future milestone.
 
@@ -10,6 +10,12 @@ These milestones describe the next program work. They are not claims of funding,
 | Three historical source notes | Three of three; coverage target reached | Three distinct notes with original source years before 2000, review depth and observation/source-date separation | Deepen methods review for the historical notes already counted and continue checking later reassessments |
 | One reviewed passive parrot pilot | Needs reviewer and access | Confirmed carers/species, avian specialist review, consent, independent labels, a successful physical-phone rehearsal | Resolve the access/reviewer checklist in `PILOT_PROTOCOL_DRAFT.md`; do not recruit or ingest real data prematurely |
 | First protected observation release | Needs consent and hosting review | Reviewed protocol/rights, private hosting, tested withdrawal, human review and an independently checked public location projection | Finish the existing hosting/consent gates before implementing public participant pins |
+
+## October 25 location review — PteroSet study regions
+
+Rechecked Ruiz et al. (2026), arXiv v2, Methods: Data Collection, Table 1 and Figure 2. The paper identifies Pivijay in Magdalena and Puerto Asís in Putumayo as two study regions, with five recording periods from April 2023 through July 2025. Added one-decimal municipal reference markers from the official GeoNames entries. They represent broad literature regions, not recorder or sample points. The paper's dataset schema includes latitude and longitude, but no dataset rows, exact recording coordinates or species-specific locations were retrieved or plotted. The location marker is therefore a separate editorial layer, not an admission of raw observations.
+
+The local candidate now contains 106 notes, 36 mapped notes, 33 approximate places and 341 cited sources; 48 notes remain location-pending and 22 have no single applicable field location. The wider catalogs contain 423 source records and 219 collection resources. The goal board computes 36/20 mapped notes and 3/3 historical notes. These are local candidate counts; this update has not been published. See the primary [PteroSet methods](https://arxiv.org/html/2605.20578v2), [Pivijay reference point](https://www.geonames.org/3672093/pivijay.html) and [Puerto Asís reference point](https://www.geonames.org/3671549/puerto-asis.html).
 
 ## October 24 catalog reconciliation
 

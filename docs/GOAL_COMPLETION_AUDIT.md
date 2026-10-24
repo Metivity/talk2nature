@@ -1,6 +1,8 @@
-# October 2 goal completion audit
+# October 2 scoped goal completion audit (historical)
 
 Project: Talk2Nature · reviewed October 2, 2026. Public website revision: `06c75ab54f9e00af11e4f4a045dd4b4e5a4dd29f`. Private lineage implementation: `55108eca91659245ffa65de94a678e75bf81c8fe`.
+
+**Scope note:** this is a point-in-time audit of the specific October 2 objective listed below. Its completion verdict applies only to that bounded objective and the revisions/checks named here; it is not a completion audit of the ongoing five-track program in [`GOAL.md`](GOAL.md). Current progress and open gates are tracked in [`STATUS.md`](STATUS.md).
 
 ## Objective audited
 
@@ -31,6 +33,6 @@ Build and publish a substantially simpler, visually compelling Talk2Nature exper
 
 ## Completion decision and remaining program
 
-The full stated goal is achieved: public experience published, research expanded, provenance foundation implemented through media/model records, boundaries tested, hosting readiness documented and experiments prioritized. This does not claim completion of Talk2Nature's larger scientific ambition.
+The October 2 objective described in this file was recorded as achieved in its bounded sense: the public experience was published, research expanded, a provenance foundation implemented through media/model records, boundaries tested, hosting readiness documented and experiments prioritized. This historical verdict does not establish that the current five-track program is complete or that later scientific, mobile-device, hosted-service or independent-review gates have passed; see [`GOAL.md`](GOAL.md) and [`STATUS.md`](STATUS.md).
 
 The roadmap's later phases remain explicitly future work: provision and verify the hosted synthetic owner workspace; obtain independent protocol review; implement real media-object and permission lifecycles; test physical phones and synchronized capture; then run and publish a reproducible ML baseline. Actual animal/plant/fungal communication, automatic identification, uploads, trained models and scientific results are not delivered features. These were preserved as future work in the objective's “foundation,” “future model results” and “document hosting readiness” requirements, rather than silently counted as complete implementations.
