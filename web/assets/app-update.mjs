@@ -1,4 +1,4 @@
-const updateReadyMessage='Update ready. Nothing will reload now. Export work you want to keep, then close all Talk2Nature windows and reopen.';
+const updateReadyMessage='A new version is ready. Save any moment you want to keep, close all Talk2Nature tabs or windows, then reopen the app.';
 
 export function announceWaitingUpdate(notice, offline) {
   if (notice) {
