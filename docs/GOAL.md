@@ -679,3 +679,7 @@ The primary 2025 study identifies its wild great-tit population at Wytham Woods,
 ### October 24 continuation — recheck Search Console discovery
 
 Google's indexed-state report still marks the Wytham page unknown with no referring sitemap or crawl, while its read-only live test says the page is available and can be indexed. The sitemap report still says “Couldn't fetch” and zero discovered pages, although direct TLS-verified requests return HTTP 200 and confirm the Wytham route in the valid 135-URL sitemap. No repeat indexing request or sitemap submission was made. Keep the SEO result unresolved and recheck after Google's processing cycle; the active goal continues across all five tracks.
+
+### October 24 continuation — validate the live microphone-free first run
+
+The deployed Station's synthetic rehearsal was started and stopped in the browser. It retained a human-entered movement note, clearly marked the 2.5-second window partial and synthetic, and did not request microphone access or play sound. This is a useful software onboarding path, not a phone-device or biological validation. Keep the Field Companion's first-use path simple; do not add more workflow choices until a demonstrated need appears. The next app check is save-and-reopen of a synthetic session on a physical phone. The science gate remains independent review before selecting a communication-adjacent benchmark; no review has been received and AutoResearch stays **NOT READY**.
