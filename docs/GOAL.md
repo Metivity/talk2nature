@@ -8,6 +8,8 @@ Continue one verifiable cycle at a time: find a concrete research or user need; 
 
 The program has four release-facing outcomes: (1) a growing, traceable resource library with reviewed methods, data, code and models kept distinct; (2) a straightforward, reliable Field Companion flow for passive observation and export; (3) clear open-source onboarding and repeatable project checks; and (4) useful, crawlable research pages with verified deployment and honest Search Console reporting. A first ML benchmark is a gated research outcome, not a launch promise: it remains **NOT READY** until the existing data, reviewer, split, baseline and locked-test requirements pass. Current implementation progress and evidence limits are tracked in `docs/STATUS.md`; next research choices are in `docs/RESEARCH_BACKLOG.md`.
 
+**October 24 checkpoint:** the moth/plant source-table audit is now published through PR [#344](https://github.com/Metivity/talk2nature/pull/344), with Pages deployment and live-route checks recorded in `docs/STATUS.md`. It demonstrates a bounded, checksum-pinned aggregate review workflow; it is not an animal-audio benchmark or evidence of communication. The active next milestone remains independent avian/bioacoustics and ML/statistical review of the first-dataset packet, while app work, source review, open-source onboarding and technical discovery continue in bounded cycles.
+
 ### Current next milestone — obtain independent review before selecting a benchmark
 
 Do not choose a species just because a dataset is large. The current evidence separates these paths:
