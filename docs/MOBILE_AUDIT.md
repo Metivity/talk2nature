@@ -347,3 +347,15 @@ The full text of the CHI 2024 tablet ergonomics study was reviewed for this dist
 **Change:** send the update message to the global banner when it exists, leaving the offline status focused on whether the public shell is ready; use the offline status only as a fallback on a page without the banner. Added checks for both cases.
 
 **Limits:** this removes duplicate status text by construction and tests the state helper; the live observation was a browser accessibility-tree check, not a phone-width, physical-device or screen-reader test. No microphone, recording, upload or animal/participant data was used. The change needs CI, a release and post-release browser verification before it is considered live.
+
+## October 24 post-release check — single-region update notice
+
+**Question:** is the update-notice correction served by the live Field Companion, and does its normal home screen keep offline readiness distinct from update status?
+
+**Release:** PR [#335](https://github.com/Metivity/talk2nature/pull/335) merged as [`ac9f6fd`](https://github.com/Metivity/talk2nature/commit/ac9f6fdb58f36d213c755c674c7e90a16840da91). Pages run [#40087965008](https://github.com/Metivity/talk2nature/actions/runs/40087965008) completed successfully on that commit.
+
+**Live check:** a TLS-verified fetch of `/app/` served `app.js?v=d1e6972ad9bec584`; that bundle imports the matching versioned [`app-update.mjs`](../web/assets/app-update.mjs). The deployed helper sends “Update ready” to the global notice when one exists and uses the offline-status region only as a fallback. A fresh live `/app/` accessibility-tree view showed the offline-ready message and update-check control, with no duplicate update-ready text. This checks the default page state and served code; I did not trigger a waiting-worker update cycle in this browser.
+
+**Test:** `node --test tests/app-update.test.mjs` passed all four cases, covering a global notice, offline-status fallback, an already-waiting worker and a newly installed worker. The update remains user-controlled: it does not force a reload or activate a waiting worker mid-session.
+
+**Limits and next decision:** the release and helper behavior are verified, but a full update cycle from an older installed shell remains unverified on a physical phone and with a screen reader. Keep the visible guidance to export wanted work, close all Talk2Nature windows and reopen. No microphone, recording, upload or animal/participant data was used.
