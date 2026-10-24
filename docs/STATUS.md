@@ -14,6 +14,12 @@
 
 **Publication receipt (October 25):** PR [#377](https://github.com/Metivity/talk2nature/pull/377) merged as [`6133dfb`](https://github.com/Metivity/talk2nature/commit/6133dfb20ef9b06dd2598fe915c393aadb37150d). Pages run [#40132236172](https://github.com/Metivity/talk2nature/actions/runs/40132236172) passed the repository and browser-tool tests, public build, publish-boundary checks, deployment and live-route/crawl verifier. Fresh TLS-verified requests returned HTTP 200 for the [bat evidence page](https://metivity.github.io/talk2nature/research/fruit-bat-context-ml-2024/) and [sitemap](https://metivity.github.io/talk2nature/sitemap.xml). The live page's reviewed date, `index,follow`, self-canonical, caller-support summary and explicit no-split caveat were verified; the sitemap contains the route. This verifies publication and crawl configuration, not Google indexing or biological communication. No model was run and no independent reviewer has responded.
 
+## October 25 — Search Console sitemap recheck after publication
+
+**Finding:** the verified Talk2Nature property still lists `/sitemap.xml` as submitted October 24, with status “Couldn't fetch” and zero discovered pages. The report has no newer last-read result. A fresh TLS-verified check confirms the sitemap returns HTTP 200 as valid XML with 136 URLs; `robots.txt` returns HTTP 200 and names the sitemap, and the bat route is present. No page-specific URL Inspection result for the bat note was verified in this check.
+
+**Decision:** make no sitemap change or repeat submission. The Search Console report remains a discovery/processing gap despite a working live endpoint; it does not establish whether this page is indexed. No indexing request was made.
+
 ## October 24 — choose a first species by scientific task, not dataset size
 
 **Question:** which animal and existing resource give Talk2Nature the most useful first research foothold?
