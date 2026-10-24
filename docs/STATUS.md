@@ -3366,3 +3366,13 @@ A recursive OSF JSON:API metadata recheck for Wytham found 14 current file items
 Created a fresh HTTPS clone of public `main` at [`4013b790808463ed2daafd94efe13cb1febfe333`](https://github.com/Metivity/talk2nature/commit/4013b790808463ed2daafd94efe13cb1febfe333) and followed the published historical and current-main examples. The historical split checksum matched; current annotation, standard split and dyadic examples passed, with the dyadic transitive chain grouped in one partition. All 156 Python and 115 Node tests passed. The explicit public-origin build produced 130 pages plus 404; the checker verified 131 HTML documents, 6,691 links and 130 reachable routes. Updated `RESEARCHER_START.md`, `RESEARCHER_START_HISTORY.md` and the execution-board evidence so the current revision and counts are accurate.
 
 This remains a maintainer-run synthetic check, not the independent outside reproduction the board asks for. The clone stayed clean; no animal/participant data, third-party media or model was acquired or run. AutoResearch remains **NOT READY**.
+
+## October 24 — simplify the university evaluation path on phones
+
+**Question:** can a research-group visitor reach the first useful review and reporting route before encountering the advanced methods and network material?
+
+**Evidence and change:** source review found that the page exposed both detailed methods reviews and the proposed network discussion in full, while the reproduction form was only linked at the bottom. Moved the review/not-ready boundary and first-contribution instructions directly after the introduction, added a direct report link in the hero with the GitHub sign-in/public-report disclosure, and placed the two advanced sections in native closed-by-default disclosures. The disclosure labels describe what is inside; keyboard focus remains visible, and no JavaScript is needed to expand them.
+
+**Validation:** all 156 Python tests and 115 Node tests passed. The explicit-origin public candidate build produced 130 pages plus 404; `scripts/check_site.py` validated 131 HTML pages, 6,692 links and all 130 public routes. In the local browser preview, the initial report link and primary browser-review button were visible in the hero; both disclosures started closed and opened with their full headings and content. At the narrow 480 CSS-pixel viewport the page had no horizontal overflow, and the 1,280 CSS-pixel desktop view also fit without overflow.
+
+**Limits:** this verifies a maintainer-run browser workflow, not an outside researcher evaluation or a physical-phone review. The evaluation continues to use invented data only; the research and university network gates remain unchanged. This entry records a local candidate, not a deployment or search-indexing result.
