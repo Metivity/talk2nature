@@ -2322,12 +2322,12 @@
   {
     "id": 222,
     "title": "Smith-Vidaurre et al. identity-encoding calls and selection table (Figshare v2)",
-    "description": "Official Figshare dataset record for the paper. The October 13, 2026 API record reports 22 files totaling 187,820,138 bytes and item-level CC BY 4.0. Its README states the monk-parakeet selection table has 1,596 rows, of which 1,582 were used in the paper. The README was streamed for review, not retained; no audio, CSV selection table, or archive was retrieved.",
+    "description": "Official Figshare dataset record for the paper. Its 22-file inventory totals 187,820,138 bytes under an item-level CC BY 4.0 declaration. The README describes a 1,596-row selection table and a WAV archive with matching sound.file names; 1,582 calls were used in the paper. No table or audio was retrieved.",
     "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
-    "checked": "2026-10-13",
-    "origin": "Reviewed the public Figshare v2 record and API metadata, and streamed the listed README.md file (41233869) from the official Figshare file endpoint. It reports 1,596 selection-table rows and 1,582 calls used in the associated analysis. The file was not retained. Provider-reported checksums were not locally verified; no audio, CSV selection table, or archive was retrieved.",
+    "checked": "2026-10-24",
+    "origin": "Refreshed the official Figshare v2 API metadata over verified TLS and streamed README.md file 41233869 without retaining it. The API lists 22 files totaling 187,820,138 bytes; the README says filenames in the 1,596-row selection table correspond to the WAVs in pre-processed_calls.zip and that 1,582 were used in the article. Recorded API metadata in research/monk_parakeet_figshare_manifest_2023.json. No audio or selection table was acquired; provider MD5 values were not recomputed, rows were not inspected, and no location values were retained.",
     "rights": {
-      "dataset": "The Figshare record declares CC BY 4.0 at item level. The exact source and provenance of every recording and any third-party material were not independently audited; do not infer rights for the related article or code from this data record."
+      "dataset": "The Figshare record declares CC BY 4.0 at item level. Its README states no use restrictions and requests prior contact to discuss possible collaboration/co-authorship; this is not independent verification of every source recording or embedded third-party item. Do not infer rights for the related article or code from this data record."
     }
   },
   {
@@ -4109,10 +4109,10 @@
   {
     "id": 401,
     "title": "F0 estimation for bioacoustics: Dryad dataset",
-    "description": "Version published May 8, 2025; Dryad lists a 27.86 GB release with more than 250,000 calls and waveforms plus annotated F0 contours for 13 taxa. Dolphin predictions are included without the waveform release.",
+    "description": "Dryad record for the F0 dataset: more than 250,000 calls, waveforms and annotated contours for 13 taxa, plus dolphin predictions without dolphin waveforms. The official API returned dataset version 9 with 15 files and a provider checksum for monk_parakeets.zip.",
     "url": "https://datadryad.org/dataset/doi:10.5061/dryad.prr4xgxw8",
     "checked": "2026-10-24",
-    "origin": "Reviewed the landing-page abstract, file inventory, data structure and access information. The displayed version totals 27.86 GB. No archive was downloaded; the individual monk-parakeet zip is listed as 5.08 MB."
+    "origin": "Reviewed the landing page and official Dryad dataset, version and file-manifest APIs over verified TLS. On 2026-10-24 the API reported record 139968, version 9, version id 363617, CC0-1.0, 27,863,357,661 bytes and 15 files. monk_parakeets.zip is 5,076,570 bytes with provider SHA-256 328f5ad50313da8d97d7a354a5cacb2ed44b5021772a2974011fdd85fc5bf780. No payload was downloaded and the provider checksum was not recomputed locally. The API download route required a bearer token; the public file-stream route returned HTTP 403 in this environment."
   },
   {
     "id": 402,

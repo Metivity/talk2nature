@@ -603,3 +603,11 @@ PR [#299](https://github.com/Metivity/talk2nature/pull/299) passed repository, b
 ### October 24 continuation — trace monk-parakeet inputs in the F0 benchmark
 
 The 2025 F0 article cites 2021 and 2023 monk-parakeet studies and data deposits for its 233-call subset, but the reviewed main text does not give a clip-to-source-file crosswalk. Added separate source/resource records for the 2021 article and Figshare v1 plus an API-only file manifest. The item-level CC BY 4.0 inventory lists 12 CSV/KML/README files and no waveform; no payload or location data was inspected. This narrows the lineage question without clearing it: the subset remains metadata-only, and no model run is ready. Parrots remain the separate companion-app route; the source audit does not change the provisional app cohort. The overall program and benchmark-readiness gates remain active.
+
+### October 24 continuation — trace the second monk-parakeet F0 source deposit
+
+The 2023 Figshare v2 API and streamed README identify a possible filename bridge: the deposit lists a selection table and a WAV archive that the README says share `sound.file` names. Added a versioned API-only manifest and updated the F0 evidence/source records. The exact match to the 233-call F0 subset remains unknown; no CSV, audio, code or model was acquired or run, and no location rows were inspected. Keep the dataset metadata-only and the benchmark **NOT READY** while we assess a permitted bounded way to compare filenames and resolve source provenance.
+
+### October 24 continuation — pin Dryad's current F0 file inventory
+
+Queried Dryad's official dataset, version and file-manifest APIs over verified TLS. The current v9 manifest pins all 15 file names, sizes and provider SHA-256 values, including the 5,076,570-byte monk-parakeet archive. Saved a metadata-only snapshot and updated the research/resource notes. The documented API download route required a bearer token, and the public file-stream URL returned HTTP 403 in this environment; no credential or alternate route was used. The file list and exact F0-to-source crosswalk remain unresolved, so the subset stays metadata-only. The broader program and benchmark-readiness gates remain active.

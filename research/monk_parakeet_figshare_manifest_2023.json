@@ -1,0 +1,236 @@
+{
+  "schema_version": "talk2nature.figshare_manifest.v1",
+  "reviewed_date": "2026-10-24",
+  "provider_api": "https://api.figshare.com/v2/articles/22582099",
+  "record": {
+    "id": 22582099,
+    "doi": "10.6084/m9.figshare.22582099.v2",
+    "title": "Smith-Vidaurre_et_al_2023_IdentityInformationEncoding",
+    "version": 2,
+    "published_date": "2023-06-13T21:45:06Z",
+    "size_bytes": 187820138,
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "scope_note": "Provider-declared item-level license. Contents and source-recording provenance were not independently audited."
+    }
+  },
+  "files": [
+    {
+      "id": 40086154,
+      "name": "monk_parakeet_contactCalls_rangeComparison_selectionTable.csv",
+      "bytes": 440873,
+      "provider_md5": "3296a9792c395fbad6d9bfa8e13a482f",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086157,
+      "name": "resampled_EMD_site_scale_introducedTemporal.txt",
+      "bytes": 1471380,
+      "provider_md5": "a9673268f2918169abe309314febbcf8",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086160,
+      "name": "resampled_EMD_site_scale.txt",
+      "bytes": 494572,
+      "provider_md5": "baacaa915506d18b809d43ba18747dc1",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086163,
+      "name": "resampled_EMD_individual_scale.txt",
+      "bytes": 72562,
+      "provider_md5": "1abcedb67fc4c78488fa5255f524bde0",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086166,
+      "name": "optimized_MDS_coords_metadata.csv",
+      "bytes": 512791,
+      "provider_md5": "77c65194d8754e68fb1754609fb14f53",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086181,
+      "name": "monk_parakeet_contactCalls_rangeComparison_extSelTable.RDS",
+      "bytes": 39154174,
+      "provider_md5": "f3eb6ad4c698d02db6853eb2e87082c8",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086184,
+      "name": "rf_validatn_predictn_prox_mat.RDS",
+      "bytes": 3523448,
+      "provider_md5": "f6d6bf869634213667def25e380b7ff7",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086187,
+      "name": "supervised_RF_dataset_acousticSimilarity.csv",
+      "bytes": 54816822,
+      "provider_md5": "27a64cc0977456d5b088ce0fe326f53d",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40086190,
+      "name": "xc_mat_nat_int_1582calls.RDS",
+      "bytes": 18764635,
+      "provider_md5": "5413ad5cbc5c5ee2f4c0c11e6d90c5cf",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 40849118,
+      "name": "pre-processed_calls.zip",
+      "bytes": 31079669,
+      "provider_md5": "cfb534d55801e70edb5ab11e8afe6215",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233548,
+      "name": "parakeet_spcc_social_scales_bootstrapped.csv",
+      "bytes": 3973935,
+      "provider_md5": "7de812b6dc4810e12e4aaa721d43a9e9",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233551,
+      "name": "parakeet_spcc_social_scales.csv",
+      "bytes": 11918352,
+      "provider_md5": "18ec975e7bb2ce234c13b1d7d949b31b",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233554,
+      "name": "amazon_spcc_social_scales_bootstrapped.csv",
+      "bytes": 1693501,
+      "provider_md5": "0d94e19bccaeb812776a747658b398c1",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233557,
+      "name": "amazon_spcc_social_scales.csv",
+      "bytes": 18361934,
+      "provider_md5": "95481b9291c313f5aa9a4572bd93aa34",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233563,
+      "name": "monk_parakeet_introducedRange_siteScaleTemporal_visualFilter.csv",
+      "bytes": 56178,
+      "provider_md5": "def3fe9a8b6b8f4205246a76cbc7ec11",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233566,
+      "name": "monk_parakeet_introducedRange_siteScaleTemporal_clusterFilter.csv",
+      "bytes": 49382,
+      "provider_md5": "fac2fd0999f17c14f9e1cc6fa465bcbe",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233569,
+      "name": "monk_parakeet_introducedRange_siteScaleTemporal_noFilters.csv",
+      "bytes": 149643,
+      "provider_md5": "0cce87d95be847085376ff77f9275ad4",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233572,
+      "name": "monk_parakeet_rangeComparison_siteScale_visualFilter.csv",
+      "bytes": 163376,
+      "provider_md5": "ce4f751dcee57a8b9a18ffaea11e089f",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233575,
+      "name": "monk_parakeet_rangeComparison_siteScale_clusterFilter.csv",
+      "bytes": 136803,
+      "provider_md5": "da0ebe137f703867d88fa1d07046d70e",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233578,
+      "name": "monk_parakeet_rangeComparison_siteScale_noFilters.csv",
+      "bytes": 316616,
+      "provider_md5": "0d370c45c48b12fe77ff85e82f20acd4",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233866,
+      "name": "Smith-Vidaurre_et_al_2023_IdentityInformationEncoding_README.html",
+      "bytes": 647390,
+      "provider_md5": "5a3270c1de5faf31f50cc342a7360ea8",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": false
+    },
+    {
+      "id": 41233869,
+      "name": "Smith-Vidaurre_et_al_2023_IdentityInformationEncoding_README.md",
+      "bytes": 22102,
+      "provider_md5": "0a6cb5c61f9938216d8cbde3df3c81d9",
+      "payload_downloaded": false,
+      "local_checksum_verified": false,
+      "content_inspected": true
+    }
+  ],
+  "readme_findings": {
+    "selection_table": "The README says the selection table has 1,596 rows and its sound.file names correspond to the WAVs in pre-processed_calls.zip; 1,582 calls were used in the associated paper.",
+    "audio_archive": "The README describes pre-processed_calls.zip as the WAV files for the 1,596 selection-table calls.",
+    "reuse_statement": "The README states no restrictions on data use and asks that authors be contacted beforehand to discuss possible collaboration/co-authorship for future work.",
+    "readme_streamed_without_retention": true
+  },
+  "decision": {
+    "use": "Metadata-only source-lineage lead for the 233-call monk-parakeet F0 subset; not a Talk2Nature training or meaning dataset.",
+    "not_established": [
+      "Which exact 2023 source-call filenames appear in the 233-call 2025 F0 subset",
+      "Whether each 2023 recording has independent source-media and location/privacy clearance for Talk2Nature use",
+      "Any independent behavioral-context or receiver-response labels"
+    ],
+    "provider_checksums_recomputed": false,
+    "payload_downloaded": false,
+    "audio_training_or_model_run": false,
+    "training_admitted": false
+  }
+}

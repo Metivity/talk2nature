@@ -1,0 +1,37 @@
+{
+  "schema": "talk2nature.dryad_manifest.v1",
+  "reviewed_date": "2026-10-24",
+  "source": {
+    "api_record_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.prr4xgxw8",
+    "dataset_id": 139968,
+    "doi": "10.5061/dryad.prr4xgxw8",
+    "title": "F0 estimation for bioacoustics: A benchmark/training dataset of non-human vocalisations with annotated frequency contours",
+    "version_number": 9,
+    "version_id": 363617,
+    "license": "CC0-1.0",
+    "storage_bytes": 27863357661,
+    "file_count": 15,
+    "file_manifest_url": "https://datadryad.org/api/v2/versions/363617/files"
+  },
+  "files": [
+    {"id": 4059720, "name": "canids.zip", "bytes": 1314137315, "sha256": "02e14fbc65a913c99f8d524e3b5539c613452f4e2df745609a4257b2965b0eda"},
+    {"id": 4059714, "name": "disk-winged_bats.zip", "bytes": 52632389, "sha256": "013993900ec123f2bfe16db56b1ce46cada7e2d6802c0be73dd2c367d72c4613"},
+    {"id": 4059721, "name": "dolphins.zip", "bytes": 260643685, "sha256": "cb7eea10259de1d52c88891c2a1cbbae0327d017fad43291c5c78f792e1f68ad"},
+    {"id": 4059713, "name": "F0_predictions.zip", "bytes": 16362579378, "sha256": "448b8132f0333228cc7f20622689b33696e82a54124d250f6f5f7e9c8dc7afbe"},
+    {"id": 4059722, "name": "hummingbirds.zip", "bytes": 401600893, "sha256": "eba3a55e1d0f382902c772dc0818a47be9b3b631ad9635209657f7ad2de6d1e5"},
+    {"id": 4059715, "name": "La_Palma_chaffinches.zip", "bytes": 87731365, "sha256": "8d91c26dac27e74d801d1c90d164481705007061c288af9b302ab958f745e5f3"},
+    {"id": 4059716, "name": "lions.zip", "bytes": 2381291, "sha256": "b74874038099e403a65de7f8c0410c179ed382ddb7ebe885d94397386323f877"},
+    {"id": 4059719, "name": "little_owls.zip", "bytes": 19588049, "sha256": "0676b4f6483bc3587289c6ee76ecbe5e40497f018d6af4e2405b6ea7199f2737"},
+    {"id": 4059717, "name": "long-billed_hermits.zip", "bytes": 2804340, "sha256": "b50f12273b0871f6aef32d0c0d5d348f4f56bfe6fa6c814809ff6a6978a4c704"},
+    {"id": 4059718, "name": "monk_parakeets.zip", "bytes": 5076570, "sha256": "328f5ad50313da8d97d7a354a5cacb2ed44b5021772a2974011fdd85fc5bf780"},
+    {"id": 4059724, "name": "orangutans.zip", "bytes": 345395558, "sha256": "c9ed8efe39ebe6c68a6c3633eae730f6e6fccf34e4f14fe07f703716633bc3cb"},
+    {"id": 4059779, "name": "README.md", "bytes": 5405, "sha256": "084c4673697d3325bf91ff585a56850fa938acbb132ac3634b57221ce72eb035"},
+    {"id": 4059723, "name": "Reunion_grey_white_eyes.zip", "bytes": 307553403, "sha256": "e2295efb1b71c9dd856a0e3077759de69461f0320eae2ed0453cd9e9f0114e19"},
+    {"id": 4059726, "name": "rodents.zip", "bytes": 8643380529, "sha256": "d4950733c9e280d1dff6cd94e08e06cbe07036875dff3b701e70bb86e19d7eda"},
+    {"id": 4059725, "name": "spotted_hyenas.zip", "bytes": 57847491, "sha256": "6798c05045cf57b43c70d1c51f4ac76327c12eead4f41d97524c9a397d209a94"}
+  ],
+  "payload_downloaded": false,
+  "provider_checksums_verified_locally": false,
+  "training_admitted": false,
+  "limitations": "Provider metadata only. File downloads were not retained. The API file-download endpoint requires a bearer token in the observed response; the public file-stream route returned HTTP 403 in this environment. No archive members, audio, labels, locations or source-file joins were inspected."
+}

@@ -3484,3 +3484,27 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Limits:** no payload was downloaded; CSV rows and KML contents were not inspected; provider MD5 values were not recomputed; no audio, code or weights were acquired or run. Item-level CC BY 4.0 does not independently clear underlying recordings or third-party material. No independent reviewer was contacted, no data was admitted to training, and no deployment or external outreach occurred. AutoResearch remains **NOT READY**.
 
 **Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 records. The explicit-origin local public candidate produced 133 pages plus 404; the site checker validated 134 HTML documents, 6,894 links and all 133 public routes. The F0 page's title, source-lineage limitation, Figshare source link, self-canonical, `index,follow` directive and sitemap entry were checked. This is a local release candidate, not a deployment.
+
+## October 24 — trace the monk-parakeet F0 subset to the 2023 source deposit
+
+**Question:** does the second Figshare deposit expose a verifiable bridge from the 233 monk-parakeet F0 calls to upstream audio files?
+
+**Evidence reviewed:** queried the official Figshare v2 API for DOI 10.6084/m9.figshare.22582099.v2 and streamed only its README. The 22-file inventory totals 187,820,138 bytes and includes `pre-processed_calls.zip` (31,079,669 bytes) and the selection table (440,873 bytes). The README says the WAV filenames correspond to `sound.file` values in the table, which contains 1,596 rows, 1,582 used in the paper. This offers a possible filename bridge but does not identify which rows/files were used for the separate 233-call F0 subset.
+
+**Decision and change:** added a versioned API-only file manifest and updated the source, resource, research-note, collection, backlog and goal records. The Figshare item declares CC BY 4.0; the deposit README requests prior contact to discuss possible collaboration/co-authorship. These statements do not settle underlying source-recording rights or prove a usable crosswalk. Keep the F0 data metadata-only and the benchmark **NOT READY** pending a permitted exact-lineage check.
+
+**Limits:** no archive, selection-table payload, audio, code or weights were downloaded; no rows or coordinates were inspected; provider MD5 values were not recomputed; no model was run and no data entered training. No researcher was contacted, no deployment occurred and no public claim was added that the subset has been matched.
+
+**Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 resources. The explicit-origin public candidate produced 133 routes plus 404; the site checker validated 134 HTML documents, 6,900 links and all 133 public routes. The F0 route has the expected Figshare ID, metadata-only notice, self-canonical, `index,follow` directive and sitemap entry. It also renders the filename-bridge limitation. The build and checks are local; this candidate has not been deployed. AutoResearch remains **NOT READY**.
+
+## October 24 — pin Dryad's current F0 file inventory
+
+**Question:** can the current Dryad API provide exact file metadata for the F0 deposit and a safe route to the monk-parakeet archive's filename list?
+
+**Evidence reviewed:** queried the official Dryad dataset, version and file-manifest APIs over verified TLS, and rechecked the public dataset page. The API returned dataset id 139968, version 9 / version id 363617, CC0-1.0, 15 files, 27,863,357,661 bytes and provider SHA-256 values for each listed file. `monk_parakeets.zip` is 5,076,570 bytes with provider SHA-256 `328f5ad50313da8d97d7a354a5cacb2ed44b5021772a2974011fdd85fc5bf780`. Saved the complete API inventory in `research/dryad_f0_manifest_2026-10-24.json`.
+
+**Finding and decision:** this pins the metadata version and archive identity, but not its contents or the 233-call crosswalk. The official API file-download route returned 401 with a bearer-token requirement. The public file-stream URL returned HTTP 403 in this environment. No token was used or requested, and no alternate route was attempted. Keep the resource metadata-only; do not use an unreviewed credential or bypass collector controls. Resume filename comparison only through a documented, permitted public metadata route.
+
+**Limits:** no Dryad archive, archive member, file_list, selection CSV, audio, code or weights were acquired or inspected; the provider SHA-256 values remain unverified locally; no row/location data or source-file joins were inspected; no model ran and no data entered training. CC0 applies to the Dryad deposit and does not settle all upstream recording provenance or establish scientific suitability.
+
+**Validation:** all 159 Python tests and 115 Node tests passed; the collection catalog validates 206 resources, and the 15-file API snapshot sums to the provider's declared storage size. The local noindex build produced 133 routes plus 404; the checker validated 134 HTML pages and 6,766 links. The explicit-origin public candidate produced 133 routes plus 404; the checker validated 134 HTML pages, 6,900 links and all 133 public routes. The F0 page has the expected version-9 and archive-size details, metadata-only notice, self-canonical, `index,follow` directive and sitemap entry; the provider checksum is preserved in the repository manifest. `git diff --check` passed. AutoResearch remains **NOT READY**. No payload acquisition, external contact or deployment occurred.
