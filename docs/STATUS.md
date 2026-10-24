@@ -3711,3 +3711,15 @@ PR [#335](https://github.com/Metivity/talk2nature/pull/335) merged as [`ac9f6fd`
 **Validation:** all 159 Python tests and 117 Node tests pass. The explicit-origin public build generated 134 routes plus 404; `scripts/check_site.py` passed with 135 HTML documents and 6,973 links, and all 134 public routes were reachable. The generated opportunities page contains the current cutoff, decision gates and payout links. The owner checklist is ignored by Git and absent from `dist/`.
 
 **Limits:** this is desk research and a local readiness checklist, not legal or financial advice. No funder was contacted; no applicant declarations, application, crowdfunding page or funding commitment was made. The private checklist is ignored and excluded from public builds. The broad five-track project goal remains active.
+
+## October 24 — tighten the first-animal recommendation around Wytham access and location data
+
+**Question:** does the Wytham Great Tit corpus remain a useful large-data starting point after checking what is actually shared and what the metadata can reveal?
+
+**Evidence reviewed:** the dataset authors' [nestbox metadata guide](https://nilomr.github.io/great-tit-hits/site/metadata/nestboxes/) says British National Grid X/Y coordinates are present in `nestboxes.csv` and also `main.csv`; their [pipeline guide](https://nilomr.github.io/great-tit-hits/site/pipeline/) describes the prepared song-data workflow, recommends an HPC cluster for computationally intensive steps, and states the original approximately 9 TB continuous soundscapes are not provided. No coordinate values, audio, data tables or code were accessed in this update.
+
+**Decision and change:** retain Wytham as a prepared-song methods candidate, not a communication/meaning dataset. Any task must add something beyond the 2025 metric-learning, repertoire-similarity and song-culture work. The prepared files cannot support a claim that Talk2Nature reproduced detection from the full original soundscapes. Keep precise nestbox data and derived identifiers out of public outputs unless a qualified wildlife-location review establishes safe need. Synchronized `docs/FIRST_DATASET_DECISION.md`, the active Wytham gate in `docs/GOAL.md`, and the public first-animal guide; added regression assertions for data availability and location caveats.
+
+**Validation:** 159 Python tests and 117 Node tests passed. The local noindex build produced 134 pages plus 404; the checker passed with 135 HTML documents and 6,837 links. The explicit-origin candidate build produced 134 public routes; the checker passed with 135 HTML documents, 6,972 links and all 134 routes reachable. A local browser preview confirmed the updated disclosure and single-column card layout at an effective 480 CSS-pixel width. No physical device or screen reader was tested.
+
+**Limits:** this is still source documentation, not an independent reproduction or specialist review. No dataset, code or model was acquired or run; the candidate public build has not been deployed in this checkpoint. AutoResearch remains **NOT READY**.
