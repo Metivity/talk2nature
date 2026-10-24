@@ -3557,3 +3557,13 @@ This remains a maintainer-run synthetic check, not the independent outside repro
 **Validation:** all 159 Python and 115 Node tests passed. The explicit-origin public build produced 133 routes plus 404; the site checker validated 134 HTML documents, 6,903 links and all 133 public routes. In a 390 × 844 local browser preview, accessibility inspection and visual review showed Start disabled and the synthetic rehearsal available. No microphone permission was granted or requested; physical-phone behavior and a fresh end-to-end rehearsal after this change were not tested.
 
 **Limit:** this improves consent clarity; it does not change local capture, storage, upload or research-admission behavior.
+
+## October 24 — verify the deployed consent gate and microphone-free rehearsal
+
+**Question:** does the released Station show the consent gate correctly on a phone-sized screen, and can a new user reach the synthetic path without microphone access?
+
+**Live check:** PR [#318](https://github.com/Metivity/talk2nature/pull/318) is merged at [`4bf9498`](https://github.com/Metivity/talk2nature/commit/4bf9498ed2c5ccadf4eeba70b13adffb32c74e7d); Pages run [#40073207909](https://github.com/Metivity/talk2nature/actions/runs/40073207909) passed build, publish-boundary and live-route checks. In a 390 × 844 in-app-browser emulation, an already-cached app view served an older Station script (`e08173b3e5e4e40c`) and exposed the old enabled Start control while the permission box was unchecked. A network-fresh route loaded the current script (`6253fa797902cb61`), showed Start disabled, left “Try without a microphone” enabled, and displayed the existing “Update ready” instruction to close and reopen the app. The page does not reload or replace an active session automatically; no cache was cleared and no user tab was changed.
+
+**Rehearsal:** selected the microphone-free synthetic path. The interface labeled the session “Synthetic session”; no browser microphone prompt appeared. Ending it after 12.5 seconds produced a correctly labeled partial synthetic recap with zero notes. The temporary test tab was closed without exporting; no participant data or persistent recording was created.
+
+**Decision and limits:** the current network release works as intended, and users of an older offline shell must follow the visible update-ready instructions before receiving it. The cache observation is not evidence of a defect in the current network release. This check does not establish physical-phone, actual-microphone, screen-reader or independent first-use behavior; those remain open gates.
