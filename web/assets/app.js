@@ -1,4 +1,4 @@
-import {announceWaitingUpdate,watchWaitingWorker} from './app-update.mjs';
+import {announceWaitingUpdate,resolveRedundantWorker,watchWaitingWorker} from './app-update.mjs';
 const base = new URL('../app/', import.meta.url), $ = id => document.getElementById(id);
 const modes = {
   outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','outdoor-place','A bird moved to another branch. Its identity is uncertain.'],
@@ -104,11 +104,15 @@ function shellReady(worker) {
   });
 }
 function watchWorker(registration) {
-  const watch=worker=>worker?.addEventListener('statechange',()=>{
+  const watch=worker=>worker?.addEventListener('statechange',async()=>{
     const offline=$('offline-status'), button=$('app-offline');
     if (worker.state==='installed') { if(registration.active) updateReady(); else if(offline) offline.textContent='Offline files saved. Waiting for activation…'; }
     if (worker.state==='activated') { if(offline) offline.textContent='Offline tools are ready on this browser.'; if(button) {button.disabled=false; button.textContent='Check for app updates';} }
-    if (worker.state==='redundant') { if(offline) offline.textContent='Offline setup did not complete. Check your connection and storage, then try again.'; if(button) button.disabled=false; }
+    if (worker.state==='redundant') {
+      const result=await resolveRedundantWorker(registration,shellReady);
+      if(offline) offline.textContent=result.message;
+      if(button) {button.disabled=false;button.textContent=result.button;}
+    }
   });
   watch(registration.installing); registration.addEventListener('updatefound',()=>watch(registration.installing));
 }
