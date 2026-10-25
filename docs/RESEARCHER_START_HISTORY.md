@@ -334,3 +334,11 @@ The documented annotation example reported an invented 8-second recording, two m
 All 170 Python tests passed with one intentional external-sample skip; all 122 Node tests passed. The local noindex build produced 138 pages plus 404; the checker validated 139 HTML documents and 7,090 links. The explicit public-origin build also produced 138 pages plus 404; the checker validated 139 HTML documents, 7,230 links and all 138 public routes. The temporary clone's tracked worktree remained clean after the tests and builds.
 
 This is maintainer-run verification of the current public revision and synthetic examples, not an independent reproduction, usability study, scientific validation or biological result. No animal data, third-party media or model weights were acquired or run. Independent reproductions remain zero and AutoResearch remains **NOT READY**.
+
+## October 25 current public-main researcher-kit recheck — 9d3e083
+
+Repeated the documented researcher workflow in a fresh depth-one HTTPS clone of public `main` at [`9d3e0835ca816401a504681ac8e5d8a7a863b123`](https://github.com/Metivity/talk2nature/commit/9d3e0835ca816401a504681ac8e5d8a7a863b123). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed. The annotation fixture reported an invented eight-second recording, two events, two seconds of interval-union coverage and zero observed context. The standard split produced 10 connected groups, 12/4/4 train/validation/test records and 6/2/2 groups.
+
+All 172 Python tests passed with one intentional external-sample skip; all 122 Node tests passed. The local noindex build produced 138 pages plus 404; the checker validated 139 HTML documents and 7,120 links. The explicit public-origin build also produced 138 pages plus 404; the checker validated 139 HTML documents, 7,260 links and all 138 public routes. The fresh clone's tracked worktree remained clean.
+
+This is maintainer-run verification of synthetic examples and public project routes, not an independent reproduction, usability study, scientific validation or biological result. No animal data, third-party media or model weights were acquired or run. Independent reproductions remain zero and AutoResearch remains **NOT READY**.
