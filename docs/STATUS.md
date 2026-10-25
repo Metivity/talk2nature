@@ -1,5 +1,15 @@
 # Project status
 
+## October 25 — reverify researcher onboarding from current public main
+
+**Question:** do the documented synthetic annotation and grouped-split examples still work in a fresh clone of the latest public revision, without setup or third-party data?
+
+**Evidence and change:** a fresh depth-one HTTPS clone checked public `main` at [`6f97a1a3be6617b7237f7c7577ce38aceab7a76a`](https://github.com/Metivity/talk2nature/commit/6f97a1a3be6617b7237f7c7577ce38aceab7a76a). With Python 3.12.5, Node v22.22.1 and Git 2.53.0 and no package installation, the annotation fixture reported 8 synthetic seconds, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split returned 10 connected groups and 12/4/4 train/validation/test records; the dyadic split returned 10 groups and 6/2/4 records. Both outputs matched byte-for-byte on repeat, with hashes recorded in `docs/RESEARCHER_START_HISTORY.md`. Refreshed the quickstart's current check and retained the earlier result as dated history.
+
+**Validation and limits:** all 174 Python tests passed with one intentional external-sample skip; all 124 Node tests passed. The public build produced 139 routes plus 404; the checker validated 140 HTML documents, 7,326 links and all 139 routes. The fresh clone remained clean. This is maintainer-run synthetic/repository verification, not an independent reproduction, user study or biological result. No animal or participant data, third-party media or model weights were acquired or run. Independent reproductions remain zero; AutoResearch remains **NOT READY**.
+
+**Next:** retain the uncoached outside-researcher report and named-phone Field Companion checks as open gates; continue the evidence library and contributor workflow until independent participation is available.
+
 ## October 25 — align app navigation with the zero-command first task
 
 **Finding:** the live Field Companion home page sends “Record a moment” to Shared moments, which correctly opens Whole moment · 30 seconds with animal identity unknown. The persistent “Listen” navigation instead opened the generic station route, where “Sound highlights” was selected. This gave two different recording defaults inside the same beginner app.
