@@ -1345,6 +1345,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('/talk2nature/app/practice/',assets)
             self.assertIn('/talk2nature/app/check/',assets)
             self.assertTrue(any('/assets/session-import.mjs?' in a for a in assets))
+            self.assertTrue(any('/assets/session-label.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/audacity-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/aoef-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/app-update.mjs?' in a for a in assets))

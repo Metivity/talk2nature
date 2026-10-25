@@ -3,6 +3,7 @@ import {ANIMAL_GROUPS} from './animal-model.mjs';
 import {SOUNDSCAPE_CONTEXT_CATEGORIES} from './station-model.mjs';
 import {WindowSession} from './window-model.mjs';
 import {sessionFiles,zipFiles} from './station-export.mjs';
+import {sessionLabel} from './session-label.mjs';
 
 const $=id=>document.getElementById(id), slots={a:new SessionSlot(),b:new SessionSlot()};
 const seconds=n=>`${n.toFixed(1)} s`;
@@ -15,7 +16,7 @@ function prepareClip(key,clip,index){stopPlayer();audioUrl=URL.createObjectURL(n
 function renderSlot(key){
   const s=slots[key].value, target=$('summary-'+key), content=$('content-'+key); target.replaceChildren();content.replaceChildren();
   $('clear-'+key).hidden=!s;$('details-'+key).hidden=!s;
-  $('title-'+key).textContent=s?s.record.station_alias:key==='a'?'Open a saved session':'Another day, perhaps?';
+  $('title-'+key).textContent=s?sessionLabel(s.record.station_alias):key==='a'?'Open a saved session':'Another day, perhaps?';
   if(!s){$('details-'+key).open=false;return;}
   const r=s.record, summary=sessionSummary(s);
   target.append(node('span',r.origin==='synthetic'?'INVENTED EXAMPLE':'MICROPHONE · DECLARED','compare-badge'),node('p',summary.kind,'compare-summary-kind'),node('p',`${seconds(r.duration_seconds)} observed · ${s.clips.length} retained recording${s.clips.length===1?'':'s'} · ${r.markers.length} observation${r.markers.length===1?'':'s'}`,'compare-summary-text'),node('p',`${animal(r)} · observer-declared`,'compare-summary-text'),node('p',`Soundscape context: ${soundscape(r)}`,'compare-summary-text'));

@@ -225,7 +225,7 @@ function checkAlias() {
   const input = $('station-alias');
   if (input.value.trim() && input.value.trim().length <= 80) { input.removeAttribute('aria-invalid'); return true; }
   $('station-settings').open = true; input.setAttribute('aria-invalid', 'true'); input.focus();
-  status('Enter a station alias of 1–80 characters in Session settings, then try again. Avoid personal names or precise locations.');
+  status('Add a short name for this moment (up to 80 characters) in Advanced settings. Avoid personal names or precise locations.');
   return false;
 }
 function exportStatus(text) { $('station-save-status').hidden = false; $('station-save-status').textContent = text; }
