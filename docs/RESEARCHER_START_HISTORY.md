@@ -2,6 +2,14 @@
 
 This file preserves the dated maintainer checks and unreleased candidate notes formerly appended to the [researcher start guide](RESEARCHER_START.md). They are historical snapshots, not independent reproductions or scientific results. Use [project status](STATUS.md) for the latest authoritative state.
 
+## Current-main onboarding check — October 25, 2026 — 6f97a1a
+
+Repeated the documented researcher-kit workflow in a fresh depth-one HTTPS clone of public `main` at [`6f97a1a3be6617b7237f7c7577ce38aceab7a76a`](https://github.com/Metivity/talk2nature/commit/6f97a1a3be6617b7237f7c7577ce38aceab7a76a). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed. The annotation example returned an invented 8-second record, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split produced 10 connected groups, 12/4/4 train/validation/test records and 6/2/2 groups; the dyadic split produced 10 groups and 6/2/4 records. Repeating each manifest command to a different output file produced byte-identical JSON. SHA-256 values for the standard and dyadic files are `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`.
+
+The clean clone passed all 174 Python tests with one intentional external-sample skip and all 124 Node tests. The public build produced 139 routes plus 404; the site checker validated 140 HTML documents, 7,326 links and all 139 public routes. The tracked working tree remained clean after the commands.
+
+This verifies maintainer-run synthetic examples and repository tooling at the stated revision. It is not an independent reproduction, user study, scientific validation or biological result. No animal or participant data, third-party media, executable third-party code or model weights were acquired or run. Independent reproductions remain zero; AutoResearch remains **NOT READY**.
+
 ## Current-main onboarding check — October 25, 2026
 
 A fresh depth-one HTTPS clone of public `main` at [`d7c51c8`](https://github.com/Metivity/talk2nature/commit/d7c51c8dc557dfb7dfeeaac964fdf31571fb5c1e), using Python 3.12.5, ran the three current commands in the researcher start guide. The annotation example reported an 8-second synthetic record, two marked events, 2 seconds of interval-union coverage and zero seconds of observed context. The standard split reported 10 connected groups and 12/4/4 train/validation/test records; the dyadic split reported 10 groups and 6/2/4 records. Both generated files matched byte-for-byte on rerun, and the first three transitive dyadic events remained together. The 169-test Python and 117-test Node suites passed from a matching checkout of the same commit, with one intentional Python skip.
