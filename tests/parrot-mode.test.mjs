@@ -22,7 +22,7 @@ test('the public first actions lead to the shared-moment and microphone-free rou
     readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),
     readFile(new URL('../web/assets/app.js',import.meta.url),'utf8')
   ]);
-  assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=companion#station-console">Start a 30-second moment/);
+  assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=companion#station-console">Set up a 30-second moment/);
   assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=demo#station-console"[^>]*>Try without a microphone/);
   assert.match(app,/companion: \['SHARED MOMENTS'/);
   assert.match(app,/demo: \['SYNTHETIC REHEARSAL'/);
