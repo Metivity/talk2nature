@@ -4478,7 +4478,7 @@
     "checked": "2026-10-25",
     "origin": "Reviewed the official GeoNames entry for the Republic of Colombia, feature 3686110, which lists coordinates 4.00000, -73.25000. The atlas reference is rounded to 4.0, -73.3 and labeled country-scale; it is not a field-site coordinate. GeoNames terms state CC BY attribution and permit commercial use. No study locations or observation data were obtained from GeoNames.",
     "rights": {
-      "location": "GeoNames data is available under CC BY 4.0 with credit. Only the rounded country reference is used; it does not reproduce study-site or observation data."
+      "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the rounded country reference is used; it does not reproduce study-site or observation data."
     }
   }
 ]
