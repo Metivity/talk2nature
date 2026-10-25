@@ -1,10 +1,10 @@
 import {announceWaitingUpdate,resolveRedundantWorker,watchWaitingWorker} from './app-update.mjs';
 const base = new URL('../app/', import.meta.url), $ = id => document.getElementById(id);
 const modes = {
-  outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','outdoor-place','A bird moved to another branch. Its identity is uncertain.'],
-  companion: ['SHARED MOMENTS','Get to know the everyday.','Observe any animal naturally. Choose a group if you know it, or leave the identity unsure. Mark visible behavior and naturally occurring voices; leave meaning open.','companion-place','The animal moved toward the window while I was already speaking.'],
-  parrot: ['PARROT FIELD VISIT','A little time together.','Observe a parrot in its ordinary routine. Keep calls, mimicked speech, nearby human voices and visible context distinct. No sound is translated or answered. You can change the animal group below.','parrot-visit','Mimicked phrase heard; nearby human speech was present too.'],
-  demo: ['SYNTHETIC REHEARSAL','Try curiosity on for size.','Use “Try without a microphone” below. Invented tones let you explore the complete workflow without a microphone.','rehearsal','A test marker, with no animal present.']
+  outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','Outdoor moment','A bird moved to another branch. Its identity is uncertain.'],
+  companion: ['SHARED MOMENTS','Get to know the everyday.','Observe any animal naturally. Choose a group if you know it, or leave the identity unsure. Mark visible behavior and naturally occurring voices; leave meaning open.','Shared moment','The animal moved toward the window while I was already speaking.'],
+  parrot: ['PARROT FIELD VISIT','A little time together.','Observe a parrot in its ordinary routine. Keep calls, mimicked speech, nearby human voices and visible context distinct. No sound is translated or answered. You can change the animal group below.','Parrot visit','Mimicked phrase heard; nearby human speech was present too.'],
+  demo: ['SYNTHETIC REHEARSAL','Try curiosity on for size.','Use “Try without a microphone” below. Invented tones let you explore the complete workflow without a microphone.','Practice session','A test marker, with no animal present.']
 };
 const mode = new URL(location.href).searchParams.get('mode');
 if ($('scenario-title') && modes[mode]) {
