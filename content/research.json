@@ -5467,50 +5467,108 @@
     "year_label": "Dataset publication year",
     "source_ids": [
       443,
-      444
+      444,
+      445,
+      446,
+      447
     ],
     "reviewed": "2026-10-25",
-    "review_stage": "Dryad record and current repository policy reviewed; dataset contents and primary article not inspected",
-    "review_depth": "Reviewed the official Dryad landing page's abstract, eight-file inventory, publication date and recommended citation, plus Dryad's current publication policy updated April 8, 2026. The page lists a total of 57.09 MB, including two sound-file ZIPs, five spreadsheets and a README. No README, spreadsheet, audio, article full text or supplementary material was opened, downloaded or played. The publisher article page was not reviewed.",
-    "finding": "The Dryad abstract describes Brown-throated Parakeet contact-call variation across five Caribbean islands and adjacent mainland populations. It reports differences in call duration, mean frequency, spectrogram similarity and variability between locations. The abstract explicitly says experimental tests would be needed to establish whether these patterns correspond to receivers' responses to call variants. This is a parrot-specific acoustic-variation resource, not a call-meaning or translation dataset.",
-    "limitations": "Only the dataset landing-page abstract and inventory were reviewed. The README, annotation and measurement schema, individual/session identifiers, recording methods, label provenance, source-to-audio joins, exact locations and split structure remain unknown. The dataset is not about pet-parrot conversations and contains no reviewed receiver-response ground truth. Dryad's current policy says published datasets are under CC0, but that is not evidence of scientific validity, completeness, privacy or welfare suitability; the article is a separate component.",
-    "lesson": "This makes Brown-throated Parakeet contact calls a promising parrot-specific candidate for a later descriptive vocal-variation review. It does not make the species a proven first communication target. Keep acoustic differences, independently observed behavior and receiver response separate; do not infer message meaning from call similarity.",
-    "next_review": "If this candidate is selected after qualified avian-bioacoustics review, inspect the README and tabular schema first, determine whether individual and recording-session groups are recoverable, and assess the RecordingSites workbook for sensitive spatial detail before considering any audio acquisition. Define a narrow descriptive task and leakage-safe groups before any model proposal. No data have been admitted or model run.",
+    "review_stage": "Targeted publisher-indexed primary-article passages and the official Dryad v4 record/file manifest reviewed; no article or dataset file acquired.",
+    "review_depth": "Reviewed the publisher-indexed abstract, recording approach, Table 1 location statement, frequency/SPCC-PCO methods, duration results and selected discussion passages; this is targeted review, not a complete article audit. The official Dryad API v2 record identifies dataset 77790, version 4 / version ID 147704, dates, dataset-level CC0-1.0 and eight file records with declared SHA-256 digests. The direct publisher fetch returned HTTP 403. The official README API download returned HTTP 401 and its record-page download link returned HTTP 403. No article PDF, README, spreadsheet, audio, supplement or code was acquired; upstream hashes were not locally checked.",
+    "finding": "The study analyzes one call type, loud contact calls, rather than the species’ full vocal repertoire. It reports population-level differences in call duration, frequency measures and spectrogram structure/variability across five island populations and mainland Venezuela. The authors explicitly say receiver experiments are needed to test whether these acoustic patterns correspond to receiver responses. This is a useful parrot-specific acoustic-variation study, not a call-meaning or translation result.",
+    "limitations": "Only selected article sections and public metadata were reviewed. The duration-results prose reports 1,319 calls from 92 units, while the 10 rows in Table 5 sum to 1,313 calls from 91 units; the article page does not reconcile this six-call/one-unit difference. Verify against the README and data before replication. The Dryad manifest contains no executable code file although the paper describes a custom MATLAB routine; no separate code repository was audited. Caller/group/session linkage, label provenance, recording conditions, exact mainland site rows, site sensitivity, split structure and receiver-response labels remain unverified. The article-specific reuse license was not established; the dataset-level CC0 record does not license the paper or a derived model. No qualified independent specialist review has occurred.",
+    "lesson": "The most defensible first parrot task suggested by this source is a descriptive, group-aware replication of acoustic variation—not a system that translates a parrot. Keep call structure, population/site association, independently observed behavior and receiver response as different evidence levels. Even a reproducible classifier of island or caller labels would not establish what a call means.",
+    "next_review": "If the dataset is selected after qualified parrot-bioacoustics review, first obtain the README and tabular schema through an authorized accessible route; reconcile the 1,319-calls/92-units duration prose with the 1,313-calls/91-units summed from Table 5; inspect caller/group/session fields; review RecordingSites for spatial sensitivity; and locate/version any analysis code. Preserve the official v4 file manifest and compare local hashes only after an authorized acquisition decision. Then define a descriptive target, grouped/site-aware split and baseline. No files are admitted and no model has been run.",
     "expert_review": "Not independently reviewed by a qualified parrot-bioacoustics or animal-communication specialist.",
     "purpose": "Behavior & communication",
     "study_snapshot": [
       [
         "Study question",
-        "How do Brown-throated Parakeet contact-call characteristics vary within individuals and across island and mainland locations?"
+        "How do Brown-throated Parakeet contact-call characteristics vary within individuals and among island and mainland locations?"
       ],
       [
-        "Species and setting",
-        "Eupsittula pertinax across five small Caribbean islands and adjacent mainland; the record abstract describes population-level comparisons."
+        "Vocal scope",
+        "The analysis focuses on loud contact calls only. The paper says the species produces other call types, many context-dependent, which this study did not analyze."
       ],
       [
-        "Public deposit",
-        "Dryad lists eight files totaling 57.09 MB: two sound-file ZIPs, five spreadsheets and a README. None were acquired or opened."
+        "Sampling and methods",
+        "The article reports 1,319 calls from 92 units for duration analysis; a separate 80-call clean-spectrogram subset supports frequency comparisons, and 150 calls from five locations support SPCC-PCO comparisons. Mainland recordings can represent groups rather than known single callers."
       ],
       [
-        "Reported acoustic patterns",
-        "The dataset abstract reports longer calls and lower mean frequencies for island birds and location differences in spectrogram similarity; these are acoustic associations, not message labels."
+        "Reported pattern",
+        "Island calls were generally longer and lower on selected frequency measures, while SPCC-PCO analyses found geographic structure and variability differences. These are acoustic associations, not semantic labels."
+      ],
+      [
+        "Sample-count reconciliation",
+        "The duration-results prose reports 1,319 calls from 92 units, but the 10 Table 5 rows sum to 1,313 calls from 91 units. The article page does not explain the difference; reconcile against the README and files before replication."
       ],
       [
         "Meaning boundary",
-        "The abstract says experimental tests are needed to connect call variation with receiver responses. No call semantics or translation result is established."
+        "The authors state that experimental receiver tests are required to determine whether call patterns correspond to response patterns. The study does not establish message meaning."
       ],
       [
-        "Reuse and review status",
-        "Dryad's April 8, 2026 policy says published datasets are released under CC0. No record-specific API metadata, README, exact locations, article license or dataset contents were checked."
+        "Dataset provenance",
+        "Dryad dataset v4 (record ID 77790, version ID 147704) is listed at 57,091,189 bytes with dataset-level CC0-1.0. The eight-file SHA-256 manifest is stored locally in the repository; no payload or code was acquired and the hashes remain unverified."
+      ],
+      [
+        "Rights and reproduction",
+        "The dataset record points to CC0-1.0, but the journal article’s specific reuse license was not verified. The archive lists no code file; a custom MATLAB routine is described in the article. Sample grouping and split suitability need data-level review."
+      ],
+      [
+        "Atlas",
+        "Five island study-area centers from Table 1 are rounded to 0.1 degrees; mainland coverage uses only a country-scale Venezuela reference. Individual recording sites in the Dryad workbook were not accessed or mapped."
       ]
     ],
     "atlas": {
       "reviewed": "2026-10-25",
-      "location_status": "pending",
-      "location_note": "The record lists a RecordingSites workbook and describes island/mainland coverage. Its site values and spatial sensitivity were not inspected, so no location is mapped.",
-      "locations": [],
+      "location_status": "mapped",
+      "location_note": "The paper names five island study regions and multiple mainland regions in Venezuela. Island markers use only the article’s stated study-area centers rounded to 0.1 degrees; mainland is represented by a generic country-scale reference. No individual recording sites or Dryad workbook coordinates are shown.",
+      "locations": [
+        {
+          "place_id": "aruba-island-study-region",
+          "role": "study_region",
+          "source_id": 445,
+          "locator": "Table 1, Recording sites; Aruba coordinate identified as study-area center",
+          "basis": "The article identifies Aruba as an island study region and says island coordinates are study-area centers. The published center is rounded to one decimal for an approximate literature marker, not a recording or animal point."
+        },
+        {
+          "place_id": "bonaire-island-study-region",
+          "role": "study_region",
+          "source_id": 445,
+          "locator": "Table 1, Recording sites; Bonaire coordinate identified as study-area center",
+          "basis": "The article identifies Bonaire as an island study region and says island coordinates are study-area centers. The published center is rounded to one decimal for an approximate literature marker, not a recording or animal point."
+        },
+        {
+          "place_id": "curacao-island-study-region",
+          "role": "study_region",
+          "source_id": 445,
+          "locator": "Table 1, Recording sites; Curaçao coordinate identified as study-area center",
+          "basis": "The article identifies Curaçao as an island study region and says island coordinates are study-area centers. The published center is rounded to one decimal for an approximate literature marker, not a recording or animal point."
+        },
+        {
+          "place_id": "isla-la-tortuga-study-region",
+          "role": "study_region",
+          "source_id": 445,
+          "locator": "Table 1, Recording sites; Isla La Tortuga coordinate identified as study-area center",
+          "basis": "The article identifies Isla La Tortuga as an island study region and says island coordinates are study-area centers. The published center is rounded to one decimal for an approximate literature marker; individual recording sites remain unreviewed and are not mapped."
+        },
+        {
+          "place_id": "isla-margarita-study-region",
+          "role": "study_region",
+          "source_id": 445,
+          "locator": "Table 1, Recording sites; Isla Margarita coordinate identified as study-area center",
+          "basis": "The article identifies Isla Margarita as an island study region and says island coordinates are study-area centers. The published center is rounded to one decimal for an approximate literature marker, not a recording or animal point."
+        },
+        {
+          "place_id": "venezuela-country",
+          "role": "study_region",
+          "source_id": 445,
+          "locator": "Methods and Table 1, mainland Venezuela recording regions; GeoNames feature 3625428 for country reference",
+          "basis": "The article reports multiple mainland study regions in Venezuela. The marker is GeoNames’ generic country reference rounded to one decimal, not a mainland site, recorder or animal coordinate; no individual locations are inferred."
+        }
+      ],
       "observation_period": null
     },
-    "review_locator": "Official Dryad dataset record and the current Dryad Publication Policies page; the article, README and dataset files were not reviewed."
+    "review_locator": "Official Dryad dataset page and v4 API file manifest; targeted publisher-indexed article passages and official Ornithology author instructions; GeoNames Venezuela country feature."
   }
 ]

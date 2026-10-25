@@ -7193,7 +7193,7 @@
       "kind": "dataset",
       "title": "Brown-throated parakeet contact-call acoustics and measurements",
       "url": "https://doi.org/10.5061/dryad.k3j9kd58b",
-      "version": "Dryad dataset published 2021-11-01; DOI 10.5061/dryad.k3j9kd58b",
+      "version": "Dryad dataset v4 (record ID 77790; version ID 147704), published 2021-11-01 and modified 2021-11-02; DOI 10.5061/dryad.k3j9kd58b",
       "source_ids": [
         443,
         444
@@ -7201,16 +7201,46 @@
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Potential descriptive comparison of contact-call acoustics across island and mainland populations; not a call-meaning or receiver-response benchmark.",
-      "review_depth": "Reviewed the official Dryad record's abstract, exact file inventory and citation, plus the current Dryad publication policy. No README, spreadsheet, audio, article full text or supplement was inspected; no dataset bytes were acquired.",
-      "access": "Public Dryad record and file listing. The record lists two sound-file ZIPs and six supporting files totaling 57.09 MB. No files were downloaded.",
-      "decision": "Metadata-only candidate. First inspect the README and tabular grouping fields, then assess spatial sensitivity and scientific fit with a qualified parrot-bioacoustics reviewer. Do not admit to training or claim communication meaning.",
-      "limitations": "Individual/session grouping, recording conditions, call-label provenance, exact site contents, receiver responses and split suitability are unknown. The dataset record's abstract reports that experimental tests are needed to relate call variation to receiver responses.",
+      "review_depth": "Official Dryad API v2 record and v4 file manifest reviewed; targeted publisher-indexed article passages and current Dryad policy reviewed. The exact metadata-only manifest is research/manifests/brown-throated-parakeet-dryad-v4.json. No dataset or article file was acquired; official README download routes returned HTTP 401 and 403.",
+      "access": "Public Dryad landing page and version/file metadata are accessible. The v4 manifest reports eight files totaling 57,091,189 bytes. README API download returned HTTP 401 and the landing-page file link returned HTTP 403; no other route was tried.",
+      "decision": "Keep metadata-only. Candidate for a later descriptive, caller/group-aware acoustic replication only after qualified specialist review, data-level schema/site-sensitivity checks and reconciliation of the paper's duration sample counts. Not a receiver-response, translation or semantic benchmark.",
+      "limitations": "The dataset-level API record points to CC0-1.0; the version/file entries do not repeat a license. Upstream SHA-256 values have not been checked against local bytes. Caller/session grouping, label provenance, site sensitivity and split suitability remain unknown. The paper's duration results report 1,319 calls from 92 units, but its 10 Table 5 rows sum to 1,313 calls from 91 units; the page does not reconcile the difference. No code file is listed in the v4 manifest. Dryad does not certify scientific validity, completeness or privacy.",
       "attribution": "Eberhard, J., Zager, I., Ferrer-Paris, J. & Rodriguez-Clark, K. (2021). Brown-throated parakeet vocalization data [Dataset]. Dryad. https://doi.org/10.5061/dryad.k3j9kd58b.",
       "rights": {
-        "license": "Dryad's current publication policy says accepted published datasets are made available under CC0; the DOI's file-level API metadata was not separately checked in this review.",
-        "scope": "Dataset policy only. The journal article, individual file contents, possible location-sensitive details and any derived model are separate concerns.",
-        "evidence_url": "https://datadryad.org/publication_policy",
-        "conditions": "Before acquisition, inspect the README, exact table fields and spatial sensitivity; establish a narrow task and appropriate group split. No files have been acquired or admitted.",
+        "license": "The dataset-level API record points to https://spdx.org/licenses/CC0-1.0.html, consistent with Dryad policy; version/file entries do not repeat the license.",
+        "scope": "Dataset deposit only; not the journal article, a code package, or a derived model.",
+        "evidence_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.k3j9kd58b",
+        "conditions": "Preserve attribution and DOI citation. Review the README, grouping fields and spatial sensitivity before any acquisition or model design; no file bytes have been acquired or admitted.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "brown-throated-parakeet-contact-call-paper",
+      "kind": "paper",
+      "title": "Contact calls of island Brown-throated Parakeets exhibit both character and variance shifts compared to calls of their mainland relatives",
+      "url": "https://doi.org/10.1093/ornithology/ukab076",
+      "version": "Ornithology 139(1), article ukab076; published online 2021-11-20; issue dated 2022-01-11",
+      "source_ids": [
+        445,
+        446
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-25",
+      "task": "Methods reference for geographic variation and variability in wild parrot contact calls; not a meaning dataset or receiver-response benchmark.",
+      "review_depth": "Targeted publisher-indexed excerpts reviewed for the abstract, recording methods, geographic sampling, analysis subsets, selected duration results/discussion and ethical statement. Direct publisher fetch returned HTTP 403; no PDF or publisher figures/tables were acquired. Not a complete article audit.",
+      "access": "Publisher article is identified as free to read; only selected indexed passages were accessible in this review. No full article copy was saved.",
+      "decision": "Use as an original source for a narrow descriptive parrot-acoustics candidate. Do not infer semantic meaning, test animal playback, or train before the separate dataset schema, rights and grouping gates pass.",
+      "limitations": "The analyzed call type is loud contact calls, not the entire repertoire. Receiver response was not tested. Duration-analysis prose reports 1,319 calls from 92 units, while the 10 rows in Table 5 sum to 1,313 calls from 91 units; the article page does not reconcile the difference. The article describes a custom MATLAB SPCC-PCO routine, but the Dryad v4 file manifest contains no code file and no separate code repository was reviewed. Call/group/session splits and data-level sample-count reconciliation remain open.",
+      "attribution": "Eberhard, J. R., Zager, I., Ferrer-Paris, J. R. & Rodriguez-Clark, K. (2022). Contact calls of island Brown-throated Parakeets exhibit both character and variance shifts compared to calls of their mainland relatives. Ornithology 139(1), ukab076. https://doi.org/10.1093/ornithology/ukab076.",
+      "rights": {
+        "license": "No article-specific open-reuse license was verified. Free-to-read access is not treated as permission to republish the paper.",
+        "scope": "Journal article only. The linked Dryad dataset is a separate component with its own record-level CC0-1.0 declaration.",
+        "evidence_url": "https://academic.oup.com/auk/pages/general_instructions",
+        "conditions": "Publish an original summary and link only; do not reproduce article text, figures or tables.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

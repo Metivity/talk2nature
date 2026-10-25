@@ -4517,15 +4517,15 @@
   {
     "id": 443,
     "title": "Brown-throated parakeet vocalization dataset, Dryad",
-    "description": "Primary Dryad dataset record for contact-call acoustics and measurements from Brown-throated Parakeets across island and mainland populations. The record lists 57.09 MB across two sound-file archives, five spreadsheets and a README.",
+    "description": "Primary Dryad record for Brown-throated Parakeet contact-call data. The current dataset-level record reports version 4, a CC0-1.0 license and eight files totaling 57,091,189 bytes; its v4 API manifest includes repository-declared SHA-256 values.",
     "url": "https://datadryad.org/dataset/doi:10.5061/dryad.k3j9kd58b",
     "checked": "2026-10-25",
-    "origin": "Reviewed the official Dryad record's file inventory, abstract and recommended dataset citation. No README or dataset files were opened or downloaded. The record cites the related paper as Eberhard et al. (2022), DOI 10.1093/ornithology/ukab076; the publisher article page was not reviewed.",
-    "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k3j9kd58b",
-    "review_url_label": "Official Dryad data record and public file inventory",
+    "origin": "Reviewed the official Dryad dataset API v2 record (dataset ID 77790) and version 4 file manifest (version ID 147704; published 2021-11-01, modified 2021-11-02). The dataset-level license field points to CC0-1.0; the version subrecord does not repeat a license. The eight-file manifest and declared hashes are saved in research/manifests/brown-throated-parakeet-dryad-v4.json. No file bytes were acquired or hashes locally verified. The official README API download returned HTTP 401 and the record page download link returned HTTP 403; no alternate route was tried.",
+    "review_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.k3j9kd58b",
+    "review_url_label": "Official Dryad v4 dataset metadata and API version history",
     "rights": {
-      "dataset": "Current Dryad publication policy says accepted datasets are released under CC0; this DOI's file-level API metadata was not separately checked in this review.",
-      "scope": "Dataset-level policy only. No article text, figures, files, or audio are reproduced. Exact file contents and spatial sensitivity are unreviewed."
+      "dataset": "The dataset-level API record points to SPDX CC0-1.0, consistent with Dryad policy for accepted datasets. The version/file entries do not repeat a license. Upstream SHA-256 digests are repository declarations, not local integrity checks.",
+      "scope": "Dryad dataset record only. The journal article, files, spatial sensitivity, scientific validity, welfare suitability and any derived model require separate review."
     }
   },
   {
@@ -4539,6 +4539,46 @@
     "review_url_label": "Official Dryad publication policies",
     "rights": {
       "policy": "Dryad says accepted published datasets are made available under CC0. This policy does not establish that a particular dataset is scientifically suitable, complete, privacy-safe, or independently validated."
+    }
+  },
+  {
+    "id": 445,
+    "title": "Eberhard et al. (2022), island and mainland Brown-throated Parakeet contact calls",
+    "description": "Primary study comparing acoustic character and variability in loud contact calls of Brown-throated Parakeets across five Caribbean islands and mainland Venezuela.",
+    "url": "https://doi.org/10.1093/ornithology/ukab076",
+    "checked": "2026-10-25",
+    "origin": "Reviewed targeted publisher-indexed excerpts for the abstract, recording methods, Table 1 location note, frequency and SPCC-PCO methods, duration results and discussion. The article reports only loud contact-call analyses, identifies island coordinates as study-area centers, and says receiver experiments are needed to test response patterns. The article also reports its animal-care protocol; this is an author statement, not an independent audit. The direct publisher-page fetch returned HTTP 403; no PDF, figure, table image or supplement was acquired. Review is targeted, not a complete page-by-page audit.",
+    "review_url": "https://academic.oup.com/auk/article/139/1/ukab076/6432415",
+    "review_url_label": "Publisher article page and indexed full-text passages",
+    "rights": {
+      "article": "The publisher page is readable through its free-to-read link, but this review did not verify an article-specific open-reuse license. Only an original summary and link are used; article text, tables and figures are not reproduced.",
+      "scope": "Article only. Dryad dataset rights and any analysis code or model are separate components."
+    }
+  },
+  {
+    "id": 446,
+    "title": "Ornithology author instructions on licensing and article sharing",
+    "description": "Official American Ornithological Society journal guidance distinguishes standard and open-access article licensing and restricts mass redistribution of subscription-based article links/content.",
+    "url": "https://academic.oup.com/auk/pages/general_instructions",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the current official author instructions, including Open Access, Sharing and Third-party permissions. The journals offer standard or open-access licensing; the article-specific license was not established here. The instructions say an author free-access link is not intended for mass distribution unless the article is Open Access, and third-party figures/tables require permission.",
+    "review_url": "https://academic.oup.com/auk/pages/general_instructions",
+    "review_url_label": "Official Ornithology author instructions: licensing and sharing",
+    "rights": {
+      "policy": "General journal guidance only. It does not establish this article’s exact license. Article-specific reuse remains unresolved."
+    }
+  },
+  {
+    "id": 447,
+    "title": "GeoNames country reference point for Venezuela",
+    "description": "Official GeoNames country feature used only as a one-decimal country-scale atlas reference for the mainland study regions in Venezuela.",
+    "url": "https://www.geonames.org/3625428/bolivarian-republic-of-venezuela.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed GeoNames feature 3625428, which lists the Venezuela country reference at 8.00000, -66.00000. The atlas uses the rounded country-scale point 8.0, -66.0. It is not a study site, recorder or animal coordinate; no wildlife observations or study locations were obtained from GeoNames.",
+    "review_url": "https://www.geonames.org/3625428/bolivarian-republic-of-venezuela.html",
+    "review_url_label": "Official GeoNames Venezuela country feature",
+    "rights": {
+      "location": "GeoNames data are CC BY 4.0; credit GeoNames. Only a rounded country reference is used."
     }
   }
 ]

@@ -267,6 +267,48 @@
       "precision": "country",
       "latitude": 39.0,
       "longitude": 22.0
+    },
+    {
+      "id": "aruba-island-study-region",
+      "label": "Aruba island study region",
+      "precision": "region",
+      "latitude": 12.5,
+      "longitude": -70.0
+    },
+    {
+      "id": "bonaire-island-study-region",
+      "label": "Bonaire island study region",
+      "precision": "region",
+      "latitude": 12.2,
+      "longitude": -68.4
+    },
+    {
+      "id": "curacao-island-study-region",
+      "label": "Curaçao island study region",
+      "precision": "region",
+      "latitude": 12.2,
+      "longitude": -69.0
+    },
+    {
+      "id": "isla-la-tortuga-study-region",
+      "label": "Isla La Tortuga study region, Venezuela",
+      "precision": "region",
+      "latitude": 10.9,
+      "longitude": -65.3
+    },
+    {
+      "id": "isla-margarita-study-region",
+      "label": "Isla Margarita study region, Venezuela",
+      "precision": "region",
+      "latitude": 11.0,
+      "longitude": -64.2
+    },
+    {
+      "id": "venezuela-country",
+      "label": "Venezuela (country-scale reference)",
+      "precision": "country",
+      "latitude": 8.0,
+      "longitude": -66.0
     }
   ]
 }
