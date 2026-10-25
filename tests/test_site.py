@@ -1478,7 +1478,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('no big show needed',home)
             self.assertIn('quiet moments count, too',home)
             self.assertNotIn('the parrot did not prepare a TED talk',home)
-            self.assertIn('Record a moment',home)
+            self.assertIn('Start a 30-second moment',home)
             self.assertIn('Try without a microphone',home)
             self.assertIn('href="/talk2nature/app/practice/">Practice first: three invented scenes · no microphone',home)
             self.assertNotIn('YOUR FIRST LITTLE FIELD NOTE',home)
@@ -1493,6 +1493,8 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(beginner_paths.count('<a class="scenario-card glass'),3)
             self.assertIn('href="/talk2nature/app/station/?mode=outdoor"',beginner_paths)
             self.assertIn('href="/talk2nature/app/station/?mode=companion"',beginner_paths)
+            self.assertIn('02 / ANY ANIMAL, OR UNSURE',beginner_paths)
+            self.assertIn('Choose an animal group if you like, or leave it unknown.',beginner_paths)
             self.assertIn('href="/talk2nature/app/station/?mode=parrot"',beginner_paths)
             self.assertIn('Check your phone at home.',more_tools)
             self.assertIn('Same place. A different day.',more_tools)
@@ -1501,6 +1503,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('href="/talk2nature/app/practice/"',more_tools)
             self.assertNotIn('Check your phone at home.',beginner_paths)
             self.assertNotIn('Same place. A different day.',beginner_paths)
+
+    def test_shared_moments_guidance_does_not_require_a_familiar_animal_or_known_identity(self):
+        app_js=(Path(__file__).resolve().parents[1]/'web/assets/app.js').read_text()
+        self.assertIn('Observe any animal naturally.',app_js)
+        self.assertIn('leave the identity unsure.',app_js)
 
     def test_recording_stop_bar_leaves_phone_scroll_space_for_observation_notes(self):
         with tempfile.TemporaryDirectory() as d:
