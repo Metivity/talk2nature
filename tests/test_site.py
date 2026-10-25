@@ -1405,10 +1405,13 @@ class SiteTests(unittest.TestCase):
             copy=re.search(r'<p id="station-device" class="station-footnote">(.*?)</p>',page)
             self.assertIsNotNone(copy)
             self.assertIn('Phone microphones may filter or change sounds.',copy.group(1))
-            self.assertIn('The level meter is not calibrated',copy.group(1))
             self.assertIn('does not identify animals',copy.group(1))
             self.assertLess(page.index('id="station-device"'),page.index('id="station-record-controls"'))
             self.assertLess(page.index('id="station-record-controls"'),page.index('id="station-settings"'))
+            advanced=re.search(r'<details id="station-advanced-instruments".*?</details>',page,re.S)
+            self.assertIsNotNone(advanced)
+            self.assertIn('The level meter is not calibrated',advanced.group(0))
+            self.assertIn('dBFS',advanced.group(0))
 
     def test_station_journal_export_has_a_name_that_matches_its_visible_label(self):
         with tempfile.TemporaryDirectory() as d:
@@ -2401,6 +2404,27 @@ class SiteTests(unittest.TestCase):
             resource_page=(root/'research'/'resources'/'index.html').read_text()
             self.assertIn('https://zenodo.org/records/13623969',resource_page)
             self.assertIn('later version 3.0',resource_page)
+
+    def test_zebra_finch_birdaves_semantic_supervision_is_prior_art_not_receiver_alignment(self):
+        project_root=Path(__file__).resolve().parents[1]
+        notes=load('research')
+        model_note=next(n for n in notes if n['slug']=='zebra-finch-call-classifier-multitask-2026')
+        call_note=next(n for n in notes if n['slug']=='zebra-finch-call-categories-2025')
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        source={row['id']:row for row in sources}
+        self.assertIn('six behavior-derived functional/semantic categories',model_note['finding'])
+        self.assertIn('does not report a direct item-level comparison',model_note['limitations'])
+        self.assertIn('not a verified mapping to the 2025 stimulus set',call_note['limitations'])
+        self.assertIn('ColColxxxx_yymmdd-VT-zz.wav',source[376]['description'])
+        self.assertIn('known naming discrepancies',source[376]['description'])
+        self.assertIn('provider MD5',source[377]['description'])
+        self.assertEqual(source[376]['checked'],'2026-10-25')
+        self.assertEqual(source[377]['checked'],'2026-10-25')
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        article=next(r for r in resources if r['id']=='zebra-finch-call-classifier-paper-2026')
+        self.assertEqual(article['acquisition'],'metadata_only')
+        self.assertEqual(article['files'],[])
+        self.assertIn('Behavior-derived semantic supervision is already implemented',article['decision'])
 
 
 if __name__=='__main__': unittest.main()

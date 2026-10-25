@@ -5459,7 +5459,13 @@
       "title": "Wytham Great Tit Song Dataset, OSF",
       "url": "https://osf.io/n8ac9/",
       "version": "OSF node n8ac9; last modified 2023-07-10; complete API tree rechecked 2026-10-24; no explicit dataset version label",
-      "source_ids": [363, 364, 365, 372, 426],
+      "source_ids": [
+        363,
+        364,
+        365,
+        372,
+        426
+      ],
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Acoustic note segmentation, sequence/repertoire structure, individual song variation and vocal-culture research within one wild population.",
@@ -5749,7 +5755,7 @@
       "kind": "dataset",
       "title": "Behavioral data and analysis code for zebra-finch call-category perception",
       "url": "https://zenodo.org/records/13623969",
-      "version": "Paper-cited Zenodo version 1.0, DOI 10.5281/zenodo.13623969 (30,929,664-byte initial-submission archive, 2024-08-31); later version 3.0 resubmission on the same concept DOI: 10.5281/zenodo.15795568 (99,341,119 bytes, July 2025)",
+      "version": "Paper-cited Zenodo version 1.0, DOI 10.5281/zenodo.13623969 (30,929,664-byte initial-submission archive, 2024-08-31; provider MD5 5ab1934fd3b07a97eb68501f39670865); later version 3.0 resubmission, record 15795568, DOI 10.5281/zenodo.15795568 (99,341,119 bytes, 2025-07-03; provider MD5 eb041f1c9928a7feadb206ef955168e6). Provider checksums were not locally recomputed.",
       "source_ids": [
         374,
         375,
@@ -5757,12 +5763,12 @@
         378
       ],
       "priority": 1,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-25",
       "task": "Potential source for behavioral responses and acoustic analysis. The separate public GitHub README describes per-bird behavioral data and leave-one-vocalizer-out LDA confusion matrices, which the 2025 paper uses in its published acoustic-versus-behavioral comparison; archive contents/version must be verified separately.",
-      "review_depth": "Official Zenodo API metadata queried over verified TLS for 13623969 and 13623968. Separately reviewed the author's GitHub README, which describes behavioral trial/confusion tables and LDA matrices; no Zenodo files, repository code or data payload was acquired or inspected.",
-      "access": "Public Zenodo metadata describes a 30.9 MB initial-submission ZIP at 13623969 and a 99.3 MB resubmission ZIP at 15795568. Zenodo record-level metadata declares CC BY 4.0.",
+      "review_depth": "Official Zenodo API metadata refreshed over verified TLS for records 13623969 and 15795568 on October 25, 2026. The API reports version, dates, sizes, record-level CC BY 4.0 and MD5 checksums. Separately reviewed the author GitHub README describing behavioral trial/confusion tables and LDA matrices. No Zenodo files, repository code or data payload was acquired or inspected.",
+      "access": "Public Zenodo metadata describes two versioned ZIPs, their sizes and provider MD5s; record-level metadata declares CC BY 4.0. API checksum values are not locally verified. The exact release bundle supporting the final analyses and per-component rights remain unknown.",
       "decision": "Metadata-only. The paper-cited version is v1, but the exact release bundle supporting the final published analyses is not verified. Confirm the archive contents and component rights before reproducing published tables. Any modern raw-audio extension additionally requires a file-to-call/vocalizer mapping and must add value beyond the published comparison.",
-      "limitations": "The final PMC Science article cites versioned record 13623969 (v1); the UC Berkeley copy cites concept DOI 13623968, which resolves to later version 3.0 at record 15795568. This clarifies the DOI lineage but does not establish which archive contains the final analysis artifacts. The repository README is a separate source and does not prove the selected ZIP contains those artifacts. Archive contents and component provenance remain uninspected; record-level CC BY 4.0 declarations do not settle embedded assets or the unlicensed GitHub repository.",
+      "limitations": "The final PMC Science article cites versioned record 13623969 (v1); the UC Berkeley copy cites concept DOI 13623968, which resolves to later version 3.0 at record 15795568. This clarifies the DOI lineage but does not establish which archive contains the final analysis artifacts. The repository README is a separate source and does not prove the selected ZIP contains those artifacts. Archive contents and component provenance remain uninspected; record-level CC BY 4.0 declarations do not settle embedded assets or the unlicensed GitHub repository. The official API reports provider MD5 values for the v1 and v3 ZIPs, but they have not been recomputed locally and the ZIP payloads remain uninspected.",
       "attribution": "Elie et al. (2025), data and code for the call-type perception study. Paper-cited Zenodo version 1.0: DOI 10.5281/zenodo.13623969; later version 3.0 resubmission: DOI 10.5281/zenodo.15795568.",
       "rights": {
         "license": "CC BY 4.0 declared at Zenodo record level.",
@@ -5809,7 +5815,7 @@
     {
       "id": "zebra-finch-call-classifier-paper-2026",
       "kind": "paper",
-      "title": "Biologically informed multi-task learning for zebra-finch call-type classification",
+      "title": "Biologically Informed Multi-Task Learning for Call-Type Classification in Zebra Finches Using Functional Semantic Hierarchies",
       "url": "https://www.mdpi.com/2504-4990/8/10/318",
       "version": "Machine Learning and Knowledge Extraction 2026, 8(10), 318; published 2026-10-08; DOI 10.3390/make8100318",
       "source_ids": [
@@ -5820,12 +5826,12 @@
         382
       ],
       "priority": 1,
-      "reviewed": "2026-10-24",
-      "task": "Published classifier baseline for 11 zebra-finch call types and six broader supervised categories, using frozen BirdAVES embeddings on the Figshare vocal-repertoire recordings.",
-      "review_depth": "Publisher article methods, split, results and limitations, journal policy and article-specific version history reviewed. The article page and version history list no supplementary file; the nearby 285 KB ZIP belongs to a different article in the same issue. No archive, code or audio acquired; no model reproduced.",
-      "access": "Public open-access publisher page; the MAKE journal specifies CC BY 4.0 for articles. It points to the Figshare vocal library; the article reports 3,433 recordings and 50 birds. The 2016 source paper reports different bird and bout/call counts. No article-specific supplementary file is listed.",
-      "decision": "Use as prior art and a possible reproducibility baseline only. A call-label classifier is not a translation system. Keep metadata-only pending count/version reconciliation, exact BirdAVES identification, rights review and independent scientific/statistical review.",
-      "limitations": "One predefined bird-level partition; only three DistressCall items in test; controlled-colony recordings; no naturalistic validation or direct receiver-response outcome. The six broader labels are supervised targets, not model-discovered semantics. Input-unit and bird-count differences across versions are unresolved. Article, dataset, code and model-weight rights are distinct.",
+      "reviewed": "2026-10-25",
+      "task": "Published frozen-BirdAVES multi-task baseline predicting 11 supplied zebra-finch call types and six behavior-derived functional/semantic categories.",
+      "review_depth": "Publisher-hosted article sections and version history reviewed on October 24. On October 25, the publisher-indexed title and results excerpt were rechecked; direct article retrieval returned HTTP 429, so no new full-text review is claimed. Official Figshare and Zenodo version/file metadata were refreshed over verified TLS. No payload, code or weights acquired; no model reproduced.",
+      "access": "Public open-access publisher article; the journal specifies CC BY 4.0 for the article. It points to the Figshare vocal library, whose landing page describes 3,433 WAVs and a filename convention with known discrepancies. The article reports 50 birds; the 2016 source paper reports 45 birds. No article-specific supplement is listed.",
+      "decision": "Use as prior art and a possible reproducibility baseline only. Behavior-derived semantic supervision is already implemented in this multi-task paper; plain classification or that supervision is not a Talk2Nature novelty claim. Keep metadata-only pending source-file/count reconciliation, exact BirdAVES identification and terms, component-rights review and independent scientific/statistical review.",
+      "limitations": "One predefined bird-level partition; only three DistressCall items in test; controlled-colony recordings; no naturalistic validation or direct receiver-response outcome. The six broader labels are supervised targets, not model-discovered semantics. Input-unit and bird-count differences across versions are unresolved. Article, dataset, code and model-weight rights are distinct. The paper's behavior-derived semantic hierarchy is a supervised auxiliary target, not a direct item-level comparison to receiver birds' measured confusion responses. The exact Figshare file-to-paper and 2025 trial mappings remain unverified.",
       "attribution": "Petra Radočaj and Dorijan Radočaj, Machine Learning and Knowledge Extraction 8(10), 318 (2026), https://doi.org/10.3390/make8100318.",
       "rights": {
         "license": "CC BY 4.0 as stated in the MAKE journal publication policy.",
@@ -6976,7 +6982,9 @@
       "title": "Context-dependent alarm responses in wild vervet monkeys",
       "url": "https://link.springer.com/article/10.1007/s10071-023-01767-0",
       "version": "Animal Cognition 26(4), 1199–1208 (2023)",
-      "source_ids": [429],
+      "source_ids": [
+        429
+      ],
       "priority": 1,
       "reviewed": "2026-10-25",
       "task": "Primary field experiment on how an ongoing intergroup context changes receiver responses to male vervet alarm barks.",
@@ -7003,7 +7011,10 @@
       "title": "Vervet alarm-context study data linked through OSF",
       "url": "https://osf.io/kw5qg/",
       "version": "Project kw5qg linked by the 2023 paper; dataset version and files not verified as of 2026-10-25",
-      "source_ids": [429, 430],
+      "source_ids": [
+        429,
+        430
+      ],
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Potential data associated with the context-dependent receiver-response experiment. The paper's OSF link is a locator only; data structure, labels and suitability for analysis are unknown.",
@@ -7030,7 +7041,9 @@
       "title": "An Open Dataset for the Acoustic Monitoring of Nocturnal Migratory Birds in Europe",
       "url": "https://doi.org/10.1038/s41597-026-07176-5",
       "version": "Scientific Data 13, Article 925 (2026); version of record published April 21, 2026",
-      "source_ids": [431],
+      "source_ids": [
+        431
+      ],
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Primary data-descriptor paper for a fine-grained nocturnal bird-call detection and localization dataset.",
@@ -7057,7 +7070,10 @@
       "title": "NBM nocturnal bird migration audio and annotations",
       "url": "https://zenodo.org/records/17573913",
       "version": "Zenodo v4; DOI 10.5281/zenodo.17573913; current record modified June 30, 2026",
-      "source_ids": [431, 432],
+      "source_ids": [
+        431,
+        432
+      ],
       "priority": 3,
       "reviewed": "2026-10-25",
       "task": "Potential methods resource for time-frequency annotation, bird-call detection and localization; not a communication-meaning corpus.",
@@ -7084,7 +7100,11 @@
       "title": "BirdSoundClassif implementation for the NBM detection model",
       "url": "https://github.com/LouisBearing/BirdSoundClassif",
       "version": "Repository main branch unpinned; linked Zenodo software record v1.0, DOI 10.5281/zenodo.15662728",
-      "source_ids": [431, 433, 434],
+      "source_ids": [
+        431,
+        433,
+        434
+      ],
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Potential code for reproducing the NBM spectrogram object-detection baseline.",
@@ -7111,7 +7131,11 @@
       "title": "Model weights referenced by the NBM BirdSoundClassif repository",
       "url": "https://github.com/LouisBearing/BirdSoundClassif",
       "version": "No immutable model release or weight checksum reviewed; repository main branch is unpinned",
-      "source_ids": [431, 433, 434],
+      "source_ids": [
+        431,
+        433,
+        434
+      ],
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Potential trained checkpoint for bird-call detection and classification on NBM-style spectrogram inputs.",
@@ -7138,7 +7162,10 @@
       "title": "Vervet alarm-context study analysis code linked through OSF",
       "url": "https://osf.io/kw5qg/",
       "version": "Project kw5qg linked by the 2023 paper; code version and files not verified as of 2026-10-25",
-      "source_ids": [429, 430],
+      "source_ids": [
+        429,
+        430
+      ],
       "priority": 2,
       "reviewed": "2026-10-25",
       "task": "Potential scripts for reproducing the 2023 paper's statistical analyses. The linked code, dependencies and run instructions are unknown.",
