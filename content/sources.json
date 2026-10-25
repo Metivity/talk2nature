@@ -3487,11 +3487,11 @@
     "title": "WABAD data paper, Ecology (2026)",
     "description": "Pérez-Granados et al., WABAD: A World Annotated Bird Acoustic Dataset for Passive Acoustic Monitoring, Ecology 107(2), e70317. DOI 10.1002/ecy.70317.",
     "url": "https://doi.org/10.1002/ecy.70317",
-    "checked": "2026-10-23",
-    "origin": "Reviewed the publisher abstract and data-availability statement. The abstract reports 5,047 minutes of audio and 91,931 species-level annotated vocalizations across 1,192 bird species, 72 sites, 29 recording locations and 13 biomes. The full article body and supporting-information PDF were not reviewed; no data, code or models were acquired or run.",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the publisher page's abstract and data-availability statement, which reports 5,047 minutes of audio, 91,931 species-level vocalizations across 1,192 bird species and links Zenodo DOI 10.5281/zenodo.17293588. Also checked the official Zenodo v3/v4 record pages and their machine-readable API metadata, plus DataCite DOI rights metadata. The full article body, supporting-information PDF, archive, code and model were not reviewed, acquired or run.",
     "rights": {
-      "article": "The article body was not reproduced. Its article-specific reuse terms were not independently verified.",
-      "dataset_statement": "The publisher abstract says the dataset is CC BY 4.0 and links to Zenodo DOI 10.5281/zenodo.17293588. The current Zenodo v4 record reports CC BY-NC 4.0; reconcile the discrepancy before reuse."
+      "article": "No article text or figures are reproduced. Article-specific reuse terms were not independently verified.",
+      "dataset_statement": "The publisher page says the dataset is CC BY 4.0. Zenodo API metadata (https://zenodo.org/api/records/17293588; https://zenodo.org/api/records/20513304) and DataCite rights metadata (https://api.datacite.org/dois/10.5281/zenodo.17293588; https://api.datacite.org/dois/10.5281/zenodo.20513304) also declare CC BY 4.0 for v3 and v4. However, the descriptive text on both Zenodo record pages says CC BY-NC 4.0. This public-record inconsistency and any source-recording/per-file conditions remain unresolved before Talk2Nature reuse."
     }
   },
   {
@@ -3499,11 +3499,11 @@
     "title": "WABAD latest Zenodo dataset record, v4",
     "description": "Official current version of the World Annotated Bird Acoustic Dataset, with 21.3 GB of audio and associated metadata/annotations listed on the record.",
     "url": "https://zenodo.org/records/20513304",
-    "checked": "2026-10-23",
-    "origin": "Reviewed the official Zenodo v4 record, version history and file inventory. It is published 2026-06-02, lists 21.3 GB of data, 102 contributors and a CC BY-NC 4.0 declaration. No archive or file was downloaded, inspected or checksum-verified.",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official Zenodo v4 page (published 2026-06-02), its API metadata and DataCite DOI record, and compared the publisher-linked v3 record (published 2025-10-08). Both Zenodo API license fields and DataCite rights lists declare CC BY 4.0; the description text on both Zenodo pages still says CC BY-NC 4.0. The v4 page lists 21.3 GB and 102 contributors. No archive or file was downloaded, inspected or checksum-verified.",
     "rights": {
-      "dataset": "Current Zenodo v4 record declares CC BY-NC 4.0. The linked journal abstract states CC BY 4.0 for the dataset; the discrepancy is unresolved.",
-      "scope": "The record-level statement has not been reconciled with the article, source-recording provenance, or any per-file restrictions. Do not infer commercial permission."
+      "dataset": "The structured Zenodo API license field and DataCite rights list for v4 (https://zenodo.org/api/records/20513304; https://api.datacite.org/dois/10.5281/zenodo.20513304) declare CC BY 4.0, matching v3 and the publisher page. The description text on both Zenodo versions says CC BY-NC 4.0, so the public deposit remains internally inconsistent.",
+      "scope": "The record-level metadata does not establish source-recording provenance or per-file rights. Keep the archive metadata-only until the contradictory description is authoritatively corrected or clarified and source-component terms are reviewed; do not infer clearance for Talk2Nature training, redistribution or commercial use."
     }
   },
   {
@@ -4579,6 +4579,28 @@
     "review_url_label": "Official GeoNames Venezuela country feature",
     "rights": {
       "location": "GeoNames data are CC BY 4.0; credit GeoNames. Only a rounded country reference is used."
+    }
+  },
+  {
+    "id": 448,
+    "title": "DataCite structured rights metadata for WABAD v4",
+    "description": "DataCite DOI metadata record for the current WABAD v4 Zenodo deposit, used to verify the structured rights declaration.",
+    "url": "https://api.datacite.org/dois/10.5281/zenodo.20513304",
+    "checked": "2026-10-25",
+    "origin": "TLS-verified read of the official DataCite API record for WABAD v4 DOI 10.5281/zenodo.20513304. Its rightsList declares Creative Commons Attribution 4.0 (CC BY 4.0), and its relation identifies the WABAD concept DOI. The corresponding v3 DataCite record 10.5281/zenodo.17293588 also declares CC BY 4.0. DataCite is structured depositor metadata; it does not audit underlying source-recording or per-file permissions. No dataset files were acquired or inspected.",
+    "rights": {
+      "metadata": "The DOI registry record declares CC BY 4.0 for the v4 dataset DOI. This does not resolve contradictory prose on the linked Zenodo record or independently establish source-media rights."
+    }
+  },
+  {
+    "id": 449,
+    "title": "WABAD Zenodo v3 dataset record",
+    "description": "The publisher-linked WABAD dataset deposit, Zenodo version 3, DOI 10.5281/zenodo.17293588.",
+    "url": "https://zenodo.org/records/17293588",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official Zenodo v3 record page and API metadata. The page dates v3 to 2025-10-08; the structured Zenodo license field and corresponding DataCite rights metadata declare CC BY 4.0, while the record description text says CC BY-NC 4.0. This inconsistency is not resolved by the version history. No files were downloaded, inspected or checksum-verified.",
+    "rights": {
+      "dataset": "Structured Zenodo and DataCite fields declare CC BY 4.0; the record description says CC BY-NC 4.0. Keep rights unresolved for Talk2Nature reuse until the public record is consistent and source-level terms are checked."
     }
   }
 ]

@@ -281,7 +281,7 @@
         334
       ],
       "priority": 2,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-10-25",
       "task": "45-task, 37,718-example evaluation suite for acoustic perception, biological-category recognition, scene understanding and in-context learning.",
       "review_depth": "Targeted preprint review: abstract, task taxonomy, data construction, benchmark split description, reported limitations and reproducibility statement; official project page and current Hugging Face card. No row-by-row audit or evaluation run.",
       "access": "Public dataset card; audio not downloaded.",
@@ -4890,18 +4890,18 @@
         338
       ],
       "priority": 1,
-      "reviewed": "2026-10-23",
+    "reviewed": "2026-10-25",
       "task": "Methods and dataset-description paper for species-level bird vocalization detection and geographic bioacoustic research.",
-      "review_depth": "Reviewed the primary publisher abstract and data-availability statement only. The full methods, supporting-information PDF and analyses were not reviewed; no data, code or model was acquired or run.",
+      "review_depth": "Reviewed the publisher page's abstract and data-availability statement, Zenodo v3/v4 record pages and API metadata, and DataCite rights metadata for both versions. The publisher and structured Zenodo/DataCite fields declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. The full article body, methods, supporting-information PDF and analyses were not reviewed; no data, code or model was acquired or run.",
       "access": "Publisher page links the dataset at Zenodo DOI 10.5281/zenodo.17293588. No paper PDF was retained.",
       "decision": "Use as a large-scale bird-acoustic dataset reference. It is relevant to detection and acoustic generalization, not animal communication meaning.",
-      "limitations": "The reviewed abstract describes species-level vocalization occurrence and timing, not independently observed behavior, receiver response or meaning. The abstract states CC BY 4.0 for the dataset, while the current Zenodo v4 record states CC BY-NC 4.0. This discrepancy remains unresolved. The full paper and supporting metadata were not inspected.",
+      "limitations": "The publisher abstract describes species-level vocalization occurrence and timing, not independently observed behavior, receiver response or meaning. Publisher and structured Zenodo/DataCite metadata declare CC BY 4.0, but the v3/v4 Zenodo descriptions say CC BY-NC 4.0. The public-record inconsistency remains unresolved. The full paper and supporting metadata were not inspected.",
       "attribution": "Pérez-Granados et al. (2026), Ecology 107(2):e70317, https://doi.org/10.1002/ecy.70317.",
       "rights": {
-        "license": "The publisher abstract reports CC BY 4.0 for the dataset; the current Zenodo v4 record reports CC BY-NC 4.0. Unresolved.",
+        "license": "Publisher and structured Zenodo/DataCite rights metadata for v3 and v4 declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. Treat as unresolved for Talk2Nature reuse until the public record is consistent and source-file rights are reviewed.",
         "scope": "Article, dataset, source recordings and any derived model are separate assets. No article text, figure or dataset media is reproduced here.",
         "evidence_url": "https://doi.org/10.1002/ecy.70317",
-        "conditions": "Do not acquire or train on the archive until the versioned dataset license discrepancy and source-recording terms have been reviewed.",
+        "conditions": "Do not acquire or train on the archive until the Zenodo description/structured-rights inconsistency is authoritatively clarified and source-recording terms have been reviewed.",
         "research_use": "unresolved",
         "commercial_use": "not_admitted",
         "redistribution": "unresolved"
@@ -4917,21 +4917,23 @@
       "version": "Zenodo v4; DOI 10.5281/zenodo.20513304; published 2026-06-02",
       "source_ids": [
         338,
-        339
+        339,
+        448,
+        449
       ],
       "priority": 1,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-10-25",
       "task": "Species-level bird vocalization detection and identification; a possible reference for cross-site acoustic evaluation.",
-      "review_depth": "Reviewed the official current Zenodo v4 record, its version history and file inventory, together with the linked publisher abstract and data-availability statement. No archive, audio, annotation table, code or model was downloaded, inspected or run.",
+      "review_depth": "Reviewed the official Zenodo v4 record, API metadata and DataCite rights record, compared the publisher-linked v3 record and its API/DataCite rights, and reviewed the publisher abstract/data-availability statement. Both versioned structured rights records declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. No archive, audio, annotation table, code or model was downloaded, inspected or run.",
       "access": "The current public Zenodo record lists a 21.3 GB archive, associated metadata and annotations. This is a provider-listed size; no local files or checksums were verified.",
       "decision": "Keep metadata-only. This is a strong candidate for studying bird-call detection and site/geographic generalization after rights and split review, but it is not a behavior-context or communication benchmark.",
-      "limitations": "The publisher abstract reports 91,931 vocalizations from 1,192 species across 72 sites, 29 recording locations and 13 biomes, within 5,047 minutes of audio. The current Zenodo v4 record declares CC BY-NC 4.0, while the linked journal abstract says CC BY 4.0 for the dataset. The discrepancy is unresolved; original-source rights and any per-file restrictions were not reviewed. The archive, metadata schema, labels, grouping keys and evaluation split were not inspected. No Talk2Nature baseline or model result exists.",
+      "limitations": "The publisher reports 91,931 vocalizations from 1,192 species across 72 sites, 29 recording locations and 13 biomes, within 5,047 minutes of audio. Zenodo API and DataCite rights fields for v3 and v4 declare CC BY 4.0, matching the publisher, but descriptive text on both Zenodo records says CC BY-NC 4.0. The inconsistency remains unresolved; original-source rights and per-file restrictions were not reviewed. The archive, metadata schema, labels, grouping keys and evaluation split were not inspected. No Talk2Nature baseline or model result exists.",
       "attribution": "Pérez-Granados et al. (2026), WABAD, Zenodo v4, DOI 10.5281/zenodo.20513304; data paper DOI 10.1002/ecy.70317.",
       "rights": {
-        "license": "Zenodo v4 declares CC BY-NC 4.0; the linked journal abstract says CC BY 4.0 for the dataset. Treat the conflict as unresolved.",
+        "license": "Zenodo API and DataCite rights metadata for v3 and v4 declare CC BY 4.0, matching the publisher page; descriptive text on both Zenodo records says CC BY-NC 4.0. Treat the inconsistency as unresolved for project reuse.",
         "scope": "Record-level statements are not an independent audit of source recordings, per-file restrictions or commercial permission.",
-        "evidence_url": "https://zenodo.org/records/20513304",
-        "conditions": "No acquisition or training until the archive/article license discrepancy, source-record terms, location handling and version-specific metadata have been reviewed. Any future evaluation needs a reviewer-approved, leakage-resistant holdout by site and other relevant groups.",
+        "evidence_url": "https://api.datacite.org/dois/10.5281/zenodo.20513304",
+        "conditions": "No acquisition or training until the conflicting Zenodo description is authoritatively clarified, source-record terms and location handling are reviewed, and relevant archive metadata is inspected. Any future evaluation needs a reviewer-approved, leakage-resistant holdout by site and other relevant groups.",
         "research_use": "unresolved",
         "commercial_use": "not_admitted",
         "redistribution": "unresolved"

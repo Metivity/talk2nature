@@ -4050,16 +4050,18 @@
     "year_label": "Journal paper and latest Zenodo archive version",
     "source_ids": [
       338,
-      339
+      339,
+      448,
+      449
     ],
-    "reviewed": "2026-10-23",
-    "review_stage": "Primary publisher abstract and current Zenodo v4 metadata review; no archive acquisition or reproduction",
-    "review_depth": "Reviewed the publisher abstract and data-availability statement, plus the official current Zenodo v4 record, version history and file inventory. The full article body, supporting-information PDF, archive contents, metadata schema, labels, evaluation split and code were not inspected; no data or models were acquired or run.",
-    "review_locator": "Pérez-Granados et al. (2026), DOI 10.1002/ecy.70317; Zenodo DOI 10.5281/zenodo.20513304, v4, published 2026-06-02. The publisher data statement points to the earlier Zenodo DOI 10.5281/zenodo.17293588.",
+    "reviewed": "2026-10-25",
+    "review_stage": "Publisher abstract/data-availability and versioned Zenodo/DataCite rights-metadata check; no archive acquisition or reproduction",
+    "review_depth": "Reviewed the publisher page's abstract and data-availability statement; official Zenodo v3 and v4 record pages and API metadata; and DataCite rights metadata for both version DOIs. The structured license fields declare CC BY 4.0, while descriptive text on both Zenodo pages says CC BY-NC 4.0. The full article body, supporting-information PDF, archive contents, metadata schema, labels, evaluation split and code were not inspected; no data or models were acquired or run.",
+    "review_locator": "Pérez-Granados et al. (2026), DOI 10.1002/ecy.70317; publisher-linked Zenodo v3 DOI 10.5281/zenodo.17293588 (published 2025-10-08) and latest v4 DOI 10.5281/zenodo.20513304 (published 2026-06-02). Zenodo API and DataCite rights metadata for both declare CC BY 4.0; both Zenodo descriptions state CC BY-NC 4.0.",
     "finding": "WABAD is a promising large-scale bird-acoustic reference. The publisher reports 5,047 minutes of audio with 91,931 species-level annotated vocalizations from 1,192 species, 72 recording sites, 29 locations and 13 biomes. The latest Zenodo record lists 21.3 GB. This scale could help researchers test whether a sound model detects and identifies bird vocalizations across sites. The reviewed task description concerns vocalization occurrence and species labels; it does not test a receiver's response or what a call means.",
-    "limitations": "The journal abstract states that the dataset is CC BY 4.0, but the current Zenodo v4 record states CC BY-NC 4.0. The archive's version history and publisher data statement point to different versions; the reuse discrepancy is unresolved. Source-recording provenance and per-file conditions were not audited. We did not inspect the underlying audio, annotations, metadata, label quality, grouping keys or any train/test split. WABAD therefore remains a metadata-only research candidate, not an admitted training set or a Talk2Nature benchmark.",
+    "limitations": "The publisher page and structured Zenodo API/DataCite rights metadata for v3 and v4 declare CC BY 4.0, but the descriptive text on both Zenodo version pages says CC BY-NC 4.0. That public-record inconsistency remains unresolved. Source-recording provenance and per-file conditions were not audited. We did not inspect the underlying audio, annotations, metadata, label quality, grouping keys or any train/test split. WABAD therefore remains a metadata-only research candidate, not an admitted training set or a Talk2Nature benchmark.",
     "lesson": "A large, multi-site bird dataset can teach us how well software finds and sorts vocalizations, and whether that skill travels across places. It cannot by itself teach us what a bird is communicating. Keep detected sound, human-observed context, an animal's measured response and any model prediction in separate records. Start with a small, rights-cleared detection question before attempting a meaning or conversation claim.",
-    "next_review": "Resolve the article/archive license mismatch against the exact versions and obtain an authoritative reuse statement; inspect the supporting metadata and schema, label definitions, site/device/session grouping and evaluation split; then ask an independent bioacoustics reviewer whether a bounded bird-detection test would answer a useful question. If those gates pass, predefine a simple baseline and site-held-out evaluation before any model run. Do not use WABAD to claim call meaning or commercial readiness.",
+    "next_review": "Seek a consistent authoritative clarification of the conflicting Zenodo description text versus the CC BY 4.0 structured fields; review original-recording provenance and per-file conditions before any acquisition. Then inspect the supporting metadata/schema, label definitions, site/device/session grouping and evaluation split, and seek independent bioacoustics review of a bounded detection question. If those gates pass, predefine a simple baseline and site-held-out evaluation before any model run. Do not use WABAD to claim call meaning or commercial readiness.",
     "expert_review": "Not yet independently reviewed by a bioacoustics or animal-communication specialist.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -4085,7 +4087,7 @@
       ],
       [
         "Rights status",
-        "Publisher abstract says dataset CC BY 4.0; current Zenodo v4 says CC BY-NC 4.0. Unresolved; metadata-only."
+        "Zenodo API and DataCite fields say CC BY 4.0 for v3/v4, matching the publisher; both Zenodo descriptions say CC BY-NC 4.0. Inconsistent; metadata-only."
       ]
     ],
     "atlas": {
@@ -4097,8 +4099,8 @@
     },
     "reuse": {
       "status": "Metadata-only candidate for bird-vocalization detection; not admitted to Talk2Nature training or a communication benchmark.",
-      "asset": "Publisher article abstract and official Zenodo v4 record 20513304. No paper body, archive, audio, annotations, code or model was acquired.",
-      "rights": "The publisher abstract reports CC BY 4.0 for the dataset, while current Zenodo v4 reports CC BY-NC 4.0. Resolve this discrepancy and review source-record/per-file conditions before acquisition. Commercial permission is not cleared.",
+      "asset": "Publisher page abstract/data-availability statement; official Zenodo v3/v4 record pages, API metadata and DataCite rights records. No article body, archive, audio, annotations, code or model was acquired.",
+      "rights": "Publisher page and structured Zenodo API/DataCite fields declare CC BY 4.0 for the dataset, while both Zenodo descriptions say CC BY-NC 4.0. Resolve the inconsistent public record and review source-record/per-file conditions before acquisition. Commercial use, redistribution and training are not admitted.",
       "experiment": "No data were acquired or analyzed, no model was trained and no result was reproduced. A future detector test requires a rights-cleared version, inspected grouping and labels, an independent reviewer, a simple baseline and a locked site-held-out evaluation. Detection performance would not establish animal behavior, comprehension or meaning."
     }
   },
