@@ -1895,18 +1895,18 @@
   {
     "id": 181,
     "title": "European Commission portal record: BiodivFuture 2026–2027",
-    "description": "The European Commission Research and Innovation portal lists the BiodivFuture call with a November 2, 2026 deadline, which conflicts with the Biodiversa+ call page and formal announcement that give November 10, 2026.",
+    "description": "The European Commission Research and Innovation portal lists the BiodivFuture call with a November 2, 2026 deadline, which conflicts with the Biodiversa+ call-owner page and formal announcement that give November 10, 2026 at 12:00 CET.",
     "url": "https://projects.research-and-innovation.ec.europa.eu/en/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/restore-our-ocean-and-waters/horizon-europe-european-biodiversity-partnership-biodivfuture-novel-ecosystems-biodiversity-socio",
-    "checked": "2026-10-14",
-    "origin": "Rechecked the European Commission portal record on October 14, 2026. It still lists November 2, 2026, which conflicts with the Biodiversa+ call-owner page and formal Announcement of Opportunity specifying November 10 at 12:00 CET. This is a live source discrepancy; no submission was made."
+    "checked": "2026-10-25",
+    "origin": "Opened the live European Commission portal record on October 25, 2026. It lists November 2, 2026 and status Open. The page had returned HTTP 403 in an October 24 review; it is accessible in this review. The current Biodiversa+ call-owner page specifies November 10 at 12:00 CET. The official source discrepancy remains unresolved; no submission was made."
   },
   {
     "id": 182,
     "title": "Biodiversa+ 2026–2027 BiodivFuture joint-call page",
     "description": "Official call-organizer page for the transnational BiodivFuture call on novel ecosystems, biodiversity and socio-ecological trajectories. It lists the mandatory pre-proposal deadline as November 10, 2026 at 12:00 CET.",
-    "url": "https://www.biodiversa.eu/2026/06/09/2026-2027-joint-call/",
-    "checked": "2026-10-24",
-    "origin": "Rechecked the official Biodiversa+ call-owner page on October 24, 2026. It still states that the mandatory EPSS pre-proposal is due November 10, 2026 at 12:00 CET (11:00 UTC), and that the submission platform is open. The formal announcement requires eligible partners from at least three participating countries and three funding organisations, including two EU Member or Associated Countries. The European Commission portal had listed November 2 when checked October 14; its page returned HTTP 403 in this refresh, so the date discrepancy remains unresolved. No applicant, consortium or submission was confirmed."
+    "url": "https://www.biodiversa.eu/2026/09/09/biodivfuture-call-now-open/",
+    "checked": "2026-10-25",
+    "origin": "Opened the official call-owner page on October 25, 2026. It lists the mandatory EPSS pre-proposal deadline as November 10, 2026 at 12:00 CET (11:00 UTC) and the full-proposal deadline as April 16, 2027 at 12:00 CEST. The European Commission portal is accessible today and lists November 2, 2026; the discrepancy remains unresolved. Formal consortium rules are recorded separately from the call-owner page. No applicant, consortium or submission was confirmed."
   },
   {
     "id": 183,
@@ -3175,8 +3175,8 @@
     "title": "Israel MoEP BiodivFuture national call, public tender 2026/4",
     "description": "Official Israeli procurement listing for the national BiodivFuture application route, with a listed opening date and national submission deadline.",
     "url": "https://mr.gov.il/ilgstorefront/he/p/4000621848",
-    "checked": "2026-10-24",
-    "origin": "Rechecked the Israeli Government Procurement Administration listing for public tender 2026/4 on October 24. The current listing reports an update date of October 21, an opening date of October 22 at 08:00, and a last submission date of November 15 at 12:00 local. The listing’s attachments were not retrievable in this review; substantive national conditions were checked against the separate official Biodiversa+ version 5 rules and MoEP information slides reviewed October 14.",
+    "checked": "2026-10-25",
+    "origin": "Opened the Israeli Government Procurement Administration listing for public tender 2026/4 on October 25. The current listing reports an update date of October 21, an opening date of October 22 at 08:00, and a last submission date of November 15 at 12:00 local. The listing’s attachments were not retrievable in this review; substantive national conditions were checked against the separate official Biodiversa+ version 5 rules and MoEP information slides reviewed October 14.",
     "rights": {
       "page": "Official procurement notice; summarized and linked, not reproduced."
     }
@@ -4437,5 +4437,13 @@
     "description": "Official Zenodo software record published June 14, 2025, listing one 128 MB ZIP for the NBM object-detection code. The reviewed landing page did not display an explicit license; archive contents and any bundled model terms remain unverified.",
     "checked": "2026-10-25",
     "origin": "Software DOI linked by the paper's Code availability statement. Record metadata only; no ZIP, code or model weights were acquired or inspected."
+  },
+  {
+    "id": 435,
+    "title": "Tel Aviv University Research Authority calendar for BiodivFuture",
+    "url": "https://research-authority.tau.ac.il/grants/10193",
+    "description": "TAU's call page lists a Research Authority internal deadline of November 3, 2026, a required letter of intent due November 10, an Israeli Ministry of Environmental Protection submission due November 15, and a full proposal due April 16, 2027. The November 3 internal date applies to TAU researchers and is not a general applicant deadline.",
+    "checked": "2026-10-25",
+    "origin": "Opened the Tel Aviv University Research Authority call page on October 25, 2026. Recorded its institution-specific calendar and minimum-three-partner/three-country note. This does not establish Talk2Nature's affiliation, host eligibility, consortium or application readiness."
   }
 ]

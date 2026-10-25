@@ -258,6 +258,8 @@ def build(output, base_url='', public=False, repo_url=''):
             label += ' · Israel national deadline ' + esc(item['national_deadline'])
             if item.get('national_deadline_time'):
                 label += ' · ' + esc(item['national_deadline_time'])
+        if item.get('institution_deadline'):
+            label += ' · ' + esc(item.get('institution_deadline_label', 'Institution-specific deadline')) + ' ' + esc(item['institution_deadline'])
         return label
 
     def opportunity_sources(item):
@@ -271,6 +273,7 @@ def build(output, base_url='', public=False, repo_url=''):
             ('national_rules_source_id', 'National funding rules ↗'),
             ('national_call_source_id', 'Israeli national call ↗'),
             ('national_presentation_source_id', 'MoEP applicant briefing ↗'),
+            ('institution_deadline_source_id', 'Institution-specific calendar ↗'),
             ('partner_search_source_id', 'Call partner search ↗'),
             ('conflicting_date_source_id', 'Other official listing (date differs) ↗'),
             ('topic_source_id', 'Official topic details ↗'),
