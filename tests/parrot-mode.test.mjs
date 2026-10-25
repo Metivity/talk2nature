@@ -17,6 +17,17 @@ test('shared moments default to one whole 30-second observation without guessing
   assert.equal(preset.animalContext,undefined);
 });
 
+test('the public first actions lead to the shared-moment and microphone-free routes',async()=>{
+  const [home,app]=await Promise.all([
+    readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),
+    readFile(new URL('../web/assets/app.js',import.meta.url),'utf8')
+  ]);
+  assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=companion#station-console">Start a 30-second moment/);
+  assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=demo#station-console"[^>]*>Try without a microphone/);
+  assert.match(app,/companion: \['SHARED MOMENTS'/);
+  assert.match(app,/demo: \['SYNTHETIC REHEARSAL'/);
+});
+
 test('the app offers a parrot visit and wires it to the editable animal picker',async()=>{
   const [home,app,station]=await Promise.all([
     readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),
