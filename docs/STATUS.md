@@ -4361,3 +4361,19 @@ Checked the live [good-first-issue #115](https://github.com/Metivity/talk2nature
 **Live read-back:** the workflow verified three routes, all 138 sitemap URLs and the `robots.txt` sitemap directive. A fresh TLS-verified read-back returned HTTP 200 for `/app/` and `/app/station/?mode=companion`; the home HTML contains the updated Listen URL `/app/station/?mode=companion#station-console`, and Station includes its controls and whole-moment choice.
 
 **Limits and next decision:** a new tab in the existing in-app browser still showed “Update ready” and the older generic Listen navigation, while the explicit companion URL selected Whole moment. This session is not a fresh-service-worker test; I did not close the user's other Talk2Nature tabs. After the user closes the old app windows and reopens the site, recheck the persistent navigation in that fresh session. No recording, permission prompt, animal data, independent user test or physical-phone test was involved; the ML benchmark remains **NOT READY**.
+
+## October 25 — refresh sitemap crawl request and recheck first-use flow
+
+**Search Console:** direct checks of the live `robots.txt` and `sitemap.xml` returned HTTP 200; the XML is valid and contains 138 unique project URLs. Google Search Console confirmed that `sitemap.xml` was submitted successfully for periodic processing. This is a crawl request, not evidence of fetch, discovery or indexing; check the reports again after Google processes it.
+
+**Zero-command workflow:** the deployed companion CTA reaches the beginner `mode=companion` station with Whole moment selected and microphone permission unchecked. The microphone-free rehearsal ran with invented audio, accepted a user-selected Movement note, stopped into a partial review and made no real recording. The confirmation to discard appeared, but the browser controller timed out during confirmation, so cleanup is unverified. The in-app browser still displays an update-ready notice and stale generic bottom navigation; a direct read of deployed HTML returns the corrected novice Listen URL. No active user tabs were reloaded or closed.
+
+**Next:** check Search Console after processing; repeat the navigation test in a truly fresh browser profile and on a named phone; obtain an independent, uncoached first-use walkthrough. No indexing, independent usability result, physical-device validation or animal data is claimed. Keep the first ML benchmark **NOT READY** and the five-track goal active.
+
+## October 25 — refresh researcher-kit evidence on current public main
+
+**Question:** do the public researcher-start instructions still reproduce from a clean checkout of current `main`?
+
+**Check:** a fresh depth-one HTTPS clone reached `9d3e0835ca816401a504681ac8e5d8a7a863b123` using Python 3.12.5, Node 22.22.1 and Git 2.53.0, without installing packages. The synthetic annotation returned an invented eight-second file, two events, two seconds of interval-union coverage and zero observed context. The standard split returned 10 connected groups, 12/4/4 records and 6/2/2 groups. All 172 Python tests passed with one intentional skip; all 122 Node tests passed. Local and public-origin builds validated 139 HTML documents, with the latter confirming all 138 sitemap routes reachable. The clone remained clean.
+
+**Limits and next decision:** refreshed [`RESEARCHER_START.md`](RESEARCHER_START.md) and its verification history. This remains a maintainer-run check; independent reproductions remain zero. It establishes neither research validity nor animal communication. No third-party data, audio or model weights were acquired or run. Keep AutoResearch **NOT READY** pending the scientific, data-rights and evaluation gates; continue toward an independently reviewed outside report.
