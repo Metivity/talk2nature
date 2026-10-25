@@ -10,7 +10,7 @@ Talk2Nature is an early-stage open-source research-software project with a publi
 
 ### 1. Prove the first-use workflow works for people
 
-The app already has a plain-language whole-moment path, optional technical details and an invented rehearsal that needs no microphone. On October 25, an isolated headless-Chrome context completed the synthetic save/reopen/discard loop on both the local preview and deployed site at 390 × 844 CSS pixels. That is a maintainer browser check, not a physical-phone result or an outside user's first-use evidence. The remaining checks are a named physical phone and an authorized, uncoached first-time-user walkthrough using invented material only. We will fix observed obstacles before adding more interface features; these checks do not ask anyone to record an animal.
+The app already has a plain-language whole-moment path, optional technical details and an invented rehearsal that needs no microphone. On October 25, an isolated headless-Chrome context completed the synthetic save/reopen/discard loop on both the local preview and deployed site at 390 × 844 CSS pixels. That is a maintainer browser check, not a physical-phone result or an outside user's first-use evidence. The remaining checks are a named physical phone and an authorized, uncoached first-time-user walkthrough using invented material only. The internal [walkthrough protocol](docs/FIRST_USE_WALKTHROUGH.md) defines consent, privacy limits and its formative target; it does not authorize recruitment. No volunteer has been contacted. We will fix observed obstacles before adding more interface features; these checks do not ask anyone to record an animal.
 
 ### 2. Make one researcher task reproducible
 
