@@ -4405,5 +4405,37 @@
     "description": "The full-text publisher article's data-availability statement points to this OSF project for both data and analysis code. Opening the publisher-provided view-only link returned HTTP 403 through the research browser on 2026-10-25. This records that retrieval attempt only; OSF metadata, files, contents and component terms were not reviewed.",
     "checked": "2026-10-25",
     "origin": "Project locator derived from Deshpande et al. (2023), source 429. The publisher-provided view-only URL was not retained; no OSF file, project metadata, access token or payload was acquired."
+  },
+  {
+    "id": 431,
+    "title": "An Open Dataset for the Acoustic Monitoring of Nocturnal Migratory Birds in Europe",
+    "url": "https://doi.org/10.1038/s41597-026-07176-5",
+    "description": "Airale, Pajot and Linossier (2026), Scientific Data 13:925. Full publisher version of record reviewed through methods, data records, technical validation, evaluation, data/code availability and rights. The paper describes 2,077 training files, 13,359 annotations, about 38 hours and 117 species; its task is time-frequency bird-call detection, not receiver response or meaning.",
+    "checked": "2026-10-25",
+    "origin": "Publisher version of record published online April 21, 2026 and marked version of record June 22, 2026. Article text license is CC BY-NC-ND 4.0; this does not license linked data, code or weights. No figures or article text were reproduced."
+  },
+  {
+    "id": 432,
+    "title": "NBM nocturnal bird migration dataset, Zenodo current record v4",
+    "url": "https://zenodo.org/records/17573913",
+    "description": "Official Zenodo v4 record, published November 10, 2025 and modified June 30, 2026. Lists a 15 GB audio/annotation archive, 170 kB metadata.csv and 3.1 kB Data_statistics.csv. The record says NBM-Orig audio is CC BY 4.0 and Xeno-Canto audio retains each recording's original license; the separate annotation/metadata license was not specified in the reviewed page.",
+    "checked": "2026-10-25",
+    "origin": "Current dataset DOI cited in the 2026 Scientific Data article. Metadata and file list only were reviewed; no file, coordinate, recording, annotation or archive was downloaded or inspected."
+  },
+  {
+    "id": 433,
+    "title": "LouisBearing BirdSoundClassif GitHub repository",
+    "url": "https://github.com/LouisBearing/BirdSoundClassif",
+    "description": "Official repository page and README reviewed. The visible root contains an nbm_model directory, model_weights directory and XC utilities; the README links to dataset DOI 17544346 (Zenodo v3), while the 2026 paper and current Zenodo record point to DOI 17573913 (v4). No license file was visible in the reviewed root listing and no commit was pinned.",
+    "checked": "2026-10-25",
+    "origin": "Public GitHub repository page and rendered README. Source code and model-weight contents were not cloned, downloaded, installed, executed or redistributed."
+  },
+  {
+    "id": 434,
+    "title": "NBM BirdSoundClassif software archive, Zenodo v1.0",
+    "url": "https://zenodo.org/records/15662728",
+    "description": "Official Zenodo software record published June 14, 2025, listing one 128 MB ZIP for the NBM object-detection code. The reviewed landing page did not display an explicit license; archive contents and any bundled model terms remain unverified.",
+    "checked": "2026-10-25",
+    "origin": "Software DOI linked by the paper's Code availability statement. Record metadata only; no ZIP, code or model weights were acquired or inspected."
   }
 ]
