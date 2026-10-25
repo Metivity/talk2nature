@@ -549,7 +549,7 @@ class SiteTests(unittest.TestCase):
     def test_el_silencio_stays_a_metadata_only_detection_candidate(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='el-silencio-multitaxon-dataset-2025')
-        self.assertEqual(note['source_ids'],[328,329,330,331,332])
+        self.assertEqual(note['source_ids'],[328,329,330,331,332,439])
         self.assertIn('not a communication or meaning benchmark',note['finding'])
         self.assertIn('no more than one second',note['finding'])
         self.assertIn('separate sound-identification task',note['finding'])
@@ -558,8 +558,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn('11,340',note['limitations'])
         self.assertIn('10,980',note['limitations'])
         self.assertIn('3,546,609,904 bytes',note['limitations'])
-        self.assertEqual(note['atlas']['location_status'],'pending')
-        self.assertEqual(note['atlas']['locations'],[])
+        self.assertEqual(note['atlas']['location_status'],'mapped')
+        self.assertEqual(note['atlas']['locations'][0]['place_id'],'colombia-country')
+        self.assertEqual(note['atlas']['locations'][0]['role'],'study_region')
+        self.assertIn('country-scale',note['atlas']['location_note'])
 
         resources={r['id']:r for r in json.loads((project_root/'research/resources.json').read_text())['resources']}
         ids={'elsilencio-birdclefplus-overview-2025','elsilencio-labeled-audio-v1','elsilencio-unlabeled-soundscapes-2025'}
@@ -596,8 +598,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('el-silencio-multitaxon-dataset-2025',reading)
             atlas=json.loads((root/'research/atlas/catalog.json').read_text())
             mapped=next(r for r in atlas['records'] if r['id']==note['slug'])
-            self.assertEqual(mapped['location_status'],'pending')
-            self.assertEqual(mapped['locations'],[])
+            self.assertEqual(mapped['location_status'],'mapped')
+            self.assertEqual(mapped['locations'][0]['place_id'],'colombia-country')
+            self.assertEqual(mapped['locations'][0]['role'],'study_region')
 
     def test_budgerigar_playback_note_bounds_trained_vocal_output(self):
         with tempfile.TemporaryDirectory() as d:

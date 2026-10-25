@@ -3836,7 +3836,8 @@
       329,
       330,
       331,
-      332
+      332,
+      439
     ],
     "reviewed": "2026-10-22",
     "review_stage": "Full overview paper, pinned annotation protocol and dataset/benchmark-fit review",
@@ -3879,10 +3880,18 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-22",
-      "location_status": "pending",
-      "location_note": "The sources identify the Middle Magdalena region and seven labeled-recording sites. No exact site coordinates were reviewed or copied; keep the dataset out of the public point map until the appropriate coarse location and sensitivity have been reviewed.",
-      "locations": [],
+      "reviewed": "2026-10-25",
+      "location_status": "mapped",
+      "location_note": "The primary dataset record locates its seven-site collection only to the Middle Magdalena region of Colombia. The public map uses a country-scale Colombia reference only; it does not show the region centroid, any of the seven sites, recorder positions or animal locations.",
+      "locations": [
+        {
+          "place_id": "colombia-country",
+          "role": "study_region",
+          "source_id": 328,
+          "locator": "Zenodo record 17064353, v1 description: Middle Magdalena region, Colombia; seven recording sites",
+          "basis": "The primary dataset record supports the broad Colombia study region, not a point within it. The displayed GeoNames country reference is rounded to one decimal and is explicitly country-scale; it is not the Middle Magdalena centroid, a site, recorder or animal coordinate. No site-level coordinates, rows or media were reviewed."
+        }
+      ],
       "observation_period": {
         "label": "Dataset README describes dawn/dusk labeled recordings from March and August 2023",
         "start_year": 2023,
