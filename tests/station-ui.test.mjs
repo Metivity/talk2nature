@@ -9,11 +9,12 @@ import {WindowSession, WINDOW_SECONDS} from '../web/assets/window-model.mjs';
 import {stationPreset} from '../web/assets/station-preset.mjs';
 import {StationSession, SOURCE_LABELS, wavBytes} from '../web/assets/station-model.mjs';
 import {sessionFiles, zipFiles} from '../web/assets/station-export.mjs';
+import {openSessionBundle, sessionSummary} from '../web/assets/session-import.mjs';
 import {emptyEventsMessage, nextEventFocusId} from '../web/assets/station-review-ui.mjs';
 
 function setup() {
   const elements = new Map();
-  const state = {confirm: false, confirmations: 0, capture: null};
+  const state = {confirm: false, confirmations: 0, capture: null, downloads: [], objectUrls: new Map()};
   let document;
   const canvasContext = {scale() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {}, setLineDash() {}};
 
@@ -26,6 +27,9 @@ function setup() {
       classList: {toggle() {}, add() {}, remove() {}},
       addEventListener(name, handler) { this.handlers[name] = handler; },
       async fire(name, event = {}) { return await this.handlers[name]?.(event); },
+      click() {
+        if (this.download) state.downloads.push({name: this.download, blob: state.objectUrls.get(this.href)});
+      },
       append(...nodes) { this.children.push(...nodes); },
       replaceChildren(...nodes) { this.children = nodes; },
       setAttribute(name, value) { (this.attributes ??= {})[name] = value; },
@@ -57,6 +61,13 @@ function setup() {
     confirm() { state.confirmations++; return state.confirm; },
     addEventListener() {}
   };
+  class TestURL extends URL {}
+  TestURL.createObjectURL = blob => {
+    const url = `blob:station-test/${state.objectUrls.size}`;
+    state.objectUrls.set(url, blob);
+    return url;
+  };
+  TestURL.revokeObjectURL = url => state.objectUrls.delete(url);
   class SyntheticAudioSession {
     constructor(options) { this.options = options; this.stopped = 0; state.capture = this; }
     async start(synthetic) {
@@ -75,7 +86,7 @@ function setup() {
     StationSession, wavBytes, SOURCE_LABELS, sessionFiles, zipFiles, AudioSession: SyntheticAudioSession,
     emptyEventsMessage, nextEventFocusId, document, window, navigator: {},
     location: {href: 'https://talk2nature.test/app/station/?mode=companion#station-console'},
-    URL, Blob, crypto: webcrypto, performance: {now: () => 1000},
+    URL: TestURL, Blob, crypto: webcrypto, performance: {now: () => 1000},
     setTimeout: () => 1, clearTimeout() {}, setInterval: () => 2, clearInterval() {}
   });
   return {get, observations, state};
@@ -99,6 +110,19 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   assert.match(h.get('station-recap-detail').textContent, /Invented practice audio/);
   assert.equal(h.get('station-event-total').textContent, '1');
   assert.equal(h.get('station-markers').children.length, 1);
+
+  await h.get('station-bundle').fire('click');
+  assert.equal(h.state.downloads.length, 1);
+  const saved = h.state.downloads[0];
+  assert.match(saved.name, /^talk2nature-[0-9a-f-]+\.zip$/);
+  assert.equal(saved.blob.type, 'application/zip');
+  assert.match(h.get('station-save-status').textContent, /download requested/);
+  const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
+  assert.equal(sessionSummary(reopened).kind, 'Whole moment · partial');
+  assert.equal(reopened.record.origin, 'synthetic');
+  assert.equal(reopened.record.animal_context.group, 'unknown');
+  assert.equal(reopened.record.markers[0].kind, 'observation');
+  assert.equal(reopened.clips.length, 1);
 
   await h.get('station-clear').fire('click');
   assert.equal(h.state.confirmations, 1);
