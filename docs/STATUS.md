@@ -1,5 +1,15 @@
 # Project status
 
+## October 25 — publish a country-scale Colombia atlas reference and update the active goal
+
+**Question:** does the El Silencio primary release support a useful public map location without exposing its recording sites?
+
+**Evidence and change:** the Zenodo v1 record identifies a seven-site collection in the Middle Magdalena region of Colombia. It does not establish a reviewed public regional centroid or site coordinates. Added a rounded country-scale Colombia reference from GeoNames, labeled explicitly as country-scale, and linked it to the primary dataset record. The note states that the marker is not the Middle Magdalena centroid, one of the seven sites, a recorder position or an animal location. No dataset rows or media were inspected or acquired. The source cites GeoNames' CC BY attribution terms; its [published terms](https://www.geonames.org/export/) require credit and permit commercial use.
+
+**Validation and publication:** all 175 Python tests passed with one intentional external-sample skip, all 125 Node tests passed and the 229-resource catalog validated. The public build produced 139 pages plus 404; the site checker validated 140 HTML documents, 7,344 links and all 139 public routes. PR [#423](https://github.com/Metivity/talk2nature/pull/423) merged to `main` as [`6429d23`](https://github.com/Metivity/talk2nature/commit/6429d231c2b5dd049ae16f79b648bfee52727cad); CI run [#40175714955](https://github.com/Metivity/talk2nature/actions/runs/40175714955) passed repository, browser-tool, Android-source and preview-site checks. Pages run [#40175909212](https://github.com/Metivity/talk2nature/actions/runs/40175909212) passed tests, public build, publishing-boundary, deployment and live-route verification. A fresh TLS-verified read-back with the installed CA bundle returned the same fingerprint as the build: `fa1c3b131c34981e19059068c5ada1b4c4d727d067e5cd63f38920fe7124d8f0`. The live catalog contains 107 notes, 38 mapped notes across 36 places, 353 cited-source records, 46 pending and 23 not applicable; wider catalogs contain 438 sources and 229 collection resources.
+
+**Limit and next step:** this adds a literature location only; it is not an animal sighting, dataset release or communication finding. The zero-command companion still needs a clean-profile check, a named physical-phone session and an authorized uncoached first-use walkthrough; no fresh visual, physical-device or independent-user evidence was produced here. Keep those gates open and continue source-grounded library work without adding UI features until a user-observed obstacle warrants one. The benchmark remains **NOT READY**.
+
 ## October 25 — reverify researcher onboarding from current public main
 
 **Question:** do the documented synthetic annotation and grouped-split examples still work in a fresh clone of the latest public revision, without setup or third-party data?
