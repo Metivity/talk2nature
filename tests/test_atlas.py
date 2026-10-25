@@ -22,7 +22,11 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),38)
+        inat_sounds=records['inat-sounds-2024']
+        self.assertEqual(inat_sounds['location_status'],'not_applicable')
+        self.assertEqual(inat_sounds['locations'],[])
+        self.assertIn('global compilation',inat_sounds['location_note'])
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),39)
         pteroset=records['pteroset-detection-benchmark-2026']
         self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})
         self.assertIn('municipal reference points',pteroset['location_note'])
@@ -41,6 +45,16 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(colombia['precision'],'country')
         self.assertEqual((colombia['latitude'],colombia['longitude']),(4.0,-73.3))
         self.assertIn('country-scale',el_silencio['location_note'])
+        hyena=records['hyenaset-event-detection-benchmark']
+        self.assertEqual(hyena['location_status'],'mapped')
+        self.assertEqual(hyena['locations'][0]['place_id'],'kenya')
+        self.assertEqual(hyena['locations'][0]['role'],'study_region')
+        self.assertEqual(hyena['locations'][0]['source_id'],296)
+        self.assertIn('country-scale',hyena['location_note'])
+        self.assertNotIn('reserve',next(p for p in self.places['places'] if p['id']=='kenya')['label'].lower())
+        kenya=next(p for p in self.places['places'] if p['id']=='kenya')
+        self.assertEqual(kenya['precision'],'country')
+        self.assertEqual((kenya['latitude'],kenya['longitude']),(1.0,38.0))
         self.assertEqual(records['great-green-macaw-vocal-development-2026']['locations'][0]['place_id'],'costa-rica')
         playback=records['parrot-vocal-imitation-addressing-2012']
         self.assertEqual(playback['group'],'birds')
@@ -127,7 +141,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('38 of 20',goals)
+            self.assertIn('39 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -236,11 +250,11 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(38,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(39,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],33)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],34)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value

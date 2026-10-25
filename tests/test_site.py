@@ -1770,12 +1770,14 @@ class SiteTests(unittest.TestCase):
 
     def test_hyenaset_note_separates_event_labels_rights_and_baseline_exposure(self):
         note=next(n for n in load('research') if n['slug']=='hyenaset-event-detection-benchmark')
-        self.assertEqual(note['source_ids'],[148,296,297,298])
+        self.assertEqual(note['source_ids'],[148,296,297,298,440])
         self.assertIn('not independently observed receiver responses',note['finding'])
         self.assertIn('pretrained on all available audio',note['limitations'])
         self.assertIn('transductive',note['limitations'])
-        self.assertEqual(note['atlas']['location_status'],'pending')
-        self.assertEqual(note['atlas']['locations'],[])
+        self.assertEqual(note['atlas']['location_status'],'mapped')
+        self.assertEqual(note['atlas']['locations'][0]['place_id'],'kenya')
+        self.assertEqual(note['atlas']['locations'][0]['role'],'study_region')
+        self.assertEqual(note['atlas']['locations'][0]['source_id'],296)
         resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
         paper=next(r for r in resources if r['id']=='hyenaset-preprint-2026')
         dataset=next(r for r in resources if r['id']=='hyenaset-dataset-v1')

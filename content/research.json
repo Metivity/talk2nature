@@ -3424,7 +3424,8 @@
       148,
       296,
       297,
-      298
+      298,
+      440
     ],
     "reviewed": "2026-10-13",
     "review_stage": "Targeted preprint methods and results; official dataset version, file and terms metadata",
@@ -3461,10 +3462,18 @@
       "experiment": "No Talk2Nature model run is authorized by this review. A future separately governed non-commercial reproduction would still need rights and privacy checks, reviewer approval, split-safe pretraining and exact baseline reproduction."
     },
     "atlas": {
-      "reviewed": "2026-10-13",
-      "location_status": "pending",
-      "location_note": "The preprint names Maasai Mara, Kenya, but the dataset links some randomized clips to individual identities and timestamps. No map marker is published until wildlife-location sensitivity is reviewed.",
-      "locations": [],
+      "reviewed": "2026-10-25",
+      "location_status": "mapped",
+      "location_note": "The bioRxiv v2 abstract identifies collar recordings from spotted hyenas in the Maasai Mara National Reserve, Kenya. The atlas reuses only a country-scale Kenya reference; it does not plot the reserve, individuals, timestamps or recording coordinates. The dataset metadata links some randomized clips to four individuals and times; no rows or precise locations were inspected.",
+      "locations": [
+        {
+          "place_id": "kenya",
+          "role": "study_region",
+          "source_id": 296,
+          "locator": "Abstract",
+          "basis": "The bioRxiv v2 abstract names the Maasai Mara National Reserve, Kenya. The map uses the country-level GeoNames reference, not the reserve or a recorder position."
+        }
+      ],
       "observation_period": null
     }
   },
@@ -4241,7 +4250,7 @@
     "reviewed": "2026-10-23",
     "review_stage": "Targeted paper, pinned dataset README/terms, media-licensing guidance and implementation/model-release review; metadata only",
     "review_depth": "Reviewed the paper abstract and targeted dataset-construction, evaluation, weak-label and assets/consent passages; the complete paper was not exhaustively reviewed. Reviewed the complete 2024 dataset README at commit bd52ecde5d9d7434f6167bbac823d152c3823ccd, including class counts, single-species file labels, location/license fields, ToU and provider-listed archive sizes; the current iNaturalist media-license FAQ; the pinned code repository README and MIT SPDX metadata; and the author-linked model folder pointer. No audio, annotation archive, source code, dependencies or weights were downloaded or run.",
-    "review_locator": "Chasmai et al., NeurIPS 2024 paper: abstract, Sections 1, 3 and 4, downstream evaluation discussion and Assets/Consent checklist; visipedia/inat_sounds 2024/README.md at commit bd52ecde5d9d7434f6167bbac823d152c3823ccd; iNaturalist media licensing FAQ; cvl-umass/iNatSounds README at commit 78ff2a5850d6c2b364dd36422085033b5a0fa750 and its linked weight folder.",
+    "review_locator": "Chasmai et al., NeurIPS 2024 paper: abstract, Sections 1, 3 and 4, downstream evaluation discussion and Assets/Consent checklist; October 25 follow-up rechecked Section 3 geographic diversity/subsampling and its stated US/Europe sampling bias, Figure 1 and Appendix Figure A2; visipedia/inat_sounds 2024/README.md at commit bd52ecde5d9d7434f6167bbac823d152c3823ccd; iNaturalist media licensing FAQ; cvl-umass/iNatSounds README at commit 78ff2a5850d6c2b364dd36422085033b5a0fa750 and its linked weight folder.",
     "finding": "iNatSounds is a substantial broad animal-audio resource: the paper reports about 230,000 recordings (around 1,200 hours) contributed by more than 27,000 recordists, covering over 5,500 species. The 2024 README reports 5,569 species across birds, insects, amphibians, mammals and reptiles. Its task is file-level species classification; every recording has a single species label. This makes it useful for studying acoustic recognition and pretraining, not event-level meaning, animal behavior or whether a receiver understood a call.",
     "limitations": "The paper calls the labels weak: the target sound may be absent from a particular short window, and other taxa or background may be present. It advises evaluating on strongly labeled downstream datasets rather than relying on iNatSounds alone. The paper also notes geographic sampling bias toward the United States and Europe. The README lists roughly 133 GB of audio across the three archives and exposes date, latitude, longitude and location-uncertainty fields; sizes are provider-reported and no location audit was performed. Dataset download terms permit non-commercial research and education only and prohibit distributing recordings. Underlying iNaturalist media have contributor-selected licenses, including non-commercial, other Creative Commons and all-rights-reserved items. The code repository reports MIT for code only; linked model-weight terms and paper reuse terms remain unverified. No model, audio or annotation was inspected locally, and no Talk2Nature result exists.",
     "lesson": "Use iNatSounds as a broad, rights-restricted species-classification reference, and test any representation on a separate strongly annotated soundscape dataset such as El Silencio. It is not suitable for the commercial-capable Talk2Nature model path under the reviewed dataset terms. Keep dataset audio, paper, code and pretrained weights under separate rights records. Species recognition does not establish a signal’s behavioral function or meaning.",
@@ -4271,9 +4280,9 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-23",
-      "location_status": "pending",
-      "location_note": "The corpus combines records from many locations rather than one study site. Its schema includes latitude, longitude and location uncertainty; no locations or coordinates are reproduced here pending sensitive-species review.",
+      "reviewed": "2026-10-25",
+      "location_status": "not_applicable",
+      "location_note": "This global compilation has no single field site or representative point for the literature atlas. The paper documents geographic sampling bias, and the dataset schema includes per-recording location metadata; no individual coordinates or locations were reviewed or reproduced.",
       "locations": [],
       "observation_period": null
     },
