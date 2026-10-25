@@ -289,11 +289,11 @@
   },
   {
     "id": 36,
-    "title": "National Geographic current grants",
-    "description": "National Geographic Society. Current RFP-based program and listed calls. General project submissions are no longer accepted. The current listing was checked for the Trebek Initiative deadline and Canada-specific scope; its individual RFP terms were not reviewed.",
+    "title": "National Geographic current grants — 2027 Trebek Initiative listing",
+    "description": "Official National Geographic Society grants listing. On 2026-10-25 it showed the 2027 Trebek Initiative RFP due October 28, 2026, supporting science, storytelling and education with distinct impact in Canada. General Society criteria state applicants must be 18 or older, projects should start at least six months after the deadline, and strong local-context connection is ideal. Detailed RFP-specific terms are separate.",
     "url": "https://www.nationalgeographic.org/explore/grants-investments",
     "checked": "2026-10-25",
-    "origin": "Official program listing read for current calls; listing-level review only."
+    "origin": "Read the official National Geographic Society program listing and its general eligibility section; followed its Apply link to the RFP portal. General criteria are not represented as RFP-specific terms."
   },
   {
     "id": 37,
@@ -4610,5 +4610,13 @@
     "url": "https://arxiv.org/abs/2512.03219",
     "checked": "2026-10-25",
     "origin": "Targeted primary-paper review of arXiv v1. The article is marked CC BY 4.0 on arXiv; no paper text or figures are reproduced."
+  },
+  {
+    "id": 451,
+    "title": "2027 Trebek Initiative RFP portal",
+    "description": "The National Geographic Society funding portal page linked from the official current grants listing for the 2027 Trebek Initiative RFP. The unauthenticated request returned a short SAML/RelayState page rather than readable RFP text; award amount and RFP-specific eligibility and terms remain unverified.",
+    "url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000CohhIAC/2027-trebek-initiative-rfp",
+    "checked": "2026-10-25",
+    "origin": "Followed the Apply link from the official National Geographic Society grants listing. A direct public-page read returned HTTP 200 but no readable opportunity text; no account sign-in or application activity occurred."
   }
 ]
