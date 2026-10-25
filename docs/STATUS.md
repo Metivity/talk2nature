@@ -1,5 +1,23 @@
 # Project status
 
+## October 25 — verify the persistent Listen route in the published app
+
+**Question:** does the Field Companion's persistent Listen navigation still return users to the beginner whole-moment workflow?
+
+**Evidence:** fresh TLS-verified HTTP reads of the published app home and Station pages both returned HTTP 200. Their rendered HTML contains the same Listen target, `/talk2nature/app/station/?mode=companion#station-console`; the local regression test also asserts this target across the app's six main pages. The companion preset sets capture mode to a 30-second whole moment while leaving animal identity unknown. A browser-tool link click appeared to drop the query string, but direct HTML read-back disproved that result, so it is not recorded as a production defect.
+
+**Limit and next gate:** the in-app browser controller timed out, so this was a source/read-back check, not a fresh visual or JavaScript-runtime inspection. No phone, microphone or animal data was used. Keep the named-device and uncoached-first-user checks open; make no navigation change based on the misleading click result.
+
+## October 25 — verify the WABAD atlas classification
+
+**Question:** should the global WABAD corpus receive a single point on the literature atlas?
+
+**Evidence:** the primary publisher describes 72 recording sites across 29 recording locations, mainly countries, and 13 biomes. Its abstract and data statement identify a broad global multi-location corpus, not one field study. The supporting-information PDF is listed, but its fetch returned HTTP 403; no location rows, audio, annotations, archive files or coordinates were inspected. The publisher abstract reports CC BY 4.0 while the current Zenodo v4 record reports CC BY-NC 4.0, so data reuse remains unresolved.
+
+**Change and limits:** classified the WABAD atlas entry as `not_applicable` for one point and added a regression check. No world centroid or inferred location was added. The note remains a metadata-only bird-detection candidate; no data or model was acquired or run, and detection labels do not establish call meaning. The local candidate is not deployed. See the [publisher paper](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.70317) and [Zenodo v4 record](https://zenodo.org/records/20513304).
+
+**Validation:** all 175 Python tests passed with one intentional external-sample skip and all 125 Node tests passed. The noindex site check covered 140 HTML documents/7,208 links; the public-origin check covered 140 documents/7,348 links and all 139 routes. Headless Chrome checks at 320, 390 and 1440 CSS pixels returned HTTP 200 with no page errors or horizontal overflow on both atlas pages. The local projection has 39 mapped, 43 pending and 25 not-applicable notes; no deployment occurred.
+
 ## October 25 — publish a country-scale Colombia atlas reference and update the active goal
 
 **Question:** does the El Silencio primary release support a useful public map location without exposing its recording sites?
