@@ -4480,5 +4480,16 @@
     "rights": {
       "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the rounded country reference is used; it does not reproduce study-site or observation data."
     }
+  },
+  {
+    "id": 440,
+    "title": "GeoNames country reference point for Kenya",
+    "description": "The official GeoNames country point for Kenya, used only as a rounded country-scale atlas reference for literature study regions.",
+    "url": "https://www.geonames.org/192950/republic-of-kenya.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official GeoNames Republic of Kenya entry, feature 192950, which lists coordinates 1.00000, 38.00000. The atlas uses this country reference only; it is not a reserve, field-site, recorder or animal location. GeoNames terms permit use under CC BY attribution and allow commercial use. No animal study locations or observation data were obtained from GeoNames.",
+    "rights": {
+      "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the country-level reference is used, not study-site or observation data."
+    }
   }
 ]

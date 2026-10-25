@@ -32,10 +32,10 @@
     },
     {
       "id": "kenya",
-      "label": "Kenya · Samburu and Amboseli",
+      "label": "Kenya (country-scale reference)",
       "precision": "country",
-      "latitude": 0.0,
-      "longitude": 37.8
+      "latitude": 1.0,
+      "longitude": 38.0
     },
     {
       "id": "kalahari",
