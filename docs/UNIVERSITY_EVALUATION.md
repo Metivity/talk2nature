@@ -9,7 +9,7 @@ Talk2Nature is ready for a small **software and workflow evaluation with synthet
 1. Choose **Try an example pair** and compare the two invented sessions and their observer-entered notes.
 2. Notice how the complete and partial sessions differ in sampling. Ask what the interface supports you in describing and what it does not establish about animal behavior.
 3. Close one session and confirm the other remains open.
-4. If a step is confusing or a field is missing, use the [public reproduction and workflow form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Posting requires GitHub sign-in, and the resulting issue is public. Include the page URL and access date; do not include recordings or confidential research details.
+4. If a step is confusing or a field is missing, share one sentence through the [short first-use form](https://github.com/Metivity/talk2nature/issues/new?template=first-use.yml). Device and browser details are optional. Posting requires GitHub sign-in, and the issue is public; do not include recordings, contact details or confidential research information. For a technical software rerun, use the more detailed [workflow report form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml).
 
 For a deeper, roughly 20-minute export review, the [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/) guides a synthetic Listen-to-Audacity check:
 

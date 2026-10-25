@@ -1,0 +1,46 @@
+name: Quick first-use note
+description: Share a short no-code browser review or a confusing step.
+title: "[First use] "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        This public report is about the software workflow, not animal meaning.
+        Trying the browser example needs no account, microphone or upload;
+        submitting here requires GitHub sign-in. One short sentence is enough.
+        Do not attach recordings or include private research, participant or
+        contact details, credentials, local file paths or sensitive locations.
+  - type: dropdown
+    id: tried
+    attributes:
+      label: What did you try?
+      options:
+        - Compare two invented sessions
+        - Try the microphone-free rehearsal
+        - Another browser workflow
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened?
+      description: One sentence is enough. Say what helped, confused you, or did not work.
+      placeholder: I tried… I expected… I saw…
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Page, device or browser (optional)
+      description: Add any detail that would help us reproduce the issue. Skip this if you are unsure.
+      placeholder: A page link, phone/browser, or leave blank
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report check
+      options:
+        - label: This report contains no private recordings, participant details, contact information, credentials or sensitive wildlife locations.
+          required: true

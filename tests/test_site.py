@@ -41,8 +41,9 @@ class SiteTests(unittest.TestCase):
             guide,
         )}
         expected={
+            'first-use.yml':'short first-use form',
             'mobile-check.yml':'mobile-check form',
-            'reproduction.yml':'workflow report form',
+            'reproduction.yml':'detailed workflow report form',
             'research-source.yml':'source-review form',
             'scientific-review.yml':'scientific review form',
         }
@@ -1106,9 +1107,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('no animal recording',university)
             self.assertIn('no account to try',university)
             self.assertIn('university-access-note',university)
-            self.assertIn('href="https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml">Share one result',university)
-            self.assertIn('Posting on GitHub requires sign-in',university)
-            self.assertIn('Anyone can read your report',university)
+            self.assertIn('href="https://github.com/Metivity/talk2nature/issues/new?template=first-use.yml">Share a short note',university)
+            self.assertIn('One sentence is enough; device details are optional.',university)
+            self.assertIn('href="https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml">use the workflow report',university)
+            self.assertIn('Posting requires GitHub sign-in',university)
+            self.assertIn('reports are public',university)
             self.assertIn('href="/talk2nature/app/compare/"',university)
             self.assertIn('href="/talk2nature/tools/interop/"',university)
             self.assertIn('Start the browser review',university)
@@ -1146,6 +1149,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('.university-access-note{',(root/'assets/university.css').read_text())
             project_root=Path(__file__).resolve().parents[1]
             brief=(project_root/'docs/UNIVERSITY_EVALUATION.md').read_text()
+            first_use_form=(project_root/'.github'/'ISSUE_TEMPLATE'/'first-use.yml').read_text()
+            self.assertIn('One short sentence is enough',first_use_form)
+            self.assertIn('submitting here requires GitHub sign-in',first_use_form)
+            self.assertIn('This public report is about the software workflow',first_use_form)
+            self.assertIn('Device and browser details are optional.',brief)
             self.assertIn('not a partnership announcement',brief)
             self.assertIn('not an ethics determination',brief)
             self.assertIn('There is no shared Talk2Nature recording network or university cloud workspace today.',brief)
@@ -1162,16 +1170,17 @@ class SiteTests(unittest.TestCase):
             self.assertIn('source-checked international reviewer paths',status)
             self.assertIn('no group is a prospect, partner or endorser',status)
             self.assertIn('browser-only comparison of two invented observation sessions',brief)
-            self.assertIn('Posting requires GitHub sign-in, and the resulting issue is public.',brief)
+            self.assertIn('Posting requires GitHub sign-in, and the issue is public',brief)
             self.assertIn('https://metivity.github.io/talk2nature/app/compare/',brief)
-            self.assertIn('Posting requires GitHub sign-in, and the resulting issue is public.',brief)
+            self.assertIn('Posting requires GitHub sign-in, and the issue is public',brief)
             self.assertIn('optional, deeper Listen-to-Audacity check',brief)
             self.assertIn('no-animal phone-reference check',brief)
             self.assertIn('PHONE_RECORDING_REVIEW.md',brief)
             self.assertNotIn('try a short synthetic Listen-to-Audacity workflow',brief)
             self.assertIn('SUPPORT.md', (project_root/'README.md').read_text())
             researcher_kit=(project_root/'docs/RESEARCHER_START.md').read_text()
-            self.assertIn('Trying the workflow needs no account; posting to GitHub requires sign-in and creates a public issue.',researcher_kit)
+            self.assertIn('one sentence is enough and device details are optional',researcher_kit)
+            self.assertIn('Posting requires GitHub sign-in and creates a public issue.',researcher_kit)
 
     def test_public_build_requires_real_origin(self):
         with tempfile.TemporaryDirectory() as d:
