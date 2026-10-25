@@ -1515,7 +1515,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('no big show needed',home)
             self.assertIn('quiet moments count, too',home)
             self.assertNotIn('the parrot did not prepare a TED talk',home)
-            self.assertIn('Start a 30-second moment',home)
+            self.assertIn('Set up a 30-second moment',home)
             self.assertIn('Try without a microphone',home)
             self.assertIn('href="/talk2nature/app/practice/">Practice first: three invented scenes · no microphone',home)
             self.assertNotIn('YOUR FIRST LITTLE FIELD NOTE',home)
