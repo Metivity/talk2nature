@@ -487,11 +487,11 @@ Decision: use this resource only to consider a low-level feature-estimation eval
 
 ## October 25 follow-up — separate access and rights for vervet study data and code
 
-**Evidence:** the full 2023 publisher article's Data availability statement links both the study data and analysis code to OSF project `kw5qg`. Opening the publisher-provided view-only link returned HTTP 403 through the research browser on October 25. This records one retrieval outcome; it does not establish that OSF is globally inaccessible. No OSF project metadata, file manifest, data, code, coordinates or component terms were reviewed, and no token or payload was retained.
+**Evidence:** the full 2023 publisher article's Data availability statement links both the study data and analysis code to OSF project `kw5qg`. The publisher-provided view-only URL returned HTTP 403 through the research browser on October 25. A separate unauthenticated read-only GET to the official OSF API v2 node endpoint succeeded: the node title matches the study, `public` is true, it was created 2021-12-17 and modified 2023-02-03, and its project-level license relationship is null. This is node metadata only. No files endpoint, file names, manifest, data, code, coordinates or component terms were reviewed; no token or payload was retained.
 
-**Catalog update:** created separate metadata-only dataset and analysis-code records, both linked to the paper and canonical OSF project locator. Each carries an unresolved version and license state. The paper's CC BY 4.0 article license is not treated as a data or code license.
+**Catalog update:** the paper, separate metadata-only dataset and analysis-code records now link the verified OSF API node metadata as a source. Data and code carry no verified file version or component license. The paper's CC BY 4.0 article license is not treated as a data or code license; a null project-level license relationship does not establish file-level terms.
 
-**Decision and next gate:** this remains a methods case about receiver responses under surrounding social context, not a ready corpus or benchmark. Inspect no files until an authorized route, exact component rights, privacy/site-sensitivity handling, version, retention and withdrawal terms are established. AutoResearch remains **NOT READY**; no acquisition, execution, model run or animal contact occurred.
+**Decision and next gate:** this remains a methods case about receiver responses under surrounding social context, not a ready corpus or benchmark. Before reviewing the file listing or any contents, establish exact component terms, privacy/site-sensitivity handling, version, retention and withdrawal conditions. Public project metadata is not a data/code reuse license. AutoResearch remains **NOT READY**; no acquisition, execution, model run or animal contact occurred.
 
 ## October 25 — NBM fine-grained bird-call detection resource
 
