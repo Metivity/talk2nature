@@ -26,6 +26,11 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(inat_sounds['location_status'],'not_applicable')
         self.assertEqual(inat_sounds['locations'],[])
         self.assertIn('global compilation',inat_sounds['location_note'])
+        wabad=records['wabad-global-bird-acoustic-dataset']
+        self.assertEqual(wabad['location_status'],'not_applicable')
+        self.assertEqual(wabad['locations'],[])
+        self.assertIn('single field region',wabad['location_note'])
+        self.assertIn(338,wabad['source_ids'])
         self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),39)
         pteroset=records['pteroset-detection-benchmark-2026']
         self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})

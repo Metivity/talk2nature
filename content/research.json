@@ -4072,9 +4072,9 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-23",
-      "location_status": "pending",
-      "location_note": "The publisher describes 29 recording locations and 72 sites, but this review did not inspect or map the site metadata. Do not infer precise points or publish sensitive locations from this coverage summary.",
+      "reviewed": "2026-10-25",
+      "location_status": "not_applicable",
+      "location_note": "This global acoustic compilation has no single field region for the literature atlas. The publisher reports 72 recording sites across 29 recording locations, mainly countries, and 13 biomes. This review used only those broad coverage statements; the supporting metadata and individual locations were not inspected. Do not add a world centroid or publish record-level coordinates.",
       "locations": [],
       "observation_period": null
     },
