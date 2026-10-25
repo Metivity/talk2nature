@@ -1246,25 +1246,26 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Biodiversa+ · BiodivFuture 2026–2027',page)
             self.assertIn('Deadline 2026-11-10 · 12:00 CET · 11:00 UTC',page)
             self.assertIn('Israel national deadline 2026-11-15 · 12:00 local (MoEP tender listing)',page)
-            self.assertIn('European Commission portal had listed November 2',page)
-            self.assertIn('returned HTTP 403 in this refresh',page)
-            self.assertIn('no-go at this stage',page)
+            self.assertIn('TAU internal deadline (TAU applicants only) 2026-11-03',page)
+            self.assertIn('now-accessible Commission listing says November 2, 2026 and Open',page)
+            self.assertIn('official date conflict is unresolved',page)
+            self.assertIn('Talk2Nature-led application remains a no-go',page)
             self.assertIn('National funding rules ↗',page)
             self.assertIn('Call partner search ↗',page)
             self.assertIn('Other official listing (date differs) ↗',page)
-            self.assertIn('Israel Science Foundation-recognized host institution',page)
+            self.assertIn('Israel Science Foundation-recognized host',page)
             self.assertIn('Israeli national call ↗',page)
             self.assertIn('MoEP applicant briefing ↗',page)
-            self.assertIn('two separate submissions',page)
-            self.assertIn('listing was updated October 21',page)
-            self.assertIn('opened October 22',page)
+            self.assertIn('Institution-specific calendar ↗',page)
+            self.assertIn('separate EPSS and Ministry submissions',page)
             self.assertIn('No application, partner profile or outreach is prepared',page)
-            for source_id in (181,182,183,184,185,309,310,311):
+            for source_id in (181,182,183,184,185,309,310,311,435):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
             for source_url in (
                 'https://www.biodiversa.eu/wp-content/uploads/2026/10/BiodivFuture_Funding-Organisation_Rules_V5_06-10-2026.pdf',
                 'https://mr.gov.il/ilgstorefront/he/p/4000621848',
                 'https://www.biodiversa.eu/wp-content/uploads/2026/10/BiodivFuture-MoEP-slides.pdf',
+                'https://research-authority.tau.ac.il/grants/10193',
             ):
                 self.assertIn(f'href="{source_url}"',page)
 
