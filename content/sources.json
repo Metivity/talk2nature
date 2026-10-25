@@ -4602,5 +4602,13 @@
     "rights": {
       "dataset": "Structured Zenodo and DataCite fields declare CC BY 4.0; the record description says CC BY-NC 4.0. Keep rights unresolved for Talk2Nature reuse until the public record is consistent and source-level terms are checked."
     }
+  },
+  {
+    "id": 450,
+    "title": "Perch 2.0 transfers 'whale' to underwater tasks",
+    "description": "Burns et al., NeurIPS 2025 Workshop on AI for Non-Human Animal Communication. Full arXiv HTML methods and results reviewed; tests few-shot transfer of bioacoustic embeddings to marine classification.",
+    "url": "https://arxiv.org/abs/2512.03219",
+    "checked": "2026-10-25",
+    "origin": "Targeted primary-paper review of arXiv v1. The article is marked CC BY 4.0 on arXiv; no paper text or figures are reproduced."
   }
 ]

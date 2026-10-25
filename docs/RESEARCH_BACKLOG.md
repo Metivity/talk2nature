@@ -36,6 +36,14 @@ Review follow-up: the parrot paper’s Table 2 displays differences that need ch
 | Support a bounded meaning claim | Carefully controlled receiver experiments in some species | Requires a suitable scientist and protocol; not demonstrated by our tooling. |
 | Translate all natural communication | Not established by reviewed evidence | Long-term question; not a launch promise or first benchmark. |
 
+## October 25 checkpoint — Perch 2.0 transfer across taxa
+
+Reviewed the full arXiv v1 paper by Burns et al. (2025), *Perch 2.0 transfers 'whale' to underwater tasks* (source 450; resource `perch2-whale-transfer-paper`). The authors use Perch 2.0 embeddings with few-shot logistic-regression probes on marine datasets and report strong species/ecotype classification. Their result supports reusing a frozen acoustic representation as one candidate baseline for a bounded, labeled classification task; it does not demonstrate semantic decoding or conversation.
+
+The paper describes random recording-level few-shot selection, not a demonstrated held-out site/deployment/session/individual test. It says the evaluation tasks were among Perch 2.0's development validation sources, while also describing DCLDE as unseen; exact model-selection overlap should be resolved before any claim of a blind independent benchmark. The evaluation also reports overlapping training data for comparison models, around a dozen mainly above-water cetacean training recordings for Perch 2.0, and weak 30-second NOAA PIPAN labels. No audio, dataset, code or model was acquired or run. The article's CC BY 4.0 notice applies only to its text; underlying datasets and artifacts retain separate terms.
+
+**Decision:** do not start by training an animal language model from the largest available archive. First establish one rights-cleared task and independently reviewed labels, then compare a simple acoustic baseline with a frozen, versioned representation using group-aware splits. Perch 2.0 is a candidate feature extractor, not a Talk2Nature model or mobile-ready model. AutoResearch remains **NOT READY**.
+
 ## Initial code boundary
 
 Implemented: metadata declarations; transitive grouping across individual/session/source hash plus explicitly selected pseudonymous dimensions such as household/device; reproducible split assignment with separate manifest and policy fingerprints; connected-group, record and class-count diagnostics. Synthetic fixtures exercise the optional dimensions and fail-closed behavior. Declared grouping IDs are not independently verified.
