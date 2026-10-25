@@ -2187,6 +2187,31 @@ class SiteTests(unittest.TestCase):
             self.assertIn(data_release['title'],page)
             self.assertIn('metadata-only',page)
 
+    def test_nbm_review_separates_detection_labels_from_meaning_and_component_rights(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='nocturnal-bird-migration-dataset-2026')
+        self.assertEqual(note['source_ids'],[431,432,433,434])
+        self.assertIn('2,077 audio files',note['finding'])
+        self.assertIn('270 total',note['finding'])
+        self.assertIn('271 recordings',note['finding'])
+        self.assertIn('They do not label observed behavior, receiver response, intention or meaning',note['finding'])
+        self.assertIn('mAP@IoU0.5 of 0.67',note['finding'])
+        self.assertIn('not independently reproduced',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'not_applicable')
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('nbm-')}
+        self.assertEqual(set(selected),{
+            'nbm-detection-paper-2026',
+            'nbm-dataset-v4',
+            'nbm-bird-sound-detection-code',
+            'nbm-detection-model-weights',
+        })
+        self.assertTrue(all(r['acquisition']=='metadata_only' and r['files']==[] for r in selected.values()))
+        self.assertIn('per-recording terms',selected['nbm-dataset-v4']['rights']['license'])
+        self.assertEqual(selected['nbm-dataset-v4']['rights']['research_use'],'unresolved')
+        self.assertEqual(selected['nbm-bird-sound-detection-code']['rights']['commercial_use'],'unresolved')
+        self.assertEqual(selected['nbm-detection-model-weights']['rights']['redistribution'],'unresolved')
+
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')

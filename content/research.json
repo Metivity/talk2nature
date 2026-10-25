@@ -5295,6 +5295,46 @@
     }
   },
   {
+    "slug": "nocturnal-bird-migration-dataset-2026",
+    "title": "Nocturnal bird migration data localizes calls, not communication meaning",
+    "seo_description": "A source-based review of the NBM nocturnal bird dataset: fine time-frequency call labels, a detection baseline, and separate data and model rights.",
+    "taxon": "Birds",
+    "kind": "Dataset and detection-method review",
+    "year": "2026",
+    "year_label": "Dataset article",
+    "source_ids": [431, 432, 433, 434],
+    "reviewed": "2026-10-25",
+    "review_stage": "Publisher methods/evaluation and official record metadata reviewed; data, code and weights remain unacquired",
+    "review_depth": "Reviewed the Scientific Data article's abstract, methods, data records, technical validation, model-evaluation description, data/code availability and article-rights statement; the current Zenodo v4 landing page and file list; the linked GitHub repository root and README; and the Zenodo software-record page. No dataset file, metadata CSV, audio, code archive or model weight was downloaded, opened, installed or executed. No result was independently reproduced.",
+    "finding": "The NBM resource is a useful example of volunteer-supported passive-acoustic annotation for a narrow bird-monitoring task. Its training collection is reported as 2,077 audio files, 13,359 time-and-frequency vocalization annotations, about 38 hours and 117 species; 883 training files came from Xeno-Canto. The paper reports a two-stage object detector and mAP@IoU0.5 of 0.67 on 45 species. Those outputs localize and classify calls on spectrograms. They do not label observed behavior, receiver response, intention or meaning. The paper's test-set description says six XC files per species, 270 total, selected from recordings uploaded after the training collection; its detection-evaluation section instead says 271 recordings. Resolve that one-file discrepancy before attempting reproduction.",
+    "limitations": "The upload-time cutoff does not by itself establish separation by bird, recording site, uploader or other biological grouping. The baseline is author-reported and not independently reproduced. The article's comparison with BirdNET includes a different multi-label classification task, so scores should not be treated as a direct translation comparison. Zenodo states that NBM-Orig audio is CC BY 4.0 while XC-origin recordings keep their individual licenses; it also describes date/location metadata for almost all XC files. Annotation and metadata terms need separate confirmation, and any future location handling must minimize precise wildlife sites. The GitHub README points to Zenodo v3 (DOI 17544346) while the paper and current dataset record point to v4 (DOI 17573913). The repository displays a model_weights folder, but no license file was visible in the inspected root; the linked 128 MB software record's license field and archive contents were not verified. Code, weights, paper text, recordings and metadata therefore remain separate rights questions.",
+    "lesson": "Fine time-frequency labels make NBM a strong methods reference for event localization, volunteer annotation quality checks and model evaluation. It is not the Talk2Nature first communication benchmark and does not change the provisional Great Tit song-structure, honeybee receiver-observation, bat context-prediction or companion-budgerigar paths. It does reveal a practical product gap: Talk2Nature's current time-only observation exports cannot represent a frequency-bounded call. Treat a spectrogram annotation mode as a future researcher need to validate, not an automatic feature request. Keep species identity, acoustic event, observed context and receiver behavior as distinct data fields.",
+    "next_review": "If a researcher proposes using NBM as an event-detection methods baseline, reconcile the 270/271 test count, pin the exact v4 files, inspect per-recording provenance and location fields without publishing sensitive coordinates, and confirm annotation/metadata rights. Review the pinned code and checkpoint licenses and source version separately. Require a reviewer-approved recording/site/uploader grouping plan and independent reproduction before comparing results. Until then retain metadata only; do not acquire, run or train on these materials.",
+    "expert_review": "No independent avian-bioacoustics, annotation-quality or ML/statistical reviewer has reviewed this Talk2Nature assessment.",
+    "review_locator": "Airale, Pajot & Linossier (2026), Scientific Data 13:925, https://doi.org/10.1038/s41597-026-07176-5; NBM Zenodo v4 DOI 10.5281/zenodo.17573913; LouisBearing/BirdSoundClassif README and repository root; NBM software record DOI 10.5281/zenodo.15662728.",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      ["Data and labels", "The paper reports 2,077 training files, 13,359 time-frequency vocalization annotations, about 38 hours and 117 species; 883 training files originate from Xeno-Canto."],
+      ["Task boundary", "The detector localizes and classifies calls on spectrograms. The reviewed labels do not include independently observed receiver behavior or communicative meaning."],
+      ["Evaluation caveat", "The test description gives 270 XC recordings (six for each of 45 species); the detection-evaluation text reports 271. The author-reported mAP@IoU0.5 is 0.67 and was not reproduced."],
+      ["Version and rights", "Zenodo v4 mixes NBM-Orig CC BY 4.0 audio with XC recordings under per-recording terms. The code, model weights, annotation files and metadata require separate review; none were acquired."],
+      ["Talk2Nature decision", "Keep as a detection and annotation-methods reference, not the first communication benchmark. No change to the current provisional species/data priorities."]
+    ],
+    "reuse": {
+      "status": "Metadata-only detection-methods reference; no benchmark admission",
+      "asset": "NBM v4 recordings/annotations, BirdSoundClassif code and referenced model weights are tracked as separate components",
+      "rights": "NBM-Orig audio is declared CC BY 4.0 and Xeno-Canto recordings retain individual licenses. Annotation/metadata, code and model-weight rights remain unresolved; article terms apply only to the paper.",
+      "experiment": "No audio, metadata file, code archive or model weight was acquired or run. Any future comparison requires exact version and rights review, a leakage-resistant grouped split and independent reproduction."
+    },
+    "atlas": {
+      "reviewed": "2026-10-25",
+      "location_status": "not_applicable",
+      "location_note": "This is a methods and resource review. The Zenodo description notes source-dependent geography and location metadata, but no coordinate file was opened or copied and no site is mapped.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
     "slug": "birdnet-live-local-first-mobile-app-2026",
     "title": "BirdNET Live keeps bird identification on the phone",
     "seo_description": "A source-based review of BirdNET Live v1.2.1: local bird-species detection, session export, opt-in network services and separate code/model licenses.",
