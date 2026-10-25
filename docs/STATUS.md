@@ -1,5 +1,11 @@
 # Project status
 
+## October 25 — run the zero-command loop in an isolated phone-width browser
+
+**Evidence:** a fresh isolated Chrome context opened the local companion preview at 390 × 844 CSS pixels. It defaulted to Whole moment · 30 seconds and Not sure yet; microphone permission remained unchecked and real Start was disabled. The microphone-free synthetic rehearsal accepted one observer-entered Movement note, stopped as a partial moment, and downloaded a 119,368-byte session ZIP to temporary storage. Compare reopened that exact file locally: its summary identified an invented partial moment, unknown animal identity, one recording and one observation; the expanded detail showed the human note. Confirmed Discard returned Station to an empty session. The page remained 390 pixels wide, with no JavaScript errors or non-GET requests.
+
+**Limit and next gate:** this validates a local preview in headless desktop-browser emulation, not the live hosted shell, physical-phone behavior or an uncoached first-time user. No real microphone, animal recording, upload or participant data was used; the temporary ZIP was removed when the check ended. Keep the hosted fresh-profile, named-phone and independent-user gates open, and change the interface only when a walkthrough documents actual friction.
+
 ## October 25 — verify the persistent Listen route in the published app
 
 **Question:** does the Field Companion's persistent Listen navigation still return users to the beginner whole-moment workflow?
