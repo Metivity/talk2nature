@@ -7249,6 +7249,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "perch2-whale-transfer-paper",
+      "kind": "paper",
+      "title": "Perch 2.0 transfers 'whale' to underwater tasks",
+      "url": "https://arxiv.org/abs/2512.03219",
+      "version": "arXiv:2512.03219v1; NeurIPS 2025 Workshop on AI for Non-Human Animal Communication",
+      "source_ids": [
+        450
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-25",
+      "task": "Primary comparator for few-shot transfer of pretrained terrestrial bioacoustic embeddings to marine acoustic classification.",
+      "review_depth": "Full arXiv HTML sections 1–6 reviewed, including data descriptions, linear-probe method, results and discussion. The arXiv page marks the paper CC BY 4.0. No datasets, code, weights or article figures were acquired or run.",
+      "access": "Open arXiv record and HTML; links to the official paper and authors' tutorial repository are recorded. Underlying marine datasets have separate access and rights terms.",
+      "decision": "Use as evidence that pretrained acoustic representations can transfer across taxa for bounded classification. Do not treat as evidence of call meaning, receiver understanding or general animal translation; do not treat random recording-level few-shot splits as site-, deployment-, session- or individual-held-out validation.",
+      "limitations": "Tasks classify marine species/ecotypes or broad sound classes. The article says the evaluated tasks were among Perch 2.0's development validation sources, while separately describing DCLDE as unseen; exact model-selection overlap is not resolved here. Perch 2.0 training included around a dozen cetacean recordings, mostly above-water phone audio. NOAA PIPAN was weakly labeled at 30-second recording level; selected datasets also overlap training for comparison models. No underlying files, per-file rights, split manifests or model artifacts were inspected.",
+      "attribution": "Burns, A., Harrell, L., van Merriënboer, B., Dumoulin, V., Hamer, J. & Denton, T. (2025). Perch 2.0 transfers 'whale' to underwater tasks. arXiv:2512.03219.",
+      "rights": {
+        "license": "CC BY 4.0 as marked on arXiv v1.",
+        "scope": "Article text only; this does not license datasets, code, model weights or linked media.",
+        "evidence_url": "https://arxiv.org/html/2512.03219v1",
+        "conditions": "Use an original summary and link; do not reproduce paper figures. Review component-specific terms before accessing associated assets.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
