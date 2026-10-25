@@ -3925,7 +3925,9 @@
     "year": "2026",
     "year_label": "Dataset version publication year",
     "source_ids": [
-      333
+      333,
+      441,
+      442
     ],
     "reviewed": "2026-10-23",
     "review_stage": "Official Zenodo v1.1 record, version notes, schema and API file inventory reviewed; annotation rows, media and model remain uninspected",
@@ -3964,10 +3966,25 @@
       ]
     ],
     "atlas": {
-      "reviewed": "2026-10-22",
-      "location_status": "pending",
-      "location_note": "The record describes mostly Germany and a smaller Greek subset; its published soundscape coordinates are rounded to whole degrees. No point locations were reviewed or copied, so this dataset is not mapped.",
-      "locations": [],
+      "reviewed": "2026-10-25",
+      "location_status": "mapped",
+      "location_note": "The Zenodo v1.1 record says the geolocated soundscape coverage is predominantly Germany with a smaller subset from Greece; those metadata coordinates are rounded to whole degrees. The focal Xeno-Canto subset has no coordinates. These country references do not show individual sites, species-specific presences or recorder/animal locations.",
+      "locations": [
+        {
+          "place_id": "germany-country",
+          "role": "study_region",
+          "source_id": 333,
+          "locator": "Geographic Coverage, Zenodo v1.1; GeoNames feature 2921044 for the country-scale reference",
+          "basis": "The dataset record names Germany as the predominant recording country. The rounded GeoNames reference represents only the stated soundscape coverage, not an exact site or individual recording."
+        },
+        {
+          "place_id": "greece-country",
+          "role": "study_region",
+          "source_id": 333,
+          "locator": "Geographic Coverage, Zenodo v1.1; GeoNames feature 390903 for the country-scale reference",
+          "basis": "The dataset record identifies a smaller Greek recording subset. The rounded GeoNames reference represents only the stated soundscape coverage, not an exact site or individual recording."
+        }
+      ],
       "observation_period": null
     },
     "reuse": {

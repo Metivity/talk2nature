@@ -253,6 +253,20 @@
       "precision": "region",
       "latitude": -28.5,
       "longitude": 30.5
+    },
+    {
+      "id": "germany-country",
+      "label": "Germany (country-scale reference)",
+      "precision": "country",
+      "latitude": 51.5,
+      "longitude": 10.5
+    },
+    {
+      "id": "greece-country",
+      "label": "Greece (country-scale reference)",
+      "precision": "country",
+      "latitude": 39.0,
+      "longitude": 22.0
     }
   ]
 }

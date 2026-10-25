@@ -4491,5 +4491,27 @@
     "rights": {
       "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the country-level reference is used, not study-site or observation data."
     }
+  },
+  {
+    "id": 441,
+    "title": "GeoNames country reference point for Germany",
+    "description": "The official GeoNames country feature, used only as a rounded country-scale atlas reference for the CEB soundscape recording coverage.",
+    "url": "https://www.geonames.org/2921044/federal-republic-of-germany.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official GeoNames Federal Republic of Germany feature 2921044, which lists coordinates 51.50000, 10.50000. The atlas reference is rounded to 51.5, 10.5 and is not a recording, recorder or animal location. GeoNames terms state CC BY attribution and permit commercial use. No study coordinates or observation data were obtained from GeoNames.",
+    "rights": {
+      "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the rounded country reference is used, not study-site or observation data."
+    }
+  },
+  {
+    "id": 442,
+    "title": "GeoNames country reference point for Greece",
+    "description": "The official GeoNames country feature, used only as a rounded country-scale atlas reference for the CEB soundscape recording coverage.",
+    "url": "https://www.geonames.org/390903/hellenic-republic.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official GeoNames Hellenic Republic feature 390903, which lists coordinates 39.00000, 22.00000. The atlas reference is rounded to 39.0, 22.0 and is not a recording, recorder or animal location. GeoNames terms state CC BY attribution and permit commercial use. No study coordinates or observation data were obtained from GeoNames.",
+    "rights": {
+      "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the rounded country reference is used, not study-site or observation data."
+    }
   }
 ]

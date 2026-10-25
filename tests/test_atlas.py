@@ -31,7 +31,15 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(wabad['locations'],[])
         self.assertIn('single field region',wabad['location_note'])
         self.assertIn(338,wabad['source_ids'])
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),39)
+        ceb=records['central-european-birds-dataset-v1-1']
+        self.assertEqual({location['place_id'] for location in ceb['locations']},{'germany-country','greece-country'})
+        self.assertIn('Xeno-Canto',ceb['location_note'])
+        self.assertTrue({441,442} <= set(ceb['source_ids']))
+        for place_id,coordinates in [('germany-country',(51.5,10.5)),('greece-country',(39.0,22.0))]:
+            place=next(p for p in self.places['places'] if p['id']==place_id)
+            self.assertEqual(place['precision'],'country')
+            self.assertEqual((place['latitude'],place['longitude']),coordinates)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),40)
         pteroset=records['pteroset-detection-benchmark-2026']
         self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})
         self.assertIn('municipal reference points',pteroset['location_note'])
@@ -65,7 +73,7 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(playback['group'],'birds')
         self.assertEqual(playback['locations'][0]['place_id'],'costa-rica')
         self.assertEqual(playback['observation_period']['start_year'],2007)
-        self.assertEqual(len(atlas['places']),36)
+        self.assertEqual(len(atlas['places']),38)
         lark=records['duponts-lark-vocal-types-2026']
         self.assertEqual(lark['locations'][0]['place_id'],'spain')
         self.assertIn('country-level',lark['location_note'])
@@ -146,7 +154,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('39 of 20',goals)
+            self.assertIn('40 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -255,11 +263,11 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(39,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(40,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],34)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],35)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value
