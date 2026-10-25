@@ -478,3 +478,11 @@ Decision: use this resource only to consider a low-level feature-estimation eval
 **Decision:** use vervets as a methods example for context-aware observation and receiver-response measurement, not as a ready training corpus or crowdsourced phone cohort. The paper links data and analysis code through OSF, but the project, contents and component-specific reuse/privacy terms were not inspected. The map records only coarse Amboseli and KwaZulu-Natal regions; precise site coordinates in the article were not copied. This evidence favors keeping sound, event context, social setting and measured behavior as separate fields; it does not demonstrate general translation.
 
 **Limits and next step:** no data, code, audio or model was acquired or run; no animal or participant was contacted. Obtain authorized full text and detailed methods for the 1980b article, then inspect the 2023 linked artifacts only after access, privacy and separate data/code rights are verified. AutoResearch stays **NOT READY** pending qualified review, a defined task and a leakage-resistant, rights-cleared dataset.
+
+## October 25 follow-up — separate access and rights for vervet study data and code
+
+**Evidence:** the full 2023 publisher article's Data availability statement links both the study data and analysis code to OSF project `kw5qg`. Opening the publisher-provided view-only link returned HTTP 403 through the research browser on October 25. This records one retrieval outcome; it does not establish that OSF is globally inaccessible. No OSF project metadata, file manifest, data, code, coordinates or component terms were reviewed, and no token or payload was retained.
+
+**Catalog update:** created separate metadata-only dataset and analysis-code records, both linked to the paper and canonical OSF project locator. Each carries an unresolved version and license state. The paper's CC BY 4.0 article license is not treated as a data or code license.
+
+**Decision and next gate:** this remains a methods case about receiver responses under surrounding social context, not a ready corpus or benchmark. Inspect no files until an authorized route, exact component rights, privacy/site-sensitivity handling, version, retention and withdrawal terms are established. AutoResearch remains **NOT READY**; no acquisition, execution, model run or animal contact occurred.

@@ -4397,5 +4397,13 @@
     "description": "Deshpande, van de Waal and Zuberbühler (2023). Full open-access primary article reviewed: a small within-subject playback study found lower vigilance and speaker-directed looking during an ongoing intergroup encounter than without one; predator-specific escape responses were not observed.",
     "checked": "2026-10-25",
     "origin": "October 25 review of the publisher full text and article rights statement. The paper declares CC BY 4.0; its linked data/code access, contents and separate reuse terms were not checked."
+  },
+  {
+    "id": 430,
+    "title": "OSF project linked for the 2023 vervet alarm-context study data and analysis code",
+    "url": "https://osf.io/kw5qg/",
+    "description": "The full-text publisher article's data-availability statement points to this OSF project for both data and analysis code. Opening the publisher-provided view-only link returned HTTP 403 through the research browser on 2026-10-25. This records that retrieval attempt only; OSF metadata, files, contents and component terms were not reviewed.",
+    "checked": "2026-10-25",
+    "origin": "Project locator derived from Deshpande et al. (2023), source 429. The publisher-provided view-only URL was not retained; no OSF file, project metadata, access token or payload was acquired."
   }
 ]
