@@ -1,5 +1,13 @@
 # Project status
 
+## October 25 — align the execution board with current evidence
+
+**Question:** does the active board still reflect the latest researcher-check and Field Companion release, while distinguishing maintainer verification from outside use?
+
+**Change:** refreshed the top priority rows with the October 25 clean-clone check, the merged zero-command Shared moments default and their verified CI/live-route receipts. Confirmed issue #115 is still open with zero comments. The board keeps independent reproduction and physical-device/novice testing open, and does not treat same-day deployment as Search Console evidence.
+
+**Validation and limits:** checked the current main SHA, merged PRs and workflow results; the public issue state was read directly. This is a documentation synchronization, not a new user test, scientific review, SEO/indexing result or biological finding. The full goal remains active.
+
 ## October 25 — reproduce the researcher examples from current main
 
 **Question:** can a new checkout run the documented synthetic research workflow and reproduce its split output without installing third-party data or model assets?
