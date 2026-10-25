@@ -4733,3 +4733,9 @@ The official National Geographic Society grants listing was rechecked. It gives 
 **Change:** added a source-linked research note and a separate metadata-only dataset record. The atlas location remains pending because the listed RecordingSites workbook was not reviewed. The note distinguishes acoustic variation from behavior, receiver response and meaning.
 
 **Decision and limits:** candidate for a later descriptive vocal-variation review, not for conversation claims or immediate model training. Before any acquisition, inspect grouping/schema and location sensitivity, then seek qualified specialist review. The zero-command named-phone and authorized novice walkthrough remain open; AutoResearch stays **NOT READY**. Validation passed: 175 Python tests passed with one intentional skip; the local noindex build produced 140 pages plus 404; the site checker validated 141 HTML documents and 7,264 links.
+
+## October 25 — publish the parrot dataset record and refresh the zero-command goal
+
+PR [#439](https://github.com/Metivity/talk2nature/pull/439) merged to public `main` as `0a58731a949d374caa617fc4cb94b6ed6ccea412`. The manual Pages deployment [#40189819545](https://github.com/Metivity/talk2nature/actions/runs/40189819545) completed successfully on that exact commit. A TLS-verified live check returned HTTP 200 for the new Brown-throated Parakeet research page, confirmed its canonical URL and the caveat separating call variation from receiver response/meaning, and found the page in the sitemap.
+
+Updated `docs/GOAL.md` to mark the catalog task complete and keep the zero-command work active. The next product acceptance gates remain a named physical-phone check and an authorized, uncoached newcomer walkthrough with invented practice material. This publication does not establish independent usability, animal communication, or ML readiness; no data files or audio were acquired, and AutoResearch remains **NOT READY**.
