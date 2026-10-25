@@ -1,5 +1,7 @@
 # Contributing
 
+For the project's current priorities and evidence gates, start with the [public roadmap](ROADMAP.md).
+
 Start with an evidence correction, a reproducibility improvement or a scoped experiment. Include a primary-source URL, the claim being changed, what you actually reviewed and the study's limits. An abstract review must not be marked as a full-paper review. Organizations listed in the library are not project partners.
 
 Do not submit raw private recordings, precise sensitive locations, personal applicant details or credentials. Recording contributions require documented ownership, consent and per-item license review. At this stage, submit metadata proposals rather than animal recordings.

@@ -8,6 +8,8 @@ Current source release: [v0.1.0](https://github.com/Metivity/talk2nature/release
 
 Website: [metivity.github.io/talk2nature](https://metivity.github.io/talk2nature/)
 
+See the [public roadmap](ROADMAP.md) for current priorities, evidence gates and useful ways to contribute.
+
 ## Start here
 
 - **Just curious?** Open the [Field Companion](https://metivity.github.io/talk2nature/app/) and choose **Try without a microphone**. The invented practice session needs no account, microphone permission, recording or upload. The [install guide](https://metivity.github.io/talk2nature/mobile/) explains the optional public-only offline shell.
