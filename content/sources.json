@@ -290,10 +290,10 @@
   {
     "id": 36,
     "title": "National Geographic current grants",
-    "description": "National Geographic Society. Current RFP-based program and listed calls. General project submissions are no longer accepted.",
+    "description": "National Geographic Society. Current RFP-based program and listed calls. General project submissions are no longer accepted. The current listing was checked for the Trebek Initiative deadline and Canada-specific scope; its individual RFP terms were not reviewed.",
     "url": "https://www.nationalgeographic.org/explore/grants-investments",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-25",
+    "origin": "Official program listing read for current calls; listing-level review only."
   },
   {
     "id": 37,
@@ -4453,5 +4453,21 @@
     "description": "Public OSF API v2 node response reviewed October 25, 2026. It identifies the project as ‘Context-dependent alarm responses in wild vervet monkeys’, reports public=true, creation on 2021-12-17, modification on 2023-02-03 and a null project-level license relationship. This is node metadata only; no files endpoint, file names, payloads or component-level terms were inspected.",
     "checked": "2026-10-25",
     "origin": "Unauthenticated read-only GET of the canonical OSF API v2 node endpoint linked from the 2023 paper's Data availability statement. The publisher-provided view-only URL had returned HTTP 403 in a separate route; this API result does not establish file-level rights or reuse permission."
+  },
+  {
+    "id": 437,
+    "title": "Chan Zuckerberg Initiative science funding programs",
+    "url": "https://chanzuckerberg.com/science/science-funding/",
+    "description": "Current CZI Science Funding directory lists Essential Open Source Software for Science (Cycle 6) as closed. No later EOSS cycle was listed on the page reviewed; this does not guarantee a future cycle or its terms.",
+    "checked": "2026-10-25",
+    "origin": "Official CZI funding directory read on October 25, 2026."
+  },
+  {
+    "id": 438,
+    "title": "Essential Open Source Software for Science Cycle 6 request for applications",
+    "url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science/",
+    "description": "Official Cycle 6 RFA with 2023 application dates. It prioritizes software essential to biomedical research, weighs demonstrated impact and adoption, and says early-stage projects without broad use and databases with few contributions or low biomedical adoption are less likely to be successful. It permits organization applicants and describes a fiscal-sponsor route; this is historical Cycle 6 guidance, not a current open call or a prediction of future terms.",
+    "checked": "2026-10-25",
+    "origin": "Official full RFA page reviewed for historical scope, selection criteria and applicant structure."
   }
 ]

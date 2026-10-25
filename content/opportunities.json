@@ -31,6 +31,20 @@
     "application_status": "No accepted application or award; late eligibility unconfirmed"
   },
   {
+    "slug": "natgeo-trebek-2026",
+    "name": "National Geographic Society · The Trebek Initiative",
+    "type": "RFP",
+    "deadline": "2026-10-28",
+    "deadline_source_id": 36,
+    "status": "Open through October 28 · current project fit unconfirmed",
+    "amount": "Not stated on the public listing; see the individual RFP.",
+    "source_id": 36,
+    "fit": "The current listing describes science, storytelling and education projects with distinct impact in Canada. Talk2Nature's current project record has no Canada-specific workstream, locally connected lead or confirmed Canadian collaborator. This is a fit assessment, not a formal eligibility ruling.",
+    "next_action": "No application draft or submission this cycle: the deadline is October 28, 2026, the Canadian workstream and local relationships needed for a credible proposal are not established, and only the official listing (not the full RFP terms) was reviewed. Revisit only if a future call aligns with a locally led, scoped project and its detailed terms are checked.",
+    "verified": "2026-10-25",
+    "application_status": "Not pursued this cycle; no draft or submission"
+  },
+  {
     "slug": "preseed",
     "name": "Israel Innovation Authority · Pre-Seed",
     "type": "Grant",
@@ -237,5 +251,19 @@
     "next_action": "Identify relevant published work and collaborators; do not present this as an evergreen grant.",
     "verified": "2026-09-30",
     "application_status": "Not submitted"
+  },
+  {
+    "slug": "czi-eoss",
+    "name": "Chan Zuckerberg Initiative · Essential Open Source Software for Science",
+    "type": "Scientific software grant program",
+    "deadline": null,
+    "status": "Cycle 6 closed · no later cycle listed",
+    "amount": "Cycle 6 historical terms: $100,000–$400,000 total over two years; not a current offer.",
+    "source_id": 437,
+    "terms_source_id": 438,
+    "fit": "Potential future relevance to research software, but Cycle 6 focused on tools essential to biomedical research and favored demonstrated adoption, scientific impact and external contributions. Its RFA said early projects and tools without biomedical community adoption were less likely to succeed. Talk2Nature has no verified external reproduction or documented biomedical adoption; applicant entity or fiscal sponsor is also unresolved.",
+    "next_action": "No current application opportunity is listed. Use Cycle 6 only as a historical readiness signal: prioritize independent researcher use, external contributions and a clearly evidenced biomedical use case before reconsidering; confirm an eligible applicant or fiscal sponsor and recheck the next official RFA if one opens. Do not assume future terms match Cycle 6.",
+    "verified": "2026-10-25",
+    "application_status": "No current call listed; not submitted"
   }
 ]

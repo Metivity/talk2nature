@@ -1,6 +1,6 @@
 # Open-source health and adoption plan
 
-**Reviewed:** October 8, 2026. This is a working project plan, not a claim of adoption or an external certification.
+**Reviewed:** October 8, 2026; funding-readiness note updated October 25, 2026. This is a working project plan, not a claim of adoption or an external certification.
 
 ## What success means here
 
@@ -100,3 +100,9 @@ The depth-one macOS clone again marked only the Windows wrapper dirty because of
 ### Clone hygiene follow-up
 
 The attribute-only fix, `native-android/gradlew.bat -text whitespace=cr-at-eol`, was published in PR #95. A fresh depth-one clone of `main` at `9a48c6509f2f52f504190ee4663b678732bc6139` now has a clean worktree; the wrapper's committed blob matches the checked-out file and its 94 CRLF lines are preserved. This closes the false dirty status for this maintainer's macOS clone. The verification remains maintainer-run and does not count as an independent reproduction. Full commands and results are in [`RESEARCHER_START.md`](RESEARCHER_START.md).
+
+## October 25, 2026 — funding readiness is evidence of adoption
+
+The current [CZI Science Funding directory](https://chanzuckerberg.com/science/science-funding/) lists EOSS Cycle 6 as closed and no later cycle. Its [Cycle 6 RFA](https://chanzuckerberg.com/rfa/essential-open-source-software-for-science/) is a 2023 call, not an open opportunity or a forecast of future terms. That RFA evaluated demonstrated scientific impact and adoption in biomedicine, project maturity and outside contributions; it said early-stage projects without broad use and tools with little biomedical adoption were less likely to succeed. It accepted organizations rather than individuals and described a fiscal-sponsor route.
+
+**Talk2Nature implication:** treat this as a historical readiness benchmark only. The execution board still records zero independent reproductions, and no biomedical adoption or applicant organization/fiscal sponsor is established. Prioritize a documented outside research workflow, a useful independent reproduction, external contributions and evidence for any biomedical application before spending time on a future EOSS application. Recheck the next RFA from its official source; do not carry Cycle 6 dates, amounts or criteria forward as current terms. The source records and closed-call entry are in `content/sources.json` and `content/opportunities.json`.
