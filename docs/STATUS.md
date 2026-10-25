@@ -1,5 +1,17 @@
 # Project status
 
+## October 25 — recheck Google discovery after the public releases
+
+**Question:** did Google process the public research-directory update, and is the submitted sitemap failing because of a visible site defect?
+
+**Search Console evidence:** in the verified `https://metivity.github.io/talk2nature/` property, URL Inspection reports `https://metivity.github.io/talk2nature/research/resources/` as “URL is on Google” and “Page is indexed.” Its last crawl was Oct 23, 2026 at 3:12:52 PM using Googlebot smartphone; page fetch succeeded, and crawl/indexing were allowed. The user-declared canonical is the inspected URL. Google reported no referring sitemap or referring page for this URL, with a note that it may be known from other sources that are not reported. The crawl predates the Oct 25 public resource refresh, so this does not show that the latest page version has been recrawled.
+
+**Performance baseline:** the 3-month report was last updated four hours before this check and covered data through Oct 22: 56 impressions, 0 clicks, 0% CTR and average position 8.7. The resource directory had 44 impressions. This is a small visibility signal, not evidence of qualified visits, adoption or the Oct 25 release's performance.
+
+**Sitemap and site checks:** the Sitemaps report lists `/sitemap.xml`, submitted Oct 24. Its detail shows last read Oct 24, “Sitemap could not be read,” and zero discovered pages/videos; no specific HTTP or parsing cause was shown. The Manual actions report says “No issues detected.” A fresh `python3 scripts/check_live_site.py --base-url https://metivity.github.io/talk2nature --attempts 1 --timeout 10`, with TLS verification using the installed CA bundle, passed: three routes, 138 sitemap URLs and the `robots.txt` sitemap directive. The research hub and first-animal page also link to the resource directory in source. A separate direct TLS-verified fetch using Googlebot's published user-agent string returned HTTP 200 for `sitemap.xml` (`application/xml`) and `robots.txt` (`text/plain`), matching the ordinary release-check response. This tests user-agent routing from this client only; it does not establish Googlebot IP access or explain Search Console's sitemap parser result.
+
+**Decision and limits:** Google’s [Sitemaps report guidance](https://support.google.com/webmasters/answer/7451001?hl=en-GB) lists robots blocking, manual actions, an incorrect URL and general fetch/availability errors among common causes. We verified the exact public URL, direct site response, robots directive and absence of manual actions; the remaining cause is unresolved. Keep the valid sitemap unchanged and do not resubmit it or request indexing again based on this snapshot. Recheck after Google processes the submitted sitemap and crawls the Oct 25 page version. Search Console indexing for this one URL is verified; sitemap ingestion, broader indexing and current search performance are not.
+
 ## October 25 — walk through the published zero-command rehearsal
 
 **Question:** can a first-use visitor try the Shared moments path without configuration or microphone access, and does the app accurately describe what the practice result is?
