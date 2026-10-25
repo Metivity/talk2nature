@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "resource_id": "wytham-great-tit-song-dataset-osf",
+  "verification_date": "2026-10-25",
+  "source": {
+    "dataset_doi": "10.17605/OSF.IO/N8AC9",
+    "node_id": "n8ac9",
+    "node_license_declaration": "CC BY 4.0",
+    "file_id": "649b14c83809110c1b3c2d9b",
+    "path": "docs/metadata/main.md",
+    "download_url": "https://osf.io/download/fegwk/",
+    "metadata_url": "https://api.osf.io/v2/files/649b14c83809110c1b3c2d9b/",
+    "provider_bytes": 6426,
+    "provider_sha256": "1f45e3898b7091af1d07ac2b397e42bbcebacedab3fba9eb0377b331a0676e54",
+    "provider_md5": "a3c2e9b5b6191ff2eaaf495231165512"
+  },
+  "verification": {
+    "retrieved_date": "2026-10-25",
+    "actual_bytes": 6426,
+    "actual_sha256": "1f45e3898b7091af1d07ac2b397e42bbcebacedab3fba9eb0377b331a0676e54",
+    "actual_md5": "a3c2e9b5b6191ff2eaaf495231165512",
+    "sha256_matches_current_osf_api": true,
+    "md5_matches_current_osf_api": true,
+    "ignored_local_copy": "data/external/wytham-integrity/main.md",
+    "content_reviewed": false,
+    "redistributed": false,
+    "audio_annotations_location_values_and_model_weights_acquired": false
+  },
+  "historical_snapshot": {
+    "manifest": "research/wytham_osf_manifest_2026-10-23.json",
+    "stored_sha256_character_count": 63,
+    "interpretation": "The historical local snapshot contains a malformed, short SHA-256 string for this file. The exact cause is unknown. The current file bytes match the current OSF API hashes."
+  },
+  "decision": "Current documentation-file integrity is verified against the OSF API. This does not verify any other file payload, annotation, location value, task novelty, held-out-individual split or meaning claim."
+}

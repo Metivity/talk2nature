@@ -232,6 +232,20 @@
       "precision": "region",
       "latitude": 0.5,
       "longitude": -76.5
+    },
+    {
+      "id": "eilat-study-region",
+      "label": "Eilat, Israel",
+      "precision": "region",
+      "latitude": 29.6,
+      "longitude": 34.9
+    },
+    {
+      "id": "kwazulu-natal",
+      "label": "KwaZulu-Natal region, South Africa",
+      "precision": "region",
+      "latitude": -28.5,
+      "longitude": 30.5
     }
   ]
 }

@@ -773,8 +773,11 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(by_id[390]['title'],'Rüttimann et al., multimodal BirdPark system for songbird behavior')
             self.assertEqual(by_id[411]['url'],readme)
             self.assertEqual(by_id[412]['url'],data_license)
+            self.assertEqual(by_id[425]['url'],'https://www.geonames.org/295277/eilat.html')
             self.assertIn(readme,page)
             self.assertIn(data_license,page)
+            self.assertIn('www.geonames.org/295277/eilat.html',page)
+            self.assertIn('voluntary',page)
             self.assertIn('NeurIPS 2026',page)
             self.assertNotIn('https://doi.org/10.7717/peerj.20203',page)
             resources=json.loads((project_root/'research/resources.json').read_text())['resources']
@@ -1179,10 +1182,13 @@ class SiteTests(unittest.TestCase):
         opportunities=load('opportunities')
         sources={source['id']:source for source in load('sources')}
         preseed=next(item for item in opportunities if item['slug']=='preseed')
-        self.assertEqual(preseed['verified'],'2026-10-24')
-        self.assertEqual(sources[27]['checked'],'2026-10-24')
+        self.assertEqual(preseed['verified'],'2026-10-25')
+        self.assertEqual(sources[27]['checked'],'2026-10-25')
         for requirement in ('NIS 3 million','NIS 300,000','at least 15%','at least 75%','unconfirmed'):
             self.assertIn(requirement,preseed['next_action'])
+        self.assertIn('index lists Pre-Seed',preseed['next_action'])
+        self.assertIn('Annex 6 to Track 1',preseed['next_action'])
+        self.assertIn('written IIA confirmation',preseed['next_action'])
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True)
@@ -1192,7 +1198,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
             self.assertIn('official date details',page)
             self.assertIn('Checked 2026-10-13 · Not submitted; not recommended for current scope',page)
-            self.assertIn('The applicant entity, investor commitment and program fit are unconfirmed.',page)
+            self.assertIn('Applicant-specific eligibility remains unconfirmed:',page)
+            self.assertIn('it is not ready to apply.',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
             self.assertIn('60% of an eligible Pre-Seed investment round, up to a NIS 2 million grant',page)
             self.assertIn('NIS 3 million',page)
@@ -1201,7 +1208,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('at least 75%',page)
             self.assertIn('Official track rules ↗',page)
             self.assertIn('Official open-source procedure ↗',page)
-            self.assertIn('Track 7 applicability is unresolved',page)
+            self.assertIn('Track 7 applicability and treatment',page)
             experiment=next(item for item in opportunities if item['slug']=='experiment')
             self.assertEqual(experiment['verified'],'2026-10-24')
             self.assertEqual(experiment['eligibility_source_id'],409)
@@ -1412,6 +1419,18 @@ class SiteTests(unittest.TestCase):
             self.assertIsNotNone(aria_label)
             visible_label=re.sub(r'<[^>]+>','',button.group(2))
             self.assertEqual(html.unescape(aria_label.group(1)),html.unescape(visible_label))
+
+    def test_field_companion_listen_navigation_uses_the_beginner_whole_moment_route(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            expected='href="/talk2nature/app/station/?mode=companion#station-console">Listen</a>'
+            for relative in ('app/index.html','app/station/index.html','app/review/index.html','app/compare/index.html','app/practice/index.html','app/check/index.html'):
+                with self.subTest(page=relative):
+                    page=(root/relative).read_text()
+                    navigation=re.search(r'<nav class="app-nav" aria-label="App navigation">(.*?)</nav>',page)
+                    self.assertIsNotNone(navigation)
+                    self.assertIn(expected,navigation.group(1))
 
     def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
         with tempfile.TemporaryDirectory() as d:
@@ -2164,7 +2183,7 @@ class SiteTests(unittest.TestCase):
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')
-        self.assertEqual(note['source_ids'],[363,364,365,366,367,372])
+        self.assertEqual(note['source_ids'],[363,364,365,366,367,372,426])
         self.assertIn('109,963 annotated songs',note['finding'])
         self.assertIn('23 files totaling 12,184,678,510 bytes',note['finding'])
         self.assertIn('14 data files',note['finding'])
@@ -2172,8 +2191,9 @@ class SiteTests(unittest.TestCase):
         self.assertIn('no independently observed interaction context',note['finding'])
         self.assertIn('2025 paper already trained a ViT metric-learning model',note['finding'])
         self.assertIn('earlier same-day 14-entry traversal',note['review_depth'])
-        self.assertIn('provider-reported SHA-256 matches 22 entries',note['review_depth'])
-        self.assertIn('different provider digest',note['review_depth'])
+        self.assertIn('malformed at 63 characters',note['review_depth'])
+        self.assertIn('SHA-256 and MD5 match the current OSF API',note['review_depth'])
+        self.assertNotIn('discrepancy remains unresolved',note['review_depth'])
         shared_package=next(value for label,value in note['study_snapshot'] if label=='Shared package')
         self.assertIn('complete OSF API root lists 23 files',shared_package)
         self.assertIn('nine documentation files',shared_package)
@@ -2196,13 +2216,23 @@ class SiteTests(unittest.TestCase):
             'wytham-great-tit-culture-paper-2025',
         })
         dataset=selected['wytham-great-tit-song-dataset-osf']
-        self.assertEqual(dataset['source_ids'],[363,364,365,372])
+        self.assertEqual(dataset['source_ids'],[363,364,365,372,426])
         self.assertEqual(dataset['acquisition'],'metadata_only')
         self.assertIn('23 files totaling 12,184,678,510 bytes',dataset['access'])
+        self.assertIn('One 6,426-byte documentation file',dataset['access'])
         self.assertIn('CC BY 4.0',dataset['rights']['license'])
         self.assertIn('British National Grid',dataset['limitations'])
         self.assertIn('Do not expose precise nestbox coordinates',dataset['rights']['conditions'])
+        self.assertIn('match current OSF SHA-256 and MD5',dataset['rights']['conditions'])
         self.assertEqual(dataset['files'],[])
+        verification=json.loads((project_root/'research'/'wytham_file_verification_2026-10-25.json').read_text())
+        self.assertEqual(verification['verification']['actual_bytes'],6426)
+        self.assertTrue(verification['verification']['sha256_matches_current_osf_api'])
+        self.assertTrue(verification['verification']['md5_matches_current_osf_api'])
+        self.assertFalse(verification['verification']['content_reviewed'])
+        checksum_source=next(s for s in json.loads((project_root/'content'/'sources.json').read_text()) if s['id']==426)
+        self.assertEqual(checksum_source['checked'],'2026-10-25')
+        self.assertIn('not read or redistributed',checksum_source['origin'])
         manifest=json.loads((project_root/'research'/'wytham_osf_manifest_2026-10-24.json').read_text())
         summary=manifest['summary']
         self.assertEqual(summary['current_api_file_count'],23)

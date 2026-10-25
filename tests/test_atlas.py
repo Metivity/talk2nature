@@ -22,17 +22,21 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),36)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),37)
         pteroset=records['pteroset-detection-benchmark-2026']
         self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})
         self.assertIn('municipal reference points',pteroset['location_note'])
         self.assertTrue({417,418} <= set(pteroset['source_ids']))
+        openwhistle=records['openwhistle-dolphin-benchmark']
+        self.assertEqual(openwhistle['location_status'],'mapped')
+        self.assertEqual(openwhistle['locations'][0]['place_id'],'eilat-study-region')
+        self.assertIn(425,openwhistle['source_ids'])
         self.assertEqual(records['great-green-macaw-vocal-development-2026']['locations'][0]['place_id'],'costa-rica')
         playback=records['parrot-vocal-imitation-addressing-2012']
         self.assertEqual(playback['group'],'birds')
         self.assertEqual(playback['locations'][0]['place_id'],'costa-rica')
         self.assertEqual(playback['observation_period']['start_year'],2007)
-        self.assertEqual(len(atlas['places']),33)
+        self.assertEqual(len(atlas['places']),35)
         lark=records['duponts-lark-vocal-types-2026']
         self.assertEqual(lark['locations'][0]['place_id'],'spain')
         self.assertIn('country-level',lark['location_note'])
@@ -69,6 +73,23 @@ class AtlasTests(unittest.TestCase):
         berlin=next(p for p in atlas['places'] if p['id']=='berlin-study-region')
         self.assertEqual(berlin['precision'],'region')
         self.assertEqual((berlin['latitude'],berlin['longitude']),(52.5,13.4))
+    def test_openwhistle_maps_only_a_rounded_eilat_study_region(self):
+        atlas=self.atlas(); records={r['id']:r for r in atlas['records']}
+        openwhistle=records['openwhistle-dolphin-benchmark']
+        self.assertEqual(openwhistle['location_status'],'mapped')
+        self.assertEqual(openwhistle['locations'][0]['role'],'study_region')
+        self.assertEqual(openwhistle['locations'][0]['source_id'],340)
+        self.assertIn('Section 3 Data Collection',openwhistle['locations'][0]['locator'])
+        self.assertIn('rounded',openwhistle['locations'][0]['basis'])
+        self.assertIn('voluntary',openwhistle['location_note'])
+        self.assertIn('hydrophone deployments',openwhistle['location_note'])
+        eilat=next(p for p in atlas['places'] if p['id']=='eilat-study-region')
+        self.assertEqual(eilat['precision'],'region')
+        self.assertEqual((eilat['latitude'],eilat['longitude']),(29.6,34.9))
+        source={s['id']:s for s in atlas['sources']}[425]
+        self.assertEqual(source['url'],'https://www.geonames.org/295277/eilat.html')
+        self.assertNotIn('29.55805',json.dumps(atlas['places']))
+        self.assertNotIn('34.94821',json.dumps(atlas['places']))
     def test_precise_or_unreviewed_locations_and_missing_citations_fail_closed(self):
         for mutation in [lambda p:p.update(precision='exact'),lambda p:p.update(latitude=47.8123),lambda p:p.update(longitude=181),lambda p:p.update(latitude=True),lambda p:p.update(latitude=float('nan')),lambda p:p.update(private_address='sensitive')]:
             places=deepcopy(self.places);mutation(places['places'][0])
@@ -96,7 +117,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('36 of 20',goals)
+            self.assertIn('37 of 20',goals)
             self.assertIn('3 of 3',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -205,25 +226,32 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(36,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(37,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],31)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],32)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value
             with self.assertRaises(ValueError):atlas_goals(atlas,changed)
 
     def test_historical_studies_keep_sampling_windows_and_later_review_distinct(self):
-        rows={r['id']:r for r in self.atlas()['records']}
+        atlas=self.atlas();rows={r['id']:r for r in atlas['records']}
         whale=rows['humpback-song-history']
         self.assertEqual(whale['source_year'],1985)
         self.assertEqual(whale['year_basis'],'Original study year')
         self.assertEqual((whale['observation_period']['start_year'],whale['observation_period']['end_year']),(1957,1975))
         self.assertIn('13 sampled years',whale['observation_period']['label'])
         self.assertIn(120,whale['source_ids'])
-        self.assertEqual(rows['vervet-alarm-development']['source_year'],1980)
+        vervet=rows['vervet-alarm-development']
+        self.assertEqual(vervet['source_year'],1980)
+        self.assertIn(429,vervet['source_ids'])
+        self.assertEqual({item['place_id'] for item in vervet['locations']},{'amboseli','kwazulu-natal'})
+        self.assertEqual(vervet['place_labels'],['Amboseli region, Kenya','KwaZulu-Natal region, South Africa'])
+        self.assertIn('precise wildlife-site coordinates are deliberately not reproduced',vervet['location_note'])
+        kwa=next(place for place in atlas['places'] if place['id']=='kwazulu-natal')
+        self.assertEqual(kwa['precision'],'region')
         for key in ['vervet-alarm-development','raven-object-gestures','wolf-howling-context','dolphin-signature-addressing']:
             self.assertIsNone(rows[key]['observation_period'])
         fish=rows['grouper-moray-coordination']
