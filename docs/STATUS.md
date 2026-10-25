@@ -1,5 +1,25 @@
 # Project status
 
+## October 26 — add a bounded plant–insect review route for research groups
+
+**Question:** can the university evaluation page invite insect and plant sensory researchers to critique a concrete receiver-response result without implying that plants intentionally communicate?
+
+**Evidence reviewed:** the eLife version-of-record article (January 5, 2026), its Abstract, Results, Discussion and Methods sections, and the published peer reviews and author responses. In controlled choices, female Egyptian cotton leafworm moths preferred the drought-plant playback side when no plant was present, but preferred the silent side when hydrated tomato plants were offered; deafening removed the playback preference. The main choice setup used 60 clicks/min, while the authors measured up to 20 clicks/min from 45 seedlings over 50 hours; a separate 30-click/min long-arena experiment used a different setup. The reviews discuss playback-rate realism, effect-size presentation and species generalization. The authors describe the drought clicks as likely cues, not signals evolved to convey a message.
+
+**Change:** added a fourth optional card to `/community/university/` and updated the evaluation brief. It asks what the controlled choices support and what context/rate differences constrain interpretation. It links the existing plant–moth evidence note, the article's public peer reviews and the established public scientific-review form. The boundary states that the work covers one moth species and one plant species, and that any submitted review is public. This is an invitation to critique literature, not a claim of plant language, a request for experiments/playback, or an external endorsement.
+
+**Validation and limits:** all 175 Python tests passed with one intentional skip; all 127 Node tests passed. Local and public builds each generated 140 pages plus 404; checks passed for 141 HTML documents, with 7,306 local links and 7,447 public links, and all 140 public routes reachable. Chrome device emulation rendered the university route at 390 CSS pixels and measured widths at 320, 390 and 1440: document width matched each viewport; all four review cards fit without horizontal overflow. This is browser emulation, not a physical-phone test. No dataset files, audio, figures, code or model were acquired; no experiment or outside reviewer was contacted. The route is a local candidate pending review and publication; it does not establish independent scientific validation.
+
+## October 25 — refresh the zero-command preview without disturbing the open tab
+
+**Question:** does the Field Companion page currently open in the user's local browser match the checked-out app?
+
+**Finding:** `http://127.0.0.1:4189/talk2nature/app/` returned HTTP 200, but its `Last-Modified` header is October 24 and its HTML still uses the older “Record a moment” wording and generic Listen link. This is stale generated preview output, not evidence of a production or source-code defect. The existing tab, server files and browser storage were left untouched.
+
+**Fresh review path:** built the current checkout (`9fc0525`) into a separate public-mode candidate and served it at `http://127.0.0.1:4193/talk2nature/app/`. The home HTML contains the current beginner Listen destination, “Start a 30-second moment” and “Try without a microphone”; the companion Station and rehearsal routes return HTTP 200. The build generated 140 pages plus 404, and the site checker validated 141 HTML documents, 7,444 links and all 140 public routes.
+
+**Validation and limits:** all 175 Python tests passed with one intentional skip, and all 127 Node tests passed. The browser-control service timed out, so no rendered-screen or interactive check was made in this continuation. No microphone, recording, export, upload or user data was used. No app code changed and nothing was deployed. Keep the named-phone and authorized uncoached-newcomer gates open; use the fresh preview for any next maintainer review and do not alter the interface without observed user friction.
+
 ## October 25 — refresh the zero-command local preview from current main
 
 **Question:** did the open local Station preview represent the current Field Companion source?
