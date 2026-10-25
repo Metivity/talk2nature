@@ -1,5 +1,23 @@
 # Project status
 
+## October 25 — align app navigation with the zero-command first task
+
+**Finding:** the live Field Companion home page sends “Record a moment” to Shared moments, which correctly opens Whole moment · 30 seconds with animal identity unknown. The persistent “Listen” navigation instead opened the generic station route, where “Sound highlights” was selected. This gave two different recording defaults inside the same beginner app.
+
+**Change:** the local candidate now sends “Listen” to the same Shared moments route. Sound highlights remain available as an explicit choice. Added a generated-page regression check for Home, Station, Review, Compare, Practice and Phone check.
+
+**Verification and limit:** all 85 `test_site.py` tests pass, including the new navigation check. The local noindex build produced 138 pages plus 404; the site checker validated 139 HTML documents and 7,099 links. The rendered app home exposes the updated Listen destination, and the local companion route shows Whole moment · 30 seconds, animal “Not sure yet,” and the microphone-free rehearsal control. No recording was started. The change is local and has not been independently tested, committed, merged or deployed. The zero-command goal remains active; an outside uncoached walkthrough and physical-device check are still open.
+
+## October 25 — map OpenWhistle at coarse city precision
+
+**Question:** can the OpenWhistle research note be placed on the literature atlas without exposing facility or animal locations?
+
+**Evidence reviewed:** the primary arXiv v1 paper, Section 3 and Figure 1 caption, identifies Dolphin Reef in Eilat, on the northern Gulf of Aqaba. It describes a semi-natural marine area open to the sea and says human–dolphin interactions are dolphin-initiated and voluntary. The official [GeoNames Eilat record](https://www.geonames.org/295277/eilat.html) lists the city point; the GeoNames homepage identifies its free gazetteer data as CC BY 4.0. No study facility, hydrophone or animal coordinate was used.
+
+**Change:** added Eilat as a one-decimal regional reference (29.6, 34.9), cited the gazetteer record separately from the primary study passage, and updated the OpenWhistle atlas note. The note preserves the semi-natural and voluntary-interaction context. Dataset files, code and model weights remain unacquired; their existing component-specific rights limits and **NOT READY** benchmark status are unchanged.
+
+**Validation and limits:** all 171 Python tests passed with one intentional skip, and all 122 Node tests passed. The local noindex build produced 138 pages plus 404; its checker validated 139 HTML documents and 7,095 links. The explicit-origin public candidate also built 138 pages plus 404; its checker validated 139 HTML documents, 7,234 links and 138 reachable public routes. Desktop browser review confirmed that the Eilat cluster filters to four cited notes including OpenWhistle, and the goals page shows 37/20 mapped notes and 3/3 historical notes while keeping the parrot-review and protected-observation gates open. In an emulated 480 CSS-pixel viewport, both atlas pages had a 480-pixel document width; the atlas map measured 434 pixels and the goals page exposed its mobile navigation in the accessibility tree. The browser runtime clamped a narrower requested viewport to 480 pixels, so this is not a narrow-phone or physical-device check. `git diff --check` passed. This is a literature location, not a participant or live-animal observation. The local atlas candidate is not deployed.
+
 ## October 25 — correct offline status during service-worker replacement
 
 **Question:** why did the public Field Companion show both an update-ready notice and an offline-setup failure, and was the offline shell actually unavailable?
@@ -28,7 +46,7 @@
 
 **Question:** can a first-use visitor try the Shared moments path without configuration or microphone access, and does the app accurately describe what the practice result is?
 
-**Live walkthrough:** on the published `mode=companion` route, the preset showed “Whole moment · 30 seconds” and left animal identity at “Not sure yet.” One tap on “Try without a microphone” started a clearly labeled synthetic session and did not request microphone access. Ending it after about 1.8 seconds produced a “Partial observation window” recap labeled “Invented practice audio”; the page said the audio remained temporary and should be saved before leaving. The recap also preserves the distinction between sounds noticed in the setting and identification of the clip.
+**Live walkthrough:** on the published `mode=companion` route, the preset showed “Whole moment · 30 seconds” and left animal identity at “Not sure yet.” One tap on “Try without a microphone” started a clearly labeled synthetic session and did not request microphone access. Ending it after about 1.8 seconds produced a “Partial observation window” recap labeled “Invented practice audio”; the page said the audio remained temporary and should be saved before leaving. In a second live run of the `mode=demo` route, the same one-tap practice started without microphone access, accepted a “Movement” marker at about 3 seconds, and stopped at 4.9 seconds. The recap retained the marker and clearly called the result partial, invented and temporary. Both routes showed the complete-window preset and unknown animal identity. The recap also preserves the distinction between sounds noticed in the setting and identification of the clip.
 
 **Limit and next decision:** this is a maintainer-run browser check of the synthetic practice path. It does not test actual recording, a physical phone, screen-reader use, first-time comprehension or independent adoption. No real animal/participant recording was made, saved or uploaded. Keep the goal active; the next zero-command acceptance is an uncoached first-time walkthrough and a physical-phone save/reopen check using only synthetic or otherwise authorized material.
 
@@ -4239,3 +4257,99 @@ The in-app browser showed its existing cached app and an “Update ready” noti
 **Fresh read-back:** verified-TLS requests returned HTTP 200 for the homepage, Field Companion, resource directory and the new MooLogue and BirdNET Live notes. The resource page and both notes have self-canonicals and `index,follow`; both new notes appear in the live sitemap, and `robots.txt` names the sitemap. The released build contains public summaries and metadata only; no dataset, recording, code archive or model was acquired or executed.
 
 **Limits and next decision:** this verifies publication and crawl metadata, not Google indexing, ranking, clicks or user success. The Search Console performance snapshot in the earlier entry predates this release and must not be interpreted as a post-release result. Recheck indexing and page-level search performance after Google's next processing cycle before making another snippet change. Independent researcher/novice use and physical-phone validation remain open; the ML benchmark remains **NOT READY**.
+
+## October 25 — complete a live zero-command Station smoke test
+
+**Question:** can a first-time visitor enter the companion's no-microphone practice route without technical setup or granting audio access?
+
+**Evidence:** the deployed Station loaded in a separate clean Chrome session without the update notice shown in the older in-app browser. It offered “Try without a microphone”; selecting it opened a synthetic rehearsal that explicitly said invented tones were not played aloud and no microphone was accessed. Tapping “Movement” added one timestamped observation. Ending the rehearsal returned a partial synthetic review with 4.4 seconds observed and one note. No save/export or upload was performed. Discard opened a confirmation prompt; the browser controller timed out while resolving it, so deletion was not verified.
+
+**Limits and next decision:** this confirms the clean-session browser flow, not independent novice success, saved-file cleanup, real microphone capture, phone installation or field reliability. Keep the full goal active. Next run an independent novice walkthrough and record assistance/failure points; then verify save/reopen and interruption behavior on a named physical phone. Do not open real-data intake or advance the ML benchmark from this smoke test; it remains **NOT READY**.
+
+## October 25 — recheck Pre-Seed funding fit and open-source scope
+
+**Question:** does the approaching Israel Innovation Authority Pre-Seed cutoff offer a credible, compatible route for this open-source project?
+
+**Evidence reviewed:** the current official [Pre-Seed page](https://innovationisrael.org.il/programs/preseed/), the Authority's [open-source procedure index](https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/), its linked [open-source procedure PDF](https://innovationisrael.org.il/wp-content/uploads/2023/08/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97.pdf), and the current [Track 7 rules dated July 15, 2026](https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf). The Pre-Seed page lists November 9, 2026 at 12:00 Israel time and requires an Israeli-incorporated commercial-R&D company, no more than NIS 3 million in prior funding and NIS 300,000 in prior-calendar-year revenue, a signed recognized-investment commitment of at least 15%, a round up to NIS 6 million and at least 75% for R&D. The procedure index associates the policy with Pre-Seed; the linked PDF identifies itself as Annex 6 to Track 1. A text search of the current Track 7 PDF found no express open-source provision; that absence does not settle scope.
+
+**Decision and change:** mark the opportunity not ready to apply. The project record does not confirm the legal applicant, its financing/revenue status, a qualifying investor commitment or a complete R&D/IP plan. Do not rely on an open-source exception or restriction until the Authority clarifies scope in writing and counsel reviews project-specific assets. Refreshed source records 27, 158 and 159 and the Pre-Seed opportunity; updated the regression test to pin the date, unmet eligibility and open-source uncertainty.
+
+**Validation and limits:** all 170 Python tests passed (one intentional skip); the explicit-origin public build produced 138 pages plus 404, and the site checker verified 139 HTML pages, 7,229 links and 138 reachable public routes. This is a dated desk-readiness screen, not an eligibility/legal conclusion; no applicant facts were invented, no IIA contact was made, and no application was drafted or submitted. The local candidate has not been deployed.
+
+## October 25 — complete a zero-command save-and-reopen rehearsal
+
+**Question:** can a visitor preserve a moment with plain-language controls and reopen the saved work without handling JSON or extracting a ZIP?
+
+**Evidence:** in a fresh local noindex build, opened the companion home at the narrowest available emulated viewport (480 × 844 CSS pixels). The document width matched the viewport and the observation cards used one column. From `/app/`, the no-microphone link opened the rehearsal setup; pressing its in-console “Try without a microphone” control started the synthetic session. The default remained a 30-second whole moment with the animal unknown. No microphone prompt appeared. Added one human “Movement” note, stopped at 4.8 seconds, and received a partial recap labeled invented practice audio. “Save session” generated a ZIP in Downloads. Opening that ZIP in Compare showed “Invented example,” a partial whole moment, 4.8 seconds observed, one retained recording, one observation, unknown animal identity and soundscape context “Not recorded.” The app kept the file local and stated that playback only occurs when requested; no playback was started.
+
+**Decision and limits:** the local candidate completes the synthetic save/reopen loop without JSON handling or manual archive extraction. This advances the maintainer-run zero-command check, not independent usability or field readiness. It does not test a physical phone, real microphone capture, iOS/Android file handling, screen readers or a first-time user. Compare reported “Opened locally”; no upload or playback action was taken. A follow-up “Discard session” click timed out in browser control before a confirmation state could be read; no deletion was verified or claimed. No real animal or participant data was made; no research admission, deployment or model run occurred. The active five-track goal remains open; next acceptance is the planned uncoached outside-user walkthrough and named-device save/reopen test, while discard handling and protocol/consent/hosting gates remain open.
+
+## October 25 — revalidate the active local candidate
+
+**Question:** do the current research-library/atlas changes and public app still pass the repository's required checks?
+
+**Validation:** all 171 Python tests passed with one intentional external-sample skip; all 122 Node tests passed. A fresh local noindex build produced 138 pages plus the 404 page. `scripts/check_site.py` checked 139 HTML documents and 7,095 links. `git diff --check` passed.
+
+**Limits and next decision:** this validates the current local candidate only. It does not verify a new Pages release, search indexing, independent user success, physical-device behavior or biological performance. No animal data, deployment or external contact was involved. Continue the active five-track goal; preserve independent novice and named-phone tests as open gates, and keep the first benchmark **NOT READY**.
+
+## October 25 — resolve the Wytham documentation-file checksum question
+
+**Question:** was the `docs/metadata/main.md` hash difference evidence that the current Wytham source file changed or was corrupt?
+
+**Evidence:** queried the current public OSF API for file ID `649b14c83809110c1b3c2d9b` and retrieved only its 6,426-byte documentation file. Its computed SHA-256 and MD5 both match the current API values. The October 23 local manifest stores a 63-character SHA-256 string for this file, which is malformed; the cause of the missing character is unknown. A receipt and verification record are in ignored `data/external/wytham-integrity/` and `research/wytham_file_verification_2026-10-25.json`. The text was not read or redistributed; no audio, annotations, location values or model weights were acquired.
+
+**Decision and limits:** correct the current resource and research notes to describe a malformed historical manifest entry, not an unresolved current-file checksum. This resolves the integrity check for this one documentation file only. It does not validate other payloads, nested rights, coordinates, annotation quality, split design, task novelty or meaning. Keep Wytham conditional and the benchmark **NOT READY** until independent avian and ML/statistical review and the remaining rights/evaluation gates pass. No deployment or external contact occurred.
+
+**Acceptance checks:** after the metadata correction, 171 Python tests passed with one intentional skip and all 122 Node tests passed. A fresh local noindex build produced 138 pages plus 404; the checker validated 139 HTML documents and 7,099 links. The Wytham page shows the new verification source, while the report and ignored sample are absent from `dist/`.
+
+## October 25 — prepare a current zero-command usability protocol
+
+**Question:** can we test the current save/reopen workflow without asking novices to handle archives, commands or animal recordings?
+
+**Change:** the older internal audit prescribed “save → unzip → open WAV,” which no longer matches the app: Compare accepts the original saved session ZIP. Added `docs/FIRST_USE_WALKTHROUGH.md` with a frozen-revision requirement, an uncoached prompt, microphone-free synthetic tasks, anonymous task measures, stop conditions, a proposed raw-note retention period and a separate ethics-review gate if results will be published as human-subject research. Updated the mobile and usability audits to link to the current workflow.
+
+**Limits and next decision:** this is a protocol draft, not recruitment authorization, ethics approval or test evidence; no participants were contacted and no user data was collected. After separate authorization, run five consenting first-time testers across at least two phone/browser combinations, then record task outcomes and limits. Keep the workflow and test synthetic; validate real capture and hardware separately in a controlled setting with no animals or people recorded.
+
+## October 25 — recheck researcher onboarding from the current public revision
+
+**Question:** do the researcher-start instructions still reproduce on the latest public `main`?
+
+**Evidence:** rechecked remote `main`, then used a fresh depth-one clone at [`e8dd07306f30a1a254708d9a5d14053535043e45`](https://github.com/Metivity/talk2nature/commit/e8dd07306f30a1a254708d9a5d14053535043e45), with Python 3.12.5, Node 22.22.1 and Git 2.53.0. No dependencies were installed. Synthetic annotation, standard split and dyadic split examples passed; the standard output was byte-identical on repeat. All 170 Python tests passed with one intentional skip, all 122 Node tests passed, and both local noindex and explicit public-origin site builds passed. The public-origin checker validated all 138 routes. Exact hashes and counts are in `docs/RESEARCHER_START_HISTORY.md`.
+
+**Limits and next decision:** this is a maintainer-run check of the current public revision, not an independent reproduction, external researcher review, biological evaluation or live Pages read-back. The temporary clone remained clean. No external contact or deployment occurred. Refresh the onboarding receipt when public `main` changes again; independent reproductions remain zero and the benchmark stays **NOT READY**.
+
+## October 25 — record the public first-use feedback baseline
+
+Checked the live [good-first-issue #115](https://github.com/Metivity/talk2nature/issues/115): it remains open and unassigned, with no outside walkthrough report visible as of October 25. This is a zero-report baseline, not evidence about whether visitors saw the issue or why they have not replied. No invitations or messages were sent. Independent first-use feedback remains unverified.
+
+## October 25 — add a context-aware vervet study to the evidence library
+
+**Question:** what does the vervet alarm-call literature teach about choosing an initial animal question and designing observations that do not mistake a signal for a translated word?
+
+**Evidence:** reviewed the Wiley abstract and German summary for the 1980 developmental study, the ScienceDirect abstract for the longer 1980b playback paper, the 1980a Science PubMed abstract, selected full-text sections of Fischer (2020), and the full Springer article for Deshpande et al. (2023). The 2023 article reports eight adult female subjects from one group and 16 within-subject trials. Lower speaker-directed looking and vigilance were reported when a male alarm bark played during an ongoing intergroup encounter than when no encounter was underway; no predator-specific escape response occurred. The paper's Results and Discussion contradict each other on the direction of the startle effect, so this measure is unresolved. The article declares CC BY 4.0 for the paper and links data/code via OSF; those artifacts and their separate rights/privacy terms were not inspected.
+
+**Change and decision:** updated the vervet note and source/resource catalog, and added the KwaZulu-Natal study region alongside Amboseli. The atlas deliberately omits the exact wildlife-site coordinates printed in the paper. Vervet literature is a useful context/receiver-response methods case, not a ready open benchmark or first phone cohort. Added this comparison to `docs/FIRST_DATASET_DECISION.md`; the public app remains species-neutral, and no animal cohort or model was selected.
+
+**Validation and limits:** 172 Python tests passed with one intentional external-sample skip; all 122 Node tests passed; the collection validator accepted 223 resources. The local noindex build produced 138 pages plus 404; the checker validated 139 HTML documents and 7,120 links. The generated vervet route showed the updated title, 2023 citation, bounded findings and next-reading note. The owner-local SQLite catalog imported 757 public metadata records; an immediate repeat changed zero. `git diff --check` passed. No data, code, audio or model was acquired or run; no hosted database, external contact or deployment was involved. This is a source-led editorial and atlas update, not independent scientific review, a new experiment or evidence of animal communication.
+
+## October 25 — verify the public Android prototype build
+
+**Question:** is the linked Android station source present on public `main`, and can its current release package be built and checked without claiming device validation?
+
+**Evidence and checks:** fetched the public `native-android/README.md` through the connected Metivity GitHub repository; its SHA-256 matches the local file. `bash native-android/scripts/test-core.sh` passed detector, ZIP, deletion-order and start-gating checks. `node --test tests/native-session.test.mjs` passed both browser-import and schedule-cap cases. With the installed Android SDK explicitly selected, `:app:lintDebug`, `:app:assembleDebug` and `:app:assembleRelease` succeeded. `bash native-android/scripts/check-release-boundaries.sh` confirmed microphone foreground permissions, no network/debug permissions or synthetic debug receiver, and Android backup disabled.
+
+**Limits and next step:** this is a maintainer-run source/build check, not a signed distribution, independent reproduction, physical-phone microphone/battery/thermal/accessibility test or university adoption. No animal recording was made or admitted, and no deployment or external contact occurred. Keep the full goal active; next perform the synthetic-session checklist on a named handset and obtain the independent, command-free first-use walkthrough. The biological benchmark remains **NOT READY**.
+
+## October 25 — identify the stale zero-command browser session
+
+**Observation:** the open in-app-browser Station tab displays an “Update ready” notice and still selects “Sound highlights,” with Listen pointing to the generic Station route. A fresh read of public `main` confirms that its source currently emits the same generic Listen URL. The local candidate's page regression test checks the novice destination `/app/station/?mode=companion#station-console`.
+
+**Decision and limits:** the update notice means this tab is not a fresh-session test, but the generic link is also present in current public source; the defect is not attributed to caching alone. I left the user's tabs untouched rather than close or reload a session that may contain work. After the reviewed candidate is published, verify the Listen destination and Whole moment default from a fresh browser session; deployment and first-use success remain unverified until then.
+
+## October 25 — verify the candidate zero-command Listen route
+
+**Question:** does the candidate's persistent Listen link take a first-time visitor into the short, whole-moment task without setup commands or microphone access?
+
+**Local browser check:** from a clean local preview, the companion home exposed the expected beginner links. Opening Listen reached the `mode=companion` Station screen with “Whole moment · 30 seconds” selected, animal “Not sure yet,” permission unchecked, Start disabled and “Try without a microphone” available. The page also described local-only handling and the lack of automatic animal identification. No recording or permission prompt was started. A 390×844 viewport request was ignored by this in-app browser, which stayed at 780 CSS pixels; its screenshot capture also failed, so this is not a narrow-phone visual check.
+
+**Change and limits:** the candidate points the persistent Listen link to the beginner route and tests that target on all six app pages. The refreshed public-source check still shows the generic Listen link on `main`; this fix is not yet in the deployed app. The full 172 Python tests (one intentional skip), 122 Node tests, 223-resource validation and explicit-origin public build/site check passed; the latter checked all 138 public routes. Next: publish the reviewed candidate, then verify this flow in a fresh live session and on a named handset. Independent first-use success remains unverified.

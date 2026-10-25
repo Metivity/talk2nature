@@ -218,10 +218,10 @@
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 24, 2026: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
+    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 25, 2026: next submission date November 9, 2026 at 12:00 Israel time; qualifying Israeli-company, investor, R&D-spend and grant requirements.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-24",
-    "origin": "Official Israel Innovation Authority Pre-Seed page rechecked October 24, 2026 for the current deadline, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
+    "checked": "2026-10-25",
+    "origin": "Official Israel Innovation Authority Pre-Seed page rechecked October 25, 2026 for the current deadline, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
   },
   {
     "id": 28,
@@ -1060,9 +1060,9 @@
     "id": 113,
     "title": "Vervet alarm-call development: original 1980 study",
     "url": "https://doi.org/10.1111/j.1439-0310.1980.tb01062.x",
-    "description": "Seyfarth and Cheney (1980). Indexed publisher abstract and German summary reviewed; full methods unavailable. The summary identifies Amboseli, Kenya.",
-    "checked": "2026-10-04",
-    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits."
+    "description": "Seyfarth and Cheney (1980). Wiley publisher abstract and German summary reviewed; full original methods were not obtained. The summary identifies three observed groups in Amboseli, Kenya.",
+    "checked": "2026-10-25",
+    "origin": "October 25 historical-source review; publisher abstract and German summary checked against Fischer's 2020 full-text reassessment."
   },
   {
     "id": 114,
@@ -1112,11 +1112,11 @@
     "id": 119,
     "title": "Primate alarm calls: a 2020 reassessment",
     "url": "https://doi.org/10.26451/abc.07.02.05.2020",
-    "description": "Fischer (2020). Review abstract and opening discussion read in the journal PDF; distinguishes call production from learned, context-sensitive responses. Not a full review of the cited experiments.",
-    "checked": "2026-10-04",
-    "origin": "October 4 continuation; original summaries, selected passages and explicit access limits.",
+    "description": "Fischer (2020). Selected full-text sections on call-context specificity, receiver learning, functional reference and limits of language comparisons reviewed. The cited primary experiments were not independently reproduced.",
+    "checked": "2026-10-25",
+    "origin": "October 25 historical-source review; full-text sections reviewed at pp. 108–114; cited primary methods remain separately gated.",
     "review_url": "https://www.animalbehaviorandcognition.org/uploads/journals/27/AB_C_Vol7(2)_Fischer.pdf",
-    "review_url_label": "Review PDF (selected passages reviewed)"
+    "review_url_label": "Open review PDF (selected sections reviewed)"
   },
   {
     "id": 120,
@@ -1599,16 +1599,16 @@
     "title": "Israel Innovation Authority Startup Fund Track 7 rules (15 July 2026)",
     "url": "https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf",
     "description": "Official benefit track 7 rules dated July 15, 2026. Sections 6.1–6.2 cover Pre-Seed eligibility, R&D location, recognized-investment commitments and rights to program-generated IP. Applicant-specific eligibility is not established.",
-    "checked": "2026-10-11",
-    "origin": "Official Israel Innovation Authority rules PDF; targeted review of sections 2.6, 6.1 and 6.2 on October 11, 2026. This is a source record, not an eligibility or legal determination."
+    "checked": "2026-10-25",
+    "origin": "Official Israel Innovation Authority rules PDF; rechecked October 25, 2026. Targeted review covered Pre-Seed terms and a text search for express open-source provisions; no matching open-source term appeared in the extracted text. Absence is not a legal determination of scope."
   },
   {
     "id": 159,
     "title": "Israel Innovation Authority open-source procedure",
     "url": "https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/",
-    "description": "Rechecked October 24, 2026: the official procedure page associates this policy with Pre-Seed, while its linked PDF calls itself an appendix to benefit track 1 (R&D Fund). Applicability to Track 7 and this project's licenses remains unresolved; no legal conclusion is made.",
-    "checked": "2026-10-24",
-    "origin": "Official Israel Innovation Authority procedure page and linked PDF rechecked October 24, 2026. The page's track association and the PDF's stated scope conflict; Track 7 applicability and project-specific treatment need written confirmation.",
+    "description": "Rechecked October 25, 2026: the official procedure index lists Pre-Seed among the associated tracks, while its linked PDF calls itself Annex 6 to benefit track 1 (R&D Fund). The current July 2026 Track 7 rules do not expressly discuss open-source treatment in the text reviewed. Applicability and this project's license treatment remain unresolved.",
+    "checked": "2026-10-25",
+    "origin": "Official Israel Innovation Authority procedure page, linked PDF and current Track 7 rules rechecked October 25, 2026. The page metadata associates the procedure with Pre-Seed; the linked PDF identifies itself as an appendix to Track 1. This does not prove inapplicability. Written IIA confirmation and project-specific legal review are required before relying on a treatment of existing assets or funded outputs.",
     "review_url": "https://innovationisrael.org.il/wp-content/uploads/2023/08/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97.pdf",
     "review_url_label": "Official open-source procedure PDF"
   },
@@ -4354,5 +4354,48 @@
       "code": "MIT in LICENSE at v1.2.1; dependencies and non-code assets keep their own terms.",
       "model": "Apache License 2.0 in MODEL_LICENSE at v1.2.1; this statement covers the bundled trained weights, not training data, images, taxonomy assets or the BirdNET name."
     }
+  },
+  {
+    "id": 425,
+    "title": "GeoNames populated-place reference for Eilat, Israel",
+    "description": "Official GeoNames city point used only as a rounded one-decimal atlas marker for the OpenWhistle study region; it is not a recording or animal coordinate.",
+    "url": "https://www.geonames.org/295277/eilat.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed official GeoNames populated-place record 295277. It lists Eilat at 29.55805, 34.94821; the public atlas marker rounds this city reference to 29.6, 34.9. This is not the Dolphin Reef facility, hydrophone deployment or dolphin location. GeoNames identifies its free gazetteer data as CC BY 4.0.",
+    "rights": {
+      "location": "GeoNames free gazetteer data are CC BY 4.0. Only an attributed, rounded city reference is used; no recording or animal coordinates are included."
+    }
+  },
+  {
+    "id": 426,
+    "title": "Wytham metadata-file integrity verification",
+    "description": "Integrity-only verification of one 6,426-byte dataset documentation file; no animal recording or annotation payload.",
+    "url": "https://api.osf.io/v2/files/649b14c83809110c1b3c2d9b/",
+    "checked": "2026-10-25",
+    "origin": "Queried the public OSF API and retrieved docs/metadata/main.md (file ID 649b14c83809110c1b3c2d9b) only to verify its current provider hashes. The 6,426 downloaded bytes match the OSF SHA-256 and MD5. The October 23 local manifest contains a 63-character SHA-256 for this path; the cause of the malformed historical value is unknown. The file content was not read or redistributed. The OSF node declares CC BY 4.0; no separate file-level terms were found. No audio, annotations, location values or model weights were acquired. Verification receipt is in ignored data/external/wytham-integrity/ and the metadata-only report is research/wytham_file_verification_2026-10-25.json."
+  },
+  {
+    "id": 427,
+    "title": "Vervet monkey alarm calls: semantic communication in a free-ranging primate",
+    "url": "https://doi.org/10.1016/S0003-3472(80)80097-2",
+    "description": "Seyfarth, Cheney and Marler (1980b), the longer Animal Behaviour companion article to the Science report. The publisher abstract describes a 14-month field study and predator-absent playbacks; the full article and detailed methods were not obtained.",
+    "checked": "2026-10-25",
+    "origin": "October 25 historical-source review; bibliographic record and publisher abstract checked, alongside the authors' publication list and Fischer (2020). Full methods and reuse terms remain unresolved."
+  },
+  {
+    "id": 428,
+    "title": "Monkey responses to three different alarm calls",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/7433999/",
+    "description": "Seyfarth, Cheney and Marler (1980a). Primary PubMed abstract reviewed: predator-absent call playbacks elicited different receiver behaviors. Full Science article and detailed methods were not obtained.",
+    "checked": "2026-10-25",
+    "origin": "October 25 historical-source review; PubMed citation and abstract linked to Science DOI 10.1126/science.7433999."
+  },
+  {
+    "id": 429,
+    "title": "Context-dependent alarm responses in wild vervet monkeys",
+    "url": "https://link.springer.com/article/10.1007/s10071-023-01767-0",
+    "description": "Deshpande, van de Waal and Zuberbühler (2023). Full open-access primary article reviewed: a small within-subject playback study found lower vigilance and speaker-directed looking during an ongoing intergroup encounter than without one; predator-specific escape responses were not observed.",
+    "checked": "2026-10-25",
+    "origin": "October 25 review of the publisher full text and article rights statement. The paper declares CC BY 4.0; its linked data/code access, contents and separate reuse terms were not checked."
   }
 ]

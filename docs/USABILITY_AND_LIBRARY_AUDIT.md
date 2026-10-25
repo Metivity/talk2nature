@@ -47,7 +47,7 @@ No automated recurring research job was created. Further reviews are a prioritiz
 
 ## Remaining usability work
 
-- Five first-time users should attempt example → stop → save → unzip → open WAV without guidance. Record completion, points of confusion and time; no measurements collected yet.
+- Five consenting first-time users should attempt the microphone-free practice → add note → stop → save → reopen in Compare path without coaching, JSON editing or archive extraction. Record anonymous completion, assistance, approximate time and confusion; no measurements collected yet. Use the [first-use walkthrough protocol](FIRST_USE_WALKTHROUGH.md), which keeps animal data and microphone access out of this formative test.
 - Verify iPhone/Android downloads, installation, microphone permission and interruption handling on physical devices.
 - Session journals and Listen labels are different formats. ZIP improves saving, but direct session-to-annotation transfer and M4A/MP3 support are still absent.
 - The private hosted workspace and real-data intake remain gated as documented in HOSTING.md. Public tools keep data in tab memory; operating systems may discard that memory.
