@@ -1,5 +1,14 @@
 # Project status
 
+## October 25 — reproduce the researcher examples from current main
+
+**Question:** can a new checkout run the documented synthetic research workflow and reproduce its split output without installing third-party data or model assets?
+
+**Evidence:** a clean depth-one clone of public main at de2e51b (Python 3.12.5, Node 22.22.1) ran the annotation report, standard metadata split and dyadic metadata split from docs/RESEARCHER_START.md. The report returned an 8-second synthetic fixture, two marked events, 2 seconds interval-union coverage and zero observed context. The standard split returned 10 groups and 12/4/4 train/validation/test records; the dyadic split returned 10 groups and 6/2/4. A same-path rerun of the standard split was byte-identical. Output hashes are recorded in the researcher starter kit.
+
+**Limits and decision:** this is a maintainer-run clean-clone check of synthetic software examples; no animal data, model, or third-party assets were acquired or executed. It does not establish an independent reproduction, biological validity or that the declared identities in a real dataset are complete. It did not rerun the full test suites. Keep the kit open to outside challenge and record any independent reproduction separately.
+
+
 ## October 25 — align the Shared moments route with its zero-command promise
 
 **Finding:** the Field Companion card described a whole 30-second observation, but its `mode=companion` route retained the default five-minute sound-highlights setting. A newcomer had to notice and change a technical capture choice before the advertised task matched the tool.
