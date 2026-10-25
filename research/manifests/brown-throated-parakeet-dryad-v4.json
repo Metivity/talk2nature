@@ -1,0 +1,87 @@
+{
+  "schema": "talk2nature.remote-file-manifest.v1",
+  "resource_id": "brown-throated-parakeet-contact-calls-2021",
+  "dataset_doi": "10.5061/dryad.k3j9kd58b",
+  "record_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k3j9kd58b",
+  "api_record_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.k3j9kd58b",
+  "api_version": "2.1.0",
+  "dataset_id": 77790,
+  "version_id": 147704,
+  "version_number": 4,
+  "publication_date": "2021-11-01",
+  "last_modification_date": "2021-11-02",
+  "curation_status": "Published",
+  "dataset_license": "https://spdx.org/licenses/CC0-1.0.html",
+  "license_scope_note": "The dataset-level API record carries this license URL; the version and file metadata do not repeat a license. Article rights are separate.",
+  "recorded_total_bytes": 57091189,
+  "reviewed": "2026-10-25",
+  "review_source_id": 443,
+  "acquisition": "metadata_only",
+  "payload_bytes_acquired": false,
+  "declared_hashes_locally_verified": false,
+  "files": [
+    {
+      "path": "Eberhard_etal_acoust_param.xlsx",
+      "size": 314551,
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "a99a49a560061172ed22c8a43c4a368f395096048c4c30801b115475db4012f7"
+    },
+    {
+      "path": "Eberhard_etal_data_README.txt",
+      "size": 2028,
+      "mime_type": "text/plain",
+      "sha256": "47e9a27beb0f28b02b8458332cea5c61446a9133290d09d5330527c54f90e12d"
+    },
+    {
+      "path": "Eberhard_etal_durations_mdf.xlsx",
+      "size": 155876,
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "d79290c80fb55558542cbd3c9dcc93875e1a6edb6e22ecdb03e52a3803d8fcce"
+    },
+    {
+      "path": "Eberhard_etal_meta.xlsx",
+      "size": 39755,
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "cc84b099693d898af25854290e993af78b1d3d584264a9ee147c1c1ed847539c"
+    },
+    {
+      "path": "Eberhard_etal_RecordingSites.xlsx",
+      "size": 50700,
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "c8f47208b77c5f6bb90603d1eca72888658377766bfb06212f211971846d0234"
+    },
+    {
+      "path": "Eberhard_etal_soundfiles1.zip",
+      "size": 15115677,
+      "mime_type": "application/zip",
+      "sha256": "6cd25cd3ef4462d8439ee9f29be6f4ae9155e8f35c408f2951dddf9e5d4e9e94"
+    },
+    {
+      "path": "Eberhard_etal_soundfiles2.zip",
+      "size": 41258072,
+      "mime_type": "application/zip",
+      "sha256": "cad3f2cb386c0efe1b55678254868e29348ccee2372e73a198d655687dce10e1"
+    },
+    {
+      "path": "Eberhard_etal_SPCC-PCO.xlsx",
+      "size": 154530,
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "1d50343afd600b20a82dddc09e19ee7dd9401e0ab2ed09b912758ffe2cb1d642"
+    }
+  ],
+  "access_attempts": [
+    {
+      "file": "Eberhard_etal_data_README.txt",
+      "route": "https://datadryad.org/api/v2/files/1138978/download",
+      "http_status": 401,
+      "bytes_acquired": false
+    },
+    {
+      "file": "Eberhard_etal_data_README.txt",
+      "route": "Official Dryad record download link",
+      "http_status": 403,
+      "bytes_acquired": false
+    }
+  ],
+  "notes": "File names, sizes and SHA-256 values are metadata returned by Dryad v4. No file content was downloaded; the listed hashes are not locally checked. No other route was attempted."
+}
