@@ -4528,6 +4528,14 @@ Ran every command in the guide's annotation and standard/dyadic split route. Res
 
 All 174 Python tests passed with one intentional external-sample skip and all 124 Node tests passed. The explicit public-origin build produced 139 pages plus 404; `scripts/check_site.py` validated 140 HTML documents, all 139 public routes and 7,328 links. The clean clone remained clean after the run; generated artifacts were confined to ignored paths. This is maintainer-run reproduction of synthetic software and metadata only; it is not an outside reproduction, research result or independent scientific review. No third-party code, audio or model weights were acquired or executed. AutoResearch remains **NOT READY**; independent reproduction remains zero.
 
+## October 25 — verify public OSF metadata for the vervet study
+
+**Question:** was the earlier HTTP 403 evidence that the linked vervet study materials were inaccessible, or only a failure of the publisher-provided view-only route?
+
+**Evidence:** an unauthenticated, read-only GET to the official OSF API v2 node endpoint for project `kw5qg` succeeded. The response identifies “Context-dependent alarm responses in wild vervet monkeys,” reports `public=true`, creation on 2021-12-17, modification on 2023-02-03, and a null project-level license relationship. The publisher-provided view-only URL had separately returned HTTP 403. These results establish public project metadata and a route-specific retrieval difference; they do not establish data/code license or permission to reuse.
+
+**Change and limit:** updated the vervet research note, source catalog, separate data/code resources and backlog so the metadata is accurately represented. No files endpoint, file names, coordinates, records, audio, code or model were inspected or acquired. Dataset/code versions, file-level rights, privacy and location sensitivity remain unknown. Keep this as receiver-response methods evidence, not a selected benchmark; AutoResearch remains **NOT READY**.
+
 ## October 25 — publish the zero-command Station navigation and novice view
 
 Merged PR [#415](https://github.com/Metivity/talk2nature/pull/415) to public `main` as `945bf1f6e687fb9ec50d9923cd1bf7d3ea30cd8c`. The change keeps elapsed time and Stop visible in the default Station view, moves technical signal and storage details behind Advanced, and sends the app’s persistent Listen tab to the whole-moment companion flow. The public-check workflow passed before merge. [Pages workflow run 40168313608](https://github.com/Metivity/talk2nature/actions/runs/40168313608) then passed tests, public build, publish-boundary checks, deployment and live-route/crawl-metadata verification.

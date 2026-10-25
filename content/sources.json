@@ -4402,9 +4402,9 @@
     "id": 430,
     "title": "OSF project linked for the 2023 vervet alarm-context study data and analysis code",
     "url": "https://osf.io/kw5qg/",
-    "description": "The full-text publisher article's data-availability statement points to this OSF project for both data and analysis code. Opening the publisher-provided view-only link returned HTTP 403 through the research browser on 2026-10-25. This records that retrieval attempt only; OSF metadata, files, contents and component terms were not reviewed.",
+    "description": "The full-text publisher article's data-availability statement points to this OSF project for both data and analysis code. Its publisher-provided view-only URL returned HTTP 403 through the research browser on 2026-10-25, but a separate unauthenticated GET to the canonical OSF API v2 node endpoint succeeded and confirmed public project metadata (source 436). No file list, contents or component terms were reviewed.",
     "checked": "2026-10-25",
-    "origin": "Project locator derived from Deshpande et al. (2023), source 429. The publisher-provided view-only URL was not retained; no OSF file, project metadata, access token or payload was acquired."
+    "origin": "Project locator derived from Deshpande et al. (2023), source 429. The API metadata request was read-only and unauthenticated. It does not establish data/code access rights; no file listing, access token or payload was acquired."
   },
   {
     "id": 431,
@@ -4445,5 +4445,13 @@
     "description": "TAU's call page lists a Research Authority internal deadline of November 3, 2026, a required letter of intent due November 10, an Israeli Ministry of Environmental Protection submission due November 15, and a full proposal due April 16, 2027. The November 3 internal date applies to TAU researchers and is not a general applicant deadline.",
     "checked": "2026-10-25",
     "origin": "Opened the Tel Aviv University Research Authority call page on October 25, 2026. Recorded its institution-specific calendar and minimum-three-partner/three-country note. This does not establish Talk2Nature's affiliation, host eligibility, consortium or application readiness."
+  },
+  {
+    "id": 436,
+    "title": "OSF API v2 node metadata for vervet alarm-context study project kw5qg",
+    "url": "https://api.osf.io/v2/nodes/kw5qg/",
+    "description": "Public OSF API v2 node response reviewed October 25, 2026. It identifies the project as ‘Context-dependent alarm responses in wild vervet monkeys’, reports public=true, creation on 2021-12-17, modification on 2023-02-03 and a null project-level license relationship. This is node metadata only; no files endpoint, file names, payloads or component-level terms were inspected.",
+    "checked": "2026-10-25",
+    "origin": "Unauthenticated read-only GET of the canonical OSF API v2 node endpoint linked from the 2023 paper's Data availability statement. The publisher-provided view-only URL had returned HTTP 403 in a separate route; this API result does not establish file-level rights or reuse permission."
   }
 ]
