@@ -1,5 +1,13 @@
 # Project status
 
+## October 25 — refresh the zero-command local preview from current main
+
+**Question:** did the open local Station preview represent the current Field Companion source?
+
+**Evidence:** port 4189 returned HTTP 200, but its response header showed `Last-Modified: 2026-10-24 23:29:20 GMT`; the served app navigation used the generic Station link. Current `main` at `9ab29a5` contains the beginner Listen destination, `/app/station/?mode=companion#station-console`. A fresh noindex build from that revision generated 140 pages plus 404; the site checker validated 141 HTML documents and 7,301 links. The fresh local preview at `http://127.0.0.1:4202/app/` and its companion Station and Practice routes returned HTTP 200, and the home-page read-back contains both the beginner Listen target and “Start a 30-second moment.”
+
+**Validation and limits:** all 127 Node tests passed; all 175 Python tests passed with one intentional external-sample skip. The browser-control service timed out, so this was a build, HTTP and HTML read-back, not a visual or interactive browser check. The port 4202 preview is local-only and noindex; nothing was deployed. Keep the named physical-phone and uncoached first-time-user gates open. Do not change the interface without observed friction.
+
 ## October 25 — run the zero-command loop in an isolated phone-width browser
 
 **Evidence:** a fresh isolated Chrome context opened the local companion preview at 390 × 844 CSS pixels. It defaulted to Whole moment · 30 seconds and Not sure yet; microphone permission remained unchecked and real Start was disabled. The microphone-free synthetic rehearsal accepted one observer-entered Movement note, stopped as a partial moment, and downloaded a 119,368-byte session ZIP to temporary storage. Compare reopened that exact file locally: its summary identified an invented partial moment, unknown animal identity, one recording and one observation; the expanded detail showed the human note. Confirmed Discard returned Station to an empty session. A second fresh context repeated the full workflow against the deployed GitHub Pages app at 390 × 844 and verified HTTP 200 for Station and Compare, ZIP reopen, the note and confirmed discard. Separate local checks at 320 and 390 pixels found no horizontal overflow and kept Stop visible during rehearsal. All runs had no JavaScript errors or non-GET requests.
