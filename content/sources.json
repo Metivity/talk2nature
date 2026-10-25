@@ -4469,5 +4469,16 @@
     "description": "Official Cycle 6 RFA with 2023 application dates. It prioritizes software essential to biomedical research, weighs demonstrated impact and adoption, and says early-stage projects without broad use and databases with few contributions or low biomedical adoption are less likely to be successful. It permits organization applicants and describes a fiscal-sponsor route; this is historical Cycle 6 guidance, not a current open call or a prediction of future terms.",
     "checked": "2026-10-25",
     "origin": "Official full RFA page reviewed for historical scope, selection criteria and applicant structure."
+  },
+  {
+    "id": 439,
+    "title": "GeoNames country reference point for Colombia",
+    "description": "The official GeoNames country point for Colombia, used only as a rounded country-scale atlas reference for the El Silencio study region.",
+    "url": "https://www.geonames.org/3686110/colombia.html",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official GeoNames entry for the Republic of Colombia, feature 3686110, which lists coordinates 4.00000, -73.25000. The atlas reference is rounded to 4.0, -73.3 and labeled country-scale; it is not a field-site coordinate. GeoNames terms state CC BY attribution and permit commercial use. No study locations or observation data were obtained from GeoNames.",
+    "rights": {
+      "location": "GeoNames data is available under CC BY 4.0 with credit. Only the rounded country reference is used; it does not reproduce study-site or observation data."
+    }
   }
 ]

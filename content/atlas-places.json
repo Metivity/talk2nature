@@ -171,6 +171,13 @@
       "longitude": -83.8
     },
     {
+      "id": "colombia-country",
+      "label": "Colombia (country-scale reference)",
+      "precision": "country",
+      "latitude": 4.0,
+      "longitude": -73.3
+    },
+    {
       "id": "spain",
       "label": "Spain · 20 study populations (country-level locator)",
       "precision": "country",
