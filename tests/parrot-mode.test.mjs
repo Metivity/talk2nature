@@ -28,6 +28,13 @@ test('the public first actions lead to the shared-moment and microphone-free rou
   assert.match(app,/demo: \['SYNTHETIC REHEARSAL'/);
 });
 
+test('the beginner recording view keeps elapsed time visible and folds technical readings into Advanced',async()=>{
+  const station=await readFile(new URL('../web/templates/station.html',import.meta.url),'utf8');
+  assert.match(station,/<div class="station-progress"><span id="station-time">00:00<\/span><small>time observed<\/small><\/div>/);
+  assert.match(station,/<details id="station-advanced-instruments" class="station-settings station-advanced-instruments"><summary>Advanced · sound level and storage details<\/summary>[\s\S]*?id="station-scope"[\s\S]*?id="station-level"[\s\S]*?id="station-event-total"[\s\S]*?id="station-memory"[\s\S]*?<\/details>/);
+  assert.match(station,/id="station-stop" class="station-stop"/);
+});
+
 test('the app offers a parrot visit and wires it to the editable animal picker',async()=>{
   const [home,app,station]=await Promise.all([
     readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),

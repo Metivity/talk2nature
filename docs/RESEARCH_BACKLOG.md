@@ -469,6 +469,12 @@ Decision: use this resource only to consider a low-level feature-estimation eval
 
 **Limits:** no Zenodo archive, Figshare audio, code, weights or other payload was acquired; no model ran, no output was reproduced and no reviewer was contacted. The README does not prove which files are in the cited Zenodo version. Repository code has no displayed license file; record-level CC BY 4.0 declarations are not component-level clearance. The result would concern correspondence with trained discrimination, not spontaneous communication or translation. AutoResearch remains **NOT READY**. See the Candidate E run card and source-linked zebra-finch research note.
 
+## October 25 — refine the zebra-finch ML prior-art and data-matching boundary
+
+**Evidence refreshed:** the publisher-indexed 2026 BirdAVES article title and result section, the official Figshare landing-page description and v1 API manifest, and Zenodo API records for the paper-cited v1 and later v3 archives. The 2026 paper is already prior art for behavior-informed multi-task learning: it uses six behavior-derived functional/semantic categories as auxiliary targets for a frozen-BirdAVES classifier. The paper does not directly compare item-level model errors with the receiver birds' measured confusion responses. The Figshare page describes a filename pattern that may encode bird, date, call type and rendition, but warns of known naming discrepancies. Its API lists two ZIPs and a notes PDF without per-file MD5s; 3,433 WAVs are described inside the archives. Zenodo reports provider MD5s for v1 and v3, but neither archive was downloaded and no checksum was locally recomputed. Direct MDPI retrieval returned HTTP 429; no new full-text review is claimed.
+
+**Decision:** retain a conditional question only: after an independently reviewed crosswalk, does a frozen modern model's error structure align with measured receiver confusions on held-out vocalizers beyond the published 2025 LDA/acoustic-similarity analysis? Plain call classification and semantic-hierarchy supervision are prior art. Update the research notes and Candidate E run card; keep all files metadata-only and AutoResearch **NOT READY**. Independent avian-perception and ML/statistical review is still required before acquisition, model selection or execution.
+
 ## October 25 — vervet receiver responses depend on surrounding context
 
 **Question:** does the historical vervet alarm-call literature support a useful open first dataset or a bounded study-design lesson?

@@ -10,13 +10,15 @@
         {{station_animal_context}}
         <div class="station-setup"><label class="station-checkbox"><input id="station-permission" type="checkbox">I have permission to record here, including any people who may be audible.</label></div>
         <p id="station-retention-guidance" class="station-retention-guidance">Nothing uploads or auto-saves. Export before closing to keep your audio and notes.</p>
-        <p id="station-device" class="station-footnote">Phone microphones may filter or change sounds. The level meter is not calibrated, and this app does not identify animals.</p>
+        <p id="station-device" class="station-footnote">Phone microphones may filter or change sounds. This app does not identify animals.</p>
       </div>
       <div id="station-record-controls" class="station-controls"><button id="station-start" class="station-primary" type="button" aria-describedby="station-retention-guidance" disabled>Start listening</button><button id="station-demo" type="button">Try without a microphone</button><button id="station-stop" class="station-stop" type="button" disabled>Stop recording</button></div>
       <p class="station-capture-boundary">On this device · foreground only · playback is always your choice.</p>
       <div class="station-instruments">
-        <div class="station-scope"><canvas id="station-scope" width="760" height="160" aria-label="Recent sound level. This is not animal identification."></canvas><div class="station-scope-caption"><span id="station-level">— dBFS</span><span id="station-threshold">3-second level check on start</span></div></div>
-        <div class="station-metrics"><div><span id="station-time">00:00</span><small>time observed</small></div><div><span id="station-event-total">0</span><small id="station-event-caption">sound candidates</small></div><div><span id="station-memory">0.0 MB</span><small>local audio</small></div></div>
+        <div class="station-progress"><span id="station-time">00:00</span><small>time observed</small></div>
+        <details id="station-advanced-instruments" class="station-settings station-advanced-instruments"><summary>Advanced · sound level and storage details</summary><div class="station-scope"><canvas id="station-scope" width="760" height="160" aria-label="Recent sound level. This is not animal identification."></canvas><div class="station-scope-caption"><span id="station-level">— dBFS</span><span id="station-threshold">3-second level check on start</span></div></div><p class="station-footnote">The level meter is not calibrated and does not identify animals.</p>
+          <div class="station-metrics"><div><span id="station-event-total">0</span><small id="station-event-caption">sound candidates</small></div><div><span id="station-memory">0.0 MB</span><small>local audio</small></div></div>
+        </details>
       </div>
         <details id="station-settings" class="station-settings"><summary>Advanced · session settings</summary><div class="station-setup"><label>Station alias<input id="station-alias" value="my-listening-place" maxlength="80" autocomplete="off"></label><label id="station-sensitivity">Sound sensitivity<select id="station-margin"><option value="12">Standard</option><option value="6">More sensitive</option><option value="18">Less sensitive</option></select></label></div><p class="station-footnote">Use an alias, not a personal name or exact location. Sensitivity applies to highlights only. Whole moments use no trigger. Neither mode identifies animals.</p></details>
     </div>

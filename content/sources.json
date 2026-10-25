@@ -3891,10 +3891,10 @@
   {
     "id": 376,
     "title": "Zebra-finch vocal-repertoire audio library, Figshare",
-    "description": "Public Figshare record for adult and chick zebra-finch vocalizations collected at UC Berkeley between 2011 and 2014. The record describes 3,433 manually annotated WAV files and 182.05 MB total; files may contain a vocalization or sequence. Figshare declares CC BY 4.0.",
+    "description": "Public Figshare v1 record for adult/chick zebra-finch vocalizations collected at UC Berkeley in 2011–2014. The landing-page description says the archives contain 3,433 manually annotated WAVs, some of which may be sequences; it gives the filename pattern ColColxxxx_yymmdd-VT-zz.wav and warns of known naming discrepancies. The API lists AdultVocalizations.zip (140,645,384 bytes), ChickVocalizations.zip (50,155,507 bytes) and Library_notes.pdf (88,818 bytes); all three API file MD5 fields are null. The item declares CC BY 4.0. No payload was inspected.",
     "url": "https://figshare.com/articles/dataset/Vocal_repertoires_from_adult_and_chick_male_and_female_zebra_finches_Taeniopygia_guttata_/11905533",
-    "checked": "2026-10-24",
-    "origin": "Reviewed the Figshare landing page and queried its public metadata API over verified TLS. No audio file or archive was downloaded and the relationship between its files and the 2025 paper's analyzed stimuli was not verified.",
+    "checked": "2026-10-25",
+    "origin": "Queried the official Figshare v2 item API over verified TLS on October 25, 2026, and reviewed the official landing-page description. The API reports version 1, DOI 10.6084/m9.figshare.11905533.v1, the three listed file sizes, and no MD5 values. The page's filename convention and discrepancy warning were recorded; no archive or audio URL was followed, and no mapping to the 2025 study trials was verified.",
     "rights": {
       "license": "CC BY 4.0 declared on the Figshare record.",
       "scope": "The vocal-repertoire files listed on this record. File contents and underlying component provenance were not inspected.",
@@ -3908,10 +3908,10 @@
   {
     "id": 377,
     "title": "Zebra-finch call-type behavioral data and analysis-code archive, Zenodo",
-    "description": "The final PMC-indexed Science paper directly cites versioned Zenodo DOI 10.5281/zenodo.13623969 (v1; 30,929,664-byte ZIP, described as the August 31, 2024 initial submission). The UC Berkeley copy cites concept DOI 10.5281/zenodo.13623968, whose later v3 resubmission is record 15795568 (99,341,119-byte ZIP, July 2025). Both records declare CC BY 4.0 at record level. Archive contents and which version supports the final published analyses remain unverified.",
+    "description": "The final PMC-indexed Science paper cites Zenodo DOI 10.5281/zenodo.13623969 (v1; 30,929,664-byte ZIP, initial submission dated 2024-08-31; provider MD5 5ab1934fd3b07a97eb68501f39670865). The UC Berkeley copy cites concept DOI 10.5281/zenodo.13623968, whose current v3 resubmission is record 15795568 (99,341,119-byte ZIP dated 2025-07-03; provider MD5 eb041f1c9928a7feadb206ef955168e6). Both records declare CC BY 4.0. The API checksums are provider-reported, not locally recomputed; archive contents and which version supports the final analyses remain unverified.",
     "url": "https://zenodo.org/records/13623969",
-    "checked": "2026-10-24",
-    "origin": "Queried the official Zenodo records API over verified TLS. Record 13623969 is version 1.0 and describes the August 31, 2024 initial-submission ZIP; concept DOI 13623968 resolves to the later version 3.0 resubmission at record 15795568. Both records declare CC BY 4.0 at record level. Provider metadata only; no archive payload was downloaded.",
+    "checked": "2026-10-25",
+    "origin": "Queried the official Zenodo records API over verified TLS on October 25, 2026. Record 13623969 is version 1.0; concept DOI 13623968 resolves to version 3.0 at record 15795568. The API reports the listed ZIP sizes and MD5 values. No archive payload was downloaded, no checksum was verified locally, and no version was treated as proven final-analysis support.",
     "rights": {
       "license": "CC BY 4.0 declared at the Zenodo record level for both API-resolved deposits.",
       "scope": "The versioned data-and-code archive as described in record metadata. Archive contents, embedded assets and component-level rights were not inspected.",
@@ -3933,10 +3933,10 @@
   {
     "id": 379,
     "title": "Radočaj & Radočaj 2026 zebra-finch call-classification study",
-    "description": "Peer-reviewed article reports single-task and biologically informed multi-task classification of 11 zebra-finch call types and six broader categories using frozen BirdAVES embeddings. Its evaluation is one bird-level partition; this is prediction of supplied labels, not open-ended translation.",
+    "description": "Peer-reviewed article introduces biologically informed multi-task classification with frozen BirdAVES embeddings, using 11 supplied call types and six behavior-derived functional/semantic categories as supervised targets. It reports one bird-level partition and improved call-type metrics; it does not directly compare item-level model errors with measured receiver responses and does not establish translation.",
     "url": "https://www.mdpi.com/2504-4990/8/10/318",
-    "checked": "2026-10-24",
-    "origin": "Reviewed publisher-hosted article sections covering the abstract, data/methods, bird-level split, training and evaluation, results, limitations, conclusion and data statement, plus the article-specific version history. The article page and version history list no supplementary file; a nearby 285 KB ZIP belongs to a different article in the same issue. The article is listed as open access; the journal policy specifies CC BY 4.0. No audio, source code or BirdAVES weights were acquired or run."
+    "checked": "2026-10-25",
+    "origin": "Reviewed the publisher-hosted article sections and version history on October 24, 2026. On October 25, the official publisher-indexed title, framing and results excerpt were rechecked; direct page retrieval returned HTTP 429, so no new full-text review is claimed. Exact article content/rights remain distinct from source data, author code and pretrained weights; no audio, code or weights were acquired or run."
   },
   {
     "id": 380,
