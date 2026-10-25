@@ -4,9 +4,17 @@
 
 **Question:** did the open local Station preview represent the current Field Companion source?
 
-**Evidence:** port 4189 returned HTTP 200, but its response header showed `Last-Modified: 2026-10-24 23:29:20 GMT`; the served app navigation used the generic Station link. Current `main` at `9ab29a5` contains the beginner Listen destination, `/app/station/?mode=companion#station-console`. A fresh noindex build from that revision generated 140 pages plus 404; the site checker validated 141 HTML documents and 7,301 links. The fresh local preview at `http://127.0.0.1:4202/app/` and its companion Station and Practice routes returned HTTP 200, and the home-page read-back contains both the beginner Listen target and “Start a 30-second moment.”
+**Evidence:** the open local Station page returned HTTP 200, but its response header showed `Last-Modified: 2026-10-24 23:29:20 GMT`; the served app navigation used the generic Station link. Current `main` at `9ab29a5` contains the beginner Listen destination, `/app/station/?mode=companion#station-console`. A fresh noindex build from that revision generated 140 pages plus 404; the site checker validated 141 HTML documents and 7,301 links. Its loopback preview and the Companion Station and Practice routes returned HTTP 200, and the home-page read-back contains both the beginner Listen target and “Start a 30-second moment.”
 
-**Validation and limits:** all 127 Node tests passed; all 175 Python tests passed with one intentional external-sample skip. The browser-control service timed out, so this was a build, HTTP and HTML read-back, not a visual or interactive browser check. The port 4202 preview is local-only and noindex; nothing was deployed. Keep the named physical-phone and uncoached first-time-user gates open. Do not change the interface without observed friction.
+**Validation and limits:** all 127 Node tests passed; all 175 Python tests passed with one intentional external-sample skip. The browser-control service timed out, so this was a build, HTTP and HTML read-back, not a visual or interactive browser check. The preview was local-only and noindex; nothing was deployed. Keep the named physical-phone and uncoached first-time-user gates open. Do not change the interface without observed friction.
+
+## October 25 — verify the 2027 Trebek Initiative call and decide fit
+
+**Question:** is the National Geographic Society's near-deadline Trebek RFP a credible application target for Talk2Nature?
+
+**Evidence:** the official [current grants listing](https://www.nationalgeographic.org/explore/grants-investments) labels it the 2027 Trebek Initiative RFP, gives an October 28, 2026 deadline, and requires distinct impact in Canada. The same official page's general criteria state applicants must be 18 or older, project start dates should be at least six months after the deadline, and strong local-context connection is ideal. Its Apply link leads to the [funding portal RFP page](https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000CohhIAC/2027-trebek-initiative-rfp); a direct unauthenticated read returned a short SAML/RelayState page with no readable RFP text. The project record has no Canada-specific workstream, locally connected lead or confirmed Canadian collaborator.
+
+**Decision and limits:** no-go for this cycle; do not invent a Canadian workstream or rush an application. This is a fit decision from the project record and listing, not a formal applicant-eligibility ruling. Award amount and RFP-specific terms remain unverified; no application, account activity or outreach occurred. Updated `content/opportunities.json` and the source catalog. Reconsider a future cycle only if a genuine Canada-based project and local lead exist and the detailed terms can be reviewed.
 
 ## October 25 — run the zero-command loop in an isolated phone-width browser
 
