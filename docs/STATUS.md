@@ -10,6 +10,14 @@
 
 **Limit and next step:** this adds a literature location only; it is not an animal sighting, dataset release or communication finding. The zero-command companion still needs a clean-profile check, a named physical-phone session and an authorized uncoached first-use walkthrough; no fresh visual, physical-device or independent-user evidence was produced here. Keep those gates open and continue source-grounded library work without adding UI features until a user-observed obstacle warrants one. The benchmark remains **NOT READY**.
 
+## October 25 — verify the current published atlas and precise GeoNames terms
+
+**Correction:** GeoNames' current export terms describe the data as CC BY attribution and allow commercial use, without naming a version. Updated the source record to use that exact description rather than inferring a version.
+
+**Publication and read-back:** PR [#424](https://github.com/Metivity/talk2nature/pull/424) merged as [`b9bcdfd`](https://github.com/Metivity/talk2nature/commit/b9bcdfdd39eb9e9d4aa5bcabab8483e13eb43caf); Pages run [#40176376957](https://github.com/Metivity/talk2nature/actions/runs/40176376957) passed the public tests, build, publish-boundary check, deployment and live-route verifier. A fresh TLS-verified catalog read-back returned the same atlas fingerprint, `fa1c3b131c34981e19059068c5ada1b4c4d727d067e5cd63f38920fe7124d8f0`, with 107 notes, 38 mapped notes across 36 places, 353 cited-source records, 46 pending and 23 not applicable. The live goals page reports 38/20 geographic and 3/3 historical milestones.
+
+**Limit:** this is metadata and release-record verification. It adds no observations, changes no map coordinates, and does not advance the ML benchmark or the zero-command human/device gates.
+
 ## October 25 — reverify researcher onboarding from current public main
 
 **Question:** do the documented synthetic annotation and grouped-split examples still work in a fresh clone of the latest public revision, without setup or third-party data?
