@@ -1,5 +1,15 @@
 # Project status
 
+## October 25 — correct offline status during service-worker replacement
+
+**Question:** why did the public Field Companion show both an update-ready notice and an offline-setup failure, and was the offline shell actually unavailable?
+
+**Observed and traced:** the published app home displayed “Update ready” and “Offline setup did not complete” at the same time. In `web/assets/app.js`, every `redundant` service-worker state unconditionally wrote the failure message. The [W3C Service Workers specification](https://www.w3.org/TR/service-workers/) uses `redundant` both when a worker is replaced and when an install fails. The app already asks its active worker whether the exact offline shell is ready, so this lifecycle event alone was not proof that offline setup had failed.
+
+**Change and checks:** the redundant-worker handler now checks the active shell and preserves the truthful state: ready when its complete allowlist is present, repair guidance when an active shell is incomplete, and an install-failure message only when no active worker exists. Added focused cases for all three states. The clean local first-visit browser check showed “Offline tools are optional” with no error; this check did not create an offline registration. Python tests passed (170, one skipped), Node tests passed (122), and the local noindex build/check passed (139 HTML pages, 7,090 links). The app helper remains in the existing offline asset allowlist.
+
+**Limits and next step:** the replacement/failure branches were exercised through the helper's tests, not a physical-phone service-worker lifecycle. The currently published app still has the previous revision until this change is merged and deployed. After the authorized Pages deployment, recheck the live app with an update waiting and confirm that offline readiness is not mislabeled; then continue the outside first-use and physical-device gates. No recordings were made, uploaded or admitted.
+
 ## October 25 — recheck Google discovery after the public releases
 
 **Question:** did Google process the public research-directory update, and is the submitted sitemap failing because of a visible site defect?

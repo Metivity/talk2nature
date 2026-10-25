@@ -7,6 +7,31 @@ export function announceWaitingUpdate(notice, offline) {
   } else if (offline) offline.textContent=updateReadyMessage;
 }
 
+export function redundantWorkerStatus(hasActiveWorker, activeShellReady) {
+  if (hasActiveWorker && activeShellReady) return {
+    message: 'Offline tools are ready on this browser.',
+    button: 'Check for app updates'
+  };
+  if (hasActiveWorker) return {
+    message: 'Offline files are missing. Reconnect and use Enable offline tools to repair them.',
+    button: 'Enable offline tools'
+  };
+  return {
+    message: 'Offline setup did not complete. Check your connection and storage, then try again.',
+    button: 'Enable offline tools'
+  };
+}
+
+export async function resolveRedundantWorker(registration, shellReady) {
+  const active=registration.active;
+  let ready=false;
+  if (active) {
+    try { ready=await shellReady(active)===true; }
+    catch { ready=false; }
+  }
+  return redundantWorkerStatus(Boolean(active),ready);
+}
+
 export function watchWaitingWorker(registration, onReady) {
   let announced = false;
   const check = () => {

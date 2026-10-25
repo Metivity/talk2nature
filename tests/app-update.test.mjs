@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {announceWaitingUpdate,watchWaitingWorker} from '../web/assets/app-update.mjs';
+import {announceWaitingUpdate,resolveRedundantWorker,watchWaitingWorker} from '../web/assets/app-update.mjs';
 
 const updateMessage='A new version is ready. Save any moment you want to keep, close all Talk2Nature tabs or windows, then reopen the app.';
 
@@ -17,6 +17,35 @@ test('offline status is the fallback when no global update notice exists',()=>{
   const offline={textContent:'Checking offline availability…'};
   announceWaitingUpdate(null,offline);
   assert.equal(offline.textContent,updateMessage);
+});
+
+test('a replaced worker keeps the verified active offline shell status',async()=>{
+  const active={};
+  assert.deepEqual(await resolveRedundantWorker({active},async worker=>worker===active),{
+    message:'Offline tools are ready on this browser.',
+    button:'Check for app updates'
+  });
+});
+
+test('a missing active shell offers repair without claiming offline readiness',async()=>{
+  assert.deepEqual(await resolveRedundantWorker({active:{}},async()=>false),{
+    message:'Offline files are missing. Reconnect and use Enable offline tools to repair them.',
+    button:'Enable offline tools'
+  });
+});
+
+test('a failed first install explains that offline setup did not complete',async()=>{
+  assert.deepEqual(await resolveRedundantWorker({active:null},()=>{throw Error('must not run');}),{
+    message:'Offline setup did not complete. Check your connection and storage, then try again.',
+    button:'Enable offline tools'
+  });
+});
+
+test('a failed readiness probe degrades to repair guidance rather than an unhandled error',async()=>{
+  assert.deepEqual(await resolveRedundantWorker({active:{}},async()=>{throw Error('probe failed');}),{
+    message:'Offline files are missing. Reconnect and use Enable offline tools to repair them.',
+    button:'Enable offline tools'
+  });
 });
 
 test('an already-waiting worker is announced once without mutating registration state',()=>{
