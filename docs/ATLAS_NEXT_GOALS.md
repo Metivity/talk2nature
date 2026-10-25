@@ -6,10 +6,12 @@ These milestones describe the next program work. They are not claims of funding,
 
 | Goal | Current state | Completion evidence | Next action |
 | --- | --- | --- | --- |
-| 20 notes with supported geography | 38 of 20 verified in the latest public atlas; coverage target reached | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen remaining source reviews without optimizing for pin count |
+| 20 notes with supported geography | 39 of 20 verified in the latest public atlas; coverage target reached | Primary-source location passage, correct location role, coarse public point and review date on each note | Deepen remaining source reviews without optimizing for pin count |
 | Three historical source notes | Three of three; coverage target reached | Three distinct notes with original source years before 2000, review depth and observation/source-date separation | Deepen methods review for the historical notes already counted and continue checking later reassessments |
 | One reviewed passive parrot pilot | Needs reviewer and access | Confirmed carers/species, avian specialist review, consent, independent labels, a successful physical-phone rehearsal | Resolve the access/reviewer checklist in `PILOT_PROTOCOL_DRAFT.md`; do not recruit or ingest real data prematurely |
 | First protected observation release | Needs consent and hosting review | Reviewed protocol/rights, private hosting, tested withdrawal, human review and an independently checked public location projection | Finish the existing hosting/consent gates before implementing public participant pins |
+
+**Latest live read-back — October 25:** PR [#426](https://github.com/Metivity/talk2nature/pull/426), merged as [`d22b494`](https://github.com/Metivity/talk2nature/commit/d22b4948eb39e80ed998e5a4e0e75887c1dac4ce), was deployed by Pages run [#40179946304](https://github.com/Metivity/talk2nature/actions/runs/40179946304). The live atlas returns fingerprint `bea1320c7fe4e2ff8f58ec79805704c6228dec66869fd797b245f64b3e8fadf7`: 107 literature notes, 39 mapped across 36 places, 354 cited-source links, 44 pending and 24 not applicable. The wider public catalogs contain 439 sources and 229 collection resources. HyenaSET is represented only by a country-scale Kenya reference; iNatSounds has no single atlas point. No individual animal or recording coordinates are exposed.
 
 ## October 25 location review — PteroSet study regions
 
