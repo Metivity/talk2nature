@@ -1,5 +1,13 @@
 # Project status
 
+## October 25 — walk through the published zero-command rehearsal
+
+**Question:** can a first-use visitor try the Shared moments path without configuration or microphone access, and does the app accurately describe what the practice result is?
+
+**Live walkthrough:** on the published `mode=companion` route, the preset showed “Whole moment · 30 seconds” and left animal identity at “Not sure yet.” One tap on “Try without a microphone” started a clearly labeled synthetic session and did not request microphone access. Ending it after about 1.8 seconds produced a “Partial observation window” recap labeled “Invented practice audio”; the page said the audio remained temporary and should be saved before leaving. The recap also preserves the distinction between sounds noticed in the setting and identification of the clip.
+
+**Limit and next decision:** this is a maintainer-run browser check of the synthetic practice path. It does not test actual recording, a physical phone, screen-reader use, first-time comprehension or independent adoption. No real animal/participant recording was made, saved or uploaded. Keep the goal active; the next zero-command acceptance is an uncoached first-time walkthrough and a physical-phone save/reopen check using only synthetic or otherwise authorized material.
+
 ## October 25 — align the execution board with current evidence
 
 **Question:** does the active board still reflect the latest researcher-check and Field Companion release, while distinguishing maintainer verification from outside use?
