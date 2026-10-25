@@ -4513,5 +4513,32 @@
     "rights": {
       "location": "GeoNames data is available under CC BY attribution terms; credit GeoNames. Only the rounded country reference is used, not study-site or observation data."
     }
+  },
+  {
+    "id": 443,
+    "title": "Brown-throated parakeet vocalization dataset, Dryad",
+    "description": "Primary Dryad dataset record for contact-call acoustics and measurements from Brown-throated Parakeets across island and mainland populations. The record lists 57.09 MB across two sound-file archives, five spreadsheets and a README.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.k3j9kd58b",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official Dryad record's file inventory, abstract and recommended dataset citation. No README or dataset files were opened or downloaded. The record cites the related paper as Eberhard et al. (2022), DOI 10.1093/ornithology/ukab076; the publisher article page was not reviewed.",
+    "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k3j9kd58b",
+    "review_url_label": "Official Dryad data record and public file inventory",
+    "rights": {
+      "dataset": "Current Dryad publication policy says accepted datasets are released under CC0; this DOI's file-level API metadata was not separately checked in this review.",
+      "scope": "Dataset-level policy only. No article text, figures, files, or audio are reproduced. Exact file contents and spatial sensitivity are unreviewed."
+    }
+  },
+  {
+    "id": 444,
+    "title": "Dryad publication policy, updated April 8, 2026",
+    "description": "Current Dryad policy says accepted datasets are published under a CC0 instrument and notes that Dryad does not verify scientific validity, veracity, accuracy or completeness.",
+    "url": "https://datadryad.org/publication_policy",
+    "checked": "2026-10-25",
+    "origin": "Reviewed the official Dryad Publication Policies page, updated April 8, 2026, especially dataset content criteria, publication under CC0, curation boundaries and scientific-validity limitations.",
+    "review_url": "https://datadryad.org/publication_policy",
+    "review_url_label": "Official Dryad publication policies",
+    "rights": {
+      "policy": "Dryad says accepted published datasets are made available under CC0. This policy does not establish that a particular dataset is scientifically suitable, complete, privacy-safe, or independently validated."
+    }
   }
 ]

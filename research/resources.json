@@ -7187,6 +7187,36 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "brown-throated-parakeet-contact-calls-2021",
+      "kind": "dataset",
+      "title": "Brown-throated parakeet contact-call acoustics and measurements",
+      "url": "https://doi.org/10.5061/dryad.k3j9kd58b",
+      "version": "Dryad dataset published 2021-11-01; DOI 10.5061/dryad.k3j9kd58b",
+      "source_ids": [
+        443,
+        444
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-25",
+      "task": "Potential descriptive comparison of contact-call acoustics across island and mainland populations; not a call-meaning or receiver-response benchmark.",
+      "review_depth": "Reviewed the official Dryad record's abstract, exact file inventory and citation, plus the current Dryad publication policy. No README, spreadsheet, audio, article full text or supplement was inspected; no dataset bytes were acquired.",
+      "access": "Public Dryad record and file listing. The record lists two sound-file ZIPs and six supporting files totaling 57.09 MB. No files were downloaded.",
+      "decision": "Metadata-only candidate. First inspect the README and tabular grouping fields, then assess spatial sensitivity and scientific fit with a qualified parrot-bioacoustics reviewer. Do not admit to training or claim communication meaning.",
+      "limitations": "Individual/session grouping, recording conditions, call-label provenance, exact site contents, receiver responses and split suitability are unknown. The dataset record's abstract reports that experimental tests are needed to relate call variation to receiver responses.",
+      "attribution": "Eberhard, J., Zager, I., Ferrer-Paris, J. & Rodriguez-Clark, K. (2021). Brown-throated parakeet vocalization data [Dataset]. Dryad. https://doi.org/10.5061/dryad.k3j9kd58b.",
+      "rights": {
+        "license": "Dryad's current publication policy says accepted published datasets are made available under CC0; the DOI's file-level API metadata was not separately checked in this review.",
+        "scope": "Dataset policy only. The journal article, individual file contents, possible location-sensitive details and any derived model are separate concerns.",
+        "evidence_url": "https://datadryad.org/publication_policy",
+        "conditions": "Before acquisition, inspect the README, exact table fields and spatial sensitivity; establish a narrow task and appropriate group split. No files have been acquired or admitted.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
