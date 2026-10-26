@@ -15,7 +15,7 @@ List the exact tests or manual checks run. For a data-loss or correctness fix, i
 - [ ] I have the rights to contribute these changes and have recorded third-party license/provenance where relevant.
 - [ ] I did not include raw recordings, participant data, credentials, personal paths or sensitive wildlife locations.
 - [ ] I have not enabled animal playback, real-data intake or a scientific claim without the required review.
-- [ ] I disclosed substantive AI assistance and checked the resulting sources, behavior and code.
+- [ ] If AI materially assisted this change, I described its use and the human checks; I named the tool/model and version when known.
 
 ## Public release boundary
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -601,15 +601,16 @@
       "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
       "version": "Dryad v6 (API version record 180872); published 2022-05-31; last modified 2022-06-01",
       "source_ids": [
-        135
+        135,
+        444
       ],
       "priority": 2,
-      "reviewed": "2026-10-11",
+      "reviewed": "2026-10-26",
       "task": "Potential species-specific vocal-development reference; not an event-context or semantic-translation benchmark.",
-      "review_depth": "Exact Dryad record, Abstract, Methods, API dataset/version records and three-file inventory reviewed, including per-file SHA-256 metadata. End User Terms (updated May 20, 2025) and Publication Policies (updated April 8, 2026) say published datasets are made public under CC0; no separate exception is displayed on this record. An unauthenticated byte-range request to the API download route returned 401; the web file-stream route returned HTML headers rather than a file. No file bytes, article PDF or supplement were downloaded.",
-      "access": "Official Dryad API v6 inventory totals 2,600,218,232 bytes: AllBouts.zip (2,556,303,736 bytes), the measurements workbook (43,909,749 bytes) and README20220326.csv (4,747 bytes). The README has SHA-256 ae6e5cdf1067de3a11a5561a304a4bea47ba816b2c7f4063fdc98a1f417daf50; exact file IDs, sizes and hashes are cataloged below. No data bytes were acquired.",
-      "decision": "Keep metadata-only. Dataset-level CC0 and a version-pinned inventory are documented, but the contents remain uninspected and the tested download routes did not return the file. Obtain it only through an authorized route, then inspect schema, linkage, interventions and contents; decide with an avian vocal-development reviewer whether a bounded developmental question justifies acquisition. This is not a call-context or semantic-translation benchmark.",
-      "limitations": "Wild green-rumped parrotlet nestlings at one station in 2017–2018; the study includes corticosterone supplementation. Individual/session joins, timestamped independent behavior labels, audio-video timing, split design and full dataset contents were not reviewed. The repository's license declaration does not establish privacy/welfare suitability, benchmark fitness or model admission. It does not establish call meaning.",
+      "review_depth": "Fresh review of the official Dryad record and current Publication Policies, including the displayed v6 file inventory, abstract, Methods and the direct README link. The policy states that accepted datasets are published under CC0, but Dryad does not verify scientific validity/completeness and is not obligated to screen for sensitive or inappropriate content. The 4.75 KB README link returned HTTP 403 on October 26. No dataset bytes, audio/video, article PDF or supplement were acquired.",
+      "access": "The official Dryad v6 inventory totals 2,600,218,232 bytes: AllBouts.zip (2,556,303,736 bytes), the measurements workbook (43,909,749 bytes) and README20220326.csv (4,747 bytes). API metadata lists a SHA-256 for each item; the direct README link returned HTTP 403. No file bytes were acquired.",
+      "decision": "Remain metadata-only. Dryad policy makes accepted data available under CC0, but this does not certify scientific validity, screen every sensitive-content issue, or establish suitability. The README is still uninspected because its direct link returned 403; do not try an authenticated route or obtain the 2.56 GB archive. If a lawful public README route becomes available, inspect that small file first, then decide whether any larger artifact merits a bounded review with an avian vocal-development specialist. This is not a call-context or semantic-translation benchmark.",
+      "limitations": "Wild green-rumped parrotlet nestlings at one station in 2017–2018; the study includes corticosterone supplementation. Individual/session joins, timestamped independent behavior labels, audio-video timing, split design and full dataset contents were not reviewed. Dryad policy says it is not obligated to screen for sensitive/inappropriate content and does not verify scientific validity, veracity, accuracy or completeness; CC0 therefore does not establish content safety, scientific fitness or model admission. It does not establish call meaning.",
       "attribution": "Berg and Eggleston (2022), Green-rumped parrotlet vocal-babbling dataset, Dryad DOI 10.5061/dryad.k0p2ngfb3; cite the associated paper separately.",
       "api_version_record": {
         "id": 180872,
@@ -643,7 +644,7 @@
         "license": "CC0 1.0 under Dryad's published-dataset policy; no separate exception is displayed on this record",
         "scope": "The published Dryad dataset only. The README and data files were not opened. The journal article, supplement, software, model weights and any embedded third-party content remain separate components.",
         "evidence_url": "https://datadryad.org/publication_policy",
-        "conditions": "Dryad's current policy supports dataset-level reuse under CC0, but inspect the README and exact file contents, linkage, intervention structure and privacy/welfare implications before acquisition or model use. No files were downloaded or admitted to research.",
+        "conditions": "Dryad states that accepted published datasets are made available under CC0; no record-specific exception is displayed. Its policy does not guarantee sensitive-content screening or scientific validity/completeness. Inspect the README and exact file contents, linkage, intervention structure and privacy/welfare implications before acquisition or analysis. The README link returned HTTP 403; no files were downloaded or admitted.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
@@ -4890,7 +4891,7 @@
         338
       ],
       "priority": 1,
-    "reviewed": "2026-10-25",
+      "reviewed": "2026-10-25",
       "task": "Methods and dataset-description paper for species-level bird vocalization detection and geographic bioacoustic research.",
       "review_depth": "Reviewed the publisher page's abstract and data-availability statement, Zenodo v3/v4 record pages and API metadata, and DataCite rights metadata for both versions. The publisher and structured Zenodo/DataCite fields declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. The full article body, methods, supporting-information PDF and analyses were not reviewed; no data, code or model was acquired or run.",
       "access": "Publisher page links the dataset at Zenodo DOI 10.5281/zenodo.17293588. No paper PDF was retained.",
@@ -7278,6 +7279,94 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "rook-repertoire-paper",
+      "kind": "paper",
+      "title": "Vocal complexity in a socially complex corvid: gradation, diversity and lack of common call repertoire in male rooks",
+      "url": "https://doi.org/10.1098/rsos.231713",
+      "version": "Royal Society Open Science 11 (2024), 231713",
+      "priority": 2,
+      "reviewed": "2026-10-26",
+      "task": "Methods comparator for vocal-unit analysis, caller identity and observed behavior context in a social bird.",
+      "review_depth": "Primary full text reviewed for Methods 2.1-2.3, dataset distribution results and Discussion; the full article was opened through Cambridge's repository. Supplementary materials and a quantitative reproduction were not reviewed.",
+      "access": "Open published article and institutional repository copy.",
+      "decision": "Use as a scientific-design comparator. The paper text license does not grant rights to the separate Zenodo recordings, annotation tables or GitLab code.",
+      "limitations": "Two captive colonies, two countries and 47.9 recorded hours. Only 33% of vocal units could be assigned an observed context; the Discussion says most calls were not conclusively associated with behavior and singles out nest calls. Methods report eight Cambridge birds but list four females and three males; reconcile the roster before reusing counts. Neither a vocal-unit cluster nor caller identity establishes meaning or receiver response.",
+      "attribution": "Martin, Cornero, Clayton, Adam, Obin and Dufour (2024), DOI 10.1098/rsos.231713.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Published article text only; recordings, labels and analysis code are separately licensed or unresolved.",
+        "evidence_url": "https://www.repository.cam.ac.uk/items/e2a89bcf-b7f5-474e-932e-445a44901306",
+        "conditions": "Attribute the published article and mark changes. Talk2Nature publishes its own short summary and links, not copied article text or figures.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        452
+      ]
+    },
+    {
+      "id": "rook-recordings-v1",
+      "kind": "dataset",
+      "title": "Annotated recordings of two captive groups of rooks",
+      "url": "https://zenodo.org/records/8036310",
+      "version": "Zenodo record 8036310, v1; DOI 10.2306/rook.comp",
+      "priority": 2,
+      "reviewed": "2026-10-26",
+      "task": "Potential later study of observer-coded caller identity and vocal-unit/context associations, subject to rights and label review.",
+      "review_depth": "Zenodo record description, version, file names/sizes and Rights section reviewed. No files or audio were acquired, opened or checksum-tested.",
+      "access": "Zenodo lists 27.9 GB total, including 26.2 GB audio.zip, 480.2 kB clean_labels.zip, 565.0 kB labels.zip and a 1.7 GB example.zip. Public visibility is not a license.",
+      "decision": "Metadata only. The Zenodo Rights > License field is blank; do not fetch, train on, redistribute or commercially use the files until permission and component scope are documented.",
+      "limitations": "The associated paper reports 31,148 vocal units over 47.9 h from two captive colonies; 25,220 identified, non-overlapping units were used in analyses. Only 33% were contextualized from observation. Missing context is not a negative label. Context class counts, label reliability, exact file-to-individual/session groups and the Cambridge roster discrepancy remain to be checked if rights are resolved.",
+      "attribution": "Martin et al. (2024) associated article; Zenodo record 8036310 / DOI 10.2306/rook.comp.",
+      "rights": {
+        "license": "No license displayed in the Zenodo record's Rights section as reviewed 2026-10-26",
+        "scope": "Audio, clean annotation tables, Audacity labels and the large example archive have not been shown to carry a reuse license in this record.",
+        "evidence_url": "https://zenodo.org/records/8036310",
+        "conditions": "Zenodo states that reuse depends on the specific record's license. Request clarification before any download or use; the article's CC BY 4.0 license is not a data license.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        453,
+        455
+      ]
+    },
+    {
+      "id": "rook-analysis-code",
+      "kind": "code",
+      "title": "Rook vocal-unit clustering analysis repository",
+      "url": "https://gitlab.com/kimartin/cluster_rook_vocs",
+      "version": "main commit 1feb3309284d688c71350e74f91fee3a9259edb0",
+      "priority": 2,
+      "reviewed": "2026-10-26",
+      "task": "Possible analysis-method comparator for dynamic time-frequency warping, UMAP and HDBSCAN.",
+      "review_depth": "Pinned GitLab repository metadata, recursive tree and README checked. No LICENSE or COPYING file appeared in the tree; no code was downloaded or executed.",
+      "access": "Public GitLab repository; its license remains unresolved.",
+      "decision": "Metadata only. Do not acquire, execute, adapt or redistribute this code until a license is identified and its dependencies and data assumptions are reviewed.",
+      "limitations": "A public repository is not automatically reusable code. The paper describes a custom dynamic frequency-time warping method and clustering parameters, but neither its code nor outputs were independently reproduced.",
+      "attribution": "Killian Martin, cluster_rook_vocs, inspected main commit 1feb3309284d688c71350e74f91fee3a9259edb0; repository metadata checked 2026-10-26.",
+      "rights": {
+        "license": "No license file found in the pinned recursive repository tree",
+        "scope": "Repository code only; the paper and audio/annotation dataset have separate rights.",
+        "evidence_url": "https://gitlab.com/api/v4/projects/35272205/repository/tree?ref=1feb3309284d688c71350e74f91fee3a9259edb0&per_page=100&recursive=true",
+        "conditions": "Obtain and document permission or a license from the rights holder before downloading or reusing code.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        454
+      ]
     }
   ]
 }

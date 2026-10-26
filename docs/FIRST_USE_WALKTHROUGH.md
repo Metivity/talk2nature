@@ -27,11 +27,11 @@ Observe whether they can:
 
 1. Find and start microphone-free practice without granting permission.
 2. Add one human-entered note and finish the session.
-3. Save the practice and reopen it in Compare using the normal file picker, without JSON editing or archive extraction.
+3. Save the practice and determine what the app asks next. If it asks the person to confirm the download, let them check the ordinary download location without hints; observe whether they find the visible Compare step and reopen the same file with the normal picker, without JSON editing or archive extraction.
 4. Explain that the example is invented practice material, not a recording or interpretation of an animal.
 5. Understand whether anything was uploaded or played automatically, based on the interface wording.
 
-Record completion, approximate time, assistance, first hesitation and any mismatch between what the interface says and what the participant believes. Do not record a participant's name, audio, screen or verbatim comments.
+Record completion, approximate time, assistance, first hesitation, whether the person confirms finding the download, and any mismatch between what the interface says and what the participant believes. Do not record a participant's name, audio, screen or verbatim comments.
 
 ## Acceptance and reporting
 

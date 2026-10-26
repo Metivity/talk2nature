@@ -309,6 +309,20 @@
       "precision": "country",
       "latitude": 8.0,
       "longitude": -66.0
+    },
+    {
+      "id": "strasbourg-region",
+      "label": "Strasbourg region, France · captive rook study",
+      "precision": "region",
+      "latitude": 48.6,
+      "longitude": 7.7
+    },
+    {
+      "id": "cambridge-region-uk",
+      "label": "Cambridge region, UK · captive rook study",
+      "precision": "region",
+      "latitude": 52.2,
+      "longitude": 0.1
     }
   ]
 }

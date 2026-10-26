@@ -152,10 +152,10 @@
   {
     "id": 19,
     "title": "2026 Coller Dolittle award",
-    "description": "Jeremy Coller Foundation. Official 26 June 2026 award announcement. It says 2027 prize submissions close 30 August 2026; this conflicts with the Tel Aviv University challenge page, which states 30 September 2026.",
+    "description": "Jeremy Coller Foundation. Official 26 June 2026 announcement names zebra-finch researcher Julie Elie as the 2026 US$100,000 annual prize recipient. It states the 2027 deadline as 30 August 2026, conflicting with the Tel Aviv University challenge page's 30 September date.",
     "url": "https://www.jeremycollerfoundation.org/news-and-insights/press-releases/scientists-win-us100-000-in-2026-coller-dolittle-prize",
-    "checked": "2026-10-13",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-26",
+    "origin": "Directly reopened the official Foundation press release on October 26, 2026. It identifies the 2026 annual prize recipient and repeats the August 30, 2026 deadline for the 2027 prize. This is not evidence of Talk2Nature's eligibility or application outcome."
   },
   {
     "id": 20,
@@ -204,8 +204,8 @@
     "title": "Coller Dolittle current rules",
     "description": "Tel Aviv University-hosted official challenge page. It says 2027 submissions close 30 September 2026 by noon CET and the award recognizes work already performed; the Foundation's June 2026 announcement states 30 August.",
     "url": "https://coller-dolittle-24.sites.tau.ac.il/",
-    "checked": "2026-10-13",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-26",
+    "origin": "Directly reopened the official TAU challenge page on October 26, 2026. It states the September 30, 2026 noon CET deadline, completed-work requirement, non-invasive/multiple-context/endogenous-signal criteria, measurable response and public data requirement."
   },
   {
     "id": 26,
@@ -1306,11 +1306,11 @@
     "id": 135,
     "title": "Green-rumped parrotlet vocal-babbling data, Dryad version of May 31, 2022",
     "url": "https://doi.org/10.5061/dryad.k0p2ngfb3",
-    "description": "The published Dryad record describes audio-video bouts recorded in nest cavities, spectrographic measurements and associated metadata. The official API identifies version 6 and a three-file inventory totaling 2,600,218,232 bytes, with SHA-256 digests. Dryad's current publication policy says accepted datasets are published under CC0; tested file routes did not return the README bytes, and no files were downloaded.",
-    "checked": "2026-10-12",
-    "origin": "Exact Dryad dataset page, public API dataset/version/file records (v6, version record 180872), End User Terms updated May 20, 2025, and Publication Policies updated April 8, 2026 reviewed October 12, 2026. The current policy states that published datasets are made public under CC0; no record-specific exception is displayed. The unauthenticated API download route returned 401 to a byte-range request; the web file stream returned HTML rather than the file. No file bytes were read or saved.",
+    "description": "The published Dryad record describes audio-video bouts recorded in nest cavities, spectrographic measurements and associated metadata. The official API identifies version 6 and a three-file inventory totaling 2,600,218,232 bytes, with SHA-256 digests. Dryad policy says accepted datasets are published under CC0, but the direct README link returned HTTP 403 on October 26; no file bytes were acquired.",
+    "checked": "2026-10-26",
+    "origin": "Fresh review of the official Dryad dataset page and linked README file on October 26, 2026, plus the official Publication Policies page updated April 8, 2026. The page lists v6, version record 180872 and the three exact file sizes. Dryad states that published datasets are made available under CC0; its policy also says it is not obligated to screen sensitive/inappropriate material or validate scientific accuracy/completeness. The 4.75 KB README link returned HTTP 403; no file bytes were acquired.",
     "review_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k0p2ngfb3",
-    "review_url_label": "Dryad dataset record, version and file inventory",
+    "review_url_label": "Dryad dataset record, version and file inventory; README link checked October 26",
     "rights": {
       "dataset": "Dryad's current Terms and Publication Policies say accepted/published datasets are made public under CC0. This published DOI has no separate exception displayed on its record. Dataset-level statement only: the README and file contents remain uninspected, so this does not establish suitability or admission for a particular analysis or model.",
       "policy_evidence_url": "https://datadryad.org/publication_policy",
@@ -4533,8 +4533,8 @@
     "title": "Dryad publication policy, updated April 8, 2026",
     "description": "Current Dryad policy says accepted datasets are published under a CC0 instrument and notes that Dryad does not verify scientific validity, veracity, accuracy or completeness.",
     "url": "https://datadryad.org/publication_policy",
-    "checked": "2026-10-25",
-    "origin": "Reviewed the official Dryad Publication Policies page, updated April 8, 2026, especially dataset content criteria, publication under CC0, curation boundaries and scientific-validity limitations.",
+    "checked": "2026-10-26",
+    "origin": "Reviewed the official Dryad Publication Policies page, updated April 8, 2026, on October 26. It requires sufficient submitter rights for CC0 and says accepted datasets are published under CC0; it also says Dryad may not screen sensitive or inappropriate content and does not verify scientific validity, veracity, accuracy or completeness.",
     "review_url": "https://datadryad.org/publication_policy",
     "review_url_label": "Official Dryad publication policies",
     "rights": {
@@ -4618,5 +4618,81 @@
     "url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000CohhIAC/2027-trebek-initiative-rfp",
     "checked": "2026-10-25",
     "origin": "Followed the Apply link from the official National Geographic Society grants listing. A direct public-page read returned HTTP 200 but no readable opportunity text; no account sign-in or application activity occurred."
+  },
+  {
+    "id": 452,
+    "title": "Rook vocal complexity and repertoire similarity: primary study",
+    "url": "https://doi.org/10.1098/rsos.231713",
+    "description": "Martin et al. (2024), Royal Society Open Science 11:231713. Primary full-text passages reviewed: Methods 2.1-2.3, dataset distribution and Discussion. The article is CC BY 4.0; its data and code have separate rights.",
+    "checked": "2026-10-26",
+    "origin": "October 26 primary-source review; selected methods/results/discussion, not a full supplementary review or reproduction.",
+    "review_url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/1d4e39fd-aced-4396-80be-88b0747e44f2/content",
+    "review_url_label": "Published-version full text in the University of Cambridge repository"
+  },
+  {
+    "id": 453,
+    "title": "Rook annotated audio and label archive",
+    "url": "https://zenodo.org/records/8036310",
+    "description": "Version 1 record describes two captive colonies, audio and clean/Audacity labels. The record's Rights > License field is blank; files were not acquired.",
+    "checked": "2026-10-26",
+    "origin": "Zenodo record page, file manifest and rights section reviewed; metadata only."
+  },
+  {
+    "id": 454,
+    "title": "Rook vocal-unit clustering code repository",
+    "url": "https://gitlab.com/kimartin/cluster_rook_vocs",
+    "description": "GitLab main commit 1feb3309284d688c71350e74f91fee3a9259edb0. Recursive repository tree and README inspected; no LICENSE/COPYING file found. Code was not downloaded or executed.",
+    "checked": "2026-10-26",
+    "origin": "GitLab project and repository API; license unresolved, metadata only.",
+    "review_url": "https://gitlab.com/api/v4/projects/35272205/repository/tree?ref=1feb3309284d688c71350e74f91fee3a9259edb0&per_page=100&recursive=true",
+    "review_url_label": "Pinned recursive repository tree"
+  },
+  {
+    "id": 455,
+    "title": "Zenodo guidance on reuse permissions",
+    "url": "https://support.zenodo.org/help/en-gb/2-content/21-can-i-get-permission-to-use-a-specific-record",
+    "description": "Zenodo explains that reuse permission depends on the license for each record; Zenodo itself does not own deposited content. Used to interpret the blank Rights > License field conservatively.",
+    "checked": "2026-10-26",
+    "origin": "Official Zenodo support guidance, read alongside the specific data record."
+  },
+  {
+    "id": 456,
+    "title": "NLnet policy on generative AI for funded projects, version 2.0",
+    "url": "https://nlnet.nl/foundation/policies/generativeAI/2.0/",
+    "description": "Effective October 20, 2026. GenAI cannot be used to write proposals or produce funded-project artifacts such as code, design, or documentation; read-only use is allowed. Applications must disclose significant pre-existing AI-generated code.",
+    "checked": "2026-10-26",
+    "origin": "Official NLnet policy version 2.0, checked against the policy page and its version history."
+  },
+  {
+    "id": 457,
+    "title": "NLnet GenAI policy FAQ",
+    "url": "https://nlnet.nl/foundation/policies/generativeAI/faq/",
+    "description": "Clarifies that AI coding assistants producing most code or documentation are incompatible with the policy; pre-existing generated code is not automatically disqualifying but must be disclosed and is evaluated by NLnet.",
+    "checked": "2026-10-26",
+    "origin": "Official NLnet FAQ reviewed alongside policy version 2.0."
+  },
+  {
+    "id": 458,
+    "title": "NLnet notice: revised GenAI policy applies to open calls",
+    "url": "https://nlnet.nl/news/2026/20261020-AI-policy.html",
+    "description": "NLnet states policy version 2.0 took effect immediately and applies to open calls with later deadlines, explicitly including CodeSupply and Restack on November 3, 2026.",
+    "checked": "2026-10-26",
+    "origin": "Official NLnet announcement published October 20, 2026."
+  },
+  {
+    "id": 459,
+    "title": "Open Source for Science Fund funding opportunities",
+    "url": "https://os4science.org/apply-for-funding/",
+    "description": "Official current-and-past call index. As checked October 26, 2026, Open Source for the Life Sciences 2026 is listed as closed and no later call is listed.",
+    "checked": "2026-10-26",
+    "origin": "Official Open Source for Science Fund funding page, read October 26, 2026."
+  },
+  {
+    "id": 460,
+    "title": "Open Source for the Life Sciences 2026 call",
+    "url": "https://os4science.org/funding_opportunity/os4ls/",
+    "description": "Official 2026 call page. It lists LOI and full-proposal dates, two funding tracks, life-sciences adoption requirements, organization-only eligibility, and examples outside scope. The page says LOI submissions are closed.",
+    "checked": "2026-10-26",
+    "origin": "Official Open Source for Science Fund call page, read October 26, 2026."
   }
 ]

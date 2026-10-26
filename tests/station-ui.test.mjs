@@ -116,7 +116,9 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   const saved = h.state.downloads[0];
   assert.match(saved.name, /^talk2nature-[0-9a-f-]+\.zip$/);
   assert.equal(saved.blob.type, 'application/zip');
-  assert.match(h.get('station-save-status').textContent, /download requested/);
+  assert.match(h.get('station-save-status').textContent, /download was requested/);
+  assert.equal(h.get('station-save-ack').hidden, false);
+  assert.equal(h.get('station-compare-link').hidden, true);
   const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
   assert.equal(sessionSummary(reopened).kind, 'Whole moment · partial');
   assert.equal(reopened.record.origin, 'synthetic');
@@ -143,7 +145,28 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   assert.equal(h.get('station-events').children.length, 1);
   assert.equal(h.get('station-save-status').hidden, true);
   assert.equal(h.get('station-save-ack').hidden, true);
+  assert.equal(h.get('station-compare-link').hidden, true);
   assert.equal(h.get('station-player').hidden, true);
   assert.equal(h.get('station-permission').checked, false);
   assert.equal(h.get('station-start').disabled, true);
+});
+
+test('checked download opens a plain-language Compare step and a new moment clears it', async () => {
+  const h = setup();
+  await h.get('station-demo').fire('click');
+  h.state.capture.frame(new Float32Array(800).fill(0.04));
+  await h.get('station-stop').fire('click');
+  await h.get('station-bundle').fire('click');
+  assert.equal(h.get('station-save-ack').hidden, false);
+  assert.equal(h.get('station-compare-link').hidden, true);
+
+  await h.get('station-save-ack').fire('click');
+  assert.equal(h.get('station-save-ack').hidden, true);
+  assert.equal(h.get('station-compare-link').hidden, false);
+  assert.match(h.get('station-save-status').textContent, /Compare moments to review the saved file/);
+
+  await h.get('station-demo').fire('click');
+  assert.equal(h.get('station-save-status').hidden, true);
+  assert.equal(h.get('station-save-ack').hidden, true);
+  assert.equal(h.get('station-compare-link').hidden, true);
 });

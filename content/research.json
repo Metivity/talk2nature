@@ -1979,14 +1979,15 @@
     "source_ids": [
       134,
       135,
-      136
+      136,
+      444
     ],
-    "review_depth": "Targeted PMC-indexed excerpts of the primary paper's abstract, conclusion and data-access statement; the exact Dryad dataset landing page, public API dataset/version/file records (v6, version record 180872), current End User Terms and Publication Policies; and an indexed excerpt from the official KBA location factsheet. Dryad's published policy states accepted datasets are made public under CC0, with no separate exception shown on this record. API file metadata supplied exact IDs, sizes and SHA-256 digests. An unauthenticated byte-range request to the API download route returned 401; the web file stream returned HTML rather than the file. No paper PDF, supplement, dataset file or audio was downloaded or fully reviewed.",
+    "review_depth": "Targeted PMC-indexed excerpts of the primary paper abstract, conclusion and data-access statement; the official Dryad dataset record, v6 public API/file metadata, current End User Terms and Publication Policies; and an indexed excerpt from the official KBA factsheet. Freshly checked the Dryad page and linked README on October 26: the README link returned HTTP 403. Dryad policy says accepted datasets are CC0, but does not verify scientific validity/completeness or guarantee screening for sensitive/inappropriate content. No paper PDF, supplement, dataset file or audio was acquired or fully reviewed.",
     "finding": "The study reports vocal babbling and repertoire development in free-ranging green-rumped parrotlet nestlings of both sexes. The paper describes a corticosterone-related repertoire difference and says the babbling repertoire was not yet integrated into functional contexts; this is developmental biology, not evidence of call translation.",
-    "limitations": "One wild species and a nestling developmental stage were studied at Hato Masaguaral in Guárico, Venezuela, during 2017–2018. The current Dryad API lists version 6 with 2.56 GB of audio bouts, a 43.91 MB spreadsheet of spectrographic measurements and a 4.75 KB README; per-file sizes and SHA-256 values are recorded in the resource catalog. The study includes corticosterone supplementation, so it is not a purely passive observation dataset. The README bytes, measurement schema, individual/session joins, label provenance, audio-video synchronization, treatment groups, split design and model performance were not inspected. No receiver-response or controlled semantic-decoding result is established by the reviewed material. Dryad's current terms and policy state that published datasets are made public under CC0, and no record-specific exception is displayed; this dataset-level license evidence does not establish scientific fit, privacy/welfare suitability or model admission. The article reuse license is separate and was not verified.",
+    "limitations": "One wild species and a nestling developmental stage were studied at Hato Masaguaral in Guárico, Venezuela, during 2017–2018. The current Dryad API lists v6 with 2.56 GB of audio bouts, a 43.91 MB spectrographic-measurements workbook and a 4.75 KB README; per-file sizes and SHA-256 values are in the resource catalog. The study includes corticosterone supplementation, so it is not a purely passive observation dataset. The README bytes, measurement schema, individual/session joins, label provenance, audio-video synchronization, treatment groups, split design and model performance were not inspected; its direct link returned HTTP 403 on October 26. Dryad policy says it is not obligated to screen sensitive/inappropriate material and does not check scientific validity, accuracy or completeness. Dataset-level CC0 does not establish content safety, scientific fit, privacy/welfare suitability or model admission. The article reuse license is separate and was not verified. No receiver-response or controlled semantic-decoding result is established.",
     "lesson": "Parrot vocal development is a useful research direction and can help define age-aware questions, but a changing repertoire or hormone-associated difference is not a message. Preserve developmental stage, treatment and individual/session structure before considering any acoustic analysis. Do not use this archive as evidence for general parrot communication or as the first context benchmark.",
-    "next_review": "Obtain the README through an authorized route; inspect the spreadsheet schema, study methods, individual/session linkage, audio-video timing, treatment design and file contents; then ask an avian vocal-development reviewer whether a narrowly defined descriptive or developmental question is justified. The dataset-level CC0 policy is documented, but the 2.60 GB acquisition remains metadata-only until content and scientific-fit checks plus a bounded storage plan are satisfied. Review the article's reuse terms separately before reproducing its text or figures.",
-    "reviewed": "2026-10-12",
+    "next_review": "The direct 4.75 KB README link returned HTTP 403 on October 26; no data or archive was acquired. Keep metadata-only and do not use authenticated or bypass routes. If Dryad exposes a lawful public README download, inspect that file and its schema before deciding whether any data merits acquisition; then seek avian vocal-development review. The 2.60 GB archive is not justified until structure, linkage, interventions, privacy/welfare and a bounded storage plan are reviewed. Review article reuse terms separately before reproducing text or figures.",
+    "reviewed": "2026-10-26",
     "expert_review": "Not yet independently reviewed by an avian vocal-development or bioacoustics specialist.",
     "review_stage": "Targeted paper and dataset-lead review",
     "purpose": "Vocal development",
@@ -2005,14 +2006,14 @@
       ],
       [
         "Intervention and result boundary",
-        "The study included corticosterone supplementation. Its abstract reports larger repertoires after treatment had ended; the conclusion says babbling was not yet integrated into functional contexts. This is not a passive-playback protocol or evidence of semantic understanding."
+        "Dryad states that accepted datasets are published under CC0, but its policy does not verify scientific validity/completeness or guarantee screening for sensitive content. The 4.75 KB README link returned HTTP 403; no files were downloaded. The article license is separate and unverified."
       ],
       [
         "Reuse and access",
         "Dryad's current End User Terms and Publication Policies state that published datasets are made public under CC0; no exception is displayed on this record. This establishes the repository's dataset-level license statement, not scientific admission or file-content suitability. The article license is separate and unverified. No files were downloaded."
       ]
     ],
-    "review_locator": "Primary paper: PMC-indexed abstract, conclusion and data-access statement; exact Dryad record, Abstract and Methods; Dryad API dataset, version and file endpoints; Dryad End User Terms (updated May 20, 2025) and Publication Policies (updated April 8, 2026); official KBA factsheet indexed location excerpt. Direct PMC access encountered CAPTCHA; API file download returned 401 and the web stream returned HTML; KBA page returned a cache miss.",
+    "review_locator": "Primary paper: targeted PMC-indexed abstract, conclusion and data-access statement; current Dryad record, abstract, Methods and v6 file inventory; Dryad End User Terms and April 8, 2026 Publication Policies; official KBA factsheet excerpt. The README link returned HTTP 403 on October 26; PMC direct access remains CAPTCHA-limited. No dataset files or paper PDF were acquired.",
     "atlas": {
       "reviewed": "2026-10-11",
       "location_status": "mapped",
@@ -4759,8 +4760,9 @@
     "kind": "Call-category perception study",
     "purpose": "Behavior & communication",
     "year": "2025",
-    "year_label": "Peer-reviewed Science paper",
+    "year_label": "Peer-reviewed Science paper; Julie Elie received the 2026 Coller Dolittle annual prize",
     "source_ids": [
+      19,
       374,
       375,
       376,
@@ -4768,9 +4770,9 @@
       378,
       379
     ],
-    "reviewed": "2026-10-25",
-    "review_stage": "Peer-reviewed article text and public release metadata reviewed; archive contents and analyses not reproduced",
-    "review_depth": "Reviewed the full PMC-indexed article text, including the abstract, reported results, Figure 4 caption and data statement on October 24; the UC Berkeley institutional-copy record; the authors' public GitHub README/root listing; and the 2026 BirdAVES article. On October 25, refreshed official Figshare v1 and Zenodo v1/v3 API metadata over verified TLS, including current file inventories, provider checksums and record-level license declarations. The Figshare landing-page description exposes a filename convention and warns of known naming discrepancies. No Figshare or Zenodo payload, article supplement, audio, source code or model weights were downloaded or reproduced; the new publisher search extract was used only to confirm the 2026 article's title, framing and reported result excerpt.",
+    "reviewed": "2026-10-26",
+    "review_stage": "Peer-reviewed article text, public release metadata and official prize announcement reviewed; archive contents and analyses not reproduced",
+    "review_depth": "Reviewed the full PMC-indexed article text, including the abstract, reported results, Figure 4 caption and data statement on October 24; the UC Berkeley institutional-copy record; the authors' public GitHub README/root listing; and the 2026 BirdAVES article. On October 25, refreshed official Figshare v1 and Zenodo v1/v3 API metadata over verified TLS, including current file inventories, provider checksums and record-level license declarations. The Figshare landing-page description exposes a filename convention and warns of known naming discrepancies. No Figshare or Zenodo payload, article supplement, audio, source code or model weights were downloaded or reproduced; the new publisher search extract was used only to confirm the 2026 article's title, framing and reported result excerpt. On October 26, directly reviewed the Jeremy Coller Foundation announcement naming Julie Elie as the 2026 annual prize recipient and rechecked the official TAU challenge criteria; no new study files were accessed.",
     "review_locator": "Elie et al., Science 389(6766):1210–1215 (2025), DOI 10.1126/science.ads8482. PMC article: PMC12721838. Figshare audio record: DOI 10.6084/m9.figshare.11905533.v1. The final PMC article data statement cites versioned Zenodo record 13623969 (v1); the UC Berkeley copy cites concept DOI 13623968, whose later v3 resubmission is record 15795568 (DOI 10.5281/zenodo.15795568). This resolves the citation targets, but not which release files support the final published analyses.",
     "finding": "The paper reports that 12 adult zebra finches learned to discriminate all 11 researcher-defined call types in an operant Go/No-Go task. The stimuli came from a library described as more than 8,000 call renditions by 45 vocalizers, and birds generalized to unfamiliar renditions. The paper already compares acoustic-classifier confusion with behavioral confusion and reports more errors among call types used in similar behavioral contexts than its acoustic-similarity comparison predicted. The authors' README describes the spectrogram classifier matrices as leave-one-vocalizer-out LDA results. Thus basic model-versus-bird confusion alignment is published prior art. A separate 2026 article applies BirdAVES to supplied call labels, but the reviewed article does not directly compare those modern-model errors with the measured behavioral confusion matrix.",
     "limitations": "The task was trained, closed-set discrimination of human-defined call categories, not spontaneous conversation, receiver behavior in a natural exchange or open-ended translation. The behavioral and acoustic confusion matrices are described at call-category level, so a matrix-level reproduction may not require a one-to-one audio-to-trial join if the exact published matrices are present in a rights-cleared release. A new raw-audio representation comparison does require matching audio files to call labels, vocalizer identities and the same stimulus population. The Figshare record lists 3,433 WAV files, some containing sequences; their mapping to the paper's more than 8,000 renditions and to the 2026 classifier inputs is unverified. The final Science paper links the versioned v1 record 13623969; the Berkeley copy cites concept DOI 13623968, whose later v3 release is record 15795568. This citation resolution does not establish which archive files support the final published analyses; archive contents and component-level rights remain unresolved. Figshare and Zenodo declare CC BY 4.0 at record level, while the GitHub repository displays no license file. The Figshare landing-page description gives the filename pattern ColColxxxx_yymmdd-VT-zz.wav, which appears to encode vocalizer, date, vocalization type and rendition, but it warns that naming discrepancies are known. Its current API manifest lists two ZIP files and a notes PDF, without per-file MD5 values; the page text says the archives contain 3,433 WAVs. These are possible join keys, not a verified mapping to the 2025 stimulus set. Zenodo's current v1 and v3 API records report provider MD5 values, but archive contents were not retrieved and those checksums were not verified locally.",
@@ -5573,5 +5575,58 @@
       "observation_period": null
     },
     "review_locator": "Official Dryad dataset page and v4 API file manifest; targeted publisher-indexed article passages and official Ornithology author instructions; GeoNames Venezuela country feature."
+  },
+  {
+    "slug": "rook-observed-context-corpus",
+    "title": "Rooks offer a closer context question, with a rights hold",
+    "taxon": "Rooks (Corvus frugilegus)",
+    "kind": "Bioacoustic corpus and methods review",
+    "year": "2024",
+    "source_ids": [
+      452,
+      453,
+      454,
+      455
+    ],
+    "review_depth": "Primary article passages reviewed from Methods 2.1-2.3, dataset distribution and Discussion, plus the Zenodo data record, file manifest, rights field, pinned GitLab repository tree/README and Zenodo's reuse guidance. Supplementary materials and data files were not inspected; no analysis was reproduced.",
+    "finding": "The paper reports 47.9 hours and 31,148 vocal units across two captive colonies. The authors analyze 25,220 identified, non-overlapping units. Context was assigned from direct behavioral observation only when possible; just 33% of units were contextualized. The authors report that most calls could not be conclusively tied to a behavior, while nest calls were associated with brooding females. This is a useful model of how identity and observed context can be linked, not a translation dataset.",
+    "limitations": "The study includes only two captive colonies. The article reports eight Cambridge birds but lists four females and three males, so its roster count needs reconciliation. Context labels are missing for most units and no independent context-label agreement was found in the reviewed sections; missing context is not a negative example. The dataset record lists 27.9 GB but has no license in its Rights section, and the pinned code repository has no LICENSE/COPYING file. The article's CC BY 4.0 applies to the article, not automatically to data or code. No files were downloaded. Caller identity, clusters and observed behavior do not establish signal meaning or receiver response.",
+    "lesson": "Choose a target that the observation supports, retain unknown and unobserved states, and test new-session or new-individual generalization only if the verified data groups support it. Treat rights for the article, audio, labels and code separately.",
+    "next_review": "Before any data or code acquisition, resolve separate reuse rights. If cleared, inspect the context and identity label counts, file-to-session/individual links, observer protocol and overlap/unknown cases with a qualified bioacoustics reviewer; then decide whether a grouped benchmark is feasible.",
+    "reviewed": "2026-10-26",
+    "expert_review": "Not independently reviewed by a bioacoustics specialist.",
+    "review_stage": "Selected primary methods/results and source-rights metadata reviewed; data and code rights unresolved.",
+    "year_label": "Publication year",
+    "purpose": "Behavior & communication",
+    "review_locator": "Martin et al.: Methods 2.1-2.3, Results 3.1 and Discussion; Zenodo record 8036310; GitLab main commit 1feb3309284d688c71350e74f91fee3a9259edb0.",
+    "atlas": {
+      "reviewed": "2026-10-26",
+      "location_status": "mapped",
+      "location_note": "The study reports two captive colonies, in Strasbourg and Cambridge. Map points are approximate city-region locators, not aviary or animal coordinates.",
+      "locations": [
+        {
+          "place_id": "strasbourg-region",
+          "role": "study_region",
+          "source_id": 452,
+          "locator": "Methods 2.1-2.2",
+          "basis": "The article places one captive colony in Strasbourg, France. The map point marks the city region only, not the aviary."
+        },
+        {
+          "place_id": "cambridge-region-uk",
+          "role": "study_region",
+          "source_id": 452,
+          "locator": "Methods 2.1-2.2",
+          "basis": "The article places one captive colony in Cambridge, United Kingdom. The map point marks the city region only, not the aviary."
+        }
+      ],
+      "observation_period": {
+        "label": "Recording sessions 2020-2022",
+        "start_year": 2020,
+        "end_year": 2022,
+        "source_id": 452,
+        "locator": "Methods 2.2"
+      }
+    },
+    "seo_description": "A cautious review of a rook vocal corpus: observed context is sparse, and data and code reuse rights remain unresolved."
   }
 ]

@@ -198,14 +198,15 @@
     "deadline": "2026-11-03",
     "deadline_time": "12:00 CET",
     "deadline_source_id": 35,
-    "genai_policy_source_id": 273,
-    "call_notice_source_id": 35,
+    "genai_policy_source_id": 456,
+    "genai_policy_faq_source_id": 457,
+    "call_notice_source_id": 458,
     "status": "Open · current project out of scope",
     "amount": "First proposals €5,000–€50,000.",
     "source_id": 150,
     "fit": "Restack funds open internet stack infrastructure and foundational technologies. Its current page excludes AI-related projects unless they already have more than one million active human users and are directly relevant to the stack. Talk2Nature is an early animal-communication and AI research/tool project, with no such user-base evidence or internet-stack work package.",
-    "next_action": "Do not prepare for this cycle on the current project scope. Reassess only if a distinct, genuinely stack-relevant deliverable emerges and current GenAI rules are clear. NLnet's September notice says the policy is being revised and advises LLM-using applicants to wait; it also says mostly LLM-generated work is ineligible.",
-    "verified": "2026-10-13",
+    "next_action": "Do not prepare for this cycle on the current project scope: Talk2Nature has no evidence of the one-million-user threshold or a directly relevant open-internet-stack work package. NLnet policy 2.0 also applies to this November 3 call: proposals cannot be written with GenAI and funded deliverables cannot be produced with GenAI. Reassess only if a distinct eligible work package and a human-led, policy-compliant delivery plan are established. No proposal has been drafted or submitted.",
+    "verified": "2026-10-26",
     "application_status": "Not submitted; not recommended for current scope"
   },
   {
@@ -216,16 +217,17 @@
     "deadline_time": "12:00 CET",
     "deadline_source_id": 152,
     "terms_source_id": 272,
-    "genai_policy_source_id": 273,
-    "call_notice_source_id": 35,
+    "genai_policy_source_id": 456,
+    "genai_policy_faq_source_id": 457,
+    "call_notice_source_id": 458,
     "application_form_source_id": 274,
-    "status": "Open · conditional fit not established",
+    "status": "Open · not recommended this cycle",
     "amount": "Proposals €5,000–€50,000.",
     "source_id": 152,
     "fit": "CodeSupply supports open R&D on software supply-chain metadata, including package provenance and licensing. Talk2Nature's current library catalogs research papers, datasets, code and models; it is not a package-metadata service. Only a distinct, reusable package-metadata contribution could be adjacent, and no user need, technical gap or aligned work package has been established.",
-    "next_action": "Do not draft yet. The call closes November 3, 2026 at noon CET and requires a strong European dimension; its usual route directs at least 60% of funds to team members from Horizon Europe-eligible countries. Applicant/team eligibility is unconfirmed. NLnet's September notice advises LLM-using applicants to wait for its revised GenAI policy; the current policy requires disclosure and prompt-provenance records for GenAI-assisted proposals, transparent attribution of substantive generated code, and human verification of publishable open-source outputs. Reconsider only after a concrete, reusable CodeSupply-aligned deliverable, European dimension, AI-use records and the applicable policy are verified. No proposal has been drafted or submitted.",
-    "verified": "2026-10-13",
-    "application_status": "Not submitted; scope, European dimension and GenAI-policy readiness unresolved"
+    "next_action": "Do not apply this cycle. The deadline is November 3, 2026 at noon CET, but no user-validated package-metadata work package or strong European dimension has been established. NLnet policy 2.0 applies: GenAI cannot write the proposal or produce funded code, design, or documentation; significant pre-existing AI-generated code must be disclosed and is assessed by NLnet. Talk2Nature's AI-assisted development history has not been inventoried for that disclosure. Reconsider a future call only after a distinct CodeSupply-aligned need, eligible team, human-led compliant delivery plan, codebase disclosure inventory, and rights review are complete. No proposal has been drafted or submitted.",
+    "verified": "2026-10-26",
+    "application_status": "Not pursued this cycle; scope, team eligibility and policy compatibility unresolved"
   },
   {
     "slug": "bezos",
@@ -266,5 +268,21 @@
     "next_action": "No current application opportunity is listed. Use Cycle 6 only as a historical readiness signal: prioritize independent researcher use, external contributions and a clearly evidenced biomedical use case before reconsidering; confirm an eligible applicant or fiscal sponsor and recheck the next official RFA if one opens. Do not assume future terms match Cycle 6.",
     "verified": "2026-10-25",
     "application_status": "No current call listed; not submitted"
+  },
+  {
+    "slug": "os4science-os4ls-2026",
+    "name": "Open Source for Science Fund · Open Source for the Life Sciences (2026)",
+    "type": "Scientific software grant program",
+    "deadline": "2026-07-21",
+    "deadline_time": "14:00 PDT / 21:00 UTC",
+    "deadline_source_id": 460,
+    "terms_source_id": 460,
+    "status": "2026 call closed · future cycle not announced",
+    "amount": "2026 terms only: up to $250,000 (Track 1) or $1,000,000 (Track 2), each over two years.",
+    "source_id": 459,
+    "fit": "The fund's mission is relevant to open life-sciences research software, data management and reproducible model evaluation. However, the 2026 RFA requires demonstrated life-sciences adoption and says early-stage prototypes without use beyond their creators or a narrow community are unlikely to succeed. It excludes proposals focused on hosting repositories or databases, developing models themselves, or generating new datasets. Talk2Nature has no verified external life-sciences adoption and is not ready for this call.",
+    "next_action": "Do not apply to the closed 2026 call. The official funding index listed this as closed on October 26 and showed no later call. Treat it only as a future readiness signal: build demonstrated use in life-sciences research, identify a specific technical bottleneck beyond generic hosting or a new animal-language model, align work with the project roadmap, and confirm a core-maintainer-backed proposal. The RFA permits foreign organizations but makes no grants to individuals; an independently operated project needs an eligible organization or fiscal sponsor. Recheck all terms if a new call opens. No application draft or submission was started.",
+    "verified": "2026-10-26",
+    "application_status": "2026 call closed; future call unannounced; not applied"
   }
 ]
