@@ -178,6 +178,34 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Dog vocalization dataset described in the 2024 bark-classification paper',resource_page)
             self.assertIn('Dog-bark baseline implementations described in the 2024 paper',resource_page)
 
+    def test_cockatiel_receiver_response_note_preserves_mixed_results_and_passive_app_boundary(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='cockatiel-distress-call-affiliation-response')
+        self.assertEqual(note['source_ids'],[462,463])
+        self.assertIn('Ten captive cockatiels',note['finding'])
+        self.assertIn('did not differ (p=.37)',note['finding'])
+        self.assertIn('No workbook, audio, code or model was acquired',note['limitations'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('cockatiel-distress-call-study-')}
+        self.assertEqual(set(selected),{
+            'cockatiel-distress-call-study-paper-2018',
+            'cockatiel-distress-call-study-data-2018',
+        })
+        self.assertEqual(selected['cockatiel-distress-call-study-paper-2018']['rights']['research_use'],'conditional')
+        self.assertEqual(selected['cockatiel-distress-call-study-data-2018']['rights']['research_use'],'unresolved')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'cockatiel-distress-call-affiliation-response'/'index.html').read_text()
+            self.assertIn('Cockatiels show mixed receiver responses',page)
+            self.assertIn('not decoded call meaning',page)
+            self.assertIn('The study elicited distress calls',page)
+            self.assertIn('Supporting data for cockatiel distress-call receiver-response study',
+                          (root/'research'/'resources'/'index.html').read_text())
+            self.assertIn('/research/cockatiel-distress-call-affiliation-response/',
+                          (root/'sitemap.xml').read_text())
+
     def test_barkopedia_context_note_is_discoverable_and_keeps_rights_and_meaning_separate(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='barkopedia-context-benchmark-2025')

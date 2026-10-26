@@ -61,6 +61,24 @@ class CollectionTests(unittest.TestCase):
             'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data'})
         self.assertLess(size, MAX_BATCH_BYTES)
 
+    def test_cockatiel_article_and_supporting_data_keep_rights_separate(self):
+        records = {r['id']: r for r in self.catalog['resources']}
+        paper = records['cockatiel-distress-call-study-paper-2018']
+        data = records['cockatiel-distress-call-study-data-2018']
+        self.assertEqual(paper['rights']['license'], 'CC-BY-4.0 as stated for the article')
+        self.assertIn('article text only', paper['rights']['scope'])
+        self.assertIn('separately cataloged S1 Data', paper['rights']['conditions'])
+        self.assertIn('Unresolved', data['rights']['license'])
+        self.assertEqual(data['rights']['research_use'], 'unresolved')
+        self.assertEqual(data['rights']['commercial_use'], 'unresolved')
+        self.assertEqual(data['rights']['redistribution'], 'not_admitted')
+        for record in (paper, data):
+            with self.subTest(resource=record['id']):
+                self.assertEqual(record['acquisition'], 'metadata_only')
+                self.assertEqual(record['files'], [])
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog, [data['id']])
+
     def test_zenodo_metadata_sample_checks_record_license_manifest_and_file_md5(self):
         resource = copy.deepcopy(next(r for r in self.catalog['resources']
                                       if r['id'] == 'northeastern-forest-bird-metadata-sample-v2'))
