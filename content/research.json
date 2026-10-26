@@ -5646,5 +5646,28 @@
       }
     },
     "seo_description": "A cautious review of a rook vocal corpus: observed context is sparse, and data and code reuse rights remain unresolved."
+  },
+  {
+    "slug": "cockatiel-distress-call-affiliation-response",
+    "title": "Cockatiels show mixed receiver responses to familiar distress calls",
+    "taxon": "Cockatiels (Nymphicus hollandicus)",
+    "kind": "Controlled receiver-response experiment",
+    "year": "2018",
+    "source_ids": [
+      462,
+      463
+    ],
+    "review_depth": "Full primary PLOS ONE article reviewed on October 26, 2026: abstract, ethics statement, methods, results, discussion and supporting-information manifest. S1 Data is listed as an XLSX but was not downloaded or inspected; no statistics were reproduced and no audio or code was acquired.",
+    "finding": "Ten captive cockatiels heard partner distress calls, familiar non-partner distress calls and white noise on separate days. During playback, call counts were higher for both distress-call conditions than for white noise, but partner versus non-partner call counts did not differ (p=.37). Partner-versus-nonpartner movement was marginal (p=.07); crest posture differed at p=.05. The partner-call comparison for time near the loudspeaker could not be tested because no bird spent more than 15 seconds there. This is evidence of measurable receiver behavior with mixed outcomes, not decoded call meaning.",
+    "limitations": "Only ten birds were studied in two cohorts across 2014 and 2015; some emitter calls were reused because of sex-balance constraints, and affiliative relationships changed over time. White noise was the control rather than a neutral social call. Movement, calling, avoidance and crest posture may reflect arousal or attention and do not establish a subjective emotional state or semantic content. The study elicited distress calls after brief glove-associated restraint and used controlled playback in a chamber; neither procedure is a model for the passive companion app. CC BY 4.0 is stated for the article; S1 Data file-specific rights were not separately verified. No workbook, audio, code or model was acquired.",
+    "lesson": "Measure observable behavior in a defined time window and preserve uncertainty, identity, social context and control condition as separate fields. Treat a following movement or call as a response observation, not a translation or conversational reply. Keep the public companion passive; do not replay animal calls.",
+    "next_review": "Ask an independent avian behavior specialist to assess whether the response measures and control comparisons support the paper-level interpretation. Keep S1 Data metadata-only until its exact file-specific reuse terms and contents are reviewed. Do not adapt the restraint/playback protocol for a consumer app.",
+    "reviewed": "2026-10-26",
+    "expert_review": "Not independently reviewed by a cockatiel or avian behavior specialist.",
+    "review_stage": "Full primary article reviewed; mixed behavioral results summarized; supporting workbook not inspected; no independent specialist review.",
+    "year_label": "Publication year",
+    "purpose": "Behavior & communication",
+    "review_locator": "Liévin-Bazin et al. (2018): Ethics; Methods (subjects, affiliation, recording, playback and behavioral analyses); Results 2.2-2.3; Discussion; Supporting Information manifest.",
+    "seo_description": "A cautious review of a 2018 cockatiel receiver-response study, its mixed results, welfare limits and unresolved supporting-data rights."
   }
 ]

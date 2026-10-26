@@ -4709,5 +4709,35 @@
       "scope": "The listed supplementary PDF only; article, code, underlying data and audio have separate rights.",
       "evidence_url": "https://api.figshare.com/v2/articles/24147825"
     }
+  },
+  {
+    "id": 462,
+    "title": "Cockatiel distress-call receiver responses and affiliation",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
+    "description": "Primary 2018 PLOS ONE study of ten cockatiels responding to partner and non-partner distress calls and white noise; behavioral outcomes are mixed and do not establish call meaning.",
+    "checked": "2026-10-26",
+    "origin": "Full primary article reviewed on the official PLOS ONE page on October 26, 2026, including ethics, methods, results, discussion and supporting-information list.",
+    "review_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
+    "review_url_label": "Official PLOS ONE full text",
+    "rights": {
+      "article": "CC BY 4.0 as stated on the article page",
+      "scope": "Published article text only for this catalog decision; supporting files are separately cataloged and their file-specific terms were not verified.",
+      "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314"
+    }
+  },
+  {
+    "id": 463,
+    "title": "Cockatiel distress-call study supporting data (S1 Data)",
+    "url": "https://doi.org/10.1371/journal.pone.0205314.s001",
+    "description": "The PLOS ONE article lists S1 Data as an XLSX supporting file. The workbook was not downloaded or inspected and its file-specific reuse notice was not separately verified.",
+    "checked": "2026-10-26",
+    "origin": "Official PLOS ONE supporting-information manifest reviewed on October 26, 2026; linked XLSX not fetched.",
+    "review_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
+    "review_url_label": "Official PLOS ONE article and supporting-information manifest",
+    "rights": {
+      "dataset": "Unresolved; article page lists an XLSX but its file-specific reuse terms were not separately verified.",
+      "scope": "The S1 Data XLSX only. Do not infer its terms from the article-level CC BY 4.0 notice.",
+      "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314"
+    }
   }
 ]

@@ -7399,6 +7399,65 @@
         55,
         461
       ]
+    },
+    {
+      "id": "cockatiel-distress-call-study-paper-2018",
+      "kind": "paper",
+      "title": "Cockatiel distress-call receiver responses and affiliation",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
+      "version": "PLOS ONE 13(10), e0205314 (2018); DOI 10.1371/journal.pone.0205314",
+      "priority": 2,
+      "reviewed": "2026-10-26",
+      "task": "Methods comparator for measuring observable receiver behavior under controlled social-call conditions.",
+      "review_depth": "Full primary article reviewed for ethics, subject cohort, call elicitation, affiliation, playback, behavioral outcomes and results. No independent reproduction or specialist review.",
+      "access": "Open article page. The article page states CC BY 4.0 for the article; S1 Data and other supporting components are cataloged separately.",
+      "decision": "Use as a bounded methods reference only. Mixed outcomes do not establish call meaning, general translation or a Talk2Nature model result. Its restraint/playback protocol is not for the passive companion app.",
+      "limitations": "Ten captive birds across two cohorts; repeated emitter calls and changing affiliation are noted in the paper. Partner versus non-partner call-count difference was absent (p=.37), movement was marginal (p=.07), and one crest comparison was p=.05. The file-specific S1 Data rights were not verified.",
+      "attribution": "Liévin-Bazin A, Pineaux M, Clerc O, Gahr M, von Bayern AMP, Bovet D (2018), PLOS ONE 13(10):e0205314, DOI 10.1371/journal.pone.0205314.",
+      "rights": {
+        "license": "CC-BY-4.0 as stated for the article",
+        "scope": "Published article text only for this resource decision. Supporting data, media, code and other files have separate rights.",
+        "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
+        "conditions": "Attribute the authors and article DOI and indicate changes. Do not treat this article license as permission for the separately cataloged S1 Data workbook or any other component.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        462
+      ]
+    },
+    {
+      "id": "cockatiel-distress-call-study-data-2018",
+      "kind": "dataset",
+      "title": "Supporting data for cockatiel distress-call receiver-response study",
+      "url": "https://doi.org/10.1371/journal.pone.0205314.s001",
+      "version": "PLOS ONE Supporting Information S1 Data; DOI 10.1371/journal.pone.0205314.s001",
+      "priority": 2,
+      "reviewed": "2026-10-26",
+      "task": "Potential later review of the study-level response data, only after exact file rights and structure are checked.",
+      "review_depth": "The official article lists S1 Data as an XLSX and says relevant data are in the paper/supporting files. The workbook was not downloaded or inspected; no data rows, schema or file-specific license notice were checked.",
+      "access": "The article provides a DOI link to the XLSX supporting file. Public linkage does not by itself establish reuse permission.",
+      "decision": "Metadata-only. Do not acquire, redistribute, train on or commercially use until file-specific rights and scientific suitability are verified.",
+      "limitations": "No workbook structure, row-level content, missingness, units or linkage to repeated measures has been reviewed. The data do not become a communication or translation benchmark by being listed as supporting information.",
+      "attribution": "Supporting information for Liévin-Bazin et al. (2018), DOI 10.1371/journal.pone.0205314.s001.",
+      "rights": {
+        "license": "Unresolved; the file-specific S1 Data reuse terms were not separately verified",
+        "scope": "The S1 Data XLSX only. Do not infer its rights from the article-level CC BY 4.0 notice.",
+        "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
+        "conditions": "Recheck the file-specific rights notice and exact contents before any acquisition or reuse. Keep attribution and research permission separate.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        462,
+        463
+      ]
     }
   ]
 }
