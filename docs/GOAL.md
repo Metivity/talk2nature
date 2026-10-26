@@ -1115,3 +1115,7 @@ Fetched current public `main` at [`0600d0e`](https://github.com/Metivity/talk2na
 ### October 26 continuation — maintain the zero-command gate while extending the evidence library
 
 Keep the first-use acceptance gates open: rendered review, a named physical phone, and an authorized uncoached newcomer. Do not add speculative interface changes while browser access is unavailable. In parallel, the 2018 cockatiel receiver-response study is now cataloged as a methods reference: its mixed behavioral results are kept distinct from meaning, the restraint/playback boundary is explicit, and the uninspected supporting-data file remains rights-unresolved. This does not change the provisional budgerigar household cohort. Continue unblocked source review while keeping AutoResearch **NOT READY**.
+
+### October 26 publication read-back — keep the program active
+
+The cockatiel methods note and its rights-separated article/data records shipped in [PR #462](https://github.com/Metivity/talk2nature/pull/462), merged as [`d97625b`](https://github.com/Metivity/talk2nature/commit/d97625bd324f5c07da2be541eee00ae6c79fbc9d). Pages deployment [#40276155079](https://github.com/Metivity/talk2nature/actions/runs/40276155079) passed its build, test, SEO/boundary and live-route jobs. The new research page is live and crawlable. Keep zero-command acceptance active: browser-control timed out before visual review, and named-phone and independent novice checks are still open. Continue the five-track goal; do not mark app usability or any model as validated from these release checks.
