@@ -36,7 +36,7 @@ def build_atlas(root, output, base, page, notes, sources):
     for g in goals['goals']:
         progress = ''
         if 'current' in g:
-            progress = f'<p class="atlas-goal-score">{g["current"]} <span>/ {g["target"]}</span></p><progress value="{min(g["current"],g["target"])}" max="{g["target"]}" aria-label="{esc(g["title"])}: {g["current"]} of {g["target"]}"></progress>'
+            progress = f'<p class="atlas-goal-score">{g["current"]} <span>/ {g["target"]} goal</span></p><progress value="{min(g["current"],g["target"])}" max="{g["target"]}" aria-label="{esc(g["title"])}: {g["current"]} current; goal {g["target"]}"></progress>'
         goal_cards.append(f'<article id="{esc(g["id"])}"><p class="eyebrow">{esc(g["status"])}</p><h2>{esc(g["title"])}</h2>{progress}<p>{esc(g["summary"])}</p><details><summary>What counts as done?</summary><p>{esc(g["acceptance"])}</p></details><p class="atlas-goal-next"><strong>Next step</strong><br>{esc(g["next_step"])}</p><a href="{base}/{esc(g["path"])}">{esc(g["action"])} →</a></article>')
     goals_body = (root/'web/templates/atlas-goals.html').read_text().replace('{{base}}',base).replace('{{updated}}',esc(goals['updated'])).replace('{{cards}}',''.join(goal_cards))
     page('research/atlas/goals/','Next goals for the research atlas','Measurable evidence-coverage goals and explicit scientific, consent and hosting gates for future community observations.',goals_body,active='research/',extra_head=f'<link rel="stylesheet" href="{base}/assets/atlas.css">')

@@ -340,21 +340,49 @@ class SiteTests(unittest.TestCase):
         opportunities=load('opportunities')
         sources={item['id']:item for item in load('sources')}
         codesupply=next(item for item in opportunities if item['slug']=='nlnet-codesupply')
-        self.assertEqual(codesupply['status'],'Open · conditional fit not established')
+        self.assertEqual(codesupply['status'],'Open · not recommended this cycle')
         self.assertEqual(codesupply['deadline'],'2026-11-03')
         self.assertEqual(codesupply['terms_source_id'],272)
-        self.assertEqual(sources[codesupply['genai_policy_source_id']]['url'],'https://nlnet.nl/foundation/policies/generativeAI/')
+        self.assertEqual(sources[codesupply['genai_policy_source_id']]['url'],'https://nlnet.nl/foundation/policies/generativeAI/2.0/')
+        self.assertEqual(sources[codesupply['genai_policy_faq_source_id']]['url'],'https://nlnet.nl/foundation/policies/generativeAI/faq/')
+        self.assertIn('not been inventoried',codesupply['next_action'])
+        self.assertIn('no user-validated package-metadata work package',codesupply['next_action'])
         self.assertIn('strong European dimension',codesupply['next_action'])
         self.assertIn('No proposal has been drafted or submitted.',codesupply['next_action'])
         restack=next(item for item in opportunities if item['slug']=='nlnet-restack')
         self.assertIn('one million active human users',restack['fit'])
+        self.assertEqual(sources[restack['call_notice_source_id']]['url'],'https://nlnet.nl/news/2026/20261020-AI-policy.html')
         with tempfile.TemporaryDirectory() as d:
             build(Path(d))
             page=(Path(d)/'opportunities'/'index.html').read_text()
             self.assertIn('Official GenAI policy ↗',page)
-            self.assertIn('https://nlnet.nl/foundation/policies/generativeAI/',page)
+            self.assertIn('https://nlnet.nl/foundation/policies/generativeAI/2.0/',page)
+            self.assertIn('GenAI policy FAQ ↗',page)
+            self.assertIn('not recommended this cycle',page)
             self.assertIn('Current application form ↗',page)
-            self.assertIn('conditional fit not established',page)
+
+    def test_ai_assistance_statement_is_published_and_linked_from_about(self):
+        project_root=Path(__file__).resolve().parents[1]
+        readme=(project_root/'README.md').read_text()
+        contributing=(project_root/'CONTRIBUTING.md').read_text()
+        self.assertIn('docs/AI_ASSISTANCE.md',readme)
+        self.assertIn('docs/AI_ASSISTANCE.md',contributing)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            statement=(root/'about'/'ai-assistance'/'index.html').read_text()
+            about=(root/'about'/'index.html').read_text()
+            self.assertIn('<title>AI assistance and accountability at Talk2Nature · Talk2Nature</title>',statement)
+            self.assertIn('<link rel="canonical" href="https://fixture.github.io/talk2nature/about/ai-assistance/">',statement)
+            self.assertIn('<meta name="robots" content="index,follow">',statement)
+            self.assertIn('Historical model, version and per-contribution records are incomplete',statement)
+            self.assertIn('Human contributors remain responsible',statement)
+            self.assertIn('https://nlnet.nl/foundation/policies/generativeAI/2.0/',statement)
+            self.assertIn('https://nlnet.nl/foundation/policies/generativeAI/faq/',statement)
+            self.assertIn('/talk2nature/opportunities/',statement)
+            self.assertIn('/talk2nature/about/ai-assistance/',about)
+            self.assertIn('/talk2nature/about/ai-assistance/',(root/'sitemap.xml').read_text())
+            self.assertTrue(check_site(root)['public'])
 
     def test_local_preview_is_complete_and_noindex(self):
         with tempfile.TemporaryDirectory() as d:
@@ -866,6 +894,19 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(by_id['openwhistle-wav2vec-model']['rights']['research_use'],'unresolved')
             self.assertEqual(by_id['openwhistle-code']['rights']['research_use'],'unresolved')
 
+    def test_parrotlet_dryad_policy_is_linked_and_archive_stays_unadmitted(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(root/'research'/'parrotlet-vocal-babbling-development'/'index.html').read_text()
+            self.assertIn('https://datadryad.org/publication_policy',page)
+            self.assertIn('accepted datasets are published under CC0',page)
+            self.assertIn('does not verify scientific validity',page)
+            self.assertIn('HTTP 403',page)
+            resource=next(r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources'] if r['id']=='parrotlet-vocal-babbling-data')
+            self.assertEqual(resource['acquisition'],'metadata_only')
+            self.assertEqual(resource['files'],[])
+
     def test_animal_name_criteria_review_is_abstract_limited_and_discoverable(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -1225,7 +1266,7 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(sum(source['id']==121 for source in load('sources')),1)
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
             self.assertIn('official date details',page)
-            self.assertIn('Checked 2026-10-13 · Not submitted; not recommended for current scope',page)
+            self.assertIn('Checked 2026-10-26 · Not submitted; not recommended for current scope',page)
             self.assertIn('Applicant-specific eligibility remains unconfirmed:',page)
             self.assertIn('it is not ready to apply.',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
@@ -1241,6 +1282,17 @@ class SiteTests(unittest.TestCase):
             self.assertIn('No-go this cycle · Canada-focused project scope not established',page)
             self.assertIn('The linked RFP-specific terms were not accessible in this review.',page)
             self.assertIn('funding.nationalgeographic.org/s/fundingopportunity/119Hr000000CohhIAC/2027-trebek-initiative-rfp',page)
+            os4ls=next(item for item in opportunities if item['slug']=='os4science-os4ls-2026')
+            self.assertEqual(os4ls['deadline'],'2026-07-21')
+            self.assertEqual(os4ls['status'],'2026 call closed · future cycle not announced')
+            self.assertEqual(sources[os4ls['source_id']]['url'],'https://os4science.org/apply-for-funding/')
+            self.assertEqual(sources[os4ls['terms_source_id']]['url'],'https://os4science.org/funding_opportunity/os4ls/')
+            self.assertIn('early-stage prototypes',os4ls['fit'])
+            self.assertIn('hosting repositories or databases',os4ls['fit'])
+            self.assertIn('makes no grants to individuals',os4ls['next_action'])
+            self.assertIn('no later call',os4ls['next_action'])
+            self.assertIn('Open Source for the Life Sciences (2026)',page)
+            self.assertIn('2026 call closed · future cycle not announced',page)
             experiment=next(item for item in opportunities if item['slug']=='experiment')
             self.assertEqual(experiment['verified'],'2026-10-24')
             self.assertEqual(experiment['eligibility_source_id'],409)
@@ -1262,7 +1314,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
             self.assertIn('excludes AI-related projects unless they already have more than one million active human users',page)
             self.assertIn('software supply-chain metadata',page)
-            self.assertIn('conditional fit not established',page)
+            self.assertIn('Open · not recommended this cycle',page)
             self.assertIn('Official GenAI policy ↗',page)
             self.assertIn('Current call and policy notice ↗',page)
             self.assertIn('Current application form ↗',page)
@@ -1369,6 +1421,7 @@ class SiteTests(unittest.TestCase):
             self.assertTrue(any('/assets/audacity-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/aoef-export.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/app-update.mjs?' in a for a in assets))
+            self.assertTrue(any('/assets/app-nav-visibility.mjs?' in a for a in assets))
             self.assertTrue(any('/assets/practice.js?' in a for a in assets))
             self.assertTrue(any('/assets/practice-model.mjs?' in a for a in assets))
             for name in ('device-check.css','device-check.js','device-check-model.mjs'):
@@ -1385,6 +1438,7 @@ class SiteTests(unittest.TestCase):
                 self.assertIn('id="app-update-status"',page)
                 self.assertIn('role="status"',page)
             self.assertIn("from './app-update.mjs?v=",(root/'assets/app.js').read_text())
+            self.assertIn("from './app-nav-visibility.mjs?v=",(root/'assets/app.js').read_text())
 
     def test_android_source_preview_is_discoverable_and_not_claimed_as_a_release(self):
         with tempfile.TemporaryDirectory() as d:
@@ -1456,6 +1510,17 @@ class SiteTests(unittest.TestCase):
             self.assertIsNotNone(aria_label)
             visible_label=re.sub(r'<[^>]+>','',button.group(2))
             self.assertEqual(html.unescape(aria_label.group(1)),html.unescape(visible_label))
+
+    def test_station_save_flow_offers_compare_only_after_download_check(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
+            station=(root/'app'/'station'/'index.html').read_text()
+            compare=(root/'app'/'compare'/'index.html').read_text()
+            self.assertIn('>Save this moment ↓</button>',station)
+            self.assertIn('id="station-save-ack" class="station-save-ack" type="button" hidden>I found my downloaded moment</button>',station)
+            self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
+            self.assertIn('Choose the moment you downloaded from Talk2Nature. No unzipping needed.',compare)
+            self.assertIn('Choose saved moment',compare)
 
     def test_field_companion_listen_navigation_uses_the_beginner_whole_moment_route(self):
         with tempfile.TemporaryDirectory() as d:
@@ -2419,8 +2484,13 @@ class SiteTests(unittest.TestCase):
     def test_zebra_finch_call_perception_names_paper_cited_zenodo_version(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='zebra-finch-call-categories-2025')
+        sources={row['id']:row for row in load('sources')}
         resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
         archive=next(r for r in resources if r['id']=='zebra-finch-call-category-behavior-and-code-2025')
+        self.assertIn(19,note['source_ids'])
+        self.assertIn('Julie Elie received the 2026 Coller Dolittle annual prize',note['year_label'])
+        self.assertEqual(sources[19]['checked'],'2026-10-26')
+        self.assertIn('names zebra-finch researcher Julie Elie',sources[19]['description'])
         self.assertIn('versioned Zenodo record 13623969 (v1)',note['review_locator'])
         self.assertIn('concept DOI 13623968',note['review_locator'])
         self.assertIn('later v3 resubmission is record 15795568',note['review_locator'])
@@ -2436,6 +2506,7 @@ class SiteTests(unittest.TestCase):
             page=(root/'research'/note['slug']/'index.html').read_text()
             self.assertIn('13623969',page)
             self.assertIn('15795568',page)
+            self.assertIn('Julie Elie received the 2026 Coller Dolittle annual prize',page)
             resource_page=(root/'research'/'resources'/'index.html').read_text()
             self.assertIn('https://zenodo.org/records/13623969',resource_page)
             self.assertIn('later version 3.0',resource_page)

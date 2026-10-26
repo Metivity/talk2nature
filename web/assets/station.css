@@ -14,6 +14,9 @@
 .station-save-status{padding:16px 19px;border-left:3px solid #d9e6b2;background:#d9e6b210;color:#e4edd1;font-size:13px;line-height:1.7;border-radius:0 12px 12px 0;margin:20px 0}
 .station-save-ack{min-height:48px;padding:11px 17px;margin:-8px 0 20px;border:1px solid #d9e6b2;border-radius:999px;background:#d9e6b2;color:#17372f;font:inherit;font-weight:600;font-size:13px;line-height:1.3;cursor:pointer}
 .station-save-ack:focus-visible{outline:3px solid #f1c87c;outline-offset:3px}
+.station-save-next{display:inline-block;min-height:48px;padding:12px 17px;margin:-8px 0 20px;border:1px solid #d9e6b2;border-radius:999px;color:#e4edd1;font-size:13px;font-weight:600;line-height:1.3;text-decoration:none}
+.station-save-next:hover{background:#31574a}
+.station-save-next:focus-visible{outline:3px solid #f1c87c;outline-offset:3px}
 .station-review [hidden]{display:none!important}
 .station-soundscape{min-width:0;margin:10px 0 24px;padding:22px;border:1px solid #c3d79152;border-radius:18px;background:linear-gradient(120deg,#d8e8aa12,#8edcc006);color:#e5edd9}
 .station-soundscape:focus-within{border-color:#d9e6b2b8}

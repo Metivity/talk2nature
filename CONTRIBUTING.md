@@ -8,7 +8,7 @@ Do not submit raw private recordings, precise sensitive locations, personal appl
 
 Run the commands in `README.md` for relevant changes. Keep generated `dist/` output, funding drafts and temporary files out of Git. Changes to scientific claims need a source-based review; model accuracy needs an evaluation artifact and leakage audit.
 
-Original code contributions are under Apache-2.0; original public summary contributions under CC BY 4.0. Do not contribute material you cannot license. Disclose substantive AI assistance and verify generated claims, sources and code.
+Original code contributions are under Apache-2.0; original public summary contributions under CC BY 4.0. Do not contribute material you cannot license. For material AI assistance, disclose what it helped with, the tool/model and version if known, and what a person checked. Do not guess missing provenance or submit private prompts. See the [AI assistance and accountability statement](docs/AI_ASSISTANCE.md).
 
 ## A useful first change
 
@@ -27,4 +27,4 @@ A pull request should explain the user problem, resulting behavior and checks ru
 
 For help choosing an evaluation or report route, read [SUPPORT.md](SUPPORT.md). University groups can use the [bounded synthetic evaluation brief](docs/UNIVERSITY_EVALUATION.md); it is not a request for research data or a claim of partnership.
 
-Read [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md) and [security reporting](SECURITY.md). Code and summary contributions retain their stated licenses; no contributor license assignment is requested. A substantive AI-generated contribution must be disclosed and its sources and behavior checked by its contributor.
+Read [governance](GOVERNANCE.md), [community conduct](CODE_OF_CONDUCT.md) and [security reporting](SECURITY.md). Code and summary contributions retain their stated licenses; no contributor license assignment is requested. AI assistance does not replace the contributor's responsibility for rights, evidence, behavior and tests. Funder rules may be stricter for applications and funded work.

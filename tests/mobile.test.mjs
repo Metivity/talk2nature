@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 async function worker({failInstall=false}={}) {
   const scope='/talk2nature/app/', origin='https://fixture.test';
-  const paths=[scope,scope+'station/',scope+'review/',scope+'compare/',scope+'practice/',scope+'check/','/talk2nature/assets/app.js?v=fixture','/talk2nature/assets/app-update.mjs?v=fixture','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture','/talk2nature/assets/practice.js?v=fixture','/talk2nature/assets/practice-model.mjs?v=fixture','/talk2nature/assets/device-check.css?v=fixture','/talk2nature/assets/device-check.js?v=fixture','/talk2nature/assets/device-check-model.mjs?v=fixture','/talk2nature/assets/station-audio.mjs?v=fixture','/talk2nature/assets/station-capture.mjs?v=fixture','/talk2nature/assets/station-model.mjs?v=fixture'];
+const paths=[scope,scope+'station/',scope+'review/',scope+'compare/',scope+'practice/',scope+'check/','/talk2nature/assets/app.js?v=fixture','/talk2nature/assets/app-update.mjs?v=fixture','/talk2nature/assets/app-nav-visibility.mjs?v=fixture','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture','/talk2nature/assets/practice.js?v=fixture','/talk2nature/assets/practice-model.mjs?v=fixture','/talk2nature/assets/device-check.css?v=fixture','/talk2nature/assets/device-check.js?v=fixture','/talk2nature/assets/device-check-model.mjs?v=fixture','/talk2nature/assets/station-audio.mjs?v=fixture','/talk2nature/assets/station-capture.mjs?v=fixture','/talk2nature/assets/station-model.mjs?v=fixture'];
   const handlers={}, stores=new Map(), fetches=[], adds=[];
   const old='talk2nature-shell:'+scope+':old', unrelated='another-project-cache';
   stores.set(old,new Map()); stores.set(unrelated,new Map());

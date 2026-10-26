@@ -79,7 +79,7 @@ async function start(synthetic) {
   let animalContext;
   try { animalContext = animal.value(); } catch (error) { status(error.message); return; }
   const windowMode = $('station-capture-mode').value === 'window';
-  const token = ++run; pending = true; pendingSynthetic = synthetic; session = null; dirty = false; levels = []; $('station-marker-feedback').textContent = 'Observe naturally. Tap only what you notice.'; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
+  const token = ++run; pending = true; pendingSynthetic = synthetic; session = null; dirty = false; levels = []; $('station-save-status').hidden = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; $('station-marker-feedback').textContent = 'Observe naturally. Tap only what you notice.'; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
   status(synthetic ? 'Starting invented tones inside the audio engine. No microphone access or audible playback.' : 'Waiting for microphone permission. You can cancel with Stop recording.');
   capture = new AudioSession({
     createContext: () => new AudioContext(),
@@ -231,17 +231,17 @@ function checkAlias() {
 function exportStatus(text) { $('station-save-status').hidden = false; $('station-save-status').textContent = text; }
 async function exportSession(bundle) {
   if (!session || active || pending || exporting || !checkAlias()) return;
-  exporting = true; $('station-save-ack').hidden = true; controls(); renderEvents(); exportStatus('Preparing your local download…');
+  exporting = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; controls(); renderEvents(); exportStatus('Preparing your local download…');
   try {
     const files = await sessionFiles(session, $('station-alias').value, settings);
     if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
     else download(files[0].bytes, files[0].name, 'application/json');
-    exportStatus(bundle ? 'Session download requested: one ZIP with your journal and all retained WAV clips. Check your Downloads folder before leaving. Unzip it to review a WAV.' : 'Journal JSON download requested. This file contains no audio; use Save session for journal and clips together.');
+    exportStatus(bundle ? 'Your download was requested. Check Downloads. When you find your saved moment, choose the button below to continue.' : 'Journal download requested. It contains no sound; use Save this moment for your notes and sounds together.');
     if (bundle) {
-      $('station-save-ack').textContent = 'I found the ZIP in Downloads';
+      $('station-save-ack').textContent = 'I found my downloaded moment';
       $('station-save-ack').hidden = false;
     }
-  } catch { $('station-save-ack').hidden = true; exportStatus('Could not prepare the download. Your clips remain in this tab. Try again or save individual WAV files before leaving.'); }
+  } catch { $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; exportStatus('Could not prepare the download. Your sounds remain in this tab. Try again or save individual clips before leaving.'); }
   finally { exporting = false; controls(); renderEvents(); }
 }
 $('station-bundle').addEventListener('click', () => exportSession(true));
@@ -249,12 +249,13 @@ $('station-export').addEventListener('click', () => exportSession(false));
 $('station-save-ack').addEventListener('click', () => {
   dirty = false;
   $('station-save-ack').hidden = true;
-  exportStatus('You confirmed the download is on this device. You can leave now; later observation changes will need another export.');
+  exportStatus('Thanks for checking. Open Compare moments to review the saved file. Later changes need another download.');
+  $('station-compare-link').hidden = false;
   $('station-save-status').focus();
 });
 function clearSession() {
   if (dirty && !window.confirm('Discard this session and all local clips? Previously downloaded files will remain on your device.')) return;
-  silencePlayer(); session = null; dirty = false; levels = []; $('station-note').value = ''; $('station-save-status').hidden = true; $('station-save-ack').hidden = true; metrics(); renderEvents(); renderMarkers(); draw(); controls(); $('station-headline').textContent = 'Begin with curiosity.'; $('station-marker-feedback').textContent = 'Available while recording. Observe naturally; no need to make anything happen.'; status('Ready for a new moment. Nothing is recording.'); $('station-headline').focus();
+  silencePlayer(); session = null; dirty = false; levels = []; $('station-note').value = ''; $('station-save-status').hidden = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; metrics(); renderEvents(); renderMarkers(); draw(); controls(); $('station-headline').textContent = 'Begin with curiosity.'; $('station-marker-feedback').textContent = 'Available while recording. Observe naturally; no need to make anything happen.'; status('Ready for a new moment. Nothing is recording.'); $('station-headline').focus();
 }
 $('station-clear').addEventListener('click', clearSession); $('station-new').addEventListener('click', clearSession);
 $('station-display').addEventListener('click', () => { const large = $('station-console').classList.toggle('station-large'); $('station-display').setAttribute('aria-pressed', String(large)); $('station-display').textContent = large ? 'Standard view' : 'Large-screen view'; draw(); });
