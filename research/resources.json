@@ -7367,6 +7367,38 @@
       "source_ids": [
         454
       ]
+    },
+    {
+      "id": "monk-parakeet-supplement",
+      "kind": "paper",
+      "title": "Monk-parakeet vocal signatures supplementary methods",
+      "url": "https://api.figshare.com/v2/articles/24147825",
+      "version": "Figshare item 24147825 v1; DOI 10.6084/m9.figshare.24147825.v1",
+      "figshare_item_id": 24147825,
+      "priority": 2,
+      "reviewed": "2026-10-26",
+      "task": "Review observer agreement, identity-split design and sensitivity checks for a caller-identification study.",
+      "review_depth": "Reviewed the versioned Figshare API manifest and targeted pages 1–7 and 11–14 of the existing local 18-page supplement copy. Checked its MD5 against the provider response. No third-party audio, article figure or media is republished.",
+      "access": "Official Figshare v1 API describes one 506,964-byte PDF and declares CC BY 4.0. Catalog metadata only; the PDF remains in ignored local external storage and is not copied to the website or repository.",
+      "decision": "Metadata-only research reference. Use the reported methods to scope an identity benchmark and its limitations; the supplement is not a training dataset or an independent reproduction.",
+      "limitations": "The reported observer check is within-study agreement; the cross-call pDFA evaluates known marked individuals, and subgroup/location analyses expose sensitivity. No receiver response, call meaning, unseen-bird generalization or Talk2Nature model performance is established.",
+      "attribution": "Smeele et al. (2023), supplementary materials for Evidence for vocal signatures and voice-prints in a wild parrot; Figshare v1, DOI 10.6084/m9.figshare.24147825.v1.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "The single supplementary PDF listed in Figshare item 24147825 v1 only. Article, Edmond archive, audio, code and annotations have separate rights.",
+        "evidence_url": "https://api.figshare.com/v2/articles/24147825",
+        "conditions": "Attribute the authors and versioned DOI, link CC BY 4.0 and indicate changes. Do not treat this license as permission for the separate Edmond archive, audio, analysis code or other study components.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "license_notice": "Official Figshare v1 API declares CC BY 4.0 for the item; API supplied_md5 and computed_md5 are both 960e685da924f5713322d9ada575e4e1.",
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        55,
+        461
+      ]
     }
   ]
 }
