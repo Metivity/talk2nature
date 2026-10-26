@@ -446,12 +446,12 @@
   {
     "id": 55,
     "title": "Monk parakeet vocal signatures",
-    "description": "Smeele et al. (2023), final Royal Society Open Science article. Targeted abstract and methods/figure text reviewed from the primary PMC index; direct full-text retrieval was CAPTCHA-limited and the ANU repository PDF fetch timed out. The ANU record lists Open Access under CC BY 4.0.",
+    "description": "Smeele et al. (2023), final Royal Society Open Science article. Full article text reviewed through PMC, including Methods, Figure 4 and Discussion. The ANU repository record lists Open Access under CC BY 4.0.",
     "url": "https://doi.org/10.1098/rsos.230835",
-    "checked": "2026-10-11",
-    "origin": "October 11, 2026 targeted study-fit review; direct article text retrieval remained unavailable.",
-    "review_url": "https://openresearch-repository.anu.edu.au/items/4a5d9893-88f8-4a65-9a28-5d444909d869",
-    "review_url_label": "ANU repository record listing open access and CC BY 4.0",
+    "checked": "2026-10-26",
+    "origin": "Full-text review of the primary PMC article on October 26, 2026; the institutional repository provides the article license statement.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10548090/",
+    "review_url_label": "Full text of the peer-reviewed article in PubMed Central",
     "rights": {
       "paper": "CC BY 4.0, as listed in the ANU institutional repository",
       "linked_code_and_data": "Separate artifacts; see source records 56 and 57"
@@ -472,10 +472,10 @@
   {
     "id": 57,
     "title": "Monk parakeet deposited dataset",
-    "description": "Edmond v1 API rechecked October 13, 2026: released version published 2023-09-07 declares MIT and lists three archives totaling 100,498,691,932 bytes with provider-supplied MD5 values. Version metadata reports fileAccessRequest=true, but no individual file's access state was resolved. No Edmond archive or member was downloaded. The local GitHub annotation-table copy is checksum-verified against its pinned GitHub commit, but has not been matched to a member inside the Edmond archives.",
+    "description": "Edmond v1 API rechecked October 26, 2026: released version published 2023-09-07 declares MIT and lists three archives with provider-supplied MD5 values. Version metadata has fileAccessRequest=true; no individual file access state was resolved. No Edmond archive or member was downloaded. The local GitHub annotation-table copy remains unmatched to an Edmond archive member.",
     "url": "https://doi.org/10.17617/3.RUIM5I",
-    "checked": "2026-10-13",
-    "origin": "Official Edmond v1 API response inspected over verified TLS on October 13, 2026; file-level access, component mapping and archive contents remain unverified."
+    "checked": "2026-10-26",
+    "origin": "Official Edmond v1 API response and DataCite DOI metadata inspected over verified TLS on October 26, 2026; component mapping and file-level access remain unresolved."
   },
   {
     "id": 58,
@@ -4694,5 +4694,20 @@
     "description": "Official 2026 call page. It lists LOI and full-proposal dates, two funding tracks, life-sciences adoption requirements, organization-only eligibility, and examples outside scope. The page says LOI submissions are closed.",
     "checked": "2026-10-26",
     "origin": "Official Open Source for Science Fund call page, read October 26, 2026."
+  },
+  {
+    "id": 461,
+    "title": "Monk-parakeet vocal-signature supplementary methods",
+    "url": "https://doi.org/10.6084/m9.figshare.24147825.v1",
+    "description": "Official Figshare v1 API lists one 506,964-byte supplementary PDF (file 42366732) and declares CC BY 4.0. The API supplied and computed MD5 values match the previously acquired local review copy. This methods supplement is separate from the Edmond data deposit and its audio archives.",
+    "checked": "2026-10-26",
+    "origin": "Versioned Figshare v1 API checked over verified TLS; supplement pages reviewed from the existing local copy on October 26, 2026.",
+    "review_url": "https://api.figshare.com/v2/articles/24147825",
+    "review_url_label": "Official Figshare v1 item API, file manifest and rights metadata",
+    "rights": {
+      "supplement": "CC BY 4.0 as declared by the versioned Figshare item",
+      "scope": "The listed supplementary PDF only; article, code, underlying data and audio have separate rights.",
+      "evidence_url": "https://api.figshare.com/v2/articles/24147825"
+    }
   }
 ]

@@ -725,18 +725,19 @@
       219,
       220,
       225,
-      226
+      226,
+      461
     ],
-    "review_depth": "Reviewed the final-article abstract and targeted methods/figure text surfaced by the primary PMC index, plus the official pinned GitHub README and the existing hash-pinned 2020 annotation sample. Recomputed the sample's Git blob SHA-1 and SHA-256; the Git blob matches the pinned GitHub file. Rechecked Edmond's released v1 API, current Data Access & Usage guide, ZIP-viewer FAQ, Terms of Use and official July 20, 2026 terms-update notice. No Edmond terms were accepted and no deposit archive/member was downloaded. Direct full-text retrieval was CAPTCHA-limited; the ANU repository PDF fetch timed out. The supplement, full statistical/code workflow and raw audio were not reviewed or run.",
-    "finding": "A study of 229 monk parakeets tests caller identity across call types; it does not predict behavior or decode meaning.",
-    "limitations": "The research target is individual identity, not behavior, context or semantics. Figure 4 describes splitting recordings and predicting marked bird IDs across call types; this appears to test transfer for known individuals, not generalization to unseen birds (an interpretation of the design). In 2020, annotation_ref links annotation rows to Raven selections, and the README says multiple selections can share one reference; rows therefore are not necessarily independent call-level labels. The free-text behavior field describes behavior during or just before vocalizations and can contain multiple values; sequence context is documented separately. The 2021 schema differs. No observer-reliability result was inspected. No Edmond archive/member or deposited audio was acquired. The Edmond API's dataset-level fileAccessRequest flag does not resolve any individual file's access status.",
-    "lesson": "Use this work as a caller-identity reproduction candidate and a warning to match splits to the claim. It cannot validate Talk2Nature's planned context task. Keep identity, recording and session groups connected; a new-bird or behavior claim needs its own held-out groups and independent labels.",
-    "next_review": "The 34,517-byte local CSV is checksum-verified against the pinned GitHub file, but its identity inside the Edmond v1 archives remains unverified. Edmond's current terms require acceptance of platform terms and the dataset license before download, and published deposits are not submitter-deletable except by exceptional deaccession. Do not accept terms or retrieve files automatically. Only if a qualified reviewer confirms a concrete scientific need, prepare a single-file privacy/provenance review and obtain Raviv's explicit approval before any terms acceptance or retrieval; do not fetch full archives. Keep the sample outside training and redistribution meanwhile. For a first context benchmark, seek independently observed, timestamp-linked behavior rather than repurposing caller IDs or vocal-event notes.",
-    "reviewed": "2026-10-13",
+    "review_depth": "Reviewed the final peer-reviewed article and targeted Methods/Figure 4 text in PMC; the official pinned GitHub README and checksum-pinned 2020 annotation sample; and targeted pages 1–7 and 11–14 of the 18-page versioned Figshare supplement (DOI 10.6084/m9.figshare.24147825.v1; API MD5 matched the existing local copy). Recomputed the annotation sample Git blob SHA-1 and SHA-256. Rechecked the Edmond v1 record, current access guide, ZIP-viewer FAQ, Terms of Use and July 20, 2026 terms notice. Ran a receipt-verified aggregate join audit of the existing annotation CSV and selection tables. No Edmond archive/member was downloaded; no author analysis code or model was run, and no audio was analyzed.",
+    "finding": "The authors report within-sample caller discrimination across some monk-parakeet call types; the target is caller identity, not behavior, intention or call meaning.",
+    "limitations": "The study target is individual identity, not behavior, context or semantics. Figure 4 and the custom pDFA split recordings within marked individuals and predict known bird IDs across call types; this does not test generalization to unseen birds (design interpretation). The supplement reports second-observer reliability on 191 calls after nine “other” calls were excluded from a random 200-call sample: 11-way observer-classification accuracy 0.72 (95% CI 0.65–0.78) and binary tonal/growly observer-classification accuracy 0.98 (95% CI 0.95–1.00). These are authors’ internal estimates, not independent validation. Sex-specific sensitivity analyses weaken some cross-call results (the male subgroup is small). In the location sensitivity analysis, cross-call results remained stable, while overlap with zero rose to 6–7%. The receipt-verified table audit found 808 annotation rows, 317 selection-table files, 762 references present and 46 unmatched; one reference occurs across files and 412 matched references expand to multiple Waveform 1 rows. This is a structural key audit only: no audio, label validity, model performance or biological meaning was checked. The 2020 annotation row is not necessarily an independent call. The 2021 schema differs. The Edmond fileAccessRequest flag does not resolve any individual file access state.",
+    "lesson": "Treat this as a caller-identity methods comparator, not a language-decoding result or a shortcut to the companion-parrot context task. Reproduce the authors’ evaluation before extending it; separate known-bird from unseen-bird claims, preserve individual/session groups, and report subgroup sensitivity. Repeated selection rows require a documented audio-level unit before modelling.",
+    "next_review": "A qualified bioacoustics and statistical reviewer should assess the identity task, the small subgroup sensitivity analyses, and the exact audio/annotation units before any benchmark proposal. Keep the aggregate audit outside training and do not infer meaning from caller identity. The Edmond archive remains unacquired; do not accept terms or fetch archive members without a separately reviewed need and action-specific authorization. Keep data admission and AutoResearch NOT READY.",
+    "reviewed": "2026-10-26",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Targeted study and dataset-fit review",
+    "review_stage": "Targeted article, supplement and join-structure review",
     "purpose": "Data & annotation",
-    "review_locator": "Final-article abstract and targeted Methods/Figure 4 passages surfaced by the primary PMC index; official pinned GitHub README at commit 293b2c8d0c3b8e21a4eaa0511fe563207095765a; local checksum receipt; official Edmond v1 API, Data Access & Usage guide, ZIP-viewer FAQ, Terms of Use and the documentation homepage's July 20, 2026 terms notice. Direct full-text retrieval was CAPTCHA/timeout limited; supplement, complete analysis workflow, Edmond archive member and raw audio were not reviewed.",
+    "review_locator": "Primary PMC article, Methods 2.1–2.2 and Figure 4; Figshare supplement pages 1, 5–7 and 11–14; official pinned GitHub README; aggregate join report research/monk_parakeet_join_audit.json; current official Edmond records and terms. The audit validates table keys only, not audio or labels.",
     "study_snapshot": [
       [
         "Research question",
@@ -761,6 +762,22 @@
       [
         "Rights and access",
         "The article is listed CC BY 4.0; the pinned analysis repository is MIT; the separate Edmond v1 dataset record declares MIT. The 34,517-byte local CSV's Git blob SHA-1 matches the pinned GitHub copy, but it has not been matched to an Edmond archive member. Edmond's current docs require accepting both repository terms and the dataset license before download; ZIP-member access is documented but does not establish target-file presence or access. No Edmond file was downloaded and no terms were accepted."
+      ],
+      [
+        "Supplementary observer check",
+        "The authors sampled 200 calls for second-observer reliability checking; nine “other” calls were excluded, leaving 191. They report observer-classification accuracy of 0.72 (95% CI 0.65–0.78) across call types and 0.98 (95% CI 0.95–1.00) for binary tonal/growly categories. This is within-study label reliability, not model performance or semantic validation."
+      ],
+      [
+        "Split and sensitivity",
+        "The custom pDFA uses MFCC summaries and repeated train/test partitions within known individuals. Supplementary sex and location sensitivity analyses weaken some cross-call findings; the male subgroup is small, and location-specific zero-overlap rises to 6–7%. These are reported methods/results, not independently reproduced."
+      ],
+      [
+        "2020 annotation-to-selection audit",
+        "A local receipt-verified structural join retained aggregate counts only: 808 annotation rows across 317 selection-table files; 762 references found and 46 unmatched; one reference appears in multiple files and 412 matched references expand to multiple Waveform 1 rows. No audio, model or author R code was run; the report remains training_admitted=false."
+      ],
+      [
+        "Supplement rights",
+        "The official Figshare v1 item lists one 506,964-byte PDF and declares CC BY 4.0. Its supplied and computed MD5 values match the existing local review copy. This rights record applies to the supplement file only, not the Edmond deposit or underlying audio."
       ]
     ],
     "atlas": {
@@ -783,7 +800,8 @@
         "source_id": 55,
         "locator": "Methods 2.2: Data collection"
       }
-    }
+    },
+    "seo_description": "Monk-parakeet studies test caller identity across call types. They do not establish what calls mean or whether birds converse."
   },
   {
     "slug": "aves-avex",
