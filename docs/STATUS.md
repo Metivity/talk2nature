@@ -1,5 +1,13 @@
 # Project status
 
+## October 26 — publish the zero-command and research-transparency update
+
+**Release:** PR [#458](https://github.com/Metivity/talk2nature/pull/458) merged to `main` as [`14f2a22`](https://github.com/Metivity/talk2nature/commit/14f2a2230b4f1e0201f641f92cfd59cf36e0bd4f). Pages workflow [#40270150637](https://github.com/Metivity/talk2nature/actions/runs/40270150637) passed its repository, browser, Android, public-build, publish-boundary, deployment and live-route checks.
+
+**Independent live read-back:** fresh TLS-verified requests returned HTTP 200 for `/app/`, `/app/station/?mode=companion`, `/about/ai-assistance/`, `/research/rook-observed-context-corpus/`, `/sitemap.xml` and `/robots.txt`. The app home and Station route contain the Whole moment and microphone-free rehearsal paths; the sitemap contains the rook note.
+
+**Limit and next decision:** this confirms the published routes and content, not an outside-user walkthrough, physical-phone behavior, real recording quality, research admission or biological interpretation. Keep the named-phone and authorized uncoached-user checks open. Continue evidence review and reproducibility work without adding speculative beginner UI; do not collect wildlife or participant audio for usability testing.
+
 ## October 26 — add a bounded plant–insect review route for research groups
 
 **Question:** can the university evaluation page invite insect and plant sensory researchers to critique a concrete receiver-response result without implying that plants intentionally communicate?
