@@ -3335,21 +3335,52 @@
         269
       ],
       "priority": 1,
-      "reviewed": "2026-10-13",
+      "reviewed": "2026-10-27",
       "task": "Bounded playback comparison of great-tit behavior toward Carolina-wren FME–D call sequences and D-only calls.",
-      "review_depth": "Publisher-indexed Methods, Results and Discussion passages plus the institutional repository abstract and license metadata. Direct publisher retrieval returned HTTP 403; full article, figures and supplementary files were not inspected.",
-      "access": "Publisher-indexed text and University of Western Australia abstract are accessible; no article PDF, trial-level dataset, stimulus audio or code was acquired.",
+      "review_depth": "Reviewed publisher-indexed Introduction, Methods, Results, Discussion, Ethical Note, Data Availability and Supplementary Material listing, plus the official institutional abstract and article-license metadata. Direct ScienceDirect retrieval returned HTTP 403; article file, figures and supplement bytes were not opened or acquired.",
+      "access": "Publisher-indexed full-text sections and University of Western Australia record are accessible; the paper lists one 985-byte supplementary text file. No article PDF, supplement, trial-level data, stimulus audio or code was acquired.",
       "decision": "Metadata only. Use as a receiver-response comparison for cross-species mobbing calls, not a benchmark, semantic translation result or authorization for animal-directed playback.",
-      "limitations": "Single field playback study with 96 great tits, 16 per treatment; no reversed Carolina-wren sequence; only two constructed tracks per Carolina-wren call treatment. The authors say the alert/recruitment functions of Carolina-wren FME and D parts are unconfirmed. The nonsignificant sequence-species contrast does not establish equivalence. Data and code availability were not verified.",
+      "limitations": "Single field playback study with 96 great tits, 16 per treatment; no reversed Carolina-wren sequence; no D-only stimulus matched to the FME-D sequence duty cycle; only two constructed tracks per Carolina-wren call treatment. The authors say the alert/recruitment functions of Carolina-wren FME and D parts are unconfirmed. The nonsignificant sequence-species contrast (P=0.12; 95% CI -0.32 to 2.95) does not establish equivalence. Supplement contents and file-specific terms remain unverified; source recordings have separate terms.",
       "attribution": "Coye, C. & Dutour, M. (2025). Animal Behaviour, 221, article 123050. DOI 10.1016/j.anbehav.2024.12.006.",
       "rights": {
-        "license": "The UWA repository record links the article under CC BY 4.0; no article file was inspected.",
+        "license": "CC BY 4.0 as linked from the UWA repository record; no article file was copied.",
         "scope": "Published article only. Carolina-wren and great-tit source recordings are separate Macaulay Library/Xeno-Canto materials with their own terms.",
         "evidence_url": "https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e",
         "conditions": "Link to the article and attribute the authors. Do not reproduce source recordings; review their separate item licenses. No paper text, figures, stimuli or third-party assets are included here.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "carolina-wren-mobbing-sequence-supplement-2025",
+      "kind": "dataset",
+      "title": "Publisher-listed supplementary data for Carolina-wren mobbing-sequence study",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003347224003610",
+      "version": "ScienceDirect version of record; one 985-byte text file listed as Multimedia component 1; filename and bytes not inspected",
+      "source_ids": [
+        268,
+        269,
+        464
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-27",
+      "task": "Track the publisher-listed supplementary item associated with the study's receiver-response data statement; not admitted as a benchmark or training dataset.",
+      "review_depth": "Reviewed the publisher-indexed Data Availability and Supplementary Material statements and the institutional article-license record. The supplement file itself was not opened, downloaded, hashed or analyzed.",
+      "access": "The paper says data are in Supplementary Material and lists one 985-byte text file. Direct ScienceDirect retrieval returned HTTP 403; no direct file URL was verified and no asset was acquired.",
+      "decision": "Metadata only. Consider inspecting the file only if a specific review or analysis question justifies it and its exact file terms are confirmed. Do not use this record to authorize playback or model training.",
+      "limitations": "The filename and content are unknown; the file may not contain trial-level outcomes. Its specific license and relationship to any third-party audio are unverified. The article-level CC BY 4.0 notice does not clear the separate Macaulay Library or Xeno-Canto recordings used to construct stimuli.",
+      "attribution": "Coye, C. & Dutour, M. (2025). Mobbing sequences of American wrens elicit mobbing responses in European tits. Animal Behaviour 221, article 123050. DOI 10.1016/j.anbehav.2024.12.006; publisher-listed supplementary item.",
+      "rights": {
+        "license": "Unresolved for the supplementary text file; the UWA record links the article under CC BY 4.0, but file-specific reuse terms were not separately confirmed.",
+        "scope": "The publisher-listed 985-byte text file only. Source recordings retain their own licenses.",
+        "evidence_url": "https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e",
+        "conditions": "Link to the publisher and confirm exact file-level terms before inspection, adaptation, redistribution or training use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
       },
       "acquisition": "metadata_only",
       "files": []

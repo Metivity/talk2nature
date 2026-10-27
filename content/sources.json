@@ -2806,10 +2806,10 @@
   {
     "id": 268,
     "title": "Carolina-wren mobbing sequences and great-tit receiver responses",
-    "description": "Coye & Dutour (2025), Mobbing sequences of American wrens elicit mobbing responses in European tits. Publisher-indexed Methods and Results describe a six-treatment playback with 96 wild great tits; direct publisher retrieval returned HTTP 403.",
+    "description": "Coye & Dutour (2025), Mobbing sequences of American wrens elicit mobbing responses in European tits. Publisher-indexed full-text sections describe a six-treatment playback with 96 wild great tits; direct publisher retrieval returned HTTP 403.",
     "url": "https://doi.org/10.1016/j.anbehav.2024.12.006",
-    "checked": "2026-10-14",
-    "origin": "Rechecked the publisher-indexed Methods, Results and Discussion passages and the official University of Western Australia repository abstract, publication and article-license metadata on 2026-10-14. Direct ScienceDirect retrieval returned HTTP 403; full article files, figures, supplementary material and complete statistical details were not reviewed. No article file, stimulus, dataset or code was acquired.",
+    "checked": "2026-10-27",
+    "origin": "Reviewed the publisher-indexed Introduction, Methods, Results, Discussion, Ethical Note, Data Availability and Supplementary Material listing on 2026-10-27, plus the official University of Western Australia article-license record. Direct ScienceDirect retrieval returned HTTP 403; the article file, figures and 985-byte supplementary text file were not opened or acquired. No stimulus audio or code was acquired, and no reanalysis or independent review was performed.",
     "rights": {
       "article": "The UWA repository record links the published article under CC BY 4.0. This does not license the separate Macaulay Library or Xeno-Canto source recordings used to construct stimuli. No article file or third-party audio was copied."
     }
@@ -2819,8 +2819,8 @@
     "title": "University of Western Australia record for the Carolina-wren playback study",
     "description": "Institutional research-repository metadata and abstract for Coye & Dutour (2025), including the DOI, publication details and a CC BY 4.0 access-license link.",
     "url": "https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e",
-    "checked": "2026-10-13",
-    "origin": "Reviewed the institutional record's authors, abstract, journal/volume/article number, early-online and publication dates, DOI, and Access to Document license link. The record links to the DOI rather than exposing an article file; no full text or underlying data was acquired.",
+    "checked": "2026-10-27",
+    "origin": "Rechecked the official institutional record through its indexed entry on 2026-10-27: it lists the authors, article details, DOI and a CC BY 4.0 Access to Document link. The record points to the DOI rather than exposing an article file; no full text file or underlying data was acquired.",
     "rights": {
       "repository_record": "The repository page carries its own copyright notice. Its Access to Document field links the article to CC BY 4.0; that license is scoped to the article and not the source recordings."
     }
@@ -4738,6 +4738,21 @@
       "dataset": "Unresolved; article page lists an XLSX but its file-specific reuse terms were not separately verified.",
       "scope": "The S1 Data XLSX only. Do not infer its terms from the article-level CC BY 4.0 notice.",
       "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314"
+    }
+  },
+  {
+    "id": 464,
+    "title": "Supplementary text file for the Carolina-wren playback study",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0003347224003610",
+    "description": "The publisher's article text says the study data are in Supplementary Material and lists one 985-byte text file as Multimedia component 1. The file name, bytes, contents and file-specific reuse terms were not inspected.",
+    "checked": "2026-10-27",
+    "origin": "Read the publisher-indexed Data Availability and Supplementary Material sections. Direct ScienceDirect retrieval returned HTTP 403; the supplement was not opened or acquired.",
+    "review_url": "https://www.sciencedirect.com/science/article/pii/S0003347224003610",
+    "review_url_label": "Publisher-indexed article data statement and supplement listing",
+    "rights": {
+      "dataset": "Unresolved; the institutional record links the article under CC BY 4.0, but the supplementary file's specific reuse terms were not separately verified.",
+      "scope": "The listed 985-byte supplementary text file only. Carolina-wren and great-tit source recordings used in stimuli retain separate Macaulay Library/Xeno-Canto terms.",
+      "evidence_url": "https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e"
     }
   }
 ]

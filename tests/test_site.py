@@ -1736,7 +1736,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(source['review_url'],'https://cnrs.hal.science/hal-04840821v1')
         self.assertIn('CC BY 4.0',source['rights']['article'])
         comparator=sources[268]
-        self.assertEqual(comparator['checked'],'2026-10-14')
+        self.assertEqual(comparator['checked'],'2026-10-27')
         self.assertIn('HTTP 403',comparator['origin'])
         self.assertIn('CC BY 4.0',comparator['rights']['article'])
         self.assertIn('Xeno-Canto',comparator['rights']['article'])
