@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -42,12 +42,12 @@
         56
       ],
       "priority": 1,
-      "reviewed": "2026-09-30",
+      "reviewed": "2026-10-27",
       "task": "Reproducible acoustic comparisons and identity analysis.",
-      "review_depth": "README, license, file tree, commit and downloaded data-preparation/MFCC scripts inspected; no execution or complete code audit.",
+      "review_depth": "README, license, file tree, commit and downloaded data-preparation/MFCC scripts inspected; no execution or complete code audit. Exact pinned `load.selection.tables.R` helper also read as text; it filters `View == 'Waveform 1'` and left-merges `Annotation` to `annotation_ref`. No R code was executed.",
       "access": "Public pinned GitHub files.",
-      "decision": "Acquire a small code sample; inspect before any execution.",
-      "limitations": "Selected files are not a complete runnable environment or reproduced result. R/Stan dependencies and large supporting files are absent. Scripts install packages dynamically and source unpinned helpers. The MFCC sample uses globally scaled distances; implement train-only preprocessing for any new held-out classifier.",
+      "decision": "Acquire a small code sample; inspect before any execution. The helper's code license does not clear the separate selection-table data.",
+      "limitations": "Selected files are not a complete runnable environment or reproduced result. R/Stan dependencies and large supporting files are absent. Scripts install packages dynamically and source unpinned helpers. The MFCC sample uses globally scaled distances; implement train-only preprocessing for any new held-out classifier. The helper's join logic is not evidence that a data-file license applies to the tables.",
       "attribution": "Simeon Quirinus Smeele; copyright 2022; related Smeele et al. (2023).",
       "rights": {
         "license": "MIT",
@@ -83,6 +83,12 @@
           "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/CODE/00_run_methods/02_MFCC_run.R",
           "bytes": 2029,
           "git_blob_sha1": "3fe460671439bbf546f4b3dfcd8b33ecb7d68187"
+        },
+        {
+          "name": "load.selection.tables.R",
+          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/CODE/functions/load.selection.tables.R",
+          "bytes": 3230,
+          "git_blob_sha1": "abe80898bae464b17c6097675d87e38446850e33"
         }
       ],
       "license_file": "LICENSE-MIT.txt",
@@ -131,6 +137,36 @@
       ],
       "license_file": "LICENSE-MIT.txt",
       "admission_reason": "The local static reference is the 34,517-byte table from an immutable GitHub repository version with its MIT notice; the separate Edmond v1 API also declares MIT at dataset level. Exact archive-to-table identity and privacy are unresolved, so this does not admit the table to training or authorize redistribution."
+    },
+    {
+      "id": "monk-parakeet-selection-tables-2020",
+      "kind": "dataset",
+      "title": "Monk-parakeet 2020 Raven selection tables",
+      "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/tree/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/selection%20tables",
+      "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+      "priority": 2,
+      "reviewed": "2026-10-27",
+      "task": "Understand the authors’ 2020 Raven Annotation to annotation_ref join; do not treat matched rows as verified biological labels.",
+      "review_depth": "Reviewed the authors’ README and root MIT notice at the pinned commit. The README labels ANALYSIS/DATA as raw data; the MIT notice refers to software and associated documentation. This review found no explicit data-license scope for these table files. No new table bytes were acquired in this rights review.",
+      "access": "The pinned GitHub directory is publicly readable, but public access does not establish reuse or redistribution rights for this data component.",
+      "decision": "Keep metadata-only. Do not fetch, redistribute or admit the selection tables to training until their data-specific terms are clarified separately from code and from the Edmond deposit.",
+      "limitations": "A structural join does not verify audio alignment, caller identity, label accuracy, generalization to unseen birds, receiver response or call meaning. The loader code is separately cataloged under monk-parakeet-code.",
+      "rights": {
+        "license": "Unresolved for the raw selection-table data files.",
+        "scope": "The 2020 Raven selection-table directory at this pinned path only. The root MIT notice and licenses for helper code, annotations, recordings, article text and the Edmond deposit are separate components.",
+        "evidence_url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
+        "conditions": "No table download, redistribution or training admission until the data-specific reuse terms are confirmed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "attribution": "Smeele, Senar, Aplin and McElreath (2023); selection-table directory at the pinned analysis-repository commit.",
+      "source_ids": [
+        55,
+        56
+      ],
+      "files": []
     },
     {
       "id": "budgerigar-vocal-social-dryad",
