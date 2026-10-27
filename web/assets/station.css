@@ -46,3 +46,11 @@
 .station-console[data-phase=recording] .station-progress span{font-size:54px;font-family:Georgia,serif}
 .station-console[data-phase=recording] .station-metrics div:first-child>span{font-size:25px;font-family:inherit}
 @media(max-width:700px){.station-console[data-phase=recording] .station-progress span{font-size:40px}}
+
+/* Keep microphone-free practice near the first-use explanation, before setup fields. */
+.station-practice{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;margin:12px 0 20px;padding:14px 16px;border:1px solid #c3d79152;border-radius:16px;background:linear-gradient(120deg,#d8e8aa12,#8edcc006)}
+.station-practice p{max-width:48ch;margin:0;color:#d5e2d2;font-size:12px;line-height:1.6}
+.station-practice button{min-height:48px;white-space:nowrap}
+.app-body .station-practice button{background:#e4ebce0a;border-color:#c2dac347;color:#ecf0de}
+.station-console:not([data-phase=setup]) .station-practice{display:none}
+@media(max-width:620px){.station-practice{grid-template-columns:1fr;gap:8px;padding:13px}.station-practice button{width:100%;white-space:normal}}
