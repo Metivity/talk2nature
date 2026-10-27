@@ -95,6 +95,36 @@
       "admission_reason": "MIT notice verified at the pinned commit; sample is static code and documentation only."
     },
     {
+      "id": "monk-parakeet-loader-code",
+      "kind": "code",
+      "title": "Monk-parakeet Raven selection-table loader helper",
+      "url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/CODE/functions/load.selection.tables.R",
+      "version": "293b2c8d0c3b8e21a4eaa0511fe563207095765a",
+      "priority": 2,
+      "reviewed": "2026-10-27",
+      "task": "Inspect the precise 2020 Raven selection-table filter and annotation join method.",
+      "review_depth": "Read the exact pinned helper and repository MIT notice as text. It filters View == “Waveform 1” and left-merges selection rows to annotations by Annotation/annotation_ref. No code was executed.",
+      "access": "Direct link to the pinned helper. The broader approved code sample, including its retained MIT notice, is cataloged as monk-parakeet-code.",
+      "decision": "Use as a method reference only. The helper license applies to this code file and does not clear the separate raw selection-table data.",
+      "limitations": "Static inspection is not a reproduction. The join does not verify audio alignment, label accuracy, caller generalization, receiver response or call meaning.",
+      "rights": {
+        "license": "MIT",
+        "scope": "This named R helper code file at the pinned repository commit only; no permission for selection tables, annotations, recordings, article text or other files is inferred.",
+        "evidence_url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
+        "conditions": "Retain the copyright and permission notice if reusing the helper. Data terms remain separate.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "attribution": "Smeele, Senar, Aplin and McElreath (2023); exact helper at the pinned analysis-repository commit.",
+      "source_ids": [
+        55,
+        56
+      ],
+      "files": []
+    },
+    {
       "id": "monk-parakeet-annotations",
       "kind": "dataset",
       "title": "Monk parakeet 2020 annotation table",
