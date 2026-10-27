@@ -73,6 +73,7 @@ def build(output, base_url='', public=False, repo_url=''):
     output.mkdir(parents=True, exist_ok=True)
     asset_revision = copy_assets(ROOT / 'web/assets', output / 'assets')
     pages = []
+    written_html = set()
     nav_items = [('research/', 'Research library'), ('tools/', 'Tools'), ('watch/', 'Watch & learn'), ('approach/', 'Our approach'), ('app/', 'Open app')]
 
     def page(path, title, description, body, active='', noindex=False, extra_head='', app=False, structured_extra=None):
@@ -140,6 +141,7 @@ def build(output, base_url='', public=False, repo_url=''):
         target = output / (path + 'index.html' if path.endswith('/') or not path else path)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(version_html(document, prefix, asset_revision))
+        written_html.add(target.relative_to(output))
         if not noindex:
             pages.append(path)
 
@@ -305,6 +307,12 @@ def build(output, base_url='', public=False, repo_url=''):
     ai_assistance_body = (ROOT / 'web/templates/ai-assistance.html').read_text().replace('{{base}}', prefix)
     page('about/ai-assistance/', 'AI assistance and accountability at Talk2Nature', 'How AI assists Talk2Nature and where human responsibility, research verification, disclosure and funder rules apply.', ai_assistance_body, active='about/')
     page('404.html', 'Page not found', 'This Talk2Nature page could not be found.', f'<section class="page-intro section"><p class="eyebrow">404 / AN UNFAMILIAR PATH</p><h1>Let’s find<br><em>our way back.</em></h1><p><a class="button" href="{url()}">Back to the project →</a></p></section>', noindex=True)
+    # A reused output directory may contain pages from a previous, larger build.
+    # Remove only stale HTML inside the explicit build target so local previews
+    # cannot retain old public index directives or obsolete routes.
+    for stale_page in output.rglob('*.html'):
+        if stale_page.relative_to(output) not in written_html:
+            stale_page.unlink()
     # Do not publish one site-wide editorial date as every page's lastmod.
     # Page-level modified dates need accurate provenance before they belong here.
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{xml_escape(base_url+"/"+p)}</loc></url>' for p in pages if base_url) + '</urlset>\n'
