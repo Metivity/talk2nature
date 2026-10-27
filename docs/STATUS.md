@@ -1,5 +1,13 @@
 # Project status
 
+## October 27 — make first-use feedback easier to find
+
+**Change:** added a plain-language link below the Field Companion's first two actions: “Want to help improve it? Tell us what worked or felt confusing.” It opens the existing feedback helper at `/mobile/#share`. People can draft a short report without an account; they review it before choosing copy or an email draft. Nothing is submitted automatically, and the helper has no server endpoint or browser-storage behavior.
+
+**Verification:** all 185 Python tests passed (one intentional skip) and all 132 Node tests passed. A public-mode build generated 143 pages plus 404; `scripts/check_site.py` validated 144 HTML pages, 7,621 links and all 143 public routes. Installed desktop Chrome through Playwright rendered a fresh local noindex build at 320×720, 390×844 and 1440×1000 CSS pixels. Each document width matched the viewport. The feedback link opened the form and a synthetic no-microphone report appeared in its review field with no JavaScript errors. The focused helper tests additionally verify zero fetches, zero storage reads, explicit copy/email actions and clipboard fallback.
+
+**Limits and next step:** this was maintainer-run desktop Chrome with emulated viewports and an invented practice report; no physical phone, assistive technology or independent newcomer was tested, and no animal recording or participant data was used. Keep the project goal active. The named-phone save/reopen check and authorized uncoached newcomer walkthrough remain open; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 26 — publish the zero-command and research-transparency update
 
 **Release:** PR [#458](https://github.com/Metivity/talk2nature/pull/458) merged to `main` as [`14f2a22`](https://github.com/Metivity/talk2nature/commit/14f2a2230b4f1e0201f641f92cfd59cf36e0bd4f). Pages workflow [#40270150637](https://github.com/Metivity/talk2nature/actions/runs/40270150637) passed its repository, browser, Android, public-build, publish-boundary, deployment and live-route checks.
