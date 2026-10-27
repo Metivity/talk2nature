@@ -1,5 +1,11 @@
 # Project status
 
+## October 28 — verify live crawlability and note stale search text
+
+**Live read-back:** with TLS certificate verification enabled, `robots.txt` returned HTTP 200 and allows crawling; `sitemap.xml` returned HTTP 200, parsed as valid XML and contains 143 unique URLs. The homepage, `/app/`, `/app/station/?mode=companion`, `/research/resources/` and `/research/egyptian-fruit-bat-data/` all returned HTTP 200 with `index,follow` and self-canonical URLs. The live resource directory displays 241 records, matching the current repository and local build.
+
+**Discovery signal and limits:** an available `site:` web-search snapshot returned the resource directory with a 238-record snippet and a “Crawled: yesterday” label. The live page now says 241; the snapshot is stale search text from an unidentified search surface, not verified Google Search Console or proof of Google indexing/rank. The Search Console owner session was not accessed this check; no sitemap resubmission, indexing request, or site metadata change was made. Next: refresh the verified Search Console sitemap and URL Inspection reports when the owner session is available, and continue to report that result separately from generic web-search snapshots.
+
 ## October 28 — remove stale public pages from reused local builds
 
 **Finding:** after building the shared checkout's local noindex preview into its existing `dist/`, the site checker found 34 leftover pages carrying `index,follow`. A fresh output directory passed, confirming stale files—not the current page template—caused the failure.
