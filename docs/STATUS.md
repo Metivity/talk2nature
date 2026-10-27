@@ -1,5 +1,15 @@
 # Project status
 
+## October 27 — clarify how visitors keep a moment
+
+**Finding:** the Field Companion's main Save button was followed by visible guidance about “export” and “auto-save,” terms that did not match the ordinary action label and could make a first-time user wonder what to do.
+
+**Change:** the app home gives one short action: download a copy before closing to keep the moment. Station setup explains that sounds and notes stay in the page until the visitor downloads them. The optional sound-context note uses “saved note.” Replacing a session and reaching the temporary sound limit explain the outcome without mentioning JSON or exports. The post-save note says the downloaded copy stays on the device and is not sent to Talk2Nature or added to research. The dedicated research JSON control remains under the optional Advanced disclosure.
+
+**Verification:** all 185 Python tests passed (one intentional skip), and all 133 Node tests passed. The local noindex build produced 143 pages plus 404; the site checker validated 144 HTML documents and 7,477 links. Installed desktop Chrome via Playwright rendered the home and Station at 320×740 and 390×844 CSS pixels; document widths matched each viewport, the feedback link remained above the fixed dock, and the main Save button fit in the first post-session review screen. The microphone-free rehearsal completed through a real ZIP download with zero microphone calls and no JavaScript errors. Screenshots were visually inspected.
+
+**Limits:** these are maintainer-run desktop-browser checks with emulated phone dimensions and invented practice material, not physical-phone, assistive-technology or independent first-time-user evidence. No real recording or participant data was used. The named physical-phone check and authorized, uncoached newcomer walkthrough remain open; no tester was contacted. Keep the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 27 — make first-use feedback easier to find
 
 **Change:** added a plain-language link below the Field Companion's first two actions: “Want to help improve it? Tell us what worked or felt confusing.” It opens the existing feedback helper at `/mobile/#share`. People can draft a short report without an account; they review it before choosing copy or an email draft. Nothing is submitted automatically, and the helper has no server endpoint or browser-storage behavior.
