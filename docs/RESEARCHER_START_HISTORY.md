@@ -2,6 +2,14 @@
 
 This file preserves the dated maintainer checks and unreleased candidate notes formerly appended to the [researcher start guide](RESEARCHER_START.md). They are historical snapshots, not independent reproductions or scientific results. Use [project status](STATUS.md) for the latest authoritative state.
 
+## Current public-main clean-clone check — October 27, 2026 — a71c75d
+
+A fresh depth-one HTTPS clone checked public `main` at [`a71c75dda3ac6aa0dd526d9af2057c5944387d17`](https://github.com/Metivity/talk2nature/commit/a71c75dda3ac6aa0dd526d9af2057c5944387d17). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed. There was no `data/external/` directory. The annotation example returned the invented 8-second fixture, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split produced 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split produced 10 groups and 6/2/4 records (6/2/2 groups). Repeating each split produced byte-identical JSON with SHA-256 values `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`.
+
+All 191 Python tests passed with one intentional skip; all 137 Node tests passed; the resource catalog accepted 241 records. The local noindex build produced 143 pages plus 404 and passed the checker (144 HTML files, 7,484 links). Generated files stayed ignored, and the clone remained clean.
+
+This is maintainer-run verification of committed synthetic fixtures, not independent reproduction, user research, scientific validation or biological evidence. No animal/participant data, third-party media, executable code or model weights were acquired or run. The independent researcher reproduction count remains zero; AutoResearch remains **NOT READY**.
+
 ## Current public-main clean-clone check — October 25, 2026 — 2bf8034
 
 A fresh depth-one HTTPS clone checked public `main` at [`2bf80347dfa6619e855b31b510d912b35e3580b5`](https://github.com/Metivity/talk2nature/commit/2bf80347dfa6619e855b31b510d912b35e3580b5). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed. The annotation command returned an invented 8-second fixture, two marked events, 2 seconds of marked interval union and zero observed context. The standard split produced 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split produced 10 groups and 6/2/4 records (6/2/2 groups). Repeating each command to a separate output path produced byte-identical JSON with SHA-256 values `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`. The collection validator accepted 231 resources.
