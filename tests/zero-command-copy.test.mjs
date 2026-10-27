@@ -8,7 +8,8 @@ const station = read('../web/templates/station.html');
 const stationScript = read('../web/assets/station.js');
 
 test('first-use save guidance uses plain language while keeping research export optional', () => {
-  assert.match(home, /Download a copy before closing to keep this moment\./);
+  assert.match(home, /Start with an invented example: no microphone or account needed\. Real observation is optional\./);
+  assert.match(home, /No microphone is used unless you choose Start\. Download a copy before closing to keep a real moment\./);
   assert.match(station, /id="station-retention-guidance"[^>]*>Your sound and notes stay in this page\. Download a copy before closing if you want to keep them\./);
   assert.match(station, /id="station-soundscape-feedback"[^>]*>No setting categories selected\. Your saved note will say “not recorded,” not that the sounds were absent\./);
   assert.match(station, /id="station-note"[^>]*aria-describedby="station-note-help"/);
