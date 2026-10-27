@@ -1,5 +1,11 @@
 # Data, code and research collection
 
+## October 27: PLOS-hosted Figshare file path
+
+The bounded collector now recognizes the PLOS Figshare storage prefix only for an explicitly pinned Figshare item and file ID. The prefix was observed on a verified-TLS redirect for PLOS item 7184276; signed query strings remain transient and are never written to the receipt. A synthetic regression test rejects a different provider path, file ID, filename or missing signed query. This provider-path support does not admit any data to training or the private server.
+
+The item-level PLOS Figshare manifest declares CC BY 4.0 for the exact S1 Data file (13219823), with 34,661 bytes and matching supplied/computed MD5. One copy was acquired to ignored `data/external/cockatiel-distress-call-study-data-2018/` and is protected by a receipt. The pinned audit in `scripts/inspect_cockatiel_s1.py` emits only structural counts; it omits raw rows and animal identifiers. The sample remains outside Git, the website, training and private storage.
+
 ## October 13 standards-mapping follow-up
 
 The current Darwin Core Data Package guide requires table fields to use descriptors from official per-table schemas. The guide's versioned profile/schema links returned HTTP 404 in this environment. The official source repository contains an unversioned profile and table-schema snapshot whose pinned commit is titled “Initial pre-review DwC-DP schemas”; do not use it as a released 1.0 conformance basis. Issue #759 is closed, while the official review index's “open” status is stale. More fundamentally, the current Station session is an operational capture session, not a protocol-defined biological sampling event: its device time is unverified, browser location is absent, and observer context is not an organism identification. Defer an adapter and any conformance claim until released versioned schemas and a qualified sampling protocol are reviewed. No schema files or datasets were copied; rights remain component-specific. See the [interoperability decision](DATA_INTEROPERABILITY.md).

@@ -184,7 +184,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(note['source_ids'],[462,463])
         self.assertIn('Ten captive cockatiels',note['finding'])
         self.assertIn('did not differ (p=.37)',note['finding'])
-        self.assertIn('No workbook, audio, code or model was acquired',note['limitations'])
+        self.assertIn('No audio, video, code or model was acquired',note['limitations'])
         resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
         selected={r['id']:r for r in resources if r['id'].startswith('cockatiel-distress-call-study-')}
         self.assertEqual(set(selected),{
@@ -192,7 +192,14 @@ class SiteTests(unittest.TestCase):
             'cockatiel-distress-call-study-data-2018',
         })
         self.assertEqual(selected['cockatiel-distress-call-study-paper-2018']['rights']['research_use'],'conditional')
-        self.assertEqual(selected['cockatiel-distress-call-study-data-2018']['rights']['research_use'],'unresolved')
+        data=selected['cockatiel-distress-call-study-data-2018']
+        self.assertEqual(data['rights']['license'],'CC-BY-4.0')
+        self.assertEqual(data['rights']['research_use'],'conditional')
+        self.assertEqual(data['rights']['commercial_use'],'conditional')
+        self.assertEqual(data['rights']['redistribution'],'conditional')
+        self.assertEqual(data['acquisition'],'sample_approved')
+        self.assertEqual(data['adapter'],'figshare_plos')
+        self.assertEqual(data['files'][0]['figshare_file_id'],13219823)
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
@@ -201,8 +208,12 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Cockatiels show mixed receiver responses',page)
             self.assertIn('not decoded call meaning',page)
             self.assertIn('The study elicited distress calls',page)
-            self.assertIn('Supporting data for cockatiel distress-call receiver-response study',
-                          (root/'research'/'resources'/'index.html').read_text())
+            resource_page=(root/'research'/'resources'/'index.html').read_text()
+            self.assertIn('Supporting data for cockatiel distress-call receiver-response study',resource_page)
+            self.assertNotIn('data/external/',resource_page)
+            report=json.loads((project_root/'research'/'cockatiel_s1_report.json').read_text())
+            self.assertFalse(report['interpretation']['training_admitted'])
+            self.assertFalse(report['interpretation']['research_admission'])
             self.assertIn('/research/cockatiel-distress-call-affiliation-response/',
                           (root/'sitemap.xml').read_text())
 

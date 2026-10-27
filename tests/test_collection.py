@@ -58,7 +58,8 @@ class CollectionTests(unittest.TestCase):
             'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf',
             'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code',
-            'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data'})
+            'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data',
+            'cockatiel-distress-call-study-data-2018'})
         self.assertLess(size, MAX_BATCH_BYTES)
 
     def test_cockatiel_article_and_supporting_data_keep_rights_separate(self):
@@ -68,16 +69,16 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(paper['rights']['license'], 'CC-BY-4.0 as stated for the article')
         self.assertIn('article text only', paper['rights']['scope'])
         self.assertIn('separately cataloged S1 Data', paper['rights']['conditions'])
-        self.assertIn('Unresolved', data['rights']['license'])
-        self.assertEqual(data['rights']['research_use'], 'unresolved')
-        self.assertEqual(data['rights']['commercial_use'], 'unresolved')
-        self.assertEqual(data['rights']['redistribution'], 'not_admitted')
-        for record in (paper, data):
-            with self.subTest(resource=record['id']):
-                self.assertEqual(record['acquisition'], 'metadata_only')
-                self.assertEqual(record['files'], [])
-        with self.assertRaisesRegex(ValueError, 'Not admitted'):
-            plan(self.catalog, [data['id']])
+        self.assertEqual(data['rights']['license'], 'CC-BY-4.0')
+        self.assertEqual(data['rights']['research_use'], 'conditional')
+        self.assertEqual(data['rights']['commercial_use'], 'conditional')
+        self.assertEqual(data['rights']['redistribution'], 'conditional')
+        self.assertEqual(paper['acquisition'], 'metadata_only')
+        self.assertEqual(paper['files'], [])
+        self.assertEqual(data['acquisition'], 'sample_approved')
+        self.assertEqual(data['adapter'], 'figshare_plos')
+        self.assertEqual(data['files'][0]['figshare_file_id'], 13219823)
+        self.assertEqual(plan(self.catalog, [data['id']])[1], 34661)
 
     def test_monk_parakeet_selection_table_rights_remain_separate_from_loader_code(self):
         records = {r['id']: r for r in self.catalog['resources']}
@@ -416,6 +417,67 @@ class CollectionTests(unittest.TestCase):
             self.assertIsNone(file_receipt['md5'])
             self.assertFalse(file_receipt['source_checksum_verified'])
             self.assertEqual(file_receipt['sha256'], hashlib.sha256(data).hexdigest())
+            self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
+
+    def test_plos_figshare_sample_pins_tenant_path_and_checksum(self):
+        data = b'Synthetic PLOS Figshare payload; no animal rows.\n'
+        item_url = 'https://api.figshare.com/v2/articles/7184276'
+        artifact = {
+            'name': 'pone.0205314.s001.xlsx',
+            'url': 'https://ndownloader.figshare.com/files/13219823',
+            'source_url': item_url,
+            'figshare_file_id': 13219823,
+            'figshare_storage_prefix': 'pstorage-plos-3567654',
+            'bytes': len(data),
+            'md5': hashlib.md5(data, usedforsecurity=False).hexdigest(),
+        }
+        resource = {
+            'id': 'figshare-plos-test', 'kind': 'dataset', 'title': 'Synthetic PLOS Figshare item',
+            'url': item_url, 'figshare_item_id': 7184276,
+            'version': 'PLOS Figshare item 7184276 v1',
+            'reviewed': '2026-10-27', 'priority': 1,
+            'review_depth': 'Synthetic provider-path fixture.',
+            'task': 'Test tenant-specific URL and checksum pinning.', 'access': 'Synthetic only.',
+            'decision': 'Test only.', 'limitations': 'No real data.', 'attribution': 'Fixture.',
+            'rights': {'license': 'CC-BY-4.0', 'scope': 'Synthetic item.',
+                       'evidence_url': item_url, 'conditions': 'Fixture.',
+                       'research_use': 'conditional', 'commercial_use': 'conditional',
+                       'redistribution': 'conditional'},
+            'license_notice': 'Synthetic PLOS CC BY metadata notice.',
+            'acquisition': 'sample_approved', 'adapter': 'figshare_plos',
+            'admission_reason': 'Synthetic redirect and checksum verification only.',
+            'files': [artifact],
+        }
+        catalog = {'schema_version': 1, 'resources': [resource]}
+        validate(catalog)
+        self.assertEqual(plan(catalog, ['figshare-plos-test'])[1], len(data))
+
+        target = ('https://s3-eu-west-1.amazonaws.com/pstorage-plos-3567654/'
+                  '13219823/pone.0205314.s001.xlsx?X-Amz-Signature=fixture')
+        handler = FigshareRedirect(artifact)
+        request = urllib.request.Request(artifact['url'])
+        self.assertEqual(
+            handler.redirect_request(request, None, 302, 'Found', {}, target).full_url,
+            target)
+        for bad_target in (
+            target.replace('pstorage-plos-3567654', 'pfigshare-u-files'),
+            target.replace('/13219823/', '/13219824/'),
+            target.replace('s001.xlsx', 'other.xlsx'),
+            target.split('?')[0],
+        ):
+            with self.subTest(target=bad_target), self.assertRaisesRegex(ValueError, 'redirect'):
+                handler.redirect_request(request, None, 302, 'Found', {}, bad_target)
+
+        opener = Mock()
+        opener.open.side_effect = lambda request, timeout: Response(
+            data, target, {'Content-Length': str(len(data))})
+        self.assertEqual(read_artifact(artifact, opener), data)
+        with tempfile.TemporaryDirectory() as temp:
+            result = acquire(catalog, ['figshare-plos-test'], Path(temp).resolve(), opener=opener)
+            receipt = json.loads(Path(result['receipts'][0]).read_text())
+            self.assertFalse(receipt['training_admitted'])
+            self.assertTrue(receipt['files'][0]['source_checksum_verified'])
+            self.assertEqual(receipt['files'][0]['sha256'], hashlib.sha256(data).hexdigest())
             self.assertNotIn('X-Amz-Signature', json.dumps(receipt))
 
     def test_figshare_missing_upstream_md5_is_explicit_and_receipt_does_not_overclaim(self):

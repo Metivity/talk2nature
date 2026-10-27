@@ -26,6 +26,8 @@ PERMITTED_LICENSES = {'MIT', 'Apache-2.0', 'CC-BY-4.0', 'CC0-1.0'}
 FIGSHARE_STORAGE_PREFIXES = {
     'figshare_springernature': 'pstorage-npg-968563215',
     'figshare_public': 'pfigshare-u-files',
+    # Observed in the verified PLOS Figshare file redirect for item 7184276.
+    'figshare_plos': 'pstorage-plos-3567654',
 }
 ZENODO_ORIGIN = 'https://zenodo.org'
 

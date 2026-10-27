@@ -571,6 +571,14 @@ Decision: link the policy source directly from the parrotlet note and resource, 
 
 **Rights and next gate:** the article page states CC BY 4.0 for the article. The page lists S1 Data as an XLSX, but that file was not downloaded or inspected and its file-specific reuse terms were not separately verified. Catalog article and data as distinct components; keep the workbook metadata-only and data rights unresolved. Do not acquire it or train on it until exact rights, content and a suitable research question are reviewed.
 
+### October 27 follow-up — rights and structure of cockatiel S1 Data
+
+The official PLOS Figshare API record for item 7184276 v1 declares CC BY 4.0 and lists the exact S1 workbook, file 13219823 (`pone.0205314.s001.xlsx`), at 34,661 bytes with matching provider MD5 fields. The normal Figshare redirect used the PLOS-specific S3 path `pstorage-plos-3567654`, which the collector had not allowed. Added that exact provider path to the allowlist, with synthetic tests for file ID, filename, tenant path, content checksum and signed-query redaction; no signed URL is retained.
+
+Acquired one bounded sample into ignored external storage. The collector receipt verifies size, provider MD5 and local SHA-256; `training_admitted` is false. The standard-library audit finds two workbook sheets: a 210-row Data sheet and a 19-entry Legend; 20 columns cover coded activity, calls, zone/crest measures and study context. The 210 records are repeated windows nested within ten birds (21 per bird), divided into 90 audio, 90 post-playback and 30 pre-stimulus rows. The workbook contains behavior-coded outcomes, not audio. The report emits no animal identifiers or raw rows: `research/cockatiel_s1_report.json`.
+
+This establishes file-level reuse terms and structural suitability for reviewing the study's repeated-measures table. It does not reproduce the paper's mixed models, establish label validity or support a speech/meaning model. No audio, video, model or code was acquired or run; the restraint/playback procedure remains outside the passive companion app. Keep the workbook local, outside the website, training and the private research database. Budgerigars remain the provisional household-app cohort; no species choice or benchmark is changed by this study-level dataset.
+
 ## October 27, 2026 — monk-parakeet selection-table rights scope
 
 The pinned authors’ repository is a useful source for understanding the 2020 Raven/annotation join, but its file-level terms need to stay separate. The repository's MIT notice refers to software and associated documentation; its README labels `ANALYSIS/DATA` as raw data. This review found no explicit data-specific license for the selection-table directory. The catalog therefore keeps those tables metadata-only, without a file manifest or acquisition path, and marks research, commercial and redistribution rights unresolved.
