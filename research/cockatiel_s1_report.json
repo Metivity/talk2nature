@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "study_doi": "10.1371/journal.pone.0205314",
+  "supporting_data_doi": "10.1371/journal.pone.0205314.s001",
+  "file": {
+    "name": "pone.0205314.s001.xlsx",
+    "bytes": 34661,
+    "sha256": "68063b3d8eead819ff776a02f70ded22f66b7de3439e3b2e2bc1efadf6a58f09",
+    "provider_md5": "10f1a76b6fabb6542982817d8d19371b",
+    "provider_checksum_verified": true
+  },
+  "workbook": {
+    "zip_integrity": "valid",
+    "macros_present": false,
+    "external_links_present": false,
+    "data_sheet_dimension": "A1:T211",
+    "legend_sheet_dimension": "A1:B20",
+    "data_columns": [
+      "testbird",
+      "sextest",
+      "day",
+      "stim",
+      "nature",
+      "identitycaller",
+      "sexcaller",
+      "typedyad",
+      "cond",
+      "Periode",
+      "activity",
+      "z1",
+      "z1_bin",
+      "z2",
+      "z3",
+      "c1",
+      "c1_bin",
+      "c2",
+      "c3",
+      "contcall"
+    ]
+  },
+  "structural_review": {
+    "behavioral_windows": 210,
+    "tested_animals": 10,
+    "windows_per_animal": {
+      "minimum": 21,
+      "maximum": 21
+    },
+    "unique_window_keys": 210,
+    "phase_rows": {
+      "audio": 90,
+      "postim": 90,
+      "prestim": 30
+    },
+    "social_condition_rows": {
+      "aff": 70,
+      "nonaff": 70,
+      "wn": 70
+    },
+    "stimulus_window_rows": {
+      "1": 60,
+      "2": 60,
+      "3": 60,
+      "pre": 30
+    },
+    "missing_cells_by_column": {
+      "testbird": 0,
+      "sextest": 0,
+      "day": 0,
+      "stim": 0,
+      "nature": 0,
+      "identitycaller": 70,
+      "sexcaller": 70,
+      "typedyad": 70,
+      "cond": 0,
+      "Periode": 0,
+      "activity": 0,
+      "z1": 0,
+      "z1_bin": 0,
+      "z2": 0,
+      "z3": 0,
+      "c1": 0,
+      "c1_bin": 0,
+      "c2": 0,
+      "c3": 0,
+      "contcall": 0
+    }
+  },
+  "interpretation": {
+    "scope": "Structural and aggregate-only workbook audit; no raw rows or animal identifiers are emitted.",
+    "unit_warning": "The 210 rows are repeated windows nested within ten tested birds and study days; they are not 210 independent animals.",
+    "data_type": "Video-coded behavioral outcomes and study condition metadata; no acoustic waveform is present.",
+    "model_reproduction": "Not attempted. Published mixed-model estimates and inferential results were not reproduced.",
+    "training_admitted": false,
+    "research_admission": false
+  }
+}

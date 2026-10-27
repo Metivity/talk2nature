@@ -4729,15 +4729,15 @@
     "id": 463,
     "title": "Cockatiel distress-call study supporting data (S1 Data)",
     "url": "https://doi.org/10.1371/journal.pone.0205314.s001",
-    "description": "The PLOS ONE article lists S1 Data as an XLSX supporting file. The workbook was not downloaded or inspected and its file-specific reuse notice was not separately verified.",
-    "checked": "2026-10-26",
-    "origin": "Official PLOS ONE supporting-information manifest reviewed on October 26, 2026; linked XLSX not fetched.",
-    "review_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314",
-    "review_url_label": "Official PLOS ONE article and supporting-information manifest",
+    "description": "The official PLOS Figshare v1 article record declares CC BY 4.0 and lists the exact S1 Data workbook as file 13219823 (34,661 bytes; provider MD5 10f1a76b6fabb6542982817d8d19371b). A checksum-verified local sample was structurally inspected; raw rows and animal identifiers are not published.",
+    "checked": "2026-10-27",
+    "origin": "Official PLOS Figshare API item 7184276 v1 checked over verified TLS; the exact S1 file was acquired with the bounded collector, matched provider size/MD5 and local SHA-256, then inspected structurally on October 27, 2026.",
+    "review_url": "https://api.figshare.com/v2/articles/7184276",
+    "review_url_label": "Official PLOS Figshare v1 item API, file manifest and rights metadata",
     "rights": {
-      "dataset": "Unresolved; article page lists an XLSX but its file-specific reuse terms were not separately verified.",
-      "scope": "The S1 Data XLSX only. Do not infer its terms from the article-level CC BY 4.0 notice.",
-      "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314"
+      "dataset": "CC BY 4.0 as declared by the official PLOS Figshare item that lists the exact S1 Data file.",
+      "scope": "PLOS Figshare item 7184276 v1 file 13219823, pone.0205314.s001.xlsx only; article, video, other supplements, and code have separate rights.",
+      "evidence_url": "https://api.figshare.com/v2/articles/7184276"
     }
   },
   {

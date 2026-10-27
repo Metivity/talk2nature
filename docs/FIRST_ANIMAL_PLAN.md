@@ -51,7 +51,7 @@ The bounded V33DA intake and caller-attribution proposal is documented in the [V
 | Candidate | Practical opportunity | Main obstacle | Decision |
 | --- | --- | --- | --- |
 | Budgerigars | A species-specific contact-call research and data starting point [1,2]; repeated observation with existing carers is a proposed route. | Multiple callers, mimicry, small movements, household/device confounding; access unconfirmed. | Provisional lead, subject to feasibility. |
-| Cockatiels | A possible existing-carer cohort; compare access directly with budgerigars. | We have not yet reviewed a matched reusable context dataset. | Alternative within the parrot track, never pooled by default. |
+| Cockatiels | A possible existing-carer cohort; one 2018 study provides a small behavior-coded receiver-response workbook. | It is not a matched passive-home audio/context corpus: 210 repeated behavior windows cover ten birds in chamber playback tests, with no audio in the workbook. | Alternative within the parrot track, never pooled by default. |
 | African greys | Relevant to the learned-human-sound branch; survey evidence highlights species differences [3]. | Human-word imitation invites stronger meaning claims than the evidence warrants. | Separate future cohort if accessible. |
 | Dogs | Existing bark-classification work and grouped-animal evaluation provide a baseline [4]. | Context, household sound and owner behavior can provide shortcuts; naturally occurring events may be uneven. | Strong fallback; distinct codebook. |
 | Cats | A small identified dataset documents context and individual/session fields [5]. | Non-commercial terms; elicited-context data are not a passive home protocol. | Useful comparison, not immediate dataset integration. |
