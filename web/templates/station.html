@@ -5,6 +5,7 @@
   <div class="station-main">
     <div class="station-monitor">
       <p class="station-kicker">A MOMENT OF ATTENTION</p><h2 id="station-headline" tabindex="-1">Begin with curiosity.</h2><p id="station-status" role="status" aria-live="polite">Choose a moment. Keep this screen open. Let life happen.</p>
+      <div class="station-practice"><p id="station-demo-help">New to the app? Try an invented example first. It uses no microphone or animal audio.</p><button id="station-demo" type="button" aria-describedby="station-demo-help">Try without a microphone</button></div>
       <div class="station-preparation">
         <div class="station-mode"><label for="station-capture-mode">What would you like to keep?</label><select id="station-capture-mode" aria-describedby="station-mode-guidance"><option value="events">Sound highlights · up to 5 minutes</option><option value="window">Whole moment · 30 seconds</option></select><p id="station-mode-guidance" class="station-footnote">Short clips of louder sounds; quiet periods are not saved.</p></div>
         {{station_animal_context}}
@@ -12,7 +13,7 @@
         <p id="station-retention-guidance" class="station-retention-guidance">Your sound and notes stay in this page. Download a copy before closing if you want to keep them.</p>
         <p id="station-device" class="station-footnote">Phone microphones may filter or change sounds. This app does not identify animals.</p>
       </div>
-      <div id="station-record-controls" class="station-controls"><button id="station-start" class="station-primary" type="button" aria-describedby="station-retention-guidance" disabled>Start listening</button><button id="station-demo" type="button">Try without a microphone</button><button id="station-stop" class="station-stop" type="button" disabled>Stop recording</button></div>
+      <div id="station-record-controls" class="station-controls"><button id="station-start" class="station-primary" type="button" aria-describedby="station-retention-guidance" disabled>Start listening</button><button id="station-stop" class="station-stop" type="button" disabled>Stop recording</button></div>
       <p class="station-capture-boundary">On this device · foreground only · playback is always your choice.</p>
       <div class="station-instruments">
         <div class="station-progress"><span id="station-time">00:00</span><small>time observed</small></div>

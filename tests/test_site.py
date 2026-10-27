@@ -1544,6 +1544,18 @@ class SiteTests(unittest.TestCase):
             self.assertIn('The level meter is not calibrated',advanced.group(0))
             self.assertIn('dBFS',advanced.group(0))
 
+    def test_microphone_free_practice_action_precedes_animal_and_permission_setup(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            page=(root/'app'/'station'/'index.html').read_text()
+            self.assertEqual(page.count('id="station-demo"'),1)
+            self.assertLess(page.index('id="station-demo"'),page.index('id="station-capture-mode"'))
+            self.assertLess(page.index('id="station-demo"'),page.index('id="station-permission"'))
+            self.assertIn('aria-describedby="station-demo-help"',page)
+            self.assertIn('Try an invented example first. It uses no microphone or animal audio.',page)
+            self.assertIn('.station-console:not([data-phase=setup]) .station-practice{display:none}',
+                          (root/'assets'/'station.css').read_text())
+
     def test_station_journal_export_has_a_name_that_matches_its_visible_label(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
