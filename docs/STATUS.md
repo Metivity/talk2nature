@@ -5403,3 +5403,13 @@ Validation: the first full Python run exposed a stale assertion for the supersed
 The opening summary in `docs/GOAL.md` still said rendered inspection had timed out, while its detailed October 28 record documents the successful maintainer Chromium flow and keyboard smoke published through PRs #495–#498. Updated the summary to match that evidence and made the next zero-command gates explicit: a named physical-phone save/reopen walkthrough, followed by an uncoached newcomer task only after recruitment is authorized. The interface remains unchanged pending observed friction.
 
 This was a documentation reconciliation against the merged public records at `main` commit `6bce5ef`; no new browser, device or participant test occurred in this continuation. The five-track goal remains active. Do not treat maintainer browser evidence as independent adoption; AutoResearch and real-data admission remain **NOT READY**.
+
+## October 28 — audit the public contributor funnel
+
+**Question:** does the repository provide a bounded first contribution, and what current evidence exists that it works outside the maintainer?
+
+**Evidence:** reviewed the current contribution, support, security, conduct and open-source practice paths. GitHub API reads on current `main` (`950d6e6`) show a public Apache-2.0 repository with Issues enabled, Discussions disabled and a protected `main` branch requiring the passing `checks` workflow on an up-to-date pull request. Required approvals are zero while Raviv remains the sole maintainer. The repository has one open issue: [#115](https://github.com/Metivity/talk2nature/issues/115), the unassigned good-first phone task, open since October 13 with zero public comments. Private email reports were not inspected.
+
+**Decision and change:** no new forum or public recruitment was justified by this snapshot. Updated `docs/OPEN_SOURCE_PRACTICE.md` to record the exact state and limits, and `docs/EXECUTION_BOARD.md` to include the completed maintainer keyboard Save-to-Compare check from PR #499.
+
+**Limits and next action:** zero public comments do not show whether visitors tried the task, sent private feedback, found it confusing or rejected it. The local browser walkthrough is not outside participation. Preserve the existing first-use task, physical-phone acceptance gate and authorized newcomer protocol; continue to report independent reproduction as zero until reviewed evidence arrives. No GitHub settings, issues, outreach or participant data were changed.
