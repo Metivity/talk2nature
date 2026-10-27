@@ -59,7 +59,8 @@ class CollectionTests(unittest.TestCase):
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf',
             'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code',
             'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data',
-            'cockatiel-distress-call-study-data-2018'})
+            'cockatiel-distress-call-study-data-2018',
+            'monk-parakeet-identity-figshare-2023'})
         self.assertLess(size, MAX_BATCH_BYTES)
 
     def test_cockatiel_article_and_supporting_data_keep_rights_separate(self):

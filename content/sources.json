@@ -2322,12 +2322,12 @@
   {
     "id": 222,
     "title": "Smith-Vidaurre et al. identity-encoding calls and selection table (Figshare v2)",
-    "description": "Official Figshare dataset record for the paper. Its 22-file inventory totals 187,820,138 bytes under an item-level CC BY 4.0 declaration. The README describes a 1,596-row selection table and a WAV archive with matching sound.file names; 1,582 calls were used in the paper. No table or audio was retrieved.",
+    "description": "Official Figshare v2 dataset record under an item-level CC BY 4.0 declaration. One 440,873-byte selection-table CSV was locally acquired for an aggregate-only structural check; no audio or other deposit file was retrieved or redistributed.",
     "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
-    "checked": "2026-10-24",
-    "origin": "Refreshed the official Figshare v2 API metadata over verified TLS and streamed README.md file 41233869 without retaining it. The API lists 22 files totaling 187,820,138 bytes; the README says filenames in the 1,596-row selection table correspond to the WAVs in pre-processed_calls.zip and that 1,582 were used in the article. Recorded API metadata in research/monk_parakeet_figshare_manifest_2023.json. No audio or selection table was acquired; provider MD5 values were not recomputed, rows were not inspected, and no location values were retained.",
+    "checked": "2026-10-27",
+    "origin": "The official v2 API and item page were rechecked over HTTPS: DOI 10.6084/m9.figshare.22582099.v2, item-level CC BY 4.0, and file 40086154 (440,873 bytes; provider MD5 3296a9792c395fbad6d9bfa8e13a482f). The bounded collector retrieved only this CSV and verified its MD5 and local SHA-256. A standard-library audit reproduced the 14-row cross-scale exclusion described by the pinned R code: 1,596 table rows become 1,582 after excluding the 14 site-scale rows whose Bird_ID also occurs at the individual scale. The aggregate report omits row values, identities, file names, sites, coordinates and free text. No audio, other deposit file or model was acquired or run.",
     "rights": {
-      "dataset": "The Figshare record declares CC BY 4.0 at item level. Its README states no use restrictions and requests prior contact to discuss possible collaboration/co-authorship; this is not independent verification of every source recording or embedded third-party item. Do not infer rights for the related article or code from this data record."
+      "dataset": "The Figshare v2 record declares CC BY 4.0 at item level, and the acquired selection CSV is a listed file in that record. Only this file is retained locally with attribution and checksums; the article, analysis code, other files and source recordings retain separate rights. The README invites contact about future collaboration/co-authorship; no contact was made, and this is not treated as a license condition. No audio was acquired or redistributed."
     }
   },
   {
@@ -2373,8 +2373,8 @@
     "title": "Pinned site-scale call selection code for the monk-parakeet identity study",
     "description": "R Markdown file at GitHub v1.0.0 commit 1f7031dc996c79914ccf5d042181f947793fb459. The inspected lines explain which 14 site-scale rows are excluded from the paper's 1,582-call analysis.",
     "url": "https://github.com/gsvidaurre/identity-information-post-introduction/blob/1f7031dc996c79914ccf5d042181f947793fb459/IdentityEncoding_Code_05_SiteScaleDatasets.Rmd#L129-L175",
-    "checked": "2026-10-13",
-    "origin": "Resolved the v1.0.0 tag through the official GitHub API, reviewed the MIT LICENSE, and read the pinned source file lines 129–175. The code selects 14 site-scale calls from birds already represented in the final individual-scale set and removes those rows before the scale comparison. Source text was not retained or executed; no selection table or audio was retrieved.",
+    "checked": "2026-10-27",
+    "origin": "Resolved the v1.0.0 tag through the official GitHub API, reviewed the MIT LICENSE, and reread the pinned source file lines 129–175 as text only. It filters Site rows with the `_site_scale` filename marker, then removes rows whose Bird_ID appears in the Individual scale. A separate standard-library audit reproduced the same 14-row count from the licensed Figshare selection CSV; the R source was not retained or executed, and no audio or extended RDS object was retrieved.",
     "rights": {
       "code": "The GitHub repository identifies its code as MIT-licensed. This is separate from the article, Figshare dataset, and the Zenodo archive's unresolved other-open metadata."
     }

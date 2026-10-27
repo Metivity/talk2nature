@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-10-27",
+  "resource_id": "monk-parakeet-identity-figshare-2023",
+  "figshare_item_doi": "10.6084/m9.figshare.22582099.v2",
+  "figshare_file_id": 40086154,
+  "analysis_reference": "https://github.com/gsvidaurre/identity-information-post-introduction/blob/1f7031dc996c79914ccf5d042181f947793fb459/IdentityEncoding_Code_05_SiteScaleDatasets.Rmd#L129-L175",
+  "file_bytes": 440873,
+  "provider_md5": "3296a9792c395fbad6d9bfa8e13a482f",
+  "local_sha256": "920a34a910b43a151eab8f2361ee2d445281d7bea84329ecf1a02b98a630f169",
+  "selection_table_rows": 1596,
+  "rows_by_social_scale": {
+    "Individual": 229,
+    "Site": 1367
+  },
+  "site_scale_rows_with_site_scale_filename_suffix": 31,
+  "site_scale_suffix_rows_for_ids_also_in_individual_scale": 14,
+  "rows_after_applying_the_pinned_cross_scale_exclusion": 1582,
+  "analysis_script_sha256": "0b819e91bc58975787b2f1f4d05414647005e7f3b1d136903afe9df22c42facc",
+  "training_admitted": false,
+  "interpretation": "Aggregate CSV-level reproduction of the pinned R exclusion rule. Raw rows, caller IDs, file names, sites, coordinates and free text are omitted. No audio, extended selection-table object, R code or model was run; the result is not a benchmark or a claim about call meaning."
+}

@@ -51,11 +51,12 @@ def build_resource_directory(root: Path, base: str, page):
     for item in resources:
         rights = item['rights']
         title = esc(item['title'])
+        source_url = item.get('landing_url', item['url'])
         acquisition_label = acquisition_labels.get(item['acquisition'])
         if acquisition_label is None:
             raise ValueError(f"Unknown resource-acquisition label: {item['acquisition']}")
         entries.append(f'''<article class="resource-entry" data-kind="{esc(item['kind'])}" data-research-use="{esc(rights['research_use'])}">
-<div class="resource-heading"><div><p class="eyebrow">{kind_labels[item['kind']]} · Catalog reviewed {esc(item['reviewed'])}</p><h2><a href="{https_href(item['url'])}" rel="external noopener">{title} <span aria-hidden="true">↗</span></a></h2></div><span class="resource-status">{esc(acquisition_label)}</span></div>
+<div class="resource-heading"><div><p class="eyebrow">{kind_labels[item['kind']]} · Catalog reviewed {esc(item['reviewed'])}</p><h2><a href="{https_href(source_url)}" rel="external noopener">{title} <span aria-hidden="true">↗</span></a></h2></div><span class="resource-status">{esc(acquisition_label)}</span></div>
 <p class="resource-task">{esc(item['task'])}</p>
 <details class="resource-details"><summary>Review, rights and research limits</summary>
 <dl class="resource-facts">
