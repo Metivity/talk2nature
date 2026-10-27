@@ -39,6 +39,19 @@ test('the beginner recording view keeps elapsed time visible and folds technical
   assert.match(station,/id="station-stop" class="station-stop"/);
 });
 
+test('optional setting notes start collapsed so the primary save action is closer after Stop',async()=>{
+  const station=await readFile(new URL('../web/templates/station.html',import.meta.url),'utf8');
+  const start=station.indexOf('<details id="station-soundscape-details" class="station-soundscape-disclosure">');
+  const end=station.indexOf('</details>',start);
+  assert.ok(start>=0&&end>start,'soundscape notes use a native disclosure');
+  const disclosure=station.slice(start,end+'</details>'.length);
+  assert.match(disclosure,/<summary>Optional · sounds around you<\/summary>/);
+  assert.doesNotMatch(disclosure.slice(0,disclosure.indexOf('>')+1),/\sopen(?:\s|>)/);
+  assert.match(disclosure,/id="station-soundscape-context"/);
+  for(const category of ['people_or_machines','other_animals','weather_or_water','another_surrounding_sound','mixed_or_uncertain']) assert.ok(disclosure.includes(`value="${category}"`),category);
+  assert.ok(end<station.indexOf('id="station-bundle"'),'the primary save action follows optional setting notes');
+});
+
 test('the app offers a parrot visit and wires it to the editable animal picker',async()=>{
   const [home,app,station]=await Promise.all([
     readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),
