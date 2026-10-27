@@ -2306,32 +2306,47 @@
       "id": "monk-parakeet-identity-figshare-2023",
       "kind": "dataset",
       "title": "Smith-Vidaurre et al. identity-encoding calls and selection table",
-      "url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
-      "version": "Figshare DOI 10.6084/m9.figshare.22582099.v2; API and README refreshed October 24, 2026",
+      "url": "https://api.figshare.com/v2/articles/22582099",
+      "landing_url": "https://figshare.com/articles/dataset/Smith-Vidaurre_et_al_2023_IdentityInformationEncoding/22582099",
+      "version": "Figshare DOI 10.6084/m9.figshare.22582099.v2; exact item and file metadata verified October 27, 2026",
       "source_ids": [
         221,
         222,
         227
       ],
       "priority": 1,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-27",
       "task": "Potential source for a separately scoped acoustic identity/convergence reproduction; not a behavior/context-labelled corpus.",
-      "review_depth": "Refreshed the official Figshare v2 API and streamed README.md file 41233869 without retaining it. The API reports 22 files totaling 187,820,138 bytes and item-level CC BY 4.0. The README states that 1,596 selection-table sound.file names match WAVs in pre-processed_calls.zip, and that 1,582 calls were used in the paper; pinned MIT code explains the 14-row exclusion. Exact file names were not compared to the F0 subset. No audio or selection CSV was acquired, provider MD5 values were not recomputed, and no row values were inspected.",
-      "access": "Public Figshare v2 record and API. Its metadata lists pre-processed_calls.zip (31,079,669 bytes) and the selection CSV (440,873 bytes). The README was streamed for review and not retained; neither listed payload was downloaded.",
-      "decision": "Keep metadata-only. The matching WAV/selection-table names create a possible route to an exact source-file comparison, but no crosswalk to the 233-call F0 subset has been established. Any bounded identity reproduction still needs independent row/file verification, exact audio provenance and rights review, and qualified methods review. Exclude from context/meaning training by default.",
-      "limitations": "The README's 1,596 monk-parakeet selection rows include 14 site-scale calls from birds also represented in the individual-scale set; the pinned v1.0.0 site-scale script removes those 14 before the paper's scale comparison, leaving 1,582 (229 individual-scale plus 1,353 site-scale). This was reconciled from the README, article and code, not independently recomputed from the selection CSV or WAVs. No file-level provenance/privacy audit, animal/session grouping audit, full-code audit, or independent reproduction was performed. The README's author-stated reuse terms and item-level CC BY 4.0 are not independent verification of every source recording or third-party component.",
+      "review_depth": "Verified the current official Figshare v2 item API and item page, including v2 DOI, item-level CC BY 4.0, file 40086154 name, size and provider MD5. The 440,873-byte selection CSV alone was acquired into ignored local storage through the bounded collector and checked against size, provider MD5 and local SHA-256. Other files, including audio, were not retrieved. A standard-library audit reports only aggregate CSV structure and omits identifiers, locations, coordinates, filenames and free text.",
+      "access": "Public Figshare v2 record. The exact selection table is retained only in ignored local external-data storage with its acquisition receipt; no raw table or audio is included in the website, examples or private database.",
+      "decision": "Retain this single selection table as a local, aggregate-only structural reference under its item-level CC BY 4.0 declaration. Do not treat selection rows or acoustic identity as call meaning, do not use it for model training, and do not acquire the linked audio or other deposit files under this narrow milestone. A benchmark would still require source-recording provenance, leakage-safe grouping, independently reviewed labels, a qualified methods reviewer, baselines and a locked test set.",
+      "limitations": "The selection table is not audio and cannot validate acoustic features, call boundaries or labels. The published count of 1,582 analyzed calls and the README's 1,596 selection rows differ; the paper and pinned analysis code explain a 14-row exclusion, but this inspection only counts and summarizes the CSV structure and does not reproduce the paper's models. Group and location values are not published. No qualified independent review or ML evaluation occurred; training_admitted remains false.",
       "attribution": "Smith-Vidaurre G, Pérez-Marrufo V, Hobson EA, Salinas-Melgoza A, Wright TF (2023). Figshare v2, DOI 10.6084/m9.figshare.22582099.v2.",
       "rights": {
-        "license": "CC BY 4.0 declared by the Figshare record at item level.",
+        "license": "CC-BY-4.0",
         "scope": "Dataset item; the article, analysis code, dependencies, and any third-party recordings are separate components.",
         "evidence_url": "https://api.figshare.com/v2/articles/22582099",
-        "conditions": "Attribute the deposit and follow its declared terms. Its README states no use restrictions and requests prior contact to discuss future collaboration/co-authorship. Before retrieving, redistributing, or training on audio, reconcile source-recording provenance, privacy and exact license scope; provider-supplied checksums were not locally verified.",
+        "conditions": "The official item page and v2 API declare CC BY 4.0 at item level. Attribute the deposit. The README invites contact to discuss collaboration/co-authorship; no contact was made and this is not treated as a license condition. The item license does not independently resolve article, code, dependency or source-recording rights.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
       },
-      "acquisition": "metadata_only",
-      "files": []
+      "acquisition": "sample_approved",
+      "adapter": "figshare_public",
+      "figshare_item_id": 22582099,
+      "license_notice": "Figshare item 22582099 version 2 declares CC BY 4.0 at item level; file 40086154 is included in that record.",
+      "admission_reason": "Acquire only the 440,873-byte selection table for a local aggregate structural audit. No audio, behavioral-meaning claim, model training or public file redistribution is part of this scope.",
+      "files": [
+        {
+          "name": "monk_parakeet_contactCalls_rangeComparison_selectionTable.csv",
+          "url": "https://ndownloader.figshare.com/files/40086154",
+          "source_url": "https://api.figshare.com/v2/articles/22582099",
+          "figshare_file_id": 40086154,
+          "figshare_storage_prefix": "pfigshare-u-files",
+          "bytes": 440873,
+          "md5": "3296a9792c395fbad6d9bfa8e13a482f"
+        }
+      ]
     },
     {
       "id": "monk-parakeet-identity-code-2023",

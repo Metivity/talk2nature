@@ -481,3 +481,9 @@ The resource catalog now lists `load.selection.tables.R` under the existing MIT-
 The 2020 Raven selection-table directory is a separate metadata-only resource with no file manifest. The pinned README labels it raw data, and the root MIT notice does not clearly establish data-file terms. Its research, commercial and redistribution rights remain unresolved, so the collection tool refuses a plan/fetch for it. This scope correction does not erase the previously reported aggregate join audit, authorize redistribution, establish audio alignment or admit any data to model training. No raw table bytes were newly acquired in this review.
 
 The resource directory now includes a separate metadata-only card linking directly to the pinned `load.selection.tables.R` file. The broader code sample remains available through `monk-parakeet-code`; the helper card is a citation aid, not a second acquisition package.
+
+## October 27 — bounded Figshare v2 selection-table sample
+
+The separately published 2023 Figshare item (DOI `10.6084/m9.figshare.22582099.v2`) declares CC BY 4.0 at item level. The bounded collector acquired only file 40086154, a 440,873-byte selection CSV, and verified provider MD5 `3296a9792c395fbad6d9bfa8e13a482f` plus local SHA-256. The sample and receipt are in ignored `data/external/monk-parakeet-identity-figshare-2023/`; neither is bundled into the site, examples or private database. Reproduce the aggregate-only audit with `python3 scripts/inspect_monk_parakeet_selection_table.py`.
+
+The audit mirrors the pinned code's CSV-level exclusion and emits counts only. It does not access the separate 2023 audio archive or 2020 GitHub selection tables. The 2020 raw tables remain metadata-only with unresolved data-specific rights; the CC BY declaration on the distinct Figshare item does not change that decision. Neither dataset is admitted to training.
