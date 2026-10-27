@@ -1,5 +1,13 @@
 # Project status
 
+## October 28 — render and walk the zero-command path in Chromium
+
+**Question:** does the deployed first-use path stay understandable on narrow screens and let a visitor save and reopen a note without microphone access?
+
+**Evidence:** using a fresh headless Chromium 153.0.8010.12 context against the live Pages site, the homepage and primary practice action rendered at 320×740, 390×844 and 1440×900. Each had no horizontal overflow and the primary action stayed within the viewport. Screenshots of the 390×844 homepage, Station-ready state, partial recap and opened Compare review were visually inspected. The flow followed the primary CTA to the no-microphone rehearsal, added the human-entered note “I noticed movement,” stopped early, saved a local ZIP, confirmed the download, reopened that exact file in Compare, verified the note, and cleared the opened session.
+
+**Read-back and limits:** Compare labeled the bundle as invented and incomplete: zero audio retained, one observation note. Browser instrumentation counted zero `getUserMedia` calls, no non-GET network requests and no page errors. The ZIP and temporary screenshots were synthetic test artifacts and were removed after review. This is maintainer headless-browser emulation, not an installed-PWA, assistive-technology, physical-phone or independent-newcomer test. The named-phone save/reopen check remains open; the uncoached newcomer protocol remains internal and no recruitment has occurred. Continue the five-track goal; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 28 — make the zero-command first action microphone-free
 
 **Question:** can a first-time visitor start with a useful example without device permission or technical setup?
