@@ -8,7 +8,7 @@ The user chooses an observer-declared animal group, optionally enters a species 
 
 The prototype uses a simple energy threshold to retain up to 24 short sound clips or 24 MiB of audio, plus up to 100 user-entered notes. The selected 1-, 4- or 8-hour limit uses Android's monotonic elapsed clock as well as processed audio time; non-blocking reads let the service enforce that bound even if audio frames stop arriving. It does not classify species, infer behavior or meaning, establish a reply, or play sounds to animals. Quiet periods are not saved. A phone microphone is not verified for ultrasound, underwater or vibration sensing.
 
-Before recording, the setup screen offers the browser Field Companion's synthetic example. It is a permission-free way to explore the public workflow; it does not start this Android station or create a recording.
+Before recording, the setup screen offers the browser Field Companion's synthetic example. The button opens the practice route directly; it needs internet and does not start this Android station, request microphone access, or create a native recording.
 
 One working session is encrypted on the phone with AES-GCM and an Android Keystore key. Android backup and device-transfer rules exclude the app's files. Users can review and manually play a selected clip, delete clips or the whole session, and export a ZIP through Android's file picker. **The exported ZIP is unencrypted.** The app tells the user this before export; review the file and destination before sharing it. The v2 ZIP is intended to open in Talk2Nature's browser Compare workflow. Exporting does not establish recording consent, sharing rights, research admission or training rights.
 
