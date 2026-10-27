@@ -17,13 +17,16 @@ test('shared moments default to one whole 30-second observation without guessing
   assert.equal(preset.animalContext,undefined);
 });
 
-test('the public first actions lead to the shared-moment and microphone-free routes',async()=>{
+test('the public first action is a microphone-free practice, with real observation optional',async()=>{
   const [home,app]=await Promise.all([
     readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),
     readFile(new URL('../web/assets/app.js',import.meta.url),'utf8')
   ]);
-  assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=companion#station-console">Set up a 30-second moment/);
-  assert.match(home,/href="\{\{base\}\}\/app\/station\/\?mode=demo#station-console"[^>]*>Try without a microphone/);
+  const practice=home.indexOf('class="glass-button primary" href="{{base}}/app/station/?mode=demo#station-console">Try an example · no microphone');
+  const real=home.indexOf('class="glass-button" href="{{base}}/app/station/?mode=companion#station-console">Set up a real 30-second moment');
+  assert.ok(practice>=0&&real>practice,'the no-microphone practice is the first and visually primary action');
+  assert.match(home,/Start with an invented example: no microphone or account needed/);
+  assert.match(home,/No microphone is used unless you choose Start/);
   assert.match(app,/companion: \['SHARED MOMENTS'/);
   assert.match(app,/demo: \['SYNTHETIC REHEARSAL'/);
   for(const label of ['Outdoor moment','Shared moment','Parrot visit','Practice session']) assert.ok(app.includes(`'${label}'`),label);
