@@ -2107,7 +2107,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('observer-classification accuracy 0.72',note)
             self.assertIn('not model performance',note)
             self.assertIn('does not test generalization to unseen birds',note)
-            self.assertIn('fileAccessRequest flag does not resolve any individual file',note)
+            self.assertIn('current Edmond API lists three V1 ZIP files with restricted=false and fileAccessRequest=null',note)
+            self.assertIn('DataCite declares MIT for Edmond V1.0 at deposit level',note)
+            self.assertIn('GitHub selection-table files have not been matched to a specific archived member',note)
+            self.assertIn('no terms were accepted and no Edmond archive was downloaded',note)
+            self.assertIn('href="https://api.datacite.org/dois/10.17617/3.RUIM5I"',note)
             resources=json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources']
             supplement=next(r for r in resources if r['id']=='monk-parakeet-supplement')
             self.assertEqual(supplement['source_ids'],[55,461])

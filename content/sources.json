@@ -472,10 +472,16 @@
   {
     "id": 57,
     "title": "Monk parakeet deposited dataset",
-    "description": "Edmond v1 API rechecked October 26, 2026: released version published 2023-09-07 declares MIT and lists three archives with provider-supplied MD5 values. Version metadata has fileAccessRequest=true; no individual file access state was resolved. No Edmond archive or member was downloaded. The local GitHub annotation-table copy remains unmatched to an Edmond archive member.",
+    "description": "Official Edmond API rechecked October 28, 2026: V1 lists three ZIP archives; each file entry is restricted=false and fileAccessRequest=null. The official DataCite DOI record declares MIT for Edmond V1.0. Edmond’s current download guide requires acceptance of its Terms of Use and the dataset license before download; no terms were accepted and no archive was downloaded. The separate GitHub annotation CSV matches its pinned repository commit by Git blob hash, but has not been matched to an Edmond archive member. The GitHub Raven tables remain separate artifacts with unresolved file-level reuse scope.",
     "url": "https://doi.org/10.17617/3.RUIM5I",
-    "checked": "2026-10-26",
-    "origin": "Official Edmond v1 API response and DataCite DOI metadata inspected over verified TLS on October 26, 2026; component mapping and file-level access remain unresolved."
+    "checked": "2026-10-28",
+    "origin": "Official Edmond V1 API and DataCite DOI API inspected over verified TLS on October 28, 2026; the Edmond download guide rechecked. The APIs establish deposit-level metadata, not membership of the separately pinned GitHub files inside an Edmond ZIP. No terms were accepted and no archive was downloaded.",
+    "review_url": "https://api.datacite.org/dois/10.17617/3.RUIM5I",
+    "review_url_label": "Official DataCite DOI metadata and rights record",
+    "rights": {
+      "edmond_deposit": "DataCite declares MIT for Edmond V1.0. Edmond terms and the dataset license must be accepted before a download.",
+      "github_files": "The separate GitHub annotation CSV and Raven selection tables have not been matched to specific Edmond archive members; do not infer their file-level rights from the deposit metadata."
+    }
   },
   {
     "id": 58,
