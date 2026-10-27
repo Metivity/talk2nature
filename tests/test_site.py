@@ -1596,8 +1596,8 @@ class SiteTests(unittest.TestCase):
             build(root,'https://fixture.github.io/talk2nature',True)
             home=(root/'app/index.html').read_text()
             station=(root/'app/station/index.html').read_text()
-            guidance='Nothing uploads or auto-saves. Export before closing to keep your audio and notes.'
-            self.assertIn(guidance,home)
+            self.assertIn('Download a copy before closing to keep this moment.',home)
+            guidance='Your sound and notes stay in this page. Download a copy before closing if you want to keep them.'
             self.assertIn(guidance,station)
             self.assertLess(station.index('id="station-retention-guidance"'),station.index('id="station-start"'))
             self.assertIn('aria-describedby="station-retention-guidance"',station)
@@ -1615,10 +1615,7 @@ class SiteTests(unittest.TestCase):
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True)
             home=(root/'app/index.html').read_text()
-            self.assertIn('Notice one ordinary moment.',home)
-            self.assertIn('Thirty seconds is enough',home)
-            self.assertIn('no big show needed',home)
-            self.assertIn('quiet moments count, too',home)
+            self.assertIn('Notice one ordinary moment. Keep a sound, movement or some context. Thirty seconds is enough.',home)
             self.assertNotIn('the parrot did not prepare a TED talk',home)
             self.assertIn('Set up a 30-second moment',home)
             self.assertIn('Try without a microphone',home)

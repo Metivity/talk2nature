@@ -21,10 +21,10 @@ function renderSoundscapeContext() {
   const selected = new Set(session?.soundscapeContext?.categories ?? []);
   for (const input of document.querySelectorAll('[name="station-soundscape-context"]')) input.checked = selected.has(input.value);
   const feedback = $('station-soundscape-feedback');
-  if (feedback && !selected.size) feedback.textContent = 'No setting categories selected. The export will say “not recorded,” not that they were absent.';
+  if (feedback && !selected.size) feedback.textContent = 'No setting categories selected. Your saved note will say “not recorded,” not that the sounds were absent.';
   else if (feedback) feedback.textContent = 'Saved as your whole-session observation, not as an identification of any clip.';
 }
-const reasons = {window_complete: 'Your 30-second window is ready. Quiet moments are included.', window_timeout: 'Recording stopped at the time limit. This window is incomplete; check its recorded duration.', user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'Local event storage is full. Export or discard before a new session.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
+const reasons = {window_complete: 'Your 30-second window is ready. Quiet moments are included.', window_timeout: 'Recording stopped at the time limit. This window is incomplete; check its recorded duration.', user_stop: 'Stopped by you.', backgrounded: 'Stopped because this page left the foreground.', page_closed: 'Stopped on leaving the page.', time_limit: 'The five-minute session limit was reached.', storage_limit: 'This page has reached its temporary sound limit. Save this moment or discard it before starting again.', microphone_ended: 'The microphone disconnected or permission ended.', audio_interrupted: 'Audio was interrupted. Restart explicitly when ready.', no_audio: 'No audio frames arrived for five seconds. Capture stopped.', capture_error: 'An audio frame could not be processed.'};
 function controls() {
   const busy = pending || active || exporting;
   const phase = pending ? 'starting' : active ? 'recording' : session ? 'review' : 'setup';
@@ -74,7 +74,7 @@ async function start(synthetic) {
   if (pending || active || exporting) return;
   if (!synthetic && !$('station-permission').checked) { status('Confirm that you have permission to record this setting before starting the microphone.'); return; }
   if (!checkAlias()) return;
-  if (dirty && !window.confirm('Discard the current local session? Export its JSON and clips first if you want to keep them.')) return;
+  if (dirty && !window.confirm('Starting a new moment will clear this one from the page. Download a copy first if you want to keep it.')) return;
   if (!window.AudioContext || !window.AudioWorkletNode || (!synthetic && !navigator.mediaDevices?.getUserMedia)) { status('This browser does not support the required audio APIs. Try a current browser on HTTPS.'); return; }
   let animalContext;
   try { animalContext = animal.value(); } catch (error) { status(error.message); return; }
