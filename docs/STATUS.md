@@ -1,5 +1,13 @@
 # Project status
 
+## October 28 — reproduce researcher quick start from current main
+
+**Question:** does the public researcher guide still reproduce on the latest clean `main`, after the recent build and docs updates?
+
+**Reproduction:** a fresh depth-one HTTPS clone checked commit `c51f2dfa683400762f028b0e8280feb65b606fef` with Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed and `data/external/` was absent. The synthetic annotation report and standard/dyadic split outputs matched the guide; repeated split runs were byte-identical with the documented SHA-256 values. The collection catalog validated 241 resources. All 192 Python tests passed (one intentional skip), all 137 Node tests passed, and the local noindex build passed `scripts/check_site.py` (144 HTML documents, 7,484 links). Generated outputs stayed ignored and `git status` remained clean.
+
+**Limits and next step:** maintainer-run synthetic/software reproduction only; no outside researcher report, scientific validation, or independent benchmark result. No participant or animal data, third-party media, code or model weights were acquired or run. Refreshed the quick-start summary and dated verification history. Continue to track independent reproduction count separately (currently zero) and keep AutoResearch/real-data admission **NOT READY**.
+
 ## October 28 — verify live crawlability and note stale search text
 
 **Live read-back:** with TLS certificate verification enabled, `robots.txt` returned HTTP 200 and allows crawling; `sitemap.xml` returned HTTP 200, parsed as valid XML and contains 143 unique URLs. The homepage, `/app/`, `/app/station/?mode=companion`, `/research/resources/` and `/research/egyptian-fruit-bat-data/` all returned HTTP 200 with `index,follow` and self-canonical URLs. The live resource directory displays 241 records, matching the current repository and local build.
