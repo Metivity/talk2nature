@@ -1562,6 +1562,18 @@ class SiteTests(unittest.TestCase):
                     self.assertIsNotNone(navigation)
                     self.assertIn(expected,navigation.group(1))
 
+    def test_field_companion_home_links_to_account_free_feedback_helper(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            home=(root/'app/index.html').read_text()
+            feedback=(root/'mobile/index.html').read_text()
+            self.assertIn('href="/talk2nature/mobile/#share"',home)
+            self.assertIn('Tell us what worked or felt confusing',home)
+            self.assertIn('No account needed. Nothing is sent automatically.',home)
+            self.assertIn('id="mobile-feedback-form"',feedback)
+            self.assertIn('Nothing is saved or sent by this form.',feedback)
+
     def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
