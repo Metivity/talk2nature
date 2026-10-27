@@ -1,5 +1,15 @@
 # Project status
 
+## October 28 — remove stale public pages from reused local builds
+
+**Finding:** after building the shared checkout's local noindex preview into its existing `dist/`, the site checker found 34 leftover pages carrying `index,follow`. A fresh output directory passed, confirming stale files—not the current page template—caused the failure.
+
+**Change:** `web/build.py` now records every HTML path written during a build and removes stale `.html` paths from the output before finishing. A regression test simulates a public build, leaves a retired crawlable page, rebuilds locally, and verifies that page is removed and the noindex site check passes.
+
+**Verification:** all 192 Python tests passed (one intentional skip) and all 137 Node tests passed. On the isolated clean `main` checkout, local → public → local builds each passed `scripts/check_site.py`: 144 HTML pages, with 7,484 local links, 7,629 public links and 143 reachable public routes. The rendered-browser controller timed out, so no visual/browser check is claimed; the change affects build output cleanup, not page UI.
+
+**Limits and next step:** no content changed and no Pages deployment was made. The shared checkout remains dirty and untouched. This prevents stale HTML from an earlier build surviving in a reused local preview; it does not prove Search Console indexing or physical-device behavior. Keep the overall goal active and AutoResearch/real-data admission **NOT READY**.
+
 ## October 27 — clarify how visitors keep a moment
 
 **Finding:** the Field Companion's main Save button was followed by visible guidance about “export” and “auto-save,” terms that did not match the ordinary action label and could make a first-time user wonder what to do.

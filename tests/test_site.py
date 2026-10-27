@@ -430,6 +430,20 @@ class SiteTests(unittest.TestCase):
             self.assertFalse(result['public'])
             self.assertGreaterEqual(result['html_pages'],20)
 
+    def test_reused_build_output_removes_stale_public_html_before_local_preview(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            stale=root/'research'/'retired-public-page'/'index.html'
+            stale.parent.mkdir(parents=True)
+            stale.write_text('<html><head><meta name="robots" content="index,follow"></head></html>')
+
+            build(root)
+
+            result=check_site(root)
+            self.assertFalse(result['public'])
+            self.assertFalse(stale.exists())
+
     def test_project_subpath_keeps_links_and_canonicals_intact(self):
         with tempfile.TemporaryDirectory() as d:
             build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
