@@ -79,6 +79,23 @@ class CollectionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, [data['id']])
 
+    def test_monk_parakeet_selection_table_rights_remain_separate_from_loader_code(self):
+        records = {r['id']: r for r in self.catalog['resources']}
+        code = records['monk-parakeet-code']
+        tables = records['monk-parakeet-selection-tables-2020']
+        helper = next(f for f in code['files'] if f['name'] == 'load.selection.tables.R')
+        self.assertEqual(helper['bytes'], 3230)
+        self.assertEqual(helper['git_blob_sha1'], 'abe80898bae464b17c6097675d87e38446850e33')
+        self.assertIn('selection-table data', code['decision'])
+        self.assertEqual(tables['source_ids'], [55, 56])
+        self.assertIn('Unresolved', tables['rights']['license'])
+        self.assertEqual(tables['acquisition'], 'metadata_only')
+        self.assertEqual(tables['files'], [])
+        for field in ('research_use', 'commercial_use', 'redistribution'):
+            self.assertEqual(tables['rights'][field], 'unresolved')
+        with self.assertRaisesRegex(ValueError, 'Not admitted'):
+            plan(self.catalog, [tables['id']])
+
     def test_zenodo_metadata_sample_checks_record_license_manifest_and_file_md5(self):
         resource = copy.deepcopy(next(r for r in self.catalog['resources']
                                       if r['id'] == 'northeastern-forest-bird-metadata-sample-v2'))
