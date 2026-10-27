@@ -5209,6 +5209,18 @@ The current Dependabot configuration requests monthly grouped GitHub Actions ver
 
 This was maintainer-run synthetic/software verification, not an independent reproduction, user study, scientific validation or biological result. No animal data, third-party media or model weights were acquired or run. The independent reproduction count remains zero; AutoResearch stays **NOT READY**.
 
+## October 27 continuation — deepen the great-tit receiver-response record
+
+**Question:** what does the Carolina-wren playback study actually measure, what alternative explanation limits its sequence claim, and what separate data asset does it expose?
+
+**Evidence reviewed:** publisher-indexed primary article sections (Introduction, Methods, Results, Discussion, Ethical Note, Data Availability and Supplementary Material listing) plus the [University of Western Australia article record](https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e). The direct ScienceDirect page still returned HTTP 403, so no article file, figures or supplement bytes were opened.
+
+**Finding:** the article reports 96 wild great tits, one playback each across six treatments. Call playback increased approach relative to controls, but call treatments did not differ significantly. Wing-flicking was more likely after FME–D sequences than after D-only calls or controls; the interspecies sequence comparison was nonsignificant and imprecise. The authors identify unmatched acoustic content/duty cycle as an alternative explanation: the FME–D sequence contains more material than the D-only playback, with no matched D-only condition. Carolina-wren stimuli were built from four source birds but only two tracks per treatment; no reversed-order Carolina-wren sequence was tested. The authors' ethics statement is recorded as their account, not a project protocol or independent welfare review.
+
+**Data and rights decision:** the publisher says study data are in Supplementary Material and lists one 985-byte text file. Added source record 464 and a separate metadata-only dataset resource; its filename, bytes, contents and file-specific terms remain unknown. The UWA record links the paper under CC BY 4.0; that does not clear the supplementary file's exact terms or the separate Macaulay Library/Xeno-Canto stimulus recordings. Nothing was acquired, opened, played or analyzed. The article note and prioritized backlog now include these limits. Keep the app passive; do not treat receiver behavior as translation.
+
+**Next:** the physical-phone save/reopen gate and authorized newcomer walkthrough remain open. Continue with accessible primary-source review or reproducibility improvements while waiting for device evidence. The five-track goal stays active; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 27 continuation — update the budgerigar edge-paper access record
 
 **Question:** has the complete primary article become available for the methods, validation and component-rights review needed to judge its relevance to the Field Companion?
