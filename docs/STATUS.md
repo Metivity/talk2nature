@@ -5208,3 +5208,11 @@ The current Dependabot configuration requests monthly grouped GitHub Actions ver
 **Result:** a fresh depth-one clone at [`2beb643`](https://github.com/Metivity/talk2nature/commit/2beb643491ff169f17e924dba0e8203bbe59cec1) reproduced the expected annotation report, 10-group standard and dyadic splits, and 240-record catalog validation. Repeated standard/dyadic outputs matched the documented hashes `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`; the clone remained clean. Detailed commands and limits are in `docs/RESEARCHER_START_HISTORY.md`.
 
 This was maintainer-run synthetic/software verification, not an independent reproduction, user study, scientific validation or biological result. No animal data, third-party media or model weights were acquired or run. The independent reproduction count remains zero; AutoResearch stays **NOT READY**.
+
+## October 27 continuation — update the budgerigar edge-paper access record
+
+**Question:** has the complete primary article become available for the methods, validation and component-rights review needed to judge its relevance to the Field Companion?
+
+**Evidence:** rechecked the [publisher record](https://www.mdpi.com/2076-2615/16/20/3246). Its indexed page still identifies an early-access version and says the complete PDF/HTML/XML versions will follow. Opening the record returned HTTP 429 through the research browser and HTTP 403 from a local request. Only the publisher record and abstract were reviewed; no full text, supplement, audio, labels, code or model weights were acquired or run.
+
+**Decision:** updated the public research note and resource metadata with the access date and retrieval limits. The article remains metadata-only prior art for long-duration edge-based vocal-activity monitoring. Do not infer event-level performance, meaning, receiver response, full evaluation design or exact component licenses from the abstract. Revisit the full-text review when the publisher makes it available; continue other accessible primary-source work in the meantime. The zero-command named-phone save/reopen and authorized newcomer gates remain open. The global five-track goal stays active; AutoResearch and real-data admission stay **NOT READY**.
