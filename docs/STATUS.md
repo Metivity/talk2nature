@@ -8,6 +8,8 @@
 
 **Verification:** all 185 Python tests passed (one intentional skip), and all 133 Node tests passed. The local noindex build produced 143 pages plus 404; the site checker validated 144 HTML documents and 7,477 links. Installed desktop Chrome via Playwright rendered the home and Station at 320×740 and 390×844 CSS pixels; document widths matched each viewport, the feedback link remained above the fixed dock, and the main Save button fit in the first post-session review screen. The microphone-free rehearsal completed through a real ZIP download with zero microphone calls and no JavaScript errors. Screenshots were visually inspected.
 
+**Release and live read-back:** PR [#472](https://github.com/Metivity/talk2nature/pull/472) merged to `main` as [`56f2006`](https://github.com/Metivity/talk2nature/commit/56f2006d1ab47a9b957175155d8d25cd45d89083). Pages run [#40550996297](https://github.com/Metivity/talk2nature/actions/runs/40550996297) passed build, publish-boundary checks, deployment and its live-route verifier. Fresh TLS-verified reads returned HTTP 200 for `/app/` and `/app/station/`; both contained the new copy.
+
 **Limits:** these are maintainer-run desktop-browser checks with emulated phone dimensions and invented practice material, not physical-phone, assistive-technology or independent first-time-user evidence. No real recording or participant data was used. The named physical-phone check and authorized, uncoached newcomer walkthrough remain open; no tester was contacted. Keep the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
 
 ## October 27 — make first-use feedback easier to find
