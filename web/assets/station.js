@@ -33,7 +33,9 @@ function controls() {
   $('station-status').setAttribute('aria-live', active ? 'off' : 'polite');
   const unaddedNote = Boolean($('station-note').value.trim());
   $('station-free-note').hidden = phase === 'review' && !unaddedNote;
+  $('station-note-help').hidden = phase === 'review';
   $('station-draft-warning').hidden = phase !== 'review' || !unaddedNote;
+  $('station-note').setAttribute('aria-describedby', phase === 'review' && unaddedNote ? 'station-draft-warning' : 'station-note-help');
   $('station-note').readOnly = phase === 'review';
   for (const step of document.querySelectorAll('[data-step]')) {
     if (step.dataset.step === (phase === 'starting' ? 'setup' : phase)) step.setAttribute('aria-current', 'step');

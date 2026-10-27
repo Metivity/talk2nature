@@ -151,6 +151,42 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   assert.equal(h.get('station-start').disabled, true);
 });
 
+test('a typed note is explicitly added to the timeline before it is included in a saved moment', async () => {
+  const h = setup();
+  await h.get('station-demo').fire('click');
+  assert.equal(h.get('station-note-help').hidden, false);
+  assert.equal(h.get('station-note').attributes['aria-describedby'], 'station-note-help');
+  h.get('station-note').value = 'A person walked past.';
+  await h.get('station-observe').fire('click');
+  assert.equal(h.get('station-note').value, '');
+  assert.match(h.get('station-marker-feedback').textContent, /Observation added to your timeline/);
+  await h.get('station-stop').fire('click');
+  assert.equal(h.get('station-note-help').hidden, true);
+  assert.equal(h.get('station-draft-warning').hidden, true);
+  assert.equal(h.get('station-note').attributes['aria-describedby'], 'station-note-help');
+  await h.get('station-bundle').fire('click');
+  const saved = h.state.downloads[0];
+  const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
+  assert.equal(reopened.record.markers.length, 1);
+  assert.equal(reopened.record.markers[0].note, 'A person walked past.');
+});
+
+test('an unmarked draft stays out of the saved moment and is named as a draft after Stop', async () => {
+  const h = setup();
+  await h.get('station-demo').fire('click');
+  h.get('station-note').value = 'This note was never added.';
+  h.get('station-draft-warning').textContent = 'This note is still a draft. It was not added to your saved moment. Copy it elsewhere if you want to keep it.';
+  await h.get('station-stop').fire('click');
+  assert.equal(h.get('station-note-help').hidden, true);
+  assert.equal(h.get('station-draft-warning').hidden, false);
+  assert.equal(h.get('station-note').attributes['aria-describedby'], 'station-draft-warning');
+  assert.match(h.get('station-draft-warning').textContent, /not added to your saved moment/);
+  await h.get('station-bundle').fire('click');
+  const saved = h.state.downloads[0];
+  const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
+  assert.equal(reopened.record.markers.length, 0);
+});
+
 test('checked download opens a plain-language Compare step and a new moment clears it', async () => {
   const h = setup();
   await h.get('station-demo').fire('click');
