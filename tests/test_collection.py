@@ -82,11 +82,17 @@ class CollectionTests(unittest.TestCase):
     def test_monk_parakeet_selection_table_rights_remain_separate_from_loader_code(self):
         records = {r['id']: r for r in self.catalog['resources']}
         code = records['monk-parakeet-code']
+        helper_card = records['monk-parakeet-loader-code']
         tables = records['monk-parakeet-selection-tables-2020']
         helper = next(f for f in code['files'] if f['name'] == 'load.selection.tables.R')
         self.assertEqual(helper['bytes'], 3230)
         self.assertEqual(helper['git_blob_sha1'], 'abe80898bae464b17c6097675d87e38446850e33')
         self.assertIn('selection-table data', code['decision'])
+        self.assertTrue(helper_card['url'].endswith('/ANALYSIS/CODE/functions/load.selection.tables.R'))
+        self.assertEqual(helper_card['rights']['license'], 'MIT')
+        self.assertIn('named R helper code file', helper_card['rights']['scope'])
+        self.assertEqual(helper_card['acquisition'], 'metadata_only')
+        self.assertEqual(helper_card['files'], [])
         self.assertEqual(tables['source_ids'], [55, 56])
         self.assertIn('Unresolved', tables['rights']['license'])
         self.assertEqual(tables['acquisition'], 'metadata_only')

@@ -5160,3 +5160,12 @@ This verifies publication and live markup/styles only. It does not establish phy
 **Validation:** the resource catalog validates 239 records. The code-resource plan reports 32,030 bytes and uses no network. All 184 Python tests pass (one intentional skip), all 132 Node tests pass, and the public candidate builds 143 pages plus 404. The site checker validates 144 HTML documents, 7,619 links and all 143 reachable routes; a fresh sitemap comparison matches the live 143-URL set exactly, with no missing or extra routes. The live verifier confirms three core routes and the sitemap directive. The 27 focused collection tests also pass. `git diff --check` passes. This is a candidate on top of current `origin/main`; external CI and deployment remain pending.
 
 **Limits and next decision:** no selection-table bytes were newly downloaded or copied into the public repository during this review; the prior aggregate report remains structural only. No model, audio or biological labels were tested. No author was contacted. Keep the tables out of training and redistribution until data-specific terms are clarified; keep AutoResearch and real-data admission **NOT READY**. The broader five-track goal remains active.
+
+
+## October 27 follow-up — link the pinned parakeet helper directly
+
+**Rendered finding:** after the rights record went live, the resource card named `load.selection.tables.R` but linked only to the repository root. The exact helper URL was present in the acquisition manifest, not as a user-facing hyperlink.
+
+**Change:** added a separate metadata-only resource card that links directly to the pinned helper. The existing MIT code bundle and its hash-verified helper file remain the bounded acquisition path. The helper card does not duplicate code bytes; the selection-table record remains rights-unresolved and unavailable to the collector.
+
+**Validation:** all 184 Python tests pass (one intentional skip), all 132 Node tests pass, and the collection catalog validates 240 records. The explicit public build produces 143 pages plus 404; the site checker validates 144 HTML documents, 7,621 links and all 143 reachable routes. Candidate and live sitemap sets match exactly (143 each, zero missing/extra). The rendered resource page contains a direct hyperlink to the pinned helper and preserves the separate unresolved-rights table card. `git diff --check` passes. External CI and deployment remain pending.
