@@ -1,5 +1,15 @@
 # Project status
 
+## October 28 — make the zero-command first action microphone-free
+
+**Question:** can a first-time visitor start with a useful example without device permission or technical setup?
+
+**Change:** the Field Companion homepage now makes the invented, microphone-free rehearsal the primary action. Real observation setup stays optional and secondary. The copy says no account is needed and the microphone is used only after the visitor chooses Start. Regression checks protect the order, visual hierarchy, and wording.
+
+**Verification:** [PR #495](https://github.com/Metivity/talk2nature/pull/495) merged as [cff1a6a](https://github.com/Metivity/talk2nature/commit/cff1a6accd7f35e4af1325849f1140333fcbfb15). All required GitHub checks passed. The Pages workflow [#40598642265](https://github.com/Metivity/talk2nature/actions/runs/40598642265) completed successfully. A fresh TLS-verified read returned HTTP 200 for `/app/` and `/app/station/?mode=demo`; the served home HTML contains the primary practice action and microphone boundary. The local build produced 143 routes plus 404; `scripts/check_site.py` passed 144 HTML pages and 7,485 links. All 192 Python tests passed (one intentional skip); all 137 Node tests passed.
+
+**Limits and next step:** browser automation timed out twice and the local preview port was closed, so no rendered-browser or physical-phone check was completed. No real recording, participant or animal media was used. The named-phone save/reopen check and authorized, uncoached newcomer walkthrough remain open; the walkthrough protocol is still internal and no recruitment has occurred. Keep the five-track goal active.
+
 ## October 28 — reproduce researcher quick start from current main
 
 **Question:** does the public researcher guide still reproduce on the latest clean `main`, after the recent build and docs updates?
