@@ -458,8 +458,14 @@ Rendered the local noindex candidate in headless Chrome 156 with explicit mobile
 
 **Finding:** the live Station introduction said it “never plays sounds to animals.” That was too absolute: optional human review uses the device's audio output and could be audible to an animal if played on the phone speaker. The existing confirmation and headphone/distance instruction cannot enforce playback routing.
 
-**Correction candidate:** the first-screen copy now says the app plays no calls or prompts for animals; any recording playback is a separate human action, must not be played to animals, and requires headphones or moving well away first. The console states “no animal calls or prompts.” This keeps the welfare boundary explicit without claiming the app can control what a person hears from the speaker.
+**Correction:** the first-screen copy now says the app plays no calls or prompts for animals; any recording playback is a separate human action, must not be played to animals, and requires headphones or moving well away first. The console states “no animal calls or prompts.” This keeps the welfare boundary explicit without claiming the app can control what a person hears from the speaker.
 
 **Validation:** all 199 Python tests passed with one intentional skip and all 152 Node tests passed. The local noindex build/check accepted 147 HTML documents and 7,765 links; the public-origin build/check accepted 147 documents, 7,912 links and all 146 public routes. Headless Chrome rendered the local candidate at 390 × 844 and 1440 × 1000 CSS pixels. The note wrapped to five mobile lines and three desktop lines; document width matched the viewport and there were no page errors. Start stayed disabled until permission was selected. No microphone request, recording, playback or animal was used.
 
 **Limits and acceptance:** this wording does not create an audio block or verify headphone routing. The browser playback still requires a fresh human confirmation after capture. Physical-phone and independent-newcomer checks remain open. No animal or participant recording is needed for those checks.
+
+**Release:** PR [#545](https://github.com/Metivity/talk2nature/pull/545) merged as [`ceeead8`](https://github.com/Metivity/talk2nature/commit/ceeead82aaaff9362bae8e9caec9e990535a81f3). Pages run [#40701657268](https://github.com/Metivity/talk2nature/actions/runs/40701657268) passed the Python and Node suites, public build/check, deployment and live-route verifier.
+
+**Live read-back:** cache-bypassed TLS-verified requests returned HTTP 200 for the homepage, app, Station, Review, Compare, resource directory and source contribution route. The pages were self-canonical and `index,follow`; the sitemap had 146 unique URLs and the resource directory showed 250 records. Station showed the no-calls/no-prompts boundary, the separate human-playback warning, and no longer contained the old absolute claim.
+
+**Remaining limits:** this is clearer instruction, not technical speaker muting or headphone enforcement. No microphone, recording, playback, animal or participant data was used. Physical-phone and independent-newcomer checks remain open.
