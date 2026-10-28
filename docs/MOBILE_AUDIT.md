@@ -453,3 +453,13 @@ Rendered the local noindex candidate in headless Chrome 156 with explicit mobile
 **Decision:** keep the exact allowlist and manual offline setup. The browser offline acceptance check for the shared review controls is satisfied; the separate named physical-phone Save-to-Compare gate and authorized newcomer walkthrough remain open. No code changed during this check and nothing was deployed.
 
 **Regression checks:** after recording the result, `node --test tests/mobile.test.mjs tests/review-audio.test.mjs tests/station-ui.test.mjs tests/listen-ui.test.mjs tests/compare.test.mjs` passed all 44 tests. The focused site-content suite passed all 102 tests; the local noindex build and `scripts/check_site.py` also passed (147 HTML documents, 7,765 links). These checks validate software and generated pages only.
+
+## October 28 — clarify the zero-command audio boundary
+
+**Finding:** the live Station introduction said it “never plays sounds to animals.” That was too absolute: optional human review uses the device's audio output and could be audible to an animal if played on the phone speaker. The existing confirmation and headphone/distance instruction cannot enforce playback routing.
+
+**Correction candidate:** the first-screen copy now says the app plays no calls or prompts for animals; any recording playback is a separate human action, must not be played to animals, and requires headphones or moving well away first. The console states “no animal calls or prompts.” This keeps the welfare boundary explicit without claiming the app can control what a person hears from the speaker.
+
+**Validation:** all 199 Python tests passed with one intentional skip and all 152 Node tests passed. The local noindex build/check accepted 147 HTML documents and 7,765 links; the public-origin build/check accepted 147 documents, 7,912 links and all 146 public routes. Headless Chrome rendered the local candidate at 390 × 844 and 1440 × 1000 CSS pixels. The note wrapped to five mobile lines and three desktop lines; document width matched the viewport and there were no page errors. Start stayed disabled until permission was selected. No microphone request, recording, playback or animal was used.
+
+**Limits and acceptance:** this wording does not create an audio block or verify headphone routing. The browser playback still requires a fresh human confirmation after capture. Physical-phone and independent-newcomer checks remain open. No animal or participant recording is needed for those checks.
