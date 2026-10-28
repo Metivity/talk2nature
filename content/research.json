@@ -457,14 +457,14 @@
     "source_ids": [
       49
     ],
-    "review_depth": "Published paper pages 3–12 reviewed for participant screening/ethics, protocol, analysis, results and limitations. Page 9 was rendered and Table 2's P1–P9 differences recalculated from the displayed session counts. The current University of Glasgow deposit record and Crossref DOI relation metadata were checked. No raw-data reanalysis or replication.",
+    "review_depth": "Published paper pages 3–12 reviewed for participant screening/ethics, protocol, analysis, results and limitations. Page 9 was rendered and Table 2's P1–P9 differences recalculated from the displayed session counts. The current University of Glasgow deposit record and Crossref DOI relation metadata were checked. No raw-data reanalysis or replication. On October 28, a targeted search of the published paper's Methods confirmed a home-based setup using participants' own devices and internet connections; the paper does not identify one study region. The Honolulu location belongs to the CHI 2024 conference listing, not the parrot study. No participant household location or raw data was obtained.",
     "finding": "In a six-month, nine-parrot home study, Table 2 lists 65 parrot-triggered live calls and 40 playback calls out of 108 possible in each phase. Recalculation from the displayed counts gives live-minus-playback differences of +50, +17, +75, +17, +8, -8, -8, +33 and +25 percentage points for P1–P9. The printed row is reversed for seven birds and appears to swap the P3/P5 entries. The authors report a live-phase advantage, but the published duration totals do not reconcile across the text and Table 3; the duration magnitude remains unresolved.",
     "limitations": "The live phase always came first, so condition order was not counterbalanced; reciprocal calls, caregiver cues and variable home devices also complicate interpretation. Table 2 labels the comparison ‘Live minus playback,’ but the printed values correspond to playback-minus-live for P1, P2, P4 and P6–P9; P3 and P5 also appear transposed relative to the displayed counts. No underlying data were available to verify author intent, and no correction was found in the current University of Glasgow record or Crossref relation metadata; that check is not exhaustive. The Data Analysis text reports 561 live-phase and 142 playback minutes, while summing Table 3's displayed per-parrot cells gives about 239 and 149 minutes, respectively; no underlying data were available to resolve this. The inferential tests were not independently recomputed. Engagement is not a direct welfare, comprehension or language measure.",
     "lesson": "The parrots signaled and selected a caller, but caregivers initiated the calls. Treat animal choice, caregiver mediation and responsiveness as separate design variables; preserve retreat and stopping options. This is an animal-computer-interface study, not a passive acoustic-collection or communication-decoding result.",
     "next_review": "Obtain independent avian animal-computer-interaction and statistical review, and author clarification if contact is separately authorized, before reusing participant-level Table 2 values or adapting the protocol. Keep the printed results distinct from our arithmetic check; do not silently correct the paper.",
-    "reviewed": "2026-10-14",
+    "reviewed": "2026-10-28",
     "expert_review": "Not yet independently reviewed by an avian, animal-computer-interaction or statistical specialist.",
-    "review_stage": "Methods reviewed",
+    "review_stage": "Full paper review plus targeted geography review; no raw study data",
     "year_label": "Source year",
     "study_snapshot": [
       [
@@ -489,7 +489,14 @@
       ]
     ],
     "review_locator": "CHI 2024 published version: participant/method sections and analysis, pages 3–8; Tables 2–4, page 9; results and limitations, pages 10–12.",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "not_applicable",
+      "location_note": "This was a home-based study using participants’ own devices and internet connections, not one fixed field site. The paper does not identify a single study region or publish household locations. Honolulu is the conference venue, not the study location.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "dog-buttons",

@@ -21,6 +21,11 @@ class AtlasTests(unittest.TestCase):
         self.assertTrue(all(r['evidence_version'] in versions for r in atlas['records']))
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
+        parrot_home=records['parrot-video']
+        self.assertEqual(parrot_home['location_status'],'not_applicable')
+        self.assertEqual(parrot_home['locations'],[])
+        self.assertIn('home-based study',parrot_home['location_note'])
+        self.assertIn('conference venue, not the study location',parrot_home['location_note'])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
         inat_sounds=records['inat-sounds-2024']
         self.assertEqual(inat_sounds['location_status'],'not_applicable')
