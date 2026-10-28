@@ -6003,3 +6003,13 @@ This publishes public catalog metadata only. It does not re-review the source re
 ## October 28 — merge the current researcher onboarding record
 
 PR [#549](https://github.com/Metivity/talk2nature/pull/549) merged to public main as [3158191](https://github.com/Metivity/talk2nature/commit/3158191c8f341ca791899a399b23d1ccea7670b7). Its hosted public-check workflow passed. The update refreshed the zero-command goal and researcher guide/history to the clean-clone verification of public main at 1016c0ae, and recorded the test/build evidence and remaining limitations. It changed documentation only; no application behavior or generated Pages route changed, so no Pages deployment was needed. The physical-phone and authorized newcomer gates remain open, and real-data admission and AutoResearch remain NOT READY.
+
+## October 28 — deploy and verify the responsive contrast correction
+
+**Question:** did the contrast fix from PR [#554](https://github.com/Metivity/talk2nature/pull/554) reach the public Field Companion, and does it preserve its responsive layout?
+
+**Release:** PR #554 merged to `main` as [`987952e`](https://github.com/Metivity/talk2nature/commit/987952e8835555099ceba17f82a1014de2572e73). Manual Pages run [#40758467783](https://github.com/Metivity/talk2nature/actions/runs/40758467783) completed successfully on that exact revision, including repository tests, browser-tool checks, native Android checks, public build, publication-boundary/site validation, deployment and the live-route verifier.
+
+**Independent live check:** certificate-verified reads returned HTTP 200 for `/app/`, `/app/practice/`, `/app/station/?mode=companion#station-console` and `/app/compare/`. The linked versioned assets return HTTP 200 and contain the approved contrast colors. Chrome rendered all four routes at 320 × 568, 390 × 844, 768 × 900 and 1440 × 1000 CSS pixels: document/body widths matched each viewport and no JavaScript page errors occurred. The four 390-pixel screens were visually inspected. No capture or playback was started and no device permission was requested.
+
+**Limits and next gate:** this is production-site read-back plus desktop Chrome emulation. It is not a physical-phone, installed-app, screen-reader, full WCAG or independent-user test. The focused contrast review sampled 14 text groups; it is not a complete conformance audit. Next, run the no-animal save/reopen rehearsal on a named physical phone, recording model, OS, browser/install mode and permission state. Keep newcomer recruitment behind its separate explicit authorization; keep AutoResearch and real-data admission **NOT READY**.
