@@ -4908,5 +4908,21 @@
     "url": "https://nlnet.nl/ELFA/",
     "checked": "2026-10-28",
     "origin": "Reviewed NLnet's official ELFA page over the web on October 28, 2026. It states that NLnet withdrew from the consortium and that calls are postponed pending another organization. This is recorded alongside the current consortium page, not interpreted as cancellation of the consortium."
+  },
+  {
+    "id": 479,
+    "title": "Earth Species Library Egyptian-fruit-bat folder commit history (GitHub API)",
+    "description": "Path-specific history for the Egyptian-fruit-bat folder in the Earth Species Library. The current public history contains one commit, the same 2021 snapshot already cataloged; this is not the EUSIPCO 2024 code release.",
+    "url": "https://api.github.com/repos/earthspecies/library/commits?path=egyptian_fruit_bat&per_page=10",
+    "checked": "2026-10-28",
+    "origin": "Read the official GitHub commits API over verified TLS on October 28, 2026. The path-specific response contained one commit: 6382c52bf553569528e0a790efe16e5ae42f0094, dated 2021-01-15, matching the immutable snapshot already cataloged. This establishes the history of this exact folder path only; it does not rule out a separately named or hosted release. No repository files or research assets were fetched."
+  },
+  {
+    "id": 480,
+    "title": "EIHW GitHub public repository inventory",
+    "description": "Metadata-only inventory of the public GitHub account for the University of Augsburg Chair of Embedded Intelligence for Health Care and Wellbeing. No repository name or description matched the checked bat-context terms.",
+    "url": "https://api.github.com/users/EIHW/repos?per_page=100&sort=updated",
+    "checked": "2026-10-28",
+    "origin": "The GitHub profile describes EIHW as the Augsburg Chair of Embedded Intelligence for Health Care and Wellbeing and links to the University of Augsburg site. A verified-TLS public API read returned 32 repositories; no repository name or description matched bat, Egyptian, Rousettus, ultrasound, vocal, bioacoustic or context. This screens profile/repository metadata only and does not rule out differently named repositories, other accounts, archives or unindexed releases. No README, tree, code, split file or research asset was fetched."
   }
 ]
