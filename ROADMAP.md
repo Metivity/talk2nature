@@ -1,16 +1,18 @@
 # Talk2Nature roadmap
 
-**Updated:** October 25, 2026. This is a public statement of direction, not a delivery schedule, funding commitment or claim that planned work has happened. We choose the next task from evidence and report delays and negative results honestly.
+**Updated:** October 28, 2026. This is a public statement of direction, not a delivery schedule, funding commitment or claim that planned work has happened. We choose the next task from evidence and report delays and negative results honestly.
 
 ## Where the project is now
 
 Talk2Nature is an early-stage open-source research-software project with a public evidence library and browser tools for careful animal-sound observation. The Field Companion includes a microphone-free synthetic practice path and local, user-started recording workflows. It does not provide a public research-recording upload service, a trained Talk2Nature animal model or general animal translation. No independent software reproduction, outside-user first-use walkthrough, physical-phone save/reopen result or scientific specialist review is currently established.
 
+**Zero-command has two requirements.** A visitor should be able to practice, add a human note, stop, save locally and reopen the same file without a terminal, account or JSON editing. Animal-facing behavior stays passive: no playback or prompts, and no promise of background or unattended recording. The current browser workflow is visible and user-started; making the interface simple does not expand what it may record or do.
+
 ## Current priorities
 
 ### 1. Prove the first-use workflow works for people
 
-The app already has a plain-language whole-moment path, optional technical details and an invented rehearsal that needs no microphone. On October 25, an isolated headless-Chrome context completed the synthetic save/reopen/discard loop on both the local preview and deployed site at 390 × 844 CSS pixels. That is a maintainer browser check, not a physical-phone result or an outside user's first-use evidence. The remaining checks are a named physical phone and an authorized, uncoached first-time-user walkthrough using invented material only. The internal [walkthrough protocol](docs/FIRST_USE_WALKTHROUGH.md) defines consent, privacy limits and its formative target; it does not authorize recruitment. No volunteer has been contacted. We will fix observed obstacles before adding more interface features; these checks do not ask anyone to record an animal.
+The app already has a plain-language whole-moment path, optional technical details and an invented rehearsal that needs no microphone. A maintainer has completed the synthetic save/reopen/discard task in browser emulation; this is not a physical-phone result or an outside user's first-use evidence. The remaining checks are a named physical phone and an authorized, uncoached first-time-user walkthrough using invented material only. Record the phone model, OS, browser and browser-versus-installed use. The internal [walkthrough protocol](docs/FIRST_USE_WALKTHROUGH.md) defines consent, privacy limits and its formative target; it does not authorize recruitment. No volunteer has been contacted. We will fix observed obstacles before adding more interface features; these checks do not ask anyone to record an animal.
 
 ### 2. Make one researcher task reproducible
 
