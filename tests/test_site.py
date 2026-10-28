@@ -1309,6 +1309,15 @@ class SiteTests(unittest.TestCase):
         self.assertIn('index lists Pre-Seed',preseed['next_action'])
         self.assertIn('Annex 6 to Track 1',preseed['next_action'])
         self.assertIn('written IIA confirmation',preseed['next_action'])
+        coller=next(item for item in opportunities if item['slug']=='coller-dolittle')
+        self.assertEqual(coller['verified'],'2026-10-28')
+        self.assertEqual(coller['deadline_source_id'],25)
+        self.assertEqual(coller['conflicting_date_source_id'],19)
+        self.assertEqual(coller['application_status'],'No public result posted')
+        self.assertIn('Both dates have passed',coller['next_action'])
+        self.assertIn('Neither page describes late handling',coller['next_action'])
+        self.assertEqual(sources[19]['checked'],'2026-10-28')
+        self.assertEqual(sources[25]['checked'],'2026-10-28')
         trebek=next(item for item in opportunities if item['slug']=='natgeo-trebek-2026')
         self.assertEqual(trebek['name'],'National Geographic Society · 2027 Trebek Initiative RFP')
         self.assertEqual(trebek['verified'],'2026-10-25')
@@ -1324,6 +1333,9 @@ class SiteTests(unittest.TestCase):
             page=(root/'opportunities/index.html').read_text()
             self.assertEqual(sum(source['id']==121 for source in load('sources')),1)
             self.assertIn('Deadline 2026-10-08 · 12:00',page)
+            self.assertIn('No public result posted',page)
+            self.assertIn('September 30, 2026 by noon CET',page)
+            self.assertIn('August 30',page)
             self.assertIn('official date details',page)
             self.assertIn('Checked 2026-10-26 · Not submitted; not recommended for current scope',page)
             self.assertIn('not documented',page)
@@ -1594,6 +1606,17 @@ class SiteTests(unittest.TestCase):
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
             self.assertIn('Choose the moment you downloaded from Talk2Nature. No unzipping needed.',compare)
             self.assertIn('Choose saved moment',compare)
+            self.assertIn('Open one saved session to review its notes and clips.',compare)
+            self.assertIn('You can review the first moment by itself.',compare)
+            self.assertIn('Open one saved moment.',(root/'app'/'index.html').read_text())
+
+    def test_mobile_guide_explains_direct_single_session_reopen_without_unzipping(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); build(root,'https://fixture.github.io/talk2nature',True)
+            mobile=(root/'mobile'/'index.html').read_text()
+            self.assertIn('Real sessions stay in temporary memory until you download a copy.',mobile)
+            self.assertIn('Open it in Compare to review your saved moment; no unpacking needed.',mobile)
+            self.assertNotIn('unzip it to review a WAV',mobile)
 
     def test_field_companion_listen_navigation_uses_the_beginner_whole_moment_route(self):
         with tempfile.TemporaryDirectory() as d:
@@ -1682,12 +1705,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Choose an animal group if you like, or leave it unknown.',beginner_paths)
             self.assertIn('href="/talk2nature/app/station/?mode=parrot"',beginner_paths)
             self.assertIn('Check your phone at home.',more_tools)
-            self.assertIn('Same place. A different day.',more_tools)
+            self.assertIn('Open one saved moment.',more_tools)
+            self.assertIn('Review it by itself, or add another when you want to compare what changed.',more_tools)
             self.assertIn('href="/talk2nature/app/review/"',more_tools)
             self.assertIn('Review a recording',more_tools)
             self.assertIn('href="/talk2nature/app/practice/"',more_tools)
             self.assertNotIn('Check your phone at home.',beginner_paths)
-            self.assertNotIn('Same place. A different day.',beginner_paths)
+            self.assertNotIn('Open one saved moment.',beginner_paths)
 
     def test_shared_moments_guidance_does_not_require_a_familiar_animal_or_known_identity(self):
         app_js=(Path(__file__).resolve().parents[1]/'web/assets/app.js').read_text()
@@ -2593,7 +2617,7 @@ class SiteTests(unittest.TestCase):
         archive=next(r for r in resources if r['id']=='zebra-finch-call-category-behavior-and-code-2025')
         self.assertIn(19,note['source_ids'])
         self.assertIn('Julie Elie received the 2026 Coller Dolittle annual prize',note['year_label'])
-        self.assertEqual(sources[19]['checked'],'2026-10-26')
+        self.assertEqual(sources[19]['checked'],'2026-10-28')
         self.assertIn('names zebra-finch researcher Julie Elie',sources[19]['description'])
         self.assertIn('versioned Zenodo record 13623969 (v1)',note['review_locator'])
         self.assertIn('concept DOI 13623968',note['review_locator'])
