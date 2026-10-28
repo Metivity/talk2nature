@@ -63,6 +63,26 @@ class SiteTests(unittest.TestCase):
                 self.assertTrue((project_root/path).is_file())
         self.assertIn('not a receiver-response or meaning benchmark',guide)
 
+    def test_contributor_zero_command_steps_match_the_live_app(self):
+        project_root=Path(__file__).resolve().parents[1]
+        home=(project_root/'web'/'templates'/'app.html').read_text()
+        station=(project_root/'web'/'templates'/'station.html').read_text()
+        compare=(project_root/'web'/'templates'/'compare.html').read_text()
+        self.assertIn('Try an example · no microphone',home)
+        live_labels=('Try without a microphone','Mark an observation','Stop recording',
+                     'Save this moment','I saved the file',
+                     'Open Compare moments to review it','Choose saved moment')
+        for label in live_labels:
+            with self.subTest(button=label):
+                self.assertIn(label,station if label!='Choose saved moment' else compare)
+        expected_steps=('Try an example · no microphone',)+live_labels
+        for name in ('README.md','CONTRIBUTING.md'):
+            with self.subTest(document=name):
+                copy=(project_root/name).read_text()
+                positions=[copy.index(step) for step in expected_steps]
+                self.assertEqual(positions,sorted(positions))
+                self.assertIn('to reopen the download',copy)
+
     def test_scientific_review_form_records_the_bounded_candidate(self):
         project_root=Path(__file__).resolve().parents[1]
         form=(project_root/'.github'/'ISSUE_TEMPLATE'/'scientific-review.yml').read_text()
