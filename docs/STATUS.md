@@ -1,5 +1,15 @@
 # Project status
 
+## October 28 — refresh Egyptian fruit-bat FileInfo integrity metadata
+
+**Question:** does the official Figshare item record still lack a provider checksum for the 31.6 MB FileInfo.csv needed to test whether call annotations can be joined to recording context?
+
+**Evidence and rights:** a direct GET of Figshare v2 item 4555897 succeeded over TLS with certificate verification. It reports item-level CC0 1.0, file ID 8900695, size 31,574,701 bytes, and identical `supplied_md5` / `computed_md5` values `b27252490ac5618bd55a9038110809d5`. Figshare’s API guide displays these as separate file metadata fields. The item API and guide were read; the CSV download was not requested, and no bytes, rows or schema were inspected. The reported MD5 values are not a local integrity check.
+
+**Change and validation:** updated source 167, added source 481 for the API field documentation, refreshed the Egyptian-fruit-bat research note and acquisition-catalog entry, and narrowed the reviewer packet’s pending question. No file was acquired; the collector’s 5 MiB cap was not changed. Validation: all 195 Python tests passed with one intentional skip; all 140 Node tests passed; the resource catalog validated 244 records; the local noindex build produced 144 pages plus 404, and the site checker validated 145 HTML documents and 7,588 links. The built bat page contains the updated provider fields/hash and is marked noindex. This is local build evidence; publication/deployment and any local-byte checksum remain separate.
+
+**Limit and next decision:** keep the item metadata-only until an independent bat-bioacoustics reviewer confirms the join is needed and a bounded integrity plan is reviewed. If a later acquisition is separately approved, verify the acquired bytes against the provider MD5 and create a local SHA-256 receipt before aggregate-only inspection. This does not verify a join, create a leakage-safe split, select a benchmark or change AutoResearch/data admission readiness.
+
 ## October 28 — crosswalk the plant-sound workbook labels against the version of record
 
 **Question:** does the Mendeley workbook's extra Bat row represent an oviposition outcome reported by the article?

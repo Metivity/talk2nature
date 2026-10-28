@@ -1686,14 +1686,14 @@
     "id": 167,
     "title": "Egyptian fruit bat per-file metadata (FileInfo.csv), Figshare item 4555897",
     "url": "https://api.figshare.com/v2/articles/4555897",
-    "description": "The official Figshare item API declares CC0 1.0 and lists FileInfo.csv (31,574,701 bytes; file ID 8900695), but md5 is null. The 2017 data descriptor says this file contains exact recording time, recording channel and voiced-segment sample positions. The CSV itself was not downloaded or inspected.",
-    "checked": "2026-10-12",
-    "origin": "Direct GET of the public Figshare item API over verified TLS on October 12, 2026. The API returned one file and no MD5; the file body was not requested.",
+    "description": "A TLS-verified GET of the official Figshare v2 item API on 2026-10-28 returns item-level CC0 1.0 and one 31,574,701-byte FileInfo.csv (file ID 8900695). The file metadata reports identical supplied_md5/computed_md5 values (b27252490ac5618bd55a9038110809d5); these provider fields have not been checked against downloaded bytes. The 2017 data descriptor says the table contains exact recording times, channels and voiced-segment sample positions. The CSV itself was not acquired or inspected.",
+    "checked": "2026-10-28",
+    "origin": "Direct GET of the public Figshare v2 item API over TLS with certifi-backed certificate verification on October 28, 2026. The response reported the item license, file ID/name/size and equal supplied_md5/computed_md5 fields. This was metadata-only; no download URL or file body was requested.",
     "review_url": "https://api.figshare.com/v2/articles/4555897",
     "review_url_label": "Direct Figshare public item metadata and file manifest",
     "rights": {
       "item": "The public item API declares CC0 1.0 for item 4555897; this records the repository declaration, not independent legal advice.",
-      "file": "The API lists one 31,574,701-byte FileInfo.csv; its bytes and contents were not retrieved or inspected."
+      "file": "The public API lists one 31,574,701-byte FileInfo.csv and reports matching supplied_md5/computed_md5 values (b27252490ac5618bd55a9038110809d5). The item-level CC0 declaration is a repository statement, not independent legal advice. No local bytes or content were retrieved, so the provider values have not been verified locally."
     }
   },
   {
@@ -4924,5 +4924,13 @@
     "url": "https://api.github.com/users/EIHW/repos?per_page=100&sort=updated",
     "checked": "2026-10-28",
     "origin": "The GitHub profile describes EIHW as the Augsburg Chair of Embedded Intelligence for Health Care and Wellbeing and links to the University of Augsburg site. A verified-TLS public API read returned 32 repositories; no repository name or description matched bat, Egyptian, Rousettus, ultrasound, vocal, bioacoustic or context. This screens profile/repository metadata only and does not rule out differently named repositories, other accounts, archives or unindexed releases. No README, tree, code, split file or research asset was fetched."
+  },
+  {
+    "id": 481,
+    "title": "Figshare API v2 file checksum metadata documentation",
+    "description": "The official Figshare API guide shows supplied_md5 and computed_md5 as distinct fields in public file metadata responses. They remain provider-reported metadata until compared with downloaded file bytes.",
+    "url": "https://info.figshare.com/user-guide/how-to-use-the-figshare-api/",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the official Figshare API guide on October 28, 2026, including its public-file retrieval example. No file data or credentials were used."
   }
 ]
