@@ -116,7 +116,8 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   const saved = h.state.downloads[0];
   assert.match(saved.name, /^talk2nature-[0-9a-f-]+\.zip$/);
   assert.equal(saved.blob.type, 'application/zip');
-  assert.match(h.get('station-save-status').textContent, /download was requested/);
+  assert.match(h.get('station-save-status').textContent, /Your file is ready/);
+  assert.match(h.get('station-save-status').textContent, /If it opens as a preview/);
   assert.equal(h.get('station-save-ack').hidden, false);
   assert.equal(h.get('station-compare-link').hidden, true);
   const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
@@ -199,7 +200,7 @@ test('checked download opens a plain-language Compare step and a new moment clea
   await h.get('station-save-ack').fire('click');
   assert.equal(h.get('station-save-ack').hidden, true);
   assert.equal(h.get('station-compare-link').hidden, false);
-  assert.match(h.get('station-save-status').textContent, /Compare moments to review the saved file/);
+  assert.match(h.get('station-save-status').textContent, /Compare moments to review the file/);
 
   await h.get('station-demo').fire('click');
   assert.equal(h.get('station-save-status').hidden, true);

@@ -15,7 +15,9 @@ test('first-use save guidance uses plain language while keeping research export 
   assert.match(station, /id="station-note"[^>]*aria-describedby="station-note-help"/);
   assert.match(station, /id="station-note-help"[^>]*>While recording, tap “Mark an observation” to add this note to your timeline\. If you stop first, it stays in this page and is not included in your download\./);
   assert.match(station, /id="station-draft-warning"[^>]*>This note is still a draft\. It was not added to your saved moment\. Copy it elsewhere if you want to keep it\./);
-  assert.match(station, /id="station-export-note"[^>]*>Save this moment downloads one file with your notes and saved sounds\. Check Downloads before leaving\. After you confirm the download, open Compare moments to review it\. The copy stays on your device; it is not sent to Talk2Nature or added to research\./);
+  assert.match(station, /id="station-export-note"[^>]*>Save this moment prepares one file with your notes and saved sounds\. Check Downloads before leaving\. If it opens as a preview, use Share → Save to Files \(or your device’s save option\), then return here\. After saving, open Compare moments to review it\. The file stays on your device; it is not sent to Talk2Nature or added to research\./);
+  assert.match(stationScript, /Your file is ready\. Check Downloads\. If it opens as a preview, use Share → Save to Files/);
+  assert.match(stationScript, /\$\('station-save-ack'\)\.textContent = 'I saved the file'/);
   assert.match(station, /<summary>Advanced · research export<\/summary>/);
   assert.match(stationScript, /Starting a new moment will clear this one from the page\. Download a copy first if you want to keep it\./);
   assert.match(stationScript, /This page has reached its temporary sound limit\. Save this moment or discard it before starting again\./);
