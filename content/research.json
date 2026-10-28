@@ -2195,7 +2195,22 @@
         "Rights and status",
         "The 3.05 GB audiovisual ZIP remains metadata-only; the smaller annotation CSV is stored only under ignored external data and is not admitted to training. Mendeley v3 declares CC BY 4.0, but its versioned file-list request returned HTTP 401 without OAuth2. No media, code or model was acquired or run."
       ]
-    ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "mapped",
+      "location_note": "The primary data descriptor identifies the wild-caught adults’ origin near Herzliya, Israel. The point represents animal origin only; the captive acoustic recording chambers are not assigned a geographic point by this source.",
+      "locations": [
+        {
+          "place_id": "herzliya",
+          "role": "animal_origin",
+          "source_id": 142,
+          "locator": "Methods: Animal retrieval and care",
+          "basis": "The data descriptor states adult bats were caught in a natural roost near Herzliya, Israel. This existing coarse region marker shows animal origin, not the recording chambers, exact roost, or an individual animal location."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "wild-parrot-duet-structure-2026",
