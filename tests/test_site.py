@@ -2792,6 +2792,11 @@ class SiteTests(unittest.TestCase):
         learning=json.loads((project_root/'content'/'learning-paths.json').read_text())
         label_path=next(p for p in learning['paths'] if p['id']=='label')
         self.assertIn(note['slug'],label_path['notes'])
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True)
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('href="/talk2nature/research/atlas/"',page)
+            self.assertIn('See this coarse literature location in the world atlas',page)
 
 
 if __name__=='__main__': unittest.main()
