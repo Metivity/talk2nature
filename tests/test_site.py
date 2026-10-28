@@ -601,11 +601,13 @@ class SiteTests(unittest.TestCase):
             build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
             note=root/'research/moths-and-plants/index.html'
             page=note.read_text()
-            self.assertIn('Note reviewed 2026-10-24',page)
+            self.assertIn('Note reviewed 2026-10-28',page)
             self.assertIn('matched the five main Table 1 tuples',page)
             self.assertIn('not a statistical-model reproduction',page)
-            self.assertIn('Bat oviposition group is not mapped to a reported oviposition outcome',page)
-            self.assertIn('flight-response validation',page)
+            self.assertIn('workbook contains a lower-rate 2-click/min condition and a Bat label outside the reported Table 1 oviposition outcomes',page)
+            self.assertIn('separate flight-response check of hearing after deafening',page)
+            self.assertIn('The Methods mention the 2-click/min repeat, but Table 1 has no outcome row for it.',page)
+            self.assertIn('The article does not map the workbook&#x27;s Bat egg-cluster label to that check; keep the row excluded.',page)
             self.assertIn('Although one workbook was checksum-verified and parsed, this does not verify the remaining files',page)
             self.assertNotIn('data/external/',page)
 

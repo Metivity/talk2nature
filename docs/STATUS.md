@@ -1,5 +1,15 @@
 # Project status
 
+## October 28 — crosswalk the plant-sound workbook labels against the version of record
+
+**Question:** does the Mendeley workbook's extra Bat row represent an oviposition outcome reported by the article?
+
+**Evidence:** rechecked the official eLife version of record, Table 1, Methods, Data Availability and public review/author-response page. The article states that its tables and code are available through Mendeley Data v1. The Methods mention a lower-rate 2-click/min oviposition repeat, while Table 1 gives no outcome row for that condition. Bat playback is described only in a separate flight-response test used to verify hearing after deafening. No source mapping links that check to the workbook's Bat egg-cluster row.
+
+**Rights and decision:** eLife identifies the article as CC BY 4.0; the separate Mendeley v1 record declares CC0. One 51,160-byte data.xlsx sample had already been acquired under the project's bounded review gate and checksum-matched to the file panel. No other data, source ZIP, code or media were acquired in this recheck. Keep both extra workbook labels outside the reported oviposition outcomes; the Bat row remains unexplained. This is not an inferential reproduction or independent specialist review. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification and goal direction:** the updated note renders the missing 2-click/min outcome and the separate bat-hearing check with the workbook row still excluded. The 241-resource catalog validates; all 193 Python tests (one intentional skip) and 140 Node tests pass. A local noindex build produced 144 HTML documents and passed the site checker. `docs/GOAL.md` now places zero-command first use first in the product queue: the next acceptance gate is the same-file save/reopen flow on a named physical phone, followed by the existing newcomer walkthrough only after recruitment authorization. No UI change or deployment was made in this continuation.
+
 ## October 28 — rerun the zero-command save-and-reopen path
 
 **Question:** can a new visitor complete a useful synthetic rehearsal, keep their note, and review the same file on a phone-size screen without microphone access or technical file steps?

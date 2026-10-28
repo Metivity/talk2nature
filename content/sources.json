@@ -4760,5 +4760,20 @@
       "scope": "The listed 985-byte supplementary text file only. Carolina-wren and great-tit source recordings used in stimuli retain separate Macaulay Library/Xeno-Canto terms.",
       "evidence_url": "https://research-repository.uwa.edu.au/en/publications/mobbing-sequences-of-american-wrens-elicit-mobbing-responses-in-e"
     }
+  },
+  {
+    "id": 465,
+    "title": "eLife version of record and public review history for the moth–plant acoustic study",
+    "description": "Official version of record and peer-review/author-response page. The article points tables and code to Mendeley Data v1; its Methods distinguish the lower-rate oviposition repeat from a separate bat-playback flight-response check.",
+    "url": "https://elifesciences.org/articles/104700",
+    "checked": "2026-10-28",
+    "origin": "Rechecked the official eLife version of record and peer-review/author-response page on October 28, 2026. Table 1, Methods and Data Availability were compared with the existing aggregate-only Mendeley data.xlsx report. The Methods mention a 2-click/min repeat with no Table 1 outcome row; bat playback appears only in a separate flight-response hearing check after deafening. No source mapping links the workbook Bat egg-cluster label to that check. No dataset file, code or additional media were acquired or run during this recheck.",
+    "review_url": "https://elifesciences.org/articles/104700/peer-reviews",
+    "review_url_label": "Official eLife public peer review and author responses",
+    "rights": {
+      "article": "The eLife version-of-record page identifies a Creative Commons Attribution license (CC BY 4.0).",
+      "scope": "Article only. The public peer-review page is linked but its reuse terms were not separately assessed. Mendeley Data v1 and publisher source-data files are separate components with separate records.",
+      "conditions": "Publish an original summary and link. Do not assume the article license applies to the separate peer-review page, Mendeley files, source-data ZIP or third-party recordings."
+    }
   }
 ]

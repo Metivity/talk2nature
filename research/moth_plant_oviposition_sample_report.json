@@ -94,7 +94,8 @@
     "This is an aggregate source-table consistency check, not a reproduction of the paper's statistical models or adjusted contrasts.",
     "The extra workbook condition labeled Bat is not mapped to a reported oviposition outcome in the reviewed article; do not interpret it as a published plant-sound result.",
     "An aggregate count match does not verify all workbook files, code, model assumptions, ecological generalization, or the authors' conclusions.",
-    "No raw rows, dates, arena identifiers, or animal-level records are emitted; the sample is not admitted to model training or the private database."
+    "No raw rows, dates, arena identifiers, or animal-level records are emitted; the sample is not admitted to model training or the private database.",
+    "The article Methods mention a lower-rate 2-click/min oviposition repeat without a corresponding Table 1 outcome row. Bat playback is described only as a separate flight-response hearing check after deafening; no source mapping links that check to the workbook Bat egg-cluster label."
   ],
   "method": {
     "processing": "Standard-library XLSX ZIP/XML parsing of static cell values; no deposited code or spreadsheet formulas were executed.",
