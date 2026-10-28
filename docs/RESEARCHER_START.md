@@ -6,6 +6,8 @@ Updated October 28, 2026. For researchers, research software engineers and prosp
 
 Choose by question, not by dataset size. The [cross-species F0 note](https://metivity.github.io/talk2nature/research/bioacoustic-f0-estimation-cross-species-2025/) describes a pitch-estimation candidate with 13 waveform taxa and 233 monk-parakeet calls; it measures a signal feature, not call meaning, and remains metadata-only. Great-tit song structure, zebra-finch turn-taking, bat context prediction and the parrot phone-app cohort are separate research paths with different open gates. See the [species and dataset decision](FIRST_ANIMAL_PLAN.md) for the evidence and limits. No current candidate establishes call meaning; the bat candidate run card is a review lead, not a ready benchmark. AutoResearch remains **NOT READY**.
 
+**For team annotation:** groups that need synchronized video and multi-person event coding can review our [Praat++ note](../praatplusplus-annotation-tool-2026/). It describes a separate open-source, self-hosted tool with TextGrid exchange. It is not part of the Field Companion or a security-reviewed Talk2Nature hosting offer; use an institution-controlled environment and do not upload sensitive media until the research group's privacy and security review is complete.
+
 
 
 ## Choose one route

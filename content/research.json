@@ -5766,5 +5766,59 @@
       }
     },
     "seo_description": "Magpie-robin acoustic measurements vary with urban noise and vegetation; the public tables contain no audio and do not reveal call meaning."
+  },
+  {
+    "slug": "praatplusplus-annotation-tool-2026",
+    "title": "Praat++: a team annotation tool, not an animal translator",
+    "taxon": "Research tools",
+    "kind": "Open-source research software",
+    "year": "2026",
+    "year_label": "Software publication year",
+    "source_ids": [
+      482,
+      483
+    ],
+    "review_depth": "Read the complete seven-page ACL 2026 System Demonstrations paper and the README and MIT LICENSE at Praat++ main commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a. No application code, dependencies, user media or model weights were acquired or run; no security audit or independent evaluation occurred.",
+    "finding": "Praat++ is a self-hosted, browser-based tool for human annotation of synchronized audio and video. Its paper and README describe waveform, spectrogram, pitch and intensity views; time-aligned video; tiered event labels with confidence; role-aware review; TextGrid import/export; and optional PANNs-based event pre-annotation. This is a potentially useful annotation workflow for university teams, separate from Talk2Nature's user-started, passive Field Companion. It marks and reviews events; it does not establish caller intent, receiver understanding or call meaning.",
+    "limitations": "The seven-page paper compares features across tools; no controlled user study or quantitative annotation-time/quality comparison was found. Pre-annotation uses generic AudioSet sound-event classes, not a communication model. The paper says generated regions overwrite the chosen tier; any later trial should use a copy of invented work. The README describes media uploads into per-user/task storage and says pretrained PANNs weights must be prepared separately. MIT applies to the code only; paper rights, model weights, dependencies, media rights, privacy, security, retention and deletion are separate or unresolved. No institution-ready hosting or mobile use was verified.",
+    "lesson": "Talk2Nature should keep its first-time path focused on passive capture, human observations, provenance and portable exports. An existing annotation system may serve researchers who need synchronized video and multi-person review; avoid building a competing server until a team demonstrates that need. TextGrid exchange is a candidate bridge, not an implemented or tested feature.",
+    "next_review": "If a research team identifies a concrete need for multi-annotator audio/video coding, compare a small invented-media workflow in a local, isolated installation and verify TextGrid import/export, saved-work recovery and tier-overwrite behavior. Review access control, storage, backup, withdrawal, video/privacy risks and every model/dependency term before any real media or institutional deployment. Do not upload participant or sensitive wildlife media to a public service.",
+    "reviewed": "2026-10-28",
+    "expert_review": "No independent research-software, bioacoustics or privacy/security review has assessed this Talk2Nature note or the application.",
+    "review_stage": "Complete system-demonstration paper and pinned README/license review; no runtime, security, accessibility or user evaluation.",
+    "review_locator": "Zhang & Zhu (2026), ACL Anthology 2026.acl-demo.80, §§2–3 and conclusion; PraatPlusPlus README and LICENSE at commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a.",
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "not_applicable",
+      "location_note": "This is an annotation-software system paper, not a biological study with an animal or recording site.",
+      "locations": [],
+      "observation_period": null
+    },
+    "study_snapshot": [
+      [
+        "Annotation workflow",
+        "Synchronized audio/video with waveform, spectrogram, pitch and intensity; regions, multiple tiers, confidence flags and TextGrid exchange."
+      ],
+      [
+        "AI assistance",
+        "PANNs-based event candidates are editable human-review suggestions, not animal behavior or meaning labels."
+      ],
+      [
+        "Code license",
+        "MIT at repository commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a; pretrained weights and dependencies are separate."
+      ],
+      [
+        "Evaluation scope",
+        "The paper presents a feature comparison; independent adoption, time savings, annotation-quality gains, security and mobile behavior remain unverified."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only software reference; not integrated, installed or recommended for real-media hosting.",
+      "asset": "ACL 2026 paper and Praat++ source repository at the pinned revision. No audio, video, code package, dependency or model weights were acquired.",
+      "rights": "The repository code declares MIT at the pinned LICENSE; the paper reuse license was not verified. PANNs weights, dependencies and media have separate terms.",
+      "experiment": "No experiment was run. A future integration decision requires researcher need, an invented-media TextGrid round trip, and separate privacy/security and license review."
+    },
+    "seo_description": "Praat++ offers self-hosted audio-video annotation and TextGrid exchange; its MIT code is not a ready Talk2Nature service or animal-meaning model."
   }
 ]
