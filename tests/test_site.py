@@ -1846,6 +1846,27 @@ class SiteTests(unittest.TestCase):
         self.assertIn('not a complete route-level',page)
         self.assertIn('login_routes.py#L9-L55',page)
 
+    def test_monk_parakeet_identity_review_is_bounded_and_links_its_guide(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='parrot-data-feasibility')
+        request=note['review_request']
+        self.assertEqual(len(request['questions']),5)
+        self.assertIn('not call meaning',request['summary'])
+        self.assertIn('No independent review has been received',request['status'])
+        self.assertEqual(request['guide_path'],'docs/FIRST_DATASET_REVIEW_PACKET.md')
+        guide=(project_root/'docs'/'FIRST_DATASET_REVIEW_PACKET.md').read_text()
+        self.assertIn('monk-parakeet known-caller identity',guide)
+        self.assertIn('46 references are unmatched',guide)
+        self.assertIn('archive remains unacquired',guide)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(root/'research'/'parrot-data-feasibility'/'index.html').read_text()
+        self.assertIn('Independent review of monk-parakeet caller identity',page)
+        self.assertIn('known-caller identity analysis is useful and defensible',page)
+        self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/FIRST_DATASET_REVIEW_PACKET.md',page)
+        self.assertIn('https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml',page)
+
     def test_japanese_tit_note_renders_source_linked_competing_theories(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='bird-call-syntax')

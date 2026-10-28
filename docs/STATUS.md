@@ -5681,3 +5681,13 @@ A site-restricted web search surfaced the project home, research-frontiers, reso
 ## October 28 — continue the zero-command goal
 
 The current in-app browser inspection timed out before returning a screen. No new visual or interaction evidence was collected and no application code changed. Keep the existing microphone-free practice → human note → Stop → local save → reopen-the-same-file-in-Compare path as the beginner acceptance target. The next qualifying check remains a named physical phone, recording its model, OS, browser and browser-versus-installed use. Do not repeat unchanged desktop emulation or recruit newcomers without explicit authorization. Continue evidence and rights review in parallel; the multi-track goal remains active, and AutoResearch and real-data admission remain **NOT READY**.
+
+## October 28 — prepare a focused monk-parakeet identity review
+
+**Question:** would a bounded reproduction of the published monk-parakeet known-caller identity analysis be useful, and what additional evaluation and rights evidence would it require?
+
+**Change:** added a five-question open methods-review section to the `parrot-data-feasibility` research note and an identity-only addendum to `docs/FIRST_DATASET_REVIEW_PACKET.md`. The questions cover the estimand, the meaning of the reference-to-selection joins, reported within-study observer classification, grouped evaluation/baselines and the file-level rights crosswalk. The note links to the existing public scientific-review form and clearly labels the invitation as methods review, not endorsement or partnership.
+
+**Limits:** the paper reports 5,599 vocalizations from 229 marked wild monk parakeets, but this study concerns caller identity. The 808-reference/317-file report is a structural join audit, not audio/label verification or a benchmark run. Edmond V1's DataCite MIT declaration does not map the separate GitHub selection-table files to particular archive members. No reviewer was contacted, no Edmond archive or audio was acquired, no model was run, and no data rights are granted by the review request. AutoResearch and real-data admission remain **NOT READY**.
+
+**Validation:** all 197 Python tests passed with one intentional skip; all 140 Node tests passed; the resource catalog validated 246 records. The local noindex build produced 145 pages plus 404, and the site checker validated 146 HTML documents and 7,644 links. The explicit public-origin build passed; the public site checker validated 146 HTML documents, 7,791 links and 145 reachable pages. A regression test confirms the note's scope, five questions, focused brief and public review-form links. These are source/build checks, not independent review, model/data validation, or recruitment.

@@ -743,6 +743,20 @@
     "next_review": "A qualified bioacoustics and statistical reviewer should assess the identity task, the small subgroup sensitivity analyses, and the exact audio/annotation units before any benchmark proposal. Keep the aggregate audit outside training and do not infer meaning from caller identity. The Edmond archive remains unacquired; do not accept terms or fetch archive members without a separately reviewed need and action-specific authorization. Keep data admission and AutoResearch NOT READY.",
     "reviewed": "2026-10-28",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_request": {
+      "title": "Independent review of monk-parakeet caller identity",
+      "summary": "We seek an independent bioacoustics and statistical assessment of whether a bounded reproduction of the 2023 known-caller identity analysis is useful and defensible. This is an identity question, not call meaning, behavior prediction or receiver understanding. The structural join report is not an audio reproduction; the Edmond archive remains unacquired and selection-table member mapping is unresolved.",
+      "questions": [
+        "What exactly does the published across-call-type split estimate? Does it support discrimination among already known individuals only, and what would be required to test a different, unseen-individual question?",
+        "How should 808 annotation references, 46 unmatched references, one reference spanning files and 412 references expanding to multiple Waveform 1 rows affect the biological unit, repeated-measure handling and any audio-to-table crosswalk?",
+        "The supplement reports second-observer classification accuracy on 191 calls: 0.72 across 11 call types and 0.98 for a tonal/growly grouping. What do these within-study values support, and how should uncertain labels be represented?",
+        "What grouped split and simple baselines would make a limited reproduction informative while distinguishing known-caller identification from session, year, site or recording shortcuts? Is there enough independent support for a useful test?",
+        "Which additional file-level provenance and rights checks are necessary before any archive acquisition or model run? Recommend go, narrow or defer, and name the smallest evidence that could change your decision."
+      ],
+      "status": "No independent review has been received. This is a no-data methods request: no Edmond archive or audio was acquired, no model was run, and the aggregate join audit does not validate labels or audio alignment. The Edmond V1 deposit declares MIT in DataCite metadata, but the separate GitHub selection-table files have not been mapped to archive members. This request grants no data rights and does not make the candidate a communication or meaning benchmark.",
+      "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml",
+      "guide_path": "docs/FIRST_DATASET_REVIEW_PACKET.md"
+    },
     "review_stage": "Targeted article and supplement review; aggregate join audit; deposit rights metadata refreshed 2026-10-28",
     "purpose": "Data & annotation",
     "review_locator": "Primary PMC article, Methods 2.1–2.2 and Figure 4; Figshare supplement pages 1, 5–7 and 11–14; official pinned GitHub README; aggregate join report research/monk_parakeet_join_audit.json; current official Edmond records and terms. The audit validates table keys only, not audio or labels.",
