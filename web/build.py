@@ -249,6 +249,12 @@ def build(output, base_url='', public=False, repo_url=''):
 <section class="page-intro section"><p class="eyebrow">THE ROADMAP</p><h1>A long view.<br><em>A concrete beginning.</em></h1><p class="lede">We’re at the foundation stage. No scientific partnership, funded grant, real dataset or trained Talk2Nature model is being claimed.</p></section><section class="section timeline">{''.join(f'<article><span class="pill">{phase}</span><div><h2>{title}</h2><p>{text}</p></div></article>' for phase,title,text in milestones)}</section><section class="section paper-panel"><h2>Questions still open</h2><ul class="readable-list"><li>Which species and observation setting give us reliable access and a meaningful scientific question?</li><li>Can existing tools already solve the workflow problem? Would contributing upstream help more?</li><li>How can parrot-app experience inform a passive, testable workflow without importing unreviewed code or treating sound guesses as meanings?</li><li>What value would a research group fund: annotation support, a managed pilot or a hosted workspace?</li></ul><p>Plants and fungi stay in the library. Our first experiment will have a narrower scope.</p></section>''', active='roadmap/')
     def opportunity_deadline(item):
         if not item['deadline']:
+            if item.get('opening_date'):
+                label = 'Expected opening ' + esc(item['opening_date'])
+                opening_source = source_map.get(item.get('opening_source_id'))
+                if opening_source:
+                    label += f' · <a href="{esc(opening_source["url"])}">official opening notice</a>'
+                return label
             return 'No fixed open deadline verified'
         label = 'Deadline ' + esc(item['deadline'])
         if item.get('deadline_time'):
@@ -279,9 +285,11 @@ def build(output, base_url='', public=False, repo_url=''):
             ('institution_deadline_source_id', 'Institution-specific calendar ↗'),
             ('partner_search_source_id', 'Call partner search ↗'),
             ('conflicting_date_source_id', 'Other official listing (date differs) ↗'),
+            ('program_status_source_id', 'Program operator update ↗'),
             ('topic_source_id', 'Official topic details ↗'),
             ('portal_source_id', 'Official call listing ↗'),
             ('eligibility_source_id', 'Applicant eligibility ↗'),
+            ('horizon_country_source_id', 'Horizon Europe country list ↗'),
             ('payout_source_id', 'Payout and fees ↗'),
         ):
             source = source_map.get(item.get(field))

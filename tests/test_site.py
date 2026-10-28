@@ -389,8 +389,13 @@ class SiteTests(unittest.TestCase):
         self.assertIn('strong European dimension',codesupply['next_action'])
         self.assertIn('No proposal has been drafted or submitted.',codesupply['next_action'])
         restack=next(item for item in opportunities if item['slug']=='nlnet-restack')
-        self.assertIn('one million active human users',restack['fit'])
+        self.assertNotIn('one million active human users',restack['fit'])
+        self.assertEqual(restack['eligibility_source_id'],475)
+        self.assertEqual(restack['horizon_country_source_id'],476)
+        self.assertIn('strong European dimension',restack['fit'])
+        self.assertIn('authored by the applicant in their own words',restack['next_action'])
         self.assertEqual(sources[restack['call_notice_source_id']]['url'],'https://nlnet.nl/news/2026/20261020-AI-policy.html')
+        self.assertEqual(sources[restack['horizon_country_source_id']]['url'],'https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-15-general-annexes_horizon-2026-2027_en.pdf')
         with tempfile.TemporaryDirectory() as d:
             build(Path(d))
             page=(Path(d)/'opportunities'/'index.html').read_text()
@@ -399,6 +404,26 @@ class SiteTests(unittest.TestCase):
             self.assertIn('GenAI policy FAQ ↗',page)
             self.assertIn('not recommended this cycle',page)
             self.assertIn('Current application form ↗',page)
+            self.assertIn('Horizon Europe country list ↗',page)
+
+    def test_elfa_future_subgrant_is_labeled_as_planned_and_terms_pending(self):
+        opportunities=load('opportunities')
+        sources={item['id']:item for item in load('sources')}
+        elfa=next(item for item in opportunities if item['slug']=='elfa-subgranting')
+        self.assertIsNone(elfa['deadline'])
+        self.assertEqual(elfa['opening_date'],'2027-01-01')
+        self.assertIn('terms pending',elfa['status'])
+        self.assertIn('Talk2Nature is eligible',elfa['fit'])
+        self.assertIn('No contact',elfa['next_action'])
+        self.assertEqual(sources[elfa['opening_source_id']]['url'],'https://elfaconsortium.eu/')
+        self.assertEqual(sources[elfa['program_status_source_id']]['url'],'https://nlnet.nl/ELFA/')
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d))
+            page=(Path(d)/'opportunities'/'index.html').read_text()
+            self.assertIn('Expected opening 2027-01-01',page)
+            self.assertIn('official opening notice',page)
+            self.assertIn('Program operator update ↗',page)
+            self.assertIn('terms and operator unverified',page)
 
     def test_ai_assistance_statement_is_published_and_linked_from_about(self):
         project_root=Path(__file__).resolve().parents[1]
@@ -1360,7 +1385,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('September 30, 2026 by noon CET',page)
             self.assertIn('August 30',page)
             self.assertIn('official date details',page)
-            self.assertIn('Checked 2026-10-26 · Not submitted; not recommended for current scope',page)
+            self.assertIn('Checked 2026-10-28 · Not submitted; not recommended for current scope and readiness',page)
             self.assertIn('not documented',page)
             self.assertIn('no-go at documented readiness',page)
             self.assertIn('Deadline 2026-11-09 · 12:00 Israel time',page)
@@ -1408,12 +1433,16 @@ class SiteTests(unittest.TestCase):
             self.assertIn('https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf',page)
             self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/',page)
             self.assertIn('Deadline 2026-11-03 · 12:00 CET',page)
-            self.assertIn('excludes AI-related projects unless they already have more than one million active human users',page)
+            self.assertIn('current program page does not state the previously recorded one-million-user AI exception',page)
             self.assertIn('software supply-chain metadata',page)
             self.assertIn('Open · not recommended this cycle',page)
+            self.assertIn('Horizon Europe country list ↗',page)
+            self.assertIn('Applicant eligibility ↗',page)
             self.assertIn('Official GenAI policy ↗',page)
             self.assertIn('Current call and policy notice ↗',page)
             self.assertIn('Current application form ↗',page)
+            self.assertIn('Expected opening 2027-01-01',page)
+            self.assertIn('Program operator update ↗',page)
             for source_id in (150,151,152,154,155,158,159,272,273,274):
                 self.assertEqual(sum(source['id']==source_id for source in load('sources')),1)
 
