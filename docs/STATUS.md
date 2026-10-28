@@ -1,5 +1,13 @@
 # Project status
 
+## October 28 — rerun the zero-command save-and-reopen path
+
+**Question:** can a new visitor complete a useful synthetic rehearsal, keep their note, and review the same file on a phone-size screen without microphone access or technical file steps?
+
+**Check:** built a fresh local noindex site from public main (5b71ab4) and used installed Chromium at 390×844 CSS pixels. Opened the companion route, chose the invented rehearsal, selected the observation marker “Movement,” stopped after two seconds, saved the moment, confirmed the download and opened that exact ZIP in Compare. The package contained its JSON journal, a short synthetic WAV and the read-me. Compare showed a partial 2-second moment, one retained recording and one observation. The visible layout was inspected. At 320×568, a direct link to Station controls showed the no-microphone rehearsal in the viewport with no horizontal overflow; the real Start control remained disabled until permission was confirmed. Browser instrumentation observed zero getUserMedia calls, zero nonlocal requests, zero non-GET requests and no page errors.
+
+**Limits and next gate:** Playwright supplied the saved file to the page, so the operating-system file picker was not tested. This is maintainer-run desktop emulation with invented audio, not a physical phone, assistive-technology or independent newcomer check. No real animal audio, participant data or account was used. No app code change was justified by this run; the physical-phone save/reopen walkthrough remains next, followed by the uncoached task only after recruitment authorization. AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 28 — refresh prize facts and separate applicant records
 
 Reopened the official [TAU challenge page](https://coller-dolittle-24.sites.tau.ac.il/) and [Jeremy Coller Foundation announcement](https://www.jeremycollerfoundation.org/news-and-insights/press-releases/scientists-win-us100-000-in-2026-coller-dolittle-prize). The TAU page lists September 30, 2026 by noon CET and still shows an open-submissions label; the Foundation's June 26 announcement lists August 30. Both dates have passed. Neither page explains late handling or identifies a later cycle. The completed-work criteria require non-invasive work across multiple contexts using endogenous signals, a measurable animal response and public data; current synthetic software does not meet that bar. Updated the public opportunity and source records with this evidence. Applicant-specific tracking remains in ignored `funding/coller-dolittle-status.md` and is not reproduced here.
