@@ -3702,10 +3702,10 @@
   {
     "id": 359,
     "title": "ZF-AIM code, checkpoints and next-call metadata release",
-    "description": "The Zenodo API lists one top-level archive, zf_aim_release.zip (26,633,934,601 bytes; provider MD5 c4726cebb2b57e28a832725e8999731e), describes code, checkpoints and next-call benchmark metadata, and states that code and model weights are MIT-licensed. The top-level listing does not establish the archive's inner contents or audio/data rights.",
+    "description": "Metadata-only recheck on October 28: the official Zenodo API still lists one 26,633,934,601-byte zf_aim_release.zip and MIT for the record/code/model statement; the top-level inventory matches the October 23 snapshot. The archive contents and any audio/data rights remain unverified.",
     "url": "https://zenodo.org/records/23024019",
-    "checked": "2026-10-23",
-    "origin": "Queried the official Zenodo landing page and API over HTTPS with certificate verification. Recorded the complete top-level file list in research/zf_aim_zenodo_manifest_2026-10-23.json. No ZIP payload was downloaded; the provider checksum was not verified locally, and archive-internal files and rights were not inspected.",
+    "checked": "2026-10-28",
+    "origin": "Queried the official Zenodo record API over HTTPS with certificate verification on October 28, 2026. The title, MIT record identifier, update time (2026-09-29T17:58:24.776870+00:00), one ZIP's size and provider MD5 match the October 23 metadata snapshot. No ZIP payload was downloaded, the provider checksum was not recomputed against bytes, and archive-internal files, model/data provenance or file-level rights were not inspected.",
     "rights": {
       "record_metadata": "Zenodo API record-level license is MIT; the description specifically states MIT for code and model weights.",
       "data": "The reviewed record does not clearly identify the license and scope for audio recordings, annotations or benchmark metadata. The article's license is separate.",
@@ -3864,10 +3864,10 @@
   {
     "id": 373,
     "title": "ZF-AIM zebra-finch data release, Zenodo record",
-    "description": "Separate dataset record for the ZF-AIM study. Its API lists 11 files, including four raw example recordings, processed-data and detector archives, and metadata. The API license field says CC BY-SA 4.0 while the record description says CC BY-NC, so the terms conflict.",
+    "description": "Metadata-only recheck on October 28: the official Zenodo API still lists 11 top-level files. Its license identifier is cc-by-sa-4.0 while the record description says CC-BY-NC; the complete key/size/provider-MD5 list matches the October 24 snapshot. The license conflict remains unresolved.",
     "url": "https://zenodo.org/records/23047646",
-    "checked": "2026-10-24",
-    "origin": "Queried the official Zenodo records API over verified TLS and recorded the title, DOI, dates, license metadata, description and complete top-level filename/size/checksum inventory in research/zf_aim_data_zenodo_manifest_2026-10-24.json. No file payload was downloaded, archive contents were not inspected and provider checksums were not locally verified.",
+    "checked": "2026-10-28",
+    "origin": "Queried the official Zenodo records API over verified TLS on October 28, 2026. The title, update time (2026-09-30T00:06:06.791856+00:00), cc-by-sa-4.0 API identifier, description's CC-BY-NC statement and complete 11-file top-level filename/size/checksum inventory match the October 24 metadata snapshot. Provider checksums were not verified against downloaded bytes; no payload or archive contents were inspected. The complete top-level filename/size/checksum inventory remains in research/zf_aim_data_zenodo_manifest_2026-10-24.json.",
     "rights": {
       "license": "The API metadata field declares CC BY-SA 4.0; the same record description says the data are under a CC BY-NC license. These statements conflict.",
       "scope": "The record includes raw recordings, processed data, detector data/weights and software. The record-level license may not resolve the distinct rights of each component; archive internals and source-media provenance were not reviewed.",
