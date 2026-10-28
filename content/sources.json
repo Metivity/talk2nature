@@ -4826,5 +4826,38 @@
     "url": "https://api.github.com/users/millinma/repos?per_page=100&sort=updated",
     "checked": "2026-10-28",
     "origin": "The official University of Augsburg OPUS record for `Automating airborne pollen classification: identifying and interpreting hard samples for classifiers` lists Manuel Milling and links its code to https://github.com/millinma/SDPollen. A verified-TLS GitHub owner-repository API inventory returned 11 public repositories, newest updated 2026-09-09. None of their repository names or descriptions contained bat, Egyptian, Rousettus, ultrasound, vocal, bioacoustic or context. This is account-level metadata screening only; no README, tree, file content or code was inspected. It does not rule out differently named releases or other coauthor/lab/archive locations. No files were fetched."
+  },
+  {
+    "id": 471,
+    "title": "Maharjan et al. (2025): Oriental magpie-robin vocalizations across Kathmandu Valley urban gradients",
+    "description": "Publisher version of record on call/song measurements associated with ambient noise and vegetation. Full 9-page article reviewed; CC BY-NC-ND 4.0 applies to the article only.",
+    "url": "https://malque.pub/ojs/index.php/jabb/article/view/10290",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the full publisher PDF, including Methods §§2.1–2.6, Results §§3.2–3.3, Table 2, discussion and stated limitations. The article reports 70 analyzed calls and 62 analyzed songs. It says maximum noise was measured for two minutes immediately after a vocalization. Its Methods report calls at 30 sites and songs at 31, while Results report calls at 27 sites and songs at 30; the Dryad README reports 30 and 31. The Dryad abstract also differs from the paper on which call category had a noise-associated minimum-frequency change. No supplementary material, CSV payload, raw audio or code was acquired.",
+    "rights": {
+      "page": "The publisher page links CC BY-NC-ND 4.0 for the article. This does not license the separately deposited dataset, any recordings, or code. Talk2Nature uses an original summary and link; no article text or figures are reproduced."
+    }
+  },
+  {
+    "id": 472,
+    "title": "Dryad landing page and README for the Oriental magpie-robin vocalization tables",
+    "description": "Current public record lists four small CSV tables and a README for calls, songs and environmental variables; no audio files are listed.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8gtht76ww",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the Dryad landing page and README for current file names, reported row counts and fields. The README describes latitude/longitude columns and reports calls from 30 sites and songs from 31, which differs from counts in the article Results. No row values or site coordinates were downloaded or copied.",
+    "rights": {
+      "page": "The landing page identifies the deposited files; the record-specific CC0 license is documented in the linked Dryad API record, source 473. It does not license the related article or establish permission for recordings that are not listed."
+    }
+  },
+  {
+    "id": 473,
+    "title": "Dryad API v2 record for Oriental magpie-robin dataset version 8",
+    "description": "Machine-readable current dataset record. It reports version 8, version ID 462305, publication date 2026-09-08, and CC0-1.0 for the deposited dataset.",
+    "url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.8gtht76ww",
+    "checked": "2026-10-28",
+    "origin": "Read the official Dryad API v2 dataset record and linked version metadata over verified TLS. The current record reports dataset version 8, version ID 462305, publication date 2026-09-08, a CC0-1.0 license URL and related article DOI 10.31893/jabb.2025027. No file payload was downloaded.",
+    "rights": {
+      "page": "The API record declares CC0-1.0 for this deposited data record. This scope is the Dryad dataset only; article text, figures, recordings and any code have separate rights."
+    }
   }
 ]

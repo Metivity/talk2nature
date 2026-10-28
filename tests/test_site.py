@@ -525,6 +525,27 @@ class SiteTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Public robots.txt does not name the exact sitemap URL'):
                 check_site(root)
 
+    def test_magpie_robin_review_keeps_paper_data_and_location_evidence_separate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='oriental-magpie-robin-urban-noise-2025')
+        self.assertEqual(note['source_ids'],[471,472,473])
+        self.assertIn('Dryad abstract assigns a positive minimum-frequency/noise association',note['finding'])
+        self.assertIn('paper Results report 27 and 30',note['finding'])
+        self.assertEqual(note['atlas']['locations'][0]['place_id'],'kathmandu-valley-nepal')
+        self.assertNotIn('27.7',json.dumps(note['atlas']))
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('oriental-magpie-robin-')}
+        self.assertEqual(set(selected),{
+            'oriental-magpie-robin-urban-noise-paper-2025',
+            'oriental-magpie-robin-vocalization-tables-dryad-v8',
+        })
+        self.assertEqual(selected['oriental-magpie-robin-urban-noise-paper-2025']['rights']['license'],'CC BY-NC-ND 4.0')
+        dataset=selected['oriental-magpie-robin-vocalization-tables-dryad-v8']
+        self.assertEqual(dataset['rights']['license'],'CC0-1.0')
+        self.assertEqual(dataset['acquisition'],'metadata_only')
+        self.assertEqual(dataset['files'],[])
+        self.assertIn('not an audio dataset',dataset['decision'])
+
     def test_resource_directory_lists_records_and_separates_rights_from_acquisition(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

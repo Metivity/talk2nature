@@ -3062,16 +3062,16 @@
     "year": "2025",
     "source_ids": [
       268,
-    269,
-    464
+      269,
+      464
     ],
-  "reviewed": "2026-10-27",
-  "review_stage": "Publisher-indexed full-text sections and institutional article-license metadata reviewed; supplement bytes not inspected",
-  "review_depth": "Reviewed the publisher-indexed Introduction, Methods, Results, Discussion, Ethical Note, Data Availability and Supplementary Material listing, plus the University of Western Australia repository abstract and CC BY 4.0 article-license metadata. The publisher lists the study data in one 985-byte supplementary text file. Direct ScienceDirect retrieval returned HTTP 403; the article file, figures and supplement bytes were not opened or acquired. No stimulus audio or code was acquired, and no reanalysis or independent specialist review was performed.",
+    "reviewed": "2026-10-27",
+    "review_stage": "Publisher-indexed full-text sections and institutional article-license metadata reviewed; supplement bytes not inspected",
+    "review_depth": "Reviewed the publisher-indexed Introduction, Methods, Results, Discussion, Ethical Note, Data Availability and Supplementary Material listing, plus the University of Western Australia repository abstract and CC BY 4.0 article-license metadata. The publisher lists the study data in one 985-byte supplementary text file. Direct ScienceDirect retrieval returned HTTP 403; the article file, figures and supplement bytes were not opened or acquired. No stimulus audio or code was acquired, and no reanalysis or independent specialist review was performed.",
     "finding": "Great tits approached the loudspeaker more often during call playbacks than during control playbacks, but approach did not significantly differ among call treatments. Wing-flicking was more likely after the complete two-part call sequence (labelled FME–D by the authors) than after D-only calls or controls for both great-tit and Carolina-wren stimuli. The study reports no significant difference between the two species’ sequence treatments (P=0.12; wide confidence interval), so it does not establish their equivalence.",
-  "limitations": "This is one field playback study of European great tits responding to unfamiliar Carolina wren calls, not a test of arbitrary call combinations or open-ended communication. The authors say the Carolina-wren FME and D functions are not confirmed as alert and recruitment calls. There was no reversed-order Carolina-wren sequence and no D-only stimulus matched to the sequence's duty cycle; the authors state the extra acoustic content could explain the difference. Only two constructed Carolina-wren tracks per call treatment came from four recorded birds. Wing flicks were sparse (11/96); the sequence-species contrast was nonsignificant (P=0.12; 95% CI −0.32 to 2.95), which does not establish equivalence. Approach and wing-flicking are receiver behaviors in this playback setting, not proof of semantic interpretation. The authors report that birds returned to normal activity within five minutes, but this study-specific ethics statement is not a Talk2Nature welfare review. The 985-byte supplement was not inspected; its contents and file-specific terms remain unknown. No Talk2Nature model or app feature was tested.",
+    "limitations": "This is one field playback study of European great tits responding to unfamiliar Carolina wren calls, not a test of arbitrary call combinations or open-ended communication. The authors say the Carolina-wren FME and D functions are not confirmed as alert and recruitment calls. There was no reversed-order Carolina-wren sequence and no D-only stimulus matched to the sequence's duty cycle; the authors state the extra acoustic content could explain the difference. Only two constructed Carolina-wren tracks per call treatment came from four recorded birds. Wing flicks were sparse (11/96); the sequence-species contrast was nonsignificant (P=0.12; 95% CI −0.32 to 2.95), which does not establish equivalence. Approach and wing-flicking are receiver behaviors in this playback setting, not proof of semantic interpretation. The authors report that birds returned to normal activity within five minutes, but this study-specific ethics statement is not a Talk2Nature welfare review. The 985-byte supplement was not inspected; its contents and file-specific terms remain unknown. No Talk2Nature model or app feature was tested.",
     "lesson": "Treat receiver actions as the measured outcome. To test how a sequence is decoded, compare sequence and component calls, reverse order, control acoustic similarity and novelty, use diverse independent callers, and predefine a receiver-side behavioral measure. Cross-species response is a hypothesis-generating bridge, not evidence of unrestricted shared language.",
-  "next_review": "If the 985-byte supplement becomes relevant to a defined research question, inspect it through the publisher's documented route and confirm its content and file-specific terms before any use. Keep source recordings under their own Macaulay Library/Xeno-Canto terms. Seek an independent avian-communication review of whether the design separates sequence structure from shared acoustic cues. Do not add animal-directed playback to the Field Companion.",
+    "next_review": "If the 985-byte supplement becomes relevant to a defined research question, inspect it through the publisher's documented route and confirm its content and file-specific terms before any use. Keep source recordings under their own Macaulay Library/Xeno-Canto terms. Seek an independent avian-communication review of whether the design separates sequence structure from shared acoustic cues. Do not add animal-directed playback to the Field Companion.",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
     "review_locator": "Publisher-indexed Introduction, Methods, Results, Discussion, Ethical Note, Data Availability and Supplementary Material listing; direct ScienceDirect request returned HTTP 403. UWA repository abstract and CC BY 4.0 article-license metadata. Checked 2026-10-27.",
     "purpose": "Behavior & communication",
@@ -5696,5 +5696,50 @@
     "purpose": "Behavior & communication",
     "review_locator": "Liévin-Bazin et al. (2018): Ethics; Methods (subjects, affiliation, recording, playback and behavioral analyses); Results 2.2-2.3; Discussion; Supporting Information manifest.",
     "seo_description": "A cautious review of a 2018 cockatiel receiver-response study, its mixed results, welfare limits and rights-verified behavior-data workbook."
+  },
+  {
+    "slug": "oriental-magpie-robin-urban-noise-2025",
+    "title": "Magpie-robin tables track urban sound context, not animal meaning",
+    "taxon": "Oriental magpie-robin (Copsychus saularis)",
+    "kind": "Urban bioacoustics and environmental association",
+    "year": "2025",
+    "source_ids": [
+      471,
+      472,
+      473
+    ],
+    "review_depth": "Full 9-page publisher version of record reviewed, including Methods §§2.1–2.6, Results §§3.2–3.3, Table 2, Discussion and limitations. The Dryad landing page/README and current API v2 record were reviewed for version 8, five listed files, table categories, reported counts, location fields and CC0-1.0. No CSV, raw audio, supplementary file or code was acquired; no analysis was reproduced.",
+    "finding": "Maharjan et al. (2025) report observational associations between selected vocal measurements and urban conditions in the Kathmandu Valley. Their Results §3.2 and Table 2 say submissive-call element count decreased with higher noise and juvenile-call minimum frequency increased; §3.3 reports song minimum frequency decreased as NDVI increased. These are acoustic measurements and environmental associations, not receiver responses or decoded meanings. The Dryad v8 release contains four small tables (21 juvenile, 25 submissive, 24 territorial, 62 song records; 132 listed rows total) plus a README, but no WAV audio. Two source conflicts remain visible: the Dryad abstract assigns a positive minimum-frequency/noise association to submissive calls rather than juvenile calls; and the paper Methods plus README report calls at 30 sites and songs at 31, while the paper Results report 27 and 30.",
+    "limitations": "The observations cover one urban region and two different recording seasons; the authors selected 70 calls from 109 recorded and 62 songs from 123 recorded based on spectrogram distinction. Noise was measured as the maximum level in a two-minute period after vocalization stopped, not concurrently, and NDVI was the only vegetation proxy. Measurements were made visually. The tables do not include audio or a receiver-response outcome, and no independent-unit/split audit was done. The CSV descriptions include latitude/longitude fields; this note maps only a coarse region and does not copy site values. No discrepancy was resolved from the underlying CSVs.",
+    "lesson": "Keep acoustic structure, environmental covariates, animal behavior and receiver response as separate evidence. A signal can vary with its soundscape without the variation identifying a message. Treat mismatches among a paper, dataset abstract and README as provenance questions, not as permission to choose the most attractive result.",
+    "next_review": "Do not promote this to a benchmark. If a defined scientific question later requires the tables, first add a pinned Dryad adapter to the bounded collector, inspect the CC0 files in ignored external storage, remove precise location fields from public outputs, and reconcile the abstract and site-count conflicts. Seek independent urban-ornithology and statistical review before any reanalysis; no author contact or data collection is planned here.",
+    "reviewed": "2026-10-28",
+    "expert_review": "No independent ornithology, urban bioacoustics or statistical review.",
+    "review_stage": "Full article and Dryad metadata review; source conflicts recorded; data not acquired or reanalyzed.",
+    "year_label": "Publication year",
+    "purpose": "Data & annotation",
+    "review_locator": "Maharjan et al. (2025), Methods §§2.3–2.6, Results §§3.2–3.3, Table 2 and stated limitations; Dryad v8 page, README and API metadata.",
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "mapped",
+      "location_note": "One coarse Kathmandu Valley study-region marker only. It is not a sample-site point or animal location; no dataset coordinates are reproduced.",
+      "locations": [
+        {
+          "place_id": "kathmandu-valley-nepal",
+          "role": "study_region",
+          "source_id": 471,
+          "locator": "Methods §§2.1 and 2.3; Figure 1",
+          "basis": "The paper names the Kathmandu Valley study region and shows randomly selected 2×2 km sampling grids. The atlas uses one-decimal regional reference coordinates only and does not map individual sites."
+        }
+      ],
+      "observation_period": {
+        "label": "Calls September–October 2022; songs February–March 2023",
+        "start_year": 2022,
+        "end_year": 2023,
+        "source_id": 471,
+        "locator": "Methods §2.3, call and song recording periods"
+      }
+    },
+    "seo_description": "Magpie-robin acoustic measurements vary with urban noise and vegetation; the public tables contain no audio and do not reveal call meaning."
   }
 ]
