@@ -1,6 +1,6 @@
 # First-data decision: independent no-data review packet
 
-Refreshed October 25, 2026. This packet is for a bounded literature-and-methods review before selecting a Talk2Nature benchmark. No reviewer has been contacted, no animal data or models have been acquired, and no benchmark is selected or ready.
+Refreshed October 28, 2026. This packet is for a bounded literature-and-methods review before selecting a Talk2Nature benchmark. No reviewer has been contacted. Small, rights-reviewed annotation/workbook samples were acquired for separate aggregate-only structural checks; no acoustic recordings or model weights have been acquired, admitted to training or run for a benchmark. No benchmark is selected or ready.
 
 ## The decision to review
 
@@ -21,6 +21,10 @@ The review needs two distinct kinds of expertise: an independent, species-approp
 | **Budgerigars — Field Companion cohort** | Can a passive phone workflow help carers make observations that an avian researcher would consider useful? | This is a product/usability hypothesis, not a public benchmark. Genuine access, qualified review, an approved protocol, consent, privacy, retention and withdrawal safeguards are not yet established. No participant recruitment or real-data intake is part of this review. |
 
 These routes are not interchangeable. Wytham remains the leading large prepared-song methods candidate; Brown-throated Parakeet is a more direct parrot-specific acoustic reproduction lead but its counts and task novelty are unresolved; OpenWhistle is a large within-pod dolphin acoustic-classification candidate; honeybees offer the clearest reviewed signal-to-follower/feeder link but mostly established prior art and one site; zebra finches are the closest controlled bird vocal-exchange lead; bats offer video-coded context but currently have a difficult grouping structure. Budgerigars are a separate app path. A larger file count does not decide which question is scientifically strongest.
+
+## October 28 update — one bounded bat-corpus review question
+
+The Egyptian fruit-bat route is a candidate for **observed-context prediction**, not a selected benchmark or a test of message meaning. The current public Figshare metadata for FileInfo.csv now returns matching provider `supplied_md5` and `computed_md5` values, but no local file bytes or rows have been checked. Please assess whether caller/session metadata is necessary to define a useful held-out evaluation and, only if it is, specify a bounded integrity plan. Do not recommend acquisition solely because a checksum exists; the file remains above the project’s 5 MiB collector limit.
 
 ## Questions for reviewers
 
