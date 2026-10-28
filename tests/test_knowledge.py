@@ -5,6 +5,7 @@ from copy import deepcopy
 from pathlib import Path
 from talk2nature.knowledge import catalog_graph
 from admin.catalog import read_catalog
+from web.knowledge_build import build_knowledge
 
 
 class KnowledgeTests(unittest.TestCase):
@@ -80,3 +81,27 @@ class KnowledgeTests(unittest.TestCase):
         self.assertNotIn('DO NOT PUBLISH', str(after))
         with self.assertRaises(ValueError): catalog_graph([entry,entry])
         with self.assertRaises(ValueError): catalog_graph([{'key':'note:a','kind':'note','title':'N','payload':{'source_ids':[99]}}])
+
+    def test_public_map_renders_notes_resources_and_source_citations(self):
+        repo = Path(__file__).resolve().parents[1]
+        sources = json.loads((repo/'content/sources.json').read_text())
+        notes = json.loads((repo/'content/research.json').read_text())
+        with tempfile.TemporaryDirectory() as temporary:
+            pages = []
+            build_knowledge(repo, Path(temporary), '/talk2nature',
+                            lambda *args, **kwargs: pages.append((args, kwargs)), notes, sources)
+            body = pages[0][0][3]
+            records = json.loads((repo/'research/resources.json').read_text())['resources']
+            expected = len(notes) + len(records) + len(sources)
+            self.assertEqual(body.count('class="graph-record"'), expected)
+            self.assertIn(f'{len(notes)} research notes', body)
+            self.assertIn(f'{len(records)} linked research resources', body)
+            self.assertIn(f'{len(sources)} original source citations', body)
+            self.assertIn('id="evidence-bird-call-syntax"', body)
+            self.assertIn('id="resource-anuraset-data"', body)
+            self.assertIn('id="source-1"', body)
+            self.assertIn('id="graph-kind-filter"', body)
+            self.assertIn('class="page-intro section evidence-map-intro"', body)
+            self.assertIn('Public metadata only. No recordings, participant observations or private records.', body)
+            graph = json.loads((Path(temporary)/'research/map/catalog.json').read_text())
+            self.assertEqual(len(graph['nodes']), expected)

@@ -1378,3 +1378,21 @@ A fresh local noindex build was inspected in headless Chrome 156 at a mobile-emu
 ### October 28 — refresh Mozilla funding fit
 
 Added two current Mozilla opportunities from official call materials. The 2027–2028 individual Fellowship is a conditional thematic lead: its RFP explicitly includes community environmental sensing for biodiversity and open infrastructure, but the applicant’s personal eligibility and community evidence are unresolved. The team-based Human-Scale AI Incubator is not recommended on current evidence because it requires core AI already used by the intended community and early product-community-fit signals. Added a private, question-led Fellowship prep note; Mozilla requires application answers to remain the applicant’s own work and voice. Nothing was submitted or sent. Keep the full goal active.
+
+### October 28 continuation — zero-command boundary and complete evidence map
+
+Keep “zero command” about the human-facing workflow: people can practice and record observations through ordinary controls without terminal commands, account setup or JSON editing. It does not mean commanding, prompting or playing sounds to animals. The Field Companion remains person-started, passive and local-first; no interpretation may be presented as an animal's message. Keep the named-phone Save-to-Compare check and the separately authorized uncoached-newcomer check open.
+
+While those gates await access, make the research library useful across species and methods. The clean `origin/main` candidate now renders the complete public metadata graph as searchable, type-filtered records: 113 research notes, 250 linked resources and 494 source citations (857 total), with explicit note/resource-to-source relationships and component-specific resource rights. This is a catalog-navigation improvement, not evidence that all records were re-reviewed, that any source endorses a claim, or that a dataset is admitted for training. See the current candidate receipt in `docs/STATUS.md`.
+
+**Next:** continue one bounded research/reproducibility milestone at a time, preserve the passive animal-facing boundary, and wait for a named device before changing the first-use workflow without observed friction. Keep AutoResearch and real-data admission **NOT READY**. This map candidate is local and not deployed; deployment and outside outreach remain separate release actions.
+
+**Map follow-up:** source and reverse-reference links now remain usable while a visitor has a type filter or search active: following a hidden citation clears the filter, opens the target record and moves keyboard focus to it. This repairs traversal within the complete graph; it is maintainer-run browser evidence, not outside-user adoption.
+
+**Live comparison:** a fresh TLS-verified, cache-bypassed read of the published map returned HTTP 200, a self-canonical `index,follow` page and a sitemap entry. Its public `catalog.json` contains all 857 nodes (113 notes, 250 resources, 494 sources), but the rendered page and current search script expose only 113 note cards. The local candidate closes that UI gap; it is still not deployed. Mobile styling now keeps the map's primary search field clear of the fixed navigation at 390×844. At 320×568 the search lies below the initial viewport and is reached by scrolling; no horizontal overflow occurred.
+
+### October 28 continuation — keep the first human task zero-command
+
+The current local Field Companion home route leads with **Try an example · no microphone or account needed** and makes real observation optional. The Station route keeps the invented rehearsal separate from person-started capture, defaults animal identity to unknown, and keeps JSON under an advanced export action. Preserve this beginner path while continuing the multi-species research and open-source tracks.
+
+This was a content check of the local HTTP response, not a rendered usability session. Do not claim a physical-phone result or independent newcomer success. The next zero-command acceptance remains a named-phone synthetic save → same-file Compare walkthrough, with no animal present; keep newcomer recruitment behind its separate authorization gate. The five-track goal remains active, and AutoResearch / real-data admission remain **NOT READY**.
