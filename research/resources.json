@@ -134,39 +134,26 @@
         56
       ],
       "priority": 1,
-      "reviewed": "2026-10-13",
-      "task": "Inspect labels and group keys; the sample is not yet suitable for a context-association benchmark.",
-      "review_depth": "The pinned README field definitions and Git tree were reviewed. The 34,517-byte local CSV's Git blob SHA-1 and SHA-256 were recomputed; its Git blob matches the pinned GitHub file. The existing aggregate report is research/parrot_sample_report.json. On 2026-10-13, the official Edmond v1 API reconfirmed version 1, publication date 2023-09-07, dataset-level MIT, and three ZIP files totaling 100,498,691,932 bytes with provider-reported MD5 values. The dataset-version metadata has fileAccessRequest=true; file-level access/restriction status was not resolved. Current official Edmond user guidance and Terms of Use were reviewed. Download requires acceptance of Edmond terms and the dataset license; none was accepted. No Edmond file or archive was downloaded.",
-      "access": "The selected 34,517-byte GitHub annotation table is local under ignored external storage and checksum-verified against its pinned GitHub source. Edmond v1 lists three archives totaling 100,498,691,932 bytes; none was downloaded. The exact CSV's presence and byte identity inside Edmond, and file-level access status, remain unverified. Edmond's current terms require acceptance before download; no terms were accepted.",
-      "decision": "The sample has 808 rows, 752 populated behavior entries and 176 distinct nonempty behavior strings. The README says multiple Raven selections may share one annotation_ref, so rows are not necessarily independent call-level labels. Retain it as a static local reference only; keep training admission false and do not redistribute pending Edmond-member provenance, privacy review, linked recordings, independent context labels and group audit. If a specific retrieval becomes scientifically justified, first prepare a single-file identity/privacy review and obtain explicit approval before accepting Edmond's terms or retrieving any file.",
-      "limitations": "No Edmond audio or archive acquired. Behavior is free text recorded during or just before vocalizations and may contain multiple values; 2020 sequence context is separately documented. Labels cannot be assumed independent, exhaustive or suitable. Edmond's MIT declaration applies at released-dataset level but does not prove the GitHub copy's membership in that deposit. The API's dataset-level fileAccessRequest flag does not resolve access for any individual file. Full recording overview includes coordinates and is excluded.",
+      "reviewed": "2026-10-28",
+      "task": "Resolve the raw-data license and archive provenance; use the published study and supplement as literature sources only.",
+      "review_depth": "The pinned author README labels ANALYSIS/DATA as raw data, while the repository MIT notice does not explicitly scope itself to those data files. The Edmond V1/DataCite record declares MIT at deposit level, but the exact GitHub file has not been matched to an archive member. Current Edmond download terms require acceptance; none were accepted and no archive was downloaded. This catalog entry is metadata-only. Earlier table-derived aggregate outputs have been removed from the current branch pending rights clarification.",
+      "access": "The pinned GitHub URL is publicly readable, but visibility does not establish reuse or redistribution rights for the raw-data component. Any existing local copy remains in ignored external storage and quarantined. No file bytes were read or processed for this rights-hold update.",
+      "decision": "Keep metadata-only and do not fetch, inspect, process, train on or redistribute the raw table. Reconsider only after the rights holder or provider clarifies data-specific terms, the exact GitHub-to-Edmond file mapping is established, and privacy plus intended research, commercial and redistribution uses are reviewed separately. The paper, code, supplement and raw data retain separate rights records.",
+      "limitations": "The published study supports a bounded caller-identity literature review, not behavior or meaning claims. The README describes free-text and location-related fields, which would require a privacy and sensitivity review before any future processing. Neither the repository MIT notice nor Edmond deposit-level metadata resolves the raw GitHub table license or its archive membership. No Edmond file or audio was acquired; no terms were accepted.",
       "attribution": "Smeele et al. (2023); data DOI 10.17617/3.RUIM5I v1.0; GitHub snapshot separately pinned.",
       "rights": {
-        "license": "MIT",
-        "scope": "The official Edmond API declares MIT for the released v1 dataset as a whole. Edmond's Terms of Use and per-dataset license are separate download conditions. The selected GitHub CSV is verified against the pinned GitHub commit, but exact identity within the Edmond archives is not verified. Repository code, article text and recordings remain separate components.",
-        "evidence_url": "https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I",
-        "conditions": "The current Edmond user guide requires acceptance of Edmond's Terms of Use and the dataset license before download. Do not infer that a public MIT label resolves the separate GitHub-to-archive identity, file-level access, privacy, or redistribution questions. No terms were accepted and no Edmond bytes were downloaded.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
+        "license": "Unresolved for the raw-data component",
+        "scope": "The pinned repository contains an MIT notice, but the README identifies ANALYSIS/DATA as raw data and the notice does not explicitly establish that the raw table is covered. Edmond V1 metadata declares MIT at deposit level, but exact identity of this GitHub file within an Edmond archive is unverified. Code, article, supplement and data are separate components.",
+        "evidence_url": "https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
+        "conditions": "Do not infer data rights from the code notice, public visibility or deposit-level metadata. No Edmond terms were accepted and no archive bytes were downloaded. Obtain a data-specific rights and file-provenance review before any access or reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
       },
-      "acquisition": "sample_approved",
-      "files": [
-        {
-          "name": "LICENSE-MIT.txt",
-          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md",
-          "bytes": 1079,
-          "git_blob_sha1": "b449976f856e1f8ca3f2f27e6711a83213f56eaf"
-        },
-        {
-          "name": "annotations-2020.csv",
-          "url": "https://raw.githubusercontent.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv",
-          "bytes": 34517,
-          "git_blob_sha1": "badde532a9712071e5048e3d45a8e3de95c618dc"
-        }
-      ],
-      "license_file": "LICENSE-MIT.txt",
-      "admission_reason": "The local static reference is the 34,517-byte table from an immutable GitHub repository version with its MIT notice; the separate Edmond v1 API also declares MIT at dataset level. Exact archive-to-table identity and privacy are unresolved, so this does not admit the table to training or authorize redistribution."
+      "acquisition": "metadata_only",
+      "files": [],
+      "admission_reason": "Raw-data rights and exact archive provenance are unresolved. Existing local copies, if any, remain quarantined; no acquisition, processing, training or redistribution is admitted.",
+      "analysis_admission": "not_admitted"
     },
     {
       "id": "monk-parakeet-selection-tables-2020",
@@ -196,7 +183,8 @@
         55,
         56
       ],
-      "files": []
+      "files": [],
+      "analysis_admission": "not_admitted"
     },
     {
       "id": "budgerigar-vocal-social-dryad",

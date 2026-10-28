@@ -62,20 +62,15 @@ Nine source files totaling **92,952 bytes** were acquired in three local collect
 
 Plants and fungi stay in the existing evidence library and a separate sensing backlog. Their instruments, signals and validation targets do not justify mixing them into a bird-audio training corpus.
 
-## What the parrot sample supports
+## Published monk-parakeet study and raw-data rights hold
 
-`research/parrot_sample_report.json` is a reproducible aggregate report, not a training manifest. The table contains 808 annotation rows, 765 populated bird entries, 752 populated behavior entries, 176 distinct nonempty behavior strings and 12 explicit uncertainty flags. Bird entries have not been normalized into verified unique individuals. Blank flags do not prove certainty, and one annotation may link to several calls.
+The 2023 Barcelona paper reports caller discrimination across some call types. Its target is known-caller identity, not behavior, intention or call meaning. The targeted Figure 4 interpretation is a within-known-individual cross-call-type evaluation, not an unseen-bird test. The published article and the versioned Figshare supplement remain useful literature sources; their rights do not transfer to the underlying raw data.
 
-Behavior text includes observable activities and descriptions of vocal events. Treating all of these as independent labels would risk circular evaluation. The repository's separate `context` field describes call/sequence structure; its name alone is not evidence of behavioral ground truth. These findings come from the [pinned source table](https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/ANALYSIS/DATA/overview%20recordings/annotations%20-%202020.csv) and its README.
+The pinned GitHub README labels `ANALYSIS/DATA` as raw data. The repository MIT notice does not explicitly scope itself to those data files. Edmond V1 metadata declares MIT at deposit level, but the exact GitHub table has not been matched to an archive member, and no Edmond terms were accepted. The annotation and selection-table resources are therefore metadata-only, with unresolved or not-admitted research, commercial and redistribution rights. Any existing local copy remains quarantined in ignored storage. Current public table-derived aggregate reports have been removed from the branch pending rights clarification.
 
-This sample does not currently support the first context-prediction benchmark. A table-only recoding would not establish that labels are independent of the call. If an identity reproduction is selected, inspect its original split and reliability workflow first. A context experiment would require separately verified, timestamp-linked recordings and independently observed behavior. Before any training:
+The current scripts that read these files check the catalog before opening data and refuse processing unless acquisition, rights and a separate analysis-admission field are explicitly approved. Synthetic fixtures verify the tools without reading third-party files. This project currently uses the paper and supplement as literature evidence only; it does not claim a raw-data audit, audio join, model result, semantic decoding or independent scientific endorsement.
 
-1. For a context task, establish access to source recordings and timestamp-linked observation evidence, then audit selection joins, repeated annotations, uncertain identities and missing labels. For an identity reproduction, inspect the relevant split and observer-reliability scripts.
-2. Define a codebook from visible behavior, with an unknown/exclude option. Audit whether labels were influenced by the call itself and measure independent reviewer agreement where source evidence allows it. A table-only recode cannot establish independent observation reliability.
-3. Link timestamps, original recordings and individuals. Construct connected groups across shared birds, sessions and source audio before framing or augmentation. If overlap leaves too few groups, change the question instead of forcing a split.
-4. Compare majority/context-only, simple acoustic features and frozen Perch embeddings with a small classifier. Fit preprocessing on training data only; preserve a held-out evaluation and report per-class results, clustered uncertainty and failure cases. Evaluate background/device/site confounding and pretraining overlap.
-
-The original MFCC script scales its combined matrix for a distance analysis. That is not automatically appropriate preprocessing for a new held-out classifier. The cross-call-type paper evaluation appears to predict identities already represented in training, rather than unseen birds; this is an interpretation of its Figure 4 design, not a reported unseen-individual test. No performance result, replication, semantic decoding or scientific endorsement is claimed here.
+Before reconsidering any raw-data access, establish written data-specific terms and exact file provenance; review privacy and sensitive fields; define permitted research, commercial and redistribution uses; and obtain any required action-specific approval. Then ask a qualified bioacoustics/statistical reviewer whether a narrow identity reproduction is useful. None of these steps is a route to testing call meaning by itself.
 
 October 11 study-fit review: the final paper abstract reports 5,599 vocalizations from 229 individually marked birds across two years, with individual signatures in three of five analyzed call types. The targeted Figure 4 text describes training on one call type and predicting marked bird IDs on another. Direct full-text retrieval was CAPTCHA/timeout limited, so the supplement, complete workflow and reliability analysis remain unreviewed. See the [public evidence note](https://metivity.github.io/talk2nature/research/parrot-data-feasibility/) and resource records for exact review depth and rights boundaries.
 
@@ -87,15 +82,13 @@ Dryad's reuse guide says deposited datasets are CC0. This does not license the r
 
 ## Acquisition backlog and limits
 
-The three Edmond archives total **100,498,691,932 bytes** (about 100.5 GB decimal), according to its [public metadata API](https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I). Raw 2020 and 2021 audio alone are about 36.96 GB and 54.55 GB. None was downloaded. Investigate a documented way to obtain a bounded audio subset after the annotation audit; do not launch the full archive transfer by default. The full recording overview includes precise coordinates and is excluded from this sample.
+The three Edmond archives total **100,498,691,932 bytes** (about 100.5 GB decimal), according to its [public metadata API](https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I). Raw 2020 and 2021 audio alone are about 36.96 GB and 54.55 GB. None was downloaded. Do not seek a bounded audio subset until data-specific rights, file provenance, privacy and scientific need are resolved. The full recording overview includes precise coordinates and is excluded from this sample.
 
-Next acquisition order: selection-table/linkage metadata; a modest matched audio subset with a stated byte budget and privacy/location review; exact model artifact/license; frozen execution dependencies. Expand to other species only when they answer a defined question. A user-created parrot-app prototype has been located and statically reviewed; source and bundled-media rights and research-data access remain unresolved. No prototype assets were imported.
+Next work order: resolve rights and provenance for metadata-only candidates; define the smallest scientific question and reviewer gate; only then consider any bounded acquisition with privacy review and a byte budget. Expand to other species only when they answer a defined question. A user-created parrot-app prototype has been located and statically reviewed; source and bundled-media rights and research-data access remain unresolved. No prototype assets were imported.
 
 ### October 23, 2026 — pinned monk-parakeet selection-table inventory
 
-A read-only request to the recursive Git tree for the pinned GitHub commit `293b2c8d0c3b8e21a4eaa0511fe563207095765a` returned 756 selection-table paths: 317 dated 2020 (639,830 bytes total) and 439 dated 2021 (373,603 bytes total). The local 2020 annotation CSV has 808 populated, unique `annotation_ref` values. The pinned README says the 2020 Raven selection-table `Annotation` column links to those references, each selection appears twice for waveform/spectrogram views, and more than one selection can share a reference. This suggests a small metadata join audit may be possible without obtaining the 100.5 GB Edmond archives, but it must deduplicate view rows and preserve one-to-many annotation links.
-
-This is structural evidence only: no selection-table contents were fetched, no references were matched, and no recording coverage or behavioral-label reliability was established. The README's repository license does not itself settle data-file rights. Edmond v1 declares MIT at record level but requires acceptance of separate download terms; neither the exact GitHub-to-archive file identity nor privacy/location handling is resolved. No terms were accepted and no data was acquired in this check. Keep the source metadata-only; any Edmond retrieval still requires the documented rights/privacy review and explicit approval before accepting terms.
+The earlier recursive GitHub-tree inventory is historical source metadata only. It did not resolve raw-data rights or Edmond archive membership and must not be treated as approval to inspect or process table files. The current decision is the October 28 rights hold recorded at the end of this document and in the resource catalog.
 
 ## Reproduce
 
@@ -103,9 +96,8 @@ All commands below run from the repository root. Python 3.10+ standard library i
 
 ```sh
 python3 -m talk2nature.collection validate
-python3 -m talk2nature.collection plan monk-parakeet-code monk-parakeet-annotations perch-hoplite-code
-python3 -m talk2nature.collection fetch monk-parakeet-code monk-parakeet-annotations perch-hoplite-code
-python3 scripts/inspect_parrot_annotations.py --output research/parrot_sample_report.json
+python3 -m talk2nature.collection plan monk-parakeet-code perch-hoplite-code
+python3 -m talk2nature.collection fetch monk-parakeet-code perch-hoplite-code
 python3 -m unittest discover -s tests -v
 ```
 
@@ -478,7 +470,7 @@ The research note was updated with the exact scope and limitations. No rows, dat
 
 The resource catalog now lists `load.selection.tables.R` under the existing MIT-licensed monk-parakeet code resource. The exact pinned helper is 3,230 bytes; its Git blob SHA-1 was independently recomputed from the TLS-verified source response and matched the commit-pinned value. `python3 -m talk2nature.collection plan monk-parakeet-code` remains offline and reports a 32,030-byte bounded code sample.
 
-The 2020 Raven selection-table directory is a separate metadata-only resource with no file manifest. The pinned README labels it raw data, and the root MIT notice does not clearly establish data-file terms. Its research, commercial and redistribution rights remain unresolved, so the collection tool refuses a plan/fetch for it. This scope correction does not erase the previously reported aggregate join audit, authorize redistribution, establish audio alignment or admit any data to model training. No raw table bytes were newly acquired in this review.
+The 2020 Raven selection-table directory is a separate metadata-only resource with no file manifest. The pinned README labels it raw data, and the root MIT notice does not clearly establish data-file terms. Its research, commercial and redistribution rights remain unresolved, so the collection tool refuses a plan/fetch for it. The October 28 rights hold also removes prior table-derived aggregates from the current branch and blocks future processing pending separate review. It does not establish audio alignment or admit any data to model training.
 
 The resource directory now includes a separate metadata-only card linking directly to the pinned `load.selection.tables.R` file. The broader code sample remains available through `monk-parakeet-code`; the helper card is a citation aid, not a second acquisition package.
 
@@ -487,3 +479,11 @@ The resource directory now includes a separate metadata-only card linking direct
 The separately published 2023 Figshare item (DOI `10.6084/m9.figshare.22582099.v2`) declares CC BY 4.0 at item level. The bounded collector acquired only file 40086154, a 440,873-byte selection CSV, and verified provider MD5 `3296a9792c395fbad6d9bfa8e13a482f` plus local SHA-256. The sample and receipt are in ignored `data/external/monk-parakeet-identity-figshare-2023/`; neither is bundled into the site, examples or private database. Reproduce the aggregate-only audit with `python3 scripts/inspect_monk_parakeet_selection_table.py`.
 
 The audit mirrors the pinned code's CSV-level exclusion and emits counts only. It does not access the separate 2023 audio archive or 2020 GitHub selection tables. The 2020 raw tables remain metadata-only with unresolved data-specific rights; the CC BY declaration on the distinct Figshare item does not change that decision. Neither dataset is admitted to training.
+
+### October 28 — hold monk-parakeet raw tables pending rights clarification
+
+The GitHub repository MIT notice does not explicitly scope itself to the raw `ANALYSIS/DATA` files, and the GitHub-to-Edmond archive-member mapping is unresolved. Keep the annotation and selection-table resources metadata-only; do not fetch, inspect, process, train on or redistribute them. Any existing local copy remains quarantined in ignored storage. The current public aggregate outputs have been removed. The literature note continues to summarize the published caller-identity study and the separately licensed supplement; neither establishes call meaning.
+
+The annotation and join scripts check the resource catalog before opening data and require separate analysis admission in addition to rights/acquisition status. Their allowed-path tests use synthetic data only. The Figshare selection CSV is a distinct CC BY 4.0 artifact and remains separately cataloged; do not conflate it with the unresolved GitHub tables.
+
+**Next:** resolve data-specific license scope, exact file provenance and privacy conditions from documented source materials. Any external rights-holder contact or archive-term acceptance requires its own authorization. Until then, continue the zero-command passive app work and literature review without touching the held files.

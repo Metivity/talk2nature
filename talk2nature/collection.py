@@ -81,6 +81,13 @@ def validate(catalog):
                 raise ValueError(f'Invalid rights decision: {field}')
         if resource.get('acquisition') not in {'metadata_only', 'sample_approved'}:
             raise ValueError('Invalid acquisition status.')
+        if ('analysis_admission' in resource
+                and resource['analysis_admission'] not in {'not_admitted', 'approved'}):
+            raise ValueError('Invalid analysis admission status.')
+        if resource.get('analysis_admission') == 'approved' and (
+                resource['acquisition'] != 'sample_approved'
+                or rights['research_use'] != 'conditional'):
+            raise ValueError('Analysis admission requires an approved sample and research-use rights.')
         files = resource.get('files', [])
         if not isinstance(files, list):
             raise ValueError('Files must be a list.')
@@ -183,6 +190,41 @@ def validate(catalog):
             if adapter == 'github' and resource.get('license_file') not in names:
                 raise ValueError('Every sample must retain a license file.')
     return catalog
+
+
+def require_processing_admission(resource_ids, catalog_path=CATALOG):
+    """Fail closed unless dataset processing and every input's rights are admitted."""
+    try:
+        catalog = json.loads(Path(catalog_path).read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError('Could not read the current rights catalog; processing is blocked.') from exc
+    if (not isinstance(catalog, dict) or catalog.get('schema_version') != 1
+            or not isinstance(catalog.get('resources'), list)):
+        raise ValueError('Invalid rights catalog; processing is blocked.')
+    admitted = {}
+    for resource_id in resource_ids:
+        matches = [r for r in catalog['resources']
+                   if isinstance(r, dict) and r.get('id') == resource_id]
+        if len(matches) != 1:
+            raise ValueError(f'Rights catalog must contain exactly one {resource_id} record; processing is blocked.')
+        resource = matches[0]
+        rights = resource.get('rights')
+        rights_ready = (isinstance(rights, dict)
+                        and all(rights.get(field) == 'conditional' for field in
+                                ('research_use', 'commercial_use', 'redistribution')))
+        dataset_ready = (resource.get('kind') == 'dataset'
+                         and resource.get('analysis_admission') == 'approved'
+                         and resource.get('acquisition') == 'sample_approved')
+        code_ready = (rights_ready
+                      and resource.get('kind') == 'code'
+                      and resource.get('acquisition') == 'sample_approved'
+                      and isinstance(rights.get('license'), str)
+                      and bool(rights['license'].strip()))
+        if not rights_ready or not (dataset_ready or code_ready):
+            raise ValueError(
+                f'Processing is not admitted for {resource_id}; confirm the required acquisition, analysis-admission and rights fields in the catalog first.')
+        admitted[resource_id] = resource
+    return admitted
 
 
 def plan(catalog, identifiers, max_bytes=MAX_BATCH_BYTES):
