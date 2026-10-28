@@ -7616,6 +7616,65 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "oriental-magpie-robin-urban-noise-paper-2025",
+      "kind": "paper",
+      "title": "Urban noise and vegetation are associated with Oriental magpie-robin vocal measurements",
+      "url": "https://malque.pub/ojs/index.php/jabb/article/view/10290",
+      "version": "Journal of Animal Behaviour and Biometeorology 13(3), 2025, e2025027",
+      "source_ids": [
+        471
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Cross-taxon methods comparator for measured call/song structure and urban environmental covariates; not a receiver-response, message-decoding or consumer-app benchmark.",
+      "review_depth": "Full 9-page publisher version reviewed, including Methods, Results, Table 2, Discussion and limitations. Findings were checked against the Dryad record and README. No supplementary material, raw data, audio, code or analysis was acquired or reproduced.",
+      "access": "Public publisher page and article PDF. The associated Dryad tables are cataloged separately; no files are copied into Talk2Nature.",
+      "decision": "Retain as an original-summary methods reference for urban acoustic ecology. Report the observational associations and preserve the article/Dryad discrepancies. It does not change the first benchmark recommendation.",
+      "limitations": "The study reports selected acoustic measurements from a single Kathmandu Valley study, not observed receiver responses or meanings. The Dryad abstract assigns a positive noise association in minimum frequency to submissive calls, while the paper abstract, Results §3.2 and Table 2 name juvenile calls. The paper Methods and Dryad README report 30 call sites and 31 song sites, while Results report 27 and 30. Noise was measured as a two-minute maximum after vocalization stopped; only NDVI represented vegetation, and spectral/temporal measurements were made visually. No independent reproduction or specialist review occurred.",
+      "attribution": "Maharjan, M. et al. (2025). Anthropogenic noise and vegetation cover affect the vocalizations of resident Oriental magpie-robins in Kathmandu Valley, Nepal. DOI 10.31893/jabb.2025027.",
+      "rights": {
+        "license": "CC BY-NC-ND 4.0",
+        "scope": "Published article text and figures only. The Dryad table dataset, recordings, supplementary files and code have separate rights.",
+        "evidence_url": "https://malque.pub/ojs/index.php/jabb/article/view/10290",
+        "conditions": "Attribute the article. Talk2Nature publishes an original short summary and link; do not reproduce or adapt article text or figures.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "oriental-magpie-robin-vocalization-tables-dryad-v8",
+      "kind": "dataset",
+      "title": "Dryad measurement tables for Oriental magpie-robin calls and songs",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8gtht76ww",
+      "version": "Dryad version 8; version ID 462305; published 2026-09-08",
+      "source_ids": [
+        472,
+        473
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Reference only for urban bioacoustics metadata and acoustic/environment associations; not an audio dataset or receiver-response task.",
+      "review_depth": "Reviewed the official Dryad page/README and API v2 record for version, file list, record counts, fields and CC0 declaration. Four CSV files and one README are listed (22.36 KB total); the CSVs describe 132 category records. No CSV payload or raw audio was downloaded or analyzed.",
+      "access": "Public Dryad v8 record. It lists measurement/context tables, not WAV recordings. Its README indicates latitude/longitude fields; this catalog and atlas omit all site coordinate values.",
+      "decision": "Keep metadata-only. Useful for contextualizing urban acoustic studies and their documentation, but not an audio dataset or a phone-audio/animal-communication benchmark because it has no raw sound, receiver response, or reviewed train/test split.",
+      "limitations": "The dataset abstract conflicts with the related article on the call category associated with minimum-frequency change; the article and README also disagree with its Results section on site counts. The tables are small, and no data-level grouping or independence audit was performed. The release includes precise location fields; no point locations were copied or mapped.",
+      "attribution": "Khanal, L. et al. (2026). Data from: Anthropogenic noise and vegetation cover affect the vocalizations of resident Oriental magpie-robins in Kathmandu Valley, Nepal [Dataset], Dryad, DOI 10.5061/dryad.8gtht76ww.",
+      "rights": {
+        "license": "CC0-1.0",
+        "scope": "The data files in the Dryad dataset version 8 only. The related article is separately licensed CC BY-NC-ND 4.0; audio and code are not included in this Dryad file list.",
+        "evidence_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.8gtht76ww",
+        "conditions": "Cite the dataset as scholarly practice. Preserve record/version provenance and handle the location fields carefully; CC0 does not establish scientific validity, independence or benchmark suitability.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

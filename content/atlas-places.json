@@ -323,6 +323,13 @@
       "precision": "region",
       "latitude": 52.2,
       "longitude": 0.1
+    },
+    {
+      "id": "kathmandu-valley-nepal",
+      "label": "Kathmandu Valley, Nepal · urban magpie-robin study",
+      "precision": "region",
+      "latitude": 27.7,
+      "longitude": 85.3
     }
   ]
 }
