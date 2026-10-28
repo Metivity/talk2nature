@@ -8,7 +8,7 @@ import {AudioSession} from './station-audio.mjs';
 import {emptyEventsMessage, nextEventFocusId} from './station-review-ui.mjs';
 
 const $ = id => document.getElementById(id);
-let session = null, capture = null, active = false, pending = false, pendingSynthetic = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, dirty = false, lastEventCount = 0, lastFrameAt = 0;
+let session = null, capture = null, active = false, pending = false, pendingSynthetic = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, playbackPending = false, dirty = false, lastEventCount = 0, lastFrameAt = 0;
 const animal = animalPicker(document, 'station');
 const preset = stationPreset(new URL(location.href).searchParams.get('mode'));
 if (preset) {
@@ -49,6 +49,7 @@ function controls() {
   $('station-start').disabled = busy || !$('station-permission').checked;
   $('station-stop').disabled = !(pending || active);
   $('station-stop').textContent = pendingSynthetic || session?.origin === 'synthetic' ? 'End rehearsal' : 'Stop recording';
+  $('station-finish').disabled = !active;
   $('station-voice').disabled = !active; $('station-observe').disabled = !active;
   $('station-soundscape-context').disabled = phase !== 'review' || exporting;
   renderSoundscapeContext();
@@ -59,10 +60,11 @@ function controls() {
 }
 function silencePlayer() {
   $('station-player').pause(); $('station-player').removeAttribute('src'); $('station-player').load(); $('station-player').hidden = true;
+  $('station-play-review').hidden = true; $('station-play-review').disabled = false; $('station-play-review').textContent = 'Play for human review'; playbackPending = false;
   if (playerUrl) URL.revokeObjectURL(playerUrl); playerUrl = null;
 }
 function stop(reason = 'user_stop') {
-  const focusReview = document.activeElement === $('station-stop') || document.activeElement?.matches('[data-observation]');
+  const focusReview = document.activeElement === $('station-stop') || document.activeElement === $('station-finish') || document.activeElement?.matches('[data-observation]');
   run++; pending = false; pendingSynthetic = false; active = false;
   capture?.stop(); capture = null;
   if (deadline) clearTimeout(deadline); if (watchdog) clearInterval(watchdog); deadline = null; watchdog = null;
@@ -177,7 +179,13 @@ function renderEvents(focusEventId = null) {
     select.addEventListener('change', saveReview); notes.addEventListener('change', saveReview); sourceLabel.append(select);
     const buttons = document.createElement('div'); buttons.className = 'station-controls';
     for (const [label, action] of [
-      ['Review audio', () => { silencePlayer(); playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'})); $('station-player').src = playerUrl; $('station-player').hidden = false; $('station-player').focus(); status(`${session.mode === 'window' ? 'Observation window' : `Sound ${event.id}`} ready in the audio player. Use headphones away from animals; press Play to review.`); }],
+      ['Load for review', () => {
+        silencePlayer();
+        playerUrl = URL.createObjectURL(new Blob([wavBytes(event.pcm, session.sampleRate)], {type: 'audio/wav'}));
+        $('station-player').src = playerUrl; $('station-player').load();
+        $('station-play-review').hidden = false; $('station-play-review').focus();
+        status(`${session.mode === 'window' ? 'Observation window' : `Sound ${event.id}`} loaded locally. Press Play for human review; a safety confirmation appears immediately before playback.`);
+      }],
       ['Save WAV', () => { download(wavBytes(event.pcm, session.sampleRate), session.audioFilename(event.id), 'audio/wav'); status(`Sound ${event.id} download requested. Review it before sharing.`); }],
       ['Discard clip', () => {
         silencePlayer();
@@ -208,7 +216,35 @@ function modeGuidance() {
 if (['companion', 'demo'].includes(new URL(location.href).searchParams.get('mode'))) $('station-capture-mode').value = 'window';
 $('station-capture-mode').addEventListener('change', modeGuidance); modeGuidance();
 $('station-permission').addEventListener('change', controls);
-$('station-start').addEventListener('click', () => start(false)); $('station-demo').addEventListener('click', () => start(true)); $('station-stop').addEventListener('click', () => stop());
+$('station-start').addEventListener('click', () => start(false)); $('station-demo').addEventListener('click', () => start(true)); $('station-stop').addEventListener('click', () => stop()); $('station-finish').addEventListener('click', () => stop());
+$('station-play-review').addEventListener('click', async () => {
+  const player = $('station-player'), button = $('station-play-review');
+  if (!playerUrl || playbackPending) return;
+  if (!player.paused) {
+    player.pause(); button.textContent = 'Play for human review';
+    status('Review playback paused. No sound is playing.');
+    return;
+  }
+  if (!window.confirm('Right before playback, confirm the animal cannot hear this recording: use headphones or move away. Do not play it to the animal. Continue?')) {
+    status('Playback cancelled. This recording was not played.');
+    return;
+  }
+  playbackPending = true; button.disabled = true;
+  try {
+    await player.play();
+    button.textContent = 'Pause review audio';
+    status('Playing for human review. Pause immediately if an animal could hear this recording.');
+  } catch {
+    status('The browser could not start playback. The recording was not played.');
+  } finally {
+    playbackPending = false; button.disabled = false;
+  }
+});
+$('station-player').addEventListener('ended', () => {
+  if (!playerUrl) return;
+  $('station-play-review').textContent = 'Replay for human review';
+  status('Review playback finished.');
+});
 for (const button of document.querySelectorAll('[data-observation]')) button.addEventListener('click', () => {
   if (!active || exporting) return;
   try { const marker = addQuickObservation(session, button.dataset.observation); dirty = true; renderMarkers(); $('station-marker-feedback').textContent = `${formatTime(marker.at_seconds)} · ${marker.note} Added to your timeline.`; }
@@ -261,7 +297,16 @@ function clearSession() {
 }
 $('station-clear').addEventListener('click', clearSession); $('station-new').addEventListener('click', clearSession);
 $('station-display').addEventListener('click', () => { const large = $('station-console').classList.toggle('station-large'); $('station-display').setAttribute('aria-pressed', String(large)); $('station-display').textContent = large ? 'Standard view' : 'Large-screen view'; draw(); });
-document.addEventListener('visibilitychange', () => { if (document.hidden && (active || pending)) stop('backgrounded'); });
-window.addEventListener('pagehide', () => { if (active || pending) stop('page_closed'); });
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) return;
+  const hadReviewAudio = Boolean(playerUrl);
+  if (hadReviewAudio) silencePlayer();
+  if (active || pending) stop('backgrounded');
+  else if (hadReviewAudio) status('Review audio cleared when Station left the foreground. Load it again only when you are ready to review away from animals.');
+});
+window.addEventListener('pagehide', () => {
+  silencePlayer();
+  if (active || pending) stop('page_closed');
+});
 window.addEventListener('beforeunload', event => { if (active || pending) stop('page_closed'); if (dirty) { event.preventDefault(); event.returnValue = ''; } });
 window.addEventListener('resize', draw); draw(); controls();

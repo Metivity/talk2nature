@@ -31,6 +31,10 @@ Station 0.2 exports remain preliminary. Hashes establish byte correspondence, no
 
 Offline setup is optional and user-triggered on the app home. Only the six public companion-app routes, their required code/styles/illustration, manifest and icons are cached. The service worker lives under `/app/` and cannot control the private admin origin or unrelated site routes. Its fetch handler additionally restricts exact public URLs, request method and accepted scenario queries. It never stores microphone audio, notes, exports, runtime responses, authentication tokens or private data. [Service-worker lifecycle and caching reference](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers).
 
+### October 28 human review playback
+
+Station, Listen and Compare keep capture separate from optional human review. Listen and Compare share custom Play/Pause, seek and elapsed-time controls. Loading or scrubbing is silent; each new Play or replay asks for a fresh confirmation to use headphones or review away from animals; Cancel never calls `play()`. Playback pauses when the page leaves the foreground. The control cannot detect a headphone connection, enforce distance or prevent a saved/exported audio file from being played elsewhere. Its code and style are in the exact offline asset list; audio itself is not cached. Synthetic interaction tests and local builds pass, but rendered-browser and physical-phone checks remain open.
+
 Exports are still essential: offline availability does not make a journal persistent. Browser storage can be evicted. Public research pages linked outside the app's cached routes require connectivity. Clear the site's browser storage to remove the optional public cache; removing a home-screen icon may leave it. Cached app updates wait for existing app windows to close. A failed cache installation removes the incomplete new cache, preserving the previous version and unrelated caches.
 
 ### October 13 follow-up: update notice on every app screen
@@ -425,3 +429,27 @@ The local noindex build passed all 193 Python tests (one intentional skip), all 
 **Verification and limits:** all 194 Python tests passed (one intentional skip), all 140 Node tests passed, and the local noindex build/site checker passed (145 HTML documents, 7,565 links). In a Playwright WebKit 26.0 desktop runtime at a 390 × 844 mobile viewport, the full home → invented rehearsal → human note → stop → ZIP download → acknowledge → same-file Compare path completed. The ZIP was 80,915 bytes; Compare showed “Opened locally”; document/body width stayed 390 pixels; the microphone-call counter remained zero; no page errors occurred. The status screenshot was inspected and the new four-line instruction remained readable. This is emulation, not current iOS Safari, an installed web app, Android, a native file picker or a physical device. The named physical-device acceptance gate and independent newcomer gate remain open. No real recording or participant data was used.
 
 **Release receipt:** PR [#517](https://github.com/Metivity/talk2nature/pull/517) merged as [`987c995`](https://github.com/Metivity/talk2nature/commit/987c99508608c8ad46d5819b27d073ed1845292f). Pages run [#40632923031](https://github.com/Metivity/talk2nature/actions/runs/40632923031) passed build, tests, publication-boundary checks, deployment and live-route/crawl verification. Fresh cache-bypassing TLS reads returned HTTP 200 for `/app/`, `/app/station/?mode=companion`, `/app/compare/` and the versioned Station script `station.js?v=ba6222e60bf2b6a5`; the live script contains the preview-save fallback. This verifies deployment, not current physical-phone behavior.
+
+## October 28 — zero-command Station smoke in mobile Chrome
+
+A local noindex build was rendered in headless Chrome 156 with explicit mobile emulation at 390 × 844 CSS pixels. `document.documentElement.scrollWidth` and `innerWidth` both measured 390; the Station console fit within the viewport. The microphone-free invented-tone path entered recording, stopped into review and generated the save-ready message. During the run, instrumented `navigator.mediaDevices.getUserMedia` and `HTMLMediaElement.play` were each called zero times; the capture worklet also fills every speaker-output channel with zero. The run was stopped immediately and retained no audio (0.0 seconds), so this is a zero-command UI smoke, not a saved-audio or reopen test.
+
+This is headless desktop Chrome with a mobile viewport, not physical iOS/Android, a microphone test, speaker measurement, installed-app test or user study. It does not establish animal audibility or safety on every device. Keep the named physical-phone Save-to-Compare gate open; no production deployment occurred.
+
+## October 28 — surface the passive-use promise before the first controls
+
+Added a short, visible Station introduction: it never plays sounds to animals, and optional human review requires headphones or distance. This places the welfare boundary ahead of the listening controls rather than relying on a collapsed “Before you begin” disclosure or text lower in the console.
+
+Rendered the local noindex candidate in headless Chrome 156 with explicit mobile emulation at 390 × 844 and 320 × 740 CSS pixels. At both sizes the notice remained within the viewport; document width equaled viewport width (390 and 320 respectively). The 390-pixel screen was visually inspected; there was no horizontal clipping, and the notice appears before the listening links and console. This was browser emulation only: no microphone, speaker, phone, installed app or participant study was used.
+
+## October 28 — verify the installed offline shell serves review tools
+
+**Question:** after a visitor explicitly saves the public app shell, do the revised Listen/Compare review assets and pages still work when the network and ordinary HTTP cache are unavailable?
+
+**Check:** built the local noindex candidate and served it on loopback. In an isolated desktop Chrome context at 390 × 844 CSS pixels, enabled offline tools from the app home and awaited the service worker's readiness. The versioned cache contained 52 allowlisted responses, including `/app/review/`, `/app/compare/`, `review-audio.mjs` and `review-audio.css`. Then set the browser context offline, disabled Chrome's HTTP cache through the DevTools protocol, and opened Review and Compare in new tabs.
+
+**Result:** both routes returned HTTP 200 with `from_service_worker=true` and an active controller. Each page rendered its expected heading at 390 pixels with no horizontal overflow. Instrumentation recorded zero microphone requests, zero HTML media `play()` calls and zero page errors. No recording was loaded or played. This demonstrates the local public-shell cache path for these two pages and assets; it does not prove physical-phone installation, iOS/Android behavior, real microphone/audio routing, headphone enforcement or independent-user success.
+
+**Decision:** keep the exact allowlist and manual offline setup. The browser offline acceptance check for the shared review controls is satisfied; the separate named physical-phone Save-to-Compare gate and authorized newcomer walkthrough remain open. No code changed during this check and nothing was deployed.
+
+**Regression checks:** after recording the result, `node --test tests/mobile.test.mjs tests/review-audio.test.mjs tests/station-ui.test.mjs tests/listen-ui.test.mjs tests/compare.test.mjs` passed all 44 tests. The focused site-content suite passed all 102 tests; the local noindex build and `scripts/check_site.py` also passed (147 HTML documents, 7,765 links). These checks validate software and generated pages only.

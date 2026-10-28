@@ -3612,26 +3612,26 @@
       "kind": "dataset",
       "title": "Nightingale citizen-science recording data",
       "url": "https://doi.org/10.5281/zenodo.4817236",
-      "version": "Zenodo DOI cited by the 2021 article; record version and files not reviewed",
+      "version": "Zenodo record 4817236, published 2021-05-28; API returned no version or concept DOI",
       "source_ids": [
         281
       ],
       "priority": 2,
-      "reviewed": "2026-10-13",
-      "task": "Potential reference for studying the provenance and acoustic usability of citizen-science nightingale recordings.",
-      "review_depth": "The article's data-availability statement was reviewed. The Zenodo record metadata, file inventory, license and data contents were not independently inspected.",
-      "access": "The article says the study data are openly published at this DOI; current record contents and access were not verified.",
-      "decision": "Metadata only. Verify the exact record version, component terms, participant privacy and wildlife-location sensitivity before retrieval or analysis.",
-      "limitations": "A cited deposit does not establish current file availability, license scope, recording consent for new uses, identity/location privacy, independent reproducibility or suitability for another species or task.",
+      "reviewed": "2026-10-28",
+      "task": "Reference for the provenance and quality metadata of citizen-science smartphone recordings; the current record listing is not an audio corpus.",
+      "review_depth": "TLS-verified official Zenodo API metadata reviewed: publication date, open-access status, record-level license, description, two XLSX names/sizes and provider MD5 strings. No file bytes, rows, media, consent records or privacy fields were inspected; provider checksums were not verified locally.",
+      "access": "The official API currently lists an open CC BY 4.0 record with NCSP_Data.xlsx (1,681,739 bytes) and SNR_Data.xlsx (12,692 bytes). No audio file is listed in this record response.",
+      "decision": "Keep metadata-only. The two listed spreadsheets may help assess reported recording quality but do not provide an inspected, ready-to-use audio corpus. Review their exact content, consent/provenance, participant privacy and wildlife-location sensitivity only if a specific question justifies file access.",
+      "limitations": "Record metadata does not establish the spreadsheet schema or contained fields, whether the rows can be linked to audio elsewhere, consent for secondary use, participant identity/location exposure, independent reproducibility or suitability for another species/task. Provider MD5 strings do not prove local file integrity until matching bytes are obtained and checked.",
       "attribution": "Zenodo record cited by Jäckel et al. (2021), PLOS ONE 16(6): e0253763.",
       "rights": {
-        "license": "Unverified at deposit level",
-        "scope": "Dataset only; article text, any code and participant or wildlife metadata have separate rights and privacy conditions.",
-        "evidence_url": "https://doi.org/10.1371/journal.pone.0253763",
-        "conditions": "Review the versioned deposit, exact files, dataset terms and privacy/consent conditions before any acquisition, analysis, redistribution or training.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
+        "license": "CC BY 4.0, declared by the Zenodo record API",
+        "scope": "Record-level declaration for the listed dataset files. The PLOS article and any other material have separate rights; file content, consent and personal or wildlife-location privacy were not inspected.",
+        "evidence_url": "https://zenodo.org/api/records/4817236",
+        "conditions": "Follow CC BY 4.0 attribution terms if the declaration applies to the intended material. Inspect file contents, provenance, consent and privacy before acquisition, analysis, redistribution or training.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
@@ -6720,9 +6720,9 @@
         411
       ],
       "priority": 3,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-28",
       "task": "Reference implementation for dolphin whistle detection, segmentation and the published benchmark.",
-      "review_depth": "Reviewed README and repository root listing only. LICENSE-DATA covers datasets; no separate code license was visible at the reviewed root. No source code downloaded or executed.",
+      "review_depth": "Reviewed README and repository root listing only. A current GitHub API check confirmed main still points to this pinned commit (last commit October 9, 2026). LICENSE-DATA covers datasets; no separate code license was visible at the reviewed root. No source code downloaded or executed.",
       "access": "Public GitHub repository.",
       "decision": "Do not copy or execute code until the authors clarify code reuse terms; a data license does not license the implementation.",
       "limitations": "No code audit or dependency audit performed; published benchmark results have not been independently reproduced.",
@@ -7820,6 +7820,35 @@
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "openwhistle-project-benchmark-page",
+      "kind": "project",
+      "title": "OpenWhistle official project and benchmark page",
+      "url": "https://sumbre-lab.github.io/openwhistle/",
+      "version": "Current author-maintained page checked 2026-10-28; its expanded benchmark tables do not identify an immutable revision",
+      "source_ids": [
+        495
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Current official summary of OpenWhistle data, whistle-type benchmark tables and future research directions; not a versioned dataset or Talk2Nature result.",
+      "review_depth": "Reviewed the Dataset, Benchmark and What Comes Next sections. The page presents a full ten-type macro-F1 table, natural-six and balanced-six metrics, detection mAP, continued-pretraining, data-scale and end-to-end results. The paper's balanced six-class accuracy is a different stated metric; the page does not map every expanded row to an immutable paper/config revision. No page media, data, code or model was acquired or run.",
+      "access": "Public author-maintained project page. It links to the paper, code and Hugging Face collection; no payload files were acquired.",
+      "decision": "Use as a supplemental official project source. Keep its reported metrics distinct from arXiv v1 Table 2 until exact configuration, metric and code mappings are established; do not present them as independently reproduced.",
+      "limitations": "The page's expanded results are not version-pinned on the page. It does not establish unseen-animal generalization or call meaning, and it does not change the separate data, code and model rights gates.",
+      "attribution": "OpenWhistle project team. Official project page, accessed 2026-10-28.",
+      "rights": {
+        "license": "No license for project-page text, image or other media reuse was established in this review.",
+        "scope": "Project-page source record only. The dataset CC BY 4.0 declaration is separately recorded; code and model licenses remain unresolved.",
+        "evidence_url": "https://sumbre-lab.github.io/openwhistle/",
+        "conditions": "Link and summarize facts with attribution. Do not reproduce project-page media or treat page access as permission to use datasets, source code or model weights.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
       },
       "acquisition": "metadata_only",
       "files": []

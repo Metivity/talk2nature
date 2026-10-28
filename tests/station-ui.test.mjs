@@ -14,7 +14,7 @@ import {emptyEventsMessage, nextEventFocusId} from '../web/assets/station-review
 
 function setup() {
   const elements = new Map();
-  const state = {confirm: false, confirmations: 0, capture: null, downloads: [], objectUrls: new Map()};
+  const state = {confirm: false, confirmations: 0, confirmationText: [], playerPlays: 0, playerPauses: 0, documentEvents: {}, windowEvents: {}, capture: null, downloads: [], objectUrls: new Map()};
   let document;
   const canvasContext = {scale() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {}, setLineDash() {}};
 
@@ -22,7 +22,7 @@ function setup() {
     return {
       id, value: id === 'station-capture-mode' ? 'events' : id === 'station-alias' ? 'practice station' : id === 'station-animal-group' ? 'unknown' : id === 'station-margin' ? '12' : '',
       _text: '', get textContent() { return this._text; }, set textContent(value) { this._text = String(value); },
-      hidden: false, open: false, disabled: false, checked: false, readOnly: false,
+      hidden: false, open: false, disabled: false, checked: false, readOnly: false, paused: true, ended: false,
       dataset: {}, children: [], handlers: {}, clientWidth: 320, clientHeight: 80,
       classList: {toggle() {}, add() {}, remove() {}},
       addEventListener(name, handler) { this.handlers[name] = handler; },
@@ -33,8 +33,10 @@ function setup() {
       append(...nodes) { this.children.push(...nodes); },
       replaceChildren(...nodes) { this.children = nodes; },
       setAttribute(name, value) { (this.attributes ??= {})[name] = value; },
-      removeAttribute(name) { delete this.attributes?.[name]; },
-      pause() {}, load() {}, remove() {}, scrollIntoView() {},
+      removeAttribute(name) { delete this.attributes?.[name]; if (name === 'src') delete this.src; },
+      pause() { this.paused = true; state.playerPauses++; this.handlers.pause?.({}); },
+      async play() { this.paused = false; state.playerPlays++; this.handlers.play?.({}); },
+      load() { this.paused = true; this.ended = false; }, remove() {}, scrollIntoView() {},
       focus() { document.activeElement = this; },
       matches(selector) { return selector === '[data-observation]' && Boolean(this.dataset.observation); },
       getContext() { return canvasContext; }
@@ -49,7 +51,7 @@ function setup() {
   document = {
     activeElement: null, hidden: false, body: get('body'), getElementById: get,
     createElement: () => element(),
-    addEventListener() {},
+    addEventListener(name, handler) { state.documentEvents[name] = handler; },
     querySelectorAll(selector) {
       if (selector === '[data-step]') return steps;
       if (selector === '[data-observation]') return observations;
@@ -58,8 +60,8 @@ function setup() {
   };
   const window = {
     devicePixelRatio: 1, AudioContext: function AudioContext() {}, AudioWorkletNode: function AudioWorkletNode() {},
-    confirm() { state.confirmations++; return state.confirm; },
-    addEventListener() {}
+    confirm(message) { state.confirmations++; state.confirmationText.push(message); return state.confirm; },
+    addEventListener(name, handler) { state.windowEvents[name] = handler; }
   };
   class TestURL extends URL {}
   TestURL.createObjectURL = blob => {
@@ -89,7 +91,7 @@ function setup() {
     URL: TestURL, Blob, crypto: webcrypto, performance: {now: () => 1000},
     setTimeout: () => 1, clearTimeout() {}, setInterval: () => 2, clearInterval() {}
   });
-  return {get, observations, state};
+  return {get, observations, state, document, activeElement: () => document.activeElement};
 }
 
 test('companion rehearsal stays microphone-free and discard returns a marked review to Ready', async () => {
@@ -170,6 +172,95 @@ test('a typed note is explicitly added to the timeline before it is included in 
   const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
   assert.equal(reopened.record.markers.length, 1);
   assert.equal(reopened.record.markers[0].note, 'A person walked past.');
+});
+
+test('Finish and review follows note controls and returns focus to the review step', async () => {
+  const h = setup();
+  const markup = fs.readFileSync(new URL('../web/templates/station.html', import.meta.url), 'utf8');
+  assert.ok(markup.indexOf('id="station-note"') < markup.indexOf('id="station-observe"'));
+  assert.ok(markup.indexOf('id="station-observe"') < markup.indexOf('id="station-finish"'));
+  assert.match(markup, /id="station-finish"[^>]*>Finish and review</);
+  assert.equal(h.get('station-finish').disabled, true);
+  await h.get('station-demo').fire('click');
+  assert.equal(h.get('station-finish').disabled, false);
+  h.get('station-finish').focus();
+  await h.get('station-finish').fire('click');
+  assert.equal(h.get('station-console').dataset.phase, 'review');
+  assert.equal(h.state.capture.stopped, 1);
+  assert.equal(h.get('station-finish').disabled, true);
+  assert.equal(h.activeElement(), h.get('station-review'));
+});
+
+test('each manual playback start requires an immediate no-animal-playback confirmation', async () => {
+  const h = setup();
+  const markup = fs.readFileSync(new URL('../web/templates/station.html', import.meta.url), 'utf8');
+  assert.match(markup, /id="station-play-review"[^>]*hidden/);
+  assert.doesNotMatch(markup, /<audio id="station-player" controls/);
+  await h.get('station-demo').fire('click');
+  h.state.capture.frame(new Float32Array(800).fill(0.04));
+  await h.get('station-stop').fire('click');
+  const reviewButton = h.get('station-events').children[0].children[4].children[0];
+
+  await reviewButton.fire('click');
+  assert.equal(h.state.confirmations, 0);
+  assert.equal(h.get('station-player').hidden, true);
+  assert.match(h.get('station-player').src, /^blob:station-test\//);
+  assert.equal(h.get('station-play-review').hidden, false);
+  assert.equal(h.state.playerPlays, 0);
+
+  await h.get('station-play-review').fire('click');
+  assert.equal(h.state.confirmations, 1);
+  assert.match(h.state.confirmationText[0], /Right before playback/);
+  assert.match(h.state.confirmationText[0], /animal cannot hear this recording/);
+  assert.match(h.state.confirmationText[0], /use headphones or move away/);
+  assert.equal(h.state.playerPlays, 0);
+  assert.match(h.get('station-status').textContent, /recording was not played/);
+
+  h.state.confirm = true;
+  await h.get('station-play-review').fire('click');
+  assert.equal(h.state.confirmations, 2);
+  assert.equal(h.state.playerPlays, 1);
+  assert.equal(h.get('station-player').hidden, true);
+  assert.equal(h.get('station-play-review').textContent, 'Pause review audio');
+  assert.equal(h.state.objectUrls.size, 1);
+  assert.match(h.get('station-status').textContent, /Playing for human review/);
+
+  const pausesBeforeReviewer = h.state.playerPauses;
+  await h.get('station-play-review').fire('click');
+  assert.equal(h.state.playerPauses, pausesBeforeReviewer + 1);
+  assert.equal(h.get('station-play-review').textContent, 'Play for human review');
+  assert.match(h.get('station-status').textContent, /playback paused/);
+});
+
+test('Station clears review audio when hidden or leaving the page', async () => {
+  const h = setup();
+  await h.get('station-demo').fire('click');
+  h.state.capture.frame(new Float32Array(800).fill(0.04));
+  await h.get('station-stop').fire('click');
+  const loadButton = h.get('station-events').children[0].children[4].children[0];
+  await loadButton.fire('click');
+  h.state.confirm = true;
+  await h.get('station-play-review').fire('click');
+  assert.equal(h.state.playerPlays, 1);
+  assert.equal(h.state.objectUrls.size, 1);
+
+  h.document.hidden = true;
+  h.state.documentEvents.visibilitychange();
+  assert.equal(h.get('station-player').paused, true);
+  assert.equal(h.get('station-player').src, undefined);
+  assert.equal(h.get('station-play-review').hidden, true);
+  assert.equal(h.state.objectUrls.size, 0);
+  assert.match(h.get('station-status').textContent, /cleared when Station left the foreground/);
+
+  h.document.hidden = false;
+  await loadButton.fire('click');
+  await h.get('station-play-review').fire('click');
+  assert.equal(h.state.playerPlays, 2);
+  h.state.windowEvents.pagehide();
+  assert.equal(h.get('station-player').paused, true);
+  assert.equal(h.get('station-player').src, undefined);
+  assert.equal(h.get('station-play-review').hidden, true);
+  assert.equal(h.state.objectUrls.size, 0);
 });
 
 test('an unmarked draft stays out of the saved moment and is named as a draft after Stop', async () => {

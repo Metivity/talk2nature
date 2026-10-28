@@ -9,6 +9,7 @@ import * as notebook from '../web/assets/notebook.mjs';
 import * as audacity from '../web/assets/audacity-export.mjs';
 import * as aoef from '../web/assets/aoef-export.mjs';
 import * as sessionImport from '../web/assets/session-import.mjs';
+import * as reviewAudio from '../web/assets/review-audio.mjs';
 import {WindowSession} from '../web/assets/window-model.mjs';
 import {sessionFiles,zipFiles} from '../web/assets/station-export.mjs';
 if (!globalThis.crypto) globalThis.crypto=webcrypto;
@@ -16,27 +17,27 @@ if (!globalThis.crypto) globalThis.crypto=webcrypto;
 // Execute the real event handlers with a small DOM facade. This checks whether
 // user drafts are lost or omitted, separately from annotation-format tests.
 function setup(overrides={}) {
-  const elements=new Map(), windowEvents={}, downloads=[], files=[], objectUrls=new Map();
+  const elements=new Map(), windowEvents={}, documentEvents={}, downloads=[], files=[], objectUrls=new Map();
   const defaults={'event-start':'0','event-end':'1','event-kind':'uncertain','event-context':'unknown','event-source':'not observed','event-confidence':'uncertain','event-notes':''};
-  const harness={confirm:false,confirmations:0,focus:null};
+  const harness={confirm:false,confirmations:0,focus:null,playerPlays:0,playerPauses:0};
   function element(id='') {
     return {id,value:defaults[id]??'',textContent:'',hidden:false,open:false,disabled:false,paused:true,handlers:{},children:[],clientWidth:600,
       addEventListener(name,fn){this.handlers[name]=fn;},
       async fire(name,event={}){return await this.handlers[name]?.(event);},
       append(...nodes){this.children.push(...nodes);},replaceChildren(...nodes){this.children=nodes;},
-      setAttribute(){},removeAttribute(){},pause(){this.paused=true;},play(){this.paused=false;},load(){},remove(){},
+      setAttribute(){},removeAttribute(name){if(name==='src')delete this.src;},pause(){this.paused=true;this.handlers.pause?.();harness.playerPauses++;},async play(){this.paused=false;this.ended=false;this.handlers.play?.();harness.playerPlays++;},load(){},remove(){},
       focus(){harness.focus=id;},click(){if(this.download){downloads.push(this.download);files.push({name:this.download,blob:objectUrls.get(this.href)});}},
       reset(){for(const [id,value] of Object.entries(defaults)) get(id).value=value;},
       getContext(){return {scale(){},fillRect(){},beginPath(){},moveTo(){},lineTo(){},stroke(){}};}
     };
   }
   const get=id=>{if(!elements.has(id))elements.set(id,element(id));return elements.get(id);};
-  const document={getElementById:get,createElement:()=>element(),body:element()};
+  const document={hidden:false,getElementById:get,createElement:()=>element(),body:element(),addEventListener(name,fn){documentEvents[name]=fn;}};
   const window={devicePixelRatio:1,confirm(){harness.confirmations++;return harness.confirm;},addEventListener(name,fn){windowEvents[name]=fn;}};
   const source=fs.readFileSync(new URL('../web/assets/listen.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
   const urlApi={createObjectURL(blob){const key=`blob:synthetic-${objectUrls.size+1}`;objectUrls.set(key,blob);return key;},revokeObjectURL(){}};
-  vm.runInNewContext(source,{...model,...notebook,...audacity,...aoef,...sessionImport,...overrides,animalPicker,document,window,crypto:webcrypto,Blob,structuredClone,URL:urlApi,setTimeout(){}});
-  return {...harness,get,downloads,files,windowEvents,state:harness,async type(id,value){get(id).value=value;await get('event-form').fire('input');}};
+  vm.runInNewContext(source,{...model,...notebook,...audacity,...aoef,...sessionImport,...reviewAudio,...overrides,animalPicker,document,window,crypto:webcrypto,Blob,structuredClone,URL:urlApi,setTimeout(){}});
+  return {...harness,get,downloads,files,windowEvents,documentEvents,document,state:harness,async type(id,value){get(id).value=value;await get('event-form').fire('input');}};
 }
 
 async function savedSessionZip() {
@@ -46,6 +47,30 @@ async function savedSessionZip() {
   const sourceFiles=await sessionFiles(session,'review rehearsal',{}), record=JSON.parse(new TextDecoder().decode(sourceFiles[0].bytes));
   return {record,archive:await zipFiles(sourceFiles).arrayBuffer()};
 }
+
+test('Sound desk pauses manual review audio when hidden or leaving the page', async () => {
+  const h = setup();
+  await h.get('example').fire('click');
+  const audio = h.get('recording-audio');
+  audio.paused = false;
+  h.document.hidden = true;
+  h.documentEvents.visibilitychange();
+  assert.equal(audio.paused, true);
+  audio.paused = false;
+  h.windowEvents.pagehide();
+  assert.equal(audio.paused, true);
+});
+
+test('Sound desk playback requires confirmation immediately before every start and remains seekable',async()=>{
+  const h=setup();const markup=fs.readFileSync(new URL('../web/templates/listen.html',import.meta.url),'utf8');
+  assert.match(markup,/id="recording-audio"[^>]*hidden/);assert.doesNotMatch(markup,/<audio id="recording-audio" controls/);
+  await h.get('example').fire('click');const audio=h.get('recording-audio'),play=h.get('listen-playback-toggle'),seek=h.get('listen-playback-seek');
+  await play.fire('click');assert.equal(h.state.confirmations,1);assert.equal(h.state.playerPlays,0);assert.match(h.get('listen-playback-status').textContent,/not played/);
+  h.state.confirm=true;await play.fire('click');assert.equal(h.state.confirmations,2);assert.equal(h.state.playerPlays,1);assert.equal(play.textContent,'Pause review');
+  seek.value='1.25';await seek.fire('input');assert.equal(audio.currentTime,1.25);assert.equal(h.state.playerPlays,1);
+  const prompts=h.state.confirmations;await play.fire('click');assert.equal(h.state.confirmations,prompts);assert.equal(audio.paused,true);assert.equal(play.textContent,'Play for human review');
+  audio.paused=false;h.document.hidden=true;h.documentEvents.visibilitychange();assert.equal(audio.paused,true);
+});
 
 test('replacing or clearing a recording protects an unfinished observation',async()=>{
   const h=setup();await h.get('example').fire('click');

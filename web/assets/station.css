@@ -54,3 +54,6 @@
 .app-body .station-practice button{background:#e4ebce0a;border-color:#c2dac347;color:#ecf0de}
 .station-console:not([data-phase=setup]) .station-practice{display:none}
 @media(max-width:620px){.station-practice{grid-template-columns:1fr;gap:8px;padding:13px}.station-practice button{width:100%;white-space:normal}}
+
+.station-console button.station-finish{display:block;width:100%;min-height:48px;margin-top:12px;background:#d8e8aa;border-color:#d8e8aa;color:#123327;font-weight:700}
+.station-console:is([data-phase=setup],[data-phase=starting],[data-phase=review]) #station-finish{display:none}
