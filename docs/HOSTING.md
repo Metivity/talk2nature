@@ -1,6 +1,6 @@
 # Private hosting release plan
 
-October 1, 2026. Talk2Nature only; Metivity/talk2nature; raviv@metivity.com. Raviv approved this proposal and a total budget of up to US$50/month on October 1. Provisioning is in progress; this is not yet a hosted service. The public website and demo remain on GitHub Pages.
+October 1, 2026. Talk2Nature only; Metivity/talk2nature; raviv@metivity.com. Raviv approved this proposal and a total budget of up to US$50/month on October 1. This document remains a proposal and local implementation record: provider provisioning has not begun, and no hosted private service has been verified. The public website and demo remain on GitHub Pages.
 
 ## Proposed first deployment
 
@@ -14,7 +14,7 @@ October 1, 2026. Talk2Nature only; Metivity/talk2nature; raviv@metivity.com. Rav
 | Identity | Basic Google identity; exact owner email and verified stable subject; no domain-wide authorization |
 | Origin | Actual provider HTTPS origin, verified before OAuth registration; no purchased domain |
 | Secrets | Database URL and pinned subject held privately; per-secret access for a dedicated service account; no broad Editor grant |
-| Initial data | Reimport the current 131 public catalog records; synthetic metadata only. Do not upload the local SQLite database, old sessions or external samples |
+| Initial data | Import the current public source, evidence-note and resource metadata through `admin.catalog`; synthetic metadata only. Do not upload the local SQLite database, old sessions or external samples |
 
 The proposed locations are listed by [Google](https://docs.cloud.google.com/run/docs/locations) and [Supabase](https://supabase.com/docs/guides/platform/regions). Raviv’s confirmation covers these proposed locations; region selection is not a compliance determination.
 
@@ -41,7 +41,7 @@ python3 web/build.py
 python3 scripts/check_site.py
 ```
 
-The PostgreSQL runner requires existing `initdb` and `pg_ctl`. It creates a password-protected loopback-only disposable cluster and a separate restricted runtime role, runs both adapters' tests, then stops its server and removes generated files. It never uses an existing database or cloud credentials. October 1 latest local check: 76 backend tests passed, including 36 PostgreSQL cases with no skips; 23 website/research tests passed. Local PostgreSQL was 14.18; the managed provider version still needs a deployment test.
+The PostgreSQL runner requires existing `initdb` and `pg_ctl`. It creates a password-protected loopback-only disposable cluster and a separate restricted runtime role, runs both adapters' tests, then stops its server and removes generated files. It never uses an existing database or cloud credentials. On October 28, 2026, a fresh Python 3.12.5 environment installed from the updated `admin/requirements.lock` passed all 104 backend tests with local PostgreSQL 14.18; this includes SQLite and PostgreSQL paths. The lock now installs Starlette's `httpx2` TestClient backend, which is preferred by the [Starlette 1.7.0 source](https://github.com/Kludex/starlette/blob/1.7.0/starlette/testclient.py) and documented in its [TestClient guide](https://www.starlette.io/testclient/), without the deprecated `httpx` fallback warning. `httpx2==2.16.0` is pinned in both requirements files. This is a maintainer-run local test, not a managed-provider test; cloud hosting, provider TLS, and managed recovery remain unverified.
 
 ## Database initialization after approval
 
