@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 async function worker({failInstall=false}={}) {
   const scope='/talk2nature/app/', origin='https://fixture.test';
-const paths=[scope,scope+'station/',scope+'review/',scope+'compare/',scope+'practice/',scope+'check/','/talk2nature/assets/app.js?v=fixture','/talk2nature/assets/app-update.mjs?v=fixture','/talk2nature/assets/app-nav-visibility.mjs?v=fixture','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture','/talk2nature/assets/practice.js?v=fixture','/talk2nature/assets/practice-model.mjs?v=fixture','/talk2nature/assets/device-check.css?v=fixture','/talk2nature/assets/device-check.js?v=fixture','/talk2nature/assets/device-check-model.mjs?v=fixture','/talk2nature/assets/station-audio.mjs?v=fixture','/talk2nature/assets/station-capture.mjs?v=fixture','/talk2nature/assets/station-model.mjs?v=fixture'];
+const paths=[scope,scope+'station/',scope+'review/',scope+'compare/',scope+'practice/',scope+'check/','/talk2nature/assets/app.js?v=fixture','/talk2nature/assets/app-update.mjs?v=fixture','/talk2nature/assets/app-nav-visibility.mjs?v=fixture','/talk2nature/assets/station.js?v=fixture','/talk2nature/assets/station-review-ui.mjs?v=fixture','/talk2nature/assets/practice.js?v=fixture','/talk2nature/assets/practice-model.mjs?v=fixture','/talk2nature/assets/device-check.css?v=fixture','/talk2nature/assets/device-check.js?v=fixture','/talk2nature/assets/device-check-model.mjs?v=fixture','/talk2nature/assets/station-audio.mjs?v=fixture','/talk2nature/assets/station-capture.mjs?v=fixture','/talk2nature/assets/station-model.mjs?v=fixture','/talk2nature/assets/review-audio.css?v=fixture','/talk2nature/assets/review-audio.mjs?v=fixture'];
   const handlers={}, stores=new Map(), fetches=[], adds=[];
   const old='talk2nature-shell:'+scope+':old', unrelated='another-project-cache';
   stores.set(old,new Map()); stores.set(unrelated,new Map());
@@ -69,6 +69,7 @@ test('only the exact release asset query is served from the public offline cache
 });
 
 test('comparison page is part of the exact public offline shell',async()=>{const w=await worker();await w.dispatch('install');const r=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'compare/')});assert.match(await r.text(),/^cached/);assert.equal(w.fetches.length,0);});
+test('shared human-review controls are cached for the offline Listen and Compare pages',async()=>{const w=await worker();await w.dispatch('install');for(const name of ['review-audio.css','review-audio.mjs'])assert.ok(w.adds.some(request=>request.url.includes('/assets/'+name+'?v=fixture')));assert.equal(w.fetches.length,0);});
 
 test('observation practice page and its modules are part of the exact public offline shell',async()=>{const w=await worker();await w.dispatch('install');const r=await w.dispatch('fetch',{request:new Request(w.origin+w.scope+'practice/')});assert.match(await r.text(),/^cached/);assert.ok(w.adds.some(request=>request.url.includes('/assets/practice.js?v=fixture')));assert.ok(w.adds.some(request=>request.url.includes('/assets/practice-model.mjs?v=fixture')));assert.equal(w.fetches.length,0);});
 

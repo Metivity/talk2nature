@@ -20,8 +20,14 @@
       <details class="sound-details"><summary>Sound details & level check</summary><p id="audio-summary" class="quiet"></p><p id="quality-note" class="listen-notice"></p></details>
       <div class="wave-wrap"><canvas id="waveform" height="180" aria-label="Waveform. Drag to choose an interval, or use the start and end fields below."></canvas><div class="wave-scale"><span>0 s</span><span id="wave-end"></span></div></div>
       <p class="quiet">Drag across the waveform to mark an interval. On any device, you can also enter exact start and end times below.</p>
-      <audio id="recording-audio" controls preload="none" aria-label="Listen to this recording"></audio>
-      <p class="quiet">Playback is only for your own review. Use headphones away from animals; do not broadcast recordings to them.</p>
+      <div class="review-audio-controls" aria-label="Manual sound review">
+        <button id="listen-playback-toggle" class="listen-secondary" type="button">Play for human review</button>
+        <label for="listen-playback-seek">Position in recording</label><input id="listen-playback-seek" type="range" min="0" max="0" step="0.01" value="0">
+        <span id="listen-playback-time">0:00 / 0:00</span>
+        <p id="listen-playback-status" role="status" aria-live="polite"></p>
+      </div>
+      <audio id="recording-audio" preload="none" aria-hidden="true" hidden></audio>
+      <p class="quiet">Playback is only for your own review. Confirm just before each play or replay; use headphones away from animals. Do not broadcast recordings to them.</p>
       <details id="recording-identifiers"><summary>Advanced · identity & recording details</summary><p class="quiet">Use aliases, not personal names or sensitive locations. These fields are included in exported labels. The original filename is omitted.</p><div class="listen-grid">
         <label>Recording alias<input id="recording-id" maxlength="80" value="recording-001"></label>
         <label>Session alias<input id="session-id" maxlength="80" value="unknown"></label>

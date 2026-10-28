@@ -2,6 +2,8 @@
 import argparse
 import html
 import json
+import re
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
 from xml.sax.saxutils import escape as xml_escape
@@ -175,7 +177,7 @@ def build(output, base_url='', public=False, repo_url=''):
 
     listen_body = (ROOT / 'web/templates/listen.html').read_text().replace('{{base}}', prefix)
     listen_body = listen_body.replace('{{listen_animal_context}}', (ROOT/'web/templates/animal-context.html').read_text().replace('{{animal_prefix}}', 'listen'))
-    page('tools/listen/', 'Listen: local audio annotation workbench', 'Listen reviews WAV files and annotations locally on your device, without uploads or animal-meaning labels.', listen_body, active='tools/', extra_head=f'<link rel="stylesheet" href="{url("assets/listen.css")}"><script type="module" src="{url("assets/listen.js")}"></script>')
+    page('tools/listen/', 'Listen: local audio annotation workbench', 'Listen reviews WAV files and annotations locally on your device, without uploads or animal-meaning labels.', listen_body, active='tools/', extra_head=f'<link rel="stylesheet" href="{url("assets/listen.css")}"><link rel="stylesheet" href="{url("assets/review-audio.css")}"><script type="module" src="{url("assets/listen.js")}"></script>')
     interop_body = (ROOT / 'web/templates/interop-lab.html').read_text().replace('{{base}}', prefix)
     page('tools/interop/', 'Sound handoff lab: test an Audacity export', 'Reproduce a small, synthetic audio export and test its labels in Audacity. A format check only; no animal or biological claim.', interop_body, active='tools/', extra_head=f'<link rel="stylesheet" href="{url("assets/interop.css")}">')
     build_mobile(ROOT, output, prefix, page, station_body, listen_body, asset_revision)
@@ -250,27 +252,40 @@ def build(output, base_url='', public=False, repo_url=''):
     milestones = [('Now','Establish the foundation','A research library, local Listen annotation tool, quality reports and tested metadata tools. Public software and synthetic examples provide the starting point for independent review.'),('Next','Choose one question','Recruit a scientific collaborator, review the highest-value papers and compare existing workflows. Confirm species, data rights and an observable outcome.'),('Pilot','Collect and learn','Start with a small passive observation study. Review labels, compare simple baselines and test generalization on independent recordings.'),('Then','Share what holds up','Publish the protocol, evaluation and limitations. Seek a funded continuation if the evidence and user need support it.')]
     page('roadmap/', 'Roadmap and open research questions', 'The Talk2Nature plan: a research library, a focused bird-communication pilot, reproducible evaluation and a path to funded open work.', f'''
 <section class="page-intro section"><p class="eyebrow">THE ROADMAP</p><h1>A long view.<br><em>A concrete beginning.</em></h1><p class="lede">We’re at the foundation stage. No scientific partnership, funded grant, real dataset or trained Talk2Nature model is being claimed.</p></section><section class="section timeline">{''.join(f'<article><span class="pill">{phase}</span><div><h2>{title}</h2><p>{text}</p></div></article>' for phase,title,text in milestones)}</section><section class="section paper-panel"><h2>Questions still open</h2><ul class="readable-list"><li>Which species and observation setting give us reliable access and a meaningful scientific question?</li><li>Can existing tools already solve the workflow problem? Would contributing upstream help more?</li><li>How can parrot-app experience inform a passive, testable workflow without importing unreviewed code or treating sound guesses as meanings?</li><li>What value would a research group fund: annotation support, a managed pilot or a hosted workspace?</li></ul><p>Plants and fungi stay in the library. Our first experiment will have a narrower scope.</p></section>''', active='roadmap/')
+    def date_label(value):
+        try:
+            parsed = date.fromisoformat(value)
+        except (TypeError, ValueError):
+            return esc(value)
+        readable = parsed.strftime('%B %d, %Y').replace(' 0', ' ')
+        return f'<time datetime="{parsed.isoformat()}">{esc(readable)}</time>'
+
+    def opportunity_status(value):
+        parts = re.split(r'(\d{4}-\d{2}-\d{2})', str(value))
+        return ''.join(date_label(part) if re.fullmatch(r'\d{4}-\d{2}-\d{2}', part) else esc(part) for part in parts)
+
     def opportunity_deadline(item):
+
         if not item['deadline']:
             if item.get('opening_date'):
-                label = 'Expected opening ' + esc(item['opening_date'])
+                label = 'Expected opening ' + date_label(item['opening_date'])
                 opening_source = source_map.get(item.get('opening_source_id'))
                 if opening_source:
                     label += f' · <a href="{esc(opening_source["url"])}">official opening notice</a>'
                 return label
             return 'No fixed open deadline verified'
-        label = 'Deadline ' + esc(item['deadline'])
+        label = 'Deadline ' + date_label(item['deadline'])
         if item.get('deadline_time'):
             label += ' · ' + esc(item['deadline_time'])
             deadline_source = source_map.get(item.get('deadline_source_id'))
             if deadline_source:
                 label += f' · <a href="{esc(deadline_source["url"])}">official date details</a>'
         if item.get('national_deadline'):
-            label += ' · Israel national deadline ' + esc(item['national_deadline'])
+            label += ' · Israel national deadline ' + date_label(item['national_deadline'])
             if item.get('national_deadline_time'):
                 label += ' · ' + esc(item['national_deadline_time'])
         if item.get('institution_deadline'):
-            label += ' · ' + esc(item.get('institution_deadline_label', 'Institution-specific deadline')) + ' ' + esc(item['institution_deadline'])
+            label += ' · ' + esc(item.get('institution_deadline_label', 'Institution-specific deadline')) + ' ' + date_label(item['institution_deadline'])
         return label
 
     def opportunity_sources(item):
@@ -299,7 +314,7 @@ def build(output, base_url='', public=False, repo_url=''):
             if source:
                 links.append(f'<a class="text-link" href="{esc(source["url"])}">{label}</a>')
         return ' · '.join(links)
-    opp_cards = ''.join(f'''<article class="opportunity"><div><span class="pill">{esc(o['status'])}</span><h2>{esc(o['name'])}</h2><p class="quiet">{esc(o['type'])} · {opportunity_deadline(o)}</p></div><div><p><strong>{esc(o['amount'])}</strong></p><p>{esc(o['fit'])}</p><p>{esc(o['next_action'])}</p>{opportunity_sources(o)}<p class="fine">Checked {esc(o['verified'])} · {esc(o['application_status'])}</p></div></article>''' for o in opportunities)
+    opp_cards = ''.join(f'''<article class="opportunity"><div><span class="pill">{opportunity_status(o['status'])}</span><h2>{esc(o['name'])}</h2><p class="quiet">{esc(o['type'])} · {opportunity_deadline(o)}</p></div><div><p><strong>{esc(o['amount'])}</strong></p><p>{esc(o['fit'])}</p><p>{esc(o['next_action'])}</p>{opportunity_sources(o)}<p class="fine">Checked {esc(o['verified'])} · {esc(o['application_status'])}</p></div></article>''' for o in opportunities)
     page('opportunities/', 'Funding and prizes for Talk2Nature research', 'A dated register of grants, prizes and other support relevant to Talk2Nature’s careful animal communication and biodiversity research, with eligibility checks.', f'''
 <section class="page-intro section"><p class="eyebrow">FUNDING THE WORK</p><h1>Ambition needs<br><em>room to grow.</em></h1><p class="lede">A practical register of opportunities that could support careful research. Availability and eligibility are different questions.</p><aside class="review-box"><strong>Program checks are dated below</strong><p>Program terms can change. Follow the official source before applying. Application status is recorded per opportunity; no funding is secured. Credits are not cash.</p></aside></section><section class="section opportunity-list">{opp_cards}</section>''', active='opportunities/')
     repo_action = f'<a class="button" href="{esc(repo_url)}/issues">Open an issue ↗</a>' if repo_url else '<p class="quiet">The public repository and contribution channel are being prepared. This preview does not collect personal details.</p>'

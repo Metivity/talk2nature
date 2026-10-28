@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
 import {WindowSession} from '../web/assets/window-model.mjs';
 import {StationSession} from '../web/assets/station-model.mjs';
 import {sessionFiles,zipFiles} from '../web/assets/station-export.mjs';
@@ -76,27 +77,32 @@ test('failed replacement preserves the open session; stale and cancelled loads c
 
 test('real file-change UI keeps a valid session after a bad replacement and renders notes as text',async()=>{
   class Element {
-    constructor(tag='div'){this.tag=tag;this.children=[];this.listeners={};this.textContent='';this.hidden=false;this.files=[];this.value='';this.paused=true;}
+    constructor(tag='div'){this.tag=tag;this.children=[];this.listeners={};this.textContent='';this.hidden=false;this.files=[];this.value='';this.paused=true;this.ended=false;this.currentTime=0;this.duration=NaN;this.plays=0;this.pauses=0;}
     append(...nodes){this.children.push(...nodes);} replaceChildren(...nodes){this.children=nodes;this.textContent='';}
-    addEventListener(name,fn){this.listeners[name]=fn;} removeAttribute(name){delete this[name];}
-    pause(){this.paused=true;} load(){} focus(){} scrollIntoView(){}
+    addEventListener(name,fn){this.listeners[name]=fn;} setAttribute(name,value){this[name]=value;} removeAttribute(name){delete this[name];}
+    pause(){this.paused=true;this.pauses++;this.listeners.pause?.();} async play(){this.paused=false;this.ended=false;this.plays++;this.listeners.play?.();} load(){} focus(){} scrollIntoView(){}
   }
-  const elements=new Map(),get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
+  const elements=new Map(),documentEvents={},state={confirm:false,confirmations:[]},get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
   const text=e=>[e.textContent,...e.children.map(text)].join(' ');
-  globalThis.document={getElementById:get,createElement:tag=>new Element(tag),addEventListener(){}};
-  const lifecycle={};globalThis.window={addEventListener:(name,fn)=>lifecycle[name]=fn};
+  globalThis.document={hidden:false,getElementById:get,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>documentEvents[name]=fn};
+  const lifecycle={};globalThis.window={confirm(message){state.confirmations.push(message);return state.confirm;},addEventListener:(name,fn)=>lifecycle[name]=fn};
   try{
     await import('../web/assets/compare.js?test-ui');
     const files=await fixture(),blob=zipFiles(files),buffer=await blob.arrayBuffer();
     get('file-a').files=[{size:blob.size,arrayBuffer:async()=>buffer}];get('file-a').listeners.change();
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
     assert.match(get('status-a').textContent,/Opened locally/);assert.match(text(get('content-a')),/<img src=x onerror=alert\(1\)>/);assert.equal(get('title-a').textContent,'Saved moment');
+    const markup=await readFile(new URL('../web/templates/compare.html',import.meta.url),'utf8');assert.match(markup,/id="compare-player"[^>]*hidden/);assert.doesNotMatch(markup,/<audio id="compare-player" controls/);
     const button=get('content-a').children.find(e=>e.tag==='ol').children[0].children.find(e=>e.tag==='button');button.listeners.click();assert.equal(get('compare-player').paused,true);assert.ok(get('compare-player').src.startsWith('blob:'));
+    await get('compare-playback-toggle').listeners.click();assert.equal(state.confirmations.length,1);assert.equal(get('compare-player').plays,0);assert.match(get('compare-playback-status').textContent,/not played/);
+    state.confirm=true;await get('compare-playback-toggle').listeners.click();assert.equal(get('compare-player').plays,1);assert.equal(get('compare-playback-toggle').textContent,'Pause review');
+    document.hidden=true;documentEvents.visibilitychange();assert.equal(get('compare-player').paused,true);assert.match(get('compare-playback-status').textContent,/left the foreground/);
+    await get('compare-playback-toggle').listeners.click();assert.equal(state.confirmations.length,3);assert.equal(get('compare-player').plays,2);
     get('file-a').files=[{size:7,arrayBuffer:async()=>new ArrayBuffer(7)}];get('file-a').listeners.change();
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
     assert.match(get('status-a').textContent,/previous session is still open/);assert.equal(get('title-a').textContent,'Saved moment');assert.match(text(get('content-a')),/<img/);
     get('clear-a').listeners.click();assert.equal(get('compare-player').src,undefined);assert.equal(get('compare-player-panel').hidden,true);assert.equal(get('compare-results').hidden,true);
     await get('compare-example').listeners.click();assert.match(text(get('summary-a')),/complete/);assert.match(text(get('summary-b')),/partial/);assert.equal(get('compare-results').hidden,false);
-    lifecycle.pagehide();assert.equal(get('compare-results').hidden,true);assert.equal(get('details-a').hidden,true);assert.equal(get('details-b').hidden,true);
+    lifecycle.pagehide();assert.equal(get('compare-results').hidden,true);assert.equal(get('details-a').hidden,true);assert.equal(get('details-b').hidden,true);assert.equal(get('compare-player').src,undefined);
   }finally{delete globalThis.document;delete globalThis.window;}
 });

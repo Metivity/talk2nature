@@ -302,5 +302,37 @@
     "next_action": "Do not apply to the closed 2026 call. The official funding index listed this as closed on October 26 and showed no later call. Treat it only as a future readiness signal: build demonstrated use in life-sciences research, identify a specific technical bottleneck beyond generic hosting or a new animal-language model, align work with the project roadmap, and confirm a core-maintainer-backed proposal. The RFA permits foreign organizations but makes no grants to individuals; an independently operated project needs an eligible organization or fiscal sponsor. Recheck all terms if a new call opens. No application draft or submission was started.",
     "verified": "2026-10-26",
     "application_status": "2026 call closed; future call unannounced; not applied"
+  },
+  {
+    "slug": "mozilla-fellowship-2027",
+    "name": "Mozilla Foundation · 2027–2028 Fellowships",
+    "type": "Technology fellowship · individual",
+    "deadline": "2026-12-17",
+    "deadline_time": "11:59 PM PST (UTC−8)",
+    "deadline_source_id": 490,
+    "terms_source_id": 490,
+    "status": "Open · conditional thematic fit",
+    "amount": "Independent Fellow: $100,000 stipend plus $25,000 project budget over 12 months. Ten Fellowships are planned across the 2027–2028 cohort.",
+    "source_id": 489,
+    "fit": "The RFP explicitly includes community-run environmental sensing for biodiversity and open public infrastructure. Talk2Nature’s current local, passive observation tools make this a plausible thematic lead, but AI work remains exploratory and no independent users, community participation or research partners are documented. A truthful route would focus on community-controlled biodiversity observation and open tools, with no animal-language or model-performance claim.",
+    "next_action": "Founder decision required: decide whether to apply as an individual; identify the intended community and evidence of its need; define one feasible 12-month technical outcome; and personally verify charitable purpose, legal ability to receive USD funds, location/payment eligibility and availability from June 2027. The RFP limits AI to supportive brainstorming, clarity and translation; any Letter of Intent must reflect the applicant’s own work and voice. No application was submitted.",
+    "verified": "2026-10-28",
+    "application_status": "Not submitted · applicant decision and personal eligibility remain unverified"
+  },
+  {
+    "slug": "mozilla-human-scale-ai-incubator-2026",
+    "name": "Mozilla Foundation · Human-Scale AI Incubator (2026)",
+    "type": "AI incubator · team/project funding",
+    "deadline": "2026-11-20",
+    "deadline_time": "11:59 PM PST (UTC−8)",
+    "deadline_source_id": 492,
+    "terms_source_id": 492,
+    "status": "Open · not recommended on current evidence",
+    "amount": "Seven projects; $300,000 for the first 12 months, with up to $200,000 in follow-on support; maximum $500,000 over three years.",
+    "source_id": 492,
+    "fit": "The theme overlaps with local, privacy-preserving biodiversity tools. The call requires AI to be core, working technology already used by its intended community, and early product-community-fit evidence. Talk2Nature has no validated animal-audio model and no independent adoption or contributor evidence in its records, so current readiness is weak despite the thematic overlap.",
+    "next_action": "Do not pursue this cycle unless the project can verify, before November 20, a core AI product already used by its intended community, credible early product-community-fit evidence, and an eligible funding structure. Do not pitch a general animal-language model. No application was prepared or submitted.",
+    "verified": "2026-10-28",
+    "application_status": "Not submitted · current readiness mismatch documented"
   }
 ]

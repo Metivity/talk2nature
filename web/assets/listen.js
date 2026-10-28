@@ -4,8 +4,10 @@ import {MAX_NOTEBOOK_BYTES, makeNotebook, readNotebook} from './notebook.mjs';
 import {audacityPackage} from './audacity-export.mjs';
 import {aoefPackage} from './aoef-export.mjs';
 import {MAX_BUNDLE_BYTES, openSessionBundle, sessionSummary} from './session-import.mjs';
+import {createReviewAudioControls} from './review-audio.mjs';
 
 const $ = id => document.getElementById(id);
+const reviewAudio = createReviewAudioControls({audio:$('recording-audio'),button:$('listen-playback-toggle'),seek:$('listen-playback-seek'),time:$('listen-playback-time'),status:$('listen-playback-status'),confirm:message=>window.confirm(message)});
 let audioBytes = null, recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0, sessionBundle = null, sessionImportRevision = 0;
 const animal = animalPicker(document, 'listen', () => { if (recording) dirty = true; });
 const ids = ['recording-id', 'session-id', 'individual-id', 'annotator-id'];
@@ -33,6 +35,7 @@ function releaseAudio() {
   $('recording-audio').pause(); $('recording-audio').removeAttribute('src'); $('recording-audio').load();
   if (mediaUrl) URL.revokeObjectURL(mediaUrl);
   mediaUrl = null;
+  reviewAudio.reset();
 }
 function resetEditor() {
   editing = null; draftDirty = false; $('export-status').textContent = ''; $('draft-status').textContent = ''; $('event-form').reset(); $('edit-heading').textContent = 'Mark a sound event.';
@@ -127,6 +130,7 @@ async function openRecording(bufferPromise, origin, stationSource = null) {
     $('quality-note').textContent = info.peak === 0 ? 'Digital silence: every sample is zero.' : `${(info.near_full_scale_fraction * 100).toFixed(3)}% of samples are near full scale (≥ 0.999). This is a basic level check; it does not establish recording quality or detect an animal.`;
     $('wave-end').textContent = `${info.duration.toFixed(3)} s`; $('hash-label').textContent = `SHA-256 · ${hash}`;
     $('event-start').max = info.duration; $('event-end').max = info.duration;
+    reviewAudio.reset(info.duration);
     mediaUrl = URL.createObjectURL(new Blob([buffer], {type: 'audio/wav'})); $('recording-audio').src = mediaUrl;
     if (restored) { events = restored.events.map(e => Object.fromEntries(['id','start_seconds','end_seconds','kind','context','context_source','confidence','notes'].map(k => [k,e[k]]))); ['recording_id','session_id','individual_id','annotator_id'].forEach((key,i) => { $(ids[i]).value = restored.recording[key]; }); }
     $('listen-loaded').hidden = false; $('export-status').textContent = ''; resetEditor(); renderEvents(); $('recording-title').focus();
@@ -252,4 +256,6 @@ $('waveform').addEventListener('pointermove', event => {
 });
 for (const name of ['pointerup', 'pointercancel']) $('waveform').addEventListener(name, () => { dragStart = null; });
 window.addEventListener('resize', draw);
+document.addEventListener('visibilitychange', () => { if (document.hidden) reviewAudio.pause('Playback paused because Listen left the foreground.'); });
+window.addEventListener('pagehide', () => reviewAudio.pause('Playback paused because Listen closed.'));
 window.addEventListener('beforeunload', event => { if (dirty || draftDirty) { event.preventDefault(); event.returnValue = ''; } });

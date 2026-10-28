@@ -4,15 +4,17 @@ import {SOUNDSCAPE_CONTEXT_CATEGORIES} from './station-model.mjs';
 import {WindowSession} from './window-model.mjs';
 import {sessionFiles,zipFiles} from './station-export.mjs';
 import {sessionLabel} from './session-label.mjs';
+import {createReviewAudioControls} from './review-audio.mjs';
 
 const $=id=>document.getElementById(id), slots={a:new SessionSlot(),b:new SessionSlot()};
+const reviewAudio=createReviewAudioControls({audio:$('compare-player'),button:$('compare-playback-toggle'),seek:$('compare-playback-seek'),time:$('compare-playback-time'),status:$('compare-playback-status'),confirm:message=>window.confirm(message)});
 const seconds=n=>`${n.toFixed(1)} s`;
 const animal=r=>r.animal_context ? `${new Map(ANIMAL_GROUPS.map(([id,label])=>[id,label])).get(r.animal_context.group)}${r.animal_context.species?' · '+r.animal_context.species:''}`:'Not provided in this older session';
 const soundscape=r=>{const c=r.soundscape_context;if(!c||c.status!=='observer_selected')return 'Not recorded · not evidence of absence';const labels=new Map(SOUNDSCAPE_CONTEXT_CATEGORIES.map(category=>[category.id,category.label]));return c.categories.map(id=>labels.get(id)).join(', ')+' · observer-entered';};
 const node=(tag,text,className)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;};
 let audioUrl=null, audioSlot=null, exampleRun=0;
-function stopPlayer(){const player=$('compare-player');player.pause();player.removeAttribute('src');player.load();if(audioUrl)URL.revokeObjectURL(audioUrl);audioUrl=null;audioSlot=null;$('compare-player-panel').hidden=true;}
-function prepareClip(key,clip,index){stopPlayer();audioUrl=URL.createObjectURL(new Blob([clip.bytes],{type:'audio/wav'}));audioSlot=key;$('compare-player').src=audioUrl;$('compare-player-label').textContent=`Moment ${key.toUpperCase()} · Recording ${index+1} · ${slots[key].value.record.origin==='synthetic'?'invented tones':'declared microphone capture'}`;$('compare-player-panel').hidden=false;$('compare-player-panel').scrollIntoView({behavior:'auto',block:'center'});$('compare-player').focus();}
+function stopPlayer(){const player=$('compare-player');player.pause();player.removeAttribute('src');player.load();if(audioUrl)URL.revokeObjectURL(audioUrl);audioUrl=null;audioSlot=null;reviewAudio.reset();$('compare-player-panel').hidden=true;}
+function prepareClip(key,clip,index){stopPlayer();audioUrl=URL.createObjectURL(new Blob([clip.bytes],{type:'audio/wav'}));audioSlot=key;$('compare-player').src=audioUrl;reviewAudio.reset(clip.event.samples/slots[key].value.record.sample_rate);$('compare-player-label').textContent=`Moment ${key.toUpperCase()} · Recording ${index+1} · ${slots[key].value.record.origin==='synthetic'?'invented tones':'declared microphone capture'}`;$('compare-player-panel').hidden=false;$('compare-player-panel').scrollIntoView({behavior:'auto',block:'center'});$('compare-playback-toggle').focus();}
 function renderSlot(key){
   const s=slots[key].value, target=$('summary-'+key), content=$('content-'+key); target.replaceChildren();content.replaceChildren();
   $('clear-'+key).hidden=!s;$('details-'+key).hidden=!s;
@@ -72,4 +74,4 @@ $('compare-example').addEventListener('click',async()=>{
   if(run!==exampleRun)return;$('compare-example').disabled=false;$('compare-status').textContent='Two invented scenes are open: one complete 30-second moment and one stopped at 18 seconds. Scroll down to compare.';
 });
 window.addEventListener('pagehide',()=>{exampleRun++;stopPlayer();for(const key of ['a','b']){slots[key].clear();$('status-'+key).textContent='';renderSlot(key);}renderComparison();$('compare-example').disabled=false;$('compare-status').textContent='Open your saved sessions again. Nothing was saved in the browser.';});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)$('compare-player').pause();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)reviewAudio.pause('Playback paused because Compare left the foreground.');});

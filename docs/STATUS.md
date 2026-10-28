@@ -1,5 +1,15 @@
 # Project status
 
+## October 28 — shorten the keyboard path from note to finish
+
+**Question:** after entering an observation, can a keyboard user reach the next action without tabbing around the page? On the deployed build, waited until Station reported active recording, added a synthetic note and activated **Mark an observation**. **Stop** came 14 Tab presses later, after the timeline, footer and page navigation.
+
+**Change:** the current-source branch adds **Finish and review** after the note actions while preserving the original immediate Stop. It is enabled only during active capture; activating it stops and focuses the review step. The live region, capture modes and export format are unchanged.
+
+**Verification:** all 199 Python tests passed (one intentional skip) and all 144 Node tests passed. The local noindex build produced 146 pages plus 404; `scripts/check_site.py` verified 147 HTML documents and 7,891 links. A local rendered 390 × 844 keyboard journey completed rehearsal → note → mark → Finish and review → save ZIP → acknowledge download → same-tab Compare → choose the same ZIP → expand **Recordings & observations** and find the note. From Mark an observation, Finish and review is one Tab away. Focus moved to review after stopping. No microphone, non-GET, off-host request, page error or horizontal overflow was observed; desktop home and Station also measured 1,440-pixel document widths at a 1,440-pixel viewport. The rendered phone-width screen was visually inspected.
+
+**Limits and next decision:** this is a maintainer-operated local browser rehearsal with invented content, not screen-reader, physical-phone or independent-user validation. The change is on local branch `codex/keyboard-finish-action-20261028`; it has not been pushed or deployed. Preserve the visible top Stop control. Next test on named physical devices, then run the uncoached newcomer protocol only after explicit recruitment authorization. AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 28 — add a university annotation-software reference
 
 **Question:** can Talk2Nature help a research group annotate synchronized animal audio and video without building another full annotation server?
@@ -5763,3 +5773,137 @@ Built the exact PR head (`733e400`) in public mode: 146 pages plus the custom 40
 ## October 28 — release receipt for PR #540
 
 PR [#540](https://github.com/Metivity/talk2nature/pull/540) merged to `main` as [`25ae643`](https://github.com/Metivity/talk2nature/commit/25ae643a4070cdf6116e0b8fd3d568836dcd7c66). Pages run [#40676257119](https://github.com/Metivity/talk2nature/actions/runs/40676257119) passed the Python and Node suites, public build, publication-boundary/site checks, deployment and live-route/crawl verifier. Fresh cache-bypassed TLS reads returned HTTP 200 for the new humpback note, atlas, sitemap and robots routes. The note has the expected canonical, `index,follow`, 5.1% validation-subset finding and atlas backlink, and is included in the 146-URL sitemap. Article, dataset and code metadata remain separate; no third-party media, data, code or weights were acquired or run. This release is not a benchmark, independent specialist review or communication claim. Search Console indexing, physical-phone acceptance and newcomer testing remain open. Keep the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
+
+## October 28 — align browser review with zero-command animal boundary
+
+**Finding:** microphone capture and synthetic rehearsal do not play sounds to animals. After capture, however, browser users could load a recording into the manual player without seeing the explicit confirmation already used by the Android prototype.
+
+**Change:** the browser now pauses and clears any previously loaded player before asking the reviewer to use headphones or move away from the animal. Cancel leaves the player hidden and creates no audio URL. Continue creates a local URL for the standard controls but does not call `play()`; the person still has to press Play. The capture boundary copy now says “no animal-directed playback.” Added a synthetic-only regression for both Cancel and Continue. Updated the device guide and active goal.
+
+**Verification:** focused station UI tests passed (6/6); all 145 Node tests passed; all 199 Python tests passed with one intentional skip; the local noindex build produced 146 pages plus 404; `scripts/check_site.py` validated 147 HTML documents and 7,744 links. No recording from an animal or participant was used. The attempted in-app browser state check timed out, so this change has no rendered-browser or physical-device evidence. A confirmation cannot establish headphone connection or acoustic isolation.
+
+**Next gate:** on a named physical phone, perform the passive save/reopen task and confirm capture produces no animal-directed sound; document model, OS, browser/install mode, assistance and observable requests. Keep manual review explicitly separate from capture and away from the animal. Do not claim safety from the confirmation alone; keep AutoResearch and real-data admission **NOT READY**. Nothing was pushed or deployed.
+
+## October 28 — confirm immediately before browser playback
+
+**Finding:** the preceding Station safeguard asked for headphones when a reviewer loaded a clip, then exposed native audio controls. A delay before pressing Play could make that confirmation stale. The review action has been split into silent local loading and a separate play action.
+
+**Change:** Station's native audio controls are removed. “Load for review” creates a local object URL in a hidden player and focuses a custom Play/Pause button; it does not invoke playback. Every Play or replay asks the reviewer immediately beforehand to use headphones or move away. Cancel does not call `play()`; Pause stops the clip. Sound desk now pauses its native review player when hidden or leaving the page; Compare already paused on background and cleared on page exit. Their manual controls and headphone warnings remain; the per-play confirmation applies only to Station, and exported files can still be played externally.
+
+**Verification:** focused Station UI tests passed (7/7) and Sound desk UI tests passed (13/13); all 147 Node tests passed; all 199 Python tests passed with one intentional skip; the local noindex build produced 146 pages plus 404; `scripts/check_site.py` validated 147 HTML documents and 7,744 links. The fixtures use invented tones only. Two in-app browser state checks timed out, so no rendered mobile/browser interaction or physical-device playback test is claimed. `adb` is unavailable; the listed iOS simulators are unrelated QA devices and shut down. A confirmation cannot verify headphones, distance or animal audibility. Nothing was pushed or deployed.
+
+**Next:** inspect the rendered Station control when browser access is available; perform the zero-command save/reopen and no-stimulus task on a named physical phone. Then decide whether to apply the same custom playback gate to Listen and Compare. Keep AutoResearch and real-data admission **NOT READY**.
+
+## October 28 — align human playback controls across Listen and Compare
+
+**Finding:** Station already required a fresh headphone/distance confirmation at playback time, but Listen and Compare still exposed native media controls that could be replayed after an older warning. That left three different safety behaviors across the review tools.
+
+**Change:** added a shared local review controller to Listen and Compare. It provides Play/Pause, seek and elapsed-time display; loading and scrubbing do not play audio. Every playback start, including a replay after Pause, Stop or backgrounding, asks for an immediate confirmation. Cancel never calls `play()`. Playback pauses when the page is hidden or left, and the player stays separate from microphone capture. Added responsive styles and included the controller and styles in the exact app offline allowlist. Station continues using its own separately reviewed control.
+
+**Verification:** all 152 Node tests passed, including cancel/no-play, repeated confirmation, pause, seek, hidden-page pause, playback rejection and offline-asset coverage; all 199 Python tests passed with one intentional skip. The local noindex build generated 146 pages plus 404; `scripts/check_site.py` validated 147 HTML documents and 7,747 links. Static output read-back confirmed the Listen, Review and Compare routes link the shared stylesheet, expose the custom controls and contain no native audio-control attribute. `git diff --check` passed.
+
+**Limits and next gate:** fixtures use synthetic audio and mocked playback; no acoustic output, headphone routing, rendered screen or physical phone was checked in this turn. A confirmation cannot verify headphones or animal audibility, and files saved/exported to other apps are outside this control. No deployment occurred. Next, run the zero-command save/reopen plus human-only playback path on a named physical phone and record handset, OS, browser/install mode and interruption behavior. An uncoached novice walkthrough still requires explicit recruitment authorization. Keep the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
+
+## October 28 — inspect the cited nightingale smartphone-data record
+
+**Question:** does the dataset DOI in the Jäckel et al. phone-recording study identify a current, rights-declared audio deposit?
+
+**Evidence:** the official [Zenodo API record](https://zenodo.org/api/records/4817236) returned HTTP 200 to a verified-TLS request. It reports DOI `10.5281/zenodo.4817236`, publication date 2021-05-28, no version/concept DOI, `open` access and a record-level `cc-by-4.0` declaration. Its description says project data were generated in 2018–2019 by smartphone-using citizen scientists. The current file list contains `NCSP_Data.xlsx` (1,681,739 bytes) and `SNR_Data.xlsx` (12,692 bytes), each with a provider MD5 string; no audio file is listed in this response.
+
+**Change:** updated source 281, dataset resource `nightingale-smartphone-recordings-data-2021`, and the smartphone-methods note. The record remains `metadata_only` and separate from the PLOS article.
+
+**Limits and next decision:** no files were downloaded, no rows or schema were inspected, and the provider MD5 values were not locally verified. The record declaration does not resolve consent, privacy, provenance, or whether the spreadsheets link to audio elsewhere. This is not an audio corpus or a benchmark. Consider file inspection only if a specific device-quality question requires it and the contents pass a privacy/provenance review. Physical-phone acceptance remains open; AutoResearch and real-data admission stay **NOT READY**.
+
+**Validation:** all 199 Python tests passed with one intentional skip; all 152 Node tests passed; the collection validator accepted 249 resources. The local noindex build produced 146 pages plus 404, and `scripts/check_site.py` validated 147 HTML documents and 7,747 links. A separate explicit-origin public-mode candidate in `/tmp/talk2nature-public-check-20261028` passed the checker for 147 HTML documents, 7,894 links and all 146 routes. Read-back confirmed the note's self-canonical, `index,follow`, new finding, dataset entry, declared license and file inventory in the candidate sitemap. This is candidate-build SEO evidence only; the current public site was not changed and no deployment or indexing request occurred.
+
+**Rendered-control follow-up:** served the same local candidate on loopback; `/app/review/` and `/app/compare/` returned HTTP 200 with their custom control IDs and no native audio-control attributes. The in-app browser bridge timed out at 30 seconds and reset its kernel, so there is no screenshot or rendered-layout review. The temporary server was stopped. This does not satisfy the mobile visual or physical-phone gate for the preceding UI work.
+
+## October 28 — zero-command mobile Station review
+
+**Boundary:** keep the browser Station passive. It must never generate animal-directed sound. A person's recording start/stop controls the session; post-session human playback remains a separate, optional, freshly confirmed action.
+
+**Rendered check:** built a local noindex candidate and reviewed it in headless Chrome 156 at 390 × 844 CSS pixels using explicit mobile emulation. The page and document widths both measured 390; the console measured 366 pixels and stayed inside the viewport. The microphone-free invented-tone rehearsal reached recording, Stop, review and a save-ready message. A browser-side guard recorded zero `getUserMedia` and zero `HTMLMediaElement.play` calls. Source inspection confirmed the worklet fills every output channel with zero. The run was stopped immediately, so review contained 0.0 seconds and no audio; this did not complete download acknowledgement or same-file reopen.
+
+**Limits and next:** no live microphone, physical speaker, named phone, installed PWA, novice or animal was involved. This is not proof of real-device silence, headphone routing or welfare. Continue bounded source-and-rights review while the physical-phone passive capture → local save → exact-file reopen gate remains open. AutoResearch and real-data admission remain **NOT READY**. No source push or deployment occurred.
+
+## October 28 — show the no-playback boundary before listening
+
+Added a plain-language welfare note to the mobile Station introduction, ahead of the start links: the Station does not play sounds to animals; optional human review requires headphones or distance. Added a site regression check for this text.
+
+**Checks:** all 199 Python tests passed with one intentional skip; all 152 Node tests passed. The local noindex build produced 146 pages plus 404; the site checker accepted 147 HTML pages and 7,747 links. Headless Chrome 156 at 390 × 844 and 320 × 740 mobile viewports showed the note within the viewport with no horizontal overflow. No microphone was requested. This does not verify physical-device behavior, headphone routing, or user comprehension.
+
+**State:** changes remain on the local task branch. No push or deployment occurred. The physical-phone Save-to-Compare test and uncoached newcomer study remain open; the latter still requires explicit recruitment authorization. AutoResearch and real-data admission remain **NOT READY**.
+
+## October 28 — screen current Mozilla funding opportunities
+
+**Question:** which live Mozilla route, if any, merits founder attention for this open-science project?
+
+**Evidence:** reviewed official Mozilla sources 489–494: the 2027–2028 Fellowship call page, full RFP, grant eligibility guide and FAQ; and the 2026 Human-Scale AI Incubator call and FAQ. The Fellowship offers an individual Independent Fellow a $100,000 stipend and $25,000 project budget for twelve months, with its Letter of Intent due December 17, 2026. Its RFP specifically mentions community environmental sensing for biodiversity and public infrastructure. Applicants must be legally able to receive Mozilla funds and show charitable purpose/public benefit; individual eligibility is not confirmed. The RFP limits AI to supportive application assistance, with answers in the applicant’s own voice.
+
+**Decision:** record the Fellowship as a conditional thematic lead and the Incubator as not recommended on present evidence. Incubator terms require AI to be core, working technology already used by its intended community, and early product-community-fit evidence. Talk2Nature has no validated animal-audio model or documented independent adoption signal. Added both opportunities to the public catalog and a private question-led prep note at ignored `funding/mozilla-fellowship-2027.md`; no personal application details were inferred.
+
+**Limits and next:** no applicant location, USD payment route, legal eligibility, charitable-purpose determination, personal availability, target-community evidence or founder narrative was verified. The candidate fit does not establish eligibility or likelihood of selection. The applicant must decide whether to apply individually, confirm these facts and write any Letter of Intent personally. No application was opened, submitted or sent; no organization was contacted. Recheck the official call before acting. The five-track goal remains active.
+
+### October 28 — make funding deadlines readable
+
+The funding directory displayed machine dates such as `2026-12-17` as visitor-facing text. It now formats verified ISO dates as “December 17, 2026” inside semantic `<time datetime="2026-12-17">` elements. This covers deadlines, expected openings, national dates and institution-specific dates while retaining the supplied time-zone text. The active five-track goal now records continued call screening and question-led, applicant-owned preparation alongside the zero-command phone gate; no application or outreach was initiated.
+
+**Validation:** all 199 Python tests passed with one intentional skip. The local noindex candidate passed `scripts/check_site.py` (147 HTML documents, 7,759 links); the explicit-origin public candidate passed (147 documents, 7,907 links, all 146 public routes reachable). Read-back confirmed the Fellowship and Incubator deadlines and ELFA opening date have readable labels plus machine dates, both date-bearing status badges render readably, and the ignored private application note is absent. The public candidate retains its expected canonical and `index,follow`. No push or deployment occurred.
+
+### October 28 — refresh OpenWhistle benchmark-page evidence
+
+The current author-maintained [OpenWhistle project page](https://sumbre-lab.github.io/openwhistle/) now presents four benchmark views. Its released-checkpoint summary reports full-set ten-type macro-F1 64.37 ± 2.67 and detection mAP 75.76 ± 2.02. The version-pinned arXiv v1 paper reports 81.1 ± 1.8% accuracy for a balanced six-class task and 75.6 ± 2.0 mAP. The classification metrics and subsets differ; the project page does not version-map every expanded row to exact data/config/code, so they must not be presented as directly comparable or as a new paper version. Added official source 495 and a metadata-only project-page record. Updated the evidence note, benchmark run card and no-data reviewer packet to make the crosswalk a pre-selection gate. No media, audio, labels, code or model was acquired or run; the candidate remains metadata-only, code/model terms unresolved, and AutoResearch **NOT READY**.
+
+**Validation:** the collection validator accepted 250 resources; all 199 Python tests passed with one intentional skip, including the OpenWhistle regression for both result families and their distinction. The local noindex build passed `scripts/check_site.py` (147 HTML documents, 7,765 links); the explicit-origin public candidate passed (147 documents, 7,913 links, all 146 routes reachable). Candidate read-back confirmed the project-page link, both distinct metric sets, the 250-resource directory, private-note exclusion, and correct local/public robots and canonical metadata. No publication or external reviewer contact occurred.
+
+## October 28 — zero-command acceptance boundary and next gate
+
+Reviewed the current browser capture and review paths in source and existing test cases. Capture begins from explicit Start controls. The capture worklet fills every speaker-output channel with zero. Station playback is post-session and manually initiated; Station, Listen and Compare use per-start confirmation before review playback. Cancel paths leave the recording unplayed. The code contains no animal-directed call generation, scheduled playback or automatic reply path. This supports a passive software design claim only; it does not verify actual phone speaker output, headphone routing, animal audibility, field welfare or user comprehension. The confirmations do not technically enforce headphone use, and files exported from the app can be played by other software.
+
+Updated the active milestone at the top of `docs/GOAL.md`: define zero-command as no animal-directed prompts or sound, preserve the no-setup local save/reopen path, and keep the physical-device test free of animals. Next record a named Android and iPhone, OS, browser/install mode and permissions while verifying capture, interruption, no app output during capture, manual-review cancel, and exact-file save/reopen. The newcomer study still requires explicit recruitment authorization. No code or UI changed, no test suite was run, no real recording was used, and no deployment or external contact occurred. The five-track goal stays active; AutoResearch and real-data admission remain **NOT READY**.
+
+## October 28 — verify the zero-command save/reopen workflow in mobile emulation
+
+**Question:** can a visitor complete the simple capture-review path on a narrow screen without microphone access, upload, or JSON editing?
+
+**Evidence:** built a fresh local noindex site and ran a new isolated headless Chrome 145 context at 390 × 844 CSS pixels. Starting at `/app/`, the primary action opened the invented rehearsal; a human note was added, the session was finished, a local ZIP was downloaded, the user acknowledged saving it, and that exact ZIP was reopened in Compare. The note appeared in the reopened journal. The synthetic session was partial (2.0 seconds, one retained recording and one note), accurately labeled as invented practice. Instrumentation counted zero microphone calls, zero HTML media playback calls, zero off-host or non-GET requests, and no page errors. Document/body width measured 390 px on the home and Compare screens. At 320 × 568 and 390 × 844, the Station document width matched the viewport; its console measured 296 px and 366 px. The home, Station and reopened Compare screenshots were visually inspected then removed from temporary storage.
+
+**Checks:** all 152 Node tests passed; all 199 Python tests passed with one intentional skip. The local build passed `scripts/check_site.py` (147 HTML documents, 7,765 links, noindex). A public-mode candidate built with the project-configured Pages origin passed the checker (147 HTML documents, 7,912 links, all 146 public routes reachable). `git diff --check` passed.
+
+**Limits and next decision:** this is maintainer-run desktop Chrome emulation with synthetic material. It does not prove physical-phone playback isolation, microphone behavior, headphone routing, installed-PWA handling, independent first-use success or animal welfare in the field. No animal, live microphone, participant or private data was used. The app still only provides local downloads; no upload or research admission occurred. The named physical Android/iPhone gate and authorized newcomer gate remain open. No source was pushed, merged or deployed.
+
+## October 28 — clean-clone verification of public researcher quick start
+
+**Question:** do the documented synthetic commands and repository checks work from current public `main` with no package installation?
+
+**Evidence:** compared `git ls-remote` with a fresh depth-one HTTPS clone; both identified commit [`369436494a221c2b8f517cf7a01b064af66409b1`](https://github.com/Metivity/talk2nature/commit/369436494a221c2b8f517cf7a01b064af66409b1). On Python 3.12.5, Node v22.22.1 and Git 2.53.0, the annotation fixture returned an invented 8-second record with two events, 2 seconds of interval-union coverage and zero observed context. Standard and dyadic manifests produced 10 connected groups; train/validation/test record counts were 12/4/4 and 6/2/4, respectively, with 6/2/2 groups each. Two runs of each output were byte-identical (SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`). The public-main catalog validated at 249 resources. Full clean-clone suites passed: 199 Python tests with one intentional skip and 143 Node tests. Local noindex build/check: 146 pages plus 404; 147 HTML documents, 7,744 links. Explicit-origin public-mode build/check: 146 pages plus 404; 147 documents, 7,891 links and all 146 public routes reachable. The clone remained tracked-clean; generated outputs were ignored.
+
+**Limits and next decision:** this is maintainer-run software verification with synthetic fixtures, not independent researcher reproduction, usability research, scientific validation or a biological result. No animal or participant data, third-party media or model weights were used. The independent-use metric is not established by this run. Public `main` has 249 resource records; the separate local candidate has 250 and remains unpublished. Keep AutoResearch **NOT READY**. After candidate review and release, measure an outside group's reproduction through the existing report route; do not count this maintainer check as external use. No push, merge, deployment, outreach or recruitment occurred.
+
+## October 28 — keep zero-command as the active product boundary
+
+Raviv reaffirmed continuing on the zero-command path. The active milestone remains passive, person-started observation: no animal-directed prompts, generated or scheduled calls, automatic replies, or playback. Human review stays separate and optional, with a fresh confirmation before each playback; all playback checks use a no-animal setup.
+
+Updated `docs/GOAL.md` to stage the device gate: test the first available named physical phone and record its model, OS, browser/installed mode, and permissions; then repeat on the other mobile platform. Check visible Start/Stop, interruption handling, no app playback during capture, review-playback cancel, and local save/reopen of the exact file. Browser emulation remains supporting evidence only. No animal or participant data were collected, no code changed, and no tests, build, deployment, outreach, or recruitment were performed in this documentation-only continuation. Keep AutoResearch and real-data admission **NOT READY**.
+
+## October 28 — verify live crawl routes and separate stale page snapshots
+
+**Question:** do the deployed public site, mobile entry points, contribution route and sitemap currently expose the expected crawl metadata?
+
+**Live read-back:** made cache-bypassed HTTPS GET requests with certificate verification enabled. `robots.txt` and `sitemap.xml` returned HTTP 200; robots allows crawling, and the sitemap parsed as XML with 146 unique URLs, including `/app/` and `/research/resources/`. The homepage, `/app/`, `/app/station/?mode=companion`, `/research/resources/` and `/contribute/source/` returned HTTP 200 with `index,follow` and self-canonical URLs. The live homepage reports 113 research notes and 487 source records; the resource directory reports 249 resources.
+
+**Freshness limit:** the available web retrieval snapshot is labeled as crawled two days earlier and renders the resource directory as 236 records. That conflicts with the direct live response and current public `main` (249 records), so the snapshot is stale for counts. It does not identify a particular search engine or establish Google indexing, impressions or rank. No Search Console connector is available in this workspace; no sitemap submission or indexing request was made.
+
+**Next:** preserve direct live-read evidence separately from search/index evidence. Refresh Search Console only if the owner session is available; until then, report crawlability and live content counts without claiming search visibility. No website code or catalog data changed; the new status note is local and not deployed.
+
+**Documentation validation:** the local noindex build completed with 146 pages plus 404; `scripts/check_site.py` checked 147 HTML documents and 7,765 links; the focused site-content suite passed all 102 tests. This validates the local documentation/site output, not Search Console indexing.
+
+## October 28 — verify the zero-command offline review shell in a real browser runtime
+
+**Question:** are the new human-review controls and their pages actually present in the user's explicitly installed public offline shell?
+
+**Evidence:** built the local noindex candidate and served it on loopback. In isolated desktop Chrome at 390 × 844 CSS pixels, selected **Enable offline tools** and waited for the active service worker. Its versioned cache held 52 allowlisted responses, including `/app/review/`, `/app/compare/`, `review-audio.mjs` and `review-audio.css`. Then disabled network access and Chrome's ordinary HTTP cache. Newly opened Review and Compare routes both returned HTTP 200 from the service worker, with the expected headings, an active controller and document width equal to the 390-pixel viewport. Instrumented counters recorded zero `getUserMedia` calls, zero HTML media `play()` calls and zero page errors.
+
+**Limits and next:** this is an isolated desktop Chrome runtime using a local build, not a physical phone or installed iOS/Android app. It confirms page and shared-control availability offline; it does not test microphone/audio hardware, headphone routing, independent users or animal behavior. No recording was loaded, no app sound played, and no production route changed. The physical-device Save-to-Compare gate and authorized newcomer gate remain open.
+
+**Validation:** all 44 focused offline/mobile/audio Node tests passed; all 102 focused site-content tests passed. A final local noindex build produced 146 pages plus 404, and `scripts/check_site.py` accepted 147 HTML documents and 7,765 links. `git diff --check` passed. No code changed during the browser check.
