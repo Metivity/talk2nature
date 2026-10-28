@@ -2241,10 +2241,10 @@
   {
     "id": 213,
     "title": "Wildlife Acoustics Scientific Grant Program · Q4 2026",
-    "description": "Official quarterly wildlife-research product program, open worldwide. Q4 applications are due November 15, 2026, with awards by December 30. Standard awards are eligible products rather than cash; applicants may request up to $4,000 in products from a quarterly pool of up to $12,000. Software-only awards are annual Kaleidoscope Pro licenses. The page requires proof of the applicant organization's charitable or educational tax-exempt status; a recommendation letter is waived for software-only requests. It says recipient projects may be featured on the company's website and social media.",
+    "description": "Official worldwide wildlife-research product grant program. The full Q4 2026 page was rechecked October 28: November 15 application deadline; awards by December 30; standard awards are eligible products up to $4,000 per applicant from a quarterly pool up to $12,000; software-only awards are annual Kaleidoscope Pro licenses. The page requires the applicant organization's certificate or tax-exemption letter showing tax-exempt charitable or educational status; a recommendation letter is waived for software-only requests. No award is cash for general software development.",
     "url": "https://www.wildlifeacoustics.com/grant-program",
-    "checked": "2026-10-25",
-    "origin": "Rechecked the official grant-program URL on October 25, 2026. The official indexed result still lists the Q4 2026 deadline (November 15), award date (December 30), worldwide program, product-only awards, request limit and organization-status requirement. The page reader exposed only navigation/contact text, so the detailed terms remain grounded in the full October 13 HTTPS review. The old FAQ URLs for foreign-organization and government eligibility now redirect to a generic knowledge-base landing page and were not used to make a current eligibility claim. No grant portal was opened or application started. Applicant-specific legal status, detailed portal fields, shipping/import costs and any award agreement remain unreviewed."
+    "checked": "2026-10-28",
+    "origin": "Read the full official grant-program page on October 28, 2026 via a verified-TLS HTTPS fetch. Page text lists worldwide product awards, the Q4 deadline and award date, request/pool limits, software-only license, tax-status documentation, recommendation-letter exception and public recipient features. The page was not an application portal or award agreement; Talk2Nature eligibility, applicant-host status, field study, product need, taxes, shipping/import costs and award terms were not established."
   },
   {
     "id": 214,
