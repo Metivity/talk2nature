@@ -1771,8 +1771,8 @@
     "title": "Andreas Triantafyllopoulos public GitHub profile and repository list",
     "description": "Author-linked GitHub profile and owner repository inventory rechecked as a bounded search for the promised EUSIPCO bat-context code and split files.",
     "url": "https://github.com/ATriantafyllopoulos?tab=repositories",
-    "checked": "2026-10-23",
-    "origin": "The author’s personal website links to this public GitHub account. On 2026-10-23 the live owner-repository API listed 13 public repositories, newest updated 2025-10-20; a GitHub repository search for the exact paper title returned no match. This does not rule out coauthor, lab, archival or unindexed releases, and a Zenodo API search was inaccessible from this environment.",
+    "checked": "2026-10-28",
+    "origin": "The author’s personal website links to this public GitHub account. A fresh verified-TLS GitHub API inventory on October 28, 2026 still listed 13 public repositories, with the newest updated 2025-10-20; none matched the EUSIPCO bat-context paper. This is the author-linked account only and cannot exclude releases under coauthors, a lab, an archive or an unindexed location. Exact public-index query evidence is recorded separately in sources 467–468.",
     "review_url": "https://atriantafyllopoulos.github.io/",
     "review_url_label": "Author personal site linking to public GitHub profile"
   },
@@ -4794,5 +4794,21 @@
       "commercial_use": "unresolved",
       "redistribution": "unresolved"
     }
+  },
+  {
+    "id": 467,
+    "title": "GitHub repository-search API for the EUSIPCO bat-context code release",
+    "description": "Public GitHub repository-search API queries for the paper identifier, exact title and author/topic phrase; all three queries returned zero repositories on 2026-10-28.",
+    "url": "https://api.github.com/search/repositories?q=2406.06332",
+    "checked": "2026-10-28",
+    "origin": "Read the public GitHub search API over verified TLS on October 28, 2026. Queries were `2406.06332`, the quoted exact title `An automatic analysis of ultrasound vocalisations`, and `Egyptian fruit bat context Triantafyllopoulos`; each returned total_count 0. Repository search is a bounded public-index check and does not rule out differently named, unindexed, private, coauthor/lab/archive releases. No repository files or research assets were fetched. Additional query URLs: https://api.github.com/search/repositories?q=%22An+automatic+analysis+of+ultrasound+vocalisations%22 and https://api.github.com/search/repositories?q=Egyptian+fruit+bat+context+Triantafyllopoulos."
+  },
+  {
+    "id": 468,
+    "title": "Zenodo records API exact-identifier search for the EUSIPCO bat-context paper",
+    "description": "Exact arXiv-identifier query against the public Zenodo records API; it returned zero hits on 2026-10-28. Broader title queries were too noisy to count as negative evidence.",
+    "url": "https://zenodo.org/api/records?q=2406.06332&size=20",
+    "checked": "2026-10-28",
+    "origin": "Read the public Zenodo records API over verified TLS on October 28, 2026. The exact query `2406.06332` returned zero hits. Broader title queries were overinclusive and are not treated as a negative result. This check does not rule out a differently indexed, private, coauthor/lab/archive release. No record payload, code, splits, media or model weights were downloaded."
   }
 ]
