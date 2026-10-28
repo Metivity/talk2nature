@@ -11,7 +11,9 @@ import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.IBinder;
+import android.os.ResultReceiver;
 
 import org.talk2nature.station.engine.CaptureEngine;
 import org.talk2nature.station.engine.CaptureDeadline;
@@ -27,6 +29,9 @@ public final class CaptureService extends Service {
     public static final String EXTRA_GROUP = "animal_group";
     public static final String EXTRA_SPECIES = "animal_species";
     public static final String EXTRA_SECONDS = "max_seconds";
+    public static final String EXTRA_NOTE_RESULT = "note_result";
+    public static final int NOTE_SAVED = 1;
+    public static final int NOTE_NOT_SAVED = 0;
     private static final String CHANNEL_ID = "nature_station_recording";
     private static final int NOTIFICATION_ID = 4612;
     private static volatile boolean capturing;
@@ -53,7 +58,13 @@ public final class CaptureService extends Service {
             return START_NOT_STICKY;
         }
         if (ACTION_NOTE.equals(action)) {
-            addNote(intent.getStringExtra("note"));
+            ResultReceiver receiver = noteResultReceiver(intent);
+            boolean saved;
+            try {
+                addNote(intent.getStringExtra("note"));
+                saved = true;
+            } catch (Exception ignored) { saved = false; }
+            if (receiver != null) receiver.send(saved ? NOTE_SAVED : NOTE_NOT_SAVED, Bundle.EMPTY);
             return START_NOT_STICKY;
         }
         if (!ACTION_START.equals(action) || capturing) return START_NOT_STICKY;
@@ -188,12 +199,19 @@ public final class CaptureService extends Service {
         } catch (Exception ignored) { return false; }
     }
 
-    private void addNote(String note) {
-        try {
-            CaptureEngine current = engine;
-            SessionStore currentStore = store;
-            if (capturing && current != null && currentStore != null) currentStore.addMarker(current.marker(note));
-        } catch (Exception ignored) {}
+    private void addNote(String note) throws Exception {
+        CaptureEngine current = engine;
+        SessionStore currentStore = store;
+        if (!capturing || current == null || currentStore == null)
+            throw new IllegalStateException("The observation session is no longer active.");
+        currentStore.addMarker(current.marker(note));
+    }
+
+    @SuppressWarnings("deprecation")
+    private ResultReceiver noteResultReceiver(Intent intent) {
+        if (Build.VERSION.SDK_INT >= 33)
+            return intent.getParcelableExtra(EXTRA_NOTE_RESULT, ResultReceiver.class);
+        return intent.getParcelableExtra(EXTRA_NOTE_RESULT);
     }
 
     private void requestStop(String reason) {
