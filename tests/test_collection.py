@@ -54,7 +54,7 @@ class CollectionTests(unittest.TestCase):
         ids = [r['id'] for r in self.catalog['resources'] if r['acquisition'] == 'sample_approved']
         selected, size = plan(self.catalog, ids)
         self.assertEqual({r['id'] for r in selected}, {
-            'monk-parakeet-code', 'monk-parakeet-annotations',
+            'monk-parakeet-code',
             'perch-hoplite-code', 'anuraset-code', 'budgerigar-vocal-signature-data',
             'egyptian-fruit-bat-annotations', 'egyptian-fruit-bat-metadata-pdf',
             'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code',
@@ -62,6 +62,12 @@ class CollectionTests(unittest.TestCase):
             'cockatiel-distress-call-study-data-2018',
             'monk-parakeet-identity-figshare-2023', 'powdermill-bird-soundscapes'})
         self.assertLess(size, MAX_BATCH_BYTES)
+        annotations = next(r for r in self.catalog['resources']
+                           if r['id'] == 'monk-parakeet-annotations')
+        self.assertEqual(annotations['acquisition'], 'metadata_only')
+        self.assertEqual(annotations['analysis_admission'], 'not_admitted')
+        self.assertEqual(annotations['files'], [])
+        self.assertEqual(annotations['rights']['research_use'], 'unresolved')
 
     def test_cockatiel_article_and_supporting_data_keep_rights_separate(self):
         records = {r['id']: r for r in self.catalog['resources']}
@@ -101,6 +107,7 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(tables['files'], [])
         for field in ('research_use', 'commercial_use', 'redistribution'):
             self.assertEqual(tables['rights'][field], 'unresolved')
+        self.assertEqual(tables['analysis_admission'], 'not_admitted')
         with self.assertRaisesRegex(ValueError, 'Not admitted'):
             plan(self.catalog, [tables['id']])
 
@@ -776,11 +783,20 @@ class CollectionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=Path(tempfile.gettempdir()).resolve()) as temp:
             root = Path(temp)
             (root / 'annotations-2020.csv').write_bytes(data)
-            receipt = {'resource_id': 'synthetic-fixture', 'resource': {'version': 'test'},
+            receipt = {'resource_id': 'monk-parakeet-annotations', 'resource': {'version': 'test'},
                        'files': [{'name': 'annotations-2020.csv', 'sha256': hashlib.sha256(data).hexdigest(),
                                   'url': 'https://example.test/synthetic'}]}
             (root / 'receipt.json').write_text(json.dumps(receipt))
-            report = inspect(root)
+            catalog = {'schema_version': 1, 'resources': [{
+                'id': 'monk-parakeet-annotations', 'kind': 'dataset',
+                'analysis_admission': 'approved',
+                'acquisition': 'sample_approved',
+                'rights': {'research_use': 'conditional', 'commercial_use': 'conditional',
+                           'redistribution': 'conditional'},
+            }]}
+            catalog_path = root / 'synthetic-catalog.json'
+            catalog_path.write_text(json.dumps(catalog))
+            report = inspect(root, catalog_path)
             self.assertEqual(report['rows'], 2)
             self.assertEqual(report['nonempty']['behaviour'], 1)
             self.assertEqual(report['uncertainty_flag_1'], 1)
@@ -790,7 +806,13 @@ class CollectionTests(unittest.TestCase):
             self.assertNotIn('synthetic-bird', json.dumps(report))
             (root / 'annotations-2020.csv').write_bytes(data + b'changed')
             with self.assertRaisesRegex(ValueError, 'differs'):
-                inspect(root)
+                inspect(root, catalog_path)
+
+    def test_annotation_processing_fails_before_reading_held_source(self):
+        with tempfile.TemporaryDirectory(dir=Path(tempfile.gettempdir()).resolve()) as temp:
+            missing_folder = Path(temp) / 'no-source-files-here'
+            with self.assertRaisesRegex(ValueError, 'Processing is not admitted'):
+                inspect(missing_folder)
 
     def test_bat_annotation_report_is_aggregate_and_checks_receipt(self):
         columns = ['FileID', 'Emitter', 'Addressee', 'Context',

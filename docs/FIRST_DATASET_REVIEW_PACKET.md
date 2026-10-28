@@ -1,6 +1,6 @@
 # First-data decision: independent no-data review packet
 
-Refreshed October 29, 2026. This packet is for a bounded literature-and-methods review before selecting a Talk2Nature benchmark. No reviewer has been contacted. Small, rights-reviewed annotation/workbook samples were acquired for separate aggregate-only structural checks; no acoustic recordings or model weights have been acquired, admitted to training or run for a benchmark. No benchmark is selected or ready.
+Refreshed October 29, 2026. This packet is for a bounded literature-and-methods review before selecting a Talk2Nature benchmark. No reviewer has been contacted. Some small, rights-reviewed annotation/workbook samples were acquired for separate aggregate-only structural checks. The monk-parakeet GitHub table is not admitted for processing and is held because the repository's MIT notice does not explicitly cover its raw-data folder and the exact file-to-Edmond provenance/access route is unresolved. Earlier table-derived aggregate outputs have been removed. No acoustic recordings or model weights have been acquired, admitted to training or run for a benchmark. No benchmark is selected or ready.
 
 ## The decision to review
 

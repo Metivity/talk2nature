@@ -22,10 +22,29 @@ def write_sample(folder, resource_id, files, version='a' * 40):
     (folder / 'receipt.json').write_text(json.dumps(receipt))
 
 
+def write_catalog(path, admitted=True):
+    ids = ('monk-parakeet-annotations', 'monk-parakeet-selection-tables-2020',
+           'monk-parakeet-code')
+    status = 'conditional' if admitted else 'unresolved'
+    resources = [{
+        'id': resource_id,
+        'kind': 'code' if resource_id == 'monk-parakeet-code' else 'dataset',
+        **({'analysis_admission': 'approved' if admitted else 'not_admitted'}
+           if resource_id != 'monk-parakeet-code' else {}),
+        'acquisition': 'sample_approved' if admitted else 'metadata_only',
+        'rights': {'license': 'MIT' if resource_id == 'monk-parakeet-code' else 'CC-BY-4.0',
+                   'research_use': status, 'commercial_use': status,
+                   'redistribution': status},
+    } for resource_id in ids]
+    path.write_text(json.dumps({'schema_version': 1, 'resources': resources}))
+    return path
+
+
 class ParakeetJoinAuditTests(unittest.TestCase):
     def test_mirrors_waveform_filter_and_left_join_without_leaking_source_text(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
+            catalog = write_catalog(root / 'catalog.json')
             annotations = root / 'annotations'
             selection = root / 'selection'
             loader = root / 'loader'
@@ -51,7 +70,7 @@ class ParakeetJoinAuditTests(unittest.TestCase):
                 'LICENSE-MIT.txt': b'fixture license',
                 'load.selection.tables.R': loader_code,
             })
-            result = audit(annotations, selection, loader)
+            result = audit(annotations, selection, loader, catalog)
             self.assertEqual(result['annotation_csv_rows'], 4)
             self.assertEqual(result['selection_table_files'], 2)
             self.assertEqual(result['selection_rows_all_views'], 6)
@@ -86,6 +105,7 @@ class ParakeetJoinAuditTests(unittest.TestCase):
     def test_receipt_mismatch_stops_the_audit(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
+            catalog = write_catalog(root / 'catalog.json')
             annotations = root / 'annotations'
             selection = root / 'selection'
             loader = root / 'loader'
@@ -97,11 +117,12 @@ class ParakeetJoinAuditTests(unittest.TestCase):
                 'load.selection.tables.R': b'pinned loader source'})
             (selection / '2020_a.txt').write_bytes(b'tampered')
             with self.assertRaisesRegex(ValueError, 'receipt'):
-                audit(annotations, selection, loader)
+                audit(annotations, selection, loader, catalog)
 
     def test_source_snapshots_must_match(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
+            catalog = write_catalog(root / 'catalog.json')
             annotations = root / 'annotations'
             selection = root / 'selection'
             loader = root / 'loader'
@@ -112,7 +133,15 @@ class ParakeetJoinAuditTests(unittest.TestCase):
             write_sample(loader, 'monk-parakeet-loader-code', {
                 'load.selection.tables.R': b'pinned loader source'}, version='b' * 40)
             with self.assertRaisesRegex(ValueError, 'do not share one snapshot'):
-                audit(annotations, selection, loader)
+                audit(annotations, selection, loader, catalog)
+
+    def test_unresolved_catalog_blocks_before_any_source_read(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            catalog = write_catalog(root / 'catalog.json', admitted=False)
+            with self.assertRaisesRegex(ValueError, 'Processing is not admitted'):
+                audit(root / 'missing-annotations', root / 'missing-tables',
+                      root / 'missing-loader', catalog)
 
 
 if __name__ == '__main__':
