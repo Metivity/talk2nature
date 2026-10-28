@@ -97,12 +97,12 @@
     "deadline_source_id": 305,
     "source_id": 304,
     "terms_source_id": 305,
-    "status": "Stage 2 open · UN-agency and developing-country co-development required",
+    "status": "Stage 2 open · no-go at current readiness; country/UN co-development missing",
     "amount": "Up to $500,000 for a single-country project or $800,000 for a multi-country project; 12–24 months. Funds go directly only to UN agencies.",
     "fit": "Not a standalone grant for Talk2Nature. A possible non-UN sub-partner role exists only inside a developing-country, NBSAP-aligned project co-developed with a UN Participating Organization and supported by the required CBD focal-point or Lead Ministry endorsement. No country project, UN partner, field evidence, or sub-partner request is confirmed.",
-    "next_action": "No application or outreach is prepared. Keep this as a conditional UN-partnership lead; reconsider only if an eligible country and UN agency have a concrete biodiversity-monitoring or knowledge-management work package, invite a clearly scoped Talk2Nature role, and agree on scientific review, data governance and animal-welfare safeguards. Stage 1 closed September 15; Stage 2 proposals are due November 15, 2026 at 23:59 on the date. Do not apply as a standalone project or imply a UN relationship.",
-    "verified": "2026-10-14",
-    "application_status": "Not pursued; UN/country project and sub-partner role unconfirmed"
+    "next_action": "Rechecked the official UNEP call page on October 28: Stage 2 closes November 15, 2026 at 23:59 on the deadline date. The page and reviewed guidelines require a developing-country NBSAP/KMGBF project co-developed with a UN Participating Organization; only UN agencies receive funds directly, and country endorsement from the CBD national focal point or Lead Ministry is required. A non-UN sub-partner role is possible only within an eligible project. No Talk2Nature country project, UN agency, endorsement, field evidence or invited work package is confirmed. No application or outreach is prepared for this cycle. Reconsider only if an eligible existing country/UN project invites a scoped, rights-aware biodiversity-monitoring or knowledge-management contribution and the host arrangement is verified. Do not imply a UN relationship.",
+    "verified": "2026-10-28",
+    "application_status": "Not pursued; eligible country/UN co-development and invited sub-partner role unconfirmed"
   },
   {
     "slug": "horizon-nature-monitoring-2027",
