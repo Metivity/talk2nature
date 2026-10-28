@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -7585,6 +7585,37 @@
         462,
         463
       ]
+    },
+    {
+      "id": "egyptian-fruit-bat-five-context-class-project-code-2026",
+      "kind": "code",
+      "title": "Egyptian fruit-bat five-context class-project classifier",
+      "url": "https://github.com/250601043/bat-context-classifier/tree/03889d6a0bf8863ea582db5c41a8ecf42842f7d6",
+      "version": "Pinned commit 03889d6a0bf8863ea582db5c41a8ecf42842f7d6 (2026-10-25)",
+      "source_ids": [
+        170,
+        171,
+        466
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Metadata-only methods comparator for five-context spectrogram classification; assess provenance, rights and whether its time-based split supports any distinct question. It is not a translation or receiver-comprehension task.",
+      "review_depth": "Pinned GitHub tree plus download.py, prepare.py, train.py and requirements.txt inspected as text through the read-only API. The repository says it is a class project; its API reports no license and the tree has no README.md or LICENSE. The scripts select five labels, split by sorted recording days and use ImageNet-initialized ResNet18. No files were saved or executed; no dataset, audio, image or model weights were acquired.",
+      "access": "Public GitHub repository at the immutable commit above. Its downloader queries Figshare metadata and names annotation/audio files, but the repository itself contains no dataset payload. The project account's connection to the EUSIPCO authors is not established.",
+      "decision": "Keep metadata-only and unexecuted. This is an unlicensed class-project comparator, not the paper's official code release or a reproduction. The paper reports 11 contexts and three subject-independent test folds with ResNet50/EfficientNet; this repository uses five contexts, a recording-day split and ResNet18. Do not train or reuse code/data/weights until provenance, component-specific rights, data versioning and animal/session leakage are reviewed.",
+      "limitations": "The inspected preparation script partitions sorted recording days and does not construct an animal-held-out split. No identity-overlap check was performed, so actual animal overlap across its splits is unknown. The downloader's dataset manifest and source data hashes were not independently verified. No metrics or confusion-matrix image were audited, no code or model was run, and no result was reproduced. Context labels remain video-derived behavior/context categories rather than evidence of message meaning or receiver understanding.",
+      "attribution": "250601043, bat-context-classifier, pinned commit 03889d6a0bf8863ea582db5c41a8ecf42842f7d6; account affiliation and relationship to the paper authors unverified.",
+      "rights": {
+        "license": "No code license is declared in the repository API or visible pinned tree.",
+        "scope": "Repository code only. Underlying Figshare data, audio, annotations, pretrained initialization and any weights have separate terms and provenance that were not reviewed.",
+        "evidence_url": "https://github.com/250601043/bat-context-classifier/tree/03889d6a0bf8863ea582db5c41a8ecf42842f7d6",
+        "conditions": "Metadata-only; no reuse, execution or redistribution until provenance and rights are established for each component.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
