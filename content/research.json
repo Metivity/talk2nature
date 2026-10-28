@@ -457,14 +457,14 @@
     "source_ids": [
       49
     ],
-    "review_depth": "Published paper pages 3–12 reviewed for participant screening/ethics, protocol, analysis, results and limitations. Page 9 was rendered and Table 2's P1–P9 differences recalculated from the displayed session counts. The current University of Glasgow deposit record and Crossref DOI relation metadata were checked. No raw-data reanalysis or replication.",
+    "review_depth": "Published paper pages 3–12 reviewed for participant screening/ethics, protocol, analysis, results and limitations. Page 9 was rendered and Table 2's P1–P9 differences recalculated from the displayed session counts. The current University of Glasgow deposit record and Crossref DOI relation metadata were checked. No raw-data reanalysis or replication. On October 28, a targeted search of the published paper's Methods confirmed a home-based setup using participants' own devices and internet connections; the paper does not identify one study region. The Honolulu location belongs to the CHI 2024 conference listing, not the parrot study. No participant household location or raw data was obtained.",
     "finding": "In a six-month, nine-parrot home study, Table 2 lists 65 parrot-triggered live calls and 40 playback calls out of 108 possible in each phase. Recalculation from the displayed counts gives live-minus-playback differences of +50, +17, +75, +17, +8, -8, -8, +33 and +25 percentage points for P1–P9. The printed row is reversed for seven birds and appears to swap the P3/P5 entries. The authors report a live-phase advantage, but the published duration totals do not reconcile across the text and Table 3; the duration magnitude remains unresolved.",
     "limitations": "The live phase always came first, so condition order was not counterbalanced; reciprocal calls, caregiver cues and variable home devices also complicate interpretation. Table 2 labels the comparison ‘Live minus playback,’ but the printed values correspond to playback-minus-live for P1, P2, P4 and P6–P9; P3 and P5 also appear transposed relative to the displayed counts. No underlying data were available to verify author intent, and no correction was found in the current University of Glasgow record or Crossref relation metadata; that check is not exhaustive. The Data Analysis text reports 561 live-phase and 142 playback minutes, while summing Table 3's displayed per-parrot cells gives about 239 and 149 minutes, respectively; no underlying data were available to resolve this. The inferential tests were not independently recomputed. Engagement is not a direct welfare, comprehension or language measure.",
     "lesson": "The parrots signaled and selected a caller, but caregivers initiated the calls. Treat animal choice, caregiver mediation and responsiveness as separate design variables; preserve retreat and stopping options. This is an animal-computer-interface study, not a passive acoustic-collection or communication-decoding result.",
     "next_review": "Obtain independent avian animal-computer-interaction and statistical review, and author clarification if contact is separately authorized, before reusing participant-level Table 2 values or adapting the protocol. Keep the printed results distinct from our arithmetic check; do not silently correct the paper.",
-    "reviewed": "2026-10-14",
+    "reviewed": "2026-10-28",
     "expert_review": "Not yet independently reviewed by an avian, animal-computer-interaction or statistical specialist.",
-    "review_stage": "Methods reviewed",
+    "review_stage": "Full paper review plus targeted geography review; no raw study data",
     "year_label": "Source year",
     "study_snapshot": [
       [
@@ -489,7 +489,14 @@
       ]
     ],
     "review_locator": "CHI 2024 published version: participant/method sections and analysis, pages 3–8; Tables 2–4, page 9; results and limitations, pages 10–12.",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "not_applicable",
+      "location_note": "This was a home-based study using participants’ own devices and internet connections, not one fixed field site. The paper does not identify a single study region or publish household locations. Honolulu is the conference venue, not the study location.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "dog-buttons",
@@ -2195,7 +2202,22 @@
         "Rights and status",
         "The 3.05 GB audiovisual ZIP remains metadata-only; the smaller annotation CSV is stored only under ignored external data and is not admitted to training. Mendeley v3 declares CC BY 4.0, but its versioned file-list request returned HTTP 401 without OAuth2. No media, code or model was acquired or run."
       ]
-    ]
+    ],
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "mapped",
+      "location_note": "The primary data descriptor identifies the wild-caught adults’ origin near Herzliya, Israel. The point represents animal origin only; the captive acoustic recording chambers are not assigned a geographic point by this source.",
+      "locations": [
+        {
+          "place_id": "herzliya",
+          "role": "animal_origin",
+          "source_id": 142,
+          "locator": "Methods: Animal retrieval and care",
+          "basis": "The data descriptor states adult bats were caught in a natural roost near Herzliya, Israel. This existing coarse region marker shows animal origin, not the recording chambers, exact roost, or an individual animal location."
+        }
+      ],
+      "observation_period": null
+    }
   },
   {
     "slug": "wild-parrot-duet-structure-2026",
@@ -4750,9 +4772,9 @@
       359,
       373
     ],
-    "reviewed": "2026-10-24",
-    "review_stage": "Primary preprint and two separate Zenodo release records reviewed; no archive acquisition or reproduction",
-    "review_depth": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license, plus official Zenodo landing-page/API metadata for records 23024019 and 23047646. A metadata-only refresh of the official bioRxiv v3 page on October 24 confirmed its current title and that the title and abstract were updated; the full text was not re-reviewed in this refresh. The code/model record lists one ZIP; the separate data record lists 11 files, including four raw example recordings and processed archives. No archive internals, supplemental analyses or media payloads were downloaded or inspected; no code, weights or data were run; no independent specialist reviewed this assessment.",
+    "reviewed": "2026-10-28",
+    "review_stage": "Full preprint review (October 24) plus metadata-only recheck of two separate Zenodo release records (October 28); no archive acquisition or reproduction",
+    "review_depth": "Reviewed the full bioRxiv v3 main text, including Results, Discussion, Methods 1.1–1.7, data-availability statement and posted license on October 24. On October 28, refreshed only the official Zenodo API metadata for records 23024019 and 23047646: titles, modification dates, rights declarations and complete top-level file inventories match the prior saved manifests, including the unresolved data-license conflict. The code/model record lists one ZIP; the separate data record lists 11 files, including four raw example recordings and processed archives. No archive internals, supplemental analyses or media payloads were downloaded or inspected; provider checksums were not recomputed against file bytes; no code, weights or data were run; no independent specialist reviewed this assessment.",
     "review_locator": "James et al., \"Leveraging AI-powered interactive playbacks to decipher rules of communication in zebra finches,\" bioRxiv 2026.02.12.705387 v3, posted March 23, 2026, DOI 10.64898/2026.02.12.705387; Zenodo code/model record 23024019, DOI 10.5281/zenodo.23024019; separate Zenodo data record 23047646, DOI 10.5281/zenodo.23047646.",
     "finding": "Female zebra-finches changed the timing and acoustic structure of their calls during exchanges. The paper reports more than 1,000 hours of recordings and analyzes 834,309 calls from 21 birds across 40 pair interactions in Methods; one Results passage says 20 birds, so the count is inconsistent. The authors define a response as a first call within one second after a partner's call ends. They report responses after about 44% of partner calls, compared with an estimated 10% chance level, and describe birds responding to live sounds from an interactive audio model in a controlled lab study. The model predicts patterns such as which bird may call next and when; this is evidence about acoustic timing and contingency, not a translation of calls into human language.",
     "limitations": "This is a preprint, not peer-reviewed evidence. A Results passage reports n=20 while Methods reports 21. The paper describes a pair-level split with 34 training pairs and pairs 35–40 for validation/evaluation, but the reviewed article does not establish that individual birds are disjoint across pairs. The response window is an operational timing rule, not a semantic label. The separate Zenodo data record (23047646) lists four raw example tracks plus processed-data and detector archives, not a verified copy of the full study corpus. Its API license field says CC BY-SA 4.0 while its description says the data are CC BY-NC; this conflict leaves reuse unresolved. The separate 26.6 GB code/model ZIP (23024019) remains opaque at the internal-file level. Supplemental analyses and independent reanalysis were not reviewed.",
@@ -4792,8 +4814,8 @@
     ],
     "reuse": {
       "status": "Metadata-only communication-research lead; not admitted to Talk2Nature training, app inference or playback.",
-      "asset": "Full main-text review of bioRxiv v3 and official Zenodo records/API metadata only. The separate data-record inventory is recorded in research/zf_aim_data_zenodo_manifest_2026-10-24.json; the code/model ZIP inventory is in research/zf_aim_zenodo_manifest_2026-10-23.json. No archive or media payload, code or model was acquired or run; provider checksums were not locally verified.",
-      "rights": "Keep the manuscript, code, checkpoints, annotations, audio and benchmark metadata as separate components. For the data record, Zenodo's API says CC BY-SA 4.0 while its description says CC BY-NC, so no reuse is admitted. The separate code/model record's description says code and weights are MIT but its opaque ZIP contents were not inspected.",
+      "asset": "Full main-text review of bioRxiv v3 (October 24) and official Zenodo record/API metadata; the October 28 API recheck matched the prior top-level inventories. The separate data-record inventory is recorded in research/zf_aim_data_zenodo_manifest_2026-10-24.json; the code/model ZIP inventory is in research/zf_aim_zenodo_manifest_2026-10-23.json. No archive or media payload, code or model was acquired or run; provider checksums were not locally verified.",
+      "rights": "Keep the manuscript, code, checkpoints, annotations, audio and benchmark metadata as separate components. For the data record, Zenodo's API says CC BY-SA 4.0 while its description says CC BY-NC, so no reuse is admitted. The separate code/model record's description says code and weights are MIT but its opaque ZIP contents were not inspected. An October 28 metadata-only recheck found the same conflicting declarations; no clarification was present.",
       "experiment": "No result was reproduced. The preprint supports a controlled study of acoustic contingency, timing and adaptation, not an animal-language translator. Any future task must verify group splits by individual bird, compare simple baselines and retain independently observed labels."
     }
   },

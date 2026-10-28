@@ -129,13 +129,13 @@
     "deadline": "2026-11-15",
     "deadline_source_id": 213,
     "terms_source_id": 213,
-    "status": "Conditional · charitable/educational host and field study unconfirmed",
+    "status": "No-go for Q4 2026 at documented readiness; eligible host and field study unconfirmed",
     "amount": "Products, not cash: up to $4,000 per applicant from a quarterly pool of up to $12,000; software-only awards are annual Kaleidoscope Pro licenses.",
     "source_id": 213,
     "fit": "Potentially useful only for a defined terrestrial wildlife research, habitat-monitoring or conservation study led through an eligible charitable or educational organization. This is not cash for general app development. Talk2Nature has no confirmed eligible host, wild-species field study or scientific lead.",
-    "next_action": "As rechecked October 25, the official program listing still gives a November 15, 2026 Q4 deadline and awards by December 30. This is an in-kind product program, not cash for general software development; the standard request cap is $4,000 in eligible products, while software-only awards are annual Kaleidoscope Pro licenses. The application requires English materials and the applicant organization's charitable/educational tax-exempt status documentation, plus a recommendation letter except for software-only requests. The current program page's indexed copy also says the recipient may be featured publicly and may owe applicable taxes where tax-exempt status is unavailable. No current application portal or award terms were reviewed, and the old eligibility FAQ links now redirect to a generic help landing page. Talk2Nature has no confirmed eligible host, field study, scientific lead or concrete recorder/software need, so this remains a watch-only lead and is not application-ready; do not prepare an application now. Reconsider only after those prerequisites exist, then verify current eligibility, import/tax costs and terms with the prospective host before preparing anything. No application or outreach has been initiated.",
-    "verified": "2026-10-25",
-    "application_status": "Not pursued; qualifying host, field study and scientific lead not established"
+    "next_action": "Rechecked October 28 against the full official program page over verified TLS. Q4 applications are due November 15, 2026, with awards by December 30. Standard awards are eligible products, not cash: up to $4,000 per applicant from a quarterly pool of up to $12,000. Software-only awards are annual Kaleidoscope Pro licenses. The public page requires charitable/educational tax-exempt status documentation: the applicant organization's certificate or tax-exemption letter; a recommendation letter is waived for software-only requests. Talk2Nature has no confirmed eligible host, field study, scientific lead or concrete recorder/software need, so this is not a fit for general app development and remains a no-go this cycle. No application, portal activity or outreach occurred; do not prepare an application now. Reconsider only if an eligible institution or charity leads a defined wildlife field study and identifies a specific product need; that host must review current application and award terms, tax/import costs and any publicity obligations before applying.",
+    "verified": "2026-10-28",
+    "application_status": "Not pursued; qualifying charitable/educational host, defined field study and scientific lead not established"
   },
   {
     "slug": "experiment",

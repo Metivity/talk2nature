@@ -5390,9 +5390,9 @@
         359
       ],
       "priority": 1,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-10-28",
       "task": "Metadata-only candidate release associated with zebra-finch call-timing and next-call prediction research; not admitted for training or app inference.",
-      "review_depth": "Queried the official Zenodo API over HTTPS with certificate verification and inspected the complete top-level file list. It contains one ZIP (26,633,934,601 bytes) with provider-reported MD5; no payload was downloaded and the checksum was not verified locally. The archive's inner manifest and contents were not inspected.",
+      "review_depth": "The official Zenodo API was rechecked over verified TLS on October 28. The current title, MIT record identifier, record update timestamp, one-file size and provider MD5 match the October 23 snapshot. No archive payload was downloaded, provider MD5 was not recomputed against bytes, and the archive's inner manifest and contents, exact recordings/data and file-level rights remain unreviewed.",
       "access": "Public record metadata lists one 26.6 GB ZIP and describes code, checkpoints and data, including next-call benchmark metadata. This does not verify which recordings, annotations or other files are inside the archive.",
       "decision": "Keep metadata-only. The MIT record field and description's code/model license statement do not establish rights for recordings, annotations or benchmark data. Do not acquire, execute, train, redistribute or commercialize archive contents until exact contents, provenance and component-level terms are resolved and reviewed.",
       "limitations": "This is a release metadata record, not an inspected dataset. The preprint v3 data-availability statement and the later Zenodo release are not reconciled. The provider MD5 is not locally verified. Exact data/audio licensing, source-media provenance, bird-level split disjointness, independent review and benchmark readiness remain unresolved.",
@@ -5817,9 +5817,9 @@
         373
       ],
       "priority": 1,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-28",
       "task": "Candidate source of selected zebra-finch interaction recordings and processed outputs for acoustic call-timing research; not a verified copy of the complete study corpus and not admitted for training.",
-      "review_depth": "Queried the official Zenodo API over verified TLS. The top-level inventory lists 11 files, including four raw example FLAC recordings, processed_data.zip, voxaboxen_data.zip, two model archives, a pipeline ZIP and metadata. No file payloads or archive internals were downloaded or inspected; provider checksums were not locally verified.",
+      "review_depth": "Queried the official Zenodo API over verified TLS on October 28. The current title, update timestamp, cc-by-sa-4.0 API identifier, conflicting CC-BY-NC description and all 11 top-level file keys/sizes/provider MD5s match the October 24 snapshot in research/zf_aim_data_zenodo_manifest_2026-10-24.json. No payload or archive internals were fetched; provider checksums were not verified against bytes.",
       "access": "Public API metadata lists four raw recordings totaling approximately 43.5 GB plus processed-data, detector-data and model archives. The file description calls these four raw tracks examples. It does not establish that the complete 1.5-million-call study corpus is present.",
       "decision": "Keep metadata-only. The Zenodo API license field declares CC BY-SA 4.0, but the record description says the data are under a CC BY-NC license. Do not acquire, train, redistribute or commercialize the data until the terms conflict and component scope are clarified.",
       "limitations": "This record is separate from the 26.6 GB code/model ZIP at Zenodo record 23024019. Its inventory does not expose archive contents or prove the processed tables cover the full study. The record includes third-party model components; source-media provenance, annotation semantics, birds/session mapping and individual-disjoint split remain unreviewed. No independent review or reproduction exists.",

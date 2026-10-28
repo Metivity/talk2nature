@@ -21,6 +21,11 @@ class AtlasTests(unittest.TestCase):
         self.assertTrue(all(r['evidence_version'] in versions for r in atlas['records']))
         self.assertEqual(records['parrot-community-data']['location_status'],'pending')
         self.assertEqual(records['parrot-community-data']['locations'],[])
+        parrot_home=records['parrot-video']
+        self.assertEqual(parrot_home['location_status'],'not_applicable')
+        self.assertEqual(parrot_home['locations'],[])
+        self.assertIn('home-based study',parrot_home['location_note'])
+        self.assertIn('conference venue, not the study location',parrot_home['location_note'])
         self.assertEqual(records['birdnet']['location_status'],'not_applicable')
         inat_sounds=records['inat-sounds-2024']
         self.assertEqual(inat_sounds['location_status'],'not_applicable')
@@ -51,7 +56,19 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual(magpie['location_status'],'mapped')
         self.assertEqual({location['place_id'] for location in magpie['locations']},{'kathmandu-valley-nepal'})
         self.assertIn('coarse Kathmandu Valley',magpie['location_note'])
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),43)
+        bat_origin=records['egyptian-fruit-bat-data']
+        self.assertEqual(bat_origin['location_status'],'mapped')
+        self.assertEqual(bat_origin['locations'],[{
+            'place_id':'herzliya',
+            'role':'animal_origin',
+            'source_id':142,
+            'locator':'Methods: Animal retrieval and care',
+            'basis':'The data descriptor states adult bats were caught in a natural roost near Herzliya, Israel. This existing coarse region marker shows animal origin, not the recording chambers, exact roost, or an individual animal location.'
+        }])
+        self.assertIn('recording chambers are not assigned',bat_origin['location_note'])
+        herzliya=next(p for p in self.places['places'] if p['id']=='herzliya')
+        self.assertEqual(herzliya['precision'],'region')
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),44)
         pteroset=records['pteroset-detection-benchmark-2026']
         self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})
         self.assertIn('municipal reference points',pteroset['location_note'])
@@ -166,8 +183,8 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('43 <span>/ 20 goal</span>',goals)
-            self.assertIn('aria-label="20 research notes with verified places: 43 current; goal 20"',goals)
+            self.assertIn('44 <span>/ 20 goal</span>',goals)
+            self.assertIn('aria-label="20 research notes with verified places: 44 current; goal 20"',goals)
             self.assertIn('3 <span>/ 3 goal</span>',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -279,11 +296,11 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(43,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(44,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],38)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],39)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         mapped=[r for r in atlas['records'] if r['locations']]
         below=deepcopy(atlas); below['records']=[r for r in atlas['records'] if not r['locations']]+mapped[:19]
@@ -293,8 +310,8 @@ class AtlasTests(unittest.TestCase):
             output=Path(temp)
             build(output,'https://fixture.github.io/talk2nature',True)
             page=(output/'research/atlas/goals/index.html').read_text()
-            self.assertIn('43 <span>/ 20 goal</span>',page)
-            self.assertIn('aria-label="20 research notes with verified places: 43 current; goal 20"',page)
+            self.assertIn('44 <span>/ 20 goal</span>',page)
+            self.assertIn('aria-label="20 research notes with verified places: 44 current; goal 20"',page)
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value
             with self.assertRaises(ValueError):atlas_goals(atlas,changed)
