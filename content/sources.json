@@ -1510,17 +1510,17 @@
     "id": 150,
     "title": "NLnet Restack program and current call",
     "url": "https://nlnet.nl/restack/",
-    "description": "Official program scope and November 3, 2026 call. Restack supports open internet stack infrastructure, but excludes AI-related projects except those already used by more than one million active human users and directly relevant to the stack.",
-    "checked": "2026-10-13",
-    "origin": "Official NLnet Restack program page reviewed October 13, 2026; current scope and AI exception are recorded in the opportunity assessment."
+    "description": "Official Restack program page reviewed October 28, 2026. The current page describes open-internet-stack R&D and the November 3 call, with first proposals of €5,000–€50,000. The current page text does not state the previously recorded one-million-user AI exception; no archived version was reviewed to establish whether that wording changed.",
+    "checked": "2026-10-28",
+    "origin": "Reopened the official Restack program page over the web on October 28, 2026 and compared it with the older October 13 repository note. The current readable page describes the open-internet-stack objective and does not contain the previously recorded million-user threshold. This is a current-page check, not an archived-change determination. See source 475 for current eligibility terms."
   },
   {
     "id": 151,
     "title": "NLnet Restack eligibility and proposal FAQ",
     "url": "https://nlnet.nl/restack/faq/",
-    "description": "Official FAQ: first proposals are €5,000–€50,000; applicants are asked to write proposals themselves and disclose and explain any generative-AI use in proposal text.",
-    "checked": "2026-10-11",
-    "origin": "Official NLnet FAQ reviewed October 11, 2026; proposal-writing and grant-size rules are summarized without reproducing the FAQ."
+    "description": "Official Restack FAQ reviewed October 28, 2026: individuals and formal or informal organisations may apply without first establishing a legal entity; its current GenAI answer says applicants should write proposals themselves. The October 20 policy 2.0 separately governs AI use in this November call.",
+    "checked": "2026-10-28",
+    "origin": "Reopened the official Restack FAQ over the web on October 28, 2026. Sections on applicant form, payment and proposal writing were reviewed; the FAQ is linked to the current GenAI policy and should be read with sources 456 and 458."
   },
   {
     "id": 152,
@@ -4666,8 +4666,8 @@
     "title": "NLnet policy on generative AI for funded projects, version 2.0",
     "url": "https://nlnet.nl/foundation/policies/generativeAI/2.0/",
     "description": "Effective October 20, 2026. GenAI cannot be used to write proposals or produce funded-project artifacts such as code, design, or documentation; read-only use is allowed. Applications must disclose significant pre-existing AI-generated code.",
-    "checked": "2026-10-26",
-    "origin": "Official NLnet policy version 2.0, checked against the policy page and its version history."
+    "checked": "2026-10-28",
+    "origin": "Official NLnet policy version 2.0 and its version history rechecked October 28, 2026; the official October 20 notice says it applies to the November 3 Restack and CodeSupply calls."
   },
   {
     "id": 457,
@@ -4682,8 +4682,8 @@
     "title": "NLnet notice: revised GenAI policy applies to open calls",
     "url": "https://nlnet.nl/news/2026/20261020-AI-policy.html",
     "description": "NLnet states policy version 2.0 took effect immediately and applies to open calls with later deadlines, explicitly including CodeSupply and Restack on November 3, 2026.",
-    "checked": "2026-10-26",
-    "origin": "Official NLnet announcement published October 20, 2026."
+    "checked": "2026-10-28",
+    "origin": "Reopened NLnet's official October 20, 2026 notice on October 28. It states that policy version 2.0 immediately applies to open calls with later deadlines, including Restack and CodeSupply on November 3."
   },
   {
     "id": 459,
@@ -4872,5 +4872,41 @@
     "rights": {
       "documentation": "Official Dryad API guidance, cited for access behavior only. This does not change the dataset, article, code or model rights for any Dryad deposit."
     }
+  },
+  {
+    "id": 475,
+    "title": "NLnet Restack eligibility: European dimension and eligible work",
+    "description": "The current eligibility page lists open-source development, usability, research and other work when directly relevant to Restack. It requires a strong European dimension; the usual route is a team from Horizon Europe-eligible countries receiving at least 60% of funds, with an exceptional-quality and unique-expertise route for applicants from outside those areas.",
+    "url": "https://nlnet.nl/restack/eligibility/",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the current official eligibility page over the web on October 28, 2026. The page contains the strong-European-dimension and 60% funding guidance. A current-page search found no one-million-user threshold; this does not establish what a prior page version said.",
+    "review_url": "https://nlnet.nl/restack/eligibility/",
+    "review_url_label": "Official Restack eligibility page"
+  },
+  {
+    "id": 476,
+    "title": "Horizon Europe 2026–2027 General Annexes: associated countries",
+    "description": "The European Commission 2026–2027 General Annexes list Israel among Horizon Europe associated countries. This country-level fact does not establish a specific applicant’s residence, team composition, allocation of grant funds or Restack eligibility.",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-15-general-annexes_horizon-2026-2027_en.pdf",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the official European Commission Horizon Europe 2026–2027 General Annexes PDF over the web on October 28, 2026; pages 10–11 list Israel among associated countries. Cited only to clarify the country list relevant to Restack, not to infer any applicant, team or funding-allocation facts.",
+    "review_url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-15-general-annexes_horizon-2026-2027_en.pdf",
+    "review_url_label": "European Commission 2026–2027 Horizon Europe General Annexes"
+  },
+  {
+    "id": 477,
+    "title": "ELFA Consortium subgranting page",
+    "description": "The consortium page says subgranting is expected to open January 1, 2027 and describes a local-first, end-to-end encrypted workspace suite. No award amount, eligibility, application guide or submission deadline was visible in the reviewed page.",
+    "url": "https://elfaconsortium.eu/",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the current ELFA consortium website over the web on October 28, 2026. Its page says subgranting opens January 1, 2027, with details available by contact, and lists the program direction and consortium partners. No contact was made."
+  },
+  {
+    "id": 478,
+    "title": "NLnet ELFA program-operator update",
+    "description": "NLnet says it withdrew from the ELFA consortium in August 2026 and that open calls were postponed until further notice to be executed by another organization. The ELFA consortium site now lists an expected January 1, 2027 subgranting opening; operator and terms need confirmation before applying.",
+    "url": "https://nlnet.nl/ELFA/",
+    "checked": "2026-10-28",
+    "origin": "Reviewed NLnet's official ELFA page over the web on October 28, 2026. It states that NLnet withdrew from the consortium and that calls are postponed pending another organization. This is recorded alongside the current consortium page, not interpreted as cancellation of the consortium."
   }
 ]

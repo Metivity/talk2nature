@@ -197,17 +197,19 @@
     "type": "Open technology grant",
     "deadline": "2026-11-03",
     "deadline_time": "12:00 CET",
-    "deadline_source_id": 35,
+    "deadline_source_id": 150,
     "genai_policy_source_id": 456,
     "genai_policy_faq_source_id": 457,
     "call_notice_source_id": 458,
-    "status": "Open · current project out of scope",
+    "status": "Open through 2026-11-03 · not recommended for current scope/policy readiness",
     "amount": "First proposals €5,000–€50,000.",
     "source_id": 150,
-    "fit": "Restack funds open internet stack infrastructure and foundational technologies. Its current page excludes AI-related projects unless they already have more than one million active human users and are directly relevant to the stack. Talk2Nature is an early animal-communication and AI research/tool project, with no such user-base evidence or internet-stack work package.",
-    "next_action": "Do not prepare for this cycle on the current project scope: Talk2Nature has no evidence of the one-million-user threshold or a directly relevant open-internet-stack work package. NLnet policy 2.0 also applies to this November 3 call: proposals cannot be written with GenAI and funded deliverables cannot be produced with GenAI. Reassess only if a distinct eligible work package and a human-led, policy-compliant delivery plan are established. No proposal has been drafted or submitted.",
-    "verified": "2026-10-26",
-    "application_status": "Not submitted; not recommended for current scope"
+    "fit": "Restack supports open-source R&D that contributes directly to an open internet stack. The current program page does not state the previously recorded one-million-user AI exception; its eligibility page instead requires a strong European dimension, usually at least 60% of funds going to team members from Horizon Europe-eligible countries. The European Commission lists Israel among associated countries, but this record does not establish the owner’s residence, team composition or funding allocation. Restack permits individual and informal-organisation applicants, so lack of incorporation alone is not a stated barrier. Talk2Nature has no validated open-internet-stack work package or demonstrated demand for one. NLnet policy 2.0 applies to this call: proposals must be human-written and GenAI cannot produce funded code, design or documentation; read-only use is allowed and significant pre-existing AI-generated code must be disclosed.",
+    "next_action": "Do not prepare or submit for this cycle. The November 3 deadline is close, and no concrete open-internet-stack contribution, user need or policy-compliant funded-work plan has been established. The project has a substantial AI-assisted development history that would need a transparent inventory/disclosure, and any proposal must be authored by the applicant in their own words. Reconsider a later call only if an independent user need supports a distinct, openly reusable stack contribution and the owner confirms the applicant/team, funding split, code disclosure and human-authored delivery plan. No application or outreach has occurred.",
+    "verified": "2026-10-28",
+    "application_status": "Not submitted; not recommended for current scope and readiness",
+    "eligibility_source_id": 475,
+    "horizon_country_source_id": 476
   },
   {
     "slug": "nlnet-codesupply",
@@ -228,6 +230,22 @@
     "next_action": "Do not apply this cycle. The deadline is November 3, 2026 at noon CET, but no user-validated package-metadata work package or strong European dimension has been established. NLnet policy 2.0 applies: GenAI cannot write the proposal or produce funded code, design, or documentation; significant pre-existing AI-generated code must be disclosed and is assessed by NLnet. Talk2Nature's AI-assisted development history has not been inventoried for that disclosure. Reconsider a future call only after a distinct CodeSupply-aligned need, eligible team, human-led compliant delivery plan, codebase disclosure inventory, and rights review are complete. No proposal has been drafted or submitted.",
     "verified": "2026-10-26",
     "application_status": "Not pursued this cycle; scope, team eligibility and policy compatibility unresolved"
+  },
+  {
+    "slug": "elfa-subgranting",
+    "name": "ELFA · local-first subgranting",
+    "type": "Open-source subgrant program (planned)",
+    "deadline": null,
+    "opening_date": "2027-01-01",
+    "opening_source_id": 477,
+    "program_status_source_id": 478,
+    "status": "Planned · expected opening 2027-01-01; terms pending",
+    "amount": "Not published.",
+    "source_id": 477,
+    "fit": "Possible future adjacency: ELFA describes a local-first, end-to-end encrypted and self-hostable workspace suite. Talk2Nature has a local browser observation workflow and privacy-sensitive research goals, but no current source says this subgrant will fund animal-observation integrations or that Talk2Nature is eligible. Treat any product fit as a hypothesis until the call scope is published.",
+    "next_action": "Monitor the consortium page for its opening guide, award range, eligible applicants, technical scope and submission deadline. NLnet says it withdrew as programme operator and calls were postponed for another organisation to run; resolve that status from the actual published call before preparing anything. No contact, application or partnership is recorded.",
+    "verified": "2026-10-28",
+    "application_status": "Not open; terms and operator unverified; no contact or application"
   },
   {
     "slug": "bezos",
