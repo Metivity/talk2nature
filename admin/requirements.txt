@@ -3,4 +3,5 @@ uvicorn==0.41.0
 google-auth==2.49.2
 requests==2.34.2
 httpx==0.27.2
+httpx2==2.16.0
 psycopg[binary]==3.3.6
