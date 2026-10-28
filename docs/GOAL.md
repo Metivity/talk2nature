@@ -1252,3 +1252,7 @@ PR [#513](https://github.com/Metivity/talk2nature/pull/513) merged to `main` as 
 ### October 28 continuation — add an urban bioacoustics comparator
 
 Reviewed a new Oriental magpie-robin paper and its Dryad version 8 metadata. Added separate article and dataset resource records, an original research note and a coarse Kathmandu Valley atlas marker. The paper/Dryad abstract disagree about the call category associated with a minimum-frequency/noise effect; site counts also differ between the paper Results and its Methods/README. The Dryad record lists small measurement tables but no raw audio, so this is a methods comparator rather than a phone-audio or ML benchmark. No payload or exact coordinate was acquired or published; the first-benchmark recommendation is unchanged. Continue the active five-track goal.
+
+### October 28 release receipt — magpie-robin reference and atlas entry
+
+PR [#515](https://github.com/Metivity/talk2nature/pull/515) merged to `main` as [`0fc2234`](https://github.com/Metivity/talk2nature/commit/0fc2234a9cdfdc41f577ce720b3adbe9f33885e4). Pages workflow [#40631222120](https://github.com/Metivity/talk2nature/actions/runs/40631222120) passed Python/Node tests, public build, publication-boundary checks, deployment and live-route/crawl verification. Fresh TLS reads confirmed the note, resource and atlas routes; the atlas now has 111 notes, 43 mapped across 47 coarse places. The first-benchmark recommendation and zero-command physical-phone/newcomer gates remain unchanged. Keep the full goal active.
