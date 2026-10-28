@@ -17,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.ResultReceiver;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
@@ -68,6 +69,11 @@ public final class MainActivity extends Activity {
     private LinearLayout sessionPanel, eventList;
     private volatile AudioTrack playback;
     private boolean permissionRequestInFlight;
+    private boolean noteRequestPending;
+    private boolean noteDraftNeedsAttention;
+    private int nextNoteRequestId;
+    private int pendingNoteRequestId;
+    private Runnable noteRequestTimeout;
     private boolean sessionReadable;
     private boolean sessionExists;
     private final EventListSnapshot eventListSnapshot = new EventListSnapshot();
@@ -95,6 +101,9 @@ public final class MainActivity extends Activity {
     }
 
     @Override protected void onDestroy() {
+        noteRequestPending=false;
+        if (noteRequestTimeout!=null) handler.removeCallbacks(noteRequestTimeout);
+        noteRequestTimeout=null;
         io.shutdownNow();
         super.onDestroy();
     }
@@ -297,11 +306,55 @@ public final class MainActivity extends Activity {
     }
 
     private void addObservationNote() {
+        if (noteRequestPending) return;
         String note=noteField.getText().toString().trim();
         if (note.isEmpty() || note.length()>300) { noteField.setError("Add a short note of 1–300 characters."); return; }
-        sendServiceAction(CaptureService.ACTION_NOTE,note);
-        noteField.setText("");
-        toast("Note added to the session timeline.");
+        int requestId=++nextNoteRequestId;
+        pendingNoteRequestId=requestId;
+        noteRequestPending=true;
+        noteDraftNeedsAttention=false;
+        noteField.setError(null);
+        noteButton.setEnabled(false);
+        ResultReceiver receiver=new ResultReceiver(handler) {
+            @Override protected void onReceiveResult(int resultCode,Bundle resultData) {
+                completeNoteRequest(requestId,note,resultCode==CaptureService.NOTE_SAVED,false);
+            }
+        };
+        noteRequestTimeout=()->completeNoteRequest(requestId,note,false,true);
+        handler.postDelayed(noteRequestTimeout,5000);
+        Intent intent=new Intent(this,CaptureService.class).setAction(CaptureService.ACTION_NOTE)
+                .putExtra("note",note).putExtra(CaptureService.EXTRA_NOTE_RESULT,receiver);
+        try {
+            startService(intent);
+            toast("Saving note to the session…");
+        } catch (Exception error) {
+            completeNoteRequest(requestId,note,false,false);
+        }
+    }
+
+    private void completeNoteRequest(int requestId,String submitted,boolean saved,boolean timedOut) {
+        if (!noteRequestPending || requestId!=pendingNoteRequestId) return;
+        noteRequestPending=false;
+        if (noteRequestTimeout!=null) handler.removeCallbacks(noteRequestTimeout);
+        noteRequestTimeout=null;
+        String current=noteField.getText().toString();
+        if (ObservationNoteDelivery.shouldClearSubmittedText(saved,submitted,current)) {
+            noteField.setText("");
+            noteField.setError(null);
+            noteDraftNeedsAttention=false;
+            toast("Note saved to the session timeline.");
+        } else if (saved) {
+            noteDraftNeedsAttention=!current.trim().isEmpty();
+            noteField.setError(noteDraftNeedsAttention?"This text is a new draft; it was not added to the session.":null);
+            toast("Note saved to the session timeline.");
+        } else {
+            noteDraftNeedsAttention=true;
+            noteField.setError(timedOut
+                    ? "Could not confirm whether this note was saved. Check the timeline before retrying."
+                    : "The note was not saved. Your text is still here.");
+            toast(timedOut?"Note delivery was not confirmed; your text is still here.":"The note was not saved; your text is still here.");
+        }
+        refreshSession();
     }
 
     private void sendServiceAction(String action) { sendServiceAction(action,null); }
@@ -362,8 +415,9 @@ public final class MainActivity extends Activity {
 
     private void setSessionControls(boolean active,boolean stopped,boolean hasSession) {
         stopButton.setVisibility(active?View.VISIBLE:View.GONE);
-        noteField.setVisibility(active?View.VISIBLE:View.GONE);
+        noteField.setVisibility(active || noteRequestPending || noteDraftNeedsAttention?View.VISIBLE:View.GONE);
         noteButton.setVisibility(active?View.VISIBLE:View.GONE);
+        noteButton.setEnabled(active && !noteRequestPending);
         exportButton.setVisibility(stopped && hasSession?View.VISIBLE:View.GONE);
         compareButton.setVisibility(stopped && hasSession?View.VISIBLE:View.GONE);
         deleteButton.setVisibility(hasSession?View.VISIBLE:View.GONE);

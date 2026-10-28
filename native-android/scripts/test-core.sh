@@ -11,9 +11,12 @@ javac -d "$TEST_CLASSES" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/SessionZip.java" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/DeleteAudioAfterManifestCommit.java" \
   "$APP_ROOT/src/main/java/org/talk2nature/station/StartButtonPolicy.java" \
+  "$APP_ROOT/src/main/java/org/talk2nature/station/ObservationNoteDelivery.java" \
   "$APP_ROOT/src/testCore/java/org/talk2nature/station/engine/CaptureEngineSelfTest.java" \
   "$APP_ROOT/src/testCore/java/org/talk2nature/station/SessionDeletionSelfTest.java" \
-  "$APP_ROOT/src/testCore/java/org/talk2nature/station/StartButtonPolicySelfTest.java"
+  "$APP_ROOT/src/testCore/java/org/talk2nature/station/StartButtonPolicySelfTest.java" \
+  "$APP_ROOT/src/testCore/java/org/talk2nature/station/ObservationNoteDeliverySelfTest.java"
 java -cp "$TEST_CLASSES" org.talk2nature.station.engine.CaptureEngineSelfTest
 java -cp "$TEST_CLASSES" org.talk2nature.station.SessionDeletionSelfTest
 java -cp "$TEST_CLASSES" org.talk2nature.station.StartButtonPolicySelfTest
+java -cp "$TEST_CLASSES" org.talk2nature.station.ObservationNoteDeliverySelfTest
