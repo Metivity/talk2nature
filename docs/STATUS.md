@@ -1,5 +1,13 @@
 # Project status
 
+## October 28 — label beginner control groups for assistive technology
+
+**Finding and change:** a focused accessibility scan found `aria-label` on two generic `div` containers without a role that supports naming: the practice statements and Station quick-observation buttons. Added `role="group"` to both, preserving their existing visible text and behavior.
+
+**Verification:** axe-core 4.14.0 found zero WCAG 2/2.1/2.2 A/AA violations on `/app/`, `/app/practice/`, `/app/station/?mode=demo#station-console` and `/app/compare/` in Playwright WebKit at 390 × 844. The prior ARIA incomplete checks cleared. Contrast remains an axe manual-review item because text sits over CSS gradients. The document width matched the 390-pixel viewport on all four routes. In desktop WebKit, keyboard focus showed a 3px outline through the skip link and primary navigation; Enter on “Try an example · no microphone” opened the synthetic Station route. Full Python tests passed (200, one intentional skip), Node tests passed (152), the local noindex build/site checker passed (147 HTML documents, 9,735 links), and the explicit-origin public candidate passed (147 HTML documents, 9,882 links, all 146 public routes reachable).
+
+**Limits and next step:** this is a targeted automated scan and maintainer keyboard check, not screen-reader, physical-phone or independent-newcomer validation. Contrast still needs manual review. No real audio, microphone, animal or participant data was used. The code and note are local on `codex/zero-command-accessibility-groups`; nothing has been pushed, merged or deployed. Keep the named-phone Save-to-Compare and separately authorized newcomer gates open; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 28 — shorten the keyboard path from note to finish
 
 **Question:** after entering an observation, can a keyboard user reach the next action without tabbing around the page? On the deployed build, waited until Station reported active recording, added a synthetic note and activated **Mark an observation**. **Stop** came 14 Tab presses later, after the timeline, footer and page navigation.

@@ -469,3 +469,9 @@ Rendered the local noindex candidate in headless Chrome 156 with explicit mobile
 **Live read-back:** cache-bypassed TLS-verified requests returned HTTP 200 for the homepage, app, Station, Review, Compare, resource directory and source contribution route. The pages were self-canonical and `index,follow`; the sitemap had 146 unique URLs and the resource directory showed 250 records. Station showed the no-calls/no-prompts boundary, the separate human-playback warning, and no longer contained the old absolute claim.
 
 **Remaining limits:** this is clearer instruction, not technical speaker muting or headphone enforcement. No microphone, recording, playback, animal or participant data was used. Physical-phone and independent-newcomer checks remain open.
+
+## October 28 — give labeled practice and observation sets group semantics
+
+A focused axe-core 4.14.0 scan marked the practice statement list and Station quick-observation controls for manual ARIA review because each generic container had an `aria-label` without a naming-supported role. Added `role="group"` to both containers. Rebuilt the local noindex site and rescanned the app home, practice, microphone-free Station and Compare routes in Playwright WebKit at 390 × 844: zero WCAG 2/2.1/2.2 A/AA violations, with the ARIA incomplete items cleared and no horizontal overflow. Axe still marks color contrast incomplete on gradients; those colors need manual review.
+
+The desktop WebKit keyboard check showed a visible 3px focus outline and activated the microphone-free example with Enter. This validates the link interaction in that browser engine only. No screen reader, physical phone, independent participant, microphone, recording or animal was involved. The named-phone save/reopen and authorized newcomer checks remain open.
