@@ -1,5 +1,13 @@
 # Project status
 
+## October 28 — add a university annotation-software reference
+
+**Question:** can Talk2Nature help a research group annotate synchronized animal audio and video without building another full annotation server?
+
+**Evidence reviewed:** read Zhang and Zhu's complete seven-page ACL 2026 System Demonstrations paper (DOI 10.18653/v1/2026.acl-demo.80) and Praat++ README and MIT LICENSE at public repository commit `229e4f3cf6a3385a286cace6dae5efbe22f4372a`. The paper and README describe synchronized waveform/spectrogram/pitch/intensity and video, tiered human labels, confidence flags, TextGrid import/export and optional editable PANNs event pre-annotations. The paper's evaluation is a feature comparison; no controlled user study or quantitative annotation-quality/time comparison was found. The README says model weights are separate and describes per-user/task media storage. The pinned code license is MIT; paper, weights, dependencies and user media have separate terms.
+
+**Decision and limits:** add it as an external research-software reference, not a Talk2Nature dependency or hosted offer. It supports a division of work: keep the Field Companion passive and simple; point teams needing multimodal annotation toward existing specialist tools. TextGrid exchange is only a future candidate. No code, package, model, media or data was acquired or run; no runtime, security, privacy, deletion, accessibility or mobile assessment occurred. The paper's feature claims do not establish researcher adoption or measured benefit. If a research team demonstrates a need, test a copied invented-media workflow and TextGrid round trip locally; review data handling and each component's rights before real media. See `docs/INTEROPERABILITY.md`, `docs/RESEARCHER_START.md` and the new research note.
+
 ## October 28 — compare public search excerpts with the live bat note
 
 **Question:** did the search excerpt update after the bat note’s corrected FileInfo checksum metadata was deployed?

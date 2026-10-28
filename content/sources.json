@@ -4932,5 +4932,21 @@
     "url": "https://info.figshare.com/user-guide/how-to-use-the-figshare-api/",
     "checked": "2026-10-28",
     "origin": "Reviewed the official Figshare API guide on October 28, 2026, including its public-file retrieval example. No file data or credentials were used."
+  },
+  {
+    "id": 482,
+    "title": "Praat++: Multimedia Annotation System for Speech and Vocalization",
+    "description": "Zhang and Zhu (2026), ACL System Demonstrations. A web-based tool for time-aligned audio/video annotation, acoustic inspection, tiered labels and editable event pre-annotation.",
+    "url": "https://aclanthology.org/2026.acl-demo.80/",
+    "checked": "2026-10-28",
+    "origin": "Read the complete seven-page ACL Anthology paper on October 28, 2026. Its evaluation section compares tool features in a table; no controlled user study was found. No text or figures were copied."
+  },
+  {
+    "id": 483,
+    "title": "Praat++ source repository and license at pinned main commit",
+    "description": "Public UTA-ACL2 PraatPlusPlus repository. The inspected main commit is 229e4f3cf6a3385a286cace6dae5efbe22f4372a; the repository LICENSE declares MIT for this code component.",
+    "url": "https://github.com/UTA-ACL2/PraatPlusPlus/tree/229e4f3cf6a3385a286cace6dae5efbe22f4372a",
+    "checked": "2026-10-28",
+    "origin": "Resolved the public main ref with git ls-remote and read the README and LICENSE at that exact commit over verified TLS. The README describes TextGrid import/export, a locally or institutionally hosted web app, media storage under a user/task file pool, and external PANNs weights. No application code, dependencies, media, or weights were acquired or run."
   }
 ]

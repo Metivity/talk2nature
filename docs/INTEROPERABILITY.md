@@ -33,3 +33,9 @@ The official [Whombat evaluation guide](https://mbsantiago.github.io/whombat/use
 ## Remaining acceptance check
 
 Have a bioacoustics or research-software specialist assess the field mapping before recommending it for a study. Other Whombat and dependency versions, mobile behavior, real recordings, study admission and scientific label quality remain unverified. Do not admit recordings to a research database or treat labels as evidence of animal meaning.
+
+## Separate team-annotation option: Praat++
+
+[Praat++](../praatplusplus-annotation-tool-2026/) is a current external option for teams that need synchronized audio/video annotation, multiple human label tiers and TextGrid import/export. Its source repository declares MIT at the reviewed commit. This is complementary to the Field Companion's passive capture and provenance path; it is not integrated or hosted by Talk2Nature.
+
+The ACL 2026 paper describes a feature-comparison evaluation, not a controlled user study. No independent performance, mobile, privacy, security, backup or deletion review was found. Its optional PANNs pre-annotation produces editable generic sound-event candidates; the paper says the selected tier is overwritten when candidates are written. A future comparison should use a copy of invented media, confirm saved-work recovery and TextGrid round-trip, and avoid any real recording until the institution reviews storage, access, retention, withdrawal and all component licenses. No integration or team demand is established.

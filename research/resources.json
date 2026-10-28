@@ -7676,6 +7676,64 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "praatplusplus-acl-2026-paper",
+      "kind": "paper",
+      "title": "Praat++: Multimedia Annotation System for Speech and Vocalization",
+      "url": "https://aclanthology.org/2026.acl-demo.80/",
+      "version": "ACL 2026 System Demonstrations, pp. 812–818; DOI 10.18653/v1/2026.acl-demo.80",
+      "source_ids": [
+        482
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-28",
+      "task": "Current research-software reference for collaborative audio/video annotation and possible TextGrid exchange; not a Talk2Nature component or evidence of animal meaning.",
+      "review_depth": "Read the complete seven-page ACL Anthology paper, including the system architecture, data/file workflow, AI pre-annotation, feature-comparison evaluation and conclusion. Checked the official repository README and license separately. No paper text or figure was copied; no code or media was acquired or run.",
+      "access": "Open ACL Anthology paper and public source repository. Talk2Nature retains only an original summary and source links.",
+      "decision": "Keep as a linked option for university teams that need synchronized audio/video review, multi-tier human labels and collaborative annotation. It supports the case for focusing Talk2Nature on passive capture, provenance and exchange instead of building a second full annotation server. Do not treat the paper's feature comparison as proof of measured time savings, annotation quality, security or adoption.",
+      "limitations": "The paper's evaluation is a feature matrix; no controlled user study or quantitative comparison of annotation time or label quality was found. Its PANNs-based pre-annotations target generic AudioSet sound-event classes, not animal behavior or meaning. The paper says generated regions overwrite the chosen tier, so preserve a copy before any trial. The software, model weights, dependencies, imported media and paper have separate terms. No mobile, privacy, security, retention or deletion audit was performed.",
+      "attribution": "Zhang, W. & Zhu, K. Q. (2026). Praat++: Multimedia Annotation System for Speech and Vocalization. Proceedings of ACL 2026, System Demonstrations, 812–818. DOI 10.18653/v1/2026.acl-demo.80.",
+      "rights": {
+        "license": "No paper-reuse license was verified in the inspected Anthology entry or PDF.",
+        "scope": "The paper only. Praat++ source code, PANNs weights, dependencies, imported media and model outputs have separate terms.",
+        "evidence_url": "https://aclanthology.org/2026.acl-demo.80/",
+        "conditions": "Link and cite the paper; do not reuse its text or figures without verifying the applicable license.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "praatplusplus-source-mit-2026-10-28",
+      "kind": "code",
+      "title": "Praat++ source code, pinned repository revision",
+      "url": "https://github.com/UTA-ACL2/PraatPlusPlus/tree/229e4f3cf6a3385a286cace6dae5efbe22f4372a",
+      "version": "Public main commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a, checked 2026-10-28",
+      "source_ids": [
+        483
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Metadata and documentation reference for an optional self-hosted research annotation tool; not a dependency or hosted Talk2Nature service.",
+      "review_depth": "Resolved the public main ref and read the README and LICENSE at that exact commit over verified TLS. The README documents waveform/spectrogram/pitch/intensity views, synchronized video, region/tier labels, confidence flags and TextGrid import/export; it also describes file uploads and external PANNs weights. No application code, dependencies, media or weights were acquired, installed, or run.",
+      "access": "Public repository, README and LICENSE. No source files beyond the README and license were fetched.",
+      "decision": "Keep as an optional reference for institution-led annotation workflows. If a researcher identifies a need, first evaluate TextGrid round-trip with invented media in an isolated local environment. Do not host it, send field recordings to a shared server, or build an adapter solely from the paper's claims.",
+      "limitations": "MIT applies to the source repository only. The README says model weight files are separate and describes user/task media storage in the application. Neither the MIT license nor role-management feature descriptions establish security, privacy, backup, retention, deletion, mobile or institutional deployment readiness. The PANNs model and dependencies were not reviewed. No app or security test was performed.",
+      "attribution": "UTA-ACL2, PraatPlusPlus, commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a.",
+      "rights": {
+        "license": "MIT per the LICENSE at the pinned repository revision.",
+        "scope": "Praat++ repository source code at the pinned commit only. Paper, PANNs weights, dependencies, media, outputs and user data have separate terms.",
+        "evidence_url": "https://github.com/UTA-ACL2/PraatPlusPlus/blob/229e4f3cf6a3385a286cace6dae5efbe22f4372a/LICENSE",
+        "conditions": "Preserve the MIT notice when redistributing covered source code. Review each model and dependency license separately; Talk2Nature does not copy or depend on this code.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
