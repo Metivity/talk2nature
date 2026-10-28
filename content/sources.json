@@ -4859,5 +4859,18 @@
     "rights": {
       "page": "The API record declares CC0-1.0 for this deposited data record. This scope is the Dryad dataset only; article text, figures, recordings and any code have separate rights."
     }
+  },
+  {
+    "id": 474,
+    "title": "Dryad API documentation on file-download authentication",
+    "description": "Pinned official Dryad documentation says API file downloads require an authentication token; anonymous API requests can still search public metadata.",
+    "url": "https://github.com/datadryad/dryad-app/blob/059e9222bb6a3fecc4d0b94851841b318c511795/documentation/apis/api_accounts.md",
+    "checked": "2026-10-28",
+    "origin": "Reviewed the pinned file at commit 059e9222bb6a3fecc4d0b94851841b318c511795, committed 2026-01-12. Its file-download section says downloads require a token. The current public Brown-throated Parakeet landing page lists a 2.03 KB README, but opening its official file link returned HTTP 403 in this review. No Dryad account or token was created; no data file was acquired.",
+    "review_url": "https://github.com/datadryad/dryad-app/blob/059e9222bb6a3fecc4d0b94851841b318c511795/documentation/apis/api_accounts.md",
+    "review_url_label": "Pinned Dryad API account and download documentation",
+    "rights": {
+      "documentation": "Official Dryad API guidance, cited for access behavior only. This does not change the dataset, article, code or model rights for any Dryad deposit."
+    }
   }
 ]

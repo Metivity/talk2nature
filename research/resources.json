@@ -7312,21 +7312,22 @@
       "version": "Dryad dataset v4 (record ID 77790; version ID 147704), published 2021-11-01 and modified 2021-11-02; DOI 10.5061/dryad.k3j9kd58b",
       "source_ids": [
         443,
-        444
+        444,
+        474
       ],
       "priority": 2,
-      "reviewed": "2026-10-25",
+      "reviewed": "2026-10-28",
       "task": "Potential descriptive comparison of contact-call acoustics across island and mainland populations; not a call-meaning or receiver-response benchmark.",
-      "review_depth": "Official Dryad API v2 record and v4 file manifest reviewed; targeted publisher-indexed article passages and current Dryad policy reviewed. The exact metadata-only manifest is research/manifests/brown-throated-parakeet-dryad-v4.json. No dataset or article file was acquired; official README download routes returned HTTP 401 and 403.",
-      "access": "Public Dryad landing page and version/file metadata are accessible. The v4 manifest reports eight files totaling 57,091,189 bytes. README API download returned HTTP 401 and the landing-page file link returned HTTP 403; no other route was tried.",
-      "decision": "Keep metadata-only. Candidate for a later descriptive, caller/group-aware acoustic replication only after qualified specialist review, data-level schema/site-sensitivity checks and reconciliation of the paper's duration sample counts. Not a receiver-response, translation or semantic benchmark.",
+      "review_depth": "Rechecked the official Dryad landing page and current file listing on October 28; it lists eight files totaling 57,091,189 bytes, including a 2.03 KB README. Opening the official README link returned HTTP 403. Reviewed Dryad API documentation at pinned commit 059e9222bb6a3fecc4d0b94851841b318c511795, which says file downloads require an authentication token. No Dryad account or token was created, and no dataset or article file was acquired. The metadata-only v4 manifest remains in research/manifests/brown-throated-parakeet-dryad-v4.json.",
+      "access": "Public Dryad page and version/file metadata are accessible. Its v4 list shows eight files totaling 57,091,189 bytes, including the README. The README file link returned HTTP 403; Dryad’s pinned API documentation says file downloads require an authentication token. No API account/token or file payload was obtained.",
+      "decision": "Keep metadata-only. This remains a descriptive, caller/group-aware replication lead, not a receiver-response, translation or semantic benchmark. Reconsider file access only if a qualified avian reviewer first confirms a distinct useful question and the project owner separately authorizes an API account/access path; do not use alternate or credentialed routes in the meantime.",
       "limitations": "The dataset-level API record points to CC0-1.0; the version/file entries do not repeat a license. Upstream SHA-256 values have not been checked against local bytes. Caller/session grouping, label provenance, site sensitivity and split suitability remain unknown. The paper's duration results report 1,319 calls from 92 units, but its 10 Table 5 rows sum to 1,313 calls from 91 units; the page does not reconcile the difference. No code file is listed in the v4 manifest. Dryad does not certify scientific validity, completeness or privacy.",
       "attribution": "Eberhard, J., Zager, I., Ferrer-Paris, J. & Rodriguez-Clark, K. (2021). Brown-throated parakeet vocalization data [Dataset]. Dryad. https://doi.org/10.5061/dryad.k3j9kd58b.",
       "rights": {
         "license": "The dataset-level API record points to https://spdx.org/licenses/CC0-1.0.html, consistent with Dryad policy; version/file entries do not repeat the license.",
         "scope": "Dataset deposit only; not the journal article, a code package, or a derived model.",
         "evidence_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.k3j9kd58b",
-        "conditions": "Preserve attribution and DOI citation. Review the README, grouping fields and spatial sensitivity before any acquisition or model design; no file bytes have been acquired or admitted.",
+        "conditions": "Preserve attribution and DOI citation. Dataset-level CC0 does not resolve the separate article or code terms, scientific suitability, labels or location sensitivity. Dryad documents that API file downloads require a token; none was created or used. Review the README, grouping fields and spatial sensitivity before any acquisition or model design.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

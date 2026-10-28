@@ -545,6 +545,10 @@ Decision: use this resource only to consider a low-level feature-estimation eval
 
 **Next gate:** before data acquisition or a model proposal, obtain the README through an authorized accessible route; reconcile the 1,319/92 duration prose with the 1,313/91 Table 5 sum; inspect grouping, label provenance and `RecordingSites` sensitivity; reconcile analysis subsets and locate/version the custom code; then seek qualified parrot-bioacoustics review. The README routes reviewed returned HTTP 401 and 403, so do not try alternate or credentialed routes without a new authorized basis. The candidate remains metadata-only and AutoResearch remains **NOT READY**.
 
+## October 28 — confirm Brown-throated Dryad file-download requirements
+
+The current public Dryad record lists eight v4 files totaling 57,091,189 bytes, including the 2.03 KB README; opening its official README link returned HTTP 403. Dryad's pinned [API account documentation](https://github.com/datadryad/dryad-app/blob/059e9222bb6a3fecc4d0b94851841b318c511795/documentation/apis/api_accounts.md) (commit `059e9222bb6a3fecc4d0b94851841b318c511795`) says API file downloads require an authentication token. No account/token was created or used. This confirms the existing metadata-only boundary; there is no new basis to try an alternate route. Pursue the candidate only if an avian reviewer first supports a useful distinct question and the owner separately authorizes the account/access step.
+
 ## October 26 — rook methods and rights review
 
 **Question:** is the rook vocal corpus a credible methods reference for linking vocal structure, caller identity and observed context, and are its non-article components reusable?
