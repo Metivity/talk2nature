@@ -4775,5 +4775,24 @@
       "scope": "Article only. The public peer-review page is linked but its reuse terms were not separately assessed. Mendeley Data v1 and publisher source-data files are separate components with separate records.",
       "conditions": "Publish an original summary and link. Do not assume the article license applies to the separate peer-review page, Mendeley files, source-data ZIP or third-party recordings."
     }
+  },
+  {
+    "id": 466,
+    "title": "Unlinked Egyptian fruit-bat context class-project repository (pinned commit)",
+    "description": "A recent GitHub project describes itself as a class project for five-context Egyptian fruit-bat call classification using ResNet18 spectrograms. Its relationship to the EUSIPCO paper authors or promised code release has not been established.",
+    "url": "https://github.com/250601043/bat-context-classifier/tree/03889d6a0bf8863ea582db5c41a8ecf42842f7d6",
+    "checked": "2026-10-28",
+    "origin": "Read-only GitHub API review on October 28, 2026, pinned to commit 03889d6a0bf8863ea582db5c41a8ecf42842f7d6. The repository API reports no license; the pinned tree has no README.md or LICENSE. The inspected download.py, prepare.py, train.py and requirements.txt describe five contexts, a recording-day split and a ResNet18 classifier. No repository files were saved locally or executed; no dataset, audio, image or model weights were acquired. The account's relationship to the paper authors is unverified.",
+    "review_url": "https://github.com/250601043/bat-context-classifier/tree/03889d6a0bf8863ea582db5c41a8ecf42842f7d6",
+    "review_url_label": "Immutable class-project commit reviewed through the GitHub API",
+    "rights": {
+      "code": "No repository license was declared by the API and no LICENSE file appears in the pinned tree; code reuse is not cleared.",
+      "data": "The repository's Figshare-based downloader and any underlying dataset components have separate rights and provenance; no data files were acquired or checked.",
+      "model": "No model weights were acquired. Any pretrained initialization and resulting weights require separate provenance and rights review.",
+      "conditions": "Metadata-only. Do not run, redistribute or reuse code, data or weights until provenance and component-specific terms are established.",
+      "research_use": "unresolved",
+      "commercial_use": "unresolved",
+      "redistribution": "unresolved"
+    }
   }
 ]
