@@ -2769,4 +2769,29 @@ class SiteTests(unittest.TestCase):
         self.assertIn('Behavior-derived semantic supervision is already implemented',article['decision'])
 
 
+    def test_humpback_tag_sensor_note_keeps_caller_and_phone_claims_bounded(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='humpback-tag-accelerometer-caller-attribution-2026')
+        self.assertEqual(note['source_ids'],[486,487,488])
+        self.assertIn('56 of 1,090 known focal calls',note['finding'])
+        self.assertIn('not a test of phone microphones',note['finding'])
+        self.assertIn('did not reliably establish which whale produced a call',note['finding'])
+        self.assertEqual(note['atlas']['location_status'],'mapped')
+        self.assertIn('No animal-level location is mapped',note['atlas']['locations'][0]['basis'])
+        self.assertIn('no third-party data or code was admitted',note['reuse']['status'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('humpback-')}
+        self.assertEqual(set(selected),{
+            'humpback-accelerometer-caller-attribution-paper-2026',
+            'humpback-focal-caller-data-zenodo-v1-2026',
+            'humpback-caller-attribution-matlab-code-zenodo-v1-2026',
+        })
+        self.assertTrue(all(r['acquisition']=='metadata_only' and r['files']==[] for r in selected.values()))
+        self.assertIn('CC BY 4.0 at the Zenodo record level',selected['humpback-focal-caller-data-zenodo-v1-2026']['rights']['license'])
+        self.assertIn('not a separately verified software license',selected['humpback-caller-attribution-matlab-code-zenodo-v1-2026']['rights']['license'])
+        learning=json.loads((project_root/'content'/'learning-paths.json').read_text())
+        label_path=next(p for p in learning['paths'] if p['id']=='label')
+        self.assertIn(note['slug'],label_path['notes'])
+
+
 if __name__=='__main__': unittest.main()

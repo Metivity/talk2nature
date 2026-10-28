@@ -7736,6 +7736,93 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "humpback-accelerometer-caller-attribution-paper-2026",
+      "kind": "paper",
+      "title": "Humpback-whale tag accelerometers and caller attribution",
+      "url": "https://doi.org/10.1098/rsos.252447",
+      "version": "Royal Society Open Science 13:252447 (2026)",
+      "source_ids": [
+        486
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-28",
+      "task": "Methods reference for validating acoustic caller attribution with synchronized animal-borne sensors; not a phone or meaning benchmark.",
+      "review_depth": "Read the complete 17-page article, including the tag and validation design, results, limitations, ethics and data availability. No article file, figure or supplementary material was added to the repository.",
+      "access": "Open-access paper; NOAA's institutional repository serves the publisher PDF. The publisher DOI is the primary citation.",
+      "decision": "Use as a bounded source-attribution and validation reference. The reported rates apply to the studied whale tags and feeding-ground conditions; do not transfer them to phone cameras or nearby phone sensors.",
+      "limitations": "Twelve whales across five groups at one feeding ground; only 8.75 hours had the strongest focal validation. No receiver-response or call-meaning label was evaluated. The article license does not license the data deposit, scripts or dependencies.",
+      "attribution": "Shearer, J. M. et al. (2026). Royal Society Open Science 13:252447. DOI 10.1098/rsos.252447.",
+      "rights": {
+        "license": "CC BY 4.0 as recorded by the NOAA institutional repository for the article.",
+        "scope": "The article only. Dataset/code deposit, supplementary material, software dependencies and any model assets have separate rights.",
+        "evidence_url": "https://repository.library.noaa.gov/view/noaa/76721",
+        "conditions": "Credit the authors and source and indicate changes if adapting article content. Talk2Nature retains only an original summary and citation.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "humpback-focal-caller-data-zenodo-v1-2026",
+      "kind": "dataset",
+      "title": "Humpback whale focal-caller audio and accelerometer data, Zenodo v1",
+      "url": "https://doi.org/10.5281/zenodo.18530673",
+      "version": "Zenodo version DOI 10.5281/zenodo.18530673; concept DOI 10.5281/zenodo.18530672; published 2026-02-09",
+      "source_ids": [
+        487
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Metadata-only methods reference for a study of whether animal-borne accelerometers reveal the focal caller.",
+      "review_depth": "Checked the official Zenodo record API, DataCite version relation, institutional dataset description and the article's cited version DOI. Metadata reports 43 files and 3,494,786,391 bytes under a record-level CC BY 4.0 declaration. No file payload or provider checksum was independently checked.",
+      "access": "Public versioned Zenodo record; the release contains call audio, acceleration, tables and code. No files were acquired.",
+      "decision": "Keep metadata-only. It supports a methods discussion about caller-label validation, not phone sensor testing, receiver understanding or a new communication benchmark. Any future reuse needs an exact file scope, qualified marine-mammal/evaluation review and a separate welfare, privacy and storage assessment.",
+      "limitations": "The study covers 12 tagged animals in five groups at one feeding ground, and the strongest known-focal labels cover only 8.75 hours. Files may contain temporal or study-location detail that should not be republished without review. Public availability and a CC BY declaration do not make it an admitted training set.",
+      "attribution": "Shearer, Parks, Gillespie, Shorter, Wiley, Smith and Jensen (2026), data for 'Animal-borne accelerometers do not reliably identify social calls from tagged humpback whales', Zenodo version DOI 10.5281/zenodo.18530673.",
+      "rights": {
+        "license": "CC BY 4.0 at the Zenodo record level, per the official API and DataCite metadata.",
+        "scope": "Version 18530673, concept 18530672, and its listed files. The article, separate supplementary record, dependencies and software tools retain separate terms.",
+        "evidence_url": "https://doi.org/10.5281/zenodo.18530673",
+        "conditions": "Preserve attribution, indicate changes and review the exact intended file use before any acquisition. No Talk2Nature data intake, training or redistribution is approved by this metadata review.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "humpback-caller-attribution-matlab-code-zenodo-v1-2026",
+      "kind": "code",
+      "title": "Humpback caller-attribution MATLAB scripts in Zenodo v1 deposit",
+      "url": "https://doi.org/10.5281/zenodo.18530673",
+      "version": "Zenodo version DOI 10.5281/zenodo.18530673; concept DOI 10.5281/zenodo.18530672",
+      "source_ids": [
+        487
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Metadata-only code reference for the published acoustic/accelerometer focal-caller analysis.",
+      "review_depth": "The Zenodo API manifest lists five MATLAB .m files among 43 files in the same 3.49 GB data/code record: combine_accel_acoustic_tables.m, parse_samplerate.m, analyze_RL_frequency.m, validate_focal_humpback.m and plot_humpback_call.m. No script was downloaded, read or executed.",
+      "access": "The scripts are listed inside the public Zenodo record with the data; there is no separately versioned code repository in the reviewed sources.",
+      "decision": "Keep metadata-only and separate from the data resource. If a bounded reproduction is proposed, inspect the exact scripts and environment, preserve the record-level license notice, and review MATLAB/toolbox dependencies before execution.",
+      "limitations": "Zenodo declares CC BY 4.0 at the whole-record level; no distinct software license or dependency manifest was reviewed. The scripts are not a Talk2Nature dependency and their presence does not establish a portable or independently reproduced pipeline.",
+      "attribution": "Shearer et al. (2026), code files included in Zenodo version DOI 10.5281/zenodo.18530673.",
+      "rights": {
+        "license": "CC BY 4.0 at the Zenodo record level; not a separately verified software license.",
+        "scope": "The five named MATLAB script files in the 18530673 deposit only. Data, paper, supplementary material, MATLAB and toolbox dependencies are separate assets.",
+        "evidence_url": "https://doi.org/10.5281/zenodo.18530673",
+        "conditions": "Retain the record attribution and review the covered files and dependencies before reuse. No code was acquired, installed or run.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
