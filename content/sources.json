@@ -4810,5 +4810,21 @@
     "url": "https://zenodo.org/api/records?q=2406.06332&size=20",
     "checked": "2026-10-28",
     "origin": "Read the public Zenodo records API over verified TLS on October 28, 2026. The exact query `2406.06332` returned zero hits. Broader title queries were overinclusive and are not treated as a negative result. This check does not rule out a differently indexed, private, coauthor/lab/archive release. No record payload, code, splits, media or model weights were downloaded."
+  },
+  {
+    "id": 469,
+    "title": "Official TUM Chair of Health Informatics GitHub organization inventory",
+    "description": "The Chair of Health Informatics at TUM links to the CHI-TUM GitHub organization. Its public API inventory returned eight repositories; none had bat/context terms in repository names or descriptions on 2026-10-28.",
+    "url": "https://api.github.com/orgs/CHI-TUM/repos?per_page=100&type=public&sort=updated",
+    "checked": "2026-10-28",
+    "origin": "The official TUM Chair team page lists Björn Schuller, Andreas Triantafyllopoulos, Manuel Milling and Alexander Gebhard; the CHI-TUM GitHub organization profile links to the Chair's official page. The verified-TLS GitHub organization API inventory contained eight public repositories, newest updated 2026-10-26. None of their repository names or descriptions contained bat, Egyptian, Rousettus, ultrasound, vocal, bioacoustic or context. This checks repository metadata only, not README content, trees, code, releases under other names or other author accounts. No files were fetched."
+  },
+  {
+    "id": 470,
+    "title": "Manuel Milling-linked GitHub owner repository inventory",
+    "description": "The official University of Augsburg library record for a separate 2025 pollen-classification paper links to millinma/SDPollen. The linked account's public API inventory had 11 repositories and no bat/context terms in names or descriptions.",
+    "url": "https://api.github.com/users/millinma/repos?per_page=100&sort=updated",
+    "checked": "2026-10-28",
+    "origin": "The official University of Augsburg OPUS record for `Automating airborne pollen classification: identifying and interpreting hard samples for classifiers` lists Manuel Milling and links its code to https://github.com/millinma/SDPollen. A verified-TLS GitHub owner-repository API inventory returned 11 public repositories, newest updated 2026-09-09. None of their repository names or descriptions contained bat, Egyptian, Rousettus, ultrasound, vocal, bioacoustic or context. This is account-level metadata screening only; no README, tree, file content or code was inspected. It does not rule out differently named releases or other coauthor/lab/archive locations. No files were fetched."
   }
 ]
