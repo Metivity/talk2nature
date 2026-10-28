@@ -1,5 +1,5 @@
 import {announceWaitingUpdate,resolveRedundantWorker,watchWaitingWorker} from './app-update.mjs';
-import {appNavOverlapsControls} from './app-nav-visibility.mjs';
+import {appNavOverlapsContent,appNavShouldHideOnLoad} from './app-nav-visibility.mjs';
 const base = new URL('../app/', import.meta.url), $ = id => document.getElementById(id);
 const modes = {
   outdoor: ['OUTDOOR VOICES','A moment in the wild.','Watch from a distance. Mark naturally occurring calls, movement and changes in the setting.','Outdoor moment','A bird moved to another branch. Its identity is uncertain.'],
@@ -19,11 +19,13 @@ const appNav = document.querySelector('.app-nav');
 if (appNav) {
   const compactViewport = window.matchMedia('(max-width: 800px)');
   const isFixedNav = () => window.getComputedStyle(appNav).position === 'fixed';
-  const focusableControls = 'a[href],button:not(:disabled),input:not(:disabled),select:not(:disabled),textarea:not(:disabled),summary,[tabindex]:not([tabindex="-1"])';
+  const navOcclusionTargets = 'a[href],button:not(:disabled),input:not(:disabled),select:not(:disabled),textarea:not(:disabled),summary,[tabindex]:not([tabindex="-1"]),h1,h2,h3,h4,p,li,blockquote,figcaption';
   let previousY = Math.max(0, window.scrollY || 0);
   let direction = 0;
   let distance = 0;
+  let startupNavigationPending = true;
   const revealNav = () => {
+    document.body.classList.remove('app-nav-instant');
     document.body.classList.remove('app-nav-away');
     if (!compactViewport.matches || !isFixedNav()) return;
     const style = appNav.style;
@@ -31,8 +33,8 @@ if (appNav) {
     const originalTransition = [style.getPropertyValue('transition'), style.getPropertyPriority('transition')];
     style.setProperty('transition', 'none');
     style.setProperty('transform', 'none');
-    const overlaps = appNavOverlapsControls(appNav, document.querySelectorAll(focusableControls), document.activeElement);
-    if (overlaps) document.body.classList.add('app-nav-away');
+    const overlaps = appNavOverlapsContent(appNav, document.querySelectorAll(navOcclusionTargets), document.activeElement);
+    if (overlaps) hideNav(true);
     if (originalTransform[0]) style.setProperty('transform', ...originalTransform);
     else style.removeProperty('transform');
     if (originalTransition[0]) style.setProperty('transition', ...originalTransition);
@@ -41,23 +43,26 @@ if (appNav) {
   const hideNav = (instant = false) => {
     if (appNav.contains(document.activeElement)) return;
     if (!instant) {
+      document.body.classList.remove('app-nav-instant');
       document.body.classList.add('app-nav-away');
       return;
     }
-    const style = appNav.style;
-    const transition = [style.getPropertyValue('transition'), style.getPropertyPriority('transition')];
-    style.setProperty('transition', 'none');
+    for (const animation of appNav.getAnimations?.() || []) animation.cancel();
+    document.body.classList.add('app-nav-instant');
     document.body.classList.add('app-nav-away');
     appNav.getBoundingClientRect();
-    if (transition[0]) style.setProperty('transition', ...transition);
-    else style.removeProperty('transition');
   };
   const syncViewport = () => {
     previousY = Math.max(0, window.scrollY || 0);
     direction = 0;
     distance = 0;
-    if (!compactViewport.matches || !isFixedNav() || previousY <= 80) revealNav();
-    else hideNav();
+    const compact = compactViewport.matches;
+    const fixed = isFixedNav();
+    const hideForStartup = startupNavigationPending && appNavShouldHideOnLoad({compact, fixed, hasHash: Boolean(location.hash), scrollY: previousY});
+    startupNavigationPending = false;
+    if (hideForStartup || (compact && fixed && previousY > 80)) hideNav(true);
+    else revealNav();
+    document.body.classList.add('app-nav-ready');
   };
   const updateNavOnScroll = () => {
     const y = Math.max(0, window.scrollY || 0);
@@ -69,7 +74,7 @@ if (appNav) {
       distance = 0;
       return;
     }
-    if (!document.body.classList.contains('app-nav-away') && appNavOverlapsControls(appNav, document.querySelectorAll(focusableControls), document.activeElement)) {
+    if (!document.body.classList.contains('app-nav-away') && appNavOverlapsContent(appNav, document.querySelectorAll(navOcclusionTargets), document.activeElement)) {
       hideNav(true);
       direction = 0;
       distance = 0;
@@ -92,7 +97,6 @@ if (appNav) {
   window.addEventListener('scroll', updateNavOnScroll, {passive: true});
   window.addEventListener('resize', syncViewport, {passive: true});
   syncViewport();
-  if (previousY > 80 && compactViewport.matches && isFixedNav()) hideNav();
   appNav.addEventListener('focusin', revealNav);
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible' && window.scrollY <= 48) revealNav();

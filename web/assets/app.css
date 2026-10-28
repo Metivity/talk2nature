@@ -40,6 +40,8 @@
 
 @media(max-width:620px){.app-body:has(.station-console:is([data-phase=starting],[data-phase=recording])){padding-bottom:calc(112px + env(safe-area-inset-bottom))}}
 .app-nav{transition:transform .22s ease,opacity .22s ease}
+.app-body.app-nav-instant .app-nav{transition:none!important}
+.app-body:has(#station-console:target,#station-demo:target):not(.app-nav-ready) .app-nav{transform:translate3d(0,calc(100% + 20px),0);opacity:0;pointer-events:none;transition:none!important}
 .app-body.app-nav-away .app-nav{transform:translate3d(0,calc(100% + 20px),0);opacity:0;pointer-events:none}
 .app-body.app-nav-away .app-nav:focus-within{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}
 @media(prefers-reduced-motion:reduce){.app-nav{transition:none!important}}
