@@ -1378,3 +1378,13 @@ A fresh local noindex build was inspected in headless Chrome 156 at a mobile-emu
 ### October 28 — refresh Mozilla funding fit
 
 Added two current Mozilla opportunities from official call materials. The 2027–2028 individual Fellowship is a conditional thematic lead: its RFP explicitly includes community environmental sensing for biodiversity and open infrastructure, but the applicant’s personal eligibility and community evidence are unresolved. The team-based Human-Scale AI Incubator is not recommended on current evidence because it requires core AI already used by the intended community and early product-community-fit signals. Added a private, question-led Fellowship prep note; Mozilla requires application answers to remain the applicant’s own work and voice. Nothing was submitted or sent. Keep the full goal active.
+
+### October 28 continuation — zero-command boundary and complete evidence map
+
+Keep “zero command” about the human-facing workflow: people can practice and record observations through ordinary controls without terminal commands, account setup or JSON editing. It does not mean commanding, prompting or playing sounds to animals. The Field Companion remains person-started, passive and local-first; no interpretation may be presented as an animal's message. Keep the named-phone Save-to-Compare check and the separately authorized uncoached-newcomer check open.
+
+While those gates await access, make the research library useful across species and methods. The clean `origin/main` candidate now renders the complete public metadata graph as searchable, type-filtered records: 113 research notes, 250 linked resources and 494 source citations (857 total), with explicit note/resource-to-source relationships and component-specific resource rights. This is a catalog-navigation improvement, not evidence that all records were re-reviewed, that any source endorses a claim, or that a dataset is admitted for training. See the current candidate receipt in `docs/STATUS.md`.
+
+**Next:** continue one bounded research/reproducibility milestone at a time, preserve the passive animal-facing boundary, and wait for a named device before changing the first-use workflow without observed friction. Keep AutoResearch and real-data admission **NOT READY**. This map candidate is local and not deployed; deployment and outside outreach remain separate release actions.
+
+**Map follow-up:** source and reverse-reference links now remain usable while a visitor has a type filter or search active: following a hidden citation clears the filter, opens the target record and moves keyboard focus to it. This repairs traversal within the complete graph; it is maintainer-run browser evidence, not outside-user adoption.
