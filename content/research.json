@@ -5776,17 +5776,19 @@
     "year_label": "Software publication year",
     "source_ids": [
       482,
-      483
+      483,
+      484,
+      485
     ],
-    "review_depth": "Read the complete seven-page ACL 2026 System Demonstrations paper and the README and MIT LICENSE at Praat++ main commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a. No application code, dependencies, user media or model weights were acquired or run; no security audit or independent evaluation occurred.",
-    "finding": "Praat++ is a self-hosted, browser-based tool for human annotation of synchronized audio and video. Its paper and README describe waveform, spectrogram, pitch and intensity views; time-aligned video; tiered event labels with confidence; role-aware review; TextGrid import/export; and optional PANNs-based event pre-annotation. This is a potentially useful annotation workflow for university teams, separate from Talk2Nature's user-started, passive Field Companion. It marks and reviews events; it does not establish caller intent, receiver understanding or call meaning.",
-    "limitations": "The seven-page paper compares features across tools; no controlled user study or quantitative annotation-time/quality comparison was found. Pre-annotation uses generic AudioSet sound-event classes, not a communication model. The paper says generated regions overwrite the chosen tier; any later trial should use a copy of invented work. The README describes media uploads into per-user/task storage and says pretrained PANNs weights must be prepared separately. MIT applies to the code only; paper rights, model weights, dependencies, media rights, privacy, security, retention and deletion are separate or unresolved. No institution-ready hosting or mobile use was verified.",
+    "review_depth": "Read the complete seven-page ACL 2026 System Demonstrations paper, the README and MIT LICENSE at Praat++ commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a, and statically reviewed that revision's run.py and login_routes.py. No application code or dependencies were installed or run; no media or weights were acquired; no login, network, penetration or full security test was performed.",
+    "finding": "Praat++ is a self-hosted, browser-based tool for human annotation of synchronized audio and video. Its paper and README describe waveform, spectrogram, pitch and intensity views; time-aligned video; tiered event labels with confidence; role-aware review; TextGrid import/export; and optional PANNs-based event pre-annotation. At the pinned commit, run.py sets the Flask secret key to the literal your_secret_key and binds the server to 0.0.0.0. login_routes.py contains a fixed allowed-account list and, when an allowed name is absent from users.json, stores the first submitted password hash and creates that user's session. These source-level defaults create an authentication and network-exposure risk for shared use; they were not exercised. Praat++ is only a feature reference for university teams, separate from Talk2Nature's passive Field Companion. Annotation does not establish caller intent, receiver understanding or call meaning.",
+    "limitations": "The seven-page paper compares features across tools; no controlled user study or quantitative annotation-time/quality comparison was found. Pre-annotation uses generic AudioSet sound-event classes, not a communication model. The paper says generated regions overwrite the chosen tier; any later trial should use a copy of invented work. The README describes media uploads into per-user/task storage and says pretrained PANNs weights must be prepared separately. MIT applies to the code only; paper rights, model weights, dependencies, media rights, privacy, retention and deletion are separate or unresolved. The static warning applies only to the pinned commit and is not a complete route-level or deployment audit. Do not expose that revision on a shared network or use it with sensitive media until qualified security review and remediation; no institution-ready hosting or mobile use was verified.",
     "lesson": "Talk2Nature should keep its first-time path focused on passive capture, human observations, provenance and portable exports. An existing annotation system may serve researchers who need synchronized video and multi-person review; avoid building a competing server until a team demonstrates that need. TextGrid exchange is a candidate bridge, not an implemented or tested feature.",
-    "next_review": "If a research team identifies a concrete need for multi-annotator audio/video coding, compare a small invented-media workflow in a local, isolated installation and verify TextGrid import/export, saved-work recovery and tier-overwrite behavior. Review access control, storage, backup, withdrawal, video/privacy risks and every model/dependency term before any real media or institutional deployment. Do not upload participant or sensitive wildlife media to a public service.",
+    "next_review": "If a research team identifies a concrete need for multi-annotator audio/video coding, first select a current code revision and have a qualified security reviewer assess session signing, initial account provisioning, per-route authorization, network binding, storage, backup and deletion. Require remediation before shared or sensitive use. Then compare a small invented-media workflow in an isolated installation and verify TextGrid import/export, saved-work recovery and tier-overwrite behavior. Review video/privacy risks and every model/dependency term before any real media. Do not upload participant or sensitive wildlife media to a public service.",
     "reviewed": "2026-10-28",
     "expert_review": "No independent research-software, bioacoustics or privacy/security review has assessed this Talk2Nature note or the application.",
-    "review_stage": "Complete system-demonstration paper and pinned README/license review; no runtime, security, accessibility or user evaluation.",
-    "review_locator": "Zhang & Zhu (2026), ACL Anthology 2026.acl-demo.80, §§2–3 and conclusion; PraatPlusPlus README and LICENSE at commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a.",
+    "review_stage": "Complete system-demonstration paper and pinned README/license review plus narrow static review of two source files; no runtime, exploit, full security, accessibility or user evaluation.",
+    "review_locator": "Zhang & Zhu (2026), ACL Anthology 2026.acl-demo.80, §§2–3 and conclusion; PraatPlusPlus README and LICENSE at commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a; source records 484–485 for run.py and app/routes/login_routes.py at that commit.",
     "purpose": "Data & annotation",
     "atlas": {
       "reviewed": "2026-10-28",
@@ -5811,13 +5813,17 @@
       [
         "Evaluation scope",
         "The paper presents a feature comparison; independent adoption, time savings, annotation-quality gains, security and mobile behavior remain unverified."
+      ],
+      [
+        "Pinned-source safety",
+        "Static review found a literal Flask session secret, a 0.0.0.0 bind and first-login account provisioning; do not expose this revision on a shared network or use sensitive media before qualified review and remediation."
       ]
     ],
     "reuse": {
-      "status": "Metadata-only software reference; not integrated, installed or recommended for real-media hosting.",
-      "asset": "ACL 2026 paper and Praat++ source repository at the pinned revision. No audio, video, code package, dependency or model weights were acquired.",
+      "status": "Metadata-only feature reference; the reviewed commit is not suitable for shared-network or sensitive-media use without security remediation.",
+      "asset": "ACL 2026 paper and Praat++ source repository at the pinned revision. Two source files were read transiently for static review. No code package, dependency, audio, video or model weights were saved, installed or run.",
       "rights": "The repository code declares MIT at the pinned LICENSE; the paper reuse license was not verified. PANNs weights, dependencies and media have separate terms.",
-      "experiment": "No experiment was run. A future integration decision requires researcher need, an invented-media TextGrid round trip, and separate privacy/security and license review."
+      "experiment": "No experiment or login test was run. A future evaluation requires researcher need, selection of a current revision, qualified security review and remediation, then an invented-media TextGrid round trip and separate privacy/security and license review."
     },
     "seo_description": "Praat++ offers self-hosted audio-video annotation and TextGrid exchange; its MIT code is not a ready Talk2Nature service or animal-meaning model."
   }

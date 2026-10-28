@@ -10,6 +10,18 @@
 
 **Publication and discovery:** PR [#531](https://github.com/Metivity/talk2nature/pull/531) merged to `main` as [`f276e66`](https://github.com/Metivity/talk2nature/commit/f276e667fd6cc0143ceff191fbe9400b00f02b47). Pages run [#40648235346](https://github.com/Metivity/talk2nature/actions/runs/40648235346) passed Python and Node tests, the public build, site checks and the live-route verifier. A TLS-verified read returned HTTP 200 for the [live note](https://metivity.github.io/talk2nature/research/praatplusplus-annotation-tool-2026/) with its self-canonical URL and `index,follow`; the sitemap returned HTTP 200 and contains the route. An available exact site-search query did not return this page. This confirms publication and crawlability, not Google indexing or search ranking; no authenticated Search Console inspection was performed in this turn.
 
+## October 28 — statically review the pinned Praat++ authentication defaults
+
+**Question:** does the exact Praat++ revision linked for university teams have source-level defaults that make shared or sensitive-media use unsafe?
+
+**Evidence:** over TLS, read only `run.py` and `app/routes/login_routes.py` at commit `229e4f3cf6a3385a286cace6dae5efbe22f4372a`. `run.py` sets `app.secret_key` to the literal `your_secret_key` and calls `app.run(host="0.0.0.0", port=5000)`. `login_routes.py` contains a fixed allowed-account list; when a name is allowed but absent from `users.json`, the first submitted password is hashed and a username session is created. The README's suggested `127.0.0.1` browser URL does not change the server's wildcard bind. No source was saved, installed or executed. No login, network, exploit, penetration, complete route-authorization or later-commit test was performed.
+
+**Change and decision:** added direct source links and a source-level warning to the Praat++ evidence note, code resource, researcher start guide and goal record. This exact commit is a feature reference only; do not expose it on a shared network or use it with sensitive media. The hard-coded signing key and first-login account setup create a material authentication risk if the service is reachable. This is a static assessment of one revision, not proof about the authors' current deployment or subsequent versions; no external contact was made.
+
+**Next gate:** if a research group wants to evaluate it, identify a current commit and require qualified review of session-secret management, account provisioning, route-level authorization, network binding, file ownership and deletion before any shared or real-media use. Only after remediation run a synthetic-media TextGrid round trip in an isolated environment. Paper, code, model weights, dependencies and imported media keep separate rights.
+
+**Validation of this documentation/catalog update:** the repository suite passed 196 tests with one intentional skip, and the resource catalog validated 246 records. The local noindex build produced 145 pages plus 404; its site checker validated 146 HTML documents and 7,642 links. The explicit public-origin build passed, and the public checker validated 146 HTML documents, 7,789 links and 145 reachable public pages. The generated note has the pinned source links, self-canonical and updated warning. These are build and content checks only; the Praat++ source was not executed, and the zero-command app was not inspected because the browser bridge timed out.
+
 ## October 28 — compare public search excerpts with the live bat note
 
 **Question:** did the search excerpt update after the bat note’s corrected FileInfo checksum metadata was deployed?
@@ -5663,3 +5675,7 @@ PR [#524](https://github.com/Metivity/talk2nature/pull/524) merged to `main` as 
 ## October 28 — public search visibility and freshness
 
 A site-restricted web search surfaced the project home, research-frontiers, resource-directory and bat-context routes. Search result metadata gave crawl ages of two to five days; the bat snippet still showed the October 23 review and the resource snippet said 238 records. Cache-bypassed TLS reads of the live routes returned HTTP 200 with canonicals, showed the October 28 bat review and 244 current resources, and confirmed that sitemap.xml and robots.txt were live with the routes listed. This confirms public search discovery of prior revisions plus current route availability; it does not identify the search engine, confirm that it has crawled the current revision, or provide Google Search Console coverage or impression data. Search Console is not connected to this workspace. No recrawl request or outreach was made.
+
+## October 28 — continue the zero-command goal
+
+The current in-app browser inspection timed out before returning a screen. No new visual or interaction evidence was collected and no application code changed. Keep the existing microphone-free practice → human note → Stop → local save → reopen-the-same-file-in-Compare path as the beginner acceptance target. The next qualifying check remains a named physical phone, recording its model, OS, browser and browser-versus-installed use. Do not repeat unchanged desktop emulation or recruit newcomers without explicit authorization. Continue evidence and rights review in parallel; the multi-track goal remains active, and AutoResearch and real-data admission remain **NOT READY**.
