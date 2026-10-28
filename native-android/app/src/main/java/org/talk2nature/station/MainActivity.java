@@ -445,11 +445,11 @@ public final class MainActivity extends Activity {
                 row.addView(text(label,15,INK,true),space(0,0,0,3));
                 row.addView(text("Unreviewed sound highlight · source is not identified",12,MUTED,false),space(0,0,0,7));
                 LinearLayout actions=new LinearLayout(this); actions.setOrientation(LinearLayout.HORIZONTAL); row.addView(actions);
-                Button play=button("Play clip",Color.rgb(101,185,157),Color.rgb(8,31,29));
+                Button play=button("Review audio",Color.rgb(101,185,157),Color.rgb(8,31,29));
                 Button discard=button("Delete clip",Color.rgb(67,47,48),Color.rgb(255,201,193));
                 LinearLayout.LayoutParams half=new LinearLayout.LayoutParams(0,dp(44),1); half.setMarginEnd(dp(7)); actions.addView(play,half);
                 LinearLayout.LayoutParams half2=new LinearLayout.LayoutParams(0,dp(44),1); actions.addView(discard,half2);
-                int id=event.getInt("id"); play.setOnClickListener(v -> playEvent(id));
+                int id=event.getInt("id"); play.setOnClickListener(v -> confirmHumanReviewPlayback(id));
                 discard.setOnClickListener(v -> new AlertDialog.Builder(this).setTitle("Delete this clip?")
                         .setMessage("The encrypted audio will be deleted. A small tombstone will remain so the session does not imply this moment was silent.")
                         .setNegativeButton("Keep it",null).setPositiveButton("Delete clip",(d,w)->deleteEvent(id)).show());
@@ -473,6 +473,13 @@ public final class MainActivity extends Activity {
         catch (Exception error) { toast("The clip could not be deleted."); }
     }
 
+    private void confirmHumanReviewPlayback(int id) {
+        new AlertDialog.Builder(this).setTitle("Keep playback away from animals")
+                .setMessage("This is an unreviewed recording. Do not play it to an animal. Listen only with headphones or after leaving the animal's space.")
+                .setNegativeButton("Cancel",null)
+                .setPositiveButton("Play for review",(dialog,which)->playEvent(id)).show();
+    }
+
     private void playEvent(int id) {
         stopPlayback();
         io.execute(() -> {
@@ -494,7 +501,7 @@ public final class MainActivity extends Activity {
                 runOnUiThread(()->toast("Clip playback failed. The original export may still be available."));
             }
         });
-        toast("Playing only the clip you selected.");
+        toast("Playing the selected clip for human review.");
     }
 
     private void stopPlayback() {
