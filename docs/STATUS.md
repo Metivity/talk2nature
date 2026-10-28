@@ -1,5 +1,14 @@
 # Project status
 
+## October 28 — compare public search excerpts with the live bat note
+
+**Question:** did the search excerpt update after the bat note’s corrected FileInfo checksum metadata was deployed?
+
+**Evidence:** a public site-specific web search returned the Egyptian-fruit-bat note with a “Crawled: 5 days ago” marker, the old October 12 review date, and the earlier text saying the FileInfo API lacked an upstream MD5. Fresh cache-bypassed, TLS-verified reads of the live note and resource directory both returned HTTP 200, the current October 28 review and matching provider `supplied_md5` / `computed_md5` fields; the pages carry self-canonical and `index,follow`, and the note is in the valid 144-URL sitemap. The live note explicitly says these provider values were not checked against local bytes.
+
+**Decision and limits:** the stale excerpt is search-index freshness evidence, not a live-page defect and not a Google Search Console result. The current workspace exposes no Search Console connector; the latest authenticated Search Console snapshot remains the October 25 report summarized in `docs/EXECUTION_BOARD.md`. Do not change the valid sitemap or claim a Google recrawl from this result. Recheck authenticated Search Console after a later processing cycle when account access is available. No external indexing request was made.
+
+
 ## October 28 — refresh Egyptian fruit-bat FileInfo integrity metadata
 
 **Question:** does the official Figshare item record still lack a provider checksum for the 31.6 MB FileInfo.csv needed to test whether call annotations can be joined to recording context?
