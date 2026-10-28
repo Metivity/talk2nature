@@ -330,6 +330,13 @@
       "precision": "region",
       "latitude": 27.7,
       "longitude": 85.3
+    },
+    {
+      "id": "stellwagen-bank-ma-bay",
+      "label": "Stellwagen Bank, Massachusetts Bay, United States",
+      "precision": "region",
+      "latitude": 42.4,
+      "longitude": -70.4
     }
   ]
 }

@@ -63,6 +63,26 @@ class SiteTests(unittest.TestCase):
                 self.assertTrue((project_root/path).is_file())
         self.assertIn('not a receiver-response or meaning benchmark',guide)
 
+    def test_contributor_zero_command_steps_match_the_live_app(self):
+        project_root=Path(__file__).resolve().parents[1]
+        home=(project_root/'web'/'templates'/'app.html').read_text()
+        station=(project_root/'web'/'templates'/'station.html').read_text()
+        compare=(project_root/'web'/'templates'/'compare.html').read_text()
+        self.assertIn('Try an example · no microphone',home)
+        live_labels=('Try without a microphone','Mark an observation','Stop recording',
+                     'Save this moment','I saved the file',
+                     'Open Compare moments to review it','Choose saved moment')
+        for label in live_labels:
+            with self.subTest(button=label):
+                self.assertIn(label,station if label!='Choose saved moment' else compare)
+        expected_steps=('Try an example · no microphone',)+live_labels
+        for name in ('README.md','CONTRIBUTING.md'):
+            with self.subTest(document=name):
+                copy=(project_root/name).read_text()
+                positions=[copy.index(step) for step in expected_steps]
+                self.assertEqual(positions,sorted(positions))
+                self.assertIn('to reopen the download',copy)
+
     def test_scientific_review_form_records_the_bounded_candidate(self):
         project_root=Path(__file__).resolve().parents[1]
         form=(project_root/'.github'/'ISSUE_TEMPLATE'/'scientific-review.yml').read_text()
@@ -2747,6 +2767,36 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(article['acquisition'],'metadata_only')
         self.assertEqual(article['files'],[])
         self.assertIn('Behavior-derived semantic supervision is already implemented',article['decision'])
+
+
+    def test_humpback_tag_sensor_note_keeps_caller_and_phone_claims_bounded(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='humpback-tag-accelerometer-caller-attribution-2026')
+        self.assertEqual(note['source_ids'],[486,487,488])
+        self.assertIn('56 of 1,090 known focal calls',note['finding'])
+        self.assertIn('not a test of phone microphones',note['finding'])
+        self.assertIn('did not reliably establish which whale produced a call',note['finding'])
+        self.assertEqual(note['atlas']['location_status'],'mapped')
+        self.assertIn('No animal-level location is mapped',note['atlas']['locations'][0]['basis'])
+        self.assertIn('no third-party data or code was admitted',note['reuse']['status'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('humpback-')}
+        self.assertEqual(set(selected),{
+            'humpback-accelerometer-caller-attribution-paper-2026',
+            'humpback-focal-caller-data-zenodo-v1-2026',
+            'humpback-caller-attribution-matlab-code-zenodo-v1-2026',
+        })
+        self.assertTrue(all(r['acquisition']=='metadata_only' and r['files']==[] for r in selected.values()))
+        self.assertIn('CC BY 4.0 at the Zenodo record level',selected['humpback-focal-caller-data-zenodo-v1-2026']['rights']['license'])
+        self.assertIn('not a separately verified software license',selected['humpback-caller-attribution-matlab-code-zenodo-v1-2026']['rights']['license'])
+        learning=json.loads((project_root/'content'/'learning-paths.json').read_text())
+        label_path=next(p for p in learning['paths'] if p['id']=='label')
+        self.assertIn(note['slug'],label_path['notes'])
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True)
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('href="/talk2nature/research/atlas/"',page)
+            self.assertIn('See this coarse literature location in the world atlas',page)
 
 
 if __name__=='__main__': unittest.main()

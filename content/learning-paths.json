@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-28",
   "paths": [
     {
       "id": "first-animal",
@@ -30,6 +30,7 @@
       "notes": [
         "bat-context",
         "egyptian-fruit-bat-data",
+        "humpback-tag-accelerometer-caller-attribution-2026",
         "das-annotation",
         "annotation-tools",
         "parrot-data-feasibility",

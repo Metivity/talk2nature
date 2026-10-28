@@ -5840,5 +5840,74 @@
       "experiment": "No experiment or login test was run. A future evaluation requires researcher need, selection of a current revision, qualified security review and remediation, then an invented-media TextGrid round trip and separate privacy/security and license review."
     },
     "seo_description": "Praat++ offers self-hosted audio-video annotation and TextGrid exchange; its MIT code is not a ready Talk2Nature service or animal-meaning model."
+  },
+  {
+    "slug": "humpback-tag-accelerometer-caller-attribution-2026",
+    "title": "A body-worn sensor was an unreliable caller ID for humpback whales",
+    "seo_description": "In the strongest validation periods, tag accelerometers missed 94.9% of known focal humpback calls. Phone sensors and call meaning were not tested.",
+    "taxon": "Humpback whale (Megaptera novaeangliae)",
+    "kind": "Multimodal caller-attribution validation",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Peer-reviewed study and versioned data/code release",
+    "source_ids": [486, 487, 488],
+    "reviewed": "2026-10-28",
+    "review_stage": "Full primary article review plus versioned data/code and location metadata review; no third-party payload was acquired or reproduced.",
+    "review_depth": "Read the complete 17-page open-access article, including Methods §§2.1–2.7, Results §§3.1–3.4, Discussion §§4.1–4.5, limitations, ethics and data availability. Checked the institutional dataset description and exact Zenodo/DataCite concept and version metadata, file count, total size and record-level license. No audio, accelerometer, table, MATLAB code or archive file was downloaded, installed or executed.",
+    "review_locator": "Shearer et al. (2026), Royal Society Open Science 13:252447, DOI 10.1098/rsos.252447; Zenodo version DOI 10.5281/zenodo.18530673 (concept DOI 10.5281/zenodo.18530672); source records 486–488.",
+    "finding": "At Stellwagen Bank National Marine Sanctuary, the authors studied 12 DTAG4 deployments across five humpback-whale groups during June and July 2023–2025. Tags combined a 192 kHz hydrophone with a 1 kHz triaxial accelerometer. Focal labels were strongest during intervals when every known group member was tagged and the group was followed; less certain periods were kept as possible-focal or indeterminate. During validation intervals, only 56 of 1,090 known focal calls had an accelerometer signature (5.1% sensitivity; 94.9% false-negative rate). Six known non-focal calls also appeared on an accelerometer (0.15% false-positive rate), and nine calls appeared on two tags at once. Under this setup, an accelerometer signal did not reliably establish which whale produced a call. This is a source-attribution result, not a test of phone microphones, phone accelerometers, external cameras, receiver response or call meaning.",
+    "limitations": "This was one feeding-ground study using 12 tagged whales in five groups; only 8.75 hours were in the strongest validation condition. The abstract summarizes the overall focal-call association as 3%; the 5.1% sensitivity reported here is calculated for the specific 1,090-call strongest-validation subset and those denominators should not be conflated. Most calls occurred outside the strongest validation periods, so their focal identity was less certain. Six of twelve tags moved from their initial position, preventing a clean tag-placement comparison. The study's animal-borne accelerometer is physically coupled to a whale and is not comparable to a phone held nearby or a camera viewing the scene. The result should not be transferred to other species, tag systems or sensor placements without validation. No receiver comprehension or semantic label was tested. The article and the combined 43-file Zenodo data/code record each declare CC BY 4.0 at their own scope; no separate software dependency or model-weight terms were reviewed.",
+    "lesson": "Synchronized channels do not automatically identify a caller. A multimodal workflow needs independent source labels, a measured alignment method, explicit possible/unknown cases, and both false-negative and false-positive checks. Co-occurrence is not proof of source identity. For Talk2Nature this is an evaluation-design lesson only; it is not evidence that a phone camera or accelerometer can identify an animal.",
+    "next_review": "If a future Talk2Nature workflow adds camera or device-sensor context, first state a narrow observable target, document each sensor's placement and clock uncertainty, and validate source attribution against independent human evidence with unknown labels preserved. Ask a qualified bioacoustics/sensor-methods reviewer to assess the design before using any real recordings. Do not acquire this deposit or present it as the first phone or communication benchmark on the basis of this literature review.",
+    "expert_review": "No independent cetacean bioacoustics, biologging, sensor-methods or ML/statistical reviewer has reviewed this Talk2Nature summary.",
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "mapped",
+      "location_note": "The paper places fieldwork at Stellwagen Bank National Marine Sanctuary. The atlas shows a one-decimal sanctuary-region locator derived from NOAA's boundary reference, not whale tracks, tag positions, vessel paths or deployment coordinates.",
+      "locations": [
+        {
+          "place_id": "stellwagen-bank-ma-bay",
+          "role": "study_region",
+          "source_id": 486,
+          "locator": "Methods §2.1, Data collection",
+          "basis": "The paper identifies Stellwagen Bank National Marine Sanctuary as the field site; the point is rounded to 0.1 degrees using the NOAA boundary locator in source 488. No animal-level location is mapped."
+        }
+      ],
+      "observation_period": {
+        "label": "Fieldwork June–July 2023–2025",
+        "start_year": 2023,
+        "end_year": 2025,
+        "source_id": 486,
+        "locator": "Methods §2.1, Data collection"
+      }
+    },
+    "study_snapshot": [
+      [
+        "Study design",
+        "Twelve humpback whales in five groups were tagged at Stellwagen Bank during June and July 2023–2025. The strongest focal labels came from periods with the entire group tagged and confirmed by focal follows."
+      ],
+      [
+        "Sensors",
+        "DTAG4 recordings combined a 192 kHz hydrophone with 1 kHz triaxial acceleration. These animal-mounted measurements are not phone-camera or handheld-phone measurements."
+      ],
+      [
+        "Validation result",
+        "Only 56 of 1,090 known focal calls had an accelerometer signature (5.1%); six known non-focal calls also had signatures. Nine calls appeared on two tags at once."
+      ],
+      [
+        "Data and code release",
+        "Zenodo version DOI 10.5281/zenodo.18530673; concept DOI 10.5281/zenodo.18530672. The official API lists 43 files totaling 3,494,786,391 bytes and a record-level CC BY 4.0 declaration. No payload was acquired."
+      ],
+      [
+        "Interpretation",
+        "The study tests caller attribution for tagged whales. It does not test call meaning, receiver understanding, phone sensors or general multimodal animal identification."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only methods reference; no third-party data or code was admitted to Talk2Nature storage or training.",
+      "asset": "This page contains an original summary and links. The paper and the Zenodo data/code deposit are separate assets. The deposit includes audio, acceleration, tables and MATLAB scripts; none of those payloads was acquired. No model weights were identified in the manifest review.",
+      "rights": "The paper is CC BY 4.0. Zenodo version 18530673 (concept 18530672) declares record-level CC BY 4.0 for its 43-file data/code deposit. No distinct software license for the MATLAB files or license review of their dependencies was completed. Preserve attribution and treat these rights as separate from any model or tool terms.",
+      "experiment": "No data acquisition, code execution, model run or reproduction occurred. The result is not a Talk2Nature benchmark and does not establish phone sensor performance, caller identity outside this setup, receiver response or communication meaning."
+    }
   }
 ]

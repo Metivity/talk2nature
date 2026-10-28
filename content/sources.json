@@ -4964,5 +4964,29 @@
     "url": "https://github.com/UTA-ACL2/PraatPlusPlus/blob/229e4f3cf6a3385a286cace6dae5efbe22f4372a/app/routes/login_routes.py#L9-L55",
     "checked": "2026-10-28",
     "origin": "Read the pinned login_routes.py directly over verified TLS. If an allowed account is absent from users.json, the first submitted password is hashed and stored and a username session is created. No login attempt or network test was made."
+  },
+  {
+    "id": 486,
+    "title": "Animal-borne accelerometers and humpback whale caller attribution, full paper",
+    "description": "Shearer et al. (2026), Royal Society Open Science 13:252447, DOI 10.1098/rsos.252447. Full open-access article reviewed for its sensor setup, validation labels, results, limitations and ethics.",
+    "url": "https://doi.org/10.1098/rsos.252447",
+    "checked": "2026-10-28",
+    "origin": "Read the complete 17-page publisher PDF served by NOAA's institutional repository, including Methods §§2.1–2.7, Results §§3.1–3.4, Discussion §§4.1–4.5, limitations, ethics and data availability. No article copy or figure was added to the repository."
+  },
+  {
+    "id": 487,
+    "title": "Humpback whale acoustic and accelerometer data/code deposit, Zenodo v1",
+    "description": "Exact version DOI 10.5281/zenodo.18530673; concept DOI 10.5281/zenodo.18530672. Zenodo and DataCite metadata declare CC BY 4.0 for the 43-file record; no payload was acquired.",
+    "url": "https://doi.org/10.5281/zenodo.18530673",
+    "checked": "2026-10-28",
+    "origin": "Queried the official Zenodo record API and DataCite version metadata over verified TLS, then checked the institutional dataset description and the paper's cited version DOI. The API reports 43 files totaling 3,494,786,391 bytes and a record-level CC BY 4.0 declaration. No audio, acceleration, table, MATLAB code or archive payload was downloaded; provider checksums were not recomputed."
+  },
+  {
+    "id": 488,
+    "title": "NOAA boundary locator for Stellwagen Bank National Marine Sanctuary",
+    "description": "Official NOAA boundary coordinate reference used only to create a rounded sanctuary-region literature locator.",
+    "url": "https://sanctuaries.noaa.gov/library/coord_sbnms.html",
+    "checked": "2026-10-28",
+    "origin": "Read NOAA's public sanctuary boundary coordinates. A one-decimal region point is used on the atlas; it is not an animal, tag, vessel or deployment coordinate."
   }
 ]
