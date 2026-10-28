@@ -101,6 +101,7 @@ class KnowledgeTests(unittest.TestCase):
             self.assertIn('id="resource-anuraset-data"', body)
             self.assertIn('id="source-1"', body)
             self.assertIn('id="graph-kind-filter"', body)
+            self.assertIn('class="page-intro section evidence-map-intro"', body)
             self.assertIn('Public metadata only. No recordings, participant observations or private records.', body)
             graph = json.loads((Path(temporary)/'research/map/catalog.json').read_text())
             self.assertEqual(len(graph['nodes']), expected)
