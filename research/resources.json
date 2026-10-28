@@ -7713,15 +7713,17 @@
       "url": "https://github.com/UTA-ACL2/PraatPlusPlus/tree/229e4f3cf6a3385a286cace6dae5efbe22f4372a",
       "version": "Public main commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a, checked 2026-10-28",
       "source_ids": [
-        483
+        483,
+        484,
+        485
       ],
       "priority": 2,
       "reviewed": "2026-10-28",
-      "task": "Metadata and documentation reference for an optional self-hosted research annotation tool; not a dependency or hosted Talk2Nature service.",
-      "review_depth": "Resolved the public main ref and read the README and LICENSE at that exact commit over verified TLS. The README documents waveform/spectrogram/pitch/intensity views, synchronized video, region/tier labels, confidence flags and TextGrid import/export; it also describes file uploads and external PANNs weights. No application code, dependencies, media or weights were acquired, installed, or run.",
-      "access": "Public repository, README and LICENSE. No source files beyond the README and license were fetched.",
-      "decision": "Keep as an optional reference for institution-led annotation workflows. If a researcher identifies a need, first evaluate TextGrid round-trip with invented media in an isolated local environment. Do not host it, send field recordings to a shared server, or build an adapter solely from the paper's claims.",
-      "limitations": "MIT applies to the source repository only. The README says model weight files are separate and describes user/task media storage in the application. Neither the MIT license nor role-management feature descriptions establish security, privacy, backup, retention, deletion, mobile or institutional deployment readiness. The PANNs model and dependencies were not reviewed. No app or security test was performed.",
+      "task": "Metadata and narrow source-security reference for an optional self-hosted research annotation tool; not a dependency or hosted Talk2Nature service.",
+      "review_depth": "Resolved the public main ref and read the README and LICENSE at that exact commit over verified TLS. Statically read run.py and app/routes/login_routes.py at the same pin. Observed a literal Flask session secret, a 0.0.0.0 bind, and first-login password setup for allowlisted usernames absent from users.json. No application code was saved, installed or run; no authentication, network or penetration test was performed.",
+      "access": "Public repository, README, LICENSE and two pinned source files read directly over verified TLS. No files were saved locally.",
+      "decision": "Keep only as an optional feature reference. Do not expose the pinned revision on a shared network or use it with sensitive media. If a researcher identifies a need, select a current revision and obtain qualified security review and remediation before shared use; then test TextGrid round-trip with invented media in an isolated environment. Do not host it or build an adapter solely from the paper's claims.",
+      "limitations": "MIT applies to source-code licensing, not security. At this pin, the hard-coded secret and wildcard bind combine with first-login account provisioning to create an authentication/network-exposure risk; this is a static finding, not a tested exploit or assessment of later commits. No full route authorization, upload ownership, privacy, backup, retention, deletion, accessibility, mobile or institutional review was performed. PANNs weights and dependencies remain unreviewed.",
       "attribution": "UTA-ACL2, PraatPlusPlus, commit 229e4f3cf6a3385a286cace6dae5efbe22f4372a.",
       "rights": {
         "license": "MIT per the LICENSE at the pinned repository revision.",

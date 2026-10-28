@@ -1832,6 +1832,20 @@ class SiteTests(unittest.TestCase):
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
 
+    def test_praatplusplus_note_limits_pinned_static_security_warning(self):
+        note=next(n for n in load('research') if n['slug']=='praatplusplus-annotation-tool-2026')
+        self.assertTrue({484,485} <= set(note['source_ids']))
+        self.assertIn('your_secret_key',note['finding'])
+        self.assertIn('0.0.0.0',note['finding'])
+        self.assertIn('not a complete route-level',note['limitations'])
+        with tempfile.TemporaryDirectory() as d:
+            output=Path(d)
+            build(output)
+            page=(output/'research'/'praatplusplus-annotation-tool-2026'/'index.html').read_text()
+        self.assertIn('Do not expose that revision on a shared network',page)
+        self.assertIn('not a complete route-level',page)
+        self.assertIn('login_routes.py#L9-L55',page)
+
     def test_japanese_tit_note_renders_source_linked_competing_theories(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='bird-call-syntax')

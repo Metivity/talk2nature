@@ -4948,5 +4948,21 @@
     "url": "https://github.com/UTA-ACL2/PraatPlusPlus/tree/229e4f3cf6a3385a286cace6dae5efbe22f4372a",
     "checked": "2026-10-28",
     "origin": "Resolved the public main ref with git ls-remote and read the README and LICENSE at that exact commit over verified TLS. The README describes TextGrid import/export, a locally or institutionally hosted web app, media storage under a user/task file pool, and external PANNs weights. No application code, dependencies, media, or weights were acquired or run."
+  },
+  {
+    "id": 484,
+    "title": "Praat++ Flask application entry point at pinned commit",
+    "description": "The entry point at the reviewed revision sets the Flask session key and network bind address.",
+    "url": "https://github.com/UTA-ACL2/PraatPlusPlus/blob/229e4f3cf6a3385a286cace6dae5efbe22f4372a/run.py#L14-L49",
+    "checked": "2026-10-28",
+    "origin": "Read run.py directly at the pinned commit over verified TLS. It assigns the literal Flask secret key your_secret_key and runs the development server on 0.0.0.0. The file was not saved, installed, or executed; this is a static source observation, not a test of a deployed instance."
+  },
+  {
+    "id": 485,
+    "title": "Praat++ first-login account handling at pinned commit",
+    "description": "The login route contains a static allowed-account list and creates a password hash for an allowed account on its first login.",
+    "url": "https://github.com/UTA-ACL2/PraatPlusPlus/blob/229e4f3cf6a3385a286cace6dae5efbe22f4372a/app/routes/login_routes.py#L9-L55",
+    "checked": "2026-10-28",
+    "origin": "Read the pinned login_routes.py directly over verified TLS. If an allowed account is absent from users.json, the first submitted password is hashed and stored and a username session is created. No login attempt or network test was made."
   }
 ]
