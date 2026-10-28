@@ -1390,3 +1390,9 @@ While those gates await access, make the research library useful across species 
 **Map follow-up:** source and reverse-reference links now remain usable while a visitor has a type filter or search active: following a hidden citation clears the filter, opens the target record and moves keyboard focus to it. This repairs traversal within the complete graph; it is maintainer-run browser evidence, not outside-user adoption.
 
 **Live comparison:** a fresh TLS-verified, cache-bypassed read of the published map returned HTTP 200, a self-canonical `index,follow` page and a sitemap entry. Its public `catalog.json` contains all 857 nodes (113 notes, 250 resources, 494 sources), but the rendered page and current search script expose only 113 note cards. The local candidate closes that UI gap; it is still not deployed. Mobile styling now keeps the map's primary search field clear of the fixed navigation at 390×844. At 320×568 the search lies below the initial viewport and is reached by scrolling; no horizontal overflow occurred.
+
+### October 28 continuation — keep the first human task zero-command
+
+The current local Field Companion home route leads with **Try an example · no microphone or account needed** and makes real observation optional. The Station route keeps the invented rehearsal separate from person-started capture, defaults animal identity to unknown, and keeps JSON under an advanced export action. Preserve this beginner path while continuing the multi-species research and open-source tracks.
+
+This was a content check of the local HTTP response, not a rendered usability session. Do not claim a physical-phone result or independent newcomer success. The next zero-command acceptance remains a named-phone synthetic save → same-file Compare walkthrough, with no animal present; keep newcomer recruitment behind its separate authorization gate. The five-track goal remains active, and AutoResearch / real-data admission remain **NOT READY**.
