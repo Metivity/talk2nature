@@ -6013,3 +6013,11 @@ PR [#549](https://github.com/Metivity/talk2nature/pull/549) merged to public mai
 **Independent live check:** certificate-verified reads returned HTTP 200 for `/app/`, `/app/practice/`, `/app/station/?mode=companion#station-console` and `/app/compare/`. The linked versioned assets return HTTP 200 and contain the approved contrast colors. Chrome rendered all four routes at 320 × 568, 390 × 844, 768 × 900 and 1440 × 1000 CSS pixels: document/body widths matched each viewport and no JavaScript page errors occurred. The four 390-pixel screens were visually inspected. No capture or playback was started and no device permission was requested.
 
 **Limits and next gate:** this is production-site read-back plus desktop Chrome emulation. It is not a physical-phone, installed-app, screen-reader, full WCAG or independent-user test. The focused contrast review sampled 14 text groups; it is not a complete conformance audit. Next, run the no-animal save/reopen rehearsal on a named physical phone, recording model, OS, browser/install mode and permission state. Keep newcomer recruitment behind its separate explicit authorization; keep AutoResearch and real-data admission **NOT READY**.
+
+## October 28 — continue the zero-command goal while the phone gate is open
+
+**Goal update:** keep the existing five-track goal active. “Zero-command” means no calls, prompts or playback directed at animals; a person deliberately starts and stops bounded capture. It does not mean unattended or background recording.
+
+**Availability check:** the local Station route returned HTTP 200. The browser-control bridge timed out, so no rendered interaction was verified in this session. `xcrun devicectl list devices` reported no connected devices, and Android Debug Bridge is unavailable. No physical-phone rehearsal was performed; emulator or simulator use would not close that gate.
+
+**Continue now:** maintain the synthetic, microphone-free workflow, source/rights review and contributor onboarding while the named-phone save/reopen check remains pending. No animal or participant data were collected, no animal-directed playback was used, and no newcomer recruitment or deployment occurred. Keep real-data admission and AutoResearch **NOT READY**.
