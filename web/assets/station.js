@@ -238,9 +238,9 @@ async function exportSession(bundle) {
     const files = await sessionFiles(session, $('station-alias').value, settings);
     if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
     else download(files[0].bytes, files[0].name, 'application/json');
-    exportStatus(bundle ? 'Your download was requested. Check Downloads. When you find your saved moment, choose the button below to continue.' : 'Journal download requested. It contains no sound; use Save this moment for your notes and sounds together.');
+    exportStatus(bundle ? 'Your file is ready. Check Downloads. If it opens as a preview, use Share → Save to Files (or your device’s save option), then return here and choose the button below.' : 'Journal download requested. It contains no sound; use Save this moment for your notes and sounds together.');
     if (bundle) {
-      $('station-save-ack').textContent = 'I found my downloaded moment';
+      $('station-save-ack').textContent = 'I saved the file';
       $('station-save-ack').hidden = false;
     }
   } catch { $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; exportStatus('Could not prepare the download. Your sounds remain in this tab. Try again or save individual clips before leaving.'); }
@@ -251,7 +251,7 @@ $('station-export').addEventListener('click', () => exportSession(false));
 $('station-save-ack').addEventListener('click', () => {
   dirty = false;
   $('station-save-ack').hidden = true;
-  exportStatus('Thanks for checking. Open Compare moments to review the saved file. Later changes need another download.');
+  exportStatus('Thanks for saving it. Open Compare moments to review the file. Later changes need another download.');
   $('station-compare-link').hidden = false;
   $('station-save-status').focus();
 });
