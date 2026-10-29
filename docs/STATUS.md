@@ -1,5 +1,17 @@
 # Project status
 
+## October 29 — add a first bird-detection evidence wedge; preserve the zero-command boundary
+
+**Decision:** keep the Field Companion passive and user-started. Separate bird-event detection, caller identity and a future parrot companion study; none is animal-language translation. The prioritized backlog records Powdermill as a bounded first detection-data lead, with Wytham identity work and a parrot pilot kept separate and gated.
+
+**Library candidate:** added six source-linked notes on temporal caller identification, Wytham identity provenance, Powdermill/BirdSet, High Sierra grouping, ArcticBirdSounds count/split limits, and ArcticSoundsNET training overlap. Added related metadata records and a coarse Wytham study-region atlas entry. New notes have concise search descriptions and source-link checks. The public atlas projection now includes 46 mapped evidence records across 49 coarse places; these counts describe literature metadata, not participant observations.
+
+**Collector correction:** the official Zenodo API for record 4656848 declares DOI `10.5061/dryad.d2547d81z` and license identifier `cc-zero`. The collector now validates the DOI and license actually declared by the exact pinned record instead of assuming every record uses a minted `10.5281/zenodo…` DOI and CC BY. A synthetic regression fixture checks the 434,265-byte annotation artifact manifest and checksum contract; no media, archive rows or model were fetched or inspected in this turn. The sample remains metadata/schema work, not training admission.
+
+**Verification:** all 234 Python tests passed with one intentional skip; all 155 Node tests passed. Local noindex and explicit-origin public candidates each built 154 routes plus 404 and passed the site checker (155 HTML documents; 10,484 and 10,640 links respectively). Comparing the candidate sitemap with the live sitemap preserved all 148 current routes and adds six research pages. This branch is still a candidate and has not been published or deployed.
+
+**Limits and next step:** the in-app browser bridge timed out, so this turn adds no new rendered screen evidence. Named-phone save/reopen and authorized newcomer checks remain open; no physical-device, participant or animal recording was made. Continue the zero-command workflow and source/rights work; keep real-data admission and AutoResearch **NOT READY**.
+
 ## October 28 — label beginner control groups for assistive technology
 
 **Finding and change:** a focused accessibility scan found `aria-label` on two generic `div` containers without a role that supports naming: the practice statements and Station quick-observation buttons. Added `role="group"` to both, preserving their existing visible text and behavior.

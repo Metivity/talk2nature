@@ -337,6 +337,13 @@
       "precision": "region",
       "latitude": 42.4,
       "longitude": -70.4
+    },
+    {
+      "id": "wytham-woods-region",
+      "label": "Wytham Woods region, UK",
+      "precision": "region",
+      "latitude": 51.8,
+      "longitude": -1.3
     }
   ]
 }

@@ -4378,7 +4378,7 @@
     "description": "Integrity-only verification of one 6,426-byte dataset documentation file; no animal recording or annotation payload.",
     "url": "https://api.osf.io/v2/files/649b14c83809110c1b3c2d9b/",
     "checked": "2026-10-25",
-    "origin": "Queried the public OSF API and retrieved docs/metadata/main.md (file ID 649b14c83809110c1b3c2d9b) only to verify its current provider hashes. The 6,426 downloaded bytes match the OSF SHA-256 and MD5. The October 23 local manifest contains a 63-character SHA-256 for this path; the cause of the malformed historical value is unknown. The file content was not read or redistributed. The OSF node declares CC BY 4.0; no separate file-level terms were found. No audio, annotations, location values or model weights were acquired. Verification receipt is in ignored data/external/wytham-integrity/ and the metadata-only report is research/wytham_file_verification_2026-10-25.json."
+    "origin": "Queried the public OSF API and retrieved docs/metadata/main.md (file ID 649b14c83809110c1b3c2d9b) only to verify its current provider hashes. The 6,426 downloaded bytes match the OSF SHA-256 and MD5. The October 23 local manifest contains a 63-character SHA-256 for this path; the cause of the malformed historical value is unknown. The file content was not read or redistributed. The OSF node declares CC BY 4.0; no separate file-level terms were found. No audio, annotations, location values or model weights were acquired. A local verification receipt is outside the public repository; the metadata-only report is research/wytham_file_verification_2026-10-25.json."
   },
   {
     "id": 427,

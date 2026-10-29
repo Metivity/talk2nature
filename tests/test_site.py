@@ -2588,6 +2588,50 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(selected['nbm-bird-sound-detection-code']['rights']['commercial_use'],'unresolved')
         self.assertEqual(selected['nbm-detection-model-weights']['rights']['redistribution'],'unresolved')
 
+    def test_arctic_bird_library_additions_keep_tasks_and_evidence_limits_separate(self):
+        project_root = Path(__file__).resolve().parents[1]
+        notes = {note['slug']: note for note in load('research')}
+        expected = {
+            'individual-bird-identification-temporal-embeddings-2026',
+            'wytham-great-tit-song-reidentification-2025',
+            'birdset-powdermill-first-compute-candidate',
+            'high-sierra-soundscape-metadata-preflight',
+            'arcticbirdsounds-grouped-split-preflight',
+            'arcticsoundsnet-transfer-learning-preflight',
+        }
+        self.assertTrue(expected.issubset(notes))
+        source_ids = {source['id'] for source in json.loads(
+            (project_root / 'content' / 'sources.json').read_text())}
+        for slug in expected:
+            self.assertTrue(set(notes[slug]['source_ids']).issubset(source_ids), slug)
+
+        arctic = notes['arcticbirdsounds-grouped-split-preflight']
+        combined = arctic['finding'] + ' ' + arctic['limitations']
+        self.assertIn('4,318', combined)
+        self.assertIn('4,319', combined)
+        self.assertIn('site-held-out', combined)
+        self.assertIn('not evidence', combined)
+        caller_id = notes['individual-bird-identification-temporal-embeddings-2026']
+        self.assertIn('not animal conversation', caller_id['finding'])
+        resource = next(r for r in json.loads(
+            (project_root / 'research' / 'resources.json').read_text())['resources']
+                        if r['id'] == 'powdermill-bird-soundscapes')
+        self.assertEqual(resource['acquisition'], 'sample_approved')
+        self.assertEqual(resource['record_doi'], '10.5061/dryad.d2547d81z')
+        self.assertEqual(resource['zenodo_api_license_id'], 'cc-zero')
+        self.assertIn('not training admission', resource['decision'])
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            build(root, 'https://fixture.github.io/talk2nature', True,
+                  'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page = (root / 'research' / 'arcticbirdsounds-grouped-split-preflight'
+                    / 'index.html').read_text()
+            self.assertIn('4,318', page)
+            self.assertIn('4,319', page)
+            self.assertIn('site-held-out', page)
+
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')
@@ -2622,6 +2666,7 @@ class SiteTests(unittest.TestCase):
             'wytham-great-tit-song-dataset-osf',
             'wytham-great-tit-song-setup-code',
             'wytham-great-tit-culture-paper-2025',
+            'wytham-great-tit-source-data',
         })
         dataset=selected['wytham-great-tit-song-dataset-osf']
         self.assertEqual(dataset['source_ids'],[363,364,365,372,426])

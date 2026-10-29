@@ -1,0 +1,115 @@
+{
+  "dataset_node": "b9trx",
+  "site_info_sha256": "1f2594a6fc1b1feb3a38e3f105c074d846e26626e188c80486c0b5f0e698dc1b",
+  "deployment_table": {
+    "deployment_rows": 19,
+    "distinct_sites": 6,
+    "distinct_plots": 15,
+    "distinct_site_plot_year_groups": 19,
+    "distinct_recorder_ids": 19,
+    "coordinate_values_retained_or_reported": false,
+    "ambiguous_year_plot_keys": 0
+  },
+  "publisher_schema": {
+    "filename_schema_documented": true,
+    "site_join_key": "year plus plot",
+    "annotation_audio_filename_field_documented": true,
+    "timestamp_clock_exceptions_within_30_seconds_documented": true
+  },
+  "published_count_comparison": {
+    "paper_reported_locations_in_abstract": 6,
+    "supplement_narrative_locations": 7,
+    "deployment_table_distinct_site_labels": 6,
+    "paper_reported_plot_year_groups": 20,
+    "manifest_plot_year_groups": 19,
+    "paper_reported_30_second_audio_segments": 2400,
+    "manifest_csv_flac_key_pairs": 2280,
+    "source_count_discrepancy_resolved": false
+  },
+  "full_audio_manifest": {
+    "representation": "uncompressed WAV directory",
+    "wav_files_in_inspected_pages": 1600,
+    "manifest_pages_inspected": 16,
+    "manifest_total_pages": 16,
+    "manifest_complete": true,
+    "unique_filename_count_in_inspected_pages": 1600,
+    "schema_valid_filenames": 1600,
+    "duplicate_schema_keys": 0,
+    "unambiguous_plot_year_to_site_matches": 1600,
+    "ambiguous_plot_year_matches": 0,
+    "unmatched_recordings_in_inspected_pages": 0,
+    "sites_with_unambiguous_audio_in_inspected_pages": 5,
+    "site_audio_sample_count_histogram": {
+      "120": 2,
+      "241": 1,
+      "519": 1,
+      "600": 1
+    }
+  },
+  "annotation_file_manifest": {
+    "flac_files_are_audio": true,
+    "csv_files_in_inspected_pages": 2280,
+    "flac_files_in_inspected_pages": 2280,
+    "manifest_pages_inspected": 46,
+    "manifest_total_pages": 46,
+    "manifest_complete": true,
+    "exact_csv_flac_schema_key_pairs": 2280,
+    "csv_keys_matching_wav_files": 1600,
+    "schema_valid_csv_filenames": 2280,
+    "schema_valid_flac_filenames": 2280,
+    "distinct_plot_year_groups": 19,
+    "plot_year_segment_count_histogram": {
+      "120": 19
+    },
+    "five_minute_recording_timestamp_groups": 228,
+    "segments_per_timestamp_group_histogram": {
+      "10": 228
+    },
+    "timestamp_groups_with_all_10_segments": 228,
+    "duplicate_csv_schema_keys": 0,
+    "duplicate_flac_schema_keys": 0,
+    "csv_keys_missing_matching_flac": 0,
+    "flac_keys_missing_matching_csv": 0,
+    "csv_keys_missing_matching_wav": 680,
+    "unambiguous_plot_year_to_site_matches": 2280,
+    "unmatched_or_ambiguous_csv_files_in_inspected_pages": 0,
+    "sites_with_unambiguous_annotation_files_in_inspected_pages": 6,
+    "site_annotation_sample_count_histogram": {
+      "120": 2,
+      "240": 1,
+      "480": 1,
+      "600": 1,
+      "720": 1
+    },
+    "annotation_csv_contents_read": false
+  },
+  "assessment": {
+    "audio_sample_file_to_site_keys_present": true,
+    "annotation_sample_to_site_keys_present": true,
+    "complete_audio_corpus_file_to_site_mapping_verified": true,
+    "complete_annotation_corpus_to_site_mapping_verified": true,
+    "site_grouped_holdout_candidate": true,
+    "uncompressed_wav_directory_covers_all_annotated_audio": false,
+    "mapping_scope": "Complete paginated filename manifests",
+    "benchmark_ready": false,
+    "decision": "Complete FLAC/annotation filename-to-site mapping is a grouped-split candidate; event-label coverage, group independence, component rights and pretrained-data leakage remain open."
+  },
+  "payloads": {
+    "wav_bytes_downloaded_or_opened": false,
+    "flac_bytes_downloaded_or_opened": false,
+    "annotation_rows_read": false,
+    "coordinates_reported": false,
+    "model_or_embedding_used": false,
+    "training_admitted": false
+  },
+  "rights": {
+    "dataset_license": "CC-By Attribution 4.0 International",
+    "license_id": "563c1cf88c5e4a3877f9e96a",
+    "preparation_code_license": "MIT declared by linked public GitHub repository",
+    "preparation_code_license_evidence": "https://github.com/Vin985/arctic_songs",
+    "preparation_code_contents_acquired_or_reviewed": false,
+    "paper_and_supplement_rights_are_separate": true,
+    "audio_or_annotation_payload_reuse_authorized_by_this_audit": false
+  },
+  "reviewed_at": "2026-10-29"
+}

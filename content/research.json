@@ -6026,5 +6026,227 @@
       "rights": "Zenodo v7 declares CC BY 4.0 at record level; pinned repository software declares BSD-3-Clause; the paper is CC BY-NC-ND 4.0. Treat each component separately and confirm bundled model/dependency rights before use.",
       "experiment": "No third-party data, audio or model was used. This metadata/literature review supports call-type methods only and establishes no receiver response, context decoding, translation, phone transfer or biological result."
     }
+  },
+  {
+    "slug": "individual-bird-identification-temporal-embeddings-2026",
+    "title": "Temporal embeddings can help identify known bird callers",
+    "seo_description": "Bird calls can identify known callers, but current splits may not hold out sessions. Review the evidence and identity-label limits.",
+    "taxon": "Birds (bioacoustic machine learning)",
+    "kind": "Closed-set acoustic individual identification",
+    "year": "2026",
+    "source_ids": [
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      144,
+      145,
+      146,
+      147,
+      148
+    ],
+    "review_depth": "Publisher article abstract, dataset descriptions, methods, results and limitations reviewed. Zenodo API record/version/file manifest, linked parent dataset metadata and licenses, pinned GitHub tree/README/LICENSE and notebook configuration cells, official BirdNET model terms, author-maintained Wytham ID documentation, and indexed excerpts of the 2024 and 2025 dataset papers reviewed. Current Zenodo concept-version API metadata for the cockatoo/penguin collection and the publisher-indexed abstract/Monash record for Huang et al. (2025) were also reviewed; full 2025 methods were not accessible. A remote byte-range check read only the Zenodo v3.1 ZIP central directory and one CSV header; no data rows/features or candidate archive were read or saved. No code executed, weights loaded or result reproduced. Zenodo v2 record/API metadata linked by the 2025 paper and the author-maintained code repository at pinned commit 8327fde28257cd82da62fcc32f37a29da8f98418 were also reviewed. The RTBC loader and fold assignment were read statically; no code was run and no dataset payload was accessed. A bounded HTTP Range check of Zenodo v2 inspected the ZIP directory and a 2,879-byte README metadata member in memory; the EML member could not be parsed, and no CSV rows, WAV or embeddings were accessed. The paper-linked analysis repository README and recursive tree at pinned commit bcfbe6990e1849531cf86feaafae5e932036954a were inspected. Its README links concept DOI 10.5281/zenodo.18603175; official Zenodo API resolves that to version record 20145425 v3.1. The README describes predefined metadata splits and notebook execution; notebook cells/outputs were not inspected or run. The publisher Supporting Information index was also reviewed: S1 covers great-spotted-kiwi segmentation, S2 reports additional performance metrics, and S3 analyzes kiwi errors; none describes a Wytham class-to-repertoire crosswalk. Current author-maintained Wytham documentation says the song-table ID denotes a breeding attempt with some identity uncertainty, or a proxy when a bird was not caught; separate song JSON documents source_wav, recording datetime and segment fields. These schemas identify possible grouping keys, not the mapping for this exact subset. No row values, recordings, spatial files or model outputs were inspected.",
+    "finding": "Gallego et al. modelled time-ordered 3-second BirdNET v2.4 embeddings with an LSTM for closed-set caller identification. Their paper reports 87,865 vocalizations across seven bird taxa and 352 labelled classes; the little-penguin labels are nest-level. Five stratified vocalization-level splits yielded mean test accuracy of 93.9–98.3% and macro-F1 of 93.2–98.3%. The largest data subset was great tit: 74,048 vocalizations from 242 labelled individuals. The original Wytham dataset papers report 242 known birds; the 2025 paper says 31 of 330 song repertoires were linked to those birds through a prior ViT metric-learning model. The paper also evaluates a smaller red-tailed black cockatoo subset: 1,785 female begging-call vocalizations from 16 individuals, described as across-year. This is a compact parrot-relative caller-ID example, not a pet-parrot or call-meaning dataset. Wytham remains the larger benchmark candidate, but neither corpus has verified session-disjoint source lineage in this review. These studies concern acoustic identity and unknown-caller detection, not animal conversation. The 2025 companion paper links Zenodo v2 (record 15054394), which is distinct from the v1 DOI cited by the 2026 paper and the current v3 concept release. Static inspection of the authors’ pinned RTBC loader shows its repeated folds are random, class-stratified clip-row splits, not season-, source-recording- or session-held-out evaluation. The README example organizes RTBC paths by call type, caller and season, but does not establish original recording-session IDs. A bounded v2 archive-directory check lists 4,216 WAV and 10 CSV members. Cockatoo WAV path names are organized through call-type, caller-like and season-like directories and contain no explicit recording/session/date token. This does not establish session independence; metadata CSV rows were not read and the EML schema could not be parsed. Author-maintained Wytham schema documentation confirms that segment JSON includes source_wav, recording filenames carry a recording ID and timestamp, and segment records include timing. These fields make a whole-source-file holdout plausible for Wytham. They do not establish which exact files/rows map to the 242 caller classes or whether distinct files belong to independent field sessions. The paper-linked code README describes predefined train/validation/test metadata splits and directs users to configure and run Jupyter notebooks. Its cited DOI 10.5281/zenodo.18603175 is the concept DOI for the already cataloged v3.1 version record 20145425, not a newly verified release. This helps locate the reproduction materials but does not show that the splits hold out source recordings or resolve Wytham class-to-row lineage. The 2025 Wytham paper gives a sharper identity-provenance split: 299 annotated repertoires from 242 known birds, plus 31 additional repertoires matched to existing IDs by a ViT metric-learning model (330 repertoires total). Since the 2026 paper says it retained identities confirmed by field observation or tagging, those 31 may be excluded if that criterion was applied literally; this is an inference, not a verified class crosswalk. The 2026 publisher lists only kiwi-focused segmentation/error supplements and aggregate performance tables, with no Wytham label crosswalk. The author-maintained schema documents source_wav and recording-time keys, but also warns that song-table IDs can be uncertain breeding-attempt links or proxies for uncaught birds. The 2026 paper says it retained identities confirmed by field observation or tagging; this suggests, but does not prove, that the 31 ViT-assisted repertoires from the 2025 paper are excluded from its 242-class subset.",
+    "limitations": "Every known class was represented across train/validation/test partitions; test vocalizations were unseen, but recording sessions were not guaranteed to be disjoint. Across-year subsets are not strict year-held-out tests. In the short-call cockatoo subset (mean 0.76 seconds), the 2026 paper reports a +0.9-point macro-F1 difference for its LSTM over the stronger static baseline, not statistically significant; sequence modeling therefore offers little demonstrated gain for this short-call case. Perch was evaluated only with static fully connected baselines, so its comparison with BirdNET+LSTM mixes backbone and downstream-model differences. Wytham documentation says the song-table ID identifies a breeding attempt and may be an uncertain bird link or proxy; recording-file IDs and segment JSON IDs refer to other objects. The exact filter mapping the paper's 242 caller labels to source rows, field/tag-confirmed birds and the 31 model-assisted repertoires remains unchecked. The Zenodo GreatTit test CSV header has 384 numbered numeric columns whose semantics are undocumented in the reviewed sources; no values or rows were inspected, so they cannot be treated as labels or embeddings. The current OSF node API returns license=null, while the 2024 dataset paper separately states that its input/output data files are CC BY 4.0. The cockatoo data release v1 (the DOI cited by the 2026 article) has a separate record-level CC BY 4.0 declaration and a 64.2 MB RTBC archive; current concept version v3, record 17576155, has a broader raw-audio/embedding package under CC BY-NC 4.0. The 2025 article itself is CC BY-NC-ND; do not conflate paper, source-data, or embedding terms. The Zenodo v3.1 aggregate declares CC BY 4.0 but bundles four upstream datasets with separate provenance and rights. BirdNET v2.4's Zenodo record declares CC BY-NC 4.0 while BirdNET-Analyzer states CC BY-NC-SA 4.0. The pinned analysis repository has an MIT license with a placeholder copyright holder. No data or model is admitted for reuse. The 2025 v2 package (record 15054394) is a separate CC BY-NC 4.0 record-level release: its archive, internal notices and EML metadata were not inspected. The author repository at pinned commit 8327fde28257cd82da62fcc32f37a29da8f98418 uses random class-stratified row folds for RTBC; the example caller/season directory structure is not proof of source-recording or session independence. The loader code was read but not executed. Bounded v2 ZIP-directory inspection found no explicit recording/session/date token in RTBC path names, but did not inspect the ten CSV members or establish whether they contain group keys. The README was read only as a small metadata document; the EML could not be parsed, so its schema is unknown. No raw data rows or audio were read. Wytham documentation does identify source_wav and time-stamped source recording identifiers, so a recording-file holdout may be constructible. It is not yet a verified session-disjoint split for the 2026 subset: the exact 242-class crosswalk, overlap of the 31 model-assisted repertoires, links among source files from one field session and class-level identity evidence remain unresolved. The pinned 2026 code tree is notebook-oriented with no standalone Python modules; README describes configurable predefined splits, but no notebook cells or outputs were inspected. Zenodo concept DOI 18603175 resolves to version 20145425 v3.1, so no newer version was verified. Preset splits do not establish session independence or the exact 242-class source mapping. The 2025 paper reports a ViT-based extension of 31 repertoires to IDs of already known birds, using acoustic similarity and a 100 m spatial constraint. Its reported 0.04% wrong-assignment rate after both thresholds is conditional on that study’s comparisons and ground-truth set; it is not a general label-error guarantee. Exact 31-repertoire overlap with the 2026 classes remains unknown. The small 2025 Zenodo archive contains code and CSV/spatial members under separate licenses; only its central directory, README and LICENSE were inspected, not its code or data. No published supplementary table reviewed maps the 242 2026 classes to the 299 field-linked repertoires, segment rows, source_wav groups or independent field sessions. The public schema alone cannot validate identity certainty, source-file joins or session independence. Exact overlap of the 31 model-assisted additions remains unknown.",
+    "lesson": "Start with a measurable, passive target such as matching a vocalization to a known caller; report it as identity prediction, not translation. Prevent session, site and time leakage before comparing models. Treat each paper, codebase, model and source dataset as a separate rights-bearing item.",
+    "next_review": "The public-document gate is complete for the 2026 article, its listed S1-S3 supplements, the 2025 repertoire-provenance paper and the author-maintained Wytham schema. No crosswalk was identified. A further mapping requires a narrowly scoped row-level audit after matching the exact 2026 package and Wytham source-data rights, and review by a qualified avian bioacoustics specialist of breeding-attempt/proxy identities and session grouping. If that gate is approved, map each of the 242 classes to field/tag evidence, the 299 field-linked repertoires, any of the 31 ViT-assisted repertoires, source_wav/time and whole-session groups; keep class stratification intact while testing recording/session leakage. Do not inspect rows, spatial files or audio before that review. Keep benchmark NOT READY and distinguish this identity task from communication.",
+    "reviewed": "2026-10-29",
+    "expert_review": "Not independently reviewed by a bioacoustics or ML specialist.",
+    "review_stage": "Primary methods/results, supporting-information scope and public schema/rights metadata reviewed; no row-level crosswalk or recording/session independence established; rights and qualified-review gates remain open.",
+    "year_label": "Publication year",
+    "purpose": "Models & evaluation",
+    "review_locator": "Gallego et al. (2026): Methods 2.1–2.3, Table 1, Results 3.3–3.4, Discussion 4.4–4.6 and data availability; Zenodo v3.1 record; pinned GitHub commit bcfbe6990e1849531cf86feaafae5e932036954a; upstream dataset records 1413495, versioned 14694741, current concept version 17576155, OSF n8ac9 and Figshare 16850542 v1; Huang et al. (2025): publisher-indexed abstract and Monash institutional record; Merino Recalde et al. (2024) dataset paper; Merino Recalde et al. (2025): selected methods and identity provenance; Wytham author-maintained ID documentation.; Huang et al. (2025): Zenodo v2 record 15054394 and pinned GitHub commit 8327fde28257cd82da62fcc32f37a29da8f98418, README RTBC folder example and data/datasets.py RTBCCallTypes/_make_cross_validation_splits; static review only.; Zenodo v2 bounded HTTP Range review: ZIP end record and central directory, README metadata member (2,879 bytes), and unparseable EML member; no CSV rows/media accessed.; 2026 pinned GitHub README and recursive tree at bcfbe6990e1849531cf86feaafae5e932036954a; Zenodo concept DOI 18603175 resolves via official API to version record 20145425 v3.1; no notebook cells/outputs reviewed.; Merino Recalde et al. (2025), Methods section Re-identifying individuals from their songs: 299 repertoires/242 known birds plus 31 model-assisted additions; reported spatial constraint and conditional false-assignment comparison. Zenodo archive v1.0.0 directory, README and MIT LICENSE only; no member data/code opened.; publisher Supporting Information index (S1 kiwi segmentation, S2 additional metrics, S3 kiwi error analysis); Wytham author-maintained variable description and song-file schema (`ID`, `source_wav`, datetime and segment timing)."
+  },
+  {
+    "slug": "wytham-great-tit-song-reidentification-2025",
+    "title": "Great-tit song identities include model-assisted repertoire matches",
+    "seo_description": "Great tit songs support caller re-identification research; session mapping and links to field-confirmed identities remain open.",
+    "taxon": "Great tits (Parus major)",
+    "kind": "Field bioacoustic dataset and model-assisted individual matching",
+    "year": "2025",
+    "source_ids": [
+      137,
+      141,
+      142,
+      143
+    ],
+    "review_depth": "Publisher-indexed primary text: Summary, data availability, STAR Methods on data collection, song annotation and re-identifying individuals; Zenodo API metadata for v1.0.0; official ForestGEO site location metadata. Direct publisher/PDF opening was inaccessible. No archive, audio or code was downloaded or executed.",
+    "finding": "Merino Recalde et al. report 109,963 songs in 299 repertoires belonging to 242 known birds, then 31 additional repertoires linked to those same birds with a prior Vision Transformer metric-learning model. The paper reports mAP@5 and CMC@1 of 0.98 for held-out known-song queries. For comparisons among physically re-identified birds, the authors report 34 wrong assignments in 11,359 acoustic-only comparisons and 4 after adding a 100 m spatial constraint. This is a population-specific caller/repertoire identification workflow, not evidence of call meaning.",
+    "limitations": "The 31 added repertoires are model-assisted labels, not direct field/tag confirmations. The reported error counts are conditional on the study's ground-truth comparisons, model, distance rule and spatial filter; they are not a general error guarantee. The exact overlap between those repertoires and Gallego et al.'s 74,048-vocalization, 242-class subset is unknown, so circularity and label lineage must be audited before benchmarking. The study is one Wytham population and does not establish cross-population performance or communication. Article, OSF data, software, embeddings and model rights are separate.",
+    "lesson": "Keep field/tag identity, model-assisted identity and caller predictions in separate provenance classes. A benchmark test label must be independent of the model under evaluation, and recording/session groups must remain intact across partitions.",
+    "next_review": "Map the 2026 benchmark's classes and clips to the 2025 study's 330 repertoires; identify whether model-assisted repertoires are included; obtain qualified review of identity confidence, acoustic/spatial thresholds and session grouping; verify file-level rights before any archive inspection.",
+    "reviewed": "2026-10-28",
+    "expert_review": "Not independently reviewed by a bioacoustics or ML specialist.",
+    "review_stage": "Selected primary article excerpts and deposit metadata reviewed; files not acquired; no independent reproduction.",
+    "year_label": "Publication year",
+    "purpose": "Models & evaluation",
+    "review_locator": "Merino Recalde et al. (2025): Summary; STAR Methods sections Data collection, Data processing and annotation, Re-identifying individuals; Data and code availability. Zenodo concept DOI 10.5281/zenodo.12800735 resolves to version record 10.5281/zenodo.12800736.",
+    "atlas": {
+      "reviewed": "2026-10-28",
+      "location_status": "mapped",
+      "location_note": "The paper places the study in Wytham Woods, UK. The rounded point is a broad forest-region locator near ForestGEO's core-plot metadata, not a nest-box, recorder or animal coordinate.",
+      "locations": [
+        {
+          "place_id": "wytham-woods-region",
+          "role": "study_region",
+          "source_id": 143,
+          "locator": "ForestGEO Wytham Woods site metadata; primary article STAR Methods: Data collection",
+          "basis": "The article names Wytham Woods as the study site; ForestGEO's rounded regional map point is used only to display the broad woodland region, not animal or recording coordinates."
+        }
+      ],
+      "observation_period": {
+        "label": "Breeding seasons 2020–2022",
+        "start_year": 2020,
+        "end_year": 2022,
+        "source_id": 141,
+        "locator": "STAR Methods: Data collection"
+      }
+    }
+  },
+  {
+    "slug": "birdset-powdermill-first-compute-candidate",
+    "title": "Start bird audio ML with event detection, not translation",
+    "seo_description": "Powdermill offers dense bird-event labels for detection tests, but one reserve cannot establish site generalization or communication.",
+    "taxon": "Birds (passive bioacoustic monitoring)",
+    "kind": "Dataset and benchmark review",
+    "year": "2025",
+    "source_ids": [
+      149,
+      150,
+      151,
+      152
+    ],
+    "review_depth": "Reviewed the BirdSet ICLR paper's scope/ethics/limitations, author-maintained dataset card and compatibility note, BioDCASE 2026 embedding-bundle schema/splits/source-license table, Powdermill dataset description and annotation protocol, and the official Zenodo API license/file manifest. Acquired only the CC0 Powdermill annotation ZIP under a checksum receipt and inspected its table schema and aggregate counts; raw annotation rows, audio, coordinates, embeddings and weights are not published or used for training.",
+    "finding": "BirdSet is a substantial entry point for multi-label bird-sound classification: its paper reports over 6,800 training hours and nearly 10,000 classes, with over 400 hours across eight strongly labeled evaluation datasets. Powdermill is useful as a small pipeline smoke test: its 77 five-minute tables contain 16,052 annotations and 48 identified species codes across only four dated recording groups; the tables expose no site key. Three codes occur in all four groups and 25 occur in one group only. The official Zenodo API declares CC0-1.0. This supports schema and pipeline rehearsal, not a robust site-generalization benchmark, caller identity, animal behavior meaning or two-way communication. The High Sierra Nevada (HSN) data audit also found no file-to-lake crosswalk, so it cannot support the proposed site-held-out split from the published files. BirdSet and its 225 MB BioDCASE Perch v2 train/validation bundle remain scale and tooling references with separate source/model terms and leakage limits.",
+    "limitations": "Powdermill has four recording groups and no site key; its one empty annotation table is not verified quiet audio because faint, unidentifiable and short-chip sounds were not fully annotated. HSN has no per-recording site mapping, five filename dates including three clips before the source-described July 9-12 window, 680 unidentified labels beyond the 10,296 identified-species rows, and 63 zero-duration intervals whose meaning remains unresolved. HSN was previously used in BirdCLEF/Kaggle, creating benchmark contamination risk. BirdSet aggregate and component licenses remain distinct, and the BioDCASE bundle is train/validation only. No model was selected or evaluated. These resources do not have parrot-specific or receiver-response labels.",
+    "lesson": "Choose the question before the species corpus. Start with a defensible low-risk software baseline for detecting labeled bird vocalizations in soundscapes, grouped by recorder/site/day and compared with simple context and majority baselines. Keep this computational benchmark separate from the provisional budgerigar observation study and the Wytham known-caller identity track. Predictive classification does not decode communication.",
+    "next_review": "Search for a rights-compatible bird-sound dataset that publishes explicit recording-to-site/session keys, independent label provenance and a defensible held-out set. Do not treat HSN dates as independent sites or train/test rows randomly. Resolve the HSN date and zero-duration metadata discrepancies and prior benchmark/model-pretraining overlap before any later use. Obtain qualified review and freeze a protocol before model execution. Separately continue the Wytham 242-class crosswalk audit.",
+    "reviewed": "2026-10-29",
+    "expert_review": "Not independently reviewed by an ornithologist or bioacoustics/ML specialist.",
+    "review_stage": "Primary methods and rights review plus checksum-verified aggregate-only annotation schema audit; no audio/model run or training admission.",
+    "year_label": "Dataset and paper years",
+    "purpose": "Models & evaluation",
+    "review_locator": "Rauch et al. (2025), ICLR 2025 BirdSet paper, abstract, conclusion, limitations and ethics statement; BirdSet author dataset card and source inventory; BioDCASE 2026 Task 4, Zenodo v2 record 19340660, bundle schema and upstream licenses; Chronister et al., Powdermill Zenodo record 4656848 page, linked README and official API metadata; Clapp et al., High Sierra Nevada Zenodo record 7525805, official API and local aggregate-only report research/hsn_metadata_report.json.",
+    "atlas": {
+      "reviewed": "2026-10-29",
+      "location_status": "not_applicable",
+      "location_note": "This note covers dataset and benchmark suitability rather than a Talk2Nature observation site.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "high-sierra-soundscape-metadata-preflight",
+    "title": "High Sierra Nevada annotations lack the site key needed for a site holdout",
+    "seo_description": "High Sierra recordings may support event benchmarks, but the reviewed metadata lacks the site key for a site-held-out test.",
+    "taxon": "Wild birds (passive soundscape annotation)",
+    "kind": "Dataset metadata and split-feasibility audit",
+    "year": "2023",
+    "source_ids": [
+      150,
+      154
+    ],
+    "review_depth": "Zenodo v1 record and API, record-level CC BY 4.0 license, file manifest, dataset sampling/annotation description and BirdSet dataset-card mapping reviewed. Only annotations.csv and recording_location.txt were fetched transiently into memory after checksum verification. The report contains aggregates only; no files were retained and no audio was acquired or opened.",
+    "finding": "The source describes 100 ten-minute clips from ten lakes, 10,296 identified-species bounding boxes across 21 species, and use in BirdCLEF 2020/Kaggle. The checksum-pinned annotation CSV contains 10,976 rows: 10,296 identified labels plus 680 ???? labels. It names 100 recording files and five filename dates; three files are dated July 8 although the description says the selected window is July 9-12. Species-date support ranges from 6 codes on one date to 5 codes on all five dates. The location text contains one coarse regional coordinate pair, not a file-to-lake crosswalk. This supports a narrow metadata audit but not a site-held-out split.",
+    "limitations": "A site-held-out result cannot be constructed from the published location text and annotation filename schema. One regional point is not ten site labels, and site-level class coverage is therefore unknown. The three July 8 files need source clarification. Sixty-three annotation rows have equal start/end times at the supplied numeric precision; whether this is rounding or a data issue is unresolved. Unlabeled intervals are not verified silence. Prior BirdCLEF/Kaggle use and possible model-pretraining overlap make evaluation leakage a separate gate. This is one region and one short seasonal window; no model, audio, score or communication inference was produced.",
+    "lesson": "An ecological site count in a paper is insufficient for grouped evaluation unless the released file metadata maps every recording to its site. Preserve date/session groups, unknown labels and malformed or ambiguous intervals, and do not convert a coarse region point into site-level truth.",
+    "next_review": "Find a license-compatible corpus with a published recording-to-site/session mapping, independent labels and a usable held-out group. Otherwise keep the first benchmark deferred. Resolve HSN date/interval questions through existing public documentation and assess prior benchmark/model overlap before considering a date-grouped feasibility study.",
+    "reviewed": "2026-10-29",
+    "expert_review": "Not independently reviewed by an ornithologist, bioacoustics specialist or ML specialist.",
+    "review_stage": "Record-level rights and manifest plus checksum-verified aggregate-only annotation/location metadata inspection; source files not retained; no audio or model run.",
+    "year_label": "Dataset release year",
+    "purpose": "Models & evaluation",
+    "review_locator": "Clapp et al., Zenodo record 7525805 and official API; source description of 100 soundscapes, ten sites, four reported days, sampling and annotation methods; BirdSet dataset card mapping; checksum-pinned in-memory aggregate audit recorded in research/hsn_metadata_report.json.",
+    "atlas": {
+      "reviewed": "2026-10-29",
+      "location_status": "not_applicable",
+      "location_note": "This note audits public dataset metadata, not a Talk2Nature observation location. Exact coordinates are not retained or displayed.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "arcticbirdsounds-grouped-split-preflight",
+    "title": "ArcticBirdSounds maps to sites; archive counts still need reconciliation",
+    "seo_description": "ArcticBirdSounds links to deployment sites, but archive counts, group keys and site-held-out support remain unresolved.",
+    "taxon": "Arctic birds (passive soundscape annotations)",
+    "kind": "Dataset metadata and grouped-split feasibility audit",
+    "year": "2023",
+    "source_ids": [
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164
+    ],
+    "review_depth": "Publisher article abstract and 36-page Data S1 metadata supplement reviewed for methods, filename schema, variable descriptions, timing anomalies and reported sample totals; current ArcticBirdSounds OSF node/license APIs and GitHub preparation-code metadata reviewed. The 2,001-byte deployment table was fetched transiently and SHA-256 verified. All 16 WAV-manifest pages and 46 annotation-manifest pages were reviewed by filename/size metadata only. The OSF root and code-folder file metadata were checked. The separate 1.326 GB dataset ZIP central directory was inspected using 761,454 bytes of bounded HTTP ranges; no file payload was read. The 2024 ECOGEN publisher Methods and Table 1 were rechecked; its five baseline counts sum to 4,319 while Methods prose says 4,318. Its GitHub repository API and OSF project/storage-folder metadata were reviewed. The 2025 ArcticSoundsNET article Methods were reviewed for known corpus overlap: approximately 18 hours from ArcticBirdSounds trained its binary BirdNET detector. No WAV/FLAC bytes, annotation rows, source code, model weights or split files were opened or retained.",
+    "finding": "Christin et al. describe 20 hours across 2018–2019, 15 plots, 12,933 temporal annotations and 49 sound classes. The article abstract says six locations while one supplement narrative says seven; the checksum-verified deployment table has 19 rows, 15 plots and six unique site labels. Data S1 documents year, plot, timestamp and segment filenames and an annotation audio-filename field. Across the complete uncompressed-WAV and annotation/FLAC folder manifests, all 1,600 WAV names map to five site groups and all 2,280 CSV/FLAC pairs map by schema key to six site labels. These folder listings cover 19 plot/year groups with 120 segments each and 228 timestamp groups with 10 segments each. The paper reports 20 plot/year groups and 2,400 segments, leaving a discrepancy of one group and 120 segments. The archive ZIP central directory confirms 2,280 schema-valid CSV/FLAC pairs across 19 plot/year groups and two additional CSV-named entries outside the published recording filename schema; it does not contain the missing 120 segments. A further 680 annotation/FLAC keys have no corresponding entry in the uncompressed-WAV folder, but do have matched FLAC audio. The OSF root also lists a separate source-code folder containing five entries, including a 4,570,231-byte ZIP; its contents were not inspected. The OSF dataset node declares CC BY 4.0; the linked GitHub preparation-code repository displays MIT. A 2024 ECOGEN paper reports a five-class ArcticBirdSounds experiment with a per-class 75/25 train/test division; no site-held-out test is described. Its five Table 1 baseline counts (422, 1,024, 183, 1,906 and 784) sum to 4,319, while the Methods prose says 4,318. This one-sample discrepancy is unresolved. The paper does not provide class-by-site support. The ECOGEN GitHub repository is archived and its API returns no detected license; the public OSF project has no declared node license and lists a 17,215,820-byte model checkpoint.",
+    "limitations": "The published count/location inconsistencies remain unresolved despite review of both extracted folder manifests and the archive ZIP central directory. Annotation CSV rows and class-by-site support remain unreviewed; filename mapping does not prove that classes occur across enough independent sites. The 228 timestamp groups are within deployment plots and do not by themselves prove independent field sessions. The OSF source-code folder has no file-level license metadata and its relationship to the parent dataset license has not been resolved. The ECOGEN paper is prior method use, but its text reports 4,318 samples while its five Table 1 baseline counts sum to 4,319; exact subset membership is unknown. Its 75/25 per-class split does not document a site/plot/session holdout, so the result is not evidence of site generalization. The ArcticSoundsNET paper documents that approximately 18 hours of ArcticBirdSounds trained its binary BirdNET detector; do not use that detector or its descendants as an independent comparator on this corpus. Overlap with other pretrained models remains unchecked. The archived code and checkpoint have no verified reuse license and were not acquired or run. Dataset, article/supplement, code and model weights have separate rights. This is an ecological soundscape event/species dataset, not evidence about caller identity, behavior meaning or conversation.",
+    "lesson": "A published multisite count and a permissive dataset declaration do not by themselves make a reproducible grouped benchmark. Verify every recording-to-label-to-site/session link and keep paper, data, code and model rights separate.",
+    "next_review": "The publisher pages do not supply class-by-site support; ECOGEN describes a per-class 75/25 split without a site/plot/session holdout and has an unresolved 4,318-versus-4,319 subset count. Do not inspect annotation rows until a qualified bioacoustics reviewer has scoped a justified, rights-compatible aggregate-only crosswalk. Retain no annotation rows, filenames, site labels or coordinates. Verify independent field-session grouping and exact overlap with the 2024 ECOGEN subset and any proposed pretrained model. Exclude the ArcticSoundsNET binary BirdNET detector as an independent comparator because its training used ArcticBirdSounds. Resolve the OSF source-code folder and ECOGEN code/checkpoint rights before considering acquisition or reproduction. Seek qualified bioacoustics review before freezing a task or split. No playback or model training is needed.",
+    "reviewed": "2026-10-29",
+    "expert_review": "Not independently reviewed by an ornithologist, Arctic ecologist, bioacoustics specialist or ML specialist.",
+    "review_stage": "Publisher schema and aggregate-results recheck, complete folder filename-manifest joins and bounded archive central-directory inspection; no audio/annotation payload or model inspection.",
+    "year_label": "Dataset paper year",
+    "purpose": "Models & evaluation",
+    "review_locator": "Christin et al. (2023), Ecology 104(6), e4047, publisher abstract and Data S1; OSF node b9trx and license API; linked arctic_songs GitHub repository; checksum-pinned site_infos.csv; aggregate reports research/arcticbirdsounds_metadata_report.json and research/arcticbirdsounds_archive_directory_report.json.",
+    "atlas": {
+      "reviewed": "2026-10-29",
+      "location_status": "not_applicable",
+      "location_note": "This note audits a public dataset's metadata, not a Talk2Nature observation location. Exact wildlife coordinates are not retained or shown.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "arcticsoundsnet-transfer-learning-preflight",
+    "title": "ArcticSoundsNET offers a strong bird-classifier reproduction lead, not a locked benchmark",
+    "seo_description": "ArcticSoundsNET reports bird-event detection results, but training overlap and evaluation design limit independent benchmarking.",
+    "taxon": "Arctic soundscapes (birds and limited other acoustic classes)",
+    "kind": "Transfer-learning methods and evaluation audit",
+    "year": "2025",
+    "source_ids": [
+      164,
+      165,
+      166
+    ],
+    "review_depth": "Publisher-indexed article abstract, methods and results reviewed; direct ScienceDirect opening returned HTTP 403. The current Dryad API v2, DataCite DOI metadata, public Dryad landing page/embedded README and two-file outer manifest reviewed; an HTTP 401 prevented a bounded archive-range read. The page describes its internal schema and file groups, but no archive, audio, annotation rows, code or model weights were opened or retained. GitHub repository metadata and README overview reviewed.",
+    "finding": "Ziegenhorn et al. describe a BirdNET-embedding and clustering workflow applied to Arctic Coastal Plain recordings from 205 sites, producing 44 acoustic classes. Their approximately 46-hour manually reviewed sample was evaluated at five-minute file level; the article reports mean ROC AUC 0.888 for ArcticSoundsNET and 0.593 for BirdNET. The authors selected a sound-rich ground-truth sample spanning plots and conditions, then optimized confidence thresholds on that same sample. The current Dryad v6 API declares CC0-1.0 and lists data_code.zip (9,196,741,095 bytes) plus README.md (12,794 bytes), totaling 9,196,753,889 bytes. The public README describes ground-truth WAVs and multi-reviewer labels keyed by file name and segment times, as well as model-training audio, outputs, code and TFLite models. It says exact plot locations/dates are in the paper but does not give a complete per-file site/date/session crosswalk. The paper says the full approximately 8 TB field archive is not online and is available from the authors on request. Separately, the Dryad record abstract reports AUC 0.299 for ArcticSoundsNET and <0.001 for BirdNET, values that differ from the article abstract/table; use the article as the performance source and resolve this discrepancy before reproduction.",
+    "limitations": "This is ecological sound-event/species classification, not caller identity, behavior meaning or conversation. The publication does not establish a locked independent test or a site-held-out evaluation, and exact file overlap between model-training audio and evaluation WAVs is unknown. Thresholds were optimized on the same labeled sample, so post-threshold scores are not untouched test estimates; the sound-rich sample may not reflect natural prevalence. The paper reports that approximately 18 hours of ArcticBirdSounds was used to train the binary BirdNET detector in the pipeline, making that model lineage non-independent of ArcticBirdSounds. The article is CC BY-NC-ND 4.0; the Dryad record declares CC0-1.0; the linked GitHub repository has no detected license; model and upstream dependency provenance remain separate.",
+    "lesson": "A well-documented transfer-learning pipeline and expert-reviewed sample can anchor a reproducibility study, but reported model scores do not become an independent benchmark without frozen inputs, leakage-safe groups and a locked test. Keep detection and ecological association separate from any communication claim.",
+    "next_review": "Do not use ArcticSoundsNET's reported scores as an independent baseline. Keep ArcticBirdSounds as the stronger site-grouped candidate, pending aggregate class support per site and a model/data leakage review; the article confirms ArcticBirdSounds was used to train the ArcticSoundsNET binary BirdNET detector. The Dryad package's public README gives file-name/time label keys and broad 2021-2023 collection dates, but no complete site/date/session crosswalk, and the bounded download-range route returned HTTP 401. Do not retry through an authorization bypass. If public documentation cannot resolve groups, defer this reproduction rather than treating clip-level splits as independent. Resolve the Dryad-vs-article AUC discrepancy and component provenance before any reproduction. No audio, labels, code or models need to be downloaded for this gate. Keep AutoResearch and real-data admission NOT READY; animal-facing output remains zero-command.",
+    "reviewed": "2026-10-29",
+    "expert_review": "Not independently reviewed by a bioacoustics specialist or ML scientist. The publication reports multiple expert annotators; Talk2Nature did not inspect their recordings or annotations.",
+    "review_stage": "Publisher-indexed full methods/results and official Dryad/DataCite/GitHub metadata and README descriptions; archive manifest range request returned 401; no package payload or row-level evaluation.",
+    "year_label": "Publication year",
+    "purpose": "Models & evaluation",
+    "review_locator": "Ziegenhorn et al. (2025), Ecological Informatics 90, 103270; DOI 10.1016/j.ecoinf.2025.103270; Dryad DOI 10.5061/dryad.jh9w0vtnr, version 6; author-linked GitHub repository MZiegenhorn/birdnet-discovery.",
+    "atlas": {
+      "reviewed": "2026-10-29",
+      "location_status": "pending",
+      "location_note": "Study geography is the Arctic Coastal Plain of Alaska. Exact deployment coordinates and sound files were not accessed or copied.",
+      "locations": [],
+      "observation_period": {
+        "label": "Acoustic data collection period",
+        "start_year": 2021,
+        "end_year": 2023,
+        "source_id": 165,
+        "locator": "Dryad README dataset description states that recordings were collected in June-August 2021-2023."
+      }
+    }
   }
 ]
