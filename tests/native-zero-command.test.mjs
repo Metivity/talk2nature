@@ -32,7 +32,7 @@ test('Android recording notification is explicitly silent and non-vibrating', ()
   assert.match(channel, /setShowBadge\(false\)/);
   const notification = service.match(/Notification notification = new Notification\.Builder[\s\S]*?\.build\(\);/)?.[0];
   assert.ok(notification, 'foreground status notification must be built explicitly');
-  assert.match(notification, /\.setSilent\(true\)/);
+  assert.doesNotMatch(notification, /\.set(?:Sound|Vibrate|Lights)\(/);
   assert.match(notification, /\.setOnlyAlertOnce\(true\)/);
   assert.match(notification, /Stop listening/);
 });

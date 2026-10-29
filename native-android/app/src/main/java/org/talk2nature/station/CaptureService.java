@@ -243,7 +243,6 @@ public final class CaptureService extends Service {
                 .setContentText("Local only · stop any time · no animal playback")
                 .setCategory(Notification.CATEGORY_SERVICE)
                 .setOngoing(true)
-                .setSilent(true)
                 .setOnlyAlertOnce(true)
                 .addAction(new Notification.Action.Builder(android.R.drawable.ic_media_pause, "Stop listening", stop).build())
                 .build();
