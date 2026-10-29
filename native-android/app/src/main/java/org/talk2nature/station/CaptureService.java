@@ -32,7 +32,7 @@ public final class CaptureService extends Service {
     public static final String EXTRA_NOTE_RESULT = "note_result";
     public static final int NOTE_SAVED = 1;
     public static final int NOTE_NOT_SAVED = 0;
-    private static final String CHANNEL_ID = "nature_station_recording";
+    private static final String CHANNEL_ID = "nature_station_recording_quiet_v1";
     private static final int NOTIFICATION_ID = 4612;
     private static volatile boolean capturing;
     private volatile boolean stopRequested;
@@ -48,7 +48,13 @@ public final class CaptureService extends Service {
     @Override public void onCreate() {
         super.onCreate();
         NotificationManager manager = getSystemService(NotificationManager.class);
-        manager.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "Nature Station", NotificationManager.IMPORTANCE_LOW));
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Nature Station", NotificationManager.IMPORTANCE_LOW);
+        channel.setDescription("Silent recording status and Stop control.");
+        channel.setSound(null, null);
+        channel.enableVibration(false);
+        channel.enableLights(false);
+        channel.setShowBadge(false);
+        manager.createNotificationChannel(channel);
     }
 
     @Override public int onStartCommand(Intent intent, int flags, int startId) {
