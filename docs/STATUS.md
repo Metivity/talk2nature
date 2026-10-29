@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — set a public contribution and evaluation baseline
+
+**Question:** does the public repository currently show independent use or contributor feedback that we can cite?
+
+**Read-back:** the GitHub contributors endpoint lists Metivity and Dependabot, with no other account in the response. The full issue list contains only owner-authored [#115, the good-first-issue phone workflow](https://github.com/Metivity/talk2nature/issues/115). There are no submitted public first-use or workflow-reproduction reports. GitHub's [traffic endpoints](https://docs.github.com/en/rest/metrics/traffic) provide rolling aggregate clone/view counts, but those counts do not establish a human evaluator, a completed task or research use; the source and intent of an individual clone are not reported.
+
+**Decision:** treat outside uptake as unverified. The empty report queue is an observable baseline, not proof that nobody has tried the site. Do not market clone totals or repository traffic as adoption, research impact or a successful experiment. No analytics, contact, recruitment or user data collection was added.
+
+**Next:** after Raviv authorizes a specific invitation/recruitment step, use the existing privacy-bounded first-use or workflow-report route and count only reviewed evidence of task completion or independent reproduction. Keep the zero-command phone check separate from desktop/emulator evidence.
+
 ## October 29 — rerun the researcher kit from current public main
 
 **Question:** do the documented researcher examples still reproduce from a fresh clone of the currently published revision, without installed packages or external samples?
