@@ -10,14 +10,20 @@ function harness() {
     .map(id => [id, { value: '', textContent: '', hidden: false, listeners: {}, addEventListener(name, fn) { this.listeners[name] = fn; }, focus() { this.focused = true; } }]));
   elements['resource-kind'].value = 'all';
   elements['resource-research-use'].value = 'all';
+  let textReads = 0;
+  const resource = (kind, researchUse, text) => ({
+    dataset: { kind, researchUse },
+    get textContent() { textReads += 1; return text; },
+    hidden: false,
+  });
   const records = [
-    { dataset: { kind: 'dataset', researchUse: 'conditional' }, textContent: 'Wild bird audio dataset and review limits', hidden: false },
-    { dataset: { kind: 'paper', researchUse: 'unresolved' }, textContent: 'Fungal signal measurement paper', hidden: false },
-    { dataset: { kind: 'code', researchUse: 'not_admitted' }, textContent: 'Bird annotation tool source code', hidden: false },
+    resource('dataset', 'conditional', 'Wild bird audio dataset and review limits. Declared license: CC BY 4.0.'),
+    resource('paper', 'unresolved', 'Fungal signal measurement paper'),
+    resource('code', 'not_admitted', 'Bird annotation tool source code'),
   ];
   const document = { getElementById: id => elements[id] ?? null, querySelectorAll: selector => selector === '.resource-entry' ? records : [] };
   vm.runInNewContext(script, { document });
-  return { elements, records };
+  return { elements, records, textReads: () => textReads };
 }
 
 test('resource search, type and research-use filters are composable and reset accessibly', () => {
@@ -26,6 +32,10 @@ test('resource search, type and research-use filters are composable and reset ac
   elements['resource-search'].listeners.input();
   assert.deepEqual(records.map(record => record.hidden), [false, true, false]);
   assert.equal(elements['resource-count'].textContent, '2 of 3 resources shown');
+
+  elements['resource-search'].value = 'cc by 4.0';
+  elements['resource-search'].listeners.input();
+  assert.deepEqual(records.map(record => record.hidden), [false, true, true]);
 
   elements['resource-kind'].value = 'dataset';
   elements['resource-kind'].listeners.change();
@@ -53,4 +63,20 @@ test('resource search, type and research-use filters are composable and reset ac
   assert.equal(elements['resource-research-use'].value, 'all');
   assert.equal(elements['resource-search'].focused, true);
   assert.equal(elements['resource-reset'].hidden, true);
+});
+
+test('resource text is indexed once and reused across search and filter edits', () => {
+  const { elements, textReads } = harness();
+  assert.equal(textReads(), 3);
+
+  for (const query of ['bird', 'annotation', 'no match']) {
+    elements['resource-search'].value = query;
+    elements['resource-search'].listeners.input();
+  }
+  elements['resource-kind'].value = 'dataset';
+  elements['resource-kind'].listeners.change();
+  elements['resource-research-use'].value = 'conditional';
+  elements['resource-research-use'].listeners.change();
+
+  assert.equal(textReads(), 3, 'filter updates should reuse the rendered-text index');
 });

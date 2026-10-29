@@ -7,6 +7,8 @@
   const empty = document.getElementById('resource-empty');
   const records = [...document.querySelectorAll('.resource-entry')];
   if (!search || !kind || !researchUse || !count || !reset || !empty || records.length === 0) return;
+  // The record text is static; normalize it once instead of rereading every full card per keystroke.
+  const searchableText = new Map(records.map(record => [record, record.textContent.toLocaleLowerCase()]));
 
   const update = () => {
     const query = search.value.trim().toLocaleLowerCase();
@@ -16,7 +18,7 @@
     for (const record of records) {
       const matches = (selectedKind === 'all' || record.dataset.kind === selectedKind)
         && (selectedResearchUse === 'all' || record.dataset.researchUse === selectedResearchUse)
-        && (!query || record.textContent.toLocaleLowerCase().includes(query));
+        && (!query || searchableText.get(record).includes(query));
       record.hidden = !matches;
       if (matches) shown += 1;
     }
