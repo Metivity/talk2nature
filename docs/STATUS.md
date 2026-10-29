@@ -6354,3 +6354,12 @@ PR [#589](https://github.com/Metivity/talk2nature/pull/589) merged to `main` as 
 A cache-bypassed TLS read returned HTTP 200 for `/approach/` and found the zero-command definition, explicit human start/stop wording, Android unverified-device limit, practice link and full-safeguards link. A fresh read of the sitemap returned HTTP 200 with 154 unique routes including `/approach/`. The public page is indexable; no capture or audio behavior changed.
 
 This verifies the deployed page and route metadata, not physical phones, screen readers or independent user success. Keep the no-animal named-device acceptance gate open and the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
+## October 29 — make the animal-facing boundary visible before the first action
+
+**Question:** does a first-time visitor see the passive-observation rule before choosing an app workflow?
+
+**Change:** the Field Companion home now says, “We don't call, imitate or prompt animals,” beside the microphone-free example. A regression checks that the sentence occurs before the first action group. The active goal now names first-screen clarity as the immediate zero-command priority.
+
+**Verification:** the full Python suite passed (238 tests, one intentional skip), the full Node suite passed (164 tests), the local noindex build produced 154 pages plus 404, and the site checker accepted 155 HTML documents and 10,588 links. Chrome 156 using CDP device metrics at 320×844 and 390×844 CSS pixels showed the boundary and primary example button before the first screen ended. At both widths the document and body scroll widths matched the viewport; the button fit within 22–298 px at 320 and 22–368 px at 390. The 320 and 390 screenshots were visually inspected. No microphone was requested and no recording was started.
+
+**Limits and next:** these are local desktop-browser emulations, not physical-phone or screen-reader checks, independent newcomer comprehension, or evidence that a whole device is silent. Keep the no-animal named-device rehearsal and separately authorized uncoached walkthrough open. No deployment occurred as of this verification; the five-track goal remains active.

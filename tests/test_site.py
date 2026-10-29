@@ -1803,7 +1803,7 @@ class SiteTests(unittest.TestCase):
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True)
             home=(root/'app/index.html').read_text()
-            self.assertIn('Start with an invented example: no microphone or account needed. Real observation is optional.',home)
+            self.assertIn("Start with an invented example: no microphone or account needed. We don't call, imitate or prompt animals. Real observation is optional.",home)
             self.assertIn('No microphone is used unless you choose Start.',home)
             self.assertNotIn('the parrot did not prepare a TED talk',home)
             self.assertIn('Set up a real 30-second moment',home)
