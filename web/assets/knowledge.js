@@ -7,6 +7,10 @@
   const rows = [...document.querySelectorAll('.graph-record')];
   if (!search || !kindFilter || !count || !empty || !list || rows.length === 0) return;
 
+  // Search the already-rendered record text and only keep supplemental terms in the
+  // HTML attribute. This avoids duplicating long findings, limitations and rights text.
+  const searchableText = new Map(rows.map(row => [row,
+    `${row.textContent || ''} ${row.dataset.search || ''} ${row.id || ''}`.toLowerCase()]));
   const names = {note: 'research notes', resource: 'resources', source: 'source citations'};
   const update = () => {
     const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
@@ -14,7 +18,7 @@
     let visible = 0;
     for (const row of rows) {
       const matches = (selectedKind === 'all' || row.dataset.kind === selectedKind)
-        && terms.every(term => row.dataset.search.includes(term));
+        && terms.every(term => searchableText.get(row).includes(term));
       row.hidden = !matches;
       if (matches) visible++;
     }

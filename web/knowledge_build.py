@@ -68,9 +68,12 @@ def build_knowledge(root, output, base, page, notes, sources):
             record_id = f'evidence-{key}'
             kind_label = 'Research note'
             meta = ' · '.join(filter(None, [text(row.get('taxon')), text(row.get('kind')), text(row.get('year_label') or row.get('year'))]))
-            search_fields = [row.get(field) for field in ('title', 'taxon', 'kind', 'year', 'year_label',
-                                                           'purpose', 'finding', 'lesson', 'limitations',
-                                                           'review_depth', 'review_stage', 'next_review')]
+            # The visible card already contains the descriptive fields. Keep only search
+            # fields that are not rendered, avoiding a second copy of long note text in
+            # every data-search attribute.
+            search_fields = [row.get('review_stage'), row.get('next_review')]
+            if row.get('year_label'):
+                search_fields.append(row.get('year'))
             content = (
                 para('Question / purpose', row.get('purpose')) + para('Finding', row.get('finding'))
                 + para('What this contributes', row.get('lesson')) + para('Review depth', row.get('review_depth'))
@@ -84,11 +87,9 @@ def build_knowledge(root, output, base, page, notes, sources):
             kind_label = f'Resource · {text(row.get("kind", "unspecified"))}'
             meta = ' · '.join(filter(None, [text(row.get('version')), text(row.get('reviewed'))]))
             rights = row.get('rights') if isinstance(row.get('rights'), dict) else {}
-            search_fields = [row.get(field) for field in ('id', 'title', 'kind', 'version', 'task', 'decision',
-                                                           'review_depth', 'reviewed', 'access', 'acquisition',
-                                                           'limitations', 'priority')]
-            search_fields += [rights.get(field) for field in ('license', 'scope', 'conditions', 'research_use',
-                                                               'commercial_use', 'redistribution')]
+            # IDs are already present in the record's HTML id; visible metadata and
+            # rights text remain searchable through the card text in knowledge.js.
+            search_fields = [row.get('priority')]
             right_lines = ''.join(para(label, rights.get(field)) for label, field in (
                 ('License', 'license'), ('Rights scope', 'scope'), ('Reuse conditions', 'conditions'),
                 ('Research use', 'research_use'), ('Commercial use', 'commercial_use'),
@@ -106,7 +107,9 @@ def build_knowledge(root, output, base, page, notes, sources):
             record_id = f'source-{key}'
             kind_label = 'Source citation'
             meta = text(row.get('checked'))
-            search_fields = [row.get(field) for field in ('id', 'title', 'description', 'origin', 'checked')]
+            # Source IDs appear in the record's HTML id; the remaining searchable
+            # source metadata is rendered into the card itself.
+            search_fields = []
             external = safe_link(row.get('url'), 'Open the original source')
             refs = referenced_by[row['id']]
             reverse = ''.join(

@@ -1,4 +1,6 @@
+import html
 import json
+import re
 import tempfile
 import unittest
 from copy import deepcopy
@@ -103,5 +105,12 @@ class KnowledgeTests(unittest.TestCase):
             self.assertIn('id="graph-kind-filter"', body)
             self.assertIn('class="page-intro section evidence-map-intro"', body)
             self.assertIn('Public metadata only. No recordings, participant observations or private records.', body)
+            note = next(row for row in notes if row.get('next_review') and row.get('finding'))
+            start = body.index(f'<details id="evidence-{note["slug"]}"')
+            card = body[start:body.index('</details>', start)]
+            supplemental = html.unescape(re.search(r'data-search="([^"]*)"', card).group(1)).lower()
+            self.assertIn(note['next_review'].lower(), supplemental)
+            self.assertNotIn(note['finding'].lower(), supplemental)
+            self.assertIn(note['finding'], html.unescape(card))
             graph = json.loads((Path(temporary)/'research/map/catalog.json').read_text())
             self.assertEqual(len(graph['nodes']), expected)
