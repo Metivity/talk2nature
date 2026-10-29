@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — audit zero-command capture modes and guard native restart
+
+**Question:** does “zero-command” describe the animal-facing boundary clearly, and are the browser and Android phone workflows honest about when capture continues?
+
+**Findings:** the browser Station stops capture when its page is hidden or closed. Android capture is user-started after the care statement and permissions, runs as a microphone foreground service with a visible Stop notification, and can continue when the activity is away. Its service is private to the app, accepts only the explicit start action, is not started on boot and returns `START_NOT_STICKY`. Human review playback remains a separate confirmed action. The distinction is now stated in `docs/ZERO_COMMAND.md`; a source-level regression check protects the Android start/restart boundary.
+
+**Verification:** focused zero-command, Android source-contract, Station, and review-audio Node checks passed (31 tests); `git diff --check` passed. No handset, microphone permission, animal or participant data was used. These are source/unit checks only and do not verify Android screen-lock, interruption, OS notification or hardware behavior.
+
+**Next:** complete a synthetic save/reopen walkthrough on a named Android phone with no animal present, recording model, OS, app revision, app-background/screen-lock behavior, interruption and Stop-notification cues. Keep the browser page-hide stop as its own check. The five-track goal remains active; real-data admission and AutoResearch remain **NOT READY**.
+
 ## October 29 — verify public route continuity in the current-main worktree
 
 **Question:** would a public build from the current `codex/` worktree remove URLs already on the live site?
