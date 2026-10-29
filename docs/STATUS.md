@@ -1,5 +1,13 @@
 # Project status
 
+## October 29 — publish the bird-evidence wedge and collector correction
+
+**Publication:** PR [#565](https://github.com/Metivity/talk2nature/pull/565) merged as [`50f5db2`](https://github.com/Metivity/talk2nature/commit/50f5db2a18e24519e0a1fffa0aead6185c9c9802). Pages workflow [#40823534448](https://github.com/Metivity/talk2nature/actions/runs/40823534448) passed the Python and Node suites, public build, route-preservation check, publish-boundary/site check, deployment and live-route verifier.
+
+**Live read-back:** TLS-verified requests returned HTTP 200 for the Field Companion home, companion Station route and all six new research pages. Each reports `index,follow` and its own canonical URL. The live sitemap contains 154 URLs. The Station HTML says the app generates no calls or prompts to animals, leaves animal identification to the observer and limits playback to human review with a headphone/distance caution. This is page-source verification, not a fresh rendered-browser interaction check.
+
+**Limits and next step:** the in-app browser bridge timed out. No physical phone, screen-reader, independent newcomer, animal or participant recording was used. Keep the deliberate Start/Stop and no-animal-playback boundaries; named-phone save/reopen and authorized newcomer checks remain open. Real-data admission and AutoResearch remain **NOT READY**.
+
 ## October 29 — add a first bird-detection evidence wedge; preserve the zero-command boundary
 
 **Decision:** keep the Field Companion passive and user-started. Separate bird-event detection, caller identity and a future parrot companion study; none is animal-language translation. The prioritized backlog records Powdermill as a bounded first detection-data lead, with Wytham identity work and a parrot pilot kept separate and gated.
@@ -8,7 +16,7 @@
 
 **Collector correction:** the official Zenodo API for record 4656848 declares DOI `10.5061/dryad.d2547d81z` and license identifier `cc-zero`. The collector now validates the DOI and license actually declared by the exact pinned record instead of assuming every record uses a minted `10.5281/zenodo…` DOI and CC BY. A synthetic regression fixture checks the 434,265-byte annotation artifact manifest and checksum contract; no media, archive rows or model were fetched or inspected in this turn. The sample remains metadata/schema work, not training admission.
 
-**Verification:** all 234 Python tests passed with one intentional skip; all 155 Node tests passed. Local noindex and explicit-origin public candidates each built 154 routes plus 404 and passed the site checker (155 HTML documents; 10,484 and 10,640 links respectively). Comparing the candidate sitemap with the live sitemap preserved all 148 current routes and adds six research pages. This branch is still a candidate and has not been published or deployed.
+**Verification checkpoint:** all 234 Python tests passed with one intentional skip; all 155 Node tests passed. Local noindex and explicit-origin public candidates each built 154 routes plus 404 and passed the site checker (155 HTML documents; 10,484 and 10,640 links respectively). Comparing the candidate sitemap with the live sitemap preserved all 148 then-current routes and added six research pages. The publication receipt above records the later merge and deployment.
 
 **Limits and next step:** the in-app browser bridge timed out, so this turn adds no new rendered screen evidence. Named-phone save/reopen and authorized newcomer checks remain open; no physical-device, participant or animal recording was made. Continue the zero-command workflow and source/rights work; keep real-data admission and AutoResearch **NOT READY**.
 
