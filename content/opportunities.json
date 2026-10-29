@@ -311,13 +311,15 @@
     "deadline_time": "11:59 PM PST (UTC−8)",
     "deadline_source_id": 490,
     "terms_source_id": 490,
-    "status": "Open · conditional thematic fit",
-    "amount": "Independent Fellow: $100,000 stipend plus $25,000 project budget over 12 months. Ten Fellowships are planned across the 2027–2028 cohort.",
+    "faq_source_id": 494,
+    "eligibility_source_id": 491,
+    "status": "Open · plausible thematic fit; individual eligibility and community need unverified",
+    "amount": "Independent Fellow: $100,000 stipend plus $25,000 project budget; Embedded Fellow: $75,000 stipend plus $25,000 project budget. Ten Fellowships are planned across the 2027–2028 cohort.",
     "source_id": 489,
-    "fit": "The RFP explicitly includes community-run environmental sensing for biodiversity and open public infrastructure. Talk2Nature’s current local, passive observation tools make this a plausible thematic lead, but AI work remains exploratory and no independent users, community participation or research partners are documented. A truthful route would focus on community-controlled biodiversity observation and open tools, with no animal-language or model-performance claim.",
-    "next_action": "Founder decision required: decide whether to apply as an individual; identify the intended community and evidence of its need; define one feasible 12-month technical outcome; and personally verify charitable purpose, legal ability to receive USD funds, location/payment eligibility and availability from June 2027. The RFP limits AI to supportive brainstorming, clarity and translation; any Letter of Intent must reflect the applicant’s own work and voice. No application was submitted.",
-    "verified": "2026-10-28",
-    "application_status": "Not submitted · applicant decision and personal eligibility remain unverified"
+    "fit": "The RFP explicitly includes community-run environmental sensing for biodiversity. The FAQ says working technology and users are welcome but not required; applicants still need a clear charitable public benefit and a project shaped with its intended community. Talk2Nature has a public local-first prototype but no independently documented users, community co-design or research partner. This is a plausible theme, not demonstrated applicant or project readiness. Avoid animal-language or model-performance claims.",
+    "next_action": "Rechecked the official call page, full RFP, FAQ and eligibility guide on October 29. The December 17, 2026, 11:59 PM Pacific Letter of Intent deadline has no extensions. This call supports individuals only; the selected applicant must be legally able to receive a grant from a US-based 501(c)(3), enter a grant agreement and receive USD. A charitable purpose and public benefit are required. The independent track expects senior, recognized innovators with a proven record; the embedded track uses one of five named hosts. The applicant must be available for a 12-month fellowship starting June 1, 2027, including community participation and travel. The RFP allows AI only for supportive brainstorming, clarity or translation, not generating full responses, and asks applicants to disclose AI use. Founder decision and personal eligibility are unverified. Before any application, identify a real intended community and evidence of its need, define a feasible public-benefit deliverable, verify eligibility and availability, and have the applicant write all application answers in their own voice. No application or outreach occurred.",
+    "verified": "2026-10-29",
+    "application_status": "Not submitted · founder decision, personal eligibility and community need remain unverified"
   },
   {
     "slug": "mozilla-human-scale-ai-incubator-2026",
