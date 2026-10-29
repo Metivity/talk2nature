@@ -1,14 +1,14 @@
 # Project status
 
-## October 29 — reproduce the researcher quick-start from current public main
+## October 29 — refresh researcher-kit verification and next gate
 
 **Question:** does the documented synthetic workflow, rights catalog and repository check suite still reproduce from a clean clone of current public `main`?
 
-**Reproduction:** a fresh depth-one HTTPS clone checked [`896aaa5`](https://github.com/Metivity/talk2nature/commit/896aaa5234d808d96ed8b69a8c397df96c3c46ff), using Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed and `data/external/` was absent. The synthetic annotation example matched the documented 8-second duration, two events, 2 seconds of interval-union coverage and zero observed context. The standard and dyadic manifests reproduced their expected group/record counts and published SHA-256 values. The catalog validator accepted all 281 resources.
+**Reproduction:** a fresh depth-one HTTPS clone checked [`0099729`](https://github.com/Metivity/talk2nature/commit/0099729daeab66a53513a3b5bb6323da9d393bfe), using Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed and `data/external/` was absent. The synthetic annotation example described an invented 8-second fixture, two marked events, 2 seconds of interval-union coverage and zero observed context. Standard and dyadic split examples reproduced their expected counts and published checksums; reruns were byte-identical. The catalog validator accepted all 281 resources.
 
-**Verification:** all 236 Python tests passed with one intentional skip and all 155 Node tests passed. Local noindex and explicit-origin builds each produced 154 routes plus 404 and passed the site checker (155 HTML documents; 10,484 and 10,640 links respectively; all 154 public routes reachable). The tracked clone remained clean after checks.
+**Verification:** all 236 Python tests passed with one intentional skip and all 157 Node tests passed. Local noindex and explicit-origin builds each produced 154 routes plus 404 and passed the site checker (155 HTML documents; 10,484 and 10,639 links respectively; all 154 public routes reachable). A live sitemap comparison found all 154 deployed routes preserved, with no missing or added URLs. The tracked clone remained clean after checks.
 
-**Decision and limits:** update the researcher quick-start and dated verification history to current `main`. This is maintainer-run synthetic/software reproduction, not an independent researcher reproduction, usability study or biological result. No raw parrot table, animal/participant data, third-party media or model weights were used. Independent reproduction remains unverified; the physical-phone and authorized newcomer gates remain open; real-data admission and AutoResearch remain **NOT READY**.
+**Decision and limits:** refreshed the quick-start and dated history to document the exact checked source revision. This is maintainer-run synthetic/software reproduction, not an independent researcher reproduction, usability study or biological result. No raw parrot table, animal/participant data, third-party media or model weights were used. The next open-source acceptance signal is an independently authored researcher reproduction or bounded first-use report; this rerun does not count toward it. The named-phone and authorized newcomer gates remain open; real-data admission and AutoResearch remain **NOT READY**.
 
 ## October 29 — hold monk-parakeet raw-table processing pending rights and provenance review
 
