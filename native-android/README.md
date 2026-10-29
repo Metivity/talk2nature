@@ -4,7 +4,7 @@ This is an experimental, source-only Android prototype for a user-started phone 
 
 ## What it does
 
-The user chooses an observer-declared animal group, optionally enters a species and station alias, selects a 1-, 4- or 8-hour limit, checks the recording and wildlife-care statement, then starts from the visible app. Android's microphone permission and a persistent foreground-service notification make capture visible; the notification has a Stop action. Capture is not started on boot.
+The user chooses an observer-declared animal group, optionally enters a species and station alias, selects a 1-, 4- or 8-hour limit, checks the recording and wildlife-care statement, then starts from the visible app. Android's microphone permission and a persistent foreground-service notification make capture visible; the notification has a Stop action. Its versioned channel is explicitly configured without sound, vibration, indicator lights or a badge, so it does not inherit older channel preferences. Physical-device and Android system behavior remain unverified. Capture is not started on boot. The ongoing notification channel is explicitly configured without sound, vibration, indicator lights or a badge; the status notification remains visible with its Stop action. Android settings and device behavior still need physical-phone verification.
 
 The prototype uses a simple energy threshold to retain up to 24 short sound clips or 24 MiB of audio, plus up to 100 user-entered notes. The selected 1-, 4- or 8-hour limit uses Android's monotonic elapsed clock as well as processed audio time; non-blocking reads let the service enforce that bound even if audio frames stop arriving. It does not classify species, infer behavior or meaning, establish a reply, or play sounds to animals. Quiet periods are not saved. A phone microphone is not verified for ultrasound, underwater or vibration sensing.
 
@@ -20,7 +20,7 @@ From the repository root:
 
 ```sh
 bash native-android/scripts/test-core.sh
-node --test tests/native-session.test.mjs
+node --test tests/native-session.test.mjs tests/native-zero-command.test.mjs
 (cd native-android && ./gradlew --no-daemon :app:lintDebug :app:assembleDebug :app:assembleRelease)
 bash native-android/scripts/check-release-boundaries.sh
 ```
