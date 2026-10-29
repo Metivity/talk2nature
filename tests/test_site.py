@@ -91,6 +91,19 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(positions,sorted(positions))
                 self.assertIn('to reopen the download',copy)
 
+    def test_approach_page_defines_zero_command_and_distinguishes_phone_modes(self):
+        with tempfile.TemporaryDirectory() as d:
+            build(Path(d))
+            page=(Path(d)/'approach'/'index.html').read_text()
+        self.assertIn('Zero command means',page)
+        self.assertIn('You choose when to start and stop',page)
+        self.assertIn('capture stops when you leave it',page)
+        self.assertIn('ongoing Stop notification',page)
+        self.assertIn('Named-phone behavior is still unverified',page)
+        self.assertIn('Try the microphone-free example',page)
+        self.assertIn('Read the full zero-command safeguards',page)
+        self.assertIn('not evidence that an animal replied or what it means',page)
+
     def test_scientific_review_form_records_the_bounded_candidate(self):
         project_root=Path(__file__).resolve().parents[1]
         form=(project_root/'.github'/'ISSUE_TEMPLATE'/'scientific-review.yml').read_text()
