@@ -9,9 +9,12 @@ test('evidence map searches all record types and combines terms with type filter
   const count = {textContent: ''}, empty = {hidden: true};
   const list = {addEventListener(event, fn) { this.onclick = fn; }};
   const rows = [
-    {dataset: {search: 'fungi slow signals', kind: 'note'}, hidden: false},
-    {dataset: {search: 'fungi data rights', kind: 'resource'}, hidden: false},
-    {dataset: {search: 'bird calls', kind: 'source'}, hidden: false},
+    {id: 'evidence-fungi', textContent: 'Research note · Fungi slow signals',
+      dataset: {search: 'expert review', kind: 'note'}, hidden: false},
+    {id: 'resource-fungi', textContent: 'Resource · Fungi dataset · Rights: CC BY',
+      dataset: {search: 'dataset priority', kind: 'resource'}, hidden: false},
+    {id: 'source-1', textContent: 'Source citation · Bird calls',
+      dataset: {search: '', kind: 'source'}, hidden: false},
   ];
   let pushedHash = '', focused = false, scrolled = false;
   Object.assign(rows[2], {
@@ -44,6 +47,21 @@ test('evidence map searches all record types and combines terms with type filter
 
   input.value = 'fungi missing'; input.oninput();
   assert.equal(empty.hidden, false);
+  type.value = 'all'; type.onchange();
+  input.value = 'expert review'; input.oninput();
+  assert.equal(rows[0].hidden, false);
+  assert.equal(rows[1].hidden, true);
+  input.value = 'source-1'; input.oninput();
+  assert.equal(rows[0].hidden, true);
+  assert.equal(rows[2].hidden, false);
+  input.value = 'priority'; input.oninput();
+  assert.equal(rows[1].hidden, false);
+  assert.equal(rows[0].hidden, true);
+  assert.equal(rows[2].hidden, true);
+  input.value = 'cc by'; input.oninput();
+  assert.equal(rows[1].hidden, false);
+  assert.equal(rows[0].hidden, true);
+  type.value = 'resource'; type.onchange();
   input.value = ''; input.oninput();
   assert.equal(empty.hidden, true);
   assert.equal(rows[1].hidden, false);
