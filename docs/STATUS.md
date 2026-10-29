@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — hold monk-parakeet raw-table processing pending rights and provenance review
+
+**Evidence:** the pinned [parrot repository README](https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/README.md) identifies `ANALYSIS/DATA` as raw data and describes annotation fields including bird IDs, location, association and notes. The pinned [MIT notice](https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md) covers software and associated documentation but does not explicitly name raw data. Edmond's [version 1 API](https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I) shows `fileAccessRequest=true` for its listed files; DataCite's [deposit metadata](https://api.datacite.org/dois/10.17617%2F3.RUIM5I) declares MIT at deposit level. The exact GitHub table has not been matched to an Edmond archive member, and no access terms were accepted.
+
+**Change in this candidate:** mark the GitHub raw-table resource metadata-only, set analysis admission to not admitted, remove the current table-derived aggregate reports, and require the rights catalog to admit every dataset and code input before either parrot analysis script reads files. Preserve the article, its independently licensed Figshare supplement and their literature-based findings as separate records. Tests use synthetic fixture files only.
+
+**Limits:** no raw parrot table or recording was opened in this turn; the PR is not merged or deployed yet. This is a conservative project-use decision under unresolved rights/provenance, not a conclusion that the data are unavailable or that the deposit license is invalid. Keep raw data out of training and public aggregates until the exact file, access route, privacy/location fields and use terms are reviewed. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification:** all 236 Python tests passed (one intentional skip) and all 155 Node tests passed. Fresh local noindex and explicit-origin public builds each passed the site checker (155 HTML documents; 10,484 and 10,640 links respectively). The public candidate preserves all 154 URLs in the currently deployed sitemap and removes the two held aggregate report files. This is maintainer-run synthetic/software verification; no animal data, recording, or public deployment was used for the check.
+
 ## October 29 — publish the bird-evidence wedge and collector correction
 
 **Publication:** PR [#565](https://github.com/Metivity/talk2nature/pull/565) merged as [`50f5db2`](https://github.com/Metivity/talk2nature/commit/50f5db2a18e24519e0a1fffa0aead6185c9c9802). Pages workflow [#40823534448](https://github.com/Metivity/talk2nature/actions/runs/40823534448) passed the Python and Node suites, public build, route-preservation check, publish-boundary/site check, deployment and live-route verifier.

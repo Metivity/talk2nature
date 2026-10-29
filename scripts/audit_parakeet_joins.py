@@ -1,9 +1,9 @@
 """Audit the monk-parakeet 2020 annotation-to-selection-table join.
 
-This mirrors the pinned authors' loader at the structural level: keep Raven
-rows whose View is "Waveform 1", then left-join Annotation to annotation_ref.
-Only aggregate counts are emitted; identifiers, notes, locations and filenames
-are never included in the report. This does not validate the corresponding audio.
+The current catalog holds the raw-data resources, so normal invocation refuses
+before reading source files. A future run requires separate analysis admission,
+rights for every input, and matching acquisition receipts. This mirrors the
+pinned loader structurally; it does not validate audio or biological meaning.
 """
 import argparse
 import csv
@@ -11,9 +11,20 @@ import hashlib
 import io
 import json
 from collections import Counter, defaultdict
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from talk2nature.collection import require_processing_admission
+
+REQUIRED_RESOURCES = (
+    'monk-parakeet-annotations',
+    'monk-parakeet-selection-tables-2020',
+    'monk-parakeet-code',
+)
 
 
 def _verified_receipt(folder):
@@ -39,7 +50,9 @@ def _verified_receipt(folder):
     return receipt, files
 
 
-def audit(annotation_folder, selection_folder, loader_folder=None):
+def audit(annotation_folder, selection_folder, loader_folder=None, catalog_path=None):
+    require_processing_admission(REQUIRED_RESOURCES,
+                                 catalog_path or ROOT / 'research/resources.json')
     if loader_folder is None:
         loader_folder = ROOT / 'data/external/monk-parakeet-loader-code'
     annotation_receipt, annotation_files = _verified_receipt(annotation_folder)
@@ -170,9 +183,11 @@ if __name__ == '__main__':
                         default=ROOT / 'data/external/monk-parakeet-selection-tables-2020')
     parser.add_argument('--loader-code', type=Path,
                         default=ROOT / 'data/external/monk-parakeet-loader-code')
+    parser.add_argument('--catalog', type=Path, default=ROOT / 'research/resources.json')
     parser.add_argument('--output', type=Path, default=ROOT / 'research/monk_parakeet_join_audit.json')
     args = parser.parse_args()
-    report = json.dumps(audit(args.annotations, args.selection_tables, args.loader_code), indent=2) + '\n'
+    report = json.dumps(audit(args.annotations, args.selection_tables, args.loader_code,
+                              args.catalog), indent=2) + '\n'
     args.output.write_text(report)
     print(json.dumps({'report': str(args.output), 'source_only': True,
                       'training_admitted': False}))

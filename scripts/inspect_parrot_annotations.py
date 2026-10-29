@@ -1,21 +1,32 @@
-"""Summarize the collected parrot table without exporting free-text observations.
+"""Summarize an admitted parrot table without exporting free-text observations.
 
-Counts are table diagnostics, not numbers of calls or independently labeled birds.
-The source table must match its acquisition receipt before it is summarized.
+The current catalog holds this raw-data resource, so normal invocation refuses
+before reading the source. A future run requires separate analysis admission,
+rights, and a matching acquisition receipt. Counts are not calls or labels.
 """
 import argparse
 import csv
 import hashlib
 import io
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from talk2nature.collection import require_processing_admission
+
+RESOURCE_ID = 'monk-parakeet-annotations'
 
 
-def inspect(folder):
+def inspect(folder, catalog_path=None):
+    require_processing_admission([RESOURCE_ID], catalog_path or ROOT / 'research/resources.json')
     folder = Path(folder)
     receipt = json.loads((folder / 'receipt.json').read_text())
+    if receipt.get('resource_id') != RESOURCE_ID:
+        raise ValueError('Receipt does not match the catalog-approved annotation resource.')
     artifact = next(f for f in receipt['files'] if f['name'] == 'annotations-2020.csv')
     data = (folder / artifact['name']).read_bytes()
     digest = hashlib.sha256(data).hexdigest()
@@ -52,9 +63,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--folder', type=Path,
                         default=ROOT / 'data/external/monk-parakeet-annotations')
+    parser.add_argument('--catalog', type=Path, default=ROOT / 'research/resources.json')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
-    result = json.dumps(inspect(args.folder), indent=2) + '\n'
+    result = json.dumps(inspect(args.folder, args.catalog), indent=2) + '\n'
     if args.output:
         args.output.write_text(result)
     else:
