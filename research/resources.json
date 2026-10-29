@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -7849,6 +7849,97 @@
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wytham-song-demography-analysis-code-v1",
+      "kind": "code",
+      "title": "Wytham song-demography analysis code v1.0.0",
+      "url": "https://github.com/nilomr/birdsong-demography/tree/96a75e8869edef36a77632b3c85f019bcd027053",
+      "version": "GitHub tag v1.0.0, commit 96a75e8869edef36a77632b3c85f019bcd027053; related Zenodo concept DOI 10.5281/zenodo.12800735, version DOI 10.5281/zenodo.12800736",
+      "source_ids": [
+        367,
+        496,
+        497
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-28",
+      "task": "Reproducibility and label-lineage context for the 2025 Wytham song-demography analysis; not an admitted model input or independent caller-label source.",
+      "review_depth": "Zenodo API version metadata and file manifest; pinned GitHub tag/ref/tree; README data instructions, MIT LICENSE.md, .gitattributes, two CSV LFS pointer texts, and selected code in scripts/setup/0.1-assign-ids.R reviewed statically. The repository README points to a separate OSF data download but its tagged link is empty. No Zenodo archive, LFS data, feature-vector payload, model weights or source audio was acquired; code was not executed.",
+      "access": "The pinned GitHub software repository declares MIT. The related Zenodo v1.0.0 record declares CC BY 4.0 at record level and lists one 303,621-byte ZIP, not inspected. CSV data are stored as Git LFS objects and must be obtained separately; their exact OSF record and file-level rights were not established by the tagged README.",
+      "decision": "Metadata-only. Use the code as provenance for a prior model-assisted identity-assignment pipeline. Do not use its derived assignments as independent test truth or treat the repository as a ready dataset. The archive and LFS data remain closed pending a distinct reviewed question and exact data-rights lineage.",
+      "limitations": "The static script constructs feature-distance pairs across years and considers candidate matches below 0.9 feature distance and 100 m nest separation, with repeated-pair filtering, before propagating a known bird ID to unlabelled records. This documents a prior model-assisted assignment route, not an independent validation of those IDs. The exact 31-repertoire membership and overlap with the 2026 benchmark subset remain unknown. The tag's great-tit metadata and manual-label CSV paths are LFS pointers (the pointer text reports 111,502,303 bytes and 49,974 bytes respectively); no underlying values, provenance, session grouping or file-level license were reviewed.",
+      "attribution": "Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016; Nilo Merino Recalde, birdsong-demography v1.0.0.",
+      "rights": {
+        "license": "MIT for pinned GitHub repository code; CC BY 4.0 at the related Zenodo record level.",
+        "scope": "The GitHub MIT notice applies to repository software and documentation. The Zenodo declaration applies at record level; neither is treated as clearance for separate LFS data, embeddings, source recordings or third-party model weights.",
+        "evidence_url": "https://github.com/nilomr/birdsong-demography/tree/96a75e8869edef36a77632b3c85f019bcd027053",
+        "conditions": "Retain the MIT notice if code is later reused. Establish exact OSF file provenance and rights independently before any data acquisition or analysis; inspect the Zenodo archive's contents before treating the record-level declaration as applicable to a component.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "canary-song-archive-community-project",
+      "kind": "project",
+      "title": "Canary Song Archive community recording project",
+      "url": "https://canary.audio/info",
+      "version": "Official page reviewed 2026-10-29; latest listed manifest snapshot September 2026",
+      "source_ids": [
+        498
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-29",
+      "task": "Reference for community home-bird recording and contribution design; not a Talk2Nature training dataset or validation study.",
+      "review_depth": "Official project About page text returned by web search indexing. Direct page retrieval timed out. Privacy policy, manifest contents, recordings, code and models were not inspected or acquired.",
+      "access": "The page describes public monthly manifests and recordings contributed from Raspberry Pi, phone or handheld devices. Its latest listed snapshot is September 2026: 5,554 recordings and approximately 24 hours.",
+      "decision": "Metadata-only architecture reference. Study the user workflow after reviewing the linked privacy and contribution terms; do not import recordings or use them for model evaluation. It is a canary archive, not a parrot cohort or receiver-response benchmark.",
+      "limitations": "The page states CC BY-NC 4.0 for recordings and permanent public availability. The linked privacy policy and per-contributor terms were not reviewed. The manifest reportedly contains usernames, bird/device IDs, dates, durations, location metadata and media URLs; no rows were accessed. No independent behavior labels, evaluation split, code license or trained model was verified.",
+      "attribution": "Canary Song Archive, About the Archive, https://canary.audio/info (indexed page text reviewed 2026-10-29).",
+      "rights": {
+        "license": "CC BY-NC 4.0 for recordings per the project page; software rights unreviewed.",
+        "scope": "The page-level statement applies to contributed recordings. It does not establish the software license, privacy/consent scope, training suitability or rights for any third-party component.",
+        "evidence_url": "https://canary.audio/info",
+        "conditions": "Do not use recordings commercially under the stated NC terms. Review the privacy policy, contributor permission and retention/withdrawal terms before any collection or use. No project data or media were acquired.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "marmaudio-common-marmoset-v7",
+      "kind": "dataset",
+      "title": "MarmAudio common-marmoset vocalization dataset, Zenodo v7",
+      "url": "https://zenodo.org/records/17191682",
+      "version": "Zenodo v7, published 2025-09-24; record DOI 10.5281/zenodo.17191682; concept DOI 10.5281/zenodo.10997563; paper cites earlier version DOI 10.5281/zenodo.15017207.",
+      "source_ids": [
+        499,
+        500,
+        501
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-29",
+      "task": "Call segmentation/type-label methods and vocalization activity summaries within one captive marmoset colony; not sender identity, social-context or receiver-response prediction.",
+      "review_depth": "Open primary article, current Zenodo page/API manifest and rights metadata, plus pinned GitHub README and license. Nine files total 60,366,144,089 bytes. No data bytes, audio, annotation rows, model weights, code files or dependencies acquired or run.",
+      "access": "The authors report 871,044 segmented vocalizations (253 hours, 96 kHz), of which about 215,000 clips received one of six specific model-assisted call-type labels. Four experts reviewed a 700-clip sample with model predictions visible. The public record requires download of a large archive; no files were retrieved.",
+      "decision": "Metadata-only methods resource. Do not select as a communication or meaning benchmark: the authors say sender identity and production context are absent, and no receiver-response labels are included. Any later call-type reanalysis needs independent review, exact file/weight provenance and a defensible grouped evaluation.",
+      "limitations": "One captive colony of 35 animals over time in three family/cage groups; room-microphone audio and 96 kHz sampling are not validated for phones or other colonies. No sender identity means no caller-held-out split. Call-type prediction is not an independently observed behavioral or communication label. The paper gives differing 9.43%/8.71% mean error figures in validation prose/table. Dataset, article, code, dependencies and bundled models have distinct rights.",
+      "attribution": "Lamothe et al. (2025), Scientific Data 12:782, DOI 10.1038/s41597-025-04951-8; MarmAudio dataset v7; pinned swasun/MarmAudioDataset repository.",
+      "rights": {
+        "license": "CC BY 4.0 at Zenodo v7 dataset-record level.",
+        "scope": "The record-level declaration is separate from the article (CC BY-NC-ND 4.0), pinned code (BSD-3-Clause), dependencies and model assets; archive contents were not inspected.",
+        "evidence_url": "https://zenodo.org/api/records/17191682",
+        "conditions": "Attribute the dataset and retain the license; inspect exact file provenance and model/dependency terms before acquisition, execution or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []
