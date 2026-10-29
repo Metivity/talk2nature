@@ -4,9 +4,11 @@
 
 **Question:** does “zero-command” describe the animal-facing boundary clearly, and are the browser and Android phone workflows honest about when capture continues?
 
-**Findings:** the browser Station stops capture when its page is hidden or closed. Android capture is user-started after the care statement and permissions, runs as a microphone foreground service with a visible Stop notification, and can continue when the activity is away. Its service is private to the app, accepts only the explicit start action, is not started on boot and returns `START_NOT_STICKY`. Human review playback remains a separate confirmed action. The distinction is now stated in `docs/ZERO_COMMAND.md`; a source-level regression check protects the Android start/restart boundary.
+**Findings:** the browser Station stops capture when its page is hidden or closed. Android capture is user-started after the care statement and permissions, runs as a microphone foreground service with a visible Stop notification, and can continue when the activity is away. Its service is private to the app, begins recording only for the explicit Start action, is not started on boot and returns `START_NOT_STICKY`. Human review playback remains a separate confirmed action. The distinction is now stated in `docs/ZERO_COMMAND.md`; source-level regression checks protect both lifecycle boundaries.
 
 **Verification:** focused zero-command, Android source-contract, Station, and review-audio Node checks passed (31 tests); `git diff --check` passed. No handset, microphone permission, animal or participant data was used. These are source/unit checks only and do not verify Android screen-lock, interruption, OS notification or hardware behavior.
+
+**Publication:** PR [#576](https://github.com/Metivity/talk2nature/pull/576) merged as [`7472df2`](https://github.com/Metivity/talk2nature/commit/7472df2419b3c7682c3056a6901a66391ac16f94) after its required Actions check passed. This documentation and test update did not require a Pages deployment.
 
 **Next:** complete a synthetic save/reopen walkthrough on a named Android phone with no animal present, recording model, OS, app revision, app-background/screen-lock behavior, interruption and Stop-notification cues. Keep the browser page-hide stop as its own check. The five-track goal remains active; real-data admission and AutoResearch remain **NOT READY**.
 
