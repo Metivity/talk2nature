@@ -1,6 +1,6 @@
 # Open-source health and adoption plan
 
-**Reviewed:** October 8, 2026; funding-readiness note updated October 25, 2026. This is a working project plan, not a claim of adoption or an external certification.
+**Plan reviewed:** October 8, 2026; **public participation snapshot:** October 29, 2026; **funding-readiness note:** October 25, 2026. This is a working project plan, not a claim of adoption or an external certification.
 
 ## What success means here
 
@@ -49,6 +49,12 @@ Next measure whether a first-time contributor can choose a task and submit a use
 Checked the same public helper in Chrome at a 390 × 844 viewport. The form controls remained within the viewport, and the visible labels supplied names for the textboxes and selectors. Starting at the title field, keyboard Tab moved in order through the source URL, review-depth selector, rationale and preview button. The focused preview button had a clear outline and remained above the fixed bottom navigation. The form was left blank; no draft was generated or sent.
 
 This confirms one maintainer-run narrow-viewport and keyboard path. It is not a physical-phone or virtual-keyboard test, a screen-reader audit, an independent usability test, or evidence across every breakpoint. No product change was needed from this check. Keep those other checks open before broad contributor outreach.
+
+## October 29 public participation baseline
+
+Reviewed the repository's public GitHub issues and pull requests. All-state issue listing returned one issue: the project-authored [good-first-phone task](https://github.com/Metivity/talk2nature/issues/115), which has no comments. The public issue search for `reproduction` returned no matches. A pull-request search excluding the project account and Dependabot returned no human-authored results; the three non-owner pull requests found were automated Dependabot updates.
+
+This snapshot found no public, independently authored first-use or reproduction report and no human external code contribution in GitHub issues or pull requests. It is not a measure of website visitors, forks, unreported private feedback or use outside GitHub; none of those were inspected. Keep verified external reports at zero until a report is reviewed. The next useful evidence is one outside person completing or attempting the existing synthetic first-use or command-line task and reporting the revision, environment and assistance received. Do not add analytics or request recordings to measure this.
 
 ## Measures that fit the project
 
