@@ -1,5 +1,17 @@
 # Project status
 
+## October 29 — verify the live zero-command workflow at phone width
+
+**Question:** can a visitor complete the published microphone-free Station path on a narrow viewport and reopen the exact export in Compare?
+
+**Revision and setup:** tested the public release deployed from [`d8cfd41`](https://github.com/Metivity/talk2nature/commit/d8cfd41a2bb65874057c432ba1c735f725b1aad3) by [Pages run #40850617982](https://github.com/Metivity/talk2nature/actions/runs/40850617982). Used Python Playwright 1.57.0 with headless Chromium 145.0.7632.6 at a 390×844 CSS-pixel viewport.
+
+**Result:** the full path completed: home → **Try an example · no microphone** → Station synthetic rehearsal → add a note → complete the 30-second window → save the ZIP → acknowledge the save → open Compare → import that same ZIP → expand **Recordings & observations**. The reopened session showed the same invented note. The ZIP metadata declares `talk2nature.observation-window.v1`, `origin=synthetic`, `duration_seconds=30`, `stop_reason=window_complete`, and a complete 1,440,000-sample window at 48 kHz. The exported note is user-entered, not a model label.
+
+**Checks and limits:** browser instrumentation counted zero `getUserMedia` calls; the microphone permission remained `prompt`. The public origin was the only request origin, there were no page errors, and `documentElement.scrollWidth` equaled the 390-pixel viewport. The Station worklet source explicitly zeros its speaker output channels. This is headless desktop-browser emulation of the deployed page, not a physical phone, Safari, screen-reader, native-app, microphone or acoustic-output check. No animal or real recording was involved, and the downloaded synthetic ZIP stayed in temporary local storage.
+
+**Next:** repeat the save/reopen task on named physical iPhone and Android devices. An independent newcomer walkthrough still requires Raviv's authorization before recruitment. No interface change or new deployment was made from this check.
+
 ## October 29 — set a public contribution and evaluation baseline
 
 **Question:** does the public repository currently show independent use or contributor feedback that we can cite?
