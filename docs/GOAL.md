@@ -1485,3 +1485,7 @@ Both the pre-session introduction and Station console's initial status now state
 ## October 29 continuation — explain zero-command to first-time visitors
 
 Added a plain-language zero-command section to the public approach page. It defines the boundary as no intentional Talk2Nature signal toward an animal, explains that people still choose Start and Stop, distinguishes the foreground browser from the bounded Android prototype, and says OS/accessibility cues and physical-device behavior are not guaranteed. The page links to microphone-free practice and the detailed safeguards. This updates the active zero-command milestone without opening a new capture mode. The named-device walkthrough remains the next acceptance gate; the five-track goal remains active.
+
+## October 29 release receipt — zero-command explainer is live
+
+PR [#589](https://github.com/Metivity/talk2nature/pull/589) merged as [`aa81c75`](https://github.com/Metivity/talk2nature/commit/aa81c75ae25ebe11c28d7a450c52a9494564a0f6). Pages workflow [#40888177815](https://github.com/Metivity/talk2nature/actions/runs/40888177815) passed build, route preservation, deployment and live verification. A fresh cache-bypassed TLS read confirmed the new `/approach/` content is served and that the 154-route sitemap includes it. Physical-device and independent-user acceptance remain open; keep the five-track goal active.

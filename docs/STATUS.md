@@ -6345,4 +6345,12 @@ The existing approach page separated signal detection from meaning and said the 
 
 **Verification:** all 238 Python tests passed (one intentional skip), including all 108 `test_site.py` tests. The local noindex build produced 154 pages plus 404; `scripts/check_site.py` accepted 155 HTML pages and 10,588 links. An explicit-origin public build accepted 155 HTML pages, 10,744 links and all 154 reachable public routes. Chrome-channel Playwright checks at 320×760, 390×844 and 1440×1000 found no horizontal overflow or page errors; the new heading and practice link were present at all sizes. The 390-pixel page was visually inspected. These are local desktop-browser viewport checks, not physical-phone, screen-reader or independent-user evidence.
 
-**Next:** keep the five-track goal active and complete the no-animal save/reopen and interruption walkthrough on named physical iPhone and Android devices when available. No animal, recording, external data, partner contact, push, merge or deployment was involved. AutoResearch and real-data admission remain **NOT READY**.
+**Next:** keep the five-track goal active and complete the no-animal save/reopen and interruption walkthrough on named physical iPhone and Android devices when available. No animal, recording, external data or partner contact was involved in this UI change. AutoResearch and real-data admission remain **NOT READY**.
+
+### October 29 release receipt — zero-command approach page
+
+PR [#589](https://github.com/Metivity/talk2nature/pull/589) merged to `main` as [`aa81c75`](https://github.com/Metivity/talk2nature/commit/aa81c75ae25ebe11c28d7a450c52a9494564a0f6). The manual Pages workflow [#40888177815](https://github.com/Metivity/talk2nature/actions/runs/40888177815) completed successfully; its public build preserved all existing routes and its live-route/crawl verifier passed.
+
+A cache-bypassed TLS read returned HTTP 200 for `/approach/` and found the zero-command definition, explicit human start/stop wording, Android unverified-device limit, practice link and full-safeguards link. A fresh read of the sitemap returned HTTP 200 with 154 unique routes including `/approach/`. The public page is indexable; no capture or audio behavior changed.
+
+This verifies the deployed page and route metadata, not physical phones, screen readers or independent user success. Keep the no-animal named-device acceptance gate open and the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
