@@ -2,6 +2,14 @@
 
 This file preserves the dated maintainer checks and unreleased candidate notes formerly appended to the [researcher start guide](RESEARCHER_START.md). They are historical snapshots, not independent reproductions or scientific results. Use [project status](STATUS.md) for the latest authoritative state.
 
+## Current public-main clean-clone check — October 29, 2026 — 896aaa5
+
+A fresh depth-one HTTPS clone checked public `main` at [`896aaa5234d808d96ed8b69a8c397df96c3c46ff`](https://github.com/Metivity/talk2nature/commit/896aaa5234d808d96ed8b69a8c397df96c3c46ff). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed and `data/external/` was absent. The synthetic annotation example returned an invented 8-second fixture, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split produced 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split produced 10 groups and 6/2/4 records (6/2/2 groups). Repeated commands produced byte-identical JSON: standard SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`; dyadic `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`.
+
+The catalog validator accepted 281 resources. All 236 Python tests passed with one intentional skip; all 155 Node tests passed. The local noindex build produced 154 pages plus 404 and passed the checker (155 HTML documents, 10,484 links). The explicit public-origin build produced 154 pages plus 404 and passed the checker (155 HTML documents, 10,640 links; all 154 public routes reachable). The tracked clone remained clean after checks.
+
+This is maintainer-run verification of synthetic fixtures, not independent reproduction, user research, scientific validation or biological evidence. No raw parrot table, animal/participant data, third-party media or model weights were used. Independent reproduction remains unverified; the physical-phone and authorized newcomer gates remain open, and AutoResearch and real-data admission remain **NOT READY**.
+
 ## Current public-main clean-clone check — October 28, 2026 — 1016c0a
 
 A fresh depth-one HTTPS clone checked public main at [1016c0ae5b20c1e948fb0fbbcc3d7faa47871ff0](https://github.com/Metivity/talk2nature/commit/1016c0ae5b20c1e948fb0fbbcc3d7faa47871ff0). Environment: Python 3.12.5, Node v22.22.1 and Git 2.53.0; no packages were installed. The synthetic annotation example returned an invented 8-second fixture, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split produced 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split produced 10 groups and 6/2/4 records (6/2/2 groups). Repeating both split commands produced byte-identical JSON with SHA-256 values 814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b and 6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139.

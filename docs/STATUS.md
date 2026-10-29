@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — reproduce the researcher quick-start from current public main
+
+**Question:** does the documented synthetic workflow, rights catalog and repository check suite still reproduce from a clean clone of current public `main`?
+
+**Reproduction:** a fresh depth-one HTTPS clone checked [`896aaa5`](https://github.com/Metivity/talk2nature/commit/896aaa5234d808d96ed8b69a8c397df96c3c46ff), using Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed and `data/external/` was absent. The synthetic annotation example matched the documented 8-second duration, two events, 2 seconds of interval-union coverage and zero observed context. The standard and dyadic manifests reproduced their expected group/record counts and published SHA-256 values. The catalog validator accepted all 281 resources.
+
+**Verification:** all 236 Python tests passed with one intentional skip and all 155 Node tests passed. Local noindex and explicit-origin builds each produced 154 routes plus 404 and passed the site checker (155 HTML documents; 10,484 and 10,640 links respectively; all 154 public routes reachable). The tracked clone remained clean after checks.
+
+**Decision and limits:** update the researcher quick-start and dated verification history to current `main`. This is maintainer-run synthetic/software reproduction, not an independent researcher reproduction, usability study or biological result. No raw parrot table, animal/participant data, third-party media or model weights were used. Independent reproduction remains unverified; the physical-phone and authorized newcomer gates remain open; real-data admission and AutoResearch remain **NOT READY**.
+
 ## October 29 — hold monk-parakeet raw-table processing pending rights and provenance review
 
 **Evidence:** the pinned [parrot repository README](https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/README.md) identifies `ANALYSIS/DATA` as raw data and describes annotation fields including bird IDs, location, association and notes. The pinned [MIT notice](https://github.com/simeonqs/Evidence_for_vocal_signatures_and_voice-prints_in_a_wild_parrot/blob/293b2c8d0c3b8e21a4eaa0511fe563207095765a/license.md) covers software and associated documentation but does not explicitly name raw data. Edmond's [version 1 API](https://edmond.mpg.de/api/datasets/:persistentId/?persistentId=doi:10.17617/3.RUIM5I) shows `fileAccessRequest=true` for its listed files; DataCite's [deposit metadata](https://api.datacite.org/dois/10.17617%2F3.RUIM5I) declares MIT at deposit level. The exact GitHub table has not been matched to an Edmond archive member, and no access terms were accepted.
