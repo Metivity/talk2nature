@@ -500,24 +500,27 @@
   },
   {
     "slug": "dog-buttons",
-    "title": "Learned buttons and receiver responses",
+    "title": "Dog responses to learned soundboard words",
+    "seo_description": "A controlled study found cue-specific responses in trained dogs, not spontaneous button use, natural-call meaning or animal translation.",
     "taxon": "Companion animals",
-    "kind": "Study announcement",
+    "kind": "Controlled behavioral study",
     "year": "2024",
     "source_ids": [
-      41,
-      40
+      514,
+      515,
+      516
     ],
-    "review_depth": "University study report and vendor description reviewed; primary paper review pending.",
-    "finding": "Research-team reporting describes appropriate responses by trained dogs to selected soundboard words.",
-    "limitations": "This is evidence about responses to learned cues, not unrestricted conversation or a natural canine-language translation.",
-    "lesson": "A learned shared interface needs different evaluation from an acoustic classifier.",
-    "next_review": "Review cue controls and distinguish comprehension evidence from spontaneous production claims.",
-    "reviewed": "2026-09-30",
+    "review_depth": "Targeted full-text review of the primary PLOS ONE article's Methods, Results, Discussion, Data Availability, ethics and competing interests. GitHub API metadata and repository root listing checked; no data or scripts inspected. The article's linked OSF preregistration was not opened, and no analysis was reproduced.",
+    "finding": "Across a researcher-led study with 30 owner-trained dogs and a citizen-science study with 29, the paper reports roughly sevenfold higher odds of play-directed behavior after PLAY/TOY cues and outside-directed behavior after OUT/OUTSIDE cues, relative to the mean across the three familiar-word conditions. Food-directed behavior did not differ conclusively by cue. The study tested dogs responding to human-produced words, not dogs spontaneously pressing buttons.",
+    "limitations": "These are bounded, learned cue-outcome associations in selected soundboard-using household dogs, not open-ended conversation, semantic translation, or evidence about natural calls. No non-soundboard-trained comparison group was tested; the food-cue result was inconclusive, and only nine head tilts occurred. In the citizen-science arm owners knew the conditions, although videos were masked and coded by blind raters; inter-rater kappa was 0.70 on a randomly selected 10% subset. Several authors disclosed consulting for FluentPet and two were company employees. The paper's CC BY 4.0 license does not cover the linked data or scripts; GitHub reports no detected repository license, and file-level rights/privacy were not reviewed.",
+    "lesson": "Keep receiver behavior after a learned human cue separate from an animal's spontaneous signal production. This paper is a methods and evidence-boundary reference only; it does not authorize playback or prompts in Talk2Nature's passive observation tools and does not support an animal-translation claim.",
+    "next_review": "Seek independent canine-cognition and statistical review before treating the result as a benchmark. Keep the linked data and code metadata-only until file-level license, provenance, consent and privacy terms are established; do not use it as an acoustic training corpus.",
+    "reviewed": "2026-10-29",
     "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Initial source note",
+    "review_stage": "Primary article reviewed; independent specialist review pending",
     "year_label": "Source year",
-    "purpose": "Behavior & communication"
+    "purpose": "Behavior & communication",
+    "review_locator": "Bastos et al. (2024), PLOS ONE: Methods (Experiments 1 and 2, coding and models), Results, Discussion, Data Availability, ethics and Competing Interests. Supplement, peer-review history, GitHub files and OSF registration contents not reviewed; no reanalysis performed."
   },
   {
     "slug": "plant-sounds",

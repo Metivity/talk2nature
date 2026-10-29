@@ -1,5 +1,17 @@
 # Project status
 
+## October 29 — review the dog soundboard paper as receiver-response evidence
+
+**Question:** what does the primary dog soundboard study establish, and can its linked data or code enter our research pipeline?
+
+**Finding:** targeted review of the PLOS ONE Version of Record reports context-specific behavior after familiar human-produced words among owner-trained dogs. It measures responses to learned cues; it does not test spontaneous dog button presses, natural-call meaning or open-ended conversation. The linked GitHub repository has no detected license in official repository metadata, and the linked OSF registration contents were not reviewed.
+
+**Change:** upgraded the existing research note and added separate catalog records for the paper, dataset and code. Only the paper's text is CC BY 4.0; the project publishes an original summary and links. Data/code remain metadata-only. No files were acquired, inspected or run; no media or article content was copied; no analyses were reproduced.
+
+**Verification:** all three edited JSON catalogs parse; `python3 -m talk2nature.collection validate` accepts all 284 resources; all 237 Python tests pass (1 skipped); all 161 Node tests pass; the local noindex build generates 154 pages plus 404; and `scripts/check_site.py` checks 155 HTML pages and 10,586 links. The SEO description is 136 characters. This is a library update, not a model benchmark, animal-facing feature or independent expert review.
+
+**Next:** seek independent canine-cognition and statistical review through an authorized process. Keep data/code out of training until file-level rights, provenance, consent and privacy are established. Preserve the no-playback, deliberate-start/stop product boundary and the open physical-phone acceptance check.
+
 ## October 29 — disclose Android background capture before consent
 
 **Question:** does first use explain that the native Android station may keep recording after the app screen is left, and how the person can stop it?
