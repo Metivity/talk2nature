@@ -51,12 +51,18 @@ test('observation assets cannot trigger animal-facing browser output', async () 
 
 test('animal-facing boundary is visible in the Station and playback cannot autoplay', async () => {
   const station = await readFile(path.join(templates, 'station.html'), 'utf8');
+  const appIntro = await readFile(path.join(templates, 'app-station-intro.html'), 'utf8');
   assert.match(station, /Observe what happens naturally/i);
   assert.match(station, /no animal calls or prompts/i);
   assert.match(station, /do not call or imitate to elicit a response/i);
   assert.match(station, /not automatically a reply/i);
+  assert.match(station, /You do not need to call, imitate or prompt an animal/i);
   assert.match(station, /Do not provoke calls, approach wildlife or change an animal’s behavior/i);
   assert.match(station, /id="station-play-review"[^>]*>Play for human review</i);
+  assert.match(appIntro, /Passive observation/i);
+  assert.match(appIntro, /no animal calls or prompts/i);
+  assert.match(appIntro, /do not call or imitate to elicit a response or change an animal’s behavior/i);
+  assert.match(appIntro, /Playback is for human review only—never play it to animals/i);
 
   for (const file of ['station.html', 'listen.html', 'compare.html']) {
     const source = await readFile(path.join(templates, file), 'utf8');
