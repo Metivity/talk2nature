@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — establish the public contributor and reproduction baseline
+
+**Question:** is there public evidence of independent researcher use, a first-use report or an outside code contribution?
+
+**Evidence:** the all-state public issue list returned one issue, the project-authored [good-first-phone task](https://github.com/Metivity/talk2nature/issues/115), with zero comments. The GitHub issue search for `reproduction` returned no results. A PR search excluding Metivity and Dependabot returned no results; the three non-owner PRs in the search were automated Dependabot updates.
+
+**Interpretation and limits:** no public, independently authored workflow report or human external contribution was found in GitHub issues/PRs. The documented external reproduction baseline remains zero. This does not measure website visits, forks, private email or unreported use; those sources were not inspected. No outreach or recruitment occurred.
+
+**Next:** use the existing browser first-use and researcher report routes to learn from one outside attempt, if a person chooses to participate. Record revision, environment and assistance separately; a maintainer rerun does not count. Keep the five-track goal active and do not add analytics or open recording intake to obtain this signal.
+
 ## October 29 — refresh researcher-kit verification and next gate
 
 **Question:** does the documented synthetic workflow, rights catalog and repository check suite still reproduce from a clean clone of current public `main`?
