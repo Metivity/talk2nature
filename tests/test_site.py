@@ -71,11 +71,11 @@ class SiteTests(unittest.TestCase):
         compare=(project_root/'web'/'templates'/'compare.html').read_text()
         self.assertIn('Try an example · no microphone',home)
         self.assertIn('The app generates no animal calls or prompts.',intro)
-        self.assertIn('You need not call or change an animal’s behavior;',intro)
+        self.assertIn('Do not call or imitate to elicit a response or change an animal’s behavior;',intro)
         self.assertIn('Capture stops if you leave the app.',intro)
         self.assertIn('Playback is for human review only—never play it to animals;',intro)
         self.assertIn('use headphones or move well away.',intro)
-        self.assertIn('You do not need to call or prompt an animal;',station)
+        self.assertIn('You do not need to call, imitate or prompt an animal;',station)
         self.assertIn('no animal calls or prompts.',station)
         live_labels=('Try without a microphone','Mark an observation','Stop recording',
                      'Save this moment','I saved the file',
