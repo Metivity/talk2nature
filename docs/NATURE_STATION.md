@@ -14,6 +14,8 @@ The *Project Hail Mary* analogy is productive: start with shared observations, r
 
 [Nature Station](https://metivity.github.io/talk2nature/tools/station/) is a public, local-only browser tool. No account, server call for recordings, browser persistence, trained model or admission to the private database is involved.
 
+The device-output invariant and a separate physical-phone checklist are in [ZERO_COMMAND.md](ZERO_COMMAND.md). Passing browser checks does not verify a physical phone or its operating-system cues.
+
 - Explicit microphone start after a recording-permission declaration and the browser's own permission. Stop cancels a pending permission request; a late-granted stream is immediately stopped.
 - A silent synthetic mode runs invented tones through the same AudioContext/worklet, without opening a microphone. The worklet zeros every speaker output. Live microphone monitoring and automatic animal playback are absent.
 - Three seconds of baseline estimation, then a simple level threshold. Roughly one second of pre-roll and half a second of trailing quiet surround a detected event; sustained sound is split at approximately six seconds per clip. Wind, speech and machinery can trigger it. There is no species or speech classifier.
