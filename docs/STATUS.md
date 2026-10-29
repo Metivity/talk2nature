@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — disclose Android background capture before consent
+
+**Question:** does first use explain that the native Android station may keep recording after the app screen is left, and how the person can stop it?
+
+**Change:** added a short disclosure immediately before the recording-and-wildlife-care checkbox and Start control. It says background/screen-lock capture is the intended foreground-service behavior, names both Stop routes, warns that system interruptions can stop a session, states that capture will not restart automatically, and preserves the unverified-device caveat. Simplified the Android README's opening description and removed repeated notification claims.
+
+**Verification:** the focused browser/native zero-command Node suite passed (9 tests), Android core checks passed (4 checks), and `git diff --check` passed. No attached device or emulator was available; no microphone permission, animal or participant data was used. Source and core checks do not show how this paragraph wraps or behaves on a real phone.
+
+**Next:** inspect the disclosure on a named Android phone and verify background, screen-lock, notification Stop and interruption behavior in a synthetic session with no animal present. The native app remains an experimental source preview, not an app-store release; physical-device acceptance remains open.
+
 ## October 29 — audit zero-command capture modes and guard native restart
 
 **Question:** does “zero-command” describe the animal-facing boundary clearly, and are the browser and Android phone workflows honest about when capture continues?
