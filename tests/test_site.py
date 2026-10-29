@@ -361,6 +361,36 @@ class SiteTests(unittest.TestCase):
         university=(project_root/'docs'/'UNIVERSITY_EVALUATION.md').read_text()
         self.assertIn('it cannot count as independent review of them',university)
 
+    def test_fruit_bat_context_study_is_prior_art_not_a_novel_benchmark(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='fruit-bat-context-ml-2024')
+        self.assertIn('subject-independent folds',note['seo_description'])
+        self.assertIn('caller-held-out split is not a novel benchmark',note['finding'])
+        self.assertIn('published subject-independent result as prior art',note['lesson'])
+        self.assertIn('Keep this candidate deferred.',note['next_review'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        paper=next(r for r in resources if r['id']=='egyptian-fruit-bat-context-paper-2024')
+        self.assertEqual(paper['reviewed'],'2026-10-29')
+        self.assertEqual(paper['acquisition'],'metadata_only')
+        self.assertEqual(paper['files'],[])
+        self.assertIn('not a novel benchmark',paper['decision'])
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        proceedings=next(s for s in sources if s['url']=='https://doi.org/10.23919/EUSIPCO63174.2024.10715475')
+        arxiv=next(s for s in sources if s['url']=='https://arxiv.org/abs/2406.06332v1')
+        for source in (proceedings,arxiv):
+            with self.subTest(source=source['title']):
+                self.assertEqual(source['checked'],'2026-10-29')
+                self.assertIn('subject-independent folds are reported',source['origin'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'research'/'fruit-bat-context-ml-2024'/'index.html').read_text()
+        self.assertIn('A 2024 study already predicts bat interaction context with subject-independent folds',page)
+        self.assertIn('not a novel benchmark by itself',page)
+        self.assertIn('Keep this candidate deferred',page)
+        self.assertIn('not message meaning or receiver comprehension',page)
+
     def test_phone_recording_review_is_bounded_and_visible_from_evidence_page(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='smartphone-bioacoustics-device-variability')
@@ -381,27 +411,6 @@ class SiteTests(unittest.TestCase):
             self.assertIn('docs/PHONE_RECORDING_REVIEW.md',page)
             self.assertIn('scientific-review.yml',page)
             self.assertIn('/research/smartphone-bioacoustics-device-variability/',(root/'sitemap.xml').read_text())
-        with tempfile.TemporaryDirectory() as d:
-            build(Path(d),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
-            page=(Path(d)/'research'/'fruit-bat-context-ml-2024'/'index.html').read_text()
-            self.assertIn('OPEN METHODS QUESTION',page)
-            self.assertIn('<details class="review-box"><summary><strong>What we reviewed',page)
-            self.assertNotIn('<details class="review-box" open>',page)
-            self.assertIn('10 connected groups',page)
-            self.assertIn('95.31%',page)
-            self.assertIn('95.56%',page)
-            self.assertIn('122 files with multiple known callers',page)
-            self.assertIn('99.26%',page)
-            self.assertIn('not validated folds',page)
-            self.assertIn('narrower estimand adds value beyond the',page)
-            self.assertIn('does not hold the same animal out when it appears as an addressee',page)
-            self.assertNotIn('caller-only holdout is not an assumed workaround',page)
-            self.assertIn('Submit a public methods review',page)
-            self.assertIn('No independent specialist review has been received',page)
-            self.assertIn('Please disclose whether you authored the source dataset or 2024 prediction result',page)
-            self.assertIn('Neurogenetics of Vocal Communication group',page)
-            self.assertIn('https://github.com/Metivity/talk2nature/blob/main/docs/BAT_CONTEXT_REVIEW.md',page)
-            self.assertIn('scientific-review.yml',page)
 
     def test_nlnet_funding_page_links_current_scope_and_ai_policy_gates(self):
         opportunities=load('opportunities')

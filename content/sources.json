@@ -1729,8 +1729,8 @@
     "title": "An automatic analysis of ultrasound vocalisations for the prediction of interaction context in captive Egyptian fruit bats",
     "description": "Peer-reviewed EUSIPCO 2024 study comparing acoustic-feature and spectrogram models on video-context-labelled bat calls.",
     "url": "https://doi.org/10.23919/EUSIPCO63174.2024.10715475",
-    "checked": "2026-10-12",
-    "origin": "The official EUSIPCO 2024 five-page proceedings paper and its methods, dataset, evaluation, results and discussion were reviewed. No model code, split files, dataset media or weights were acquired or run.",
+    "checked": "2026-10-29",
+    "origin": "The official EUSIPCO 2024 five-page proceedings paper and its methods, dataset, evaluation, results and discussion were reviewed. No model code, split files, dataset media or weights were acquired or run. Rechecked on 2026-10-29 against the official arXiv v1 HTML and the official EUSIPCO proceedings PDF; subject-independent folds are reported, but their exact membership remains unverified here.",
     "review_url": "https://eurasip.org/Proceedings/Eusipco/Eusipco2024/pdfs/0001277.pdf",
     "review_url_label": "Official EUSIPCO 2024 proceedings paper (pp. 1277–1281)",
     "rights": {
@@ -1743,8 +1743,8 @@
     "title": "Author manuscript: Egyptian fruit-bat context prediction (arXiv v1)",
     "description": "Versioned author manuscript of the EUSIPCO 2024 context-prediction study; arXiv records acceptance at EUSIPCO.",
     "url": "https://arxiv.org/abs/2406.06332v1",
-    "checked": "2026-10-12",
-    "origin": "The official arXiv v1 record and manuscript were checked against the final EUSIPCO proceedings PDF to identify the version relationship and stated license.",
+    "checked": "2026-10-29",
+    "origin": "The official arXiv v1 record and manuscript were checked against the final EUSIPCO proceedings PDF to identify the version relationship and stated license. Rechecked on 2026-10-29 against the official arXiv v1 HTML and the official EUSIPCO proceedings PDF; subject-independent folds are reported, but their exact membership remains unverified here.",
     "review_url": "https://arxiv.org/abs/2406.06332v1",
     "review_url_label": "Official arXiv v1 record, accepted at EUSIPCO 2024",
     "rights": {

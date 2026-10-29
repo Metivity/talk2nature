@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "paths": [
     {
       "id": "first-animal",
@@ -12,6 +12,7 @@
         "wild-parrot-duet-structure-2026",
         "great-green-macaw-vocal-development-2026",
         "budgerigar-starting-point",
+        "fruit-bat-context-ml-2024",
         "parrotlet-vocal-babbling-development",
         "dog-barks",
         "catmeows-context",
@@ -19,8 +20,8 @@
         "frog-chorus-data",
         "smartphone-bioacoustics-device-variability"
       ],
-      "next_step": "Confirm access to several households with the same parrot species; compare annotation feasibility before committing to a pilot.",
-      "gate": "Budgerigars are provisional. No recruited participants, expert sign-off, recording uploads or translation model are implied."
+      "next_step": "Keep the app usability cohort separate from the scientific benchmark. Test the passive workflow with an available companion species; choose any dataset task only after checking what published work already tested.",
+      "gate": "Budgerigars remain a provisional usability hypothesis, not a selected research cohort. Egyptian fruit bats have a large, video-linked corpus, but a 2024 study already reports subject-independent context-prediction folds. Treat bats as a possible reproduction or evaluation audit, not a novel translation benchmark; exact folds and session/chamber effects remain unverified. No recruitment, uploads, animal playback or translation model are implied."
     },
     {
       "id": "label",
@@ -85,7 +86,7 @@
         "moologue-cattle-call-learning-app-2026",
         "birdnet-live-local-first-mobile-app-2026"
       ],
-      "next_step": "Choose a rights-cleared, independently labeled task; pin every data and model component; and freeze animal/session/site holdouts before evaluating simple baselines.",
+      "next_step": "Choose a rights-cleared, independently labeled task; pin every data and model component; and freeze animal/session/site holdouts before evaluating simple baselines. For the bat archive, decide first whether exact reproduction or a reviewed extension adds value beyond the published subject-independent evaluation.",
       "gate": "The dog-bark paper predicts labels tied to induced stimuli; Barkopedia's reviewed context labels were initially inferred from video and its source recordings' rights remain unresolved; CowRumIA reuses its test partition in validation callbacks. Treat each as a methods comparator, not evidence of meaning or a ready training set. No Talk2Nature animal model has been trained or benchmarked; AutoResearch remains NOT READY. iNatSounds is a weakly labeled file-level species-classification/pretraining reference, not a context or meaning set; its download terms restrict use to non-commercial research/education and prohibit audio redistribution, so it is not admitted to the commercial-capable Talk2Nature path. MooLogue is a mobile-learning comparator only: its paper and pinned repository disagree about offline versus cloud behavior, and code/data rights remain unresolved. BirdNET Live v1.2.1 identifies bird species, not call meaning. Its MIT code and Apache-2.0 model licenses are distinct; developer privacy claims and optional third-party location services were reviewed from docs, not runtime-tested."
     },
     {

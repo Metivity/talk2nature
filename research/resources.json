@@ -1308,12 +1308,12 @@
         170
       ],
       "priority": 1,
-      "reviewed": "2026-10-12",
+      "reviewed": "2026-10-29",
       "task": "Reproducibility and evaluation-split comparator for context prediction from bat ultrasound calls.",
       "review_depth": "Reviewed the complete official five-page EUSIPCO proceedings paper and arXiv v1 record/manuscript, including dataset filtering, subject-independent test-fold description, random train/validation split, models, metrics, results, errors and license record. No code, split files, data media, model weights or supplementary artifacts were acquired or run.",
       "access": "Official EUSIPCO proceedings PDF and versioned arXiv v1 manuscript; article PDFs were reviewed in the browser only.",
-      "decision": "Use as a methods and reported-baseline reference. Do not treat its result as a Talk2Nature reproduction, animal communication translation, or evidence of receiver comprehension.",
-      "limitations": "The paper reports three subject-independent development/test folds, but the exact partition files, identity/group definitions, session overlap and channel/treatment balance have not been independently verified. Its 70/30 train/validation split within each development set is stratified random and does not account for identity. The reported sample-bootstrap confidence intervals are not group-clustered. Grooming recall is zero, context labels are video-derived, and no public code or split artifact was located in the targeted review despite the paper's statement that code would be released upon acceptance.",
+      "decision": "Prior-art and reproducibility comparator. The paper already reports subject-independent context-prediction folds; consider only an exact reproduction or a reviewer-justified robustness audit, not a novel benchmark or translation result.",
+      "limitations": "The paper reports three subject-independent development/test folds, but the exact partition files, identity/group definitions, session overlap and channel/treatment balance have not been independently verified. Its 70/30 train/validation split within each development set is stratified random and does not account for identity. The reported sample-bootstrap confidence intervals are not group-clustered. Grooming recall is zero, context labels are video-derived, and no public code or split artifact was located in the targeted review despite the paper's statement that code would be released upon acceptance. Rechecked 2026-10-29 from official primary sources: the paper reports subject-independent development/test folds, so another caller-held-out result is not novel by itself. Exact fold membership and both interaction-role/session/chamber controls remain unverified; no Talk2Nature split or reproduction exists.",
       "attribution": "Triantafyllopoulos, A., Gebhard, A., Milling, M., Rampp, S. & Schuller, B. (2024), EUSIPCO 2024, DOI 10.23919/EUSIPCO63174.2024.10715475; arXiv:2406.06332v1.",
       "rights": {
         "license": "CC BY-NC-ND 4.0 declared for arXiv v1; proceedings-version terms not separately reviewed",
