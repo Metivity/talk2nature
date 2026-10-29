@@ -76,3 +76,16 @@ test('animal-facing boundary is visible in the Station and playback cannot autop
   assert.match(listen, /id="listen-playback-toggle"[^>]*>Play for human review</i);
   assert.match(compare, /id="compare-playback-toggle"[^>]*>Play for human review</i);
 });
+
+test('browser Station stops capture when the page leaves the foreground', async () => {
+  const station = await readFile(path.join(assets, 'station.js'), 'utf8');
+  const hiddenStart = station.indexOf("document.addEventListener('visibilitychange'");
+  const pagehideStart = station.indexOf("window.addEventListener('pagehide'");
+  const unloadStart = station.indexOf("window.addEventListener('beforeunload'");
+  assert.ok(hiddenStart >= 0 && pagehideStart > hiddenStart && unloadStart > pagehideStart);
+  const hiddenHandler = station.slice(hiddenStart, pagehideStart);
+  const pagehideHandler = station.slice(pagehideStart, unloadStart);
+  assert.match(hiddenHandler, /if \(!document\.hidden\) return;/);
+  assert.match(hiddenHandler, /if \(active \|\| pending\) stop\('backgrounded'\)/);
+  assert.match(pagehideHandler, /if \(active \|\| pending\) stop\('page_closed'\)/);
+});

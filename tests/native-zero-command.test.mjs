@@ -20,6 +20,7 @@ const allJava = sources.map(([, source]) => source).join('\n');
 const service = readFileSync(path.join(appSource, 'org/talk2nature/station/CaptureService.java'), 'utf8');
 const activity = readFileSync(path.join(appSource, 'org/talk2nature/station/MainActivity.java'), 'utf8');
 const stationPage = readFileSync(path.join(root, 'web/templates/station.html'), 'utf8');
+const manifest = readFileSync(path.join(root, 'native-android/app/src/main/AndroidManifest.xml'), 'utf8');
 
 test('Android recording notification is explicitly silent and non-vibrating', () => {
   assert.match(service, /CHANNEL_ID = \"nature_station_recording_quiet_v1\"/);
@@ -35,6 +36,15 @@ test('Android recording notification is explicitly silent and non-vibrating', ()
   assert.doesNotMatch(notification, /\.set(?:Sound|Vibrate|Lights)\(/);
   assert.match(notification, /\.setOnlyAlertOnce\(true\)/);
   assert.match(notification, /Stop listening/);
+});
+
+test('Android capture is user-started and cannot restart itself after system process loss', () => {
+  assert.match(manifest, /<service\s+android:name="\.CaptureService"\s+android:exported="false"\s+android:foregroundServiceType="microphone"\s*\/>/);
+  assert.doesNotMatch(manifest, /<receiver\b|BOOT_COMPLETED|MY_PACKAGE_REPLACED/i);
+  assert.match(service, /if \(!ACTION_START\.equals\(action\) \|\| capturing\) return START_NOT_STICKY;/);
+  assert.match(service, /return START_NOT_STICKY;/);
+  assert.doesNotMatch(allJava, /BOOT_COMPLETED|MY_PACKAGE_REPLACED/i);
+  assert.match(service, /\.addAction\([\s\S]*?"Stop listening"/);
 });
 
 test('Android audio output is limited to separately confirmed human review', () => {
