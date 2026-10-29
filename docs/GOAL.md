@@ -1427,3 +1427,11 @@ The Wytham great-tit corpus is only a provisional song-structure methods candida
 
 
 **October 29 candidate-matrix decision:** added MarmAudio after reviewing the primary paper, current Zenodo v7 manifest/license, and pinned BSD-3-Clause code license. It is a substantial call-type methods corpus, but its authors state sender identity and vocal context are absent; it is not a communication benchmark. A cross-candidate gate table now records why bat, zebra-finch, honeybee, MarmAudio and household-budgerigar routes do not yet support model selection. Defer the benchmark; next is a no-data review of novelty and exact file/version/split provenance for the best behavior-linked candidate, with independent species and statistical reviewers still required. Continue the five tracks; no real-data run, outreach, recruitment or deployment was made.
+
+### October 29 continuation — keep zero-command as the field-workflow gate
+
+The latest public release is verified in `docs/STATUS.md`: the evidence catalog and MarmAudio review are live, and the deployed Station's page, playback-confirmation script and silent capture worklet were read back over verified HTTPS. The five-track goal remains **active**.
+
+For every ordinary animal-facing tool, keep the rule explicit: no generated, scheduled or prompted sounds, calls, mimicry, vibration or other signals aimed at animals. A person starts and stops bounded foreground capture; human review is separate, manual and preceded by a fresh confirmation to use headphones or move away. This is a product safeguard, not proof of animal welfare or of what a handset's operating system may emit.
+
+**Next acceptance:** when a named iPhone or Android handset is available, run the microphone-free, no-animal rehearsal on that device. Record model, OS, browser/install mode and permission state; verify visible start/stop, interruption cleanup, silent loading, playback cancellation, local save and reopening the exact file in Compare. Do not substitute desktop emulation. Until then, continue source-grounded evidence work and clear researcher onboarding. Keep newcomer recruitment separately gated, and keep AutoResearch and real-data admission **NOT READY**.
