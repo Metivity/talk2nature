@@ -21,6 +21,7 @@ const service = readFileSync(path.join(appSource, 'org/talk2nature/station/Captu
 const activity = readFileSync(path.join(appSource, 'org/talk2nature/station/MainActivity.java'), 'utf8');
 const stationPage = readFileSync(path.join(root, 'web/templates/station.html'), 'utf8');
 const manifest = readFileSync(path.join(root, 'native-android/app/src/main/AndroidManifest.xml'), 'utf8');
+const zeroCommand = readFileSync(path.join(root, 'docs/ZERO_COMMAND.md'), 'utf8');
 
 test('Android recording notification is explicitly silent and non-vibrating', () => {
   assert.match(service, /CHANNEL_ID = \"nature_station_recording_quiet_v1\"/);
@@ -78,4 +79,11 @@ test('Android setup discloses background capture and Stop routes before recordin
   const start = activity.indexOf('startButton = button("Start listening"');
   assert.ok(disclosure >= 0, 'the setup must explain when background recording can continue and how to stop it');
   assert.ok(disclosure < consent && disclosure < start, 'background behavior must be visible before consent and Start');
+});
+
+test('zero-command documentation does not claim total Android device silence', () => {
+  assert.match(zeroCommand, /Android lets the user change its behavior/);
+  assert.match(zeroCommand, /default haptic feedback when device settings allow it/);
+  assert.match(zeroCommand, /not a certification that the whole phone is silent/);
+  assert.match(zeroCommand, /Do not override system or accessibility feedback as a blanket fix/);
 });
