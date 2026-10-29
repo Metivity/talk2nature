@@ -164,6 +164,7 @@ public final class MainActivity extends Activity {
             microphoneDetailsToggle.setText(showDetails ? "Phone microphone details · hide" : "Phone microphone details · show");
         });
         setup.addView(text(getString(R.string.permission_disclosure),13,MUTED,false),space(0,0,0,10));
+        setup.addView(text("After you tap Start, this Android station is designed to keep listening if you leave this screen or lock the phone. Stop it here or from the ongoing notification. Calls or system interruptions may stop it; it will not restart automatically. Phone behavior is not yet verified.",13,MUTED,false),space(0,0,0,10));
 
         consent = new CheckBox(this);
         consent.setText(R.string.recording_consent_statement);
