@@ -28,6 +28,13 @@ jobs:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
           REPO_URL: ${{ github.server_url }}/${{ github.repository }}
         run: python3 web/build.py --public --base-url "$SITE_URL" --repo-url "$REPO_URL"
+      - name: Preserve currently published routes
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          mkdir -p tmp
+          curl --fail --silent --show-error --max-time 20 "$SITE_URL/sitemap.xml" --output tmp/live-sitemap.xml
+          python3 scripts/compare_sitemap_routes.py --reference tmp/live-sitemap.xml --candidate dist/sitemap.xml --base-url "$SITE_URL"
       - name: Check links, SEO metadata and publish boundaries
         run: python3 scripts/check_site.py
       - name: Upload only the public site
