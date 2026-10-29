@@ -1,0 +1,65 @@
+{
+  "resource_id": "powdermill-bird-soundscapes",
+  "source_sha256": "7edf8a0e66c3cc2dba7290f510a6452df339927b752497422113a7acaf1044cb",
+  "source_url": "https://zenodo.org/api/records/4656848/files/annotation_Files.zip/content",
+  "source_version": "Zenodo record 4656848; v1; source DOI 10.5061/dryad.d2547d81z",
+  "archive_members": 77,
+  "table_columns": [
+    "Selection",
+    "View",
+    "Channel",
+    "Begin Time (s)",
+    "End Time (s)",
+    "Low Freq (Hz)",
+    "High Freq (Hz)",
+    "Species"
+  ],
+  "recording_group_count": 4,
+  "recording_groups": {
+    "Recording_1": {
+      "segments": 36,
+      "annotations": 6125,
+      "empty_annotation_segments": 1,
+      "distinct_segment_numbers": 36
+    },
+    "Recording_2": {
+      "segments": 14,
+      "annotations": 3853,
+      "empty_annotation_segments": 0,
+      "distinct_segment_numbers": 14
+    },
+    "Recording_3": {
+      "segments": 1,
+      "annotations": 367,
+      "empty_annotation_segments": 0,
+      "distinct_segment_numbers": 1
+    },
+    "Recording_4": {
+      "segments": 26,
+      "annotations": 5707,
+      "empty_annotation_segments": 0,
+      "distinct_segment_numbers": 26
+    }
+  },
+  "annotation_count": 16052,
+  "unique_identified_species_codes": 48,
+  "species_group_support_histogram": {
+    "1": 25,
+    "2": 10,
+    "3": 10,
+    "4": 3
+  },
+  "unknown_or_blank_labels": 0,
+  "invalid_time_or_frequency_intervals": 0,
+  "empty_annotation_segments": 1,
+  "audio_members_present": false,
+  "audio_opened": false,
+  "training_admitted": false,
+  "grouping_assessment": "Recording_N is a usable four-group recording/date key per the source README; site grouping is not established by the annotation archive. Four groups are too few for a robust generalization claim.",
+  "limitations": [
+    "An empty annotation table is not verified quiet audio: faint, unidentifiable and short-chip sounds were not fully labeled.",
+    "The source README describes four continuous recordings on four dates; it does not map these IDs to independent sites.",
+    "A recording-held-out result over four groups would be a narrow feasibility check, not broad ecological generalization.",
+    "No audio, location coordinates, raw annotation rows, model weights or predictions are included in this report."
+  ]
+}

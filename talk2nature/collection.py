@@ -30,6 +30,10 @@ FIGSHARE_STORAGE_PREFIXES = {
     'figshare_plos': 'pstorage-plos-3567654',
 }
 ZENODO_ORIGIN = 'https://zenodo.org'
+ZENODO_LICENSE_IDS = {
+    'CC-BY-4.0': 'cc-by-4.0',
+    'CC0-1.0': 'cc-zero',
+}
 
 
 def require_text(record, field):
@@ -109,12 +113,16 @@ def validate(catalog):
                 require_text(resource, 'license_notice')
             elif adapter == 'zenodo_record':
                 record_id = resource.get('zenodo_record_id')
-                expected_doi = f'10.5281/zenodo.{record_id}' if type(record_id) is int else ''
+                record_doi = resource.get('record_doi')
+                license_id = resource.get('zenodo_api_license_id')
                 if (type(record_id) is not int or record_id <= 0
                         or resource['url'] != f'{ZENODO_ORIGIN}/records/{record_id}'
-                        or resource.get('zenodo_doi') != expected_doi
+                        or not isinstance(record_doi, str)
+                        or not re.fullmatch(r'10\.\d{4,9}/[^\s]+', record_doi, re.IGNORECASE)
+                        or license_id not in ZENODO_LICENSE_IDS.values()
+                        or ZENODO_LICENSE_IDS.get(rights['license']) != license_id
                         or f'record {record_id}' not in resource['version'].lower()):
-                    raise ValueError('Zenodo sample requires an exact versioned public record and DOI.')
+                    raise ValueError('Zenodo sample requires an exact versioned public record, declared DOI and matching license.')
                 require_text(resource, 'license_notice')
             else:
                 raise ValueError('Unknown acquisition adapter.')
@@ -265,8 +273,9 @@ def verify_zenodo_record(resource, opener):
         raise ValueError('Zenodo API manifest is invalid JSON.') from exc
     metadata = record.get('metadata', {})
     license_entry = metadata.get('license') if isinstance(metadata, dict) else None
-    if (record.get('id') != record_id or record.get('doi') != resource['zenodo_doi']
-            or not isinstance(license_entry, dict) or license_entry.get('id') != 'cc-by-4.0'):
+    if (record.get('id') != record_id or record.get('doi') != resource['record_doi']
+            or not isinstance(license_entry, dict)
+            or license_entry.get('id') != resource['zenodo_api_license_id']):
         raise ValueError('Zenodo record identity, DOI or license changed.')
     record_files = record.get('files')
     if not isinstance(record_files, list):

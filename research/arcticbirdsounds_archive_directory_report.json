@@ -1,0 +1,40 @@
+{
+  "central_directory_entries": 4564,
+  "files": 4562,
+  "directories": 2,
+  "entry_compressed_bytes_total": 1325412100,
+  "entry_uncompressed_bytes_total": 1326945024,
+  "suffix_counts": {
+    ".csv": 2282,
+    ".flac": 2280
+  },
+  "schema_valid_filename_counts": {
+    ".csv": 2280,
+    ".flac": 2280
+  },
+  "unique_schema_keys_by_suffix": {
+    ".wav": 0,
+    ".flac": 2280,
+    ".csv": 2280
+  },
+  "distinct_plot_year_groups_by_suffix": {
+    ".wav": 0,
+    ".flac": 19,
+    ".csv": 19
+  },
+  "csv_flac_intersection_unique_keys": 2280,
+  "unique_csv_keys_missing_flac": 0,
+  "unique_flac_keys_missing_csv": 0,
+  "csv_entries_outside_published_filename_schema": 2,
+  "dataset_node": "b9trx",
+  "archive_file_id": "6414ae138604900fc4087a35",
+  "archive_size_bytes": 1326435558,
+  "zip64": false,
+  "central_directory_bytes": 630382,
+  "range_bytes_read": 761454,
+  "archive_file_payload_bytes_read": 0,
+  "audio_or_annotation_payload_opened": false,
+  "filenames_or_location_values_retained_or_reported": false,
+  "full_archive_checksum_verified": false,
+  "reviewed_at": "2026-10-28T23:54:11Z"
+}

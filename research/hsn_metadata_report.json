@@ -1,0 +1,102 @@
+{
+  "dataset": {
+    "title": "A collection of fully-annotated soundscape recordings from the southern Sierra Nevada mountain range",
+    "doi": "10.5281/zenodo.7525805",
+    "zenodo_record_id": 7525805,
+    "license": "CC BY 4.0",
+    "attribution": "Mary Clapp, Stefan Kahl, Erik Meyer, Megan McKenna, Holger Klinck, Gail Patricelli",
+    "manifest_sha256_basis": "Zenodo API MD5 checksums verified for the two in-memory metadata files.",
+    "files_reviewed": [
+      {
+        "name": "annotations.csv",
+        "bytes": 631187,
+        "md5": "0f300f5536784cc34f51f9f42e80756e"
+      },
+      {
+        "name": "recording_location.txt",
+        "bytes": 105,
+        "md5": "bf5aae95885ee85fcdcc0a408e45bfe9"
+      }
+    ]
+  },
+  "annotations": {
+    "columns": [
+      "Filename",
+      "Start Time (s)",
+      "End Time (s)",
+      "Low Freq (Hz)",
+      "High Freq (Hz)",
+      "Species eBird Code"
+    ],
+    "annotation_rows": 10976,
+    "identified_species_codes": 21,
+    "identified_species_rows": 10296,
+    "unknown_or_unidentified_rows": 680,
+    "recordings": 100,
+    "filename_date_groups": {
+      "2015-07-08": {
+        "recordings": 3,
+        "annotation_rows": 221
+      },
+      "2015-07-09": {
+        "recordings": 21,
+        "annotation_rows": 2538
+      },
+      "2015-07-10": {
+        "recordings": 20,
+        "annotation_rows": 2251
+      },
+      "2015-07-11": {
+        "recordings": 30,
+        "annotation_rows": 3861
+      },
+      "2015-07-12": {
+        "recordings": 26,
+        "annotation_rows": 2105
+      }
+    },
+    "species_date_support_histogram": {
+      "1": 6,
+      "2": 2,
+      "3": 2,
+      "4": 6,
+      "5": 5
+    },
+    "interval_structure": {
+      "zero_duration_intervals": 63,
+      "reversed_or_negative_time": 0,
+      "end_after_600_seconds": 0,
+      "negative_or_reversed_frequency": 0,
+      "non_numeric_interval_fields": 0
+    },
+    "row_level_labels_reported": false
+  },
+  "location": {
+    "approximate_coordinate_pairs": 1,
+    "per_recording_or_lake_key_present": false,
+    "coordinate_values_retained_or_reported": false,
+    "mapping_assessment": "One coarse regional point is not a recording-to-lake crosswalk."
+  },
+  "source_description_comparison": {
+    "source_reported_recordings": 100,
+    "source_reported_known_species": 21,
+    "source_reported_known_species_boxes": 10296,
+    "source_reported_sample_window": "July 9-12, 2015",
+    "annotation_csv_has_extra_undetermined_labels": true,
+    "filename_dates_outside_reported_window": {
+      "2015-07-08": {
+        "recordings": 3,
+        "annotation_rows": 221
+      }
+    }
+  },
+  "assessment": {
+    "site_held_out_evaluation_supported": false,
+    "reason": "The published location text gives one coarse point, not a file-to-lake/site crosswalk.",
+    "date_grouped_evaluation": "Filename dates are available for 5 groups; this is not a site holdout. Resolve source-date provenance and prior benchmark overlap first.",
+    "audio_acquired_or_opened": false,
+    "model_or_embedding_run": false,
+    "coordinates_reported": false,
+    "training_admitted": false
+  }
+}
