@@ -1,5 +1,15 @@
 # Project status
 
+## October 29 — rerun the researcher kit from current public main
+
+**Question:** do the documented researcher examples still reproduce from a fresh clone of the currently published revision, without installed packages or external samples?
+
+**Evidence:** a depth-one HTTPS clone checked `main` at [`d8cfd41`](https://github.com/Metivity/talk2nature/commit/d8cfd41a2bb65874057c432ba1c735f725b1aad3), using Python 3.12.5, Node v22.22.1 and Git 2.53.0. The annotation fixture reported an invented 8-second file, two marked events, 2 seconds of interval coverage and zero observed context. Standard and dyadic splits matched the guide's group/record counts; repeated outputs matched SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`.
+
+**Verification:** the catalog validates 284 resources; 237 Python tests pass (one skipped), 161 Node tests pass, and the local noindex build plus checker pass (155 HTML pages, 10,586 links). The explicit-origin public build passes (154 public routes reachable; 10,742 links); its sitemap preserves all 154 live routes with no additions or losses. The fresh clone remained clean, and `data/external/` was absent. The guide and dated verification history now report the current commit and counts.
+
+**Limit and next gate:** this is maintainer-run verification on invented fixtures, not independent reproduction, researcher usability, scientific validation or biological evidence. No external files, animal/participant data, media or model weights were used. Independent reproduction remains unverified; do not claim uptake or change AutoResearch **NOT READY**. A qualified outside researcher can use the existing workflow report route; contact or recruitment requires Raviv's authorization.
+
 ## October 29 — review the dog soundboard paper as receiver-response evidence
 
 **Question:** what does the primary dog soundboard study establish, and can its linked data or code enter our research pipeline?
