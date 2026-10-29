@@ -5313,5 +5313,29 @@
     },
     "review_url": "https://api.github.com/repos/MZiegenhorn/birdnet-discovery",
     "review_url_label": "Official repository metadata; code not inspected or executed"
+  },
+  {
+    "id": 514,
+    "title": "How do soundboard-trained dogs respond to human button presses? (PLOS ONE, 2024)",
+    "description": "Primary peer-reviewed study of context-specific dog behavior after human-produced soundboard words and speech; not a test of spontaneous dog button use or general conversation.",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0307189",
+    "checked": "2026-10-29",
+    "origin": "Publisher Version of Record. Targeted full-text review of Methods, Results, Discussion, Data Availability, ethics and competing-interest statement completed October 29, 2026. Article text links the study preregistration and data/code repository; neither linked resource's contents were acquired or used."
+  },
+  {
+    "id": 515,
+    "title": "Soundboard comprehension study data and analysis repository",
+    "description": "Author-linked public GitHub repository for the PLOS ONE study. Official GitHub API reports no detected repository license; its root lists data/, Scripts/ and README.md. No files were inspected.",
+    "url": "https://github.com/znhoughton/comprehension",
+    "checked": "2026-10-29",
+    "origin": "PLOS ONE Data Availability statement links this repository. Official GitHub repository metadata and root listing checked October 29, 2026; API license field is null. No source or data files were downloaded, cloned or executed."
+  },
+  {
+    "id": 516,
+    "title": "OSF preregistration linked by the dog soundboard study",
+    "description": "The PLOS ONE article states that analyses were preregistered and links OSF record tskcq. The registration page and contents were not reviewed.",
+    "url": "https://osf.io/tskcq/",
+    "checked": "2026-10-29",
+    "origin": "Linked from the primary article's Data Availability statement. The article's claim and URL were reviewed; OSF metadata, timestamp and registration contents were not independently verified."
   }
 ]

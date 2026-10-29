@@ -8814,6 +8814,87 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "dog-soundboard-comprehension-paper",
+      "kind": "paper",
+      "title": "How do soundboard-trained dogs respond to human button presses?",
+      "url": "https://doi.org/10.1371/journal.pone.0307189",
+      "version": "PLOS ONE 19(8): e0307189 (2024), published August 28, 2024",
+      "source_ids": [514],
+      "priority": 1,
+      "reviewed": "2026-10-29",
+      "task": "Primary evidence on context-specific receiver behavior after human-produced learned words; not evidence of spontaneous dog button use or open-ended conversation.",
+      "review_depth": "Targeted full-text review of Methods, Results, Discussion, Data Availability, ethics and competing interests. Supporting information, peer-review history and statistical code were not reviewed or reproduced.",
+      "access": "Open-access PLOS ONE Version of Record. Article text links a preregistration and author data/code repository; those components are recorded separately.",
+      "decision": "Use an original attributed summary as a behavioral-methods reference. Do not treat this as an acoustic corpus, a general animal-communication result or a Talk2Nature benchmark.",
+      "limitations": "The study tests 30 researcher-led and 29 citizen-science owner-trained household dogs responding to human cues. Play and outside behaviors were more likely after matching words; food-directed behavior did not differ conclusively. It does not test spontaneous dog-produced button sequences, untrained dogs, translation or natural-call meaning. Several authors disclosed FluentPet consulting or employment.",
+      "attribution": "Bastos et al. (2024), PLOS ONE 19(8): e0307189, DOI 10.1371/journal.pone.0307189.",
+      "rights": {
+        "license": "CC BY 4.0, linked from the PLOS article page.",
+        "scope": "Article text only. The author's data repository, scripts, study materials and any embedded media have separate rights and privacy terms.",
+        "evidence_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0307189",
+        "conditions": "Credit the authors and source, link the license and mark changes. This project publishes an original summary and links only; no article text, figures or media were copied.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-soundboard-comprehension-data",
+      "kind": "dataset",
+      "title": "Dog soundboard comprehension study data (metadata only)",
+      "url": "https://github.com/znhoughton/comprehension",
+      "version": "GitHub main metadata checked 2026-10-29; API updated_at 2023-10-03",
+      "source_ids": [514, 515],
+      "priority": 2,
+      "reviewed": "2026-10-29",
+      "task": "Potential source for the published behavioral-response study only; not a natural-call or acoustic-training corpus.",
+      "review_depth": "Article Data Availability statement and GitHub official API/root listing reviewed. The repository lists data/ and Scripts/ folders; no folder contents or files were inspected.",
+      "access": "The public article links this repository for data and analysis scripts. Exact data-file contents, consent, de-identification and reuse terms remain unknown.",
+      "decision": "Metadata-only and not admitted to training or analysis. Do not download or use until file-level provenance, consent/privacy and rights are established.",
+      "limitations": "The article's CC BY 4.0 license does not extend automatically to GitHub data. The API reports no detected repository license; the study collected video observations in private homes, but repository contents and any data-specific participant protections were not inspected.",
+      "attribution": "Bastos et al. (2024), linked GitHub study repository, https://github.com/znhoughton/comprehension.",
+      "rights": {
+        "license": "No detected repository license; file-level data reuse terms unresolved.",
+        "scope": "The repository's data/ folder only; scripts, article, study materials and participant media are separate components.",
+        "evidence_url": "https://api.github.com/repos/znhoughton/comprehension",
+        "conditions": "Do not acquire, process, train on or redistribute data until the exact files, license, consent/privacy scope and provenance are confirmed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-soundboard-comprehension-code",
+      "kind": "code",
+      "title": "Dog soundboard comprehension analysis code (metadata only)",
+      "url": "https://github.com/znhoughton/comprehension",
+      "version": "GitHub main metadata checked 2026-10-29; API updated_at 2023-10-03",
+      "source_ids": [514, 515],
+      "priority": 2,
+      "reviewed": "2026-10-29",
+      "task": "Published analysis-script pointer; no execution or baseline reproduction performed.",
+      "review_depth": "Article Data Availability statement and GitHub official API/root listing reviewed. The repository lists Scripts/; no script files, dependencies or outputs were inspected.",
+      "access": "Public GitHub repository linked by the paper; API license field is null.",
+      "decision": "Do not copy, run or adapt the scripts until an applicable license and dependency/data provenance are confirmed.",
+      "limitations": "Repository visibility and article CC BY 4.0 do not establish a code license. No code audit, environment reconstruction, data join or statistical reanalysis was performed.",
+      "attribution": "Bastos et al. (2024), linked GitHub study repository, https://github.com/znhoughton/comprehension.",
+      "rights": {
+        "license": "No detected GitHub repository license; code reuse rights unresolved.",
+        "scope": "Analysis scripts only; dataset, article and study materials are separate components.",
+        "evidence_url": "https://api.github.com/repos/znhoughton/comprehension",
+        "conditions": "Do not copy, execute, redistribute or incorporate until code licensing and dependency rights are clear.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
