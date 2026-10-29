@@ -6281,6 +6281,16 @@ Updated the public opportunity record with separate official FAQ/eligibility ref
 
 **Validation:** all 237 Python tests passed with one intentional skip; all 158 Node tests passed; Android core checks passed. The explicit-origin local build produced 154 public routes plus 404; the site checker validated 155 HTML documents, 10,712 links and all 154 public routes. Source IDs are unique and every Mozilla opportunity source reference resolves. The private checklist is Git-ignored and absent from the public build. `git diff --check` passed. These checks validate the local candidate, not deployment, search-index coverage, founder eligibility, independent scientific review or benchmark readiness.
 
+## October 29 — define the Android zero-command system-cue boundary
+
+**Question:** does the Android Station's app-level quiet notification configuration prove that an entire handset will remain silent during observation?
+
+**Source review:** on published `main` at `38fbdc7`, `CaptureService` creates a low-importance notification channel with no app-set sound, vibration, indicator lights or badge. Capture is user-started, the service returns `START_NOT_STICKY`, and the sole native `AudioTrack.play()` path follows the separate human-review confirmation. Android's official documentation states that users can change notification-channel sound/vibration behavior after creation, and that standard views can supply default haptic feedback under device settings. Keyboard, accessibility and other OS/device cues are outside the app's source-level guarantee.
+
+**Verification:** `node --test tests/zero-command.test.mjs tests/native-zero-command.test.mjs tests/station.test.mjs tests/station-ui.test.mjs tests/review-audio.test.mjs` passed 33/33 after adding a regression for the system-cue disclosure. The local noindex build and site checker validated 155 HTML pages and 10,586 links. GitHub post-merge main checks [#40860186907](https://github.com/Metivity/talk2nature/actions/runs/40860186907) passed, including native Android station checks. No `adb` executable or named phone was available, so no handset, Android system setting, accessibility service, notification output, microphone or acoustic behavior was tested here.
+
+**Decision and next gate:** retain the quiet-by-default app configuration and do not suppress OS/accessibility feedback as a blanket measure. “Zero-command” prohibits deliberate app output toward animals; it is not a device-silence certification. The physical synthetic rehearsal must log app-controlled output separately from Android, keyboard, accessibility and other OS cues, then repeat the save/reopen and interruption checks on named devices. No animal or participant data was recorded, and no deployment occurred.
+
 ## October 29 — refresh the researcher guide from current public main
 
 **Question:** does the researcher start guide's latest verification snapshot describe the current public repository revision and reproduce as written?

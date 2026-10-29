@@ -16,6 +16,12 @@ Talk2Nature's current observation tools listen only. They do not try to make an 
 
 These modes make “put the phone down” mean different things. The browser mode stops on leaving the page; the Android mode is explicitly started and remains visibly stoppable. Neither mode is an unattended recorder or sends a cue to an animal.
 
+## What zero-command can and cannot guarantee on Android
+
+The Android app initially creates its recording-notification channel without app-set sound, vibration or indicator lights. After a channel is created, Android lets the user change its behavior; the app cannot reset those channel settings programmatically. Android views may also provide default haptic feedback when device settings allow it. Keyboard, accessibility and other operating-system services can add their own cues. See [Android notification-channel settings](https://developer.android.com/develop/ui/compose/notifications/channels) and [Android view haptics](https://developer.android.com/develop/ui/views/haptics/haptics-apis).
+
+Zero-command is a rule against deliberate Talk2Nature output toward animals; it is not a certification that the whole phone is silent. Do not override system or accessibility feedback as a blanket fix. During a no-animal device rehearsal, record app-controlled playback and notification behavior separately from system, keyboard, accessibility and device cues. Keep the platform marked unverified until that check is completed.
+
 ## What the observation app must not do
 
 Do not add animal-directed calls, imitation, generated voice, automatic playback, adaptive prompts, or visual or haptic signals. Do not ask people to provoke a call, approach wildlife or change an animal's behavior to get a recording. No notification, voice assistant, TV or background process should prompt an animal or silently resume capture.
@@ -26,7 +32,7 @@ Any future study of an animal-facing interface is a separate research project. I
 
 ## Regression checks and limits
 
-`node --test tests/zero-command.test.mjs tests/station.test.mjs tests/station-ui.test.mjs tests/review-audio.test.mjs` guards against scripted animal-facing output, autoplay and unconfirmed playback. The Station worklet zeros all speaker channels. Station, Listen and Compare allow human review only after deliberate activation and a just-in-time confirmation. Behavior tests cover cancellation, pause, replay confirmation and browser playback rejection.
+`node --test tests/zero-command.test.mjs tests/native-zero-command.test.mjs tests/station.test.mjs tests/station-ui.test.mjs tests/review-audio.test.mjs` guards against scripted animal-facing output, autoplay and unconfirmed playback. The Station worklet zeros all speaker channels. Station, Listen and Compare allow human review only after deliberate activation and a just-in-time confirmation. Behavior tests cover cancellation, pause, replay confirmation and browser playback rejection.
 
 Source checks and desktop browser tests cannot establish what a physical phone, operating system, accessibility service, connected TV or native app may emit. A phone test must be a synthetic rehearsal in a place with no animal present. Record the device model, OS, browser/app revision and install mode; verify clear Start and Stop, background/page-hide behavior for the selected mode, interruption handling, no silent resume, save and reopen of the same invented session, and headphone-only manual review. Report app-controlled behavior separately from OS cues. Leave unavailable platforms marked unverified. Do not collect real animal recordings for this check.
 
