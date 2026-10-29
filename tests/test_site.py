@@ -2579,7 +2579,7 @@ class SiteTests(unittest.TestCase):
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='wytham-great-tit-song-structure-2024')
-        self.assertEqual(note['source_ids'],[363,364,365,366,367,372,426])
+        self.assertEqual(note['source_ids'],[363,364,365,366,367,372,426,496,497])
         self.assertIn('109,963 annotated songs',note['finding'])
         self.assertIn('23 files totaling 12,184,678,510 bytes',note['finding'])
         self.assertIn('14 data files',note['finding'])
@@ -2595,7 +2595,7 @@ class SiteTests(unittest.TestCase):
         self.assertIn('nine documentation files',shared_package)
         self.assertNotIn('14 current file items',shared_package)
         rights_summary=next(value for label,value in note['study_snapshot'] if label=='Separate rights')
-        self.assertIn('for the dataset record',rights_summary)
+        self.assertIn('for its dataset record',rights_summary)
         self.assertIn('British National Grid',note['limitations'])
         self.assertIn('keep public geography coarse',note['limitations'])
         self.assertIn('as a held-out-individual baseline',note['limitations'])
@@ -2638,6 +2638,13 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(summary['prior_snapshot_provider_hash_differences'],['docs/metadata/main.md'])
         self.assertFalse(manifest['retrieval']['payload_bytes_downloaded'])
         self.assertEqual(selected['wytham-great-tit-song-setup-code']['rights']['license'],'MIT as declared by official GitHub repository.')
+        demography_code=next(r for r in resources if r['id']=='wytham-song-demography-analysis-code-v1')
+        self.assertEqual(demography_code['acquisition'],'metadata_only')
+        self.assertEqual(demography_code['source_ids'],[367,496,497])
+        self.assertIn('MIT',demography_code['rights']['license'])
+        self.assertIn('CC BY 4.0',demography_code['rights']['license'])
+        self.assertIn('as independent test truth',demography_code['decision'])
+        self.assertEqual(demography_code['files'],[])
         meaning=next(p for p in json.loads((project_root/'content'/'learning-paths.json').read_text())['paths'] if p['id']=='meaning')
         self.assertIn(note['slug'],meaning['notes'])
         plan=(project_root/'docs'/'FIRST_ANIMAL_PLAN.md').read_text()
@@ -2821,6 +2828,54 @@ class SiteTests(unittest.TestCase):
             page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
             self.assertIn('href="/talk2nature/research/atlas/"',page)
             self.assertIn('See this coarse literature location in the world atlas',page)
+
+    def test_canary_home_archive_is_an_architecture_reference_not_model_data(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='canary-song-archive-home-recording-project')
+        self.assertEqual(note['source_ids'],[498])
+        self.assertIn('5,554 recordings',note['finding'])
+        self.assertIn('CC BY-NC 4.0',note['limitations'])
+        self.assertIn('linked privacy policy was not reviewed',note['limitations'])
+        self.assertIn('not a parrot cohort',note['limitations'])
+        self.assertEqual(note['reuse']['status'][:13],'Metadata-only')
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        source=next(s for s in sources if s['id']==498)
+        self.assertIn('Direct page retrieval timed out',source['origin'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='canary-song-archive-community-project')
+        self.assertEqual(resource['kind'],'project')
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertEqual(resource['files'],[])
+        self.assertEqual(resource['rights']['commercial_use'],'not_admitted')
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True)
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('CC BY-NC 4.0',page)
+            self.assertIn('not a communication benchmark',page)
+
+    def test_marm_audio_is_call_type_methods_resource_not_communication_benchmark(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='marmaudio-common-marmoset-vocalization-dataset-2025')
+        self.assertEqual(note['source_ids'],[499,500,501])
+        self.assertIn('871,044 segmented vocalizations',note['finding'])
+        self.assertIn('sender identity and production context',note['finding'])
+        self.assertIn('model-assisted',note['limitations'])
+        self.assertIn('9.43% average error in its validation text but 8.71%',note['limitations'])
+        self.assertIn('CC BY 4.0',note['reuse']['rights'])
+        self.assertIn('CC BY-NC-ND 4.0',note['reuse']['rights'])
+        self.assertEqual(note['reuse']['status'][:13],'Metadata-only')
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        self.assertEqual({s['id'] for s in sources if s['id'] in {499,500,501}},{499,500,501})
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        resource=next(r for r in resources if r['id']=='marmaudio-common-marmoset-v7')
+        self.assertEqual(resource['acquisition'],'metadata_only')
+        self.assertEqual(resource['files'],[])
+        self.assertEqual(resource['rights']['license'],'CC BY 4.0 at Zenodo v7 dataset-record level.')
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True)
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('not a sender-context benchmark',page)
+            self.assertIn('No third-party data, audio or model was used',page)
 
 
 if __name__=='__main__': unittest.main()

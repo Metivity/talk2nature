@@ -4541,16 +4541,18 @@
       366,
       367,
       372,
-      426
+      426,
+      496,
+      497
     ],
-    "reviewed": "2026-10-25",
-    "review_stage": "Primary 2024 dataset paper and 2025 full article/methods reviewed; author documentation, OSF API manifest and documented coordinate fields reviewed. On 2026-10-25, one 6,426-byte documentation file was fetched only to verify its current OSF SHA-256 and MD5; its text was not reviewed or redistributed. No audio archive acquisition or model reproduction.",
-    "review_depth": "Reviewed the 2024 publisher article and author dataset documentation for collection design, labels and package format; Oxford Research Archive rights record; setup-code license and pinned revision; and the full 2025 Current Biology article including STAR Methods on feature extraction, similarity, clustering and validation. The 2025 methods describe a ViT metric-learning model trained on song-type labels from this corpus, 384-dimensional embeddings calculated for all 109,963 songs, and downstream repertoire-similarity/cultural analyses; the article reports 0.87 validation accuracy for a separate ResNet50 procedure on a random subset. The reviewed method text does not establish an individual-held-out test for that validation. The complete 2026-10-24 OSF root traversal lists 23 current file entries totaling 12,184,678,510 bytes: 14 data files and nine documentation files. An earlier same-day 14-entry traversal had listed only the data/ folder and omitted the separate docs/ folder; it is superseded. All 23 normalized paths and byte sizes match the 2026-10-23 snapshot. The saved 2026-10-23 SHA-256 for docs/metadata/main.md is malformed at 63 characters. On 2026-10-25, the 6,426-byte file was retrieved solely for integrity verification; its SHA-256 and MD5 match the current OSF API. Its content was not read or redistributed. The OSF node license relationship declares CC BY 4.0. The author nestbox documentation specifies British National Grid X/Y coordinates and says these data are also included in main.csv. No coordinate values, audio/annotation or analysis-code payloads were accessed; the one documentation file was not read or redistributed; no model was run and no independent specialist reviewed this Talk2Nature note.",
-    "review_locator": "Merino Recalde et al. (2024), Animal Behaviour 211:111–122, DOI 10.1016/j.anbehav.2024.02.008; OSF DOI 10.17605/OSF.IO/N8AC9; author documentation; setup code commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7; Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016, STAR Methods sections on repertoire similarity, automated clustering and manual categorization.",
-    "finding": "The Wytham Great Tit Song Dataset is an unusually dense wild-population resource: its authors report 109,963 annotated songs and 1,161,033 acoustic notes from more than 400 individual birds, collected in Wytham Woods, Oxfordshire, from 2020 to 2023. The complete current OSF API root lists 23 files totaling 12,184,678,510 bytes: 14 data files (12,184,652,639 bytes) and nine documentation files (25,871 bytes). The four song-archive parts total 11,380,411,540 bytes and ten metadata/map files total 804,241,099 bytes. The OSF node declares CC BY 4.0 and reports last modification on 2023-07-10; no explicit dataset version label was present in the inspected node response. The 2025 paper already trained a ViT metric-learning model on this corpus, generated 384-dimensional embeddings for all 109,963 songs, and used them to analyze repertoire similarity and demographic drivers of song culture. It then used automated clustering plus manual song categorization; the reported 0.87 validation accuracy belongs to a separate ResNet50 validation procedure. The dataset supports valuable song-structure and population-methods work, but it has no independently observed interaction context, receiver response or label for what a song means.",
-    "limitations": "This is one wild population and dawn-singing research system, so its labels do not establish transfer to other sites, species, household phones or general communication. Dataset documentation says bird identity associated with a breeding attempt can be uncertain or a proxy when the bird was not caught. The ordinary shared package is not the approximately 9 TB of original continuous soundscapes used in preparation. The authors’ nestbox metadata documentation specifies location coordinates in British National Grid and says the coordinates are also included in main.csv; the OSF manifest separately lists a Wytham perimeter shapefile. We inspected these documentation descriptions only, not coordinate values or file contents. Treat those fields as potentially sensitive wildlife-location information: keep public geography coarse and exclude precise coordinates from any future derivatives unless an appropriate wildlife-location review establishes a need and safe handling. The complete 2026-10-24 API tree has 23 entries; the earlier same-day 14-entry result was a partial traversal of data/ and omitted docs/. All 23 normalized paths and byte sizes match the historical snapshot. The 2026-10-23 local manifest stored a malformed 63-character SHA-256 for docs/metadata/main.md. On October 25, the current 6,426-byte file matched the OSF API SHA-256 and MD5; the cause of the malformed historical string is unknown. The file content was not reviewed, and no other provider hash was recomputed. Annotation values, grouping keys and dataset-level splits remain unaudited. The prior ViT embeddings were calculated across all songs from the same corpus, so treating them as a held-out-individual baseline for a new Talk2Nature benchmark would be an invalid shortcut; this is an evaluation-design inference from the published training scope. The 2025 paper already covers the obvious deep-embedding, individual-similarity and demographic song-culture tasks. No independent specialist assessed this note.",
+    "reviewed": "2026-10-28",
+    "review_stage": "Primary 2024 dataset and 2025 culture studies reviewed; targeted pinned 2025 code/provenance review added. No data payload or model was acquired or run; independent specialist review remains open.",
+    "review_depth": "Reviewed the 2024 publisher article and author dataset documentation for collection design, labels and package format; Oxford Research Archive rights record; setup-code license and pinned revision; and the full 2025 Current Biology article including STAR Methods on feature extraction, similarity, clustering and validation. The 2025 methods describe a ViT metric-learning model trained on song-type labels from this corpus, 384-dimensional embeddings calculated for all 109,963 songs, and downstream repertoire-similarity/cultural analyses; the article reports 0.87 validation accuracy for a separate ResNet50 procedure on a random subset. The reviewed method text does not establish an individual-held-out test for that validation. The complete 2026-10-24 OSF root traversal lists 23 current file entries totaling 12,184,678,510 bytes: 14 data files and nine documentation files. An earlier same-day 14-entry traversal had listed only the data/ folder and omitted the separate docs/ folder; it is superseded. All 23 normalized paths and byte sizes match the 2026-10-23 snapshot. The saved 2026-10-23 SHA-256 for docs/metadata/main.md is malformed at 63 characters. On 2026-10-25, the 6,426-byte file was retrieved solely for integrity verification; its SHA-256 and MD5 match the current OSF API. Its content was not read or redistributed. The OSF node license relationship declares CC BY 4.0. The author nestbox documentation specifies British National Grid X/Y coordinates and says these data are also included in main.csv. No coordinate values or audio/annotation payloads were accessed. In this continuation, selected pinned analysis-code text was inspected transiently; no code was retained locally or executed; the one documentation file was not read or redistributed; no model was run and no independent specialist reviewed this Talk2Nature note. The Zenodo v1.0.0 API record lists one 303,621-byte ZIP under a record-level CC BY 4.0 declaration; it was not downloaded. GitHub tag v1.0.0 resolves to commit 96a75e8869edef36a77632b3c85f019bcd027053; README, LICENSE.md, .gitattributes, two LFS pointer texts and selected identity-assignment code were reviewed.",
+    "review_locator": "Merino Recalde et al. (2024), Animal Behaviour 211:111–122, DOI 10.1016/j.anbehav.2024.02.008; OSF DOI 10.17605/OSF.IO/N8AC9; author documentation; setup code commit c96dc2d7ec0cc8bf6220f4aaf5dd6d9b941e5ef7; Merino Recalde et al. (2025), Current Biology, DOI 10.1016/j.cub.2025.02.016, STAR Methods sections on repertoire similarity, automated clustering and manual categorization. Pinned 2025 analysis repository v1.0.0: README.md, LICENSE.md, .gitattributes and scripts/setup/0.1-assign-ids.R (selected sections); source records 496–497.",
+    "finding": "The Wytham Great Tit Song Dataset is an unusually dense wild-population resource: its authors report 109,963 annotated songs and 1,161,033 acoustic notes from more than 400 individual birds, collected in Wytham Woods, Oxfordshire, from 2020 to 2023. The complete current OSF API root lists 23 files totaling 12,184,678,510 bytes: 14 data files (12,184,652,639 bytes) and nine documentation files (25,871 bytes). The four song-archive parts total 11,380,411,540 bytes and ten metadata/map files total 804,241,099 bytes. The OSF node declares CC BY 4.0 and reports last modification on 2023-07-10; no explicit dataset version label was present in the inspected node response. The 2025 paper already trained a ViT metric-learning model on this corpus, generated 384-dimensional embeddings for all 109,963 songs, and used them to analyze repertoire similarity and demographic drivers of song culture. It then used automated clustering plus manual song categorization; the reported 0.87 validation accuracy belongs to a separate ResNet50 validation procedure. The dataset supports valuable song-structure and population-methods work, but it has no independently observed interaction context, receiver response or label for what a song means. A static review of the pinned 2025 assignment script shows candidate identities propagated from feature-vector similarities across years under acoustic-distance and nest-distance thresholds; this is model-assisted label provenance, not independent test truth. The GitHub tag exposes the relevant CSV paths only as LFS pointers, and its README's OSF link is empty; the exact 31-repertoire mapping cannot be recovered from this code review.",
+    "limitations": "This is one wild population and dawn-singing research system, so its labels do not establish transfer to other sites, species, household phones or general communication. Dataset documentation says bird identity associated with a breeding attempt can be uncertain or a proxy when the bird was not caught. The ordinary shared package is not the approximately 9 TB of original continuous soundscapes used in preparation. The authors’ nestbox metadata documentation specifies location coordinates in British National Grid and says the coordinates are also included in main.csv; the OSF manifest separately lists a Wytham perimeter shapefile. We inspected these documentation descriptions only, not coordinate values or file contents. Treat those fields as potentially sensitive wildlife-location information: keep public geography coarse and exclude precise coordinates from any future derivatives unless an appropriate wildlife-location review establishes a need and safe handling. The complete 2026-10-24 API tree has 23 entries; the earlier same-day 14-entry result was a partial traversal of data/ and omitted docs/. All 23 normalized paths and byte sizes match the historical snapshot. The 2026-10-23 local manifest stored a malformed 63-character SHA-256 for docs/metadata/main.md. On October 25, the current 6,426-byte file matched the OSF API SHA-256 and MD5; the cause of the malformed historical string is unknown. The file content was not reviewed, and no other provider hash was recomputed. Annotation values, grouping keys and dataset-level splits remain unaudited. The prior ViT embeddings were calculated across all songs from the same corpus, so treating them as a held-out-individual baseline for a new Talk2Nature benchmark would be an invalid shortcut; this is an evaluation-design inference from the published training scope. The 2025 paper already covers the obvious deep-embedding, individual-similarity and demographic song-culture tasks. No independent specialist assessed this note. The 2025 analysis-code repository declares MIT for software, but its CSV files are separate Git LFS objects; the code license does not clear them. The tagged README's OSF hyperlink is blank, the Zenodo ZIP was not inspected, and no data values or exact overlap with the 2026 subset were examined.",
     "lesson": "A large corpus can teach us to measure patterns in animal sound before we try to interpret them. This dataset is a candidate for note, sequence and repertoire questions, not a conversation model. Keep it separate from the Egyptian-fruit-bat context-prediction candidate and provisional household-parrot app cohort. Any future model result should use whole-individual and time-aware grouping, compare simple acoustic baselines, and state that it predicts acoustic structure rather than meaning.",
-    "next_review": "Do not prioritize Wytham as a new Talk2Nature ML benchmark unless an independent avian-bioacoustics and evaluation reviewer identifies a useful task beyond the published embeddings, re-identification and cultural analyses. If a distinct acoustic-structure task is proposed, inspect the 2025 analysis split/code, define an individual/time-aware holdout and baseline, and decide whether any location fields are necessary. Keep precise coordinates out of maps and public derivatives unless an appropriate wildlife-location review establishes a need and safe handling. Do not present the corpus as a communication benchmark or run AutoResearch before shared readiness gates pass.",
+    "next_review": "Do not prioritize Wytham as a new Talk2Nature ML benchmark unless an independent avian-bioacoustics and evaluation reviewer identifies a useful task beyond the published embeddings, re-identification and cultural analyses. If a distinct acoustic-structure task is proposed, inspect the 2025 analysis split/code, define an individual/time-aware holdout and baseline, and decide whether any location fields are necessary. Keep precise coordinates out of maps and public derivatives unless an appropriate wildlife-location review establishes a need and safe handling. Do not present the corpus as a communication benchmark or run AutoResearch before shared readiness gates pass. The newly reviewed code release alone cannot establish the 31-label membership or data rights. Continue only if an independent avian-bioacoustics/evaluation reviewer identifies a non-duplicative task; then resolve the exact OSF record, file-level provenance and grouped label mapping before any payload use.",
     "expert_review": "No independent specialist review has been received.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -4568,7 +4570,7 @@
       ],
       [
         "Prior analysis",
-        "A 2025 paper trained a ViT metric-learning model on this corpus and used embeddings from all 109,963 songs for repertoire-similarity and cultural analyses. Do not treat those embeddings as an independent held-out baseline."
+        "A 2025 paper trained a ViT metric-learning model on this corpus and used embeddings from all 109,963 songs for repertoire-similarity and cultural analyses. Do not treat those embeddings as an independent held-out baseline. The pinned 2025 script propagates IDs from feature-distance matches; these labels are model-assisted."
       ],
       [
         "Useful questions",
@@ -4580,7 +4582,7 @@
       ],
       [
         "Separate rights",
-        "The OSF node declares CC BY 4.0 for the dataset record; the setup-code repository separately declares MIT. Nested provenance, 2025 analysis files and model weights were not reviewed."
+        "The OSF node declares CC BY 4.0 for its dataset record; the 2024 setup-code repository and 2025 analysis-code repository separately declare MIT. The 2025 repository's Git LFS data objects and model assets have separate, unresolved provenance and rights."
       ],
       [
         "Wildlife-location fields",
@@ -5855,7 +5857,11 @@
     "purpose": "Models & evaluation",
     "year": "2026",
     "year_label": "Peer-reviewed study and versioned data/code release",
-    "source_ids": [486, 487, 488],
+    "source_ids": [
+      486,
+      487,
+      488
+    ],
     "reviewed": "2026-10-28",
     "review_stage": "Full primary article review plus versioned data/code and location metadata review; no third-party payload was acquired or reproduced.",
     "review_depth": "Read the complete 17-page open-access article, including Methods §§2.1–2.7, Results §§3.1–3.4, Discussion §§4.1–4.5, limitations, ethics and data availability. Checked the institutional dataset description and exact Zenodo/DataCite concept and version metadata, file count, total size and record-level license. No audio, accelerometer, table, MATLAB code or archive file was downloaded, installed or executed.",
@@ -5913,6 +5919,112 @@
       "asset": "This page contains an original summary and links. The paper and the Zenodo data/code deposit are separate assets. The deposit includes audio, acceleration, tables and MATLAB scripts; none of those payloads was acquired. No model weights were identified in the manifest review.",
       "rights": "The paper is CC BY 4.0. Zenodo version 18530673 (concept 18530672) declares record-level CC BY 4.0 for its 43-file data/code deposit. No distinct software license for the MATLAB files or license review of their dependencies was completed. Preserve attribution and treat these rights as separate from any model or tool terms.",
       "experiment": "No data acquisition, code execution, model run or reproduction occurred. The result is not a Talk2Nature benchmark and does not establish phone sensor performance, caller identity outside this setup, receiver response or communication meaning."
+    }
+  },
+  {
+    "slug": "canary-song-archive-home-recording-project",
+    "title": "A home canary archive is a recording-network precedent, not a communication benchmark",
+    "seo_description": "Canary Song Archive describes home canary recordings from phones and Raspberry Pi. Its snapshot lacks verified behavior labels and a reviewed privacy policy.",
+    "taxon": "Domestic canary (Serinus canaria)",
+    "kind": "Community recording archive",
+    "purpose": "Animal-computer interaction",
+    "year": "2026",
+    "year_label": "Official project snapshot; latest listed September 2026",
+    "source_ids": [
+      498
+    ],
+    "reviewed": "2026-10-29",
+    "review_stage": "Indexed official project information reviewed; direct page retrieval timed out. The privacy policy, manifest and recordings were not opened or downloaded.",
+    "review_depth": "Reviewed the official Canary Song Archive About page as returned by the web search index: project approach, home-recording methods, licensing/privacy summary and September 2026 dataset snapshot. Direct page retrieval timed out. No privacy policy text, manifest rows, code, audio, or underlying dataset was reviewed or downloaded.",
+    "review_locator": "Canary Song Archive, About the Archive: Approach, Method, Data & privacy, Dataset snapshots; official project page https://canary.audio/info; indexed text reviewed 2026-10-29, direct retrieval unavailable.",
+    "finding": "The project describes a distributed home-recording archive for domesticated canaries. Contributors may use Raspberry Pi recorders, phones or handheld devices and provide location, time and recording-condition context. Its page lists a September 2026 snapshot of 5,554 recordings and about 24 hours of audio. The project presents this as a research and creative resource; this page review found no independently evaluated behavioral labels or model benchmark.",
+    "limitations": "The page states recordings are contributed under CC BY-NC 4.0 and remain permanently available. Its linked privacy policy was not reviewed. The described manifest includes contributor usernames, bird/device identifiers, recording dates, duration, location metadata and media links; no manifest row was accessed. The current snapshot is a website-reported count, not an independently counted dataset. Recording, model, code and consent terms beyond the page summary remain unverified. This domestic-canary archive is not a parrot cohort, receiver-response dataset, or translation benchmark.",
+    "lesson": "This is a useful reference for a distributed home-bird recording workflow, not a dataset to copy or a reason to change Talk2Nature's provisional species choice. Any similar contribution path should decide separately how local drafts, publication consent, location precision, contributor identity, retention and withdrawal work before collecting media. Keep independently observed behavior separate from acoustic predictions.",
+    "next_review": "When direct project access is available, review the linked privacy policy, contribution and withdrawal terms, manifest schema and any public software/device pipeline. Until then, keep this as a metadata-only architecture reference; do not import the manifest, recordings or models and do not contact the project without authorization.",
+    "expert_review": "No independent avian bioacoustics, privacy or data-governance review; this is a project-page review, not peer-reviewed evidence.",
+    "study_snapshot": [
+      [
+        "Collection model",
+        "Contributor-provided domestic-canary recordings; page names Raspberry Pi, phone and handheld devices."
+      ],
+      [
+        "Latest listed snapshot",
+        "September 2026: 5,554 recordings and approximately 24 hours, as stated by the project page."
+      ],
+      [
+        "Context metadata",
+        "The page describes location, time, recording conditions and a manifest with contributor, bird, device and media fields; no rows were inspected."
+      ],
+      [
+        "Recording terms",
+        "CC BY-NC 4.0 per the project page; recording-level permission and linked privacy terms were not independently reviewed."
+      ],
+      [
+        "Scientific scope",
+        "A community archive of canary song; no reviewed independent behavior labels, receiver-response experiment or benchmark split."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only architecture reference; no recording, manifest, code or model was admitted to Talk2Nature storage or training.",
+      "asset": "The project page describes a public archive and monthly manifests. No manifest, audio, sidecar, spectrogram, source code or model was accessed.",
+      "rights": "The project page states CC BY-NC 4.0 for recordings and says the archive remains permanently available. The linked privacy policy and detailed per-contributor permission language were not reviewed; software licensing was not established.",
+      "experiment": "No external data were acquired or used, no model was trained, and no user or animal behavior was evaluated. The page is an architecture comparator only, not a Talk2Nature result or partnership."
+    }
+  },
+  {
+    "slug": "marmaudio-common-marmoset-vocalization-dataset-2025",
+    "title": "MarmAudio is a rich call corpus, not a sender-context benchmark",
+    "seo_description": "MarmAudio offers 871,044 marmoset vocalizations, but lacks sender identity and social context; its call-type labels are not meaning labels.",
+    "taxon": "Common marmoset (Callithrix jacchus)",
+    "kind": "Vocalization dataset and methods",
+    "purpose": "Data & annotation",
+    "year": "2025",
+    "year_label": "Zenodo v7, published 2025-09-24",
+    "source_ids": [
+      499,
+      500,
+      501
+    ],
+    "reviewed": "2026-10-29",
+    "review_stage": "Primary article, current Zenodo record/API metadata and pinned code license/README reviewed. No audio, annotation payload, model weights or code acquired or run.",
+    "review_depth": "Reviewed the open-access primary article sections on recording design, semi-automated segmentation/labeling, data records, technical validation and limitations; current Zenodo v7 page and API manifest/license; and the pinned GitHub README and BSD-3-Clause notice. No raw audio, TSV rows, Metadata.pdf, model weights, supplementary files or code source were downloaded or executed.",
+    "review_locator": "Lamothe et al. (2025), Scientific Data 12:782, DOI 10.1038/s41597-025-04951-8; Zenodo v7 DOI 10.5281/zenodo.17191682 (concept DOI 10.5281/zenodo.10997563; article cites earlier version 10.5281/zenodo.15017207); GitHub commit 5c65268f2734f0abb4e26a83877cedbc4e9c8330.",
+    "finding": "The authors report 871,044 segmented vocalizations spanning 253 hours at 96 kHz, recorded from a single colony of 35 marmosets over time in three family/cage groups. About 215,000 vocalizations (72 hours) received one of six specific call-type labels through a semi-automated pipeline using a learned representation and classifier; most remain generic/unknown vocalizations. A sample of 700 was reviewed by four experts, with the model prediction visible during the yes/no check. The authors explicitly state that the public dataset lacks sender identity and production context. The current Zenodo v7 API declares CC BY 4.0 for the dataset record; the article is CC BY-NC-ND 4.0 and the pinned analysis software declares BSD-3-Clause.",
+    "limitations": "This is a high-sampling-rate captive-colony call corpus, not a home-phone dataset; transfer to phones or other colonies is untested. Because sender identity and social/production context are absent, it cannot support individual-held-out evaluation, call-to-context inference, receiver response or meaning. Specific call labels are model-assisted and the 700-record review showed reviewers the model prediction; it is not an independent communication label set. The article reports 9.43% average error in its validation text but 8.71% in its table; reconcile before reproducing. The one-colony/three-cage system and available time fields do not substitute for caller identity. The latest record lists nine files totaling 60,366,144,089 bytes (about 60.4 GB); no payload was acquired. Keep article, data, code, dependencies and model assets under separate rights review.",
+    "lesson": "A large annotated corpus can support event detection and call-type methods while still being unsuitable for communication questions. A label for call form is not a label for what the sender is doing, whom it addresses or how a receiver understood it.",
+    "next_review": "Use as a methods comparator only. If a call-type reproduction becomes a distinct project goal, first reconcile the validation-error discrepancy, exact v7 file contents and the provenance/licensing of bundled model assets; obtain independent marmoset-bioacoustics and ML/statistical review; and define a session-aware evaluation. Do not acquire the 60.4 GB archive or run models merely because the record is open.",
+    "expert_review": "No independent marmoset-bioacoustics, animal-behavior or ML/statistical reviewer assessed Talk2Nature task suitability.",
+    "study_snapshot": [
+      [
+        "Scale and equipment",
+        "Authors report 871,044 segmented vocalizations across 253 hours, recorded at 96 kHz with a room microphone."
+      ],
+      [
+        "Labels",
+        "Six specific call types cover about 215,000 clips; labels were produced through a semi-automated clustering/classifier workflow."
+      ],
+      [
+        "Quality check",
+        "700 sampled clips were shown to four expert reviewers with the classifier prediction visible; article text and table report different average error values (9.43% vs 8.71%)."
+      ],
+      [
+        "Missing communication variables",
+        "The authors explicitly state that sender identity and production context are not available in the dataset."
+      ],
+      [
+        "Rights",
+        "Current Zenodo v7 record declares CC BY 4.0; pinned code declares BSD-3-Clause; the article has a separate CC BY-NC-ND 4.0 license."
+      ],
+      [
+        "Disposition",
+        "Metadata-only methods resource; not a Talk2Nature communication benchmark and not admitted to training."
+      ]
+    ],
+    "reuse": {
+      "status": "Metadata-only methods reference; no dataset files, audio, model weights or code were admitted to Talk2Nature storage or training.",
+      "asset": "The current dataset record lists nine files totaling about 60.4 GB. The payload, annotation TSV, Metadata.pdf, model assets and code source files were not acquired or executed.",
+      "rights": "Zenodo v7 declares CC BY 4.0 at record level; pinned repository software declares BSD-3-Clause; the paper is CC BY-NC-ND 4.0. Treat each component separately and confirm bundled model/dependency rights before use.",
+      "experiment": "No third-party data, audio or model was used. This metadata/literature review supports call-type methods only and establishes no receiver response, context decoding, translation, phone transfer or biological result."
     }
   }
 ]

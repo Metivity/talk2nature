@@ -5048,5 +5048,90 @@
       "scope": "Official project-page factual summary only. No project-page image, text beyond short factual summaries, dataset, code or model rights are inferred from the page.",
       "note": "Dataset license declaration remains separately recorded at source 412; code and model terms remain unresolved."
     }
+  },
+  {
+    "id": 496,
+    "title": "Wytham song demography analysis release v1.0.0 · Zenodo record",
+    "description": "Official Zenodo API record for the 2025 Wytham song-demography software release. Version 1.0.0 declares CC BY 4.0 at record level and lists one 303,621-byte ZIP (MD5 c0f9367b68576fe6b854aabc1a439d57). The archive was not downloaded or inspected; its internal contents and component-specific rights remain unknown.",
+    "url": "https://doi.org/10.5281/zenodo.12800735",
+    "checked": "2026-10-28",
+    "origin": "Official Zenodo API version record 12800736; concept DOI distinguished from version DOI.",
+    "rights": {
+      "license": "CC BY 4.0 at the Zenodo record level.",
+      "scope": "Record-level declaration only. The archive was not inspected; no separate rights are inferred for code, Git LFS data, derived features, models or source recordings.",
+      "note": "Metadata-only review; no archive bytes acquired."
+    },
+    "review_url": "https://zenodo.org/records/12800736",
+    "review_url_label": "Versioned record API metadata and file manifest only"
+  },
+  {
+    "id": 497,
+    "title": "Wytham song demography analysis repository v1.0.0 · pinned GitHub source",
+    "description": "Pinned GitHub tag v1.0.0 resolves to commit 96a75e8869edef36a77632b3c85f019bcd027053. Its LICENSE.md declares MIT for repository software. The README says data must be obtained separately from OSF but the tagged README's OSF hyperlink is empty; .gitattributes sends CSVs through Git LFS, and inspected CSV paths resolve to pointer text rather than payload. Static review of the ID-assignment script found feature-distance matches across different years, with distance below 0.9 and nest separation below 100 m, used to assign a known bird ID to an unlabelled repertoire. No code was retained locally or executed; no data payload was acquired.",
+    "url": "https://github.com/nilomr/birdsong-demography/tree/96a75e8869edef36a77632b3c85f019bcd027053",
+    "checked": "2026-10-28",
+    "origin": "Official GitHub tag/ref/tree API and pinned raw README.md, LICENSE.md, .gitattributes, CSV LFS pointer text and selected static source from scripts/setup/0.1-assign-ids.R.",
+    "rights": {
+      "license": "MIT as declared by the pinned repository LICENSE.md.",
+      "scope": "Repository software and associated documentation only; the separate Git LFS dataset objects, model artifacts and recordings have distinct unresolved provenance and rights.",
+      "note": "The linked Zenodo version separately declares CC BY 4.0 at record level; its archive contents were not inspected."
+    },
+    "review_url": "https://github.com/nilomr/birdsong-demography/blob/96a75e8869edef36a77632b3c85f019bcd027053/scripts/setup/0.1-assign-ids.R",
+    "review_url_label": "Pinned source code; targeted static inspection only"
+  },
+  {
+    "id": 498,
+    "title": "The Canary Song Archive · official project information",
+    "description": "The project describes a community archive of domestic-canary recordings from Raspberry Pi, phone and handheld devices. Its indexed About page reports a September 2026 snapshot of 5,554 recordings and about 24 hours; it states CC BY-NC 4.0 for recordings and permanent public availability. The linked privacy policy and manifest rows were not reviewed. No data, code or audio were acquired.",
+    "url": "https://canary.audio/info",
+    "checked": "2026-10-29",
+    "origin": "Official project About page text returned by web search indexing. Direct page retrieval timed out; no linked policy, manifest, media or software was accessed.",
+    "review_url": "https://canary.audio/info",
+    "review_url_label": "Official project page; indexed text only, direct retrieval unavailable"
+  },
+  {
+    "id": 499,
+    "title": "Lamothe et al. (2025) · A large annotated dataset of vocalizations by common marmosets",
+    "description": "Peer-reviewed data descriptor for 871,044 segmented marmoset vocalizations across 253 hours. It explicitly says sender identity and production context are missing; this supports call-type methods, not a receiver-response or meaning benchmark.",
+    "url": "https://doi.org/10.1038/s41597-025-04951-8",
+    "checked": "2026-10-29",
+    "origin": "Full open-access article reviewed via PubMed Central: abstract, methods, segmentation/labeling, animal/recording setup, data records, technical validation and stated limitations. No audio or dataset payload acquired.",
+    "rights": {
+      "license": "CC BY-NC-ND 4.0 for the article.",
+      "scope": "Publication text and figures only; the Zenodo data deposit and GitHub software have separate rights.",
+      "note": "Only an original short summary and links are stored; no article text or figures redistributed."
+    },
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12075697/",
+    "review_url_label": "Open full text; methods, dataset, validation and limitations reviewed"
+  },
+  {
+    "id": 500,
+    "title": "MarmAudio common-marmoset vocalization dataset · Zenodo v7",
+    "description": "Official Zenodo API metadata for the current v7 record declares CC BY 4.0 and lists nine files totaling 60,366,144,089 bytes. The original audio and annotations were not downloaded or inspected.",
+    "url": "https://zenodo.org/records/17191682",
+    "checked": "2026-10-29",
+    "origin": "Official Zenodo record page and verified-TLS REST API metadata. Current version v7 (record DOI 10.5281/zenodo.17191682); concept DOI 10.5281/zenodo.10997563. The article cites version DOI 10.5281/zenodo.15017207. Nine-file manifest, aggregate size and record-level CC BY 4.0 declaration checked; no file bytes acquired.",
+    "rights": {
+      "license": "CC BY 4.0 declared at the current Zenodo dataset-record level.",
+      "scope": "The record-level declaration is kept separate from article text, code, dependencies and any model-weight components bundled in the deposit; no files were inspected.",
+      "note": "Attribution and exact component/use review are required before any acquisition, execution or redistribution."
+    },
+    "review_url": "https://zenodo.org/api/records/17191682",
+    "review_url_label": "Current record API metadata, license and file manifest; payload not accessed"
+  },
+  {
+    "id": 501,
+    "title": "MarmAudio dataset analysis code · pinned GitHub source",
+    "description": "Pinned public repository at commit 5c65268f2734f0abb4e26a83877cedbc4e9c8330 declares BSD-3-Clause and describes preprocessing, call detection, classification and a visualization interface. Code was not executed.",
+    "url": "https://github.com/swasun/MarmAudioDataset/tree/5c65268f2734f0abb4e26a83877cedbc4e9c8330",
+    "checked": "2026-10-29",
+    "origin": "Public GitHub repository metadata, README and pinned LICENCE.txt reviewed; current head resolved through GitHub API to commit 5c65268f2734f0abb4e26a83877cedbc4e9c8330 (2025-11-21). No source files or dependencies were run.",
+    "rights": {
+      "license": "BSD-3-Clause declared in the pinned repository.",
+      "scope": "Repository software only; not the article, dataset, pretrained model weights or third-party dependencies.",
+      "note": "Preserve the notice and disclaimer if code is reused; audit requirements and dependencies before reproduction."
+    },
+    "review_url": "https://github.com/swasun/MarmAudioDataset/blob/5c65268f2734f0abb4e26a83877cedbc4e9c8330/LICENCE.txt",
+    "review_url_label": "Pinned software license text; no code execution"
   }
 ]
