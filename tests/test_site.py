@@ -2570,6 +2570,68 @@ class SiteTests(unittest.TestCase):
             self.assertIn(data_release['title'],page)
             self.assertIn('metadata-only',page)
 
+    def test_bird_corpus_notes_and_resources_link_to_their_actual_sources(self):
+        project_root=Path(__file__).resolve().parents[1]
+        sources={s['id']:s for s in load('sources')}
+        notes={n['slug']:n for n in load('research')}
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        resources={r['id']:r for r in resources}
+
+        expected_notes={
+            'birdset-powdermill-first-compute-candidate': {
+                'https://zenodo.org/records/4656848',
+                'https://doi.org/10.5061/dryad.d2547d81z',
+            },
+            'high-sierra-soundscape-metadata-preflight': {
+                'https://zenodo.org/records/7525805',
+                'https://zenodo.org/records/19340660',
+            },
+            'arcticbirdsounds-grouped-split-preflight': {
+                'https://doi.org/10.1002/ecy.4047',
+                'https://osf.io/b9trx/',
+                'https://github.com/Vin985/arctic_songs',
+            },
+            'arcticsoundsnet-transfer-learning-preflight': {
+                'https://doi.org/10.1016/j.ecoinf.2025.103270',
+                'https://doi.org/10.5061/dryad.jh9w0vtnr',
+                'https://github.com/MZiegenhorn/birdnet-discovery',
+            },
+        }
+        for slug,expected_urls in expected_notes.items():
+            with self.subTest(note=slug):
+                actual_urls={sources[i]['url'] for i in notes[slug]['source_ids']}
+                self.assertTrue(expected_urls.issubset(actual_urls))
+                self.assertFalse(any('nlnet.nl' in url or 'mendeley.com' in url
+                                     for url in actual_urls))
+
+        expected_resources={
+            'powdermill-bird-soundscapes': {'https://zenodo.org/records/4656848'},
+            'birdset-baseal-perch-v2-embeddings': {
+                'https://zenodo.org/records/19340660',
+                'https://zenodo.org/records/4656848',
+                'https://zenodo.org/records/7525805',
+            },
+            'high-sierras-hsn-soundscapes': {'https://zenodo.org/records/7525805'},
+            'arcticbirdsounds-soundscape-dataset': {
+                'https://doi.org/10.1002/ecy.4047',
+                'https://osf.io/b9trx/',
+            },
+            'arcticsoundsnet-dryad-data': {
+                'https://doi.org/10.5061/dryad.jh9w0vtnr',
+                'https://doi.org/10.1016/j.ecoinf.2025.103270',
+            },
+            'wytham-great-tit-source-data': {
+                'https://osf.io/n8ac9/',
+                'https://doi.org/10.1016/j.anbehav.2024.02.008',
+            },
+        }
+        for resource_id,expected_urls in expected_resources.items():
+            with self.subTest(resource=resource_id):
+                actual_urls={sources[i]['url'] for i in resources[resource_id]['source_ids']}
+                self.assertTrue(expected_urls.issubset(actual_urls))
+                self.assertFalse(any('nlnet.nl' in url or 'mendeley.com' in url
+                                     for url in actual_urls))
+
     def test_nbm_review_separates_detection_labels_from_meaning_and_component_rights(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='nocturnal-bird-migration-dataset-2026')

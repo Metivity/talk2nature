@@ -5378,10 +5378,10 @@
         359
       ],
       "priority": 1,
-      "reviewed": "2026-10-28",
+      "reviewed": "2026-10-29",
       "task": "Metadata-only candidate release associated with zebra-finch call-timing and next-call prediction research; not admitted for training or app inference.",
-      "review_depth": "The official Zenodo API was rechecked over verified TLS on October 28. The current title, MIT record identifier, record update timestamp, one-file size and provider MD5 match the October 23 snapshot. No archive payload was downloaded, provider MD5 was not recomputed against bytes, and the archive's inner manifest and contents, exact recordings/data and file-level rights remain unreviewed.",
-      "access": "Public record metadata lists one 26.6 GB ZIP and describes code, checkpoints and data, including next-call benchmark metadata. This does not verify which recordings, annotations or other files are inside the archive.",
+      "review_depth": "The official Zenodo API was rechecked over verified TLS on October 29. The current title, MIT record identifier, record update timestamp and complete one-file key/size/provider-checksum inventory match the October 23 snapshot. No archive payload was downloaded, provider checksum was not recomputed against bytes, and the archive's inner manifest and contents, exact recordings/data and file-level rights remain unreviewed.",
+      "access": "Public record metadata lists one 26.6 GB ZIP and describes code, checkpoints, a StreamPlayback directory and next-call metadata. This does not verify which recordings, annotations or other files are inside the archive.",
       "decision": "Keep metadata-only. The MIT record field and description's code/model license statement do not establish rights for recordings, annotations or benchmark data. Do not acquire, execute, train, redistribute or commercialize archive contents until exact contents, provenance and component-level terms are resolved and reviewed.",
       "limitations": "This is a release metadata record, not an inspected dataset. The preprint v3 data-availability statement and the later Zenodo release are not reconciled. The provider MD5 is not locally verified. Exact data/audio licensing, source-media provenance, bird-level split disjointness, independent review and benchmark readiness remain unresolved.",
       "attribution": "James et al. (2026), ZF-AIM Acoustic Interaction Model, Zenodo record 23024019, DOI 10.5281/zenodo.23024019; related preprint DOI 10.64898/2026.02.12.705387.",
@@ -5806,11 +5806,11 @@
         373
       ],
       "priority": 1,
-      "reviewed": "2026-10-28",
+      "reviewed": "2026-10-29",
       "task": "Candidate source of selected zebra-finch interaction recordings and processed outputs for acoustic call-timing research; not a verified copy of the complete study corpus and not admitted for training.",
-      "review_depth": "Queried the official Zenodo API over verified TLS on October 28. The current title, update timestamp, cc-by-sa-4.0 API identifier, conflicting CC-BY-NC description and all 11 top-level file keys/sizes/provider MD5s match the October 24 snapshot in research/zf_aim_data_zenodo_manifest_2026-10-24.json. No payload or archive internals were fetched; provider checksums were not verified against bytes.",
-      "access": "Public API metadata lists four raw recordings totaling approximately 43.5 GB plus processed-data, detector-data and model archives. The file description calls these four raw tracks examples. It does not establish that the complete 1.5-million-call study corpus is present.",
-      "decision": "Keep metadata-only. The Zenodo API license field declares CC BY-SA 4.0, but the record description says the data are under a CC BY-NC license. Do not acquire, train, redistribute or commercialize the data until the terms conflict and component scope are clarified.",
+      "review_depth": "Queried the official Zenodo API over verified TLS on October 29. The current title, update timestamp, cc-by-sa-4.0 API identifier, conflicting CC-BY-NC description and all 11 top-level file keys/sizes/provider checksums match the October 24 snapshot in research/zf_aim_data_zenodo_manifest_2026-10-24.json. No payload or archive internals were fetched; provider checksums were not verified against bytes.",
+      "access": "Public API metadata describes four example raw tracks from Pairs 27, 3003, 5014 and 5031, totaling approximately 43.5 GB, plus processed-data, detector-data and model archives. It does not establish that the complete 40-pair, 834,309-call interaction corpus is present.",
+      "decision": "Defer as the first Talk2Nature benchmark and retain as prior art. The API declares CC BY-SA 4.0 while the record description says CC BY-NC. Keep metadata-only until the terms conflict, corpus completeness and bird/session mapping are resolved; no acquisition, training or redistribution is admitted.",
       "limitations": "This record is separate from the 26.6 GB code/model ZIP at Zenodo record 23024019. Its inventory does not expose archive contents or prove the processed tables cover the full study. The record includes third-party model components; source-media provenance, annotation semantics, birds/session mapping and individual-disjoint split remain unreviewed. No independent review or reproduction exists.",
       "attribution": "James et al. (2026), Data for ZF-AIM, Zenodo DOI 10.5281/zenodo.23047646; related preprint DOI 10.64898/2026.02.12.705387.",
       "rights": {
@@ -8299,16 +8299,18 @@
       "priority": 2,
       "reviewed": "2026-10-29",
       "source_ids": [
-        137,
-        139,
-        140,
-        153,
-        141,
-        142,
-        148
+        363,
+        364,
+        365,
+        366,
+        367,
+        372,
+        426,
+        496,
+        497
       ],
-      "task": "Largest source collection in the 2026 temporal-embedding study and source for the 2025 Wytham song-demography analysis; strong candidate for a passive caller-identity benchmark, conditional on label provenance and session mapping.",
-      "review_depth": "Official OSF node and file metadata, metadata-only file tree, public dataset documentation, and indexed full-text excerpts of the 2024 and 2025 dataset papers reviewed. The current OSF node API returns license=null. Only the great-tit-hits.csv header was read via bounded byte range; no row values, segment JSON, WAV or archive payload inspected or saved. The 2025 primary paper specifies 299 annotated repertoires from 242 known birds plus 31 additional ViT-matched repertoires assigned to existing IDs; the exact overlap of the 31 with the 2026 subset remains unknown. The small reproducibility archive index/README/license were inspected without opening any source code or data rows.",
+      "task": "Source-data release for the 2024 Wytham dataset paper and 2025 song-demography analysis; a possible passive caller-identity benchmark only after label provenance and session mapping are resolved.",
+      "review_depth": "Official OSF node and file metadata, metadata-only file tree, public dataset documentation, and indexed full-text excerpts of the 2024 and 2025 dataset papers reviewed. The current OSF node API returns license=null. Only the great-tit-hits.csv header was read via bounded byte range; no row values, segment JSON, WAV or archive payload inspected or saved. The 2025 primary paper specifies 299 annotated repertoires from 242 known birds plus 31 additional ViT-matched repertoires assigned to existing IDs; exact membership and row mapping remain unknown. The small reproducibility archive index/README/license were inspected without opening any source code or data rows.",
       "access": "OSF documentation describes 109,963 WAV/JSON segment pairs (about 11.4 GB) and song/recording metadata. Current node API has no license value; the 2024 dataset paper states its input/output data files are CC BY 4.0. File-level terms and use still require review.",
       "decision": "Metadata only. Strong candidate for a passive identity benchmark: 242 identities recur across the 2024 dataset description and 2025/2026 studies, but exact class-to-row, field-tag versus model-assisted label provenance, and session mapping remain unverified. The data-paper CC BY statement is recorded separately from the current OSF API, whose license field is null.",
       "limitations": "The song table's ID denotes a breeding attempt and may be an uncertain bird link or proxy; the recording filename ID and segment JSON ID refer to different objects. The 2025 paper says 31 repertoires were linked to known birds through a prior ViT metric-learning model. The matching 242 count does not prove which rows/classes in the 2026 study used those model-assisted labels. The node license does not establish every component's provenance. The article's repeated stratified vocalization split is not session-disjoint. The 2025 paper distinguishes 299 field-linked repertoires from 31 additional ViT-matched repertoires (330 total, 242 birds). The 2026 criterion of field observation/tagging suggests the additional model-assisted repertoires may be excluded, but that is an inference until the class/row crosswalk is documented. The archive README and file index do not resolve membership; its CSV and R files remain unopened.",
@@ -8424,14 +8426,15 @@
       "priority": 1,
       "reviewed": "2026-10-29",
       "source_ids": [
-        149,
-        152
+        294,
+        295,
+        502
       ],
-      "task": "Small, strongly labeled passive-acoustic candidate for bird vocalization event/species detection and a first grouped-evaluation rehearsal; it cannot test individual recognition, behavior meaning or communication.",
-      "review_depth": "Primary dataset description, sampling/annotation method and official Zenodo API/file manifest reviewed. Only the 434,265-byte annotation ZIP was acquired for schema and group-key review; audio remains unacquired and unopened.",
+      "task": "Small, strongly labeled passive-acoustic fixture for schema or pipeline smoke tests; four recording groups from one reserve cannot establish site generalization, individual recognition, behavior meaning or communication.",
+      "review_depth": "Primary dataset description, sampling/annotation method and the October 29 official Zenodo API/license/file manifest were reviewed. Only the 434,265-byte annotation ZIP was previously acquired under a checksum receipt for schema and aggregate group-key review; no audio payload is held or opened in this review.",
       "access": "Zenodo lists a 1.43 GB WAV archive, a 182 MB MP3 archive, a 434 kB annotation archive and README. The authors describe 385 minutes across ten sites and four days, 48 species and 16,052 time/frequency/species annotations. The official API declares CC0-1.0. A local annotation ZIP receipt records the API checksum and SHA-256; the archive and receipt are excluded from public materials.",
-      "decision": "Conditional leading dataset for a first acoustic species/event-detection baseline, pending completion of annotation/group-key and site/day feasibility review. The sample acquisition is annotation-only and is not training admission. Prefer the direct CC0 Powdermill record over the aggregated BirdSet corpus for an initial experiment. Keep it separate from the companion-parrot observation study and the Wytham caller-identity benchmark.",
-      "limitations": "One reserve and four recording days provide narrow ecological coverage. Species/event labels do not establish individual caller identity, behavior, communicative meaning or receiver understanding. Review annotation coverage, site/day grouping, quiet negatives, clipping and file-level provenance before model execution; no result is established.",
+      "decision": "Metadata-only finding: the direct Zenodo record declares CC0-1.0 and lists the WAV, MP3, annotation and README packages, but the reviewed annotation tables expose four Recording_N groups and no site key. Keep Powdermill as an optional schema/pipeline smoke-test fixture, not a selected benchmark; the prior annotation-only sample is not training admission. A recording-held-out result across four groups would be narrow feasibility evidence only; qualified review and a frozen task are still required before any model execution.",
+      "limitations": "One reserve and four recording groups provide narrow ecological coverage; three species codes occur in all four groups and 25 occur in only one. The lone empty annotation segment is not verified quiet audio because faint, unidentifiable and short-chip sounds were not fully annotated. Species/event labels do not establish individual caller identity, behavior, communicative meaning or receiver understanding. No audio was acquired, no model was selected or evaluated, and no result is established.",
       "attribution": "Chronister, Rhinehart, Place and Kitzes, An annotated set of audio recordings of Eastern North American birds containing frequency, time, and species information, Zenodo record 4656848 / Dryad DOI 10.5061/dryad.d2547d81z.",
       "rights": {
         "license": "CC0-1.0",
@@ -8472,9 +8475,12 @@
       "priority": 2,
       "reviewed": "2026-10-29",
       "source_ids": [
-        149,
-        150,
-        151
+        335,
+        336,
+        337,
+        502,
+        503,
+        504
       ],
       "task": "Potential low-storage classifier rehearsal on predefined bird-sound labels, with HSN, POW and UHH subset metadata and Perch v2 embeddings.",
       "review_depth": "Official Zenodo v2 metadata/file manifest and BioDCASE schema, split, model-attribution and upstream-source descriptions reviewed. The bundle and its labels/embeddings were not downloaded or inspected.",
@@ -8503,9 +8509,10 @@
       "priority": 1,
       "reviewed": "2026-10-29",
       "source_ids": [
-        149,
-        150,
-        154
+        335,
+        336,
+        503,
+        504
       ],
       "task": "Candidate for a small site-held-out event/species detector on strongly labeled wild-bird soundscapes; not caller identity or call-meaning inference.",
       "review_depth": "Official Zenodo v1 record/API, CC BY 4.0 declaration, file manifest and dataset description reviewed. Only annotations.csv and the coarse recording_location.txt were fetched transiently into memory, with pinned MD5 checks verified; no source files or row-level labels were retained. The report contains aggregate counts only; no audio was acquired or opened.",
@@ -8535,14 +8542,13 @@
       "priority": 2,
       "reviewed": "2026-10-29",
       "source_ids": [
-        155,
-        156,
-        157,
-        158,
-        159,
-        162,
-        163,
-        164
+        505,
+        506,
+        507,
+        508,
+        509,
+        510,
+        511
       ],
       "task": "Potential multisite passive bird-event/species detection candidate; not a caller-identity, behavior-meaning or communication dataset.",
       "review_depth": "Publisher abstract and 36-page Data S1 metadata supplement, current OSF node/license APIs, GitHub preparation-code repository metadata, all pages of the audio and annotation filename manifests, OSF root/source-code-folder metadata, bounded central-directory ranges from the 1.326 GB OSF data ZIP, the publisher Methods and Table 1 for the 2024 ECOGEN follow-up (Table 1 totals 4,319 versus 4,318 in prose), and the 2025 ArcticSoundsNET method for its use of approximately 18 hours of ArcticBirdSounds to train binary BirdNET reviewed. The 2,001-byte site_infos.csv was fetched transiently and SHA-256 verified; aggregate schema has 19 deployments, 15 plots and six site labels. No WAV/FLAC bytes, annotation rows, code files, weights or split files were acquired or opened.",
@@ -8573,7 +8579,9 @@
       "priority": 3,
       "reviewed": "2026-10-29",
       "source_ids": [
-        162
+        505,
+        506,
+        507
       ],
       "task": "Potential dataset-preparation code reference after component-specific rights and scope review.",
       "review_depth": "The official OSF root and source-code-folder manifests were reviewed for object types, sizes and file-level license metadata. No code or archive content was downloaded or opened.",
@@ -8602,9 +8610,11 @@
       "priority": 2,
       "reviewed": "2026-10-29",
       "source_ids": [
-        159,
-        160,
-        161
+        505,
+        506,
+        508,
+        509,
+        510
       ],
       "task": "Prior-method reference for bird-sound data augmentation and a five-class ArcticBirdSounds evaluation; not a communication or animal-interaction method.",
       "review_depth": "Publisher Methods, Table 1 and data/code availability statement reviewed for the ArcticBirdSounds subset, split description, printed sample counts and ECOGEN's source training data. The Table 1 baseline counts sum to 4,319 while Methods prose reports 4,318. GitHub API metadata and OSF node/storage-folder metadata were checked without acquiring code or weights. No annotation rows, audio, labels or split files were acquired or run.",
@@ -8633,7 +8643,8 @@
       "priority": 3,
       "reviewed": "2026-10-29",
       "source_ids": [
-        160
+        508,
+        509
       ],
       "task": "Possible code reference for bird-sound augmentation after license and lineage review.",
       "review_depth": "GitHub repository page and API metadata reviewed for archive status, last-push date and detected license only. No source files were opened or cloned.",
@@ -8662,7 +8673,8 @@
       "priority": 3,
       "reviewed": "2026-10-29",
       "source_ids": [
-        161
+        508,
+        510
       ],
       "task": "Potential research artifact for later controlled reproduction, only after model rights, code lineage and Xeno-Canto source-data terms are resolved.",
       "review_depth": "Official OSF node and storage-folder metadata reviewed for public status, license field, file name and size. Checkpoint contents and weights were not downloaded or opened.",
@@ -8691,7 +8703,7 @@
       "priority": 1,
       "reviewed": "2026-10-29",
       "source_ids": [
-        164
+        511
       ],
       "task": "Primary methods reference for passive bird event/species classification, domain adaptation and human-reviewed evaluation.",
       "review_depth": "Publisher-indexed abstract, Methods sections on signal discovery and evaluation, and Results reviewed; Crossref Version of Record license metadata checked. Direct ScienceDirect retrieval returned HTTP 403. No article PDF, audio, code or model was downloaded.",
@@ -8720,7 +8732,9 @@
       "priority": 1,
       "reviewed": "2026-10-29",
       "source_ids": [
-        165
+        511,
+        512,
+        513
       ],
       "task": "Potential reproducibility source for expert-reviewed bird-sound detection and comparison with BirdNET; useful for assessing annotation and split design.",
       "review_depth": "Current Dryad API v2, DataCite DOI metadata, the public landing page/embedded README and its two-file outer manifest reviewed. The page describes data_code.zip (9,196,741,095 bytes) and README.md (12,794 bytes), including ground-truth WAVs, four reviewer columns, file-name/start/end label keys, training examples, code and TFLite models. A bounded request to the archive download endpoint returned HTTP 401; no archive body, audio, label rows, code or model weights were read or retained.",
@@ -8749,7 +8763,8 @@
       "priority": 2,
       "reviewed": "2026-10-29",
       "source_ids": [
-        166
+        511,
+        513
       ],
       "task": "Candidate reference implementation for embedding extraction, clustering, annotation and evaluation workflow.",
       "review_depth": "Official GitHub page/API metadata and README overview checked for repository status, license field, last push and linked data package. No code was cloned, opened or executed.",
@@ -8778,8 +8793,9 @@
       "priority": 2,
       "reviewed": "2026-10-29",
       "source_ids": [
-        164,
-        165
+        511,
+        512,
+        513
       ],
       "task": "Potential published baseline for later bird-sound presence classification, after frozen inputs and rights review.",
       "review_depth": "Publisher article and Dryad file-structure README reviewed; no model file or code was downloaded or inspected.",

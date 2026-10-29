@@ -53,3 +53,11 @@ test('public Station copy states the quiet-notification limit without claiming h
   assert.match(stationPage, /notification is configured without sound, vibration or indicator lights/i);
   assert.match(stationPage, /hardware behavior remains unverified/i);
 });
+
+test('native welcome screen states listen-only boundaries before practice and recording setup', () => {
+  const disclosure = activity.indexOf('Listen only: this app never calls, imitates or prompts animals. Listening starts only after you tap Start and grant the required permissions.');
+  const practice = activity.indexOf('Try practice · no microphone');
+  const setup = activity.indexOf('01   Set up your observation');
+  assert.ok(disclosure >= 0, 'the first screen must disclose the listen-only rule');
+  assert.ok(disclosure < practice && disclosure < setup, 'the listen-only rule must appear before practice and recording setup');
+});

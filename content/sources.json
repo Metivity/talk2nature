@@ -3702,10 +3702,10 @@
   {
     "id": 359,
     "title": "ZF-AIM code, checkpoints and next-call metadata release",
-    "description": "Metadata-only recheck on October 28: the official Zenodo API still lists one 26,633,934,601-byte zf_aim_release.zip and MIT for the record/code/model statement; the top-level inventory matches the October 23 snapshot. The archive contents and any audio/data rights remain unverified.",
+    "description": "Metadata-only recheck on October 29: the official Zenodo API lists one 26,633,934,601-byte zf_aim_release.zip and an MIT record identifier; the complete top-level key/size/provider-checksum inventory matches the October 23 snapshot. The description names StreamPlayback and next-call metadata, but archive contents and component-level audio/data rights remain unverified.",
     "url": "https://zenodo.org/records/23024019",
-    "checked": "2026-10-28",
-    "origin": "Queried the official Zenodo record API over HTTPS with certificate verification on October 28, 2026. The title, MIT record identifier, update time (2026-09-29T17:58:24.776870+00:00), one ZIP's size and provider MD5 match the October 23 metadata snapshot. No ZIP payload was downloaded, the provider checksum was not recomputed against bytes, and archive-internal files, model/data provenance or file-level rights were not inspected.",
+    "checked": "2026-10-29",
+    "origin": "Queried the official Zenodo record API over verified TLS on October 29, 2026. The title, MIT record identifier, update time (2026-09-29T17:58:24.776870+00:00) and complete one-file key/size/provider-checksum inventory match the October 23 metadata snapshot. No ZIP payload was downloaded, the provider checksum was not recomputed against bytes, and archive-internal files, model/data provenance or file-level rights were not inspected.",
     "rights": {
       "record_metadata": "Zenodo API record-level license is MIT; the description specifically states MIT for code and model weights.",
       "data": "The reviewed record does not clearly identify the license and scope for audio recordings, annotations or benchmark metadata. The article's license is separate.",
@@ -3864,10 +3864,10 @@
   {
     "id": 373,
     "title": "ZF-AIM zebra-finch data release, Zenodo record",
-    "description": "Metadata-only recheck on October 28: the official Zenodo API still lists 11 top-level files. Its license identifier is cc-by-sa-4.0 while the record description says CC-BY-NC; the complete key/size/provider-MD5 list matches the October 24 snapshot. The license conflict remains unresolved.",
+    "description": "Metadata-only recheck on October 29: the official Zenodo API still lists 11 top-level files. Its license identifier is cc-by-sa-4.0 while the record description says CC-BY-NC; the complete key/size/provider-checksum list matches the October 24 snapshot. The license conflict remains unresolved. Four example raw tracks are named in the description; corpus completeness is not established.",
     "url": "https://zenodo.org/records/23047646",
-    "checked": "2026-10-28",
-    "origin": "Queried the official Zenodo records API over verified TLS on October 28, 2026. The title, update time (2026-09-30T00:06:06.791856+00:00), cc-by-sa-4.0 API identifier, description's CC-BY-NC statement and complete 11-file top-level filename/size/checksum inventory match the October 24 metadata snapshot. Provider checksums were not verified against downloaded bytes; no payload or archive contents were inspected. The complete top-level filename/size/checksum inventory remains in research/zf_aim_data_zenodo_manifest_2026-10-24.json.",
+    "checked": "2026-10-29",
+    "origin": "Queried the official Zenodo records API over verified TLS on October 29, 2026. The title, update time (2026-09-30T00:06:06.791856+00:00), cc-by-sa-4.0 API identifier, description's CC-BY-NC statement and complete 11-file top-level filename/size/checksum inventory match the October 24 metadata snapshot. Provider checksums were not verified against downloaded bytes; no payload or archive contents were inspected. The complete top-level filename/size/checksum inventory remains in research/zf_aim_data_zenodo_manifest_2026-10-24.json.",
     "rights": {
       "license": "The API metadata field declares CC BY-SA 4.0; the same record description says the data are under a CC BY-NC license. These statements conflict.",
       "scope": "The record includes raw recordings, processed data, detector data/weights and software. The record-level license may not resolve the distinct rights of each component; archive internals and source-media provenance were not reviewed.",
@@ -4994,24 +4994,24 @@
     "title": "Mozilla Foundation Fellowships 2027–2028 · call page",
     "description": "Official current fellowship page with tracks, amounts, cohort size and application timeline.",
     "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/2027-call-for-applications/",
-    "checked": "2026-10-28",
-    "origin": "Reviewed the official Mozilla Foundation call page and linked 2027–2028 Fellowship RFP."
+    "checked": "2026-10-29",
+    "origin": "Official Mozilla Foundation call page reopened October 29, 2026; focus areas, track amounts, cohort count, timeline and open Letter of Intent route rechecked."
   },
   {
     "id": 490,
     "title": "Mozilla Foundation Fellowships 2027–2028 · request for proposals",
     "description": "Official 16-page Fellowship RFP covering focus areas, applicant requirements, tracks, application questions and AI-use policy.",
     "url": "https://assets.mofoprod.net/network/documents/PUBLIC_2027_2028_Fellowship_RFP-2.pdf",
-    "checked": "2026-10-28",
-    "origin": "Read the official RFP metadata and the relevant sections on biodiversity sensing, individual eligibility, deadlines, review criteria, application questions and AI use."
+    "checked": "2026-10-29",
+    "origin": "Official 16-page RFP reopened October 29, 2026; biodiversity-sensing scope, individual eligibility, track expectations, public-benefit criteria, schedule and AI-use rules reviewed. No application portal was opened or submitted."
   },
   {
     "id": 491,
     "title": "Mozilla Foundation grant eligibility guidelines",
     "description": "Official eligibility rules for charitable purpose, individual applicants, legal fund receipt, USD banking and restrictions.",
     "url": "https://www.mozillafoundation.org/documents/501/Mozilla_Foundation_Grant_Eligibility_Guidelines_tNhKrgM.pdf",
-    "checked": "2026-10-28",
-    "origin": "Reviewed the official four-page eligibility guide. Project eligibility is not a determination of any specific person’s legal, tax or payment eligibility."
+    "checked": "2026-10-29",
+    "origin": "Official four-page eligibility guide reopened October 29, 2026. It describes global applicants, charitable-purpose and USD receipt requirements; it does not determine any specific person’s legal, tax or payment eligibility."
   },
   {
     "id": 492,
@@ -5034,8 +5034,8 @@
     "title": "Mozilla Foundation 2027 Fellows · official FAQs",
     "description": "Official FAQ distinguishing the individual Fellowship from the team-based Incubator and clarifying the deadline and AI-use requirements.",
     "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/2027-call-for-applications/faqs/",
-    "checked": "2026-10-28",
-    "origin": "Reviewed the current official Fellowship FAQ. It states that Fellowships support individuals and that any AI assistance must remain supportive and the final application must reflect the applicant’s own voice."
+    "checked": "2026-10-29",
+    "origin": "Official Fellowship FAQ, last updated October 25, 2026, reopened October 29. Confirmed individual-only awards, no late LOIs or extensions, user-readiness expectations, U.S. 501(c)(3) grant receipt, and limited supportive AI use with applicant-authored final responses."
   },
   {
     "id": 495,
@@ -5133,5 +5133,185 @@
     },
     "review_url": "https://github.com/swasun/MarmAudioDataset/blob/5c65268f2734f0abb4e26a83877cedbc4e9c8330/LICENCE.txt",
     "review_url_label": "Pinned software license text; no code execution"
+  },
+  {
+    "id": 502,
+    "title": "Powdermill bird soundscapes · official Zenodo v1 record",
+    "description": "The official Zenodo API declares CC0-1.0 and lists separate WAV, MP3, annotation and README files. The data page describes 385 minutes over four recording days, 48 species and 16,052 annotations. No audio payload was opened in this review.",
+    "url": "https://zenodo.org/records/4656848",
+    "checked": "2026-10-29",
+    "origin": "Official Zenodo v1 record page and verified-TLS API response checked October 29, 2026. The record shares DOI 10.5061/dryad.d2547d81z with the Dryad dataset record. The API lists wav_Files.zip (1,428,295,296 bytes), mp3_Files.zip (182,276,751 bytes), annotation_Files.zip (434,265 bytes) and README.txt (7,943 bytes), with record-level cc-zero. This turn did not request media bytes or recompute provider checksums; a prior annotation-only schema sample is separately receipted in ignored storage.",
+    "rights": {
+      "license": "CC0-1.0 declared in the official Zenodo API at record level.",
+      "scope": "The versioned deposit and its four listed files. This does not establish source-media provenance or license terms for unrelated model/software components.",
+      "conditions": "Preserve scholarly citation. Keep annotation-only sample, audio, derived outputs, code and model rights as separate assets; no audio acquisition or training admission is recorded here."
+    },
+    "review_url": "https://zenodo.org/api/records/4656848",
+    "review_url_label": "Official record API, record-level license and complete file manifest; audio bytes not accessed"
+  },
+  {
+    "id": 503,
+    "title": "BioDCASE 2026 Task 4 BirdSet embedding bundle · Zenodo v2",
+    "description": "Official Zenodo v2 metadata describes a 225,207,567-byte bundle of Perch v2 embeddings, labels and metadata for HSN, POW and UHH, with train and validation splits only. The record declares CC BY 4.0; upstream audio and model terms are separate.",
+    "url": "https://zenodo.org/records/19340660",
+    "checked": "2026-10-29",
+    "origin": "Official Zenodo record page and verified-TLS API file/license metadata checked October 29, 2026. The current record is v2, DOI 10.5281/zenodo.19340660, with one ZIP and no packaged held-out test split. The bundle and embeddings were not downloaded or inspected.",
+    "rights": {
+      "license": "CC BY 4.0 declared at the Zenodo bundle-record level.",
+      "scope": "The derived embedding bundle only. BirdSet source records, Perch v2 model/software and upstream audio have separate provenance and rights.",
+      "conditions": "Cite the source subset and model separately; do not present its train/validation splits as an untouched test set."
+    },
+    "review_url": "https://zenodo.org/api/records/19340660",
+    "review_url_label": "Official record v2 metadata, license and file manifest; payload not accessed"
+  },
+  {
+    "id": 504,
+    "title": "High Sierra Nevada soundscapes · official Zenodo v1 record",
+    "description": "Official Zenodo metadata declares CC BY 4.0 and lists five files for 100 ten-minute soundscapes from ten Sierra Nevada lake sites. The published files do not expose a verified recording-to-lake mapping in the aggregate-only audit.",
+    "url": "https://zenodo.org/records/7525805",
+    "checked": "2026-10-29",
+    "origin": "Official Zenodo v1 record page and verified-TLS API metadata checked October 29, 2026. Record DOI 10.5281/zenodo.7525805; five listed files include annotations.csv, recording_location.txt, species.csv, description.pdf and soundscape_data.zip. The page describes a July 9–12, 2015 sampled window and prior BirdCLEF/Kaggle use. In a separate bounded audit, only annotation.csv and the coarse location text were fetched transiently after checksum verification; no audio was acquired or opened.",
+    "rights": {
+      "license": "CC BY 4.0 declared at the Zenodo dataset-record level.",
+      "scope": "The dataset deposit. Article, code and model assets are separate; no per-recording site mapping or sensitive coordinate is reproduced here.",
+      "conditions": "Attribute the authors and indicate changes. Resolve file-to-site and date/interval discrepancies before proposing a site-held-out evaluation."
+    },
+    "review_url": "https://zenodo.org/api/records/7525805",
+    "review_url_label": "Official record API, record-level license and file manifest"
+  },
+  {
+    "id": 505,
+    "title": "ArcticBirdSounds · peer-reviewed dataset paper",
+    "description": "Christin et al. describe an open, multi-year bird-song and call dataset with time- and frequency-bounded annotations. The article and supplement are distinct from the dataset and code licenses.",
+    "url": "https://doi.org/10.1002/ecy.4047",
+    "checked": "2026-10-29",
+    "origin": "Publisher article abstract and Data S1 metadata supplement reviewed October 29, 2026 for sampling, filename/group fields, reported totals and location-count discrepancy. No article text or figures were copied into Talk2Nature.",
+    "rights": {
+      "license": "Article and supplementary material terms are separate from the OSF dataset and linked code; no redistribution of article content.",
+      "scope": "Publication and its supplementary files only.",
+      "conditions": "Cite the article; review the exact publication license before reusing any text, figure or supplement."
+    },
+    "review_url": "https://doi.org/10.1002/ecy.4047",
+    "review_url_label": "Publisher article and Data S1 source"
+  },
+  {
+    "id": 506,
+    "title": "ArcticBirdSounds · OSF dataset node and current manifest metadata",
+    "description": "The current OSF API for node b9trx declares CC BY 4.0 and exposes dataset and source-code folders. Audio rows, annotations and code payloads were not opened in the metadata review.",
+    "url": "https://osf.io/b9trx/",
+    "checked": "2026-10-29",
+    "origin": "Official OSF node and license APIs were queried over verified TLS on October 29, 2026. The API license relationship resolves to CC-By Attribution 4.0 International. The linked project includes data and a separate source-code folder; folder/file metadata and the data archive central directory were reviewed under bounded rules, without opening audio, annotation rows or code files.",
+    "rights": {
+      "license": "CC BY 4.0 declared by the OSF dataset node.",
+      "scope": "Dataset node only. The separate source-code folder has no file-level license metadata; article/supplement, GitHub preparation code and pretrained models remain separate.",
+      "conditions": "Retain attribution and review provenance and license scope per component; do not treat a dataset-node license as authorization for unrelated code or model assets."
+    },
+    "review_url": "https://api.osf.io/v2/nodes/b9trx/",
+    "review_url_label": "Official OSF node/license API and project metadata; payloads not opened"
+  },
+  {
+    "id": 507,
+    "title": "ArcticBirdSounds preparation code · author-linked GitHub repository",
+    "description": "The linked arctic_songs repository displays an MIT license. Repository code was not downloaded, executed or otherwise reviewed in this audit.",
+    "url": "https://github.com/Vin985/arctic_songs",
+    "checked": "2026-10-29",
+    "origin": "Official GitHub repository API metadata checked October 29, 2026; the repository reports MIT and its current main branch was not cloned or executed. This source is separate from the OSF source-code folder whose file-level licensing remains unresolved.",
+    "rights": {
+      "license": "MIT detected by GitHub for the linked repository.",
+      "scope": "That GitHub repository only; it does not establish rights for OSF code-folder files, the dataset, article or models.",
+      "conditions": "Retain the MIT notice if later reusing covered code; review contents, dependencies and data/model lineage first."
+    },
+    "review_url": "https://api.github.com/repos/Vin985/arctic_songs",
+    "review_url_label": "Official repository metadata; source code not inspected or executed"
+  },
+  {
+    "id": 508,
+    "title": "ECOGEN · bird-sound generation and augmentation paper",
+    "description": "The study reports an ECOGEN augmentation experiment on five ArcticBirdSounds classes; its split is per class and not documented as a site-, plot- or session-held-out evaluation.",
+    "url": "https://doi.org/10.1111/2041-210X.14239",
+    "checked": "2026-10-29",
+    "origin": "Publisher article Methods, Table 1 and data/code availability statement reviewed October 29, 2026. The five Table 1 baseline counts sum to 4,319 while Methods prose reports 4,318; no data rows or split files were acquired.",
+    "rights": {
+      "license": "Publisher labels the article open access; exact reuse license not established in this review.",
+      "scope": "Publication text/figures only; code, checkpoint and all training datasets have distinct rights.",
+      "conditions": "Cite reported results as published; do not reproduce article material or infer site generalization from its split description."
+    },
+    "review_url": "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14239",
+    "review_url_label": "Publisher full text; Methods, Table 1 and data/code statement reviewed"
+  },
+  {
+    "id": 509,
+    "title": "ECOGEN · linked GitHub code repository metadata",
+    "description": "The author-linked repository is archived and the GitHub API detects no license. No repository files were acquired or run.",
+    "url": "https://github.com/ixobert/birds-generation",
+    "checked": "2026-10-29",
+    "origin": "Official GitHub repository page/API metadata checked October 29, 2026 for archived status, last push and license field. No source file was downloaded, cloned or executed.",
+    "rights": {
+      "license": "No detected repository license; code reuse rights unresolved.",
+      "scope": "GitHub repository source tree only; paper, model checkpoint and training media remain separate.",
+      "conditions": "Do not copy, run or redistribute until ownership and a usable code license are clarified."
+    },
+    "review_url": "https://api.github.com/repos/ixobert/birds-generation",
+    "review_url_label": "Official GitHub repository metadata; code not inspected"
+  },
+  {
+    "id": 510,
+    "title": "ECOGEN · OSF checkpoint project metadata",
+    "description": "OSF node yqdj9 lists the ECOGEN project and a 17,215,820-byte checkpoint; no node license is declared and the checkpoint was not downloaded.",
+    "url": "https://osf.io/yqdj9/",
+    "checked": "2026-10-29",
+    "origin": "Official OSF node and storage-folder metadata checked October 29, 2026 for public status, node license and filename/size. No checkpoint bytes were acquired or opened.",
+    "rights": {
+      "license": "No OSF node license declaration detected for the checkpoint project.",
+      "scope": "Model checkpoint only; the code repository, Xeno-Canto training recordings and dependencies have separate rights.",
+      "conditions": "Do not download or execute until model permission, training-data provenance and derivative-use terms are resolved."
+    },
+    "review_url": "https://api.osf.io/v2/nodes/yqdj9/",
+    "review_url_label": "Official OSF node and storage-folder metadata; checkpoint not accessed"
+  },
+  {
+    "id": 511,
+    "title": "ArcticSoundsNET · peer-reviewed article",
+    "description": "The paper reports a BirdNET-based classifier evaluated on a manually reviewed sound-rich sample and documents training on ArcticBirdSounds data; it does not establish a locked site-held-out benchmark.",
+    "url": "https://doi.org/10.1016/j.ecoinf.2025.103270",
+    "checked": "2026-10-29",
+    "origin": "Publisher-indexed article abstract and Methods/Results reviewed October 29, 2026; Crossref Version of Record license metadata checked. The publisher reports ROC AUC 0.888 for ArcticSoundsNET and 0.593 for BirdNET on the reviewed sample. No article PDF, audio, code or model was downloaded.",
+    "rights": {
+      "license": "CC BY-NC-ND 4.0 reported by Crossref for the Version of Record.",
+      "scope": "Article text and figures only; Dryad package, GitHub source, models and upstream BirdNET materials are separate.",
+      "conditions": "Cite scores as reported, not independently reproduced; review rights and evaluation design before reproduction."
+    },
+    "review_url": "https://www.sciencedirect.com/science/article/pii/S1574954125002791",
+    "review_url_label": "Publisher Version of Record; article methods and results reviewed"
+  },
+  {
+    "id": 512,
+    "title": "ArcticSoundsNET · Dryad version 6 data/code record",
+    "description": "The current Dryad v6 metadata lists data_code.zip and README.md with CC0-1.0 at the dataset-record level. Its large archive download endpoint returned HTTP 401 in the bounded metadata audit; no payload was read.",
+    "url": "https://doi.org/10.5061/dryad.jh9w0vtnr",
+    "checked": "2026-10-29",
+    "origin": "Current Dryad API v2, DataCite DOI metadata, landing page and embedded README were reviewed October 29, 2026. The v6 manifest lists data_code.zip (9,196,741,095 bytes) and README.md (12,794 bytes), with record-level cc-zero. The bounded archive-range request returned HTTP 401; no archive body was read or retained.",
+    "rights": {
+      "license": "CC0-1.0 declared at the Dryad dataset-record level.",
+      "scope": "The deposited v6 package only; the article, linked GitHub tree, BirdNET base model and dependencies are separate.",
+      "conditions": "Do not assume model/code rights from the dataset license. Verify file provenance and component terms before reuse."
+    },
+    "review_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.jh9w0vtnr",
+    "review_url_label": "Current Dryad v6 API record and file manifest; archive payload not accessed"
+  },
+  {
+    "id": 513,
+    "title": "ArcticSoundsNET · author-linked GitHub repository metadata",
+    "description": "The public birdnet-discovery repository has no detected GitHub license. No code was acquired or executed.",
+    "url": "https://github.com/MZiegenhorn/birdnet-discovery",
+    "checked": "2026-10-29",
+    "origin": "Official GitHub API repository metadata and README overview checked October 29, 2026. The repository was not archived at the time of review; its detected license field was null. No source files were cloned, downloaded or executed.",
+    "rights": {
+      "license": "No detected license for this GitHub repository copy.",
+      "scope": "GitHub source tree only; the Dryad v6 package and upstream BirdNET components have separate provenance and terms.",
+      "conditions": "Do not reuse or redistribute until a clear code license and dependency/data provenance are established."
+    },
+    "review_url": "https://api.github.com/repos/MZiegenhorn/birdnet-discovery",
+    "review_url_label": "Official repository metadata; code not inspected or executed"
   }
 ]
