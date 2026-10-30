@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -1136,12 +1136,12 @@
         166
       ],
       "priority": 2,
-      "reviewed": "2026-10-14",
+      "reviewed": "2026-10-31",
       "task": "Possible methods-reproduction input for extracellular fungal electrophysiology, not an animal behavior or communication benchmark.",
-      "review_depth": "Reviewed the official Mendeley version 1 description, displayed CC BY 4.0 declaration and visible Files section. The section contained no file entries; no files were downloaded or inspected.",
-      "access": "The record describes raw voltage-potential data from F. oxysporum before and after external stimuli; the visible Files section contained no filenames, sizes or sample metadata.",
-      "decision": "Keep metadata-only. Before acquisition, verify exact files, provenance, treatment/replicate metadata and preprocessing, then assess fit with a mycology/electrophysiology reviewer. No training admission.",
-      "limitations": "The paper tests one fungal strain with laboratory electrodes and reports mixed treatment effects. Even suitable data would measure sensor activity, not decode fungal meaning or animal communication.",
+      "review_depth": "Reviewed the official Mendeley v1 description, its displayed CC BY 4.0 declaration and visible Files section; it contained no file entries. Cross-checked its displayed DOI against the data DOI printed in the published article. No files were downloaded or inspected.",
+      "access": "Mendeley v1 describes raw voltage-potential data from F. oxysporum before and after external stimuli and displays DOI 10.17632/srkxbkh6sp.1. Its visible Files section contains no filenames, sizes or sample metadata. The published article prints a different DOI string, 10.17632/srkkxbh6sp.1.",
+      "decision": "Keep metadata-only. Preserve the paper-to-record DOI mismatch as unresolved; do not silently normalize it. Before acquisition, verify the deposit identity, exact files, provenance, treatment/replicate metadata and preprocessing, then assess fit with a mycology/electrophysiology reviewer. No training admission.",
+      "limitations": "The paper tests one fungal strain with laboratory electrodes and reports mixed treatment effects. Even suitable data would measure sensor activity, not decode fungal meaning or animal communication. The article prints DOI 10.17632/srkkxbh6sp.1, whereas the official Mendeley v1 page displays 10.17632/srkxbkh6sp.1; the exact deposit link needs source-level reconciliation.",
       "attribution": "Buffi, M. et al. (2025), Detection of electrical signals in fungal mycelia in response to external stimuli [Dataset]. Mendeley Data, v1. DOI 10.17632/srkxbkh6sp.1.",
       "rights": {
         "license": "CC-BY-4.0 as displayed on the Mendeley Data v1 record",
