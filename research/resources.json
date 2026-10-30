@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -1078,12 +1078,12 @@
         163
       ],
       "priority": 1,
-      "reviewed": "2026-10-12",
+      "reviewed": "2026-10-30",
       "task": "Reference for call-event, speaker/pair, sequence-position and acoustic-measurement fields in a wild-parrot duet study.",
-      "review_depth": "Reviewed the Dryad landing page, file list and README description, plus repository-wide Dryad reuse guidance. README and workbook bytes and rows were not inspected.",
+      "review_depth": "Refreshed the full Dryad landing page and README description, including the exact Response Time(s) field definition, plus repository-wide Dryad reuse guidance on 2026-10-30. README and workbook bytes and rows were not inspected.",
       "access": "Dryad lists README.md (2.46 KB) and Supplement_Data_DRYAD.xlsx (65.46 KB); the latter is described as Raven measurements, not raw audio.",
       "decision": "Keep metadata-only. Before any acquisition, review exact rows and pair identifiers, sensitive-species implications, and fit with a defined research question. No training admission.",
-      "limitations": "The workbook includes duet names and pair initials; labels depend on the original field study and human call lexicon. It does not include the source recordings required to reproduce acoustic measurements. The article’s separate WAV/DOCX supplements have not been reviewed.",
+      "limitations": "The workbook includes duet names and pair initials; labels depend on the original field study and human call lexicon. Its Response Time(s) field is an interval between consecutive call onsets, not a verified behavioral response. It does not include the source recordings required to reproduce acoustic measurements. The article’s separate WAV/DOCX supplements have not been reviewed.",
       "attribution": "Dahlin, C.R. et al. (2026), Data from: Decoding parrot duets: Complex communication in yellow-naped amazons [Dataset]. Dryad. DOI 10.5061/dryad.rn8pk0prb.",
       "rights": {
         "license": "CC0 per Dryad’s current repository-wide reuse guide; no separate file notice inspected",
@@ -6141,12 +6141,12 @@
         390
       ],
       "priority": 2,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-30",
       "task": "Describes synchronized multi-sensor recording and vocal-event/source-separation methods for songbird groups.",
-      "review_depth": "PubMed article metadata and abstract, selected searchable PMC passages on the shared-clock recording system and vocal segmentation, and the ETH publication record's article-rights statement reviewed. Full article and supplement, code and data were not inspected or acquired.",
+      "review_depth": "Reviewed targeted full-text sections in PMC: abstract/system design, Animals and experiments, Table 2, Vocal analysis and annotation rules, Data Availability, and the article license. No supplement, dataset files, media, code or weights were acquired or run.",
       "access": "Open-access article record; only citation and an original summary are retained in Talk2Nature.",
       "decision": "Use as a methods reference for multimodal synchronization and event/source attribution, not as evidence of semantic decoding or receiver understanding.",
-      "limitations": "The article describes a specialized laboratory setup with cameras, multiple microphones and body-worn accelerometer transmitters. Its paper license does not grant rights to separate data deposits, software or model weights. Reported event-segmentation evaluation is not a meaning benchmark.",
+      "limitations": "The evaluated 28-minute sample is a manually selected subset of a broader deposit described as 112 minutes; exact files/windows remain unmapped. Caller labels are manually consolidated from multiple sensor views, and some microphone-only caller assignments are inferred from repertoire/noise. This is an event/source methods paper, not meaning or receiver-understanding evidence. The article license does not cover linked data or code.",
       "attribution": "Rüttimann, L. et al. (2025). PeerJ 13:e20203. DOI 10.7717/peerj.20203.",
       "rights": {
         "license": "CC BY 4.0 as listed for the article by the ETH Research Collection.",
@@ -6165,24 +6165,55 @@
       "kind": "dataset",
       "title": "BirdPark zebra-finch group recordings and vocal-segment annotations, Zenodo v2",
       "url": "https://doi.org/10.5281/zenodo.13144875",
-      "version": "Zenodo record 13144875 v2; published 2024-08-08; reviewed 2026-10-24",
+      "version": "Zenodo record 13144875 v2; published 2024-08-08; reviewed 2026-10-30; paper cites v1 for raw data/annotations and v2 for MP4/HDF5",
       "source_ids": [
         390,
-        391
+        391,
+        517
       ],
       "priority": 1,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-10-30",
       "task": "Potential methods reference for multimodal vocal-event segmentation, overlap review and caller attribution in controlled zebra-finch groups.",
-      "review_depth": "Exact Zenodo v2 landing-page description and file inventory reviewed. The page reports 112 minutes from four experiments, group sizes of two, four and eight, and manually annotated vocal segments. No file payload, annotation, README, video or audio was acquired or inspected.",
+      "review_depth": "Reviewed exact Zenodo v2 record and file inventory, its link to v1, and the PeerJ full-text Data Availability, Methods and Table 2. The paper identifies v1 for raw data/annotations and v2 for MP4/HDF5; its 28-minute evaluation sample is a subset of the four experiment groups described as 112 minutes. Exact selected source files/windows were not mapped. No payload was acquired or inspected.",
       "access": "The record lists Data.zip at 12.3 GB, Attachments.zip at 292.6 kB, README.pdf at 59.5 kB and segments.h5 at 1.9 MB. These are provider-listed files; no bytes were acquired or locally hashed.",
       "decision": "Keep metadata-only. The Zenodo record page does not display a dataset license. No acquisition, training or redistribution is cleared. Treat this as a candidate for bounded event/source methods only, subject to rights, exact coverage and group-split review.",
-      "limitations": "The 112-minute record description is not reconciled with the 28-minute segmentation evaluation slice reported in a searchable passage of the peer-reviewed paper. The relationship to the separate 2026 annotator pack and ETH ten-pair record is unverified. The laboratory sensors and groups do not establish phone/home generalization or call meaning.",
+      "limitations": "The paper’s 28-minute evaluation is a subset of the 112-minute record description, but exact file/window membership remains unverified. The Zenodo v1/v2 pages display no dataset license. Separate annotator-pack and ETH dataset overlap remains unresolved. Labels are manually consolidated and some caller identities are inferred from sensor evidence; no meaning or receiver-response labels are established.",
       "attribution": "BirdPark group-recording dataset, Zenodo record 13144875 v2; associated system paper Rüttimann et al. (2025), DOI 10.7717/peerj.20203.",
       "rights": {
-        "license": "No dataset license is displayed on the exact Zenodo v2 record page reviewed on 2026-10-24.",
-        "scope": "Dataset record 13144875 v2 and its listed files only; absence of a displayed license is not a permission grant.",
+        "license": "No dataset license is displayed on the exact Zenodo v2 record page reviewed on 2026-10-30.",
+        "scope": "Record 13144875 v2 and its listed files only. The article names the related v1 record 7105196 for raw data/annotations; absent dataset license fields are not permission grants.",
         "evidence_url": "https://zenodo.org/records/13144875",
         "conditions": "Do not acquire or reuse until the rights holder or authoritative record clarifies permitted research use, commercial use, redistribution and component coverage.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdpark-zebra-finch-pairs-zenodo-v1-2022",
+      "kind": "dataset",
+      "title": "BirdPark zebra-finch paired recordings and annotations, Zenodo v1",
+      "url": "https://doi.org/10.5281/zenodo.7105196",
+      "version": "Zenodo record 7105196 v1; published 2022-12-12; reviewed 2026-10-30",
+      "source_ids": [
+        390,
+        517
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-30",
+      "task": "Potential source for manually annotated multimodal vocal-event and pair-recording methods; not a meaning dataset.",
+      "review_depth": "Reviewed exact Zenodo v1 landing page and file inventory, Zenodo newer-version link, and the PeerJ Data Availability statement. It describes one 7-minute file per mixed-sex pair; the article names this v1 deposit for raw data and annotations. No README or archive payload was acquired or inspected.",
+      "access": "Zenodo lists Annotations.zip, Attachments.zip, Data.zip and README.md with a combined display size of about 1.2 GB. These are provider-listed metadata; no payload bytes were acquired or hashed.",
+      "decision": "Keep metadata-only. The v1 page has no displayed dataset license. Zenodo points to record 13144875 as a newer version, and the paper distinguishes the v1 raw-data/annotation citation from v2 MP4/HDF5. Do not infer rights or exact sample membership across the version chain.",
+      "limitations": "Pair recordings and manually consolidated labels concern event boundaries and likely caller attribution, not receiver comprehension or call meaning. Exact relationship to Zenodo 20608098 and the ETH ten-pair dataset is unverified. File-level sample mapping, independent animal-held-out splits and annotator agreement were not reviewed.",
+      "attribution": "Rüttimann et al. BirdPark mixed-sex zebra-finch pair dataset, Zenodo record 7105196 v1; PeerJ 13:e20203, DOI 10.7717/peerj.20203.",
+      "rights": {
+        "license": "No dataset license is displayed on the exact Zenodo v1 record page reviewed 2026-10-30.",
+        "scope": "Zenodo record 7105196 v1 and its listed files only; article, later dataset version, code, annotations and media may have separate rights.",
+        "evidence_url": "https://zenodo.org/records/7105196",
+        "conditions": "Do not acquire or reuse until authoritative terms clarify research use, commercial use, redistribution and component coverage.",
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
@@ -6246,6 +6277,36 @@
         "research_use": "conditional",
         "commercial_use": "not_admitted",
         "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdpark-birdradio-software",
+      "kind": "code",
+      "title": "BirdPark BirdRadio synchronized audio and transmitter acquisition software",
+      "url": "https://gitlab.switch.ch/hahnloser-songbird/birdpark/birdradio",
+      "version": "GitLab `dev` branch; no immutable commit reviewed; license page checked 2026-10-30",
+      "source_ids": [
+        390,
+        518
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "task": "Reference for synchronized acquisition of microphone and animal-borne transmitter streams in the BirdPark system.",
+      "review_depth": "The PeerJ paper describes BirdRadio’s role in streaming audio and sensor signals to disk. The official BirdRadio subproject page and LICENSE page were checked; the page states GNU GPL v3.0 or later. No source files were cloned, acquired or executed.",
+      "access": "Public GitLab landing page; source revision is not pinned in this record.",
+      "decision": "Metadata-only code reference. The displayed license applies to the BirdRadio subproject’s code under its terms. Do not apply it to the full BirdPark source collection, BirdVideo, datasets or media.",
+      "limitations": "The `dev` branch is mutable and was not pinned to a commit. No runtime, build, hardware behavior or scientific result was reproduced. Component boundaries and BirdVideo licensing remain unreviewed.",
+      "attribution": "BirdPark BirdRadio subproject, Songbird group GitLab; associated system paper Rüttimann et al. (2025), DOI 10.7717/peerj.20203.",
+      "rights": {
+        "license": "GNU GPL v3.0 or later, as stated by the BirdRadio subproject LICENSE page.",
+        "scope": "Only code in the BirdPark `birdradio` subproject associated with the reviewed LICENSE page; not the full repository, BirdVideo, datasets or media.",
+        "evidence_url": "https://gitlab.switch.ch/hahnloser-songbird/birdpark/birdradio/-/blob/dev/LICENSE",
+        "conditions": "Follow the GPL-3.0-or-later terms for any use or redistribution. Recheck the license and pin an immutable source revision before acquisition or reproduction.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []

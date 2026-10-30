@@ -46,7 +46,9 @@ function controls() {
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
-  $('station-start').disabled = busy || !$('station-permission').checked;
+  const recordingPermissionConfirmed = $('station-permission').checked;
+  $('station-start').disabled = busy || !recordingPermissionConfirmed;
+  $('station-start').textContent = recordingPermissionConfirmed ? 'Start listening' : 'Permission needed';
   $('station-stop').disabled = !(pending || active);
   $('station-stop').textContent = pendingSynthetic || session?.origin === 'synthetic' ? 'End rehearsal' : 'Stop recording';
   $('station-finish').disabled = !active;

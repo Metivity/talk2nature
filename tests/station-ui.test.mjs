@@ -100,7 +100,17 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   assert.equal(h.get('station-animal-group').value, 'unknown');
   assert.equal(h.get('station-permission').checked, false);
   assert.equal(h.get('station-start').disabled, true);
+  assert.equal(h.get('station-start').textContent, 'Permission needed');
   assert.equal(h.get('station-demo').disabled, false);
+
+  h.get('station-permission').checked = true;
+  await h.get('station-permission').fire('change');
+  assert.equal(h.get('station-start').disabled, false);
+  assert.equal(h.get('station-start').textContent, 'Start listening');
+  h.get('station-permission').checked = false;
+  await h.get('station-permission').fire('change');
+  assert.equal(h.get('station-start').disabled, true);
+  assert.equal(h.get('station-start').textContent, 'Permission needed');
 
   await h.get('station-demo').fire('click');
   assert.equal(h.state.capture.synthetic, true);

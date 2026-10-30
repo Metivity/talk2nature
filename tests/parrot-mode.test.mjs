@@ -17,6 +17,22 @@ test('shared moments default to one whole 30-second observation without guessing
   assert.equal(preset.animalContext,undefined);
 });
 
+test('scenario note examples are labeled as examples and never prefill an observation',async()=>{
+  const [station,app]=await Promise.all([
+    readFile(new URL('../web/templates/station.html',import.meta.url),'utf8'),
+    readFile(new URL('../web/assets/app.js',import.meta.url),'utf8')
+  ]);
+  for(const example of [
+    'Example only: A bird moved to another branch.',
+    'Example only: The animal moved toward the window',
+    'Example only: Mimicked phrase heard;',
+    'Example only: A test marker,'
+  ]) assert.ok(app.includes(example),example);
+  assert.match(app,/\$\('station-note'\)\.placeholder=placeholder/);
+  assert.doesNotMatch(app,/\$\('station-note'\)\.value\s*=/);
+  assert.match(station,/<textarea id="station-note"(?![^>]*\bvalue=)[^>]*placeholder=/);
+});
+
 test('the public first action is a microphone-free practice, with real observation optional',async()=>{
   const [home,app]=await Promise.all([
     readFile(new URL('../web/templates/app.html',import.meta.url),'utf8'),

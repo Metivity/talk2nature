@@ -11,6 +11,8 @@ test('first-use save guidance uses plain language while keeping research export 
   assert.match(home, /Start with an invented example: no microphone or account needed\. We don't call, imitate or prompt animals\. Real observation is optional\./);
   assert.match(home, /No microphone is used unless you choose Start\. Download a copy before closing to keep a real moment\./);
   assert.match(station, /id="station-retention-guidance"[^>]*>Your sound and notes stay in this page\. Download a copy before closing if you want to keep them\./);
+  assert.match(station, /id="station-zero-command"[^>]*><strong>Listen-only by design\.<\/strong> Talk2Nature does not play calls or prompts to animals\. Recording starts only after you confirm permission and tap Start\./);
+  assert.match(station, /id="station-start"[^>]*aria-describedby="station-zero-command station-retention-guidance"/);
   assert.match(station, /id="station-soundscape-feedback"[^>]*>No setting categories selected\. Your saved note will say “not recorded,” not that the sounds were absent\./);
   assert.match(station, /id="station-note"[^>]*aria-describedby="station-note-help"/);
   assert.match(station, /id="station-note-help"[^>]*>While recording, tap “Mark an observation” to add this note to your timeline\. If you stop first, it stays in this page and is not included in your download\./);
