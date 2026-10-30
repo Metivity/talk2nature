@@ -2,6 +2,11 @@
 
 This is a decision queue, not a claim to have reviewed the entire field. The founding inventory and its subsequent additions include documentation, organizations and grants as well as papers. Full text is not copied into the public website.
 
+## October 31 — preserve the fungal article-to-dataset DOI mismatch
+
+Cross-checked the published iScience PDF's Data and code availability paragraph against the official Mendeley Data v1 page. The PDF prints `10.17632/srkkxbh6sp.1`; the Mendeley page identifies its own v1 record as `10.17632/srkxbkh6sp.1` and displays CC BY 4.0. Its visible Files section has no entries. Preserve both strings as an unresolved source mismatch; do not silently normalize the link or infer file-level rights, contents or reproducibility. No dataset or supplement was acquired, no code was executed, and no result was reproduced. Keep it a specialized fungal-electrophysiology methods reference, not a language or first-animal benchmark. AutoResearch remains **NOT READY**. See resources `fungal-electrophysiology-stimuli-2025-data` and source IDs 165–166.
+
+
 ## October 30 — include BirdPark in the benchmark comparison
 
 BirdPark now appears as Candidate G in `BENCHMARK_CANDIDATE_RUN_CARD.md`: a possible event-segmentation/caller-attribution methods reproduction, not a behavior-meaning or receiver-response benchmark. The peer-reviewed evaluation uses a 28-minute selected slice from the 112-minute v2-described deposit, but exact sample-to-file mapping is unresolved. Some microphone-only caller labels are guessed from repertoire/noise and both Zenodo records show no dataset license. Keep metadata-only pending rights, mapping, label-independence and independent avian/ML review. No media, code or model was acquired or run; AutoResearch remains **NOT READY**.
