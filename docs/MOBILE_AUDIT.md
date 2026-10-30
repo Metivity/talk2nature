@@ -2,6 +2,13 @@
 
 October 1, 2026. Internal engineering/product review of Talk2Nature, not independent scientific or security certification. Scope: public mobile entry, existing Station/Listen tools, installation, offline behavior, exports, design and discovery. Private hosting and real research admission remain separate.
 
+## October 30 — current public zero-command first-use rehearsal
+
+Built a clean local noindex copy of public `main` at `ce6105b` and used headless Chromium with mobile emulation at 390 × 844 CSS pixels. From `/app/`, **Try an example · no microphone** opened synthetic Station with the recording-permission checkbox unchecked, real Start hidden, and **Try without a microphone** available. The first rehearsal ran 5.9 seconds and ended with a partial-session recap. A second 2.2-second session accepted one explicitly human-entered practice marker, stopped, saved a 215,359-byte ZIP and reopened that exact file in Compare. Compare preserved **INVENTED EXAMPLE**, partial status, one retained synthetic recording, one observation and unknown animal identity. A third rehearsal stopped and was discarded through the confirmation prompt; Station returned to **Ready** with no event retained. At 320 and 390 CSS pixels, document width matched the viewport. Instrumented `getUserMedia` and `HTMLMediaElement.play` calls were both zero; observed requests stayed on the loopback preview; there were no page errors. No generated audio was played or linked to a real animal observation.
+
+This is a maintainer-run desktop browser emulation, not a physical phone, installed PWA, screen-reader or OS-cue check, independent user test, or proof that a whole device is silent. No animal, bystander, real recording, upload or animal-directed output was involved. The named iPhone/Android and newcomer gates remain open; see the active acceptance sequence in [GOAL.md](GOAL.md).
+
+
 ## Decision: one installable web app first
 
 The Field Companion at `/app/` has three workflows: Outdoor voices, Shared moments and Sound desk. The first two provide different observation prompts around the same bounded Station engine; they are not different trained models. Sound desk reuses Listen's WAV review workflow. Sharing the engine avoids inconsistent consent, timing and export behavior across separate apps.
