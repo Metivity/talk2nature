@@ -22,6 +22,19 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
+    def test_benchmark_candidate_card_count_and_birdpark_gate_are_consistent(self):
+        project_root=Path(__file__).resolve().parents[1]
+        card=(project_root/'docs'/'BENCHMARK_CANDIDATE_RUN_CARD.md').read_text()
+        candidates=re.findall(r'^## Candidate ([A-G]) —',card,re.M)
+        self.assertEqual(candidates,list('ABCDEFG'))
+        self.assertIn('This card compares seven distinct research exercises',card)
+        self.assertIn('No first communication-adjacent ML benchmark is selected or training-ready.',card)
+        birdpark=card.split('## Candidate G —',1)[1].split('## Shared readiness gates',1)[0]
+        self.assertIn('2,677 vocalizations in a 28-minute',birdpark)
+        self.assertIn('Some microphone-only caller labels were guessed',birdpark)
+        self.assertIn('Zenodo v1 and v2 pages display no dataset license',birdpark)
+        self.assertIn('not receiver understanding, behavior meaning or communication',birdpark)
+
     def test_researcher_start_guide_keeps_quick_start_separate_from_history(self):
         project_root=Path(__file__).resolve().parents[1]
         guide=(project_root/'docs'/'RESEARCHER_START.md').read_text()
@@ -1220,6 +1233,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('52 high-quality warble duets from 12 pairs',html)
             self.assertIn('19 positive and four negative',html)
             self.assertIn('cannot confidently assign meanings',html)
+            self.assertIn('Response Time(s) is an interval between consecutive call onsets, not a verified behavioral reply',html)
+            self.assertIn('does not establish that one bird behaviorally answered another',html)
             self.assertIn('https://doi.org/10.1002/jav.03552',html)
             self.assertIn('https://datadryad.org/dataset/doi:10.5061/dryad.rn8pk0prb',html)
             self.assertIn('https://datadryad.org/help/guides/reuse',html)
@@ -1386,8 +1401,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn('https://www.st-andrews.ac.uk/biology/people/vj/',network)
             self.assertIn('no registration or proposal has been made',network)
             status=(project_root/'docs/STATUS.md').read_text()
-            self.assertIn('source-checked international reviewer paths',status)
-            self.assertIn('no group is a prospect, partner or endorser',status)
+            status_history=(project_root/'docs/STATUS_HISTORY.md').read_text()
+            self.assertIn('[STATUS_HISTORY.md](STATUS_HISTORY.md)',status)
+            self.assertIn('source-checked international reviewer paths',status+status_history)
+            self.assertIn('no group is a prospect, partner or endorser',status+status_history)
             self.assertIn('browser-only comparison of two invented observation sessions',brief)
             self.assertIn('Posting requires GitHub sign-in, and the issue is public',brief)
             self.assertIn('https://metivity.github.io/talk2nature/app/compare/',brief)
@@ -1787,10 +1804,16 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Download a copy before closing to keep a real moment.',home)
             guidance='Your sound and notes stay in this page. Download a copy before closing if you want to keep them.'
             self.assertIn(guidance,station)
+            boundary='Talk2Nature does not play calls or prompts to animals. Recording starts only after you confirm permission and tap Start.'
+            self.assertIn(boundary,station)
+            self.assertLess(station.index('id="station-zero-command"'),station.index('id="station-permission"'))
             self.assertLess(station.index('id="station-retention-guidance"'),station.index('id="station-start"'))
-            self.assertIn('aria-describedby="station-retention-guidance"',station)
+            self.assertIn('aria-describedby="station-zero-command station-retention-guidance"',station)
             self.assertIn('href="/talk2nature/app/station/?mode=demo#station-demo">Try a no-microphone rehearsal ↓</a>',station)
             start_button=re.search(r'<button id="station-start"[^>]*>',station).group(0)
+            description_ids=re.search(r'\baria-describedby="([^"]+)"',start_button).group(1).split()
+            rendered_ids=set(re.findall(r'\bid="([^"]+)"',station))
+            self.assertTrue(set(description_ids).issubset(rendered_ids),description_ids)
             rehearsal_button=re.search(r'<button id="station-demo"[^>]*>',station).group(0)
             self.assertRegex(start_button,r'\sdisabled(?:\s|>)')
             self.assertNotRegex(rehearsal_button,r'\sdisabled(?:\s|>)')
@@ -2813,38 +2836,55 @@ class SiteTests(unittest.TestCase):
     def test_birdpark_zebra_finch_records_keep_event_tasks_and_rights_bounded(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='zebra-finch-birdpark-multimodal-segmentation-2025')
-        self.assertEqual(note['source_ids'],[390,391,392,393])
-        self.assertIn('do not establish what a call means',note['finding'])
-        self.assertIn('not an ordinary phone workflow',note['limitations'])
-        self.assertIn('28-minute segmentation evaluation slice',note['limitations'])
+        self.assertEqual(note['source_ids'],[390,391,392,393,517,518])
+        self.assertIn('not what a call means',note['finding'])
+        self.assertIn('28 minutes is the evaluated subset',note['finding'])
+        self.assertIn('do not establish phone/home generalization',note['limitations'])
+        self.assertIn('guessed caller identity from repertoire and noise levels',note['finding'])
+        self.assertIn('exact file-level mapping',note['limitations'])
         resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
         selected={r['id']:r for r in resources if r['id'].startswith('birdpark-')}
         self.assertEqual(set(selected),{
             'birdpark-multimodal-songbird-paper-2025',
             'birdpark-zebra-finch-groups-zenodo-v2-2024',
+            'birdpark-zebra-finch-pairs-zenodo-v1-2022',
             'birdpark-paired-zebra-finch-annotation-examples-zenodo-v2-2026',
             'birdpark-zebra-finch-pairs-eth-zurich-2025',
+            'birdpark-birdradio-software',
         })
         for resource in selected.values():
             with self.subTest(resource=resource['id']):
                 self.assertEqual(resource['acquisition'],'metadata_only')
                 self.assertEqual(resource['files'],[])
         self.assertEqual(selected['birdpark-zebra-finch-groups-zenodo-v2-2024']['rights']['research_use'],'unresolved')
+        self.assertEqual(selected['birdpark-zebra-finch-pairs-zenodo-v1-2022']['rights']['research_use'],'unresolved')
         self.assertEqual(selected['birdpark-paired-zebra-finch-annotation-examples-zenodo-v2-2026']['rights']['redistribution'],'unresolved')
         self.assertEqual(selected['birdpark-zebra-finch-pairs-eth-zurich-2025']['rights']['commercial_use'],'not_admitted')
+        self.assertEqual(selected['birdpark-birdradio-software']['rights']['license'],'GNU GPL v3.0 or later, as stated by the BirdRadio subproject LICENSE page.')
+        self.assertIn('not the full repository',selected['birdpark-birdradio-software']['rights']['scope'])
+        self.assertEqual(selected['birdpark-zebra-finch-groups-zenodo-v2-2024']['source_ids'],[390,391,517])
+        self.assertEqual(selected['birdpark-zebra-finch-pairs-zenodo-v1-2022']['source_ids'],[390,517])
         sources=json.loads((project_root/'content'/'sources.json').read_text())
-        self.assertEqual([next(s for s in sources if s['id']==source_id)['checked'] for source_id in note['source_ids']],['2026-10-24']*4)
+        self.assertEqual([next(s for s in sources if s['id']==source_id)['checked'] for source_id in note['source_ids']],['2026-10-30','2026-10-30','2026-10-24','2026-10-24','2026-10-30','2026-10-30'])
+        self.assertIn('peer-reviewed PMC full text',next(s for s in sources if s['id']==390)['origin'])
+        self.assertIn('MP4/HDF5',next(s for s in sources if s['id']==391)['description'])
+        self.assertIn('No dataset license',next(s for s in sources if s['id']==517)['description'])
+        self.assertIn('not establish the license for the full GitLab collection',next(s for s in sources if s['id']==518)['description'])
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
             self.assertTrue(check_site(root)['public'])
             page=(root/'research'/note['slug']/'index.html').read_text()
             self.assertIn('not translate them',page)
-            self.assertIn('not an ordinary phone workflow',page)
+            self.assertIn('do not establish phone/home generalization',page)
+            self.assertIn('28 minutes is the evaluated subset',page)
+            self.assertIn('caller labels need independence review',page)
             self.assertIn('name="robots" content="index,follow"',page)
             self.assertIn(f'/research/{note["slug"]}/',(root/'sitemap.xml').read_text())
             resource_page=(root/'research'/'resources'/'index.html').read_text()
             self.assertIn('BirdPark zebra-finch group recordings',resource_page)
+            self.assertIn('BirdPark zebra-finch paired recordings and annotations, Zenodo v1',resource_page)
+            self.assertIn('BirdPark BirdRadio synchronized audio and transmitter acquisition software',resource_page)
             self.assertIn('In Copyright - Non-Commercial Use Permitted',resource_page)
 
     def test_zebra_finch_human_guided_clustering_keeps_versions_and_asset_rights_separate(self):

@@ -8,12 +8,13 @@
       <div class="station-practice"><p id="station-demo-help">New to the app? Try an invented example first. It uses no microphone or animal audio.</p><button id="station-demo" type="button" aria-describedby="station-demo-help">Try without a microphone</button></div>
       <div class="station-preparation">
         <div class="station-mode"><label for="station-capture-mode">What would you like to keep?</label><select id="station-capture-mode" aria-describedby="station-mode-guidance"><option value="events">Sound highlights · up to 5 minutes</option><option value="window">Whole moment · 30 seconds</option></select><p id="station-mode-guidance" class="station-footnote">Short clips of louder sounds; quiet periods are not saved.</p></div>
+        <p id="station-zero-command" class="station-zero-command"><strong>Listen-only by design.</strong> Talk2Nature does not play calls or prompts to animals. Recording starts only after you confirm permission and tap Start.</p>
         {{station_animal_context}}
         <div class="station-setup"><label class="station-checkbox"><input id="station-permission" type="checkbox">I have permission to record here, including any people who may be audible.</label></div>
         <p id="station-retention-guidance" class="station-retention-guidance">Your sound and notes stay in this page. Download a copy before closing if you want to keep them.</p>
         <p id="station-device" class="station-footnote">Phone microphones may filter or change sounds. This app does not identify animals.</p>
       </div>
-      <div id="station-record-controls" class="station-controls"><button id="station-start" class="station-primary" type="button" aria-describedby="station-retention-guidance" disabled>Start listening</button><button id="station-stop" class="station-stop" type="button" disabled>Stop recording</button></div>
+      <div id="station-record-controls" class="station-controls"><button id="station-start" class="station-primary" type="button" aria-describedby="station-zero-command station-retention-guidance" disabled>Permission needed</button><button id="station-stop" class="station-stop" type="button" disabled>Stop recording</button></div>
       <p class="station-capture-boundary">On this device · foreground only · no animal calls or prompts.</p>
       <div class="station-instruments">
         <div class="station-progress"><span id="station-time">00:00</span><small>time observed</small></div>

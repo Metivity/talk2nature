@@ -2,6 +2,14 @@
 
 This is a decision queue, not a claim to have reviewed the entire field. The founding inventory and its subsequent additions include documentation, organizations and grants as well as papers. Full text is not copied into the public website.
 
+## October 30 — include BirdPark in the benchmark comparison
+
+BirdPark now appears as Candidate G in `BENCHMARK_CANDIDATE_RUN_CARD.md`: a possible event-segmentation/caller-attribution methods reproduction, not a behavior-meaning or receiver-response benchmark. The peer-reviewed evaluation uses a 28-minute selected slice from the 112-minute v2-described deposit, but exact sample-to-file mapping is unresolved. Some microphone-only caller labels are guessed from repertoire/noise and both Zenodo records show no dataset license. Keep metadata-only pending rights, mapping, label-independence and independent avian/ML review. No media, code or model was acquired or run; AutoResearch remains **NOT READY**.
+
+## October 30 — read duet timing fields conservatively
+
+Refreshed the official Dryad record and reuse guide for Dahlin et al.'s yellow-naped amazon duet study (sources 163–164; resources `yellow-naped-amazon-duets-2026-paper` and `yellow-naped-amazon-duets-dryad-2026`). Dryad defines `Response Time(s)` as an interval between consecutive call onsets. That measurement alone cannot establish which bird initiated an exchange or whether the following call was a behavioral response. The deposit lists a measurement workbook and README, not raw audio; the workbook, pair identifiers and publisher supplements remain uninspected. Keep the record as a methods reference for sequence structure, not a communication benchmark. No data or model was acquired or run; see the dated public note and current source/resource records.
+
 ## October 29 — dog soundboard study: cue response is not spontaneous communication
 
 Reviewed targeted full text of Bastos et al. (2024), *How do soundboard-trained dogs respond to human button presses?* (source 514; resource `dog-soundboard-comprehension-paper`). The two studies report more play-directed behavior after PLAY/TOY and outside-directed behavior after OUT/OUTSIDE among selected owner-trained dogs. This is evidence about responses to learned human cues. It does not test dogs spontaneously pressing buttons or establish natural canine language. The linked registration (source 516) was not reviewed and its data/code repository (source 515) was not inspected beyond official metadata and root listing; GitHub reports no detected license. Keep both metadata-only until file-level rights, provenance, consent and privacy are clear. The article's CC BY 4.0 text license does not extend to the repository. No files or media were acquired and no analysis was reproduced. Seek independent canine-cognition/statistical review before using the study to design a benchmark; preserve Talk2Nature's passive, zero-command app boundary.

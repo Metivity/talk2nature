@@ -57,3 +57,4 @@
 
 .station-console button.station-finish{display:block;width:100%;min-height:48px;margin-top:12px;background:#d8e8aa;border-color:#d8e8aa;color:#123327;font-weight:700}
 .station-console:is([data-phase=setup],[data-phase=starting],[data-phase=review]) #station-finish{display:none}
+.station-zero-command{margin:14px 0;padding:12px 14px;border-left:2px solid #d8e8aa;border-radius:0 12px 12px 0;background:#d8e8aa0b;color:#dce8d5;font-size:12px;line-height:1.65}.station-zero-command strong{color:#eff3d4}

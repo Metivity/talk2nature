@@ -194,6 +194,16 @@ Keep the archive metadata-only: the publisher abstract calls the dataset CC BY 4
 
 **Next gate:** reconcile the paper-to-deposit versions and exact annotation scope, then determine whether any specific component has terms that permit the intended research. Only after that should a reviewer define an observable segmentation or caller task and animal-grouped evaluation. Do not use animal playback or infer message meaning from a predicted caller.
 
+## October 30 — reconcile BirdPark paper, Zenodo versions, and evaluation slice
+
+**Question:** does the paper's 28-minute evaluation contradict the Zenodo v2 record's 112 minutes, and what benchmark labels are actually supported?
+
+**Primary sources reviewed:** targeted full-text sections of the peer-reviewed article in PMC (system design, Animals and experiments, Table 2, Vocal analysis/annotation rules, Data Availability, and article license); exact Zenodo pages for 7105196 v1 and 13144875 v2, including the v1 “newer version” link; and the BirdRadio subproject's official LICENSE page. The article's Data Availability statement names v1 for raw data and annotations and v2 for MP4/HDF5. The methods explain the Table 2 sample: one seven-minute file from each of two pair experiments, plus the first minute from seven randomly selected files in each of the four- and eight-bird experiments. That is 28 minutes drawn from the four experiment conditions represented by the 112-minute v2 deposit. The exact selected file IDs/windows were not matched to the deposit. Table 2 reports 2,677 vocalizations; the manually consolidated labels combine transmitter and microphone views, and some microphone-only caller IDs are guessed from repertoire/noise.
+
+**Rights and components:** PeerJ's CC BY 4.0 is article-only. Neither Zenodo record displays a dataset license, so both remain metadata-only. The linked BirdRadio subproject LICENSE states GPL-3.0-or-later for that subproject only; its mutable `dev` branch was not pinned, and this does not clear BirdVideo or the full source collection. The separately cataloged 2026 annotator pack and ETH record are not shown by the article's data statement to be the same files; their overlap remains unresolved. No files, media or code were acquired or run.
+
+**Decision:** the 28/112 minute scope discrepancy is resolved at the aggregate methods level: 28 minutes is the reported evaluation subset of the larger deposit. Exact file membership and component rights remain unresolved. Caller labels need an independence review because some assignments were inferred using the same multimodal signals that contribute to the reference labels. Keep BirdPark as a methods candidate for segmentation/overlap/source attribution, not a communication benchmark. Require rights clearance, file mapping, an independent avian-bioacoustics/ML review and animal/group-held-out split evidence before any data admission. AutoResearch remains **NOT READY**.
+
 ## October 24 — human-guided zebra-finch clustering as annotation-workflow prior art
 
 **Question:** can an existing animal-audio workflow help Talk2Nature scale annotation while keeping experts responsible for labels?

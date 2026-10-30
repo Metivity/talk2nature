@@ -2,6 +2,17 @@
 
 Talk2Nature's current observation tools listen only. They do not try to make an animal respond and do not translate animal communication. Here, **zero-command means zero output directed at animals**; it does not mean zero human controls or automatic recording. A person deliberately starts capture after the required permission and can stop it at any time. The microphone-free synthetic example is the default for practice.
 
+## Active acceptance gates
+
+- Keep the microphone-free invented example as the clearest first action. Real capture must remain a separate, optional choice.
+- Before capture, show what the browser or Android mode will do, require the person's deliberate Start action and platform permission, and keep Stop accessible. Never resume capture silently.
+- Keep example scenes, placeholders, participant observations and model predictions visibly distinct. A prediction is not a label of meaning or a response.
+- Verify save, reopen, discard and interruption behavior using invented material only. No animal or bystander should be present during device rehearsals.
+- Record named-device results separately for browser and Android, including app-controlled sound/notification cues and system/accessibility cues. Viewport emulation and source tests do not close this gate.
+- Conduct newcomer comprehension checks only with an actual, authorized walkthrough; do not infer success from maintainer testing, traffic or an empty issue.
+
+These are the continuing project gates, not a claim that they have all passed. See the active milestone in [`GOAL.md`](GOAL.md) and the evidence log in [`STATUS.md`](STATUS.md).
+
 ## What the app may do
 
 - Run invented sounds through the same silent capture path without requesting microphone access.
