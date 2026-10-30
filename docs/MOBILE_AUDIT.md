@@ -8,6 +8,13 @@ Built a clean local noindex copy of public `main` at `ce6105b` and used headless
 
 This is a maintainer-run desktop browser emulation, not a physical phone, installed PWA, screen-reader or OS-cue check, independent user test, or proof that a whole device is silent. No animal, bystander, real recording, upload or animal-directed output was involved. The named iPhone/Android and newcomer gates remain open; see the active acceptance sequence in [GOAL.md](GOAL.md).
 
+## October 30 follow-up — synthetic visibility-change cleanup
+
+On a clean build of public `main` at `3bc8c28`, ran the microphone-free Station at 390 × 844, then explicitly made the test page report `document.hidden = true` and dispatched `visibilitychange`. Station stopped the 1.3-second invented session, labeled it partial, stated **Stopped because this page left the foreground**, and disabled Stop. Returning the test page to visible did not restart capture. The recap retained only synthetic practice audio. `getUserMedia` and `HTMLMediaElement.play` calls were zero; requests stayed on loopback; there were no page errors or horizontal overflow.
+
+This verifies the application's hidden-state event handler under an injected browser event. In this headless run, opening a second tab left the first tab's visibility state at `visible`, so the check does not verify actual tab backgrounding, operating-system interruption, physical iPhone/Android behavior, native Android, audio hardware or a newcomer workflow. No animal or real recording was involved. Keep those gates open.
+
+
 
 ## Decision: one installable web app first
 
