@@ -1,6 +1,6 @@
 # University evaluation brief
 
-Updated October 26, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
+Updated October 30, 2026. This is an invitation to evaluate an early research-software workflow or critique a source-linked literature summary. It is not a partnership announcement, study protocol, animal-communication claim or request for recordings.
 
 **October 30 maintainer mobile-browser check:** in a local noindex build of public `main` at `ba4950466f055699cdafdf41cb2016c9c573a3b9`, opened this page at 390 CSS pixels, followed **Start the browser review**, and ran **Try an example pair**. The complete and early-stop invented moments appeared side by side; closing the first left the second open. At 320 and 390 CSS pixels, document width matched the viewport. Instrumented microphone and media-play calls remained at zero; requests stayed on the local origin and there were no page errors. This is a maintainer browser rehearsal, not physical-phone testing, independent newcomer research, native-app validation or evidence of biological behavior.
 
