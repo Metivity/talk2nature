@@ -26,6 +26,10 @@ A regression test now ties the three guide links to their expected GitHub issue-
 
 Next measure whether a first-time contributor can choose a task and submit a useful report without maintainer guidance. Keep the report self-declared as independent, assisted or maintainer-led; a passing form or CI run does not prove adoption or biological validity.
 
+## October 31 follow-up: surface AI accountability in the project entry point
+
+The README now states the known project-level use of generative AI, the incomplete historical model/version and per-contribution record, human responsibility for claims and rights, and the contributor disclosure expectation. It links to the detailed policy and contribution guide. This improves discoverability of an existing policy; it does not reconstruct historical provenance or establish independent scientific review. No contributor has been contacted and no outside adoption is claimed. Next: keep the disclosure consistent when the README or contribution process changes, and continue to measure newcomer task success from actual, authorized reports.
+
 ## October 13 follow-up: make the evaluator report approachable
 
 **Question:** does the public report form make the no-code browser route legible to a non-programmer while keeping enough provenance to review a result?

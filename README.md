@@ -42,6 +42,10 @@ The communication-adjacent research lead is Egyptian fruit-bat interaction-conte
 
 The [AutoResearch adaptation](docs/AUTORESEARCH_ADAPTATION.md) and [agent program](research/autoresearch/program.md) describe safeguards for a possible future experiment. The program is **NOT READY**; the documents do not start training or authorize real-data use. We have no confirmed institutional partners or DPG recognition.
 
+## AI assistance and accountability
+
+Generative AI tools and coding assistants have helped with software, documentation, research organization and evidence summaries. Historical model/version records and per-contribution provenance are incomplete. Humans remain responsible for source checks, code, rights and scientific claims; AI-assisted summaries are not independent review or biological validation. Contributors may work without generative AI. For material AI assistance, disclose what it helped with, the tool/model and version if known, and what a person checked. See the [AI assistance statement](docs/AI_ASSISTANCE.md) and [contribution guide](CONTRIBUTING.md).
+
 ## Develop locally
 
 Python 3.10+; the static website and research toolkit use the standard library. Node is only needed for browser-module tests.
