@@ -1,5 +1,13 @@
 # Talk2Nature goals
 
+## October 31 continuation — finish the Zero Command phone-sized rehearsal
+
+Raviv reaffirmed Zero Command as the immediate product focus within the still-active five-track goal. On clean public `main` at `ac733f9`, I rebuilt the local noindex site and completed the invented, no-microphone path at the browser backend's **480 × 844 CSS-pixel minimum**: start practice, add one plain-language observation, finish, save the ZIP, open Compare and reopen that exact downloaded file. Compare labeled it **INVENTED EXAMPLE**, retained one recording and one observer note, and said recordings play only when a person presses Play. The recording remained paused with autoplay disabled; document width stayed at 480 pixels. The short rehearsal was partial (0.4 seconds). No animal, live microphone, playback, upload or participant data was involved. This is maintainer desktop-browser emulation; this backend cannot verify 390-pixel screens, physical phones, screen readers or independent novice comprehension.
+
+The focused Zero Command/Station/review checks passed **31/31**. The local build produced **162 pages plus 404**; the site checker validated **163 HTML documents and 11,341 links**. A fresh TLS-verified live check still fails because the published Station lacks **Listen-only by design**. Therefore the rehearsal confirms the current source workflow, not the public release.
+
+**Next:** keep the product passive and person-controlled. Publish only the reviewed clean-main revision through the authorized Metivity Pages dispatch path when available, then verify the live Station. Separately complete the named-device checklist for iPhone/Safari and Android/Chrome, screen-reader checks, and an authorized newcomer walkthrough; record unavailable checks as **not run**. Continue the other goal tracks while release/device access is unavailable. Keep AutoResearch and real-data admission **NOT READY**.
+
 ## October 31 continuation — verify the live discovery gap
 
 **Question:** does the deployed public site expose the current research inventory and current-main pages to crawlers and visitors?
