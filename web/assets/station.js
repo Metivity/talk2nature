@@ -49,7 +49,7 @@ function controls() {
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
   const recordingPermissionConfirmed = $('station-permission').checked;
   $('station-start').disabled = busy || !recordingPermissionConfirmed;
-  $('station-start').textContent = recordingPermissionConfirmed ? 'Start listening' : 'Permission needed';
+  $('station-start').textContent = recordingPermissionConfirmed ? 'Start recording' : 'Permission needed';
   $('station-stop').disabled = !(pending || active);
   $('station-stop').textContent = pendingSynthetic || session?.origin === 'synthetic' ? 'End rehearsal' : 'Stop recording';
   $('station-finish').disabled = !active;

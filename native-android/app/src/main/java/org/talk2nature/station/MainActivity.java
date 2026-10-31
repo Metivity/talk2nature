@@ -128,7 +128,7 @@ public final class MainActivity extends Activity {
         TextView title = text("A little field station\nfor a big question.",31,INK,true);
         page.addView(title,space(0,0,0,10));
         page.addView(text("Notice sounds and context. Let the evidence stay bigger than the guess.",16,MUTED,false),space(0,0,0,20));
-        page.addView(text("Listen only: this app never calls, imitates or prompts animals. Listening starts only after you tap Start and grant the required permissions.",14,INK,false),space(0,0,0,16));
+        page.addView(text("Listen only: this app never calls, imitates or prompts animals. Recording starts only after you tap Start recording and grant the required permissions.",14,INK,false),space(0,0,0,16));
         Button browserDemo = button("Try invented example · no microphone",PANEL,INK);
         page.addView(browserDemo,space(0,0,0,14));
         browserDemo.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW,
@@ -172,7 +172,7 @@ public final class MainActivity extends Activity {
         consent.setPadding(0,dp(8),0,dp(6));
         setup.addView(consent,space(0,4,0,6));
         consent.setOnCheckedChangeListener((button, checked) -> updateStartButton());
-        startButton = button("Start listening",MINT,Color.rgb(8,37,31));
+        startButton = button("Start recording",MINT,Color.rgb(8,37,31));
         startButton.setEnabled(false);
         setup.addView(startButton,space(0,4,0,0));
         startButton.setOnClickListener(v -> requestStart());
