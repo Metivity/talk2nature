@@ -3312,3 +3312,11 @@ The Performance report was last updated about four hours before inspection and c
 **Checks:** all 167 Node tests passed; all 239 Python tests passed with one intentional skip. The local noindex build produced 155 pages plus 404; the site checker validated 156 HTML files and 10,847 links. Generated Station HTML contains the revised wording. `git diff --check` passed.
 
 **Limit and next step:** the copy describes the app's intended output, not whole-device silence. Zero-command does not mean hands-free, unattended or background recording. Continue the open named-device synthetic rehearsal and authorized newcomer-comprehension gates. No animal or participant recording was made.
+
+## October 31 — align the contributor quick-start with the synthetic rehearsal
+
+**Finding:** a no-microphone browser rehearsal displayed **Finish and review** as the direct path to review; its stop control was **End rehearsal**. The contributor guide instead called the action **Stop recording**. The same current screen showed the documented **Save this moment** action and the explicit **I saved the file** acknowledgement, followed by the Compare route; Compare exposes **Choose saved moment**.
+
+**Change:** corrected the README and contributor quick-start to name the controls a newcomer sees and added a regression assertion to keep both public paths aligned with the app template. This was a microphone-free invented rehearsal. No WAV or ZIP was downloaded, no microphone was requested, and the saved-session flow was not counted as complete.
+
+**Next:** run the repository/site checks and keep actual device and independent newcomer acceptance open.
