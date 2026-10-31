@@ -74,6 +74,34 @@ test('worklet zeros every speaker channel while retaining input frames', async (
     assert.equal(frames.length, 1); assert.equal(frames[0][0], .25);
   } finally { delete globalThis.sampleRate; delete globalThis.AudioWorkletProcessor; delete globalThis.registerProcessor; }
 });
+test('live and synthetic audio enter only the zero-output capture worklet', async () => {
+  for (const synthetic of [false, true]) {
+    const links = [];
+    const node = {port: {}, connect(target) { links.push(['worklet', target]); }, disconnect() {}};
+    const source = {connect(target) { links.push(['source', target]); }, disconnect() {}};
+    const generator = {...source, start() {}, stop() {}};
+    const track = {stop() {}, getSettings: () => ({}), addEventListener() {}};
+    const stream = {getTracks: () => [track], getAudioTracks: () => [track]};
+    const context = {
+      sampleRate: 48000, state: 'running', destination: {},
+      audioWorklet: {addModule: async () => {}}, resume: async () => {},
+      createMediaStreamSource: () => source,
+      createBuffer: (_channels, length) => ({getChannelData: () => new Float32Array(length)}),
+      createBufferSource: () => generator,
+      addEventListener() {}, close: async () => { context.state = 'closed'; },
+    };
+    const session = new AudioSession({
+      getMicrophone: async () => stream, createContext: () => context,
+      createNode: () => node, moduleUrl: 'fixture', onFrame() {}, onEnded() {},
+    });
+    await session.start(synthetic);
+    assert.deepEqual(links, [
+      ['source', node],
+      ['worklet', context.destination],
+    ], `${synthetic ? 'synthetic' : 'live'} input must flow only through the output-zeroing worklet`);
+    session.stop();
+  }
+});
 test('bad audio and labels are rejected, stopped sessions cannot ingest or mark', () => {
   const s = new StationSession(8000); assert.throws(() => s.push(new Float32Array([NaN])));
   assert.throws(() => s.push(new Float32Array(8000))); assert.throws(() => s.mark('reply'));
