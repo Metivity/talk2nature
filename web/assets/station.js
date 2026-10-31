@@ -59,7 +59,7 @@ function controls() {
   $('station-bundle').disabled = !session || busy; $('station-export').disabled = !session || busy; $('station-clear').disabled = !session || busy;
   $('station-state').textContent = pending ? 'Starting…' : active ? session?.origin === 'synthetic' ? 'Synthetic session' : 'Microphone recording' : session ? 'Stopped · local only' : 'Ready';
   $('station-light').classList.toggle('recording', active && session?.origin === 'microphone');
-  $('station-voice').textContent = session?.origin === 'synthetic' ? 'Add test voice marker' : 'Mark my voice';
+  $('station-voice').textContent = session?.origin === 'synthetic' ? 'Add test voice marker' : 'Mark heard speech';
 }
 function silencePlayer() {
   $('station-player').pause(); $('station-player').removeAttribute('src'); $('station-player').load(); $('station-player').hidden = true;
