@@ -1,5 +1,13 @@
 # Talk2Nature goals
 
+## October 31 continuation — verify the invented path at a phone-sized viewport
+
+On the exact public-main tree for `01ab379`, a local headless Chromium run used mobile emulation at 390 × 844 CSS pixels on `/app/station/?mode=companion#station-console`. The linked Station disclosure and invented no-microphone action rendered without horizontal overflow. Starting the invented example produced a visible Synthetic session and enabled Stop; an instrumented `getUserMedia` wrapper observed **0 microphone requests**. Stop opened a partial invented recap with the player still paused; Discard returned the Station to Ready. No live-microphone recording, animal, playback, upload or participant data was used.
+
+This is maintainer-run desktop-browser emulation with synthetic material. It does not verify iPhone/Safari, Android/Chrome, native Android, an installed web app, screen readers or newcomer comprehension. A TLS-verified live check still fails because deployed `/app/station/` lacks the current “Listen-only by design” disclosure. The manual Pages workflow could not be dispatched through the available GitHub toolset, so this source change remains undeployed. The five-track goal stays **active**.
+
+**Next:** publish the reviewed clean-main build when an authorized Pages dispatch route is available, confirm the live Station disclosure and action, then record named-device and assistive-technology results separately. Keep unavailable runs **not run**. The overall goal continues through its research, open-source, discovery and benchmark tracks while these release/device gates remain open.
+
 ## October 31 continuation — say plainly when recording starts
 
 On the clean public main baseline after PR #631 (`98ca61f`), changed the browser and native Android microphone action from **Start listening** to **Start recording**. “Listening” describes the project's passive, animal-facing boundary; “recording” tells the person what the control actually does. The microphone checkbox, deliberate Start, pending-permission Stop, and manual human-review playback boundaries are unchanged. Browser state and Android welcome-screen regression checks cover the wording.

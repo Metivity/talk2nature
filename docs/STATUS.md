@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 — mobile-emulated Zero Command rehearsal
+
+Rendered the exact public-main source tree at `01ab379` in local headless Chromium with 390 × 844 CSS-pixel mobile emulation. On the direct `/app/station/?mode=companion#station-console` route, the Station aligned to the requested anchor, fit the viewport with no horizontal overflow, and showed the listen-only disclosure, invented example and recording permission control. Tapping **Try invented example · no microphone** entered a visible Synthetic session and exposed Stop. Instrumentation wrapped `navigator.mediaDevices.getUserMedia`; the rehearsal made **0 microphone requests**. Stop opened a partial invented recap, the audio player remained paused, and Discard returned to Ready.
+
+This was a maintainer-run browser emulation, not a phone, native build, screen reader or newcomer test. No animal, microphone, playback, upload or participant data was used. The current Pages site still fails the TLS-verified release check because its deployed Station lacks the listen-only disclosure; no deployment was triggered because the available GitHub toolset has no manual workflow-dispatch action. The five-track goal remains **active**; see [`GOAL.md`](GOAL.md).
+
 ## October 31 — make the recording action explicit
 
 On clean main after fungal evidence PR #631 merged as `98ca61f`, browser and native Android microphone controls now say **Start recording** instead of **Start listening**. The label names the actual capture behavior; the listen-only animal-facing rule remains separate. Permission gating, user-started capture, visible Stop and confirmed human-only playback are unchanged.
