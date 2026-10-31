@@ -1133,21 +1133,22 @@
       "url": "https://doi.org/10.17632/srkxbkh6sp.1",
       "version": "Mendeley Data v1, published 2025-10-10",
       "source_ids": [
-        166
+        166,
+        559
       ],
       "priority": 2,
       "reviewed": "2026-10-31",
       "task": "Possible methods-reproduction input for extracellular fungal electrophysiology, not an animal behavior or communication benchmark.",
-      "review_depth": "Reviewed the official Mendeley v1 description, its displayed CC BY 4.0 declaration and visible Files section; it contained no file entries. Cross-checked its displayed DOI against the data DOI printed in the published article. No files were downloaded or inspected.",
-      "access": "Mendeley v1 describes raw voltage-potential data from F. oxysporum before and after external stimuli and displays DOI 10.17632/srkxbkh6sp.1. Its visible Files section contains no filenames, sizes or sample metadata. The published article prints a different DOI string, 10.17632/srkkxbh6sp.1.",
-      "decision": "Keep metadata-only. Preserve the paper-to-record DOI mismatch as unresolved; do not silently normalize it. Before acquisition, verify the deposit identity, exact files, provenance, treatment/replicate metadata and preprocessing, then assess fit with a mycology/electrophysiology reviewer. No training admission.",
-      "limitations": "The paper tests one fungal strain with laboratory electrodes and reports mixed treatment effects. Even suitable data would measure sensor activity, not decode fungal meaning or animal communication. The article prints DOI 10.17632/srkkxbh6sp.1, whereas the official Mendeley v1 page displays 10.17632/srkxbkh6sp.1; the exact deposit link needs source-level reconciliation.",
+      "review_depth": "Rechecked the current PMC full-text article's Data and code availability section, its official Mendeley v1 page and DataCite metadata for both DOI strings. PMC full text, Mendeley and DataCite identify 10.17632/srkxbkh6sp.1; DataCite returned HTTP 404 for 10.17632/srkkxbh6sp.1, the differing string in a previously reviewed publisher PDF. This resolves the DOI crosswalk at metadata level. Mendeley's visible Files section is empty; no data files were downloaded or inspected.",
+      "access": "The current PMC article text links the original unprocessed data to Mendeley DOI 10.17632/srkxbkh6sp.1. Official DataCite metadata returns this canonical DOI, the matching dataset title, publication year 2025 and Mendeley URL. The Mendeley v1 record displays CC BY 4.0 but its visible Files section has no entries. The differing DOI printed in a previously reviewed PDF returns 404 in DataCite.",
+      "decision": "Keep metadata-only. The dataset identifier is resolved at DOI metadata level in favor of Mendeley v1 10.17632/srkxbkh6sp.1: current PMC full text and DataCite metadata match the official Mendeley record; DataCite returns 404 for the differing PDF string. This does not establish file payloads, provenance, treatment/replicate metadata, file-level terms or reproducibility. Confirm the manifest and obtain qualified mycology/electrophysiology review before any acquisition or analysis. No training admission.",
+      "limitations": "The study uses one Fusarium oxysporum strain with specialized laboratory electrodes; electrode-pair counts are not established as independent biological replicates. The reported signal is a voltage measurement, not a decoded message or animal-audio resource. The Mendeley page has no visible file entries, so file contents, provenance, preprocessing and file-level rights remain unknown. The article's DOI crosswalk is resolved only at the registry metadata level; no data file or supplement was inspected.",
       "attribution": "Buffi, M. et al. (2025), Detection of electrical signals in fungal mycelia in response to external stimuli [Dataset]. Mendeley Data, v1. DOI 10.17632/srkxbkh6sp.1.",
       "rights": {
         "license": "CC-BY-4.0 as displayed on the Mendeley Data v1 record",
-        "scope": "This dataset record only; article and supplementary code are separate components.",
-        "evidence_url": "https://data.mendeley.com/datasets/srkxbkh6sp/1",
-        "conditions": "Credit authors and dataset DOI. Keep files unacquired until the manifest and study metadata are reviewed; license alone does not establish scientific suitability.",
+        "scope": "Mendeley v1 record-level CC BY 4.0 declaration, corroborated by DataCite DOI metadata; no data files are listed or inspected, so file-level terms are unverified.",
+        "evidence_url": "https://api.datacite.org/dois/10.17632/srkxbkh6sp.1",
+        "conditions": "The DOI resolves to the Mendeley v1 record, but no payload, file manifest or per-file license was reviewed. Preserve attribution if later reuse is separately justified; confirm exact contents and provenance before acquisition, processing or redistribution.",
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"

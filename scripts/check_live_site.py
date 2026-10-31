@@ -159,6 +159,16 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
             missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
             if missing_copy:
                 raise LiveCheckError(f"{url}: Zero Command setup disclosure is incomplete: {missing_copy[0]}")
+            speech_marker = content.controls.get("station-voice")
+            if (
+                speech_marker is None
+                or speech_marker["tag"] != "button"
+                or speech_marker["text"] != "Mark heard speech"
+                or speech_marker["attributes"].get("aria-describedby") != "station-voice-guidance"
+                or "Only mark nearby human speech when it occurs naturally." not in visible_copy
+                or "Do not speak, call or imitate to elicit a response." not in visible_copy
+            ):
+                raise LiveCheckError(f"{url}: observational speech marker or its guidance is missing")
             permission = content.controls.get("station-permission")
             if (
                 permission is None

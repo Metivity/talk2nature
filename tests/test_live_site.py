@@ -27,7 +27,10 @@ class FakeLiveSite:
                 "In the browser, recording ends if you leave this page. "
                 '<input id="station-permission" type="checkbox">'
                 '<button id="station-start" disabled>Permission needed</button>'
-                '<button id="station-demo">Try invented example · no microphone</button>',
+                '<button id="station-demo">Try invented example · no microphone</button>'
+                '<button id="station-voice" aria-describedby="station-voice-guidance">Mark heard speech</button>'
+                '<p id="station-voice-guidance">Only mark nearby human speech when it occurs naturally. '
+                'Do not speak, call or imitate to elicit a response.</p>',
             ),
             "research/resources/": self._page("research/resources/", "Research resources"),
         }
@@ -127,6 +130,14 @@ class LiveSiteTests(unittest.TestCase):
             "Try invented example · no microphone", "Try without a microphone"
         )
         with self.assertRaisesRegex(LiveCheckError, "invented, microphone-free action"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_a_stale_speech_marker_that_could_prompt_the_animal(self):
+        site = FakeLiveSite()
+        site.pages["app/station/"] = site.pages["app/station/"].replace(
+            "Mark heard speech", "Mark my voice"
+        )
+        with self.assertRaisesRegex(LiveCheckError, "observational speech marker"):
             verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
     def test_retries_transient_deployment_failure(self):

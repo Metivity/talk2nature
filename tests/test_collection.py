@@ -312,6 +312,9 @@ class CollectionTests(unittest.TestCase):
         code = records['fungal-electrophysiology-stimuli-2025-method-s1']
         self.assertEqual(paper['rights']['license'], 'CC-BY-4.0 for the article as stated in the published paper')
         self.assertEqual(dataset['rights']['license'], 'CC-BY-4.0 as displayed on the Mendeley Data v1 record')
+        self.assertEqual(dataset['source_ids'], [166, 559])
+        self.assertIn('resolves the DOI crosswalk at metadata level', dataset['review_depth'])
+        self.assertIn('visible Files section is empty', dataset['review_depth'])
         self.assertIn('Unresolved', code['rights']['license'])
         self.assertIn('Method S1', code['version'])
         self.assertIn('Document S2', code['version'])
