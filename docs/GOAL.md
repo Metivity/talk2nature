@@ -1,3 +1,11 @@
+## October 31 post-merge readback — checks pass; Pages release remains pending
+
+PR [#608](https://github.com/Metivity/talk2nature/pull/608) merged to `main` as `febd5de157ab7b409a23010e4bf6c270e0e7c094`. The post-merge Public checks run [#41163242087](https://github.com/Metivity/talk2nature/actions/runs/41163242087) completed successfully, including repository, browser-tool, Android and preview-site checks. The merged source now contains the explicit invented/no-microphone first action and Arbimon governance review.
+
+**Live-site readback:** the published Station URL returns HTTP 200 but still renders `Try without a microphone` and `Try a no-microphone rehearsal`. The Pages workflow is `workflow_dispatch` only; merging does not publish it. No Pages deployment was triggered. Do not report this candidate as live or its new research routes as discoverable.
+
+**Next milestone:** dispatch the existing Pages workflow for merged `main`, then verify the workflow's route-preservation check, deployed first-action copy, all four new research routes, sitemap and live SEO metadata. Keep the named-device/no-animal rehearsal and independent novice walkthrough open. The five-track goal remains active; real-data admission and AutoResearch remain **NOT READY**.
+
 ## October 31 continuation — keep Zero Command local-first after Arbimon terms review
 
 Reviewed the official Arbimon privacy policy and Terms of Service in addition to its workflow docs. The published policy describes AI-training use of submitted audio/labels/metadata, an opt-out that applies to future material but cannot remove effects from already-trained models, and indefinite annotation retention. The terms describe a perpetual, irrevocable license for submitted content and a competitor-use/disclosure clause that may be relevant to projects offering similar tools. Whether those clauses apply to Talk2Nature/Raviv is unresolved; this is not legal advice.

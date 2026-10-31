@@ -1,3 +1,11 @@
+## October 31 post-merge release state
+
+PR [#608](https://github.com/Metivity/talk2nature/pull/608) merged as `febd5de157ab7b409a23010e4bf6c270e0e7c094`. Post-merge Public checks run [#41163242087](https://github.com/Metivity/talk2nature/actions/runs/41163242087) passed all jobs. The static GitHub Pages workflow remains manual (`workflow_dispatch`); no deploy run followed the merge.
+
+Fresh live readback of `/app/station/` returns HTTP 200 but still shows the previous `Try without a microphone` action. The source update and tests are merged; the public website has not yet been updated. Next: run the manual Pages workflow, then check live route preservation, Station copy, the four candidate research pages, sitemap and crawl metadata. Do not equate a merged PR with a deployment. Named physical-device and independent novice acceptance remain open.
+
+---
+
 ## October 31 — Zero Command and Arbimon governance decision
 
 Reviewed the official RFCx Arbimon privacy policy and terms. The published policy states submitted audio/annotations/metadata may train ML models, future submissions can be opted out but existing model effects cannot be extracted, and annotations/labels may be kept indefinitely. The terms describe a perpetual, irrevocable submitted-content license plus competitor-use and organization-disclosure clauses. Applicability to Talk2Nature/Raviv remains unresolved; this is a policy-text summary, not a legal determination.
