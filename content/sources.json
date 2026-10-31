@@ -5693,5 +5693,29 @@
     "origin": "TLS-verified GET to the official DataCite API: canonical DOI lookup returned HTTP 200, canonical DOI, dataset title, publication year 2025 and Mendeley URL; lookup for the PDF string returned HTTP 404. No dataset payload or manifest was acquired.",
     "review_url": "https://api.datacite.org/dois/10.17632/srkxbkh6sp.1",
     "review_url_label": "DataCite DOI metadata"
+  },
+  {
+    "id": 560,
+    "title": "OpenWhistle pretraining data Croissant metadata (revision eea3742)",
+    "description": "The revision-pinned machine-readable Croissant RAI metadata for OpenWhistle-Pretraining declares CC BY 4.0 and dataset version 1.0.0. This is a structured dataset-license declaration; no audio was acquired.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/blob/eea37423c7841b0f99a7c0380f945999c0a2c489/croissant_rai_OpenWhistle-Pretraining.json",
+    "checked": "2026-10-31",
+    "origin": "Reviewed the immutable Croissant RAI file at dataset revision eea37423c7841b0f99a7c0380f945999c0a2c489; its license field is https://creativecommons.org/licenses/by/4.0/ and version is 1.0.0. The separate Hugging Face API cardData.license field is null. No dataset payload was downloaded.",
+    "rights": {
+      "dataset": "The structured metadata declares CC BY 4.0 for the dataset release.",
+      "scope": "This record is metadata evidence, not verification of provenance, consent, exact-file coverage or any code/model license."
+    }
+  },
+  {
+    "id": 561,
+    "title": "OpenWhistle classification data Croissant metadata (revision 2b7806e)",
+    "description": "The revision-pinned machine-readable Croissant RAI metadata for OpenWhistle-Classification-Finetuning declares CC BY 4.0 and dataset version 1.0.0. This is a structured dataset-license declaration; no audio or label payload was acquired.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/blob/2b7806e3c5913c459c40b824ab7f944d494b3993/croissant_rai_OpenWhistle-Classification-Finetuning.json",
+    "checked": "2026-10-31",
+    "origin": "Reviewed the immutable Croissant RAI file at dataset revision 2b7806e3c5913c459c40b824ab7f944d494b3993; its license field is https://creativecommons.org/licenses/by/4.0/ and version is 1.0.0. The separate Hugging Face API cardData.license field is null. No dataset payload was downloaded.",
+    "rights": {
+      "dataset": "The structured metadata declares CC BY 4.0 for the dataset release.",
+      "scope": "This record is metadata evidence, not verification of provenance, consent, exact-file coverage or any code/model license."
+    }
   }
 ]

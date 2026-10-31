@@ -13,6 +13,7 @@ Talk2Nature's current observation tools listen only. They do not try to make an 
 - Conduct newcomer comprehension checks only with an actual, authorized walkthrough; do not infer success from maintainer testing, traffic or an empty issue.
 
 These are the continuing project gates, not a claim that they have all passed. See the active milestone in [`GOAL.md`](GOAL.md) and the evidence log in [`STATUS.md`](STATUS.md).
+Use the [Zero Command device checklist](ZERO_COMMAND_DEVICE_CHECKLIST.md) to record each browser and native-device run separately.
 
 ## What the app may do
 
