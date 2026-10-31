@@ -142,3 +142,13 @@ The current `.github/dependabot.yml` is on `main`: GitHub Actions version update
 **Interpretation and limits:** the issue snapshot shows no public reply, not why nobody replied; private email reports were not inspected. It does not establish that the task is confusing, rejected or successful. Keep the single, bounded phone task and existing email alternative; do not add a forum, analytics or a broader recruitment campaign on this evidence. Continue to report independent reproductions as zero until an outside person's workflow is reviewed. The maintainer-only keyboard result is not adoption evidence.
 
 **Next:** keep the named physical-phone walkthrough open, and obtain an authorized first-time-user report before revising the task based on usability. A second maintainer and independent scientific reviewer remain continuity needs, not appointed roles.
+
+## October 31 follow-up — keep first-use instructions resilient to release lag
+
+**Question:** do the public first-phone instructions match both the deployed app and current source while the Pages release is pending?
+
+**Evidence:** a fresh TLS-verified fetch of the deployed `/app/` shows **Try an example · no microphone**; `/app/station/` shows **Try without a microphone** and does not yet contain the **Listen-only by design.** disclosure. Current public `main` at `cc30c72` labels the station action **Try invented example · no microphone** and includes the disclosure. GitHub issue [#115](https://github.com/Metivity/talk2nature/issues/115) remains open and unassigned with the `good first issue` and `help wanted` labels; it has 0 public comments and 0 reactions, was created October 13 and last updated October 30. Its current exact button wording matches the deployed Station. Private email was not inspected.
+
+**Change:** made the station step in README and CONTRIBUTING refer to the **no-microphone practice button** by purpose, not a version-specific label, and adjusted the source test to keep the step order checked across both copies. This reduces confusion while the public site and source remain on different revisions.
+
+**Interpretation and next decision:** zero comments means no public report is recorded on this issue, not that nobody tried the app or that the wording failed. Do not close or rewrite the open task from that absence. Keep its current live-site wording until a verified Pages update changes the button, then synchronize the issue and rerun its static-route and instruction checks. No external contact, user-data analysis or independent use was claimed.

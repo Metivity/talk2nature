@@ -109,7 +109,7 @@ class SiteTests(unittest.TestCase):
         for label in live_labels:
             with self.subTest(button=label):
                 self.assertIn(label,station if label!='Choose saved moment' else compare)
-        expected_steps=('Try an example · no microphone','Try invented example · no microphone',
+        expected_steps=('Try an example · no microphone',
                         'Mark an observation','Finish and review','End rehearsal',
                         'Save this moment','I saved the file',
                         'Open Compare moments to review it','Choose saved moment')
@@ -118,6 +118,9 @@ class SiteTests(unittest.TestCase):
                 copy=(project_root/name).read_text()
                 positions=[copy.index(step) for step in expected_steps]
                 self.assertEqual(positions,sorted(positions))
+                practice=copy.index('no-microphone practice button')
+                self.assertLess(positions[0],practice)
+                self.assertLess(practice,positions[1])
                 self.assertIn('to reopen the download',copy)
 
     def test_approach_page_defines_zero_command_and_distinguishes_phone_modes(self):

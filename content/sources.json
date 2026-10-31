@@ -5531,5 +5531,141 @@
     "url": "https://norecopa.no/PREPARE",
     "checked": "2026-10-31",
     "origin": "Official Norecopa PREPARE page reviewed; the page notes its voluntary role and field-study adaptation."
+  },
+  {
+    "id": 519,
+    "title": "AVEX supported-model input configuration",
+    "url": "https://github.com/earthspecies/avex/blob/main/docs/supported_models.md",
+    "description": "Official AVEX documentation lists ESP-AVES2 supported model configuration, including the checkpoint family and declared audio input settings. AVEX code license does not determine checkpoint or training-data rights.",
+    "checked": "2026-10-30",
+    "origin": "Official AVEX supported-model documentation."
+  },
+  {
+    "id": 520,
+    "title": "eLife public peer-review record for the moth–plant study",
+    "description": "Publisher-hosted eLife Assessment, two public reviews and author response linked from the Version of Record. This is review-process evidence, not independent replication.",
+    "url": "https://elifesciences.org/articles/104700/peer-reviews",
+    "checked": "2026-10-30",
+    "origin": "Opened from the Version of Record public peer-review link; covers reviewer comments and author responses through publication on 5 January 2026."
+  },
+  {
+    "id": 521,
+    "title": "Moth–plant oviposition source-data and code deposit",
+    "description": "Mendeley Data version 1, DOI 10.17632/yg7ms8rn37.1, published 14 November 2025. The article points here for tables and code; the landing page describes “Codes and statistics” and displays CC0 1.0. File manifest and contents not inspected.",
+    "url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+    "checked": "2026-10-30",
+    "origin": "Version of Record Data availability statement and the public Mendeley version 1 landing page; no files downloaded or opened."
+  },
+  {
+    "id": 522,
+    "title": "Acoustic and visual monitoring comparison for Arctic-breeding shorebirds",
+    "description": "Ziegenhorn et al. (2026), Journal of Applied Ecology 63(2), e70300. Version of Record sections reviewed: abstract, Methods 2.1–2.3, Results, Discussion 4.1–4.3 and data availability. The paper reports a paired acoustic/visual field-method comparison, not communication evidence. Its site/species totals differ from the associated latest Dryad README.",
+    "url": "https://doi.org/10.1111/1365-2664.70300",
+    "checked": "2026-10-31",
+    "origin": "Publisher Version of Record and its displayed CC BY 4.0 statement; selected methods and results reviewed. No figures, supplement, audio, data or code acquired."
+  },
+  {
+    "id": 523,
+    "title": "Dryad shorebird survey data and code record",
+    "description": "Dryad DOI 10.5061/dryad.7wm37pw54, published 2026-01-21 and updated 2026-07-30. The latest landing-page abstract/README says 129 sites (54 ANWR, 75 TESH) and 12 species or groups. The page lists code.zip, data.zip and README; the July changelog notes fixes to visual detections, mismatched plots and date ranges. The README describes coordinate columns. No archive or rows inspected.",
+    "url": "https://doi.org/10.5061/dryad.7wm37pw54",
+    "checked": "2026-10-31",
+    "origin": "Official Dryad version history, landing-page abstract, README descriptions and changelog; metadata only."
+  },
+  {
+    "id": 524,
+    "title": "Dryad dataset and file reuse policy",
+    "description": "Dryad's current reuse and file-requirement guidance states datasets hosted there are made available under CC0 1.0 and explains that software or supplemental files with incompatible terms may be hosted separately through Zenodo. This is repository-wide policy, not a file-by-file inspection of DOI 10.5061/dryad.7wm37pw54.",
+    "url": "https://datadryad.org/help/guides/reuse",
+    "checked": "2026-10-31",
+    "origin": "Official Dryad policy pages reviewed alongside the versioned dataset landing page."
+  },
+  {
+    "id": 525,
+    "title": "U.S. Fish and Wildlife Service Arctic Refuge Coastal Plain boundary layer",
+    "description": "Official FWS Region 7 feature layer for the Arctic National Wildlife Refuge Coastal Plain (1002 Area), with a legal-boundary description and spatial extent. For the atlas, the center of its WGS84 bounding extent is rounded to one decimal degree as a broad regional pin; it is not a study-plot or recorder coordinate.",
+    "url": "https://services.arcgis.com/QVENGdaPbd4LUkLV/ArcGIS/rest/services/FWS_R7_Realty_Arctic_Coastal_Plain_feature_layer/FeatureServer/0",
+    "checked": "2026-10-31",
+    "origin": "Official FWS ArcGIS feature layer queried for its regional extent only; geometry and wildlife-site coordinates were not copied. Extent center rounded to 69.9 N, 144.3 W."
+  },
+  {
+    "id": 526,
+    "title": "Bureau of Land Management Teshekpuk Lake Special Management Area description",
+    "description": "BLM describes the Teshekpuk Lake Special Management Area as the northeastern quadrant of NPR-A around and including Teshekpuk Lake. Used to support only a broad regional relationship; this report's area designation is not assumed identical to the paper's survey boundary.",
+    "url": "https://www.blm.gov/documents/national-office/blm-library/report/teshekpuk-lake-special-management-area-oil-and-gas",
+    "checked": "2026-10-31",
+    "origin": "Official Bureau of Land Management report metadata and regional description reviewed; no survey coordinates or field data used."
+  },
+  {
+    "id": 527,
+    "title": "USGS Teshekpuk Lake center regional locator",
+    "description": "USGS Water Data location named 'TESHEKPUK LK CENTER NR LONELY AK' reports a WGS84 position. For this atlas the point is rounded to one decimal degree and used only as a named-lake regional anchor, not as an acoustic study plot or animal location.",
+    "url": "https://waterdata.usgs.gov/monitoring-location/USGS-703606153300000/",
+    "checked": "2026-10-31",
+    "origin": "Official USGS Water Data location metadata; coordinates rounded from 70.601285 N, 153.503263 W to 70.6 N, 153.5 W for a coarse regional locator."
+  },
+  {
+    "id": 528,
+    "title": "BioSoundNet bird-vocalization detection preprint",
+    "description": "Christin et al. (2023), Authorea version 1, DOI 10.22541/au.169963215.50290219/v1. The preprint describes a bird-vocalization presence detector for ecological acoustic activity and phenology, not caller meaning or conversation. Its page says the work is not peer reviewed and all rights are reserved; this record contains only an original summary and link.",
+    "url": "https://doi.org/10.22541/au.169963215.50290219/v1",
+    "checked": "2026-10-31",
+    "origin": "Authorea preprint PDF and DOI landing record; sections on data availability, dataset construction, training, evaluation, results and limitations reviewed."
+  },
+  {
+    "id": 529,
+    "title": "BioSoundNet reference implementation repository",
+    "description": "Author-linked public GitHub repository. Its current page identifies an MIT repository license and says a pretrained model is included. The repository is mutable; no commit was pinned, source code or dependencies were inspected, and the repository license is not assumed to license data, paper text or model weights separately.",
+    "url": "https://github.com/vin985/BioSoundNet",
+    "checked": "2026-10-31",
+    "origin": "GitHub repository page and README metadata reviewed; no clone or execution."
+  },
+  {
+    "id": 530,
+    "title": "OSF destination cited for BioSoundNet data",
+    "description": "The 2023 BioSoundNet preprint says the data would be made available at this OSF project upon manuscript acceptance. Current project contents, publication status, file manifest and license were not verified; do not treat this link as evidence that the data are publicly deposited.",
+    "url": "https://osf.io/4SFCR/",
+    "checked": "2026-10-31",
+    "origin": "OSF destination linked by the preprint data-availability statement; current page/API could not be retrieved in this review."
+  },
+  {
+    "id": 552,
+    "title": "Hanf-Dressler et al. (2026), living systematic review of passive-acoustics software",
+    "description": "F1000Research 15:48, Version 1, published 2026-01-13, DOI 10.12688/f1000research.173495.1. The review maps software used in bioacoustics and ecoacoustics and recommends greater interoperability. Results, abstract and conclusion disagree on some tool counts; three public reviewer reports identify gaps in tool links, functional detail and update/reproducibility methods.",
+    "url": "https://doi.org/10.12688/f1000research.173495.1",
+    "checked": "2026-10-31",
+    "origin": "F1000Research Version 1 full text mirrored in Europe PMC; abstract, Methods §§2.1–2.3, Results §§3.1–3.2, Conclusion, Data Availability and article license reviewed. No supplementary inventory, dendrogram or analysis script downloaded."
+  },
+  {
+    "id": 553,
+    "title": "Hanf-Dressler et al. (2026), F1000Research public peer-review report R453949",
+    "description": "Public review report on the living systematic review. It supports the review's importance while requesting direct links for listed tools, more specific feature descriptions, and a clearer, supportable update procedure; it records partial ratings for living-review scheduling and reproducibility detail.",
+    "url": "https://doi.org/10.5256/f1000research.191317.r453949",
+    "checked": "2026-10-31",
+    "origin": "Signed public peer-review report linked with F1000Research article Version 1; report text and criteria responses reviewed."
+  },
+  {
+    "id": 554,
+    "title": "Hanf-Dressler et al. (2026), F1000Research public peer-review report R453943",
+    "description": "Public review report on the living systematic review. It identifies the inventory's usefulness and asks for explicit definitions and justification of the categories, more transparent screening detail and direct tool links; it rates method replication detail as partial.",
+    "url": "https://doi.org/10.5256/f1000research.191317.r453943",
+    "checked": "2026-10-31",
+    "origin": "Public peer-review report linked with F1000Research article Version 1; report text and criteria responses reviewed."
+  },
+  {
+    "id": 555,
+    "title": "Hanf-Dressler et al. (2026), F1000Research public peer-review report R453942",
+    "description": "Public review report on the living systematic review. It supports the question's relevance and requests clearer search and screening methods, more use of the collected taxon information and improved presentation; its reviewer records partial ratings for the review rationale, analysis and living-review schedule.",
+    "url": "https://doi.org/10.5256/f1000research.191317.r453942",
+    "checked": "2026-10-31",
+    "origin": "Public peer-review report linked with F1000Research article Version 1; report text and criteria responses reviewed."
+  },
+  {
+    "id": 556,
+    "title": "OSF metadata for the ecoacoustic software inventory, project v72ce",
+    "description": "The public OSF API describes an inventory of 251 software tools, PRISMA materials, an interactive dendrogram and an R analysis script. The root project's license field is null. The article separately states CC0 for its underlying data package; no individual file metadata or payload was reviewed or acquired.",
+    "url": "https://api.osf.io/v2/nodes/v72ce/",
+    "checked": "2026-10-31",
+    "origin": "Official OSF node API metadata read over verified TLS; project title, public status, modified date, inventory description and null root license field recorded. No file list or file payload accessed."
   }
 ]

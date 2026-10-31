@@ -92,3 +92,14 @@ test('browser Station stops capture when the page leaves the foreground', async 
   assert.match(hiddenHandler, /if \(active \|\| pending\) stop\('backgrounded'\)/);
   assert.match(pagehideHandler, /if \(active \|\| pending\) stop\('page_closed'\)/);
 });
+
+test('pending capture keeps keyboard focus on Stop and restores it after cancel or failure', async () => {
+  const station = await readFile(path.join(assets, 'station.js'), 'utf8');
+  const stop = station.slice(station.indexOf('function stop('), station.indexOf('async function start('));
+  const start = station.slice(station.indexOf('async function start('), station.indexOf('function metrics('));
+  const focusStop = start.indexOf("$('station-stop').focus({preventScroll: true});");
+  const createCapture = start.indexOf('capture = new AudioSession(');
+  const waitForCapture = start.indexOf('await capture.start(synthetic)');
+  assert.ok(focusStop > 0 && focusStop < createCapture && createCapture < waitForCapture, 'focus the visible Stop action before constructing or awaiting the audio/permission request');
+  assert.match(stop, /if \(focusReview\) \{\s*if \(session\) \$\('station-review'\)\.focus\(\);\s*else \$\('station-headline'\)\.focus\(\{preventScroll: true\}\);\s*\}/, 'cancelled or failed startup must not leave focus on the hidden Stop action');
+});

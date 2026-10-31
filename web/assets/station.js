@@ -75,7 +75,10 @@ function stop(reason = 'user_stop') {
   if (session) { session.stop(reason); dirty = true; status(reasons[session.stopReason] || 'Session stopped.'); }
   else status(reasons[reason] || 'Start cancelled.');
   controls(); renderEvents(); renderMarkers(); metrics();
-  if (focusReview && session) $('station-review').focus();
+  if (focusReview) {
+    if (session) $('station-review').focus();
+    else $('station-headline').focus({preventScroll: true});
+  }
 }
 async function start(synthetic) {
   if (pending || active || exporting) return;
@@ -92,6 +95,7 @@ async function start(synthetic) {
   const windowMode = $('station-capture-mode').value === 'window';
   const token = ++run; pending = true; pendingSynthetic = synthetic; session = null; dirty = false; levels = []; $('station-save-status').hidden = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; $('station-marker-feedback').textContent = 'Observe naturally. Tap only what you notice.'; lastEventCount = 0; settings = {}; silencePlayer(); renderEvents(); renderMarkers(); controls(); metrics();
   status(synthetic ? 'Starting invented tones inside the audio engine. No microphone access or audible playback.' : 'Waiting for microphone permission. You can cancel with Stop recording.');
+  $('station-stop').focus({preventScroll: true});
   capture = new AudioSession({
     createContext: () => new AudioContext(),
     getMicrophone: () => navigator.mediaDevices.getUserMedia({audio: {channelCount: {ideal: 1}, echoCancellation: {ideal: false}, noiseSuppression: {ideal: false}, autoGainControl: {ideal: false}}, video: false}),

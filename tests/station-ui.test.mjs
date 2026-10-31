@@ -12,7 +12,7 @@ import {sessionFiles, zipFiles} from '../web/assets/station-export.mjs';
 import {openSessionBundle, sessionSummary} from '../web/assets/session-import.mjs';
 import {emptyEventsMessage, nextEventFocusId} from '../web/assets/station-review-ui.mjs';
 
-function setup(mode = 'companion') {
+function setup(mode = 'companion', realCaptureStart = null) {
   const elements = new Map();
   const state = {confirm: false, confirmations: 0, confirmationText: [], playerPlays: 0, playerPauses: 0, documentEvents: {}, windowEvents: {}, capture: null, downloads: [], objectUrls: new Map()};
   let document;
@@ -37,7 +37,7 @@ function setup(mode = 'companion') {
       pause() { this.paused = true; state.playerPauses++; this.handlers.pause?.({}); },
       async play() { this.paused = false; state.playerPlays++; this.handlers.play?.({}); },
       load() { this.paused = true; this.ended = false; }, remove() {}, scrollIntoView() {},
-      focus() { document.activeElement = this; },
+      focus(options = {}) { document.activeElement = this; this.lastFocusOptions = options; },
       matches(selector) { return selector === '[data-observation]' && Boolean(this.dataset.observation); },
       getContext() { return canvasContext; }
     };
@@ -74,6 +74,7 @@ function setup(mode = 'companion') {
     constructor(options) { this.options = options; this.stopped = 0; state.capture = this; }
     async start(synthetic) {
       this.synthetic = synthetic;
+      if (!synthetic && realCaptureStart) return await realCaptureStart(this);
       if (!synthetic) throw new Error('This test must never request microphone capture.');
       return {sampleRate: 8000, settings: {auto_gain_control: false, noise_suppression: false, echo_cancellation: false}};
     }
@@ -86,7 +87,7 @@ function setup(mode = 'companion') {
   vm.runInNewContext(source, {
     addQuickObservation, sessionRecap, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset, microphoneCaptureAllowed,
     StationSession, wavBytes, SOURCE_LABELS, sessionFiles, zipFiles, AudioSession: SyntheticAudioSession,
-    emptyEventsMessage, nextEventFocusId, document, window, navigator: {},
+    emptyEventsMessage, nextEventFocusId, document, window, navigator: {mediaDevices: {getUserMedia() { throw new Error('The Station UI test must never request microphone capture.'); }}},
     location: {href: `https://talk2nature.test/app/station/?mode=${mode}#station-console`},
     URL: TestURL, Blob, crypto: webcrypto, performance: {now: () => 1000},
     setTimeout: () => 1, clearTimeout() {}, setInterval: () => 2, clearInterval() {}
@@ -211,6 +212,38 @@ test('Finish and review follows note controls and returns focus to the review st
   assert.equal(h.state.capture.stopped, 1);
   assert.equal(h.get('station-finish').disabled, true);
   assert.equal(h.activeElement(), h.get('station-review'));
+});
+
+test('pending microphone permission keeps Stop focused and cancellation restores the Station heading', async () => {
+  let resolveStartup;
+  const h = setup('companion', () => new Promise(resolve => { resolveStartup = resolve; }));
+  h.get('station-permission').checked = true;
+  const startup = h.get('station-start').fire('click');
+
+  assert.equal(h.activeElement(), h.get('station-stop'));
+  assert.equal(h.get('station-stop').lastFocusOptions.preventScroll, true);
+  assert.equal(h.get('station-stop').disabled, false);
+  await h.get('station-stop').fire('click');
+  assert.equal(h.activeElement(), h.get('station-headline'));
+  assert.equal(h.get('station-headline').lastFocusOptions.preventScroll, true);
+
+  resolveStartup({sampleRate: 8000, settings: {}});
+  await startup;
+  assert.equal(h.state.capture.stopped, 1, 'a late permission result remains cancelled');
+  assert.equal(h.get('station-console').dataset.phase, 'setup');
+});
+
+test('microphone denial restores focus from the pending Stop action to the Station heading', async () => {
+  const denied = Object.assign(new Error('permission denied'), {name: 'NotAllowedError'});
+  const h = setup('companion', async () => { throw denied; });
+  h.get('station-permission').checked = true;
+
+  await h.get('station-start').fire('click');
+
+  assert.equal(h.activeElement(), h.get('station-headline'));
+  assert.equal(h.get('station-headline').lastFocusOptions.preventScroll, true);
+  assert.match(h.get('station-status').textContent, /permission was denied/i);
+  assert.equal(h.get('station-console').dataset.phase, 'setup');
 });
 
 test('each manual playback start requires an immediate no-animal-playback confirmation', async () => {
