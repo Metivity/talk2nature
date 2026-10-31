@@ -1,5 +1,13 @@
 ## October 31 post-merge readback — checks pass; Pages release remains pending
 
+## October 31 continuation — publish the animal-agency methods note
+
+
+Added a targeted, source-linked ethics note on animal agency and welfare in communication studies. The review covers selected sections of Mamzer et al. (2026), official PREPARE and ARRIVE guidance, and the scope of EU Directive 2010/63/EU. The article and guidance are distinct sources; no data, code or model is provided for Talk2Nature reuse. Because source IDs 535–538 are already assigned on current `main`, the four new source records use 548–551.
+
+**Decision:** use the paper as a design prompt, not a systematic review, legal opinion, institutional approval or validated welfare protocol. It does not establish what animal sounds mean. Before any participant recording, define a species-specific protocol, welfare stop rules, human consent and recording rights, privacy, retention, storage, withdrawal and applicable institutional review. Keep animal-directed playback absent. Verification on a clean branch from current `main`: Python **239 passed, 1 skipped**; Node **167 passed**; local noindex build **159 pages plus 404**, checker **160 HTML / 10,974 links**; explicit-origin public build **159 pages plus 404**, checker **160 HTML / 11,135 links / 159 reachable public pages**; `git diff --check` passed. The large dirty local checkout remains untouched. The five-track goal stays **active**.
+
+
 PR [#608](https://github.com/Metivity/talk2nature/pull/608) merged to `main` as `febd5de157ab7b409a23010e4bf6c270e0e7c094`. The post-merge Public checks run [#41163242087](https://github.com/Metivity/talk2nature/actions/runs/41163242087) completed successfully, including repository, browser-tool, Android and preview-site checks. The merged source now contains the explicit invented/no-microphone first action and Arbimon governance review.
 
 **Live-site readback:** the published Station URL returns HTTP 200 but still renders `Try without a microphone` and `Try a no-microphone rehearsal`. The Pages workflow is `workflow_dispatch` only; merging does not publish it. No Pages deployment was triggered. Do not report this candidate as live or its new research routes as discoverable.
