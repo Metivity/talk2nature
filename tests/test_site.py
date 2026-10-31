@@ -3072,5 +3072,29 @@ class SiteTests(unittest.TestCase):
             self.assertIn('not a sender-context benchmark',page)
             self.assertIn('No third-party data, audio or model was used',page)
 
+    def test_mozilla_calls_separate_fellowship_theme_fit_from_incubator_readiness(self):
+        project_root=Path(__file__).resolve().parents[1]
+        opportunities=json.loads((project_root/'content'/'opportunities.json').read_text())
+        sources=json.loads((project_root/'content'/'sources.json').read_text())
+        sources_by_id={source['id']:source for source in sources}
+        fellowship=next(item for item in opportunities if item['slug']=='mozilla-fellowship-2027')
+        incubator=next(item for item in opportunities if item['slug']=='mozilla-human-scale-ai-incubator-2026')
+
+        self.assertEqual(fellowship['verified'],'2026-10-31')
+        self.assertEqual(fellowship['deadline'],'2026-12-17')
+        self.assertIn('community-run environmental sensing',fellowship['fit'])
+        self.assertIn('not validation of animal communication',fellowship['fit'])
+        self.assertIn('own work and voice',fellowship['next_action'])
+        self.assertIn('do not begin an LOI until the founder confirms',fellowship['next_action'])
+        for source_id in [fellowship['source_id'],fellowship['terms_source_id'],fellowship['faq_source_id'],fellowship['eligibility_source_id']]:
+            self.assertEqual(sources_by_id[source_id]['checked'],'2026-10-31')
+
+        self.assertEqual(incubator['verified'],'2026-10-31')
+        self.assertEqual(incubator['deadline'],'2026-11-20')
+        self.assertIn('no AI feature at the core',incubator['next_action'])
+        self.assertIn('no-go',incubator['status'])
+        for source_id in [incubator['source_id'],incubator['faq_source_id']]:
+            self.assertEqual(sources_by_id[source_id]['checked'],'2026-10-31')
+
 
 if __name__=='__main__': unittest.main()

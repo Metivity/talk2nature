@@ -1,5 +1,11 @@
 # Talk2Nature goals
 
+## October 31 continuation — refresh Mozilla funding fit with current call text
+
+Rechecked the current Fellowship call, linked RFP, Fellowship FAQ, grant eligibility guide, Human-Scale AI call and its FAQ. The Fellowship RFP explicitly mentions community-run environmental sensing for biodiversity, making it a plausible theme lead; it remains conditional on a founder's own eligibility, intended community, documented need, charitable public benefit, time commitment and applicant-authored LOI. Mozilla's AI policy permits supportive brainstorming/clarity/translation, not full answer generation. The Human-Scale AI Incubator is a no-go on current evidence: it asks for a working AI product already deployed with its intended community, AI core to the solution and early product-community-fit evidence. The Field Companion is an observation/review tool and no AI product-community fit is documented.
+
+Updated sources 489–494 and the two opportunity records, with a private blank readiness checklist under ignored `funding/`. Added catalog regression coverage. No applicant facts or application answers were written; no portal or external contact was used. Keep the five-track goal **active**. **Next:** only consider the individual Fellowship if Raviv confirms a genuine intended community/need, eligibility, availability and desire to apply; keep the Incubator closed unless its technology/community evidence changes. Continue the other research, product, open-source, discovery and benchmark work in parallel.
+
 ## October 31 post-merge readback — release gate still fails on Pages
 
 PR [#613](https://github.com/Metivity/talk2nature/pull/613) merged to `main` as `622a4095c857b81a1eb4af972e2b35a6b8ecd999`. Its Public checks workflow **41170094342** completed successfully, including repository, browser-tool, Android and preview-site jobs. The live verifier was freshly run with TLS verification against `https://metivity.github.io/talk2nature`; it still fails on `/app/station/` because the deployed copy lacks **Listen-only by design.** The manual Pages workflow was not dispatched. Keep the goal active; next deploy clean `main` through an action-capable authorized Metivity session and verify the live route. Physical-device and independent-novice acceptance remain open.
