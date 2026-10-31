@@ -1,5 +1,21 @@
 # Talk2Nature goals
 
+## October 31 continuation — verify the live discovery gap
+
+**Question:** does the deployed public site expose the current research inventory and current-main pages to crawlers and visitors?
+
+**Evidence:** fresh TLS-verified requests returned HTTP 200 for `sitemap.xml` (154 canonical routes), `robots.txt` (`Allow: /` and the sitemap directive), and `/research/resources/` (showing **284 resources**). The current public build validates **310 resources**, produces **162 pages plus 404**, and passes the explicit-origin site check (**163 HTML documents / 11,504 links / 162 reachable routes**). Route comparison preserved all 154 live URLs and found eight additional current-main research pages. Direct requests for all eight returned HTTP 404, confirming they are not deployed. The live resource page still shows 284 records. A public search result surfaced the resource directory with the 284-record snippet and surfaced the frontiers page; this is public search-result evidence, not Search Console coverage, traffic, or an indexing census.
+
+**Decision:** the current build preserves existing routes and its crawler metadata is valid, but the live site is behind by eight research pages and 26 catalog records. Do not claim SEO is complete or rankings improved. Deploy the checked public build using the authorized Metivity Pages action, then verify the eight routes, catalog count, canonicals, sitemap and `robots.txt` again. The current browser is signed into `raviv-lgtm`, and the available GitHub connector has no manual workflow-dispatch operation, so no deployment was made.
+
+## October 31 continuation — keep Zero Command acceptance active
+
+On `main` at `c25e431`, the source keeps the invented no-microphone example first and preserves passive, visible, person-started, local handling. The TLS-verified live-site checker still fails at `/app/station/`: the deployed copy lacks **Listen-only by design**. Keep the animal-directed boundary intact; no generated call, prompt, unattended browser capture, or animal playback is added to make the site appear interactive. Physical-device, assistive-technology and independent-newcomer acceptance remain **not run**. After the live release is current, use [`ZERO_COMMAND_DEVICE_CHECKLIST.md`](ZERO_COMMAND_DEVICE_CHECKLIST.md) on each named device and mode; do not infer acceptance from desktop emulation.
+
+## October 31 continuation — keep researcher onboarding versioned
+
+Refreshed [`RESEARCHER_START.md`](RESEARCHER_START.md) from a fresh depth-one clone at `65453d6bea88db4227e4b0758a506e4797da1edf`, then merged [PR #634](https://github.com/Metivity/talk2nature/pull/634) as `c25e431`. The three synthetic workflows reproduced; Python passed **244 tests** (one intentional skip), Node passed **171/171**, the focused guide regression passed **1/1**, and local/public-format builds and checks passed. This is maintainer software reproduction, not independent researcher completion or biological validation. Continue to measure independent task completion through the existing public forms; no outside reproduction has been verified.
+
 ## October 31 continuation — verify the invented path at a phone-sized viewport
 
 On the exact public-main tree for `01ab379`, a local headless Chromium run used mobile emulation at 390 × 844 CSS pixels on `/app/station/?mode=companion#station-console`. The linked Station disclosure and invented no-microphone action rendered without horizontal overflow. Starting the invented example produced a visible Synthetic session and enabled Stop; an instrumented `getUserMedia` wrapper observed **0 microphone requests**. Stop opened a partial invented recap with the player still paused; Discard returned the Station to Ready. No live-microphone recording, animal, playback, upload or participant data was used.
