@@ -1,7 +1,7 @@
 import {addQuickObservation, sessionRecap} from './observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from './window-model.mjs';
 import {animalPicker} from './animal-picker.mjs';
-import {stationPreset} from './station-preset.mjs';
+import {microphoneCaptureAllowed, stationPreset} from './station-preset.mjs';
 import {StationSession, wavBytes, SOURCE_LABELS} from './station-model.mjs';
 import {sessionFiles, zipFiles} from './station-export.mjs';
 import {AudioSession} from './station-audio.mjs';
@@ -10,7 +10,8 @@ import {emptyEventsMessage, nextEventFocusId} from './station-review-ui.mjs';
 const $ = id => document.getElementById(id);
 let session = null, capture = null, active = false, pending = false, pendingSynthetic = false, exporting = false, run = 0, settings = {}, levels = [], wake = null, deadline = null, watchdog = null, playerUrl = null, playbackPending = false, dirty = false, lastEventCount = 0, lastFrameAt = 0;
 const animal = animalPicker(document, 'station');
-const preset = stationPreset(new URL(location.href).searchParams.get('mode'));
+const routeMode = new URL(location.href).searchParams.get('mode');
+const preset = stationPreset(routeMode);
 if (preset) {
   $('station-capture-mode').value = preset.captureMode;
   if (preset.animalContext) animal.set(preset.animalContext);
@@ -78,6 +79,10 @@ function stop(reason = 'user_stop') {
 }
 async function start(synthetic) {
   if (pending || active || exporting) return;
+  if (!synthetic && !microphoneCaptureAllowed(routeMode)) {
+    status('This example is microphone-free. Return to the station to choose a real session.');
+    return;
+  }
   if (!synthetic && !$('station-permission').checked) { status('Confirm that you have permission to record this setting before starting the microphone.'); return; }
   if (!checkAlias()) return;
   if (dirty && !window.confirm('Starting a new moment will clear this one from the page. Download a copy first if you want to keep it.')) return;

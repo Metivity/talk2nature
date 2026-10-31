@@ -80,6 +80,7 @@ test('the app offers a parrot visit and wires it to the editable animal picker',
   assert.match(home,/app\/station\/\?mode=parrot/);
   assert.match(home,/calls, mimicked words, nearby human voices and visible context separately/);
   assert.match(app,/parrot: \['PARROT FIELD VISIT'/);
-  assert.match(station,/stationPreset\(new URL\(location\.href\)\.searchParams\.get\('mode'\)\)/);
+  assert.match(station,/const routeMode = new URL\(location\.href\)\.searchParams\.get\('mode'\)/);
+  assert.match(station,/stationPreset\(routeMode\)/);
   assert.match(station,/animal\.set\(preset\.animalContext\)/);
 });

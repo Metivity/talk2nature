@@ -6,13 +6,13 @@ import {webcrypto} from 'node:crypto';
 import {animalPicker} from '../web/assets/animal-picker.mjs';
 import {addQuickObservation, sessionRecap} from '../web/assets/observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from '../web/assets/window-model.mjs';
-import {stationPreset} from '../web/assets/station-preset.mjs';
+import {microphoneCaptureAllowed, stationPreset} from '../web/assets/station-preset.mjs';
 import {StationSession, SOURCE_LABELS, wavBytes} from '../web/assets/station-model.mjs';
 import {sessionFiles, zipFiles} from '../web/assets/station-export.mjs';
 import {openSessionBundle, sessionSummary} from '../web/assets/session-import.mjs';
 import {emptyEventsMessage, nextEventFocusId} from '../web/assets/station-review-ui.mjs';
 
-function setup() {
+function setup(mode = 'companion') {
   const elements = new Map();
   const state = {confirm: false, confirmations: 0, confirmationText: [], playerPlays: 0, playerPauses: 0, documentEvents: {}, windowEvents: {}, capture: null, downloads: [], objectUrls: new Map()};
   let document;
@@ -84,15 +84,27 @@ function setup() {
     .replace(/^import .*;\n/gm, '')
     .replaceAll('import.meta.url', '"https://talk2nature.test/assets/station.js"');
   vm.runInNewContext(source, {
-    addQuickObservation, sessionRecap, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset,
+    addQuickObservation, sessionRecap, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset, microphoneCaptureAllowed,
     StationSession, wavBytes, SOURCE_LABELS, sessionFiles, zipFiles, AudioSession: SyntheticAudioSession,
     emptyEventsMessage, nextEventFocusId, document, window, navigator: {},
-    location: {href: 'https://talk2nature.test/app/station/?mode=companion#station-console'},
+    location: {href: `https://talk2nature.test/app/station/?mode=${mode}#station-console`},
     URL: TestURL, Blob, crypto: webcrypto, performance: {now: () => 1000},
     setTimeout: () => 1, clearTimeout() {}, setInterval: () => 2, clearInterval() {}
   });
   return {get, observations, state, document, activeElement: () => document.activeElement};
 }
+
+test('the synthetic-only route rejects a hidden real-capture control but allows its invented example', async () => {
+  const h = setup('demo');
+  h.get('station-permission').checked = true;
+  await h.get('station-start').fire('click');
+  assert.equal(h.state.capture, null, 'no AudioSession should be created by an attempted real start');
+  assert.match(h.get('station-status').textContent, /microphone-free/);
+
+  await h.get('station-demo').fire('click');
+  assert.equal(h.state.capture.synthetic, true);
+  await h.get('station-stop').fire('click');
+});
 
 test('companion rehearsal stays microphone-free and discard returns a marked review to Ready', async () => {
   const h = setup();

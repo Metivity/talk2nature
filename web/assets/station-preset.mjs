@@ -1,4 +1,8 @@
 // A convenience for observer-selected studies; never an automatic animal ID.
+export function microphoneCaptureAllowed(mode) {
+  return mode !== 'demo';
+}
+
 export function stationPreset(mode) {
   if (mode === 'companion') return {captureMode: 'window'};
   if (mode !== 'parrot') return null;
