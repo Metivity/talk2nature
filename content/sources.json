@@ -5717,5 +5717,18 @@
       "dataset": "The structured metadata declares CC BY 4.0 for the dataset release.",
       "scope": "This record is metadata evidence, not verification of provenance, consent, exact-file coverage or any code/model license."
     }
+  },
+  {
+    "id": 562,
+    "title": "Coordination without a brain: investigating environmental sensing and electrical signaling in fungal networks (Matteo Buffi thesis, 2025)",
+    "url": "https://doi.org/10.35662/unine-thesis-3210",
+    "description": "The official University of Neuchatel repository record identifies Matteo Buffi’s 180-page 2025 doctoral thesis. Its Chapter 4 reproduces the 2025 fungal-potential-card article and a supplementary section whose index lists Figures S1–S7 and Method S1 for analysis code. This thesis copy is a source for checking the supplement text, not a separate code or data manifest.",
+    "checked": "2026-10-31",
+    "origin": "Reviewed the official repository record and the thesis PDF text around Chapter 4 and its supplementary pages. The rendered text identifies Supplemental Material Chapter 4 and Method S1, with a MATLAB R2024b code listing. The repository record view reviewed showed no separate thesis or code license field. No thesis PDF, code file, or dataset file was downloaded or executed.",
+    "review_url": "https://libra.unine.ch/entities/publication/f97a01ae-d004-495b-9c74-ef0ee6577f3b",
+    "review_url_label": "University of Neuchatel thesis record",
+    "rights": {
+      "thesis_and_embedded_supplement": "No separate license was displayed in the repository record view reviewed. Do not infer a reuse license for the thesis or code from the embedded article’s CC BY 4.0 notice."
+    }
   }
 ]
