@@ -88,8 +88,12 @@ class SiteTests(unittest.TestCase):
         home=(project_root/'web'/'templates'/'app.html').read_text()
         intro=(project_root/'web'/'templates'/'app-station-intro.html').read_text()
         station=(project_root/'web'/'templates'/'station.html').read_text()
+        station_script=(project_root/'web'/'assets'/'station.js').read_text()
         compare=(project_root/'web'/'templates'/'compare.html').read_text()
+        contributor=(project_root/'CONTRIBUTING.md').read_text()
         self.assertIn('Try an example · no microphone',home)
+        self.assertIn('**Finish and review**',contributor)
+        self.assertNotIn('**Stop recording**',contributor)
         self.assertIn('Observe without prompting.',intro)
         self.assertIn('Talk2Nature sends no animal-directed sounds or prompts.',intro)
         self.assertIn('capture stops if you leave this page.',intro)
@@ -97,13 +101,18 @@ class SiteTests(unittest.TestCase):
         self.assertIn('use headphones or move well away.',intro)
         self.assertIn('You do not need to call, imitate or prompt an animal;',station)
         self.assertIn('no animal calls or prompts.',station)
-        live_labels=('Try without a microphone','Mark an observation','Stop recording',
+        self.assertIn('Finish and review',station)
+        self.assertIn("'End rehearsal'",station_script)
+        live_labels=('Try without a microphone','Mark an observation','Finish and review',
                      'Save this moment','I saved the file',
                      'Open Compare moments to review it','Choose saved moment')
         for label in live_labels:
             with self.subTest(button=label):
                 self.assertIn(label,station if label!='Choose saved moment' else compare)
-        expected_steps=('Try an example · no microphone',)+live_labels
+        expected_steps=('Try an example · no microphone','Try without a microphone',
+                        'Mark an observation','Finish and review','End rehearsal',
+                        'Save this moment','I saved the file',
+                        'Open Compare moments to review it','Choose saved moment')
         for name in ('README.md','CONTRIBUTING.md'):
             with self.subTest(document=name):
                 copy=(project_root/name).read_text()
