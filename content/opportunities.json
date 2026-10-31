@@ -3,15 +3,15 @@
     "slug": "tnufa",
     "name": "Israel Innovation Authority · Tnufa",
     "type": "Grant",
-    "deadline": "2026-10-08",
-    "deadline_time": "12:00",
+    "deadline": "2026-11-09",
+    "deadline_time": "12:00 Israel time",
     "deadline_source_id": 121,
-    "status": "Deadline passed",
-    "amount": "Up to NIS 200,000; up to 80% of approved costs.",
+    "status": "Open · applicant eligibility unverified",
+    "amount": "Up to 80% of approved costs, capped at NIS 200,000 for up to 12 months; excludes salary and overhead, and successful commercialization can trigger 3% royalties.",
     "source_id": 26,
-    "fit": "Early technological R&D; genuine novelty, applicant eligibility, matching funds and IP obligations need verification.",
-    "next_action": "The listed October 8, 2026 deadline has passed. The official Tnufa program page did not show a newer submission date when checked October 11. Monitor the program page for its next cycle; before preparing, verify the applicant route, novelty, budget and IP obligations. General website development alone is not a sufficient R&D case.",
-    "verified": "2026-10-11",
+    "fit": "Potential early technical R&D fit only if the applicant is an eligible Israeli resident founder or qualifying Israeli company and can show a technically novel, globally relevant R&D plan; applicant status and project fit are unverified.",
+    "next_action": "The official program and open-applications pages show a 12:00 Israel-time deadline on November 9, 2026. Before considering an application, confirm applicant eligibility, a bounded technical R&D question, novelty, budget, previous funding, IP obligations and the non-salary eligible-cost plan. Website development alone is not a sufficient R&D case.",
+    "verified": "2026-10-31",
     "application_status": "Not submitted"
   },
   {
@@ -58,8 +58,8 @@
     "amount": "60% of an eligible Pre-Seed investment round, up to a NIS 2 million grant; subject to program terms.",
     "source_id": 27,
     "fit": "Potentially relevant only to an Israeli-incorporated startup with commercial R&D and a private-investment round. This is not stand-alone project funding; Talk2Nature's applicant company and signed investor commitment are not documented.",
-    "next_action": "Rechecked the official IIA page on October 27: the cutoff remains November 9, 2026 at 12:00 Israel time. The page requires an Israeli-incorporated commercial R&D company; funding no more than NIS 3 million through three months before the submission month; prior-calendar-year revenue no more than NIS 300,000; a signed recognized-investment commitment of at least 15% of the requested round; a round no more than NIS 6 million with at least 75% allocated to R&D; and an eligible R&D plan. Decision: no-go for this call at the project's documented readiness. Reconsider only if an eligible applicant company and signed investor commitment are established and the financial thresholds and round plan are verified. The official open-source procedure index lists Pre-Seed among associated tracks, but the linked procedure PDF identifies itself as Annex 6 to Track 1, and the current July 2026 Track 7 rules do not expressly discuss open-source treatment in the text reviewed. Track 7 applicability and treatment of pre-existing or funded project assets remain unresolved; obtain written IIA confirmation and project-specific legal review before any application. No draft or submission was made.",
-    "verified": "2026-10-27",
+    "next_action": "Rechecked the official IIA page on October 31: the cutoff remains November 9, 2026 at 12:00 Israel time. The page requires an Israeli-incorporated commercial R&D company; funding no more than NIS 3 million through three months before the submission month; prior-calendar-year revenue no more than NIS 300,000; a signed recognized-investment commitment of at least 15% of the requested round; a round no more than NIS 6 million with at least 75% allocated to R&D; and an eligible R&D plan. Decision: no-go for this call at the project's documented readiness. Reconsider only if an eligible applicant company and signed investor commitment are established and the financial thresholds and round plan are verified. The official open-source procedure index lists Pre-Seed among associated tracks, but the linked procedure PDF identifies itself as Annex 6 to Track 1, and the current July 2026 Track 7 rules do not expressly discuss open-source treatment in the text reviewed. Track 7 applicability and treatment of pre-existing or funded project assets remain unresolved; obtain written IIA confirmation and project-specific legal review before any application. No draft or submission was made.",
+    "verified": "2026-10-31",
     "application_status": "Not submitted · no-go at current documented readiness"
   },
   {
@@ -336,5 +336,35 @@
     "next_action": "Do not pursue this cycle unless the project can verify, before November 20, a core AI product already used by its intended community, credible early product-community-fit evidence, and an eligible funding structure. Do not pitch a general animal-language model. No application was prepared or submitted.",
     "verified": "2026-10-28",
     "application_status": "Not submitted · current readiness mismatch documented"
+  },
+  {
+    "slug": "academic-ai-compute-voucher",
+    "name": "Israel Innovation Authority · Academic AI compute vouchers",
+    "type": "In-kind compute voucher",
+    "deadline": "2026-11-04",
+    "deadline_time": "12:00 Israel time",
+    "deadline_source_id": 557,
+    "status": "Open · budgeted academic institutions only",
+    "amount": "80% discount from market price; minimum use is 8 Nvidia B200 accelerators for 480 hours. This is compute access, not cash.",
+    "source_id": 557,
+    "fit": "Partner-only and not ready for Talk2Nature: the applicant must be a budgeted academic institution, the work must be research-stage AI model training, and product development is excluded. Talk2Nature has no academic applicant or research host, no admitted dataset/benchmark, and no justified large-model compute requirement.",
+    "next_action": "Do not pursue this cycle. Revisit only if a qualified academic group leads a specific research question, documents why this minimum compute allocation is needed, and clears the project's data, rights, evaluation and institutional gates. Do not treat this voucher as funding for Talk2Nature or as evidence of a university partnership.",
+    "verified": "2026-10-31",
+    "application_status": "No academic partner identified; not submitted"
+  },
+  {
+    "slug": "industrial-nebius-model-voucher",
+    "name": "Israel Innovation Authority · Industrial Nebius compute vouchers",
+    "type": "In-kind compute voucher",
+    "deadline": "2026-11-05",
+    "deadline_time": "12:00 Israel time",
+    "deadline_source_id": 558,
+    "status": "Conditional · applicant and compute need unverified; no-go for November 5 at current readiness",
+    "amount": "30% discount from Nebius market price; minimum request is 16 Nvidia B200 accelerators or 72 Petaflops/s for one to six months. This is compute access, not cash.",
+    "source_id": 558,
+    "fit": "Only potentially relevant to a registered Israeli industrial corporation developing a commercial AI product. No eligible applicant entity or justified large-model training need is documented for Talk2Nature; this is not a grant for open-source project work.",
+    "next_action": "Do not submit for the November 5 round on current evidence. Revisit the official December 10 or January 7 round only if an eligible Israeli industrial applicant, a concrete commercial R&D work package, and a measured need for at least 16 accelerators or 72 Petaflops/s are independently established. Review current terms and compute pricing before any decision; no application, purchase, or company eligibility is confirmed.",
+    "verified": "2026-10-31",
+    "application_status": "No eligible company or compute plan confirmed; not submitted"
   }
 ]

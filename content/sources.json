@@ -210,18 +210,18 @@
   {
     "id": 26,
     "title": "Tnufa",
-    "description": "Israel Innovation Authority. Current Tnufa program page: eligible resident entrepreneurs or qualifying Israeli companies, grant terms, eligible costs and IP obligations. The October 8, 2026 cutoff has passed; no newer date was listed on the page when checked October 11.",
+    "description": "Israel Innovation Authority. Current Tnufa program page checked October 31, 2026: next deadline November 9 at 12:00 Israel time; eligibility, grant, cost and royalty terms reviewed.",
     "url": "https://innovationisrael.org.il/programs/מסלול-תנופה-קרן-ההזנק/",
-    "checked": "2026-10-11",
+    "checked": "2026-10-31",
     "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
   },
   {
     "id": 27,
     "title": "Pre-Seed fund",
-    "description": "Israel Innovation Authority. Official Pre-Seed track page rechecked October 27, 2026: November 9, 2026 at 12:00 Israel time. This is a co-investment round for an Israeli-incorporated commercial R&D startup, with company, funding, revenue, signed-investor and R&D-allocation requirements.",
+    "description": "Israel Innovation Authority. Current Pre-Seed track checked October 31, 2026: November 9 deadline, company/funding/revenue thresholds, R&D share and investor-commitment requirements reviewed.",
     "url": "https://innovationisrael.org.il/programs/preseed/",
-    "checked": "2026-10-27",
-    "origin": "Official Israel Innovation Authority Pre-Seed page rechecked October 27, 2026 for the November 9 noon cutoff, company and investor conditions, funding/revenue thresholds, R&D allocation and grant cap. This does not establish Talk2Nature applicant eligibility or investment readiness."
+    "checked": "2026-10-31",
+    "origin": "Official Israel Innovation Authority Pre-Seed page rechecked October 31, 2026 for the November 9 noon cutoff and eligibility terms. This does not establish Talk2Nature applicant eligibility or investment readiness."
   },
   {
     "id": 28,
@@ -1136,9 +1136,9 @@
     "id": 121,
     "title": "Israel Innovation Authority open application dates",
     "url": "https://innovationisrael.org.il/%D7%A4%D7%AA%D7%95%D7%97%D7%99%D7%9D-%D7%9C%D7%94%D7%92%D7%A9%D7%94/",
-    "description": "Official open-applications listing. Checked October 8, 2026; it lists the Tnufa and Pre-Seed deadlines on October 8 at 12:00 Israel time.",
-    "checked": "2026-10-08",
-    "origin": "Israel Innovation Authority live submission listing; checked October 8, 2026."
+    "description": "Official open-applications listing. Checked October 31, 2026: Tnufa and Pre-Seed close November 9 at 12:00 Israel time; the academic Nebius voucher closes November 4 at 12:00 and industrial large-model Nebius vouchers have rounds on November 5, December 10 and January 7.",
+    "checked": "2026-10-31",
+    "origin": "Israel Innovation Authority live submission listing; checked October 31, 2026. Separate call pages were reviewed for applicant type and terms."
   },
   {
     "id": 122,
@@ -5667,5 +5667,21 @@
     "url": "https://api.osf.io/v2/nodes/v72ce/",
     "checked": "2026-10-31",
     "origin": "Official OSF node API metadata read over verified TLS; project title, public status, modified date, inventory description and null root license field recorded. No file list or file payload accessed."
+  },
+  {
+    "id": 557,
+    "title": "Israel Innovation Authority academic AI-compute voucher call",
+    "description": "Official call for discounted Nebius GPU-compute vouchers for budgeted academic institutions doing research-stage AI model training; the published call lists a November 4, 2026 noon cutoff, an 80% discount and a minimum use of eight Nvidia B200 accelerators for 480 hours. It is not a cash grant and excludes product-development use.",
+    "url": "https://innovationisrael.org.il/kol_kore/usage-vouchers-rnd-research/",
+    "checked": "2026-10-31",
+    "origin": "Official Israel Innovation Authority call notice and current open-applications listing checked October 31, 2026; applicant class, eligible research stage, minimum compute, discount and closing time reviewed."
+  },
+  {
+    "id": 558,
+    "title": "Israel Innovation Authority industrial Nebius large-model compute voucher",
+    "description": "Official call for industrial corporations developing commercial AI products in Israel. The current round closes November 5, 2026 at 12:00 Israel time; later rounds close December 10 and January 7. Minimum request is 16 Nvidia B200 accelerators or 72 Petaflops/s, with a 30% discount for one to six months. This is a compute voucher, not cash.",
+    "url": "https://innovationisrael.org.il/kol_kore/vouchers-nebius-rd-labs/",
+    "checked": "2026-10-31",
+    "origin": "Official Israel Innovation Authority call page and open-applications listing checked October 31, 2026; applicant class, commercial-development scope, accelerator minimum, discount and submission dates reviewed."
   }
 ]
