@@ -1,5 +1,9 @@
 # Talk2Nature goals
 
+## October 31 post-merge readback — release gate still fails on Pages
+
+PR [#613](https://github.com/Metivity/talk2nature/pull/613) merged to `main` as `622a4095c857b81a1eb4af972e2b35a6b8ecd999`. Its Public checks workflow **41170094342** completed successfully, including repository, browser-tool, Android and preview-site jobs. The live verifier was freshly run with TLS verification against `https://metivity.github.io/talk2nature`; it still fails on `/app/station/` because the deployed copy lacks **Listen-only by design.** The manual Pages workflow was not dispatched. Keep the goal active; next deploy clean `main` through an action-capable authorized Metivity session and verify the live route. Physical-device and independent-novice acceptance remain open.
+
 ## October 31 continuation — make the Zero Command release check verify live behavior copy
 
 The public Field Companion needs stronger deployment evidence than reachable routes and SEO tags: its live primary action must open the invented example without a microphone, and the Station must show its listen-only and explicit Start/Stop boundary. Extended `scripts/check_live_site.py` to fetch `/app/station/`, check the primary home action and key Station disclosure, and reject stale action copy. Added regressions for a microphone-first homepage and missing Station disclosure.
