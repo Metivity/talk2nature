@@ -6405,5 +6405,52 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "interspecies-communication-ethics-review-2026",
+    "title": "Animal agency belongs in the method, not just the discussion",
+    "taxon": "Multispecies (focus on primates and dogs)",
+    "kind": "Interdisciplinary ethics review",
+    "year": "2026",
+    "source_ids": [
+      548,
+      549,
+      550,
+      551
+    ],
+    "review_depth": "Targeted review of the article abstract, Introduction, §§5.1 and 5.5, and publication/license/data statements through the Version of Record and PubMed Central full text. Also checked the official ARRIVE 2.0 description, current Norecopa PREPARE page, and EU Directive 2010/63/EU scope/definition. No individual cited empirical study was independently re-reviewed. No dataset, code or model was produced for Talk2Nature use.",
+    "finding": "Mamzer et al. argue that animal-communication research should consider animals as active participants and account for emotional and cognitive welfare, not only signal accuracy or physical harm. This is a useful ethical orientation for designing observations in which an animal can disengage and the observer's influence stays visible. It is not an operational welfare protocol or a measure of what a sound means.",
+    "limitations": "The review focuses mainly on primate and canine work, with selected examples from other groups, and combines empirical literature with theoretical ethics. The article structure provides no dedicated literature-search strategy, selection criteria or evidence grading, so its coverage cannot be treated as systematic. Its analogy between voluntary animal participation and consent is a normative framing, not legal consent or a substitute for ethics review. The EU Directive has a defined jurisdiction and scope around animals used in procedures; do not assume it either applies or does not apply to a proposed passive-observation protocol without local institutional/legal review. ARRIVE 2.0 is reporting guidance and PREPARE is a voluntary planning aid; neither is regulatory approval. None of these sources validates Talk2Nature software or a model.",
+    "lesson": "Keep animal-facing output absent and remember that human presence and recording can still affect behavior. Preserve observer interpretation separately from observable behavior and model predictions. Use PREPARE as a planning prompt and ARRIVE 2.0 when applicable for transparent reporting, not as substitutes for local institutional review. Before participant research, define the protocol, welfare stop rules, human consent and data rights, privacy, retention, storage and withdrawal plan.",
+    "next_review": "Obtain qualified avian-welfare and methods review of a proposed parrot field study and ask the relevant institution to determine which local requirements apply. Keep recording intake closed until the protocol, rights, privacy and storage gates are approved.",
+    "reviewed": "2026-10-31",
+    "expert_review": "Not independently reviewed by a specialist in animal ethics, avian welfare or bioacoustic methods.",
+    "review_stage": "Targeted primary-source ethics review; cited empirical findings not independently audited",
+    "year_label": "Article publication year",
+    "study_snapshot": [
+      [
+        "Scope",
+        "An interdisciplinary review focused mainly on primates and dogs, with selected examples from elephants and marine mammals."
+      ],
+      [
+        "Ethical frame",
+        "The authors emphasize animal agency, emotional and cognitive welfare, voluntary participation and the ability to withdraw."
+      ],
+      [
+        "Framework roles",
+        "PREPARE is a voluntary planning aid; ARRIVE 2.0 guides reporting; Directive 2010/63/EU has a defined EU legal scope. None alone determines approval for a Talk2Nature observation protocol."
+      ],
+      [
+        "Project use",
+        "Treat this as a design and ethics perspective; it does not supply a dataset, annotation protocol or semantic decoder."
+      ],
+      [
+        "Evidence limit",
+        "No dedicated search-methods or evidence-grading section was identified; primary claims need their own source review before reuse."
+      ]
+    ],
+    "purpose": "Behavior & communication",
+    "review_locator": "Mamzer et al.: Abstract; §1 Introduction; §§5.1 and 5.5; article license, conflicts and data-availability statements. Directive 2010/63/EU: Articles 1 and 3. ARRIVE: official About and 2.0 pages. PREPARE: current official Norecopa page. No dedicated systematic-search strategy or evidence-grading section identified in Mamzer et al.",
+    "seo_description": "A targeted review of animal agency, welfare and research guidance; it does not approve a study or decode animal calls."
   }
 ]
