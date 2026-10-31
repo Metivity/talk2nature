@@ -1,6 +1,26 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 30, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated October 31, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+
+## Start here
+
+**Try the browser workflow (a few minutes, no setup):** open [Compare moments](https://metivity.github.io/talk2nature/app/compare/) and choose **Try an example pair**. Compare the complete and partial invented sessions, their observer-entered notes and sampling differences. Close one session and confirm the other remains available. Ask what the interface lets you describe and which claims about animal behavior it cannot support. No microphone, playback or upload is needed. For a deeper file-format check, try the optional [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/); Audacity is only needed for that route. A project estimate puts it at about 20 minutes; independent completion time has not been measured.
+
+**Run the research-code example (optional):** Git and Python 3.10+; no extra packages or animal media. From a terminal:
+
+```sh
+git clone --depth 1 --branch main https://github.com/Metivity/talk2nature.git
+cd talk2nature
+git rev-parse HEAD
+python3 --version
+python3 -m talk2nature.annotations examples/annotations.synthetic.json
+python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/reproduction/standard.json
+python3 -m talk2nature.manifest examples/interactions.dyadic.synthetic.json --output tmp/reproduction/dyadic.json
+```
+
+Record the commit printed by `git rev-parse HEAD` with any report. The annotation and split fixtures exercise **separate** tools; the annotation report is not converted or admitted into either evaluation manifest. Split files go under ignored `tmp/reproduction/`.
+
+To share a usability barrier, use the [short first-use form](https://github.com/Metivity/talk2nature/issues/new?template=first-use.yml); one sentence is enough and device details are optional. Posting requires GitHub sign-in and creates a public issue. For a technical rerun, use the [workflow report form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Keep private media and research details out of either report.
 
 **Latest focused code check (October 30):** reran the three commands below from a fresh depth-one clone of public `main` at [`ba4950466f055699cdafdf41cb2016c9c573a3b9`](https://github.com/Metivity/talk2nature/commit/ba4950466f055699cdafdf41cb2016c9c573a3b9), using Python 3.12.5. The annotation fixture reported an invented 8-second recording, two events, 2 seconds of interval-union coverage and zero observed context. The standard split returned 10 groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split returned 10 groups and 6/2/4 records (6/2/2 groups). The first three linked dyadic events stayed together in test. Both split manifests used policy SHA-256 `5d483661cbb78bb1f62578c2cf3dbe17c6ffb075d52f4fe2e3acf5c2281eb8d9`. The generated files stayed under ignored `tmp/reproduction/`; the tracked clone remained clean. This was a focused maintainer rerun; the full suites and builds below were not rerun on this commit.
 
@@ -15,26 +35,6 @@ This is maintainer-run verification with synthetic fixtures, not independent rep
 Choose by question, not by dataset size. The [cross-species F0 note](https://metivity.github.io/talk2nature/research/bioacoustic-f0-estimation-cross-species-2025/) describes a pitch-estimation candidate with 13 waveform taxa and 233 monk-parakeet calls; it measures a signal feature, not call meaning, and remains metadata-only. Great-tit song structure, zebra-finch turn-taking, bat context prediction and the parrot phone-app cohort are separate research paths with different open gates. See the [species and dataset decision](FIRST_ANIMAL_PLAN.md) for the evidence and limits. No current candidate establishes call meaning; the bat candidate run card is a review lead, not a ready benchmark. AutoResearch remains **NOT READY**.
 
 **For team annotation:** groups that need synchronized video and multi-person event coding can review our [Praat++ note](../praatplusplus-annotation-tool-2026/). The note concerns the pinned source revision only: static review found a hard-coded Flask session secret, a server binding to all interfaces, and first-login account setup for unregistered allowlisted names. Do not expose that revision on a shared network or use it with sensitive media. This was not a runtime or complete security test, and it says nothing about later revisions. Praat++ is not part of the Field Companion or a Talk2Nature service; any institutional use needs a current-revision security and privacy review.
-
-
-
-## Choose one route
-
-**Quick browser route (a few minutes; no setup):** open [Compare moments](https://metivity.github.io/talk2nature/app/compare/) and choose **Try an example pair**. Compare the complete and partial sessions, their observer-entered notes and the sampling differences. Ask yourself: what does the interface let you describe, and what would be an unsupported claim about animal behavior? Close one session and confirm the other remains available. No microphone, playback or upload is needed. For a deeper file-format check, use the optional [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/); it takes about 20 minutes and Audacity is only needed for that route. To share a barrier or useful gap, use the [short first-use form](https://github.com/Metivity/talk2nature/issues/new?template=first-use.yml); one sentence is enough and device details are optional. Posting requires GitHub sign-in and creates a public issue. For a technical rerun, use the separate [workflow report form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Keep private media and research details out of either report. The time estimate is a project estimate; independent first-use timing has not yet been measured.
-
-**Research-code route (optional):** use the current public repository and its synthetic fixtures. Git and Python 3.10+ are required; the Python tools use the standard library, so no extra packages or animal media are needed.
-
-```sh
-git clone --depth 1 --branch main https://github.com/Metivity/talk2nature.git
-cd talk2nature
-git rev-parse HEAD
-python3 --version
-python3 -m talk2nature.annotations examples/annotations.synthetic.json
-python3 -m talk2nature.manifest examples/recordings.synthetic.json --output tmp/reproduction/standard.json
-python3 -m talk2nature.manifest examples/interactions.dyadic.synthetic.json --output tmp/reproduction/dyadic.json
-```
-
-Record the commit printed by `git rev-parse HEAD` with any report. These commands use current `main`; the generated split files are written under ignored `tmp/reproduction/`. The annotation and split fixtures exercise **separate** tools. The annotation report is not converted or admitted into either evaluation manifest.
 
 ## Expected observations
 

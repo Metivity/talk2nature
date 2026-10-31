@@ -35,11 +35,18 @@ class SiteTests(unittest.TestCase):
         self.assertIn('Zenodo v1 and v2 pages display no dataset license',birdpark)
         self.assertIn('not receiver understanding, behavior meaning or communication',birdpark)
 
-    def test_researcher_start_guide_keeps_quick_start_separate_from_history(self):
+    def test_researcher_start_guide_puts_quick_routes_before_verification_history(self):
         project_root=Path(__file__).resolve().parents[1]
         guide=(project_root/'docs'/'RESEARCHER_START.md').read_text()
         history=(project_root/'docs'/'RESEARCHER_START_HISTORY.md').read_text()
-        self.assertIn('## Choose one route',guide)
+        start=guide.index('## Start here')
+        browser=guide.index('**Try the browser workflow',start)
+        code=guide.index('**Run the research-code example',browser)
+        evidence=guide.index('**Latest focused code check')
+        self.assertLess(start,browser)
+        self.assertLess(browser,code)
+        self.assertLess(code,evidence)
+        self.assertIn('No microphone, playback or upload is needed',guide[browser:code])
         self.assertIn('## Three useful first contributions',guide)
         self.assertIn('[verification history](RESEARCHER_START_HISTORY.md)',guide)
         self.assertNotIn('## October 24 current public-main clean-clone recheck',guide)
@@ -633,6 +640,28 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(dataset['acquisition'],'metadata_only')
         self.assertEqual(dataset['files'],[])
         self.assertIn('not an audio dataset',dataset['decision'])
+
+    def test_interspecies_ethics_note_keeps_source_scope_and_local_review_gate(self):
+        project_root=Path(__file__).parents[1]
+        note=next(n for n in load('research') if n['slug']=='interspecies-communication-ethics-review-2026')
+        self.assertEqual(note['source_ids'],[519,520,521,522])
+        self.assertIn('not legal consent',note['limitations'])
+        self.assertIn('without local institutional/legal review',note['limitations'])
+        resources={r['id']:r for r in json.loads((project_root/'research/resources.json').read_text())['resources']}
+        selected={key:resources[key] for key in [
+            'interspecies-communication-ethics-paper-2026',
+            'animal-research-directive-2010-63-eu',
+            'arrive-guidelines-2',
+            'prepare-animal-research-planning',
+        ]}
+        self.assertEqual(selected['interspecies-communication-ethics-paper-2026']['rights']['license'],'CC BY 4.0 as declared by the publisher for the article')
+        self.assertEqual(selected['interspecies-communication-ethics-paper-2026']['rights']['scope'],'Article text only. Cited works, third-party figures and media keep separate terms.')
+        self.assertEqual(selected['animal-research-directive-2010-63-eu']['rights']['commercial_use'],'unresolved')
+        self.assertEqual(selected['arrive-guidelines-2']['rights']['redistribution'],'unresolved')
+        self.assertIn('voluntary',selected['prepare-animal-research-planning']['access'])
+        sources={source['id']:source for source in load('sources')}
+        self.assertEqual(sources[521]['url'],'https://arriveguidelines.org/arrive-guidelines')
+        self.assertIn('Essential 10',sources[521]['origin'])
 
     def test_resource_directory_lists_records_and_separates_rights_from_acquisition(self):
         with tempfile.TemporaryDirectory() as d:
