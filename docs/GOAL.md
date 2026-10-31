@@ -1,5 +1,13 @@
 # Talk2Nature goals
 
+## October 31 continuation — keep Zero Command as the next acceptance gate
+
+Raviv asked to continue the Zero Command work and keep the overall program active. The latest public source baseline is `e1cef8a` (PR #628 merged; Public checks passed). A focused refresh on that source passed **14/14** browser/native safeguards: no animal-facing output from observation assets, no autoplay, fresh confirmation before review playback, browser capture cleanup when the page leaves the foreground, Android notification/output constraints, no silent service restart, and keyboard focus recovery while permission is pending.
+
+This confirms source-level protections only. It does not establish physical iPhone/Safari or Android/Chrome behavior, VoiceOver/TalkBack output, installed-PWA behavior, physical native-Android behavior, or independent newcomer comprehension. No animal, microphone, playback, real recording, upload, or participant data was used in this refresh.
+
+**Next product gate:** use [`ZERO_COMMAND_DEVICE_CHECKLIST.md`](ZERO_COMMAND_DEVICE_CHECKLIST.md) for a named-device, no-animal walkthrough of the invented example, permission denial/cancellation, deliberate Start and Stop, interruption, confirmed human-only playback, and save/reopen/discard of the same invented file. Record browser tab, installed web app, native Android, keyboard, VoiceOver and TalkBack separately; mark unavailable runs **not run**. Then conduct an independently observed newcomer walkthrough using invented material and note comprehension without coaching. Until those runs happen, keep the product in passive-observation scope and do not claim device-wide silence, field readiness, translation, or independent usability. The five-track project goal remains **active**; real-data admission and AutoResearch remain **NOT READY**.
+
 ## October 31 continuation — keep Zero Command and the five-track goal moving
 
 The five-track project goal remains **active**. PR [#627](https://github.com/Metivity/talk2nature/pull/627) is merged to `main` as [`3ca40d1`](https://github.com/Metivity/talk2nature/commit/3ca40d199c7e618cb17465bf3521e9e6e174c15e); Public checks passed repository, browser-tool, native Android and preview-site jobs. This documentation-only change reconciles the history of the synthetic browser playback-cancellation check. It changes no app behavior and is not a Pages deployment.
