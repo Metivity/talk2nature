@@ -212,6 +212,10 @@ Added Buffi et al. (2025), an iScience method study using a fungal-potential car
 
 Paper, Mendeley raw-voltage dataset and supplementary Method S1 are separate catalog records. The article and dataset pages display CC BY 4.0; the code-component license is unresolved. The Mendeley page describes data from before/after stimuli but did not expose its file manifest in this review. Nothing was downloaded or executed. Keep every component metadata-only until files, provenance, controls, grouping, code and rights receive separate review. This is a fungal electrophysiology reference, not animal data or the first animal benchmark.
 
+### October 31 supplement-text follow-up
+
+The official University of Neuchatel repository record links Matteo Buffi's doctoral thesis; its Chapter 4 reproduces Supplemental Material Chapter 4, whose index lists Figures S1–S7 and Method S1. The extracted Method S1 text describes an eight-channel HDF5 input and a MATLAB R2024b analysis listing. This clarifies the available Method S1 content, but the article's software table still points to Document S2, which was not present in the supplement index reviewed. The thesis record does not display a separate license for the thesis or embedded code. No PDF, code or data was downloaded, no code was executed and no file-level dataset terms or replicate mapping were verified. Keep those components separate and metadata-only pending an authorized exact manifest and rights review; see source 562.
+
 ## October 12: BioCPPNet source-separation method and code
 
 Added separate records for the 2021 BioCPPNet paper and its linked implementation, plus an original research note distinguishing source separation from communication decoding. Reviewed the primary paper's methods, results, data/code statements and article rights, along with the repository README and visible root inventory at commit 7092851cbd9a32116e6453583823d5334ab11f1b. The article states CC BY 4.0 for the article text; the code repository has no visible LICENSE at the reviewed snapshot. The paper identifies public macaque and Egyptian-fruit-bat datasets and restricted dolphin recordings.

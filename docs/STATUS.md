@@ -1,5 +1,13 @@
 # Project status
 
+## October 31 — inspect fungal supplement text without acquiring files
+
+Reviewed the official University of Neuchatel thesis record and extracted text from its Chapter 4 copy of the article's supplementary section. The index lists Figures S1–S7 and Method S1; the reproduced listing identifies MATLAB R2024b and HDF5 input arrays. The paper's software table separately points to Document S2, so the supplement/code cross-reference remains unresolved. The reviewed thesis record does not display a separate license for the thesis or embedded code. No PDF or code was downloaded or executed, and no dataset payload was acquired.
+
+The Mendeley v1 page showed no visible file rows; an unauthenticated file-list request returned HTTP 401. Dataset provenance, treatment-to-file mapping, file-level rights and independent-culture structure remain unknown. Added source **562** and updated separate paper, dataset and code records plus the research note. Keep all components metadata-only and outside the animal benchmark. The DOI crosswalk is resolved at metadata level; the next research gate is an authorized exact file manifest and qualified mycology/electrophysiology review. AutoResearch and real-data admission remain **NOT READY**.
+
+**Validation:** the catalog accepts **310 resources**; Python **244 passed, 1 skipped**; Node **171/171 passed**. The local noindex build produced **162 pages plus 404** and checked **163 HTML pages / 11,341 links**. The explicit-origin public-format candidate produced **162 pages plus 404** and checked **163 HTML pages / 11,504 links / 162 reachable public routes**. The generated fungal note's title, canonical route, thesis link and Method S1 reference were confirmed. `git diff --check` passed. This is a local candidate, not a deployment or a scientific reproduction.
+
 ## October 31 — refresh the Zero Command source gate
 
 On clean public baseline `e1cef8a` (PR #628), reran `node --test tests/zero-command.test.mjs tests/native-zero-command.test.mjs tests/review-audio.test.mjs`; **14/14 passed**. The focused suites cover browser observation assets, deliberate/confirmed human-review playback, hidden-page cleanup, pending-permission focus recovery, Android notification/output constraints, and prevention of silent service restart.
