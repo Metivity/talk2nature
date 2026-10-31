@@ -52,6 +52,13 @@ test('observation assets cannot trigger animal-facing browser output', async () 
 test('animal-facing boundary is visible in the Station and playback cannot autoplay', async () => {
   const station = await readFile(path.join(templates, 'station.html'), 'utf8');
   const appIntro = await readFile(path.join(templates, 'app-station-intro.html'), 'utf8');
+  for (const file of ['station.js', 'device-check.js']) {
+    const source = await readFile(path.join(assets, file), 'utf8');
+    assert.match(source, /createNode:\s*context\s*=>\s*new AudioWorkletNode\(context,\s*'station-capture'/,
+      `${file} must route captured audio through the tested zero-output worklet`);
+    assert.match(source, /moduleUrl:\s*new URL\('\.\/station-capture\.mjs'/,
+      `${file} must load the processor whose output channels are tested as zero`);
+  }
   assert.match(station, /Observe what happens naturally/i);
   assert.match(station, /no animal calls or prompts/i);
   assert.match(station, /You choose when recording starts and can stop it at any time/i);
