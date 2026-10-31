@@ -1690,3 +1690,9 @@ Added a plain-language zero-command section to the public approach page. It defi
 ## October 29 release receipt — zero-command explainer is live
 
 PR [#589](https://github.com/Metivity/talk2nature/pull/589) merged as [`aa81c75`](https://github.com/Metivity/talk2nature/commit/aa81c75ae25ebe11c28d7a450c52a9494564a0f6). Pages workflow [#40888177815](https://github.com/Metivity/talk2nature/actions/runs/40888177815) passed build, route preservation, deployment and live verification. A fresh cache-bypassed TLS read confirmed the new `/approach/` content is served and that the 154-route sitemap includes it. Physical-device and independent-user acceptance remain open; keep the five-track goal active.
+
+## October 31 continuation — keep zero-command acceptance active after merge
+
+The five-track goal remains **active**. PR [#617](https://github.com/Metivity/talk2nature/pull/617) is merged as [`be69a8f`](https://github.com/Metivity/talk2nature/commit/be69a8fcfc1429fac84288d02faa75998ee045c1), and its public repository, browser, Android and preview checks passed. A fresh local build of that exact `main` revision showed the microphone-free invented path first. A maintainer-run browser rehearsal reached the partial invented review and local-save guidance; it did not verify the downloaded file or reopen that same file in Compare.
+
+No physical iPhone or Android device is attached, and the live Pages site still serves the prior Station copy. Keep those facts explicit rather than counting browser emulation as device acceptance. **Next:** complete the full synthetic Save → same-file Compare path on a named phone when available, recording device, OS, browser/install mode, interruption, permission and app/system cue behavior. Keep screen-reader and separately authorized newcomer checks open. In parallel, continue source-grounded evidence, open-source onboarding, SEO and benchmark-readiness work; AutoResearch and real-data admission remain **NOT READY**.
