@@ -5497,5 +5497,39 @@
     "url": "https://rfcx.org/terms-of-service",
     "checked": "2026-10-31",
     "origin": "Official terms directly reviewed, including content license, competitor-use restriction, organizational disclosure and commercial-use sections. Applicability to Talk2Nature/Raviv and any negotiated terms were not determined."
+  },
+  {
+    "id": 548,
+    "title": "Mamzer, Kuchtar and Grzegorzewski (2026), Animals as Communication Partners",
+    "description": "Interdisciplinary review of animal communication, welfare and research ethics. The publisher declares CC BY 4.0 for this article; cited studies and other works retain their own rights.",
+    "url": "https://doi.org/10.3390/ani16030375",
+    "checked": "2026-10-31",
+    "origin": "Version of Record and PubMed Central full text reviewed at targeted sections; no data, code or model is provided for Talk2Nature reuse.",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12896553/",
+    "review_url_label": "Read free full text at PubMed Central"
+  },
+  {
+    "id": 549,
+    "title": "Directive 2010/63/EU on animals used for scientific purposes",
+    "description": "Official EU legal text. Articles 1 and 3 define scope around animals used or intended for use in procedures and describe the threshold for a procedure; applicability to a particular observation protocol requires jurisdiction-specific determination.",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0063",
+    "checked": "2026-10-31",
+    "origin": "Official EUR-Lex legal text, scope and definition inspected; no legal advice or applicability determination made."
+  },
+  {
+    "id": 550,
+    "title": "ARRIVE guidelines 2.0",
+    "description": "Official reporting guidance for transparent and reproducible animal research, organized into the Essential 10 and a Recommended Set. It is a reporting framework, not a legal approval determination.",
+    "url": "https://arriveguidelines.org/about",
+    "checked": "2026-10-31",
+    "origin": "Official ARRIVE/NC3Rs guidance page and ARRIVE 2.0 description reviewed; no checklist or figure reproduced."
+  },
+  {
+    "id": 551,
+    "title": "PREPARE guidelines for planning animal research",
+    "description": "Norecopa's planning aid covers literature review, legal and ethical issues, harm-benefit assessment, design, welfare and study conduct. The current site describes it as voluntary and adaptable to field studies.",
+    "url": "https://norecopa.no/PREPARE",
+    "checked": "2026-10-31",
+    "origin": "Official Norecopa PREPARE page reviewed; the page notes its voluntary role and field-study adaptation."
   }
 ]
