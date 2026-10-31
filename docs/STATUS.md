@@ -1,5 +1,15 @@
 ## October 31 post-merge release state
 
+## October 31 continuation — add the animal-agency research note
+
+
+The current-main source-ID collision was resolved before publication: local source IDs 535–538 belong to different BeVo/BORIS records on `main`, so the ethics note now references new IDs 548–551. Added `interspecies-communication-ethics-review-2026` and its four source records. The note states the targeted review depth, component rights and limits; it distinguishes PREPARE planning, ARRIVE reporting and the EU directive's defined scope from any Talk2Nature approval. No dataset, code, model, participant observation or recording is included. The dirty divergent checkout was not modified.
+
+**Checks:** Python **239 passed, 1 skipped**; Node **167 passed**. The local noindex build produced **159 pages plus 404**; checker validated **160 HTML / 10,974 links**. The explicit-origin public-mode build produced **159 pages plus 404**; checker validated **160 HTML / 11,135 links / 159 reachable public pages**. `git diff --check` passed. These are generated artifacts and tests; no live deployment or public indexing is claimed.
+
+**Next:** keep the note as context for a future species-specific welfare/methods review; it does not approve a parrot study. Continue the zero-command product track and preserve the real-data admission gate.
+
+
 PR [#608](https://github.com/Metivity/talk2nature/pull/608) merged as `febd5de157ab7b409a23010e4bf6c270e0e7c094`. Post-merge Public checks run [#41163242087](https://github.com/Metivity/talk2nature/actions/runs/41163242087) passed all jobs. The static GitHub Pages workflow remains manual (`workflow_dispatch`); no deploy run followed the merge.
 
 Fresh live readback of `/app/station/` returns HTTP 200 but still shows the previous `Try without a microphone` action. The source update and tests are merged; the public website has not yet been updated. Next: run the manual Pages workflow, then check live route preservation, Station copy, the four candidate research pages, sitemap and crawl metadata. Do not equate a merged PR with a deployment. Named physical-device and independent novice acceptance remain open.
