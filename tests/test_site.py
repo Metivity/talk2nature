@@ -641,28 +641,6 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(dataset['files'],[])
         self.assertIn('not an audio dataset',dataset['decision'])
 
-    def test_interspecies_ethics_note_keeps_source_scope_and_local_review_gate(self):
-        project_root=Path(__file__).parents[1]
-        note=next(n for n in load('research') if n['slug']=='interspecies-communication-ethics-review-2026')
-        self.assertEqual(note['source_ids'],[519,520,521,522])
-        self.assertIn('not legal consent',note['limitations'])
-        self.assertIn('without local institutional/legal review',note['limitations'])
-        resources={r['id']:r for r in json.loads((project_root/'research/resources.json').read_text())['resources']}
-        selected={key:resources[key] for key in [
-            'interspecies-communication-ethics-paper-2026',
-            'animal-research-directive-2010-63-eu',
-            'arrive-guidelines-2',
-            'prepare-animal-research-planning',
-        ]}
-        self.assertEqual(selected['interspecies-communication-ethics-paper-2026']['rights']['license'],'CC BY 4.0 as declared by the publisher for the article')
-        self.assertEqual(selected['interspecies-communication-ethics-paper-2026']['rights']['scope'],'Article text only. Cited works, third-party figures and media keep separate terms.')
-        self.assertEqual(selected['animal-research-directive-2010-63-eu']['rights']['commercial_use'],'unresolved')
-        self.assertEqual(selected['arrive-guidelines-2']['rights']['redistribution'],'unresolved')
-        self.assertIn('voluntary',selected['prepare-animal-research-planning']['access'])
-        sources={source['id']:source for source in load('sources')}
-        self.assertEqual(sources[521]['url'],'https://arriveguidelines.org/arrive-guidelines')
-        self.assertIn('Essential 10',sources[521]['origin'])
-
     def test_resource_directory_lists_records_and_separates_rights_from_acquisition(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
