@@ -1,3 +1,13 @@
+# Project status
+
+## October 31 continuation — reaffirm Zero Command and keep the goal active
+
+Zero Command is the default Field Companion posture: user-started passive observation, an invented first action requiring no microphone, no animal-directed sound, no inferred reply, and no silent upload or research admission. The five-track project goal remains **active**. Next is a named-device no-animal rehearsal followed by an independent novice walkthrough; neither is complete yet. Use invented material only and preserve the real-data and AutoResearch **NOT READY** gates.
+
+## October 31 continuation — repair project-status heading order
+
+Moved the single top-level heading ahead of the dated status sections. This is a documentation-structure correction; the recorded test, merge and deployment evidence is unchanged.
+
 ## October 31 post-merge release state
 
 ## October 31 continuation — add the animal-agency research note
@@ -26,7 +36,6 @@ Reviewed the official RFCx Arbimon privacy policy and terms. The published polic
 
 ---
 
-# Project status
 
 ## October 31 continuation — check the current public release candidate
 

@@ -1,3 +1,17 @@
+# Talk2Nature goals
+
+## October 31 continuation — repair project-goal heading order
+
+Moved the single top-level heading ahead of the dated continuation sections so document hierarchy is clear. Project scope, active goals and release state are unchanged.
+
+## October 31 continuation — make Zero Command the product-wide direction
+
+Raviv reaffirmed Zero Command as the direction for the Field Companion and the continuing project goal. Keep the default experience observational: the person starts and stops any microphone session; the easiest first action is an invented example that needs no microphone; no app feature calls, imitates or prompts an animal; and a sound that follows an event is not treated as a reply. Keep capture local-first and do not upload, retain or admit observations to research by implication. Optional researcher controls may add detail, but must preserve these same boundaries.
+
+**Next acceptance milestone:** complete a named-device, no-animal rehearsal of the browser companion and, where available, the native Android companion. Record OS/app revision, verify the invented/no-microphone path, permission and explicit start, stop/interruption, local review and discard, no silent restart, and the distinction between app output and OS/accessibility cues. Then run a separate novice walkthrough and record what the person understood without coaching. Use invented material only; no real-animal playback or collection is part of this milestone. Keep physical-device and independent-novice results marked open until actually performed.
+
+**Continuing goal:** the existing five-track program remains active: build the evidence library, improve the mobile companion, support open-source and researcher reproducibility, improve honest technical discovery, and defer an ML benchmark until its data, rights, independent labels, evaluation and review gates pass. Zero Command is a cross-cutting product boundary for every track, not a claim that communication has been solved. Keep real-data admission and AutoResearch **NOT READY** unless their separate gates are met.
+
 ## October 31 post-merge readback — checks pass; Pages release remains pending
 
 ## October 31 continuation — publish the animal-agency methods note
@@ -22,7 +36,6 @@ Reviewed the official Arbimon privacy policy and Terms of Service in addition to
 
 **Next milestone:** finish a bounded no-animal phone rehearsal on a named physical device: test the invented no-microphone path, real capture only after explicit Start/permission, Stop and interruption behavior, local save/reopen/discard, no silent resume, and app-controlled versus OS/accessibility cues. Record the device/OS/app revision and use invented material only. Until a physical device and authorized newcomer walkthrough are available, preserve the source-level checks without claiming acceptance. The overall five-track goal remains active; real-data admission and AutoResearch remain **NOT READY**.
 
-# Talk2Nature goals
 
 ## October 31 continuation — verify public release candidate routes and discovery metadata
 
