@@ -84,6 +84,31 @@ The Safe & Sound project has explored adapting Camtrap DP to passive acoustic mo
 
 First session-format adapter acceptance: one documented destination version, synthetic complete/partial/discard examples, a loss report and target-tool validation. If the target cannot express an essential distinction, report the incompatibility rather than silently dropping it. No Safe & Sound bridge is implemented.
 
+## BORIS: complementary behavior coding, not a drop-in backend
+
+[BORIS](https://www.boris.unito.it/) is an established free/open-source desktop tool for video/audio coding and live event logging. Its official [download page](https://www.boris.unito.it/download/) and [v10.0.2 release](https://github.com/olivierfriard/BORIS/releases/tag/v10.0.2) agree on the current version, dated October 16, 2026; the linked [user guide still says it applies to v9.15.0](https://www.boris.unito.it/user_guide/). The export guide covers subject, behavior/category/modifier, independent-variable, STATE/POINT, timing and media/image-frame fields. The official [features page](https://www.boris.unito.it/features/) lists CSV/TSV, spreadsheets, SQL, SDIS, Python/R dataframes, Praat TextGrid and other outputs.
+
+Talk2Nature's current annotation schema is narrower: sound kind, bounded context, observation source, confidence and notes. Its Audacity bridge moves a selected WAV and a one-way label/JSON package; it is not a BORIS project importer. Mapping only timestamps would lose or misstate ethogram and subject semantics.
+
+| Before any BORIS adapter | Acceptance evidence |
+| --- | --- |
+| Actual need | A researcher describes a concrete workflow and the exact BORIS version they use. No need is inferred from BORIS's existence. |
+| Rights and example | A synthetic or rights-cleared sample export and representative project structure, with file-level terms checked. |
+| Mapping | Field-by-field source-to-target map, explicit unknown/unsupported values and a machine-readable loss report; never convert a human observation into a model label. |
+| Version validation | Test a synthetic complete/partial case in the named BORIS version and verify the reopened project/export, IDs, labels, timing and provenance. The v9.15.0 guide alone does not validate v10.0.2. |
+
+Until those gates pass, recommend BORIS only as a complementary external analysis tool. No BORIS software, code, project or media has been acquired or tested here; no adapter or BORIS partnership is claimed.
+
+## Arbimon: existing hosted acoustic research infrastructure
+
+[Arbimon](https://arbimon.org/support/arbimon/get-started/getting-started-with-arbimon/) documents collaborative projects and sites, passive-audio upload, visual inspection, analysis jobs, human validation, insights and optional publishing. Its separate [desktop Uploader](https://arbimon.org/support/arbimon/import/using-the-arbimon-uploader-app/) imports WAV/FLAC and segments files into one-minute recordings; its [project backup](https://arbimon.org/support/arbimon/settings/exporting-project-backups/) documents metadata, validations and analysis results, with some derived Insight material exported separately. This is a credible existing destination to evaluate for university workflows, not evidence that Talk2Nature is integrated or that all uploaded data are open.
+
+**Zero Command boundary:** Talk2Nature's Field Companion remains user-started, passive and local-first. Do not silently upload recordings or add playback/cues. A future researcher handoff must be a deliberate export of permitted files to a named destination, with provenance and a loss report. Start with a synthetic fixture; review training use, retention, deletion/withdrawal, region, access, export, institutional rules and reversibility before considering real data. The device acceptance gate still requires a named phone and no-animal rehearsal.
+
+**Arbimon terms review (31 October 2026):** RFCx's [privacy policy](https://rfcx.org/privacy-policy) says Arbimon-submitted audio, labels and metadata may be used for ML training; newly submitted data can be opted out from future training, but effects already incorporated into models cannot be removed, and annotations/labels may be retained indefinitely. Its [terms](https://rfcx.org/terms-of-service) describe a perpetual, irrevocable license covering submitted recordings, metadata, annotations and derived data for RFCx and its ML partners. The terms also require written disclosure for users affiliated with a competing or substantially similar platform and restrict using Arbimon to inform development of competing products. Talk2Nature's status under those clauses is unresolved; this summary is not a legal determination.
+
+**Decision:** Arbimon remains public prior-art documentation only. Do not create an account, use it to benchmark or develop Talk2Nature, add a connector, or hand off project data until an authorized review resolves applicability and any required written disclosure or permission. Keep the field workflow local-first and platform-neutral; evaluate another named destination only after a researcher documents a concrete need. No account, app, recording, upload, API or backup was tested; no partner or institution has approved a workflow.
+
 October 5 software continuation: a narrower [Audacity export](AUDACITY_EXPORT.md) now packages an individual WAV, timed annotations, full original metadata and a conversion report. It does not convert an entire Station session, infer monitoring effort or implement Safe & Sound. It is a prototype for evaluation; external demand and native verification scope are recorded separately.
 
 ## Credit and use

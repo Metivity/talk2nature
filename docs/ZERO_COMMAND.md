@@ -4,8 +4,8 @@ Talk2Nature's current observation tools listen only. They do not try to make an 
 
 ## Active acceptance gates
 
-- Keep the microphone-free invented example as the clearest first action. Real capture must remain a separate, optional choice.
-- Before capture, show what the browser or Android mode will do, require the person's deliberate Start action and platform permission, and keep Stop accessible. Never resume capture silently.
+- Keep the microphone-free invented example as the clearest first action. Its visible control must say that the example is invented and uses no microphone. Real capture must remain a separate, optional choice.
+- Before capture, show what the browser or Android mode will do, require the person's deliberate Start action and platform permission, and keep Stop accessible. At the permission decision, say plainly that the person chooses when recording starts and can stop it at any time. Never resume capture silently.
 - Keep example scenes, placeholders, participant observations and model predictions visibly distinct. A prediction is not a label of meaning or a response.
 - Verify save, reopen, discard and interruption behavior using invented material only. No animal or bystander should be present during device rehearsals.
 - Record named-device results separately for browser and Android, including app-controlled sound/notification cues and system/accessibility cues. Viewport emulation and source tests do not close this gate.

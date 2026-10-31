@@ -9001,6 +9001,134 @@
         534,
         58
       ]
+    },
+    {
+      "id": "bevo-behavior-conditioned-generation-paper",
+      "kind": "paper",
+      "title": "Behavior-Conditioned Animal Vocalization Generation: Event-Aware Modeling and Multidimensional Evaluation",
+      "url": "https://arxiv.org/abs/2610.16382v1",
+      "version": "arXiv:2610.16382v1, posted 2026-10-12",
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "source_ids": [
+        535,
+        536
+      ],
+      "task": "Review behavior-conditioned animal-sound generation as prior art; distinguish anchor-level acoustic conditioning from event-level behavior, animal comprehension or receiver response.",
+      "review_depth": "Targeted full-text review of the five-page v1 preprint: abstract, dataset construction, caption and split design, generation method, evaluation, results, conclusion and ethics statement. Reviewed the author project-page demo and interpretation caveat. No code or checkpoint was acquired or run, and demo audio was not played.",
+      "access": "The v1 preprint and author project page are public. The project page listed code as forthcoming on 2026-10-31; no released model checkpoint was identified in the reviewed sources.",
+      "decision": "Record as recent generation prior art, not a communication capability or product model. Preserve Talk2Nature's zero-command boundary: do not integrate generated calls into observation tools or play generated audio to animals. Its paper metrics evaluate vocalization-anchor discriminability and distribution fidelity, not whether an animal understands or responds to a prompt.",
+      "limitations": "The six-species BeVo set has 31,191 events and 42 anchors. Samples are stratified and randomly split within species/anchor; the reviewed paper does not describe animal-, source-recording- or site-held-out evaluation. GPT-5.6 creates 500 conditions per anchor from literature-derived behavior cards; the authors report no manual post-generation verification. Conditions attach to groups sharing an anchor, not verified behavior for each recording. Test text uses new formulations of behavioral knowledge already represented during training, not unseen behaviors. Classifier shifts and audio-distribution metrics do not establish semantic grounding, animal comprehension, sender intent or receiver response. This is an unreviewed preprint with no independent Talk2Nature reproduction.",
+      "attribution": "Deng, X., Tian, Y., Guan, J., Kong, Q., Jiang, J., & Cao, Y. (2026). arXiv:2610.16382v1.",
+      "rights": {
+        "license": "No separate paper reuse license was verified",
+        "scope": "Article citation and link only; no article text, figure, demo audio or generated output copied.",
+        "evidence_url": "https://arxiv.org/abs/2610.16382v1",
+        "conditions": "Keep source paper, dataset, model code, weights and outputs as separate rights questions. No code or weights were identified in the reviewed project page.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bevo-behavior-vocalization-dataset-2026",
+      "kind": "dataset",
+      "title": "BeVo — Behavior-Vocalization Dataset",
+      "url": "https://huggingface.co/datasets/Xinghour/BeVo/tree/f096c7ab3853f92e04627ade15884d890f44a332",
+      "version": "Hugging Face revision f096c7ab3853f92e04627ade15884d890f44a332, reviewed 2026-10-31",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "source_ids": [
+        535,
+        537
+      ],
+      "task": "Metadata reference for behavior-conditioned sound generation across six species; not admitted for model training, commercial reuse or animal-facing playback.",
+      "review_depth": "Official Hugging Face dataset card, repository revision, LICENSE notice and source_datasets.csv metadata diff reviewed. No audio, annotation payload or model artifact was downloaded or run.",
+      "access": "The card lists 31,191 events, 42 vocalization anchors, six species, three splits and approximately 524.3 minutes of audio. The repository is approximately 2.96 GB and its license field is `other`; no data bytes were acquired.",
+      "decision": "Keep metadata-only. The repository has mixed component terms: third-party audio retains original source restrictions; the repository notice reports non-commercial terms for HyenaSET, MeerKAT and Goat Bleatings, CC BY 4.0 for MarmAudio and zebra finch, and CC0 for plains zebra. BeVo-created materials are described as CC BY 4.0 only to the extent the authors hold the relevant rights. Do not treat the dataset as commercially reusable or redistribute any component without source-level rights review.",
+      "limitations": "The source_datasets.csv and repository license are author-provided metadata, not an independent verification of every file's provenance or license. No individual-event behavior labels are claimed: conditions are associated by shared vocalization anchor. The random within-anchor split does not establish generalization to unseen animals, source recordings or sites. No model code or checkpoint was identified in the reviewed sources. License and source mapping may change; recheck the pinned revision before any future use.",
+      "attribution": "Deng et al. (2026), BeVo, Hugging Face dataset Xinghour/BeVo, revision f096c7ab3853f92e04627ade15884d890f44a332.",
+      "rights": {
+        "license": "Mixed source-specific terms; repository card labels overall license as other",
+        "scope": "Audio files retain original dataset terms. BeVo-created conditions/metadata are CC BY 4.0 only to the extent authors hold rights. Papers, code, weights and generated audio are separate components.",
+        "evidence_url": "https://huggingface.co/datasets/Xinghour/BeVo/blob/f096c7ab3853f92e04627ade15884d890f44a332/LICENSE",
+        "conditions": "No acquisition or training admission. Check each source dataset's current terms and intended use before accessing, reproducing, redistributing or using derived model outputs; non-commercial restrictions apply to several audio sources.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "analysis_admission": "not_admitted",
+      "files": []
+    },
+    {
+      "id": "boris-software-v10-0-2",
+      "kind": "code",
+      "title": "BORIS behavioral observation and event-logging software",
+      "url": "https://github.com/olivierfriard/BORIS/releases/tag/v10.0.2",
+      "version": "v10.0.2; official GitHub release dated 2026-10-16; project site refers to GNU GPL v3",
+      "source_ids": [
+        538,
+        539,
+        540,
+        541
+      ],
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Reference for structured behavioral coding and a potential handoff target for a researcher-supplied, rights-cleared workflow; not a Talk2Nature dependency or backend.",
+      "review_depth": "Official project and download pages, v10.0.2 release, feature overview, and v9.15.0 user-guide export fields reviewed. No code, executable, project file, export, sample media or model was acquired, installed or run.",
+      "access": "Public official documentation and release metadata only. The guide describes multiple structured export formats and fields for subjects, ethograms, modifiers, event types, timing and media/frame references.",
+      "decision": "Treat BORIS as a complementary desktop behavior-coding tool. Do not build an importer or claim compatibility until a researcher supplies a permitted example, the target version/schema is confirmed, and a field-by-field loss report plus target-tool validation passes.",
+      "limitations": "The official download and release pages identify v10.0.2, but the linked user guide explicitly applies to v9.15.0; the current v10 export schema was not verified. Talk2Nature's annotation schema holds bounded sound/context labels and notes, not arbitrary subjects, ethograms, behavior categories/modifiers, STATE/POINT semantics or image-frame paths. Matching timestamps alone would not preserve annotation meaning. No actual cross-tool workflow, adoption or science result was tested.",
+      "attribution": "BORIS project, olivierfriard/BORIS, v10.0.2 release; Friard and Gamba (2016), DOI 10.1111/2041-210X.12584.",
+      "rights": {
+        "license": "GNU GPL v3 per the official BORIS website notice; exact release-tag license files not inspected",
+        "scope": "BORIS software as described by the official project notice. This does not license Talk2Nature code, third-party media, sample project files, dependencies or model assets.",
+        "evidence_url": "https://www.boris.unito.it/",
+        "conditions": "No BORIS code or media is copied or bundled here. Review the exact release license and each dependency before any future installation, integration or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "arbimon-hosted-platform-workflow-2026",
+      "kind": "code",
+      "title": "Arbimon passive-acoustic research platform",
+      "url": "https://arbimon.org/support/arbimon/get-started/getting-started-with-arbimon/",
+      "version": "Official help pages checked 2026-10-31",
+      "source_ids": [
+        542,
+        543,
+        544,
+        545,
+        546,
+        547
+      ],
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "task": "Reference and possible external destination for collaborative passive-acoustic data management, analysis, validation and insight sharing; not a Talk2Nature dependency or backend.",
+      "review_depth": "Official workflow, uploader, backup, FAQ, privacy and terms pages reviewed. No account, upload, audio, analysis, backup or API was tested; legal applicability was not determined.",
+      "access": "Public official documentation and policy text. Arbimon documents a web platform and desktop WAV/FLAC uploader; policies describe AI-training use, retention, content license and competitor/organization disclosures.",
+      "decision": "Prior-art reference only for now. Do not create an account, benchmark or develop Talk2Nature using Arbimon, add a connector, or hand off project data until an authorized review resolves term applicability and any required written disclosure/permission. Keep local-first files and evaluate a different named destination only against a concrete researcher need.",
+      "limitations": "Published terms describe a perpetual, irrevocable content license covering submitted media/metadata/labels/derived data for ML development; the privacy policy describes future-submission opt-out but not removal of existing trained-model effects and indefinite annotation retention. Terms also restrict using the platform to inform competing products and require disclosure for competing or organization-affiliated use. Applicability to Talk2Nature/Raviv is unresolved. No account or data was used; no legal opinion or institutional approval is established.",
+      "attribution": "Rainforest Connection, Arbimon official support documentation, FAQ, Privacy Policy and Terms of Service, accessed 2026-10-31.",
+      "rights": {
+        "license": "Not assessed for platform software or user data",
+        "scope": "This record references documentation only and does not assert a software, data, API or redistribution license.",
+        "evidence_url": "https://rfcx.org/terms-of-service",
+        "conditions": "Published terms and privacy policy were reviewed on 2026-10-31. Resolve their application to Talk2Nature, any required written disclosure/permission, institutional rules and component rights before any account, benchmarking, product-development use, integration, upload or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "analysis_admission": "not_admitted",
+      "files": []
     }
   ]
 }

@@ -129,11 +129,11 @@ public final class MainActivity extends Activity {
         page.addView(title,space(0,0,0,10));
         page.addView(text("Notice sounds and context. Let the evidence stay bigger than the guess.",16,MUTED,false),space(0,0,0,20));
         page.addView(text("Listen only: this app never calls, imitates or prompts animals. Listening starts only after you tap Start and grant the required permissions.",14,INK,false),space(0,0,0,16));
-        Button browserDemo = button("Try practice · no microphone",PANEL,INK);
+        Button browserDemo = button("Try invented example · no microphone",PANEL,INK);
         page.addView(browserDemo,space(0,0,0,14));
         browserDemo.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://metivity.github.io/talk2nature/app/station/?mode=demo#station-console"))));
-        page.addView(text("Opens the website and needs internet. It will not start this station.",12,MUTED,false),space(0,0,0,14));
+        page.addView(text("Opens an invented browser example; it uses no microphone or animal audio, needs internet, and will not start this station.",12,MUTED,false),space(0,0,0,14));
 
         LinearLayout setup = card();
         page.addView(setup,space(0,0,0,14));

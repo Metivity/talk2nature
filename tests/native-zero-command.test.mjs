@@ -67,10 +67,16 @@ test('public Station copy states the quiet-notification limit without claiming h
 
 test('native welcome screen states listen-only boundaries before practice and recording setup', () => {
   const disclosure = activity.indexOf('Listen only: this app never calls, imitates or prompts animals. Listening starts only after you tap Start and grant the required permissions.');
-  const practice = activity.indexOf('Try practice · no microphone');
+  const practice = activity.indexOf('Try invented example · no microphone');
   const setup = activity.indexOf('01   Set up your observation');
   assert.ok(disclosure >= 0, 'the first screen must disclose the listen-only rule');
+  assert.ok(practice >= 0, 'the microphone-free first action must say the example is invented');
   assert.ok(disclosure < practice && disclosure < setup, 'the listen-only rule must appear before practice and recording setup');
+  const click = activity.slice(practice, activity.indexOf('LinearLayout setup', practice));
+  assert.match(click, /Opens an invented browser example; it uses no microphone or animal audio, needs internet, and will not start this station\./);
+  assert.match(click, /Intent\.ACTION_VIEW/);
+  assert.match(click, /mode=demo/);
+  assert.doesNotMatch(click, /CaptureService|RECORD_AUDIO|startService/);
 });
 
 test('Android setup discloses background capture and Stop routes before recording consent', () => {

@@ -24,7 +24,7 @@ test('scenario note examples are labeled as examples and never prefill an observ
   ]);
   for(const example of [
     'Example only: A bird moved to another branch.',
-    'Example only: The animal moved toward the window',
+    'Example only: The animal changed position. The reason is unknown.',
     'Example only: Mimicked phrase heard;',
     'Example only: A test marker,'
   ]) assert.ok(app.includes(example),example);

@@ -31,6 +31,12 @@ Perch's listed input is five seconds of mono 32 kHz audio, with a 1,536-dimensio
 
 Sources: [Perch model card](https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2), [exact CPU variation v1](https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1), [older repository notice](https://github.com/google-research/perch), [Hoplite at reviewed commit](https://github.com/google-research/perch-hoplite/tree/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302), [frozen model configuration](https://github.com/google-research/perch-hoplite/blob/050c57b5dac2f6d28ab1f562fa2000c8dcbc2302/perch_hoplite/zoo/model_configs.py), [NatureLM revision](https://huggingface.co/EarthSpeciesProject/NatureLM-audio/tree/77855d9b0acd039f90798dcf0861f626bfefbd6f), [BirdNET](https://github.com/birdnet-team/birdnet), [STM32 terms](https://birdnet-team.github.io/birdnet-stm32/license/).
 
+## October 31 — behavior-conditioned generation is not animal understanding
+
+The [BeVo v1 preprint](https://arxiv.org/abs/2610.16382v1) and [project page](https://persimmontian.github.io/BCAVG/) establish recent prior work on generating animal vocalizations from behavior-conditioned text. The corpus links recordings from six species to 42 vocalization anchors; language conditions come from GPT-5.6-generated descriptions based on literature-derived behavior cards, and are assigned to recordings by shared anchor. The paper reports no manual verification of generated conditions. Its random within-species/anchor split and classifier/distribution metrics do not test unseen animals/sites, event-level behavior correctness, receiver comprehension or animal response. The project page says implementation code is forthcoming.
+
+The [BeVo repository license notice](https://huggingface.co/datasets/Xinghour/BeVo/blob/f096c7ab3853f92e04627ade15884d890f44a332/LICENSE) makes clear there is no single license for all audio. It preserves third-party source terms; several source components are non-commercial, while BeVo-created materials are CC BY 4.0 only insofar as the authors hold rights. Keep the dataset metadata-only and commercially unadmitted. Do not add generated calls to Talk2Nature observation tools or play them to animals. This is a methods reference, not an endorsement, reproduction or animal-facing experiment.
+
 ## Data feasibility
 
 | Data route | What was checked | Decision |

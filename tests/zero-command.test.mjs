@@ -54,6 +54,8 @@ test('animal-facing boundary is visible in the Station and playback cannot autop
   const appIntro = await readFile(path.join(templates, 'app-station-intro.html'), 'utf8');
   assert.match(station, /Observe what happens naturally/i);
   assert.match(station, /no animal calls or prompts/i);
+  assert.match(station, /You choose when recording starts and can stop it at any time/i);
+  assert.match(station, /In the browser, recording ends if you leave this page/i);
   assert.match(station, /do not call or imitate to elicit a response/i);
   assert.match(station, /not automatically a reply/i);
   assert.match(station, /You do not need to call, imitate or prompt an animal/i);
