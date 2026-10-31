@@ -59,9 +59,10 @@ test('animal-facing boundary is visible in the Station and playback cannot autop
   assert.match(station, /You do not need to call, imitate or prompt an animal/i);
   assert.match(station, /Do not provoke calls, approach wildlife or change an animal’s behavior/i);
   assert.match(station, /id="station-play-review"[^>]*>Play for human review</i);
-  assert.match(appIntro, /Passive observation/i);
-  assert.match(appIntro, /no animal calls or prompts/i);
-  assert.match(appIntro, /do not call or imitate to elicit a response or change an animal’s behavior/i);
+  assert.match(appIntro, /Observe without prompting/i);
+  assert.match(appIntro, /You do not need to call or imitate an animal/i);
+  assert.match(appIntro, /no animal-directed sounds or prompts/i);
+  assert.match(appIntro, /capture stops if you leave this page/i);
   assert.match(appIntro, /Playback is for human review only—never play it to animals/i);
 
   for (const file of ['station.html', 'listen.html', 'compare.html']) {

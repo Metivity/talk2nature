@@ -3305,3 +3305,10 @@ The Performance report was last updated about four hours before inspection and c
 **Acceptance checks:** 144 Python tests and 115 Node tests passed. The local noindex build produced 115 pages plus 404; the site checker passed 116 HTML pages and 5,704 links. An explicit-origin public build produced 115 pages plus 404; its publish-boundary/link check passed 116 HTML pages, 5,820 links and 115 reachable pages. The route's revised title, description, `index,follow`, canonical and sitemap entry were verified in generated output. Browser inspection at the backend's 480-CSS-pixel minimum showed the candidate cards stacking and document width matching the viewport. It could not test 320/390 CSS pixels; physical phones, screen-reader output and independent novice comprehension remain unverified.
 
 **Limits and next decision:** this is a local release candidate, not a deployment or external review. No new data, model run, recruitment or animal playback occurred. Keep AutoResearch **NOT READY**; the independent bat/ML review and source-join gates remain open.
+## October 31 — clarify zero-command language at the start point
+
+**Change:** revised the Field Companion's visible safety note to say **Observe without prompting** in plain language. It explains that the user need not call or imitate an animal, Talk2Nature sends no animal-directed sounds or prompts, the user chooses when capture starts, and browser capture stops when the page is left. Updated the regression check for this copy. Capture and playback behavior are unchanged.
+
+**Checks:** all 167 Node tests passed; all 239 Python tests passed with one intentional skip. The local noindex build produced 155 pages plus 404; the site checker validated 156 HTML files and 10,847 links. Generated Station HTML contains the revised wording. `git diff --check` passed.
+
+**Limit and next step:** the copy describes the app's intended output, not whole-device silence. Zero-command does not mean hands-free, unattended or background recording. Continue the open named-device synthetic rehearsal and authorized newcomer-comprehension gates. No animal or participant recording was made.
