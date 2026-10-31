@@ -66,7 +66,7 @@ test('public Station copy states the quiet-notification limit without claiming h
 });
 
 test('native welcome screen states listen-only boundaries before practice and recording setup', () => {
-  const disclosure = activity.indexOf('Listen only: this app never calls, imitates or prompts animals. Listening starts only after you tap Start and grant the required permissions.');
+  const disclosure = activity.indexOf('Listen only: this app never calls, imitates or prompts animals. Recording starts only after you tap Start recording and grant the required permissions.');
   const practice = activity.indexOf('Try invented example · no microphone');
   const setup = activity.indexOf('01   Set up your observation');
   assert.ok(disclosure >= 0, 'the first screen must disclose the listen-only rule');
@@ -82,7 +82,7 @@ test('native welcome screen states listen-only boundaries before practice and re
 test('Android setup discloses background capture and Stop routes before recording consent', () => {
   const disclosure = activity.indexOf('After you tap Start, this Android station is designed to keep listening if you leave this screen or lock the phone. Stop it here or from the ongoing notification. Calls or system interruptions may stop it; it will not restart automatically. Phone behavior is not yet verified.');
   const consent = activity.indexOf('consent = new CheckBox(this)');
-  const start = activity.indexOf('startButton = button("Start listening"');
+  const start = activity.indexOf('startButton = button("Start recording"');
   assert.ok(disclosure >= 0, 'the setup must explain when background recording can continue and how to stop it');
   assert.ok(disclosure < consent && disclosure < start, 'background behavior must be visible before consent and Start');
 });

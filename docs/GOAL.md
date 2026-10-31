@@ -1,5 +1,13 @@
 # Talk2Nature goals
 
+## October 31 continuation — say plainly when recording starts
+
+On the clean public main baseline after PR #631 (`98ca61f`), changed the browser and native Android microphone action from **Start listening** to **Start recording**. “Listening” describes the project's passive, animal-facing boundary; “recording” tells the person what the control actually does. The microphone checkbox, deliberate Start, pending-permission Stop, and manual human-review playback boundaries are unchanged. Browser state and Android welcome-screen regression checks cover the wording.
+
+This is a source-level consent-clarity improvement, not device acceptance. The focused checks and full repository suites pass; no live microphone, animal, playback, recording, upload or participant data was used. The overall five-track goal remains **active**.
+
+**Next Zero Command gate:** verify this copy and the full invented example on the live clean-main release, then run named iPhone/Safari, Android/Chrome, installed web app, native Android, keyboard and VoiceOver/TalkBack checks using [`ZERO_COMMAND_DEVICE_CHECKLIST.md`](ZERO_COMMAND_DEVICE_CHECKLIST.md). Keep all unavailable runs **not run**. Independently observe a newcomer walkthrough before claiming first-use success. Do not expand into animal-directed output or real-data intake to close a usability gate; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 31 continuation — keep Zero Command as the next acceptance gate
 
 Raviv asked to continue the Zero Command work and keep the overall program active. The app-code baseline audited was `e1cef8a` (PR #628; PR #630 later added documentation only as `10ee70f`). A focused refresh on that app-code baseline passed **14/14** browser/native safeguards: no animal-facing output from observation assets, no autoplay, fresh confirmation before review playback, browser capture cleanup when the page leaves the foreground, Android notification/output constraints, no silent service restart, and keyboard focus recovery while permission is pending.

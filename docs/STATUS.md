@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 — make the recording action explicit
+
+On clean main after fungal evidence PR #631 merged as `98ca61f`, browser and native Android microphone controls now say **Start recording** instead of **Start listening**. The label names the actual capture behavior; the listen-only animal-facing rule remains separate. Permission gating, user-started capture, visible Stop and confirmed human-only playback are unchanged.
+
+**Validation:** focused browser/native Zero Command tests **21/21**; full Node suite **171/171**; Python suite **244 passed, 1 skipped**; Android core checks passed; resource catalog **310 valid**; local noindex build **162 pages plus 404**, checked **163 HTML pages / 11,332 links**. This is source and synthetic-test evidence only. No device, live microphone, animal, playback, upload or participant data was used. Physical-device, screen-reader and independent-newcomer acceptance remain open; no deployment occurred.
+
 ## October 31 — inspect fungal supplement text without acquiring files
 
 Reviewed the official University of Neuchatel thesis record and extracted text from its Chapter 4 copy of the article's supplementary section. The index lists Figures S1–S7 and Method S1; the reproduced listing identifies MATLAB R2024b and HDF5 input arrays. The paper's software table separately points to Document S2, so the supplement/code cross-reference remains unresolved. The reviewed thesis record does not display a separate license for the thesis or embedded code. No PDF or code was downloaded or executed, and no dataset payload was acquired.

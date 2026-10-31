@@ -119,7 +119,7 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   h.get('station-permission').checked = true;
   await h.get('station-permission').fire('change');
   assert.equal(h.get('station-start').disabled, false);
-  assert.equal(h.get('station-start').textContent, 'Start listening');
+  assert.equal(h.get('station-start').textContent, 'Start recording');
   h.get('station-permission').checked = false;
   await h.get('station-permission').fire('change');
   assert.equal(h.get('station-start').disabled, true);
