@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 — keyboard-only Zero Command rehearsal on current main
+
+On current public `main` `d4a2334`, used only keyboard navigation in a local noindex build at **480 × 844 CSS pixels**. From the ordinary Station route, Tab reached the invented no-microphone action; Enter started the synthetic session and focused **End rehearsal**. Enter stopped and focused review. Tab reached **Discard session**; confirming removal of the temporary synthetic session returned the app to **Ready** and focused the Station heading. The document width stayed 480 pixels. Python passed **244 tests** (one intentional skip), Node passed **171/171**, and the local build/site check passed (**162 pages plus 404; 163 HTML documents / 11,341 links**).
+
+This is desktop-browser keyboard evidence, not a physical-device, screen-reader or novice result. A direct `#station-console` URL starts keyboard focus at the Station wordmark after the anchor scroll; this differs from the ordinary route, whose first Tab reaches Skip to content. Preserve this as a screen-reader/device follow-up, not a claimed failure. No microphone, playback, animal or participant data was used. The live Station's missing **Listen-only by design** disclosure remains a separate deployment gap.
+
 ## October 31 — Zero Command save/reopen rehearsal on current main
 
 On clean public `main` `ac733f9`, the local noindex build produced **162 pages plus 404** and the site checker validated **163 HTML documents / 11,341 links**. Focused Zero Command, Station and review checks passed **31/31**.
