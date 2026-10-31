@@ -1,5 +1,13 @@
 # Project status
 
+## October 31 — Zero Command save/reopen rehearsal on current main
+
+On clean public `main` `ac733f9`, the local noindex build produced **162 pages plus 404** and the site checker validated **163 HTML documents / 11,341 links**. Focused Zero Command, Station and review checks passed **31/31**.
+
+In browser emulation at the backend's **480 × 844 CSS-pixel minimum**, the invented session opened without a microphone prompt. I added one observation, stopped, downloaded the session ZIP, and reopened that exact file in Compare. The page identified the invented example, retained one recording and one observer note, and kept playback paused behind a deliberate human action. Document width remained 480 pixels. The rehearsal lasted 0.4 seconds and is a partial synthetic example only; it is not physical-phone, 390-pixel, screen-reader or independent-user evidence.
+
+A fresh live check still fails at `/app/station/` because the deployed copy lacks **Listen-only by design**. The local rehearsal does not close this release gap. Next: update the live site via the authorized Metivity Pages path when available, then run named-device and assistive-technology checks separately. No animal or participant data were used; AutoResearch and real-data admission remain **NOT READY**.
+
 ## October 31 — mobile-emulated Zero Command rehearsal
 
 Rendered the exact public-main source tree at `01ab379` in local headless Chromium with 390 × 844 CSS-pixel mobile emulation. On the direct `/app/station/?mode=companion#station-console` route, the Station aligned to the requested anchor, fit the viewport with no horizontal overflow, and showed the listen-only disclosure, invented example and recording permission control. Tapping **Try invented example · no microphone** entered a visible Synthetic session and exposed Stop. Instrumentation wrapped `navigator.mediaDevices.getUserMedia`; the rehearsal made **0 microphone requests**. Stop opened a partial invented recap, the audio player remained paused, and Discard returned to Ready.
