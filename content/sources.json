@@ -5353,5 +5353,37 @@
     "url": "https://gitlab.switch.ch/hahnloser-songbird/birdpark/birdradio/-/blob/dev/LICENSE",
     "checked": "2026-10-30",
     "origin": "Read the official BirdRadio subproject landing page and its LICENSE page. The `dev` branch was not pinned to an immutable commit; no source code was cloned, acquired or executed. Do not generalize this notice to BirdVideo or the full BirdPark collection."
+  },
+  {
+    "id": 531,
+    "title": "DCASE 2018 Task 3: Bird Audio Detection",
+    "description": "Official task definition, development/evaluation datasets, suggested cross-dataset validation, scoring and task-page CC-BY-4.0 statement. The page’s manual-label wording needs to be read alongside the BirdVox source record, which documents automatically derived labels for that component.",
+    "url": "https://dcase.community/challenge2018/task-bird-audio-detection",
+    "checked": "2026-10-31",
+    "origin": "Primary challenge specification; task and reuse metadata reviewed, no dataset acquired."
+  },
+  {
+    "id": 532,
+    "title": "Stowell et al. (2019), first Bird Audio Detection challenge",
+    "description": "Peer-reviewed Methods in Ecology and Evolution article, DOI 10.1111/2041-210X.13103. Methods, dataset provenance, split, evaluation, error and generalisation sections reviewed. Its description covers the original challenge design; it is not a substitute for the DCASE 2018 extension specification.",
+    "url": "https://doi.org/10.1111/2041-210X.13103",
+    "checked": "2026-10-31",
+    "origin": "Primary Version of Record; original article reviewed via publisher full text."
+  },
+  {
+    "id": 533,
+    "title": "DCASE 2018 Bird Audio Detection evaluation audio",
+    "description": "Zenodo record 1298604, version 1.0, lists 2,000 Warblr, 6,620 Chernobyl and 4,000 PolandNFC evaluation WAV clips. The deposit lists audio only and its Rights/License field is blank; evaluation labels remain unavailable in the reviewed public record.",
+    "url": "https://zenodo.org/records/1298604",
+    "checked": "2026-10-31",
+    "origin": "Official evaluation-data deposit metadata; no audio or archive payload retrieved."
+  },
+  {
+    "id": 534,
+    "title": "DCASE 2018 bulbul Bird Audio Detection baseline",
+    "description": "Official DCASE-REPO GitHub baseline README reviewed. The documented runtime uses Python 2.7, Theano and Lasagne and estimates about 30 GPU-hours for the full approach; the top-level repository listing reviewed shows no license file.",
+    "url": "https://github.com/DCASE-REPO/bulbul_bird_detection_dcase2018",
+    "checked": "2026-10-31",
+    "origin": "Official challenge baseline repository page and README; code not acquired, executed or license-cleared."
   }
 ]

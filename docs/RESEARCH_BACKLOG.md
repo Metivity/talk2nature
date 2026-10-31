@@ -2,6 +2,12 @@
 
 This is a decision queue, not a claim to have reviewed the entire field. The founding inventory and its subsequent additions include documentation, organizations and grants as well as papers. Full text is not copied into the public website.
 
+## October 31 — identify the narrowest first bird-audio task
+
+Reviewed the official DCASE 2018 Task 3 specification, Stowell et al. (2019) primary article, the BirdVox-DCASE-20k v2 record, the official 2018 evaluation-data deposit and the DCASE-REPO baseline README. DCASE's task is binary bird-sound presence in ten-second clips and explicitly tests generalization across recording domains; the 2019 article describes manual annotation for Warblr/freefield and the BirdVox deposit says its labels were automatically derived from flight-call annotations. The evaluation deposit lists 12,620 clips (9.1 GB) without labels and has a blank license field, despite the challenge page's CC BY 4.0 statement. The baseline is historical Python 2.7/Theano/Lasagne code and its repository-level license was not established.
+
+**Decision:** use DCASE as the strongest reviewed *task-match precedent*, not as a selected or admitted benchmark. No audio, labels, code or model were acquired or run. Before any acquisition, seek qualified review of event definition, per-component rights and labels, group structure, baseline feasibility and whether any truly locked evaluation is available. If not, revise or defer. AutoResearch and real-data admission remain **NOT READY**. See the public note `dcase2018-bird-presence-benchmark` and resource `dcase2018-bird-audio-detection`.
+
 ## October 31 — preserve the fungal article-to-dataset DOI mismatch
 
 Cross-checked the published iScience PDF's Data and code availability paragraph against the official Mendeley Data v1 page. The PDF prints `10.17632/srkkxbh6sp.1`; the Mendeley page identifies its own v1 record as `10.17632/srkxbkh6sp.1` and displays CC BY 4.0. Its visible Files section has no entries. Preserve both strings as an unresolved source mismatch; do not silently normalize the link or infer file-level rights, contents or reproducibility. No dataset or supplement was acquired, no code was executed, and no result was reproduced. Keep it a specialized fungal-electrophysiology methods reference, not a language or first-animal benchmark. AutoResearch remains **NOT READY**. See resources `fungal-electrophysiology-stimuli-2025-data` and source IDs 165–166.

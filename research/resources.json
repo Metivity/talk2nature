@@ -8002,7 +8002,9 @@
       "version": "Current Biology 27(15), 2331–2336.e3 (2017)",
       "priority": 2,
       "reviewed": "2026-10-29",
-      "source_ids": [264],
+      "source_ids": [
+        264
+      ],
       "task": "Primary methods comparator for order-sensitive receiver responses to a novel mixed-species call sequence.",
       "review_depth": "Publisher-indexed primary Results and STAR Methods reviewed. Direct ScienceDirect page opening returned HTTP 403. No supplementary-file inspection or result reproduction.",
       "access": "Article metadata and indexed text are linked; the article text is under Elsevier's user license and is not reproduced here.",
@@ -8029,7 +8031,9 @@
       "version": "Mendeley Data v1; DOI 10.17632/r7v96zf5pp.1 (2017)",
       "priority": 2,
       "reviewed": "2026-10-28",
-      "source_ids": [265],
+      "source_ids": [
+        265
+      ],
       "task": "Potential structured-data review for the published playback experiment; not a Talk2Nature observation corpus.",
       "review_depth": "Official Mendeley version 1 record, title, description and CC BY 4.0 record license reviewed. File manifest and file contents were not inspected; nothing was downloaded.",
       "access": "Public versioned record describes raw playback-experiment and acoustic-analysis data.",
@@ -8483,7 +8487,7 @@
       "kind": "dataset",
       "title": "Powdermill annotated bird soundscapes",
       "url": "https://zenodo.org/records/4656848",
-    "version": "Zenodo record 4656848; version v1 published 2022-01-21; declared DOI 10.5061/dryad.d2547d81z",
+      "version": "Zenodo record 4656848; version v1 published 2022-01-21; declared DOI 10.5061/dryad.d2547d81z",
       "priority": 1,
       "reviewed": "2026-10-29",
       "source_ids": [
@@ -8509,10 +8513,10 @@
       "license_notice": "cc-zero",
       "admission_reason": "Acquire the small annotation archive only to inspect its schema and recording/site/day keys; no audio, model use or training admission.",
       "acquisition": "sample_approved",
-    "adapter": "zenodo_record",
+      "adapter": "zenodo_record",
       "zenodo_record_id": 4656848,
-    "record_doi": "10.5061/dryad.d2547d81z",
-    "zenodo_api_license_id": "cc-zero",
+      "record_doi": "10.5061/dryad.d2547d81z",
+      "zenodo_api_license_id": "cc-zero",
       "zenodo_api_url": "https://zenodo.org/api/records/4656848",
       "files": [
         {
@@ -8520,10 +8524,10 @@
           "url": "https://zenodo.org/api/records/4656848/files/annotation_Files.zip/content",
           "bytes": 434265,
           "mime_type": "application/zip",
-        "zenodo_file_key": "annotation_Files.zip",
-        "zenodo_record_id": 4656848,
-        "source_url": "https://zenodo.org/records/4656848",
-        "md5": "8f78ba7cf9fc5d25656f7747ed3406d1"
+          "zenodo_file_key": "annotation_Files.zip",
+          "zenodo_record_id": 4656848,
+          "source_url": "https://zenodo.org/records/4656848",
+          "md5": "8f78ba7cf9fc5d25656f7747ed3406d1"
         }
       ]
     },
@@ -8882,7 +8886,9 @@
       "title": "How do soundboard-trained dogs respond to human button presses?",
       "url": "https://doi.org/10.1371/journal.pone.0307189",
       "version": "PLOS ONE 19(8): e0307189 (2024), published August 28, 2024",
-      "source_ids": [514],
+      "source_ids": [
+        514
+      ],
       "priority": 1,
       "reviewed": "2026-10-29",
       "task": "Primary evidence on context-specific receiver behavior after human-produced learned words; not evidence of spontaneous dog button use or open-ended conversation.",
@@ -8909,7 +8915,10 @@
       "title": "Dog soundboard comprehension study data (metadata only)",
       "url": "https://github.com/znhoughton/comprehension",
       "version": "GitHub main metadata checked 2026-10-29; API updated_at 2023-10-03",
-      "source_ids": [514, 515],
+      "source_ids": [
+        514,
+        515
+      ],
       "priority": 2,
       "reviewed": "2026-10-29",
       "task": "Potential source for the published behavioral-response study only; not a natural-call or acoustic-training corpus.",
@@ -8936,7 +8945,10 @@
       "title": "Dog soundboard comprehension analysis code (metadata only)",
       "url": "https://github.com/znhoughton/comprehension",
       "version": "GitHub main metadata checked 2026-10-29; API updated_at 2023-10-03",
-      "source_ids": [514, 515],
+      "source_ids": [
+        514,
+        515
+      ],
       "priority": 2,
       "reviewed": "2026-10-29",
       "task": "Published analysis-script pointer; no execution or baseline reproduction performed.",
@@ -8956,6 +8968,39 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "dcase2018-bird-audio-detection",
+      "kind": "dataset",
+      "title": "DCASE 2018 Task 3 — Bird Audio Detection",
+      "url": "https://dcase.community/challenge2018/task-bird-audio-detection",
+      "version": "DCASE Challenge 2018, Task 3; evaluation deposit Zenodo record 1298604 v1.0",
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "task": "Binary bird-sound presence in a 10-second soundscape clip; detection only, not species, behavior, meaning or conversation.",
+      "review_depth": "Official DCASE 2018 task description, dataset partition guidance, metrics and results; Stowell et al. (2019) primary article sections on annotation, evaluation and domain generalisation; official Zenodo evaluation-deposit metadata; DCASE-REPO baseline README. No audio, label file, code or model payload acquired or executed.",
+      "access": "Task page describes three labeled development corpora (freefield1010, warblrb10k and BirdVox-DCASE-20k) and three evaluation corpora. The evaluation Zenodo record lists 12,620 audio clips totaling 9.1 GB but provides no labels in the record. No downloads performed.",
+      "decision": "Promote to the strongest current task-match lead for passive bird-sound presence detection, ahead of ArcticBirdSounds for the specific binary-presence question. Do not select it as a Talk2Nature benchmark or begin acquisition/training until a qualified reviewer checks label scope, component rights, independent grouping, held-out-label access and a reproducible modern baseline.",
+      "limitations": "The task page says its 10-second 44.1 kHz mono clips carry presence/absence labels and recommends cross-dataset generalisation checks. Label provenance is mixed: the task page describes manual labels, while the BirdVox-DCASE-20k deposit says its hasbird labels are automatically derived from source annotations; the primary article describes manual annotation for Warblr/freefield and warns about condition-specific errors. Bird presence is not equivalent to a bounded call-event label. Public development data do not provide a single untouched locked test after all three domains have informed development; the challenge evaluation audio is public but evaluation labels were kept private and are absent from the reviewed Zenodo record. Challenge page states CC BY 4.0 for all datasets, but the evaluation deposit shows no license value and source-level rights still require reconciliation. The legacy baseline is Python 2.7/Theano/Lasagne, has no license file visible in the top-level repository listing, and the README estimates about 30 GPU-hours for the full system. No Talk2Nature reproduction or independent score exists.",
+      "attribution": "DCASE 2018 organizers; Stowell et al. (2019), DOI 10.1111/2041-210X.13103; BirdVox-DCASE-20k creators for that component.",
+      "rights": {
+        "license": "DCASE task page states CC-BY-4.0 for all challenge datasets; evaluation deposit license field is blank.",
+        "scope": "Challenge-level rights statement only; individual source audio, labels, evaluation files, baseline code, dependencies and pretrained weights are separate components.",
+        "evidence_url": "https://dcase.community/challenge2018/task-bird-audio-detection",
+        "conditions": "Before acquisition, redistribution, commercial use or model training, verify the applicable terms for each data/label component and the exact intended use. The baseline repository and its dependencies are not cleared by the dataset statement.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        531,
+        532,
+        533,
+        534,
+        58
+      ]
     }
   ]
 }
