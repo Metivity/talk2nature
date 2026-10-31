@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 follow-up — Zero Command evidence note reconciled
+
+PR [#627](https://github.com/Metivity/talk2nature/pull/627) merged to `main` as [`3ca40d1`](https://github.com/Metivity/talk2nature/commit/3ca40d199c7e618cb17465bf3521e9e6e174c15e). All Public checks passed, including repository, browser-tool, native Android and preview-site checks. It clarifies that the earlier locked-host attempt was unverified at that time and that a later local synthetic browser rehearsal did verify cancellation through the visible “Playback cancelled. This recording was not played” status. The app-level discard result, physical-device behavior, assistive-technology output and newcomer comprehension remain unverified. This was a documentation change only; no Pages deployment occurred.
+
+The five-track goal remains **active**, with Zero Command as the immediate product milestone. Next gates are the reviewed clean-main Pages release and live verification when an authorized Metivity dispatch session is available, followed by separate named-device and assistive-technology checks. Until then, continue other project tracks and report unavailable checks as **not run**.
+
 ## Current focus — Zero Command acceptance
 
 The active project goal prioritizes a consistent no-animal-output acceptance gate for the browser Field Companion and native Android Station. Added [`ZERO_COMMAND_DEVICE_CHECKLIST.md`](ZERO_COMMAND_DEVICE_CHECKLIST.md) as a runnable, privacy-minimal checklist with separate browser/native expected outcomes and explicit `not run` reporting. Source verification passed: the five focused Node suites passed **38/38**, and Android core/session/start-state checks passed. These checks do not establish device behavior. No physical-device run is claimed. Keep the microphone-free invented example first; live capture deliberate and stoppable; playback manual and confirmed. Device and independent-newcomer acceptance remain unverified. No animal data is needed for this gate. See [`GOAL.md`](GOAL.md) and [`ZERO_COMMAND.md`](ZERO_COMMAND.md).

@@ -1,5 +1,13 @@
 # Talk2Nature goals
 
+## October 31 continuation — keep Zero Command and the five-track goal moving
+
+The five-track project goal remains **active**. PR [#627](https://github.com/Metivity/talk2nature/pull/627) is merged to `main` as [`3ca40d1`](https://github.com/Metivity/talk2nature/commit/3ca40d199c7e618cb17465bf3521e9e6e174c15e); Public checks passed repository, browser-tool, native Android and preview-site jobs. This documentation-only change reconciles the history of the synthetic browser playback-cancellation check. It changes no app behavior and is not a Pages deployment.
+
+The current Zero Command evidence supports source safeguards and microphone-free desktop-browser rehearsals with invented material. It does **not** establish physical iPhone/Android behavior, VoiceOver/TalkBack output, or independent newcomer comprehension. No real animal recording, directed playback, or data admission is needed to close these usability gates.
+
+**Next:** when an action-capable authorized Metivity Pages session is available, publish only the reviewed clean `main` build and run the live verifier. Separately, use [`ZERO_COMMAND_DEVICE_CHECKLIST.md`](ZERO_COMMAND_DEVICE_CHECKLIST.md) for named iPhone/Safari and Android/Chrome checks, plus native Android where a device/build is available. Record each platform and assistive-technology outcome independently; mark unavailable checks **not run**. Keep working on the other four tracks while those external conditions are unavailable. Preserve the zero-command boundary and keep AutoResearch and real-data admission **NOT READY**.
+
 ## October 31 continuation — prioritize Zero Command acceptance
 
 Raviv's latest direction is to continue with Zero Command. Keep this as the immediate product milestone inside the active five-track program: observation tools send no intentional signal to animals; people still control when capture starts and stops; an invented example stays the first, microphone-free action; live capture stays optional, local and visibly stoppable; and playback remains a separate, confirmed action for human review away from animals. Preserve these boundaries across every supported species and device mode.
