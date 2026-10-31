@@ -6452,5 +6452,176 @@
     "purpose": "Behavior & communication",
     "review_locator": "Mamzer et al.: Abstract; §1 Introduction; §§5.1 and 5.5; article license, conflicts and data-availability statements. Directive 2010/63/EU: Articles 1 and 3. ARRIVE: official About and 2.0 pages. PREPARE: current official Norecopa page. No dedicated systematic-search strategy or evidence-grading section identified in Mamzer et al.",
     "seo_description": "A targeted review of animal agency, welfare and research guidance; it does not approve a study or decode animal calls."
+  },
+  {
+    "slug": "arctic-shorebird-acoustic-visual-methods-2026",
+    "title": "Arctic recorders extend survey time; paper and data totals differ",
+    "seo_description": "A 2026 Alaska study compares passive acoustic recorders with visual shorebird surveys, while revealing differences between published paper and dataset totals.",
+    "taxon": "Arctic-breeding shorebirds",
+    "kind": "Field-method comparison",
+    "year": "2026",
+    "source_ids": [
+      522,
+      523,
+      524,
+      525,
+      526,
+      527
+    ],
+    "review_depth": "Publisher Version of Record: abstract, Methods 2.1–2.3, Results, Discussion 4.1–4.3, data-availability statement and supporting-information index reviewed. Dryad's July 30, 2026 landing-page abstract, README description and changelog reviewed, along with its current general reuse policy. Official FWS regional boundary extent, BLM regional description and a USGS named-lake locator were reviewed for coarse atlas placement only. No supporting-information file, dataset/code archive, recording, row, model or dataset plot coordinate was downloaded or opened.",
+    "finding": "Ziegenhorn et al. compare PRISM visual surveys with AudioMoth recordings at the same Alaska Arctic Coastal Plain plots in two region-year blocks: ANWR in 2022 and Teshekpuk Lake Special Area in 2023. The paper's Table 1 reports 55 and 75 paired plots (130 total), while the latest Dryad abstract/README reports 54 and 75 sites (129 total). The paper describes 15 species/groups, while Dryad reports 12; its Results say 12 were detected by both methods and separately list method-exclusive detections. Do not reconcile these totals without a version-mapped source. In the paper, ARUs sampled five minutes every 30 minutes at 16 kHz and collected roughly 8,500 and 11,000 hours through July 5, compared with 82.5 and 112.5 hours of visual surveys. Average richness was about twice as high for ARUs in ANWR and 1.5 times in TLSA, under this much longer acoustic effort. The workflow outputs detections, plot-level presence, encounter rates, richness and modeled distributions; it does not test animal meaning or communication.",
+    "limitations": "The methods compare different observation durations and temporal coverage, so the richness difference is not evidence that a phone or acoustic detector outperforms a matched visual survey. The paper's shorebird pipeline uses ArcticSoundsNET, a classifier built on BirdNET with a specialist head trained on the PRISM acoustic dataset; the acoustic record is therefore model-derived, not independent ground truth. The paper's ecological exclusions, minimum-day presence rule and manual verification of ten high-confidence detections per plot should not be confused with a locked external test. The 5-fold species-distribution analysis is not described as a site-held-out validation. The paper and latest Dryad metadata disagree on paired-site and species/group totals; Dryad's July changelog notes corrections to missing visual detections, mismatched plots and date ranges but does not fully reconcile the published totals. Exact plot coordinates are described in the record; none were copied. The article is CC BY 4.0; Dryad's repository-wide policy states CC0 for hosted datasets, but code/data payloads and third-party component rights were not inspected. No independent specialist review or Talk2Nature reproduction.",
+    "lesson": "Long passive recordings can add seasonal coverage to field surveys, while missing quieter or less-vocal species and introducing classifier and effort assumptions. A community recorder network should preserve recording effort, time, place and observation provenance and compare acoustic detections with independent field evidence. Ecological presence detection is not evidence of communication.",
+    "next_review": "Keep as a methods comparator, not a benchmark or evidence of animal understanding. Preserve the paper and July 30 Dryad counts as separate versioned records; check for a correction or newer mapped release before using aggregate counts. If map coverage is added, use only independently sourced coarse region locators, never recorder/plot coordinates. Do not acquire the files or use the classifier until component rights, provenance, grouping and a qualified review are independently resolved. Keep AutoResearch and real-data admission NOT READY.",
+    "reviewed": "2026-10-31",
+    "expert_review": "Not independently reviewed by a shorebird ecologist, bioacoustician or ML specialist.",
+    "review_stage": "Selected Version of Record sections and current dataset metadata reviewed",
+    "year_label": "Publication year",
+    "study_snapshot": [
+      [
+        "Study design",
+        "Visual area-search surveys paired with passive autonomous recorders at the same plots in two region-year blocks: ANWR (2022) and Teshekpuk Lake Special Area (2023)."
+      ],
+      [
+        "Recording schedule",
+        "AudioMoth recorders sampled 5 minutes per 30-minute cycle at 16 kHz from late spring to summer; visual surveys were approximately 96 minutes per plot."
+      ],
+      [
+        "Unequal effort",
+        "The paper reports about 8,500 and 11,000 acoustic hours through July 5 versus 82.5 and 112.5 visual-survey hours."
+      ],
+      [
+        "Reported outcomes",
+        "Plot-level species richness, encounter rates and modelled habitat-use patterns; ARU richness was higher under the extended recording schedule, while some rare species appeared only in visual records."
+      ],
+      [
+        "Version discrepancy",
+        "The paper reports 130 paired plots and 15 species/groups; the latest Dryad record reports 129 sites and 12 species/groups. Dryad's change log records file corrections but does not establish a direct reconciliation."
+      ],
+      [
+        "Review boundary",
+        "No dataset files or plot coordinates, annotation rows, code, weights or supplement payload reviewed. No Talk2Nature model or independent validation."
+      ]
+    ],
+    "review_locator": "Ziegenhorn et al. (2026), Journal of Applied Ecology 63(2), e70300, DOI 10.1111/1365-2664.70300; selected Version of Record sections 2.1–2.3, Results, Discussion 4.1–4.3 and data availability. Associated Dryad DOI 10.5061/dryad.7wm37pw54, latest page update July 30, 2026; Dryad general reuse policy.",
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-10-31",
+      "location_status": "mapped",
+      "location_note": "Both pins are rounded regional anchors, not recorder or study-plot coordinates. The ANWR point is the center of the official FWS 1002 Area extent rounded to one decimal degree. The TLSA point uses the USGS named-lake center as a broad locator; BLM describes the special management area around and including that lake. The exact dataset plot locations were not accessed or copied.",
+      "locations": [
+        {
+          "place_id": "arctic-refuge-1002-coastal-plain",
+          "role": "study_region",
+          "source_id": 522,
+          "locator": "Methods 2.1 and Figure 1 name the Arctic National Wildlife Refuge 1002 Area study block.",
+          "basis": "The study paper names ANWR. Its public regional pin is the rounded center of the official FWS Coastal Plain (1002 Area) extent (source 525), not a field plot or recorder coordinate."
+        },
+        {
+          "place_id": "teshekpuk-lake-special-area",
+          "role": "study_region",
+          "source_id": 522,
+          "locator": "Methods 2.1 and Figure 1 name the Teshekpuk Lake Special Area study block.",
+          "basis": "The study paper names TLSA. The rounded point uses a USGS named-lake center as a coarse regional anchor (source 527); BLM describes the related special management area as around and including the lake (source 526). It is not a plot coordinate or area centroid."
+        }
+      ],
+      "observation_period": {
+        "label": "Paired visual surveys and ARU deployments",
+        "start_year": 2022,
+        "end_year": 2023,
+        "source_id": 522,
+        "locator": "Methods 2.1 and Table 1 identify ANWR field work in 2022 and TLSA field work in 2023."
+      }
+    }
+  },
+  {
+    "slug": "biosoundnet-bird-phenology-detection-2023",
+    "title": "BioSoundNet detects bird vocal activity for phenology studies",
+    "seo_description": "BioSoundNet combines acoustic detection with phenology monitoring; its reported evaluation and dataset limits do not establish general animal communication.",
+    "taxon": "Birds",
+    "kind": "Passive acoustic detection method",
+    "year": "2023",
+    "source_ids": [
+      528,
+      529,
+      530
+    ],
+    "review_depth": "Authorea preprint v1: abstract, data availability, dataset construction, Table 1, Methods 2.1–2.4, Table 2, Results, Discussion and stated limitations reviewed. The author-linked GitHub repository page and README were reviewed for repository structure and license declaration; code and weights were not inspected. OSF contents were not verified. This preprint states that it has not been peer reviewed.",
+    "finding": "Christin et al. describe BioSoundNet as a small bird-vocalization presence detector intended to summarize acoustic activity and seasonal phenology. The preprint reports training on ArcticBirdSounds+ (20.9 hours, 13,303 annotations, 44 classes across eight sites) alongside other datasets, and evaluation on ArcticSummer plus test subsets of CityNet, NIPS4Bplus and ENAB. It reports AUC values of 0.88–0.93 and average precision of 0.87–0.97 across five evaluation datasets. These are claims in a 2023 preprint, not independently reproduced results.",
+    "limitations": "This predicts vocalization presence, not species identity, caller identity, behavior, meaning or reply. ArcticBirdSounds+ is described as an expanded aggregation, but its exact files, overlap with the original dataset, session groups and current deposit were not verified; the preprint says data would be placed on OSF upon manuscript acceptance. Its 1-second windows have 95% overlap, while the reviewed methods do not establish whether train/validation separation was grouped before window extraction. The manual check selected 300 model-detected events and found bird vocalizations in 262 (87.3%); this does not estimate missed-event recall because undetected background was not sampled. The preprint is marked not peer reviewed and all rights reserved. GitHub displays MIT for the mutable code repository, but no commit, dependencies or checkpoint-specific license were reviewed.",
+    "lesson": "A credible first software question can be modest ecological detection: when and how much bird vocal activity is present in a recording? Keep that separate from species identification and communication. Evaluate missed detections, independent deployment groups, class coverage and ecological use, and compare predictions with conventional monitoring before interpreting activity patterns.",
+    "next_review": "Verify whether a peer-reviewed version and a public, versioned OSF data deposit exist; reconcile ArcticBirdSounds+ files and rights with the original dataset; pin the exact BioSoundNet code and checkpoint and their licenses; and obtain qualified review of the split order and ecological evaluation. Do not acquire media, run the model or use it as an independent ArcticBirdSounds comparator until those gates are resolved.",
+    "reviewed": "2026-10-31",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Primary preprint review; not peer reviewed and not independently reproduced",
+    "year_label": "Preprint year",
+    "study_snapshot": [
+      [
+        "Output",
+        "One-second presence/absence of bird vocalizations; not a species or communication label."
+      ],
+      [
+        "Training aggregate",
+        "ArcticBirdSounds+; 20.9 hours, 13,303 annotations, 44 classes and eight sites, as reported in the preprint."
+      ],
+      [
+        "Evaluation",
+        "ArcticSummer and test subsets of CityNet, NIPS4Bplus and ENAB; the article reports 0.88–0.93 AUC across five datasets."
+      ],
+      [
+        "Manual check",
+        "262 of 300 model-detected events contained bird vocalizations; this selected-positive check does not estimate recall."
+      ]
+    ],
+    "purpose": "Models & evaluation",
+    "review_locator": "Authorea preprint v1: abstract/data-availability statement, §§2.1–2.4, Tables 1–2, Results and Discussion; repository page and README reviewed at https://github.com/vin985/BioSoundNet."
+  },
+  {
+    "slug": "passive-acoustic-software-ecosystem-review-2026",
+    "title": "Bioacoustic software is mature but fragmented: what a 2026 review means for Talk2Nature",
+    "seo_description": "A 2026 review maps passive-acoustics software and argues for interoperability, careful metadata, and reproducible benchmarks across research tools.",
+    "taxon": "Multiple taxa and ecosystems",
+    "kind": "Living systematic review of passive-acoustics software",
+    "year": "2026",
+    "source_ids": [
+      552,
+      553,
+      554,
+      555,
+      556
+    ],
+    "review_depth": "F1000Research 15:48, Version 1, published 2026-01-13. Reviewed the abstract; Methods §§2.1–2.3; Results §§3.1–3.2; conclusion; data-availability and license statements; and three linked public peer-review reports. Checked the official OSF v72ce node API metadata. The tool-inventory spreadsheet, dendrogram and R script were not downloaded, opened or run; no software package was installed or evaluated.",
+    "finding": "Hanf-Dressler et al. searched Web of Science literature from 2014 through 2023 and supplemented their screening with expert/database cross-checks. They report 189 tools in included studies plus 66 additions, for 251 identified; 221 were available at analysis time. The review groups features into data management, signal pre-processing, visualisation/navigation and acoustic analysis, and concludes that the fragmented field needs interoperability, FAIR-aligned metadata and collaboration rather than isolated tool proliferation. Its abstract and main text do not agree on several counts: the abstract says 174 PAM-specific tools and 40 with all four workflow components; Results §3.1 says 178 PAM-specific tools, Results §3.2 says 39 with all four, and the conclusion again says 174. Treat each figure as version-specific reported text, not a reconciled total.",
+    "limitations": "The literature search stops at 2024-01-01; this is a dated map, not a current 2026 census or a user-usability study. The three public reviews ask for direct links to tools, more granular feature descriptions and clearer search/screening and update procedures; they also rate aspects of replication and living-review scheduling as partial. The article says its underlying inventory and R script are CC0, while the current public OSF project's root API license field is null. No individual file rights metadata was checked. Counts conflict across the abstract, results and conclusion. These limitations do not negate the review's comparative value, but they make it unsafe to quote a single headline count without qualification or to treat the list as an independently verified feature audit.",
+    "lesson": "Do not build another all-in-one recording, annotation and classification platform just because the field is fragmented. The review's concrete design direction is to connect existing specialized tools with portable metadata and reproducible handoffs. Talk2Nature's local observation journal, explicit provenance and existing Audacity export are plausible integration surfaces, not proof of a validated market gap. Before expanding them, compare official formats and workflows and verify a specific interoperability problem with researchers.",
+    "next_review": "Create a bounded comparator matrix for the existing Talk2Nature handoff and a few established tools: supported audio/annotation formats, metadata preservation, license and access route, export/import path, local versus hosted processing, and maintenance status. Use only official documentation and versioned sources. Identify one concrete workflow break and a reproducible synthetic example before adding another integration. Keep the OSF inventory and R script metadata-only until their item-level rights are verified.",
+    "reviewed": "2026-10-31",
+    "expert_review": "No independent Talk2Nature specialist review; the source article has three public F1000Research reviewer reports, linked separately.",
+    "review_stage": "F1000Research Version 1 with three public review reports; Talk2Nature did not reproduce the review analysis",
+    "year_label": "Publication year",
+    "study_snapshot": [
+      [
+        "Search frame",
+        "Web of Science studies published 2014-01-01 through 2024-01-01, supplemented by expert and database cross-checks."
+      ],
+      [
+        "Inventory",
+        "251 tools identified, 221 available at analysis time; the abstract and main text disagree on PAM-dedicated totals."
+      ],
+      [
+        "Workflow coverage",
+        "Four broad areas: data management, signal pre-processing, visualisation/navigation and acoustic analysis. Abstract and results differ on tools covering all four."
+      ],
+      [
+        "Author recommendation",
+        "Connect existing tools and improve FAIR metadata and benchmarks; do not multiply isolated tools."
+      ],
+      [
+        "Reuse gate",
+        "The article states CC0 for underlying files, but OSF root metadata has no license value; no individual files were opened."
+      ]
+    ],
+    "purpose": "Data & annotation",
+    "review_locator": "F1000Research Version 1 abstract; Methods §§2.1–2.3; Results §§3.1–3.2; Conclusion; Data Availability; public peer-review report DOIs 10.5256/f1000research.191317.r453949, r453943 and r453942; OSF project v72ce node API metadata."
   }
 ]

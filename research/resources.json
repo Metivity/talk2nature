@@ -9129,6 +9129,576 @@
       "acquisition": "metadata_only",
       "analysis_admission": "not_admitted",
       "files": []
+    },
+    {
+      "id": "perch2-gpu-model",
+      "kind": "model",
+      "title": "Perch 2 GPU model candidate",
+      "url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2",
+      "version": "perch_v2/2 (official pinned Hoplite configuration)",
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "source_ids": [
+        51,
+        52
+      ],
+      "task": "Frozen acoustic representation candidate; possible bounded bird sound-event or context-prediction baseline.",
+      "review_depth": "Read-only review of the official Perch 2 parent model card and Perch-Hoplite configuration at commit 9016d59511ad339d3a12166c95549ea8aa87f917. The explicit GPU preset selects Kaggle perch_v2/2; it specifies five-second windows and hops at 32 kHz with 1,536-dimensional embeddings. No model package downloaded or run.",
+      "access": "The exact perch_v2/2 variation page declares Apache-2.0 and lists a 410.28 MB package. It requires TensorFlow >=2.20 and a GPU. The CPU variation card says its weights exactly match GPU version 2. Underlying training-media rights and item-level source membership are separate and unresolved. No package downloaded.",
+      "decision": "Metadata-only comparator candidate. Do not acquire or execute until exact bundle terms and intended use are checked; do not use generic perch_v2 in a reproduction because it selects CPU/GPU based on detected hardware.",
+      "limitations": "No Talk2Nature runtime, cost, accuracy or phone performance. The package archive checksum/signature and per-file training-source membership were not inspected. Pretraining overlap and independent group-held-out evaluation remain unresolved. Embeddings and class logits are not communication or meaning.",
+      "attribution": "Google Perch team; see official model card and pinned Perch-Hoplite configuration.",
+      "rights": {
+        "license": "Apache-2.0 (exact perch_v2/2 Kaggle variation card)",
+        "scope": "The model package as declared by the exact versioned Kaggle variation page; upstream training-media rights are separate and unresolved.",
+        "evidence_url": "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2/2",
+        "conditions": "Follow Apache-2.0 terms for the model package; verify archive integrity and separately review underlying training media and input recordings.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "fungar-oyster-fungal-electrical-recordings",
+      "kind": "dataset",
+      "title": "Oyster-fungus electrical recordings dataset",
+      "url": "https://zenodo.org/records/4430968",
+      "version": "Zenodo record 4430968 v1; published 2021-01-10; API updated 2026-10-18",
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        93,
+        177,
+        178
+      ],
+      "task": "Methods and reproducibility context for slow, multichannel extracellular fungal electrical recordings; not an animal-audio resource or evidence of linguistic communication.",
+      "review_depth": "Reviewed the primary paper's data-availability statement and publisher-indexed Methods for the reported sampling rate, event threshold and propagation window; direct article navigation was blocked by the publisher cookie gate. Also reviewed the official Zenodo landing page/API metadata and license documentation, and the ZIP end record/central-directory metadata using exact HTTPS byte ranges. The landing-page License row appears empty. Read 83,371 bytes of archive metadata only. The 80 file entries comprise 18 CSVs, 19 TARs and 43 JPEGs; 13 CSVs are at least 20 MB. No file payload was read; the API MD5 was not verified against the archive.",
+      "access": "The primary paper cites this DOI for its approximately fifteen-day, eight-channel, 1 Hz recording from one oyster-fungus specimen. The 2021 ZIP directory identifies multiple large CSV candidates and nested TAR files but does not identify the analyzed series. No filename clearly identifies a license/readme/notice member; nested TAR contents were not inspected.",
+      "decision": "Keep metadata-only. The Zenodo API declares record-level CC BY 4.0 while the landing page's Rights > License row appears empty; the outer ZIP has no named rights/readme notice and possible nested component rights remain unreviewed. The paper-to-record DOI link is verified, but the series is not mapped among 13 large CSV candidates. Establish file-level rights and define a justified target with qualified electrophysiology review before opening member payloads, analysis or redistribution.",
+      "limitations": "The study uses eight channels from one specimen; channels are not independent biological replicates. The saved signal is one averaged value per second, and the paper uses a fixed baseline +2 SD event threshold, 60-second minimum duration and 300-second cross-channel window; findings are limited to slow dynamics and these analysis choices. Temporal propagation does not establish a vocabulary, receiver, referent or communication. The paper reports shuffled-train controls, but independent replication and substrate, electrode and environmental controls remain open. No audio-language model or phone microphone is suitable for this electrophysiology dataset.",
+      "attribution": "Adamatzky (2026), Propagation of electrical spike trains in substrates colonised by oyster fungi, Scientific Reports 16, 16332; data DOI 10.5281/zenodo.4430968.",
+      "rights": {
+        "license": "CC BY 4.0 declared for the Zenodo record in its API; the landing-page License row appears blank",
+        "scope": "Record-level depositor declaration only. The outer ZIP directory was checked, but member contents, nested TARs, provenance, exact file-to-paper mapping and any third-party components were not reviewed.",
+        "evidence_url": "https://zenodo.org/api/records/4430968",
+        "conditions": "Do not infer that every component inside the ZIP carries the record license. Preserve attribution if reuse is later cleared; establish file-level terms and map the analyzed series before opening members, processing or redistribution.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "companion-parrot-mimicry-survey-v4",
+      "kind": "dataset",
+      "title": "What Does Polly Say? companion-parrot survey data",
+      "url": "https://doi.org/10.6084/m9.figshare.19674330.v4",
+      "version": "Figshare item 19674330 v4; published 2022-12-12",
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        98,
+        99,
+        180,
+        181
+      ],
+      "task": "Methods and community-survey design context for owner-reported human-mimicry repertoires; not natural-call audio or an ML training resource.",
+      "review_depth": "Benedict et al. primary article and publisher-linked 11-page supplement reviewed for methods, 17-question instrument, sample, quality checks, confidence rubrics and contextual-use measures. Figshare API item metadata read: v4, CC BY 4.0 declaration and one 186,629-byte XLSX. No spreadsheet bytes, schema, rows or personal data inspected.",
+      "access": "The paper links this Figshare item as its analysis dataset. The paper says the survey asked for respondent and parrot names plus respondent email. The linked file has not been inspected to determine which fields it contains or how it was de-identified.",
+      "decision": "Metadata only. Do not acquire or analyze the workbook until a concrete question justifies review and the file's privacy, consent scope, and intended-use terms are assessed. No training admission.",
+      "limitations": "The survey is owner-reported and recruitment favored parrot-mimicry communities. The paper's Methods say non-mimicking entries were removed while Results report 13 non-mimicking birds; reconcile the denominator before data use. A CC BY 4.0 item-level declaration does not establish that personal data are safe or consented for secondary use.",
+      "attribution": "Benedict, Charles, Brockington and Dahlin (2022), A Survey of Vocal Mimicry in Companion Parrots, Scientific Reports 12, 20271; Figshare DOI 10.6084/m9.figshare.19674330.v4.",
+      "rights": {
+        "license": "CC BY 4.0 declared by the Figshare v4 item API",
+        "scope": "Item-level metadata declaration. The workbook contents, personal-data fields, consent scope, de-identification and file-level reuse conditions have not been verified.",
+        "evidence_url": "https://api.figshare.com/v2/articles/19674330",
+        "conditions": "Retain required attribution if a permitted reuse is later established. Resolve privacy, consent and secondary-use permissions separately; do not infer training, commercial use or redistribution approval from the record license alone.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-bark-wav2vec2-paper",
+      "kind": "paper",
+      "title": "Towards Dog Bark Decoding: Leveraging Human Speech Processing for Automated Bark Classification",
+      "url": "https://aclanthology.org/2024.lrec-main.1432/",
+      "version": "LREC-COLING 2024, pp. 16480–16486; 7-page published PDF",
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        21
+      ],
+      "task": "Methods comparator for dog-level grouped evaluation and human-speech-pretrained acoustic representations; not a translation or bird benchmark.",
+      "review_depth": "Full published paper reviewed for its home-stimulus protocol, segmentation, stimulus-derived context labels, Wav2Vec2 setup, splits, all result tables and limitations. No reproduction.",
+      "access": "Published paper is available through ACL Anthology. First page declares CC BY-NC 4.0 for the article.",
+      "decision": "Use as methods context only. Do not transfer its classes or performance to birds; the underlying dog data and baselines have separate by-request access and rights.",
+      "limitations": "One species, three predominant breeds, induced home stimuli, skewed labels, no external location/session holdout and one neural architecture. Dog identity evaluation intentionally includes each dog in train and test and acknowledges shortcut risk.",
+      "attribution": "Abzaliev, Pérez Espinosa and Mihalcea (2024), LREC-COLING 2024, 16480–16486.",
+      "rights": {
+        "license": "CC BY-NC 4.0 for the published article",
+        "scope": "Article text only; does not establish rights for the dataset, baseline code, model implementation or pretrained checkpoint.",
+        "evidence_url": "https://aclanthology.org/2024.lrec-main.1432.pdf",
+        "conditions": "Attribute the authors and source, link the license and indicate changes; commercial reuse is not permitted under this license.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-bark-stimulus-dataset",
+      "kind": "dataset",
+      "title": "Stimulus-recorded household dog vocalization dataset",
+      "url": "https://aclanthology.org/2024.lrec-main.1432/",
+      "version": "Dataset described in the 2024 paper; exact release/version not provided",
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        21
+      ],
+      "task": "Context, breed and individual dog classification methods in the associated paper; no use in Talk2Nature evaluation.",
+      "review_depth": "Paper describes 74 dogs, 16,789 segments and 14 labels. The authors state the dataset is available by request. No data files, participant/owner terms or release manifest were obtained.",
+      "access": "Available by request according to the paper; Talk2Nature has not contacted the authors.",
+      "decision": "Metadata only. No request or analysis until a concrete question, authorization, animal/owner consent scope and separate data terms are reviewed.",
+      "limitations": "The labels derive from induced stimuli and include non-dog sounds. File-level composition, annotation details, privacy, consent, split identifiers and external reuse terms are unavailable from the reviewed paper alone.",
+      "attribution": "Abzaliev, Pérez Espinosa and Mihalcea (2024), associated data described in LREC-COLING paper 2024.lrec-main.1432.",
+      "rights": {
+        "license": "No separate dataset license identified; access described as by request",
+        "scope": "The article's CC BY-NC 4.0 license does not establish rights for the recording dataset, owner/household material or derived labels.",
+        "evidence_url": "https://aclanthology.org/2024.lrec-main.1432.pdf",
+        "conditions": "Obtain and review explicit data-use terms, consent scope, privacy requirements and permitted processing before any access or reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog-bark-baseline-code",
+      "kind": "code",
+      "title": "Dog-bark classification baselines",
+      "url": "https://aclanthology.org/2024.lrec-main.1432/",
+      "version": "Code/baselines described in the 2024 paper; repository or revision not identified",
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        21
+      ],
+      "task": "Potential historical baseline reference for supervised dog-bark classification only.",
+      "review_depth": "The paper states the dataset and baselines are available by request. No repository, commit, package manifest or code license was identified from the reviewed paper.",
+      "access": "By request according to the paper; no contact or code acquisition occurred.",
+      "decision": "Do not treat as open-source code or reproduce until an exact revision, dependency inventory and license are independently verified.",
+      "limitations": "No runnable code, checkpoint, training configuration or reproducible split manifest was reviewed. The paper's article license is not a code license.",
+      "attribution": "Abzaliev, Pérez Espinosa and Mihalcea (2024), LREC-COLING paper 2024.lrec-main.1432.",
+      "rights": {
+        "license": "Unspecified for baseline code; available by request in the paper",
+        "scope": "No separate code repository, revision or license identified. The CC BY-NC 4.0 paper license does not grant code rights.",
+        "evidence_url": "https://aclanthology.org/2024.lrec-main.1432.pdf",
+        "conditions": "Verify code provenance and exact license before requesting, running, modifying or redistributing any implementation.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "esp-aves2-effnetb0-all-weights",
+      "kind": "model",
+      "title": "ESP-AVES2 EfficientNet-B0 all-mix checkpoint",
+      "url": "https://huggingface.co/EarthSpeciesProject/esp-aves2-effnetb0-all",
+      "version": "Checkpoint commit 7f27f0f7cc8aab4119ae0b52dafeb0cbf75b506d; SHA-256 a9ab2bf0896493a4bf325dbd739a7fbd58971513ac171bded880a81f7982bdc1; 81,855,656 bytes",
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        517,
+        518,
+        519
+      ],
+      "task": "Candidate frozen bioacoustic representation for a future bounded classification or retrieval comparison after dataset and task gates; not a generative communication model.",
+      "review_depth": "Official model card, exact checkpoint commit and SHA-256 sidecar, and official AVEX supported-model documentation reviewed. Metadata only: no weight or code download/execution. No source-level training-file manifest, overlap audit, or independent evaluation reproduction.",
+      "access": "Public model metadata and checksum are available; no artifact acquired.",
+      "decision": "Metadata-only. Consider only for a specifically noncommercial research comparison after scientific, data-rights, provenance, grouped-split and compute gates. Do not use as the project commercial/product baseline absent separate rights review; select a compatible alternative if commercial reuse is required.",
+      "limitations": "The card declares CC-BY-NC-SA-4.0 and lists AudioSet (5,700 h), Xeno-canto (10,416 h; varied licenses), iNaturalist (1,539 h; varied licenses), Watkins (27 h; licensing agreement) and Animal Sound Archive (78 h; terms unspecified). These aggregate source descriptions are not an item-level training manifest and do not resolve overlap or all upstream rights. The 16 kHz input description and classification/embedding tasks do not establish meaning or communication. Paper results were not reproduced.",
+      "attribution": "Earth Species Project, ESP-AVES2 EfficientNet-B0 all-mix model card and checkpoint.",
+      "rights": {
+        "license": "CC-BY-NC-SA-4.0 (model repository tag)",
+        "scope": "Model checkpoint repository only. AVEX code is separately MIT; the paper and upstream training media each have separate terms.",
+        "evidence_url": "https://huggingface.co/EarthSpeciesProject/esp-aves2-effnetb0-all",
+        "conditions": "Noncommercial and share-alike conditions apply to covered material; verify all upstream notices and scope before any reuse or redistribution. This is a project reuse decision, not legal advice.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moths-and-plants-elife-paper",
+      "kind": "paper",
+      "title": "Female moths incorporate plant acoustic emissions into oviposition decisions",
+      "url": "https://doi.org/10.7554/eLife.104700.3",
+      "version": "eLife 13:RP104700, Version of Record DOI 10.7554/eLife.104700.3; published 2026-01-05",
+      "task": "Methods context on a receiver’s behavior changing in response to an environmental acoustic cue; not a translation benchmark.",
+      "review_depth": "Version of Record full text and publisher-hosted assessment, public reviews and author response reviewed on 2026-10-30. No independent reproduction.",
+      "access": "Open Version of Record and public review history at eLife.",
+      "decision": "Use as a bounded receiver-response and context-effects methods comparator. It does not demonstrate plant intention or semantic communication.",
+      "limitations": "One moth species and tomato system; egg-cluster choice in controlled arenas. The preference reverses with plant context, and the authors identify multimodal and signal-specificity limits. The Methods contain a playback-rate discrepancy (1/min in one experiment description vs 60/min in the playback validation, Table 1 and author response); reconcile before reproduction.",
+      "attribution": "Seltzer et al. (2026), eLife 13:RP104700, Version of Record.",
+      "rights": {
+        "license": "CC BY 4.0",
+        "scope": "Published article text; deposited tables/data and analysis code are separate components with separate records.",
+        "evidence_url": "https://elifesciences.org/articles/104700",
+        "conditions": "Attribute the authors and source, link the license, and indicate changes. Do not extend the article license to the separate Mendeley deposit.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        16,
+        520
+      ],
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moths-and-plants-oviposition-data",
+      "kind": "dataset",
+      "title": "Moth–plant oviposition source tables",
+      "url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+      "version": "Mendeley Data v1; DOI 10.17632/yg7ms8rn37.1; published 2025-11-14",
+      "task": "Potential source tables for reproducing the published oviposition analyses only; not animal-call model training.",
+      "review_depth": "The Version of Record points to this deposit for tables and code. The Mendeley landing page describes codes/statistics and displays CC0 1.0, but no filenames, archive manifest, table mapping or file contents were inspected.",
+      "access": "Public versioned Mendeley metadata page; no files downloaded or opened.",
+      "decision": "Metadata only. Verify the exact file manifest, source-data mapping and component notices before any acquisition or analysis.",
+      "limitations": "Record-level license display does not verify file membership, data provenance, checksums, table correspondence or independence from the article analyses. No independent reproduction or Talk2Nature analysis. Published Methods disagree on whether playback was 1 click/minute or 60/minute; the deposited files have not been checked against this protocol.",
+      "attribution": "Zer et al. (2025), Mendeley Data v1, DOI 10.17632/yg7ms8rn37.1.",
+      "rights": {
+        "license": "CC0 1.0 displayed at record level; file-level scope unverified",
+        "scope": "Mendeley version 1 landing page only. Exact deposited tables, file notices and their correspondence to article results were not inspected; article rights remain separate.",
+        "evidence_url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+        "conditions": "Before reuse, inspect the versioned file manifest and notices, document provenance and validate the link to the reported results. No training admission is implied.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        16,
+        521
+      ],
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "moths-and-plants-analysis-code",
+      "kind": "code",
+      "title": "Moth–plant oviposition analysis code",
+      "url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+      "version": "Mendeley Data v1; DOI 10.17632/yg7ms8rn37.1; published 2025-11-14",
+      "task": "Potential methods reference for the paper’s analyses; not a runnable or verified project baseline.",
+      "review_depth": "The Version of Record says tables and code are deposited here, and the landing page describes codes/statistics. No code file, dependency, license header, checksum or execution environment was inspected or run.",
+      "access": "Public versioned Mendeley metadata page; no code files downloaded or opened.",
+      "decision": "Do not execute or redistribute until the exact code files, dependencies, file-level terms and mapping to the published analysis are verified.",
+      "limitations": "No immutable code file/version, dependency manifest, checksum or reproduction result was reviewed. The paper license does not independently establish rights for the deposit component. The paper’s Methods disagree on the playback rate (1/min vs 60/min); the referenced script or source files needed to resolve it were not inspected.",
+      "attribution": "Zer et al. (2025), Mendeley Data v1, DOI 10.17632/yg7ms8rn37.1; associated with Seltzer et al. (2026).",
+      "rights": {
+        "license": "CC0 1.0 displayed at record level; code-component scope unverified",
+        "scope": "Mendeley version 1 landing page only. No specific code files or included third-party components were inspected; paper rights remain separate.",
+        "evidence_url": "https://data.mendeley.com/datasets/yg7ms8rn37/1",
+        "conditions": "Verify files, embedded notices, dependencies, data/code mapping and provenance before execution, modification or redistribution.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-10-30",
+      "source_ids": [
+        16,
+        521
+      ],
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "arctic-shorebird-methods-paper",
+      "kind": "paper",
+      "title": "Acoustic and visual monitoring of Arctic-breeding shorebirds",
+      "url": "https://doi.org/10.1111/1365-2664.70300",
+      "version": "Journal of Applied Ecology 63(2), e70300; Version of Record published 2026-02-12",
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "task": "Methods comparator for passive acoustic versus visual biodiversity monitoring; not an animal-communication or Talk2Nature benchmark.",
+      "review_depth": "Publisher Version of Record abstract, Methods 2.1–2.3, Results, Discussion 4.1–4.3 and data-availability statement reviewed. No figures or supporting-information payload reused.",
+      "access": "Open-access publisher Version of Record; selected sections reviewed online.",
+      "decision": "Useful for recording-effort, field-context and acoustic-versus-visual comparison design. Treat its reported ecological results as paper claims; do not use as a validated Talk2Nature baseline.",
+      "limitations": "The paper's 130 paired plots and 15 species/groups differ from the latest Dryad record's 129 sites and 12 species/groups. Acoustic and visual effort is highly unequal. The article's ArcticSoundsNET detections derive from a classifier trained on the PRISM acoustic dataset. No independent reproduction or site-held-out evaluation was established in this review.",
+      "attribution": "Ziegenhorn et al. (2026), Journal of Applied Ecology 63, e70300, DOI 10.1111/1365-2664.70300.",
+      "rights": {
+        "license": "CC BY 4.0 as stated on the publisher article page",
+        "scope": "Publisher article content only. Dataset, code, classifier weights, upstream BirdNET and third-party components have separate terms.",
+        "evidence_url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2664.70300",
+        "conditions": "Attribute the authors and source, link the license and note changes; check any separately credited material before reuse. Talk2Nature publishes an original summary and link, not article figures or text.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        522
+      ]
+    },
+    {
+      "id": "arctic-shorebird-data",
+      "kind": "dataset",
+      "title": "Arctic shorebird acoustic and visual survey data",
+      "url": "https://doi.org/10.5061/dryad.7wm37pw54",
+      "version": "Dryad record first published 2026-01-21; latest listed update 2026-07-30",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Potential source for reproducing the published Arctic shorebird survey comparisons after reconciling version-specific counts and reviewing file-level provenance.",
+      "review_depth": "Current Dryad landing-page abstract, README description, version list and changelog reviewed. Its current reuse policy was checked. The listed data.zip and code.zip archives, their rows, coordinate values and embedded notices were not downloaded or opened.",
+      "access": "Public versioned metadata record; current page lists code.zip, data.zip and README.md. Payloads not acquired.",
+      "decision": "Metadata only; do not admit to a model, reproduce counts or publish site-level data until the paper/Dryad discrepancy and component-level provenance are resolved.",
+      "limitations": "The current Dryad page reports 129 sites (54 ANWR, 75 TESH) and 12 species/groups, while the paper reports 130 paired plots and 15. The change log notes corrections but does not fully reconcile the mismatch. The README states that data files include plot coordinates. No rights, data integrity, row-level join, classifier lineage or reproducibility audit was made.",
+      "attribution": "Ziegenhorn, M. (2026). Data and code to compare acoustic ARU and point count data for shorebird species presence across Alaska's North Slope [Dataset]. Dryad. DOI 10.5061/dryad.7wm37pw54.",
+      "rights": {
+        "license": "Dryad's current general policy states CC0 1.0 for hosted datasets; the dataset page has no visible record-level license field",
+        "scope": "Repository policy only. The exact data.zip contents, geographic sensitivity, third-party materials and component provenance were not inspected; article and code terms are separate.",
+        "evidence_url": "https://datadryad.org/help/guides/reuse",
+        "conditions": "Before acquisition or use, confirm the current version and file mapping, assess plot-coordinate sensitivity and component provenance, and preserve source version and attribution. No training admission is implied.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        523,
+        524
+      ]
+    },
+    {
+      "id": "arctic-shorebird-analysis-code",
+      "kind": "code",
+      "title": "Arctic shorebird survey comparison code",
+      "url": "https://doi.org/10.5061/dryad.7wm37pw54",
+      "version": "Code archive listed with the Dryad record last updated 2026-07-30; archive not acquired",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Potential reproduction source for the article's ecological analyses, pending code/data mapping and a reproducibility review.",
+      "review_depth": "Dryad record lists code.zip and describes scripts and their inputs. The archive, scripts, dependencies, embedded notices and input mapping were not downloaded or inspected.",
+      "access": "Public metadata record links the code archive; no code files acquired or executed.",
+      "decision": "Do not execute or redistribute until the exact code package, data inputs, component terms and version correspondence are reviewed.",
+      "limitations": "Repository-wide Dryad policy says CC0 for hosted datasets, but the record does not display a component license and the archive was not inspected. Code-to-data compatibility, external dependencies, exact versioning and reproducibility remain unknown.",
+      "attribution": "Ziegenhorn, M. (2026). Data and code to compare acoustic ARU and point count data for shorebird species presence across Alaska's North Slope [Dataset]. Dryad. DOI 10.5061/dryad.7wm37pw54.",
+      "rights": {
+        "license": "Dryad's current policy states CC0 1.0 for files hosted as datasets; the code.zip package and any embedded third-party notices were not inspected",
+        "scope": "Dryad code archive only. Dependencies and any embedded third-party components have separate, unreviewed provenance; data and article rights are separate.",
+        "evidence_url": "https://datadryad.org/help/guides/reuse",
+        "conditions": "Verify the archive version, file-level notices, dependencies, input mapping and appropriate permissions before execution, modification or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        523,
+        524
+      ]
+    },
+    {
+      "id": "arcticbirdsounds-plus-training-corpus",
+      "kind": "dataset",
+      "title": "ArcticBirdSounds+ training corpus described in BioSoundNet",
+      "url": "https://osf.io/4SFCR/",
+      "version": "As described in the 2023 Authorea preprint; current public OSF data version not verified",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Possible training corpus for bird-vocalization presence detection and ecological activity summaries; not a communication dataset or Talk2Nature test set.",
+      "review_depth": "The preprint describes ArcticBirdSounds+ as an expansion of the original ArcticBirdSounds with additional 2018–2019 field annotations and reports 20.9 hours, 13,303 annotations, 44 classes and eight sites. Its linked OSF page/API and file manifest were not verified; no data payload or annotation row was acquired.",
+      "access": "The preprint says data would be made available on OSF upon manuscript acceptance. Current deposit status and file access were not verified.",
+      "decision": "Metadata only. Do not infer that the original ArcticBirdSounds CC BY 4.0 statement applies to this expanded collection, and do not admit it to training or evaluation.",
+      "limitations": "Exact file membership, overlap with the original 20-hour/12,933-annotation corpus, annotation-to-audio mapping, session grouping, independent test status and current deposit are unresolved. The associated 2023 preprint is not peer reviewed and states all rights reserved; no dataset-specific license was verified.",
+      "attribution": "Christin et al. (2023), “Deep learning for passive acoustic monitoring: how to study changing phenology in remote areas,” Authorea preprint v1, DOI 10.22541/au.169963215.50290219/v1.",
+      "rights": {
+        "license": "Unverified for ArcticBirdSounds+; the preprint states all rights reserved, and the original dataset paper does not establish terms for the expanded aggregate.",
+        "scope": "Expanded dataset and annotations described in the preprint; article, source code and checkpoint are separate components.",
+        "evidence_url": "https://doi.org/10.22541/au.169963215.50290219/v1",
+        "conditions": "Verify a public versioned deposit, file-to-paper mapping, source overlap, session fields, consent/rights and exact license before acquisition or use.",
+        "research_use": "not_admitted",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        528,
+        530
+      ]
+    },
+    {
+      "id": "biosoundnet-reference-code",
+      "kind": "code",
+      "title": "BioSoundNet bird-vocalization detector code",
+      "url": "https://github.com/vin985/BioSoundNet",
+      "version": "Mutable default branch main observed 2026-10-31; no commit pinned",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Prior-method implementation for ecological bird-vocalization detection; not a validated Talk2Nature baseline.",
+      "review_depth": "GitHub repository page, README, visible folder list and repository-level MIT license indicator reviewed. No code, dependency file, training data, model or tests were inspected or run.",
+      "access": "Public repository metadata; exact revision was not pinned or acquired.",
+      "decision": "Keep metadata only. Before reproduction, pin a commit, inspect code and dependencies, map each input and output, and check source-data and checkpoint rights separately.",
+      "limitations": "A repository-level MIT indicator does not establish licenses for linked or embedded datasets, model weights, dependencies or the preprint. Current branch may change; no independent reproduction or security review was performed.",
+      "attribution": "Christin et al. author-linked repository, Vin985/BioSoundNet, default branch main as viewed 2026-10-31.",
+      "rights": {
+        "license": "MIT displayed at repository level; exact commit and file scope not pinned in this review.",
+        "scope": "Repository code only, subject to the exact license text and any file-level or third-party notices; excludes paper, data, weights and dependencies unless separately covered.",
+        "evidence_url": "https://github.com/vin985/BioSoundNet",
+        "conditions": "Pin the exact commit; retain applicable MIT notice; audit dependencies, bundled assets, data inputs and checkpoint licensing before execution, redistribution or commercial use.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        529
+      ]
+    },
+    {
+      "id": "biosoundnet-pretrained-checkpoint",
+      "kind": "model",
+      "title": "BioSoundNet pretrained bird-vocalization model",
+      "url": "https://github.com/vin985/BioSoundNet/tree/main/resources",
+      "version": "Repository README says a pretrained model is included; exact checkpoint version, checksum and manifest not reviewed",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Pretrained model used by the BioSoundNet reference implementation; not selected for Talk2Nature.",
+      "review_depth": "The repository README says a pretrained model is included and the page lists a resources folder. No checkpoint file was opened, downloaded, hashed or run.",
+      "access": "Repository page links a resources folder; file identity and current access were not verified.",
+      "decision": "Not admitted. Do not download or execute until exact checkpoint identity, training lineage, checksum, architecture, dependencies and model-specific license are reviewed.",
+      "limitations": "The repository-level MIT indicator does not resolve checkpoint terms or training data rights. Its possible use of ArcticBirdSounds+ also means it must not be treated as an independent comparator on overlapping material.",
+      "attribution": "Christin et al. author-linked repository, Vin985/BioSoundNet, default branch main as viewed 2026-10-31.",
+      "rights": {
+        "license": "Unverified; repository-level MIT status does not establish checkpoint-specific terms or scope.",
+        "scope": "Pretrained model weights and any model metadata; code and upstream dependencies are separate.",
+        "evidence_url": "https://github.com/vin985/BioSoundNet/tree/main/resources",
+        "conditions": "Verify exact file, checksum, source training set and model license before acquisition, execution, redistribution or commercial use.",
+        "research_use": "not_admitted",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        529
+      ]
+    },
+    {
+      "id": "pam-software-living-review-2026",
+      "kind": "paper",
+      "title": "Software tools for passive acoustic monitoring: a living systematic review",
+      "url": "https://doi.org/10.12688/f1000research.173495.1",
+      "version": "F1000Research 15:48, Version 1; published 2026-01-13",
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "task": "Prior-art and interoperability reference for selecting an open, maintainable role for Talk2Nature among existing bioacoustic and ecoacoustic tools.",
+      "review_depth": "Reviewed the article abstract, Methods §§2.1–2.3, Results §§3.1–3.2, conclusion, data availability, article license and three public reviewer reports. No supplementary files or tools were acquired or run.",
+      "access": "Open Version 1 article and public review reports; the article declares CC BY 4.0 for article content.",
+      "decision": "Use as a dated landscape and design reference. Quote counts only with the section and the article's internal discrepancies disclosed. Prioritize a verified interoperability need over another end-to-end platform.",
+      "limitations": "Literature ends 2024-01-01. The article's abstract and main text differ on PAM-dedicated tool and full-workflow counts. Public reviewers request direct software links, more granular features, clearer screening detail and a supportable living-update procedure. This is not an independent current feature audit or user study.",
+      "attribution": "Hanf-Dressler et al. (2026), F1000Research 15:48, Version 1, DOI 10.12688/f1000research.173495.1; cite the article separately from its linked inventory and R script.",
+      "rights": {
+        "license": "CC BY 4.0 declared for the article.",
+        "scope": "Article text only. The OSF inventory and R analysis script are separately cataloged and have a different rights-verification record.",
+        "evidence_url": "https://doi.org/10.12688/f1000research.173495.1",
+        "conditions": "Attribute the article and indicate adaptations; do not reproduce third-party works or infer rights for the supplementary files from the article license.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        552,
+        553,
+        554,
+        555
+      ]
+    },
+    {
+      "id": "pam-software-inventory-osf-v72ce",
+      "kind": "dataset",
+      "title": "Ecoacoustic software inventory, PRISMA materials and dendrogram",
+      "url": "https://doi.org/10.17605/OSF.IO/V72CE",
+      "version": "Public OSF project v72ce; API metadata modified 2025-11-20",
+      "priority": 1,
+      "reviewed": "2026-10-31",
+      "task": "Potential structured tool inventory for interoperability and coverage comparison; not a Talk2Nature benchmark or field dataset.",
+      "review_depth": "The paper's data-availability statement lists ECOACOUSTIC_SOFTWARE_INVENTORY.xlsx, an interactive dendrogram, PRISMA materials and an R script. The official OSF node API confirmed the public project title, summary and modified date, but its root license field is null. No file manifest, individual license field or payload was read.",
+      "access": "Public OSF project metadata and DOI; the linked individual files were not opened or acquired.",
+      "decision": "Metadata only. Use the paper's own summarized findings for now. Before file-level reuse, inspect the exact version, manifest, item-level terms and included software links.",
+      "limitations": "The inventory reflects a literature frame through 2023 and tool availability at analysis time, not a current 2026 census. The article states CC0 for its underlying package, but the current OSF root API exposes no license value; the exact item-level scope was not checked. Do not assume the article's CC BY 4.0 applies to these files.",
+      "attribution": "Hanf-Dressler et al. (2026) article data deposit, OSF project v72ce, DOI 10.17605/OSF.IO/V72CE; cite the article and deposit separately.",
+      "rights": {
+        "license": "Article states CC0 for the underlying data package; OSF project API license is null; item-level terms remain unverified.",
+        "scope": "Spreadsheet inventory, PRISMA materials and dendrogram named by the article; individual contents and embedded links may have separate terms.",
+        "evidence_url": "https://api.osf.io/v2/nodes/v72ce/",
+        "conditions": "Verify exact file version and rights before download, reuse, redistribution or commercial analysis; preserve the provenance and tool-level license data separately.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        552,
+        556
+      ]
+    },
+    {
+      "id": "pam-software-review-analysis-r-v72ce",
+      "kind": "code",
+      "title": "R analysis script for the ecoacoustic software review",
+      "url": "https://doi.org/10.17605/OSF.IO/V72CE",
+      "version": "Named in the F1000Research Version 1 data-availability statement; exact file revision not inspected",
+      "priority": 2,
+      "reviewed": "2026-10-31",
+      "task": "Potential reproducibility reference for the article's inventory analysis and figures; not Talk2Nature production code.",
+      "review_depth": "The article identifies PAM_SOFTWARE_ANALYSIS.R as the analysis script on OSF and says the underlying package is CC0. The OSF project root currently has license=null. The file, dependencies and code-level notices were not inspected or run.",
+      "access": "Public OSF project DOI; no script payload acquired.",
+      "decision": "Metadata only. If reproduction is justified, pin the file version and hash, inspect its dependencies and exact license, and compare its declared outputs with the article before execution.",
+      "limitations": "The paper's CC0 statement and null OSF root license need item-level reconciliation; project-level access does not establish safe code execution, dependency rights or reproducibility. No run has been performed.",
+      "attribution": "Hanf-Dressler et al. (2026), analysis script named in the Version 1 article's Data Availability statement; OSF project v72ce.",
+      "rights": {
+        "license": "Article states CC0 for underlying files; OSF root API license is null and the exact script-file license was not verified.",
+        "scope": "Analysis script and any dependencies; separate from article text, inventory data and software entries in the inventory.",
+        "evidence_url": "https://api.osf.io/v2/nodes/v72ce/",
+        "conditions": "Verify exact script and dependency terms; inspect source before running and retain original provenance.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": [],
+      "source_ids": [
+        552,
+        556
+      ]
     }
   ]
 }
