@@ -79,3 +79,4 @@
 .app-feedback-prompt{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;margin:0 0 18px;font-size:12px;line-height:1.55;color:#bcd2c9}.app-feedback-prompt a{color:#d8f2e3;text-underline-offset:3px}.app-feedback-prompt a:hover{color:#b5e7d1}
 @media(max-width:620px){.app-feedback-prompt{max-width:340px;font-size:11px}}
 .app-body .station-console button.station-primary:disabled{background:#31463f;border-color:#667c71;color:#c5d3cb;box-shadow:none;opacity:1}
+.app-body #station-console:focus-visible{outline:3px solid #e4d792;outline-offset:5px}

@@ -52,6 +52,11 @@ test('observation assets cannot trigger animal-facing browser output', async () 
 test('animal-facing boundary is visible in the Station and playback cannot autoplay', async () => {
   const station = await readFile(path.join(templates, 'station.html'), 'utf8');
   const appIntro = await readFile(path.join(templates, 'app-station-intro.html'), 'utf8');
+  const appCss = await readFile(path.join(assets, 'app.css'), 'utf8');
+  assert.match(station, /<section id="station-console"[^>]*tabindex="-1"/,
+    'direct Station fragment links must focus the named console without adding it to the normal Tab order');
+  assert.match(appCss, /#station-console:focus-visible\{outline:3px solid #e4d792;outline-offset:5px\}/,
+    'direct Station fragment focus must be visible to keyboard users');
   for (const file of ['station.js', 'device-check.js']) {
     const source = await readFile(path.join(assets, file), 'utf8');
     assert.match(source, /createNode:\s*context\s*=>\s*new AudioWorkletNode\(context,\s*'station-capture'/,
