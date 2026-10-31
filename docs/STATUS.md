@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 — refresh the Zero Command source gate
+
+On clean public baseline `e1cef8a` (PR #628), reran `node --test tests/zero-command.test.mjs tests/native-zero-command.test.mjs tests/review-audio.test.mjs`; **14/14 passed**. The focused suites cover browser observation assets, deliberate/confirmed human-review playback, hidden-page cleanup, pending-permission focus recovery, Android notification/output constraints, and prevention of silent service restart.
+
+This is a source regression check, not physical-device or assistive-technology acceptance. No microphone, animal, playback, recording, upload or participant data was used. Named iPhone/Safari, Android/Chrome, installed web app, native Android, VoiceOver/TalkBack and independent newcomer runs remain **not run** or open as applicable. The checklist and next acceptance step are in [`ZERO_COMMAND_DEVICE_CHECKLIST.md`](ZERO_COMMAND_DEVICE_CHECKLIST.md) and [`GOAL.md`](GOAL.md). No site deployment occurred.
+
 ## October 31 follow-up — Zero Command evidence note reconciled
 
 PR [#627](https://github.com/Metivity/talk2nature/pull/627) merged to `main` as [`3ca40d1`](https://github.com/Metivity/talk2nature/commit/3ca40d199c7e618cb17465bf3521e9e6e174c15e). All Public checks passed, including repository, browser-tool, native Android and preview-site checks. It clarifies that the earlier locked-host attempt was unverified at that time and that a later local synthetic browser rehearsal did verify cancellation through the visible “Playback cancelled. This recording was not played” status. The app-level discard result, physical-device behavior, assistive-technology output and newcomer comprehension remain unverified. This was a documentation change only; no Pages deployment occurred.
