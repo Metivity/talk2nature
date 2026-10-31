@@ -4992,50 +4992,50 @@
   {
     "id": 489,
     "title": "Mozilla Foundation Fellowships 2027–2028 · call page",
-    "description": "Official current fellowship page with tracks, amounts, cohort size and application timeline.",
+    "description": "Official current fellowship page with the focus areas, tracks, amounts, cohort size and application timeline.",
     "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/2027-call-for-applications/",
-    "checked": "2026-10-29",
-    "origin": "Official Mozilla Foundation call page reopened October 29, 2026; focus areas, track amounts, cohort count, timeline and open Letter of Intent route rechecked."
+    "checked": "2026-10-31",
+    "origin": "Official Mozilla Foundation call page rechecked October 31, 2026. Confirmed ten Fellowships, individual applicants, $100,000 stipend plus $25,000 project budget for Independent Fellows or $75,000 plus $25,000 for Embedded Fellows, LOI deadline December 17 at 11:59 PM Pacific, and June 1, 2027 start. The detailed biodiversity-sensing scope is in the linked RFP."
   },
   {
     "id": 490,
     "title": "Mozilla Foundation Fellowships 2027–2028 · request for proposals",
     "description": "Official 16-page Fellowship RFP covering focus areas, applicant requirements, tracks, application questions and AI-use policy.",
     "url": "https://assets.mofoprod.net/network/documents/PUBLIC_2027_2028_Fellowship_RFP-2.pdf",
-    "checked": "2026-10-29",
-    "origin": "Official 16-page RFP reopened October 29, 2026; biodiversity-sensing scope, individual eligibility, track expectations, public-benefit criteria, schedule and AI-use rules reviewed. No application portal was opened or submitted."
+    "checked": "2026-10-31",
+    "origin": "Official 16-page RFP rechecked October 31, 2026. Reviewed community-run environmental sensing for biodiversity, track expectations, charitable public benefit, availability and work-in-the-open requirements, eligibility, schedule and AI-use policy. The RFP permits AI for limited brainstorming, clarity or translation but not generating full answers; applicant responses must remain the applicant's own work and voice. No application portal was opened or submitted."
   },
   {
     "id": 491,
     "title": "Mozilla Foundation grant eligibility guidelines",
     "description": "Official eligibility rules for charitable purpose, individual applicants, legal fund receipt, USD banking and restrictions.",
     "url": "https://www.mozillafoundation.org/documents/501/Mozilla_Foundation_Grant_Eligibility_Guidelines_tNhKrgM.pdf",
-    "checked": "2026-10-29",
-    "origin": "Official four-page eligibility guide reopened October 29, 2026. It describes global applicants, charitable-purpose and USD receipt requirements; it does not determine any specific person’s legal, tax or payment eligibility."
+    "checked": "2026-10-31",
+    "origin": "Official four-page eligibility guide rechecked October 31, 2026. It describes global individual applicants, charitable-purpose and public-benefit requirements, legal ability to receive funds from a US-based organization and enter a grant agreement, USD banking and restrictions. It does not determine any specific person's legal, tax or payment eligibility."
   },
   {
     "id": 492,
     "title": "Mozilla Foundation Human-Scale AI Incubator · 2026 call",
-    "description": "Official 2026 Incubator call for proposals, including working-technology and product-community-fit requirements.",
+    "description": "Official 2026 Human-Scale AI call for proposals, including working-technology, community, AI-core and product-community-fit requirements.",
     "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/incubator/human-scale-ai/call-for-proposals/",
-    "checked": "2026-10-28",
-    "origin": "Reviewed the current official call for the seven-project cohort, its technical principles, deadline, first-year/follow-on funding and criteria."
+    "checked": "2026-10-31",
+    "origin": "Rechecked the official 2026 Human-Scale AI call on October 31. It seeks seven projects, with $300,000 for 12 months beginning in April 2027 and possible follow-on support up to $500,000 total; it requires working technology already deployed with its intended community and early evidence of product-community fit. The November 20 deadline has no extension. No application was prepared or submitted."
   },
   {
     "id": 493,
     "title": "Mozilla Foundation Human-Scale AI Incubator · 2026 FAQs",
     "description": "Official FAQ clarifying the Incubator’s AI-core requirement, eligible team shape and application deadline.",
     "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/incubator/human-scale-ai/call-for-proposals/faqs/",
-    "checked": "2026-10-28",
-    "origin": "Reviewed the official FAQ, last updated October 15, 2026, including fit distinctions between the individual Fellowship and the team-based Incubator."
+    "checked": "2026-10-31",
+    "origin": "Rechecked the official FAQ, last updated October 15, 2026. It confirms the November 20 deadline, team/project funding, sufficient team structure to execute, the need to receive funds from a U.S.-based 501(c)(3), AI as a core part of the solution and early product-community-fit evidence."
   },
   {
     "id": 494,
     "title": "Mozilla Foundation 2027 Fellows · official FAQs",
     "description": "Official FAQ distinguishing the individual Fellowship from the team-based Incubator and clarifying the deadline and AI-use requirements.",
     "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/2027-call-for-applications/faqs/",
-    "checked": "2026-10-29",
-    "origin": "Official Fellowship FAQ, last updated October 25, 2026, reopened October 29. Confirmed individual-only awards, no late LOIs or extensions, user-readiness expectations, U.S. 501(c)(3) grant receipt, and limited supportive AI use with applicant-authored final responses."
+    "checked": "2026-10-31",
+    "origin": "Official Fellowship FAQ, last updated October 25, 2026, rechecked October 31. Confirmed individual-only awards, no late LOIs or extensions, the required ability to receive funds from a U.S.-based 501(c)(3), and the distinction between the early-stage individual Fellowship and team/product Incubator. The full RFP supplies the AI-use policy."
   },
   {
     "id": 495,

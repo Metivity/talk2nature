@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 continuation — record current Mozilla call fit and private gates
+
+Updated Mozilla source records 489–494 and the Fellowship/Incubator opportunity entries against the current official pages and the linked RFP. The Fellowship RFP's biodiversity-sensing example supports thematic relevance, but no applicant eligibility, community need or readiness is inferred. The Human-Scale AI Incubator requires working AI already deployed with an intended community, AI as a core solution and early product-community-fit evidence; Talk2Nature's current tool is not an AI product, so this cycle is a no-go on the documented evidence. Added an ignored private checklist with blank founder decision fields and a regression test for this distinction.
+
+Verification is local only; no application answers, portal actions, external contact or commitment occurred. The five-track goal remains **active**. The current clean branch is based on public `main`; this milestone is not yet committed or published. Next: founder decision and fact confirmation are prerequisites for any LOI. The Incubator remains no-go unless relevant evidence materially changes.
+
 ## October 31 post-merge readback — source checks green; Pages not updated
 
 PR [#613](https://github.com/Metivity/talk2nature/pull/613) merged to `main` as `622a4095c857b81a1eb4af972e2b35a6b8ecd999`. GitHub Actions run [#41170094342](https://github.com/Metivity/talk2nature/actions/runs/41170094342) completed successfully; repository, browser-tool, Android and preview-site jobs all passed. A fresh TLS-verified live check still fails at `/app/station/` on the missing **Listen-only by design.** disclosure, confirming Pages has not published the change. No workflow dispatch or deployment occurred. The manual Pages workflow has no dispatch action in the connected GitHub tool. Next: dispatch the manual workflow from an action-capable authorized Metivity session, then verify the live route. Physical-device and independent-novice acceptance remain open.
