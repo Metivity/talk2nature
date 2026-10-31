@@ -1,12 +1,18 @@
 # First model and dataset decision
 
-Reviewed September 30, 2026; updated October 14. This is a feasibility decision, not an installed environment, benchmark result or legal clearance. No model weights or animal recordings were downloaded.
+Reviewed September 30, 2026; updated October 31. This is a task-selection decision, not an installed environment, benchmark result or legal clearance. No model weights or animal recordings were downloaded.
 
 ## Decision
 
-Prefer a small classifier over frozen Perch embeddings for a first **acoustic context-association experiment**, conditional on a suitable species, question and dataset. Compare it with majority-class, simple acoustic-feature and background/context baselines. Do not build a new foundation model or natural-language animal persona. A voluntary parrot interface would require a different experiment and might not need an acoustic model at all.
+The most defensible first computational question identified so far is **passive bird-sound presence detection** in a ten-second soundscape clip. The output is a score for whether any bird sound is present, not species, caller, behavior, meaning or conversation. DCASE 2018 Task 3 is the clearest task/design precedent reviewed: it uses three development and three evaluation domains and recommends per-domain evaluation for generalization.
 
-This choice keeps the initial implementation small and leaves a possible commercial route if the exact artifact, training-data provenance and application terms are verified. It does not establish task performance or an original research contribution. The existing Hoplite workflow already covers embedding search, annotation and classifiers; use or contribute to it where practical.
+**DCASE is a candidate, not an admitted benchmark or selected dataset.** The task page's manual-label description conflicts with the BirdVox deposit's record that its binary labels were automatically derived from flight-call annotations. The official evaluation audio deposit lists 9.1 GB of clips but no labels and has a blank license field, while the task page gives a challenge-level CC BY 4.0 statement. Source-component rights and the possibility of a genuinely locked, independent test remain unresolved. The listed baseline uses legacy Python 2.7/Theano/Lasagne dependencies; the repository-level code license was not established. No DCASE audio, labels, baseline code or weights were acquired or run. See the DCASE evidence note and resource/source records in `content/research.json`, `content/sources.json` and `research/resources.json`.
+
+Before any acquisition or training, obtain qualified review of the event definition, each component's label provenance and rights, independent recording/site/session groups, and whether a locked evaluation is possible. If those gates fail, revise or defer rather than reuse challenge scores as a Talk2Nature result. AutoResearch and real-data admission remain **NOT READY**.
+
+Frozen Perch embeddings remain a possible later route for a distinct **acoustic context-association** question, conditional on suitable independently observed labels, dataset rights and reviewer approval. Do not conflate that task with bird-presence detection. Do not build a new foundation model or natural-language animal persona; a voluntary parrot interface would need a separate study and might not need an acoustic model at all.
+
+The existing Hoplite workflow already covers embedding search, annotation and classifiers; use or contribute to it where practical. Neither task selection establishes performance or an original research contribution.
 
 ## Candidate register
 

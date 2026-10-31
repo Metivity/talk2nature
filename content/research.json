@@ -6256,9 +6256,57 @@
         "label": "Acoustic data collection period",
         "start_year": 2021,
         "end_year": 2023,
-      "source_id": 512,
+        "source_id": 512,
         "locator": "Dryad README dataset description states that recordings were collected in June-August 2021-2023."
       }
     }
+  },
+  {
+    "slug": "dcase2018-bird-presence-benchmark",
+    "title": "DCASE makes bird presence measurable, not meaningful",
+    "seo_description": "DCASE 2018 tests binary bird-sound presence across recording domains; rights and hidden-label limits make it a precedent, not a ready benchmark.",
+    "taxon": "Birds (passive acoustic monitoring)",
+    "kind": "Benchmark and task review",
+    "year": "2018–2019",
+    "source_ids": [
+      531,
+      532,
+      533,
+      534,
+      58
+    ],
+    "review_depth": "DCASE 2018 Task 3 specification: task definition, development/evaluation dataset descriptions, validation guidance, rights statement and metric. Stowell et al. (2019) Version of Record: task design, dataset provenance, baseline, private-test procedure, results, calibration and error/generalisation sections. Official DCASE evaluation-data record and baseline README reviewed. The DCASE 2018 extension and the 2019 paper’s original challenge description are kept distinct. No audio, label files, code or weights acquired or executed.",
+    "finding": "DCASE Task 3 is the clearest reviewed precedent for Talk2Nature’s narrow first ML question: return a score for whether any bird sound is present in a 10-second passive soundscape window. The 2018 task page describes three development domains and three evaluation domains and recommends measuring cross-domain generalisation; the 2019 primary article reports that detector performance depended strongly on site/recording conditions. It is ecological filtering for later human review, not species identification, caller identity, behavior, meaning or communication.",
+    "limitations": "The 2018 page says all six datasets carry binary present/absent labels and declares CC BY 4.0; label provenance is not uniform. The 2019 article describes manual annotation for the Warblr and freefield corpora; the BirdVox-DCASE-20k source record says its labels were automatically derived from annotations of avian vocalizations. The task page estimates label accuracy at 96.7% for most data and 99.5% or higher for BirdVox; these are source-reported estimates, not independently verified by Talk2Nature. The task targets any bird sound, not necessarily one precisely defined vocalization class. DCASE’s evaluation audio record is 9.1 GB of WAV archives and lists no labels or license value; the challenge kept final test labels private. The labeled development domains can support a predeclared pilot comparison but do not by themselves leave a single untouched locked test after development. Component rights need review despite the challenge-level CC BY 4.0 statement. The listed neural baseline is legacy Python 2.7/Theano/Lasagne; repository-level code licensing was not established. No current model was run or independently reproduced.",
+    "lesson": "Use presence/absence only as a modest detector output with a human-review step. A useful benchmark must preserve whole recording/domain groups, report each domain separately, document annotation uncertainty and comparison baselines, and retain a locked test that is never used for model or threshold choices. Different data provenance and the distinction between a bird-event label and a missing/unannotated label must remain explicit.",
+    "next_review": "Ask a qualified bioacoustics reviewer to compare DCASE 2018 and ArcticBirdSounds for the proposed event-presence task: label completeness/definition, source-specific rights, recoverable recording/site/session groups, benchmark contamination and whether evaluation labels can support a truly locked test. Do not inspect rows or acquire any archive until that scope and rights are approved.",
+    "reviewed": "2026-10-31",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Primary task and methods reviewed; no independent reproduction",
+    "year_label": "Challenge and article years",
+    "study_snapshot": [
+      [
+        "Question and output",
+        "Does any bird sound occur within a 10-second audio clip? Binary/probability output; not species, caller, behavior or meaning."
+      ],
+      [
+        "Development data",
+        "DCASE 2018 page lists freefield1010, warblrb10k and BirdVox-DCASE-20k as three 44.1 kHz mono 10-second development sources. The 2019 article describes manual labels for Warblr/freefield; BirdVox source record describes automatically derived hasbird labels."
+      ],
+      [
+        "Evaluation design",
+        "DCASE recommends train on two development datasets and test on the third, rotating the held-out domain. Its official evaluation record lists 2,000 Warblr, 6,620 Chernobyl and 4,000 PolandNFC audio clips, but no labels. The 2019 paper says its official test labels were kept private."
+      ],
+      [
+        "Reported task outcomes",
+        "The 2019 article reports about 88.7% AUC for the leading original challenge system and strong site dependence. These are published challenge results, not Talk2Nature reproduction or current benchmark evidence."
+      ],
+      [
+        "Rights and implementation",
+        "DCASE task page states CC BY 4.0 at challenge level; evaluation Zenodo license field is blank. Code, component sources and dependencies require separate review. The official 2018 baseline README describes legacy Python 2.7, Theano and Lasagne; no code was run."
+      ]
+    ],
+    "purpose": "Models & evaluation",
+    "review_locator": "DCASE 2018 Task 3: Description, Audio datasets, Recommended cross-validation procedure, Task-specific use of external data and Evaluation measure; Stowell et al. (2019): §§2.1–2.4, §3.1, §3.3 and Discussion; Zenodo 1298604 record description and Rights section; DCASE-REPO README."
   }
 ]

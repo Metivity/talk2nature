@@ -17,6 +17,7 @@ if (toggle && navigation) {
 const dock = document.querySelector('.field-dock');
 if (dock) {
   const compactViewport = window.matchMedia('(max-width: 800px)');
+  const occlusionTargets = 'a[href],button:not(:disabled),input:not(:disabled),select:not(:disabled),textarea:not(:disabled),summary,[tabindex]:not([tabindex="-1"]),h1,h2,h3,h4,p,li,blockquote,figcaption';
   let previousY = Math.max(0, window.scrollY || 0);
   let direction = 0;
   let distance = 0;
@@ -24,12 +25,35 @@ if (dock) {
   const hideDock = () => {
     if (!dock.contains(document.activeElement)) document.body.classList.add('field-dock-away');
   };
+  const dockCoversContent = () => {
+    if (!compactViewport.matches || !dock.getBoundingClientRect) return false;
+    const away = document.body.classList.contains('field-dock-away');
+    const transition = dock.style?.transition;
+    if (away) {
+      if (dock.style) dock.style.transition = 'none';
+      document.body.classList.remove('field-dock-away');
+    }
+    const box = dock.getBoundingClientRect();
+    const covered = box.width > 0 && box.height > 0 && [...document.querySelectorAll(occlusionTargets)].some(item => {
+      if (dock.contains(item) || item.hidden || item.disabled || item.closest?.('[hidden], [inert], [aria-hidden="true"]')) return false;
+      const style = item.ownerDocument?.defaultView?.getComputedStyle?.(item);
+      if (style && (style.display === 'none' || style.visibility === 'hidden')) return false;
+      const rect = item.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0 && rect.left < box.right && rect.right > box.left && rect.top < box.bottom && rect.bottom > box.top;
+    });
+    if (away) {
+      document.body.classList.add('field-dock-away');
+      if (dock.style) dock.style.transition = transition || '';
+    }
+    return covered;
+  };
   const syncViewport = () => {
     previousY = Math.max(0, window.scrollY || 0);
     direction = 0;
     distance = 0;
-    if (!compactViewport.matches || previousY <= 80) revealDock();
-    else hideDock();
+    if (!compactViewport.matches) revealDock();
+    else if (previousY > 80 || dockCoversContent()) hideDock();
+    else revealDock();
   };
   const updateDockOnScroll = () => {
     const y = Math.max(0, window.scrollY || 0);
@@ -37,6 +61,12 @@ if (dock) {
     previousY = y;
     if (!compactViewport.matches) {
       revealDock();
+      direction = 0;
+      distance = 0;
+      return;
+    }
+    if (dockCoversContent()) {
+      hideDock();
       direction = 0;
       distance = 0;
       return;
@@ -57,10 +87,13 @@ if (dock) {
   };
   window.addEventListener('scroll', updateDockOnScroll, {passive: true});
   window.addEventListener('resize', syncViewport, {passive: true});
-  if (previousY > 80 && compactViewport.matches) hideDock();
+  if (compactViewport.matches && (previousY > 80 || dockCoversContent())) hideDock();
   dock.addEventListener('focusin', revealDock);
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && window.scrollY <= 48) revealDock();
+    if (document.visibilityState === 'visible' && window.scrollY <= 48) {
+      if (dockCoversContent()) hideDock();
+      else revealDock();
+    }
   });
 }
 const search = document.querySelector('#research-search');

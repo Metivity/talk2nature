@@ -1,5 +1,13 @@
 # Project status
 
+## October 31 continuation — document DCASE task candidate and mobile dock fix
+
+Added four primary-source records (531–534), one research note and one metadata-only resource for DCASE 2018 Task 3. Updated the model/data decision to distinguish a narrow binary presence-detection question from a selected dataset or communication claim. The official task page, Stowell et al. (2019), the BirdVox v2 record, the evaluation-data record and baseline README were reviewed. Label provenance is mixed, the evaluation-record license field is blank despite the challenge-level CC BY 4.0 statement, evaluation labels are absent from the reviewed deposit, and baseline code licensing remains unverified. No third-party media/code/weights were acquired or run; AutoResearch and real-data admission stay **NOT READY**.
+
+A rendered 390 × 844 browser check exposed fixed mobile navigation over the research-note introduction. The site now hides the dock when it overlaps visible content and restores it for keyboard focus. Full suites pass: Python **239 passed / 1 skipped**, Node **167 passed**. The local noindex build has **155 pages plus 404**; the site checker validates **156 HTML documents and 10,847 links**; resource validation reports **287 valid**. `git diff --check` passes.
+
+This is unmerged work on `codex/dcase-bird-presence-evidence`, based on public `main` `5e38f0932f0875ff808c4ee93f4d24b7ad216e04`; no push, merge or deployment occurred. Browser emulation is not physical-device acceptance or expert review. Next gate: qualified review before dataset acquisition, with named iPhone/Android checks still open.
+
 > Additional status history is preserved in [STATUS_HISTORY.md](STATUS_HISTORY.md).
 
 ## October 30 — keep the active status record manageable
