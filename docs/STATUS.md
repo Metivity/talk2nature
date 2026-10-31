@@ -6,6 +6,16 @@ Extended the live Pages verifier to check the phone app's primary invented/no-mi
 
 Fresh live HTTP readback shows `/app/` has the correct invented-example primary action but `/app/station/` still lacks the required disclosure; the live check therefore fails on that route. An open installed-app tab showed an update-available notice and older home copy, a separate cached view. No deployment, recording or animal interaction occurred. Next: publish clean `main` via the authorized Metivity Pages workflow when its session is available, then require the live verifier to pass. Named-device and independent-novice acceptance remain open.
 
+## October 31 follow-up — assert the initial Zero Command control state
+
+Extended `scripts/check_live_site.py` to check the deployed Station's initial controls: the recording-permission checkbox must be unchecked, microphone Start must be disabled, and the enabled practice action must say **Try invented example · no microphone**. Added regression cases for a checked permission, enabled microphone Start and missing/renamed practice action. This verifies the static first-load HTML state; it does not validate JavaScript behavior, OS permission behavior or an actual phone.
+
+**Verification:** full Python suite **243 passed, 1 skipped**; Node suite **167/167**; public build **159 pages plus 404**; site checker **160 HTML / 11,135 links / 159 reachable public pages**; route-backed post-deploy verifier passed on the generated candidate; `git diff --check` passed. A TLS-verified direct fetch of the live Station still serves the old copy and fails the updated disclosure contract. No deployment, microphone, recording, animal interaction or external contact occurred. The candidate is in a clean-main-based worktree; the five-track goal remains active.
+
+Read-only accessibility-tree inspection of the deployed Companion and demo routes showed Ready state, Whole moment selected, permission unchecked, microphone Start disabled and the synthetic rehearsal available; no action was activated. The deployed button still says **Try without a microphone**. An already-open app tab displayed an update-ready notice, consistent with a cached shell. This is desktop browser evidence only.
+
+**Next:** dispatch the manual Pages workflow from the authorized Metivity session, then read back the workflow result and live Station route. The connected GitHub plugin can inspect the repository but does not expose workflow dispatch, and the current local CLI is not authenticated for the authorized publishing identity. No run was started. Physical-device and independent-novice acceptance remain open.
+
 ## October 31 continuation — reaffirm Zero Command and keep the goal active
 
 Zero Command is the default Field Companion posture: user-started passive observation, an invented first action requiring no microphone, no animal-directed sound, no inferred reply, and no silent upload or research admission. The five-track project goal remains **active**. Next is a named-device no-animal rehearsal followed by an independent novice walkthrough; neither is complete yet. Use invented material only and preserve the real-data and AutoResearch **NOT READY** gates.

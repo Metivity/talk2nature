@@ -30,7 +30,9 @@ class _VisibleContentParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.text = []
         self.anchors = []
+        self.controls = {}
         self._anchor = None
+        self._control = None
         self._hidden_depth = 0
 
     def handle_starttag(self, tag, attrs):
@@ -43,6 +45,13 @@ class _VisibleContentParser(HTMLParser):
                 "classes": set(attrs.get("class", "").split()),
                 "text": [],
             }
+        if tag in {"button", "input"} and attrs.get("id"):
+            self._control = {
+                "tag": tag,
+                "attributes": attrs,
+                "text": [],
+            }
+            self.controls[attrs["id"]] = self._control
 
     def handle_endtag(self, tag):
         if tag in {"script", "style", "template"} and self._hidden_depth:
@@ -51,6 +60,9 @@ class _VisibleContentParser(HTMLParser):
             self._anchor["text"] = _normalize_copy(" ".join(self._anchor["text"]))
             self.anchors.append(self._anchor)
             self._anchor = None
+        if tag == "button" and self._control is not None and self._control["tag"] == "button":
+            self._control["text"] = _normalize_copy(" ".join(self._control["text"]))
+            self._control = None
 
     def handle_data(self, data):
         if self._hidden_depth:
@@ -58,6 +70,8 @@ class _VisibleContentParser(HTMLParser):
         self.text.append(data)
         if self._anchor is not None:
             self._anchor["text"].append(data)
+        if self._control is not None:
+            self._control["text"].append(data)
 
 
 def _normalize_copy(value):
@@ -145,6 +159,25 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
             missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
             if missing_copy:
                 raise LiveCheckError(f"{url}: Zero Command setup disclosure is incomplete: {missing_copy[0]}")
+            permission = content.controls.get("station-permission")
+            if (
+                permission is None
+                or permission["tag"] != "input"
+                or permission["attributes"].get("type") != "checkbox"
+                or "checked" in permission["attributes"]
+            ):
+                raise LiveCheckError(f"{url}: microphone permission must be unchecked by default")
+            start = content.controls.get("station-start")
+            if start is None or start["tag"] != "button" or "disabled" not in start["attributes"]:
+                raise LiveCheckError(f"{url}: microphone Start must be disabled by default")
+            demo = content.controls.get("station-demo")
+            if (
+                demo is None
+                or demo["tag"] != "button"
+                or demo["text"] != "Try invented example · no microphone"
+                or "disabled" in demo["attributes"]
+            ):
+                raise LiveCheckError(f"{url}: the enabled invented, microphone-free action is missing")
         checked_pages.append(url)
 
     sitemap_url = urljoin(root_url, "sitemap.xml")
@@ -179,6 +212,9 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
         "robots_names_sitemap": True,
         "zero_command_first_action_verified": True,
         "station_disclosure_verified": True,
+        "permission_unchecked_by_default": True,
+        "microphone_start_disabled_by_default": True,
+        "synthetic_action_available": True,
     }
 
 

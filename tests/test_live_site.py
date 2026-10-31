@@ -24,7 +24,10 @@ class FakeLiveSite:
                 "Nature Station",
                 "<strong>Listen-only by design.</strong> We do not call, imitate or prompt animals. "
                 "You choose when recording starts and can stop it at any time. "
-                "In the browser, recording ends if you leave this page.",
+                "In the browser, recording ends if you leave this page. "
+                '<input id="station-permission" type="checkbox">'
+                '<button id="station-start" disabled>Permission needed</button>'
+                '<button id="station-demo">Try invented example · no microphone</button>',
             ),
             "research/resources/": self._page("research/resources/", "Research resources"),
         }
@@ -78,6 +81,9 @@ class LiveSiteTests(unittest.TestCase):
         self.assertTrue(result["robots_names_sitemap"])
         self.assertTrue(result["zero_command_first_action_verified"])
         self.assertTrue(result["station_disclosure_verified"])
+        self.assertTrue(result["permission_unchecked_by_default"])
+        self.assertTrue(result["microphone_start_disabled_by_default"])
+        self.assertTrue(result["synthetic_action_available"])
         self.assertEqual(len(site.calls), 6)
 
     def test_rejects_a_stale_or_microphone_first_app_home(self):
@@ -96,6 +102,31 @@ class LiveSiteTests(unittest.TestCase):
             "Recording starts when you open the app.",
         )
         with self.assertRaisesRegex(LiveCheckError, "setup disclosure is incomplete"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_a_checked_permission_or_enabled_microphone_start(self):
+        site = FakeLiveSite()
+        station = site.pages["app/station/"].replace(
+            '<input id="station-permission" type="checkbox">',
+            '<input id="station-permission" type="checkbox" checked>',
+        )
+        site.pages["app/station/"] = station
+        with self.assertRaisesRegex(LiveCheckError, "permission must be unchecked"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+        site = FakeLiveSite()
+        site.pages["app/station/"] = site.pages["app/station/"].replace(
+            '<button id="station-start" disabled>', '<button id="station-start">'
+        )
+        with self.assertRaisesRegex(LiveCheckError, "Start must be disabled"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_a_missing_or_unavailable_synthetic_station_action(self):
+        site = FakeLiveSite()
+        site.pages["app/station/"] = site.pages["app/station/"].replace(
+            "Try invented example · no microphone", "Try without a microphone"
+        )
+        with self.assertRaisesRegex(LiveCheckError, "invented, microphone-free action"):
             verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
     def test_retries_transient_deployment_failure(self):
