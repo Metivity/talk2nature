@@ -1666,9 +1666,9 @@
     "id": 165,
     "title": "Detection of electrical signals in fungal mycelia in response to external stimuli (2025)",
     "url": "https://doi.org/10.1016/j.isci.2025.113484",
-    "description": "Buffi et al. report extracellular fungal-potential-card recordings in Fusarium oxysporum, including a growth-associated PSD difference and nonsignificant treatment contrasts. The paper does not establish semantic communication. Its data-availability paragraph prints DOI 10.17632/srkkxbh6sp.1; the cited Mendeley v1 record displays DOI 10.17632/srkxbkh6sp.1.",
+    "description": "Buffi et al. report extracellular fungal-potential-card recordings in Fusarium oxysporum, including a growth-associated PSD difference and nonsignificant treatment contrasts; the experiment does not decode fungal language. The current PMC full-text record links dataset DOI 10.17632/srkxbkh6sp.1, matching the official Mendeley v1 and DataCite metadata. A previously reviewed publisher PDF prints 10.17632/srkkxbh6sp.1; DataCite returns 404 for that differing string. This resolves the DOI crosswalk at metadata level only; it does not verify any data files.",
     "checked": "2026-10-31",
-    "origin": "Full PMC article text, including Methods, Results/Table 1, figures, Discussion, data statement and CC BY 4.0 license, reviewed. Supplementary Document S1 and raw data files were not inspected; no result reproduced.",
+    "origin": "Re-reviewed the current PMC full-text Data and code availability section and compared its linked data DOI with the official Mendeley v1 page and DataCite API. The PDF previously reviewed from the university repository prints a differing DOI string. Supplementary Document S1 and raw data files were not inspected; no result reproduced.",
     "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12483595/",
     "review_url_label": "Open full-text article record"
   },
@@ -1676,9 +1676,9 @@
     "id": 166,
     "title": "Raw voltage data for the fungal-potential-card study (Mendeley Data v1)",
     "url": "https://doi.org/10.17632/srkxbkh6sp.1",
-    "description": "The official Mendeley Data v1 page displays DOI 10.17632/srkxbkh6sp.1 and CC BY 4.0, describing raw voltage-potential data from Fusarium oxysporum before and after external stimuli. The published article prints a different DOI (10.17632/srkkxbh6sp.1). The visible Files section contains no file entries, so deposit identity, file-level contents and analysis suitability remain unchecked.",
+    "description": "The official Mendeley Data v1 page displays DOI 10.17632/srkxbkh6sp.1 and CC BY 4.0 and describes raw voltage-potential data from Fusarium oxysporum before and after external stimuli. Its visible Files section contains no file entries. The current PMC full-text article and DataCite metadata identify this same DOI; a previously reviewed publisher PDF's differing DOI string returns 404 in DataCite. The crosswalk is resolved at metadata level, while file contents and analysis suitability remain unchecked.",
     "checked": "2026-10-31",
-    "origin": "Official Mendeley Data version 1 page reviewed; its visible Files section contained no file entries. No files were downloaded.",
+    "origin": "Official Mendeley Data v1 page and DataCite API metadata for the canonical DOI reviewed; DataCite API returned 404 for the differing DOI string printed in the previously reviewed PDF. The visible Mendeley Files section contained no file entries. No files were downloaded.",
     "review_url": "https://data.mendeley.com/datasets/srkxbkh6sp/1",
     "review_url_label": "Mendeley Data record and license"
   },
@@ -5683,5 +5683,15 @@
     "url": "https://innovationisrael.org.il/kol_kore/vouchers-nebius-rd-labs/",
     "checked": "2026-10-31",
     "origin": "Official Israel Innovation Authority call page and open-applications listing checked October 31, 2026; applicant class, commercial-development scope, accelerator minimum, discount and submission dates reviewed."
+  },
+  {
+    "id": 559,
+    "title": "DataCite metadata for the fungal-potential-card dataset DOI",
+    "url": "https://api.datacite.org/dois/10.17632/srkxbkh6sp.1",
+    "description": "DataCite metadata identifies DOI 10.17632/srkxbkh6sp.1 as the 2025 Mendeley Data record “Detection of electrical signals in fungal mycelia in response to external stimuli; Buffi et al.” and links it to https://data.mendeley.com/datasets/srkxbkh6sp/1. The differing DOI string 10.17632/srkkxbh6sp.1 from a previously reviewed publisher PDF returns HTTP 404. This verifies the record-level DOI crosswalk, not file contents or rights.",
+    "checked": "2026-10-31",
+    "origin": "TLS-verified GET to the official DataCite API: canonical DOI lookup returned HTTP 200, canonical DOI, dataset title, publication year 2025 and Mendeley URL; lookup for the PDF string returned HTTP 404. No dataset payload or manifest was acquired.",
+    "review_url": "https://api.datacite.org/dois/10.17632/srkxbkh6sp.1",
+    "review_url_label": "DataCite DOI metadata"
   }
 ]
