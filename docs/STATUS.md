@@ -1,5 +1,9 @@
 # Project status
 
+## October 31 post-merge readback — source checks green; Pages not updated
+
+PR [#613](https://github.com/Metivity/talk2nature/pull/613) merged to `main` as `622a4095c857b81a1eb4af972e2b35a6b8ecd999`. GitHub Actions run [#41170094342](https://github.com/Metivity/talk2nature/actions/runs/41170094342) completed successfully; repository, browser-tool, Android and preview-site jobs all passed. A fresh TLS-verified live check still fails at `/app/station/` on the missing **Listen-only by design.** disclosure, confirming Pages has not published the change. No workflow dispatch or deployment occurred. The manual Pages workflow has no dispatch action in the connected GitHub tool. Next: dispatch the manual workflow from an action-capable authorized Metivity session, then verify the live route. Physical-device and independent-novice acceptance remain open.
+
 ## October 31 continuation — verify Zero Command copy after deployment
 
 Extended the live Pages verifier to check the phone app's primary invented/no-microphone action, the Station's listen-only and explicit Start/Stop disclosure, and the `/app/station/` route's SEO metadata. Added regressions for stale first-action copy and missing Station disclosure. Focused tests passed **8/8**; full Python **241 passed, 1 skipped**; Node **167 passed**. The public-format build has **159 pages plus 404** and the site checker reports **160 HTML / 11,135 links / 159 reachable public routes**. The stronger verifier passes on the generated candidate.
