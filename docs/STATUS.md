@@ -1,5 +1,13 @@
 # Project status
 
+## October 31 continuation — reproduce the researcher quick-start from current public main
+
+**Question:** can a new checkout of the currently merged project run the documented, package-free research examples and discoverable site checks?
+
+**Evidence and verification:** fresh depth-one clone of public `main` at `b715fe3ce38ee4fb8b35f30e12a38ee482df92fd`; Python 3.12.5, Node 22.22.1, Git 2.53.0. The annotation example reported the expected invented 8-second sample, two marked events, 2 seconds of marked coverage and zero observed context. Both split examples completed and matched expected standard/dyadic hashes; their shared policy hash also matched. Python passed **244 tests (1 intentional skip)**; Node passed **171/171**. Local noindex build/check: **162 pages plus 404; 163 HTML / 11,320 links**. Explicit-origin public-format build/check: **162 pages plus 404; 163 HTML / 11,483 links / 162 reachable public routes**. Generated split files stayed ignored under `tmp/reproduction/`; the clone remained tracked-clean.
+
+**Limits and decision:** this is maintainer rerun evidence using synthetic fixtures only. It does not demonstrate independent reproduction, newcomer success, scientific validity, animal communication or model readiness. No third-party media, animal data or model weights were acquired or run. Updated `docs/RESEARCHER_START.md`; next evidence needed is an independent researcher or newcomer completing a task and reporting barriers. Keep AutoResearch and real-data admission **NOT READY**.
+
 ## October 31 continuation — resolve the fungal dataset DOI record, not the data
 
 Rechecked the current PMC full text, official Mendeley Data v1 record and DataCite metadata. They agree on dataset DOI `10.17632/srkxbkh6sp.1`; DataCite returns 404 for the differing DOI string `10.17632/srkkxbh6sp.1` printed in a previously reviewed publisher PDF. Updated source IDs 165, 166 and 559, the collection catalog and the public research note to record this metadata-level resolution. The Mendeley page's visible Files section is empty. No dataset, supplement or code was acquired, and no analysis or model was run. File contents, provenance, biological replicate structure, supplementary code references and component terms remain unverified; keep the catalog metadata-only and AutoResearch **NOT READY**.

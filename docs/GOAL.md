@@ -1,5 +1,9 @@
 # Talk2Nature goals
 
+## October 31 continuation — refresh the clean-clone researcher baseline
+
+Reproduced the documented research-code workflow from a new depth-one clone of public `main` at `b715fe3`: Python 3.12.5, Node 22.22.1 and Git 2.53.0; no dependency installation or external media/model access. The annotation fixture and both deterministic split examples ran, with split checksums matching the documented values. The full Python and Node suites passed; local and explicit-origin public-format builds passed, and the fresh clone stayed clean with generated outputs ignored. Updated `docs/RESEARCHER_START.md` with the current public-main evidence. This is maintainer verification on synthetic fixtures, not an independent reproduction or scientific validation. **Next:** obtain independent user completion evidence through the published feedback workflow; until then, report researcher onboarding as maintainer-tested only. Keep the five-track goal active and AutoResearch **NOT READY**.
+
 ## October 31 continuation — keep Zero Command and the five-track program moving
 
 The overall five-track goal remains **active**. The current product milestone is Zero Command: lead with an invented example that needs no microphone; make permission, Start, Stop and manual playback deliberate; describe observations without claiming replies; and keep capture local. The next product gate is to deploy the reviewed release through an authorized Pages run, verify the live observational speech marker and setup copy, then complete a named-device, no-animal rehearsal of interruption, playback cancellation and exact-file Save → Compare. Follow with an independently observed novice walkthrough if separately authorized. Physical-device and independent-novice evidence remain open.
