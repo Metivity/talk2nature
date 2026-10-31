@@ -13,7 +13,19 @@ class FakeLiveSite:
         self.calls = []
         self.pages = {
             "": self._page("", "Talk2Nature"),
-            "app/": self._page("app/", "Field Companion"),
+            "app/": self._page(
+                "app/",
+                "Field Companion",
+                '<a class="glass-button primary" href="/talk2nature/app/station/?mode=demo#station-console">'
+                "Try an example · no microphone</a> We don't call, imitate or prompt animals.",
+            ),
+            "app/station/": self._page(
+                "app/station/",
+                "Nature Station",
+                "<strong>Listen-only by design.</strong> We do not call, imitate or prompt animals. "
+                "You choose when recording starts and can stop it at any time. "
+                "In the browser, recording ends if you leave this page.",
+            ),
             "research/resources/": self._page("research/resources/", "Research resources"),
         }
         self.sitemap = (
@@ -24,14 +36,14 @@ class FakeLiveSite:
         )
         self.robots = f"User-agent: *\nAllow: /\nSitemap: {self.base_url}/sitemap.xml\n"
 
-    def _page(self, path, title):
+    def _page(self, path, title, body="Page"):
         url = f"{self.base_url}/{path}"
         return (
             '<!doctype html><html lang="en"><head>'
             f"<title>{title}</title><meta name=\"description\" content=\"{title} description\">"
             '<meta name="robots" content="index,follow">'
             f'<link rel="canonical" href="{url}">'
-            "</head><body><h1>Page</h1></body></html>"
+            f"</head><body><h1>Page</h1>{body}</body></html>"
         )
 
     def fetch(self, url, timeout):
@@ -61,10 +73,30 @@ class LiveSiteTests(unittest.TestCase):
     def test_checks_core_pages_sitemap_and_robots(self):
         site = FakeLiveSite()
         result = verify_live_site(site.base_url + "/", attempts=1, fetch=site.fetch)
-        self.assertEqual(result["pages_verified"], 3)
-        self.assertEqual(result["sitemap_urls"], 3)
+        self.assertEqual(result["pages_verified"], 4)
+        self.assertEqual(result["sitemap_urls"], 4)
         self.assertTrue(result["robots_names_sitemap"])
-        self.assertEqual(len(site.calls), 5)
+        self.assertTrue(result["zero_command_first_action_verified"])
+        self.assertTrue(result["station_disclosure_verified"])
+        self.assertEqual(len(site.calls), 6)
+
+    def test_rejects_a_stale_or_microphone_first_app_home(self):
+        site = FakeLiveSite()
+        site.pages["app/"] = site.pages["app/"].replace(
+            'href="/talk2nature/app/station/?mode=demo#station-console"',
+            'href="/talk2nature/app/station/?mode=companion#station-console"',
+        ).replace("Try an example · no microphone", "Start a 30-second moment")
+        with self.assertRaisesRegex(LiveCheckError, "first primary action"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_incomplete_station_zero_command_disclosure(self):
+        site = FakeLiveSite()
+        site.pages["app/station/"] = site.pages["app/station/"].replace(
+            "You choose when recording starts and can stop it at any time.",
+            "Recording starts when you open the app.",
+        )
+        with self.assertRaisesRegex(LiveCheckError, "setup disclosure is incomplete"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
     def test_retries_transient_deployment_failure(self):
         site = FakeLiveSite()
@@ -81,7 +113,7 @@ class LiveSiteTests(unittest.TestCase):
         result = verify_live_site(
             site.base_url, attempts=2, interval=3, fetch=flaky_fetch, sleep=sleeps.append
         )
-        self.assertEqual(result["pages_verified"], 3)
+        self.assertEqual(result["pages_verified"], 4)
         self.assertEqual(sleeps, [3])
 
     def test_rejects_stale_or_blocked_live_metadata(self):

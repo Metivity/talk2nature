@@ -1,5 +1,11 @@
 # Project status
 
+## October 31 continuation — verify Zero Command copy after deployment
+
+Extended the live Pages verifier to check the phone app's primary invented/no-microphone action, the Station's listen-only and explicit Start/Stop disclosure, and the `/app/station/` route's SEO metadata. Added regressions for stale first-action copy and missing Station disclosure. Focused tests passed **8/8**; full Python **241 passed, 1 skipped**; Node **167 passed**. The public-format build has **159 pages plus 404** and the site checker reports **160 HTML / 11,135 links / 159 reachable public routes**. The stronger verifier passes on the generated candidate.
+
+Fresh live HTTP readback shows `/app/` has the correct invented-example primary action but `/app/station/` still lacks the required disclosure; the live check therefore fails on that route. An open installed-app tab showed an update-available notice and older home copy, a separate cached view. No deployment, recording or animal interaction occurred. Next: publish clean `main` via the authorized Metivity Pages workflow when its session is available, then require the live verifier to pass. Named-device and independent-novice acceptance remain open.
+
 ## October 31 continuation — reaffirm Zero Command and keep the goal active
 
 Zero Command is the default Field Companion posture: user-started passive observation, an invented first action requiring no microphone, no animal-directed sound, no inferred reply, and no silent upload or research admission. The five-track project goal remains **active**. Next is a named-device no-animal rehearsal followed by an independent novice walkthrough; neither is complete yet. Use invented material only and preserve the real-data and AutoResearch **NOT READY** gates.

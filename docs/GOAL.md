@@ -1,5 +1,13 @@
 # Talk2Nature goals
 
+## October 31 continuation — make the Zero Command release check verify live behavior copy
+
+The public Field Companion needs stronger deployment evidence than reachable routes and SEO tags: its live primary action must open the invented example without a microphone, and the Station must show its listen-only and explicit Start/Stop boundary. Extended `scripts/check_live_site.py` to fetch `/app/station/`, check the primary home action and key Station disclosure, and reject stale action copy. Added regressions for a microphone-first homepage and missing Station disclosure.
+
+**Verification:** focused live-check suite **8/8**; full Python suite **241 passed, 1 skipped**; Node **167 passed**. The explicit-origin public build produced **159 pages plus 404**; `check_site.py` verified **160 HTML pages, 11,135 links and 159 reachable public pages**. The post-deploy verifier also passed against the generated candidate via a local route-backed fetch. On the current public host, direct HTTPS checking with the installed `certifi` CA bundle reaches `/app/station/` but fails because the deployed page lacks the required Zero Command disclosure. `/app/` currently serves the invented no-microphone primary action. An already-open PWA tab separately displayed an update-available notice and older copy; its cache state is not the same evidence as the direct HTTP response. No microphone, recording, animal or observation data was used.
+
+**Limit and next:** this improves release verification; it does not itself publish the candidate or establish physical-phone acceptance. Keep the goal **active**. After reviewable checks pass, deploy only clean `main` through the approved Metivity Pages workflow, then verify its run and live routes. The browser GitHub session is signed out and local `gh` selects a different account, so use the authorized Metivity session for dispatch. Keep device and independent-novice gates open.
+
 ## October 31 continuation — repair project-goal heading order
 
 Moved the single top-level heading ahead of the dated continuation sections so document hierarchy is clear. Project scope, active goals and release state are unchanged.
