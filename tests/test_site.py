@@ -103,13 +103,13 @@ class SiteTests(unittest.TestCase):
         self.assertIn('no animal calls or prompts.',station)
         self.assertIn('Finish and review',station)
         self.assertIn("'End rehearsal'",station_script)
-        live_labels=('Try without a microphone','Mark an observation','Finish and review',
+        live_labels=('Try invented example · no microphone','Mark an observation','Finish and review',
                      'Save this moment','I saved the file',
                      'Open Compare moments to review it','Choose saved moment')
         for label in live_labels:
             with self.subTest(button=label):
                 self.assertIn(label,station if label!='Choose saved moment' else compare)
-        expected_steps=('Try an example · no microphone','Try without a microphone',
+        expected_steps=('Try an example · no microphone','Try invented example · no microphone',
                         'Mark an observation','Finish and review','End rehearsal',
                         'Save this moment','I saved the file',
                         'Open Compare moments to review it','Choose saved moment')
@@ -1820,7 +1820,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Download a copy before closing to keep a real moment.',home)
             guidance='Your sound and notes stay in this page. Download a copy before closing if you want to keep them.'
             self.assertIn(guidance,station)
-            boundary='Talk2Nature does not play calls or prompts to animals. Recording starts only after you confirm permission and tap Start.'
+            boundary='We do not call, imitate or prompt animals. You choose when recording starts and can stop it at any time. In the browser, recording ends if you leave this page.'
             self.assertIn(boundary,station)
             self.assertLess(station.index('id="station-zero-command"'),station.index('id="station-permission"'))
             self.assertLess(station.index('id="station-retention-guidance"'),station.index('id="station-start"'))

@@ -6308,5 +6308,102 @@
     ],
     "purpose": "Models & evaluation",
     "review_locator": "DCASE 2018 Task 3: Description, Audio datasets, Recommended cross-validation procedure, Task-specific use of external data and Evaluation measure; Stowell et al. (2019): §§2.1–2.4, §3.1, §3.3 and Discussion; Zenodo 1298604 record description and Rights section; DCASE-REPO README."
+  },
+  {
+    "slug": "bevo-behavior-conditioned-vocalization-generation",
+    "title": "BeVo generates anchor-linked vocalizations, not verified behavior",
+    "seo_description": "BeVo pairs generated behavior descriptions with animal sounds, but its labels are anchor-level and its results do not test animal understanding or response.",
+    "taxon": "Spotted hyena, meerkat, common marmoset, goat, plains zebra and zebra finch",
+    "kind": "Preprint and mixed-license dataset review",
+    "year": "2026",
+    "year_label": "arXiv v1 preprint year",
+    "source_ids": [
+      535,
+      536,
+      537
+    ],
+    "reviewed": "2026-10-31",
+    "expert_review": "Not independently reviewed by an animal-communication, bioacoustics-generation or animal-welfare specialist.",
+    "review_stage": "Targeted full-text method/results review and official dataset metadata/license review; no independent reproduction",
+    "review_depth": "Reviewed the arXiv v1 preprint's dataset, split, caption-generation, modeling, evaluation, results and ethics sections; the author project page's demo explanation and limitations; and the exact Hugging Face revision f096c7ab3853f92e04627ade15884d890f44a332, dataset card, LICENSE and source_datasets.csv metadata. No article figure or text was copied. No audio, code, model checkpoint or generated sample was downloaded or played, and no result was reproduced.",
+    "finding": "Deng et al. introduce BeVo, a 31,191-event collection across six species and 42 vocalization anchors, and condition a text-to-audio model on literature-derived behavior cards. The paper reports improved acoustic anchor classification and audio-distribution metrics after adaptation. Its own dataset description says GPT-5.6 generated behavior-condition text from behavior cards, with no manual post-generation verification; recordings are paired with those descriptions through shared anchors rather than an event-level verified behavior label. The published classifier and distribution scores therefore show anchor-level acoustic conditioning in this setup, not that a model understands a behavior description or that an animal would understand or respond to a generated call. This is recent generation prior art, not evidence for an animal translator.",
+    "lesson": "Keep generated signal quality, predicted acoustic category, experimentally measured receiver response and communication meaning as separate claims. BeVo is useful evidence that text-conditioned vocalization generation is technically being explored, but its current evaluation is not an animal-facing communication experiment. Preserve zero-command in ordinary observation tools.",
+    "limitations": "The reported train/validation/test partitions stratify and randomly sample events within species and anchor; the reviewed paper does not describe animal-, source-recording- or site-held-out tests. Test prompts reformulate behavioral knowledge represented during training, rather than testing unseen behaviors. The dataset combines six source corpora with different annotation granularities and mixed source terms. The project page listed code as forthcoming; no reproducible implementation or checkpoint was identified in the reviewed sources. No independent specialist assessment or Talk2Nature reproduction has occurred.",
+    "next_review": "Keep this as a generation-method reference. Revisit only for a specific non-animal-facing research question after qualified bioacoustics, language-evaluation and animal-welfare review, file-level source-rights reconciliation, and an independently grouped evaluation plan. Never use the generated sounds as cues or play them to animals in Talk2Nature observation tools; any animal-facing study needs a separate reviewed protocol and release decision.",
+    "purpose": "Models & evaluation",
+    "review_locator": "Deng et al. arXiv v1: §§2.1–2.3 (source corpora, split, behavior conditions), §§3–5 (generation, metrics and results), §8 ethics; BeVo project page: Listen interpretation note, Dataset, Results and Scope; pinned Hugging Face revision: Dataset card, LICENSE and source_datasets.csv metadata.",
+    "atlas": {
+      "reviewed": "2026-10-31",
+      "location_status": "not_applicable",
+      "location_note": "This is a literature, model and dataset review, not a Talk2Nature observation location. Exact locations are not retained.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "boris-behavior-coding-complement-not-backend",
+    "title": "BORIS is a complementary behavior-coding tool, not a drop-in backend",
+    "seo_description": "BORIS offers structured ethograms and media-linked coding. Talk2Nature's simpler sound notes need a versioned, loss-aware adapter review.",
+    "taxon": "Cross-species behavioral observation",
+    "kind": "Research software and interoperability review",
+    "year": "2026",
+    "year_label": "BORIS v10.0.2 release; official guide remains v9.15.0",
+    "source_ids": [
+      538,
+      539,
+      540,
+      541
+    ],
+    "reviewed": "2026-10-31",
+    "expert_review": "Not independently reviewed by a behavioral-research software specialist or BORIS maintainer.",
+    "review_stage": "Official documentation and release metadata reviewed; no installation or cross-tool test",
+    "review_depth": "Read the official BORIS project/download and feature pages, GitHub v10.0.2 release page and v9.15.0 event-export guide. Compared their documented export fields with Talk2Nature's annotation schema and one-way Audacity package. No BORIS executable, source, project, media, export or model was acquired or run; no researcher workflow was supplied.",
+    "finding": "BORIS is an established free/open-source desktop tool for live and media-based event logging. Its documented model includes multiple subjects, user-defined behaviors/categories/modifiers, independent variables, point/state event types, event times, media references and image frame/path fields, with tabular, spreadsheet, SQL, SDIS, Python/R and Praat TextGrid exports. Talk2Nature's current Listen annotations instead record bounded sound-event/context labels and notes; its Audacity bridge is a one-way selected-WAV package. These systems solve complementary tasks, and matching event timestamps would not make their labels or semantics equivalent.",
+    "lesson": "Do not build a competing ethogram editor or a lossy BORIS importer by default. Offer BORIS as an external analysis option only when useful, and keep source labels, human observations and model predictions distinct. Consider an adapter only after a researcher supplies a permitted workflow and sample export, the exact target version is pinned, every field is mapped or explicitly reported as lost, and the destination application validates synthetic examples.",
+    "limitations": "The official release and download pages identify v10.0.2, dated 2026-10-16, while the linked user guide explicitly applies to v9.15.0; v10 export schema compatibility is unresolved. The license statement on the project website points to GNU GPL v3, but the exact release-tag license file and dependencies were not inspected. This review establishes no tested interoperability, adoption, partnership, scientific result or need for a converter.",
+    "next_review": "Keep the issue open for a researcher-supplied use case. Before implementation, obtain a synthetic or rights-cleared representative project/export, inspect the exact BORIS version/schema and file-level licenses, define a field-by-field mapping and loss report, then validate import/export in the named BORIS release. If no researcher need or safe mapping is supplied, retain this as a documented complementary tool and do not build an adapter.",
+    "purpose": "Data & annotation",
+    "review_locator": "BORIS project home, current download page and v10.0.2 GitHub release; official feature overview; User Guide landing page version notice; Export events guide, especially output formats and aggregated event fields; Talk2Nature talk2nature/annotations.py and docs/AUDACITY_EXPORT.md.",
+    "atlas": {
+      "reviewed": "2026-10-31",
+      "location_status": "not_applicable",
+      "location_note": "This is a software and interoperability review, not an animal observation or study location.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "arbimon-hosted-bioacoustic-workflow-complement",
+    "title": "Arbimon already covers much of the hosted acoustic-research workflow",
+    "seo_description": "Arbimon covers hosted bioacoustic storage, analysis and review. Talk2Nature should prove a distinct local-first role before building duplicate infrastructure.",
+    "taxon": "Research infrastructure",
+    "kind": "Research software and infrastructure review",
+    "year": "2026",
+    "year_label": "Official workflow documentation checked",
+    "source_ids": [
+      542,
+      543,
+      544,
+      545,
+      546,
+      547
+    ],
+    "reviewed": "2026-10-31",
+    "expert_review": "Not independently reviewed by an acoustic-ecology infrastructure specialist or Arbimon maintainer.",
+    "review_stage": "Official workflow, privacy policy and terms reviewed; no account, data upload, analysis or export performed",
+    "review_depth": "Reviewed Arbimon official getting-started workflow, desktop uploader guide, project backup guide and FAQ, plus RFCx privacy policy and terms. Workflow docs describe collaborative project/site organization, uploaded passive acoustic recordings, visual browsing, analysis jobs, human validation, insights and optional publishing. The desktop uploader accepts WAV/FLAC, handles recorder/time-zone metadata and segments uploads into one-minute recordings. The privacy policy states uploaded audio and associated metadata may be used for service operation and AI training; it describes an opt-out for newly submitted material, says already trained model effects cannot be removed, and says annotations/labels may be retained indefinitely. The terms state a perpetual, irrevocable content license that includes ML model development, a competitor-use restriction and organizational disclosure obligations. No account, app, recording, analysis, backup, API or upload was tested; this is a review of published policy text, not a legal determination of applicability.",
+    "finding": "Arbimon is a substantial existing hosted platform for passive-acoustic research, but its published terms create material fit and governance constraints for Talk2Nature. The terms describe a perpetual, irrevocable license over submitted recordings, metadata, annotations and derived data for RFCx and its ML partners; the privacy policy describes AI-training use and indefinite annotation retention, with an opt-out for future submissions that cannot remove prior model effects. The terms also require disclosure where a user or affiliated entity offers a competing or substantially similar platform and restrict using Arbimon to inform competing product development. Talk2Nature’s status under these clauses has not been determined. Do not create an account, use Arbimon to benchmark/develop Talk2Nature, or hand off project data unless the applicable terms and project relationship have been reviewed and any required written disclosure/permission is resolved. Its documented workflow remains useful as public prior-art context.",
+    "lesson": "Keep the Zero Command Field Companion user-started, passive and local-first, with portable user-controlled files. Do not build an Arbimon connector or send project recordings/labels there under current uncertainty. For any future institutional handoff, begin with a platform-neutral synthetic fixture and a named destination whose rights, training use, retention, deletion, transfer, export and institutional terms fit the project; require an explicit decision before real files leave the device.",
+    "limitations": "This review summarizes published policy text accessed 2026-10-31 and does not determine whether or how the terms apply to Talk2Nature, Raviv, a university, or any particular account; negotiated terms or later revisions may differ. No legal review, account, API, upload, audio, analysis job or backup was tested. No integration, partnership, data-sharing permission, privacy guarantee, interoperability or institutional approval is established. No audio or user data was uploaded.",
+    "next_review": "Before any Arbimon account, benchmark, product-development use or data handoff, obtain an authorized review of the current terms for Talk2Nature’s actual project/legal relationship and resolve any disclosure or permission requirement in writing. Otherwise use only public documentation for prior-art review and keep the product platform-neutral and local-first. For a researcher-requested handoff, validate a synthetic fixture and rights/retention/reversibility at a different named destination before considering real data.",
+    "purpose": "Data standards & interoperability",
+    "review_locator": "Official Arbimon Getting Started workflow, Uploader App workflow, project backup guide, FAQ, RFCx privacy policy (AI training/retention) and Terms of Service (content license, competitor-use restriction, organizational disclosure). See sources 542–547.",
+    "atlas": {
+      "reviewed": "2026-10-31",
+      "location_status": "not_applicable",
+      "location_note": "This is a research infrastructure review, not an animal observation or study location.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

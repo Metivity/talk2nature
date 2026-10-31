@@ -82,10 +82,10 @@
   {
     "id": 11,
     "title": "BORIS",
-    "description": "University of Torino / BORIS project. Behavioral Observation Research Interactive Software, accessed 30 September 2026. Free open-source behavior annotation.",
+    "description": "University of Torino / BORIS project. Behavioral Observation Research Interactive Software. Official pages were refreshed 31 October 2026; its v10.0.2 release and v9.15.0 user-guide documentation are separately recorded because the pages are not version-aligned.",
     "url": "https://www.boris.unito.it/",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-10-31",
+    "origin": "Founding inventory source refreshed from the official site, release tag, download page, feature overview and export guide. See source records 538–541 for exact pages and limits. No software, project file or export was acquired or tested."
   },
   {
     "id": 12,
@@ -5385,5 +5385,117 @@
     "url": "https://github.com/DCASE-REPO/bulbul_bird_detection_dcase2018",
     "checked": "2026-10-31",
     "origin": "Official challenge baseline repository page and README; code not acquired, executed or license-cleared."
+  },
+  {
+    "id": 535,
+    "title": "Deng et al. (2026), behavior-conditioned animal vocalization generation",
+    "description": "Version 1 preprint, arXiv:2610.16382v1, posted October 12, 2026. Targeted full-text review covers BeVo construction, generated behavior-caption supervision, sample-level splits, generation evaluation and limitations. The paper reports anchor-level generation metrics, not animal comprehension or response.",
+    "url": "https://arxiv.org/abs/2610.16382v1",
+    "review_url": "https://arxiv.org/pdf/2610.16382v1",
+    "review_url_label": "Read the arXiv v1 preprint PDF",
+    "checked": "2026-10-31",
+    "origin": "Primary author preprint, v1. No code, checkpoint, dataset audio or evaluation output was acquired or run."
+  },
+  {
+    "id": 536,
+    "title": "Official BeVo project page and demonstration",
+    "description": "Author project page for the Behavior-Vocalization Dataset and behavior-conditioned vocalization generation. It states that captions are anchor-linked rather than behavior-verified for individual events, that demo pairs were curated for spectral resemblance, and that spectral similarity does not establish behavioral correctness. The page lists code as forthcoming.",
+    "url": "https://persimmontian.github.io/BCAVG/",
+    "checked": "2026-10-31",
+    "origin": "Read project overview, demo interpretation note, dataset, method, results and scope sections. No demo audio was played or downloaded; the code link was not available."
+  },
+  {
+    "id": 537,
+    "title": "BeVo dataset card, source-license notice and metadata revision",
+    "description": "Hugging Face BeVo dataset card and repository revision f096c7ab3853f92e04627ade15884d890f44a332. The card lists 31,191 events, six species, 42 anchors and approximately 524.3 minutes. Its repository license says BeVo-created materials are CC BY 4.0 only to the extent the authors hold rights, while third-party audio retains source-specific terms; the license table includes non-commercial restrictions for several sources.",
+    "url": "https://huggingface.co/datasets/Xinghour/BeVo/tree/f096c7ab3853f92e04627ade15884d890f44a332",
+    "review_url": "https://huggingface.co/datasets/Xinghour/BeVo/blob/f096c7ab3853f92e04627ade15884d890f44a332/LICENSE",
+    "review_url_label": "Review the pinned dataset license notice",
+    "checked": "2026-10-31",
+    "origin": "Official dataset card, revision tree, repository license and source_datasets.csv change reviewed. No audio or model payload was downloaded; no model code was found on the project page."
+  },
+  {
+    "id": 538,
+    "title": "BORIS v10.0.2 release and project license statement",
+    "description": "The official GitHub release page marks v10.0.2 as Latest and dates it 2026-10-16. The BORIS project website describes the software as free/open source and refers to GNU GPL v3; this is the project notice, not an inspection of every file at the release tag.",
+    "url": "https://github.com/olivierfriard/BORIS/releases/tag/v10.0.2",
+    "review_url": "https://www.boris.unito.it/",
+    "review_url_label": "Official BORIS project page",
+    "checked": "2026-10-31",
+    "origin": "Official BORIS GitHub release and project website reviewed. No source archive, executable, project file or media was acquired, installed or run."
+  },
+  {
+    "id": 539,
+    "title": "BORIS user guide: export fields and formats",
+    "description": "The official export guide describes tabular, spreadsheet, SQL, SDIS, Python/R and Praat TextGrid outputs, with subject, behavior, category, modifiers, STATE/POINT, timing, media and image-frame/path fields. The guide explicitly applies to v9.15.0, not the v10.0.2 release.",
+    "url": "https://www.boris.unito.it/user_guide/export_events/",
+    "review_url": "https://www.boris.unito.it/user_guide/",
+    "review_url_label": "Check the user-guide version notice",
+    "checked": "2026-10-31",
+    "origin": "Official BORIS user guide and export-fields page reviewed. The guide identifies itself as version 9.15.0; no v10 export schema or actual export was tested."
+  },
+  {
+    "id": 540,
+    "title": "BORIS official features overview",
+    "description": "The official features page lists video/audio and live event coding, picture-directory coding, behaviors, subjects, independent variables, inter-rater reliability and multiple analysis/export paths.",
+    "url": "https://www.boris.unito.it/features/",
+    "checked": "2026-10-31",
+    "origin": "Official BORIS feature overview reviewed as product documentation. No installation, independent evaluation or researcher workflow was performed."
+  },
+  {
+    "id": 541,
+    "title": "BORIS download page current-version notice",
+    "description": "The official download page names v10.0.2 as the current release, dated 2026-10-16, and refers users to the v9.15.0 user guide; this confirms the version mismatch is in the documentation, not the current release listing.",
+    "url": "https://www.boris.unito.it/download/",
+    "checked": "2026-10-31",
+    "origin": "Official BORIS download page directly reviewed. No binary, source code, project, media sample or exported data was acquired."
+  },
+  {
+    "id": 542,
+    "title": "Arbimon official workflow overview",
+    "description": "Rainforest Connection. Getting Started with Arbimon. Official documentation for project/site organization, recording uploads, visualizer, analyses, validation, insights and publishing.",
+    "url": "https://arbimon.org/support/arbimon/get-started/getting-started-with-arbimon/",
+    "checked": "2026-10-31",
+    "origin": "Official Arbimon help page directly reviewed. Establishes documented workflow only; no account, upload, analysis job or project was created."
+  },
+  {
+    "id": 543,
+    "title": "Arbimon Uploader workflow",
+    "description": "Rainforest Connection. Using the Arbimon Uploader App. Official documentation describes desktop WAV/FLAC cloud upload, recorder metadata/time-zone handling, 1-minute segmentation and backup advice.",
+    "url": "https://arbimon.org/support/arbimon/import/using-the-arbimon-uploader-app/",
+    "checked": "2026-10-31",
+    "origin": "Official Arbimon support documentation directly reviewed. No Uploader application or audio was downloaded or run."
+  },
+  {
+    "id": 544,
+    "title": "Arbimon project backup export",
+    "description": "Rainforest Connection. Exporting Project Backups. Official guide documents project metadata, recordings, validations and analysis-result backup contents and exclusions.",
+    "url": "https://arbimon.org/support/arbimon/settings/exporting-project-backups/",
+    "checked": "2026-10-31",
+    "origin": "Official Arbimon backup guide directly reviewed. Backup behavior was not executed or independently tested."
+  },
+  {
+    "id": 545,
+    "title": "Arbimon funding, data sharing and privacy links",
+    "description": "Rainforest Connection. Arbimon FAQ. Official FAQ describes donor/sponsor funding, optional publication of project insights, and recommended local backups; legal pages are linked separately.",
+    "url": "https://www.arbimon.org/faq",
+    "checked": "2026-10-31",
+    "origin": "Official Arbimon FAQ directly reviewed. The linked privacy policy and terms were not reviewed, so this source does not establish data retention, rights or security terms for a Talk2Nature deployment."
+  },
+  {
+    "id": 546,
+    "title": "Arbimon privacy policy",
+    "description": "Rainforest Connection, Privacy Policy, accessed 31 October 2026. States data-use, AI-training, opt-out, retention, deletion, sharing and institutional DPA terms for Arbimon/Platform data.",
+    "url": "https://rfcx.org/privacy-policy",
+    "checked": "2026-10-31",
+    "origin": "Official privacy policy directly reviewed, including data collected/use, AI training, retention, user rights and DPA sections. Website text states terms; legal applicability and any later changes were not independently assessed."
+  },
+  {
+    "id": 547,
+    "title": "Arbimon terms of service",
+    "description": "Rainforest Connection, Terms of Service, accessed 31 October 2026. States submitted-content license, competitor-use restrictions, organizational disclosure, commercial-use limits and usage limits.",
+    "url": "https://rfcx.org/terms-of-service",
+    "checked": "2026-10-31",
+    "origin": "Official terms directly reviewed, including content license, competitor-use restriction, organizational disclosure and commercial-use sections. Applicability to Talk2Nature/Raviv and any negotiated terms were not determined."
   }
 ]
