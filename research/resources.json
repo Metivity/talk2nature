@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -9701,6 +9701,65 @@
         552,
         556
       ]
+    },
+    {
+      "id": "honeybee-audience-feedback-paper-2026",
+      "kind": "paper",
+      "title": "The audience shapes the information content of the honey bee waggle dance",
+      "url": "https://doi.org/10.1073/pnas.2518687123",
+      "version": "PNAS 123(14): e2518687123 (2026); DOI 10.1073/pnas.2518687123",
+      "source_ids": [
+        563
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Primary evidence for a species-bounded communication question: whether receiver availability changes precision in a known referential signal.",
+      "review_depth": "Full article reviewed through the official PNAS/PMC record, including experiments, controls, results, discussion, data statement and article license. No supplementary file or media acquired.",
+      "access": "Open-access article under CC BY 4.0. Its dataset is deposited separately on Zenodo; no software or model artifact was reviewed.",
+      "decision": "Use as prior art and a methods reference. The observed audience effect is already published; any Talk2Nature work should first test whether a transparent reproduction or distinct question is justified.",
+      "limitations": "The result concerns honey bee waggle-dance precision under the studied audience manipulations. It is not a general animal-language result and does not validate transfer to other species or settings.",
+      "attribution": "Lin T, Dong S, Gu G, Zhang F, Ye X, Wang T, Wang Z, Li J, Nieh JC, Chittka L, Tan K (2026). The audience shapes the information content of the honey bee waggle dance. Proceedings of the National Academy of Sciences 123(14): e2518687123. DOI 10.1073/pnas.2518687123.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Published article only; the separate dataset and any software or model artifacts have distinct rights.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13056074/",
+        "conditions": "Attribute the authors and source, link the license and indicate changes if article material is reused. Talk2Nature publishes an original summary and source link.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-audience-feedback-data-2026",
+      "kind": "dataset",
+      "title": "Honey bee audience-feedback experiment data",
+      "url": "https://zenodo.org/records/10892587",
+      "version": "Zenodo v1; DOI 10.5281/zenodo.10892587; record created 2026-03-04",
+      "source_ids": [
+        563,
+        564
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Potential source for a reviewer-approved, narrowly scoped descriptive reproduction of one audience-manipulation result.",
+      "review_depth": "Official Zenodo v1 record and API metadata reviewed. One XLSX file is listed (109,830 bytes; MD5 1adc5aefa26c1d7a49e6395f678a240d); the payload was not downloaded, locally hashed or inspected.",
+      "access": "Public Zenodo metadata record. The record lists a single XLSX data file; no supplementary media or code is included in this catalog record.",
+      "decision": "Metadata only, not acquired and not training-ready. Before any data inspection or reproduction, reviewers must verify the workbook-to-paper mapping, independent experimental units, nesting, and whether a prespecified result can be reproduced. No ML benchmark is selected.",
+      "limitations": "The file contents, data dictionary, trial/colony structure and location fields have not been checked. Record-level licensing does not establish anything about associated article, code, dependency or model rights.",
+      "attribution": "Lin T et al. (2026). Data for The audience shapes the information content of the honey bee waggle dance. Zenodo v1. DOI 10.5281/zenodo.10892587.",
+      "rights": {
+        "license": "Zenodo v1 official API metadata declares CC BY 4.0 for the deposited dataset.",
+        "scope": "Dataset record only. The associated paper, software, dependencies and model artifacts require separate rights review.",
+        "evidence_url": "https://zenodo.org/api/records/10892587",
+        "conditions": "Retain attribution to the deposit. Review the exact file and scientific suitability before any acquisition or analysis; no dataset bytes have been inspected.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
