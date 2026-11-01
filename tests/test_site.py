@@ -2465,6 +2465,8 @@ class SiteTests(unittest.TestCase):
             'honeybee-beesbook-longterm-paper-2015',
             'honeybee-dance-following-paper-2023',
             'honeybee-dance-following-data-2023',
+            'honeybee-audience-feedback-paper-2026',
+            'honeybee-audience-feedback-data-2026',
         })
         for resource in selected.values():
             with self.subTest(resource=resource['id']):
@@ -2481,6 +2483,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn('no recognized license',page)
             self.assertIn('scientific-review.yml',page)
             self.assertIn('/research/honeybee-waggle-vision-decoding-2017/',(root/'sitemap.xml').read_text())
+            audience_page=(root/'research'/'honeybee-audience-feedback-2026'/'index.html').read_text()
+            self.assertIn('receiver availability can shape signal production',audience_page)
+            self.assertIn('No dataset payload',audience_page)
+            audience_data=selected['honeybee-audience-feedback-data-2026']
+            self.assertEqual(audience_data['acquisition'],'metadata_only')
+            self.assertEqual(audience_data['files'],[])
+            self.assertIn('CC BY 4.0',audience_data['rights']['license'])
             resource_page=(root/'research'/'resources'/'index.html').read_text()
             self.assertIn('WDD_paper honeybee waggle-dance analysis code',resource_page)
             self.assertIn('WDD_paper 200-waggle-run ground-truth sample',resource_page)

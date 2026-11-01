@@ -5730,5 +5730,29 @@
     "rights": {
       "thesis_and_embedded_supplement": "No separate license was displayed in the repository record view reviewed. Do not infer a reuse license for the thesis or code from the embedded article’s CC BY 4.0 notice."
     }
+  },
+  {
+    "id": 563,
+    "title": "The audience shapes the information content of the honey bee waggle dance",
+    "description": "Primary experiment testing how actual and potential followers affect the precision of the honey bee waggle dance.",
+    "url": "https://doi.org/10.1073/pnas.2518687123",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the full primary article through the official PNAS/PMC record, including abstract and significance, audience-manipulation experiments, controls, measured dance variables, results, discussion, data statement and article license. No article figures, videos, supplement, data payload, code or model was downloaded or executed.",
+    "rights": {
+      "page": "Open-access article under Creative Commons Attribution 4.0 (CC BY 4.0).",
+      "scope": "Article only. The separate Zenodo dataset and any software or model artifacts have their own rights."
+    }
+  },
+  {
+    "id": 564,
+    "title": "Zenodo v1 dataset for the honey bee audience-feedback experiment",
+    "description": "Versioned data record associated with the 2026 waggle-dance audience study; official API metadata declares CC BY 4.0.",
+    "url": "https://zenodo.org/records/10892587",
+    "checked": "2026-11-02",
+    "origin": "Checked the official Zenodo record and API metadata: v1, record-level CC BY 4.0, one XLSX file (Results Final 030426.xlsx), 109,830 bytes, MD5 1adc5aefa26c1d7a49e6395f678a240d. The dataset payload was not downloaded, hashed locally or inspected.",
+    "rights": {
+      "dataset": "The official Zenodo v1 record API declares CC BY 4.0 for the deposited dataset.",
+      "scope": "Dataset record only. The article, software, dependencies and any model artifacts have separate rights."
+    }
   }
 ]

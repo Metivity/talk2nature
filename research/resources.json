@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -4731,452 +4731,7 @@
       "review_depth": "Reviewed the repository README, pinned commit tree and MIT license metadata, then statically inspected setup/input sections in the four R Markdown analyses. No code was executed.",
       "access": "Public GitHub repository pinned to the reviewed commit.",
       "decision": "Keep as a code reference; do not import or run it as a baseline until the full paper, required data/inputs and a reproducible environment are reviewed.",
-      "limitations": "The reviewed scripts contain author-specific absolute filesystem paths, install an unpinned latest warbleR revision, and note archived rgdal/rgeos dependencies; the pinned tree has no lockfile. The required original audio and intermediate random-sampling files are not in Dryad v6. A clean-clone reproduction is not established.",
-      "attribution": "gsvidaurre/amazon-vocal-culture, MIT-licensed code at commit 1399b7a2de6354d27b5227bb75de7e285fe3d636.",
-      "rights": {
-        "license": "MIT License.",
-        "scope": "Repository code only. It does not grant rights to the paper, dataset, raw recordings or supplements.",
-        "conditions": "Retain the MIT notice if code is reused; review any dependency licenses separately.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional",
-        "evidence_url": "https://github.com/gsvidaurre/amazon-vocal-culture/blob/1399b7a2de6354d27b5227bb75de7e285fe3d636/LICENSE"
-      },
-      "acquisition": "metadata_only"
-    },
-    {
-      "id": "emotionalcanines-paper-acmmm-2025",
-      "kind": "paper",
-      "title": "EmotionalCanines: A Dataset for Analysis of Arousal and Valence in Dog Vocalization",
-      "url": "https://doi.org/10.1145/3746027.3758286",
-      "version": "ACM Multimedia 2025, pp. 13281–13288; DOI 10.1145/3746027.3758286; author-hosted full text checked 2026-10-14",
-      "source_ids": [
-        325
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-14",
-      "task": "Methods reference for video-derived affect labels, per-dog test separation and audio classification baselines.",
-      "review_depth": "Targeted full-text review of dataset construction, annotation, pilot reliability, dog-separated test, baselines, results and limitations; no independent reproduction.",
-      "access": "Author-hosted eight-page PDF available; the ACM DOI page returned HTTP 403 in this review.",
-      "decision": "Use as a linked research/methods reference. Do not present its audio classifier as emotion diagnosis, welfare advice or translation.",
-      "limitations": "Human labels were assigned from video context and visible behavior; the pilot reported Fleiss kappa 0.30 for arousal and 0.42 for valence. No independently validated internal-state ground truth or receiver-response test is reported here. Dataset rights are a separate component.",
-      "attribution": "Tuan M. Dang, Theron S. Wang, Hridayesh Lekhak and Kenny Q. Zhu, ACM Multimedia 2025.",
-      "rights": {
-        "license": "CC BY-NC-SA 4.0, as stated in the paper PDF.",
-        "scope": "Article only; does not grant rights to datasets, source videos, code or model weights.",
-        "evidence_url": "https://kenzhu2000.github.io/papers/acmmm25-dogemo.pdf",
-        "conditions": "Attribution, non-commercial use and share-alike conditions apply to covered article material.",
-        "research_use": "conditional",
-        "commercial_use": "not_admitted",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "emotionalcanines-dataset-2025",
-      "kind": "dataset",
-      "title": "EmotionalCanines dog-bark arousal and valence dataset",
-      "url": "https://github.com/tmdang1101/EmotionalCanines/tree/6b73c5fce55fc132e97db6a76899f8594a955f59",
-      "version": "GitHub commit 6b73c5fce55fc132e97db6a76899f8594a955f59; associated Hugging Face card revision c0617b15562882b9eee4cc1bcb8e6aa80e51bd34",
-      "source_ids": [
-        325,
-        326,
-        327
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-14",
-      "task": "Audio classification against human video-derived three-class arousal and valence labels for two dog breeds.",
-      "review_depth": "Reviewed the associated paper, exact Hugging Face card commit/diff, and pinned GitHub README/LICENSE; no audio, label CSV or archive bytes were fetched or inspected.",
-      "access": "Public paper and dataset repository metadata. No dataset files were acquired.",
-      "decision": "Metadata-only. Do not admit this non-commercial dataset to the shared collection or training path until exact source-media rights, consent/privacy, file lineage and the intended research protocol are independently established.",
-      "limitations": "CC BY-NC-SA 4.0 is declared for the dataset. Original internet-video permissions and consent are unresolved. Labels are human interpretations of video behavior/context, not independent measurements of subjective emotion or call meaning. The historical Hugging Face Task 6 card and current EmotionalCanines repository have not been shown to contain identical files.",
-      "attribution": "Tuan M. Dang, Theron S. Wang, Hridayesh Lekhak and Kenny Q. Zhu, EmotionalCanines dataset, GitHub commit 6b73c5fce55fc132e97db6a76899f8594a955f59.",
-      "rights": {
-        "license": "CC BY-NC-SA 4.0 in the pinned GitHub LICENSE and associated Hugging Face card.",
-        "scope": "Dataset repository/card declaration only; it does not verify rights, consent or privacy terms for original source videos, or license any separate baseline code or model weights.",
-        "evidence_url": "https://huggingface.co/datasets/ArlingtonCL2/BarkopediaDogEmotionClassification_Data/commit/c0617b15562882b9eee4cc1bcb8e6aa80e51bd34",
-        "conditions": "Non-commercial use and share-alike conditions; verify original media permissions and consent independently.",
-        "research_use": "unresolved",
-        "commercial_use": "not_admitted",
-        "redistribution": "unresolved"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "elsilencio-birdclefplus-overview-2025",
-      "kind": "paper",
-      "title": "Overview of BirdCLEF+ 2025: multi-taxonomic sound identification",
-      "url": "https://ceur-ws.org/Vol-4038/paper_232.pdf",
-      "version": "CLEF 2025 Working Notes, Vol. 4038, paper 232, pp. 2909-2919; 2025",
-      "source_ids": [
-        331
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-22",
-      "task": "Published overview of a multi-taxonomic acoustic-identification challenge and its El Silencio dataset.",
-      "review_depth": "Reviewed the full 11-page paper and its dataset/methods descriptions. No dataset audio, labels, code or model weights were acquired or run; no challenge result was reproduced.",
-      "access": "Public CEUR PDF; a local review copy is excluded from the public website.",
-      "decision": "Use as a source for dataset and challenge provenance, not as a reproduced benchmark or evidence of animal communication.",
-      "limitations": "The paper describes 11,340 unlabeled soundscapes across 63 sites, while the later pinned README and separate Zenodo deposit describe 10,980 across 61 sites; the 360-file/two-site change is unexplained. The paper's BirdCLEF+ competition dataset and classification metric are separate from the El Silencio labeled subset. The task concerns sound identification, not independently observed behavior, receiver response or meaning.",
-      "attribution": "Cañas et al., Overview of BirdCLEF+ 2025: Multi-taxonomic sound identification in the Middle Magdalena, Colombia. CLEF 2025 Working Notes, Vol. 4038, paper 232.",
-      "rights": {
-        "license": "CC BY 4.0 stated on the CEUR-WS volume index and the paper's first page.",
-        "scope": "Article only. The paper license does not grant rights to the separate dataset recordings, annotations, challenge code or model weights. No article text or figures were copied into Talk2Nature.",
-        "evidence_url": "https://ceur-ws.org/Vol-4038/paper_232.pdf",
-        "conditions": "Attribute and link the paper, identify changes, and check third-party material exclusions before reuse.",
-        "research_use": "conditional",
-        "commercial_use": "unresolved",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "elsilencio-labeled-audio-v1",
-      "kind": "dataset",
-      "title": "El Silencio multi-taxonomic labeled soundscapes, Zenodo v1",
-      "url": "https://zenodo.org/records/17064353",
-      "version": "Zenodo record v1; DOI 10.5281/zenodo.17064353; published 2025-09-05",
-      "source_ids": [
-        328,
-        330,
-        331,
-        332
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-22",
-      "task": "Acoustic event and species/sonotype identification across birds, mammals, amphibians and insects.",
-      "review_depth": "Queried official Zenodo API metadata and its provider file manifest: 9 files, 3,546,609,904 bytes total, record-level CC BY 4.0. Read the pinned repository README and LICENSE and reviewed the full overview paper and extractable text from the pinned Spanish protocol. No audio, annotation table, labels, code or weights were acquired or run, and no provider audio checksum was locally verified.",
-      "access": "Public Zenodo record with a 9-file provider manifest. Record-level CC BY 4.0 is declared by the official API; a license declaration is not an independent source-media/privacy review.",
-      "decision": "Metadata-only. Candidate for multi-taxonomic detection-pipeline engineering, not a communication, behavior-context or meaning benchmark. Keep outside training until source-media, privacy, annotation and evaluation requirements are reviewed.",
-      "limitations": "The paper describes 770 one-minute recordings (12.8 hours) and about 15,000 strong event boxes. The protocol describes manual Group/Label/SongType annotation and a one-second same-species event grouping rule; it provides acoustic-form labels, not independently observed behavior or receiver response. The paper discusses four taxonomic groups, while the protocol's visible group codes list birds, anurans and insects; the relationship to mammal labels needs specialist clarification. No inter-annotator reliability statistic was found in the reviewed paper/protocol. The rendered page reports 109.8 GB while the nine-file API manifest totals 3,546,609,904 bytes; unresolved. UNKNOWN is not a stable class.",
-      "attribution": "Cañas, Toro Gómez, Benavides-Lopez, Rodriguez-Buritica, Ulloa and Caycedo-Rosales, El Silencio MT dataset, Zenodo v1, DOI 10.5281/zenodo.17064353.",
-      "rights": {
-        "license": "CC BY 4.0 declared by the official Zenodo API record.",
-        "scope": "Record-level dataset declaration. Does not independently establish source-recording rights, consent, privacy, human-audio handling or sensitive-location protections. The pinned GitHub MIT license applies only to repository materials.",
-        "evidence_url": "https://zenodo.org/api/records/17064353",
-        "conditions": "Attribute the dataset where the CC BY 4.0 declaration applies; verify source-media rights, privacy and location sensitivity before research use, redistribution or commercial use.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "elsilencio-unlabeled-soundscapes-2025",
-      "kind": "dataset",
-      "title": "El Silencio unlabeled soundscapes, Zenodo record",
-      "url": "https://zenodo.org/records/17122738",
-      "version": "DOI 10.5281/zenodo.17122738; published 2025-09-15",
-      "source_ids": [
-        329,
-        330,
-        331
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-22",
-      "task": "Unlabeled passive-acoustic soundscapes proposed for exploratory multi-taxonomic identification methods.",
-      "review_depth": "Queried official Zenodo API metadata and its provider file manifest: 61 ZIP files, 49,620,235,222 bytes total, record-level CC BY 4.0. Read the linked repository README at a pinned commit. No audio bytes, labels or code were downloaded or inspected.",
-      "access": "Public Zenodo record; the pinned repository README describes 10,980 one-minute soundscapes at 61 sites. The official API supplies per-file sizes and MD5 strings; none were checked against downloaded files.",
-      "decision": "Metadata-only. Possible future representation-learning or ingestion-scale candidate after the task, rights, privacy, site grouping and compute plan are justified. Unlabeled audio cannot test animal meaning by itself.",
-      "limitations": "The 2025 overview paper reports 11,340 soundscapes at 63 sites, unlike this separate 10,980-recording, 61-site release. The source records do not explain the difference. No event labels, behavior labels, animal identities, session joins, site split or human-audio review were checked. The archive is about 49.62 GB compressed according to the provider manifest.",
-      "attribution": "REDECOACUSTICA, El Silencio unlabeled soundscapes, Zenodo record 17122738, DOI 10.5281/zenodo.17122738.",
-      "rights": {
-        "license": "CC BY 4.0 declared by the official Zenodo API record.",
-        "scope": "Record-level dataset declaration. Does not independently establish source-recording rights, consent, privacy, human-audio handling or sensitive-location protections.",
-        "evidence_url": "https://zenodo.org/api/records/17122738",
-        "conditions": "Attribute the dataset where the CC BY 4.0 declaration applies; verify source-media rights, privacy and location sensitivity before research use, redistribution or commercial use.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "central-european-birds-ceb-v1-1",
-      "kind": "dataset",
-      "title": "Central European Birds (CEB), Zenodo v1.1",
-      "url": "https://zenodo.org/records/21821133",
-      "version": "Zenodo v1.1; published 2026-08-06; DOI 10.5281/zenodo.21821133",
-      "source_ids": [
-        333
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-23",
-      "task": "Bird sound-event detection, species identification, vocalization-type classification and localization; not observed behavior or receiver response.",
-      "review_depth": "Reviewed official Zenodo v1.1 record metadata, version notes, file inventory, rights statement and schema.json browser preview. Re-read the official API inventory on October 23, 2026: train_soundscape.csv is 8,559,233 bytes with provider MD5 55b5e3f99566c5bb3ba4fb5b833424da; test_soundscape.csv is 2,401,049 bytes with provider MD5 f572155ae41714e17b218e95d97b1ce9. Checksums are not locally verified. The training CSV exceeds the collection tool's 5 MiB per-file limit. No CSV rows, audio, code or weights were acquired, parsed or executed.",
-      "access": "49.7 GB collection. File-inventory metadata only; no media or annotation table acquired. The training annotation CSV exceeds the current collector's 5 MiB per-file cap. The smaller public test-label CSV was left uninspected and cannot serve as a concealed locked holdout.",
-      "decision": "Metadata-only candidate for bird detector engineering, separate from the first communication-adjacent question. Do not exceed the current intake cap or inspect the public test-label CSV as a locked evaluation. If training-table group structure remains necessary to justify this detection-only exercise, first prepare a bounded, rights- and privacy-reviewed intake plan; no model run is authorized.",
-      "limitations": "train_soundscape annotations are weak point-centered labels with a fixed +/-2.5 second window and often no vocalization-type label. The schema identifies 40 zero-area boxes to exclude from event localization and one truncated focal recording with annotations past the audio end. The API's project-group semantics and actual row-level group distribution remain unknown because the training CSV was not inspected. Soundscape audio and metadata are declared CC BY 4.0, while train_xenocanto retains per-record Xeno-Canto licenses and some license fields are empty. Source overlap, annotation reliability and source-media privacy remain unaudited.",
-      "attribution": "Martin et al., Central European Birds (CEB), Zenodo v1.1, DOI 10.5281/zenodo.21821133.",
-      "rights": {
-        "license": "Component-specific: CC BY 4.0 for soundscape audio and dataset metadata/annotations; original per-record Xeno-Canto licenses for train_xenocanto.",
-        "scope": "The record-level CC BY declaration does not replace upstream licenses for focal recordings. The schema reports some empty Xeno-Canto license fields; inspect each row before reuse.",
-        "evidence_url": "https://zenodo.org/records/21821133",
-        "conditions": "Provide CC BY attribution where it applies; preserve each focal recording's own license and attribution. Resolve blank rights fields and verify privacy/source provenance before use, redistribution or commercial work. Do not treat API metadata as row inspection or as verification of group structure.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "birdset-paper",
-      "kind": "paper",
-      "title": "BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics",
-      "url": "https://arxiv.org/abs/2403.10380",
-      "version": "arXiv:2403.10380v6 (2025-05-18); accepted as an ICLR 2025 spotlight",
-      "source_ids": [
-        335
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-23",
-      "task": "Multi-label avian acoustic/species classification across several evaluation soundscapes; not call meaning or receiver response.",
-      "review_depth": "Reviewed the primary paper abstract and version history plus the linked current dataset card. The full paper body, supplement and training code were not audited; no data, code or model weights were acquired or run.",
-      "access": "Public arXiv record and linked project card. No local copy retained.",
-      "decision": "Use as a large-scale methods benchmark reference only. It cannot answer the first Talk2Nature communication question, and the linked data are not admitted for training.",
-      "limitations": "The task labels bird taxa and acoustic events, not behavior, receiver comprehension or meaning. Published scale figures are benchmark descriptions, not an independent reproduction. Do not transfer its results to parrots or other animal groups without a task-specific test.",
-      "attribution": "Rauch et al. (2025), arXiv:2403.10380v6; spotlight at ICLR 2025.",
-      "rights": {
-        "license": "Paper reuse terms not independently verified.",
-        "scope": "Article only; no automatic license for the separate dataset, code or model weights.",
-        "evidence_url": "https://arxiv.org/abs/2403.10380",
-        "conditions": "Talk2Nature publishes an original short summary and link only. Recheck the article license before reproducing text, figures or tables.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "birdset-dataset",
-      "kind": "dataset",
-      "title": "BirdSet avian sound classification benchmark",
-      "url": "https://huggingface.co/datasets/DBD-research-group/BirdSet",
-      "version": "Current dataset card reviewed 2026-10-23; source Xeno-Canto snapshot dated 2024-03-10; dataset revision not pinned",
-      "source_ids": [
-        336,
-        337
-      ],
-      "priority": 2,
-      "reviewed": "2026-10-23",
-      "task": "Multi-label bird-species and soundscape classification; potentially a methods reference for an acoustic-detection layer only.",
-      "review_depth": "Reviewed the current card’s task, configuration sizes, metadata fields, rights statements and code/viewer notes, and the complete May 2026 maintainer license-clarification thread. No recording, label file, code or weight was acquired, loaded or executed.",
-      "access": "The card lists XCL at 528,434 recordings / 484 GB and recommends the HSN configuration at 5,460 training recordings / 10,296 test labels / 5.92 GB / 21 classes. These are upstream card figures, not locally verified files. No dataset files were downloaded.",
-      "decision": "Keep metadata-only and out of Talk2Nature model training. BirdSet is useful background for evaluating sound-classification methods, but it is not a parrot-context or animal-communication benchmark. Reconsider only after a component-level rights review and a clearly scoped, appropriately licensed task.",
-      "limitations": "The dataset card’s top-level license is CC BY-NC 4.0 and limits use to non-commercial research and education, while Xeno-Canto recordings carry mixed record-level terms, including NC, SA, CC BY and CC0 entries. The maintainer thread documents a metadata correction and inconsistent license-string formats; exact terms for a usable subset and their compatibility with the umbrella restriction remain unresolved. The card’s compatibility statements are inconsistent (datasets <=3.6.0 versus a later <4.0.0 changelog entry), and the live viewer reports that it cannot load the custom dataset script. The card does not provide receiver-response or experimentally supported meaning labels. Metadata include latitude and longitude, so any future handling also needs location-sensitivity review.",
-      "attribution": "Rauch et al., BirdSet (2025); dataset card and license clarification by DBD-research-group contributors.",
-      "rights": {
-        "license": "Dataset card states CC BY-NC 4.0 at the collection level and non-commercial research/education only; source recordings have per-record CC terms.",
-        "scope": "The umbrella statement, per-record terms and test-set component terms must be reviewed together. The card and maintainer discussion do not establish Talk2Nature’s right to train, redistribute, or use a resulting model commercially.",
-        "evidence_url": "https://huggingface.co/datasets/DBD-research-group/BirdSet",
-        "conditions": "No acquisition or model use. Before any subset is considered, pin its dataset revision, inspect each included recording’s license and provenance, resolve the umbrella-versus-record-level terms, and separately review code, weights, derived artifacts and location handling.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "wabad-paper-2026",
-      "kind": "paper",
-      "title": "WABAD: A World Annotated Bird Acoustic Dataset for Passive Acoustic Monitoring",
-      "url": "https://doi.org/10.1002/ecy.70317",
-      "version": "Ecology 107(2), e70317; first published 2026-02-07",
-      "source_ids": [
-        338
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-25",
-      "task": "Methods and dataset-description paper for species-level bird vocalization detection and geographic bioacoustic research.",
-      "review_depth": "Reviewed the publisher page's abstract and data-availability statement, Zenodo v3/v4 record pages and API metadata, and DataCite rights metadata for both versions. The publisher and structured Zenodo/DataCite fields declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. The full article body, methods, supporting-information PDF and analyses were not reviewed; no data, code or model was acquired or run.",
-      "access": "Publisher page links the dataset at Zenodo DOI 10.5281/zenodo.17293588. No paper PDF was retained.",
-      "decision": "Use as a large-scale bird-acoustic dataset reference. It is relevant to detection and acoustic generalization, not animal communication meaning.",
-      "limitations": "The publisher abstract describes species-level vocalization occurrence and timing, not independently observed behavior, receiver response or meaning. Publisher and structured Zenodo/DataCite metadata declare CC BY 4.0, but the v3/v4 Zenodo descriptions say CC BY-NC 4.0. The public-record inconsistency remains unresolved. The full paper and supporting metadata were not inspected.",
-      "attribution": "Pérez-Granados et al. (2026), Ecology 107(2):e70317, https://doi.org/10.1002/ecy.70317.",
-      "rights": {
-        "license": "Publisher and structured Zenodo/DataCite rights metadata for v3 and v4 declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. Treat as unresolved for Talk2Nature reuse until the public record is consistent and source-file rights are reviewed.",
-        "scope": "Article, dataset, source recordings and any derived model are separate assets. No article text, figure or dataset media is reproduced here.",
-        "evidence_url": "https://doi.org/10.1002/ecy.70317",
-        "conditions": "Do not acquire or train on the archive until the Zenodo description/structured-rights inconsistency is authoritatively clarified and source-recording terms have been reviewed.",
-        "research_use": "unresolved",
-        "commercial_use": "not_admitted",
-        "redistribution": "unresolved"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "wabad-dataset-v4",
-      "kind": "dataset",
-      "title": "WABAD global bird vocalization archive, latest Zenodo v4",
-      "url": "https://zenodo.org/records/20513304",
-      "version": "Zenodo v4; DOI 10.5281/zenodo.20513304; published 2026-06-02",
-      "source_ids": [
-        338,
-        339,
-        448,
-        449
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-25",
-      "task": "Species-level bird vocalization detection and identification; a possible reference for cross-site acoustic evaluation.",
-      "review_depth": "Reviewed the official Zenodo v4 record, API metadata and DataCite rights record, compared the publisher-linked v3 record and its API/DataCite rights, and reviewed the publisher abstract/data-availability statement. Both versioned structured rights records declare CC BY 4.0; both Zenodo descriptions say CC BY-NC 4.0. No archive, audio, annotation table, code or model was downloaded, inspected or run.",
-      "access": "The current public Zenodo record lists a 21.3 GB archive, associated metadata and annotations. This is a provider-listed size; no local files or checksums were verified.",
-      "decision": "Keep metadata-only. This is a strong candidate for studying bird-call detection and site/geographic generalization after rights and split review, but it is not a behavior-context or communication benchmark.",
-      "limitations": "The publisher reports 91,931 vocalizations from 1,192 species across 72 sites, 29 recording locations and 13 biomes, within 5,047 minutes of audio. Zenodo API and DataCite rights fields for v3 and v4 declare CC BY 4.0, matching the publisher, but descriptive text on both Zenodo records says CC BY-NC 4.0. The inconsistency remains unresolved; original-source rights and per-file restrictions were not reviewed. The archive, metadata schema, labels, grouping keys and evaluation split were not inspected. No Talk2Nature baseline or model result exists.",
-      "attribution": "Pérez-Granados et al. (2026), WABAD, Zenodo v4, DOI 10.5281/zenodo.20513304; data paper DOI 10.1002/ecy.70317.",
-      "rights": {
-        "license": "Zenodo API and DataCite rights metadata for v3 and v4 declare CC BY 4.0, matching the publisher page; descriptive text on both Zenodo records says CC BY-NC 4.0. Treat the inconsistency as unresolved for project reuse.",
-        "scope": "Record-level statements are not an independent audit of source recordings, per-file restrictions or commercial permission.",
-        "evidence_url": "https://api.datacite.org/dois/10.5281/zenodo.20513304",
-        "conditions": "No acquisition or training until the conflicting Zenodo description is authoritatively clarified, source-record terms and location handling are reviewed, and relevant archive metadata is inspected. Any future evaluation needs a reviewer-approved, leakage-resistant holdout by site and other relevant groups.",
-        "research_use": "unresolved",
-        "commercial_use": "not_admitted",
-        "redistribution": "unresolved"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "monk-parakeet-social-structure-paper-2025",
-      "kind": "paper",
-      "title": "The effect of social structure on vocal flexibility in monk parakeets",
-      "url": "https://doi.org/10.1098/rsos.241717",
-      "version": "Royal Society Open Science 12(5):241717 (2025); published May 7, 2025",
-      "source_ids": [
-        344
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-23",
-      "task": "Relates vocal diversity and contact-call similarity to social-network measures; useful as an observational context-design reference, not a call-meaning benchmark.",
-      "review_depth": "Reviewed the published abstract and targeted methods, results, discussion, data-access and rights passages via the primary article record and institutional copy. No article figures or full-text copy are reproduced.",
-      "access": "Open article via DOI and linked institutional/PMC records.",
-      "decision": "Include as a source-linked methods reference. Treat the 2025 result as a social-network analysis of an overlapping cohort already reported in the 2023 voiceprint paper, not independent replication.",
-      "limitations": "Associations between social measures and call variation do not establish message meaning, causal function or receiver understanding. The same 5,599-call, 229-bird, two-year cohort is reported in the 2023 voiceprint study.",
-      "attribution": "Smeele, Senar, McElreath and Aplin (2025), Royal Society Open Science 12:241717, https://doi.org/10.1098/rsos.241717.",
-      "rights": {
-        "license": "CC BY 4.0 declared for the article.",
-        "scope": "Article rights do not automatically apply to the separate data archive, code, audio or model outputs.",
-        "evidence_url": "https://doi.org/10.1098/rsos.241717",
-        "conditions": "Credit the authors and source; do not reproduce third-party data or figures under the article license assumption.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "monk-parakeet-social-structure-data-zenodo-v1",
-      "kind": "dataset",
-      "title": "Monk-parakeet social-structure data deposit, Zenodo v1",
-      "url": "https://zenodo.org/records/13906800",
-      "version": "Zenodo v1; DOI 10.5281/zenodo.13906800; published 2024-10-09",
-      "source_ids": [
-        345,
-        344
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-23",
-      "task": "Potential source for inspecting social-network and vocal-analysis data structure after overlap, rights and location review.",
-      "review_depth": "Reviewed the official Zenodo v1 record, listed archive size and record-level license declaration only. No archive or member file was downloaded or inspected.",
-      "access": "The record is marked open and lists one 129.5 MB ZIP. No local file or checksum was verified.",
-      "decision": "Keep metadata-only. Do not acquire until the exact relationship to the 2023 cohort, member-level contents and terms, missing input files, and location sensitivity are reviewed.",
-      "limitations": "The record-level MIT declaration does not establish the provenance, rights or privacy suitability of every archive member. Archive contents and joins are unknown. The author code README documents some UTM/nest-location fields and says some inputs are not shared.",
-      "attribution": "Smeele, Simeon Q. (2024), data associated with Smeele et al. (2025), Zenodo v1, DOI 10.5281/zenodo.13906800.",
-      "rights": {
-        "license": "Zenodo declares MIT at record level; archive members have not been inspected.",
-        "scope": "Do not infer that all embedded audio, annotations, locations or third-party elements share the record-level terms.",
-        "evidence_url": "https://zenodo.org/records/13906800",
-        "conditions": "No acquisition or reuse until file-level provenance, overlap, location sensitivity and the intended-use terms are reviewed.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "monk-parakeet-social-structure-code-2025",
-      "kind": "code",
-      "title": "Analysis code for monk-parakeet social-structure study",
-      "url": "https://github.com/simeonqs/The_effect_of_social_structure_on_vocal_flexibility_in_monk_parakeets/tree/395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
-      "version": "GitHub commit 395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
-      "source_ids": [
-        346
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-23",
-      "task": "Author R/Stan analyses and data-preparation scripts for social-network and acoustic-variation models.",
-      "review_depth": "Reviewed the pinned repository README and file tree. No LICENSE file was located at this revision. No code, dependencies or data were downloaded or executed.",
-      "access": "Public GitHub repository; commit pinned for provenance.",
-      "decision": "Keep metadata-only. Do not reuse or execute until a license is identified and missing inputs, data provenance, dependency setup and location fields are reviewed.",
-      "limitations": "The README states some required age, relatedness and other input data are not shared, so parts of the analyses cannot be rerun. It also documents UTM/nest-location fields. The Zenodo record-level license does not apply automatically to GitHub code.",
-      "attribution": "Simeon Q. Smeele and coauthors; repository snapshot 395a622b18f3f55fd4efdcb9a093cc214f6fdf67.",
-      "rights": {
-        "license": "No repository license was located in the pinned tree; reuse terms unresolved.",
-        "scope": "The Zenodo data-record license is not a code license.",
-        "evidence_url": "https://github.com/simeonqs/The_effect_of_social_structure_on_vocal_flexibility_in_monk_parakeets/tree/395a622b18f3f55fd4efdcb9a093cc214f6fdf67",
-        "conditions": "Do not reuse or execute until the repository license and dependency/data terms are clarified.",
-        "research_use": "unresolved",
-        "commercial_use": "unresolved",
-        "redistribution": "unresolved"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "inat-sounds-paper-neurips-2024",
-      "kind": "paper",
-      "title": "The iNaturalist Sounds Dataset, NeurIPS 2024",
-      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ef3713b8d72266e803f9346088fed92d-Abstract-Datasets_and_Benchmarks_Track.html",
-      "version": "NeurIPS 2024 Datasets and Benchmarks Track; DOI 10.52202/079017-4213",
-      "source_ids": [
-        347
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-23",
-      "task": "Large-scale, file-level animal species classification and acoustic pretraining across five taxonomic classes.",
-      "review_depth": "Targeted review of the paper abstract and dataset, label, evaluation, downstream-test and asset/consent passages. No paper text or figures were copied; no experiments were reproduced.",
-      "access": "Official NeurIPS record and linked paper. A local paper copy was not retained.",
-      "decision": "Use as an important methods and dataset reference only. It is not admitted to Talk2Nature model training or commercial product inference; the linked paper does not itself supply rights to audio, code or weights.",
-      "limitations": "The dataset uses one species label per recording and the paper describes these labels as weak. A recording or short window may not contain the labeled species call. The paper cautions against evaluating models on iNatSounds alone and recommends strongly labeled downstream tests. Article reuse terms were not independently verified.",
-      "attribution": "Chasmai, Shepard, Maji and Van Horn, The iNaturalist Sounds Dataset, NeurIPS 2024 Datasets and Benchmarks Track, DOI 10.52202/079017-4213.",
-      "rights": {
-        "license": "Article reuse terms not independently verified.",
-        "scope": "Paper only. The article provides no automatic license to the dataset recordings, training code or model weights.",
-        "evidence_url": "https://doi.org/10.52202/079017-4213",
-        "conditions": "Cite and link to the original paper; do not reproduce its text, figures or tables until article reuse terms are checked.",
-        "research_use": "conditional",
-        "commercial_use": "conditional",
-        "redistribution": "conditional"
-      },
-      "acquisition": "metadata_only",
-      "files": []
-    },
-    {
-      "id": "inat-sounds-dataset-2024",
-      "kind": "dataset",
-      "title": "iNatSounds 2024 multi-taxon audio dataset",
-      "url": "https://github.com/visipedia/inat_sounds/tree/bd52ecde5d9d7434f6167bbac823d152c3823ccd/2024",
-      "version": "2024 release; README pinned to commit bd52ecde5d9d7434f6167bbac823d152c3823ccd",
-      "source_ids": [
-        347,
-        348,
-        349
-      ],
-      "priority": 1,
-      "reviewed": "2026-10-23",
-      "task": "File-level species classification and representation/pretraining research across birds, insects, amphibians, mammals and reptiles.",
-      "review_depth": "Reviewed the NeurIPS paper’s targeted dataset/evaluation passages, the pinned official dataset README and the current iNaturalist media-license FAQ. Checked split totals, annotation fields, usage terms, archive-size claims and location metadata. No audio, annotation JSON or checksum was acquired or verified.",
+      "limitations": "The reviewed scripts contain author-specific absolute filesystem paths, install an unpinned latest warbleR revision, and note archived rgdal/rgeos dependencies; the pinned tree has no lockfile. The required original audio and intermediate random-sampling files are not in Dryad v6. A clean-clone reproduction is not establishe���弭z�&��^v "Reviewed the NeurIPS paper’s targeted dataset/evaluation passages, the pinned official dataset README and the current iNaturalist media-license FAQ. Checked split totals, annotation fields, usage terms, archive-size claims and location metadata. No audio, annotation JSON or checksum was acquired or verified.",
       "access": "The README lists train, validation and test audio archives as approximately 81 GB, 25 GB and 27 GB (about 133 GB combined), plus small annotation archives. These are provider-listed sizes, not locally verified files.",
       "decision": "Metadata-only. It is a valuable broad species-classification/pretraining reference but is not admitted to the commercial-capable Talk2Nature data/model path. Any non-commercial research use remains conditional on the dataset terms and individual media licenses.",
       "limitations": "One species label applies to each whole recording; labels do not mark call boundaries, behavior, interaction context or receiver response. The paper notes geographic sampling bias toward the United States and Europe and says iNatSounds-only evaluation is not a sufficient measure of downstream performance. The README exposes recording date, latitude, longitude and location uncertainty, so sensitive-species location handling needs review. Dataset terms restrict downloads to non-commercial research/education and prohibit redistribution of recordings; individual iNaturalist media licenses vary and can be all-rights-reserved. No item-level license filtering, location audit, source-overlap audit or Talk2Nature evaluation was performed.",
@@ -9701,6 +9256,65 @@
         552,
         556
       ]
+    },
+    {
+      "id": "honeybee-audience-feedback-paper-2026",
+      "kind": "paper",
+      "title": "The audience shapes the information content of the honey bee waggle dance",
+      "url": "https://doi.org/10.1073/pnas.2518687123",
+      "version": "PNAS 123(14): e2518687123 (2026); DOI 10.1073/pnas.2518687123",
+      "source_ids": [
+        563
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Primary evidence for a species-bounded communication question: whether receiver availability changes precision in a known referential signal.",
+      "review_depth": "Full article reviewed through the official PNAS/PMC record, including experiments, controls, results, discussion, data statement and article license. No supplementary file or media acquired.",
+      "access": "Open-access article under CC BY 4.0. Its dataset is deposited separately on Zenodo; no software or model artifact was reviewed.",
+      "decision": "Use as prior art and a methods reference. The observed audience effect is already published; any Talk2Nature work should first test whether a transparent reproduction or distinct question is justified.",
+      "limitations": "The result concerns honey bee waggle-dance precision under the studied audience manipulations. It is not a general animal-language result and does not validate transfer to other species or settings.",
+      "attribution": "Lin T, Dong S, Gu G, Zhang F, Ye X, Wang T, Wang Z, Li J, Nieh JC, Chittka L, Tan K (2026). The audience shapes the information content of the honey bee waggle dance. Proceedings of the National Academy of Sciences 123(14): e2518687123. DOI 10.1073/pnas.2518687123.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Published article only; the separate dataset and any software or model artifacts have distinct rights.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13056074/",
+        "conditions": "Attribute the authors and source, link the license and indicate changes if article material is reused. Talk2Nature publishes an original summary and source link.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "honeybee-audience-feedback-data-2026",
+      "kind": "dataset",
+      "title": "Honey bee audience-feedback experiment data",
+      "url": "https://zenodo.org/records/10892587",
+      "version": "Zenodo v1; DOI 10.5281/zenodo.10892587; record created 2026-03-04",
+      "source_ids": [
+        563,
+        564
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Potential source for a reviewer-approved, narrowly scoped descriptive reproduction of one audience-manipulation result.",
+      "review_depth": "Official Zenodo v1 record and API metadata reviewed. One XLSX file is listed (109,830 bytes; MD5 1adc5aefa26c1d7a49e6395f678a240d); the payload was not downloaded, locally hashed or inspected.",
+      "access": "Public Zenodo metadata record. The record lists a single XLSX data file; no supplementary media or code is included in this catalog record.",
+      "decision": "Metadata only, not acquired and not training-ready. Before any data inspection or reproduction, reviewers must verify the workbook-to-paper mapping, independent experimental units, nesting, and whether a prespecified result can be reproduced. No ML benchmark is selected.",
+      "limitations": "The file contents, data dictionary, trial/colony structure and location fields have not been checked. Record-level licensing does not establish anything about associated article, code, dependency or model rights.",
+      "attribution": "Lin T et al. (2026). Data for The audience shapes the information content of the honey bee waggle dance. Zenodo v1. DOI 10.5281/zenodo.10892587.",
+      "rights": {
+        "license": "Zenodo v1 official API metadata declares CC BY 4.0 for the deposited dataset.",
+        "scope": "Dataset record only. The associated paper, software, dependencies and model artifacts require separate rights review.",
+        "evidence_url": "https://zenodo.org/api/records/10892587",
+        "conditions": "Retain attribution to the deposit. Review the exact file and scientific suitability before any acquisition or analysis; no dataset bytes have been inspected.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
