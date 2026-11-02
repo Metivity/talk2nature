@@ -1,6 +1,6 @@
 # Open-source health and adoption plan
 
-**Plan reviewed:** October 8, 2026; **public participation snapshot:** October 29, 2026; **funding-readiness note:** October 25, 2026. This is a working project plan, not a claim of adoption or an external certification.
+**Plan reviewed:** October 8, 2026; **public participation snapshot:** November 2, 2026; **funding-readiness note:** October 25, 2026. This is a working project plan, not a claim of adoption or an external certification.
 
 ## What success means here
 
@@ -164,3 +164,13 @@ This verifies the documented software path from a clean clone on this Python ver
 The clean-clone researcher kit had only been exercised on Python 3.12 even though public instructions promised Python 3.10+. A run on isolated CPython 3.10.20 exposed a nested escaped f-string in `web/knowledge_build.py`; moved that optional metadata markup into a separate variable, then reran the full suite (**254 passed, 1 intentional skip**) and local site build/check (**171 pages plus 404; 172 HTML documents / 12,043 links**) on 3.10.20. Python 3.10 is now selected explicitly in the public-checks workflow using the immutable, full-SHA `actions/setup-python` v7.0.0 release.
 
 This closes the local compatibility gap and makes CI exercise the minimum; the regular CPython 3.12.5 suite also passed (**254 passed, 1 intentional skip**) and Node passed **171/171**. A hosted workflow run is still needed to verify the action on GitHub's runner. These checks say nothing about independent researcher success, scientific validity or real-data readiness.
+
+## November 2 follow-up — measure the actual contributor funnel
+
+**Question:** is there public evidence of adoption or outside maintenance that should change the project's invitation strategy?
+
+**Snapshot:** queried the public GitHub repository and issue/PR records at 16:15 UTC on November 2, 2026. `main` was `30300aa07b4773aa5304af54f3dcacb6b3bda503`. GitHub reported **0 stars and 0 forks**. Its contributor endpoint listed one human account (`Metivity`, 707 contributions) and `dependabot[bot]` (3); all 20 most recent commits were authored by Metivity. There was **one open issue**, the existing [first-phone walkthrough task](https://github.com/Metivity/talk2nature/issues/115), with zero public comments, and **one open pull request**, [#616](https://github.com/Metivity/talk2nature/pull/616), authored by Metivity. The repository's current researcher guide still records **zero verified independent reproductions**. No private email, analytics or personal contributor information was inspected.
+
+**Interpretation:** this is an active, single-maintainer project with a public invitation but no independently documented uptake yet. Zero comments, stars or forks are counts of visible GitHub activity, not proof that nobody visited, tried the app or shared feedback privately. Stars are not a success target. The only verified build/research-kit runs remain maintainer-run.
+
+**Decision and next measure:** keep the existing short phone task as the only open newcomer issue; do not add a forum, tracking pixel or wider outreach campaign on this evidence. First make the public Pages app match the reviewed source, then obtain one voluntary first-time walkthrough with device/browser, completion, first hesitation and one suggested change. Track outside walkthroughs separately from independent code reproductions, and record maintainer response time only when a report arrives. Preserve the manual release and data/privacy gates; no outreach, issue edit or deployment occurred during this snapshot.

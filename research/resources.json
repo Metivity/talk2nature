@@ -10377,6 +10377,89 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "sperm-whale-acoustic-blueprint-preprint-2026",
+      "kind": "paper",
+      "title": "Music of the Deep: An acoustic blueprint of sperm whale codas",
+      "url": "https://arxiv.org/abs/2610.33974",
+      "version": "arXiv preprint posted 2026-10-23; manuscript prepared for JASA",
+      "source_ids": [592],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Methods reference for multilevel acoustic description and synthetic-audio fidelity; not a semantic decoding or whale-emotion result.",
+      "review_depth": "Full arXiv HTML text reviewed for questions, methods/controls, main results and limitations. No data, code, audio, supplement or model acquired or run.",
+      "access": "Public arXiv preprint. Article terms were not independently reviewed; this catalog links to the source and does not reproduce manuscript content.",
+      "decision": "Use as a provisional methods reference. Do not treat preprint claims as independently validated or use them to motivate animal playback.",
+      "limitations": "Sampled Dominica EC-1 codas and three selected music references; sequence order does not establish continuous behavioral bouts. The natural-versus-WhAM comparison uses 17 generated clips and does not test full-sequence generation or semantic meaning.",
+      "attribution": "Sinha and Chavan (2026), arXiv:2610.33974.",
+      "rights": {
+        "license": "Not independently reviewed",
+        "scope": "Article rights only; separate rights for any audio, data, code, figures, supplements or models are not established.",
+        "evidence_url": "https://arxiv.org/abs/2610.33974",
+        "conditions": "Link and cite the paper; do not redistribute source files or infer data/model permissions from paper availability.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "sperm-whale-dual-channel-encoder-preprint-2026",
+      "kind": "paper",
+      "title": "Dual-Channel Contrastive Encoding of Sperm Whale Coda",
+      "url": "https://arxiv.org/abs/2610.29101",
+      "version": "arXiv preprint posted 2026-10-21",
+      "source_ids": [593],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Exploratory comparison of timing and spectral representations for coda type, social-unit and individual-label prediction.",
+      "review_depth": "Full arXiv HTML reviewed for architecture, preprocessing, losses, evaluation splits, results and limitations. No code, notebook, dataset, audio or model acquired or run.",
+      "access": "Public arXiv preprint; accompanying website is named in the manuscript but was not independently reviewed in this entry. Article rights were not independently reviewed.",
+      "decision": "Use as a provisional evaluation-design reference. Do not adopt the architecture or treat any label prediction as communication or meaning.",
+      "limitations": "Exploratory single-project Dominica corpus with class imbalance and small numbers of social units/individuals. Recording-date grouping and year holdouts are informative but do not establish transfer to a different whale population; random and grouped identity scores have different class support.",
+      "attribution": "Quintanilha, Virnelli and Zhang (2026), arXiv:2610.29101.",
+      "rights": {
+        "license": "Not independently reviewed",
+        "scope": "Article rights only; separate rights for data, code, notebooks, audio, model weights and results artifacts are not established.",
+        "evidence_url": "https://arxiv.org/abs/2610.29101",
+        "conditions": "Link and cite the paper; verify component-specific rights and provenance before acquiring or using artifacts.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "finland-citizen-audio-digital-twin-paper-2026",
+      "kind": "paper",
+      "title": "A digital twin for real-time biodiversity forecasting with citizen science data",
+      "url": "https://doi.org/10.1038/s41559-025-02966-3",
+      "version": "Nature Ecology & Evolution 10, 481–495 (2026); published 27 January 2026",
+      "source_ids": [
+        594
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Architecture and validation comparator for a smartphone-based ecological observation network; not a communication-meaning benchmark.",
+      "review_depth": "Targeted full-text review of capture/model workflow, independent test, data publication, privacy and code/data statements. No source code, data, audio, app or model acquired or run.",
+      "access": "Open-access article; follow DOI/PMC links. Linked FinBIF data and Zenodo code are separate resources not reviewed or acquired here.",
+      "decision": "Use the architecture pattern as a requirements comparator for a future approved university pilot. Do not copy the system or infer a language-decoding result.",
+      "limitations": "Finnish bird occurrence forecasting with managed sampling and expert point-count validation. Not a Talk2Nature reproduction; the separate app, code, data and model terms were not cleared.",
+      "attribution": "Ovaskainen et al. (2026), DOI 10.1038/s41559-025-02966-3.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Article text only. Separate rights apply to the MK app, Zenodo source code, FinBIF observation records, associated audio and model outputs.",
+        "evidence_url": "https://research.aalto.fi/en/publications/a-digital-twin-for-real-time-biodiversity-forecasting-with-citize/",
+        "conditions": "Link and cite the article; publish original summaries only. Review linked component-specific rights before acquisition, reproduction or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

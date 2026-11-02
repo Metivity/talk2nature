@@ -1,3 +1,27 @@
+# November 2 — merge the annotation-lineage walkthrough; Pages remains stale
+
+Merged PR [#666](https://github.com/Metivity/talk2nature/pull/666) as [`615d4b6`](https://github.com/Metivity/talk2nature/commit/615d4b6b70f3697d3f3919ae95379a40d88d467b). Hosted run [#41496005369](https://github.com/Metivity/talk2nature/actions/runs/41496005369) passed all Public Checks jobs: repository tests, browser-tool logic, native Android station checks and preview site.
+
+After merge, a fresh request to `/research/annotation-lineage/` returned **HTTP 404**. The live sitemap returned **200** with `Last-Modified: Thu, 29 Oct 2026 14:34:16 GMT`, confirming Pages has not published the route. The Actions page is signed out in the available browser, and the connected GitHub API tools expose no `workflow_dispatch` operation. No deployment occurred. Source merge and hosted CI are verified; public website release is not.
+
+**Next:** publish the remaining source-reviewed, locally tested research changes as a separate PR. Continue pursuing the authorized Pages release through an authenticated Metivity workflow, then verify the new route and sitemap. Independent review, physical-device, screen-reader, AutoResearch and real-data gates remain open or **NOT READY**.
+
+## Previous status — publish the synthetic annotation-lineage walkthrough in the local candidate
+
+The current repository already contained the synthetic lineage package and APLOSE loss report. The gap was a useful public entry point. Added an indexable `/research/annotation-lineage/` page, a concise evidence-flow layout, explicit format-loss summary and links to the versioned fixtures and underlying source reviews. Linked it from Annotation Compare, the university evaluation and the researcher start guide. This applies the project's multi-annotator and interoperability research while keeping labels, review, model proposals and export limits separate.
+
+Focused lineage tests passed **6/6**; Python **264 passed, 1 skipped**; Node **176/176**; explicit-origin build **180 pages plus 404**; site checker **181 HTML / 12,526 links / 180 reachable routes**. Browser emulation at **390 × 844** confirmed a single-column card layout, no horizontal overflow and action links at least 44px high. The page remains local; no real data, model execution, APLOSE conversion, independent review or deployment is claimed.
+
+**Next:** publish source through the authorized Metivity path and independently verify the new route, sitemap and metadata after Pages release. Then collect bounded, non-sensitive methods feedback via the existing review process. Independent researcher use, physical devices, screen readers, benchmark readiness and real-data admission remain unverified or **NOT READY**.
+
+## Previous status — apply Finland citizen-audio network evidence to university onboarding
+
+Added a cited prior-art card inside the optional university recording-network section and a matching note in the evaluation brief. It translates Ovaskainen et al. (2026) into a bounded product implication: a governed phone network can support occurrence forecasting when combined with ecological context, daily updates, expert review and independent point counts. The page preserves the crucial limit that this is not evidence of decoded call meaning, conversation or a Talk2Nature deployment. A site regression now pins the reported scale/results, limitation and both links.
+
+Checks: Python **263 passed, 1 skipped**; Node **176/176**; resource catalog **336 valid**; explicit-origin build **179 pages plus 404**; site checker **180 HTML / 12,485 links / 179 reachable routes**; `git diff --check` passed. Local-only candidate. The preview was previously opened and expanded at mobile width; a fresh measurement after viewport reset reported the browser's 780px default, so no fresh 390px layout claim is made. No live deploy, recording collection or model run.
+
+**Next:** prototype a synthetic, versioned lab review package distinguishing observer annotation, reviewer decision and model proposal; include provenance and a format-loss report. Seek a named target workflow before building an adapter. Preserve the open Pages release-parity, device, screen-reader and independent-novice gates; AutoResearch and real-data admission remain **NOT READY**.
+
 ## November 2 — verify merged source against the live Compare page
 
 PR [#659](https://github.com/Metivity/talk2nature/pull/659) is merged; remote `main` is `25211575131c6033deec169c99984c30448096ca` and matches the locally checked source tree. Its hosted Public Checks run `41457562859` passed repository checks, browser-tool logic, native Android station checks and preview-site checks. A fresh request to `https://metivity.github.io/talk2nature/app/compare/` returned **HTTP 200** with `Last-Modified: Thu, 29 Oct 2026 14:34:16 GMT`. The live HTML does not match the candidate: it retains a speculative future-research-path paragraph removed from the candidate's simplified Compare explanation. This verifies a stale deployment on this route, not a functional defect in the current source.
@@ -3751,3 +3775,25 @@ Fresh TLS-verified requests to GitHub Pages returned HTTP 200 for `robots.txt`, 
 The source research update was pushed to `codex/aplose-research-crosswalk-20261102` and merged by PR [#661](https://github.com/Metivity/talk2nature/pull/661) as [`001a0f0`](https://github.com/Metivity/talk2nature/commit/001a0f09f08bb4460a212e40a966e509616b4b4f). Hosted Public Checks run [#41466604832](https://github.com/Metivity/talk2nature/actions/runs/41466604832) passed repository, browser-tool, native Android and preview-site jobs. The connected GitHub tool still exposes no Actions workflow-dispatch operation; this source merge did not deploy Pages. Keep live publication separate from source and preview checks.
 
 Candidate verification after adding the APLOSE crosswalk: Python 257 passed (one intentional skip), Node 171/171, collection validation 333 resources; noindex and explicit-origin public-format builds each produced 174 routes plus 404. Site check: 175 HTML documents, 12,084 links locally and 12,260 links publicly, with 174 public routes reachable. This verifies the local candidate only; the new route is still absent from Pages.
+
+## November 2 continuation — measure open-source participation without inferring adoption
+
+At 16:15 UTC, read the public `Metivity/talk2nature` repository metadata, contributor endpoint, and issue/PR records. Current `main` was `30300aa07b4773aa5304af54f3dcacb6b3bda503`; GitHub showed zero stars/forks, one human contributor identity and Dependabot, and the 20 most recent commits all authored by Metivity. The only open issue was the first-phone walkthrough task (#115), with zero comments; the only open PR was #616 by Metivity. The project researcher guide has no verified independent reproductions. These counts cover public GitHub only and exclude private feedback or unobserved site/app use.
+
+The next useful evidence is one voluntary newcomer walkthrough after the live release is current, with completion and first friction point recorded separately from independent researcher code reproduction. Keep the current single short phone task. Do not add tracking, another forum or broad outreach from zero GitHub counters alone. No person was contacted, no issue or PR was changed and no deployment occurred.
+
+## November 2 continuation — apply current whale-model methods without overclaiming
+
+Reviewed two October 2026 arXiv preprints in full HTML and added source IDs 592–593, two evidence notes, metadata-only paper records and links in the model/meaning learning paths. Applied them to `docs/PHASE_TWO_PLAN.md`: keep timing, spectral/waveform, event, sequence, caller and behavior targets distinct; compare simple/single-view baselines before fusion; group evaluation by the independent unit the claim needs; and evaluate acoustic fidelity separately from meaning. The studies are provisional methods references, not proof of translation, and neither was reproduced. No audio, data, model, code or supplement was acquired or run.
+
+Candidate verification remains local and separate from publication. The existing live/source release gap, named-device and independent newcomer gates remain open. The five-track goal remains active; AutoResearch and real-data admission remain **NOT READY**.
+
+## November 2 continuation — verify a phone-width Station rehearsal
+
+Desktop Chrome emulated 390 × 844 at the current candidate's correct GitHub Pages subpath. A synthetic whole-moment session started without a microphone prompt, accepted one uncertainty marker, stopped and displayed an invented, partial, 25.4-second review with one note and a local-only save option. Document width matched the viewport at 320, 360 and 390 CSS pixels; Save and Discard buttons were 46 px high at 390. The session was not exported; no microphone, speaker playback, animal or participant data was involved. This is local browser emulation only. Physical-phone, native-file-picker, screen-reader, independent-newcomer and live-release checks remain open; no UI code changed.
+
+## November 2 — apply a citizen-audio network study to the product architecture
+
+Reviewed a peer-reviewed Finnish smartphone bioacoustics/digital-twin study and added a source, research note and metadata-only resource entry. Applied it to `docs/FIELD_NOTES.md`: future university capture should use a defined protocol and schedule, preserve device/location/consent lineage, separate media from metadata, distinguish machine predictions from human review and publish only privacy-reviewed generalized outputs. The reported independent validation is for bird occurrence prediction, not animal communication.
+
+Candidate catalog: 145 research notes; 336 resource records. Python **263 passed, 1 skipped**; Node **176/176**; public-format build **179 pages plus 404**; site check **180 HTML / 12,483 links / 179 reachable routes**; catalog validation passed. The first Python run caught an overlong search description and unsupported learning-path category in the new note; both were corrected before the passing run. No asset was downloaded or run, and no real-data intake, service deployment or outside contact occurred. This change is local to the isolated candidate; live Pages and publication are not verified. Next: prototype and review a synthetic university contribution walkthrough against Field Notes. Real-media admission and AutoResearch remain **NOT READY**.

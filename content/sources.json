@@ -5988,5 +5988,36 @@
     "url": "https://doi.org/10.1111/2041-210x.70331",
     "checked": "2026-11-02",
     "origin": "Publisher full text reviewed on 2026-11-02 for abstract, design, observer-ground-truth comparisons, adjudicated capture-recapture workflow, results and discussion. Supporting information was not reviewed and no data, code or calculations were acquired or reproduced."
+  },
+  {
+    "id": 592,
+    "title": "Sinha and Chavan (2026), Music of the Deep: An acoustic blueprint of sperm whale codas",
+    "description": "October 2026 preprint comparing multilevel coda acoustics with three musical references and assessing whether a broader acoustic description distinguishes sampled natural codas from WhAM generations. Not a translation or whale-emotion study.",
+    "url": "https://arxiv.org/abs/2610.33974",
+    "review_url": "https://arxiv.org/html/2610.33974",
+    "review_url_label": "Full arXiv HTML manuscript reviewed",
+    "checked": "2026-11-02",
+    "origin": "Full arXiv HTML reviewed for research questions, controls, main results, discussion and limitations. The manuscript identifies itself as a preprint prepared for the Journal of the Acoustical Society of America. No data, code, audio, supplement or model was acquired or run; the article's reuse terms were not independently reviewed."
+  },
+  {
+    "id": 593,
+    "title": "Quintanilha et al. (2026), Dual-Channel Contrastive Encoding of Sperm Whale Coda",
+    "description": "October 2026 arXiv preprint comparing separate rhythm and spectral encoders and their fusion for sperm-whale coda type, social-unit and individual-label prediction.",
+    "url": "https://arxiv.org/abs/2610.29101",
+    "review_url": "https://arxiv.org/html/2610.29101",
+    "review_url_label": "Full arXiv HTML manuscript reviewed",
+    "checked": "2026-11-02",
+    "origin": "Full arXiv HTML reviewed for architecture, preprocessing, objectives, splits, headline tables, ablations and limitations. The manuscript describes exploratory experiments on the Dominica public release; no code, data, audio or model was acquired or run, and no independent reproduction or specialist review occurred. Article reuse terms were not independently reviewed."
+  },
+  {
+    "id": 594,
+    "title": "Ovaskainen et al. (2026), A digital twin for real-time biodiversity forecasting with citizen science data",
+    "description": "Peer-reviewed open-access Finnish bird-monitoring study combining smartphone audio, prior ecological data and daily model updates; independently evaluated against expert point counts. It concerns occurrence forecasting, not communication meaning.",
+    "url": "https://doi.org/10.1038/s41559-025-02966-3",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12971481/",
+    "review_url_label": "Full text and methods reviewed via PMC mirror",
+    "checked": "2026-11-02",
+    "origin": "Targeted review of the article abstract, capture/model workflow, prior and updating model components, reported independent point-count evaluation, code/data statements and privacy/generalization discussion. No article supplement, code, data, audio, app or model was acquired or run. The article version is identified as CC BY in Aalto University's research portal. Rights for the separately linked code and observation records were not independently checked.",
+    "license_url": "https://research.aalto.fi/en/publications/a-digital-twin-for-real-time-biodiversity-forecasting-with-citize/"
   }
 ]

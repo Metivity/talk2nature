@@ -53,6 +53,8 @@ There is no shared Talk2Nature recording network or university cloud workspace t
 
 Bird-sound identification, archival media submission and biodiversity metadata publishing already have established tools and communities. A university conversation should therefore start by comparing one existing workflow and finding a concrete gap in context, provenance, annotation or reproducibility—not by asking a lab to move its recordings to a new service. This remains a product hypothesis to test.
 
+**Recent network prior art:** Ovaskainen et al. (2026) combined citizen smartphone recordings of Finnish birds with ecological priors, daily model updates, expert review and independent point-count validation. The article reports 15 million detections over two years; mean AUC for 73 tested species increased from 0.62 to 0.67 against 1,185 expert point counts. This supports the feasibility of a governed mobile biodiversity-monitoring network. It does not establish animal-call meaning or translation, and it is not a Talk2Nature integration. See the [source-grounded review](https://metivity.github.io/talk2nature/research/citizen-audio-digital-twin-finland-2026/) and [published article](https://doi.org/10.1038/s41559-025-02966-3).
+
 ## Plausible first conversations
 
 These are **evidence-based fit hypotheses**, not known prospects, partners or endorsements. Verify current interests and ask permission before describing any conversation publicly.

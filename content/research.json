@@ -7178,5 +7178,88 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "sperm-whale-acoustic-blueprint-2026",
+    "title": "A broader acoustic blueprint tests what click timing leaves out",
+    "seo_description": "A 2026 preprint compares sperm-whale coda structure and timing, and tests acoustic differences between natural calls and WhAM output.",
+    "taxon": "Sperm whales · cetacean bioacoustics",
+    "kind": "Acoustic structure and model-evaluation comparison",
+    "year": "2026",
+    "year_label": "Preprint posted 23 October 2026; prepared for the Journal of the Acoustical Society of America",
+    "source_ids": [592],
+    "reviewed": "2026-11-02",
+    "review_stage": "Full preprint text reviewed; no reproduction",
+    "review_depth": "Read the full arXiv HTML manuscript for study questions, analysis design and controls, main results, discussion and limitations. The study compares Dominica EC-1 sperm-whale codas with three selected musical references and compares a small sample of generated WhAM clips with natural clips. No data, code, audio, supplement or model was acquired or executed.",
+    "finding": "The authors describe codas across several acoustic levels rather than reducing them to click count and inter-click timing: constituent click composition, order across coda sequences, local timing variation, caller-associated patterns and other waveform-level variation. Under their selected controls, coda sequence predictability overlaps with some musical references while the relationships within units differ. In a matched comparison of 17 generated WhAM clips with natural references, five of six acoustic descriptions still distinguished the sampled synthetic from natural codas. The authors explicitly treat human emotion-rating directions as acoustic reference axes, not whale emotional states.",
+    "limitations": "This is a preprint and its findings concern sampled Dominica EC-1 codas and three particular musical references, not a universal comparison of whales and music. Recorded sequence order is grouped by date and unit, not confirmed continuous behavioral bouts. Analysis states and encoder descriptions are not demonstrated biological units. The WhAM comparison uses 17 isolated generated clips and does not test generation of full natural sequences or explain which mismatch caused the measured differences. It establishes no call meaning, receiver understanding or translation.",
+    "lesson": "For Talk2Nature, score acoustic detection, event structure, sequence prediction and synthetic-audio fidelity as separate tasks. A familiar-sounding output or good score on one representation must not stand in for a match across waveform, timing, context or behavior. Preserve the distinction between measured acoustic variation and inferred internal state. This reinforces a task-specific evaluation stack; it does not justify animal-directed output.",
+    "next_review": "If a future model-fidelity task is proposed, first obtain qualified cetacean review, identify an authorized and versioned natural-audio release, pin the exact generated examples and comparison metrics, and use independently held-out animals or recording units where the source design permits. Do not acquire or run artifacts based on this preprint alone.",
+    "expert_review": "No independent cetacean-bioacoustics specialist review or Talk2Nature reproduction.",
+    "review_locator": "arXiv:2610.33974 HTML, Methods Table 1, Results IV.1–IV.5, Discussion V, Limitations VI.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "A bounded preprint review; no new animal observation or public map point.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "sperm-whale-dual-channel-encoder-2026",
+    "title": "A two-branch whale model shows why the task and split matter",
+    "seo_description": "A 2026 preprint compares timing and spectral features for sperm-whale coda tasks; scores change across tasks and recording-date splits.",
+    "taxon": "Sperm whales · cetacean bioacoustics",
+    "kind": "Exploratory representation-learning comparison",
+    "year": "2026",
+    "year_label": "arXiv preprint posted 21 October 2026",
+    "source_ids": [593],
+    "reviewed": "2026-11-02",
+    "review_stage": "Full preprint text reviewed; no reproduction",
+    "review_depth": "Read the full arXiv HTML manuscript for encoder/preprocessing design, contrastive and auxiliary objectives, split protocol, comparison tables, ablations and limitations. The paper describes 1,501 files in the public DSWP card and 1,383 after noise-flag exclusions. No audio, dataset, code, notebook, checkpoint or model was acquired or run.",
+    "finding": "The proposed Dual-Channel Contrastive Encoder represents inter-click timing and log-mel spectral structure with separate branches followed by fusion, then evaluates frozen representations with linear probes. On the reported exploratory comparison, the best model depends on the target: raw timing is strongest for coda type, while the learned two-branch representation is competitive for some tasks. Recording-date grouping materially changes scores, and the paper includes date-grouped folds and year holdouts. The authors caution that the two branches do not establish independent biological channels or general architectural superiority.",
+    "limitations": "This is a recent preprint, not an independent Talk2Nature reproduction or specialist review. The study uses a single regional/clan corpus, small numbers of units and individuals, an imbalanced unit distribution, and exploratory experiments; year-held-out tests still draw from the same broad recording project. Random and grouped identity scores cover different supported classes, so their difference is not a clean estimate of a generalization penalty. Training and evaluation target coda type, social unit and caller identity, not context meaning or receiver understanding. The authors state broader-population generalization remains open.",
+    "lesson": "Do not default to one large multimodal model. Start with interpretable, task-appropriate feature baselines, keep acoustic views inspectable, compare single-view and combined systems, and predeclare animal/session/site/device holdouts. Report the label target and which test classes were supported. A representation or identity classifier is not a semantic decoder.",
+    "next_review": "Before considering any replication, verify the code and exact data-to-label mapping, clarify data and artifact rights, independently review the folds and class support, and define an untouched population-level holdout. No model run is proposed; AutoResearch and real-data admission remain NOT READY.",
+    "expert_review": "No independent cetacean-bioacoustics or representation-learning review and no Talk2Nature reproduction.",
+    "review_locator": "arXiv:2610.29101 HTML, Sections 3–5, Tables 1–2 and Discussion/Limitations.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "A model-method review, not a new animal observation or public map point.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "citizen-audio-digital-twin-finland-2026",
+    "title": "A citizen-audio network can update bird forecasts, with a separate validation stream",
+    "seo_description": "A Finnish bird app links smartphone audio, ecological data, expert review and validation. It forecasts occurrence, not animal communication meaning.",
+    "taxon": "Birds · citizen science and biodiversity forecasting",
+    "kind": "Smartphone bioacoustics and dynamic ecological modelling",
+    "year": "2026",
+    "year_label": "Peer-reviewed Nature Ecology & Evolution article, published 27 January 2026",
+    "source_ids": [
+      594
+    ],
+    "reviewed": "2026-11-02",
+    "review_stage": "Targeted full-text methods and systems review; no reproduction",
+    "review_depth": "Reviewed the article abstract and targeted full-text sections on the smartphone workflow, ecological priors, daily updates, independent expert point-count evaluation, data publication, location protection and code/data availability. The paper reports 595,400 one-minute prior-model recordings from eight Finnish sites, 15 million detections from the MK app over two years, and a 2025 independent survey. No code, observation files, recordings, app binary or models were acquired or run; no system was reproduced.",
+    "finding": "The study combines three distinct components: a prior for seasonal vocal activity, a migration-timing model, and a spatial-distribution model. Daily app detections update these components. The paper reports 15 million bird detections over two years. Against independent expert point counts, the mean AUC for 73 comparable species rose from 0.62 for the prior to 0.67 for the updated system; the validation involved 1,185 five-minute counts, with observers blinded to the competing predictions. The app sends recordings to a backend for classification, while occurrence outputs are reviewed, aggregated and published through FinBIF/GBIF. The article describes pseudonymous participation, one-kilometre coordinate rounding and wider 1–100 km obfuscation for sensitive taxa; associated audio is not public. This is a strong precedent for a governed biodiversity-observation network, not a demonstrated animal-language translator.",
+    "limitations": "The case is Finland-wide bird occurrence forecasting with a managed app, prior datasets, scheduled/point-count sampling and expert ecological review. The 15 million figure counts detections, not independent people, sessions or validated semantic observations. AUC changes quantify discrimination for the study’s presence/detection targets and tested population; they do not show that calls encode the predicted concepts or that animals understood an exchange. Machine confidence filtering is not a correctness guarantee. The paper’s open-source technology-stack description does not establish that the entire MK app, pipeline, data or model is reusable under one license. Linked software and occurrence data have separate rights and governance; no underlying asset was inspected here.",
+    "lesson": "Design a future university network as an explicit study pipeline: fixed protocol and sampling schedule; user-visible recording and consent; capture/device/time/location provenance; separable media storage and relational metadata; versioned model detections; human correction; privacy-generalized public projections; and an independent observation stream for evaluation. Keep human reports, machine detections, expert corrections and forecasts as distinct records. Do not interpret a working biodiversity pipeline as evidence for context understanding or conversation. Talk2Nature should remain local-first until protocol, consent, privacy, rights, hosting and withdrawal gates are cleared.",
+    "next_review": "If a named research group validates the need, translate this pattern into a synthetic end-to-end university pilot with explicit capture, metadata, review, withdrawal and public-projection states. Compare the protocol against the existing Field Notes workflow before proposing any schema or upload. Keep real audio intake and AutoResearch NOT READY until independent review, rights, consent, location protection, durable hosting, backup and withdrawal reconciliation pass.",
+    "expert_review": "No independent Talk2Nature review or reproduction. Article authors report expert review of their own ecological predictions; this is not independent review of Talk2Nature.",
+    "review_locator": "Ovaskainen et al. (2026), Nature Ecology & Evolution 10:481–495; targeted Abstract, Methods (MK app, prior-model components, independent validation), Results and Discussion/data-publication sections. DOI 10.1038/s41559-025-02966-3.",
+    "purpose": "Data standards & interoperability",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This review concerns a country-scale app and modelling workflow; it adds no point location or Talk2Nature observation to the atlas.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
