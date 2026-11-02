@@ -1,0 +1,53 @@
+<section class="section annotation-compare-intro">
+  <p class="eyebrow">RESEARCHER TOOL · LOCAL ONLY</p>
+  <h1>See where two observers<br><em>noticed the same moment.</em></h1>
+  <p class="lede">Compare two independent Talk2Nature annotation exports for the exact same WAV. Keep each person's labels visible; no upload, merging or consensus score.</p>
+  <p class="annotation-compare-note">This is an interval cross-check, not a judgment of who is right. A sound that was not marked is not proof that it was absent.</p>
+</section>
+
+<section class="section annotation-compare-workspace" aria-labelledby="annotation-compare-heading">
+  <div class="annotation-compare-heading">
+    <p class="eyebrow">01 / CHOOSE TWO EXPORTS</p>
+    <h2 id="annotation-compare-heading">Start with independent notes.</h2>
+    <p>In <a href="{{base}}/tools/listen/">Listen</a>, open the same WAV, use a different reviewer alias for each person, then export each label file from the advanced menu.</p>
+  </div>
+  <div class="annotation-compare-inputs">
+    <div class="annotation-compare-card">
+      <span class="annotation-compare-number" aria-hidden="true">A</span>
+      <h3>First observer</h3>
+      <label for="annotation-file-a">Choose annotation file</label>
+      <input id="annotation-file-a" type="file" accept=".json,application/json" aria-describedby="annotation-status-a">
+      <p id="annotation-status-a" class="annotation-compare-status" role="status" aria-live="polite">Nothing selected.</p>
+    </div>
+    <div class="annotation-compare-card">
+      <span class="annotation-compare-number" aria-hidden="true">B</span>
+      <h3>Second observer</h3>
+      <label for="annotation-file-b">Choose annotation file</label>
+      <input id="annotation-file-b" type="file" accept=".json,application/json" aria-describedby="annotation-status-b">
+      <p id="annotation-status-b" class="annotation-compare-status" role="status" aria-live="polite">Nothing selected.</p>
+    </div>
+  </div>
+  <p id="annotation-compare-error" class="annotation-compare-error" role="alert"></p>
+  <button id="annotation-compare-clear" class="listen-secondary" type="button" disabled>Clear both files</button>
+</section>
+
+<section id="annotation-compare-results" class="section annotation-compare-results" aria-labelledby="annotation-results-heading" hidden>
+  <div class="annotation-compare-heading">
+    <p class="eyebrow">02 / REVIEW THE OVERLAPS</p>
+    <h2 id="annotation-results-heading" tabindex="-1">The notes stay separate.</h2>
+    <p>Rows show every positive interval overlap. One event can appear in several rows; there is no automatic event matching, aggregation or verdict.</p>
+  </div>
+  <div id="annotation-compare-summary" class="annotation-compare-summary"></div>
+  <div class="annotation-compare-table-wrap"><table class="annotation-compare-table"><caption>Pairwise event overlaps between the two observer files</caption><thead><tr><th scope="col">A event</th><th scope="col">B event</th><th scope="col">Overlap</th><th scope="col">Time IoU</th><th scope="col">A sound kind</th><th scope="col">B sound kind</th><th scope="col">Observed context</th></tr></thead><tbody id="annotation-compare-pairs"></tbody></table></div>
+  <div class="annotation-compare-unmatched"><div><h3>A events without positive overlap</h3><p id="annotation-unmatched-a"></p></div><div><h3>B events without positive overlap</h3><p id="annotation-unmatched-b"></p></div></div>
+  <button id="annotation-report-download" class="button" type="button">Download comparison report</button>
+  <p id="annotation-download-status" class="annotation-compare-status" role="status" aria-live="polite"></p>
+  <p class="annotation-compare-note">The report contains declared WAV metadata, event IDs, intervals and exact label comparisons. It excludes notes and annotator IDs. Inspect it before sharing.</p>
+</section>
+
+<section class="section annotation-compare-boundary">
+  <div><p class="eyebrow">A SMALL, HONEST COMPARISON</p><h2>Overlap is a place to look closer.</h2></div>
+  <p>Exact WAV checksums and recording settings must match, and the declared annotator IDs must differ. A pairwise time overlap does not establish label quality. Context is compared only when both notes name an independently observed context. No file leaves this page; nothing is saved in browser storage.</p>
+  <p>Research precedent: one blue-whale study tested two aggregation methods for two call-detection tasks against separate expert-annotated sets. That does not establish behavior or meaning, or justify a universal consensus rule. This tool keeps each observer's labels separate.</p>
+  <p><a href="{{base}}/research/blue-whale-multi-annotator-labels-2024/">Read the source review and limitations →</a></p>
+</section>

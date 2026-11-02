@@ -1376,6 +1376,20 @@ class SiteTests(unittest.TestCase):
             self.assertIn('audacity-compatibility.yml',lab)
             self.assertTrue((root/'assets/interop.css').is_file())
 
+    def test_annotation_comparison_tool_is_discoverable_and_keeps_labels_separate(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page=(root/'tools/annotation-compare/index.html').read_text()
+            tools=(root/'tools/index.html').read_text()
+            self.assertIn('rel="canonical" href="https://fixture.github.io/talk2nature/tools/annotation-compare/"',page)
+            self.assertIn('no upload, merging or consensus score',page)
+            self.assertIn('keeps each observer\'s labels separate',page)
+            self.assertIn('/talk2nature/tools/annotation-compare/',tools)
+            self.assertIn('/talk2nature/assets/annotation-compare-page.mjs',page)
+            self.assertTrue((root/'assets/annotation-compare.css').is_file())
+
     def test_community_invites_bounded_university_evaluation(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
