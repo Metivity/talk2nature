@@ -6762,5 +6762,34 @@
       ]
     ],
     "review_locator": "Vengrovski and Gardner, “A Vision-Language Model as a Teacher for Bird Vocalization Detection,” bioRxiv v1, posted September 25, 2026, DOI 10.64898/2026.09.23.753955; §§2–7 and Tables 1–2. Full text read from bioRxiv PDF on 2026-11-02."
+  },
+  {
+    "slug": "bioacoustic-model-comparison",
+    "title": "Bioacoustic model comparisons are task-specific, not translation evidence",
+    "taxon": "Machine learning · bioacoustics",
+    "kind": "Model selection and evaluation",
+    "year": "2025–2026",
+    "source_ids": [
+      569
+    ],
+    "review_depth": "Targeted full-text review of arXiv v2: abstract; benchmark split protocols; data/model summaries; experimental design; probing results; model-selection advice; limitations and conclusion. No code, weights or benchmark data acquired or run.",
+    "seo_description": "Bioacoustic model rankings depend on task, benchmark and probe. Classification performance does not show animal understanding.",
+    "finding": "Schwinger et al. compare frozen bioacoustic and general-audio encoders on classification tasks from BEANS and BirdSet, using linear and attentive probes. They report Perch 2.0 as strongest in their restricted BirdSet evaluation and strongest with linear probing on BEANS. Transformer encoders often benefit from attentive probing; general-audio models can outperform bird-specialist models on some BEANS tasks when evaluated with attentive probes. The practical finding is that model rankings depend on task, representation, probe, and benchmark protocol—not a universal species-understanding score.",
+    "limitations": "This is an arXiv preprint, not independent Talk2Nature validation. The experiments are classification comparisons with frozen encoders, not event-presence detection, behavior inference, receiver response or meaning. The authors note sensitivity to fixed hyperparameters. They exclude BirdNET because it was trained on BirdSet evaluation datasets, and identify BirdSet Sapsucker Woods exposure in BEATs_NLM; restricted Perch scores are not a fully blind test. BEANS split protocols vary by dataset and can allow metadata influence. The paper’s CC BY-NC-ND 4.0 notice covers the paper, not separately distributed data, code or model weights. No files were acquired or run.",
+    "lesson": "For Talk2Nature, select the labelable scientific task first, then compare only candidate models and probes suited to it. The first candidate remains passive bird-vocalization presence, so these species-classification results are context for later model selection, not a baseline result for that task. Require rights-cleared labels, valid negatives, recording/site/session-aware holdouts and training-data overlap checks. Keep model proposals separate from human observations and any receiver-response evidence.",
+    "next_review": "When a rights-cleared event-presence dataset and independent reviewer are available, compare a simple baseline with a frozen candidate model using a locked, group-held-out test. Recheck the exact model/data versions and evaluation overlap before any run.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected sections reviewed",
+    "year_label": "Source year",
+    "review_locator": "Schwinger et al. (2025, revised 2026), arXiv:2508.01277v2. Sections 2.3; 3; 4; 5.1–5.2 (especially probing strategy, model selection advice and limitations); 6.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This note compares model methods and benchmark protocols rather than reporting one study site.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
