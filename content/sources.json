@@ -5850,5 +5850,21 @@
     "url": "https://doi.org/10.6084/m9.figshare.c.8383586",
     "checked": "2026-11-02",
     "origin": "Supplement DOI captured from the article record. Landing page was not accessible through the review tool; no files acquired and rights remain unresolved."
+  },
+  {
+    "id": 575,
+    "title": "Chasmai et al. (2026), MetaPerch: Learning from metadata for bioacoustic foundation models",
+    "description": "Peer-reviewed ICML 2026 paper in Proceedings of Machine Learning Research 306, pages 13066–13088. Full text reviewed for the model method, benchmark results, ablations and limitations.",
+    "url": "https://proceedings.mlr.press/v306/chasmai26a.html",
+    "checked": "2026-11-02",
+    "origin": "Official PMLR proceedings record and linked full-text PDF reviewed on 2026-11-02. No benchmark data, model weights or paper figures were acquired or reproduced."
+  },
+  {
+    "id": 576,
+    "title": "Official Google Research Perch repository: MetaPerch code location and repository license",
+    "description": "The PMLR paper links its software to google-research/perch, under chirp/projects/metaperch. The repository landing page displays Apache-2.0; the MetaPerch implementation and dependencies were not inspected or run.",
+    "url": "https://github.com/google-research/perch/tree/main/chirp/projects/metaperch",
+    "checked": "2026-11-02",
+    "origin": "Official repository landing page and PMLR software link checked on 2026-11-02. Repository-level license metadata is separate from model weights, datasets, article rights and dependencies."
   }
 ]
