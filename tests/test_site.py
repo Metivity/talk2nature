@@ -2773,6 +2773,18 @@ class SiteTests(unittest.TestCase):
         self.assertIn('not evidence', combined)
         caller_id = notes['individual-bird-identification-temporal-embeddings-2026']
         self.assertIn('not animal conversation', caller_id['finding'])
+        arcticsoundsnet = notes['arcticsoundsnet-transfer-learning-preflight']
+        self.assertEqual(arcticsoundsnet['atlas']['location_status'], 'mapped')
+        self.assertEqual(len(arcticsoundsnet['atlas']['locations']), 1)
+        self.assertEqual(arcticsoundsnet['atlas']['locations'][0]['place_id'],
+                         'arctic-coastal-plain-alaska')
+        self.assertEqual(arcticsoundsnet['atlas']['locations'][0]['source_id'], 511)
+        self.assertIn('no plot, recorder or animal coordinates',
+                      arcticsoundsnet['atlas']['locations'][0]['basis'])
+        places = json.loads((project_root / 'content' / 'atlas-places.json').read_text())['places']
+        region = next(place for place in places if place['id'] == 'arctic-coastal-plain-alaska')
+        self.assertEqual(region['precision'], 'region')
+        self.assertEqual((region['latitude'], region['longitude']), (70.0, -151.5))
         resource = next(r for r in json.loads(
             (project_root / 'research' / 'resources.json').read_text())['resources']
                         if r['id'] == 'powdermill-bird-soundscapes')
@@ -2791,6 +2803,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn('4,318', page)
             self.assertIn('4,319', page)
             self.assertIn('site-held-out', page)
+            atlas = json.loads((root / 'research' / 'atlas' / 'catalog.json').read_text())
+            mapped = next(item for item in atlas['records']
+                          if item['id'] == 'arcticsoundsnet-transfer-learning-preflight')
+            self.assertEqual(mapped['place_labels'], ["Alaska's Arctic Coastal Plain, USA"])
 
     def test_wytham_great_tit_resource_separates_song_structure_from_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
