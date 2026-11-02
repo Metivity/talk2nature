@@ -3165,3 +3165,11 @@ This verifies the deployed page and route metadata, not physical phones, screen 
 PR [#591](https://github.com/Metivity/talk2nature/pull/591) merged to `main` as [`eb3e911`](https://github.com/Metivity/talk2nature/commit/eb3e911fca4ef1fe5b1629cdf2c860ff1d7e0e69). Pages run [#40892470302](https://github.com/Metivity/talk2nature/actions/runs/40892470302) passed its public build, test, route-preservation, publication-boundary and live-route checks. The public build preserved all 154 routes; the site checker accepted 155 HTML documents and 10,743 links.
 
 A fresh TLS read with cache bypass returned HTTP 200 for `/app/` (14,125 bytes). The animal-facing sentence appeared before the first action. This confirms the deployed markup and copy, not device behavior, screen-reader accessibility or newcomer comprehension. The named-device and independent-user gates remain open; the five-track goal remains active.
+
+### November 2 — merge bonobo methods review; Pages release pending
+
+PR [#668](https://github.com/Metivity/talk2nature/pull/668) merged to `main` as [`b6de66d`](https://github.com/Metivity/talk2nature/commit/b6de66d2be57a473c5b9b496a02e218d78602b6d). Pull-request Public Checks run [#41504057288](https://github.com/Metivity/talk2nature/actions/runs/41504057288) completed successfully: repository checks, browser-tool logic, Android station checks and preview-site checks all passed.
+
+The manual Pages workflow has not been dispatched for this merge. No deployment occurred, and post-merge live routes, sitemap and crawl metadata remain unverified. The last recorded pre-merge live check found the research route returning HTTP 404 and a sitemap dated October 29. Next: publish from an authenticated Metivity workflow session, then verify the updated route, sitemap, canonical metadata and crawl controls.
+
+The bonobo source review remains a bounded statistical-methods review. Talk2Nature did not execute the reanalysis or settle the disputed interpretation; AutoResearch and real-data admission remain **NOT READY**.
