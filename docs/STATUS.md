@@ -1,3 +1,11 @@
+## November 2 — verify current-main Pages release parity
+
+**Question:** can reviewed public `main` be built without removing any path currently published by GitHub Pages? On clean `main` `72f0061e9e3e72eebf7c5172268810a5246fcc33`, all **250 Python tests** passed (1 intentional skip), all **171 Node tests** passed, and the collection validator accepted **318 resources**. The explicit-origin public build produced **167 pages plus 404**; `scripts/check_site.py` verified **168 HTML documents, 11,775 links, and 167 reachable public routes**.
+
+Fetched the live sitemap over verified HTTPS and ran the repository's deployment route comparator. All **154/154** currently published routes are preserved; the candidate adds **13 research routes**. Live read-back still shows 200 for `/`, `/app/`, `/app/compare/` and `/app/station/`, but **404** for `/research/bioacoustic-foundation-model-snr-2026/`; the sitemap remains at 154 URLs. The candidate is route-safe by the repository's route-retention check, but it is not deployed.
+
+**Deployment gate:** the Pages workflow only accepts manual `workflow_dispatch`. The connected Metivity GitHub tools can read/write repository content and PRs but expose no dispatch operation; the current Chrome GitHub page is signed out, and the CLI does not have a valid Metivity login. No dispatch or deployment occurred. Keep the goal active and run the checked manual workflow from an authenticated Metivity session, then verify every live route and crawl signal. Physical-device, screen-reader and independent-newcomer checks also remain open; AutoResearch and real-data admission remain **NOT READY**.
+
 ## November 2 — add an SNR-aware model evaluation lesson
 
 Reviewed Jean-Labadye et al. (2026), an arXiv preprint evaluating four frozen encoders on one continuous Antarctic whale-detection deployment. In that experiment, test signal-to-noise ratio explained more average-precision variation than model choice; mixed-SNR training redistributed performance toward lower-SNR conditions while absolute performance remained low. Added an original summary and metadata-only paper record. The result is specific to one marine task and does not establish transfer to birds, parrots or phones.
