@@ -1,3 +1,25 @@
+# November 2 continuation — merge the walkthrough and verify the live release gap
+
+PR [#666](https://github.com/Metivity/talk2nature/pull/666) merged to `main` as [`615d4b6`](https://github.com/Metivity/talk2nature/commit/615d4b6b70f3697d3f3919ae95379a40d88d467b). Hosted Public Checks run [#41496005369](https://github.com/Metivity/talk2nature/actions/runs/41496005369) passed repository, browser-tool, Android and preview-site checks. The new walkthrough is now in source on `main`.
+
+**Live readback:** `GET /research/annotation-lineage/` still returns **404**; `sitemap.xml` returns 200 but retains `Last-Modified: 2026-10-29`. The Pages workflow is manual. The current GitHub browser session is signed out, and no workflow-dispatch action is available through the connected GitHub tools. No deployment occurred. Continue with the separately reviewed research additions already on this local branch; keep the release gap open until an authenticated Pages dispatch is available.
+
+## Previous continuation — make the synthetic review workflow publicly discoverable
+
+**Repository audit:** the versioned lineage fixture, APLOSE loss report and structural tests were already present, but the workflow had no dedicated public landing page. Added `/research/annotation-lineage/` as a source-linked walkthrough. It separates Observer A and B, the explicitly undetermined human review decision, and the invented unexecuted model proposal; it summarizes unsupported APLOSE fields and links to the full crosswalk and source reviews. Annotation Compare and the university evaluation now link to the page, and the researcher kit names it as the public entry point.
+
+**Verification:** the focused lineage tests passed **6/6**. The full Python suite passed **264 tests, 1 intentional skip**; Node passed **176/176**. Explicit-origin build produced **180 pages plus 404**; site checker passed **181 HTML documents / 12,526 links / 180 reachable public routes**. In a local browser at **390 × 844**, the cards stack in one column, document width stays 390px, and all page action links measure at least 44px high. No recording, model, upload, APLOSE installation, external review or deployment occurred.
+
+The landing page improves reviewability and crawlable project discovery; it is not an interoperability adapter or proof of independent researcher use. Next: verify this route and updated count after the approved source-publishing/release path, then seek independent feedback through the existing public review channel without implying endorsement. Keep physical-device, assistive-technology, independent-review, AutoResearch and real-data gates open.
+
+## Previous continuation — apply citizen-audio network research to the university path
+
+Applied the reviewed Finland smartphone-bird-monitoring study to the optional recording-network panel and the university evaluation brief. The site now reports the paper's two-year, 15-million-detection scale and the 0.62-to-0.67 mean AUC result for 73 species against 1,185 independent expert point counts, with links to the project review and original article. It explicitly says this evidence concerns biodiversity occurrence forecasting, not call meaning or conversation, and is not a Talk2Nature service. Added regression coverage for the result, claim boundary and source links.
+
+Validation after this change: Python **263 tests passed (1 intentional skip)**; Node **176/176**; catalog **336 valid resources**; explicit-origin public-format build **179 pages plus 404**; site check **180 HTML documents / 12,485 links / 179 reachable public routes**; `git diff --check` passed. These checks describe the local candidate. The UI was opened at phone width earlier in the turn, but a fresh width readback returned the default 780px viewport, so this continuation does not claim a verified 390px visual check. No deployment occurred. Keep the five-track goal active and AutoResearch / real-data admission **NOT READY**.
+
+**Next:** use this precedent to define the smallest synthetic university evaluation: one fixed observation package with separate observer labels, reviewer decisions and model proposals, plus an explicit export-loss report. Compare with a lab's named existing workflow before proposing adapters or a shared server. Continue only from primary-source review and keep physical-device, screen-reader and independent-newcomer gates separate.
+
 ## November 2 continuation — merge the research update and preserve the release boundary
 
 PR [#661](https://github.com/Metivity/talk2nature/pull/661) merged into `main` as [`001a0f0`](https://github.com/Metivity/talk2nature/commit/001a0f09f08bb4460a212e40a966e509616b4b4f) after the hosted Public Checks run [#41466604832](https://github.com/Metivity/talk2nature/actions/runs/41466604832) passed. The update applies multi-annotator evidence to contributor guidance and records APLOSE as prior art, while documenting why a generic export converter is not justified. It does not add a multi-review service, import third-party code/data, admit recordings or establish call meaning. Pages is still on the older October 29 build; the manual workflow cannot be dispatched through the current connected tools, so the research pages remain unpublished. Keep the five-track goal active and AutoResearch / real-data admission **NOT READY**.
@@ -1951,3 +1973,29 @@ The APLOSE/OSEkit comparison is now field-level: the documented export can carry
 The exact-version APLOSE/OSEkit format review is now in the source library and advanced researcher guide, but the live site is still on its October 29 build: the candidate APLOSE page returns 404 while core crawler files and existing pages return 200. The current source candidate passes its full local checks; it is not published.
 
 **Next:** resume with a clean authorized Metivity publish path for the already-reviewed candidate, then verify the new research page, sitemap, resource count, canonical/structured metadata and the live app disclosures. Meanwhile continue independent work on actual phone acceptance, newcomer completion evidence and the NOT READY benchmark gates. The complete five-track goal remains active.
+
+## November 2 continuation — set a measured baseline for outside participation
+
+Reviewed the current public GitHub repository, contributor endpoint and issue/PR records at 16:15 UTC. On `main` `30300aa`, the repository showed zero stars and forks; one human contributor identity (`Metivity`) plus Dependabot; all 20 latest commits were by Metivity; one open, zero-comment first-phone issue; and one maintainer-authored open PR. The researcher guide still records zero verified outside reproductions. These are public activity counts, not evidence that nobody visited or gave private feedback.
+
+Applied the measurement to outreach: keep one short phone task; do not add analytics, another forum or broader solicitation based only on quiet GitHub counters. After the live app matches source, measure one voluntary newcomer walkthrough separately from code reproduction; capture completion, first hesitation and one requested change, then track maintainer response when there is a report. No external contact or issue edit occurred. The five-track goal remains active.
+
+## November 2 continuation — apply two new sperm-whale modeling preprints
+
+Reviewed the full HTML of two October 2026 arXiv preprints: Sinha and Chavan's *Music of the Deep* (arXiv:2610.33974) and Quintanilha et al.'s dual-channel coda encoder (arXiv:2610.29101). Added source/resource records and two evidence notes, clearly labeled as preprints and not independently reproduced. No recordings, datasets, code, models, supplements or weights were acquired or run.
+
+**Applied to Talk2Nature:** the researcher model plan now makes acoustic event detection, rhythm/timing, waveform/spectral description, sequence context, caller association and independently observed behavior separate evaluation targets. It calls for interpretable single-view baselines before fusion; date/session/animal/site holdouts where the data support them; and distinct checks for event utility, acoustic fidelity and meaning. The papers illustrate why task-specific rankings and familiar-sounding synthesis cannot establish a general communication model. They do not change the current passive, no-playback product boundary. See sources 592–593 and the model/meaning learning paths.
+
+**Next:** continue targeted primary-source review when it changes a research or product decision; resolve existing release/deployment and device gates; keep AutoResearch and real-data admission **NOT READY**. No outside contact or public release occurred.
+
+## November 2 continuation — rehearse the Station on a narrow screen
+
+Used the current explicit-origin candidate at its correct `/talk2nature/` path in desktop Chrome emulating 390 × 844. The no-microphone 30-second whole-moment rehearsal started without a permission request, accepted one uncertainty observation, stopped, and produced a partial synthetic review with one note and a local-only save option. At 320, 360 and 390 CSS pixels, document width matched the viewport; Save/Discard controls were 46 px high at 390. No microphone or playback was used, and the temporary synthetic session was not saved. This is browser emulation, not physical-device, file-picker, assistive-technology or independent-newcomer acceptance; see `docs/MOBILE_AUDIT.md`.
+
+**Decision:** no interface change is supported by this run. Keep named-phone and newcomer gates open, and keep the source/live publication gap separate. The five-track goal remains active; AutoResearch and real-data admission remain **NOT READY**.
+
+## November 2 continuation — apply citizen-audio network research to our product architecture
+
+Added a targeted, source-grounded review of Ovaskainen et al. (2026), a Finnish smartphone-based bird-forecasting system, and applied its evidence to the future university contribution path. The important implementation pattern is structured mobile capture plus ecological priors, daily model lineage, expert correction, generalized public outputs and independent validation. Its independent AUC result concerns bird occurrence forecasts; it is not a communication or meaning result. The project now states the architecture implications in the researcher backlog and Field Notes guide: keep user/device/protocol provenance; distinguish detections, corrections, observations and forecasts; keep media in controlled storage and precise sensitive locations private; and validate independently.
+
+No code, app, model, data, audio or recording was acquired or run; no ingestion or partner activity was opened. This strengthens product and database planning while preserving the local-only and synthetic-only gates. Candidate catalog now has 145 research notes and 336 resource records. Next: build a wholly synthetic university contribution walkthrough and check it against existing Field Notes before proposing any real schema or upload. Keep the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.

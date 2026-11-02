@@ -22,6 +22,19 @@ The first research question remains whether sound adds information about indepen
 
 The public catalog's editable source remains versioned JSON in Git; the database holds imported snapshots for private research use. Private studies, sessions and observations are database-owned and are never exported by the static website builder. This is not yet a single production content-management system. The 808-row external annotation sample remains quarantined in ignored local files; importing its dataset description does not admit those rows to the participant database.
 
+## November 2 research application: citizen audio network architecture
+
+Ovaskainen et al. (2026) show a useful biodiversity-monitoring pattern: citizen smartphone audio is one input to a versioned system that combines prior ecology, time/location-aware acoustic detections, expert review and independently collected validation. Their Finland bird case reports 15 million detections in two years and improved mean AUC from 0.62 to 0.67 against 1,185 independent expert point counts for the 73 species available in that comparison. This is evidence for forecasting bird occurrence from a managed observation network; it does not test call meaning, animal replies or translation.
+
+**Applied design decisions for Talk2Nature:**
+
+- Keep the first public contribution flow a short, user-started, foreground recording with a clearly selected study and protocol. This study demonstrates mobile contribution, but does not establish that an unattended background phone is a reliable or privacy-safe wildlife station.
+- If a future university pilot is approved, keep audio in controlled object storage and its metadata, consent, device/capture path, model version, reviewer state, withdrawal and publication lineage in the database. Publish separately reviewed, generalized observations; never expose raw audio or precise sensitive locations by default.
+- Track human observations, automated detections, expert corrections and model forecasts as separate records. Provide an explicit review path and confidence/provenance fields; confidence thresholds are a filter, not proof of correctness.
+- Use fixed recording schedules and site protocols to address sampling bias, then evaluate against an independent observation stream. Keep ecological presence/detection tasks separate from the project's communication/context questions.
+
+These are architecture requirements for a later, approved university study, not a change to the current local-only app or synthetic-only server. No real recordings, user data, code or weights were acquired, uploaded, admitted or run; no live service or partner relationship is claimed. See the source-grounded note in [RESEARCH_BACKLOG.md](RESEARCH_BACKLOG.md#november-2--apply-a-citizen-audio-digital-twin-study-to-infrastructure-design).
+
 The older standalone observation API remains compatible with earlier synthetic records. New UI submissions require a study session. Standalone records are visibly labeled; they do not receive a study-protocol claim. A metadata release can contain different study references and is not a scientifically approved combined dataset.
 
 ## Reproduce the private workflow
