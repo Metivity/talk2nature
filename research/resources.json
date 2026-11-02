@@ -9907,6 +9907,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bioacoustic-foundation-model-snr-2026",
+      "kind": "paper",
+      "title": "Do bioacoustic foundation models hear through the noise? SNR and generalization in underwater detection",
+      "url": "https://arxiv.org/abs/2610.33068",
+      "version": "arXiv v1, submitted 2026-10-20; DOI 10.48550/arXiv.2610.33068",
+      "source_ids": [
+        570
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Methodological reference for evaluation under acoustic noise variation in continuous passive acoustic monitoring.",
+      "review_depth": "Targeted full-text review of data, overlapping windows, encoder comparison, SNR-stratified results and limitations. No data, code, audio or model acquired or run.",
+      "access": "Public arXiv abstract and experimental HTML full text.",
+      "decision": "Metadata-only literature record. Informs future evaluation design; not a Talk2Nature benchmark, model choice, reproduction or evidence of call meaning.",
+      "limitations": "One preprint, one continuous hydrophone deployment and one binary whale-call presence task. It does not establish transfer to birds, parrots or phone microphones. Five-second windows overlap by 50%; reviewed methods do not establish site-held-out generalization. Dataset, code and model rights are separate from article terms.",
+      "attribution": "Jean-Labadye L, Farrugia N, Marmoret A, Cazau D, Adam O. Do bioacoustic foundation models hear through the noise? SNR and generalization in underwater detection. arXiv:2610.33068v1 (2026).",
+      "rights": {
+        "license": "CC BY 4.0 for the paper, as linked by the arXiv record.",
+        "scope": "Article only. No rights for referenced dataset, audio, software or model are inferred.",
+        "evidence_url": "https://arxiv.org/abs/2610.33068",
+        "conditions": "Link to the paper and use an original summary. Review dataset, code and model terms independently before any reuse.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

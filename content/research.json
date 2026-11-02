@@ -6791,5 +6791,34 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "bioacoustic-foundation-model-snr-2026",
+    "title": "Noise conditions can outweigh model choice in one continuous whale-detection study",
+    "taxon": "Machine learning · marine bioacoustics",
+    "kind": "Model evaluation",
+    "year": "2026",
+    "source_ids": [
+      570
+    ],
+    "review_depth": "Targeted full-text review of arXiv v1: abstract; continuous-recording dataset and event labels; five-second overlapping segmentation; four-encoder comparison; SNR-stratified training/evaluation design; reported results; discussion and limitations. No data, code, audio or model acquired or run.",
+    "seo_description": "A 2026 whale-detection preprint finds evaluation noise matters more than model choice in one continuous-recording test; scope and limits reviewed.",
+    "finding": "Jean-Labadye et al. evaluate four frozen bioacoustic encoders for binary presence detection on continuously recorded Antarctic whale audio from one Kerguelen Plateau deployment. They construct same-size training/evaluation conditions that vary the signal-to-noise ratios (SNR) of positive segments. In this experiment, evaluation SNR accounts for more variation in average precision than encoder choice; a mixed-SNR training condition shifts performance toward lower-SNR data, while absolute performance remains low. The practical lesson for Talk2Nature is to measure the recording conditions a future tool will face and report noise-stratified detection performance, rather than selecting a model from clean clips alone.",
+    "limitations": "This is a recent arXiv preprint and one marine detection task using one continuous recorder deployment from 2014–2015; it does not establish the same effect size for birds, parrots, phones, other sites or other tasks. The seven whale call types are pooled into binary presence labels, not communication or behavior labels. Five-second segments overlap by 50%; the reviewed methods describe five-fold validation and held-out test conditions but do not establish a site-held-out or cross-deployment test. Test prevalence is operationally imbalanced while training and validation are balanced by negative subsampling. SNR binning and annotations have their own uncertainty, especially for faint events. Article CC BY 4.0 does not license the underlying data, code or models. No Talk2Nature result or independent reproduction is claimed.",
+    "lesson": "For future field-facing acoustic evaluation, freeze the event definition and grouping before model selection; keep clips from the same source recording/session together; describe microphone, placement, environment and sampling conditions; predeclare acoustic-quality strata where meaningful; report precision-recall measures at realistic prevalence and results by stratum. Treat these as proposed design safeguards informed by one marine study, not proof that the same factors dominate every Talk2Nature task. Keep detection outputs separate from observer notes, context associations and receiver-response evidence.",
+    "next_review": "When a rights-cleared event-presence task is selected, ask an independent passive-acoustics reviewer whether recording groups and acoustic-quality strata are available and biologically meaningful before any acquisition or model run.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Selected sections reviewed",
+    "year_label": "Source year",
+    "review_locator": "Jean-Labadye et al. (2026), arXiv:2610.33068v1. Sections 1–4; especially 2.1–2.4, 3.1–3.3 and 4.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews model evaluation methods and one study site; it does not geocode animal observations for the public atlas.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
