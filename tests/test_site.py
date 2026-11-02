@@ -22,6 +22,30 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
+    def test_pipeline_comparison_research_is_applied_without_claiming_translation(self):
+        project_root=Path(__file__).resolve().parents[1]
+        notes=json.loads((project_root/'content'/'research.json').read_text())
+        note=next(item for item in notes if item['slug']=='same-data-different-results-bioacoustics-2025')
+        self.assertEqual(note['source_ids'],[616,617])
+        self.assertIn('known identity classes',note['limitations'])
+        self.assertIn('does not test open-set or unseen-caller',note['limitations'])
+        self.assertIn('does not justify making it our universal baseline',note['lesson'])
+        model_decision=(project_root/'docs'/'MODEL_DATA_DECISION.md').read_text()
+        run_card=(project_root/'docs'/'BENCHMARK_CANDIDATE_RUN_CARD.md').read_text()
+        self.assertIn('same frozen, question-appropriate split',model_decision)
+        self.assertIn('signal-processing/feature/model path',run_card)
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        deposit=next(item for item in resources if item['id']=='wierucka-bioacoustics-methods-data-code-2025')
+        self.assertEqual(deposit['acquisition'],'metadata_only')
+        self.assertEqual(deposit['rights']['research_use'],'unresolved')
+        with tempfile.TemporaryDirectory() as d:
+            output=Path(d)
+            build(output,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(output/'research'/'same-data-different-results-bioacoustics-2025'/'index.html').read_text()
+            self.assertIn('name="robots" content="index,follow"',page)
+            self.assertIn('https://doi.org/10.1111/2041-210X.70091',page)
+            self.assertIn('/research/same-data-different-results-bioacoustics-2025/',(output/'sitemap.xml').read_text())
+
     def test_passerine_methods_are_applied_without_claiming_full_text_or_meaning(self):
         project_root=Path(__file__).resolve().parents[1]
         notes=json.loads((project_root/'content'/'research.json').read_text())

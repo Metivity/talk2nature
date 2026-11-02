@@ -6203,5 +6203,29 @@
     "url": "https://doi.org/10.1016/j.ecoinf.2026.103765",
     "checked": "2026-11-03",
     "origin": "Verified the journal article title, authors, publication date and version-of-record CC BY 4.0 license from the publisher-indexed record and Crossref metadata over verified TLS. Publisher full-text retrieval returned HTTP 403; the methods/results review remains explicitly scoped to arXiv v2. No article file, code, dataset or model was acquired or run."
+  },
+  {
+    "id": 616,
+    "title": "Wierucka et al. (2025), Same data, different results? Machine learning approaches in bioacoustics",
+    "description": "Peer-reviewed open-access article in Methods in Ecology and Evolution; full publisher text reviewed for methods, results, limitations and data statement.",
+    "url": "https://doi.org/10.1111/2041-210X.70091",
+    "checked": "2026-11-03",
+    "origin": "Read the full publisher-hosted article: abstract, literature search, methods, results, discussion, limitations and data availability statement. The study compares acoustic feature extraction and classifiers for known-caller identity classification over 16 datasets from 14 mammalian species. Supplementary tables and the linked data/code files were not inspected or acquired; no analysis was reproduced."
+  },
+  {
+    "id": 617,
+    "title": "Wierucka et al. (2025) analysis data and code, Figshare version 1",
+    "description": "Deposit identified by the paper data-availability statement; item contents and license were not reviewed.",
+    "url": "https://doi.org/10.6084/m9.figshare.29209976.v1",
+    "checked": "2026-11-03",
+    "origin": "The article links this DOI for study data and code. The Figshare record, individual file metadata, licensing and files were not inspected or acquired. Do not infer reuse rights from the article access status or the deposit link."
+  },
+  {
+    "id": 618,
+    "title": "Ghani et al. (2026), Twelve quick tips for applying deep learning to animal sounds",
+    "description": "Peer-reviewed open-access practical guide to the full bioacoustic ML lifecycle, with domain shift, reproducibility, evaluation costs and privacy.",
+    "url": "https://doi.org/10.1371/journal.pcbi.1014604",
+    "checked": "2026-11-03",
+    "origin": "Reviewed the complete publisher-hosted article: task definition, recording provenance, data sourcing, annotation and agreement, domain shift and grouped evaluation, transfer learning, error-cost-aware metrics, reproducibility, reuse/deployment, and human/wildlife privacy. The article is CC BY 4.0; no cited data, code, model or figures were acquired or run."
   }
 ]

@@ -1,3 +1,9 @@
+# November 3 — apply a full-lifecycle guide to bioacoustic ML planning
+
+Reviewed Ghani et al. (2026), a complete peer-reviewed guide covering the animal-sound ML lifecycle. Added a source-linked evidence note and metadata-only article entry, linked it into the model learning path, and applied its device, field-background/hard-negative, split-leakage, error-cost, preprocessing-parity, privacy and sensitive-location guidance to the benchmark run card and model/data decision. The note and route render in the local noindex build; no linked data/code/weights were acquired, no animal media were collected, and no model was run.
+
+**Checks:** catalog validates **353 resources**; Python **280 passed, 1 skipped**; local build **186 routes plus 404**; site checker **187 HTML documents / 12,822 links / public:false**; `git diff --check` passes. Remote `main` remains at `439bbd142c5461440358796737651873ba12f104`; this research addition remains local and unpublished. No deployment occurred. AutoResearch and real-data admission remain **NOT READY**.
+
 # November 2 — deepen the global passerine method record
 
 The pinned author README reports 500 ms MPS windows at 67% overlap, weighted PCA to 37 dimensions over 116,792 vocalizations, and GMM clustering of eight acoustic motifs, with separate ecological and propagation analyses. This supports the project’s acoustic-structure knowledge map but does not make the study a receiver-response or meaning benchmark. The Science full-text and supplement requests returned HTTP 403; only the primary abstract and author README are reviewed. The Xeno-canto filename join is paused absent provider-permitted, authenticated metadata access. No code, dataset or audio was acquired or run.

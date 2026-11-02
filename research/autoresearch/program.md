@@ -18,6 +18,17 @@ Select checkpoints, epochs, hyperparameters, thresholds, early stopping and seed
 
 If a test result is viewed and then influences any choice, mark that set as development data. Do not report it as a final generalization estimate; a new independent test set is required. Log whether and when final-test access occurred and any deviation. This policy does not make the current task ready: all other scientific, rights and safety gates still apply.
 
+## Pipeline-comparability gate
+
+The 2025 mammal caller-identity methods comparison reports that outcomes vary with feature extraction and classifier choice; its MFCC/random-forest consistency finding is limited to known-caller tasks in its tested mammal datasets ([Talk2Nature's review](https://metivity.github.io/talk2nature/research/same-data-different-results-bioacoustics-2025/)). Before any future comparison is reviewed for approval, the run card must freeze and identify:
+
+- the exact estimand, including known-caller classification versus unseen-caller transfer when identity is the target;
+- the crop/window policy, source and processing sample rates, channels, filters and resampling;
+- feature extraction/model/checkpoint version and parameters, tuning procedure, and software/environment fingerprint;
+- group/split membership, random seeds, class balance, primary metric and uncertainty method.
+
+Compare candidates on the same question-appropriate frozen groups and report sensitivity to the prespecified pipeline variants. Do not mix preprocessing changes with model changes and then attribute the score difference to the model; if preprocessing itself is under study, declare it as a separate method-comparison experiment before evaluation. MFCC plus random forest is not a default Talk2Nature baseline. This gate refines recordkeeping only; the program remains **NOT READY**, and no model or recording may be run under this section.
+
 ## Agent scope after approval
 
 For a future, separately approved run:

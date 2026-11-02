@@ -497,3 +497,14 @@ The GitHub repository MIT notice does not explicitly scope itself to the raw `AN
 The annotation and join scripts check the resource catalog before opening data and require separate analysis admission in addition to rights/acquisition status. Their allowed-path tests use synthetic data only. The Figshare selection CSV is a distinct CC BY 4.0 artifact and remains separately cataloged; do not conflate it with the unresolved GitHub tables.
 
 **Next:** resolve data-specific license scope, exact file provenance and privacy conditions from documented source materials. Any external rights-holder contact or archive-term acceptance requires its own authorization. Until then, continue the zero-command passive app work and literature review without touching the held files.
+
+## November 3 — compare published pipelines without mixing tasks
+
+Reviewed Wierucka et al. (2025), a peer-reviewed comparison of feature extraction and classifiers for identifying known callers across 16 mammalian datasets. The study reports more consistent performance for MFCC features and random forests within its experimental conditions, while results depend on pipeline and class count. It does not test unseen callers, receiver response or call meaning. The article links a Figshare data/code deposit, but its contents and component terms were not inspected; nothing was acquired or run.
+
+Applied the finding to benchmark documentation: future comparisons must declare whether they target known or unseen callers, pin preprocessing and model choices, share a frozen grouped split, and report pipeline sensitivity. MFCC plus random forest is a possible task-specific reference, not a universal baseline. Added a separate metadata-only resource record; dataset/code rights remain unresolved and no admission follows. See the [research note](https://metivity.github.io/talk2nature/research/same-data-different-results-bioacoustics-2025/) and `docs/MODEL_DATA_DECISION.md`.
+
+
+## November 3 — practical lifecycle guidance for bioacoustic ML
+
+Added Ghani et al. (2026), a complete publisher-article review covering the path from biological question through deployment and ethics. It is linked to the model learning path and benchmark run card. The guide specifically strengthens Talk2Nature's future field-use checks: identify the target device up front, retain representative hard negatives, check site/time and model-training overlap, tie metrics to error costs, preserve train/inference preprocessing parity, and review human privacy and sensitive species locations. These design recommendations do not demonstrate model performance or clear any dataset. The article is CC BY 4.0; no linked data, software, model or weights were acquired or audited. See `content/research.json`, `content/sources.json`, and `research/resources.json` (source ID 618).

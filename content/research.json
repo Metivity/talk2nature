@@ -7418,5 +7418,50 @@
       ],
       "observation_period": null
     }
+  },
+  {
+    "slug": "same-data-different-results-bioacoustics-2025",
+    "title": "Same recordings, different pipelines: mammal identity results need method context",
+    "taxon": "Mammals · cross-species acoustic methods",
+    "kind": "Method comparison and individual acoustic identity",
+    "year": "2025",
+    "source_ids": [
+      616,
+      617
+    ],
+    "review_depth": "Read the full publisher-hosted article, including its abstract, literature-search method, data selection, feature extraction, classifiers, results, discussion, limitations and data-availability statement. The study compares four feature-extraction families and four classifiers on 16 datasets from 14 mammalian species; two taxa contribute two call-type datasets each. The linked supplement and Figshare files were not inspected, and no code, data, audio or model was acquired or run.",
+    "seo_description": "A 2025 mammal study shows acoustic identity scores vary with feature and classifier choices. Its lesson is reproducible methods, not animal translation.",
+    "finding": "Wierucka et al. combine a literature review of 46 empirical papers with a controlled comparison of feature extraction and classification methods for known-caller identity. Across 16 datasets from 14 mammals, they report that MFCC features and random-forest classifiers tend to give more consistent results across the tested conditions; MFCC results were comparatively robust across several classifiers. The paper also reports that absolute accuracy changes with the feature/classifier combination and number of candidate individuals. This is evidence about reproducibility and machine-detectable caller identity under the study design, not about unseen-caller transfer, behavior, receiver comprehension or what calls mean.",
+    "limitations": "The comparison uses tightly cropped, single-call files, one call type per dataset and known identity classes; it does not test open-set or unseen-caller recognition. Its controlled subset randomly samples calls for each individual and uses a closed set of known callers. The mammal results do not establish that MFCC or random forests are universal, best for birds/parrots, or fit for Talk2Nature phone audio. The literature review searched Google Scholar for 2000–2022 publications and is not a current census of all bioacoustics work. The supplementary tables were not reviewed. The paper links a Figshare data/code deposit, but its files and their separate terms were not inspected; no replication was performed.",
+    "lesson": "For any future Talk2Nature model comparison, pin the scientific target and full analysis pipeline alongside the audio and label versions: crop/window rules, sample rate and filters, feature extractor and parameters, classifier/model and version, tuning procedure, grouping and split IDs, random seeds, class balance and metric. Compare candidate pipelines on the same frozen, question-appropriate grouped split and report pipeline sensitivity rather than pooling published scores across incompatible studies. MFCC plus a random forest may serve as a conventional caller-identity reference when that is the task, but the paper does not justify making it our universal baseline. Do not infer biological significance or communication meaning from a classifier identifying known callers.",
+    "next_review": "Before any identity benchmark, ask an independent bioacoustics reviewer to define whether the question concerns known-caller recognition or generalization to unseen callers; check the audio/individual/session joins and rights; then predeclare grouped partitions, pipeline versions, baselines and metrics. Revisit the supplementary tables and Figshare item only if that task becomes a real candidate. No model run follows from this literature review.",
+    "reviewed": "2026-11-03",
+    "expert_review": "No independent Talk2Nature reproduction or mammalian bioacoustics specialist review has occurred.",
+    "review_stage": "Full article review; no supplemental-file review or reproduction",
+    "year_label": "Peer-reviewed open-access Methods in Ecology and Evolution article, first published 2025-07-09",
+    "review_locator": "Wierucka et al. (2025), DOI 10.1111/2041-210X.70091; abstract, §§2–4, data-availability statement. The Figshare v1 record is linked by the article but was not inspected.",
+    "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "twelve-quick-tips-bioacoustic-deep-learning-2026",
+    "title": "From a clear animal-sound question to a field-ready workflow",
+    "taxon": "Cross-taxon bioacoustics",
+    "kind": "Practical machine-learning lifecycle guide",
+    "year": "2026",
+    "source_ids": [
+      618
+    ],
+    "review_depth": "Read the complete publisher-hosted article, including all 12 recommendations, lifecycle figure, data-repository discussion, annotation quality guidance, domain-shift and split recommendations, metric selection, reproducibility, deployment and ethical/privacy considerations. No cited external dataset, code, model, weights or figure was acquired or executed.",
+    "seo_description": "A 2026 guide to animal-sound ML: define the science question, test realistic field conditions, report useful metrics, and protect people and wildlife.",
+    "finding": "Ghani et al. present an iterative lifecycle for bioacoustic machine learning: define the biological question and deployment setting before choosing a model; document sensors and processing; build explicit annotation and disagreement procedures; include realistic background and hard negatives; evaluate across sites or times that were not used for training; and select metrics according to the consequences of errors. The guide also calls for matching training and inference preprocessing, documenting reusable systems, and treating privacy and sensitive-species locations as design constraints. This is a practical synthesis, not a new benchmark or a test of animal communication meaning.",
+    "limitations": "The recommendations synthesize a fast-moving field and do not validate Talk2Nature’s devices, app, database, training data or any model. Suggested standards, repositories and tools need task-specific review; guidance to use APIs or local recordings does not itself grant access or rights. “Field-ready” must be demonstrated under the actual intended devices and environments. The guide does not establish that transfer learning, any named model, or a universal pipeline will work for parrots or another target taxon. The linked repositories, datasets, packages and weights were not separately audited or acquired.",
+    "lesson": "Apply the lifecycle to each proposed Talk2Nature study as a compact protocol: write the biological estimand and intended phone/station setting first; capture sensor, sample-rate, channel, time and processing provenance while keeping public wildlife locations appropriately coarse; retain quiet/background and non-target hard negatives alongside reviewed positives; define human labels and disagreement handling before training; group holdouts by recording/session and by site or time when the question requires transfer; check overlap with foundation-model training sources; predeclare class-aware metrics and the human cost of false alerts versus missed events; and verify training/inference preprocessing parity on the actual target device. This is a planning checklist, not authorization to collect sensitive audio or run a model. Our current public tools remain local, user-started and non-model; the private server remains synthetic-only, and AutoResearch remains NOT READY.",
+    "next_review": "Before selecting any benchmark, compare its proposed protocol with this lifecycle checklist and name evidence for each applicable gate. If any model is eventually considered, test the exact deployment device and realistic acoustic conditions after rights, consent, independent review and data-admission gates pass. No collection or model run follows from this article review.",
+    "reviewed": "2026-11-03",
+    "expert_review": "No independent Talk2Nature experiment or external specialist review has occurred.",
+    "review_stage": "Full peer-reviewed article review; no independent reproduction or linked-resource audit",
+    "year_label": "Peer-reviewed open-access PLOS Computational Biology article, published 2026-08-12; CC BY 4.0",
+    "review_locator": "Ghani et al. (2026), DOI 10.1371/journal.pcbi.1014604; complete publisher-hosted article, including Tips 1–12 and conclusions.",
+    "purpose": "Models & evaluation"
   }
 ]
