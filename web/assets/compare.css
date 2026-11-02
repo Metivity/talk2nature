@@ -3,3 +3,5 @@
 @media(max-width:360px){.compare-intro{padding-top:12px}.compare-heading{margin:8px 0 18px}.compare-heading h1{font-size:2.1rem;line-height:1;margin:8px 0 10px}.compare-heading p:not(.app-eyebrow){line-height:1.65}}
 @media(prefers-reduced-motion:no-preference){.motion-enabled .compare-orbits{animation:moment-arrives .7s ease-out both}}
 @media(prefers-reduced-transparency:reduce){.compare-slot,.compare-results,.compare-player{background:#23443e;backdrop-filter:none;-webkit-backdrop-filter:none}}
+.compare-view-results{margin:-12px 0 18px;text-decoration:none}
+@media(max-width:700px){.compare-view-results{width:100%}}
