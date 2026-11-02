@@ -22,6 +22,17 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
+    def test_passerine_methods_are_applied_without_claiming_full_text_or_meaning(self):
+        project_root=Path(__file__).resolve().parents[1]
+        notes=json.loads((project_root/'content'/'research.json').read_text())
+        note=next(item for item in notes if item.get('slug')=='global-passerine-song-biogeography-2026')
+        model_decision=(project_root/'docs'/'MODEL_DATA_DECISION.md').read_text()
+        plan=(project_root/'docs'/'FIRST_ANIMAL_PLAN.md').read_text()
+        self.assertIn('500 ms modulation-power-spectrum windows',note['review_depth'])
+        self.assertIn('HTTP 403',note['review_depth'])
+        self.assertIn('not a sound-presence, receiver-response or meaning benchmark',model_decision)
+        self.assertIn('Do not continue filename-to-record joins by scraping',plan)
+
     def test_benchmark_candidate_card_count_and_birdpark_gate_are_consistent(self):
         project_root=Path(__file__).resolve().parents[1]
         card=(project_root/'docs'/'BENCHMARK_CANDIDATE_RUN_CARD.md').read_text()
@@ -262,6 +273,35 @@ class SiteTests(unittest.TestCase):
             resource_page=(root/'research'/'resources'/'index.html').read_text()
             self.assertIn('Dog vocalization dataset described in the 2024 bark-classification paper',resource_page)
             self.assertIn('Dog-bark baseline implementations described in the 2024 paper',resource_page)
+
+    def test_birdcode_note_keeps_detection_proposals_and_asset_rights_separate(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='birdcode-event-detection')
+        self.assertEqual(note['source_ids'],[610,611,612])
+        self.assertIn('abstract',note['review_depth'])
+        self.assertIn('full split/grouping details',note['limitations'])
+        self.assertIn('temporal boundaries',note['finding'])
+        self.assertIn('separate proposal layer',note['lesson'])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        by_id={r['id']:r for r in resources}
+        self.assertEqual(by_id['birdcode-sound-event-detection-code']['rights']['license'],'MIT')
+        self.assertEqual(by_id['birdcode-pretrained-checkpoint']['rights']['license'],'Not reviewed')
+        self.assertEqual(by_id['birdcode-pretrained-checkpoint']['acquisition'],'metadata_only')
+
+    def test_elephant_chorus_note_keeps_overlap_context_and_permissions_bounded(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='elephant-chorus-context-convergence')
+        self.assertEqual(note['source_ids'],[613,614])
+        self.assertIn('92 exchanges',note['finding'])
+        self.assertIn('200 iterations',note['limitations'])
+        self.assertIn('No playback test',note['limitations'])
+        self.assertEqual(note['atlas']['locations'][0]['place_id'],'amboseli')
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        by_id={r['id']:r for r in resources}
+        self.assertEqual(by_id['elephant-chorus-context-convergence-paper-2026']['rights']['license'],'CC-BY-4.0')
+        self.assertEqual(by_id['elephant-chorus-context-convergence-code-2026']['rights']['license'],'Not stated')
+        self.assertEqual(by_id['elephant-chorus-context-convergence-data-2026']['rights']['license'],'Not stated')
+        self.assertEqual(by_id['elephant-chorus-context-convergence-data-2026']['acquisition'],'metadata_only')
 
     def test_cockatiel_receiver_response_note_preserves_mixed_results_and_passive_app_boundary(self):
         project_root=Path(__file__).resolve().parents[1]

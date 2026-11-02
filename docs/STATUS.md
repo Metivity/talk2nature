@@ -1,3 +1,29 @@
+# November 2 — deepen the global passerine method record
+
+The pinned author README reports 500 ms MPS windows at 67% overlap, weighted PCA to 37 dimensions over 116,792 vocalizations, and GMM clustering of eight acoustic motifs, with separate ecological and propagation analyses. This supports the project’s acoustic-structure knowledge map but does not make the study a receiver-response or meaning benchmark. The Science full-text and supplement requests returned HTTP 403; only the primary abstract and author README are reviewed. The Xeno-canto filename join is paused absent provider-permitted, authenticated metadata access. No code, dataset or audio was acquired or run.
+
+# November 2 — connect Compare to reviewed overlap and chorus research
+
+Applied the latest library work to the saved-moment Compare screen: its results now explain why overlap/context measurements are useful but do not establish meaning or replies, and link directly to the source-reviewed elephant-chorus and zebra-finch overlap notes. Added a focused regression assertion. This adds no model behavior or data collection. Verify generated public links and site checks before considering release; the broader source tranche remains local pending the authorized Metivity publishing path.
+
+# November 2 — add elephant chorus context research and apply its limits
+
+Added a full-text review of a recent peer-reviewed elephant study and a pinned metadata/code inspection. It extends the library's coverage of overlapping multi-caller signals and context prediction. Applied it to model guidance: represent overlap, multiple/uncertain callers and observer context separately; do not claim receiver comprehension from a classifier. A targeted code check found 200 permutations for convergence tests and an empirical-tail calculation that merits clarification against one reported `<.001` value before numeric reuse.
+
+The paper is CC BY 4.0; the separate code and data resources remain metadata-only because the repository has no visible license. The article is mapped to the existing coarse Amboseli region only. No data, code, audio or model was acquired/run. This does not alter the first benchmark choice; the AutoResearch gate remains **NOT READY**. Validation passes: catalog **350 resources**, **149 literature notes**, **50 mapped notes**; Python **274 tests passed, 1 skipped**; public build **184 routes plus 404**; site checker **185 HTML documents / 12,892 links / 184 reachable routes**; `git diff --check` passed. Fresh TLS-verified live checks show the new note route returns 404 and the resource page/sitemap remain dated October 29 and omit it. No deployment occurred; the candidate remains local because the Metivity CLI credential is invalid and the browser is locked.
+
+# November 2 — apply BirdCODE research to model and app boundaries
+
+Added a source-linked, explicitly bounded review of BirdCODE after checking its public preprint abstract, the author's technical overview and the current official repository README. The evidence describes frame-level bird-sound event proposals, large-scale analysis and precomputed output tables. Applied it to Talk2Nature's architecture: prefer existing pinned detections or a researcher-side handoff over a new general detector or a 1.1 GB phone model; preserve each model proposal and its time/label/score/version separately from human observation and any receiver-response evidence.
+
+The new paper note and code/checkpoint catalog records are metadata-only. The paper's full methods, checkpoint license, input/output rights, and evaluation were not fully reviewed; no software, media, model, prediction or dependency was acquired or run. This adds no benchmark admission or scientific finding. Validation passed: catalog **347 resources**; Python **273 tests, 1 skipped**; Node **176/176**; explicit-origin build **183 routes plus 404**; site checker **184 HTML documents / 12,826 links / 183 reachable routes**; focused BirdCODE regression and `git diff --check` passed. The source change remains local: the Metivity CLI credential is invalid, while the active local CLI identity is not the authorized account, so nothing was pushed. AutoResearch and real-data admission remain **NOT READY**.
+
+# November 2 — verify the merged evidence tranche against live Pages
+
+PR [#674](https://github.com/Metivity/talk2nature/pull/674) merged as [`90e17d2`](https://github.com/Metivity/talk2nature/commit/90e17d2aecd34c6ebe5d72afecb40b41e05ab231). Hosted checks [#41523435766](https://github.com/Metivity/talk2nature/actions/runs/41523435766) passed all four jobs. A clean checkout of current public `main` validates **345 research resources** and contains **147 literature notes**.
+
+After the merge, a TLS-verified request to `/research/dog2vec-canine-specific-model/` still returns **404**. `/research/resources/` and `sitemap.xml` return **200**, but the live resource page and sitemap do not yet include Dog2vec. The Pages workflow is `workflow_dispatch` only; the connected GitHub tools have no dispatch action, and the authenticated browser is unavailable while the Mac is locked. No deployment occurred. AutoResearch and real-data admission remain **NOT READY**.
+
 # November 2 — PR #673 merged; live Pages has not updated
 
 PR [#673](https://github.com/Metivity/talk2nature/pull/673) merged to public `main` as [`4300600`](https://github.com/Metivity/talk2nature/commit/4300600ae6b59eb39564e99bc933f0137ec4c792). Its hosted Public Checks run [#41522152420](https://github.com/Metivity/talk2nature/actions/runs/41522152420) passed repository, browser-tool, native Android and preview-site jobs. Remote `main` readback matches the merge commit.

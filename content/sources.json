@@ -3981,16 +3981,16 @@
     "title": "The global biogeography of passerine songs",
     "description": "Peer-reviewed Science article analyzing the acoustic architecture of songs from more than 3,000 passerine species and reporting eight recurring acoustic motifs associated with biological traits and sound-propagation conditions.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/42490479/",
-    "checked": "2026-10-24",
-    "origin": "Reviewed the PubMed article record and abstract. The full article methods, supplementary material, recording IDs and analyses were not independently reviewed or reproduced. DOI: 10.1126/science.aee6239."
+    "checked": "2026-11-02",
+    "origin": "Reviewed the PubMed article record and abstract. The full article methods, supplementary material, recording IDs and analyses were not independently reviewed or reproduced. DOI: 10.1126/science.aee6239. Rechecked the PubMed primary record and attempted the Science article and supplement endpoints on 2026-11-02; the publisher endpoints returned HTTP 403. The article abstract was available, but full methods and supplement remain unreviewed."
   },
   {
     "id": 385,
     "title": "Global passerine song biogeography analysis repository, pinned main revision",
     "description": "Authors’ public repository for the 2026 passerine-song study. A recursive API tree at the pinned commit lists 1,280 audio segments (185,758,300 bytes), but no payloads were fetched. Its Zenodo DOI is a placeholder, no standalone LICENSE file appears in the tree, and the README’s CC BY 4.0 statement has unresolved component scope.",
     "url": "https://github.com/quentinbacquele/birdsong_biogeography/tree/1629e665f902cad405ff2f7bf2a0e9dc8c09b47e",
-    "checked": "2026-10-24",
-    "origin": "Reviewed the public repository root/README and the recursive GitHub API tree at commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e. Tree metadata lists 1,456 files, including 1,280 audio segments totaling 185,758,300 provider-reported bytes. No file contents, audio or source code were fetched or run; the README’s data DOI remains the literal placeholder 10.5281/zenodo.XXXXXXX."
+    "checked": "2026-11-02",
+    "origin": "Reviewed the public repository root/README and the recursive GitHub API tree at commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e. Tree metadata lists 1,456 files, including 1,280 audio segments totaling 185,758,300 provider-reported bytes. No file contents, audio or source code were fetched or run; the README’s data DOI remains the literal placeholder 10.5281/zenodo.XXXXXXX. On 2026-11-02, reviewed the complete README at this pinned commit. It describes 500 ms MPS windows with 67% overlap and 2D FFT; a weighted-PCA 37-dimensional space on 116,792 vocalizations; GMM motif clustering with AIC/BIC; and separate phylogenetic, spatial, propagation-degradation and species-classification analyses. This is a README review only; no source code, data payload or audio was acquired or run."
   },
   {
     "id": 386,
@@ -6155,5 +6155,45 @@
     "url": "https://github.com/sumbre-lab/OpenWhistle/tree/ad715bb3cf24c36f85b3c3c8159077548134a39e",
     "checked": "2026-11-02",
     "origin": "A verified-TLS GitHub API check found that main still resolves to ad715bb3cf24c36f85b3c3c8159077548134a39e (committer date 2026-10-09). The root contains README.md, LICENSE-DATA, an image and .gitignore; repository metadata reports NOASSERTION for a software license. LICENSE-DATA applies to named datasets, not code. No source code was acquired or executed."
+  },
+  {
+    "id": 610,
+    "title": "BirdCODE preprint, version 1",
+    "description": "Primary preprint record and abstract for the Bird Communication Detector study.",
+    "url": "https://doi.org/10.64898/2026.07.31.742086",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the public abstract and bibliographic/version information. The bioRxiv page states the authors' claims about >9,000 bird species, precise vocalization boundaries, 1.3 million citizen-science recordings and four downstream case studies. The full methods and supplementary analyses were not reviewed, and no results were reproduced."
+  },
+  {
+    "id": 611,
+    "title": "BirdCODE authors' technical overview",
+    "description": "Earth Species Project's public research summary describing the BirdCODE training approach and applications.",
+    "url": "https://earthspecies.org/2026/08/20/birdcode-scaling-zero-shot-sound-event-detection-for-bioacoustics/",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the public technical summary sections describing weak labels, synthetic soundscapes, pseudo-labeling, frame-level timing, large-scale applications and the preprint's status. This is an author-affiliated project summary, not an independent assessment."
+  },
+  {
+    "id": 612,
+    "title": "BirdCODE sound-event-detection software repository",
+    "description": "Current public README and repository license notice for Earth Species Project's sound event detection software.",
+    "url": "https://github.com/earthspecies/sound-event-detection",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the current public repository overview and README. It describes a Python pipeline with 32 kHz frame detections, evaluation, large-scale inference and precomputed BirdCODE selection tables; the quick start estimates about 1.1 GB for model weights. The repository displays an MIT code license. No commit was pinned, code or checkpoint was acquired or run, and model/data terms were not reviewed."
+  },
+  {
+    "id": 613,
+    "title": "Mahon et al. (2026), elephant vocal choruses and acoustic convergence",
+    "description": "Full peer-reviewed Scientific Reports article, including methods, results, limitations, data availability and article-specific open-access notice.",
+    "url": "https://doi.org/10.1038/s41598-026-68525-3",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the published article text, including the six context classes, context-prediction design, caller/family grouping, chorus analysis, statistical significance methods, limitations and data availability. The paper reports 92 multi-caller exchanges and 200 iterations per convergence permutation test. Its published article notice declares CC BY 4.0. No supplement, audio, feature data or analysis result was independently reproduced."
+  },
+  {
+    "id": 614,
+    "title": "Elephant-choruses-context-convergence repository at pinned main revision",
+    "description": "GitHub API repository metadata and complete recursive tree checked at the current main commit.",
+    "url": "https://github.com/earthspecies/Elephant-choruses-context-convergence/tree/008528f3e39ab2c2731e56158bc36335aa3d7e8c",
+    "checked": "2026-11-02",
+    "origin": "Verified main at 008528f3e39ab2c2731e56158bc36335aa3d7e8c (committed 2026-03-21); GitHub API reports no license object, and the complete tree contains no LICENSE/COPYING file. The tree lists Python scripts, metadata/features, and WAV/ZIP files. Read repository and analysis READMEs and inspected the convergence permutation code around its iteration count and empirical-tail calculation; no code or data was executed or acquired. The repository license gap applies independently to code and data."
   }
 ]
