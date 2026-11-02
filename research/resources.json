@@ -9878,6 +9878,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bioacoustic-model-comparative-review-2025",
+      "kind": "paper",
+      "title": "Foundation Models for Bioacoustics — a Comparative Review",
+      "url": "https://arxiv.org/abs/2508.01277",
+      "version": "arXiv v2, revised 2026-03-29; DOI 10.48550/arXiv.2508.01277",
+      "source_ids": [
+        569
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Choose and adapt frozen bioacoustic representations for predefined classification tasks; methodological reference only.",
+      "review_depth": "Targeted full-text review of benchmark split protocols, selected model comparisons, linear/attentive probing results, model-selection advice, limitations and conclusion. No code, benchmark data or weights acquired or run.",
+      "access": "Public arXiv preprint and HTML full text.",
+      "decision": "Metadata and research-note record only. Not a Talk2Nature model selection, benchmark run, reproduction or evidence of translation.",
+      "limitations": "The study compares classification on BEANS and BirdSet with frozen encoders. The authors identify possible dataset exposure, restricted-evaluation and fixed-hyperparameter limits. Evaluation tasks are not receiver-response or meaning tests. No data/code/model license is inferred from the paper license.",
+      "attribution": "Schwinger R, Vali Zadeh P, Rauch L, Kurz M, Hauschild T, Lapp S, Tomforde S. Foundation Models for Bioacoustics — a Comparative Review. arXiv:2508.01277v2 (2026).",
+      "rights": {
+        "license": "CC BY-NC-ND 4.0 for the paper, as displayed on the arXiv v2 HTML page.",
+        "scope": "Article only. This does not license referenced data, software, model weights or derived outputs.",
+        "evidence_url": "https://arxiv.org/html/2508.01277v2",
+        "conditions": "Link to the paper and provide an original summary; do not redistribute its text or figures. Review each model, dataset and code license independently.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
