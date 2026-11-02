@@ -9760,6 +9760,95 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "tweetybert-paper-2026",
+      "kind": "paper",
+      "title": "TweetyBERT: Automated parsing of birdsong through self-supervised machine learning",
+      "url": "https://doi.org/10.1016/j.patter.2025.101491",
+      "version": "Patterns 7 (2026), 101491; DOI 10.1016/j.patter.2025.101491",
+      "source_ids": [
+        565
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Methods comparator for discovering canary song units from unlabeled acoustic sequences.",
+      "review_depth": "Full peer-reviewed article reviewed. No supplementary file acquired.",
+      "access": "Open full text through PMC.",
+      "decision": "Methods reference only. Does not establish call meaning, receiver understanding, or transfer to parrots/other species.",
+      "limitations": "Three canaries for the main dataset; supervised song detector; song-level held-out recordings from birds represented in training; laboratory recordings. Article license is noncommercial.",
+      "attribution": "Vengrovski G et al. (2026). TweetyBERT: Automated parsing of birdsong through self-supervised machine learning. Patterns 7:101491.",
+      "rights": {
+        "license": "Article text states CC BY-NC 4.0.",
+        "scope": "Article only. Data, code, weights and supplements have separate terms.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12027336/",
+        "conditions": "Do not reuse article material commercially under the article license; assess other artifacts separately.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "tweetybert-canary-dataset",
+      "kind": "dataset",
+      "title": "Canary song recordings and annotations used in TweetyNET/TweetyBERT research",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.xgxd254f4",
+      "version": "Dryad v2022-04-29; landing page lists 26.42 GB across six archives plus README",
+      "source_ids": [
+        565,
+        566
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Candidate for a reviewer-approved canary song parsing methods reproduction only.",
+      "review_depth": "Landing-page record and version inventory inspected; no payload, manifest or individual file metadata inspected.",
+      "access": "Public Dryad landing page; archive files available for download. File contents not acquired.",
+      "decision": "Metadata-only. Not selected, not benchmark-ready and not authorized for acquisition or model use.",
+      "limitations": "Record-specific license, exact item inventory/checksums, annotation provenance, song/bird grouping and mapping to TweetyBERT results remain unverified.",
+      "attribution": "Cohen Y (2022). Song recordings and annotation files of 3 canaries used to evaluate training of TweetyNet models for birdsong segmentation and annotation. Dryad DOI 10.5061/dryad.xgxd254f4.",
+      "rights": {
+        "license": "Not verified for this dataset record in this review.",
+        "scope": "Dataset only. Associated paper, code, weights and derivatives need separate review.",
+        "evidence_url": "https://datadryad.org/dataset/doi:10.5061/dryad.xgxd254f4",
+        "conditions": "Check exact-version item-level rights and protocol fit before acquisition; do not infer permission from public availability.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "tweetybert-code-repository",
+      "kind": "code",
+      "title": "Official TweetyBERT code repository",
+      "url": "https://github.com/georgevenven/tweety_bert",
+      "version": "Default branch TweetyBERT-Nov-Refactor; no commit pinned",
+      "source_ids": [
+        565,
+        567
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Potential code reference for canary song representation learning.",
+      "review_depth": "Official repository link confirmed in paper; GitHub API repository metadata and root listing checked. No files acquired or inspected.",
+      "access": "Public GitHub repository.",
+      "decision": "Metadata-only; do not copy or run until a license and exact revision are reviewed.",
+      "limitations": "GitHub API reports no recognized license; code state is not pinned or reproduced.",
+      "attribution": "Vengrovski et al., official TweetyBERT repository, https://github.com/georgevenven/tweety_bert.",
+      "rights": {
+        "license": "No recognized license returned by the GitHub API at review time.",
+        "scope": "Repository code only; paper and data have separate rights.",
+        "evidence_url": "https://api.github.com/repos/georgevenven/tweety_bert",
+        "conditions": "Do not treat public source visibility as permission to reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

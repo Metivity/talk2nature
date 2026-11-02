@@ -14,6 +14,14 @@ Frozen Perch embeddings remain a possible later route for a distinct **acoustic 
 
 The existing Hoplite workflow already covers embedding search, annotation and classifiers; use or contribute to it where practical. Neither task selection establishes performance or an original research contribution.
 
+## November 2 — self-supervised song parsing is a separate stage, not translation
+
+Reviewed the full 2026 TweetyBERT paper and its linked Dryad/repository metadata. The paper shows that a compact transformer trained to predict masked spectrogram regions can discover canary song units that align with human syllable/phrase labels. Its main training data are about 15 hours from three canaries, after a supervised song detector; whole songs are held out, but the evaluation remains within those known birds. It also reports seasonal representation differences in two birds. This is a useful methods precedent for sequence structure discovery, not a semantic decoder.
+
+**Project application:** keep the software stages distinct: (1) detect candidate sound, (2) segment/cluster acoustic units, (3) test associations with independently observed context, and only then (4) test any bounded receiver outcome. The paper supports investigating stage 2 in a species-specific study; it does not change the current first question (passive bird-sound presence), establish canary-to-parrot transfer, or justify generated animal-facing responses.
+
+**Rights/readiness:** the paper states CC BY-NC 4.0; the Dryad landing page shows a large multi-archive dataset, but its record-specific dataset license and exact file metadata were not checked. The linked code repository has no recognized license in GitHub API metadata, while trained weights and seasonal data are available from the authors on request. No files or code were acquired or run. Keep all three resources metadata-only pending specialist review, file-level rights and a bounded, non-duplicative protocol. AutoResearch and real-data admission remain **NOT READY**. See the [research note](../content/research.json), source IDs 565–567 and resource IDs `tweetybert-paper-2026`, `tweetybert-canary-dataset`, and `tweetybert-code-repository`.
+
 ## Candidate register
 
 | Candidate | Verified reference | Rights and role | Remaining check |
