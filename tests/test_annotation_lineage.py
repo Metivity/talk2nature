@@ -1,6 +1,9 @@
 import json
 from pathlib import Path
+import tempfile
 import unittest
+from scripts.check_site import check_site
+from web.build import build
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +67,26 @@ class AnnotationLineageFixtureTests(unittest.TestCase):
         self.assertIn('exact target software/version', form)
         self.assertIn('public [scientific methods review form]', guide)
         self.assertIn('creates a public issue and requires GitHub sign-in', guide)
+
+    def test_public_walkthrough_is_indexable_and_linked_from_research_workflows(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            base = 'https://fixture.github.io/talk2nature'
+            build(root, base, True, 'https://github.com/fixture/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            page = (root / 'research/annotation-lineage/index.html').read_text()
+            compare = (root / 'tools/annotation-compare/index.html').read_text()
+            university = (root / 'community/university/index.html').read_text()
+            sitemap = (root / 'sitemap.xml').read_text()
+            self.assertIn(f'<link rel="canonical" href="{base}/research/annotation-lineage/">', page)
+            self.assertIn('annotation-lineage.css', page)
+            self.assertIn('same event is <strong>not determined</strong>', page)
+            self.assertIn('proposal is marked <strong>not executed</strong>', page)
+            self.assertIn('It is not a CSV export, converter or compatibility claim.', page)
+            self.assertIn('/talk2nature/research/annotation-lineage/', compare)
+            self.assertIn('/talk2nature/research/annotation-lineage/', university)
+            self.assertIn(f'{base}/research/annotation-lineage/', sitemap)
+            self.assertTrue((root / 'assets/annotation-lineage.css').is_file())
 
 
 if __name__ == '__main__':
