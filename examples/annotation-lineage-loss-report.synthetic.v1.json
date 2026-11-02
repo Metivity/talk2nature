@@ -1,0 +1,49 @@
+{
+  "schema": "talk2nature.interoperability-loss-report.synthetic.v1",
+  "origin": "synthetic",
+  "target": {
+    "format": "APLOSE results CSV as inspected through OSEkit",
+    "version": "APLOSE v3.15.0 reference; OSEkit commit 39170854efa35e6a17ce1da5e15e6c73109d14b9"
+  },
+  "export_status": "not_performed",
+  "rights_status": "unresolved_for_example_csv_and_user_media",
+  "lossless_export_supported": false,
+  "entries": [
+    {
+      "field": "recording_identity",
+      "status": "not_mapped",
+      "detail": "Talk2Nature recording IDs and declared checksum are not APLOSE project, filename, or annotation IDs."
+    },
+    {
+      "field": "absolute_time_and_timezone",
+      "status": "not_available",
+      "detail": "Relative WAV offsets do not establish a wall-clock start time or timezone."
+    },
+    {
+      "field": "frequency_bounds",
+      "status": "not_represented",
+      "detail": "annotation.v1 has no frequency-bound fields; no values may be inferred."
+    },
+    {
+      "field": "point_weak_box_geometry",
+      "status": "not_represented",
+      "detail": "Talk2Nature interval events cannot losslessly encode APLOSE POINT, WEAK, or frequency-box geometry."
+    },
+    {
+      "field": "labels_and_codebook",
+      "status": "mapping_not_authorized",
+      "detail": "Preserve source labels as strings; no label-to-kind, context, or meaning mapping is approved."
+    },
+    {
+      "field": "reviewer_and_verification_history",
+      "status": "not_represented_in_annotation_v1",
+      "detail": "Independent observer files remain separate; this schema does not store per-event adjudication history."
+    },
+    {
+      "field": "context_provenance",
+      "status": "not_equivalent",
+      "detail": "A free-text comment or signal descriptor is not automatically an independently observed context."
+    }
+  ],
+  "decision": "Do not create an APLOSE file or converter from this report. A named research group, exact target version, approved codebook, rights review, and synthetic reopen test are prerequisites."
+}

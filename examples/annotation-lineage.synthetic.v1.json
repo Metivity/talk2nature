@@ -1,0 +1,34 @@
+{
+  "schema": "talk2nature.annotation-lineage.synthetic.v1",
+  "origin": "synthetic",
+  "recording_payload_present": false,
+  "claim": "No biological event, label truth, meaning, or response is established.",
+  "observer_annotations": [
+    {
+      "role": "independent_observer",
+      "path": "annotation-observer-a.synthetic.json",
+      "annotator_id": "synthetic-observer-a"
+    },
+    {
+      "role": "independent_observer",
+      "path": "annotation-observer-b.synthetic.json",
+      "annotator_id": "synthetic-observer-b"
+    }
+  ],
+  "review_decision": {
+    "reviewer_id": "synthetic-reviewer-1",
+    "status": "example_only",
+    "action": "preserve_independent_labels",
+    "same_biological_event": "not_determined",
+    "consensus_label": null,
+    "rationale": "Temporal overlap alone is not evidence that two marks describe the same biological event."
+  },
+  "model_proposal": {
+    "path": "acoustic-units.synthetic.json",
+    "run_id": "invented-cluster-run-001",
+    "status": "not_executed",
+    "proposal_type": "invented acoustic-unit clusters",
+    "semantic_interpretation": "none"
+  },
+  "external_format_loss_report": "annotation-lineage-loss-report.synthetic.v1.json"
+}

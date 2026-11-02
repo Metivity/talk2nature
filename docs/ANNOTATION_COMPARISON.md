@@ -21,6 +21,8 @@ This boundary follows the scope of Dubus et al. (2024): nineteen novices and one
 
 A second, distinct study informs the boundary: Miller et al. (2026) compared three experienced observers and two automated detectors for Antarctic blue whale song calls. Their adjudicated capture-recapture workflow produced more consistent call-density estimates across observers and detectors than treating each human observer as ground truth. They explicitly describe adjudication as helping detector characterization, not replacing manual annotation for detector development. This is a single site-year density-estimation result; it does not establish a universal event-matching rule. The comparison tool follows that lesson by exposing overlaps while leaving every source annotation intact. Read the [focused project review](../research/whale-call-adjudication-2026/) and [primary article](https://doi.org/10.1111/2041-210x.70331).
 
+For the next research step, see the [synthetic annotation-lineage exercise](ANNOTATION_LINEAGE.md). It demonstrates a review record that preserves both observer files and keeps a not-executed model proposal separate; its loss report does not generate an external-format export.
+
 ## Try the invented example
 
 Open the comparison page and choose the committed fixtures:
