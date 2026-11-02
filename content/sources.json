@@ -5802,5 +5802,13 @@
       "article": "Author/funder copyright; bioRxiv grant is for display in perpetuity. No reuse permission is inferred.",
       "scope": "Preprint text only. Cited recordings, BirdSet components, Powdermill annotations, model weights, code and teacher-generated labels have separate rights and provenance."
     }
+  },
+  {
+    "id": 569,
+    "title": "Foundation Models for Bioacoustics — a Comparative Review",
+    "description": "Schwinger et al. arXiv v2, revised 29 March 2026. Selected review and comparative results on frozen-model probes for BEANS and BirdSet classification.",
+    "url": "https://arxiv.org/abs/2508.01277",
+    "checked": "2026-11-02",
+    "origin": "Targeted review of the authors’ arXiv v2 paper sections on split protocols, model selection, probing results, limitations and conclusions. The authors identify the work as a preprint. No article text, datasets, code, weights or figures were copied or acquired."
   }
 ]
