@@ -91,8 +91,8 @@ test('real file-change UI keeps a valid session after a bad replacement and rend
     const files=await fixture(),blob=zipFiles(files),buffer=await blob.arrayBuffer();
     get('file-a').files=[{size:blob.size,arrayBuffer:async()=>buffer}];get('file-a').listeners.change();
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
-    assert.match(get('status-a').textContent,/Opened locally/);assert.match(text(get('content-a')),/<img src=x onerror=alert\(1\)>/);assert.equal(get('title-a').textContent,'Saved moment');
-    const markup=await readFile(new URL('../web/templates/compare.html',import.meta.url),'utf8');assert.match(markup,/id="compare-player"[^>]*hidden/);assert.doesNotMatch(markup,/<audio id="compare-player" controls/);
+    assert.match(get('status-a').textContent,/Opened locally/);assert.match(text(get('content-a')),/<img src=x onerror=alert\(1\)>/);assert.equal(get('title-a').textContent,'Saved moment');assert.equal(get('compare-view-results').hidden,true);
+    const markup=await readFile(new URL('../web/templates/compare.html',import.meta.url),'utf8');assert.match(markup,/id="compare-player"[^>]*hidden/);assert.doesNotMatch(markup,/<audio id="compare-player" controls/);assert.match(markup,/id="compare-view-results"[^>]*href="#compare-result-title"[^>]*hidden/);assert.match(markup,/id="compare-result-title" tabindex="-1"/);assert.match(markup,/id="compare-status" role="status" aria-live="polite"/);
     const button=get('content-a').children.find(e=>e.tag==='ol').children[0].children.find(e=>e.tag==='button');button.listeners.click();assert.equal(get('compare-player').paused,true);assert.ok(get('compare-player').src.startsWith('blob:'));
     await get('compare-playback-toggle').listeners.click();assert.equal(state.confirmations.length,1);assert.equal(get('compare-player').plays,0);assert.match(get('compare-playback-status').textContent,/not played/);
     state.confirm=true;await get('compare-playback-toggle').listeners.click();assert.equal(get('compare-player').plays,1);assert.equal(get('compare-playback-toggle').textContent,'Pause review');
@@ -101,8 +101,8 @@ test('real file-change UI keeps a valid session after a bad replacement and rend
     get('file-a').files=[{size:7,arrayBuffer:async()=>new ArrayBuffer(7)}];get('file-a').listeners.change();
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
     assert.match(get('status-a').textContent,/previous session is still open/);assert.equal(get('title-a').textContent,'Saved moment');assert.match(text(get('content-a')),/<img/);
-    get('clear-a').listeners.click();assert.equal(get('compare-player').src,undefined);assert.equal(get('compare-player-panel').hidden,true);assert.equal(get('compare-results').hidden,true);
-    await get('compare-example').listeners.click();assert.match(text(get('summary-a')),/complete/);assert.match(text(get('summary-b')),/partial/);assert.equal(get('compare-results').hidden,false);
-    lifecycle.pagehide();assert.equal(get('compare-results').hidden,true);assert.equal(get('details-a').hidden,true);assert.equal(get('details-b').hidden,true);assert.equal(get('compare-player').src,undefined);
+    get('clear-a').listeners.click();assert.equal(get('compare-player').src,undefined);assert.equal(get('compare-player-panel').hidden,true);assert.equal(get('compare-results').hidden,true);assert.equal(get('compare-view-results').hidden,true);
+    await get('compare-example').listeners.click();assert.match(text(get('summary-a')),/complete/);assert.match(text(get('summary-b')),/partial/);assert.equal(get('compare-results').hidden,false);assert.equal(get('compare-view-results').hidden,false);assert.match(get('compare-status').textContent,/Choose “View side-by-side comparison”/);
+    lifecycle.pagehide();assert.equal(get('compare-results').hidden,true);assert.equal(get('compare-view-results').hidden,true);assert.equal(get('details-a').hidden,true);assert.equal(get('details-b').hidden,true);assert.equal(get('compare-player').src,undefined);
   }finally{delete globalThis.document;delete globalThis.window;}
 });

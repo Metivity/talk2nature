@@ -33,7 +33,7 @@ function renderSlot(key){
   content.append(r.markers.length?notes:node('p','No observer notes were saved.','compare-summary-text'));
 }
 function renderComparison(){
-  const a=slots.a.value,b=slots.b.value;$('compare-results').hidden=!(a&&b);$('compare-table').replaceChildren();$('compare-warnings').replaceChildren();if(!a||!b)return;
+  const a=slots.a.value,b=slots.b.value,ready=Boolean(a&&b);$('compare-results').hidden=!ready;$('compare-view-results').hidden=!ready;$('compare-table').replaceChildren();$('compare-warnings').replaceChildren();if(!ready)return;
   const rows=[['Recording mode',s=>sessionSummary(s).kind],['Observed time',s=>seconds(s.record.duration_seconds)],['Retained audio¹',s=>seconds(sessionSummary(s).retainedSeconds)],['Recordings kept',s=>String(s.clips.length)],['Discarded recordings',s=>String(sessionSummary(s).discarded)],['Observer notes',s=>String(s.record.markers.length)],['Who was there?',s=>animal(s.record)],['Soundscape context',s=>soundscape(s.record)],['Declared start · UTC²',s=>s.record.started_at_utc.replace('T',' ').replace('Z',' UTC')],['Sample rate',s=>`${s.record.sample_rate.toLocaleString('en')} Hz`],['Declared origin',s=>s.record.origin==='synthetic'?'Invented example':'Microphone'],['Stop reason',s=>s.record.stop_reason.replaceAll('_',' ')]];
   const makeTable=entries=>{
     const table=node('table',undefined,'compare-table'),head=node('thead'),tr=node('tr');
@@ -48,7 +48,7 @@ function renderComparison(){
 }
 async function loadSlot(key,load){
   $('status-'+key).textContent='Checking the journal and recordings…';
-  try{if(!await slots[key].open(load))return;if(audioSlot===key)stopPlayer();renderSlot(key);renderComparison();$('status-'+key).textContent='Opened locally. Recordings play only when you press Play.';}
+  try{if(!await slots[key].open(load))return;if(audioSlot===key)stopPlayer();renderSlot(key);renderComparison();$('status-'+key).textContent='Opened locally. Recordings play only when you press Play.';if(slots.a.value&&slots.b.value)$('compare-status').textContent='Both moments are open. Choose “View side-by-side comparison” to jump to the results. Your files stay on this device.';}
   catch(error){$('status-'+key).textContent=`Could not open this session. ${error.message} ${slots[key].value?'Your previous session is still open.':''}`;}
 }
 for(const key of ['a','b']){
@@ -71,7 +71,7 @@ $('compare-example').addEventListener('click',async()=>{
   // Reserve both slots immediately so a later file choice always wins.
   const run=++exampleRun;$('compare-example').disabled=true;$('compare-status').textContent='Making two tiny invented recordings on your device…';
   await Promise.all(['a','b'].map((key,i)=>loadSlot(key,()=>example(i))));
-  if(run!==exampleRun)return;$('compare-example').disabled=false;$('compare-status').textContent='Two invented scenes are open: one complete 30-second moment and one stopped at 18 seconds. Scroll down to compare.';
+  if(run!==exampleRun)return;$('compare-example').disabled=false;$('compare-status').textContent='Two invented scenes are ready: one complete 30-second moment and one stopped at 18 seconds. Choose “View side-by-side comparison” to see them.';
 });
 window.addEventListener('pagehide',()=>{exampleRun++;stopPlayer();for(const key of ['a','b']){slots[key].clear();$('status-'+key).textContent='';renderSlot(key);}renderComparison();$('compare-example').disabled=false;$('compare-status').textContent='Open your saved sessions again. Nothing was saved in the browser.';});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)reviewAudio.pause('Playback paused because Compare left the foreground.');});
