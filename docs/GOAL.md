@@ -1,3 +1,11 @@
+# November 3 — merge the bioacoustics methods tranche; Pages still stale
+
+PR [#678](https://github.com/Metivity/talk2nature/pull/678) merged to `main` as [`380dfdb`](https://github.com/Metivity/talk2nature/commit/380dfdb859e78ff3407be47c884360b868aa3b10). GitHub Public Checks run [#41542357767](https://github.com/Metivity/talk2nature/actions/runs/41542357767) passed repository, browser-tool, native Android and preview-site checks. The 2026 lifecycle guide and 2025 pipeline-comparability review are now in public source; the exact PR diff matched the 14 locally checked files (284 additions, 4 deletions).
+
+**Live Pages check:** a fresh TLS-verified request to `/research/twelve-quick-tips-bioacoustic-deep-learning-2026/` returns **404**. The public resource directory still reports **284 records**, while source contains **353**. The workflow is manual (`workflow_dispatch`); the authorized Metivity CLI credential is unavailable and the connected GitHub API has no dispatch action. No deployment occurred. AutoResearch and real-data admission remain **NOT READY**.
+
+**Next:** dispatch the already-authorized Pages workflow through a signed-in Metivity browser when available, then verify the new route, resource count, sitemap and live metadata. Keep the complete five-track goal active.
+
 # November 3 — apply the full-lifecycle bioacoustics guide
 
 Reviewed the complete peer-reviewed 2026 PLOS Computational Biology guide by Ghani et al. It ties the biological question to the target device, provenance, annotation agreement, field domain shift, realistic hard negatives, class-aware/error-cost-aware evaluation, preprocessing parity, reproducibility, and human/wildlife privacy. Added an original evidence note and metadata-only article record; linked it into the model learning path; and applied a compact checklist to the benchmark run card and model/data decision. The article is guidance, not a Talk2Nature validation. No linked dataset/code/weights were acquired, no recording was collected, and no model was run.
