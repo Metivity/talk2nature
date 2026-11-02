@@ -5754,5 +5754,41 @@
       "dataset": "The official Zenodo v1 record API declares CC BY 4.0 for the deposited dataset.",
       "scope": "Dataset record only. The article, software, dependencies and any model artifacts have separate rights."
     }
+  },
+  {
+    "id": 565,
+    "title": "Vengrovski et al. (2026), TweetyBERT peer-reviewed article",
+    "description": "Primary article, full text reviewed through PMC: model design, data, split, results, limitations, code/data availability and CC BY-NC 4.0 article license.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12027336/",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the full published article (Patterns 7, 101491; DOI 10.1016/j.patter.2025.101491), including Methods and limitations. It reports a 2.5M-parameter masked-spectrogram transformer trained on about 15 hours of song from three canaries after a supervised song detector; song-level held-out evaluation is within those birds. It discovers acoustic song units, not meanings or receiver understanding.",
+    "rights": {
+      "article": "CC BY-NC 4.0 as stated in the article.",
+      "scope": "Article text only. Dataset, code, model weights and supplements have separate rights/access terms."
+    }
+  },
+  {
+    "id": 566,
+    "title": "Cohen (2022), Dryad canary song and annotation dataset",
+    "description": "Versioned Dryad dataset referenced by the TweetyBERT article; landing-page version inventory checked, payload not acquired.",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.xgxd254f4",
+    "checked": "2026-11-02",
+    "origin": "The official landing page lists an April 29, 2022 version with six archive files totaling 26.42 GB plus a 162-byte README, and an earlier February 2022 version. Three canary folders and annotation descriptions are documented. Files and record-specific license metadata were not inspected or acquired.",
+    "rights": {
+      "dataset": "Record-specific dataset reuse license not verified in this review.",
+      "scope": "Dataset only; article, code, trained weights and supplementary materials are separate."
+    }
+  },
+  {
+    "id": 567,
+    "title": "Official TweetyBERT code repository",
+    "description": "Repository identified by the peer-reviewed paper; GitHub API metadata checked, no recognized repository license returned.",
+    "url": "https://github.com/georgevenven/tweety_bert",
+    "checked": "2026-11-02",
+    "origin": "Official paper links this repository. GitHub API currently reports no recognized license. Default branch is TweetyBERT-Nov-Refactor; no commit was pinned or code downloaded, inspected or run.",
+    "rights": {
+      "software": "No recognized license was declared by the repository API at review time.",
+      "scope": "Repository only. Do not assume permission to copy, modify, redistribute or use commercially."
+    }
   }
 ]

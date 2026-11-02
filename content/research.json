@@ -6672,5 +6672,51 @@
       ]
     ],
     "review_locator": "Lin et al. (2026), PNAS 123(14): e2518687123, DOI 10.1073/pnas.2518687123: significance, abstract, Experiments 1–2, controls, Results, Discussion, Methods and Data/Materials/Software Availability; Zenodo v1 DOI 10.5281/zenodo.10892587 and official API metadata reviewed 2026-11-02."
+  },
+  {
+    "slug": "tweetybert-canary-song-parsing-2026",
+    "title": "TweetyBERT finds structure in canary song, not a translation",
+    "seo_description": "A 2026 self-supervised transformer groups canary song units, showing how sequence models can help bioacoustics without establishing meaning.",
+    "taxon": "Birds",
+    "kind": "Self-supervised song-structure analysis",
+    "year": "2026",
+    "source_ids": [
+      565,
+      566,
+      567
+    ],
+    "review_depth": "Full peer-reviewed paper reviewed through PMC: abstract, architecture, training data and preprocessing, song-level split, clustering and probe analyses, results, limitations, methods, code/data availability and article license. Checked the official Dryad landing page and GitHub repository API metadata. No audio, annotation payload, model weights, repository code or supplements were downloaded or run.",
+    "finding": "Vengrovski et al. introduce TweetyBERT, a compact 2.5-million-parameter transformer trained with masked spectrogram prediction. On canary song, its learned representations support clustering that aligns with human syllable/phrase labels and capture seasonal repertoire differences. The paper reports approximately 15 hours of song from three canaries for its main model; a supervised song detector first removes calls, cage noise and long silences. The holdout split is by song, so it tests unseen songs from known birds rather than transfer to unseen individuals or species.",
+    "limitations": "This is acoustic-unit discovery and sequence analysis, not a test of what a call means or whether a receiver understands it. The method depends on prior song detection, was evaluated on high-quality laboratory canary recordings, and the authors note clustering/label-convention disagreement and UMAP scaling limits. The seasonal analysis uses two birds. The linked Dryad dataset landing page lists 26.42 GB in its 2022 version, but payload and record-specific dataset license were not checked. The official code repository has no recognized license in the reviewed GitHub API response; trained weights and seasonal data are available from authors on request. No independent reproduction or Talk2Nature expert review exists.",
+    "lesson": "Human-language sequence-model ideas can help discover recurring acoustic units and temporal structure without training on human song labels. Keep that stage separate from biological interpretation: any later meaning claim needs independently observed context and receiver outcomes. For Talk2Nature, this supports an eventual representation/segmentation research track, but does not change the current first software question (passive bird-sound presence) or justify an animal-facing text/voice translator. Canary performance does not establish parrot transfer.",
+    "next_review": "If a canary methods reproduction is proposed, first obtain qualified bioacoustics and statistical review; verify the exact Dryad file inventory, item-level rights and code license; map song-level grouping and bird identity; then define a small, descriptive reproduction using licensed, versioned inputs. A cross-bird or cross-species test must be designed separately and cannot be inferred from the published song-level split. Keep the candidate metadata-only until these gates clear.",
+    "reviewed": "2026-11-02",
+    "expert_review": "No independent Talk2Nature bioacoustics, ML or statistical specialist has reviewed this assessment.",
+    "review_stage": "Full primary-paper review plus dataset/repository metadata; no acquisition or reproduction",
+    "year_label": "Publication year",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Model",
+        "2.5M-parameter transformer with masked spectrogram prediction; 2.7 ms spectrogram time bins and 2.7 s input windows."
+      ],
+      [
+        "Training material",
+        "About 15 hours from three canaries; a supervised song detector precedes self-supervised representation learning."
+      ],
+      [
+        "Evaluation",
+        "Whole songs held out, but the evaluation birds are represented in training; this is not unseen-bird or cross-species validation."
+      ],
+      [
+        "Result boundary",
+        "Embeddings/clusters align with song-unit annotations and seasonal structure; the study does not test semantic decoding or receiver comprehension."
+      ],
+      [
+        "Access and rights",
+        "Article CC BY-NC 4.0; Dryad payload rights not verified; official code repo has no recognized license; weights are by request."
+      ]
+    ],
+    "review_locator": "Vengrovski et al. (2026), Patterns 7:101491, DOI 10.1016/j.patter.2025.101491; PMC article sections Abstract, Results, Limitations, Discussion, Materials and Methods, Code Availability and Data Availability. Dryad DOI 10.5061/dryad.xgxd254f4 landing page; GitHub API metadata for georgevenven/tweety_bert checked 2026-11-02."
   }
 ]
