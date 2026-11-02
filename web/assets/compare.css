@@ -4,4 +4,5 @@
 @media(prefers-reduced-motion:no-preference){.motion-enabled .compare-orbits{animation:moment-arrives .7s ease-out both}}
 @media(prefers-reduced-transparency:reduce){.compare-slot,.compare-results,.compare-player{background:#23443e;backdrop-filter:none;-webkit-backdrop-filter:none}}
 .compare-view-results{margin:-12px 0 18px;text-decoration:none}
+.compare-research-context{padding:15px 17px;border-left:2px solid #dce8b477;background:#dce8b40b;border-radius:0 14px 14px 0}.compare-research-context a{color:#e2eccb;text-underline-offset:3px}
 @media(max-width:700px){.compare-view-results{width:100%}}

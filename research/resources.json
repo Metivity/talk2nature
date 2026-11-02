@@ -6082,11 +6082,11 @@
         389
       ],
       "priority": 2,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-11-02",
       "task": "Author-listed scripts for acoustic feature extraction, motif clustering, phylogenetic and spatial models, and figures for the 2026 paper.",
-      "review_depth": "Public root/README and recursive GitHub API tree metadata reviewed at the pinned commit. The non-truncated tree lists 1,456 tracked files, including 1,280 audio segments totaling 185,758,300 bytes, a 12,796,164-byte metadata_xeno_passerines.csv and a 79,543,989-byte traits_data.csv. No file contents, source code, audio or dependency code were fetched or run. A follow-up filename-only screen matched all 1,280 audio paths to numeric-ID-like tokens and found 495 distinct candidates; three candidate record pages were spot-checked, with variable terms, but no complete join or license inventory. Official API documentation requires a key and warns of strict rate limits; no key or bulk API query was used.",
+      "review_depth": "Public root/README and recursive GitHub API tree metadata reviewed at the pinned commit. The non-truncated tree lists 1,456 tracked files, including 1,280 audio segments totaling 185,758,300 bytes, a 12,796,164-byte metadata_xeno_passerines.csv and a 79,543,989-byte traits_data.csv. No file contents, source code, audio or dependency code were fetched or run. A follow-up filename-only screen matched all 1,280 audio paths to numeric-ID-like tokens and found 495 distinct candidates; three candidate record pages were spot-checked, with variable terms, but no complete join or license inventory. Official API documentation requires a key and warns of strict rate limits; no key or bulk API query was used. Pinned README reread 2026-11-02: author-described methods include 500 ms MPS windows at 67% overlap, 2D FFT, weighted PCA to 37 dimensions over 116,792 vocalizations, GMM motif clustering with AIC/BIC, and separate phylogenetic, spatial, propagation-degradation and species-classification analyses. No script, dependency or data payload was fetched or executed; publisher full text/supplement were inaccessible (HTTP 403).",
       "access": "Public GitHub repository. The pinned tree lists 1,280 audio-segment payloads in data/selected_data_8x8x20_top/ and processed acoustic/spatial files. README cites the literal placeholder Zenodo DOI 10.5281/zenodo.XXXXXXX.",
-      "decision": "Reference only. Do not acquire the audio subset or execute/copy code until repository license scope, underlying recording-level terms, dependencies and source-data provenance are verified.",
+      "decision": "Reference only. Do not acquire the audio subset or execute/copy code until repository license scope, underlying recording-level terms, dependencies and source-data provenance are verified. No model or Talk2Nature benchmark is selected from this corpus; acoustic motif classes are not observed behavior or meaning labels.",
       "limitations": "The tree contains no standalone LICENSE file. README states CC BY 4.0 but does not define its scope across author code, derived files, metadata and third-party Xeno-canto audio. The 1,280 audio-file count is not a count of verified unique recordings; the source-ID joins and item-level licenses have not been inspected. The cited data DOI is unresolved. Numeric filename tokens are not a verified full record manifest: only three pages and one filename/taxon match were checked, and study membership remains unknown. No location fields were extracted or retained.",
       "attribution": "Quentin Bacquelé et al., global passerine song biogeography analysis repository, pinned commit 1629e665f902cad405ff2f7bf2a0e9dc8c09b47e.",
       "rights": {
@@ -10744,6 +10744,152 @@
         "research_use": "conditional",
         "commercial_use": "conditional",
         "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdcode-sound-event-detection-code",
+      "kind": "code",
+      "title": "Earth Species Project sound-event-detection code (BirdCODE workflow)",
+      "url": "https://github.com/earthspecies/sound-event-detection",
+      "version": "Public main branch overview checked 2026-11-02; commit not pinned",
+      "source_ids": [
+        612
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Python software for frame-level bioacoustic detection, evaluation and large-scale inference; README documents the BirdCODE model and precomputed selection-table workflow.",
+      "review_depth": "Current public README, repository overview and visible MIT license notice reviewed. No code, dependencies, data, predictions or model weights were acquired or executed.",
+      "access": "Public GitHub repository; model download described by its README requires separate checkpoint access and about 1.1 GB of weights.",
+      "decision": "Metadata-only methods reference. Consider a version-pinned export or precomputed-detection handoff only if a researcher identifies a concrete need. Do not integrate it into the mobile app or treat outputs as observations or meaning labels.",
+      "limitations": "The main branch is mutable. MIT applies to repository code; it does not establish rights for checkpoints, source recordings, precomputed detections or dependencies. The paper is a preprint and Talk2Nature has not reproduced its results.",
+      "attribution": "Earth Species Project, sound-event-detection repository; cite the repository and relevant BirdCODE paper if used.",
+      "rights": {
+        "license": "MIT",
+        "scope": "Repository code notice only; weights, recordings, derived detections and dependencies have separate terms.",
+        "evidence_url": "https://github.com/earthspecies/sound-event-detection",
+        "conditions": "Pin a commit and audit dependencies before reuse; separately review exact checkpoint and input/output data terms.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdcode-pretrained-checkpoint",
+      "kind": "model",
+      "title": "BirdCODE pretrained checkpoint",
+      "url": "https://huggingface.co/EarthSpeciesProject/sed-birdcode",
+      "version": "Repository README links the current Hub model; exact checkpoint revision not reviewed",
+      "source_ids": [
+        612
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Candidate bird-vocalization detection and classification with temporal boundaries; not a communication-meaning model.",
+      "review_depth": "Existence and approximate size are noted from the official code README. The checkpoint card, files, checksum, license, preprocessing implementation and inference were not reviewed.",
+      "access": "Public Hub route linked by the official repository; no checkpoint or audio acquired.",
+      "decision": "Do not add to the phone app or training pipeline. Keep as a research comparator pending an exact-version card, rights and resource review and a bounded need.",
+      "limitations": "The code README estimates about 1.1 GB of model weights, which is not a measured Talk2Nature runtime or a mobile performance test. Species labels and event boundaries do not establish a vocalization's meaning or receiver response.",
+      "attribution": "Earth Species Project; see the official sound-event-detection repository and BirdCODE preprint.",
+      "rights": {
+        "license": "Not reviewed",
+        "scope": "Checkpoint only; separate from code, training recordings and derived predictions.",
+        "evidence_url": "https://huggingface.co/EarthSpeciesProject/sed-birdcode",
+        "conditions": "Inspect immutable model-card revision and all applicable base/dependency terms before any use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "elephant-chorus-context-convergence-paper-2026",
+      "kind": "paper",
+      "title": "Elephant vocal choruses, context and acoustic convergence (2026)",
+      "url": "https://doi.org/10.1038/s41598-026-68525-3",
+      "version": "Scientific Reports 16, article 27961; version of record published 2026-10-01",
+      "source_ids": [
+        613
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Peer-reviewed observational study of acoustic context prediction in single and chorused elephant rumbles, plus context-specific acoustic convergence in multi-caller exchanges.",
+      "review_depth": "Full published article text reviewed. Supplementary material was not reviewed; results and code were not independently reproduced.",
+      "access": "Publisher article available online; no local copy, audio or supplemental files retained.",
+      "decision": "Use as a methods reference for overlapping vocal events, group context and caller-uncertainty reporting. It is not a ready Talk2Nature benchmark or evidence of receiver comprehension.",
+      "limitations": "Authors report observer-assigned context/caller IDs rather than independently double-coded context; chorus context models were not caller-held-out; context varies with age, state and social surroundings; convergence analysis uses a bounded subset from one repeatedly sampled family and includes inferred caller IDs. No playback response test was performed. The article's results are not a Talk2Nature reproduction.",
+      "attribution": "Mahon et al., Scientific Reports 16, 27961 (2026). Cite the original article and indicate changes if reusing CC BY material.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Published article text and figures, subject to any third-party credit-line exceptions. Does not license repository code, data or recordings.",
+        "evidence_url": "https://doi.org/10.1038/s41598-026-68525-3",
+        "conditions": "Provide attribution, link the license and indicate changes; check figure-specific credits before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "elephant-chorus-context-convergence-code-2026",
+      "kind": "code",
+      "title": "Elephant chorus context/convergence analysis code",
+      "url": "https://github.com/earthspecies/Elephant-choruses-context-convergence/tree/008528f3e39ab2c2731e56158bc36335aa3d7e8c",
+      "version": "main commit 008528f3e39ab2c2731e56158bc36335aa3d7e8c (2026-03-21)",
+      "source_ids": [
+        614
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Python analysis for context prediction and acoustic convergence in elephant rumble sequences.",
+      "review_depth": "Pinned repository metadata/tree, READMEs and targeted permutation-code sections inspected; no complete code audit, execution or dependency installation.",
+      "access": "Public GitHub repository metadata; no files acquired.",
+      "decision": "Do not reuse or execute until the authors' code license is clarified. Keep the source as methods prior art only.",
+      "limitations": "GitHub reports no license and the pinned complete tree has no license file. The repository may include both code and data; no code or data term should be inferred from the article's CC BY license.",
+      "attribution": "Earth Species Project repository for Mahon et al. (2026). Cite exact commit if any future use is separately cleared.",
+      "rights": {
+        "license": "Not stated",
+        "scope": "Code repository at the pinned commit. The article's CC BY notice does not extend to this repository.",
+        "evidence_url": "https://github.com/earthspecies/Elephant-choruses-context-convergence/tree/008528f3e39ab2c2731e56158bc36335aa3d7e8c",
+        "conditions": "Obtain/verify a code license and review dependencies before reuse, redistribution or commercial use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "elephant-chorus-context-convergence-data-2026",
+      "kind": "dataset",
+      "title": "Elephant chorus recordings, metadata and acoustic features in analysis repository",
+      "url": "https://github.com/earthspecies/Elephant-choruses-context-convergence/tree/008528f3e39ab2c2731e56158bc36335aa3d7e8c",
+      "version": "Repository tree at commit 008528f3e39ab2c2731e56158bc36335aa3d7e8c; files not individually reviewed",
+      "source_ids": [
+        613,
+        614
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Underlying acoustic files, metadata and derived features supporting the published elephant chorus analyses.",
+      "review_depth": "Article data-availability statement and pinned public repository tree reviewed; no file contents, recordings or row-level metadata inspected or acquired.",
+      "access": "Public repository tree lists recording archives and tabular features/metadata; presence does not establish reuse terms.",
+      "decision": "Not admitted for analysis, training, redistribution or commercial use. Preserve as metadata-only until item-level rights, permissions, sensitive-wildlife implications and intended use are resolved.",
+      "limitations": "No dataset-specific license was visible in the repository API or file tree. The article's CC BY license is for the article, not underlying audio/data. No recording provenance or participant/wildlife consent records were audited.",
+      "attribution": "Original data collectors and Mahon et al. (2026); exact recording/data attribution remains to be reviewed before any use.",
+      "rights": {
+        "license": "Not stated",
+        "scope": "Underlying recording archives, metadata and acoustic-feature tables; separate from the paper and code.",
+        "evidence_url": "https://github.com/earthspecies/Elephant-choruses-context-convergence/tree/008528f3e39ab2c2731e56158bc36335aa3d7e8c",
+        "conditions": "Require item-level rights and provenance review and any necessary data-holder permission before access or reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
       },
       "acquisition": "metadata_only",
       "files": []

@@ -1,3 +1,37 @@
+# November 2 — apply a deeper acoustic-structure methods review
+
+Reviewed the complete author README at the pinned global passerine repository commit and rechecked the primary PubMed article record. The README describes an MPS → weighted-PCA → eight-motif clustering pipeline plus separate ecological/phylogenetic analyses. Applied the distinction to benchmark planning: this is acoustic-structure prior art, not a receiver-response or meaning benchmark; the current first computational question remains passive sound presence. The publisher's full text and supplement returned HTTP 403, so those methods remain unreviewed. The candidate's source-ID/license join is paused unless provider-permitted metadata access becomes available; no scraping or payload acquisition was attempted.
+
+**Verification:** added a regression check for the source-limited method record and decision; rerun the repository Python suite and public build/link checks. Continue prioritizing task-matched, rights-described sources and the still-open release gate.
+
+# November 2 — bring overlapping-caller research into Compare
+
+The Compare results now point readers to the reviewed elephant-chorus and zebra-finch overlap studies, with a short plain-language limit: measured overlap and context do not establish decoded meaning or a reply. This applies the library to the public tool without adding animal inference, model execution, uploads or data admission. Add a focused regression check and include both routes in the generated public-site validation. The change remains local until the authorized Metivity publish path is available.
+
+**Next:** validate the rendered Compare copy and links, then continue reviewing research where it changes a concrete app, protocol or rights decision. Keep the live Pages publication gap and the AutoResearch/real-data gates visible.
+
+# November 2 — apply elephant chorus methods; source remains local
+
+Added a source-linked review of the 2026 elephant chorus study, its analysis repository metadata and a bounded permutation-code inspection. Applied its concrete lesson to the project model/data plan: preserve overlapping events, caller uncertainty and observer-context provenance; context prediction is not a receiver-understanding result. The article's coarse Amboseli study region is now represented on the research atlas. The dataset and unlicensed repository remain unadmitted.
+
+**Verification:** catalog **350 resources**, **149 literature notes**, **50 mapped notes**; Python **274 tests passed, 1 skipped**; public build **184 routes plus 404**; site checker **185 HTML documents / 12,892 links / 184 reachable routes**; `git diff --check` passed.
+
+**Live gate:** a fresh TLS-verified request to the new elephant route returns 404; the resource page and sitemap are still dated October 29 and omit it. No deployment occurred.
+
+**Next:** publish the validated source tranche through the authorized Metivity path when the credential/browser gate is available, then dispatch Pages and verify the live route and atlas totals. Keep the five-track objective active, and keep first-benchmark, independent-review and real-data gates separate.
+
+# November 2 — apply current detection research; Pages release still pending
+
+Added BirdCODE as bounded prior art and translated it into a clear software boundary: research-side event proposals can be versioned and compared with human notes; they must not overwrite observations or be presented as call meaning. A general detector and large checkpoint are not the next phone-app feature. The evidence note covers only the preprint abstract, official overview and current README; no artifact was acquired or run.
+
+**Next:** validate and publish this source-reviewed tranche through the established Metivity PR/release path, then resume the already-authorized Pages deployment and live route checks when authenticated browser control is available. Continue the active five tracks: research collection, usable tools, open-source operations, discoverability and research collaboration. Keep independent scientific review, model readiness and real-data intake as separate gates.
+
+# November 2 — merge the evidence tranche; publication to Pages remains pending
+
+PR [#674](https://github.com/Metivity/talk2nature/pull/674) merged to public `main` as [`90e17d2`](https://github.com/Metivity/talk2nature/commit/90e17d2aecd34c6ebe5d72afecb40b41e05ab231). Hosted Public Checks run [#41523435766](https://github.com/Metivity/talk2nature/actions/runs/41523435766) passed repository, browser-tool, native Android and preview-site jobs. On a clean checkout of the merged source, the catalog validator accepts **345 resources** and `content/research.json` contains **147 literature notes**.
+
+**Live release readback:** the new `/research/dog2vec-canine-specific-model/` route still returns **404**; `/research/resources/` and `sitemap.xml` remain on the older Pages build and do not contain the new route. This is a source merge, not a live deployment. The Pages workflow is manual and the authenticated browser is unavailable while the Mac is locked. No model or animal media was acquired/run; AutoResearch and real-data admission remain **NOT READY**. Next: launch the authorized Pages workflow when the signed-in Metivity browser is available, then verify the research route, live catalog, sitemap and Compare control.
+
 # November 2 — merge the Compare navigation improvement; deployment still pending
 
 PR [#673](https://github.com/Metivity/talk2nature/pull/673) merged to `main` as [`4300600`](https://github.com/Metivity/talk2nature/commit/4300600ae6b59eb39564e99bc933f0137ec4c792) after Public Checks passed repository, browser-tool, native Android and preview-site jobs. The PR carries only the four Compare UI/test files; the larger research candidate remains local. A fresh TLS-verified `GET /app/compare/` returned HTTP 200 but does not yet contain the new “View side-by-side comparison” action. The Pages workflow is `workflow_dispatch` only. Current browser control reports the Mac locked, and no connected GitHub workflow-dispatch tool is available. No deployment occurred. Continue with the authorized Pages release when the signed-in browser is available, then verify the live Compare route and crawl metadata.

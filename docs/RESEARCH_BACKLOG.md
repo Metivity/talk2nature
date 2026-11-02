@@ -1,3 +1,19 @@
+# November 2 update — elephant chorus study adds overlap and caller-uncertainty evidence
+
+Reviewed Mahon et al.'s full 2026 *Scientific Reports* article and the pinned public analysis repository (commit `008528f3e39ab2c2731e56158bc36335aa3d7e8c`). The study reports context prediction on single and overlapping elephant rumbles and acoustic convergence in three of six contexts; it includes a separate 92-exchange, multi-caller analysis. The atlas already had an approximate Amboseli region, so the note uses that coarse literature location without copying wildlife coordinates.
+
+**Applied:** preserve chorus/overlap, caller uncertainty and observer-context provenance as distinct fields. The chorus context model is not caller-held-out and the study did not test playback/receiver response; it is not a translation benchmark. In a source-code check, 200 permutations per convergence test and empirical-tail fractions appear difficult to reconcile with one reported `<.001` value; record as a reporting-resolution question, not a failed reproduction. The paper is CC BY 4.0; the pinned repository has no visible license and its data terms are unresolved. No supplement, code or data was acquired or executed.
+
+**Next:** leave the corpus metadata-only; revisit only with independent elephant and statistical review, clarification of the permutation reporting and item-level rights. The first task and AutoResearch readiness do not change.
+
+# November 2 update — BirdCODE fills the event-boundary infrastructure gap
+
+Reviewed the BirdCODE preprint abstract, the author-affiliated technical overview and the current official repository README. This is a bounded review, not a full-paper audit or reproduction. The materials describe frame-level bird-vocalization detection/classification and large-scale downstream analyses; the README exposes a Python/32 kHz workflow, precomputed selection tables and an approximately 1.1 GB checkpoint. Added separate metadata-only code/checkpoint records and a source-linked literature note.
+
+**Applied:** do not build another general bird detector or place this checkpoint in the phone app. If a researcher needs event proposals, test a version-pinned, loss-aware handoff using synthetic records first. Store model/version, input provenance, time bounds, label, score and post-processing separately from human observations and receiver outcomes. The MIT code notice does not clear checkpoint, recording or prediction rights. No code, model, audio or predictions were acquired or run.
+
+**Next:** compare BirdCODE's documented selection-table fields against the synthetic annotation-lineage format only if a named researcher need warrants an adapter; otherwise preserve it as prior art. Keep model execution, real-data admission and AutoResearch **NOT READY**.
+
 # Prioritized research and machine-learning backlog
 ## November 2 — reconcile current OpenWhistle model and dataset releases
 
@@ -850,3 +866,9 @@ Reviewed Ovaskainen et al. (2026), *A digital twin for real-time biodiversity fo
 The university page now includes an explicitly invented four-stage walkthrough: local capture, study permissions before sharing, separate observer/reviewer evidence, and validation before any result is released. It links the managed Finnish citizen-audio study and APLOSE as prior art, while saying that neither supplies a Talk2Nature integration or a communication result. This is explanatory design material only; it adds no database schema, upload, research workspace or real-data admission.
 
 **Next:** use a named research group's workflow to identify whether any handoff gap justifies an adapter. Until then, prefer existing annotation tools, preserve the local-first public app, and keep real-media intake and AutoResearch **NOT READY**.
+
+## November 2 — deepen the global passerine methods review without overclaiming access
+
+Rechecked the primary PubMed record and author repository README at pinned commit `1629e665f902cad405ff2f7bf2a0e9dc8c09b47e`. The authors' README specifies 500 ms modulation-power-spectrum windows with 67% overlap and a 2D FFT; weighted PCA to 37 dimensions over 116,792 vocalizations; Gaussian-mixture clustering with AIC/BIC model selection; and distinct follow-on phylogenetic, spatial, propagation-degradation and species-classification analyses. This improves the method map, but it is author-described repository documentation, not a Talk2Nature reproduction or independent verification. The Science article and supplement endpoints returned HTTP 403, so full methods and supplement remain unreviewed.
+
+**Applied:** keep this work as acoustic-structure/ecology prior art. Its motif clusters and global trait associations are not receiver-response labels or a Talk2Nature meaning task; the current first computational question remains passive sound presence. Do not copy or run the unlicensed-scope code or acquire the mixed-rights Xeno-canto subset. The filename-to-record join is paused until provider-permitted authenticated metadata access is available; avoid scraping around API requirements and rate limits. The article, source code, derived data and underlying recordings remain separate rights questions. No files, code, data or audio were acquired or executed.
