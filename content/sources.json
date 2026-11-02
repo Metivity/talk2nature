@@ -5810,5 +5810,13 @@
     "url": "https://arxiv.org/abs/2508.01277",
     "checked": "2026-11-02",
     "origin": "Targeted review of the authors’ arXiv v2 paper sections on split protocols, model selection, probing results, limitations and conclusions. The authors identify the work as a preprint. No article text, datasets, code, weights or figures were copied or acquired."
+  },
+  {
+    "id": 570,
+    "title": "Jean-Labadye et al. (2026), SNR and generalization in underwater bioacoustic detection",
+    "description": "arXiv:2610.33068 v1, submitted 20 October 2026. Full-text methods and reported results on SNR-stratified detection with four frozen encoders and continuous Kerguelen Plateau recordings.",
+    "url": "https://arxiv.org/abs/2610.33068",
+    "checked": "2026-11-02",
+    "origin": "Targeted review of the arXiv v1 abstract and HTML sections on data, preprocessing, encoder comparison, SNR results, discussion and limitations. No data, code, audio or model was acquired or run."
   }
 ]

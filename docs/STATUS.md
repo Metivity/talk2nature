@@ -1,3 +1,11 @@
+## November 2 — add an SNR-aware model evaluation lesson
+
+Reviewed Jean-Labadye et al. (2026), an arXiv preprint evaluating four frozen encoders on one continuous Antarctic whale-detection deployment. In that experiment, test signal-to-noise ratio explained more average-precision variation than model choice; mixed-SNR training redistributed performance toward lower-SNR conditions while absolute performance remained low. Added an original summary and metadata-only paper record. The result is specific to one marine task and does not establish transfer to birds, parrots or phones.
+
+Applied the narrow lesson to the benchmark run card: any future field-facing detector evaluation should keep source recording/session groups together, document recording conditions and report predeclared acoustic-quality strata at realistic prevalence. This is a future evaluation criterion only. No data, code, audio or model was acquired or run; no benchmark was selected or made training-ready.
+
+**Checks:** clean-clone researcher CLI reproduction passed at `55eb8331a0e5c3a0806750eaabf8e95e6623cefc`; collection catalog validates **318 resources**; Python **250 passed, 1 intentional skip**; Node **171/171**; local noindex build **167 pages plus 404**; site checker **168 HTML documents / 11,606 links**. The change is local, not merged or deployed. The five-track goal remains active; AutoResearch and real-data admission remain **NOT READY**.
+
 ## November 2 — apply selected model research and record Search Console evidence
 
 Cross-checked the existing NatureLM, Perch transfer, model-evaluation and VLM-localization reviews against the live Compare workflow. They support task-specific acoustic proposals and classifiers, not claims of animal meaning or translation. Current Compare copy retains manual review and does not treat a sound after a human voice as a reply; no inference or app change was made. The first benchmark remains passive bird-vocalization presence, blocked on a reviewed event definition, valid negatives, rights and independent group-held-out evaluation. This is a targeted synthesis, not an exhaustive review or model reproduction.
