@@ -1,6 +1,6 @@
 # Evaluate Talk2Nature with a small, reproducible task
 
-Updated October 31, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
+Updated November 2, 2026. For researchers, research software engineers and prospective reviewers. This is a software evaluation kit, not a validated biological benchmark. It needs no account, animal recording, cloud service, model download or paid dependency.
 
 ## Start here
 
@@ -19,6 +19,8 @@ python3 -m talk2nature.manifest examples/interactions.dyadic.synthetic.json --ou
 ```
 
 Record the commit printed by `git rev-parse HEAD` with any report. The annotation and split fixtures exercise **separate** tools; the annotation report is not converted or admitted into either evaluation manifest. Split files go under ignored `tmp/reproduction/`.
+
+**Optional methods exercise:** read the [acoustic-unit crosswalk](ACOUSTIC_UNIT_CROSSWALK.md) and inspect its [invented fixture](../examples/acoustic-units.synthetic.json). It demonstrates how time-indexed cluster proposals can be overlaid on, while remaining separate from, human-entered intervals. The invented clusterer is not a model result; no semantic label, training data or benchmark is created.
 
 To share a usability barrier, use the [short first-use form](https://github.com/Metivity/talk2nature/issues/new?template=first-use.yml); one sentence is enough and device details are optional. Posting requires GitHub sign-in and creates a public issue. For a technical rerun, use the [workflow report form](https://github.com/Metivity/talk2nature/issues/new?template=reproduction.yml). Keep private media and research details out of either report.
 
