@@ -44,8 +44,8 @@
     "title": "DolphinGemma",
     "description": "Google / Herzing & Starner. DolphinGemma announcement (14 April 2025). Natural sound modeling and the separate CHAT project for learned shared signals.",
     "url": "https://blog.google/innovation-and-ai/products/dolphingemma/",
-    "checked": "2026-09-30",
-    "origin": "Founding audit source inventory; review depth is recorded separately in evidence notes."
+    "checked": "2026-11-02",
+    "origin": "The original Google / Herzing & Starner announcement and current Google DeepMind model page were reviewed. The current page still describes DolphinGemma as in development and says it will be openly available on release; it provides no public checkpoint, technical paper, benchmark or release date. The announcement describes DolphinGemma's acoustic sequence modeling separately from CHAT's learned synthetic-whistle interface. These are official project descriptions, not independent validation or translation evidence."
   },
   {
     "id": 7,
@@ -6059,5 +6059,101 @@
     "review_url_label": "Official Figshare v1 item metadata API",
     "checked": "2026-11-02",
     "origin": "TLS-verified Figshare API metadata identifies item 26217803 v1, published 2025-01-29, and declares CC BY 4.0 for the item. Its manifest lists xdata.txt (801,667 bytes; provider MD5 24bcbb0c1b4d98ad645168307cb4f500) and Final data.xlsx (761,453 bytes; provider MD5 ef6e16496372f78372423fac7078a4c7). Only xdata.txt was acquired through the bounded collector; received size and provider MD5 matched, and the local receipt records SHA-256. A row-value-free schema audit found 735 rows and 343 tab-delimited columns, matching the expected script layout. No row values were emitted, the workbook was not acquired, and no analysis code was run."
+  },
+  {
+    "id": 599,
+    "title": "Li, Zhu & Wu (2025), Dog2vec: Self-Supervised Pre-Training for Canine Vocal Representation",
+    "description": "Peer-reviewed Interspeech 2025 full paper describing a dog-specific self-supervised acoustic embedding model and dog bark detection/classification experiments.",
+    "url": "https://doi.org/10.21437/Interspeech.2025-1287",
+    "review_url": "https://www.isca-archive.org/interspeech_2025/li25o_interspeech.pdf",
+    "review_url_label": "Official ISCA Interspeech 2025 paper PDF",
+    "checked": "2026-11-02",
+    "origin": "Full paper reviewed from the official ISCA archive: abstract, data processing, training, task definitions, evaluation setup/results and limitations. The paper reports >6,000 hours collected from YouTube, about 150 hours retained after cleaning, six breeds, dog-specific tasks and a best dog-detection segment F1 of 0.8287. No recordings, code or weights were acquired or executed. The publisher page and article reuse terms were not independently reviewed."
+  },
+  {
+    "id": 600,
+    "title": "Official fispresent/dog2vec GitHub repository",
+    "description": "Official repository linked by the Dog2vec paper for source code, data and model access.",
+    "url": "https://github.com/fispresent/dog2vec",
+    "review_url": "https://github.com/fispresent/dog2vec",
+    "review_url_label": "Official repository root and README",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the public repository root and README. The visible root contains a data folder, README and feature-extraction script, and the README links to a Zenodo checkpoint. The repository root view exposed no LICENSE file; code was not cloned or run and dataset contents were not inspected."
+  },
+  {
+    "id": 601,
+    "title": "Dog2vec checkpoint, Zenodo record 15494042 v1",
+    "description": "Versioned Zenodo model record for the dog2vec_130k_9.pt checkpoint.",
+    "url": "https://doi.org/10.5281/zenodo.15494042",
+    "review_url": "https://zenodo.org/records/15494042",
+    "review_url_label": "Zenodo v1 record metadata and file inventory",
+    "checked": "2026-11-02",
+    "origin": "The public v1 record lists one 1.1 GB file named dog2vec_130k_9.pt and shows no license value in the visible rights field. No checkpoint was downloaded. The record's displayed total data volume is 214.6 GB despite a single 1.1 GB listed file; this unexplained discrepancy was not reconciled."
+  },
+  {
+    "id": 602,
+    "title": "Dog2vec training audio provenance as described in the paper",
+    "description": "Paper-described source for the training corpus, not a verified release manifest.",
+    "url": "https://doi.org/10.21437/Interspeech.2025-1287",
+    "review_url": "https://www.isca-archive.org/interspeech_2025/li25o_interspeech.pdf",
+    "review_url_label": "Official paper, data-collection and cleaning sections",
+    "checked": "2026-11-02",
+    "origin": "The paper says >6,000 hours of dog barking video/audio were collected from YouTube and about 150 hours remained after cleaning and source separation. The exact video IDs, recording-level consent and rights, removal manifest, identities, site distribution and reproducible split membership were not reviewed or established. No corpus data were acquired."
+  },
+  {
+    "id": 603,
+    "title": "DolphinGemma official model status",
+    "description": "Current Google DeepMind model page describing DolphinGemma's reported scope and release status.",
+    "url": "https://deepmind.google/models/gemma/dolphingemma/",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the official model page's capabilities, training description, collaboration and community-release statement. It describes sequence/pattern prediction from dolphin audio and says the model is currently in development and will be openly available on release. The page links no downloadable checkpoint, model card, technical paper, benchmark, or release date. This is a dated public-status check, not evidence that no private or partner-only artifact exists."
+  },
+  {
+    "id": 604,
+    "title": "CHAT underwater wearable computer paper",
+    "description": "Kohlsdorf et al. (2013), a technical report on an underwater wearable that recognizes predefined synthetic whistles for a human–dolphin interaction protocol.",
+    "url": "https://www.wilddolphinproject.org/wp-content/uploads/2016/01/ISWC-2013-An-Underwater-Wearable-Computer-for-Two-Way-Human-Dolphin-Communication-Experimentation-copy.pdf",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the official Wild Dolphin Project-hosted paper's protocol, acoustic-marker/template recognition method and reported pool/field performance. The paper supports a purpose-built interface for a small set of predefined synthetic whistles; its pool metrics and deployment descriptions do not establish translation of spontaneous dolphin vocalizations. No software or media was acquired or run."
+  },
+  {
+    "id": 605,
+    "title": "OpenWhistle Wav2Vec2 model card, current release revision",
+    "description": "Current official model card and release metadata for the bottlenose-dolphin Wav2Vec2 backbone.",
+    "url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/737962cf00605ddfa4618df9dcde8e4f1f5586e2",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the immutable model-card revision and Hugging Face release metadata. The card declares CC BY 4.0 for model weights/card; describes a 400,000-update Fairseq pretraining run using 16 V100s (220.47 GPU-hours); reports a 61.9 ± 2.8 full-test macro-F1 frozen-encoder linear probe with 1,000 test-clip bootstrap resamples; and states that the exact runner and pinned revision manifest for that score are not yet released. The card says its code repository has an earlier benchmark implementation. No weights, audio, labels or code were acquired or run."
+  },
+  {
+    "id": 606,
+    "title": "OpenWhistle pretraining dataset card, current release revision",
+    "description": "Current official card and metadata for the unlabeled OpenWhistle pretraining audio dataset.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/e0fbe77305944272ce24446293fd98a1b8c6f04d",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the immutable dataset-card revision and Hugging Face release metadata. The release declares CC BY 4.0; its card describes 31,780 segments totaling about 114.284 hours. This declaration does not establish provenance, consent, privacy, or suitability for a new use. No audio or other payload was acquired."
+  },
+  {
+    "id": 607,
+    "title": "OpenWhistle classification dataset card, current release revision",
+    "description": "Current official card and metadata for the expert-labeled whistle classification release.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/364e3d31b5a96b0a524d0a5d18a46902f3f77020",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the immutable dataset-card revision and Hugging Face release metadata. The release declares CC BY 4.0. The card describes 8,354 labeled rows and session-disjoint splits; the reported groups still represent the same five dolphins. The declaration does not establish provenance, consent, privacy, label validity, or transfer to new animals. No audio, labels or other payload was acquired."
+  },
+  {
+    "id": 608,
+    "title": "OpenWhistle detection dataset card, current release revision",
+    "description": "Current official card and metadata for the whistle-detection fine-tuning dataset.",
+    "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Detection-Finetuning/tree/7c2a42dcbdd772acbea558b9abfc6b66a732e0d9",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the immutable dataset-card revision and Hugging Face release metadata. The release declares CC BY 4.0. This is a dataset-level rights declaration only; it does not establish provenance, consent, privacy, label validity, or suitability for Talk2Nature. No audio, labels or other payload was acquired."
+  },
+  {
+    "id": 609,
+    "title": "OpenWhistle author code repository, current main state",
+    "description": "GitHub API metadata and root-file inventory for the official OpenWhistle repository, checked against its current main branch.",
+    "url": "https://github.com/sumbre-lab/OpenWhistle/tree/ad715bb3cf24c36f85b3c3c8159077548134a39e",
+    "checked": "2026-11-02",
+    "origin": "A verified-TLS GitHub API check found that main still resolves to ad715bb3cf24c36f85b3c3c8159077548134a39e (committer date 2026-10-09). The root contains README.md, LICENSE-DATA, an image and .gitignore; repository metadata reports NOASSERTION for a software license. LICENSE-DATA applies to named datasets, not code. No source code was acquired or executed."
   }
 ]

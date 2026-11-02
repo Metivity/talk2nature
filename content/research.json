@@ -339,23 +339,25 @@
   },
   {
     "slug": "dolphingemma",
-    "title": "DolphinGemma and shared signals",
+    "title": "DolphinGemma predicts sound patterns; CHAT tests a shared signal set",
     "taxon": "Marine mammals",
     "kind": "Project announcement",
     "year": "2025",
     "source_ids": [
-      6
+      6,
+      603,
+      604
     ],
-    "review_depth": "Official announcement, including its field-program location paragraph, reviewed; not an independent replication or complete dataset audit.",
-    "finding": "DolphinGemma models patterns in dolphin sounds. The related CHAT work uses learned shared signals in human-dolphin interactions.",
-    "limitations": "Learning a shared interface and translating spontaneous natural communication are distinct scientific tasks.",
-    "lesson": "Choose which question a pilot is trying to answer before selecting the interface or model.",
-    "next_review": "Keep natural-call interpretation and taught-symbol experiments in separate protocols.",
-    "reviewed": "2026-10-04",
-    "expert_review": "Not yet independently reviewed by a scientific specialist.",
-    "review_stage": "Initial source note",
+    "review_depth": "Read the Google / Herzing & Starner announcement and the current Google DeepMind DolphinGemma page, including its capability, training and community-release statements. Read the Wild Dolphin Project-hosted 2013 CHAT wearable-computer paper's protocol, recognizer design and reported pool/field evaluation. The current DeepMind page says DolphinGemma is still in development and will be openly available on release; it links no public checkpoint, technical paper, benchmark, or release date. No private partner status was checked, no model/software/data was downloaded or run, and no independent reproduction or specialist review occurred.",
+    "finding": "DolphinGemma and CHAT answer different research questions. Google describes DolphinGemma as an approximately 400M-parameter audio sequence model that learns recurring patterns and predicts likely subsequent sound tokens from Atlantic spotted-dolphin recordings. The current official model page still lists it as in development and promises open availability on release, but provides no public checkpoint, model card, technical paper, benchmark or date; treat its capabilities as official project descriptions, not independently verified results. CHAT is a separate, researcher-designed interface that associates a small set of synthetic whistles with selected objects and recognizes possible mimics. The 2013 technical paper reports a purpose-built underwater device and controlled recognition tests; it does not decode spontaneous dolphin calls. Neither track demonstrates general translation.",
+    "limitations": "DolphinGemma's current public page provides no reproducible evaluation or release artifact, so performance, rights and reuse readiness cannot be independently assessed. Its sequence-prediction objective can find regularities without identifying what a sound means. CHAT's synthetic signals are a taught interface, not decoded natural vocabulary; the 2013 paper's controlled recognition results do not establish broad comprehension or an animal-initiated, welfare-reviewed field outcome. Results from dolphins and underwater hydrophones do not transfer directly to parrots, consumer phones or other taxa.",
+    "lesson": "Keep four evidence layers distinct in Talk2Nature: passive natural-call detection/representation; human-reviewed call categories; associations with independently observed behavior and social context; and receiver-response evidence from a separately approved experiment. A next-sound model can help propose patterns, but cannot by itself establish semantics. A learned-symbol interaction is a different protocol with its own welfare, consent, output and evaluation gates. For the current product, build passive, source-provenanced observations and human review; do not add animal-directed sound output or frame predictions as translations.",
+    "next_review": "Recheck the official release page before considering DolphinGemma; review any eventual model card, exact checkpoint, license, evaluation split and training-data terms independently. For Talk2Nature, first define a passive acoustic task with valid labels and independent group-held-out evaluation. Keep any symbol-learning experiment out of the public companion until a qualified research team specifies protocol, animal-welfare review and receiver-response outcome.",
+    "reviewed": "2026-11-02",
+    "expert_review": "No independent specialist review or reproduction; this is a source-grounded project-status note.",
+    "review_stage": "Targeted official-status and prior-art review; no model or software acquired or run",
     "year_label": "Source year",
-    "purpose": "Behavior & communication",
+    "purpose": "Models & evaluation",
     "atlas": {
       "reviewed": "2026-10-04",
       "location_status": "mapped",
@@ -370,6 +372,14 @@
         }
       ],
       "observation_period": null
+    },
+    "seo_description": "DolphinGemma models dolphin sound sequences; CHAT uses predefined synthetic whistles. Neither establishes natural-language translation.",
+    "review_locator": "Google DeepMind model page (source 603); Google / Herzing & Starner announcement (source 6); Kohlsdorf et al. 2013 CHAT wearable paper (source 604).",
+    "reuse": {
+      "status": "Metadata-only research note; no model or data admitted to Talk2Nature.",
+      "asset": "Official Google announcement/model page and Wild Dolphin Project-hosted CHAT paper only.",
+      "rights": "The current DolphinGemma page states open availability is planned on release, not a present license grant. No checkpoint or code was found on the reviewed official page. The CHAT paper does not establish software reuse rights. Keep model, code, datasets and article rights separate.",
+      "experiment": "No model, dataset, code, acoustic output or playback was acquired or run. No Talk2Nature communication experiment is proposed by this note."
     }
   },
   {
@@ -4213,16 +4223,21 @@
       425,
       495,
       560,
-      561
+      561,
+      605,
+      606,
+      607,
+      608,
+      609
     ],
-    "reviewed": "2026-10-31",
-    "review_stage": "Targeted version-pinned paper, current official project page, release metadata and separate data/code/model rights review; metadata only; dataset-license metadata refreshed October 31, 2026",
-    "review_depth": "Reviewed the arXiv v1 data-collection, annotation, benchmark, evaluation, limitations and ethics sections; revision-pinned Hugging Face dataset/model cards and file inventories; the pinned official README and LICENSE-DATA at commit ad715bb3cf24c36f85b3c3c8159077548134a39e; and the current official project page's dataset, benchmark and future-work sections. The project page now summarizes full-set ten-type macro-F1, natural-six and balanced-six metrics, detection mAP, continued-pretraining, data-scale and end-to-end results. The paper's balanced six-class accuracy and the page's differently named macro-F1 values are separate metrics; the page does not map every expanded table row to an immutable paper/config revision. No audio, labels, code, weights or page media were acquired or run. No independent specialist reviewed this note. On October 31, rechecked the pinned Hugging Face dataset-card revisions and their Croissant RAI JSON files: each structured license field declares CC BY 4.0, while each separate Hugging Face API cardData.license field is null. Reconfirmed the official model card states the model license is unspecified. No media, labels, code or weights were acquired or run.",
-    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10, especially Table 2; current official project page sections Dataset, Benchmark and What Comes Next (source 495); OpenWhistle-Pretraining revision eea37423c7841b0f99a7c0380f945999c0a2c489; OpenWhistle-Classification-Finetuning revision 2b7806e3c5913c459c40b824ab7f944d494b3993; OpenWhistle-Wav2Vec2.0 revision 985ac11bc6939af5e41383143aad5a0ae6993f68; pinned official README (source 411) and LICENSE-DATA (source 412) at commit ad715bb3cf24c36f85b3c3c8159077548134a39e.; OpenWhistle pretraining Croissant RAI metadata source 560 at revision eea37423c7841b0f99a7c0380f945999c0a2c489; classification Croissant RAI metadata source 561 at revision 2b7806e3c5913c459c40b824ab7f944d494b3993; current model-card license section at https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0",
-    "finding": "OpenWhistle is a timely single-species research candidate: its authors report about 114 hours of 96 kHz recordings collected over five years from five known dolphins at Dolphin Reef in Eilat, plus 8,354 expert-annotated whistles in 10 categories. The authors describe the site as a semi-natural marine area open to the Gulf of Aqaba and say human–dolphin interactions are dolphin-initiated and voluntary. Published tasks detect whistle presence or classify whistle type. The current official project page presents expanded evaluation views: it reports 64.37 ± 2.67 full-set ten-type macro-F1 and 75.76 ± 2.02 detection mAP for the released checkpoint, with separate natural-six, balanced-six, continued-pretraining, data-scale and end-to-end tables. By comparison, arXiv v1 Table 2 reports 81.1 ± 1.8% accuracy on its balanced six-class classification task and 75.6 ± 2.0 detection mAP. The six-class accuracy and ten-class macro-F1 are not interchangeable; the page does not identify an immutable configuration for each expanded result. These are upstream reports, not a Talk2Nature reproduction.",
-    "limitations": "All recordings come from one site and a pod of five; the paper says results need validation on independent groups. Its labels cover whistle categories, including individual signature-whistle types, not experimentally established message meanings or receiver understanding. The arXiv v1 main evaluation holds out recording sessions, not whole animals, and the expert labels cover only a short part of the five-year span; the labels are highly imbalanced. The official project page adds broader metric and training tables but does not map every row to an immutable paper, dataset or code revision; do not treat its reported values as directly comparable to arXiv v1 Table 2. The official repository README and LICENSE-DATA declare CC BY 4.0 for the dataset releases, while the pinned Hugging Face API cardData.license fields are null, although the corresponding Croissant RAI metadata records also declare CC BY 4.0; code terms were not visible in the repository root and the separate model card says its license is unspecified. No files are admitted or acquired.",
+    "reviewed": "2026-11-02",
+    "review_stage": "Targeted paper, current official benchmark/model/data release metadata, and separate data/model/code-rights review; metadata only; no acquisition or reproduction",
+    "review_depth": "Reviewed the arXiv v1 data-collection, annotation, benchmark, evaluation, limitations and ethics sections; revision-pinned Hugging Face dataset/model cards and file inventories; the pinned official README and LICENSE-DATA at commit ad715bb3cf24c36f85b3c3c8159077548134a39e; and the current official project page's dataset, benchmark and future-work sections. The project page now summarizes full-set ten-type macro-F1, natural-six and balanced-six metrics, detection mAP, continued-pretraining, data-scale and end-to-end results. The paper's balanced six-class accuracy and the page's differently named macro-F1 values are separate metrics; the page does not map every expanded table row to an immutable paper/config revision. No audio, labels, code, weights or page media were acquired or run. No independent specialist reviewed this note. On October 31, rechecked the pinned Hugging Face dataset-card revisions and their Croissant RAI JSON files: each structured license field declares CC BY 4.0, while each separate Hugging Face API cardData.license field is null. Reconfirmed the official model card states the model license is unspecified. No media, labels, code or weights were acquired or run. On November 2, checked current immutable Hugging Face model and three dataset-card revisions plus the GitHub API and root inventory. The model and datasets now declare CC BY 4.0 in their current cards; this supersedes the prior model-license-unknown status for the pinned current model release. The model card reports a separate 61.9 ± 2.8 full-test macro-F1 linear-probe score and states that its exact evaluation runner and pinned revision manifest have not been released. Rechecked author code main at ad715bb3cf24c36f85b3c3c8159077548134a39e; the repository still has no general code license. No weights, audio, labels or code were acquired or run.",
+    "review_locator": "arXiv:2609.34839v1, Sections 3–5 and 9–10, especially Table 2; current official project page sections Dataset, Benchmark and What Comes Next (source 495); OpenWhistle-Pretraining revision eea37423c7841b0f99a7c0380f945999c0a2c489; OpenWhistle-Classification-Finetuning revision 2b7806e3c5913c459c40b824ab7f944d494b3993; OpenWhistle-Wav2Vec2.0 revision 985ac11bc6939af5e41383143aad5a0ae6993f68; pinned official README (source 411) and LICENSE-DATA (source 412) at commit ad715bb3cf24c36f85b3c3c8159077548134a39e.; OpenWhistle pretraining Croissant RAI metadata source 560 at revision eea37423c7841b0f99a7c0380f945999c0a2c489; classification Croissant RAI metadata source 561 at revision 2b7806e3c5913c459c40b824ab7f944d494b3993; current model-card license section at https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0; current Wav2Vec2 model card/revision source 605; current pretraining, classification and detection dataset cards sources 606–608; current GitHub repository metadata source 609",
+    "finding": "OpenWhistle is a timely single-species research candidate: its authors report about 114 hours of 96 kHz recordings collected over five years from five known dolphins at Dolphin Reef in Eilat, plus 8,354 expert-annotated whistles in 10 categories. The authors describe the site as a semi-natural marine area open to the Gulf of Aqaba and say human–dolphin interactions are dolphin-initiated and voluntary. Published tasks detect whistle presence or classify whistle type. The current official project page presents expanded evaluation views: it reports 64.37 ± 2.67 full-set ten-type macro-F1 and 75.76 ± 2.02 detection mAP for the released checkpoint, with separate natural-six, balanced-six, continued-pretraining, data-scale and end-to-end tables. By comparison, arXiv v1 Table 2 reports 81.1 ± 1.8% accuracy on its balanced six-class classification task and 75.6 ± 2.0 detection mAP. The six-class accuracy and ten-class macro-F1 are not interchangeable; the page does not identify an immutable configuration for each expanded result. These are upstream reports, not a Talk2Nature reproduction. The current Wav2Vec2 model card now declares CC BY 4.0 for the model weights/card and reports a frozen-encoder linear-probe score of 61.9 ± 2.8 macro-F1 on the complete ten-type test split, with 1,000 test-clip bootstrap resamples. It states that the exact runner and pinned revision manifest for this score have not been released. This is a newly reported upstream result, separate from both the unversioned expanded project-page values and arXiv v1 results; Talk2Nature has not reproduced it.",
+    "limitations": "All recordings come from one site and a pod of five; the paper says results need validation on independent groups. Its labels cover whistle categories, including individual signature-whistle types, not experimentally established message meanings or receiver understanding. The arXiv v1 main evaluation holds out recording sessions, not whole animals, and the expert labels cover only a short part of the five-year span; the labels are highly imbalanced. The official project page adds broader metric and training tables but does not map every row to an immutable paper, dataset or code revision; do not treat its reported values as directly comparable to arXiv v1 Table 2. The official repository README and LICENSE-DATA declare CC BY 4.0 for the dataset releases, while the pinned Hugging Face API cardData.license fields are null, although the corresponding Croissant RAI metadata records also declare CC BY 4.0; code terms remain unresolved: the current repository root still has no general software license and GitHub reports NOASSERTION and the current pinned model card declares CC BY 4.0 for the weights and card. The model card’s exact evaluation runner and revision manifest for its new 61.9 ± 2.8 result are unreleased, limiting reproducibility. CC BY 4.0 declarations do not establish provenance, consent, privacy, label validity or suitability for new use. No files are admitted or acquired.",
     "lesson": "This is a strong newly reviewed large-data candidate for a bounded communication-adjacent benchmark, not evidence of dolphin translation. A useful contribution would need to go beyond repeating the published whistle classifier—for example, a carefully reviewed test of temporal and individual generalization if the available metadata and rights support it. Keep this research track distinct from a companion-parrot app: app participation and model training have different evidence, consent and welfare requirements.",
-    "next_review": "The dataset-level license declaration is documented, but code and model rights remain separate. Before any acquisition or training, ask independent cetacean-bioacoustics and ML reviewers whether the v1 paper reproduction or an extension is useful. First map the official project's expanded ten-type macro-F1 and additional training tables to exact dataset configs, code and splits; select one comparable primary baseline only after that mapping. A temporal or individual-generalization extension also needs a defensible independent grouping. If reviewers approve, freeze a bounded dataset-only run card and consider a project-authored simple acoustic baseline; do not reuse the unlicensed/unclear source code or model weights unless their terms are clarified. Do not infer meaning from detection or classification, and do not create playback features from this dataset.",
+    "next_review": "The current model and dataset releases declare CC BY 4.0, but code terms remain unresolved and rights declarations do not establish provenance, consent, privacy or fit. Before considering any acquisition or training, obtain independent cetacean-bioacoustics and ML/statistical review. First obtain or independently reconstruct the exact runner, pinned inputs and configuration for the model card’s 61.9 ± 2.8 score, then map it separately against the author project-page and arXiv v1 metrics; keep the published values distinct until crosswalked. Any extension needs a defensible grouping/estimand beyond the five known dolphins and one site. No code reuse until its license is clarified. Do not infer meaning from detection or classification, and do not create playback features from this dataset.",
     "expert_review": "Not yet independently reviewed by a cetacean-bioacoustics or machine-learning specialist.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -4236,7 +4251,7 @@
       ],
       [
         "Published numbers",
-        "arXiv v1 reports 81.1 ± 1.8% accuracy for its balanced six-class task and 75.6 ± 2.0 detection mAP. The current official project page separately reports 64.37 ± 2.67 full-set ten-type macro-F1 and 75.76 ± 2.02 mAP for the released checkpoint; metrics/configuration are not fully cross-mapped and no value is reproduced by Talk2Nature."
+        "arXiv v1 reports 81.1 ± 1.8% accuracy for its balanced six-class task and 75.6 ± 2.0 detection mAP. The current official project page separately reports 64.37 ± 2.67 full-set ten-type macro-F1 and 75.76 ± 2.02 mAP for the released checkpoint; metrics/configuration are not fully cross-mapped and no value is reproduced by Talk2Nature. The current model card separately reports 61.9 ± 2.8 macro-F1 for a frozen-encoder linear probe on the complete ten-type test split, but its exact runner and pinned revision manifest are unreleased; it is not directly comparable without a metric/configuration crosswalk and was not reproduced here."
       ],
       [
         "Evaluation boundary",
@@ -4244,7 +4259,7 @@
       ],
       [
         "Rights boundary",
-        "Official repository README and LICENSE-DATA at a pinned commit declare CC BY 4.0 for the datasets; Hugging Face card metadata is null. The separate model card says its license is unspecified, and no separate code license was visible. No files acquired."
+        "Current immutable Hugging Face cards declare CC BY 4.0 for the model weights/card and the pretraining, classification and detection datasets. The author code repository still has no general software license (GitHub metadata: NOASSERTION). Rights declarations do not establish provenance, consent, privacy or scientific fitness. No payload files acquired."
       ]
     ],
     "atlas": {
@@ -4270,8 +4285,8 @@
     },
     "reuse": {
       "status": "Metadata-only candidate; not admitted to Talk2Nature training or public app inference.",
-      "asset": "Pinned arXiv paper, current official project page, Hugging Face metadata/cards and official repository README/LICENSE-DATA only. The dataset release is declared CC BY 4.0 upstream; no audio, labels, code, checkpoint or video was acquired. On October 31, the two revision-pinned Croissant RAI files were also reviewed as machine-readable rights metadata; no dataset payload was acquired.",
-      "rights": "The official repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e explicitly declares CC BY 4.0 for the four listed OpenWhistle dataset releases; the Hugging Face card license fields are null. No separate code license was visible at the repository root, and the model card says the model license has not been specified. The dataset declaration does not cover code or weights; use attribution and verify exact scope before any acquisition or commercial use. The current project page is linked as a source; no page media or other assets are reused.",
+      "asset": "Pinned arXiv paper, author project page, current Hugging Face model and dataset-card revisions, and official repository metadata only. Current model and dataset releases declare CC BY 4.0; no audio, labels, code, checkpoint or video was acquired.",
+      "rights": "Current Hugging Face model card declares CC BY 4.0 for the model weights and card; current pretraining, classification and detection dataset cards declare CC BY 4.0. The author code repository remains without a general software license (GitHub reports NOASSERTION). These component-level declarations do not establish provenance, consent, privacy, or permission for any other component or use. No artifacts were acquired.",
       "experiment": "No files were acquired or analyzed, no model was trained and no result was reproduced. The expanded project-page metrics are not directly comparable to every arXiv v1 result and are not Talk2Nature results. A follow-up rights check confirms the dataset-license declaration across the repository LICENSE-DATA and the two pinned Croissant records, but does not resolve code or model terms. Any future study needs independent review, an exact configuration/metric mapping, a bounded approved run, a frozen session split, and a clear report of within-pod limits. Whistle labels alone cannot establish semantics or translation."
     }
   },
@@ -7187,7 +7202,9 @@
     "kind": "Acoustic structure and model-evaluation comparison",
     "year": "2026",
     "year_label": "Preprint posted 23 October 2026; prepared for the Journal of the Acoustical Society of America",
-    "source_ids": [592],
+    "source_ids": [
+      592
+    ],
     "reviewed": "2026-11-02",
     "review_stage": "Full preprint text reviewed; no reproduction",
     "review_depth": "Read the full arXiv HTML manuscript for study questions, analysis design and controls, main results, discussion and limitations. The study compares Dominica EC-1 sperm-whale codas with three selected musical references and compares a small sample of generated WhAM clips with natural clips. No data, code, audio, supplement or model was acquired or executed.",
@@ -7214,7 +7231,9 @@
     "kind": "Exploratory representation-learning comparison",
     "year": "2026",
     "year_label": "arXiv preprint posted 21 October 2026",
-    "source_ids": [593],
+    "source_ids": [
+      593
+    ],
     "reviewed": "2026-11-02",
     "review_stage": "Full preprint text reviewed; no reproduction",
     "review_depth": "Read the full arXiv HTML manuscript for encoder/preprocessing design, contrastive and auxiliary objectives, split protocol, comparison tables, ablations and limitations. The paper describes 1,501 files in the public DSWP card and 1,383 after noise-flag exclusions. No audio, dataset, code, notebook, checkpoint or model was acquired or run.",
@@ -7270,7 +7289,12 @@
     "kind": "Observational call-context analysis and statistical reanalysis",
     "year": "2025–2026",
     "year_label": "Original Science article (2025); PeerJ reanalysis (2026)",
-    "source_ids": [595, 596, 597, 598],
+    "source_ids": [
+      595,
+      596,
+      597,
+      598
+    ],
     "reviewed": "2026-11-02",
     "review_stage": "Primary article, peer-reviewed statistical critique, pinned reanalysis code and source-dataset file/schema reviewed; no analysis reproduced",
     "review_depth": "Read the University of Warwick author-accepted manuscript for the original abstract, methods, call-combination criteria, MCA/results, proposed interpretations and stated limitations. Read the full PeerJ critique in PMC, including its null simulations, dependence argument, full-pipeline permutation reanalysis, discussion and data/code availability. The original abstract describes 700 calls/call combinations; the critique describes 735 repeated observations. Acquired only the separately released Figshare v1 xdata.txt input through the bounded collector; its 801,667 bytes matched provider MD5 24bcbb0c1b4d98ad645168307cb4f500, and the receipt records SHA-256 84ad7b48bb41cf55b4f92c5a2fcf57780ad5590b0b4d941684f3a843b1abd6a4. A row-value-free structural check found 735 tab-delimited data rows, 343 unique columns and the expected seven leading metadata columns plus 336 feature columns, matching the pinned scripts' input layout. The file's individual/group headings were not used to emit any row values. The Figshare workbook was not acquired. The Zenodo code archive was checksum-verified transiently; README and all three scripts at pinned commit b918fd2e03379c1d1d4abca51eca21de41ce5ec6 were reviewed. Script 03 sets nperm=100 although the paper reports 10,000 permutations. No code was executed, dependencies installed or outputs reproduced; no original authors' response was reviewed.",
@@ -7287,6 +7311,37 @@
       "location_note": "This literature-methods review adds no Talk2Nature observation or public atlas location.",
       "locations": [],
       "observation_period": null
+    }
+  },
+  {
+    "slug": "dog2vec-canine-specific-model",
+    "title": "Dog2vec: a specialist dog-bark model, not a dog translator",
+    "seo_description": "Dog2vec reports stronger dog-specific bark detection and classification. Its tasks and data do not establish what dogs mean or say.",
+    "taxon": "Domestic dog (Canis familiaris)",
+    "kind": "Species-specific model",
+    "year": "2025",
+    "year_label": "Interspeech 2025 conference paper",
+    "source_ids": [
+      599,
+      600,
+      601,
+      602
+    ],
+    "reviewed": "2026-11-02",
+    "review_stage": "Targeted full-paper and official repository/checkpoint metadata review; no acquisition or reproduction",
+    "review_depth": "Read the full five-page paper in the official ISCA archive, covering data collection and cleaning, pretraining, evaluation tasks and metrics, results, limitations and conclusion. Checked the official GitHub repository root/README and Zenodo v1 metadata/file inventory. The paper states that >6,000 hours of YouTube material yielded about 150 hours after cleaning, and evaluates breed, individual, bark-type and detection tasks. The repository root exposed no LICENSE; the Zenodo record lists one 1.1 GB checkpoint but no visible license and an unexplained 214.6 GB total-volume figure. No data, code, checkpoint or dependencies were downloaded, installed or run; no results were reproduced.",
+    "finding": "Dog2vec continues HuBERT pretraining on dog vocalizations and reports improved representations on several dog tasks versus tested general speech and bioacoustic encoders. Its strongest reported dog-detection result is segment F1 0.8287; the paper's task suite includes breed recognition, individual identification, bark-type classification and vocal-event detection. The study reports a large collection pipeline (>6,000 hours from YouTube) but only about 150 hours remained after cleaning. This is meaningful evidence that species-specific pretraining can help narrow acoustic tasks; it does not show call meaning, receiver understanding, conversation or translation.",
+    "limitations": "The results are author-reported and were not independently reproduced. The inspected paper describes task-specific partitions, but this review did not establish that every comparison separates source video, dog identity, uploader, household, recording session and environment in a way suitable for generalization to phone recordings. Several labels (including bark type) are task categories, not independently validated messages. Social-platform availability does not establish recording rights, consent or privacy permission. The official GitHub root exposes no license; the visible Zenodo model record has no license value, lists a 1.1 GB checkpoint, and reports 214.6 GB data volume despite the single listed file. Corpus-level provenance and artifact reuse rights remain unresolved.",
+    "lesson": "Keep Talk2Nature multi-species in scope, but define one species-specific question at a time. For any future dog task, first compare a simple acoustic baseline, a general bioacoustic representation and a dog-specific representation on an independently grouped, rights-cleared test; report event detection separately from bark-category labels and never call either translation. The large web-sourced corpus is not a shortcut around provenance or rights review. This does not establish that dogs should replace parrots as the first usability cohort: choose that cohort based on an accessible, repeatable passive-observation question and a responsible study path, not on scraped-hour totals.",
+    "next_review": "Keep Dog2vec as a metadata-only comparator. Revisit only if a named research question requires dog-bark event detection and a qualified researcher can resolve exact data/model/code licenses, source-video provenance, dog/session grouping and fair mobile-domain evaluation. Do not add its 1.1 GB checkpoint to the phone app. No animal-directed playback is part of the proposed workflow.",
+    "expert_review": "No independent Talk2Nature reproduction or dog-behavior/bioacoustics specialist review has occurred.",
+    "review_locator": "https://www.isca-archive.org/interspeech_2025/li25o_interspeech.pdf",
+    "purpose": "Models & evaluation",
+    "reuse": {
+      "status": "Metadata-only research comparator; no project benchmark admission",
+      "asset": "Paper (ISCA proceedings); code/data repository (no root license seen); Dog2vec checkpoint (Zenodo v1, license not visible); underlying YouTube-derived audio (rights unresolved)",
+      "rights": "Paper, source code, training audio and weights are separate assets. Public access is not a reuse grant. No audio, code, weights or dependencies were acquired.",
+      "experiment": "No local model run or mobile integration. If a future, authorized comparison is justified, freeze permitted artifacts and group held-out data by dog, recording source and session; compare simple/general/specialist baselines only on the same rights-cleared test."
     }
   }
 ]

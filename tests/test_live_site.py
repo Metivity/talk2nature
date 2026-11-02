@@ -105,6 +105,27 @@ class LiveSiteTests(unittest.TestCase):
         self.assertEqual(result["sitemap_urls"], 5)
         self.assertIn((f"{site.base_url}/{route}", 5), site.calls)
 
+    def test_reports_core_copy_failure_and_still_checks_all_sitemap_routes_and_robots(self):
+        site = FakeLiveSite()
+        site.pages["app/station/"] = site.pages["app/station/"].replace(
+            "Listen-only by design.", "Passive observation."
+        )
+        missing_route = "research/missing-note/"
+        site.sitemap = site.sitemap.replace(
+            "</urlset>",
+            f"<url><loc>{site.base_url}/{missing_route}</loc></url></urlset>",
+        )
+
+        with self.assertRaises(LiveCheckError) as raised:
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+        message = str(raised.exception)
+        self.assertIn("5 unique in-scope route(s), 5 route checks were attempted, robots fetched: True", message)
+        self.assertIn("Zero Command setup disclosure is incomplete", message)
+        self.assertIn("https://example.github.io/talk2nature/research/missing-note/: expected HTTP 200, received 404", message)
+        self.assertIn((f"{site.base_url}/{missing_route}", 5), site.calls)
+        self.assertIn((f"{site.base_url}/robots.txt", 5), site.calls)
+
     def test_rejects_a_sitemap_route_that_returns_404(self):
         site = FakeLiveSite()
         route = "research/missing-note/"

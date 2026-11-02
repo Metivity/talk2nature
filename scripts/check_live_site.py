@@ -145,113 +145,148 @@ def _validate_sitemap_route(url, base_url):
         raise LiveCheckError(f"sitemap contains a non-canonical or out-of-project URL: {url}")
 
 
+def _check_core_contract(path, url, body, root_url):
+    if path == "app/":
+        content = _VisibleContentParser()
+        content.feed(body)
+        primary_actions = [anchor for anchor in content.anchors if "primary" in anchor["classes"]]
+        expected_href = urljoin(root_url, "app/station/?mode=demo#station-console")
+        if not primary_actions or urljoin(root_url, primary_actions[0]["href"]) != expected_href:
+            raise LiveCheckError(
+                f"{url}: first primary action must open the invented, microphone-free example"
+            )
+        if primary_actions[0]["text"] != "Try an example · no microphone":
+            raise LiveCheckError(f"{url}: the first primary action does not identify the invented example")
+        visible_copy = _normalize_copy(" ".join(content.text))
+        if "We don't call, imitate or prompt animals." not in visible_copy:
+            raise LiveCheckError(f"{url}: the Zero Command statement is missing")
+        if "Try without a microphone" in visible_copy or "Start a 30-second moment" in visible_copy:
+            raise LiveCheckError(f"{url}: stale first-action copy is still published")
+    elif path == "app/station/":
+        content = _VisibleContentParser()
+        content.feed(body)
+        visible_copy = _normalize_copy(" ".join(content.text))
+        required_copy = (
+            "Listen-only by design.",
+            "We do not call, imitate or prompt animals.",
+            "You choose when recording starts and can stop it at any time.",
+            "In the browser, recording ends if you leave this page.",
+        )
+        missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
+        if missing_copy:
+            raise LiveCheckError(f"{url}: Zero Command setup disclosure is incomplete: {missing_copy[0]}")
+        speech_marker = content.controls.get("station-voice")
+        if (
+            speech_marker is None
+            or speech_marker["tag"] != "button"
+            or speech_marker["text"] != "Mark heard speech"
+            or speech_marker["attributes"].get("aria-describedby") != "station-voice-guidance"
+            or "Only mark nearby human speech when it occurs naturally." not in visible_copy
+            or "Do not speak, call or imitate to elicit a response." not in visible_copy
+        ):
+            raise LiveCheckError(f"{url}: observational speech marker or its guidance is missing")
+        permission = content.controls.get("station-permission")
+        if (
+            permission is None
+            or permission["tag"] != "input"
+            or permission["attributes"].get("type") != "checkbox"
+            or "checked" in permission["attributes"]
+        ):
+            raise LiveCheckError(f"{url}: microphone permission must be unchecked by default")
+        start = content.controls.get("station-start")
+        if start is None or start["tag"] != "button" or "disabled" not in start["attributes"]:
+            raise LiveCheckError(f"{url}: microphone Start must be disabled by default")
+        demo = content.controls.get("station-demo")
+        if (
+            demo is None
+            or demo["tag"] != "button"
+            or demo["text"] != "Try invented example · no microphone"
+            or "disabled" in demo["attributes"]
+        ):
+            raise LiveCheckError(f"{url}: the enabled invented, microphone-free action is missing")
+
+
 def check_once(base_url, fetch=fetch_text, timeout=8):
     base_url = normalize_base_url(base_url)
     root_url = base_url + "/"
+    errors = []
     checked_pages = []
+    attempted_core_urls = set()
+    route_checks_attempted = 0
+    robots_checked = False
     for path in HTML_PATHS:
         url = urljoin(root_url, path)
-        body = _verify_live_page(url, fetch, timeout)
-        if path == "app/":
-            content = _VisibleContentParser()
-            content.feed(body)
-            primary_actions = [anchor for anchor in content.anchors if "primary" in anchor["classes"]]
-            expected_href = urljoin(root_url, "app/station/?mode=demo#station-console")
-            if not primary_actions or urljoin(root_url, primary_actions[0]["href"]) != expected_href:
-                raise LiveCheckError(
-                    f"{url}: first primary action must open the invented, microphone-free example"
-                )
-            if primary_actions[0]["text"] != "Try an example · no microphone":
-                raise LiveCheckError(f"{url}: the first primary action does not identify the invented example")
-            visible_copy = _normalize_copy(" ".join(content.text))
-            if "We don't call, imitate or prompt animals." not in visible_copy:
-                raise LiveCheckError(f"{url}: the Zero Command statement is missing")
-            if "Try without a microphone" in visible_copy or "Start a 30-second moment" in visible_copy:
-                raise LiveCheckError(f"{url}: stale first-action copy is still published")
-        elif path == "app/station/":
-            content = _VisibleContentParser()
-            content.feed(body)
-            visible_copy = _normalize_copy(" ".join(content.text))
-            required_copy = (
-                "Listen-only by design.",
-                "We do not call, imitate or prompt animals.",
-                "You choose when recording starts and can stop it at any time.",
-                "In the browser, recording ends if you leave this page.",
-            )
-            missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
-            if missing_copy:
-                raise LiveCheckError(f"{url}: Zero Command setup disclosure is incomplete: {missing_copy[0]}")
-            speech_marker = content.controls.get("station-voice")
-            if (
-                speech_marker is None
-                or speech_marker["tag"] != "button"
-                or speech_marker["text"] != "Mark heard speech"
-                or speech_marker["attributes"].get("aria-describedby") != "station-voice-guidance"
-                or "Only mark nearby human speech when it occurs naturally." not in visible_copy
-                or "Do not speak, call or imitate to elicit a response." not in visible_copy
-            ):
-                raise LiveCheckError(f"{url}: observational speech marker or its guidance is missing")
-            permission = content.controls.get("station-permission")
-            if (
-                permission is None
-                or permission["tag"] != "input"
-                or permission["attributes"].get("type") != "checkbox"
-                or "checked" in permission["attributes"]
-            ):
-                raise LiveCheckError(f"{url}: microphone permission must be unchecked by default")
-            start = content.controls.get("station-start")
-            if start is None or start["tag"] != "button" or "disabled" not in start["attributes"]:
-                raise LiveCheckError(f"{url}: microphone Start must be disabled by default")
-            demo = content.controls.get("station-demo")
-            if (
-                demo is None
-                or demo["tag"] != "button"
-                or demo["text"] != "Try invented example · no microphone"
-                or "disabled" in demo["attributes"]
-            ):
-                raise LiveCheckError(f"{url}: the enabled invented, microphone-free action is missing")
         checked_pages.append(url)
+        attempted_core_urls.add(url)
+        try:
+            body = _verify_live_page(url, fetch, timeout)
+            _check_core_contract(path, url, body, root_url)
+        except (LiveCheckError, OSError, UnicodeDecodeError) as exc:
+            errors.append(str(exc) if isinstance(exc, LiveCheckError) else f"{url}: {exc}")
 
     sitemap_url = urljoin(root_url, "sitemap.xml")
-    sitemap_body = _read(fetch, sitemap_url, {"application/xml", "text/xml"}, timeout)
+    sitemap_urls = set()
     try:
+        sitemap_body = _read(fetch, sitemap_url, {"application/xml", "text/xml"}, timeout)
         sitemap_root = ElementTree.fromstring(sitemap_body)
-    except ElementTree.ParseError as exc:
-        raise LiveCheckError(f"{sitemap_url}: invalid XML ({exc})") from exc
-    if sitemap_root.tag.rsplit("}", 1)[-1] != "urlset":
-        raise LiveCheckError(f"{sitemap_url}: expected a sitemap urlset")
-    sitemap_entries = [
-        (element.text or "").strip()
-        for element in sitemap_root.iter()
-        if element.tag.rsplit("}", 1)[-1] == "loc"
-    ]
-    if not sitemap_entries:
-        raise LiveCheckError(f"{sitemap_url}: sitemap contains no page URLs")
-    if len(sitemap_entries) != len(set(sitemap_entries)):
-        raise LiveCheckError(f"{sitemap_url}: sitemap contains duplicate page URLs")
-    for url in sitemap_entries:
-        _validate_sitemap_route(url, base_url)
-    sitemap_urls = set(sitemap_entries)
-    missing = sorted(set(checked_pages) - sitemap_urls)
-    if missing:
-        raise LiveCheckError(f"{sitemap_url}: missing required routes: {', '.join(missing)}")
+        if sitemap_root.tag.rsplit("}", 1)[-1] != "urlset":
+            raise LiveCheckError(f"{sitemap_url}: expected a sitemap urlset")
+        sitemap_entries = [
+            (element.text or "").strip()
+            for element in sitemap_root.iter()
+            if element.tag.rsplit("}", 1)[-1] == "loc"
+        ]
+        if not sitemap_entries:
+            raise LiveCheckError(f"{sitemap_url}: sitemap contains no page URLs")
+        if len(sitemap_entries) != len(set(sitemap_entries)):
+            errors.append(f"{sitemap_url}: sitemap contains duplicate page URLs")
+        for url in sitemap_entries:
+            try:
+                _validate_sitemap_route(url, base_url)
+            except LiveCheckError as exc:
+                errors.append(str(exc))
+            else:
+                sitemap_urls.add(url)
+        missing = sorted(set(checked_pages) - sitemap_urls)
+        if missing:
+            errors.append(f"{sitemap_url}: missing required routes: {', '.join(missing)}")
 
-    additional_urls = sorted(sitemap_urls - set(checked_pages))
-    with ThreadPoolExecutor(max_workers=min(8, len(additional_urls) or 1)) as pool:
-        futures = {
-            pool.submit(_verify_live_page, url, fetch, timeout): url
-            for url in additional_urls
-        }
-        for future in as_completed(futures):
-            future.result()
+        additional_urls = sorted(sitemap_urls - attempted_core_urls)
+        route_checks_attempted = len(sitemap_urls.intersection(attempted_core_urls)) + len(additional_urls)
+        with ThreadPoolExecutor(max_workers=min(8, len(additional_urls) or 1)) as pool:
+            futures = {
+                pool.submit(_verify_live_page, url, fetch, timeout): url
+                for url in additional_urls
+            }
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except (LiveCheckError, OSError, UnicodeDecodeError) as exc:
+                    url = futures[future]
+                    errors.append(str(exc) if isinstance(exc, LiveCheckError) else f"{url}: {exc}")
+    except (LiveCheckError, OSError, UnicodeDecodeError, ElementTree.ParseError) as exc:
+        errors.append(str(exc) if isinstance(exc, LiveCheckError) else f"{sitemap_url}: {exc}")
 
     robots_url = urljoin(root_url, "robots.txt")
-    robots_body = _read(fetch, robots_url, {"text/plain"}, timeout)
-    expected_sitemap_line = f"Sitemap: {sitemap_url}"
-    if expected_sitemap_line not in {line.strip() for line in robots_body.splitlines()}:
-        raise LiveCheckError(f"{robots_url}: does not name {sitemap_url}")
-    if "Disallow: /" in {line.strip() for line in robots_body.splitlines()}:
-        raise LiveCheckError(f"{robots_url}: blocks all crawlers")
+    try:
+        robots_body = _read(fetch, robots_url, {"text/plain"}, timeout)
+        robots_checked = True
+        robot_lines = {line.strip() for line in robots_body.splitlines()}
+        expected_sitemap_line = f"Sitemap: {sitemap_url}"
+        if expected_sitemap_line not in robot_lines:
+            errors.append(f"{robots_url}: does not name {sitemap_url}")
+        if "Disallow: /" in robot_lines:
+            errors.append(f"{robots_url}: blocks all crawlers")
+    except (LiveCheckError, OSError, UnicodeDecodeError) as exc:
+        errors.append(str(exc) if isinstance(exc, LiveCheckError) else f"{robots_url}: {exc}")
+
+    if errors:
+        unique_errors = sorted(set(errors))
+        raise LiveCheckError(
+            f"live check found {len(unique_errors)} problem(s); sitemap has "
+            f"{len(sitemap_urls)} unique in-scope route(s), {route_checks_attempted} route checks were attempted, "
+            f"robots fetched: {robots_checked}:\n- " + "\n- ".join(unique_errors)
+        )
 
     return {
         "base_url": base_url,

@@ -6680,7 +6680,8 @@
       "url": "https://arxiv.org/abs/2609.34839v1",
       "version": "arXiv v1, 2026-09-28",
       "source_ids": [
-        340
+        340,
+        605
       ],
       "priority": 2,
       "reviewed": "2026-10-24",
@@ -6706,24 +6707,25 @@
       "id": "openwhistle-pretraining-audio",
       "kind": "dataset",
       "title": "OpenWhistle dolphin pretraining audio corpus",
-      "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/eea37423c7841b0f99a7c0380f945999c0a2c489",
-      "version": "Hugging Face revision eea37423c7841b0f99a7c0380f945999c0a2c489; data-license declaration at repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
+      "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/e0fbe77305944272ce24446293fd98a1b8c6f04d",
+      "version": "Hugging Face revision e0fbe77305944272ce24446293fd98a1b8c6f04d; current card declares CC BY 4.0",
       "source_ids": [
         341,
-        412
+        412,
+        606
       ],
       "priority": 3,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-11-02",
       "task": "Unlabeled dolphin audio for self-supervised acoustic representation learning, not behavior or meaning labels.",
-      "review_depth": "Reviewed immutable dataset-card metadata and file inventory plus the pinned official README/LICENSE-DATA. Upstream reports 31,780 segments, 114.284 hours and about 79.8 GB; no audio bytes acquired.",
+      "review_depth": "Current immutable dataset card/release metadata; 31,780 segments and about 114.284 hours. No audio acquired.",
       "access": "Public Hugging Face listing; the complete repository is about 79.8 GB. The current acquisition state remains metadata-only.",
       "decision": "Do not acquire the full corpus by default. First get independent cetacean and ML review of a bounded question and whether unlabeled pretraining is necessary.",
       "limitations": "One site and pod of five dolphins; no labels in this component; does not support semantic claims or unseen-pod generalization.",
       "attribution": "Mustun et al. (2026), OpenWhistle; cite the dataset and paper, credit source, and indicate changes.",
       "rights": {
         "license": "CC-BY-4.0",
-        "scope": "The official repository README and LICENSE-DATA at source 412 declare CC BY 4.0 for the listed OpenWhistle dataset releases; the Hugging Face card license field is null. This does not cover model weights or code.",
-        "evidence_url": "https://github.com/sumbre-lab/OpenWhistle/blob/ad715bb3cf24c36f85b3c3c8159077548134a39e/LICENSE-DATA",
+        "scope": "Current release card declares CC BY 4.0 for this dataset. This does not establish provenance, consent, privacy, or suitability for new use.",
+        "evidence_url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Pretraining/tree/e0fbe77305944272ce24446293fd98a1b8c6f04d",
         "conditions": "Attribute the authors/source, cite the paper, indicate changes and confirm the exact artifact is within the declared dataset scope before use.",
         "research_use": "conditional",
         "commercial_use": "conditional",
@@ -6736,24 +6738,25 @@
       "id": "openwhistle-classification-dataset",
       "kind": "dataset",
       "title": "OpenWhistle expert-labeled whistle classification dataset",
-      "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/2b7806e3c5913c459c40b824ab7f944d494b3993",
-      "version": "Hugging Face revision 2b7806e3c5913c459c40b824ab7f944d494b3993; data-license declaration at repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
+      "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/364e3d31b5a96b0a524d0a5d18a46902f3f77020",
+      "version": "Hugging Face revision 364e3d31b5a96b0a524d0a5d18a46902f3f77020; current card declares CC BY 4.0",
       "source_ids": [
         342,
-        412
+        412,
+        607
       ],
       "priority": 2,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-11-02",
       "task": "Whistle type and presence benchmark with expert labels; no behavior/context or receiver-response labels.",
-      "review_depth": "Reviewed immutable dataset-card metadata, labels, split counts and file inventory plus the pinned official README/LICENSE-DATA. Upstream reports 8,354 labeled rows and about 6.65 GB; no data bytes acquired.",
+      "review_depth": "Current immutable card/release metadata; the labeled set and session split still cover the same five known dolphins. No payload acquired.",
       "access": "Public Hugging Face listing. The 10-class configuration has 5,848/1,253/1,253 train/validation/test rows; metadata-only review only.",
       "decision": "Strong candidate for an independently reviewed, bounded reproduction; no data acquisition or run has been approved.",
       "limitations": "The reported partition is session-disjoint but includes the same five dolphins; categories include individual signature whistle types. Labels do not establish what a whistle means.",
       "attribution": "Mustun et al. (2026), OpenWhistle; cite the dataset and paper, credit source, and indicate changes.",
       "rights": {
         "license": "CC-BY-4.0",
-        "scope": "The official repository README and LICENSE-DATA at source 412 declare CC BY 4.0 for the listed OpenWhistle dataset releases; the Hugging Face card license field is null. This does not cover model weights or code.",
-        "evidence_url": "https://github.com/sumbre-lab/OpenWhistle/blob/ad715bb3cf24c36f85b3c3c8159077548134a39e/LICENSE-DATA",
+        "scope": "Current release card declares CC BY 4.0 for this dataset. This does not establish provenance, consent, privacy, label validity, or suitability for new use.",
+        "evidence_url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Classification-Finetuning/tree/364e3d31b5a96b0a524d0a5d18a46902f3f77020",
         "conditions": "Attribute the authors/source, cite the paper, indicate changes and confirm the exact artifact is within the declared dataset scope before use.",
         "research_use": "conditional",
         "commercial_use": "conditional",
@@ -6767,21 +6770,22 @@
       "kind": "code",
       "title": "OpenWhistle detection, segmentation and benchmark code",
       "url": "https://github.com/sumbre-lab/OpenWhistle/tree/ad715bb3cf24c36f85b3c3c8159077548134a39e",
-      "version": "Repository commit ad715bb3cf24c36f85b3c3c8159077548134a39e",
+      "version": "Current main remains ad715bb3cf24c36f85b3c3c8159077548134a39e (last commit 2026-10-09)",
       "source_ids": [
-        411
+        411,
+        609
       ],
       "priority": 3,
-      "reviewed": "2026-10-28",
+      "reviewed": "2026-11-02",
       "task": "Reference implementation for dolphin whistle detection, segmentation and the published benchmark.",
-      "review_depth": "Reviewed README and repository root listing only. A current GitHub API check confirmed main still points to this pinned commit (last commit October 9, 2026). LICENSE-DATA covers datasets; no separate code license was visible at the reviewed root. No source code downloaded or executed.",
+      "review_depth": "Current GitHub API and root inventory checked 2026-11-02; root has README.md, LICENSE-DATA, image and .gitignore; repository license metadata is NOASSERTION. No code acquired or executed.",
       "access": "Public GitHub repository.",
-      "decision": "Do not copy or execute code until the authors clarify code reuse terms; a data license does not license the implementation.",
+      "decision": "Do not copy or execute code until maintainers clarify code reuse terms; a data or model license does not license this implementation.",
       "limitations": "No code audit or dependency audit performed; published benchmark results have not been independently reproduced.",
       "attribution": "OpenWhistle authors and repository maintainers; cite Mustun et al. (2026).",
       "rights": {
-        "license": "Unspecified; no separate code license visible at the reviewed root",
-        "scope": "Code only. LICENSE-DATA covers dataset artifacts and is not a code license.",
+        "license": "Unspecified; GitHub reports NOASSERTION and no general software license is visible",
+        "scope": "No general software license is present in the reviewed root; LICENSE-DATA does not cover code. Clarify terms before copying or executing.",
         "evidence_url": "https://github.com/sumbre-lab/OpenWhistle/tree/ad715bb3cf24c36f85b3c3c8159077548134a39e",
         "conditions": "Clarify license with maintainers before use, copying or redistribution.",
         "research_use": "unresolved",
@@ -6795,23 +6799,24 @@
       "id": "openwhistle-wav2vec-model",
       "kind": "model",
       "title": "OpenWhistle Wav2Vec2.0 dolphin acoustic model",
-      "url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/985ac11bc6939af5e41383143aad5a0ae6993f68",
-      "version": "Hugging Face revision 985ac11bc6939af5e41383143aad5a0ae6993f68",
+      "url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/737962cf00605ddfa4618df9dcde8e4f1f5586e2",
+      "version": "Hugging Face revision 737962cf00605ddfa4618df9dcde8e4f1f5586e2; current model card declares CC BY 4.0",
       "source_ids": [
-        343
+        343,
+        605
       ],
       "priority": 3,
-      "reviewed": "2026-10-24",
+      "reviewed": "2026-11-02",
       "task": "Dolphin-specific acoustic representation model for whistle classification/detection; not a ready supervised translator.",
-      "review_depth": "Reviewed immutable model-card license and intended-use sections. The card says the model license has not been specified; no weights acquired or executed.",
+      "review_depth": "Current immutable model card/release metadata checked 2026-11-02. The card reports 61.9 ± 2.8 macro-F1 for a frozen-encoder linear probe, but says the exact score runner and pinned revision manifest are unreleased. No weights acquired or executed.",
       "access": "Public model-card listing.",
-      "decision": "Do not acquire, execute, redistribute or commercially use the checkpoint until the model license and training provenance are clarified.",
+      "decision": "Keep metadata-only pending independent scientific review and exact reproducibility artifacts for the new model-card score; do not treat the score as independently reproduced or as evidence of meaning.",
       "limitations": "Dolphin-specific model; no behavioral, social or environmental context; no independent generalization validation beyond the published setup.",
       "attribution": "OpenWhistle authors and model maintainers; cite Mustun et al. (2026).",
       "rights": {
-        "license": "Unspecified by the model card",
-        "scope": "Model weights and model artifact only; the dataset CC BY 4.0 statement does not automatically license this checkpoint.",
-        "evidence_url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/985ac11bc6939af5e41383143aad5a0ae6993f68",
+        "license": "CC-BY-4.0",
+        "scope": "CC BY 4.0 applies to the model weights/card as declared by the current model card. Dataset and software terms are separate. The declaration does not establish provenance, consent, or scientific fit.",
+        "evidence_url": "https://huggingface.co/dolphinteam/OpenWhistle-Wav2Vec2.0/tree/737962cf00605ddfa4618df9dcde8e4f1f5586e2",
         "conditions": "Clarify the checkpoint license and training-data provenance with maintainers before any use.",
         "research_use": "unresolved",
         "commercial_use": "unresolved",
@@ -10384,7 +10389,9 @@
       "title": "Music of the Deep: An acoustic blueprint of sperm whale codas",
       "url": "https://arxiv.org/abs/2610.33974",
       "version": "arXiv preprint posted 2026-10-23; manuscript prepared for JASA",
-      "source_ids": [592],
+      "source_ids": [
+        592
+      ],
       "priority": 1,
       "reviewed": "2026-11-02",
       "task": "Methods reference for multilevel acoustic description and synthetic-audio fidelity; not a semantic decoding or whale-emotion result.",
@@ -10411,7 +10418,9 @@
       "title": "Dual-Channel Contrastive Encoding of Sperm Whale Coda",
       "url": "https://arxiv.org/abs/2610.29101",
       "version": "arXiv preprint posted 2026-10-21",
-      "source_ids": [593],
+      "source_ids": [
+        593
+      ],
       "priority": 1,
       "reviewed": "2026-11-02",
       "task": "Exploratory comparison of timing and spectral representations for coda type, social-unit and individual-label prediction.",
@@ -10467,7 +10476,9 @@
       "title": "Extensive compositionality in the vocal system of bonobos",
       "url": "https://doi.org/10.1126/science.adv1170",
       "version": "Science 388(6742):104–108 (2025); author-accepted manuscript linked from Warwick WRAP",
-      "source_ids": [595],
+      "source_ids": [
+        595
+      ],
       "priority": 1,
       "reviewed": "2026-11-02",
       "task": "Observational call/context analysis proposing compositional structure; comparator for hypothesis and inference design, not a machine-learning or comprehension benchmark.",
@@ -10494,7 +10505,9 @@
       "title": "Structure without semantics: no evidence for bonobo compositionality in Berthet et al. (2025)",
       "url": "https://doi.org/10.7717/peerj.21651",
       "version": "PeerJ 14 (2026), published 2026-08-21",
-      "source_ids": [596],
+      "source_ids": [
+        596
+      ],
       "priority": 1,
       "reviewed": "2026-11-02",
       "task": "Statistical critique and reanalysis of a published animal-communication claim; methods comparator for dependence-aware null testing.",
@@ -10521,7 +10534,9 @@
       "title": "Bonobo-MCA v1.0.0 statistical-reanalysis scripts",
       "url": "https://doi.org/10.5281/zenodo.21370080",
       "version": "Zenodo v1.0.0, published 2026-07-15; corresponding GitHub tag commit b918fd2e03379c1d1d4abca51eca21de41ce5ec6",
-      "source_ids": [597],
+      "source_ids": [
+        597
+      ],
       "priority": 1,
       "reviewed": "2026-11-02",
       "task": "Reanalysis code comparator for randomized-null checks and weighted multiple-correspondence-analysis permutations; not a Talk2Nature model or semantic benchmark.",
@@ -10548,7 +10563,10 @@
       "title": "Final dataset for Extensive compositionality in the vocal system of bonobos",
       "url": "https://api.figshare.com/v2/articles/26217803",
       "version": "Figshare item 26217803 v1, published 2025-01-29, DOI 10.6084/m9.figshare.26217803.v1; cited by the 2025 Science study",
-      "source_ids": [598, 595],
+      "source_ids": [
+        598,
+        595
+      ],
       "priority": 1,
       "reviewed": "2026-11-02",
       "task": "Bounded structural compatibility check of the original study table named by the 2026 bonobo-compositionality reanalysis scripts; not admitted to training or a Talk2Nature benchmark.",
@@ -10582,6 +10600,153 @@
           "bytes": 801667
         }
       ]
+    },
+    {
+      "id": "dog2vec-paper-2025",
+      "kind": "paper",
+      "title": "Dog2vec: Self-Supervised Pre-Training for Canine Vocal Representation",
+      "url": "https://doi.org/10.21437/Interspeech.2025-1287",
+      "version": "Interspeech 2025; DOI 10.21437/Interspeech.2025-1287",
+      "source_ids": [
+        599
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Methods comparator for species-specific dog-vocalization representations, bark-category classification and vocal-event detection.",
+      "review_depth": "Full official ISCA proceedings paper reviewed; no results reproduced and no article text copied into the project.",
+      "access": "Official ISCA paper link for scholarly reference.",
+      "decision": "Keep as a narrow methods reference. Do not treat its class/detection tasks as evidence of animal meaning or translation.",
+      "limitations": "Author-reported dog tasks; no Talk2Nature reproduction. Article reuse terms were not independently reviewed. Underlying training audio and model have separate rights.",
+      "attribution": "Li, X., Zhu, K. Q. and Wu, M. (2025), Interspeech 2025, 1698–1702.",
+      "rights": {
+        "license": "Article reuse terms not independently reviewed",
+        "scope": "Scholarly paper only; does not grant rights to code, audio, datasets or weights.",
+        "evidence_url": "https://www.isca-archive.org/interspeech_2025/li25o_interspeech.pdf",
+        "conditions": "Link to the paper; do not reproduce its text or figures absent verified terms.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog2vec-official-code",
+      "kind": "code",
+      "title": "Official Dog2vec repository",
+      "url": "https://github.com/fispresent/dog2vec",
+      "version": "Mutable main branch checked 2026-11-02; no commit pinned",
+      "source_ids": [
+        600
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Reference implementation for extracting Dog2vec features; not an integrated Talk2Nature dependency.",
+      "review_depth": "Official repository root, file list and README inspected. No root LICENSE was visible. Code was not cloned or run; dependencies and security were not audited.",
+      "access": "Public GitHub repository; no files acquired.",
+      "decision": "Metadata only. Do not reuse until exact code revision, license and dependencies are verified.",
+      "limitations": "Repository also points to a checkpoint and data; their rights are separate and unresolved. The paper relies on fairseq.",
+      "attribution": "fispresent, Dog2vec official repository.",
+      "rights": {
+        "license": "No repository LICENSE visible in the reviewed root",
+        "scope": "Code only; does not establish rights to model weights, source audio, datasets, paper or dependencies.",
+        "evidence_url": "https://github.com/fispresent/dog2vec",
+        "conditions": "Do not copy, run or redistribute until a clear license and exact commit are reviewed.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog2vec-checkpoint-zenodo-v1",
+      "kind": "model",
+      "title": "Dog2vec pretrained checkpoint, Zenodo v1",
+      "url": "https://zenodo.org/records/15494042",
+      "version": "Zenodo record 15494042 v1; published 2025-05-23",
+      "source_ids": [
+        601
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Potential feature encoder for bounded dog-acoustic tasks; not evaluated by Talk2Nature.",
+      "review_depth": "Record metadata and visible file inventory inspected; one 1.1 GB checkpoint is listed. No checkpoint, card details beyond visible metadata, or inference code was acquired or run.",
+      "access": "Public Zenodo record metadata; no weights acquired.",
+      "decision": "Do not integrate into the mobile app or any project model path. License is not visible, size is large for the first mobile workflow, and no project need has been demonstrated.",
+      "limitations": "The record shows no license value in the visible rights panel and an unexplained 214.6 GB total-volume figure despite a single 1.1 GB listed file. Compatibility, dependencies, compute and model behavior were not assessed.",
+      "attribution": "Dog2vec model record, Zenodo v1, DOI 10.5281/zenodo.15494042.",
+      "rights": {
+        "license": "No license value visible on reviewed record",
+        "scope": "Checkpoint only; paper, code and data terms are separate.",
+        "evidence_url": "https://zenodo.org/records/15494042",
+        "conditions": "No download, execution or redistribution until the record's actual license and exact artifact are resolved.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "dog2vec-youtube-audio-corpus",
+      "kind": "dataset",
+      "title": "Dog2vec training audio described in the paper",
+      "url": "https://doi.org/10.21437/Interspeech.2025-1287",
+      "version": "Paper-described corpus; no versioned recording manifest reviewed",
+      "source_ids": [
+        602
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "The paper's YouTube-derived training corpus for species-specific acoustic pretraining; not a Talk2Nature dataset.",
+      "review_depth": "Paper data collection and cleaning sections reviewed. Exact source URLs, recording-level rights, exclusions and released data files were not inspected or acquired.",
+      "access": "The paper links a GitHub repository and describes data collection from YouTube; this review did not establish a reproducible or rights-cleared recording manifest.",
+      "decision": "Not admitted. Publicly accessible videos do not by themselves grant research, commercial or redistribution rights. No acquisition or training.",
+      "limitations": "The paper reports >6,000 hours collected and about 150 hours retained after cleaning, but this does not establish identity/session balance or household/mobile domain validity.",
+      "attribution": "Li, X., Zhu, K. Q. and Wu, M. (2025), corpus described in the Dog2vec paper.",
+      "rights": {
+        "license": "Recording-level terms, consent and rights not established",
+        "scope": "Underlying audio/video only; paper, code and model checkpoint are separate assets.",
+        "evidence_url": "https://www.isca-archive.org/interspeech_2025/li25o_interspeech.pdf",
+        "conditions": "No acquisition, training or redistribution until exact items, permission, privacy and terms are documented.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "openwhistle-detection-dataset",
+      "kind": "dataset",
+      "title": "OpenWhistle whistle detection dataset",
+      "url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Detection-Finetuning/tree/7c2a42dcbdd772acbea558b9abfc6b66a732e0d9",
+      "version": "Hugging Face revision 7c2a42dcbdd772acbea558b9abfc6b66a732e0d9; current card declares CC BY 4.0",
+      "source_ids": [
+        340,
+        412,
+        608
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Dolphin whistle-event detection benchmark; does not provide message meaning or receiver-response labels.",
+      "review_depth": "Reviewed current immutable dataset-card metadata and release license only. No audio, labels or other payload was acquired.",
+      "access": "Public Hugging Face listing; metadata review only.",
+      "decision": "Keep metadata-only pending independent cetacean and ML/statistical review of label provenance, split design, exact benchmark mapping and scientific fit. Do not treat detection as translation.",
+      "limitations": "A CC BY 4.0 declaration does not establish provenance, consent, privacy, annotation validity, or generalization beyond the reported site and animals.",
+      "attribution": "Mustun et al. (2026), OpenWhistle; cite the dataset and paper, credit the source, and indicate changes.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Current immutable dataset card declares CC BY 4.0 for this detection dataset. Separate code/model terms do not follow from this dataset license; the declaration does not establish provenance, consent, privacy or suitability for new use.",
+        "evidence_url": "https://huggingface.co/datasets/dolphinteam/OpenWhistle-Detection-Finetuning/tree/7c2a42dcbdd772acbea558b9abfc6b66a732e0d9",
+        "conditions": "Attribute the authors and indicate changes under the declared CC BY 4.0 terms; separately assess all provenance, privacy, welfare and research approvals.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

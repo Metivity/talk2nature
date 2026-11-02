@@ -1,4 +1,18 @@
 # Prioritized research and machine-learning backlog
+## November 2 — reconcile current OpenWhistle model and dataset releases
+
+**Evidence reviewed:** checked current immutable Hugging Face revisions for the Wav2Vec2 model and pretraining, classification and detection datasets, plus the official GitHub API state and root inventory. Sources **605–609** and the OpenWhistle note/resource entries record the exact pins. The current cards declare CC BY 4.0 for the model weights/card and the three dataset releases. The code repository remains at `ad715bb3cf24c36f85b3c3c8159077548134a39e` (last commit October 9); GitHub reports `NOASSERTION` for a software license, and the root has no general code license. No payloads were acquired.
+
+**Finding and application:** the model card adds a 61.9 ± 2.8 macro-F1 result for a frozen-encoder linear probe on the complete ten-type test split, based on 1,000 test-clip bootstrap resamples. The card explicitly says the exact evaluation runner and pinned revision manifest for that score are not yet released. It also reports 220.47 GPU-hours for its upstream pretraining; this is compute provenance, not an estimate or reproduction by Talk2Nature. Keep this score distinct from arXiv v1's balanced-six accuracy and the project page's expanded metrics until exact task/configuration/split mapping is available. These classifications remain whistle-structure outputs, not message meaning or receiver comprehension.
+
+**Decision:** update the component rights record to match the current pinned declarations, while retaining metadata-only status. CC BY 4.0 declarations do not establish consent, provenance, privacy or suitability for this project's use. Do not use the author code until its software license is clarified. Before any reproduction decision, obtain independent cetacean and ML/statistical review and the exact runner plus pinned revision manifest; then decide whether this adds information beyond the older reported baselines. AutoResearch and real-data admission remain **NOT READY**.
+
+
+## November 2 — refresh DolphinGemma status and apply the two-path distinction
+
+Reviewed the current Google DeepMind DolphinGemma page, the 2025 Google/Wild Dolphin Project announcement, and the Wild Dolphin Project-hosted 2013 CHAT wearable-system paper. Google describes DolphinGemma as an approximately 400M-parameter sequence model for finding patterns and predicting likely subsequent dolphin sounds. Its current page still says it is in development and will be openly available on release; it links no public checkpoint, model card, technical benchmark, or release date. CHAT is a separate, researcher-designed interface that maps a small set of synthetic whistles to selected objects and detects possible mimics. The older paper reports a purpose-built underwater system and controlled recognition results; it does not decode spontaneous dolphin calls.
+
+**Applied to Talk2Nature:** updated the source-linked DolphinGemma page and model-selection guidance. Keep passive detection/representation, human-reviewed call categories, behavior/context associations, and receiver-response experiments as separate evidence stages. Sound-sequence prediction can propose structure; it cannot independently establish meaning. Any learned-symbol interaction needs a separate qualified protocol and welfare review. No model, data, code or media was acquired or run; no public release was found on the reviewed official page. No app output or playback behavior changed. AutoResearch and real-data admission remain **NOT READY**.
 
 ## November 2 — treat bonobo compositionality as a live methods dispute
 
