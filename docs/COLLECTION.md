@@ -1,5 +1,11 @@
 # Data, code and research collection
 
+## November 2: verify the bonobo reanalysis input layout
+
+Official Figshare v1 item 26217803 declares CC BY 4.0 and lists `xdata.txt` at 801,667 bytes. The verified HTTPS redirect used the already-supported `pfigshare-u-files` path. The bounded collector fetched only that exact file to ignored `data/external/bonobo-compositionality-original-dataset-figshare-v1/`; provider MD5 `24bcbb0c1b4d98ad645168307cb4f500` matched the received bytes, and the receipt records SHA-256 `84ad7b48bb41cf55b4f92c5a2fcf57780ad5590b0b4d941684f3a843b1abd6a4`.
+
+Run `python3 scripts/inspect_bonobo_xdata.py` to verify the receipt and regenerate `research/bonobo_xdata_structure_report.json`. The aggregate-only report confirms 735 tab-delimited data rows, 343 columns, seven metadata fields, 336 feature fields and the leading header positions expected by the pinned scripts. It emits no row values or identifiers. This matches the PeerJ paper's 735 observations and code dimensions, but does not resolve the original abstract's 700-count difference, validate labels or reproduce any analysis. The Figshare workbook was not acquired; no R code or dependencies were run. The sample remains outside Git, the website, examples, training, private storage and research admission.
+
 ## October 27: PLOS-hosted Figshare file path
 
 The bounded collector now recognizes the PLOS Figshare storage prefix only for an explicitly pinned Figshare item and file ID. The prefix was observed on a verified-TLS redirect for PLOS item 7184276; signed query strings remain transient and are never written to the receipt. A synthetic regression test rejects a different provider path, file ID, filename or missing signed query. This provider-path support does not admit any data to training or the private server.

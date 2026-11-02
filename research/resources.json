@@ -10460,6 +10460,128 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "bonobo-compositionality-science-paper-2025",
+      "kind": "paper",
+      "title": "Extensive compositionality in the vocal system of bonobos",
+      "url": "https://doi.org/10.1126/science.adv1170",
+      "version": "Science 388(6742):104–108 (2025); author-accepted manuscript linked from Warwick WRAP",
+      "source_ids": [595],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Observational call/context analysis proposing compositional structure; comparator for hypothesis and inference design, not a machine-learning or comprehension benchmark.",
+      "review_depth": "Accepted-manuscript abstract, methods, compositionality criteria, results, discussion and stated limitations reviewed.",
+      "access": "DOI and university repository record; no media or data acquired. The repository says the manuscript may be used for personal research/study and non-profit educational purposes with attribution and must not be redistributed.",
+      "decision": "Publish an original summary and link only. Keep the result distinct from the 2026 statistical critique; do not treat the initial interpretation as settled or as evidence of AI translation.",
+      "limitations": "The article's contextual associations and MCA geometry do not by themselves establish receiver comprehension. A 2026 peer-reviewed critique reports inflated false-positive rates under its simulated nulls and a non-significant full-pipeline permutation result; Talk2Nature has not independently reanalyzed the study. The study is bonobo-specific.",
+      "attribution": "Berthet, Surbeck and Townsend (2025), DOI 10.1126/science.adv1170.",
+      "rights": {
+        "license": "Repository access terms; no redistribution permission",
+        "scope": "Author-accepted manuscript only; linked data, code, audio, figures and publisher version have separate rights.",
+        "evidence_url": "https://wrap.warwick.ac.uk/id/eprint/190948/",
+        "conditions": "Link to the repository record, cite the published article and provide an original summary; do not mirror the accepted manuscript or imply that the deposit license covers related assets.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bonobo-compositionality-peerj-critique-2026",
+      "kind": "paper",
+      "title": "Structure without semantics: no evidence for bonobo compositionality in Berthet et al. (2025)",
+      "url": "https://doi.org/10.7717/peerj.21651",
+      "version": "PeerJ 14 (2026), published 2026-08-21",
+      "source_ids": [596],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Statistical critique and reanalysis of a published animal-communication claim; methods comparator for dependence-aware null testing.",
+      "review_depth": "Full text reviewed, including simulation design, full-pipeline permutation, discussion and linked data/code availability. The versioned v1.0.0 code archive was checksum-verified and inspected transiently, then discarded without execution. Official Figshare v1 metadata for the original study's separate dataset item was inspected; no study data bytes or rows were reviewed.",
+      "access": "Open-access article in PubMed Central; the linked v1.0.0 analysis-code archive was inspected transiently and checksum-matched, but was not retained or executed. The xdata.txt file is absent from that code archive but appears in the original study's separately released Figshare v1 file manifest; compatibility was not checked.",
+      "decision": "Use as a cautionary methods comparator. The article's reanalysis is not independently reproduced by Talk2Nature and does not show that bonobos lack communication.",
+      "limitations": "The null simulation and alternative permutation are the critique authors' analysis choices; Talk2Nature has not adjudicated them against a response from the original study authors. The linked Zenodo v1.0.0 code archive does not contain the xdata.txt input named in its scripts, and its permutation script sets 100 rather than the article's reported 10,000 iterations. The code was not executed.",
+      "attribution": "Wartel et al. (2026), DOI 10.7717/peerj.21651.",
+      "rights": {
+        "license": "CC BY",
+        "scope": "Article text; linked code/data and original-study assets are separately licensed or unresolved.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13505523/",
+        "conditions": "Link and cite the article. This catalog publishes an original summary, not copied article content or linked artifacts.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bonobo-compositionality-peerj-reanalysis-code-2026",
+      "kind": "code",
+      "title": "Bonobo-MCA v1.0.0 statistical-reanalysis scripts",
+      "url": "https://doi.org/10.5281/zenodo.21370080",
+      "version": "Zenodo v1.0.0, published 2026-07-15; corresponding GitHub tag commit b918fd2e03379c1d1d4abca51eca21de41ce5ec6",
+      "source_ids": [597],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Reanalysis code comparator for randomized-null checks and weighted multiple-correspondence-analysis permutations; not a Talk2Nature model or semantic benchmark.",
+      "review_depth": "Read the README and all three R scripts at the exact Zenodo-matched tag. Verified the 7,136-byte archive's provider MD5 from a TLS-verified response and inspected its in-memory ZIP inventory. Did not retain files, execute code or install dependencies.",
+      "access": "Public Zenodo v1.0.0 archive with a record-level CC BY 4.0 declaration. The GitHub repository's API has no recognized license; use the versioned Zenodo archive as the source for this rights statement.",
+      "decision": "Metadata-only methods reference. Do not cite the reported p-value as reproduced by the tag. The separately released Figshare v1 xdata.txt was checksum-verified and its 735-by-343 layout matches the pinned scripts' input positions. This is structural compatibility only. Resolve the permutation-count and weighting questions with an independent specialist, then pin the environment before considering execution.",
+      "limitations": "The Zenodo archive contains README.md and three R scripts but not xdata.txt; the original study's Figshare v1 dataset item separately provides the input. Its 801,667-byte file matched provider MD5 24bcbb0c1b4d98ad645168307cb4f500 and local SHA-256 84ad7b48bb41cf55b4f92c5a2fcf57780ad5590b0b4d941684f3a843b1abd6a4. A row-value-free audit found 735 rows, 343 columns and the expected input-column positions. Script 03 sets nperm to 100, while the PeerJ paper reports 10,000 permutations and p=0.2597; 100 iterations cannot yield that four-decimal result. The script computes weights using original labels, then permutes labels without recomputing weights; the validity of this choice needs specialist review. Scripts invoke unpinned install.packages calls and do not provide a lockfile. No code ran and no result was reproduced.",
+      "attribution": "Wartel et al. (2026), Bonobo-MCA v1.0.0, DOI 10.5281/zenodo.21370080; GitHub commit b918fd2e03379c1d1d4abca51eca21de41ce5ec6.",
+      "rights": {
+        "license": "CC BY 4.0 (Zenodo record declaration)",
+        "scope": "The files in the Zenodo v1.0.0 archive only; do not infer a license for the unbundled xdata.txt or other sources from this code release.",
+        "evidence_url": "https://zenodo.org/api/records/21370080",
+        "conditions": "Attribution to the authors and Zenodo record; identify changes if any. This Talk2Nature catalog links and summarizes only.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "bonobo-compositionality-original-dataset-figshare-v1",
+      "kind": "dataset",
+      "title": "Final dataset for Extensive compositionality in the vocal system of bonobos",
+      "url": "https://api.figshare.com/v2/articles/26217803",
+      "version": "Figshare item 26217803 v1, published 2025-01-29, DOI 10.6084/m9.figshare.26217803.v1; cited by the 2025 Science study",
+      "source_ids": [598, 595],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Bounded structural compatibility check of the original study table named by the 2026 bonobo-compositionality reanalysis scripts; not admitted to training or a Talk2Nature benchmark.",
+      "review_depth": "The official Figshare v1 item declares CC BY 4.0 and lists xdata.txt (801,667 bytes; provider MD5 24bcbb0c1b4d98ad645168307cb4f500) and Final data.xlsx (761,453 bytes). Only xdata.txt was acquired through the bounded collector; received size and provider MD5 matched, and local SHA-256 is recorded. A standard-library audit confirmed 735 tab-delimited data rows, 343 columns, 336 feature columns and the expected leading metadata-column layout. No row values are emitted. The workbook was not acquired; no scripts or dependencies were run.",
+      "access": "The 801,667-byte xdata.txt and receipt are retained only in ignored local external storage. Neither is in Git, examples, the website or private server storage.",
+      "decision": "Keep the sample local and outside training, private research admission and redistribution. The exact input layout matches the critique scripts, but a 100-permutation script setting and unresolved row-weighting behavior prevent a defensible reproduction; seek independent statistical review before any code execution.",
+      "limitations": "The table's 735 rows match the PeerJ critique and code dimensions, while the original abstract reports 700; that publication-level discrepancy is unresolved. Header positions and table shape match the input logic, but this does not verify biological labels, missingness mechanisms, source-version history or the published result. The separate Figshare workbook was not acquired, and no raw row values are in the report. The original paper's data/code releases and critique code remain distinct artifacts with separate rights.",
+      "attribution": "Berthet et al. (2025), Final dataset, Figshare item 26217803 v1, DOI 10.6084/m9.figshare.26217803.v1; related study DOI 10.1126/science.adv1170.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "The files listed under item 26217803 v1 only. This does not license the critique code, article text, separate R script item or any derived assets.",
+        "evidence_url": "https://api.figshare.com/v2/articles/26217803",
+        "conditions": "The Figshare v1 item API declares CC BY 4.0. Attribute the dataset deposit and identify changes. This acquisition is limited to a local input-compatibility check; it does not admit the file to training, private storage or redistribution.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "adapter": "figshare_public",
+      "figshare_item_id": 26217803,
+      "license_notice": "Official Figshare API item 26217803 v1 declares CC BY 4.0 and lists xdata.txt file 47522606; TLS-verified redirect used the pfigshare-u-files prefix.",
+      "admission_reason": "Acquire only the 801,667-byte xdata.txt candidate input to verify received-byte identity and compare a bounded, row-value-free schema summary against the critique scripts' requirements. No script execution, training, private-server intake, redistribution or semantic claim is authorized.",
+      "files": [
+        {
+          "name": "xdata.txt",
+          "url": "https://ndownloader.figshare.com/files/47522606",
+          "figshare_file_id": 47522606,
+          "figshare_storage_prefix": "pfigshare-u-files",
+          "source_url": "https://api.figshare.com/v2/articles/26217803",
+          "md5": "24bcbb0c1b4d98ad645168307cb4f500",
+          "bytes": 801667
+        }
+      ]
     }
   ]
 }
