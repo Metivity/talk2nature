@@ -6828,5 +6828,37 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "sperm-whale-coda-phonology-2026",
+    "title": "Sperm whale coda patterns are complex; their meanings remain unknown",
+    "taxon": "Sperm whales · bioacoustics · phonetics",
+    "kind": "Acoustic structure analysis",
+    "year": "2026",
+    "source_ids": [
+      571,
+      572,
+      573,
+      574
+    ],
+    "review_depth": "Targeted full-text review: abstract; sampling and coda selection; acoustic annotation; coda-type/vowel distributions; duration and coarticulation analyses; statistical methods; discussion and limitations. Checked the PubMed article record, official GitHub file listing, and cited OSF/Figshare records. No audio, data, code, supplementary files or models acquired or run.",
+    "seo_description": "A 2026 sperm-whale study reports structured coda-vowel patterns. We explain what the acoustic evidence supports and why it does not decode meaning.",
+    "finding": "Beguš et al. analyze manually annotated sperm-whale click codas and report several structured patterns: coda type covaries with an acoustic quality called a- or i-coda; a-codas tend to be longer; i-coda durations appear to split into short and long groups in most of the four whales with enough relevant examples; baseline timing varies by whale; and some edge-click mismatches resemble coarticulation. The article compares these patterns with phonetic/phonological structure. The study does not identify what individual codas or sequences mean, nor demonstrate that a whale listener understands a translated message.",
+    "limitations": "The study uses 3,948 individually attributed and manually annotated codas from 15 female or immature sperm whales recorded around Dominica in 2014–2018. Analyses use smaller, different subsets: 1,144 focal codas after noisy/non-focal exclusions; 1,066 for the coda-type/vowel distribution after rare types were excluded; 628 duration observations concentrated in four whales; and 760 for coarticulation. The four whales contribute most of the relevant 1+1+3 examples; the apparent i-duration split is absent in one whale and the authors note sampling limits. These are acoustic-structure associations and phonological analogies, not semantic decoding, receiver-response evidence, general language, or cross-species results. No independent reproduction or expert review by Talk2Nature is claimed. The article license does not establish rights for code, tables, recordings, OSF files or supplementary material.",
+    "lesson": "Keep acoustic measurements, analyst-defined categories, caller identity, independently observed context, receiver response and proposed meaning in separate fields. When testing a pattern, report which individuals and examples support each analysis, preserve uncertainty and avoid treating a human-language analogy as a decoded message. For Talk2Nature, this is a methods precedent for recording structure and evidence levels; it does not change the first product question or justify animal-directed playback.",
+    "next_review": "If this work becomes a concrete comparison candidate, ask an independent cetacean bioacoustics/phonetics reviewer to assess the operational definitions and subset imbalance. Before reproducing any analysis, pin the code version and resolve separate rights and provenance for the R code, CSV tables, OSF deposit and supplementary material.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not independently reviewed by a Talk2Nature scientific specialist.",
+    "review_stage": "Targeted full-text review",
+    "year_label": "Publication year",
+    "review_locator": "Beguš et al. (2026), Proceedings of the Royal Society B 293:20252994, DOI 10.1098/rspb.2025.2994. Reviewed abstract, sampling/data selection, analysis sections, discussion and limitations.",
+    "purpose": "Behavior & communication",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This review concerns acoustic structure and evidence interpretation. The study location is not being added as an animal-observation point to the public atlas.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

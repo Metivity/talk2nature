@@ -5818,5 +5818,37 @@
     "url": "https://arxiv.org/abs/2610.33068",
     "checked": "2026-11-02",
     "origin": "Targeted review of the arXiv v1 abstract and HTML sections on data, preprocessing, encoder comparison, SNR results, discussion and limitations. No data, code, audio or model was acquired or run."
+  },
+  {
+    "id": 571,
+    "title": "Beguš et al. (2026), The phonology of sperm whale coda vowels",
+    "description": "Peer-reviewed Proceedings of the Royal Society B article, published 15 April 2026; DOI 10.1098/rspb.2025.2994. Full article reviewed for sample construction, acoustic measures, statistical comparisons and explicit limits on meaning claims.",
+    "url": "https://doi.org/10.1098/rspb.2025.2994",
+    "checked": "2026-11-02",
+    "origin": "Targeted full-text review via the publisher-linked open article and PubMed record. Article text is CC BY 4.0; no figures or article text were copied."
+  },
+  {
+    "id": 572,
+    "title": "Project CETI coda-vowel analysis repository",
+    "description": "Official GitHub repository linked to the 2026 sperm-whale coda-vowel article. Its visible file listing includes an R analysis script, notebook, README and CSV tables; repository-level license and immutable analysis version were not established.",
+    "url": "https://github.com/Project-CETI/coda-vowel-phonology",
+    "checked": "2026-11-02",
+    "origin": "Repository landing page and visible file listing reviewed. No code or data files acquired, inspected or executed; rights remain unresolved by component."
+  },
+  {
+    "id": 573,
+    "title": "OSF deposit cited for sperm-whale coda-vowel data",
+    "description": "OSF DOI 10.17605/OSF.IO/9T6QU is cited by the article/repository as the accompanying data deposit. Deposit contents, version manifest and license could not be verified in this review.",
+    "url": "https://doi.org/10.17605/OSF.IO/9T6QU",
+    "checked": "2026-11-02",
+    "origin": "Deposit DOI recorded from the article/repository materials; landing page access failed during review. Metadata-only reference; contents and rights not verified."
+  },
+  {
+    "id": 574,
+    "title": "Supplementary material for The phonology of sperm whale coda vowels",
+    "description": "Figshare collection DOI 10.6084/m9.figshare.c.8383586, referenced as supplementary material for the 2026 article. Contents and component-specific license were not verified.",
+    "url": "https://doi.org/10.6084/m9.figshare.c.8383586",
+    "checked": "2026-11-02",
+    "origin": "Supplement DOI captured from the article record. Landing page was not accessible through the review tool; no files acquired and rights remain unresolved."
   }
 ]
