@@ -8,6 +8,8 @@ Updated November 2, 2026. For researchers, research software engineers and prosp
 
 **Compare two independent annotations (optional):** the local [Annotation Compare tool](https://metivity.github.io/talk2nature/tools/annotation-compare/) accepts two Listen label exports for the same declared WAV. It shows every positive interval overlap and exact label comparison without matching, merging or scoring them. Try the committed synthetic A/B files first; the report leaves notes and annotator IDs out. Read [`ANNOTATION_COMPARISON.md`](ANNOTATION_COMPARISON.md) before using it with real materials. The workflow does not validate source rights, annotations or biological meaning.
 
+**Trace observations through review and proposals (synthetic only):** follow the [annotation lineage exercise](ANNOTATION_LINEAGE.md) to see how two observers, a review decision, an unexecuted model proposal and an external-format loss report can remain distinct. This is a design fixture, not a real adjudication or APLOSE export.
+
 **Run the research-code example (optional):** Git and Python 3.10+; no extra packages or animal media. From a terminal:
 
 ```sh
