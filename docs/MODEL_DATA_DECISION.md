@@ -247,3 +247,10 @@ The official TUM Chair of Health Informatics team page identifies the paper's TU
 ## November 2 — machine annotations must remain suggestions
 
 The full review of Vengrovski and Gardner’s 2026 bioRxiv preprint finds a useful teacher/student design for candidate time-frequency localization: a VLM proposes spectrogram boxes, a SongMAE student learns from them, and held-out datasets test localization. Apply the data-lineage pattern to future Talk2Nature annotation tools, not the labels as truth: preserve exact model, prompt, transform and source provenance; store human review separately; audit recording overlap and groups; and report threshold-free AP apart from thresholded operating behavior. The preprint is not peer reviewed; XC-AJ overlap with the Xeno-Canto/BirdSet pool and explicit site/species transfer remain unresolved. No model, data, or app changes follow from this paper.
+
+
+## November 2 — sperm-whale coda phonology is structural evidence, not a decoding benchmark
+
+Beguš et al. report acoustic coda-type/vowel associations, duration patterns and edge-click behavior across unequal analysis subsets of 15 Dominica sperm whales. The results support treating within-species acoustic structure as a measurable research target. They do not identify coda meaning, test receiver comprehension, or justify translating labels into messages. For Talk2Nature, keep signal features and analyst categories separate from observed context and receiver response, and expose the subset/individual counts behind each result.
+
+The article is CC BY 4.0; the linked code, CSVs, OSF deposit and Figshare supplement remain distinct and unresolved. No files or code were acquired or run. See source IDs 571–574 and resource records beginning `sperm-whale-coda-phonology-`. This is a literature-informed design decision, not a Talk2Nature result; AutoResearch and real-data admission remain **NOT READY**.

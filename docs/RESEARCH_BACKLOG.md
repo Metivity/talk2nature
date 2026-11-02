@@ -768,3 +768,12 @@ Compared TweetyBERT's reported time-bin representations and downstream HDBSCAN c
 **Decision:** keep these as separate records; the fixture demonstrates interval correspondence only. It does not recreate TweetyBERT's 2.7 ms timebase, compare embeddings, test accuracy, imply acoustic equivalence, or establish animal meaning. No audio, model, code or dataset was acquired or run. The paper remains a within-known-canary song-structure precedent; real-data rights, specialist review and leakage-safe external evaluation remain open. AutoResearch and data admission stay **NOT READY**.
 
 **Next:** if an external researcher identifies a concrete unit-segmentation need, ask a qualified reviewer to define independent onset/offset/category references and grouping before designing a real adapter or evaluation. Until then, keep the example educational and avoid adding a model-output type to production capture or the database.
+
+
+## November 2 — apply sperm-whale coda research to evidence design
+
+Reviewed Beguš et al. (2026), *The phonology of sperm whale coda vowels* (peer-reviewed; DOI 10.1098/rspb.2025.2994), including the abstract, sampling and analysis subsets, acoustic findings, discussion and stated limits. Added a research-library note and separate metadata records for the paper, repository code, repository CSV tables, cited OSF deposit and supplementary Figshare collection. The article is CC BY 4.0; code/data terms are not inferred from that license. The repository landing page was reviewed, but its contents were not acquired or run; OSF and Figshare landing pages could not be verified.
+
+**Application:** preserve acoustic measurements/categories separately from caller identity, independently observed context, receiver response and proposed meaning. Report the per-analysis sample and individual coverage. The paper demonstrates structured acoustic patterns and phonological parallels; it does not decode coda meaning or show listener comprehension. This is a methods precedent, not a Talk2Nature benchmark and does not change the first passive bird-sound question. No animal-directed output is justified.
+
+**Next gate:** if a reproduction is proposed, obtain independent cetacean-bioacoustics/phonetics review, pin code and data versions, and clear each component's rights/provenance before acquisition. Keep real-data admission and AutoResearch **NOT READY**.

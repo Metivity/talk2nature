@@ -9936,6 +9936,151 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "acquisition": "metadata_only",
+      "files": [],
+      "id": "sperm-whale-coda-phonology-paper-2026",
+      "kind": "paper",
+      "title": "The phonology of sperm whale coda vowels",
+      "url": "https://doi.org/10.1098/rspb.2025.2994",
+      "version": "Proceedings of the Royal Society B 293:20252994 (2026); published 2026-04-15",
+      "source_ids": [
+        571
+      ],
+      "task": "Peer-reviewed acoustic-structure and phonetic-analysis reference; not a semantic-decoding benchmark.",
+      "review_depth": "Targeted full-text review of sampling, analysis subsets, acoustic results, discussion and limitations.",
+      "access": "Open article via publisher and eScholarship; PubMed record verified.",
+      "decision": "Metadata-only research note. Use an original summary and link. Do not infer animal meaning or listener comprehension from phonological parallels.",
+      "limitations": "One observational sperm-whale study; no decoded meanings or receiver-response test. Article terms do not cover data, code, audio or supplementary materials.",
+      "attribution": "Beguš G, Dąbkowski M, Sprouse RL, Gruber DF, Gero S. The phonology of sperm whale coda vowels. Proc Biol Sci. 2026;293(2069):20252994. doi:10.1098/rspb.2025.2994.",
+      "rights": {
+        "license": "CC BY 4.0 for article text, as stated by the article.",
+        "scope": "Article text only; excluded datasets, code, recordings, supplementary files and model assets have separate or unverified terms.",
+        "evidence_url": "https://doi.org/10.1098/rspb.2025.2994",
+        "conditions": "Attribute the article and link to the source. Do not copy publisher figures or assume the article license covers linked resources.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      }
+    },
+    {
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "acquisition": "metadata_only",
+      "files": [],
+      "id": "sperm-whale-coda-phonology-code-repository-2026",
+      "kind": "code",
+      "title": "Project CETI coda-vowel analysis repository",
+      "url": "https://github.com/Project-CETI/coda-vowel-phonology",
+      "version": "GitHub main as viewed 2026-11-02; immutable commit not pinned",
+      "source_ids": [
+        572
+      ],
+      "task": "Potential R analysis implementation for the published acoustic comparisons; not reviewed or run.",
+      "review_depth": "Repository landing page and visible file listing only; README/code contents and dependency behavior not audited.",
+      "access": "Public GitHub repository page.",
+      "decision": "Metadata-only pointer. Do not acquire or execute until an immutable version, code license, dependencies and scope are reviewed.",
+      "limitations": "No repository-level license was visible on the reviewed page; visibility/public access does not grant reuse rights. The repository also lists CSV data files whose terms must be reviewed separately.",
+      "attribution": "Project CETI, coda-vowel-phonology repository, https://github.com/Project-CETI/coda-vowel-phonology.",
+      "rights": {
+        "license": "No standalone code license identified in the reviewed repository listing.",
+        "scope": "Code component only; data tables in the same repository are a separate component and remain uncleared.",
+        "evidence_url": "https://github.com/Project-CETI/coda-vowel-phonology",
+        "conditions": "Resolve license, immutable commit, dependencies and permitted use before copying, running or adapting code.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      }
+    },
+    {
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "acquisition": "metadata_only",
+      "files": [],
+      "id": "sperm-whale-coda-phonology-repository-data-2026",
+      "kind": "dataset",
+      "title": "CSV tables in the coda-vowel analysis repository",
+      "url": "https://github.com/Project-CETI/coda-vowel-phonology",
+      "version": "GitHub main as viewed 2026-11-02; immutable commit and data manifest not pinned",
+      "source_ids": [
+        572
+      ],
+      "task": "Derived tabular data supporting the article; data content and provenance not inspected.",
+      "review_depth": "Visible file listing only; CSV rows, data dictionary, source recording links and license were not inspected.",
+      "access": "Public repository page lists codamd.csv, codasp.csv and focal-coarticulation-metadata.csv.",
+      "decision": "Metadata-only pointer. No data rows acquired, examined, or admitted to analysis/training.",
+      "limitations": "A repository listing does not establish dataset license, recording-level permissions, consent, provenance, privacy, or redistribution rights. The listed CSV tables are not raw recordings.",
+      "attribution": "Project CETI, coda-vowel-phonology repository, https://github.com/Project-CETI/coda-vowel-phonology.",
+      "rights": {
+        "license": "Dataset/table license not identified in the reviewed repository listing.",
+        "scope": "CSV tables only; code and the OSF/supplementary deposits are separately reviewed components.",
+        "evidence_url": "https://github.com/Project-CETI/coda-vowel-phonology",
+        "conditions": "Verify versioned manifest, data dictionary, provenance, source permissions, and exact reuse license before acquisition or analysis.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      }
+    },
+    {
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "acquisition": "metadata_only",
+      "files": [],
+      "id": "sperm-whale-coda-phonology-osf-data-2026",
+      "kind": "dataset",
+      "title": "OSF deposit cited for sperm-whale coda-vowel data",
+      "url": "https://doi.org/10.17605/OSF.IO/9T6QU",
+      "version": "DOI 10.17605/OSF.IO/9T6QU; deposit version/content not verified",
+      "source_ids": [
+        573
+      ],
+      "task": "Cited accompanying data deposit; potential source for future reproducibility review only.",
+      "review_depth": "DOI citation recorded; OSF landing page could not be accessed in this review. Contents, file manifest and license not reviewed.",
+      "access": "Public DOI reference; landing page access failed during review.",
+      "decision": "Metadata-only unresolved lead. Do not download, process or cite specific contents until the exact deposit is accessible and audited.",
+      "limitations": "No manifest, license, consent/provenance terms or file-level rights verified. Article citation is not permission to reuse deposit files.",
+      "attribution": "OSF project DOI 10.17605/OSF.IO/9T6QU, cited by the study materials.",
+      "rights": {
+        "license": "Unknown; deposit not accessible for verification.",
+        "scope": "Data deposit and its files only; article license does not apply by assumption.",
+        "evidence_url": "https://doi.org/10.17605/OSF.IO/9T6QU",
+        "conditions": "Verify exact version, file manifest, item-level terms, provenance and permissions before any acquisition or use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      }
+    },
+    {
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "acquisition": "metadata_only",
+      "files": [],
+      "id": "sperm-whale-coda-phonology-supplement-2026",
+      "kind": "dataset",
+      "title": "Supplementary material for The phonology of sperm whale coda vowels",
+      "url": "https://doi.org/10.6084/m9.figshare.c.8383586",
+      "version": "Figshare collection DOI 10.6084/m9.figshare.c.8383586; contents/version not verified",
+      "source_ids": [
+        574
+      ],
+      "task": "Supplementary materials cited by the article; not inspected or needed for the current methods note.",
+      "review_depth": "Supplement DOI recorded; collection landing page and component files/license were not reviewed.",
+      "access": "Public DOI reference; landing page access failed during review.",
+      "decision": "Metadata-only unresolved lead. No files acquired or redistributed.",
+      "limitations": "Collection-level existence does not establish individual file scope, version, license or relation to the CSV/OSF deposit.",
+      "attribution": "Figshare collection DOI 10.6084/m9.figshare.c.8383586.",
+      "rights": {
+        "license": "Unknown; collection contents not accessible for verification.",
+        "scope": "Supplementary files only; article text has separate CC BY 4.0 terms.",
+        "evidence_url": "https://doi.org/10.6084/m9.figshare.c.8383586",
+        "conditions": "Inspect exact file manifest, version and license before citing file contents or using/redistributing them.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      }
     }
   ]
 }
