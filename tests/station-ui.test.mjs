@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {webcrypto} from 'node:crypto';
 import {animalPicker} from '../web/assets/animal-picker.mjs';
-import {addQuickObservation, sessionRecap} from '../web/assets/observation-ui.mjs';
+import {addQuickObservation, sessionRecap, sessionProvenance} from '../web/assets/observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from '../web/assets/window-model.mjs';
 import {microphoneCaptureAllowed, stationPreset} from '../web/assets/station-preset.mjs';
 import {StationSession, SOURCE_LABELS, wavBytes} from '../web/assets/station-model.mjs';
@@ -85,7 +85,7 @@ function setup(mode = 'companion', realCaptureStart = null) {
     .replace(/^import .*;\n/gm, '')
     .replaceAll('import.meta.url', '"https://talk2nature.test/assets/station.js"');
   vm.runInNewContext(source, {
-    addQuickObservation, sessionRecap, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset, microphoneCaptureAllowed,
+    addQuickObservation, sessionRecap, sessionProvenance, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset, microphoneCaptureAllowed,
     StationSession, wavBytes, SOURCE_LABELS, sessionFiles, zipFiles, AudioSession: SyntheticAudioSession,
     emptyEventsMessage, nextEventFocusId, document, window, navigator: {mediaDevices: {getUserMedia() { throw new Error('The Station UI test must never request microphone capture.'); }}},
     location: {href: `https://talk2nature.test/app/station/?mode=${mode}#station-console`},
@@ -133,6 +133,8 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
   await h.get('station-stop').fire('click');
   assert.equal(h.get('station-console').dataset.phase, 'review', h.get('station-status').textContent);
   assert.match(h.get('station-recap-detail').textContent, /Invented practice audio/);
+  assert.equal(h.get('station-provenance').hidden, false);
+  assert.ok(h.get('station-provenance-list').children.some(row => row.children[0].textContent === 'Capture source' && /no microphone used/.test(row.children[1].textContent)));
   assert.equal(h.get('station-event-total').textContent, '1');
   assert.equal(h.get('station-markers').children.length, 1);
 
@@ -195,6 +197,23 @@ test('a typed note is explicitly added to the timeline before it is included in 
   const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
   assert.equal(reopened.record.markers.length, 1);
   assert.equal(reopened.record.markers[0].note, 'A person walked past.');
+});
+
+test('recording provenance labels browser-reported values and keeps device identity out', () => {
+  const rows = sessionProvenance({origin: 'microphone', sample_rate: 48000, clock: 'device wall clock; not synchronized', audio_settings: {input_sample_rate: 44100, input_channels: 2, auto_gain_control: false, noise_suppression: true, echo_cancellation: null}});
+  const values = Object.fromEntries(rows.map(row => [row.label, row.value]));
+  assert.equal(values['Input sample rate'].replace(/\D/g, ''), '44100');
+  assert.match(values['Input sample rate'], /browser-reported/);
+  assert.match(values['Input channels'], /2 · browser-reported/);
+  assert.equal(values['Processing sample rate'].replace(/\D/g, ''), '48000');
+  assert.match(values['Processing sample rate'], /browser audio processing/);
+  assert.match(values['Microphone processing'], /Automatic gain Off · noise suppression On · echo cancellation Not reported/);
+  assert.match(values['Capture source'], /device identifier not saved/);
+  assert.equal(values['Saved audio'], 'Mono 16-bit PCM WAV · uncompressed');
+  assert.ok(!JSON.stringify(rows).includes('deviceId'));
+  const synthetic = Object.fromEntries(sessionProvenance({origin: 'synthetic', sample_rate: 8000, clock: 'device wall clock', audio_settings: {}}).map(row => [row.label, row.value]));
+  assert.match(synthetic['Input sample rate'], /Not applicable/);
+  assert.match(synthetic['Microphone processing'], /Not applicable/);
 });
 
 test('Finish and review follows note controls and returns focus to the review step', async () => {
