@@ -10081,6 +10081,64 @@
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
       }
+    },
+    {
+      "id": "metaperch-icml-paper-2026",
+      "kind": "paper",
+      "title": "MetaPerch: Learning from metadata for bioacoustic foundation models",
+      "url": "https://proceedings.mlr.press/v306/chasmai26a.html",
+      "version": "ICML 2026, PMLR volume 306, pages 13066–13088",
+      "source_ids": [
+        575
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Species identification across acoustic, geographic and species-distribution shifts; comparator for metadata-aware training and evaluation design.",
+      "review_depth": "Full-text review of the official PMLR PDF, including method, evaluation tables, ablations and appendix. No replication or artifact audit.",
+      "access": "Official proceedings page and linked PDF; no paper copy, figures, dataset, audio or model weights retained.",
+      "decision": "Use the findings to shape metadata ablations and grouped evaluation. Do not treat species-identification performance as evidence of animal communication meaning or deploy the model from this citation alone.",
+      "limitations": "The reported mean gains are specific to the authors’ benchmarks and baseline; results vary across datasets. Talk2Nature has not reproduced them. Article rights were not separately reviewed.",
+      "attribution": "Chasmai, M., Dumoulin, V. and Hamer, J. (2026), Proceedings of the 43rd International Conference on Machine Learning, PMLR 306:13066–13088.",
+      "rights": {
+        "license": "Not separately reviewed",
+        "scope": "Article only; original summary and link only, no reproduced text, table or figure.",
+        "evidence_url": "https://proceedings.mlr.press/v306/chasmai26a.html",
+        "conditions": "Check article-specific terms before any further reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "metaperch-perch-code-2026",
+      "kind": "code",
+      "title": "Official MetaPerch implementation location in the Perch repository",
+      "url": "https://github.com/google-research/perch/tree/main/chirp/projects/metaperch",
+      "version": "Mutable main branch; checked 2026-11-02, no commit pinned",
+      "source_ids": [
+        576
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Potential future inspection of the MetaPerch implementation and training recipes.",
+      "review_depth": "PMLR software link, public repository landing page and repository-level Apache-2.0 notice checked; MetaPerch files, dependencies, artifacts and security were not inspected or run.",
+      "access": "Public Google Research repository; no clone, code or model files acquired.",
+      "decision": "Reference only. Pin and audit the implementation, dependencies, compute needs, training/evaluation protocol and artifact rights before proposing any run or integration.",
+      "limitations": "The repository README warns that some repository segments are out of date and pip installation may be difficult; it points practical inference users to a separate project. Repository license does not establish rights for training/evaluation datasets, weights, dependencies or article.",
+      "attribution": "Google Research Perch repository; MetaPerch software link in Chasmai et al. (2026).",
+      "rights": {
+        "license": "Apache-2.0 at repository root",
+        "scope": "Repository code only; not model weights, datasets, paper or third-party dependencies.",
+        "evidence_url": "https://github.com/google-research/perch/blob/main/LICENSE",
+        "conditions": "Pin the exact code revision and audit subdirectory contents and dependencies before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
