@@ -7087,6 +7087,41 @@
     "review_locator": "SoftwareX publisher abstract; APLOSE README Usage/Presentation; LICENSE; GitHub latest release API; OSEkit APLOSE-results documentation."
   },
   {
+    "slug": "whale-call-adjudication-2026",
+    "title": "Independent call labels and adjudication can change density estimates",
+    "taxon": "Antarctic blue whales · observer evaluation",
+    "kind": "Annotation quality and detection evaluation",
+    "year": "2026",
+    "year_label": "Peer-reviewed article",
+    "source_ids": [
+      591
+    ],
+    "review_depth": "Publisher full text reviewed on 2026-11-02 for the abstract, single-site-year study design, observer-ground-truth comparisons, adjudicated capture-recapture method, main results and discussion. The supporting information was not reviewed. No data, code, calculations or field protocol were acquired or reproduced.",
+    "seo_description": "A 2026 Antarctic blue whale study found observer-based call-density estimates varied. Adjudicated capture-recapture offered a different reference workflow.",
+    "finding": "Miller et al. compared three experienced human observers and two automated detectors on Antarctic blue whale song calls. For one site-year, observer-ground-truth approaches produced less consistent call-density estimates than an adjudicated capture-recapture workflow combining detections across observers. The authors describe adjudication as a way to reduce work when characterizing detectors for density estimation; they explicitly do not present it as a replacement for manual annotation when developing detectors.",
+    "limitations": "This is a specialized detection and density-estimation method on a single Antarctic blue whale site-year with three experienced observers, two detectors and calls defined for that study. Adjudication remains a human review process and its outputs are not biological ground truth by default. The results do not validate a universal event-matching rule, inter-rater score, consensus label or interpretation of call meaning. The supporting information and underlying materials were not reviewed here; no estimates or code were reproduced.",
+    "lesson": "Keep each observer's event list visible and preserve the route from a disagreement to any later adjudication. The study used temporal overlap as an event-matching rule within its own defined evaluation task; Talk2Nature's comparison tool therefore reports overlaps but does not merge them or call them the same biological event. Any later adjudication workflow needs a task-specific codebook, named reviewer role, retained original labels and a validation plan before it can support a training or density claim.",
+    "next_review": "Ask an independent passive-acoustics methodologist whether a bounded adjudication state and audit trail would help a named Talk2Nature evaluation task. Review the supporting information and exact data/code availability before attempting a reproduction; do not transfer the capture-recapture method to other species or settings without task-specific justification.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Targeted full-text methods review; no materials acquired or results reproduced",
+    "purpose": "Data & annotation",
+    "review_locator": "Miller et al. (2026), Methods in Ecology and Evolution 17, 2161–2174, DOI 10.1111/2041-210x.70331; abstract, §§2.1–2.5, results and discussion.",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "pending",
+      "location_note": "The paper identifies its Casey2019 Antarctic recording site. A coarse atlas locator has not been reviewed or added, so no map point is displayed.",
+      "locations": [],
+      "observation_period": {
+        "label": "Casey2019 site-year",
+        "start_year": 2019,
+        "end_year": 2019,
+        "source_id": 591,
+        "locator": "Methods §2.2"
+      }
+    }
+  },
+  {
     "slug": "aplose-export-crosswalk-2026",
     "title": "APLOSE CSV exports cannot yet round-trip Talk2Nature annotations without loss",
     "taxon": "Research software · data standards and interoperability",
