@@ -81,6 +81,7 @@ class LiveSiteTests(unittest.TestCase):
         result = verify_live_site(site.base_url + "/", attempts=1, fetch=site.fetch)
         self.assertEqual(result["pages_verified"], 4)
         self.assertEqual(result["sitemap_urls"], 4)
+        self.assertTrue(result["all_sitemap_pages_verified"])
         self.assertTrue(result["robots_names_sitemap"])
         self.assertTrue(result["zero_command_first_action_verified"])
         self.assertTrue(result["station_disclosure_verified"])
@@ -88,6 +89,43 @@ class LiveSiteTests(unittest.TestCase):
         self.assertTrue(result["microphone_start_disabled_by_default"])
         self.assertTrue(result["synthetic_action_available"])
         self.assertEqual(len(site.calls), 6)
+
+    def test_checks_every_sitemap_page_for_reachability_and_index_metadata(self):
+        site = FakeLiveSite()
+        route = "research/dcase2018-bird-presence-benchmark/"
+        site.pages[route] = site._page(route, "DCASE research note")
+        site.sitemap = site.sitemap.replace(
+            "</urlset>",
+            f"<url><loc>{site.base_url}/{route}</loc></url></urlset>",
+        )
+
+        result = verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+        self.assertEqual(result["pages_verified"], 5)
+        self.assertEqual(result["sitemap_urls"], 5)
+        self.assertIn((f"{site.base_url}/{route}", 5), site.calls)
+
+    def test_rejects_a_sitemap_route_that_returns_404(self):
+        site = FakeLiveSite()
+        route = "research/missing-note/"
+        site.sitemap = site.sitemap.replace(
+            "</urlset>",
+            f"<url><loc>{site.base_url}/{route}</loc></url></urlset>",
+        )
+
+        with self.assertRaisesRegex(LiveCheckError, "research/missing-note.*expected HTTP 200, received 404"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_an_out_of_project_sitemap_url_before_fetching_it(self):
+        site = FakeLiveSite()
+        site.sitemap = site.sitemap.replace(
+            "</urlset>",
+            "<url><loc>https://example.org/outside/</loc></url></urlset>",
+        )
+
+        with self.assertRaisesRegex(LiveCheckError, "out-of-project URL"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+        self.assertFalse(any("example.org" in url for url, _ in site.calls))
 
     def test_rejects_a_stale_or_microphone_first_app_home(self):
         site = FakeLiveSite()
