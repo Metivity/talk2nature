@@ -6,6 +6,8 @@ Updated November 2, 2026. For researchers, research software engineers and prosp
 
 **Try the browser workflow (a few minutes, no setup):** open [Compare moments](https://metivity.github.io/talk2nature/app/compare/) and choose **Try an example pair**. Compare the complete and partial invented sessions, their observer-entered notes and sampling differences. Close one session and confirm the other remains available. Ask what the interface lets you describe and which claims about animal behavior it cannot support. No microphone, playback or upload is needed. For a deeper file-format check, try the optional [Sound Handoff Lab](https://metivity.github.io/talk2nature/tools/interop/); Audacity is only needed for that route. A project estimate puts it at about 20 minutes; independent completion time has not been measured.
 
+**Compare two independent annotations (optional):** the local [Annotation Compare tool](https://metivity.github.io/talk2nature/tools/annotation-compare/) accepts two Listen label exports for the same declared WAV. It shows every positive interval overlap and exact label comparison without matching, merging or scoring them. Try the committed synthetic A/B files first; the report leaves notes and annotator IDs out. Read [`ANNOTATION_COMPARISON.md`](ANNOTATION_COMPARISON.md) before using it with real materials. The workflow does not validate source rights, annotations or biological meaning.
+
 **Run the research-code example (optional):** Git and Python 3.10+; no extra packages or animal media. From a terminal:
 
 ```sh
