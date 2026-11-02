@@ -1,0 +1,26 @@
+{
+  "schema": "talk2nature.acoustic-unit-crosswalk.synthetic.v1",
+  "origin": "synthetic",
+  "description": "Invented run-length cluster labels for timestamp comparison only; not TweetyBERT output.",
+  "observation_fixture": "annotations.synthetic.json",
+  "recording_id": "synthetic-tones-001",
+  "model_run": {
+    "run_id": "invented-cluster-run-001",
+    "model_name": "invented-demo-clusterer",
+    "model_version": "not-a-real-model",
+    "output_kind": "invented frame cluster assignments",
+    "timebase": {
+      "sample_rate_hz": 16000,
+      "hop_samples": 8000,
+      "frame_count": 16,
+      "duration_seconds": 8
+    },
+    "runs": [
+      {"start_frame": 0, "end_frame_exclusive": 2, "cluster_id": null, "state": "unassigned"},
+      {"start_frame": 2, "end_frame_exclusive": 4, "cluster_id": "unit-A", "state": "assigned"},
+      {"start_frame": 4, "end_frame_exclusive": 8, "cluster_id": null, "state": "unassigned"},
+      {"start_frame": 8, "end_frame_exclusive": 10, "cluster_id": "unit-A", "state": "assigned"},
+      {"start_frame": 10, "end_frame_exclusive": 16, "cluster_id": null, "state": "unassigned"}
+    ]
+  }
+}
