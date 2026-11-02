@@ -111,18 +111,19 @@ class SiteTests(unittest.TestCase):
             with self.subTest(button=label):
                 self.assertIn(label,station if label!='Choose saved moment' else compare)
         expected_steps=('Try an example · no microphone',
-                        'Mark an observation','Finish and review','End rehearsal',
-                        'Save this moment','I saved the file',
-                        'Open Compare moments to review it','Choose saved moment')
+                        'no-microphone practice button','one observation marker',
+                        'End rehearsal','Finish and review','invented-session recap')
         for name in ('README.md','CONTRIBUTING.md'):
             with self.subTest(document=name):
                 copy=(project_root/name).read_text()
                 positions=[copy.index(step) for step in expected_steps]
                 self.assertEqual(positions,sorted(positions))
-                practice=copy.index('no-microphone practice button')
-                self.assertLess(positions[0],practice)
-                self.assertLess(practice,positions[1])
-                self.assertIn('to reopen the download',copy)
+        self.assertIn('Optional deeper file check',contributor)
+        advanced_steps=('Save this moment','I saved the file',
+                        'Open Compare moments to review it','Choose saved moment',
+                        'to reopen the download')
+        advanced_positions=[contributor.index(step) for step in advanced_steps]
+        self.assertEqual(advanced_positions,sorted(advanced_positions))
 
     def test_approach_page_defines_zero_command_and_distinguishes_phone_modes(self):
         with tempfile.TemporaryDirectory() as d:
@@ -182,6 +183,8 @@ class SiteTests(unittest.TestCase):
             page=(root/'contribute'/'index.html').read_text()
             self.assertIn('GOOD FIRST TASK / PHONE',page)
             self.assertIn('Try the Field Companion with the microphone off.',page)
+            self.assertIn('no-microphone practice option',page)
+            self.assertNotIn('“Try invented example · no microphone,”',page)
             self.assertIn('href="https://github.com/Metivity/talk2nature/issues/115"',page)
             self.assertIn('No animal recording or upload is needed.',page)
             self.assertIn('posting a public reply requires GitHub sign-in',page)
