@@ -1,3 +1,11 @@
+# November 3 — merge the ecological sensor-to-insight review; Pages remains stale
+
+PR [#680](https://github.com/Metivity/talk2nature/pull/680) merged to `main` as [`a353a14`](https://github.com/Metivity/talk2nature/commit/a353a14ac2aeb1aade229b9e2a5b775c36911ad6). Public Checks run [#41545061175](https://github.com/Metivity/talk2nature/actions/runs/41545061175) passed repository, browser-tool, native Android and preview-site checks. The research library and resource catalog now include Kitzes et al.'s six-stage sensor + AI workflow review and a new field-pipeline learning path. Source totals are **152 literature notes / 354 resources**.
+
+**Live Pages check:** a fresh TLS-verified request to `/research/ecological-sensors-ai-workflow-kitzes-2026/` returns **404**. `/research/resources/` returns 200 but still reports **284 records**. The workflow is manual (`workflow_dispatch`); no deployment occurred. The current authorized Metivity CLI credential is unavailable and the connected GitHub API has no workflow-dispatch action. Do not use another GitHub account or change the workflow to deploy on push.
+
+No device calibration, model run, recording acquisition or server upload was performed. AutoResearch and real-data admission remain **NOT READY**. Next: use the signed-in Metivity browser to dispatch the already-authorized Pages workflow when available, then verify the route, catalog, sitemap and metadata. Continue with a synthetic-only provenance-export review.
+
 # November 3 — merge the bioacoustics methods tranche; Pages still stale
 
 PR [#678](https://github.com/Metivity/talk2nature/pull/678) merged to `main` as [`380dfdb`](https://github.com/Metivity/talk2nature/commit/380dfdb859e78ff3407be47c884360b868aa3b10). GitHub Public Checks run [#41542357767](https://github.com/Metivity/talk2nature/actions/runs/41542357767) passed repository, browser-tool, native Android and preview-site checks. The 2026 lifecycle guide and 2025 pipeline-comparability review are now in public source; the exact PR diff matched the 14 locally checked files (284 additions, 4 deletions).
