@@ -1,5 +1,6 @@
-"""Verify core routes and crawl metadata after a GitHub Pages deployment."""
+"""Verify core routes and every sitemap page after a GitHub Pages deployment."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 import re
 import time
@@ -113,23 +114,44 @@ def _read(fetch, url, expected_type, timeout):
     return body
 
 
+def _verify_live_page(url, fetch, timeout):
+    body = _read(fetch, url, {"text/html"}, timeout)
+    page = PageParser()
+    page.feed(body)
+    if page.title_count != 1 or not page.title.strip():
+        raise LiveCheckError(f"{url}: missing a unique, non-empty title")
+    if page.description_count != 1 or not page.description.strip():
+        raise LiveCheckError(f"{url}: missing a unique, non-empty description")
+    if page.canonical_count != 1 or page.canonical != url:
+        raise LiveCheckError(f"{url}: canonical URL is missing or does not match the live route")
+    if page.robots_count != 1 or page.robots != "index,follow":
+        raise LiveCheckError(f"{url}: route is not explicitly indexable")
+    return body
+
+
+def _validate_sitemap_route(url, base_url):
+    route = urlsplit(url)
+    base = urlsplit(base_url)
+    prefix = base.path.rstrip("/")
+    if (
+        route.scheme != "https"
+        or route.netloc.lower() != base.netloc.lower()
+        or route.username
+        or route.password
+        or route.query
+        or route.fragment
+        or (prefix and route.path != prefix and not route.path.startswith(prefix + "/"))
+    ):
+        raise LiveCheckError(f"sitemap contains a non-canonical or out-of-project URL: {url}")
+
+
 def check_once(base_url, fetch=fetch_text, timeout=8):
     base_url = normalize_base_url(base_url)
     root_url = base_url + "/"
     checked_pages = []
     for path in HTML_PATHS:
         url = urljoin(root_url, path)
-        body = _read(fetch, url, {"text/html"}, timeout)
-        page = PageParser()
-        page.feed(body)
-        if page.title_count != 1 or not page.title.strip():
-            raise LiveCheckError(f"{url}: missing a unique, non-empty title")
-        if page.description_count != 1 or not page.description.strip():
-            raise LiveCheckError(f"{url}: missing a unique, non-empty description")
-        if page.canonical_count != 1 or page.canonical != url:
-            raise LiveCheckError(f"{url}: canonical URL is missing or does not match the live route")
-        if page.robots_count != 1 or page.robots != "index,follow":
-            raise LiveCheckError(f"{url}: route is not explicitly indexable")
+        body = _verify_live_page(url, fetch, timeout)
         if path == "app/":
             content = _VisibleContentParser()
             content.feed(body)
@@ -198,14 +220,30 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
         raise LiveCheckError(f"{sitemap_url}: invalid XML ({exc})") from exc
     if sitemap_root.tag.rsplit("}", 1)[-1] != "urlset":
         raise LiveCheckError(f"{sitemap_url}: expected a sitemap urlset")
-    sitemap_urls = {
+    sitemap_entries = [
         (element.text or "").strip()
         for element in sitemap_root.iter()
         if element.tag.rsplit("}", 1)[-1] == "loc"
-    }
+    ]
+    if not sitemap_entries:
+        raise LiveCheckError(f"{sitemap_url}: sitemap contains no page URLs")
+    if len(sitemap_entries) != len(set(sitemap_entries)):
+        raise LiveCheckError(f"{sitemap_url}: sitemap contains duplicate page URLs")
+    for url in sitemap_entries:
+        _validate_sitemap_route(url, base_url)
+    sitemap_urls = set(sitemap_entries)
     missing = sorted(set(checked_pages) - sitemap_urls)
     if missing:
         raise LiveCheckError(f"{sitemap_url}: missing required routes: {', '.join(missing)}")
+
+    additional_urls = sorted(sitemap_urls - set(checked_pages))
+    with ThreadPoolExecutor(max_workers=min(8, len(additional_urls) or 1)) as pool:
+        futures = {
+            pool.submit(_verify_live_page, url, fetch, timeout): url
+            for url in additional_urls
+        }
+        for future in as_completed(futures):
+            future.result()
 
     robots_url = urljoin(root_url, "robots.txt")
     robots_body = _read(fetch, robots_url, {"text/plain"}, timeout)
@@ -217,8 +255,9 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
 
     return {
         "base_url": base_url,
-        "pages_verified": len(checked_pages),
+        "pages_verified": len(sitemap_urls),
         "sitemap_urls": len(sitemap_urls),
+        "all_sitemap_pages_verified": True,
         "robots_names_sitemap": True,
         "zero_command_first_action_verified": True,
         "station_disclosure_verified": True,
