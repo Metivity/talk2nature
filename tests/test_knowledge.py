@@ -11,6 +11,67 @@ from web.knowledge_build import build_knowledge
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_openwhistle_current_release_rights_and_reproducibility_gap(self):
+        repo = Path(__file__).resolve().parents[1]
+        notes = json.loads((repo/'content/research.json').read_text())
+        sources = {row['id']: row for row in json.loads((repo/'content/sources.json').read_text())}
+        resources = json.loads((repo/'research/resources.json').read_text())['resources']
+        note = next(row for row in notes if row['slug']=='openwhistle-dolphin-benchmark')
+        by_id = {row['id']: row for row in resources}
+
+        self.assertTrue({605, 606, 607, 608, 609}.issubset(note['source_ids']))
+        self.assertIn('61.9 ± 2.8', note['finding'])
+        self.assertIn('exact evaluation runner and revision manifest', note['limitations'])
+        self.assertEqual(by_id['openwhistle-wav2vec-model']['rights']['license'], 'CC-BY-4.0')
+        self.assertEqual(by_id['openwhistle-classification-dataset']['rights']['license'], 'CC-BY-4.0')
+        self.assertEqual(by_id['openwhistle-detection-dataset']['rights']['license'], 'CC-BY-4.0')
+        self.assertEqual(by_id['openwhistle-detection-dataset']['acquisition'], 'metadata_only')
+        self.assertEqual(by_id['openwhistle-code']['rights']['research_use'], 'unresolved')
+        self.assertEqual(by_id['openwhistle-code']['acquisition'], 'metadata_only')
+        self.assertTrue(all(sources[i]['checked']=='2026-11-02' for i in [605,606,607,608,609]))
+        self.assertIn('NOASSERTION', sources[609]['origin'])
+
+    def test_dolphingemma_status_separates_sequence_prediction_from_taught_signals(self):
+        repo = Path(__file__).resolve().parents[1]
+        notes = json.loads((repo/'content/research.json').read_text())
+        sources = {row['id']: row for row in json.loads((repo/'content/sources.json').read_text())}
+        paths = json.loads((repo/'content/learning-paths.json').read_text())['paths']
+        note = next(row for row in notes if row['slug']=='dolphingemma')
+        meaning = next(row for row in paths if row['id']=='meaning')
+
+        self.assertEqual(set(note['source_ids']), {6, 603, 604})
+        self.assertIn('still lists it as in development', note['finding'])
+        self.assertIn('no public checkpoint', note['finding'])
+        self.assertIn('Neither track demonstrates general translation', note['finding'])
+        self.assertIn('cannot by itself establish semantics', note['lesson'])
+        self.assertIn('dolphingemma', meaning['notes'])
+        self.assertTrue(all(sources[source_id]['checked']=='2026-11-02' for source_id in note['source_ids']))
+
+    def test_dog2vec_is_a_species_specific_task_comparator_not_a_translator(self):
+        repo = Path(__file__).resolve().parents[1]
+        notes = json.loads((repo/'content/research.json').read_text())
+        sources = {row['id']: row for row in json.loads((repo/'content/sources.json').read_text())}
+        resources = json.loads((repo/'research/resources.json').read_text())['resources']
+        paths = json.loads((repo/'content/learning-paths.json').read_text())['paths']
+        decision = (repo/'docs/MODEL_DATA_DECISION.md').read_text()
+        phase_two = (repo/'docs/PHASE_TWO_PLAN.md').read_text()
+        note = next(row for row in notes if row['slug']=='dog2vec-canine-specific-model')
+        by_id = {row['id']:row for row in resources}
+
+        self.assertEqual(set(note['source_ids']), {599, 600, 601, 602})
+        self.assertIn('about 150 hours', note['finding'])
+        self.assertIn('does not show call meaning', note['finding'])
+        self.assertIn('does not establish recording rights', note['limitations'])
+        self.assertEqual(by_id['dog2vec-official-code']['rights']['commercial_use'], 'unresolved')
+        self.assertEqual(by_id['dog2vec-checkpoint-zenodo-v1']['acquisition'], 'metadata_only')
+        self.assertEqual(by_id['dog2vec-youtube-audio-corpus']['rights']['research_use'], 'unresolved')
+        model_path = next(row for row in paths if row['id']=='model')
+        self.assertIn(note['slug'], model_path['notes'])
+        self.assertIn('does not change the first computational question', decision)
+        self.assertIn('it is not an app dependency', decision)
+        self.assertIn('Dog2vec is a dog-specific task comparator', phase_two)
+        self.assertTrue(all(sources[source_id]['checked']=='2026-11-02' for source_id in note['source_ids']))
+
     def test_aplose_crosswalk_is_pinned_and_keeps_unverified_export_terms_separate(self):
         repo = Path(__file__).resolve().parents[1]
         notes = json.loads((repo/'content/research.json').read_text())

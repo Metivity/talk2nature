@@ -42,7 +42,7 @@ class SiteTests(unittest.TestCase):
         start=guide.index('## Start here')
         browser=guide.index('**Try the browser workflow',start)
         code=guide.index('**Run the research-code example',browser)
-        evidence=guide.index('**Current clean-clone maintainer verification')
+        evidence=guide.index('**Current public-main quickstart verification')
         self.assertLess(start,browser)
         self.assertLess(browser,code)
         self.assertLess(code,evidence)
@@ -1046,9 +1046,12 @@ class SiteTests(unittest.TestCase):
             resources=json.loads((project_root/'research/resources.json').read_text())['resources']
             by_resource={resource['id']:resource for resource in resources}
             self.assertEqual(by_resource['birdpark-multimodal-songbird-paper-2025']['source_ids'],[390])
-            self.assertEqual(by_resource['openwhistle-pretraining-audio']['source_ids'],[341,412])
-            self.assertEqual(by_resource['openwhistle-classification-dataset']['source_ids'],[342,412])
-            self.assertEqual(by_resource['openwhistle-code']['source_ids'],[411])
+            self.assertEqual(by_resource['openwhistle-pretraining-audio']['source_ids'],[341,412,606])
+            self.assertEqual(by_resource['openwhistle-classification-dataset']['source_ids'],[342,412,607])
+            self.assertEqual(by_resource['openwhistle-code']['source_ids'],[411,609])
+            self.assertEqual(by_resource['openwhistle-wav2vec-model']['rights']['license'],'CC-BY-4.0')
+            self.assertIn('runner and pinned revision manifest',by_resource['openwhistle-wav2vec-model']['review_depth'])
+            self.assertIn('61.9 ± 2.8 macro-F1',page)
             self.assertEqual(by_resource['openwhistle-project-benchmark-page']['source_ids'],[495])
             self.assertEqual(by_resource['openwhistle-project-benchmark-page']['acquisition'],'metadata_only')
 
