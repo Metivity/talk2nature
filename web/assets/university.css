@@ -6,3 +6,15 @@
 @media(max-width:600px){.university-disclosure{margin:0 20px 13px;border-radius:15px}.university-disclosure>summary{min-height:72px;padding:17px 16px;gap:12px}.university-disclosure>summary strong{font-size:16px}.university-disclosure>summary small{max-width:29ch}.university-disclosure-icon{flex-basis:30px;width:30px;height:30px}.university-disclosure>section.section{padding:23px 18px 34px}.university-disclosure .university-science-review,.university-disclosure .university-network{padding-top:23px;padding-bottom:34px}}
 .university-network-evidence{max-width:920px;margin:26px 0 30px;padding:21px 24px;border:1px solid #cdd6c4;border-radius:16px;background:linear-gradient(135deg,#f5f6ed,#e9eee2);box-shadow:0 10px 24px #263c2708;color:#46584b;font-size:14px;line-height:1.75}.university-network-evidence .eyebrow{margin:0 0 7px;color:#64765c;font-size:9px}.university-network-evidence p{margin:8px 0}.university-network-evidence strong{color:#294638}.university-network-evidence a{display:inline-block;min-height:44px;padding-top:8px;color:#315b45;text-underline-offset:4px}
 @media(max-width:600px){.university-network-evidence{margin:21px 0 24px;padding:17px 16px;border-radius:14px;font-size:13px;line-height:1.7}.university-network-evidence a{min-height:44px;padding-top:8px}}
+.university-pilot-map{margin:38px 0 30px;padding:clamp(22px,3.8vw,38px);border:1px solid #d4d8cc;border-radius:22px;background:linear-gradient(145deg,#fffdf7,#f0f2e9);box-shadow:0 16px 40px #263c270a}
+.university-pilot-map h3{max-width:700px;margin:0 0 12px;color:#294638;font:clamp(25px,3.4vw,38px)/1.15 Georgia,serif;letter-spacing:-.035em}
+.university-pilot-intro{max-width:780px;margin:0;color:#58675c;font-size:14px;line-height:1.75}
+.university-pilot-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:25px 0 0;padding:0;list-style:none}
+.university-pilot-steps li{min-width:0;padding:21px;border:1px solid #d9ded1;border-radius:16px;background:#fffefa}
+.university-pilot-steps li>span{display:block;color:#687958;font-size:9px;font-weight:700;letter-spacing:.13em}
+.university-pilot-steps strong{display:block;margin:11px 0 7px;color:#294638;font:20px/1.2 Georgia,serif}
+.university-pilot-steps p{margin:0;color:#59675b;font-size:13px;line-height:1.7}
+.university-pilot-steps small{display:block;margin-top:14px;padding-top:11px;border-top:1px solid #e5e8df;color:#6a765e;font-size:9px;font-weight:700;letter-spacing:.06em;line-height:1.5}
+.university-pilot-sources{max-width:900px;margin:20px 0 0;color:#57665a;font-size:12px;line-height:1.75}
+.university-pilot-sources a{color:#315b45;text-decoration-thickness:1px;text-underline-offset:3px}
+@media(max-width:600px){.university-pilot-map{margin:26px 0 22px;padding:21px 17px;border-radius:17px}.university-pilot-steps{grid-template-columns:1fr;gap:11px;margin-top:20px}.university-pilot-steps li{padding:18px;border-radius:14px}.university-pilot-sources{font-size:11px}}
