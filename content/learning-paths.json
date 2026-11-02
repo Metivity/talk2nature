@@ -184,6 +184,20 @@
       ],
       "next_step": "Compare the two MammAlps releases' modalities, splits and licenses, then write a leakage-safe retrieval protocol with held-out individuals or sites before considering a model run.",
       "gate": "Prompting-MammAlps is video-only and CC BY-NC 4.0; its code rights are unresolved and its published day split is not verified animal-held-out. Neither MammAlps release establishes animal language or enters the first commercial-capable benchmark."
+    },
+    {
+      "id": "field-pipeline",
+      "title": "Design the whole sensor-to-insight workflow",
+      "question": "What must be in place before sensor recordings can support a scientific conclusion?",
+      "decision": "Plan capture, deployment, storage, model evaluation and inference together; do not treat the model as the whole system.",
+      "notes": [
+        "ecological-sensors-ai-workflow-kitzes-2026",
+        "twelve-quick-tips-bioacoustic-deep-learning-2026",
+        "smartphone-bioacoustics-device-variability",
+        "same-data-different-results-bioacoustics-2025"
+      ],
+      "next_step": "Use synthetic sessions to inspect device and processing provenance in the current export. Record values each device actually provides, represent unknowns explicitly, preserve an original checksum and document each conversion. Compare a phone with a reference recorder in a controlled non-animal setup before any field claim.",
+      "gate": "The literature synthesis does not validate Talk2Nature hardware or authorize uploads. Exact location, people-audio consent, retention, rights, protocol and independent review must be resolved before real data are admitted. Keep participant observations, human notes and model outputs separate; no automatic playback or research inference is enabled."
     }
   ]
 }

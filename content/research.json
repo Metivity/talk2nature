@@ -7463,5 +7463,27 @@
     "year_label": "Peer-reviewed open-access PLOS Computational Biology article, published 2026-08-12; CC BY 4.0",
     "review_locator": "Ghani et al. (2026), DOI 10.1371/journal.pcbi.1014604; complete publisher-hosted article, including Tips 1–12 and conclusions.",
     "purpose": "Models & evaluation"
+  },
+  {
+    "slug": "ecological-sensors-ai-workflow-kitzes-2026",
+    "title": "A field recorder is only the first link in the AI research chain",
+    "taxon": "Cross-taxon bioacoustics and ecological sensing",
+    "kind": "Ecological research workflow review",
+    "year": "2026",
+    "source_ids": [
+      619
+    ],
+    "review_depth": "Reviewed the publisher abstract and relevant main-text sections on hardware, deployment, storage metadata and compression, model evaluation, ancillary-data circularity, statistical uncertainty and ecological interpretation. The supporting information and simulation app were not inspected or run. No cited data, code or model was acquired.",
+    "seo_description": "A 2026 ecology review maps how phone microphones, field conditions, metadata, storage and AI evaluation combine to shape research results.",
+    "finding": "Kitzes et al. describe a six-stage sensor-plus-AI research workflow: hardware, field deployment, data management, AI analysis, statistical inference and ecological insight. Their central point is that decisions at each stage constrain the stages that follow. Microphone directionality and self-noise can change what is captured; deployment conditions shape which sounds and confusing negatives are present; missing sensor settings make later interpretation harder; lossy compression can change signals; and false detections can distort downstream ecological estimates. Model scores and extra context such as location are not automatically valid evidence or calibrated probabilities.",
+    "limitations": "This is a terrestrial bioacoustics workflow review, not a Talk2Nature device evaluation, universal recording standard, animal-communication result or benchmark. Its examples and recommendations need task-specific review. We did not inspect or run the supporting simulation, test any phone microphone, determine a complete metadata schema, or assess a hosted collection service. The article page's reuse terms were not established; this site publishes an original summary and DOI link only.",
+    "lesson": "Treat every phone, laptop or dedicated recorder as a sensor in a documented study pipeline. Before an observation could ever enter a research dataset, preserve available device/app version, recording settings, channels, source sample rate, format/compression, time uncertainty and processing history alongside the original file checksum. Keep those fields distinct from user notes and model predictions. Ask only for context needed by the approved question, default public maps to coarse locations, and keep exact sensitive wildlife locations or identifiable household detail out of public exports. For university use, export a provenance-rich, reviewable study package before considering shared hosting. A brief phone microphone check remains an operational check, not calibration or proof of device equivalence.",
+    "next_review": "Use this as a design review for the Field Companion export and university evaluation kit: list which provenance fields each supported device can actually report, mark unknown values explicitly, and test the export with synthetic sessions. Do not add always-on capture, location collection or server upload from this review alone.",
+    "reviewed": "2026-11-03",
+    "expert_review": "No independent Talk2Nature experiment or external specialist review has occurred.",
+    "review_stage": "Publisher article review; supporting app not inspected or run; no device or model evaluation",
+    "year_label": "Peer-reviewed Methods in Ecology and Evolution article; online first 2025-08-08, volume 17 (2026), pages 257–271",
+    "review_locator": "Kitzes et al. (2026), DOI 10.1111/2041-210X.70133; abstract and relevant sections on sensor hardware, deployment, storage, AI evaluation, inference and ecological insight.",
+    "purpose": "Data standards & interoperability"
   }
 ]

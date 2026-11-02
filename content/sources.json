@@ -6227,5 +6227,13 @@
     "url": "https://doi.org/10.1371/journal.pcbi.1014604",
     "checked": "2026-11-03",
     "origin": "Reviewed the complete publisher-hosted article: task definition, recording provenance, data sourcing, annotation and agreement, domain shift and grouped evaluation, transfer learning, error-cost-aware metrics, reproducibility, reuse/deployment, and human/wildlife privacy. The article is CC BY 4.0; no cited data, code, model or figures were acquired or run."
+  },
+  {
+    "id": 619,
+    "title": "Kitzes et al. (2026), Integrating AI models into ecological research workflows",
+    "description": "A six-stage synthesis connecting ecological questions to sensors, deployment, storage, AI, statistical inference and ecological insight.",
+    "url": "https://doi.org/10.1111/2041-210X.70133",
+    "checked": "2026-11-03",
+    "origin": "Reviewed the publisher abstract and relevant main-text sections on hardware, deployment, storage metadata and compression, evaluation, ancillary-data circularity, uncertainty and ecological interpretation. Supporting information and simulation app were not inspected or run; cited data, code and models were not acquired. Article reuse terms were not established, so only an original summary and DOI link are used."
   }
 ]
