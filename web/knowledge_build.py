@@ -125,9 +125,10 @@ def build_knowledge(root, output, base, page, notes, sources):
             )
 
         search_text = ' '.join(text(value) for value in search_fields if value is not None).lower()
+        meta_html = f' <span class="graph-meta">{esc(meta)}</span>' if meta else ''
         return (f'<details id="{esc(record_id)}" class="graph-record" data-kind="{esc(kind)}" '
                 f'data-search="{esc(search_text)}"><summary><span class="graph-kind">{esc(kind_label)}</span> '
-                f'<span class="graph-title">{title}</span>{f" <span class=\"graph-meta\">{esc(meta)}</span>" if meta else ""}'
+                f'<span class="graph-title">{title}</span>{meta_html}'
                 f'</summary><div class="graph-detail">{content}</div></details>')
 
     cards = ''.join(record_card(item) for item in records)

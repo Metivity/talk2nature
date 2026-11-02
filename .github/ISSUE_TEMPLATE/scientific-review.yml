@@ -52,9 +52,18 @@ body:
         - label: Scientific question and intended generalization
         - label: Animal, pair, group, session, or recording split design
         - label: Leakage, confounding, or metadata requirements
+        - label: Signal, receiver, and outcome alignment (where relevant)
         - label: Baselines, metrics, or uncertainty estimates
         - label: Interpretation and limits of the biological claim
         - label: Rights or provenance questions (not legal advice)
+  - type: textarea
+    id: receiver-evidence
+    attributes:
+      label: Signal, receiver, and measured outcome (if relevant)
+      description: For an interaction claim, separate the signal time/event, potential receiver availability, observed receiver presence or attention, and any directly measured behavior. Name the evidence source and timing for each; distinguish natural observation from an intervention. Record unknown, not visible, not observed, and missing separately. Pure detection/classification reviews may write “not applicable.” A following sound or model proposal alone does not establish a response or meaning.
+      placeholder: Signal event and timebase; receiver evidence; observed outcome and its independent evidence; uncertainty/missingness; natural or controlled condition.
+    validations:
+      required: false
   - type: textarea
     id: judgment
     attributes:

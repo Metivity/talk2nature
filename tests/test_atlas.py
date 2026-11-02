@@ -148,6 +148,12 @@ class AtlasTests(unittest.TestCase):
         berlin=next(p for p in atlas['places'] if p['id']=='berlin-study-region')
         self.assertEqual(berlin['precision'],'region')
         self.assertEqual((berlin['latitude'],berlin['longitude']),(52.5,13.4))
+    def test_honeybee_audience_study_stays_unmapped_without_primary_site_evidence(self):
+        records={r['id']:r for r in self.atlas()['records']}
+        note=records['honeybee-audience-feedback-2026']
+        self.assertEqual(note['location_status'],'pending')
+        self.assertEqual(note['locations'],[])
+        self.assertIn('affiliations alone',note['location_note'])
     def test_openwhistle_maps_only_a_rounded_eilat_study_region(self):
         atlas=self.atlas(); records={r['id']:r for r in atlas['records']}
         openwhistle=records['openwhistle-dolphin-benchmark']

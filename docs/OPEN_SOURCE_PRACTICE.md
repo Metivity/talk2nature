@@ -152,3 +152,15 @@ The current `.github/dependabot.yml` is on `main`: GitHub Actions version update
 **Change:** made the station step in README and CONTRIBUTING refer to the **no-microphone practice button** by purpose, not a version-specific label, and adjusted the source test to keep the step order checked across both copies. This reduces confusion while the public site and source remain on different revisions.
 
 **Interpretation and next decision:** zero comments means no public report is recorded on this issue, not that nobody tried the app or that the wording failed. Do not close or rewrite the open task from that absence. Keep its current live-site wording until a verified Pages update changes the button, then synchronize the issue and rerun its static-route and instruction checks. No external contact, user-data analysis or independent use was claimed.
+
+## November 2 follow-up — reproduce the researcher starter from a clean clone
+
+Recloned the current candidate commit `786e7e7` into a fresh temporary checkout and ran the documented researcher-start commands with Python 3.12.5: the synthetic annotation report, standard split manifest and dyadic split manifest all completed; generated manifests landed under ignored `tmp/reproduction/`, and `git status` remained clean. In that same clean clone, all 254 Python tests passed with one intentional skip, all 171 Node tests passed, the local noindex builder produced 171 pages plus 404, and the site checker validated 172 HTML documents and 12,043 links.
+
+This verifies the documented software path from a clean clone on this Python version. It does not establish independent researcher completion, timing, Python 3.10 compatibility, scientific validity or real-data readiness. Keep the benchmark and data-admission gates unchanged. Next evidence: an independent researcher or newcomer completes one scoped task and reports where the instructions or interface fail.
+
+## November 2 follow-up — test the declared minimum Python version
+
+The clean-clone researcher kit had only been exercised on Python 3.12 even though public instructions promised Python 3.10+. A run on isolated CPython 3.10.20 exposed a nested escaped f-string in `web/knowledge_build.py`; moved that optional metadata markup into a separate variable, then reran the full suite (**254 passed, 1 intentional skip**) and local site build/check (**171 pages plus 404; 172 HTML documents / 12,043 links**) on 3.10.20. Python 3.10 is now selected explicitly in the public-checks workflow using the immutable, full-SHA `actions/setup-python` v7.0.0 release.
+
+This closes the local compatibility gap and makes CI exercise the minimum; the regular CPython 3.12.5 suite also passed (**254 passed, 1 intentional skip**) and Node passed **171/171**. A hosted workflow run is still needed to verify the action on GitHub's runner. These checks say nothing about independent researcher success, scientific validity or real-data readiness.

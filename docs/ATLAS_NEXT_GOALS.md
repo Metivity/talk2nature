@@ -2,6 +2,8 @@
 
 Reviewed October 28, 2026. Public board: https://metivity.github.io/talk2nature/research/atlas/goals/
 
+**Local research candidate — November 2 (not yet published):** the current source catalog has 138 literature notes; the atlas projection has 48 mapped notes across 52 coarse places, 51 location-pending notes and 39 not applicable to a single point. The honey-bee audience-effects study remains pending: its reviewed main-text methods do not establish the field locality, and author affiliation is not a study-site citation. The new three-study receiver-context synthesis is not a single geographic study and is correctly marked not applicable. The latest live read-back remains the October 28 snapshot below.
+
 These milestones describe the next program work. They are not claims of funding, recruitment, scientific approval, partnership or a release of participant data. The bounded October 4 software/research task is to expand geography and publish this board; completing it does not complete every future milestone.
 
 | Goal | Current state | Completion evidence | Next action |

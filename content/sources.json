@@ -5866,5 +5866,29 @@
     "url": "https://github.com/google-research/perch/tree/main/chirp/projects/metaperch",
     "checked": "2026-11-02",
     "origin": "Official repository landing page and PMLR software link checked on 2026-11-02. Repository-level license metadata is separate from model weights, datasets, article rights and dependencies."
+  },
+  {
+    "id": 577,
+    "title": "Faiß et al. (2026), Mixed-sample-rate training for an animal2vec bioacoustic transformer",
+    "description": "Peer-reviewed Scientific Reports article, published 13 October 2026; DOI 10.1038/s41598-026-74940-3. Targeted full-text review of methods, classification and event-detection results, compute comparison and stated limits.",
+    "url": "https://doi.org/10.1038/s41598-026-74940-3",
+    "checked": "2026-11-02",
+    "origin": "Publisher article reviewed on 2026-11-02. No supplementary files, recordings, code, model weights or article figures were acquired or run. The publisher page's article reuse license was not independently verified in this review."
+  },
+  {
+    "id": 578,
+    "title": "Edmond deposit cited for the mixed-sample-rate animal2vec paper",
+    "description": "Max Planck Edmond DOI 10.17617/3.DOHL0O, cited by the paper for the dataset and released model artifacts. Deposit landing-page contents, exact file manifest and artifact-specific terms were not independently verified.",
+    "url": "https://doi.org/10.17617/3.DOHL0O",
+    "checked": "2026-11-02",
+    "origin": "Deposit DOI and CC BY-NC 4.0 data statement recorded from the peer-reviewed article. The deposit landing page was inaccessible during this review; no files acquired."
+  },
+  {
+    "id": 579,
+    "title": "animal2vec mixed-sample-rate paper code repository",
+    "description": "Authors’ GitHub repository with training/configuration and processing scripts for the mixed-sample-rate study. Repository landing page displays an MIT license; no commit is pinned and code, dependencies and artifacts were not inspected or run.",
+    "url": "https://github.com/mariusfaiss/animal2vec_sr_invariant",
+    "checked": "2026-11-02",
+    "origin": "Official public repository landing page, README and repository license link checked on 2026-11-02. The README still describes the paper as submitted under an earlier title; the final citation is taken from the publisher. Repository-level MIT notice is not inferred to cover data, weights, dependencies or paper text."
   }
 ]

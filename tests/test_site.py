@@ -162,6 +162,9 @@ class SiteTests(unittest.TestCase):
             'five months',
             'cetacean-bioacoustics',
             'LICENSE-DATA',
+            'Claim class',
+            'signal time, receiver availability, observed receiver presence/attention',
+            'not a validated universal schema',
             'https://metivity.github.io/talk2nature/research/openwhistle-dolphin-benchmark/',
         ):
             with self.subTest(review_packet=evidence):
@@ -172,6 +175,11 @@ class SiteTests(unittest.TestCase):
         self.assertIn('required: true',conflict_field)
         self.assertIn('authored a reviewed source',conflict_field)
         self.assertIn('none known',conflict_field)
+        receiver_field=form.split('id: receiver-evidence',1)[1].split('  - type:',1)[0]
+        self.assertIn('signal time/event',receiver_field)
+        self.assertIn('natural observation from an intervention',receiver_field)
+        self.assertIn('Pure detection/classification reviews may write “not applicable.”',receiver_field)
+        self.assertIn('required: false',receiver_field)
 
     def test_contribute_page_surfaces_the_phone_first_task_without_data_intake(self):
         project_root=Path(__file__).resolve().parents[1]
@@ -1828,6 +1836,22 @@ class SiteTests(unittest.TestCase):
             self.assertIn('id="mobile-feedback-form"',feedback)
             self.assertIn('Nothing is saved or sent by this form.',feedback)
 
+    def test_field_companion_back_and_footer_links_have_mobile_hit_area(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            compare=(root/'app/compare/index.html').read_text()
+            self.assertIn('class="app-back"',compare)
+            self.assertIn('class="app-footer"',compare)
+            css=(root/'assets/app.css').read_text()
+            self.assertIn('.app-back{font-size:12px;color:#c4e5d2;text-decoration:none;display:flex;align-items:center;min-height:44px;',css)
+            self.assertIn('.app-footer a{color:inherit;display:inline-flex;align-items:center;min-height:24px}',css)
+
+    def test_field_companion_standalone_home_links_have_mobile_hit_area(self):
+        css=(Path(__file__).resolve().parents[1]/'web/assets/app.css').read_text()
+        self.assertIn('.app-note a{color:#d9edda;font-size:12px;display:inline-flex;align-items:center;flex-wrap:wrap;max-width:100%;min-height:32px}',css)
+        self.assertIn('.app-practice-prompt a{color:#d8f2e3;text-underline-offset:3px;display:inline-flex;align-items:center;flex-wrap:wrap;max-width:100%;min-height:32px}',css)
+
     def test_field_companion_explains_multi_animal_scope_and_sensor_limits(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
@@ -1970,6 +1994,20 @@ class SiteTests(unittest.TestCase):
                 if note['review_stage']=='Methods reviewed':
                     self.assertTrue(note['study_snapshot'])
                     self.assertTrue(note['review_locator'])
+
+    def test_receiver_context_synthesis_is_cited_and_discoverable(self):
+        note=next(n for n in load('research') if n['slug']=='receiver-context-research-crosswalk-2026')
+        self.assertEqual(note['source_ids'],[65,462,563])
+        self.assertIn('not a systematic review',note['review_depth'])
+        self.assertIn('Keep the biological measurements species-specific',note['lesson'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(root/'research'/'receiver-context-research-crosswalk-2026'/'index.html').read_text()
+            self.assertIn('https://pmc.ncbi.nlm.nih.gov/articles/PMC5178335/',page)
+            self.assertIn('https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205314',page)
+            self.assertIn('https://doi.org/10.1073/pnas.2518687123',page)
+            self.assertIn('This is a design inference from these studies, not a deployed schema.',page)
 
     def test_praatplusplus_note_limits_pinned_static_security_warning(self):
         note=next(n for n in load('research') if n['slug']=='praatplusplus-annotation-tool-2026')

@@ -10139,6 +10139,124 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "animal2vec-mixed-sr-paper-2026",
+      "kind": "paper",
+      "title": "Mixed-sample-rate animal2vec bioacoustic transformer paper",
+      "url": "https://doi.org/10.1038/s41598-026-74940-3",
+      "version": "Scientific Reports 16, article 32067 (2026); published 2026-10-13",
+      "source_ids": [
+        577
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Methods reference for sample-rate handling and acoustic model evaluation.",
+      "review_depth": "Publisher article reviewed for study design, data construction, comparisons, results and limitations. Article reuse terms not independently checked; no text, figures or supplements copied.",
+      "access": "Open-access publisher record.",
+      "decision": "Literature reference only. Do not infer reuse rights for article text, data or software from the article being open access.",
+      "limitations": "Species classification and event detection do not test communication meaning. Study data and model conditions are narrow; independent group-held-out performance was not established in this review.",
+      "attribution": "Faiß et al. (2026), DOI 10.1038/s41598-026-74940-3.",
+      "rights": {
+        "license": "Not independently verified",
+        "scope": "Article text and figures only; no permission is inferred for data, code, models or supplements.",
+        "evidence_url": "https://doi.org/10.1038/s41598-026-74940-3",
+        "conditions": "Consult the publisher's current article license before reuse beyond linking and original summary.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal2vec-mixed-sr-data-2026",
+      "kind": "dataset",
+      "title": "Mixed-rate MeerKAT and Xeno-Canto training/evaluation dataset",
+      "url": "https://doi.org/10.17617/3.DOHL0O",
+      "version": "Edmond DOI 10.17617/3.DOHL0O; exact version and file manifest not checked",
+      "source_ids": [
+        577,
+        578
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Study-specific mixed-sample-rate method comparison for bird and meerkat audio.",
+      "review_depth": "The article's data statement identifies this deposit and declares CC BY-NC 4.0. Deposit landing page, manifest, file-level source licenses, consent/provenance and exact paper-to-file mapping were not independently reviewed.",
+      "access": "Edmond DOI cited by the publisher article; deposit page was inaccessible during this review. No files acquired.",
+      "decision": "Metadata-only; do not acquire or use for Talk2Nature model training, commercial use or redistribution. Reconsider only after reviewing the exact release, all source-level terms and scientific grouping metadata.",
+      "limitations": "Contains source datasets under potentially distinct provenance; a deposit-level statement is not proof that all source files share identical rights. No held-out individual/session/device/site independence established here.",
+      "attribution": "Faiß et al. (2026); Edmond DOI 10.17617/3.DOHL0O.",
+      "rights": {
+        "license": "CC BY-NC 4.0 as stated by the article for the data deposit",
+        "scope": "Dataset use; exact deposited files, source-recording licenses and any model weights require separate verification. Non-commercial restriction excludes Talk2Nature's shared commercial-capable path.",
+        "evidence_url": "https://doi.org/10.1038/s41598-026-74940-3",
+        "conditions": "Attribution and non-commercial terms apply as stated by the article; inspect the versioned deposit and source-level licenses before any use.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal2vec-mixed-sr-code-2026",
+      "kind": "code",
+      "title": "animal2vec mixed-sample-rate study code",
+      "url": "https://github.com/mariusfaiss/animal2vec_sr_invariant",
+      "version": "Mutable main branch; checked 2026-11-02; no commit pinned",
+      "source_ids": [
+        579
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Reference implementation and preprocessing scripts for the paper's architecture-specific comparison.",
+      "review_depth": "Repository landing page, README and repository license link checked. No files cloned, dependencies audited, code inspected or commands run.",
+      "access": "Official public GitHub repository.",
+      "decision": "Reference only. Pin and inspect code, dependencies, exact model lineage and hardware assumptions before proposing reuse or reproduction.",
+      "limitations": "README retains the paper's submitted title and points to manually installed Fairseq; current reproducibility and dependency status are unverified. Repository license does not cover data or weights.",
+      "attribution": "Marius Faiß et al.; animal2vec_sr_invariant repository.",
+      "rights": {
+        "license": "MIT at repository root",
+        "scope": "Repository code only; data, model weights, article and third-party dependencies are separate.",
+        "evidence_url": "https://github.com/mariusfaiss/animal2vec_sr_invariant/blob/main/LICENSE",
+        "conditions": "Retain MIT notice if code is later reused; pin an exact revision and audit third-party dependencies.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "animal2vec-mixed-sr-weights-2026",
+      "kind": "model",
+      "title": "animal2vec mixed-sample-rate model artifacts cited by the paper",
+      "url": "https://doi.org/10.17617/3.DOHL0O",
+      "version": "Checkpoint version, filenames and manifest not verified",
+      "source_ids": [
+        577,
+        578
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Potential methods comparator only; no Talk2Nature use selected.",
+      "review_depth": "The paper states that model weights are released with open-access platforms and cites the Edmond deposit. Exact checkpoint location, version, architecture configuration and artifact-specific license were not verified. No weights acquired or loaded.",
+      "access": "Possibly co-located with the cited Edmond data deposit; exact artifact unverified.",
+      "decision": "Do not download, run or integrate. If reconsidered, identify the exact checkpoint and license separately from dataset and code terms, then assess task fit, safety, compute and group-held-out evaluation.",
+      "limitations": "The published work evaluates curated classification/event-detection tasks, not semantic communication, animal response or mobile inference. A dataset license does not automatically establish model-weight terms.",
+      "attribution": "Faiß et al. (2026); exact model artifact not yet identified.",
+      "rights": {
+        "license": "Unresolved for model weights",
+        "scope": "Model artifacts only; the paper's CC BY-NC dataset statement and repository MIT license are not being transferred to weights.",
+        "evidence_url": "https://doi.org/10.1038/s41598-026-74940-3",
+        "conditions": "Verify exact checkpoint terms before any acquisition or use.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

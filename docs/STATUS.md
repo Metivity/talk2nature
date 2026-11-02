@@ -1,3 +1,25 @@
+## November 2 — enforce the declared Python minimum
+
+The researcher guide promised Python 3.10+, but clean-clone evidence covered 3.12 only and CI used the runner's default. Isolated CPython 3.10.20 found a nested escaped f-string that 3.10 cannot parse; the renderer now builds its optional metadata fragment separately. The full Python suite passes on both 3.10.20 and 3.12.5 (**254 passed, 1 intentional skip each**), Node passes **171/171**, and the 3.10.20 local site build/check reports **171 pages plus 404; 172 HTML documents / 12,043 links**. CI now pins Python 3.10 with `actions/setup-python` v7.0.0 by full SHA. The hosted workflow has not run yet; deployment, independent researcher completion and scientific validity remain separate gates.
+
+## November 2 — enlarge mobile navigation hit areas
+
+**Question:** are essential navigation actions easy to hit in the rendered Field Companion at phone widths? Before the change, Chromium measured the Compare back link at **20 px** high and the Privacy/Share footer links at **12 px**. Although spacing/inline exceptions mean this does not by itself prove a WCAG failure, the controls were too small for the intended phone workflow. Set the app back link to a **44 px** minimum height and footer links to **24 px**; added a regression assertion in `tests/test_site.py`.
+
+**Verification:** the site suite passed **111/111** and Node passed **171/171**. The local noindex build produced **171 pages plus 404**; the checker validated **172 HTML documents / 11,871 links**. Chromium rendered Compare and direct Station routes at **320 × 844** and **390 × 844**: measured target heights were 44/24 px, document widths matched both viewports, and there were no page errors. This is browser emulation, not physical iPhone/Android, VoiceOver/TalkBack or user acceptance. No data or media was used. Next: include the improved targets in the named-device/screen-reader walkthrough; keep the public release unchanged until the authorized Pages workflow can publish the reviewed candidate. WCAG context: [W3C SC 2.5.8](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum).
+
+## November 2 — verify phone-width Station-to-Compare handoff
+
+**Question:** can a novice reach a saved-moment review using only the invented workflow, including on a narrow phone-sized viewport? On the local noindex candidate, Playwright/Chromium emulation at **320 × 568** completed Home → no-microphone example → one human-entered practice note → Finish → local ZIP download → save acknowledgement → Compare → reopen that exact ZIP. Compare labeled it invented and partial, showed one retained clip and one note, and the expanded details preserved the note verbatim. The player remained hidden and paused. The two-example Compare action opened one complete and one partial invented moment at **320 × 844**, **360 × 844** and **390 × 844**. Document width matched each viewport.
+
+Instrumentation observed zero microphone requests, zero media playback calls, zero failed requests and no page errors; every request stayed on the local preview. `node --test tests/compare.test.mjs tests/mobile.test.mjs tests/zero-command.test.mjs` passed **24/24**; `git diff --check` passed. This is maintainer browser emulation and short synthetic content, not physical-phone, installed-PWA, screen-reader, operating-system interruption or independent-newcomer acceptance. No code change was indicated; the device/accessibility gates remain open. Details are in [`MOBILE_AUDIT.md`](MOBILE_AUDIT.md).
+
+## November 2 — verify exact Pages release parity after fresh remote check
+
+**Question:** which reviewed research pages are currently absent from the public site, and is the local candidate based on the latest public source? A fresh `git ls-remote origin refs/heads/main` returned `144ede63ae0b5c02cf83a09643c6cbd86178018f`, matching this candidate's base. The explicit-origin build produced **171 pages plus 404**; `scripts/check_site.py dist` validated **172 HTML documents, 12,043 links and 171 reachable routes**. Comparing its sitemap with the freshly fetched live sitemap retained **154/154** live routes and found **17** candidate-only routes. Direct HTTPS GETs for all 17 returned **404** (no other status). `robots.txt`, `sitemap.xml` and `/research/resources/` returned **200**; the sitemap contains **154** URLs and the live resource directory lists **284**, while the local rights catalog validates **329**.
+
+**Decision:** this is a verified undispatched release gap, not evidence that the new articles are indexed or that Google has processed the sitemap. The 17 candidate pages remain absent from live Pages. Do not claim public availability, and do not trigger deployment from the non-Metivity CLI identity. Next, publish only through the approved Metivity workflow when an authorized dispatch path is available, then rerun the exact-route verifier and confirm the live catalog/sitemap counts. No source code or dataset was acquired or run in this audit; the scientific benchmark remains **NOT READY**.
+
 ## November 2 — apply MetaPerch to Talk2Nature evaluation design
 
 Reviewed the ICML 2026 MetaPerch paper in full at the method, benchmark, ablation and appendix level, plus the official PMLR record and the linked Perch repository landing page/license. MetaPerch trains audio embeddings with auxiliary metadata targets such as location, season, time-of-day and background species. Across the authors’ evaluation suite it reports mean improvements over its BioBaseline, including +0.015 BirdSet ROC-AUC, +0.016 BEANS classification accuracy and +0.006 BEANS detection class-mAP. These are species-identification/detection metrics; they do not establish meaning, intent, listener comprehension or conversation. They are not Talk2Nature results.
@@ -3652,3 +3674,23 @@ This corrects the instructions and tests; it does not establish that a newcomer 
 PR [#654](https://github.com/Metivity/talk2nature/pull/654) merged the sperm-whale coda research review and five component-specific resource records as `eebe59f`. PR [#655](https://github.com/Metivity/talk2nature/pull/655) then aligned the first phone task with the simpler open issue #115; the export-and-reopen workflow is now optional. Its hosted Public checks passed, and the merge is `f8e4b25`. The local full Python suite passed 250 tests (one intentional skip); the focused contributor-flow test, local build and site-link checker also passed.
 
 **Production remains behind source.** A fresh HTTPS request to the newly added research route returns 404; the live contributor page still shows the older wording. The GitHub Actions workflow is manual, the Metivity browser is signed out, and the available connector cannot dispatch workflows. No deployment occurred. Next: run the Pages workflow from an authenticated Metivity session, then verify the research route, contributor instructions, sitemap and live page count. Keep physical-phone, assistive-technology and independent-newcomer acceptance open; AutoResearch and real-data admission remain **NOT READY**.
+
+
+## November 2 continuation — complete home-screen touch-target pass
+
+A rendered pass over Home, Station, Review, Compare, Practice and Device Check at 320 and 390 CSS pixels found three standalone Home links below 24 pixels at 390px. Increased those links to a wrapping 32px minimum; the consent controls already had large clickable labels. The prior Compare back/footer fix remains in place. Regression checks now cover both changes. This pass used desktop Chromium emulation; it is not physical-device, screen-reader or independent-user acceptance.
+
+
+## November 2 continuation — apply metadata-learning evidence to model design
+
+Applied the full-text MetaPerch review to `docs/MODEL_DATA_DECISION.md`: provenance metadata remains descriptive by default, and any future predictive use must compare audio-only, metadata-only and combined baselines, include an ablation/shuffle control, use question-appropriate group holdouts and stratify results. The ICML results concern species identification/detection and do not support translation claims or automatic model integration. No code, weights, dataset or model were acquired or run; the analysis is a source-grounded design rule, not a Talk2Nature experiment. AutoResearch and real-data admission remain **NOT READY**.
+
+
+## November 2 continuation — verify researcher onboarding from a clean clone
+
+Cloned candidate `786e7e7` into a new temporary checkout and ran the documented synthetic annotation and standard/dyadic manifest examples with Python 3.12.5. All generated outputs stayed in ignored `tmp/reproduction/`, and the clone remained clean. Full clean-clone checks passed: Python 254 (one intentional skip), Node 171/171, local noindex build 171 pages plus 404, and site checker 172 HTML documents / 12,043 links. This verifies one software setup path, not Python 3.10 compatibility, an independent researcher’s success, or scientific/benchmark readiness. The next adoption evidence still requires an independent person to complete a scoped task and report barriers.
+
+
+## November 2 continuation — refresh Search Console and sitemap evidence
+
+Read the project property in Search Console using the Metivity account. The live `robots.txt` and sitemap are reachable; the sitemap parses as 154 URLs, but Search Console still reports “Sitemap could not be read” and zero discovered pages. The index report is older than the latest source changes; page-level examples and index counts remain private. Manual-action and security reports show no issues; Core Web Vitals has no field data. This does not prove a Googlebot fetch, and no resubmission, validation or indexing request was made. See `docs/SEO_AUDIT.md`; low-volume query/page analytics are retained only in the ignored owner snapshot. Candidate-only research routes remain 404 on live Pages.

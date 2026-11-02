@@ -1,6 +1,6 @@
 # First-data decision: independent no-data review packet
 
-Refreshed October 29, 2026. This packet is for a bounded literature-and-methods review before selecting a Talk2Nature benchmark. No reviewer has been contacted. Some small, rights-reviewed annotation/workbook samples were acquired for separate aggregate-only structural checks. The monk-parakeet GitHub table is not admitted for processing and is held because the repository's MIT notice does not explicitly cover its raw-data folder and the exact file-to-Edmond provenance/access route is unresolved. Earlier table-derived aggregate outputs have been removed. No acoustic recordings or model weights have been acquired, admitted to training or run for a benchmark. No benchmark is selected or ready.
+Refreshed November 2, 2026. This packet is for a bounded literature-and-methods review before selecting a Talk2Nature benchmark. The receiver-context questions now distinguish signal timing, receiver opportunity/presence, observed behavior and evidence provenance, following the targeted three-study crosswalk. No reviewer has been contacted. Some small, rights-reviewed annotation/workbook samples were acquired for separate aggregate-only structural checks. The monk-parakeet GitHub table is not admitted for processing and is held because the repository's MIT notice does not explicitly cover its raw-data folder and the exact file-to-Edmond provenance/access route is unresolved. Earlier table-derived aggregate outputs have been removed. No acoustic recordings or model weights have been acquired, admitted to training or run for a benchmark. No benchmark is selected or ready.
 
 ## The decision to review
 
@@ -38,11 +38,13 @@ The Egyptian fruit-bat route is a candidate for **observed-context prediction**,
 ## Questions for reviewers
 
 1. **Novelty and value:** Is the proposed question useful and distinct from the cited prior work? What published analysis must be reproduced or surpassed first?
-2. **Labels and unit:** What exactly is the target label and unit of analysis—note, song, call, pair, context event, bird or session? Which labels are observed directly and which are inferred or assigned by people?
-3. **Generalization and leakage:** What population should the result generalize to? Which birds, pairs, sessions, sites or devices must be held out together? Is there enough independent group structure for that test?
-4. **Baselines and uncertainty:** Which simple label-prior, context-only, identity, timing or acoustic baseline is necessary? Which primary metric and uncertainty procedure respect repeated recordings and class imbalance? What outcome would justify stopping?
-5. **Rights and data minimization:** Which exact paper, data, annotations, code, model weights and derived fields are needed? What terms govern each asset? For Wytham, can the proposed task avoid raw continuous soundscapes and exact nest-box locations? For OpenWhistle, are the exact files within the dataset releases named by `LICENSE-DATA`, with code and model terms kept separate?
-6. **Decision:** Recommend **go**, **narrow**, or **defer** for the specific route you assessed. Name the smallest next check that could change your recommendation and the artifact it needs.
+2. **Claim class:** Is this acoustic detection/classification, caller or event identification, context association, an observed receiver outcome, or a controlled test of a proposed interpretation? What exact claim does the design support, and which stronger claims remain outside it?
+3. **Labels and unit:** What exactly is the target label and unit of analysis—note, song, call, pair, context event, bird, receiver, colony or session? Which labels are directly observed, which are human interpretations, and which are model proposals?
+4. **Receiver link, when relevant:** Keep signal time, receiver availability, observed receiver presence/attention, and a separately measured behavior as distinct facts. What sensor or observer supports each one? How are clock error, visibility, unknown identity, “not observed” and missing evidence represented? Does a later sound actually have independently observed evidence connecting it to the earlier signal? For a controlled stimulus, what was deliberately changed, what was measured before/during/after, and what ethical and welfare review governed it? Pure detection/classification tasks may mark this not applicable. The [receiver-context crosswalk](https://metivity.github.io/talk2nature/research/receiver-context-research-crosswalk-2026/) compares three examples; its shared evidence envelope is a design proposal, not a validated universal schema.
+5. **Generalization and leakage:** What population should the result generalize to? Which birds, pairs, receivers, colonies, sessions, sites or devices must be held out together? Is there enough independent group structure for that test?
+6. **Baselines and uncertainty:** Which simple label-prior, context-only, identity, timing or acoustic baseline is necessary? Which primary metric and uncertainty procedure respect repeated recordings and class imbalance? What outcome would justify stopping?
+7. **Rights and data minimization:** Which exact paper, data, annotations, code, model weights and derived fields are needed? What terms govern each asset? For Wytham, can the proposed task avoid raw continuous soundscapes and exact nest-box locations? For OpenWhistle, are the exact files within the dataset releases named by `LICENSE-DATA`, with code and model terms kept separate?
+8. **Decision:** Recommend **go**, **narrow**, or **defer** for the specific route you assessed. Name the smallest next check that could change your recommendation and the artifact it needs.
 
 “Cannot assess from the available public record” is a valid conclusion. A reviewer recommendation does not grant rights or authorize acquisition. If the reviewers disagree, preserve both assessments and do not turn the disagreement into a consensus claim.
 
@@ -62,6 +64,7 @@ This packet authorizes no data acquisition, model execution, animal playback, pa
 - [Brown-throated Parakeet contact-call review](https://metivity.github.io/talk2nature/research/brown-throated-parakeet-contact-call-variation/)
 - [ZF-AIM no-data review](ZF_AIM_INDEPENDENT_REVIEW.md)
 - [Egyptian fruit-bat context review](BAT_CONTEXT_REVIEW.md)
+- [Receiver-context crosswalk across honeybees, bats and cockatiels](https://metivity.github.io/talk2nature/research/receiver-context-research-crosswalk-2026/)
 - [Zebra-finch call-perception review](ZEBRA_FINCH_PERCEPTION_REVIEW.md)
 - [Research execution board](EXECUTION_BOARD.md)
 
