@@ -1,3 +1,9 @@
+# November 3 — apply a six-stage sensor-to-insight research review
+
+Reviewed the publisher abstract and relevant sections of Kitzes et al. (2026), which connect hardware, deployment, storage, AI, statistical inference and ecological insight. Added the paper to the source catalog, research library, resource directory and a new field-pipeline learning path. Applied the review to the Station architecture and benchmark card: record available device/format/processing provenance, keep unknowns explicit, preserve sensor context, report acoustic-quality strata, keep model outputs separate from observations, and avoid location-driven circular inference. This is an original linked summary; the publisher's support app was not inspected or run.
+
+**Local review candidate:** 354 resource records and 152 literature notes after this addition. No device calibration or equivalence was performed, no recordings or models were acquired/run, and no central upload behavior or real-data admission changed. The proposed provenance export remains design guidance. Next: validate the new catalog/learning route and inspect the generated page, then prototype the provenance summary only with synthetic sessions. Keep public location precision coarse and private-data/storage gates closed.
+
 # November 3 — merge the bioacoustics methods tranche; Pages still stale
 
 PR [#678](https://github.com/Metivity/talk2nature/pull/678) merged to `main` as [`380dfdb`](https://github.com/Metivity/talk2nature/commit/380dfdb859e78ff3407be47c884360b868aa3b10). GitHub Public Checks run [#41542357767](https://github.com/Metivity/talk2nature/actions/runs/41542357767) passed repository, browser-tool, native Android and preview-site checks. The 2026 lifecycle guide and 2025 pipeline-comparability review are now in public source; the exact PR diff matched the 14 locally checked files (284 additions, 4 deletions).

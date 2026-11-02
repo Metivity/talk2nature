@@ -10981,6 +10981,35 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "ecological-sensors-ai-workflow-kitzes-2026",
+      "kind": "paper",
+      "title": "Kitzes et al. six-stage ecological sensors + AI workflow review",
+      "url": "https://doi.org/10.1111/2041-210X.70133",
+      "version": "Methods in Ecology and Evolution 17 (2026), 257–271; first published 2025-08-08",
+      "source_ids": [
+        619
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "Cross-cutting design reference for sensor hardware, field deployment, recording provenance, data storage, AI evaluation, statistical analysis and ecological inference.",
+      "review_depth": "Publisher abstract and relevant main-text sections reviewed. Supporting information, simulation app, cited data, code and models not inspected or run.",
+      "access": "Publisher article and DOI are linked. Article reuse terms not established; no text or figures reproduced.",
+      "decision": "Use as a workflow-design reference. It does not evaluate Talk2Nature devices, authorize real-data intake or establish a model or communication result.",
+      "limitations": "Terrestrial ecology focus; recommendations require task-specific review. It does not establish that smartphone microphones are calibrated or interchangeable, nor that centralized storage or edge inference is appropriate for Talk2Nature.",
+      "attribution": "Kitzes J, Chronister L, Czarnecki C, et al. (2026). Integrating AI models into ecological research workflows: The case of terrestrial bioacoustics. Methods in Ecology and Evolution, 17, 257–271. https://doi.org/10.1111/2041-210X.70133",
+      "rights": {
+        "license": "Not reviewed",
+        "scope": "Article text and figures; linked data, code and software are separate assets.",
+        "evidence_url": "https://onlinelibrary.wiley.com/doi/10.1111/2041-210X.70133",
+        "conditions": "Use DOI link and original summary only unless article terms are independently verified.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
