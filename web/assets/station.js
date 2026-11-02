@@ -173,7 +173,7 @@ function renderEvents(focusEventId = null) {
   const provenance = $('station-provenance'), provenanceList = $('station-provenance-list');
   const record = session?.exportRecord($('station-alias').value, settings);
   const provenanceRows = session?.stopped ? sessionProvenance(record) : [];
-  provenance.hidden = provenanceRows.length === 0;
+  provenance.hidden = !session?.stopped;
   if (!provenanceRows.length) provenance.open = false;
   provenanceList.replaceChildren();
   for (const row of provenanceRows) {

@@ -25,7 +25,9 @@ export function sessionRecap(session) {
 }
 
 export function sessionProvenance(record) {
-  if (!record || !Number.isInteger(record.sample_rate) || !record.audio_settings) return [];
+  if (!record || !Number.isInteger(record.sample_rate) || !record.audio_settings) {
+    return [{label: 'Recording details', value: 'Not available for this session.'}];
+  }
   const settings = record.audio_settings;
   const synthetic = record.origin === 'synthetic';
   const reported = (value, unit = '') => Number.isFinite(value) && value > 0 ? `${value.toLocaleString()}${unit} · browser-reported` : 'Not reported';

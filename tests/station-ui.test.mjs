@@ -211,6 +211,7 @@ test('recording provenance labels browser-reported values and keeps device ident
   assert.match(values['Capture source'], /device identifier not saved/);
   assert.equal(values['Saved audio'], 'Mono 16-bit PCM WAV · uncompressed');
   assert.ok(!JSON.stringify(rows).includes('deviceId'));
+  assert.deepEqual(sessionProvenance(null), [{label: 'Recording details', value: 'Not available for this session.'}]);
   const synthetic = Object.fromEntries(sessionProvenance({origin: 'synthetic', sample_rate: 8000, clock: 'device wall clock', audio_settings: {}}).map(row => [row.label, row.value]));
   assert.match(synthetic['Input sample rate'], /Not applicable/);
   assert.match(synthetic['Microphone processing'], /Not applicable/);
