@@ -10865,6 +10865,35 @@
       "files": []
     },
     {
+      "id": "bioacoustic-model-comparative-review-journal-2026",
+      "kind": "paper",
+      "title": "Foundation models for bioacoustics – A comparative review (version of record)",
+      "url": "https://doi.org/10.1016/j.ecoinf.2026.103765",
+      "version": "Ecological Informatics 96 (June 2026), article 103765; DOI 10.1016/j.ecoinf.2026.103765",
+      "source_ids": [
+        615
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "Model-selection and frozen-representation comparison on BEANS and BirdSet classification tasks.",
+      "review_depth": "Verified publisher/Crossref version-of-record metadata and CC BY 4.0 license; publisher full-text request returned HTTP 403. The selected methods/results text review is separately identified as arXiv v2. No code, benchmark data or weights acquired or run.",
+      "access": "Publisher article metadata and abstract; version-of-record full text was not retrieved. Public arXiv v2 full text was reviewed separately.",
+      "decision": "Metadata and research-note link only. The article supports task-specific model selection for classification; it is not a Talk2Nature model selection, benchmark run, reproduction or evidence of translation.",
+      "limitations": "The reported comparisons concern frozen encoders and probes on BEANS/BirdSet classification, not receiver response or meaning. Version-of-record methods were not compared with arXiv v2 because publisher full text returned HTTP 403. CC BY 4.0 applies to the article only; code, datasets and model weights have separate terms.",
+      "attribution": "Schwinger R, Vali Zadeh P, Rauch L, Kurz M, Hauschild T, Lapp S, Tomforde S. Foundation models for bioacoustics – A comparative review. Ecological Informatics 96 (2026), 103765. DOI 10.1016/j.ecoinf.2026.103765.",
+      "rights": {
+        "license": "CC BY 4.0 for the version-of-record article; the separate arXiv v2 page states CC BY-NC-ND 4.0.",
+        "scope": "Article only. This does not license referenced data, software, model weights or derived outputs.",
+        "evidence_url": "https://doi.org/10.1016/j.ecoinf.2026.103765",
+        "conditions": "Link to the article and provide an original summary; do not redistribute figures or text without following the applicable license. Review each model, dataset and code license independently.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "elephant-chorus-context-convergence-data-2026",
       "kind": "dataset",
       "title": "Elephant chorus recordings, metadata and acoustic features in analysis repository",

@@ -6195,5 +6195,13 @@
     "url": "https://github.com/earthspecies/Elephant-choruses-context-convergence/tree/008528f3e39ab2c2731e56158bc36335aa3d7e8c",
     "checked": "2026-11-02",
     "origin": "Verified main at 008528f3e39ab2c2731e56158bc36335aa3d7e8c (committed 2026-03-21); GitHub API reports no license object, and the complete tree contains no LICENSE/COPYING file. The tree lists Python scripts, metadata/features, and WAV/ZIP files. Read repository and analysis READMEs and inspected the convergence permutation code around its iteration count and empirical-tail calculation; no code or data was executed or acquired. The repository license gap applies independently to code and data."
+  },
+  {
+    "id": 615,
+    "title": "Schwinger et al. (2026) peer-reviewed article record",
+    "description": "Version-of-record metadata, DOI, publication date and article license for the bioacoustic foundation-model comparison.",
+    "url": "https://doi.org/10.1016/j.ecoinf.2026.103765",
+    "checked": "2026-11-03",
+    "origin": "Verified the journal article title, authors, publication date and version-of-record CC BY 4.0 license from the publisher-indexed record and Crossref metadata over verified TLS. Publisher full-text retrieval returned HTTP 403; the methods/results review remains explicitly scoped to arXiv v2. No article file, code, dataset or model was acquired or run."
   }
 ]
