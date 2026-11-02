@@ -6860,5 +6860,35 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "metaperch-metadata-bioacoustic-foundation-model-2026",
+    "title": "Metadata can improve bioacoustic identification, and create shortcuts",
+    "taxon": "Machine learning · cross-taxa bioacoustics",
+    "kind": "Foundation-model evaluation",
+    "year": "2026",
+    "source_ids": [
+      575,
+      576
+    ],
+    "review_depth": "Full-text review of the ICML 2026 PMLR paper: abstract, method, training-data summary, BirdSet/BEANS/WABAD evaluation results, ablations, appendix details on location/time targets, and limitations. Checked the official linked code location and repository-level Apache-2.0 notice. No code, weights, benchmark data or media acquired or run.",
+    "seo_description": "MetaPerch uses place, season and other metadata as training signals for bioacoustic species identification. We review what it shows and what it does not.",
+    "finding": "Chasmai et al. introduce MetaPerch, which trains an audio encoder to identify species while also predicting metadata such as location, season, background species, time of day and recording characteristics. They report mean gains over their BioBaseline on several species-identification benchmarks: +0.015 ROC-AUC on BirdSet, +0.016 accuracy on BEANS classification tasks and +0.006 mean class-mAP on BEANS detection tasks. The study spans 17 evaluation datasets and five random-seed runs. This is evidence that metadata-aware auxiliary training can improve some species-identification results under the authors’ benchmark setup. The input remains audio; metadata are auxiliary training targets, not proof of semantic decoding. The paper does not establish animal intent, listener comprehension, a conversation, or a Talk2Nature result.",
+    "limitations": "These results concern species identification/detection metrics, not behavior, call meaning or receiver response. Gains are averages and vary by dataset; they do not establish universal benefit or transfer to parrots, phone microphones or a Talk2Nature field task. Training uses large citizen-science corpora with geographic, taxonomic and recording biases; the authors note that some metadata can encode spurious correlations and explore adversarial objectives. The evaluation protocols are benchmark-specific, not a single proof of geographic, individual and temporal independence. The code repository’s Apache-2.0 notice applies to repository code only; data, model weights, dependencies and article rights require separate review. No Talk2Nature reproduction or expert review is claimed.",
+    "lesson": "Keep place, time, device and environment as provenance-bearing metadata in the research graph. For any future predictive task, predeclare audio-only, context/metadata-only and combined baselines; include a shuffled or ablated metadata comparison; group holdouts by individual, session and site where the question requires them; and report performance by recording condition and region. Use metadata to describe and stratify evidence before allowing it to influence a model. For wildlife privacy, publish only an appropriate coarse location. This is a study-design safeguard inspired by MetaPerch, not a recommendation to deploy its model.",
+    "next_review": "Before selecting any metadata-aware model for a real study, have an independent bioacoustics reviewer inspect the target labels, data lineage, geographic and individual holdouts, benchmark overlap, calibration and exact code/weight/data rights.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Full paper reviewed; software metadata checked",
+    "year_label": "Conference year",
+    "review_locator": "Chasmai et al. (2026), ICML 2026, PMLR 306:13066–13088; Methods §3; Results §§4.1–4.4; Appendix §§A.1–A.4.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This note covers a model and benchmark review across multiple datasets, not a single verified study site.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
