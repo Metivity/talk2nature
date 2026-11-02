@@ -3461,8 +3461,8 @@
     "title": "BEANS-Next and ROOTS: Broadening Audio-Language Capabilities for Bioacoustics",
     "description": "Plachouras et al. (2026), arXiv:2610.10663. Benchmark and training-resource paper; preprint, not a Talk2Nature reproduction.",
     "url": "https://arxiv.org/abs/2610.10663",
-    "checked": "2026-10-23",
-    "origin": "Targeted review of the primary preprint abstract, task taxonomy, data construction, benchmark split description, reported findings, risks and reproducibility statement, plus the official project page and Hugging Face benchmark/training-resource cards. No audio, dataset shards, code or model weights downloaded; no inference or benchmark run."
+    "checked": "2026-11-02",
+    "origin": "Full-text review of arXiv v1 sections on task taxonomy, data construction, model setup, tier results, risks and reproducibility, plus Appendix D metrics and Appendix E.6 text-only/Gaussian-noise controls. Rechecked official project and Hugging Face cards. No audio, data shards, code or weights acquired; no inference, benchmark run, independent reproduction or specialist review."
   },
   {
     "id": 335,
@@ -5357,9 +5357,9 @@
   {
     "id": 531,
     "title": "DCASE 2018 Task 3: Bird Audio Detection",
-    "description": "Official task definition, development/evaluation datasets, suggested cross-dataset validation, scoring and task-page CC-BY-4.0 statement. The page’s manual-label wording needs to be read alongside the BirdVox source record, which documents automatically derived labels for that component.",
+    "description": "Official task definition, development/evaluation datasets, suggested cross-dataset validation, scoring and task-page CC-BY-4.0 statement. The page’s manual-label wording needs to be read alongside the BirdVox source record, which documents automatically derived labels for that component. The official submission rules also disclose preview scores from approximately 1,000 Chernobyl/Warblr clips, up to 20 team variants and selection of four for final evaluation.",
     "url": "https://dcase.community/challenge2018/task-bird-audio-detection",
-    "checked": "2026-10-31",
+    "checked": "2026-11-02",
     "origin": "Primary challenge specification; task and reuse metadata reviewed, no dataset acquired."
   },
   {
@@ -5367,7 +5367,7 @@
     "title": "Stowell et al. (2019), first Bird Audio Detection challenge",
     "description": "Peer-reviewed Methods in Ecology and Evolution article, DOI 10.1111/2041-210X.13103. Methods, dataset provenance, split, evaluation, error and generalisation sections reviewed. Its description covers the original challenge design; it is not a substitute for the DCASE 2018 extension specification.",
     "url": "https://doi.org/10.1111/2041-210X.13103",
-    "checked": "2026-10-31",
+    "checked": "2026-11-02",
     "origin": "Primary Version of Record; original article reviewed via publisher full text."
   },
   {
