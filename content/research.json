@@ -6718,5 +6718,49 @@
       ]
     ],
     "review_locator": "Vengrovski et al. (2026), Patterns 7:101491, DOI 10.1016/j.patter.2025.101491; PMC article sections Abstract, Results, Limitations, Discussion, Materials and Methods, Code Availability and Data Availability. Dryad DOI 10.5061/dryad.xgxd254f4 landing page; GitHub API metadata for georgevenven/tweety_bert checked 2026-11-02."
+  },
+  {
+    "slug": "vlm-teacher-bird-vocalization-detection-2026",
+    "title": "A vision-language model can propose bird-call labels, not verify them",
+    "seo_description": "A 2026 preprint trains a bird-call localizer from spectrogram boxes proposed by a vision-language model; label independence and transfer remain open.",
+    "taxon": "Birds",
+    "kind": "Preprint: VLM-assisted time-frequency localization",
+    "year": "2026",
+    "source_ids": [
+      568
+    ],
+    "review_depth": "Full five-page bioRxiv v1 preprint reviewed: prompt/rendering pipeline, teacher self-review ablations, SongMAE student setup, data counts, split descriptions, comparison tables, threshold selection, discussion, ethics and copyright statement. Cross-checked the paper’s named datasets against existing Talk2Nature source records. No audio, labels, code or model weights were acquired or executed.",
+    "finding": "Vengrovski and Gardner use Qwen3.8-27B as a vision-language teacher over five-second mel-spectrogram images. The model proposes time-frequency boxes for bird vocalizations and performs one self-review pass; those boxes train a SongMAE encoder with a detection head. The preprint reports 5,500 Xeno-Canto/BirdSet recordings, 31,422 labeled events and 4,969 recording sites. On the Powdermill development set, coordinate axes and chain-of-thought account for most of the teacher’s reported pixel-AP gain (0.242 to 0.452); one self-review raises it to 0.457 and a second pass to 0.458. SongMAE-Large reports pixel AP 0.633 on WABAD and 0.716 on Hawaii, and temporal AP 0.836 on XC-AJ and 0.777 on NIPS4Bplus. These are localization results: marking time-frequency regions that appear to contain bird vocalizations.",
+    "limitations": "This is a bioRxiv preprint, not peer reviewed. The paper’s headline suggestion that VLM labels can substitute for expert annotations is stronger than an independently replicated annotation study: self-review uses the same teacher, and the human-label comparison draws on released YOLO models rather than an independently audited, matched annotation protocol. The preprint describes evaluation datasets as held out but does not report a file-level overlap audit, explicit site-held-out split or species-held-out test. XC-AJ therefore needs an overlap check against the Xeno-Canto/BirdSet training pool before it can support an independence claim. Average precision is threshold-free, but the single segmentation threshold is selected on Powdermill; the paper reports weaker or mixed IoU transfer on held-out datasets, especially after temporal collapse. A confident box is not a species, caller, behavior, meaning or receiver response. No versioned code, exact teacher-output manifest or model artifact was identified in the reviewed preprint. Dataset, annotation, model and code rights remain separate; the preprint’s copyright notice does not license reuse of its text or cited assets.",
+    "lesson": "For Talk2Nature, treat model-generated boxes as machine suggestions with explicit provenance, never as human observations or admitted ground truth. If a future annotation workflow uses them, preserve the exact model/checkpoint, prompt, spectrogram settings, source recording, raw suggestion, confidence, human correction and unresolved disagreement as separate linked records. Evaluate against independently reviewed examples and source/session/site holdouts; report threshold-free ranking and thresholded operating behavior separately. This is a useful design pattern for a future researcher annotation aid, not a reason to run a large VLM on phones, adopt its labels, or change the current first task (passive bird-sound presence).",
+    "next_review": "Before considering a reproduction, ask a qualified bioacoustics reviewer to verify the task definition and annotation protocol; audit Xeno-Canto/BirdSet versus XC-AJ source-file overlap; confirm exact training/evaluation group keys and per-dataset rights; and specify a blinded, independently reviewed subset that measures false positives, missed calls and boundary error. Keep the work metadata-only until those gates clear. No model or data acquisition is needed for this review.",
+    "reviewed": "2026-11-02",
+    "expert_review": "No independent Talk2Nature bioacoustics, computer-vision or statistical specialist has reviewed this assessment.",
+    "review_stage": "Full preprint review and comparison with existing source records; no acquisition or reproduction",
+    "year_label": "Preprint year",
+    "purpose": "Models & evaluation",
+    "study_snapshot": [
+      [
+        "Teacher",
+        "Qwen3.8-27B receives rendered five-second mel-spectrogram images and returns candidate time-frequency boxes; one self-review pass is used for the training labels."
+      ],
+      [
+        "Student",
+        "SongMAE is fine-tuned with a detection head over teacher-generated masks; the reported training set is 25,000 seconds plus 2,500 seconds for validation."
+      ],
+      [
+        "Evaluation",
+        "Powdermill is the development/threshold-selection set; WABAD and Hawaii test time-frequency localization, while XC-AJ and NIPS4Bplus test onset/offset localization."
+      ],
+      [
+        "Result boundary",
+        "Reported average precision ranks candidate vocal regions; threshold transfer and intersection-over-union are less consistent. This is detection/localization, not communication decoding."
+      ],
+      [
+        "Readiness",
+        "Preprint is not peer reviewed; file overlap, grouping, independent label review, artifacts and dataset-specific rights remain unresolved."
+      ]
+    ],
+    "review_locator": "Vengrovski and Gardner, “A Vision-Language Model as a Teacher for Bird Vocalization Detection,” bioRxiv v1, posted September 25, 2026, DOI 10.64898/2026.09.23.753955; §§2–7 and Tables 1–2. Full text read from bioRxiv PDF on 2026-11-02."
   }
 ]

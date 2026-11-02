@@ -1,5 +1,11 @@
 # Project status
 
+## November 2 — review VLM-assisted bird-call localization
+
+Reviewed the full bioRxiv v1 preprint “A Vision-Language Model as a Teacher for Bird Vocalization Detection.” Added an original, source-linked note, paper resource record and methods decision. The review applies its teacher/student pipeline only as a future annotation-workflow pattern: machine boxes stay suggestions with full provenance and separate human review. File overlap, independent annotation quality, group holdouts, threshold transfer, preprint status and artifact-specific rights remain explicit limits. No app code, external data or model changed; none was acquired or run.
+
+**Checks:** all **247 Python tests** passed (one intentional skip); local noindex build generated **165 pages plus 404**; the site checker validated **166 HTML documents / 11,516 links**. The clean research worktree is based on public main `3fe8dfb`; this update is not merged or deployed. Keep AutoResearch and real-data admission **NOT READY**.
+
 ## October 31 — keyboard-only Zero Command rehearsal on current main
 
 On current public `main` `d4a2334`, used only keyboard navigation in a local noindex build at **480 × 844 CSS pixels**. From the ordinary Station route, Tab reached the invented no-microphone action; Enter started the synthetic session and focused **End rehearsal**. Enter stopped and focused review. Tab reached **Discard session**; confirming removal of the temporary synthetic session returned the app to **Ready** and focused the Station heading. The document width stayed 480 pixels. Python passed **244 tests** (one intentional skip), Node passed **171/171**, and the local build/site check passed (**162 pages plus 404; 163 HTML documents / 11,341 links**).
