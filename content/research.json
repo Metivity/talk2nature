@@ -6679,7 +6679,63 @@
         "The Zenodo v1 record declares CC BY 4.0 and lists one 109,830-byte XLSX file. Metadata only: payload not inspected; no reproduction or ML run."
       ]
     ],
-    "review_locator": "Lin et al. (2026), PNAS 123(14): e2518687123, DOI 10.1073/pnas.2518687123: significance, abstract, Experiments 1–2, controls, Results, Discussion, Methods and Data/Materials/Software Availability; Zenodo v1 DOI 10.5281/zenodo.10892587 and official API metadata reviewed 2026-11-02."
+    "review_locator": "Lin et al. (2026), PNAS 123(14): e2518687123, DOI 10.1073/pnas.2518687123: significance, abstract, Experiments 1–2, controls, Results, Discussion, Methods and Data/Materials/Software Availability; Zenodo v1 DOI 10.5281/zenodo.10892587 and official API metadata reviewed 2026-11-02.",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "pending",
+      "location_note": "The reviewed main-text methods identify a focal observation colony and feeder arrangement but do not establish its locality. XTBG/CAS author affiliations alone are not evidence of the field site. Check the SI Appendix or another primary study-site statement before mapping.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "receiver-context-research-crosswalk-2026",
+    "title": "A signal is only part of the scene: three ways to study receivers",
+    "seo_description": "Honeybees, Egyptian fruit bats and cockatiels show why receiver context needs species-specific measurements, synchronized evidence and careful limits.",
+    "taxon": "Cross-taxa / animal communication methods",
+    "kind": "Evidence-to-design synthesis",
+    "year": "2016–2026",
+    "source_ids": [
+      65,
+      462,
+      563
+    ],
+    "reviewed": "2026-11-02",
+    "year_label": "Primary studies published",
+    "review_stage": "Targeted cross-study methods synthesis",
+    "review_depth": "Rechecked the existing Talk2Nature evidence records against the linked primary sources. The PLOS ONE article was opened and reviewed for its playback design, behavioral outcomes and limitations; the bat article was reviewed at abstract and selected methods level through its PMC record; the honeybee article was previously reviewed in full, and its audience manipulation and measures were rechecked for this comparison. No underlying recordings, video, datasets, code or model weights were acquired or analyzed. This is not a systematic review or independent specialist assessment.",
+    "review_locator": "Prat et al. (2016), abstract and selected Methods; Liévin-Bazin et al. (2018), abstract, Methods, Results and Discussion; Lin et al. (2026), audience manipulations, measured dance variables and reported results.",
+    "finding": "These studies link signals to receivers in different ways. The honeybee experiment manipulated audience size and age-appropriate follower availability, then measured dance precision and return-run behavior. The Egyptian fruit-bat study paired everyday audio and video to annotate emitter, addressee, context and subsequent behavior. The cockatiel experiment presented partner and non-partner distress calls or white noise in separate playback sessions and measured time near the speaker, movement, calling and crest position; outcomes were mixed across measures. Together they show why receiver context and observed behavior can sharpen a bounded study question, while leaving each species' signal, receiver and outcome definitions specific to its own protocol.",
+    "limitations": "This is a three-paper design comparison, not a systematic survey or a claim that the methods transfer directly between insects, bats and parrots. The honeybee study concerns a known movement signal and follower availability; the bat study uses synchronized video and specialized acoustic recording; the cockatiel study used controlled playback and an ethically approved distress-call protocol that is not a model for the passive companion app. A behavioral change does not by itself establish attention, subjective emotion, comprehension or message meaning. The underlying media and datasets were not reused, and no Talk2Nature model or experiment was run.",
+    "lesson": "For a future research protocol, use a small shared evidence envelope—protocol version, session timebase and quality, signal-event interval, source/identity certainty, receiver availability or presence where measurable, directly observed response with its own time and evidence source, intervention/condition, observer provenance, visibility and missingness. Keep the biological measurements species-specific: a bee follower count, a bat addressee annotation and a parrot's movement or calls are not interchangeable labels. Preserve unknown, not visible and not observed as distinct states. This is a design inference from these studies, not a deployed schema. Keep the public Field Companion simple and passive; do not add animal-directed playback or a universal 'audience' control.",
+    "next_review": "Have an independent ethologist and a bioacoustics/ML methods reviewer assess this proposed evidence envelope against a narrowly defined first-species question before formalizing a research schema. Identify which fields are directly observable, which require synchronized sensors, and which cannot be inferred. No participant collection, animal playback, data admission or model run is authorized by this synthesis.",
+    "expert_review": "No independent avian, chiropteran, insect-communication or statistical specialist has reviewed this synthesis.",
+    "purpose": "Behavior & communication",
+    "study_snapshot": [
+      [
+        "Honeybees · manipulated audience",
+        "Potential follower availability and actual followers were measured alongside waggle-run variability and return-run movement."
+      ],
+      [
+        "Egyptian fruit bats · synchronized audio/video",
+        "Everyday vocal interactions were annotated for emitter, addressee, context and behavior; the study used specialized acoustic recording."
+      ],
+      [
+        "Cockatiels · controlled playback",
+        "Receiver behavior was measured before, during and after partner-call, non-partner-call and white-noise conditions; several outcomes were mixed or inconclusive."
+      ],
+      [
+        "Project decision",
+        "Share timing, provenance and explicit unknowns across research records; keep receiver measures and ethical protocol species-specific."
+      ]
+    ],
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This is an editorial comparison of three studies, not a single field observation or study site.",
+      "locations": [],
+      "observation_period": null
+    }
   },
   {
     "slug": "tweetybert-canary-song-parsing-2026",
@@ -6887,6 +6943,37 @@
       "reviewed": "2026-11-02",
       "location_status": "not_applicable",
       "location_note": "This note covers a model and benchmark review across multiple datasets, not a single verified study site.",
+      "locations": [],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "mixed-sample-rate-animal2vec-2026",
+    "title": "Preserve sample-rate provenance in bioacoustic model comparisons",
+    "taxon": "Birds and meerkats · bioacoustic machine learning",
+    "kind": "Audio representation and evaluation methods",
+    "year": "2026",
+    "source_ids": [
+      577,
+      578,
+      579
+    ],
+    "review_depth": "Targeted review of the full publisher article's dataset construction, mixed-rate versus upsampled conditions, classification and strongly labeled meerkat detection results, compute comparison and discussion. Checked the official code repository README and MIT license link. The Edmond record, supplementary files, exact data manifest, code, dependencies and model artifacts were not inspected or run.",
+    "seo_description": "A 2026 animal2vec study compares mixed sample rates with upsampling. We explain what it supports for bioacoustic evaluation and what remains unproven.",
+    "finding": "Faiß et al. evaluate animal2vec on a 22-class dataset combining meerkat recordings and Xeno-Canto birds, with source rates from 8 to 48 kHz. In their clip-level multi-label classification setup, the standard learnable positional encoding reached macro mAP 0.828 on mixed-rate audio and 0.759 on the same data upsampled to 48 kHz. The study reports 10–11.1 training days for mixed-rate configurations versus 14.9–16.7 days for upsampled configurations on the authors’ GPU setup. Their proposed sample-rate positional encoding performed poorly on the mixed-rate condition (0.156 mAP), so the paper does not support treating that encoding as a ready solution. These are results for one architecture, curated dataset and task; they are not evidence of animal-language decoding or mobile inference.",
+    "limitations": "The dataset is limited to 8–48 kHz and to birds and meerkats; it does not establish behavior, receiver response or meaning. The mixed and upsampled comparisons use a sample-level iterative-stratification split; independent animal, recording-session, source, device or site holdouts were not established in this targeted review. Upsampling is not universally harmful: appropriate resampling may be required by a model interface, while interpolation cannot restore frequencies absent from the original recording. The authors report exploratory poor performance at 96 kHz and explicitly leave unseen sample-rate generalization open. Compute results are training costs for their research setup, not phone-runtime or server-capacity estimates. The article identifies the Edmond dataset as CC BY-NC 4.0; keep it out of any commercial-capable path. The repository landing page displays MIT for code, but no commit or dependencies were audited. Dataset, checkpoint, code, dependency and article rights remain separate.",
+    "lesson": "Preserve the original recording and its sample-rate metadata. For any future rights-cleared task, record both input and processing sample rates, device/configuration, channel choice, duration and any resampling transform; compare original-rate and appropriately resampled inputs only when both conditions preserve the task-relevant bandwidth. Stratify metrics by source rate/device and use recording-, session-, individual- or site-grouped holdouts that match the scientific question. Include simple audio-only and metadata-only baselines when context could become a shortcut. Talk2Nature's Listen tools already retain WAV sample rate, and Nature Station records input/processing settings; this study supports those provenance choices but does not validate the tools or justify adding this model. No code or model integration is proposed.",
+    "next_review": "Before using any released artifact, inspect the exact Edmond file manifest and checkpoint-specific terms, pin the code commit, audit dependencies, and have an independent bioacoustics/ML reviewer approve the target labels and source/session/device/site grouping plan. Keep AutoResearch NOT READY until all existing data, reviewer, benchmark and execution gates pass.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Full article and repository metadata reviewed; no data or code acquired",
+    "year_label": "Peer-reviewed article",
+    "review_locator": "Faiß et al. (2026), Scientific Reports 16:32067, DOI 10.1038/s41598-026-74940-3; dataset/methods, classification results, event-detection experiments, compute comparison and discussion.",
+    "purpose": "Models & evaluation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This is a model-method review across meerkat and bird recordings, not a single verified field site.",
       "locations": [],
       "observation_period": null
     }
