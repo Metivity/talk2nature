@@ -5890,5 +5890,13 @@
     "url": "https://github.com/mariusfaiss/animal2vec_sr_invariant",
     "checked": "2026-11-02",
     "origin": "Official public repository landing page, README and repository license link checked on 2026-11-02. The README still describes the paper as submitted under an earlier title; the final citation is taken from the publisher. Repository-level MIT notice is not inferred to cover data, weights, dependencies or paper text."
+  },
+  {
+    "id": 580,
+    "title": "NLnet Restack current AI-scope exclusion and November 2026 deadline",
+    "description": "The official Restack page lists the November 3, 2026 noon CET deadline, €5,000–€50,000 first proposals, and states that AI-related projects are out of scope unless they already have more than one million active human users and are directly relevant to the Open Internet Stack.",
+    "url": "https://nlnet.nl/restack/",
+    "checked": "2026-11-02",
+    "origin": "Directly reopened the official program page on November 2, 2026 and reviewed its scope and deadline text. This supersedes the October 28 current-page observation in source 150 that did not find the one-million-user language. No archived version was reviewed, so when or why the visible text differed is unknown. Used only to assess current call fit; no application was drafted or submitted."
   }
 ]
