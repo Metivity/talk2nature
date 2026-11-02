@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -10919,6 +10919,65 @@
         "research_use": "unresolved",
         "commercial_use": "not_admitted",
         "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "wierucka-bioacoustics-methods-data-code-2025",
+      "kind": "dataset",
+      "title": "Wierucka et al. mammalian acoustic identity analysis data and code",
+      "url": "https://doi.org/10.6084/m9.figshare.29209976.v1",
+      "version": "Figshare version 1, as linked by the peer-reviewed article; item files not inspected",
+      "source_ids": [
+        616,
+        617
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "task": "Study data and code supporting a comparison of acoustic feature extraction and classifiers for known-caller identity across 16 mammalian datasets.",
+      "review_depth": "Article data-availability statement and Figshare DOI link reviewed; the deposit and its individual files were not inspected or acquired.",
+      "access": "Deposit is linked by the article. File inventory, download conditions and component-specific terms remain unreviewed.",
+      "decision": "Metadata-only. Not admitted for analysis, training, redistribution or commercial use; review exact deposit contents and terms before any acquisition.",
+      "limitations": "The article link does not establish item-level rights. The underlying recordings originate from multiple study systems; the exact dataset components, permissions, source-file terms and code license were not reviewed.",
+      "attribution": "Wierucka et al. (2025); original recording contributors and dataset-level attribution require inspection before any reuse.",
+      "rights": {
+        "license": "Not reviewed",
+        "scope": "Deposit data and code; distinct from article access and license.",
+        "evidence_url": "https://doi.org/10.1111/2041-210X.70091",
+        "conditions": "Review the versioned Figshare record and every relevant component license before acquisition or reuse.",
+        "research_use": "unresolved",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "twelve-quick-tips-animal-sound-ml-2026",
+      "kind": "paper",
+      "title": "Ghani et al. practical lifecycle guide for deep learning on animal sounds",
+      "url": "https://doi.org/10.1371/journal.pcbi.1014604",
+      "version": "PLOS Computational Biology 22(8), e1014604; published 2026-08-12",
+      "source_ids": [
+        618
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "Practical cross-taxon guidance for question definition, provenance, annotation, domain-shift evaluation, metrics, reproducibility, deployment and ethics.",
+      "review_depth": "Complete publisher-hosted article reviewed. The linked datasets, code, model weights and tools were not acquired or audited.",
+      "access": "Publisher article is open access under CC BY 4.0; article terms do not license linked datasets, software, models or weights.",
+      "decision": "Reference for protocol design and researcher onboarding only; not a benchmark, model-selection result, Talk2Nature validation or authorization to acquire data/run models.",
+      "limitations": "The article is a practical synthesis and does not validate Talk2Nature’s capture devices, species, data, model, server or app. Named linked resources need separate rights and fit review.",
+      "attribution": "Ghani B, Baier AL, Kalkman VJ, Stowell D (2026), PLOS Computational Biology 22(8):e1014604. https://doi.org/10.1371/journal.pcbi.1014604",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "Article text only; linked data, code, figures, models and weights have separate terms.",
+        "evidence_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014604",
+        "conditions": "Attribute the authors and article. Review the exact license and rights of every separately linked artifact before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
       },
       "acquisition": "metadata_only",
       "files": []

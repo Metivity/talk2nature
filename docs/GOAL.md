@@ -1,3 +1,11 @@
+# November 3 — apply the full-lifecycle bioacoustics guide
+
+Reviewed the complete peer-reviewed 2026 PLOS Computational Biology guide by Ghani et al. It ties the biological question to the target device, provenance, annotation agreement, field domain shift, realistic hard negatives, class-aware/error-cost-aware evaluation, preprocessing parity, reproducibility, and human/wildlife privacy. Added an original evidence note and metadata-only article record; linked it into the model learning path; and applied a compact checklist to the benchmark run card and model/data decision. The article is guidance, not a Talk2Nature validation. No linked dataset/code/weights were acquired, no recording was collected, and no model was run.
+
+**Verification:** catalog validation accepts **353 resources**; the Python suite passes **280 tests, 1 skipped**; the local noindex build produces **186 routes plus 404**; the site checker passes **187 HTML documents / 12,822 links / public:false**; `git diff --check` passes. The new note route is present in local build output. This branch is a local candidate, not a merge or deployment. Keep AutoResearch and real-data admission **NOT READY**; publication/deployment and independent device/reviewer checks remain separate.
+
+**Next:** use this lifecycle checklist to compare the next candidate animal-audio study to the five active tracks and prioritize a concrete improvement.
+
 # November 2 — apply a deeper acoustic-structure methods review
 
 Reviewed the complete author README at the pinned global passerine repository commit and rechecked the primary PubMed article record. The README describes an MPS → weighted-PCA → eight-motif clustering pipeline plus separate ecological/phylogenetic analyses. Applied the distinction to benchmark planning: this is acoustic-structure prior art, not a receiver-response or meaning benchmark; the current first computational question remains passive sound presence. The publisher's full text and supplement returned HTTP 403, so those methods remain unreviewed. The candidate's source-ID/license join is paused unless provider-permitted metadata access becomes available; no scraping or payload acquisition was attempted.
@@ -2078,3 +2086,15 @@ Reviewed the full Dog2vec paper and its official repository and Zenodo checkpoin
 **Applied:** keep dogs in the all-animal scope, but do not use scraped-hour totals to pick the first cohort. A future dog task needs rights-cleared recordings, dog/session/source-grouped evaluation and simple/general/specialist baselines. Keep the 1.1 GB model out of the phone app. Added the evidence to the model learning path, model/data decision matrix and phase-two plan; a regression check preserves the first bird-detection question and prevents Dog2vec from becoming an app dependency. Each asset has a separate metadata-only record.
 
 **Release and verification:** PR #672 recorded the release preflight and merged as `ed615e6`. On top of that public source, Python passed **269 tests** (one intentional skip), Node passed **176/176**, the catalog validated **344 resources**, and the explicit-origin build and checker passed with **182 routes / 12,701 links**. The candidate retains all **154** live sitemap URLs and adds **28** routes; the 27 previously checked routes and the new Dog2vec route return 404 on Pages. The new route is not live; GitHub 2FA is still needed for the authorized manual Pages dispatch. Keep the five-track goal active; AutoResearch and real-data admission remain **NOT READY**.
+
+## November 3 continuation — apply pipeline-comparison research
+
+Reviewed the full publisher-hosted Wierucka et al. (2025) article on mammalian caller-identity analysis, which compares four acoustic feature families and four classifiers across 16 datasets from 14 species. The reported consistency of MFCC and random-forest results is specific to the study's known-caller task; it does not establish unseen-caller generalization or call meaning. Its linked data/code deposit remains uninspected and metadata-only.
+
+Applied this as a reproducibility requirement to the model decision record and benchmark run card: define the identity estimand, pin the full signal-processing/model pipeline, compare on one frozen grouped split, and report pipeline sensitivity. Added a public evidence note and a separately rights-gated resource record. No data, code, model, audio or supplement was downloaded or run.
+
+**Next:** continue targeted primary-source review only when it changes a task, method or product decision; keep the independent reviewer, external-use, physical-device and live-release gates distinct. AutoResearch and real-data admission remain **NOT READY**; the full five-track goal remains active.
+
+## November 3 continuation — carry pipeline research into the inactive AutoResearch protocol
+
+Extended the prior Wierucka et al. (2025) review into `docs/AUTORESEARCH_ADAPTATION.md` and `research/autoresearch/program.md`. A future candidate must now declare the identity estimand (known caller or unseen-caller transfer), pin the complete audio/feature/model pipeline and group split, and report prespecified pipeline sensitivity without attributing preprocessing changes to model changes. The paper's MFCC/random-forest result remains a task-bounded reference, not a default baseline. Added a protocol regression check; this does not approve, execute or validate a model run. AutoResearch and real-data admission remain **NOT READY**; the five-track goal remains active.
