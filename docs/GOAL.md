@@ -1,4 +1,12 @@
-# November 2 continuation — merge the walkthrough and verify the live release gap
+# November 2 continuation — stress-test “meaning” claims against current methods disputes
+
+Reviewed the original bonobo compositionality paper alongside a 2026 peer-reviewed statistical critique, then applied the disagreement to the Talk2Nature benchmark rules. The source-linked library now records both sides and the unresolved 700-versus-735 observation-count difference. The critique's null simulations and permutation result are reported as its authors' analyses; Talk2Nature did not reproduce them or resolve the dispute.
+
+**Decision:** keep model embeddings and context clusters exploratory until a preregistered test survives a dependence-aware null that repeats the full analysis pipeline. Record sampling, missingness and individual/session groups; compare simple and context-only baselines; require independently observed receiver behavior for comprehension claims. This supports the existing passive sound-event first task and adds no basis for animal-directed output or general translation.
+
+**Verification and next step:** source, paper, code-release and original-dataset records were added and linked from the “meaning” learning path. The 7,136-byte CC BY 4.0 code archive was fetched transiently, matched to Zenodo's MD5, inspected and discarded. The separately licensed Figshare v1 `xdata.txt` was acquired with the bounded collector to ignored external storage; size, provider MD5 and local SHA-256 match the receipt. A row-value-free structural audit found 735 rows × 343 columns, including the exact leading metadata layout and 336 feature columns expected by the pinned scripts. This confirms input-shape compatibility, not a reproduced analysis; the original abstract's 700-count difference remains unresolved. The tagged permutation script uses 100 iterations versus 10,000 in the paper, and it keeps original-label weights fixed while permuting labels. Get independent statistical review of that weighting null and reconcile the permutation count before code execution. Keep the five-track goal active and AutoResearch/real-data admission **NOT READY**.
+
+## November 2 continuation — merge the walkthrough and verify the live release gap
 
 PR [#666](https://github.com/Metivity/talk2nature/pull/666) merged to `main` as [`615d4b6`](https://github.com/Metivity/talk2nature/commit/615d4b6b70f3697d3f3919ae95379a40d88d467b). Hosted Public Checks run [#41496005369](https://github.com/Metivity/talk2nature/actions/runs/41496005369) passed repository, browser-tool, Android and preview-site checks. The new walkthrough is now in source on `main`.
 

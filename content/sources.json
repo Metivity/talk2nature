@@ -6019,5 +6019,45 @@
     "checked": "2026-11-02",
     "origin": "Targeted review of the article abstract, capture/model workflow, prior and updating model components, reported independent point-count evaluation, code/data statements and privacy/generalization discussion. No article supplement, code, data, audio, app or model was acquired or run. The article version is identified as CC BY in Aalto University's research portal. Rights for the separately linked code and observation records were not independently checked.",
     "license_url": "https://research.aalto.fi/en/publications/a-digital-twin-for-real-time-biodiversity-forecasting-with-citize/"
+  },
+  {
+    "id": 595,
+    "title": "Berthet et al. (2025), Extensive compositionality in the vocal system of bonobos",
+    "description": "Original field study proposing compositional structure from call/context associations and a multiple-correspondence-analysis semantic space.",
+    "url": "https://doi.org/10.1126/science.adv1170",
+    "review_url": "https://wrap.warwick.ac.uk/id/eprint/190948/1/WRAP-Extensive-compositionality-the-vocal-system-bonobos-25.pdf",
+    "review_url_label": "Author-accepted manuscript hosted by the University of Warwick",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the accepted manuscript abstract, methods, compositionality criteria, results, interpretations and limitations. The repository permits personal research/study and non-profit educational use with attribution but says not to redistribute the manuscript; this site links to it and publishes an original summary only."
+  },
+  {
+    "id": 596,
+    "title": "Wartel et al. (2026), Structure without semantics: no evidence for bonobo compositionality in Berthet et al. (2025)",
+    "description": "Peer-reviewed PeerJ reanalysis testing the original MCA pipeline with randomized data and a full-pipeline permutation null.",
+    "url": "https://doi.org/10.7717/peerj.21651",
+    "review_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13505523/",
+    "review_url_label": "Full text in PubMed Central",
+    "checked": "2026-11-02",
+    "origin": "Reviewed the full article's methods, simulation checks, reanalysis, discussion, data/code availability and declared limitations. The article is CC BY. Also inspected the named Zenodo release metadata and code package, plus the public GitHub files at the pinned release; the 7,136-byte archive matched Zenodo's published MD5. No code was executed and no dependencies were installed."
+  },
+  {
+    "id": 597,
+    "title": "Wartel et al. (2026), Bonobo-MCA v1.0.0 reanalysis code release",
+    "description": "Pinned 2026 Zenodo/GitHub R-code package for randomized-null simulations and a weighted-MCA permutation test; it does not bundle the referenced xdata.txt input.",
+    "url": "https://doi.org/10.5281/zenodo.21370080",
+    "review_url": "https://github.com/AndreasWartel/Bonobo-MCA/tree/b918fd2e03379c1d1d4abca51eca21de41ce5ec6",
+    "review_url_label": "Pinned v.1.0.0 source commit",
+    "checked": "2026-11-02",
+    "origin": "Zenodo API metadata identifies v.1.0.0, CC BY 4.0 and one 7,136-byte ZIP; in-memory download matched provider MD5 md5:270923b2f6fd9a57d77e99eda37319c2. The archive contains README and three R scripts, but not xdata.txt referenced by all scripts. Source review found 100 permutations in script 03 versus 10,000 reported by the paper, and unpinned install.packages calls. GitHub has no recognized repository LICENSE. Files were not retained, code was not run, dependencies were not installed and no result was reproduced."
+  },
+  {
+    "id": 598,
+    "title": "Berthet et al. (2025), Final dataset for the bonobo compositionality study",
+    "description": "Versioned Figshare dataset item cited by the original study; its file manifest includes an xdata.txt file that is absent from the PeerJ critique's Zenodo code archive.",
+    "url": "https://doi.org/10.6084/m9.figshare.26217803.v1",
+    "review_url": "https://api.figshare.com/v2/articles/26217803",
+    "review_url_label": "Official Figshare v1 item metadata API",
+    "checked": "2026-11-02",
+    "origin": "TLS-verified Figshare API metadata identifies item 26217803 v1, published 2025-01-29, and declares CC BY 4.0 for the item. Its manifest lists xdata.txt (801,667 bytes; provider MD5 24bcbb0c1b4d98ad645168307cb4f500) and Final data.xlsx (761,453 bytes; provider MD5 ef6e16496372f78372423fac7078a4c7). Only xdata.txt was acquired through the bounded collector; received size and provider MD5 matched, and the local receipt records SHA-256. A row-value-free schema audit found 735 rows and 343 tab-delimited columns, matching the expected script layout. No row values were emitted, the workbook was not acquired, and no analysis code was run."
   }
 ]

@@ -60,7 +60,8 @@ class CollectionTests(unittest.TestCase):
             'japanese-tit-core-merge-2022-data', 'japanese-tit-core-merge-2022-code',
             'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data',
             'cockatiel-distress-call-study-data-2018',
-            'monk-parakeet-identity-figshare-2023', 'powdermill-bird-soundscapes'})
+            'monk-parakeet-identity-figshare-2023', 'powdermill-bird-soundscapes',
+            'bonobo-compositionality-original-dataset-figshare-v1'})
         self.assertLess(size, MAX_BATCH_BYTES)
         annotations = next(r for r in self.catalog['resources']
                            if r['id'] == 'monk-parakeet-annotations')
