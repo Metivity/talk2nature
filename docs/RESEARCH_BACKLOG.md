@@ -1,5 +1,13 @@
 # Prioritized research and machine-learning backlog
 
+## November 2 — review VLM-assisted bird-call localization as an annotation workflow
+
+Reviewed the full five-page bioRxiv v1 preprint by Vengrovski and Gardner, “A Vision-Language Model as a Teacher for Bird Vocalization Detection” (DOI 10.64898/2026.09.23.753955). It uses Qwen3.8-27B to propose time-frequency boxes on five-second mel spectrograms, one self-review pass, and SongMAE as the student detector. The authors report 5,500 Xeno-Canto/BirdSet recordings, 31,422 events and four held-out evaluation datasets. Their development ablation shows axes and chain-of-thought account for most of the Powdermill gain; self-review adds little. Average precision is strong in the reported tests, while the Powdermill-selected threshold yields weaker/mixed IoU transfer.
+
+**Application:** the useful project idea is a provenance-preserving annotation assistant. Any future machine-generated event box must remain a suggestion, separate from human labels, and retain model/checkpoint, prompt, audio transform, source recording, confidence, human edits and disagreement. The research library now records this preprint and the distinction. No app/code, model or recording changed; nothing was acquired or run.
+
+**Limits and next gate:** this is not peer reviewed. The preprint does not document a file-overlap audit or explicit site/species holdout; XC-AJ should be checked against the Xeno-Canto/BirdSet training pool. The claimed substitution for expert annotations needs blinded independent review and a matched protocol. Dataset and model rights remain separate; no code/artifact manifest was identified. Keep it metadata-only. Ask a qualified reviewer to validate the overlap/grouping plan before any reproduction. This improves the annotation and evaluation roadmap but does not change the first task (passive bird-sound presence), make generated labels ground truth, or support animal-directed output. AutoResearch and real-data admission remain **NOT READY**. See the full review page and source 568.
+
 ## October 31 — place BORIS in the researcher workflow without inventing interoperability
 
 Reviewed the official BORIS feature and event-export documentation, v10.0.2 release and current download page. BORIS represents subjects, ethograms, modifiers, point/state events, media timing and image frames; Talk2Nature's annotation schema and one-way Audacity export do not. The release/download pages identify v10.0.2 while the official user guide remains v9.15.0, so the v10 export schema is unverified. No software, media, project or export was acquired or tested.
