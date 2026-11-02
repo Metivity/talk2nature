@@ -1388,7 +1388,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn('keeps each observer\'s labels separate',page)
             self.assertIn('/talk2nature/tools/annotation-compare/',tools)
             self.assertIn('/talk2nature/assets/annotation-compare-page.mjs',page)
+            self.assertIn('id="annotation-compare-mobile-pairs"',page)
+            self.assertIn('Pairwise comparison results for phone screens',page)
+            self.assertIn('/talk2nature/research/whale-call-adjudication-2026/',page)
             self.assertTrue((root/'assets/annotation-compare.css').is_file())
+            review=(root/'research/whale-call-adjudication-2026/index.html').read_text()
+            self.assertIn('do not validate a universal event-matching rule',review)
+            self.assertIn('https://doi.org/10.1111/2041-210x.70331',review)
 
     def test_community_invites_bounded_university_evaluation(self):
         with tempfile.TemporaryDirectory() as d:

@@ -39,6 +39,7 @@
   </div>
   <div id="annotation-compare-summary" class="annotation-compare-summary"></div>
   <div class="annotation-compare-table-wrap"><table class="annotation-compare-table"><caption>Pairwise event overlaps between the two observer files</caption><thead><tr><th scope="col">A event</th><th scope="col">B event</th><th scope="col">Overlap</th><th scope="col">Time IoU</th><th scope="col">A sound kind</th><th scope="col">B sound kind</th><th scope="col">Observed context</th></tr></thead><tbody id="annotation-compare-pairs"></tbody></table></div>
+  <section id="annotation-compare-mobile-pairs" class="annotation-compare-mobile-pairs" role="region" aria-label="Pairwise comparison results for phone screens"></section>
   <div class="annotation-compare-unmatched"><div><h3>A events without positive overlap</h3><p id="annotation-unmatched-a"></p></div><div><h3>B events without positive overlap</h3><p id="annotation-unmatched-b"></p></div></div>
   <button id="annotation-report-download" class="button" type="button">Download comparison report</button>
   <p id="annotation-download-status" class="annotation-compare-status" role="status" aria-live="polite"></p>
@@ -49,5 +50,6 @@
   <div><p class="eyebrow">A SMALL, HONEST COMPARISON</p><h2>Overlap is a place to look closer.</h2></div>
   <p>Exact WAV checksums and recording settings must match, and the declared annotator IDs must differ. A pairwise time overlap does not establish label quality. Context is compared only when both notes name an independently observed context. No file leaves this page; nothing is saved in browser storage.</p>
   <p>Research precedent: one blue-whale study tested two aggregation methods for two call-detection tasks against separate expert-annotated sets. That does not establish behavior or meaning, or justify a universal consensus rule. This tool keeps each observer's labels separate.</p>
-  <p><a href="{{base}}/research/blue-whale-multi-annotator-labels-2024/">Read the source review and limitations →</a></p>
+  <p>A separate 2026 study used adjudication and capture-recapture for call-density estimates from one Antarctic blue-whale site-year. Its method does not define universal event matching; this tool reports overlaps without joining events. <a href="{{base}}/research/whale-call-adjudication-2026/">Read that review and its limits →</a></p>
+  <p><a href="{{base}}/research/blue-whale-multi-annotator-labels-2024/">Read the multi-annotator study review →</a></p>
 </section>

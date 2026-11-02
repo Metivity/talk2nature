@@ -19,16 +19,28 @@ function state(){
 }
 function card(value,label){const e=node('div',undefined,'annotation-compare-stat');e.append(node('strong',String(value)),node('span',label));return e;}
 function render(report){
-  const summary=$('annotation-compare-summary'),tbody=$('annotation-compare-pairs');
+  const summary=$('annotation-compare-summary'),tbody=$('annotation-compare-pairs'),mobilePairs=$('annotation-compare-mobile-pairs');
   summary.replaceChildren(card(report.annotation_counts.a,'events in A'),card(report.annotation_counts.b,'events in B'),card(report.positive_overlap_pair_count,'positive-overlap pairs'));
-  tbody.replaceChildren();
-  if(!report.pairwise_overlaps.length){const row=node('tr'),cell=node('td','No positive interval overlaps. This does not establish that no sound occurred.');cell.colSpan=6;row.append(cell);tbody.append(row);}
+  tbody.replaceChildren();mobilePairs.replaceChildren();
+  if(!report.pairwise_overlaps.length){
+    const message='No positive interval overlaps. This does not establish that no sound occurred.';
+    const row=node('tr'),cell=node('td',message);cell.colSpan=7;row.append(cell);tbody.append(row);
+    const empty=node('article',undefined,'annotation-compare-mobile-card');empty.append(node('h3','No positive interval overlaps'),node('p',message));mobilePairs.append(empty);
+  }
   for(const pair of report.pairwise_overlaps){
     const row=node('tr'),kindClass=pair.kind_exact_match?'annotation-match':'annotation-difference';
     const kindA=node('td',pair.kind_a,kindClass),kindB=node('td',pair.kind_b,kindClass);
     const context=pair.context_comparison==='same_declared_category'?`Same: ${pair.context_a}`:pair.context_comparison==='different_declared_category'?`${pair.context_a} / ${pair.context_b}`:'Not comparable';
     const eventA=node('th',`#${pair.event_a_id}`);eventA.scope='row';
     row.append(eventA,node('td',`#${pair.event_b_id}`),node('td',`${fmt(pair.overlap_start_seconds)}–${fmt(pair.overlap_end_seconds)} · ${fmt(pair.overlap_seconds)}`),node('td',pair.temporal_iou.toFixed(3)),kindA,kindB,node('td',context));tbody.append(row);
+    const mobile=node('article',undefined,'annotation-compare-mobile-card');
+    mobile.append(node('h3',`A #${pair.event_a_id}  ↔  B #${pair.event_b_id}`));
+    const details=node('dl');
+    const detail=(label,value)=>{const item=node('div');item.append(node('dt',label),node('dd',value));return item;};
+    const kinds=node('div');kinds.append(node('dt','Sound-kind labels'));
+    const kindValues=node('dd');kindValues.append(node('span',`A · ${pair.kind_a}`,kindClass),node('span',`B · ${pair.kind_b}`,kindClass));kinds.append(kindValues);
+    details.append(detail('Interval overlap',`${fmt(pair.overlap_start_seconds)}–${fmt(pair.overlap_end_seconds)} · ${fmt(pair.overlap_seconds)}`),detail('Time IoU',pair.temporal_iou.toFixed(3)),kinds,detail('Observed context',context));
+    mobile.append(details);mobilePairs.append(mobile);
   }
   const ids=(values)=>values.length?values.map(id=>`#${id}`).join(', '):'None';
   $('annotation-unmatched-a').textContent=ids(report.event_ids_without_positive_overlap.a);

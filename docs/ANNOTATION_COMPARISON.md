@@ -19,6 +19,8 @@ A positive interval overlap does not establish the same biological event, call m
 
 This boundary follows the scope of Dubus et al. (2024): nineteen novices and one bioacoustics expert annotated two blue-whale call-detection types. The paper assessed novice annotations and task-specific majority-vote and soft-label aggregation against separately annotated evaluation sets; expert labels served as pseudo-ground truth for the study. It supports retaining independent reviewer labels and testing any aggregation against a defined task, not assuming that the majority is biologically right. Those results do not establish behavioral meaning or a universal aggregation rule. Read the [source-grounded project review](../content/research.json) and [primary article](https://doi.org/10.1016/j.ecoinf.2024.102642).
 
+A second, distinct study informs the boundary: Miller et al. (2026) compared three experienced observers and two automated detectors for Antarctic blue whale song calls. Their adjudicated capture-recapture workflow produced more consistent call-density estimates across observers and detectors than treating each human observer as ground truth. They explicitly describe adjudication as helping detector characterization, not replacing manual annotation for detector development. This is a single site-year density-estimation result; it does not establish a universal event-matching rule. The comparison tool follows that lesson by exposing overlaps while leaving every source annotation intact. Read the [focused project review](../research/whale-call-adjudication-2026/) and [primary article](https://doi.org/10.1111/2041-210x.70331).
+
 ## Try the invented example
 
 Open the comparison page and choose the committed fixtures:
@@ -28,7 +30,7 @@ Open the comparison page and choose the committed fixtures:
 
 They share a declared checksum and contain invented intervals only. The expected output lists two positive-overlap pairs and one event without positive overlap. No animal recording is present. The tests verify that notes and annotator IDs do not enter the report, mismatched checksums fail closed, and one-to-many overlap remains visible.
 
-Maintainer browser check: both fixtures loaded locally; the page rendered two overlap rows, preserved unmatched event `#12`, downloaded a report without notes or annotator IDs, and cleared both selections. Chromium responsive emulation at 390 px and 320 px kept the document within the viewport; the wide results table stayed inside its own horizontal-scroll region. Files were selected at desktop width before resizing; no physical phone, assistive technology or independent researcher tested this workflow.
+Maintainer browser check: both fixtures loaded locally; the page rendered two overlap pairs, preserved unmatched event `#12`, downloaded a report without notes or annotator IDs, and cleared both selections. At 390 px and 320 px, the document stayed within the viewport and results were presented as paired A/B cards instead of requiring horizontal panning across the seven-column table; desktop retains the semantic table. Files were selected at desktop width before resizing; no physical phone, assistive technology or independent researcher tested this workflow.
 
 ## Limits and next decision
 

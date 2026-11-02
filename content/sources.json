@@ -5980,5 +5980,13 @@
     "url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/LICENSE",
     "checked": "2026-11-02",
     "origin": "Exact official LICENSE at the reviewed OSEkit commit was read on 2026-11-02. No OSEkit code was copied or used."
+  },
+  {
+    "id": 591,
+    "title": "Miller et al. (2026), adjudicated observer comparison for Antarctic blue whale call density",
+    "description": "Open-access Methods in Ecology and Evolution study combining human and automated call detections with adjudication and capture-recapture to estimate Antarctic blue whale call density.",
+    "url": "https://doi.org/10.1111/2041-210x.70331",
+    "checked": "2026-11-02",
+    "origin": "Publisher full text reviewed on 2026-11-02 for abstract, design, observer-ground-truth comparisons, adjudicated capture-recapture workflow, results and discussion. Supporting information was not reviewed and no data, code or calculations were acquired or reproduced."
   }
 ]
