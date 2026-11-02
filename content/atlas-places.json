@@ -365,6 +365,27 @@
       "precision": "region",
       "latitude": 70.0,
       "longitude": -151.5
+    },
+    {
+      "id": "amsterdam-saint-paul-islands",
+      "label": "Amsterdam and Saint Paul Islands region, southern Indian Ocean",
+      "precision": "region",
+      "latitude": -37.8,
+      "longitude": 77.6
+    },
+    {
+      "id": "swams-southern-indian-ocean",
+      "label": "SWAMS region between Kerguelen and Amsterdam Island",
+      "precision": "region",
+      "latitude": -43.5,
+      "longitude": 73.4
+    },
+    {
+      "id": "elephant-island-southern-ocean",
+      "label": "Elephant Island region, Southern Ocean",
+      "precision": "region",
+      "latitude": -61.1,
+      "longitude": -55.1
     }
   ]
 }

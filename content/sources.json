@@ -5898,5 +5898,87 @@
     "url": "https://nlnet.nl/restack/",
     "checked": "2026-11-02",
     "origin": "Directly reopened the official program page on November 2, 2026 and reviewed its scope and deadline text. This supersedes the October 28 current-page observation in source 150 that did not find the one-million-user language. No archived version was reviewed, so when or why the visible text differed is unknown. Used only to assess current call fit; no application was drafted or submitted."
+  },
+  {
+    "id": 581,
+    "title": "Dubus et al. (2024), multi-annotator blue whale call detection study",
+    "description": "Publisher abstract for the Ecological Informatics study of 19 novice annotators and one bioacoustics expert. It reports annotator-style differences and tests majority-vote and soft-label aggregation for blue whale call detection.",
+    "url": "https://doi.org/10.1016/j.ecoinf.2024.102642",
+    "checked": "2026-11-02",
+    "origin": "Publisher landing-page abstract, highlights and data-availability statement reviewed on 2026-11-02. Full text was not accessible in this review; no dataset, code, weights or audio were acquired. The abstract says data are available on request. Exact article reuse terms were not verified."
+  },
+  {
+    "id": 582,
+    "title": "Dubus et al. (2024) full text archived in Archimer / IFREMER",
+    "description": "Institutional archive copy of the peer-reviewed Ecological Informatics article. Full-text review covered study design, the APLOSE annotation workflow, evaluation sets, aggregation results, discussion, campaign guidelines, data statement and the article license.",
+    "url": "https://doi.org/10.1016/j.ecoinf.2024.102642",
+    "review_url": "https://archimer.ifremer.fr/doc/00889/100094/110389.pdf",
+    "checked": "2026-11-02",
+    "origin": "Full text retrieved from the IFREMER Archimer institutional archive on 2026-11-02. The PDF states CC BY-NC 4.0 for the article and says data are available on request. Those terms do not establish rights to the study data, code or model weights; none were acquired or run.",
+    "review_url_label": "Institutional full-text copy used for the review"
+  },
+  {
+    "id": 583,
+    "title": "APLOSE annotation platform paper, SoftwareX (2025)",
+    "description": "Publisher abstract for the open-access software paper describing APLOSE as a collaborative underwater passive-acoustic annotation platform used for inter-annotator variability, reference datasets and detector review. Direct full-text retrieval returned HTTP 403 in this review.",
+    "url": "https://doi.org/10.1016/j.softx.2025.102055",
+    "checked": "2026-11-02",
+    "origin": "Publisher-indexed abstract and bibliographic record reviewed on 2026-11-02; full paper text was not retrieved."
+  },
+  {
+    "id": 584,
+    "title": "APLOSE official repository README",
+    "description": "Maintainer documentation describing its annotation and verification phases, stored/exportable annotations, React frontend, Django backend and reliance on precomputed OSEkit spectrograms.",
+    "url": "https://github.com/Project-OSmOSE/APLOSE",
+    "checked": "2026-11-02",
+    "origin": "Official repository README reviewed on 2026-11-02. This is documentation review, not a source-code audit or installation."
+  },
+  {
+    "id": 585,
+    "title": "APLOSE repository license file",
+    "description": "The repository LICENSE contains standard MIT text, including permission to sell copies. The separate README contains an additional “must not be sold” statement.",
+    "url": "https://github.com/Project-OSmOSE/APLOSE/blob/master/LICENSE",
+    "checked": "2026-11-02",
+    "origin": "Exact license text and its mismatch with the repository README were checked on 2026-11-02. No legal interpretation or maintainer clarification obtained."
+  },
+  {
+    "id": 586,
+    "title": "APLOSE latest stable GitHub release metadata",
+    "description": "GitHub API marked v3.15.0 as the latest non-prerelease, published 2026-10-12. The master branch had a later verified commit on 2026-10-26; release and branch state are distinct.",
+    "url": "https://github.com/Project-OSmOSE/APLOSE/releases",
+    "checked": "2026-11-02",
+    "origin": "GitHub releases page and public GitHub REST release/master-commit metadata freshly read on 2026-11-02. Version is a dated snapshot and may change."
+  },
+  {
+    "id": 587,
+    "title": "OSEkit documentation: working with APLOSE results",
+    "description": "Official OSEkit documentation describes APLOSE campaign results as CSV files that can be loaded as OSEkit detections and linked to audio/spectrogram data.",
+    "url": "https://project-osmose.github.io/OSEkit/aplose.html",
+    "checked": "2026-11-02",
+    "origin": "Official OSEkit documentation result reviewed on 2026-11-02 for the published CSV handoff description; no code was run."
+  },
+  {
+    "id": 588,
+    "title": "Pinned OSEkit APLOSE detection CSV parser",
+    "description": "Detection.from_dict and from_csv at the OSEkit repository commit reviewed for required/used fields, absolute-time parsing, frequency bounds, annotator confidence and verification columns.",
+    "url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/src/osekit/core/detection.py",
+    "checked": "2026-11-02",
+    "origin": "Official source at exact commit 39170854efa35e6a17ce1da5e15e6c73109d14b9 inspected on 2026-11-02. Read as text only; not installed, imported or executed."
+  },
+  {
+    "id": 589,
+    "title": "Pinned OSEkit APLOSE results example CSV",
+    "description": "Official example export header and one example row used to confirm the documented field names and the presence of dynamic verification columns. The file itself was not retained or redistributed.",
+    "url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/docs/source/_static/detections/aplose_results.csv",
+    "checked": "2026-11-02",
+    "origin": "Official example CSV at OSEkit commit 39170854efa35e6a17ce1da5e15e6c73109d14b9 inspected transiently on 2026-11-02. Its reuse license was not verified; no file was retained or copied."
+  },
+  {
+    "id": 590,
+    "title": "Pinned OSEkit repository MIT license",
+    "description": "The OSEkit repository LICENSE at the reviewed source commit contains standard MIT terms. These terms apply to that code repository, not to the example CSV, APLOSE software, dependencies or research data.",
+    "url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/LICENSE",
+    "checked": "2026-11-02",
+    "origin": "Exact official LICENSE at the reviewed OSEkit commit was read on 2026-11-02. No OSEkit code was copied or used."
   }
 ]

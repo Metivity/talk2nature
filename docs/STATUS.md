@@ -3710,3 +3710,44 @@ Cloned candidate `786e7e7` into a new temporary checkout and ran the documented 
 ## November 2 continuation — refresh Search Console and sitemap evidence
 
 Read the project property in Search Console using the Metivity account. The live `robots.txt` and sitemap are reachable; the sitemap parses as 154 URLs, but Search Console still reports “Sitemap could not be read” and zero discovered pages. The index report is older than the latest source changes; page-level examples and index counts remain private. Manual-action and security reports show no issues; Core Web Vitals has no field data. This does not prove a Googlebot fetch, and no resubmission, validation or indexing request was made. See `docs/SEO_AUDIT.md`; low-volume query/page analytics are retained only in the ignored owner snapshot. Candidate-only research routes remain 404 on live Pages.
+
+## November 2 continuation — apply multi-annotator evidence to contributor design
+
+Reviewed the publisher abstract, highlights and data-availability statement for Dubus et al. (2024), “From citizen science to AI models: Advancing cetacean vocalization automatic detection through multi-annotator campaigns.” It describes 19 novice annotators and one bioacoustics expert labeling blue whale vocalizations, reports annotator-style differences, and tests majority-vote and soft-label aggregation for detection. The abstract reports improved model performance and lower variability after aggregation in that task. The full paper, detailed methods, dataset, code, weights and exact reuse terms were not reviewed; the article says data are available on request. This is a targeted abstract-level review, not a full literature review or independent replication.
+
+Added source **581** and a public research-library note. Applied the narrow lesson to the parrot-pilot draft: preserve individual labels and uncertainty, show disagreement, and represent any aggregation as a traceable derived view. Call-detection labels do not establish behavior labels or meaning, and agreement is not biological truth. The Indian Ocean is only recorded as a coarse study-region clue with map status pending; no exact location is invented. No data, media, model, code or participant information was acquired or run; no recruiting or real-data intake began.
+
+**Validation:** Python suite **255 tests, 1 intentional skip**; local noindex build **172 pages plus 404**; site checker **173 HTML documents / 11,913 links**; focused generated-note regression passed; `git diff --check` passed. This is a candidate change in the isolated `codex/annotation-evidence-transfer-20261102` branch, not a public release. Continue selected-source synthesis; keep real-data admission and AutoResearch **NOT READY**.
+
+## November 2 continuation — upgrade the annotation review and map the study regions
+
+Located and reviewed the full peer-reviewed article in the IFREMER Archimer institutional archive. The methods describe a bounded detection task on two blue-whale call types: 19 novice annotators received one hour of task-specific training, annotated independently in APLOSE for one month, and had their source, annotator ID, label and time/frequency boundaries recorded. The study used separate expert-annotated recordings for evaluation and compared single-annotator, majority-vote and soft-label training sets. Results were call-type specific: aggregation reduced model-score variability and improved some comparisons, but soft labels did not consistently beat majority labels and the number at which performance plateaued differed by task. Expert labels were explicitly treated as pseudo-ground truth; the work does not show behavior or meaning.
+
+Updated the public note and source register with the full-text archive and its CC BY-NC 4.0 article license. Data remain available only on request; no data, code or weights were acquired or run, and article terms do not extend to those artifacts. The note now maps three coarse literature regions—Amsterdam/Saint Paul, the SWAMS area between Kerguelen and Amsterdam, and Elephant Island—while leaving exact recorder locations and one common observation period unspecified. The pilot draft now emphasizes clear narrow instructions, independent labels and contributor provenance, without importing the paper’s playback/spectrogram workflow into the passive companion. This is source-grounded workflow guidance, not a validated multi-review feature or approved study.
+
+**Validation:** full Python suite **255 tests, 1 intentional skip**; focused atlas/page regressions **4/4**; explicit-origin public build **172 pages plus 404**; site checker **173 HTML documents / 12,098 links / 172 reachable public routes**. Keep the release candidate separate from live Pages; no real-data intake or specialist approval occurred.
+
+
+## November 2 continuation — map APLOSE prior art to the product boundary
+
+Reviewed the APLOSE SoftwareX publisher abstract, official repository README and license, OSEkit's APLOSE-results documentation, and live GitHub release/master metadata. The publisher full text was not accessible; APLOSE code was not installed, audited or run. The project already documents collaborative annotation/verification, detector-output review, database-backed annotation and export for prepared marine-acoustic data. Its README/license contain a conflicting commercial-use statement.
+
+Applied this research by recording APLOSE as complementary prior art and deferring any duplicate campaign platform. A future researcher-driven handoff may be evaluated against exact export semantics with synthetic fixtures. No APLOSE code, audio or dataset was acquired; no integration, partner relationship or legal clearance is claimed. See `docs/RESEARCH_BACKLOG.md`, `content/research.json` and resource records 583–587 / APLOSE metadata entries. The existing five-track goal remains active; AutoResearch and real-data admission remain **NOT READY**.
+
+
+## November 2 continuation — verify APLOSE/OSEkit field-level interoperability
+
+**Question:** can Talk2Nature's annotation export be handed to APLOSE as if it were equivalent? Inspected the OSEkit parser and one published example CSV at pinned commit `39170854efa35e6a17ce1da5e15e6c73109d14b9`, plus Talk2Nature's current annotation validator and synthetic notebook shape. The OSEkit parser reads absolute event timestamps and min/max frequency bounds; the example also carries relative times, annotation IDs, annotator/expertise, confidence, geometry/type, phase and dynamic verification columns. Talk2Nature instead has relative WAV intervals, SHA-256/device metadata, a bounded event kind/context/provenance and notes. These do not constitute a lossless generic mapping.
+
+**Implementation:** added `docs/APLOSE_INTEROPERABILITY.md`, a researcher-onboarding link, a new source-grounded note and separate metadata-only records for parser code versus example CSV. The file rights for the CSV remain unresolved; it was viewed transiently, not retained or copied. No parser was run, adapter implemented, real file exchanged or external party contacted. OSEkit MIT code terms do not apply to its example CSV or to APLOSE; APLOSE's own README/license conflict remains unresolved.
+
+**Next:** wait for a named researcher need before building an adapter; if one arrives, use a wholly invented fixture, versioned schema, timezone/file-origin contract, fail-closed loss report and target-version reopen check. Keep the five-track goal active and real-data admission/AutoResearch **NOT READY**.
+
+
+## November 2 continuation — verify the candidate’s public-discovery boundary
+
+Fresh TLS-verified requests to GitHub Pages returned HTTP 200 for `robots.txt`, `sitemap.xml`, `/research/resources/` and `/app/compare/`; the sitemap, resources page and Compare page still carry an October 29, 2026 `Last-Modified` time. The new APLOSE research route returns HTTP 404. This confirms the content candidate is not yet live; it does not diagnose Search Console processing or indexing.
+
+The current candidate is on local branch `codex/annotation-evidence-transfer-20261102`; the fresh `main` fetch is its parent and it is three commits ahead before this continuation. The authenticated GitHub connector profile is Raviv Yatom / Metivity and confirms repository push permission. The available connector exposes no Actions workflow-dispatch operation, and no push, merge or deployment occurred. Keep live publication separate from local build checks.
+
+Candidate verification after adding the APLOSE crosswalk: Python 257 passed (one intentional skip), Node 171/171, collection validation 333 resources; noindex and explicit-origin public-format builds each produced 174 routes plus 404. Site check: 175 HTML documents, 12,084 links locally and 12,260 links publicly, with 174 public routes reachable. This verifies the local candidate only; the new route is still absent from Pages.

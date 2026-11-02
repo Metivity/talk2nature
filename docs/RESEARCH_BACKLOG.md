@@ -99,7 +99,7 @@ Review follow-up: the parrot paper’s Table 2 displays differences that need ch
 | Detect / identify sounds | BirdNET, Merlin and other mature systems | Reuse if needed; do not mistake identification for semantic understanding. |
 | Extract reusable features | Perch and other audio representations | Select a permitted, frozen checkpoint and baseline on real target data. |
 | Describe biological audio | NatureLM-audio | Test grounded accuracy and abstention; respect exact model terms. |
-| Annotate behavior / recordings | BORIS, Arbimon and existing review tools | Demonstrate an actual unmet workflow need before building a platform. |
+| Annotate behavior / recordings | BORIS, Arbimon, APLOSE and existing review tools | Demonstrate an actual unmet workflow need before building a platform; prefer interoperable handoff over a duplicate campaign system. |
 | Associate sound and observed context | Many species-specific studies | Define a narrow task and evaluate beyond individual/device/background cues. |
 | Support a bounded meaning claim | Carefully controlled receiver experiments in some species | Requires a suitable scientist and protocol; not demonstrated by our tooling. |
 | Translate all natural communication | Not established by reviewed evidence | Long-term question; not a launch promise or first benchmark. |
@@ -792,3 +792,19 @@ Reviewed Beguš et al. (2026), *The phonology of sperm whale coda vowels* (peer-
 **Application:** preserve acoustic measurements/categories separately from caller identity, independently observed context, receiver response and proposed meaning. Report the per-analysis sample and individual coverage. The paper demonstrates structured acoustic patterns and phonological parallels; it does not decode coda meaning or show listener comprehension. This is a methods precedent, not a Talk2Nature benchmark and does not change the first passive bird-sound question. No animal-directed output is justified.
 
 **Next gate:** if a reproduction is proposed, obtain independent cetacean-bioacoustics/phonetics review, pin code and data versions, and clear each component's rights/provenance before acquisition. Keep real-data admission and AutoResearch **NOT READY**.
+
+
+## November 2, 2026 — APLOSE prior-art and interoperability decision
+
+APLOSE is a mature complementary reference for prepared-audio annotation campaigns: its maintainers describe independent annotation and verification phases, review of detector outputs, database-backed labels and export; its current documented stack is React + Django and precomputed OSEkit spectrograms. OSEkit documents CSV results. We reviewed the SoftwareX abstract but not the full paper (publisher returned HTTP 403), and did not install or audit the software.
+
+**Applied decision:** do not build a second general-purpose campaign annotator now. Keep Talk2Nature centered on passive field capture, human-entered context, provenance and local review. For a named researcher need, assess a user-controlled, loss-aware handoff against exact APLOSE/OSEkit schemas using synthetic fixtures before any real data flow.
+
+**Reuse gate:** APLOSE README claims MIT and says “This software must not be sold”; its LICENSE is standard MIT and expressly grants selling. Treat this as an unresolved terms conflict, not a legal conclusion. No copying, installation, deployment or commercial reuse is approved by this research review. Seek maintainer clarification and legal review before selecting a hosted or commercial path. Paper, code, dependencies, data and model rights remain separate. See source IDs 583–587, note `aplose-collaborative-annotation-platform-2025`, and metadata-only resources `aplose-collaborative-annotation-software` / `aplose-softwarex-2025-paper`.
+
+
+## November 2, 2026 — inspect the exact APLOSE export contract
+
+Pinned OSEkit at `39170854efa35e6a17ce1da5e15e6c73109d14b9`; read its APLOSE detection parser, official example CSV header/one row and code license, then compared those fields with Talk2Nature's `annotation.v1` contract. The parser reads absolute datetimes and min/max frequency bounds; the export also carries relative offsets, file/project and annotation IDs, label, annotator/expertise, confidence, geometry/type, phase and verifier columns. Talk2Nature provides relative WAV intervals, a source checksum, recording metadata, bounded human context/provenance and notes. Several dimensions are missing or semantically different, so an unversioned one-click CSV export would not be lossless.
+
+**Applied decision:** added [`docs/APLOSE_INTEROPERABILITY.md`](APLOSE_INTEROPERABILITY.md) and linked it from researcher onboarding. No converter was implemented. The example CSV's rights remain unknown and it was not retained. OSEkit code MIT terms are separate from the APLOSE license conflict, its dependencies and example CSV terms. Next step is only a synthetic crosswalk for a named researcher and pinned APLOSE version, with an explicit loss report and target-tool reopen check.

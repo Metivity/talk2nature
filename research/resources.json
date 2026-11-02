@@ -10257,6 +10257,126 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "aplose-collaborative-annotation-software",
+      "kind": "project",
+      "title": "APLOSE collaborative annotation platform",
+      "url": "https://github.com/Project-OSmOSE/APLOSE",
+      "version": "GitHub latest stable v3.15.0 as checked 2026-11-02; master commit e04c5f1 dated 2026-10-26",
+      "source_ids": [
+        584,
+        585,
+        586,
+        587
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Prior art and possible future interoperability reference for researcher-led acoustic annotation campaigns; no Talk2Nature use selected.",
+      "review_depth": "Official README, LICENSE, OSEkit CSV handoff documentation, release metadata and current master-commit metadata reviewed. No code audit, installation, security review, schema validation or runtime test.",
+      "access": "Public source repository and documentation. The exact user/campaign permissions, deployment requirements and data handling were not fully reviewed.",
+      "decision": "Do not copy, install, host or integrate yet. Avoid duplicating a mature annotation campaign product. If a researcher identifies a concrete need, first check the exact APLOSE data/export schema against synthetic Talk2Nature examples and request clarification on the conflicting README restriction and MIT LICENSE.",
+      "limitations": "README says MIT and also “This software must not be sold”; LICENSE text grants permission to sell. The conflict is unresolved and prevents treating reuse or commercial hosting as cleared. Repository dependencies have separate licenses. An underwater prepared-audio campaign is not evidence of fit for phone-first household capture or parrots.",
+      "attribution": "Project-OSmOSE APLOSE maintainers; cite the SoftwareX article and repository when relevant.",
+      "rights": {
+        "license": "Conflicting repository README restriction and MIT LICENSE; unresolved",
+        "scope": "APLOSE repository code only. Dependencies, paper, data and model artifacts are separate.",
+        "evidence_url": "https://github.com/Project-OSmOSE/APLOSE/blob/master/LICENSE",
+        "conditions": "Do not rely on repository reuse for a commercial or hosted path until maintainers clarify the conflict and legal review resolves applicable terms.",
+        "research_use": "not_admitted",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "aplose-softwarex-2025-paper",
+      "kind": "paper",
+      "title": "APLOSE: A web-based annotation platform for underwater passive acoustic monitoring",
+      "url": "https://doi.org/10.1016/j.softx.2025.102055",
+      "version": "SoftwareX 29 (2025), article 102055; abstract reviewed 2026-11-02",
+      "source_ids": [
+        583
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Prior art for collaborative annotation and verification workflow; not a biological communication benchmark.",
+      "review_depth": "Publisher abstract and bibliographic record reviewed. Direct full-text retrieval returned HTTP 403; methods, figures, supplements and article license were not independently checked.",
+      "access": "Publisher landing page and DOI; full text not retrieved in this review.",
+      "decision": "Use only as an attributed prior-art reference until the full article is available for a deeper methods review.",
+      "limitations": "The abstract supports platform purpose and stated use cases only. It does not establish performance, generality, quality of labels, privacy/security posture, Talk2Nature fit or semantic decoding.",
+      "attribution": "APLOSE authors, SoftwareX (2025), DOI 10.1016/j.softx.2025.102055.",
+      "rights": {
+        "license": "Article reuse license not verified in this review",
+        "scope": "Article text only; unrelated to the repository software, data or model terms.",
+        "evidence_url": "https://doi.org/10.1016/j.softx.2025.102055",
+        "conditions": "Check article-specific terms before reuse beyond citation and short original summary.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "osekit-aplose-detection-csv-parser",
+      "kind": "code",
+      "title": "OSEkit APLOSE detection CSV parser",
+      "url": "https://github.com/Project-OSmOSE/OSEkit/tree/39170854efa35e6a17ce1da5e15e6c73109d14b9",
+      "version": "Git commit 39170854efa35e6a17ce1da5e15e6c73109d14b9 (2026-11-02)",
+      "source_ids": [
+        588,
+        590
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-02",
+      "task": "Versioned interoperability reference only; no Talk2Nature code use selected.",
+      "review_depth": "Read the official parser source and repository LICENSE at the exact commit. No code copied, installed, imported or run; dependencies and runtime were not audited.",
+      "access": "Public GitHub repository at a pinned commit.",
+      "decision": "Use only to document format semantics. Do not copy code or treat MIT for repository code as a license for dependencies or the separate example CSV. Any future adapter needs a specific user-requested target version and synthetic conformance review.",
+      "limitations": "MIT license applies to code under the stated terms; third-party dependencies and other repository assets have separate terms. This static inspection does not validate APLOSE exports or runtime behavior.",
+      "attribution": "Project-OSmOSE OSEkit maintainers.",
+      "rights": {
+        "license": "MIT (repository LICENSE at pinned commit)",
+        "scope": "OSEkit code only; not the APLOSE example CSV, dependencies, Talk2Nature data or generated results.",
+        "evidence_url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/LICENSE",
+        "conditions": "Retain notices if using code; check dependencies and exact target version separately. No source code is copied or used in Talk2Nature.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "osekit-aplose-example-csv-metadata",
+      "kind": "dataset",
+      "title": "OSEkit APLOSE results CSV documentation example (not acquired)",
+      "url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/docs/source/_static/detections/aplose_results.csv",
+      "version": "File at OSEkit commit 39170854efa35e6a17ce1da5e15e6c73109d14b9; header and one row viewed transiently 2026-11-02",
+      "source_ids": [
+        589
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-02",
+      "task": "Format metadata reference only; not an admitted training, benchmark or Talk2Nature example dataset.",
+      "review_depth": "Header and one row viewed through the official source connector to identify field names. File was not downloaded, retained, redistributed or analyzed as data. File-level license was not found.",
+      "access": "Official versioned source URL; file reuse rights unresolved.",
+      "decision": "Do not acquire, include in examples, redistribute or run analysis. Prefer a wholly invented fixture if a later synthetic interoperation test is justified.",
+      "limitations": "This is one example export and may not represent other APLOSE versions or projects. Its labels, rows and fields do not establish truth or Talk2Nature compatibility.",
+      "attribution": "Project-OSmOSE OSEkit documentation; file-level authorship/reuse terms not verified.",
+      "rights": {
+        "license": "Unresolved for the example CSV",
+        "scope": "Example CSV rows and metadata only; separate from OSEkit code and article terms.",
+        "evidence_url": "https://github.com/Project-OSmOSE/OSEkit/blob/39170854efa35e6a17ce1da5e15e6c73109d14b9/docs/source/_static/detections/aplose_results.csv",
+        "conditions": "Do not redistribute or treat as a licensed dataset until exact file terms and provenance are verified. No file is retained in this repository.",
+        "research_use": "not_admitted",
+        "commercial_use": "not_admitted",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

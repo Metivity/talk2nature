@@ -961,6 +961,22 @@ class SiteTests(unittest.TestCase):
             resource=next(r for r in json.loads((Path(__file__).parents[1]/'research/resources.json').read_text())['resources'] if r['id']=='budgerigar-vocal-social-dryad')
             self.assertEqual(resource['acquisition'],'metadata_only')
 
+    def test_multi_annotator_note_preserves_full_text_scope_and_contributor_boundaries(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            self.assertTrue(check_site(root)['public'])
+            html=(root/'research/blue-whale-multi-annotator-labels-2024/index.html').read_text()
+            self.assertIn('Full article reviewed via institutional archive',html)
+            self.assertIn('Nineteen novice annotators received one hour of task-specific training',html)
+            self.assertIn('hid other annotators’ labels',html)
+            self.assertIn('not observed behavior',html)
+            self.assertIn('make any aggregate reproducible',html)
+            self.assertIn('https://doi.org/10.1016/j.ecoinf.2024.102642',html)
+            canonical='https://fixture.github.io/talk2nature/research/blue-whale-multi-annotator-labels-2024/'
+            self.assertIn(canonical,html)
+            self.assertIn(canonical,(root/'sitemap.xml').read_text())
+
     def test_meerkat_review_exposes_final_evidence_component_rights_and_canonical(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

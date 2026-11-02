@@ -6977,5 +6977,171 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "blue-whale-multi-annotator-labels-2024",
+    "title": "Multiple annotators can help detect calls; preserve disagreement",
+    "taxon": "Blue whales · human annotation and bioacoustics",
+    "kind": "Annotation quality and citizen science",
+    "year": "2024",
+    "source_ids": [
+      581,
+      582
+    ],
+    "review_depth": "Full-text review of the IFREMER Archimer copy: study design and datasets; volunteer recruitment/training and APLOSE annotation fields; independent evaluation sets; majority-vote and soft-label methods; reported model results; discussion, campaign guidelines, data statement and article license. No underlying audio/data, code or weights were obtained or run.",
+    "seo_description": "A blue whale call-detection study tested novice annotations and label aggregation. We apply its limits to Talk2Nature’s contributor design.",
+    "finding": "Dubus et al. studied detection of two blue-whale vocalization types, not behavior or meaning. From a 762-hour source archive, the researchers selected 100 ten-minute recordings for a volunteer campaign. Nineteen novice annotators received one hour of task-specific training and labeled independently over one month; APLOSE stored annotator ID, source file, call class, time bounds and frequency bounds, and hid other annotators’ labels. The models were evaluated on two separate recording sets annotated by other experts. Across these specific detection tasks, majority-vote aggregation generally improved model performance and reduced variability as annotators were combined; reported performance plateaued at about five annotators for one call type and ten for the other. Soft labels were a viable alternative but were not consistently better than hard majority labels. The study shows a concrete, auditable citizen-science annotation process, not a general recipe for other species or tasks.",
+    "limitations": "The target was detection of two acoustic call types in underwater recordings, including a narrowly defined harmonic component, not observed behavior, receiver response or signal meaning. The authors treat expert annotations as pseudo-ground truth; their results do not establish biological truth. Training and evaluation used specific datasets, environments, models and label rules, so the subgroup sizes and aggregation results must not be transferred as universal thresholds. Study data are available on request. The article is CC BY-NC 4.0; that license does not confer data, code or model-weight rights. None of those artifacts was obtained or reproduced.",
+    "lesson": "For any future Talk2Nature contributor study, first make a bounded label task and codebook, offer examples and task-specific onboarding, keep annotators blind to peers’ labels, and retain independent labels with stable pseudonymous contributor, source and time-boundary provenance. Measure disagreement and class-specific error before deciding whether aggregation is useful; preserve raw labels and make any aggregate reproducible. The paper’s APLOSE playback/spectrogram workflow was built for underwater-call detection; it does not justify adding playback or model-directed output to the passive parrot companion. This is a design inference, not a deployed multi-review feature or approved study.",
+    "next_review": "Before proposing shared annotation software or real recruitment, have an independent bioacoustics and human-subjects reviewer assess the exact task, training examples, privacy/consent, appropriate disagreement measures, adjudication and any aggregation rule. Keep the current app microphone-first, passive and real-data intake closed.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not yet independently reviewed by a scientific specialist.",
+    "review_stage": "Full article reviewed via institutional archive; no dataset or model artifacts acquired",
+    "year_label": "Peer-reviewed article",
+    "review_locator": "Dubus et al. (2024), Ecological Informatics 81, article 102642, DOI 10.1016/j.ecoinf.2024.102642; Methods §§2.1–2.4, Results §§3.2–3.4, Discussion §4, campaign guideline Table 2 and data statement.",
+    "purpose": "Data & annotation",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "mapped",
+      "location_note": "The paper reports development recordings off Amsterdam and Saint Paul Islands, a SWAMS evaluation area between Kerguelen and Amsterdam Island, and an Elephant Island evaluation set. Points are coarse study-region locators; individual hydrophone positions are not exposed. The datasets cover different observation periods, so no single observation period is assigned.",
+      "locations": [
+        {
+          "place_id": "amsterdam-saint-paul-islands",
+          "role": "study_region",
+          "source_id": 582,
+          "locator": "Methods §2.1, development set AmStP",
+          "basis": "The paper identifies source recordings off Amsterdam and Saint Paul Islands. This combined coarse marker represents the named development-region pair, not a specific recorder position."
+        },
+        {
+          "place_id": "swams-southern-indian-ocean",
+          "role": "study_region",
+          "source_id": 582,
+          "locator": "Methods §2.1, evaluation set SWAMS",
+          "basis": "The paper places SWAMS in the Indian Ocean between Kerguelen and Amsterdam Island. This editorial midpoint marks that broad region and is not a deployment coordinate."
+        },
+        {
+          "place_id": "elephant-island-southern-ocean",
+          "role": "study_region",
+          "source_id": 582,
+          "locator": "Methods §2.1, evaluation set ElephantIsland2013",
+          "basis": "The paper identifies recordings off Elephant Island, north of the Antarctic Peninsula. This is a coarse island-area locator, not a hydrophone position."
+        }
+      ],
+      "observation_period": null
+    }
+  },
+  {
+    "slug": "aplose-collaborative-annotation-platform-2025",
+    "title": "APLOSE shows how collaborative acoustic annotation can work; reuse terms need clarification",
+    "taxon": "Research software · passive acoustics",
+    "kind": "Research software review",
+    "year": "2025",
+    "source_ids": [
+      583,
+      584,
+      585,
+      586,
+      587
+    ],
+    "review_depth": "Reviewed the publisher-indexed abstract for the SoftwareX paper; the full paper could not be retrieved (HTTP 403). Read the official APLOSE README and LICENSE, checked the official OSEkit APLOSE-results documentation, and queried current GitHub release and master-commit metadata. This is a bounded product/prior-art review, not a full code, security or deployment audit. No software was installed, and no audio, data or model was acquired or run.",
+    "seo_description": "APLOSE already supports collaborative acoustic annotation and verification. We compare its research workflow with Talk2Nature and flag a license ambiguity.",
+    "finding": "APLOSE is an existing web platform built for marine passive-acoustic research. Its maintainers describe separate annotation and verification phases, collaborative review of detector outputs, database-stored annotations with export, a React frontend and Django backend, and reliance on spectrograms precomputed with OSEkit. The SoftwareX abstract says the platform has supported inter-annotator-variability research, reference datasets and detector review. OSEkit documents a CSV results handoff. GitHub reported v3.15.0 as the latest stable release on November 2, 2026, while the master branch had a later commit dated October 26. This establishes credible prior art for prepared-audio campaigns; it does not show that APLOSE fits phone-first household recording or Talk2Nature's current local-first app.",
+    "limitations": "The publisher full text was inaccessible, so the article methods and evaluation were not reviewed. The repository documentation was read but its code, runtime behavior, security, deployments, dataset formats and user experience were not audited. Current release metadata is a dated snapshot. Most importantly, the README states MIT licensing and also says the software must not be sold, while the linked LICENSE file is standard MIT text that expressly permits selling. The mismatch is unresolved; do not treat the software as cleared for commercial reuse or hosting pending maintainer clarification and legal review. The paper, code, dependencies, data and model artifacts have separate rights. No Talk2Nature integration, pilot, partner relationship or comparative user evaluation is claimed.",
+    "lesson": "Avoid building a second general-purpose collaborative annotation platform before a researcher demonstrates a concrete unmet need. Keep Talk2Nature focused on accessible passive field capture, source/device/session provenance, plain-language notes and local review. If qualified researchers need campaign annotation, prefer a user-controlled, loss-aware export or interoperation with their chosen tool; first document exact APLOSE fields and CSV semantics using permitted synthetic fixtures, confirm rights/terms for any hosted or commercial path, and validate the handoff with a researcher. Do not upload recordings by default, assume a CSV preserves all context, or copy APLOSE code. Research inference from the cited sources; no product change is implemented by this note.",
+    "next_review": "If a university or research group identifies a concrete shared-annotation need, compare its required fields with the existing Talk2Nature notebook and exports on synthetic data, inspect APLOSE versioned schemas and deployment/privacy terms, then seek maintainer clarification on the README/license conflict before selecting an integration path. Independent bioacoustics and research-data-governance review is required before real recordings or participants.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not independently reviewed by an APLOSE maintainer, legal specialist, bioacoustics specialist or research group.",
+    "review_stage": "Publisher abstract and official software documentation reviewed; no software or data acquired",
+    "purpose": "Data standards & interoperability",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "This note reviews research software and its workflow, not a field study or animal observation.",
+      "locations": [],
+      "observation_period": null
+    },
+    "year_label": "SoftwareX publication year",
+    "study_snapshot": [
+      [
+        "Purpose",
+        "Collaborative annotation and verification for prepared underwater passive-acoustic recordings."
+      ],
+      [
+        "Workflow",
+        "Independent annotation, then verification of other annotations or detector outputs; labels are stored and exportable."
+      ],
+      [
+        "Stack",
+        "React frontend, Django backend and OSEkit-precomputed spectrograms, as described in the official README."
+      ],
+      [
+        "Handoff",
+        "OSEkit documents reading APLOSE campaign results from CSV."
+      ]
+    ],
+    "theory_comparison": {
+      "intro": "Not applicable: this is a research-software workflow review, not a test of animal communication theories.",
+      "items": [],
+      "takeaway": "No competing animal-communication explanations are assessed in this software review."
+    },
+    "review_locator": "SoftwareX publisher abstract; APLOSE README Usage/Presentation; LICENSE; GitHub latest release API; OSEkit APLOSE-results documentation."
+  },
+  {
+    "slug": "aplose-export-crosswalk-2026",
+    "title": "APLOSE CSV exports cannot yet round-trip Talk2Nature annotations without loss",
+    "taxon": "Research software · data standards and interoperability",
+    "kind": "Versioned format comparison",
+    "year": "2026",
+    "year_label": "Format snapshot reviewed November 2, 2026",
+    "source_ids": [
+      584,
+      585,
+      586,
+      587,
+      588,
+      589,
+      590
+    ],
+    "review_depth": "Compared Talk2Nature annotation.v1 source/tests with the APLOSE README and OSEkit official documentation; inspected the pinned OSEkit Detection.from_dict/from_csv implementation, the published APLOSE-results CSV header plus one row, and the OSEkit MIT license at commit 39170854efa35e6a17ce1da5e15e6c73109d14b9. No CSV was retained, no parser/software was installed or run, and no real Talk2Nature file was exported. The APLOSE article full text was not accessible; no user or institutional workflow was tested.",
+    "seo_description": "A pinned APLOSE/OSEkit export was compared with Talk2Nature. We identify the timing, frequency and review fields a generic converter would lose.",
+    "finding": "The inspected OSEkit parser builds detections from absolute start_datetime/end_datetime, min_frequency/max_frequency, annotation/label, annotator and expertise, confidence, detection type, phase, and additional verification columns. Its published example also includes project, filename, annotation IDs and relative start/end offsets. Talk2Nature annotation.v1 instead stores WAV checksum/device format metadata and human-entered relative-time intervals with a bounded kind, observed context/provenance, confidence and notes. These contracts overlap only partially. A file/time origin, label codebook, frequency bounds, point/weak/box geometry, per-reviewer decisions and context provenance cannot be assumed equivalent.",
+    "limitations": "This is a static schema/source review at one OSEkit commit and one published example export, not a test against an APLOSE v3.15.0 running instance. APLOSE exports may change between versions; no formal stable CSV schema or conformance suite was reviewed. The inspected example CSV file rights were not verified, and its rows are not included here. Time zone and file-start alignment were not executed. The APLOSE README/LICENSE commercial-use conflict remains unresolved. This crosswalk does not show that a converter is impossible for a named workflow; it shows that no lossless generic mapping is justified by the inspected fields. No software integration, user study, researcher confirmation or scientific result is claimed.",
+    "lesson": "Do not create a generic APLOSE converter yet. If a university names a real need, pin the target export version, preserve both ID systems and source-file checksum, require independently verified absolute-time alignment, retain original labels and each annotator/reviewer row, and emit a machine-readable loss report for frequency bounds and WEAK/POINT/BOX geometry. Use an explicitly approved codebook before mapping labels; never convert comments into observed context or model/annotation labels into meaning. Reopen synthetic exports in the target version with the researcher before calling any adapter interoperable. This is an implementation recommendation from a bounded source-to-source comparison.",
+    "next_review": "Before implementing an adapter, have a named researcher confirm the APLOSE version and actual workflow, resolve software terms with the relevant maintainers/counsel, verify example/export rights and provide a synthetic sample with its timezone and file-origin contract. Then create a field mapping and fail-closed loss report; keep real recordings outside until consent, rights, privacy and storage gates pass.",
+    "reviewed": "2026-11-02",
+    "expert_review": "Not independently reviewed by an APLOSE/OSEkit maintainer, research-data specialist, legal specialist or participating university.",
+    "review_stage": "Pinned source and documentation review; no parser run or real file exchange",
+    "purpose": "Data standards & interoperability",
+    "study_snapshot": [
+      [
+        "APLOSE parser inputs",
+        "Absolute event datetimes and min/max frequency bounds are directly used to construct a detection; label, annotator, confidence, type and phase are mapped where present."
+      ],
+      [
+        "Additional review data",
+        "Columns outside the parser known-key set are interpreted as verifier decisions in the inspected OSEkit version."
+      ],
+      [
+        "Talk2Nature event fields",
+        "Relative interval, bounded kind/context/context source/confidence and notes, linked to a WAV checksum and recording metadata."
+      ],
+      [
+        "Compatibility result",
+        "Partial overlap only; mapping requires exact source-file/time origin and cannot preserve all frequency, geometry and multi-review information."
+      ]
+    ],
+    "theory_comparison": {
+      "intro": "Not applicable: this is a software-format comparison, not a biological hypothesis test.",
+      "items": [],
+      "takeaway": "No animal-communication claim follows from these file formats."
+    },
+    "review_locator": "OSEkit commit 39170854efa35e6a17ce1da5e15e6c73109d14b9; Detection.from_dict/from_csv, documentation example CSV header and LICENSE; Talk2Nature web/assets/listen-model.mjs and tests/notebook.test.mjs.",
+    "atlas": {
+      "reviewed": "2026-11-02",
+      "location_status": "not_applicable",
+      "location_note": "A data-format review, not a field study or animal observation.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
