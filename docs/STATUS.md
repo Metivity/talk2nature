@@ -1,3 +1,11 @@
+## November 2 — apply selected model research and record Search Console evidence
+
+Cross-checked the existing NatureLM, Perch transfer, model-evaluation and VLM-localization reviews against the live Compare workflow. They support task-specific acoustic proposals and classifiers, not claims of animal meaning or translation. Current Compare copy retains manual review and does not treat a sound after a human voice as a reply; no inference or app change was made. The first benchmark remains passive bird-vocalization presence, blocked on a reviewed event definition, valid negatives, rights and independent group-held-out evaluation. This is a targeted synthesis, not an exhaustive review or model reproduction.
+
+Search Console showed **262 impressions, 2 clicks, 0.8% CTR, average position 7.9** for September 29–October 31, 2026, with **11 indexed and 1 not indexed**. InsectSet459 is “Crawled — currently not indexed”; its live page returned HTTP 200 with title, description, exact canonical and `index,follow`. No page-level defect was found; the indexing cause is unknown. Search Console acknowledged the November 2 sitemap submission, while the latest report still said **Couldn’t fetch / 0 discovered**. Separately, verified-TLS requests to `robots.txt` and the 154-URL sitemap succeeded with both ordinary and Googlebot user agents. Do not resubmit immediately; recheck after Google processes the submission. These low counts do not establish demand or ranking.
+
+No model/data was acquired or run, no SEO code change was warranted, and no deployment is claimed. Goal remains active; AutoResearch and real-data admission remain **NOT READY**.
+
 # Project status
 
 ## November 2 — review VLM-assisted bird-call localization
