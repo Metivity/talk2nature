@@ -1,3 +1,15 @@
+## November 2 — map ArcticSoundsNET at a safe regional scale
+
+**Question:** can the atlas show where this Arctic bioacoustics study took place without turning a sensitive multi-site deployment into a misleading point map? Reviewed the paper's Methods §2.1 and Figure 1 caption through publisher-indexed text (the article page itself returned HTTP 403) and the official Dryad dataset record. The sources describe recordings at 205 sites across Alaska's Arctic Coastal Plain during June–August 2021–2023; the paper names broad subregions including the Arctic National Wildlife Refuge coastal plain, Teshekpuk Lake Special Area, Utqiaġvik vicinity and Willow development. The sources identify exact plot locations, but this atlas record intentionally does not reproduce them.
+
+Added one editorial, coarse regional anchor labelled **Alaska's Arctic Coastal Plain, USA**. Its approximate coordinates are for regional display only—not a centroid, study boundary, recorder site, animal origin or observation. The note cites Methods §2.1/Figure 1 and names this precision in the atlas record. The article and dataset remain metadata-only; no audio, code, model or dataset payload was acquired.
+
+Applied research lesson: multi-site recordings make geographic and acquisition grouping important for any future evaluation, but a map pin does not establish independent samples or a valid held-out split. Preserve plot/session provenance as a future review question; do not claim benchmark readiness from the map.
+
+**Checks:** the generated atlas catalog now reports **134 notes, 48 mapped notes, 52 approximate regions, 51 notes pending location review, 35 not applicable and 462 cited source links**. Local atlas preview rendered the new Alaska region in the grouped map and filter controls; the record displayed the coarse region label and retained the note's evidence/limits disclosure. Python **250 passed, 1 intentional skip**; Node **171/171**; resource catalog **318 valid**; explicit-origin build **167 pages plus 404**, checker **168 HTML / 11,777 links / 167 reachable**; local noindex build **167 pages plus 404**, checker **168 HTML / 11,608 links**. No deployment or scientific reproduction is claimed.
+
+The five-track goal remains **active**. Continue targeted primary-source reviews where they improve scope, location, rights or evaluation decisions; keep physical-device, screen-reader and independent-newcomer checks open. AutoResearch and real-data admission remain **NOT READY**.
+
 ## November 2 — verify current-main Pages release parity
 
 **Question:** can reviewed public `main` be built without removing any path currently published by GitHub Pages? On clean `main` `72f0061e9e3e72eebf7c5172268810a5246fcc33`, all **250 Python tests** passed (1 intentional skip), all **171 Node tests** passed, and the collection validator accepted **318 resources**. The explicit-origin public build produced **167 pages plus 404**; `scripts/check_site.py` verified **168 HTML documents, 11,775 links, and 167 reachable public routes**.

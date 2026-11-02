@@ -5275,7 +5275,7 @@
     "description": "The paper reports a BirdNET-based classifier evaluated on a manually reviewed sound-rich sample and documents training on ArcticBirdSounds data; it does not establish a locked site-held-out benchmark.",
     "url": "https://doi.org/10.1016/j.ecoinf.2025.103270",
     "checked": "2026-10-29",
-    "origin": "Publisher-indexed article abstract and Methods/Results reviewed October 29, 2026; Crossref Version of Record license metadata checked. The publisher reports ROC AUC 0.888 for ArcticSoundsNET and 0.593 for BirdNET on the reviewed sample. No article PDF, audio, code or model was downloaded.",
+    "origin": "Publisher-indexed article abstract and Methods/Results reviewed October 29, 2026; Crossref Version of Record license metadata checked. The publisher reports ROC AUC 0.888 for ArcticSoundsNET and 0.593 for BirdNET on the reviewed sample. No article PDF, audio, code or model was downloaded. For the atlas location review, checked the publisher-indexed Methods 2.1 and Figure 1 caption; the exact plot/recorder points were not copied.",
     "rights": {
       "license": "CC BY-NC-ND 4.0 reported by Crossref for the Version of Record.",
       "scope": "Article text and figures only; Dryad package, GitHub source, models and upstream BirdNET materials are separate.",

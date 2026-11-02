@@ -6244,7 +6244,7 @@
       512,
       513
     ],
-    "review_depth": "Publisher-indexed article abstract, methods and results reviewed; direct ScienceDirect opening returned HTTP 403. The current Dryad API v2, DataCite DOI metadata, public Dryad landing page/embedded README and two-file outer manifest reviewed; an HTTP 401 prevented a bounded archive-range read. The page describes its internal schema and file groups, but no archive, audio, annotation rows, code or model weights were opened or retained. GitHub repository metadata and README overview reviewed.",
+    "review_depth": "Publisher-indexed article abstract, methods and results reviewed; direct ScienceDirect opening returned HTTP 403. The current Dryad API v2, DataCite DOI metadata, public Dryad landing page/embedded README and two-file outer manifest reviewed; an HTTP 401 prevented a bounded archive-range read. The page describes its internal schema and file groups, but no archive, audio, annotation rows, code or model weights were opened or retained. GitHub repository metadata and README overview reviewed. For the atlas, the publisher-indexed Methods 2.1 and Figure 1 caption were checked for the named study region; direct ScienceDirect retrieval returned HTTP 403. No figure coordinates or site-level points were copied.",
     "finding": "Ziegenhorn et al. describe a BirdNET-embedding and clustering workflow applied to Arctic Coastal Plain recordings from 205 sites, producing 44 acoustic classes. Their approximately 46-hour manually reviewed sample was evaluated at five-minute file level; the article reports mean ROC AUC 0.888 for ArcticSoundsNET and 0.593 for BirdNET. The authors selected a sound-rich ground-truth sample spanning plots and conditions, then optimized confidence thresholds on that same sample. The current Dryad v6 API declares CC0-1.0 and lists data_code.zip (9,196,741,095 bytes) plus README.md (12,794 bytes), totaling 9,196,753,889 bytes. The public README describes ground-truth WAVs and multi-reviewer labels keyed by file name and segment times, as well as model-training audio, outputs, code and TFLite models. It says exact plot locations/dates are in the paper but does not give a complete per-file site/date/session crosswalk. The paper says the full approximately 8 TB field archive is not online and is available from the authors on request. Separately, the Dryad record abstract reports AUC 0.299 for ArcticSoundsNET and <0.001 for BirdNET, values that differ from the article abstract/table; use the article as the performance source and resolve this discrepancy before reproduction.",
     "limitations": "This is ecological sound-event/species classification, not caller identity, behavior meaning or conversation. The publication does not establish a locked independent test or a site-held-out evaluation, and exact file overlap between model-training audio and evaluation WAVs is unknown. Thresholds were optimized on the same labeled sample, so post-threshold scores are not untouched test estimates; the sound-rich sample may not reflect natural prevalence. The paper reports that approximately 18 hours of ArcticBirdSounds was used to train the binary BirdNET detector in the pipeline, making that model lineage non-independent of ArcticBirdSounds. The article is CC BY-NC-ND 4.0; the Dryad record declares CC0-1.0; the linked GitHub repository has no detected license; model and upstream dependency provenance remain separate.",
     "lesson": "A well-documented transfer-learning pipeline and expert-reviewed sample can anchor a reproducibility study, but reported model scores do not become an independent benchmark without frozen inputs, leakage-safe groups and a locked test. Keep detection and ecological association separate from any communication claim.",
@@ -6256,10 +6256,18 @@
     "purpose": "Models & evaluation",
     "review_locator": "Ziegenhorn et al. (2025), Ecological Informatics 90, 103270; DOI 10.1016/j.ecoinf.2025.103270; Dryad DOI 10.5061/dryad.jh9w0vtnr, version 6; author-linked GitHub repository MZiegenhorn/birdnet-discovery.",
     "atlas": {
-      "reviewed": "2026-10-29",
-      "location_status": "pending",
-      "location_note": "Study geography is the Arctic Coastal Plain of Alaska. Exact deployment coordinates and sound files were not accessed or copied.",
-      "locations": [],
+      "reviewed": "2026-11-02",
+      "location_status": "mapped",
+      "location_note": "The primary paper describes 205 recording sites across Alaska's Arctic Coastal Plain, including several named subregions. The atlas uses one coarse regional display point only; it does not show the paper's deployment plots or any recorder or animal coordinates. This is a literature study region, not an observation or sighting.",
+      "locations": [
+        {
+          "place_id": "arctic-coastal-plain-alaska",
+          "role": "study_region",
+          "source_id": 511,
+          "locator": "Methods §2.1, “Data collection,” and Figure 1 caption.",
+          "basis": "Editorial regional display anchor for the broad study area named in the primary paper. It is not a region centroid, boundary, or site coordinate; no plot, recorder or animal coordinates are mapped."
+        }
+      ],
       "observation_period": {
         "label": "Acoustic data collection period",
         "start_year": 2021,

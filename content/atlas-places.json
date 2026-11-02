@@ -358,6 +358,13 @@
       "precision": "region",
       "latitude": 70.6,
       "longitude": -153.5
+    },
+    {
+      "id": "arctic-coastal-plain-alaska",
+      "label": "Alaska's Arctic Coastal Plain, USA",
+      "precision": "region",
+      "latitude": 70.0,
+      "longitude": -151.5
     }
   ]
 }

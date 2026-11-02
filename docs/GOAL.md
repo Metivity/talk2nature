@@ -1,3 +1,11 @@
+## November 2 continuation — apply the ArcticSoundsNET review to the atlas
+
+Mapped the ArcticSoundsNET literature record to one coarse Alaska Arctic Coastal Plain display region after checking the publisher-indexed Methods §2.1/Figure 1 text and the official Dryad record. The sources describe 205 acoustic sites and June–August sampling in 2021–2023; exact plot locations are intentionally not shown. The new point is an editorial regional anchor, not a centroid, boundary, animal sighting, recorder coordinate or Talk2Nature observation.
+
+This applies the source review to discovery while protecting the precision of multi-site field locations. The atlas now has 48 mapped notes across 52 approximate regions; 51 records still await location review and 35 are explicitly not applicable. A rendered local preview shows the new region in the map and filter. Python 250 passed (one intentional skip), Node 171/171, resource catalog 318 valid, and both public-format and noindex build checks passed. No dataset or media was acquired, no model was run, and no deployment is claimed.
+
+**Next:** keep reviewing primary sources only where a location or method changes a useful decision; resolve the remaining high-value map gaps with cited study-site evidence, preserving region-level precision. Continue the five-track program and the existing zero-command/device acceptance work. Keep AutoResearch and real-data admission **NOT READY**.
+
 # Talk2Nature goals
 
 ## October 31 continuation — verify the keyboard-only Zero Command path
