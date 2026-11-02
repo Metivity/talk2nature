@@ -1,3 +1,17 @@
+## November 2 continuation — reconcile funding research against current call rules
+
+Rechecked the official NLnet Restack terms and corrected the dated opportunity record and regression coverage. The live call explicitly excludes current AI-related projects unless they already have more than one million active human users and directly contribute to the Open Internet Stack. Talk2Nature has no evidence meeting that exception, and the applicable GenAI policy bars AI-written applications/funded deliverables while requiring disclosure of significant pre-existing AI-generated code. Recommendation: no-go for this cycle; no application or outreach. Preserve the Oct. 28 observation as history and use the newly checked source for current planning. See `docs/RESEARCH_BACKLOG.md` and opportunity/source 580.
+
+The broader research-to-product principle continues: translate source findings into concrete constraints and decisions, not just citations. Recent examples include preserving sample-rate/device provenance in the audio workflow and keeping machine-proposed event boxes distinct from reviewed human annotations. No model or dataset has been admitted; AutoResearch and real-data admission remain **NOT READY**.
+
+## November 2 continuation — merge the reviewed candidate and verify release readiness
+
+Merged PR [#658](https://github.com/Metivity/talk2nature/pull/658) as `02cfb46` on `main`. Its hosted Public Checks run `41454193713` passed Python 3.10 setup, repository and browser tests, native Android checks, and the preview build. Rebuilt the merged source locally: the public site has 171 routes and the checker validates 172 HTML documents / 12,044 links. Compared against the live sitemap: all 154 live routes are preserved and 17 source routes are new. Direct live checks still return 404 for sampled new research pages, and the live-site verifier fails because `/app/station/` lacks the Zero Command disclosure.
+
+**Release state:** the Pages workflow only accepts manual `workflow_dispatch`. The connected GitHub tool exposes no dispatch operation; the opened GitHub Actions page is signed out. No deployment occurred. The user's prior approval remains on record, but this session has no authenticated dispatch path.
+
+**Next:** dispatch the existing Pages workflow from the authorized Metivity Actions session, then verify the workflow result, all 17 added routes, complete sitemap parity, live resource count, Station disclosure and representative page metadata. After publication, recheck Search Console processing separately. Keep the broader five-track goal active and keep AutoResearch / real-data admission **NOT READY**.
+
 ## November 2 continuation — enforce the documented Python floor
 
 The researcher kit promises Python 3.10+, so I installed CPython 3.10.20 in an isolated tool cache and exercised the full tests and static build. This found and fixed a Python 3.10 syntax incompatibility in the evidence-map renderer. CI now pins the minimum version through a full-SHA setup action; a hosted workflow run remains the next confirmation. This improves contributor reproducibility without changing research admission or model-readiness gates.
