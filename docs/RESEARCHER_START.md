@@ -107,6 +107,10 @@ Talk2Nature's current annotation schema is narrower: sound kind, bounded context
 
 Until those gates pass, recommend BORIS only as a complementary external analysis tool. No BORIS software, code, project or media has been acquired or tested here; no adapter or BORIS partnership is claimed.
 
+## APLOSE and OSEkit: collaborative acoustic annotation
+
+APLOSE's maintained annotation/verification workflow is useful prior art for prepared-audio campaigns. A pinned review of [OSEkit's CSV parser and example export](APLOSE_INTEROPERABILITY.md) shows why a generic converter would currently be lossy: Talk2Nature and APLOSE differ in event timing, frequency geometry, label vocabularies and per-annotator verification records. Use the crosswalk only as a design/review brief. No adapter is implemented, and the APLOSE README/LICENSE commercial-use conflict remains unresolved.
+
 ## Arbimon: existing hosted acoustic research infrastructure
 
 [Arbimon](https://arbimon.org/support/arbimon/get-started/getting-started-with-arbimon/) documents collaborative projects and sites, passive-audio upload, visual inspection, analysis jobs, human validation, insights and optional publishing. Its separate [desktop Uploader](https://arbimon.org/support/arbimon/import/using-the-arbimon-uploader-app/) imports WAV/FLAC and segments files into one-minute recordings; its [project backup](https://arbimon.org/support/arbimon/settings/exporting-project-backups/) documents metadata, validations and analysis results, with some derived Insight material exported separately. This is a credible existing destination to evaluate for university workflows, not evidence that Talk2Nature is integrated or that all uploaded data are open.

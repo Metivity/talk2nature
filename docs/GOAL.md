@@ -1916,3 +1916,32 @@ The manual Pages workflow requires `workflow_dispatch`. The current authenticate
 **Validation:** the focused site suite passed **110/110**; the full Python suite passed **252 tests, 1 skipped**; the GitHub issue template parsed as valid YAML with 13 fields; `git diff --check` passed. The local noindex build produced **171 pages plus 404** and passed the checker (**172 HTML / 11,871 links**). The explicit-origin public-format build also produced **171 pages plus 404** and passed (**172 HTML / 12,044 links / 171 reachable routes**). This validates the candidate artifact, not live deployment or reviewer uptake.
 
 **Next:** preserve benchmark selection as deferred until a qualified independent review assesses a specific candidate and its evidence/rights gates. Continue the broader mobile, contributor, discovery and evidence work; AutoResearch and real-data admission remain **NOT READY**.
+
+## November 2 continuation — apply multi-annotator evidence to contribution design
+
+Added a source-linked research note on Dubus et al. (2024), a blue-whale call-detection study involving novice and expert annotators, and applied its limited lesson to the first parrot-pilot draft: preserve original independent labels and uncertainty, expose disagreement, and make any later aggregation traceable. The review is limited to the publisher abstract/highlights; the full methods and dataset were not inspected. This is a workflow design inference from call detection, not evidence about parrot behavior, signal meaning or Talk2Nature performance. Keep real-data admission and AutoResearch **NOT READY**. Next, use an independent specialist to review task definitions and contributor onboarding before considering a real study.
+
+## November 2 continuation — upgrade the annotation review and map its study regions
+
+Located the full article in the IFREMER Archimer institutional archive and replaced the abstract-only synthesis with a targeted full-text review. The study's workflow used a bounded vocalization task, one-hour onboarding, independent annotator views, and saved source/annotator/class/time/frequency provenance; it compared individual labels and two aggregation strategies on separate expert-annotated recording sets. Its results vary by call type and do not show that aggregation establishes behavior or meaning. Added the archive source, the article's CC BY-NC 4.0 limitation, and three coarse map regions while leaving individual recorder positions and the combined observation period unspecified. Refined the pilot draft to carry forward task-specific training and label independence; no app capability, real-data intake or study approval was added. This replaces the earlier abstract-only review status. Next: seek independent methods review before proposing any shared annotation service or real recruitment; keep AutoResearch and real-data admission **NOT READY**.
+
+
+## November 2 continuation — use existing annotation infrastructure as product evidence
+
+The active five-track goal continues. A targeted APLOSE review now informs the “what to build” track: avoid duplicating established collaborative annotation software; keep the current field companion focused on passive capture and local evidence review; evaluate a synthetic, loss-aware export only after a research group names the need. The README/LICENSE conflict means no reuse or commercial hosting decision is cleared.
+
+**Next:** continue bounded primary-source reviews only when they alter a product, evaluation or rights decision; compare candidate handoff fields against the existing notebook on invented records; preserve separate deployment, independent-review, device-acceptance and data-admission gates.
+
+
+## November 2 continuation — turn interoperability research into a clear handoff boundary
+
+The APLOSE/OSEkit comparison is now field-level: the documented export can carry independent verification and acoustic geometry that Talk2Nature's current interval notes do not, while Talk2Nature retains its own audio checksum, recording metadata and bounded context provenance. That is a reason to preserve a loss report, not to claim a ready integration. The research CSV's rights are unresolved.
+
+**Next:** use the reviewer/customer evidence path to determine whether a university has this exact mismatch; only then decide whether to prototype a synthetic, version-pinned crosswalk. Continue independent progress on live discovery parity and the phone workflow; the goal remains active.
+
+
+## November 2 continuation — keep source readiness separate from live discovery
+
+The exact-version APLOSE/OSEkit format review is now in the source library and advanced researcher guide, but the live site is still on its October 29 build: the candidate APLOSE page returns 404 while core crawler files and existing pages return 200. The current source candidate passes its full local checks; it is not published.
+
+**Next:** resume with a clean authorized Metivity publish path for the already-reviewed candidate, then verify the new research page, sitemap, resource count, canonical/structured metadata and the live app disclosures. Meanwhile continue independent work on actual phone acceptance, newcomer completion evidence and the NOT READY benchmark gates. The complete five-track goal remains active.

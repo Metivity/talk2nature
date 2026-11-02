@@ -11,6 +11,47 @@ from web.knowledge_build import build_knowledge
 
 
 class KnowledgeTests(unittest.TestCase):
+    def test_aplose_crosswalk_is_pinned_and_keeps_unverified_export_terms_separate(self):
+        repo = Path(__file__).resolve().parents[1]
+        notes = json.loads((repo/'content/research.json').read_text())
+        resources = json.loads((repo/'research/resources.json').read_text())['resources']
+        note = next(row for row in notes if row['slug'] == 'aplose-export-crosswalk-2026')
+        parser = next(row for row in resources if row['id'] == 'osekit-aplose-detection-csv-parser')
+        example = next(row for row in resources if row['id'] == 'osekit-aplose-example-csv-metadata')
+        guide = (repo/'docs/RESEARCHER_START.md').read_text()
+        crosswalk = (repo/'docs/APLOSE_INTEROPERABILITY.md').read_text()
+
+        self.assertIn('39170854efa35e6a17ce1da5e15e6c73109d14b9', note['review_depth'])
+        self.assertIn('cannot be assumed equivalent', note['finding'])
+        self.assertIn('loss report', note['lesson'])
+        self.assertEqual(parser['rights']['license'], 'MIT (repository LICENSE at pinned commit)')
+        self.assertEqual(example['rights']['license'], 'Unresolved for the example CSV')
+        self.assertEqual(example['acquisition'], 'metadata_only')
+        self.assertIn('APLOSE_INTEROPERABILITY.md', guide)
+        self.assertIn('no converter or APLOSE connector now', crosswalk)
+        self.assertIn('Do not infer a UTC instant', crosswalk)
+        self.assertIn('verification decisions', crosswalk)
+
+    def test_aplose_prior_art_keeps_license_conflict_and_integration_gate_visible(self):
+        repo = Path(__file__).resolve().parents[1]
+        notes = json.loads((repo/'content/research.json').read_text())
+        sources = {row['id']: row for row in json.loads((repo/'content/sources.json').read_text())}
+        resources = json.loads((repo/'research/resources.json').read_text())['resources']
+        note = next(row for row in notes if row['slug'] == 'aplose-collaborative-annotation-platform-2025')
+        platform = next(row for row in resources if row['id'] == 'aplose-collaborative-annotation-software')
+
+        self.assertEqual(note['review_stage'], 'Publisher abstract and official software documentation reviewed; no software or data acquired')
+        self.assertIn('HTTP 403', note['review_depth'])
+        self.assertIn('not a full code', note['review_depth'])
+        self.assertIn('MIT', note['limitations'])
+        self.assertIn('must not be sold', note['limitations'])
+        self.assertIn('No Talk2Nature integration', note['limitations'])
+        self.assertEqual(platform['acquisition'], 'metadata_only')
+        self.assertEqual(platform['rights']['commercial_use'], 'not_admitted')
+        self.assertEqual(platform['rights']['redistribution'], 'unresolved')
+        self.assertEqual(set(note['source_ids']), {583, 584, 585, 586, 587})
+        self.assertEqual({sources[source_id]['checked'] for source_id in note['source_ids']}, {'2026-11-02'})
+
     def test_catalog_is_deterministic_and_closed(self):
         entries = read_catalog()
         graph = catalog_graph(entries)
