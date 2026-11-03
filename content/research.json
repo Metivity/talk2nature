@@ -7486,5 +7486,51 @@
     "year_label": "Peer-reviewed Methods in Ecology and Evolution article; online first 2025-08-08, volume 17 (2026), pages 257–271",
     "review_locator": "Kitzes et al. (2026), DOI 10.1111/2041-210X.70133; abstract and relevant sections on sensor hardware, deployment, storage, AI evaluation, inference and ecological insight.",
     "purpose": "Data standards & interoperability"
+  },
+  {
+    "slug": "animal-audio-model-landscape-2026",
+    "title": "Animal-audio models: a task map, not a translation stack",
+    "taxon": "Machine learning · bioacoustics",
+    "kind": "Cross-model research synthesis",
+    "year": "2025–2026",
+    "source_ids": [
+      53,
+      59,
+      60,
+      61,
+      204,
+      205,
+      334,
+      519,
+      575,
+      610,
+      612,
+      620
+    ],
+    "review_stage": "Targeted synthesis of cited library reviews; current AVEX model guide checked",
+    "review_depth": "Synthesized the project notes for AVES/AVEX, NatureLM-audio, BEANS-Next/ROOTS, MetaPerch and BirdCODE. In this continuation, checked the official AVEX supported-model guide and model configurations. Claims inherit the source-specific review depth and dates in those notes. This is not an exhaustive survey: not every cited paper, supplement, training-data component or current checkpoint was reread. No code, model, weights, benchmark data or audio were acquired or executed; no result was reproduced.",
+    "finding": "Current animal-audio systems solve distinct tasks: event detectors propose time-bounded sounds and species labels; frozen encoders produce reusable features for a labeled downstream task; audio-language systems answer prompts with model-generated descriptions or benchmark labels; self-supervised models expose repeated acoustic structure; and context-aware systems predict human-labeled scenes or behavior. AVEX offers a common interface to configured models that can return class outputs or embeddings, which may simplify a later researcher-side comparison. These outputs describe model predictions, not what an animal intends or whether a receiver understood. BirdCODE’s cross-species timing analysis, NatureLM captions, MetaPerch metadata supervision and BEANS-Next task scores are useful prior art, but their benchmarks ask different questions and their reported numbers are not a shared leaderboard.",
+    "limitations": "This synthesis compares methods from existing project reviews; Talk2Nature did not reproduce or independently validate the cited systems. Source notes have different review depths, benchmark splits, taxa, devices and rights status. Published species/event/caption/context scores do not establish receiver comprehension, a reply, or translation. AVEX code access does not clear any exact checkpoint, base model, training data or benchmark component. Even an apparent audio-plus-context gain can reflect site, time, device or background shortcuts. No household phone feasibility or Talk2Nature model performance has been established.",
+    "lesson": "Build the phone as a consented capture, quality-check and human-review tool. Keep original media, human observations and every model prediction separate and versioned; preserve timestamps, model/checkpoint, preprocessing, scores, uncertainty and reviewer decisions. Keep the first computational question narrow: is a bird vocalization present in a short soundscape window? Before choosing any model, establish the label, rights-cleared source data and independent animal/session/site groups. Compare a simple baseline, audio-only, context-only and candidate model under a frozen grouped evaluation. Inspect AVEX as a possible comparison interface only after a qualified collaborator defines the task and each component’s rights. Do not train a foundation model, ship a large audio-language model to phones, or add animal-directed output on the strength of these papers.",
+    "next_review": "Only if a qualified collaborator identifies a feasible first task and rights-cleared data: pin one AVEX model/config and a simple baseline, verify preprocessing and exact component terms, then predeclare grouped splits and a locked test before any execution. Otherwise keep this as a research map and do not acquire or run a model.",
+    "reviewed": "2026-11-03",
+    "expert_review": "No independent specialist review or Talk2Nature reproduction has occurred.",
+    "year_label": "Research period",
+    "review_locator": "Existing notes: aves-avex (sources 59–61, 519), naturelm (204–211), beans-next-roots (53, 334), MetaPerch (575–576) and birdcode-event-detection (610–612, 620). Current AVEX supported-model guide checked at source 519. See docs/ANIMAL_AUDIO_MODEL_MAP.md for the repository-level decision map.",
+    "purpose": "Models & evaluation",
+    "seo_description": "Compare animal-audio detectors, encoders, audio-language and context models by task, limits, rights and the evidence needed before use.",
+    "reuse": {
+      "status": "Research map only; no model or benchmark admitted",
+      "asset": "Existing source records and the AVEX interface as a possible future research comparison layer.",
+      "rights": "Every paper, code package, checkpoint, base model, training source, benchmark and derived output has separate terms. Public access and code licenses are not blanket clearance.",
+      "experiment": "No execution now. If readiness gates are met, compare one task-matched candidate with a simple baseline on rights-cleared data grouped by independent study units."
+    },
+    "atlas": {
+      "reviewed": "2026-11-03",
+      "location_status": "not_applicable",
+      "location_note": "This is a model-method synthesis, not a study-site record.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]
