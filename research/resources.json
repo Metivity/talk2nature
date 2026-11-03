@@ -11381,6 +11381,37 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "seabad-detection-2026",
+      "kind": "dataset",
+      "title": "SEABAD: Southeast Asian Bird Activity Detection",
+      "url": "https://zenodo.org/records/18290494",
+      "version": "Zenodo v1.0.0 / DOI 10.5281/zenodo.18290494; paper arXiv:2605.20853",
+      "source_ids": [
+        638,
+        639,
+        640
+      ],
+      "task": "Three-second bird-presence detection; useful as a candidate for studying source-aware evaluation, not evidence of animal communication.",
+      "review_depth": "Reviewed the preprint abstract and Methods sections on negative labels, quality assurance and split design; Zenodo metadata; and the public curation repository README. No archive, audio, code, weights or source files were downloaded or executed.",
+      "access": "Zenodo advertises a 4.2 GB archive with stratified 80/10/10 splits and provenance metadata. Archive contents were not accessed.",
+      "decision": "Metadata-only candidate for a source-held-out reanalysis after expert, rights and provenance review. Not selected as Talk2Nature’s first benchmark; do not interpret the reported random clip-split metrics as independent field generalization.",
+      "limitations": "The preprint reports a random stratified clip split without describing source-group separation. Positive clips come from Xeno-Canto while negatives combine six other source collections, so source identity and recording conditions may predict class; this is a leakage/domain-confounding risk inferred from the curation design, not a tested result. Negative labels were inherited from source collections and were not manually audited in this study. The paper/Zenodo and repository README disagree on the ESC-50 negative-clip count (444 vs 1,840). Per-clip licenses vary, the dataset compilation license does not replace source rights, and a repository-level license file was not visible in the reviewed root inventory although its README says the code is MIT-licensed.",
+      "attribution": "Zabidi, Idris and Idris (2026), SEABAD dataset and accompanying preprint; cite the Zenodo record, paper, and original source collections when appropriate.",
+      "rights": {
+        "license": "Zenodo declares CC BY 4.0 for the dataset compilation; positive audio inherits varied Xeno-Canto licenses and negative audio remains subject to its source collection terms.",
+        "scope": "Compilation metadata only; this does not establish that every embedded clip may be redistributed or used commercially.",
+        "evidence_url": "https://zenodo.org/records/18290494",
+        "conditions": "Resolve exact per-file and source-dataset terms, attribution and intended use before any acquisition or reuse. Review code rights separately.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }

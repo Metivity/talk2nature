@@ -6379,5 +6379,29 @@
     "url": "https://zenodo.org/api/records/21821133",
     "checked": "2026-11-03",
     "origin": "Queried the official Zenodo v1.1 record API over verified TLS for the exact schema.json entry and record-level metadata license. The collector fetched only schema.json; its 10,237 bytes matched the provider MD5 and the local SHA-256 in the ignored receipt. No annotation table, audio, code, model or test label was acquired or inspected."
+  },
+  {
+    "id": 638,
+    "title": "SEABAD bird activity detection preprint",
+    "description": "Reviewed the arXiv abstract and Methods sections on negative-label curation, label quality assurance and the stratified train/validation/test split, plus the reported dataset composition and baseline results. This is a preprint; the reported metrics were not reproduced.",
+    "url": "https://arxiv.org/abs/2605.20853",
+    "checked": "2026-11-03",
+    "origin": "Primary-source review of the authors' arXiv preprint. No audio, dataset archive, code, weights or supplemental files were acquired or executed."
+  },
+  {
+    "id": 639,
+    "title": "SEABAD dataset · Zenodo record 18290494",
+    "description": "Official dataset metadata states 50,000 three-second clips, a 25,000/25,000 class balance, stratified 80/10/10 splits, mixed source-level audio licenses, and a 4.2 GB archive. The archive and files were not accessed.",
+    "url": "https://zenodo.org/records/18290494",
+    "checked": "2026-11-03",
+    "origin": "Reviewed the public Zenodo record metadata only. No dataset payload or files were acquired."
+  },
+  {
+    "id": 640,
+    "title": "SEABAD curation repository README",
+    "description": "The public README describes the curation pipeline, stratified splits, inherited audio licenses and an MIT code license; its negative-source table reports an ESC-50 count that differs from the paper and Zenodo record. The repository inventory, not source files, was reviewed.",
+    "url": "https://github.com/mun3im/seabad",
+    "checked": "2026-11-03",
+    "origin": "Reviewed the public repository landing page and README only. No source files were downloaded or executed; a repository-level license file was not visible in the reviewed root inventory."
   }
 ]
