@@ -2438,16 +2438,16 @@
     "title": "Earth Species Project alp-data repository and dataset catalog",
     "description": "The repository describes a shared Python interface for 35+ bioacoustic datasets across multiple taxa, with streaming, transforms and per-dataset metadata. Its README states that dataset rights remain those of the original creators.",
     "url": "https://github.com/earthspecies/alp-data",
-    "checked": "2026-10-13",
-    "origin": "Reviewed the public README and project configuration on the repository main branch. The README describes the shared loader, supported taxonomic breadth and per-dataset rights metadata. The branch is mutable and was not pinned; the listed datasets and features were not audited individually. No repository files or dataset assets were acquired, installed or run."
+    "checked": "2026-11-03",
+    "origin": "Rechecked the current mutable repository README, pyproject.toml and MIT LICENSE on November 3, 2026. The README describes 35+ built-in datasets, shared loading, and dataset-specific terms; the package configuration declares Python >=3.11. The branch is not pinned and individual datasets were not audited. No package, repository archive or dataset assets were acquired, installed or run."
   },
   {
     "id": 234,
-    "title": "alp-data 1.11.1 release metadata and license",
-    "description": "PyPI lists alp-data 1.11.1, released July 31, 2026, under MIT, with Python >=3.11. The code license does not apply to each dataset exposed by the package.",
-    "url": "https://pypi.org/project/alp-data/1.11.1/",
-    "checked": "2026-10-13",
-    "origin": "Reviewed the exact PyPI release page for version, release date, Python requirement and MIT license statement. The wheel and source distribution were not downloaded; no package checksum was independently verified."
+    "title": "alp-data 1.12.0 release metadata",
+    "description": "PyPI's exact 1.12.0 release was uploaded October 28, 2026 and declares Python >=3.11. PyPI's structured metadata has no SPDX license expression or license classifier; the current upstream repository README and LICENSE declare MIT for the software. Dataset items retain their own terms.",
+    "url": "https://pypi.org/project/alp-data/1.12.0/",
+    "checked": "2026-11-03",
+    "origin": "Reviewed PyPI's version-specific JSON metadata for 1.12.0, upload time and Python requirement. Separately read the current upstream README, pyproject.toml and LICENSE; README and LICENSE are mutable main-branch files, not pinned to the release commit. No wheel or source distribution was downloaded; no package checksum was independently verified."
   },
   {
     "id": 235,
