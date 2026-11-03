@@ -1,3 +1,9 @@
+# November 3 — BirdCODE review applied to Compare; draft checks running
+
+Full-text BirdCODE methods review and pinned code/model-card records are included in draft PR [#684](https://github.com/Metivity/talk2nature/pull/684). The public Compare screen now links to the note and describes the event-detection/timing-association boundary. Local verification passed: Node **176/176**, Python **280 passed / 1 intentional skip**, noindex build **187 pages plus 404**, site checker **188 HTML / 12,878 links**. The focused Compare/mobile run passed **20/20**.
+
+The remote PR head is `9d119fbad956346f17f3f8806d6cc5004b4e4219`; GitHub Public Checks run [#41552686050](https://github.com/Metivity/talk2nature/actions/runs/41552686050) is still in progress at last readback. This remains a draft, not a merge or deployment. No external assets or research results were acquired or reproduced; AutoResearch and real-data admission remain **NOT READY**.
+
 # November 3 — merge the ecological sensor-to-insight review; Pages remains stale
 
 PR [#680](https://github.com/Metivity/talk2nature/pull/680) merged to `main` as [`a353a14`](https://github.com/Metivity/talk2nature/commit/a353a14ac2aeb1aade229b9e2a5b775c36911ad6). Public Checks run [#41545061175](https://github.com/Metivity/talk2nature/actions/runs/41545061175) passed repository, browser-tool, native Android and preview-site checks. The research library and resource catalog now include Kitzes et al.'s six-stage sensor + AI workflow review and a new field-pipeline learning path. Source totals are **152 literature notes / 354 resources**.

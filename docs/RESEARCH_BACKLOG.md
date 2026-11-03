@@ -12,6 +12,8 @@ Reviewed the BirdCODE preprint abstract, the author-affiliated technical overvie
 
 **Applied:** do not build another general bird detector or place this checkpoint in the phone app. If a researcher needs event proposals, test a version-pinned, loss-aware handoff using synthetic records first. Store model/version, input provenance, time bounds, label, score and post-processing separately from human observations and receiver outcomes. The MIT code notice does not clear checkpoint, recording or prediction rights. No code, model, audio or predictions were acquired or run.
 
+**Applied in Compare (November 3):** the saved-moment results now link to this note and explain that large-scale event detection and cross-species timing analyses describe patterns but do not establish meaning or a reply. A focused assertion covers both the copy and link.
+
 **Next:** compare BirdCODE's documented selection-table fields against the synthetic annotation-lineage format only if a named researcher need warrants an adapter; otherwise preserve it as prior art. Keep model execution, real-data admission and AutoResearch **NOT READY**.
 
 # Prioritized research and machine-learning backlog

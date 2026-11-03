@@ -1,3 +1,11 @@
+# November 3 — apply BirdCODE methods review to Compare
+
+Completed a full-text review of the BirdCODE preprint and pinned official repository/model-card metadata. Applied the distinction between large-scale event detection, temporal association and receiver understanding to the saved-moment Compare screen: it links the BirdCODE evidence note and says those analyses describe patterns without proving meaning or replies. The model remains metadata-only; no model, audio, code or predictions were acquired or run.
+
+**Checks:** focused Compare/mobile tests **20/20**; full Node suite **176/176**; Python suite **280 passed, 1 intentional skip**; local noindex build **187 pages plus 404**; site checker **188 HTML documents / 12,878 links**. PR [#684](https://github.com/Metivity/talk2nature/pull/684) remains a draft; hosted checks for head `9d119fb` are running. No merge or deployment occurred.
+
+**Next:** await hosted checks; continue the active five-track goal from the research and release gates, leaving physical-device acceptance, independent scientific review, AutoResearch and real-data admission open.
+
 # November 3 — apply a six-stage sensor-to-insight research review
 
 Reviewed the publisher abstract and relevant sections of Kitzes et al. (2026), which connect hardware, deployment, storage, AI, statistical inference and ecological insight. Added the paper to the source catalog, research library, resource directory and a new field-pipeline learning path. Applied the review to the Station architecture and benchmark card: record available device/format/processing provenance, keep unknowns explicit, preserve sensor context, report acoustic-quality strata, keep model outputs separate from observations, and avoid location-driven circular inference. This is an original linked summary; the publisher's support app was not inspected or run.
