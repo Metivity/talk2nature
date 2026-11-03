@@ -1,0 +1,52 @@
+# Animal-audio model map: what current systems can and cannot tell us
+
+**Reviewed:** November 3, 2026  
+**Purpose:** turn the project’s existing research reviews into a practical architecture and evaluation choice. This is a targeted synthesis, not an exhaustive literature review, expert review, reproduction, or endorsement of a particular model.
+
+## The central distinction
+
+Animal-audio systems solve different prediction tasks. A detector can locate a likely vocalization. A classifier can assign a likely species or call category. An embedding model can place clips near one another. An audio-language model can produce a text response to an audio prompt. A context model can predict a separately observed scene or behavior. None of those outputs, by itself, shows that a model identified what a sound means to an animal, that a receiver understood it, or that a later sound was a reply.
+
+The data model and user interface should preserve those outputs as separate evidence, each with its source, uncertainty and review status.
+
+## What the main model families are for
+
+| Family | Examples in the reviewed library | Useful output | What it does not establish | Talk2Nature use |
+| --- | --- | --- | --- | --- |
+| Event detector and species classifier | BirdCODE; BirdNET | Time-bounded candidate vocalizations and species scores across recordings | Call meaning, caller intent, receiver understanding, or a response | Researcher-side event proposals after a concrete need, with human review and exact model/preprocessing provenance |
+| Frozen acoustic representation | Perch 2 / Hoplite; animal2vec | Similarity features or features for a small, task-specific probe | A biological category without labels, or meanings from unlabeled structure | Candidate reusable baseline only after rights review and independent, task-matched evaluation |
+| Audio-language model | NatureLM-audio | Text conditioned on audio and a prompt; bounded captioning or benchmark classification | Grounded truth just because the sentence sounds fluent; animal-language translation | Researcher-side comparator, not a phone companion or animal-facing voice |
+| Self-supervised sequence or unit model | TweetyBERT and related acoustic-structure work | Repeated units, sequence structure and representations for downstream tests | That a cluster is a call type, has a referent, or carries a human-like word meaning | A later species-specific structural analysis, only after the first measurement task is defensible |
+| Audio plus context or video | MetaPerch, BEANS-Next, and multimodal behavior studies | Prediction of species, scene, or a human-defined behavior from acoustic and contextual evidence | That sound caused the behavior or contains the predicted context; metadata can be a shortcut | Separate audio-only, context-only and combined baselines; independently label behavior and keep all predictions distinct from observations |
+
+These families are not interchangeable. In particular, an audio-language model is a user interface around predictions; it does not replace independent labels or receiver-response experiments.
+
+## Evidence from the reviewed studies
+
+- **BirdCODE** scales frame-level bird event/species predictions and downstream timing analyses. Its reported cross-species five-second timing associations are useful for generating hypotheses, but shared environments, flock context and detector errors remain alternative explanations. Do not build a duplicate general detector or put its approximately 1.1 GB checkpoint in the mobile app. See the [full methods review](../content/research.json) (slug: `birdcode-event-detection`), the [pinned code](https://github.com/earthspecies/sound-event-detection/tree/617c6408fdd1b56c3873ef2d17006ffbaee61783), and the [pinned model card](https://huggingface.co/EarthSpeciesProject/sed-birdcode/tree/fd16e12a98360db51b4b6e9c23e29309a804661d).
+- **NatureLM-audio** demonstrates an audio-plus-language research interface and reports results on BEANS-Zero. Its paper and repository describe an 8B Llama-based system; the official evaluation resources are large. A prompt or caption is still a model prediction, not a report from an animal. See the [ICLR paper](https://openreview.net/forum?id=hJVdwBpWjt) and [official repository](https://github.com/earthspecies/NatureLM-audio).
+- **AVEX / ESP-AVES2** provides a common interface to a model collection and exposes either class logits with a label map or embeddings, with preprocessing specified in per-model configurations. That is a useful researcher-side comparison layer to inspect before writing custom adapters; it does not make checkpoints, labels, training data, terms or benchmarks interchangeable. The interface and configs were read, not installed or run. See the [supported-model guide](https://github.com/earthspecies/avex/blob/main/docs/supported_models.md) and [official model collection](https://huggingface.co/collections/EarthSpeciesProject/esp-aves2).
+- **MetaPerch** tests auxiliary metadata across 17 bioacoustic datasets. Its authors report improved species-identification performance on their evaluation suite, while explicitly raising the risk that location, season, time or background species encode shortcuts. Our evaluation plan therefore compares audio-only, metadata/context-only and combined baselines, with shuffled/ablated metadata and grouped holdouts. See the [ICML paper](https://proceedings.mlr.press/v306/chasmai26a.html).
+- **BEANS-Next and ROOTS** make task boundaries and data provenance visible: the benchmark combines several tasks, while the much larger training resource is separate. A caption, soundscape label or species result is not an animal communication label. Keep each task, source component, license and split explicit. See the [paper](https://arxiv.org/abs/2610.10663) and the project's [BEANS-Next dataset card](https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Next).
+- **Self-supervised acoustic-structure work** supports discovering patterns before asking what they mean. The next step still needs an independently observed outcome and controls; clustering alone cannot supply a dictionary.
+
+These are the authors' reported results as summarized in the linked records. Talk2Nature has not reproduced them or independently validated these models.
+
+## Architecture to build toward
+
+1. **Capture and provenance:** the foreground mobile app records only after clear user action. Preserve the original media checksum, device/format details when available, time uncertainty, consent and processing history. Unknown values stay unknown.
+2. **Quality and candidate events:** measure clipping, noise and missing/interrupted windows. Any detector output is a versioned *proposal* with model/checkpoint, settings, timestamps, score and input reference. It never overwrites the recording or observer notes.
+3. **Human review:** show the original recording and proposal separately. Let a reviewer accept, reject, correct or mark uncertain. Preserve edits and reviewer identity/role as a lineage, not as an erased prediction.
+4. **Context and behavior:** collect a short, species-specific ethogram only with a qualified collaborator. Label context from contemporaneous observation/video before showing predictions. Compare majority, context-only, background-only, audio-only and combined baselines.
+5. **Independent evaluation:** freeze task, labels, splits and thresholds before the test. Group connected animal, household, session, source recording, site and device as the study requires. Report per-group errors, calibration, abstention and uncertainty; do not let many clips from one animal masquerade as many independent animals.
+6. **Receiver-response evidence:** only a specialist-designed, welfare-reviewed study can test whether a listener changes behavior in response to a controlled signal. The passive companion app must remain silent toward animals; generated calls and automatic playback stay outside it.
+
+## Practical first step
+
+Keep the first computational question narrow: **is a candidate bird vocalization present in this short soundscape window?** Start with a simple baseline and establish whether labels and independent recording groups can be created lawfully and reliably. Reuse a frozen encoder or an existing detector only if it improves that defined task on a held-out set and the exact component rights are acceptable. Species identification, parrot call categories, context association, acoustic-unit discovery and receiver response are separate later questions.
+
+The phone is a measurement and annotation tool first. Heavy model exploration belongs in a versioned researcher workflow. There is no reason yet to train a foundation model, run an audio-language model on a participant's private clip, or promise an unattended background listener.
+
+## Readiness and rights
+
+This map changes the research and product plan; it does not authorize model/data acquisition or training. Code, weights, base models, training recordings, benchmark data, and derived predictions have separate rights and provenance. The library's current candidate register keeps relevant models metadata-only. AutoResearch and real-data admission remain **NOT READY** until a bounded protocol, qualified review, rights/consent, leakage-aware independent evaluation, storage/withdrawal design and execution boundary are satisfied.
