@@ -43,6 +43,13 @@ Reviewed the BirdCODE preprint abstract, the author-affiliated technical overvie
 **Next:** compare BirdCODE's documented selection-table fields against the synthetic annotation-lineage format only if a named researcher need warrants an adapter; otherwise preserve it as prior art. Keep model execution, real-data admission and AutoResearch **NOT READY**.
 
 # Prioritized research and machine-learning backlog
+
+## November 3 — CEB is not selected for the first benchmark
+
+**Decision:** retain Central European Birds (CEB) v1.1 as metadata-only detector prior art; do not use it for the first Talk2Nature benchmark under the current intake and evaluation gates. The reviewed schema supports grouping annotations by exact recording filepath, but does not establish independent site/session/device groups. The training annotation CSV exceeds the existing 5 MiB per-file intake cap, and the public test-label file cannot serve as a concealed locked evaluation. Unannotated intervals are not verified negatives. Do not bypass the size cap by chunking the table, inspect the public test labels, or start a model run.
+
+**Applied:** keep the ten-second passive bird-sound-presence question as a task definition only. The benchmark remains **NOT READY** until a candidate has rights/provenance review, independently verified labels including suitable negatives, leakage-safe groups, a separate locked test set and qualified scientific review. DCASE 2018 remains the strongest task-match lead in the current review, but its label provenance, component rights and held-out evaluation gates are unresolved; compare its screening path with ArcticBirdSounds, whose site mapping is clearer but whose label values/site coverage remain unreviewed. Changing the CEB intake cap alone would not resolve its scientific gaps. See the [CEB evidence note](../research/central-european-birds-dataset-v1-1/), the [model/data decision](MODEL_DATA_DECISION.md) and official [Zenodo v1.1 record](https://zenodo.org/records/21821133).
+
 ## November 2 — reconcile current OpenWhistle model and dataset releases
 
 **Evidence reviewed:** checked current immutable Hugging Face revisions for the Wav2Vec2 model and pretraining, classification and detection datasets, plus the official GitHub API state and root inventory. Sources **605–609** and the OpenWhistle note/resource entries record the exact pins. The current cards declare CC BY 4.0 for the model weights/card and the three dataset releases. The code repository remains at `ad715bb3cf24c36f85b3c3c8159077548134a39e` (last commit October 9); GitHub reports `NOASSERTION` for a software license, and the root has no general code license. No payloads were acquired.
