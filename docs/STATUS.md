@@ -4051,3 +4051,13 @@ Compare now teaches the next evidence steps: bounded sound-presence detection, g
 **Checks:** Python **289 passed, 1 intentional skip**; Node **178/178**; public build **192 pages plus 404**; site checker **193 HTML documents / 13,461 links / 192 reachable routes**. `dist/` is a local generated candidate; no push or deployment occurred.
 
 **Browser review:** local Compare rendered at 480 CSS px with no document overflow and the evidence cards in a single column. The synthetic example action opened one complete and one partial invented session and exposed the comparison table without requesting microphone access. Physical-device and independent-user checks remain open. Corrected the receiver-outcome example link to the existing bee-dance follower review; no dataset or model was used.
+
+## November 3 continuation — record a benchmark no-go for CEB
+
+**Question:** does the schema-only CEB review establish enough independent groups and usable labels to select it for the first sound-presence benchmark?
+
+**Evidence applied:** the official [Zenodo CEB v1.1 record](https://zenodo.org/records/21821133) declares component rights and lists the files; the checksum-verified schema establishes an event-per-row unit and exact filepath key. The anonymized `project_NNN` token is not documented as site/session/device identity. The 8,559,233-byte training CSV exceeds the 5 MiB intake limit and remains uninspected; public test labels remain uninspected and cannot be represented as a concealed holdout; unannotated intervals are not verified negatives.
+
+**Decision and application:** CEB is not selected for the first benchmark and remains metadata-only prior art. Do not chunk the large table to bypass intake controls, inspect public test labels as a locked evaluation, or run a model. DCASE 2018 remains the strongest task-fit lead, with label provenance, component rights and held-out evaluation unresolved; ArcticBirdSounds is a site-group comparator whose label values and site coverage are still unreviewed. Updated the CEB note, resource catalog, model/data decision and backlog to reflect this. No new data, labels, audio, code or weights were acquired or run. AutoResearch and real-data admission remain **NOT READY**.
+
+**Next:** resolve the DCASE/ArcticBirdSounds comparison from primary sources against the existing gates before selecting any benchmark. The Pages release gate is separate and still pending authenticated Metivity workflow access.
