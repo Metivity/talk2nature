@@ -7571,5 +7571,36 @@
       "rights": "Development data declares CC BY 4.0; evaluation v2 shows no license; repository declares Apache-2.0, but dependencies and exact source files were not reviewed. Challenge materials, data, code, weights and reports have separate terms.",
       "experiment": "No execution now. Any future study requires qualified review, an intake plan within policy, source-song/individual/recording-group splits, an artifact-shortcut audit and an independently held-out evaluation set."
     }
+  },
+  {
+    "slug": "biodcase-tiny-edge-bird-classification-2026",
+    "title": "BioDCASE-Tiny 2026 shows the edge-model tradeoff",
+    "seo_description": "What the BioDCASE-Tiny 2026 bird-classification challenge teaches about efficient on-device audio models—and what it does not validate.",
+    "taxon": "Birds · 10-species classification · embedded bioacoustic machine learning",
+    "kind": "Challenge and edge-inference assessment",
+    "year": "2026",
+    "year_label": "BioDCASE 2026 Task 3; official challenge results",
+    "source_ids": [
+      629,
+      630,
+      631,
+      632
+    ],
+    "reviewed": "2026-11-03",
+    "review_stage": "Targeted review of official task, results, baseline README and proceedings abstract",
+    "review_depth": "Reviewed the official BioDCASE Task 3 specification and linked dataset summary; the official results table and metrics; the baseline repository landing page/README and Apache-2.0 declaration; and the DCASE 2026 proceedings abstract for the hardware-aware distillation paper. The full proceedings paper, dataset files, task code, dependencies, submissions and model weights were not acquired, inspected or run. No score was independently reproduced.",
+    "finding": "BioDCASE-Tiny 2026 evaluates a ten-species plus urban-background bird classifier on the ESP32-S3-Korvo-2, with 2,750 three-second 24 kHz clips. Its official results page ranks submissions using hidden-set classification performance alongside model size, RAM and processing time. The first-ranked MobileNetV2-lite submission reports a 357,292-byte embedded model and 664.36 ms total processing; a smaller convolutional alternative reports different efficiency/performance tradeoffs. A DCASE 2026 proceedings abstract describes teacher-pool distillation with a compact hardware-aware student and reports first place on the ESP32-S3 evaluation track. These challenge-reported findings show that feature extraction and inference must be measured together for a named board. They do not establish transfer to arbitrary phones or species, robust live microphone capture, behavior inference, receiver response or animal-to-human meaning.",
+    "limitations": "This is a constrained multiclass bird task in one challenge environment, not Talk2Nature's proposed broad bird-presence task or a communication dataset. The framework README explicitly says its profiler does not yet consume live Korvo microphone input; therefore its processing measurements do not validate a complete unattended field station. The challenge page links a 254 MB development set, but item-level dataset terms and provenance were not reviewed. The proceedings paper was reviewed only at abstract level. No system, score or hardware result was reproduced by Talk2Nature.",
+    "lesson": "Keep mobile capture useful without inference. For any future edge-model proposal, name the task and target device, then evaluate the exact microphone, resampling, feature extraction, model, postprocessing and storage path together for held-out accuracy, abstention, energy, latency and peak memory. Preserve model outputs as proposals separate from observer notes, and retain human review. Use challenge-reported metrics as an engineering template only; do not treat this as permission to acquire data or hardware.",
+    "next_review": "Revisit only after a named researcher need, qualified bioacoustic/embedded review, rights-cleared independently labeled data, group-safe evaluation and a target-device protocol exist. Check the dataset's exact record-level license and the complete proceedings paper before any reuse or reproduction.",
+    "expert_review": "No independent Talk2Nature ornithology, bioacoustics, machine-learning or embedded-systems review has occurred.",
+    "review_locator": "BioDCASE 2026 Task 3 specification and linked development-set record; official challenge-results table, especially the rank-1 MobileNetV2-lite and rank-6 compact DS-CNN entries; official repository README sections Dataset, Quickstart, Limitations and License; DCASE 2026 proceedings entry P4-4, DOI 10.5281/zenodo.22954971.",
+    "purpose": "Models & evaluation",
+    "reuse": {
+      "status": "Metadata-only engineering reference; not selected as a dataset or Talk2Nature benchmark",
+      "asset": "Official task/results pages, public repository metadata and proceedings abstract",
+      "rights": "Repository declares Apache-2.0 at its public landing page; exact dependencies and files were not inspected. Dataset license was not reviewed and remains unresolved. Proceedings paper/article terms and benchmark audio rights are separate; no materials were acquired.",
+      "experiment": "No execution now. A future task requires a named species/question, approved data and rights, independent group-safe test, human-reviewed labels and exact device acceptance. Do not infer transfer from the challenge leaderboard."
+    }
   }
 ]

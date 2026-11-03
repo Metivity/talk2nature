@@ -11216,6 +11216,65 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "biodcase-tiny-2026-task3",
+      "kind": "project",
+      "title": "BioDCASE 2026 Task 3: Bioacoustics for Tiny Hardware",
+      "url": "https://biodcase.github.io/challenge2026/task3",
+      "version": "Task 3 page and official results checked 2026-11-03",
+      "source_ids": [
+        629,
+        630
+      ],
+      "task": "Task-specific edge-classification and efficiency-reporting precedent for bird sound on ESP32-S3 hardware.",
+      "review_depth": "Official task specification, dataset summary and results page reviewed. No dataset, submission artifacts or scores were independently reproduced.",
+      "access": "Public task and organizer-results pages.",
+      "decision": "Use as an engineering reference only. Not the Talk2Nature first benchmark, a phone validation, or evidence of animal communication.",
+      "limitations": "Ten bird species plus urban background; 2,750 short clips; exact dataset item-level terms not reviewed. Baseline repository states its profiler does not use live device microphone input.",
+      "attribution": "BioDCASE Challenge 2026, Task 3: Bioacoustics for Tiny Hardware.",
+      "rights": {
+        "license": "Dataset license not reviewed; unresolved. The repository license is a separate component.",
+        "scope": "Challenge page, dataset, code, submissions and papers have distinct terms.",
+        "evidence_url": "https://biodcase.github.io/challenge2026/task3",
+        "conditions": "Link to original pages; inspect exact dataset and artifact terms before any acquisition or reuse.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2026-code",
+      "kind": "code",
+      "title": "BioDCASE-Tiny 2026 baseline framework",
+      "url": "https://github.com/birdnet-team/BioDCASE-Tiny-2026",
+      "version": "Repository landing page and README checked 2026-11-03; branch not pinned",
+      "source_ids": [
+        631
+      ],
+      "task": "Reference training, feature-processing and ESP32-S3 deployment framework for the BioDCASE 2026 challenge.",
+      "review_depth": "Repository landing page, README and repository-level Apache-2.0 notice reviewed; source files, dependencies and execution were not inspected.",
+      "access": "Public GitHub repository.",
+      "decision": "Metadata-only engineering reference; do not add as a Talk2Nature dependency without a named need, pinned revision, dependency/license review and device-specific acceptance plan.",
+      "limitations": "The README says its profiler does not yet use real Korvo microphone input. Current branch is mutable and was not pinned in this record.",
+      "attribution": "BioDCASE Challenge 2026 baseline framework; cite the repository and task page.",
+      "rights": {
+        "license": "Apache-2.0 declared at repository root; exact files and dependencies not reviewed.",
+        "scope": "Repository software only; does not license challenge datasets or third-party components.",
+        "evidence_url": "https://github.com/birdnet-team/BioDCASE-Tiny-2026",
+        "conditions": "Review exact revision, file headers and dependency licenses before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
