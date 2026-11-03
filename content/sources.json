@@ -3728,13 +3728,13 @@
   {
     "id": 361,
     "title": "Northeastern forest-bird soundscapes, Zenodo v2",
-    "description": "Current dataset record, Zenodo 20038954 / DOI 10.5281/zenodo.20038954. The record describes 1,302 ten-minute recordings from 104 sites in four parks and about 183,000 annotations across 96 bird species; it declares CC BY 4.0.",
+    "description": "Current dataset record, Zenodo 20038954 / DOI 10.5281/zenodo.20038954. The record describes 1,302 ten-minute recordings from 104 sites in four parks and about 183,000 annotations across 96 bird species. Zenodo API metadata declares CC BY 4.0, although the current landing-page Rights/License panel is blank.",
     "url": "https://zenodo.org/records/20038954",
-    "checked": "2026-10-23",
-    "origin": "Reviewed the full current v2 landing-page description and the official Zenodo API metadata, including the record-level license, file names, upstream sizes and provider MD5 values. These values were not checked against local bytes. No annotation rows, recordings, README file, code or model were downloaded or inspected.",
+    "checked": "2026-11-03",
+    "origin": "The official landing-page description, methods summary, file sizes and blank rendered Rights/License panel were freshly checked. The existing project review separately inspected Zenodo API license metadata and provider file manifests. Current file bytes were not downloaded or checksummed in this continuation. No recording or annotation row was newly acquired or inspected.",
     "rights": {
-      "dataset": "Zenodo v2 metadata declares CC BY 4.0 at the dataset-record level.",
-      "scope": "The record-level declaration is separate from the article's CC BY-NC-ND 4.0 license. No independent component-level provenance, location-sensitivity or legal review was performed."
+      "dataset": "Zenodo API metadata declares CC BY 4.0 at the dataset-record level; the HTML landing page currently shows a blank Rights/License panel.",
+      "scope": "The record-level API declaration is separate from the article text license. It does not establish source-media provenance, sensitive-location acceptability or Talk2Nature admission."
     }
   },
   {
