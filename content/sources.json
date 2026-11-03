@@ -6307,5 +6307,37 @@
     "url": "https://biodcase.github.io/documents/challenge2025/technical_reports/Oguamanam_task3_technical_report.pdf",
     "checked": "2026-11-03",
     "origin": "Official challenge-linked PDF, all five pages reviewed. The linked challenge rules say submitted system outputs and technical reports are published under CC BY. No dataset, source code or model was retrieved or run."
+  },
+  {
+    "id": 629,
+    "title": "BioDCASE 2026 Task 3 — Bioacoustics for Tiny Hardware",
+    "description": "Official challenge specification for ten bird species on the ESP32-S3-Korvo-2. It reports 2,750 three-second 24 kHz clips and evaluates classification together with size, latency and memory. The linked 254 MB development dataset was not downloaded; its item-level license was not reviewed.",
+    "url": "https://biodcase.github.io/challenge2026/task3",
+    "checked": "2026-11-03",
+    "origin": "Official challenge task page; task scope, dataset summary, evaluation fields and linked dataset record reviewed."
+  },
+  {
+    "id": 630,
+    "title": "BioDCASE 2026 Task 3 official results",
+    "description": "Official results table for the hidden-set bird-classification challenge and ESP32-S3 measurements. Rankings are challenge-reported and were not reproduced by Talk2Nature.",
+    "url": "https://biodcase.github.io/challenge2026/task3-results",
+    "checked": "2026-11-03",
+    "origin": "Official organizer results page; ranking, reported metrics and leading submission were reviewed."
+  },
+  {
+    "id": 631,
+    "title": "BioDCASE-Tiny 2026 baseline framework repository",
+    "description": "Official PyTorch/TensorFlow training and embedded-deployment framework. Repository declares Apache-2.0. README states the profiler does not yet use live microphone input from the Korvo-2. Repository code, dependencies and weights were not inspected or executed.",
+    "url": "https://github.com/birdnet-team/BioDCASE-Tiny-2026",
+    "checked": "2026-11-03",
+    "origin": "Official GitHub repository landing page and README; license, workflow overview and stated microphone-input limitation reviewed."
+  },
+  {
+    "id": 632,
+    "title": "Wang et al. (2026), Hardware-Aware Representation-Asymmetric Distillation with a Teacher Pool for Tiny Bioacoustic Recognition",
+    "description": "DCASE 2026 proceedings abstract describing a teacher-pool distillation method for low-cost bioacoustic inference. The proceedings page reports first place on the ESP32-S3 evaluation track. Only the proceedings abstract and linked result context were reviewed; the full paper was not retrieved or reproduced.",
+    "url": "https://dcase.community/workshop2026/proceedings",
+    "checked": "2026-11-03",
+    "origin": "Official DCASE 2026 proceedings entry P4-4, including abstract and DOI 10.5281/zenodo.22954971; full paper not reviewed."
   }
 ]
