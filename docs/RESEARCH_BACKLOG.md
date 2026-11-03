@@ -1,3 +1,9 @@
+## November 3 — apply BioDCASE active-learning results to future annotation workflow
+
+Reviewed the full 2026 BioDCASE active-learning preprint. Across four terrestrial/marine subsets, its top-ranked method reports 26.4% higher average learning-curve score than random selection, but gains range from 8.0% to 67.1%. High-performing methods combine diversity and uncertainty, reduce within-batch redundancy, and can shift from diversity toward uncertainty as labeling progresses. The paper also reports computational and annotation-cost proxies.
+
+**Applied:** a future researcher-facing review queue should be evaluated against random selection, avoid redundant batches, and measure reviewer time plus compute. Keep model-selected samples as recommendations; only independent human review supplies labels. Preserve recording/site/session grouping and a separate locked evaluation. The challenge's BirdSet subsets split five-second segments rather than source recordings, so their results do not establish recording-held-out generalization. This is a design lead only: no queue, model or dataset was integrated, and real-data admission and AutoResearch remain **NOT READY**. See the [source-grounded review](../research/biodcase-active-learning-2026/).
+
 # November 3, 2026 — refresh the shared bioacoustic loader release and architecture decision
 
 **Question:** did the release used in Talk2Nature's existing `alp-data` note remain current, and does the update change our architecture recommendation?

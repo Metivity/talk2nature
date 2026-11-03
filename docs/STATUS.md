@@ -249,6 +249,12 @@ No model/data was acquired or run, no SEO code change was warranted, and no depl
 
 # Project status
 
+## November 3 continuation — add BioDCASE active-learning evidence; Pages deployment remains separate
+
+Reviewed the full primary-source preprint for BioDCASE 2026 active learning and recorded source 634 plus the `biodcase-active-learning-2026` note. Applied it as a future researcher-workflow design lead: measure label and compute costs separately, compare selection strategies against random, reduce batch redundancy, and preserve group-safe locked evaluation. The published challenge result is not reproduced, and its BirdSet-derived splits allow segments from one source recording in different splits. No dataset, model, code, or labels were acquired or executed; no automatic annotation feature was added.
+
+Exact public-main candidate `dcf2fe244099384e908212ba2c10bf83dd3623d1` passes Python **285 tests (1 skipped)**, Node **178/178**, a **191-page plus 404** local build, and site checks (**192 HTML / 13,202 links**). Catalog totals are **156 research notes / 633 sources**. This is not yet in a PR or live Pages. Previous manual Pages deployment limitation remains.
+
 ## November 2 — review VLM-assisted bird-call localization
 
 Reviewed the full bioRxiv v1 preprint “A Vision-Language Model as a Teacher for Bird Vocalization Detection.” Added an original, source-linked note, paper resource record and methods decision. The review applies its teacher/student pipeline only as a future annotation-workflow pattern: machine boxes stay suggestions with full provenance and separate human review. File overlap, independent annotation quality, group holdouts, threshold transfer, preprint status and artifact-specific rights remain explicit limits. No app code, external data or model changed; none was acquired or run.
