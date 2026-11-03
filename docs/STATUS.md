@@ -1,3 +1,11 @@
+# November 3 — PR #687 merged; manual publication pending
+
+PR [#687](https://github.com/Metivity/talk2nature/pull/687) is merged to `main` as [`37b568a`](https://github.com/Metivity/talk2nature/commit/37b568a49649bc41478c473eb981b23a9ba76424). Public checks passed on final PR head `05bd05e`. The tree includes the task-based animal-audio model synthesis, regression coverage, and a dated SEO discovery snapshot. Local verification: Python **281 passed, 1 intentional skip**; public build **188 pages plus 404**; site checker **189 HTML documents / 13,151 links / 188 reachable public pages**.
+
+The live directory still has **284** resource records; current source has **354**. The Pages workflow is manual and has not run for this merge, so the new route is not yet confirmed live. Search Console is unavailable in this check. No model or third-party media was acquired or executed; AutoResearch and real-data admission remain **NOT READY**.
+
+**Next:** publish via the authorized Metivity workflow, then verify HTTP delivery, canonical/robots metadata, live resource count and sitemap membership. Keep independent specialist review, a first benchmark and phone/device acceptance separate from publication.
+
 # November 3 — turn the model map into a discoverable research-library page
 
 **Question:** can a reader compare current animal-audio model families without treating every model output as “communication”? Added the public synthesis note `animal-audio-model-landscape-2026` and linked it from the “Reuse models, then test transfer” reading path. It distinguishes event/species detectors, frozen encoders, audio-language systems, self-supervised structure discovery, and context-aware prediction. The note applies the reviews to a practical order of work: consented mobile capture and human review first; model outputs as versioned proposals; task-matched grouped evaluation before any model choice; receiver-response evidence only under qualified study review. It identifies AVEX as a possible researcher-side comparison interface to inspect, not a validated or integrated dependency.

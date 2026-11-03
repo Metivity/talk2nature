@@ -1,3 +1,11 @@
+# November 3 — model landscape merged; Pages publication pending
+
+PR [#687](https://github.com/Metivity/talk2nature/pull/687) merged to `main` as [`37b568a`](https://github.com/Metivity/talk2nature/commit/37b568a49649bc41478c473eb981b23a9ba76424). Its final public-check run [#41557007601](https://github.com/Metivity/talk2nature/actions/runs/41557007601) passed repository, browser-tool, native Android and preview-site jobs. The merge tree matches the fully verified local tree. The merge adds the model-family research page, its source/limits/discoverability regression test, and [`SEO_DISCOVERY_AUDIT_2026-11-03.md`](SEO_DISCOVERY_AUDIT_2026-11-03.md).
+
+The live resource directory still shows **284 records** while current `main` has **354**. The Pages workflow is manual; no deployment has occurred, and the new research route is not yet live. A connected search tool surfaced existing project pages, but Search Console was unavailable; there is no ranking or traffic claim. No audio, dataset, code, checkpoint or model was acquired or run. AutoResearch and real-data admission remain **NOT READY**.
+
+**Next:** run the already-authorized Pages workflow from the authenticated Metivity session. Read back the deployed research route, resource count, sitemap and Station disclosure. Keep physical-device acceptance, independent scientific review, benchmark selection and data-admission gates open.
+
 # November 3 — turn the model map into a discoverable research-library page
 
 **Question:** can a reader compare current animal-audio model families without treating every model output as “communication”? Added the public synthesis note `animal-audio-model-landscape-2026` and linked it from the “Reuse models, then test transfer” reading path. It distinguishes event/species detectors, frozen encoders, audio-language systems, self-supervised structure discovery, and context-aware prediction. The note applies the reviews to a practical order of work: consented mobile capture and human review first; model outputs as versioned proposals; task-matched grouped evaluation before any model choice; receiver-response evidence only under qualified study review. It identifies AVEX as a possible researcher-side comparison interface to inspect, not a validated or integrated dependency.
