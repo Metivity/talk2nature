@@ -1,3 +1,11 @@
+# November 3, 2026 — apply NatureLM context controls and check the mobile save flow
+
+Reviewed Appendix A.5 of the primary NatureLM-audio paper: its CBI species-classification result rises from 0.776 (audio) to 0.792 (audio plus available geography) and 0.798 (also adding recordist notes). The paper does not report a metadata-only condition. Added this bounded result to the existing evidence note and made the applied rule explicit: future context-aware work needs predeclared audio-only, context-only and combined conditions, metadata shuffle/ablation controls, and a split matched to the scientific question. This is not a Talk2Nature reproduction or evidence of animal understanding; no data, code or weights were acquired or run. See `naturelm` and `docs/MODEL_DATA_DECISION.md`.
+
+At 320 CSS px, the local synthetic Station rehearsal fit without horizontal overflow and completed a microphone-free partial-observation workflow. The summary correctly retained the synthetic label and one human note. Clicking “Save this moment” changed the interface to “Your file is ready,” but Chrome's browser-control download event timed out, so the downloaded archive and Compare re-open were not verified in this run. No “I saved the file” acknowledgement was clicked. This remains maintainer emulation with invented audio, not a physical-phone or independent-user check; the named-device save/re-open gate stays open. No app defect was established, so no product code changed.
+
+**Checks:** pending for this documentation/catalog update. The local and public Pages release remain separate; no deployment occurred. AutoResearch and real-data admission remain **NOT READY**.
+
 # November 3, 2026 — apply forest-soundscape methods to the first task
 
 Revisited the already-catalogued Zenodo v2 forest soundscape corpus and applied its annotation and grouping limits to the existing public research assessment. Its record describes 1,302 ten-minute recordings across 104 sites/four parks, approximately 183,000 expert annotations and a 27.7 GB release. The landing-page Rights/License panel is blank; the previously reviewed Zenodo API metadata declares record-level CC BY 4.0. Its annotation account says faint/ambiguous calls and some bird/mammal sounds may be missed.
