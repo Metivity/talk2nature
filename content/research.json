@@ -7602,5 +7602,33 @@
       "rights": "Repository declares Apache-2.0 at its public landing page; exact dependencies and files were not inspected. Dataset license was not reviewed and remains unresolved. Proceedings paper/article terms and benchmark audio rights are separate; no materials were acquired.",
       "experiment": "No execution now. A future task requires a named species/question, approved data and rights, independent group-safe test, human-reviewed labels and exact device acceptance. Do not infer transfer from the challenge leaderboard."
     }
+  },
+  {
+    "slug": "biodcase-active-learning-2026",
+    "title": "BioDCASE 2026: active learning can save labels, but review batches need diversity",
+    "seo_description": "BioDCASE 2026 reports dataset-dependent gains from diverse label batches, with split caveats. Useful design evidence, not a universal result.",
+    "taxon": "Cross-species bioacoustics · research workflow",
+    "kind": "Active-learning challenge and annotation workflow",
+    "purpose": "Data & annotation",
+    "year": "2026",
+    "source_ids": [
+      634
+    ],
+    "reviewed": "2026-11-03",
+    "review_stage": "Full arXiv preprint reviewed; no challenge data, code, embeddings or results reproduced",
+    "review_depth": "Reviewed Sections 1–5 of McEwen et al. (2026), including the four challenge subsets, dataset construction and split details, BaseAL protocol, baselines, rankings and discussion. No challenge dataset, feature embeddings, repository code, dependencies or supplementary files were downloaded or executed.",
+    "finding": "The 2026 BioDCASE challenge compares active-learning strategies under a shared setup across three terrestrial bird subsets and one marine-whale subset. The preprint reports the top method reached 0.507 area under the learning curve (AULC) for macro mAP versus 0.390 for random sampling, a reported 26.4% relative gain averaged over the four subsets. Gains varied substantially: 67.1% on HSN, 28.5% on UHH, 13.2% on POW and 8.0% on ATBFL. High-ranked approaches combined acquisition signals, used diversity early and uncertainty later, and reduced redundancy within batches. The challenge also reported sampling time, compute-cost proxies and a label-count proxy alongside the ranking score.",
+    "limitations": "These are challenge-reported comparisons, not a Talk2Nature reproduction or a universal annotation-efficiency result. Dataset-specific gains varied substantially, and the headline ranking did not optimize annotation and compute cost jointly. For BirdSet-derived HSN, POW and UHH, the paper states that five-second segments were split at segment level, so segments from a source recording could occur in different splits; this weakens independence for some recording-level generalization claims. The challenge uses an oracle to reveal labels for selected samples from its active-learning pool; that pool is not a locked final test set. No evidence here establishes animal meaning, receiver comprehension, or suitable rights and consent for Talk2Nature data.",
+    "lesson": "If Talk2Nature later supports a researcher-controlled review queue, compare a random queue with diversity-aware and uncertainty-aware strategies, limit near-duplicate selections per batch, and test whether the schedule should shift as labels accumulate. Report human annotation time and compute separately. Keep all candidates, observer labels and model suggestions distinct, and evaluate on an independent recording/site/session split that stays locked during queue development.",
+    "next_review": "Do not build or activate an ML-selected label queue until a named study, qualified reviewer, rights-cleared dataset, independent labels, group-safe splits, annotation-cost plan and locked evaluation are approved. A synthetic-only interface rehearsal may test usability, but cannot establish annotation savings or model quality.",
+    "expert_review": "Not yet reviewed by an independent bioacoustics, active-learning or annotation-workflow specialist.",
+    "atlas": {
+      "reviewed": "2026-11-03",
+      "location_status": "not_applicable",
+      "location_note": "This is a cross-dataset methods challenge review, not a location-specific animal study.",
+      "locations": [],
+      "observation_period": null
+    },
+    "year_label": "BioDCASE 2026 active-learning challenge"
   }
 ]

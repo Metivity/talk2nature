@@ -191,6 +191,12 @@ This applies the source review to discovery while protecting the precision of mu
 
 # Talk2Nature goals
 
+## November 3 continuation — apply current active-learning research to researcher workflows
+
+Reviewed the full 2026 BioDCASE active-learning challenge preprint and added its source-grounded note (`biodcase-active-learning-2026`, source 634). Applied the useful design signal to the future review-queue plan: compare against random selection, combine diversity and uncertainty, reduce redundant batches, and report human annotation time separately from model/compute metrics. Also recorded the challenge’s segment-level split caveat and the fact that its query pool is not a locked final test. No data, code, model or labels were acquired or run; no app feature was activated.
+
+Checks on exact public-main candidate `dcf2fe244099384e908212ba2c10bf83dd3623d1`: Python **285 tests passed, 1 skipped**; Node **178/178**; noindex build **191 pages plus 404**; site checker **192 HTML / 13,202 links**; catalog **156 research notes / 633 sources**; JSON integrity and `git diff --check` passed. The active work remains a reviewable candidate, not a live Pages update. Real-data admission and AutoResearch remain **NOT READY**.
+
 ## November 3 continuation — complete a source-linked model comparison refresh
 
 Extended the clean current-main model-comparison note with two primary studies on prompt-based zero-shot bioacoustics and task-dependent embeddings, and recorded each article’s review depth and rights boundary. Applied the findings to the first-benchmark decision: narrow event screening only, prompts frozen on development data, a simple baseline, realistic background/unknown examples, group-held-out evaluation, abstention and human review. No code/model/data was acquired or run.

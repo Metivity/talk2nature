@@ -6347,5 +6347,13 @@
     "url": "https://doi.org/10.5281/zenodo.15774443",
     "checked": "2026-11-03",
     "origin": "Queried the official Zenodo API for the concept DOI. The latest record at review time is version record 17354837, DOI 10.5281/zenodo.17354837, titled 'szwinter/realtime-birds: realtime-birds-v3', published 2025-06-30, resource type software, with a CC BY 4.0 declaration and 45 files totaling 168,949 bytes. Read only its README through the Zenodo API; it describes sequential Python and Slurm scripts intended for the CSC Mahti cluster and requires site-specific project configuration. No other code file, input data, app, model, recording or output was acquired or run. The deposit license does not cover the MK mobile app, its backend, associated recordings, FinBIF data or third-party dependencies."
+  },
+  {
+    "id": 634,
+    "title": "McEwen et al. (2026), BioDCASE: Active Learning for Bioacoustics",
+    "description": "Full arXiv preprint describing the 2026 BioDCASE active-learning challenge, its four acoustic datasets, evaluation protocol and reported results. No challenge data, code or embeddings were acquired or run.",
+    "url": "https://arxiv.org/abs/2609.15255",
+    "checked": "2026-11-03",
+    "origin": "Full primary-source arXiv preprint reviewed, including challenge design, data splits, evaluation metrics, results and discussion. No supplement, dataset, code, features or model outputs were acquired or executed."
   }
 ]
