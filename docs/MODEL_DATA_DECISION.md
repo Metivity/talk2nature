@@ -185,6 +185,12 @@ The pinned dataset card reports 91,965 examples in a single test split and a lic
 
 The benchmark is a useful cross-taxon reference for classification, detection, call type, life stage and captioning, but does not test interaction context or receiver comprehension. Keep the data and code metadata-only. A first Talk2Nature benchmark still needs a narrow behavior-linked question, permitted data, qualified review, independent labels, grouped/frozen evaluation, baselines and locked test data. Sources 245–246 and the updated `naturelm` note record the review. AutoResearch remains **NOT READY**.
 
+## November 3 follow-up — NatureLM context gains need task-matched controls
+
+Reviewed Appendix A.5 of the ICLR 2025 paper. On its CBI species-classification task, the authors report accuracy of 0.776 for audio alone, 0.792 with available geographic metadata, and 0.798 after adding recordist notes. This paper-reported comparison does not provide a metadata-only result or establish that the incremental gain is causal, transferable, or evidence of animal understanding.
+
+**Applied protocol:** if Talk2Nature later uses context fields, predeclare audio-only, context-only and combined conditions; add metadata-shuffle or ablation controls; and group evaluation by the independent unit matched to the question. Keep context as provenance unless a reviewed experiment needs it as an input. This updates the existing NatureLM evidence note; no data, code, weights or model were acquired or run. Benchmark selection and AutoResearch remain **NOT READY**.
+
 
 ## October 14 update: CowRumIA illustrates why the final test must stay locked
 

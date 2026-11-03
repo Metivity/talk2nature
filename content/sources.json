@@ -2143,8 +2143,8 @@
     "title": "Robinson et al. (2025), NatureLM-audio and BEANS-Zero",
     "description": "Published ICLR 2025 proceedings paper. Targeted review of architecture, training data, benchmark tasks, results and comparison caveats; original summary only, no reproduction.",
     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/36c20807317ae6cb3817acd554da2d32-Paper-Conference.pdf",
-    "checked": "2026-10-12",
-    "origin": "Official ICLR proceedings PDF reviewed October 12, 2026: abstract, model/training sections, BEANS-Zero evaluation, Tables 3–6, baseline-comparison caveat, conclusion and risk discussion. No code, weights or data were acquired or run.",
+    "checked": "2026-11-03",
+    "origin": "Official ICLR proceedings PDF reviewed October 12, 2026: abstract, model/training sections, BEANS-Zero evaluation, Tables 3–6, baseline-comparison caveat, conclusion and risk discussion. November 3: Appendix A.5 comparison of audio-only, metadata and recordist-note conditions. No code, weights or data were acquired or run.",
     "rights": {
       "article": "Article-specific redistribution terms were not reviewed. Talk2Nature publishes only an original summary and citation."
     }
