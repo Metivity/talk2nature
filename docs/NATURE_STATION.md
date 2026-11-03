@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 8160)
-Total output lines: 179
-
 # Nature Station: from encounters to shared signals
 
 Decision and implementation record, October 1, 2026. Talk2Nature / Metivity/talk2nature. This updates the device sequence in [PHASE_TWO_PLAN.md](PHASE_TWO_PLAN.md) following Raviv's request for spare phones, encounter histories and a more ambitious learning system. The long-term vision is a distributed observatory of nonhuman communication. Only the bounded browser prototype below is implemented.
@@ -25,7 +22,145 @@ The device-output invariant and a separate physical-phone checklist are in [ZERO
 - A five-minute foreground limit, 24-clip / 24 MiB stored-audio limits, explicit stop, and stop on hidden page, interrupted audio or missing frames. A wake lock is requested where supported, but is not a background-recording guarantee.
 - Timestamped voice and observation markers on the audio sample clock. Ten-second windows report a following detected sound, none detected, an incomplete window, or a discarded sound. Calibration is not counted as a complete quiet window. A detected sound may be the observer's own voice.
 - After stopping: review source labels and notes, load a clip for human review, save individual PCM16 mono WAVs, export `talk2nature.station.v1` JSON, or discard. Station loads audio into a hidden, controls-free player; its custom Play/Pause control asks for a safety confirmation immediately before every play or replay. Cancel never calls `play()`. The confirmation cannot verify headphones or distance, and an exported WAV can be played in another app. Station pauses and clears a loaded review clip when hidden or leaving the page. JSON does not embed audio. Listen can open an exported WAV for finer annotation; it does not import the Station journal.
-- Discarding a clip removes its audio and review text from the session, while retaining it…6160 tokens truncated…xclusion notice, and a confirmed new session clears it. Countdown updates avoid redundant text writes and live-region chatter; recording state, marker feedback and export status are announced separately. The demo now defaults to a 30-second whole moment. The exact offline allowlist includes the new UI module. Physical devices and scientific protocols remain separate requirements.
+- Discarding a clip removes its audio and review text from the session, while retaining its ID/onset to prevent deletion being mislabeled as silence. Discarding the session clears those too. Previously downloaded files remain on the device.
+- A large-screen layout on the same device. Remote TV pairing is not implemented.
+
+Timing is approximate: frames are 100 ms, the final partial frame is not retained, markers use the most recently processed frame, and browser/device latency is not calibrated. Station 0.2 introduced a session UUID, an unverified device UTC start time and unique filenames. Event offsets remain relative; station clocks are not synchronized. Browser JSON exports include WAV SHA-256 values; save the WAVs separately. This is a preliminary personal record, not a research manifest, consent receipt or admitted release. Clips omitted for storage limits retain an ID/onset tombstone so they are not counted as silence.
+
+The [mobile Field Companion](https://metivity.github.io/talk2nature/app/) now presents this engine in outdoor, companion and synthetic workflows, alongside Listen's Sound desk. Its optional offline cache saves public app files only. See [the mobile audit](MOBILE_AUDIT.md) for installation, design, testing and distribution decisions.
+
+The Field Companion's [phone rehearsal](https://metivity.github.io/talk2nature/app/check/) is separate from animal observations: a user-started eight-second check reduces microphone frames to temporary aggregate readings and stops on backgrounding or interruption. It stores no sound, result or device identifier, has no export or playback, and does not calibrate the microphone. Physical-device and reference-recorder checks remain required.
+
+Use **Try without a microphone → add a test voice marker → Stop recording → review a sound → Save session · ZIP** to explore without recording a household. For microphone use, choose a permitted setting, observe naturally, and review recordings privately with headphones away from animals. A permission checkbox cannot establish the rights or consent of everyone who might be audible.
+
+## Devices: an explicit sequence
+
+| Surface | Role | Next decision and constraint |
+| --- | --- | --- |
+| Mobile browser | Short sessions and encounter review | Implemented; physical Android/iOS testing remains necessary. Keep visible; no all-day promise. |
+| Dedicated Android phone | Experimental source prototype built; field validation next | User-started foreground microphone service, visible Stop notification, encrypted bounded local session and chosen ZIP export. Emulator workflow only; no physical-phone, field, unattended-reliability or store-release validation. |
+| iPhone/iPad | Later native station | Audio background modes can support recording; validate interruption, power, storage and distribution behavior on actual devices. |
+| TV | Review display | Pair temporarily to a station; expose minimal data, never leave owner-admin credentials on a shared display. |
+| Alexa / Google Assistant | Potential control or review interface | Do not assume third-party skills receive a raw ambient microphone stream. Validate a specific supported integration before designing around it. |
+| Tree/fungal sensors | Separate research track | Phone audio does not replace appropriate ultrasonic or electrical sensing, calibration and controls. |
+
+Android permits continued microphone capture through an eligible foreground service, with microphone permissions and restrictions on background/boot starts. This supports a user-started station, not silent boot recording. [Official Android requirements](https://developer.android.com/develop/background-work/services/fgs/service-types#microphone).
+
+### Android Station source preview
+
+The separate [`native-android/` project](../native-android/README.md) is an experimental Android implementation. The user starts a 1-, 4- or 8-hour session from the visible app; Android shows a persistent foreground-service notification with a Stop action. Its versioned notification channel is configured without sound, vibration or indicator lights; physical-device and OS behavior remain unverified. A simple energy threshold retains up to 24 short clips or 24 MiB of audio. It does not identify species, infer behavior or meaning, upload recordings, generate animal-directed prompts, or play audio during capture. After stopping, it offers optional manual playback for human review behind a warning and confirmation not to play clips to animals; reviewers are told to use headphones or review away from the animal. This is a user safeguard, not enforced headphone routing or proof an animal cannot hear playback. The active session and clips are encrypted with a key held by Android Keystore; a user-selected ZIP export is unencrypted and must be reviewed before sharing. The browser Compare importer accepts the export as `talk2nature.station.v2`.
+
+Maintainer QA used an API 34 emulator to verify permissions, the foreground-service/notification lifecycle, local encrypted retention, review, deletion, and export. A synthetic-only debug fixture produced a ZIP that the browser importer opened with one event and one note. This validates the software interchange path, not microphone quality or an animal observation. Physical Android devices, long-session/power/thermal tests, screen-reader and first-time-user checks, and any distribution review remain open. The prototype is not in an app store and is not ready for field-research data.
+
+**October 28 playback-safety check:** the API 34 debug build displays the post-session “Keep playback away from animals” confirmation before audio review. Cancel returns to the saved session without invoking playback; a synthetic-only debug fixture was used and Android microphone permission remained denied. This verifies the UI gate, not headphone routing, acoustic output behavior, physical-device safety or that a user will stay away from the observed animal. No real recording was used.
+
+**October 13 emulator follow-up:** installed the debug build on the API 34 emulator and visually inspected first-run setup at its 1080×2400-pixel output and a compact 360×640 dp setting. The page scrolls to the consent and Start controls without horizontal clipping; the existing-session review distinguishes locally saved, not uploaded clips and notes; the delete confirmation warns that there is no recycle bin and that export is unencrypted. During the first interaction, the emulator's prior microphone grant allowed a 9-second session to start. It stopped immediately, retained zero clips, and the app correctly said that no retained highlights do not establish silence. The explicitly labeled synthetic session was deleted through the confirmation flow and the app files were verified empty. After revoking emulator `RECORD_AUDIO`, choosing “Don't allow” returned a recovery dialog explaining that nothing started or was saved. “Not now” returned to setup; “Open app settings” launched Android App info. Permission remained denied and no session files were created. This is emulator-only UI/permission evidence; it does not establish hardware capture, physical-device permission behavior, long-session reliability, accessibility or first-time-user comprehension.
+
+**October 13 notification-permission recovery:** the app requires notification access so a persistent Stop control is available during a session. Denial previously showed only a transient toast, which did not explain why the user could not proceed or offer a settings route. The denial now opens a dialog that confirms nothing started or was saved and offers “Not now” or “Open app settings.” API 34 emulator verification checked both choices, the denied permission state and absence of session files. The microphone was not requested after notification denial. This verifies the emulator path only; it does not establish behavior on physical Android devices or user comprehension.
+
+Apple documents a recording audio-session category; background capability and interruptions still require native implementation and device tests. [Apple audio recording category](https://developer.apple.com/documentation/avfaudio/avaudiosession/category-swift.struct/record). Google's Conversational Actions were discontinued in 2023; that does not remove all Google device integrations. [Google sunset notice](https://developers.google.com/assistant/ca-sunset). Standard Alexa custom-skill documentation describes structured requests; treating it as an unrestricted ambient-audio API would be an unsupported assumption. [Amazon request interface](https://developer.amazon.com/en-US/docs/alexa/custom-skills/request-types-reference.html).
+
+## Can an LLM-style training process help?
+
+Yes, for learning representations and sequence structure. The missing ingredient is grounding: which sound patterns relate to which independently observed events, for whom, and under what conditions? Human language training benefits from enormous existing symbolic records and shared human contexts. Animal audio usually lacks reliable transcriptions and intended-meaning labels.
+
+```mermaid
+flowchart LR
+    A[Permitted sound and device quality] --> B[Segments and acoustic representations]
+    B --> C[Sequences and recurring patterns]
+    D[Independent context and behavior] --> E[Testable hypotheses with uncertainty]
+    C --> E
+    E --> F[Held-out prediction and controls]
+    F --> G[Reviewed bounded exchange study]
+    G --> D
+```
+
+The proposed architecture proceeds in evidence stages:
+
+1. **Acoustic representation.** First compare a frozen, appropriately licensed bioacoustic encoder plus a small classifier with basic acoustic features. Preserve unknown and overlapping sources. Detect clipping and noise; a privacy classifier can flag speech for review but cannot guarantee privacy.
+2. **Temporal representation.** When data justify it, learn masked segments, next-event distributions, contrastive embeddings or recurring units over sequences. Preserve pauses, overlap and individual variation. Discovered clusters are acoustic patterns, not automatically words.
+3. **Grounded encounter model.** Align representations with independently labeled behavior, context, source identity confidence, pre-event conditions and observer voice. Predict a bounded observable outcome with calibrated uncertainty. Compare audio-only, context-only, background-only and combined models. Abstain on unfamiliar devices, species or settings.
+4. **Hypothesis workbench.** Retrieve similar reviewed encounters and show competing explanations. An LLM may summarize these records and cited research, with explicit evidence and uncertainty. It must not generate its own meaning labels and train on them as ground truth.
+5. **Bounded exchange.** Only after a qualified lead defines the question, evaluate a small voluntary signal/response protocol with controls, predefined outcomes and welfare stop rules. Native-call playback and a learned button/sound interface are different experiments. Optimize for validated information and welfare, not response frequency. No online agent should autonomously provoke an animal to maximize engagement.
+
+NatureLM-audio is a concrete architecture reference: its documentation describes an audio encoder coupled to a language model, with classification, detection and captioning tasks. Those capabilities motivate comparison, not a claim of validated general animal translation. No weights were installed or evaluated in this release; inspect each exact artifact's license and training overlap before use. [Official project documentation](https://projects.earthspecies.org/naturelm-audio/latest/), [source repository](https://github.com/earthspecies/NatureLM-audio), [existing model decisions](MODEL_DATA_DECISION.md).
+
+## What would count as progress toward communication?
+
+A preregistered example question could be: does a defined signal predict a specific observable behavior beyond context alone in previously unseen individuals and sessions? That establishes a bounded association. A separate controlled receiver-response experiment is needed to support a causal interpretation or exchange.
+
+**Research update — receiver availability is measurable in some systems:** Lin et al. experimentally varied the honey-bee waggle-dance audience and found that follower availability changed dance precision and return-run behavior. This makes a concrete design point for Talk2Nature: where a species-specific protocol can measure it, preserve who could receive a signal, who actually attended, and the receiver's independently observed response as separate, time-linked observations. Keep unknowns and missed views explicit. This is a protocol-level research field, not a generic “audience” control for every species; the honey-bee result does not establish the same mechanism in parrots or other taxa. The study is a video-observed colony experiment, not evidence that ordinary phone audio can decode intent. See the [primary PNAS study](https://doi.org/10.1073/pnas.2518687123) and its [full-text record](https://pmc.ncbi.nlm.nih.gov/articles/PMC13056074/). For the design implications across honeybees, Egyptian fruit bats and cockatiels, see the [receiver-context research crosswalk](https://metivity.github.io/talk2nature/research/receiver-context-research-crosswalk-2026/); it proposes a shared evidence envelope while keeping measurements and protocols species-specific.
+
+- Preserve naturally occurring comparison periods and failed attempts. “No detector event” is not “the animal said nothing.” The current level-triggered clips oversample louder sounds; they cannot provide an unbiased all-day conversation corpus.
+- A future approved collector should retain consented random background windows, detector decisions and interruption gaps. Choose windows and hypotheses before inspecting outcomes. Do not retrofit a time window around a compelling example.
+- Mark observer speech separately. A sound after a voice may be continuing speech, another animal, chance, movement or an environmental event. Matched quiet periods, context controls and later randomized controls distinguish some alternatives.
+- Split by connected animals, households, devices, sessions and sources as appropriate. Use independent annotators, measure agreement, and inspect identity uncertainty, duplicate recordings and pretrained-model contamination.
+- Freeze a held-out evaluation; report calibration, false alarms, abstentions and negative results alongside predictive performance. Require an independent reproduction before a communication claim becomes publicity.
+
+This release provides instrumentation for observation, not an approved animal experiment. Research admission remains closed pending a protocol, qualified collaborator, rights, consent and hosted operational checks.
+
+## Microphone quality and cost
+
+The local Station journal records the Web Audio processing sample rate and browser-reported input sample rate, channel and gain/noise/echo settings when available. Its optional advanced recorder/microphone description is user-entered and unverified; do not enter serial numbers, personal names or exact locations. The export says microphone frequency response is not measured. Capture takes the first input channel and reports near-full-scale fraction; levels are dBFS, not calibrated dB SPL. Quiet sound can be lost in noise or processing; a high sample rate alone does not establish microphone bandwidth. Ordinary phones should not be assumed to capture bat/plant ultrasound.
+
+This is deliberately a lightweight provenance field, not a calibrated-device registry. [Kitzes et al. (2026)](https://doi.org/10.1111/2041-210X.70133) describe recorder identifiers and hardware/settings as part of the metadata needed in ecological AI workflows; Talk2Nature does not yet verify those details or support a reviewed shared equipment registry.
+
+Before field work, compare candidate phones against a reference recorder with a documented, repeatable indoor test away from animals. Examine clipping, sensitivity, frequency response, wind/handling noise, placement and repeatability. Do not play calibration signals at wildlife. Keep raw-versus-processed lineage and model/device IDs in a future reviewed intake schema.
+
+Uncompressed mono PCM16 at 48 kHz is 96,000 bytes/second: 345.6 MB/hour or 8.2944 GB/day per phone, using decimal units. A thousand continuously recording phones would produce about 8.29 TB/day before replication, metadata or analysis. At 16 kHz the per-phone figure is still 2.7648 GB/day. Event selection reduces volume and changes sampling bias; neither effect should be hidden.
+
+The approved $50/month private-hosting budget is a small-pilot constraint, not a funded global audio network. Start with bounded local clips and reviewed batches. Define per-station quotas, retention, consented sampling, expected compute and an explicit budget before scaling. Do not continuously stream raw household audio into an LLM API.
+
+## Database and contribution design
+
+Reuse the existing private Python API/PostgreSQL design; store admitted media in dedicated private object storage, not database rows or GitHub Pages. A future queue can run quality checks and embeddings. Use short-lived, scoped transfers, content hashes, idempotency keys and resumable batches. No ingestion endpoint was added by this release.
+
+The future database should connect station, device profile, protocol version, session, clock quality/gaps, media object, event, context marker, identity confidence, permission scope, review version and frozen dataset release. A user's interpretation must be separate from independent observations and model hypotheses. Differentiate personal journal retention, research review, training and public sharing permissions. Station exports alone establish none of these.
+
+Invite contributors into one study; quarantine submissions and review source, rights, quality and protocol fit before release. Use role separation, quotas and provenance rather than a volume leaderboard. Keep coarse location only when needed; protect sensitive wildlife locations. Withdrawal must reconcile objects, derived features, release manifests and restored backups, with clearly disclosed limits for prior downloaded releases or trained models.
+
+## Next bounded milestone
+
+Run a controlled, owner-operated physical-device evaluation of the Android preview before inviting field users: verify permission denial and later revocation, screen lock, notification Stop, calls/interruption recovery, screen-off battery/thermal behavior and 1- and 8-hour bounds; record the exact device, OS, build, outcomes and failures. The API 34 emulator now covers the initial denial flow and a compact-layout review only. Complete a first-time-user and accessibility review, then decide whether to keep the native prototype, narrow its supported devices or pause it. Do not use real animal recordings for this validation, enable boot capture or upload data, or claim store/field readiness. Keep participant-data intake closed.
+
+The immediate public browser acceptance checks are: synthetic pipeline, marker timing, source review, separate exports, no autoplay, cancellation cleanup, storage/time bounds, desktop/mobile layout, and live deployment. Physical microphone response and unattended-device reliability require separate hardware tests. The private backend is unchanged.
+
+```sh
+python3 -m unittest discover -s tests -v
+node --test tests/demo.test.mjs tests/listen.test.mjs tests/station.test.mjs
+python3 web/build.py
+python3 scripts/check_site.py
+```
+
+Browser permission and wake-lock behavior were checked against [getUserMedia documentation](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) and the [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). Platform/model documentation review is not a hardware test or a new full-text scientific literature review.
+
+## Version 0.3: one session download
+
+**Save session · ZIP** includes the journal JSON, every retained PCM16 WAV and a short readme. The uncompressed ZIP is generated entirely in memory, with bounded size and flat generated filenames. Journal SHA-256 values describe the exact included WAV bytes; ZIP CRCs support file-manager integrity checks. Discarded audio is excluded while its existing event tombstone remains in JSON. Empty sessions can still save their journal. JSON-only and individual WAV downloads remain available.
+
+Export locks session-changing controls and snapshots metadata/audio before asynchronous hashing. An invalid alias opens Session settings, focuses the field and gives a repair instruction. Downloads are requested, not confirmed by the browser API: check the saved file before leaving. The ZIP is not encrypted. Open the original ZIP in Compare to review the full session without unzipping, or choose **Annotate a clip from a saved session** in Review to select a retained clip directly. Review verifies each WAV hash and carries a copy of the full journal and selected event relationship into the `.t2n` notebook. This keeps source notes separate from new annotation labels; it does not upload data or admit research records.
+
+## October 3: animal groups and species labels
+
+The shared “Who was there?” control accepts an observer-declared group and optional species before starting a session. The session snapshots this context and locks editing until the session is discarded; changing the setup cannot retrospectively relabel an existing recording. JSON and ZIP journals include the additive `animal_context` object described in `docs/LISTEN.md`. Unknown remains the default; choosing an animal never changes the detector or claims species recognition. Guidance makes phone-microphone limits explicit for ultrasonic, underwater and vibration signals. Existing capture, playback, export and real-data admission boundaries are unchanged.
+
+
+## October 3: Whole moment · 30 seconds
+
+The capture choice is visible before starting: **Sound highlights** retains the existing energy-triggered clips for up to five minutes; **Whole moment** keeps every processed sample in one user-started 30-second window, including quiet samples. Companion mode defaults to Whole moment; other scenarios retain highlights. The choice and animal context are frozen during a session. Optional sensitivity controls apply only to highlights.
+
+Whole moment runs without an energy detector/calibration phase. It stops after exactly `sample_rate × 30` processed samples and trims the final frame to that bound. The existing visibility/interruption/stall cleanup remains; a 31.5-second wall watchdog protects capture if the sample target is not reached. Early stops, watchdog expiry, storage limits or discarded audio cannot be marked complete. Storage is bounded by sample capacity and the existing byte quota. User playback remains manual; no upload or browser audio persistence is added.
+
+Its journal uses a distinct **`talk2nature.observation-window.v1`** schema, with `sampling` (requested seconds, processed/retained samples, completion and observer selection). It omits detector/marker-window claims. The retained `events` entry is explicitly `kind: observation_window`, with no detected onset; it is not a vocalization. Markers share its relative timeline without inferred responses. Discard preserves a tombstone and clears completion/retained samples. Device clock/settings, source review, WAV hashes and local ZIP export remain available. In Review, this remains a continuous observation window, not a detected vocalization; its validated journal is preserved with the selected clip.
+
+A whole window does not establish random sampling, calibrated sensing, animal presence, synchronized video, biological meaning or research permission. The app still records processed first-channel phone/browser input, stops when hidden and requires permission for any audible people. See [PILOT_PROTOCOL_DRAFT.md](PILOT_PROTOCOL_DRAFT.md) before research use.
+
+
+## October 3: guided observation and review
+
+The public Station and companion app share Set up → Observe → Keep. Setup precedes instruments; mobile app Stop remains fixed within reach during pending/active capture. Four shortcuts add ordinary `user-entered` observation markers at the current processed-audio time. They neither label acoustic events nor establish independently verified behavior. The existing 100-marker limit remains. `observation-ui.mjs` formats the human-facing recap; journals, capture classes and admission rules are unchanged.
+
+A typed note is included only when explicitly added. If a session ends first, the draft stays readable with an exclusion notice, and a confirmed new session clears it. Countdown updates avoid redundant text writes and live-region chatter; recording state, marker feedback and export status are announced separately. The demo now defaults to a 30-second whole moment. The exact offline allowlist includes the new UI module. Physical devices and scientific protocols remain separate requirements.
 
 ## October 13: optional soundscape context
 
