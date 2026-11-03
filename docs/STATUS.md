@@ -1,3 +1,9 @@
+# November 3 — BirdCODE review applied to Compare; draft checks running
+
+Full-text BirdCODE methods review and pinned code/model-card records are included in draft PR [#684](https://github.com/Metivity/talk2nature/pull/684). The public Compare screen now links to the note and describes the event-detection/timing-association boundary. Local verification passed: Node **176/176**, Python **280 passed / 1 intentional skip**, noindex build **187 pages plus 404**, site checker **188 HTML / 12,878 links**. The focused Compare/mobile run passed **20/20**.
+
+GitHub Public Checks run [#41552686050](https://github.com/Metivity/talk2nature/actions/runs/41552686050) passed on the code-and-Compare revision. A follow-on documentation commit then updated this goal/status record; check the live check panel on [PR #684](https://github.com/Metivity/talk2nature/pull/684) before merge. The PR remains a draft, not a merge or deployment. No external assets or research results were acquired or reproduced; AutoResearch and real-data admission remain **NOT READY**.
+
 # November 3 — merge the ecological sensor-to-insight review; Pages remains stale
 
 PR [#680](https://github.com/Metivity/talk2nature/pull/680) merged to `main` as [`a353a14`](https://github.com/Metivity/talk2nature/commit/a353a14ac2aeb1aade229b9e2a5b775c36911ad6). Public Checks run [#41545061175](https://github.com/Metivity/talk2nature/actions/runs/41545061175) passed repository, browser-tool, native Android and preview-site checks. The research library and resource catalog now include Kitzes et al.'s six-stage sensor + AI workflow review and a new field-pipeline learning path. Source totals are **152 literature notes / 354 resources**.
@@ -3931,6 +3937,14 @@ Fresh external state: public `main` is `81338dc8c79a7e38dee3bddba00e1dca2b75f09d
 No deployment was dispatched. The available CLI is authenticated under a non-Metivity identity and the saved Metivity CLI credential is invalid; the connected GitHub tools expose read operations but no workflow dispatch. Do not switch to or publish from another account. The user has already authorized deployment; the remaining operational step is an authenticated Metivity session, followed by the manual Pages workflow and live read-back. The five-track goal stays active; AutoResearch and real-data admission remain **NOT READY**.
 
 The current `81338dc` Compare candidate was also checked in an isolated headless Chrome profile with explicit 320 × 780 and 390 × 844 CSS-pixel metrics. The primary invented-pair action stayed visible at 320, the complete/partial sample pair opened, and the table remained within both viewports. This validates current source-level responsive behavior beyond the live October 29 page; it remains desktop emulation only. No app code changed. See `docs/MOBILE_AUDIT.md` for the measurements and limits.
+
+## November 3 continuation — apply a full BirdCODE methods review
+
+Read the full BirdCODE bioRxiv v1 text and pinned official code/model-card metadata. Expanded the evidence note with the task and “zero-shot” definition, training stages, WABAD/XCSL evaluation scope, reported metrics, cross-species timing/null procedure, author-noted confounds, and component-specific rights. Applied it to product and benchmark design: do not duplicate the large detector or add its approximately 1.1 GB checkpoint to the phone app; preserve any future external detections as versioned model proposals separate from human observation/review. Keep this species-specific frame-detection task distinct from the project's first binary bird-presence question.
+
+The first hosted PR check found that source ID 616 had been allocated on `main` while the local change was being prepared. Moved the new pinned model-card source to ID 620 and updated every related citation before continuing.
+
+**Validation:** Python **280 passed, 1 intentional skip**; Node **176/176**; resource catalog **354 valid**; local noindex build generated **187 pages plus 404**; site checker passed **188 HTML documents / 12,877 links**; `git diff --check` passed. The generated note includes the full review scope and pinned source links. No dataset, code, audio, output, supplement or model weights were acquired or executed; no result was reproduced. This is a local clean-main branch and has not been merged or deployed. The five-track goal remains active; AutoResearch and real-data admission remain **NOT READY**.
 
 ## November 3 — update a model-comparison record to its peer-reviewed publication
 

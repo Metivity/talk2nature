@@ -1,3 +1,11 @@
+# November 3 — apply BirdCODE methods review to Compare
+
+Completed a full-text review of the BirdCODE preprint and pinned official repository/model-card metadata. Applied the distinction between large-scale event detection, temporal association and receiver understanding to the saved-moment Compare screen: it links the BirdCODE evidence note and says those analyses describe patterns without proving meaning or replies. The model remains metadata-only; no model, audio, code or predictions were acquired or run.
+
+**Checks:** focused Compare/mobile tests **20/20**; full Node suite **176/176**; Python suite **280 passed, 1 intentional skip**; local noindex build **187 pages plus 404**; site checker **188 HTML documents / 12,878 links**. PR [#684](https://github.com/Metivity/talk2nature/pull/684) remains a draft; hosted checks for head `9d119fb` are running. No merge or deployment occurred.
+
+**Next:** await hosted checks; continue the active five-track goal from the research and release gates, leaving physical-device acceptance, independent scientific review, AutoResearch and real-data admission open.
+
 # November 3 — apply a six-stage sensor-to-insight research review
 
 Reviewed the publisher abstract and relevant sections of Kitzes et al. (2026), which connect hardware, deployment, storage, AI, statistical inference and ecological insight. Added the paper to the source catalog, research library, resource directory and a new field-pipeline learning path. Applied the review to the Station architecture and benchmark card: record available device/format/processing provenance, keep unknowns explicit, preserve sensor context, report acoustic-quality strata, keep model outputs separate from observations, and avoid location-driven circular inference. This is an original linked summary; the publisher's support app was not inspected or run.
@@ -1669,6 +1677,12 @@ Combined the plain-language Save-to-Compare workflow and the rights-bounded rook
 Keep the zero-command Save-to-Compare workflow on the active product track. Its next acceptance evidence is still a rendered candidate review, a named physical-phone check, and an authorized uncoached first-use session; no interaction or field-use claim is made until those checks happen. In parallel, use primary-source funding updates to protect the project from spending time on calls whose real requirements do not fit.
 
 NLnet's GenAI policy 2.0 now applies to its November 3, 2026 CodeSupply and Restack calls. Given Talk2Nature's AI-assisted development history, the missing codebase disclosure inventory, and the absence of a validated CodeSupply package-metadata work package or established European dimension, do not pursue CodeSupply this cycle. Restack remains out of scope on current evidence. Do not generate proposal text or funded deliverables with GenAI. Reconsider only a future, human-led, rights-cleared work package after an eligibility and disclosure review. The formal five-track goal remains active; AutoResearch, benchmark readiness and real-data admission remain **NOT READY**.
+
+## November 3 continuation — apply a full BirdCODE methods review
+
+Expanded the existing BirdCODE note from abstract-level coverage to a full preprint-text review and pinned code/model-card metadata. This clarifies the actual task, reported evaluation domains and metrics, the five-second cross-species timing analysis, its causal/meaning limits, checkpoint scale, and separate paper/code/model/source-media rights. Applied the findings to the project: do not build a duplicate general bird detector or bundle a 1.1 GB checkpoint into the mobile app; if a named lab needs it, test a synthetic, loss-aware import of versioned model proposals alongside immutable human observations. Keep the selected first binary bird-presence question separate from species-specific event segmentation.
+
+No data, audio, code or weights were acquired or run; no result was reproduced. The evidence note, resource records, model/data decision and regression test are updated in this local candidate only. The five-track goal remains **active**; AutoResearch and real-data admission remain **NOT READY**.
 
 ### October 26 continuation — refresh current-main researcher reproduction
 

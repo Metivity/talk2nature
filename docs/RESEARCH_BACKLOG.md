@@ -12,6 +12,8 @@ Reviewed the BirdCODE preprint abstract, the author-affiliated technical overvie
 
 **Applied:** do not build another general bird detector or place this checkpoint in the phone app. If a researcher needs event proposals, test a version-pinned, loss-aware handoff using synthetic records first. Store model/version, input provenance, time bounds, label, score and post-processing separately from human observations and receiver outcomes. The MIT code notice does not clear checkpoint, recording or prediction rights. No code, model, audio or predictions were acquired or run.
 
+**Applied in Compare (November 3):** the saved-moment results now link to this note and explain that large-scale event detection and cross-species timing analyses describe patterns but do not establish meaning or a reply. A focused assertion covers both the copy and link.
+
 **Next:** compare BirdCODE's documented selection-table fields against the synthetic annotation-lineage format only if a named researcher need warrants an adapter; otherwise preserve it as prior art. Keep model execution, real-data admission and AutoResearch **NOT READY**.
 
 # Prioritized research and machine-learning backlog
@@ -839,6 +841,16 @@ APLOSE is a mature complementary reference for prepared-audio annotation campaig
 **Applied decision:** do not build a second general-purpose campaign annotator now. Keep Talk2Nature centered on passive field capture, human-entered context, provenance and local review. For a named researcher need, assess a user-controlled, loss-aware handoff against exact APLOSE/OSEkit schemas using synthetic fixtures before any real data flow.
 
 **Reuse gate:** APLOSE README claims MIT and says “This software must not be sold”; its LICENSE is standard MIT and expressly grants selling. Treat this as an unresolved terms conflict, not a legal conclusion. No copying, installation, deployment or commercial reuse is approved by this research review. Seek maintainer clarification and legal review before selecting a hosted or commercial path. Paper, code, dependencies, data and model rights remain separate. See source IDs 583–587, note `aplose-collaborative-annotation-platform-2025`, and metadata-only resources `aplose-collaborative-annotation-software` / `aplose-softwarex-2025-paper`.
+
+## November 3, 2026 — deepen BirdCODE from an abstract lead into a methods read
+
+Read the full bioRxiv v1 text through methods, evaluation, four downstream analyses, discussion and limitations. The authors define “zero-shot” as inference without task-specific fine-tuning or prompts, not a model that learned without training data. BirdCODE predicts each of 9,258 species at 7.6 frames/second; its training pipeline combines weak clip labels, one million synthetic scenes and ensemble pseudo-labels. Reported detection evaluation includes 68 WABAD site datasets (4,262 recordings / 1,112 species) and XCSL (967 focal recordings / 22 species), which the article describes as held out from training. The authors report WABAD mean frame mAP 0.493 and XCSL mean frame mAP 0.836; their different soundscape/focal-recording domains make these scores non-comparable as a single headline. No model, source audio, output table, supplement or code was acquired or run, and the results were not reproduced.
+
+The clearest “communication” case study asks whether species B vocalizes within five seconds after species A and compares event timing with circularly shifted nulls. That is a useful exploratory temporal-association design, but it does not establish that B heard A, responded to A, or understood a signal. Shared conditions, flock context, sampling bias and correlated detector errors remain plausible; the authors also warn about geography/background confounds. Their global-scale detections are best read as a way to generate ecological hypotheses that need independent validation.
+
+**Applied to Talk2Nature:** do not recreate a large bird detector or ship a roughly 1.1 GB checkpoint inside the mobile app. A future researcher path could import an existing selection table as a separate model-proposal layer, preserving its recording link/checksum, model and checkpoint revision, pre/postprocessing, time span, label, score and human disposition. Observer notes and reviewer decisions remain separate and immutable. Prototype the mapping only with invented data and a loss report after a named researcher asks for this handoff. The current binary bird-presence question remains different from BirdCODE's per-species temporal detection task.
+
+Checked the official repository at main commit `617c6408fdd1b56c3873ef2d17006ffbaee61783` and the Hub model card at revision `fd16e12a98360db51b4b6e9c23e29309a804661d`. Those respective code/model cards declare MIT; the article preprint declares CC BY-NC 4.0. These licenses do not supply rights for source recordings, dependencies or derived detections. The candidate stays metadata-only; no integration, real-media handling, deployment or contact occurred. AutoResearch and real-data admission remain **NOT READY**.
 
 
 ## November 2, 2026 — inspect the exact APLOSE export contract
