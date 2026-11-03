@@ -101,7 +101,7 @@ This release provides instrumentation for observation, not an approved animal ex
 
 ## Microphone quality and cost
 
-Record actual input/processing sample rates, channel choice and reported gain/noise/echo processing. Requested settings may be ignored. Current capture takes the first input channel, reports the browser's available settings and near-full-scale fraction, and expresses levels in dBFS, not calibrated dB SPL. Quiet sound can be lost in noise or processing; a high sample rate alone does not establish microphone bandwidth. Ordinary phones should not be assumed to capture bat/plant ultrasound.
+The local Station journal records the Web Audio processing sample rate and browser-reported input sample rate, channel and gain/noise/echo settings when available. Its optional advanced recorder/microphone description is user-entered and unverified; do not enter serial numbers, personal names or exact locations. The export says microphone frequency response is not measured. Capture takes the first input channel and reports near-full-scale fraction; levels are dBFS, not calibrated dB SPL. Quiet sound can be lost in noise or processing; a high sample rate alone does not establish microphone bandwidth. Ordinary phones should not be assumed to capture bat/plant ultrasound.
 
 Before field work, compare candidate phones against a reference recorder with a documented, repeatable indoor test away from animals. Examine clipping, sensitivity, frequency response, wind/handling noise, placement and repeatability. Do not play calibration signals at wildlife. Keep raw-versus-processed lineage and model/device IDs in a future reviewed intake schema.
 
