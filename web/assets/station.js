@@ -1,4 +1,4 @@
-import {addQuickObservation, sessionRecap} from './observation-ui.mjs';
+import {addQuickObservation, sessionRecap, sessionProvenance} from './observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from './window-model.mjs';
 import {animalPicker} from './animal-picker.mjs';
 import {microphoneCaptureAllowed, stationPreset} from './station-preset.mjs';
@@ -46,7 +46,8 @@ function controls() {
   $('station-new').disabled = !session || busy;
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
-  for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-recorder-description', 'station-permission']) $(id).disabled = busy;
+  for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
+  $('station-recorder-description').disabled = busy || Boolean(session);
   const recordingPermissionConfirmed = $('station-permission').checked;
   $('station-start').disabled = busy || !recordingPermissionConfirmed;
   $('station-start').textContent = recordingPermissionConfirmed ? 'Start recording' : 'Permission needed';
@@ -170,6 +171,16 @@ function download(content, name, type) {
 function renderEvents(focusEventId = null) {
   const recap = sessionRecap(session); $('station-recap').hidden = !recap;
   if (recap) { $('station-recap-title').textContent = recap.title; $('station-recap-detail').textContent = recap.detail; }
+  const provenance = $('station-provenance'), provenanceList = $('station-provenance-list');
+  const record = session?.exportRecord($('station-alias').value, settings, $('station-recorder-description').value);
+  const provenanceRows = session?.stopped ? sessionProvenance(record) : [];
+  provenance.hidden = !session?.stopped;
+  if (!provenanceRows.length) provenance.open = false;
+  provenanceList.replaceChildren();
+  for (const row of provenanceRows) {
+    const item = document.createElement('div'), label = document.createElement('dt'), value = document.createElement('dd');
+    label.textContent = row.label; value.textContent = row.value; item.append(label, value); provenanceList.append(item);
+  }
   const list = $('station-events'); list.replaceChildren();
   if (!session?.events.length) {
     const p = document.createElement('p'); p.className = 'station-empty'; p.setAttribute('role', 'status'); p.textContent = emptyEventsMessage(session, active);
