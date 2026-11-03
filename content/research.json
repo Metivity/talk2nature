@@ -7534,5 +7534,38 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "biodcase-tiny-yellowhammer-edge-detection-2025",
+    "title": "BioDCASE Tiny is a useful edge benchmark—and a narrow one",
+    "seo_description": "What BioDCASE 2025 Task 3 can teach Talk2Nature about small bird-sound detectors, evaluation leakage, and on-device efficiency.",
+    "taxon": "Birds · Yellowhammer · embedded bioacoustic machine learning",
+    "kind": "Challenge and dataset assessment",
+    "year": "2025",
+    "year_label": "BioDCASE 2025 Task 3; development data v1 and public evaluation record v2",
+    "source_ids": [
+      623,
+      624,
+      625,
+      626,
+      627,
+      628
+    ],
+    "reviewed": "2026-11-03",
+    "review_stage": "Targeted review of official task, dataset and results records plus the linked baseline repository",
+    "review_depth": "Reviewed the official BioDCASE Task 3 page and linked challenge rules; the Zenodo development-set v1 and evaluation-set v2 records including rights and file inventories; the organizer results table and rendered abstracts; the GitHub repository landing page, declared license and README; and one task-linked five-page participant report from Oguamanam et al. The report methods, feature design, results table, performance discussion and preprocessing were reviewed. Other participant reports, audio, labels, archive bytes, source code, dependencies and weights were not acquired or run. No score was independently reproduced.",
+    "finding": "BioDCASE 2025 Task 3 is a concrete example of designing bird-vocalization detection around a constrained recorder: Yellowhammer presence is scored on an ESP32-S3-Korvo-2, with average precision reported beside model size, RAM and processing time. The development record describes 209 source songs from 10 individuals, assembled into a playback track and re-recorded across distances and forest/grassland settings; a source song can recur up to 15 times. Its stated split reserves different individuals for training, validation and evaluation. One selected Toronto Metropolitan University report compares a shallow CNN with compact GFCC and spectral-flux features. It illustrates an edge tradeoff: small classifiers can move much of the compute and memory cost into feature extraction, so inference-only timing is incomplete. The official results page and participant report describe different metrics and the exact mapping between report methods and submitted scoreboard entry was not established. These challenge results are not a common cross-dataset comparison or evidence of Talk2Nature performance. The development set is CC BY 4.0, while its 224.7 MB archive exceeds our 5 MiB collector limit. The GitHub baseline declares Apache-2.0. The evaluation v2 record now lists both audio and binary labels and shows no license.",
+    "limitations": "This is a single-species, short-clip detection challenge on a named embedded board, not a ten-second general bird-presence benchmark, phone test, behavior/context model, receiver-response study or communication result. The replay design repeats source songs across distances/settings; clip-level random splitting would leak song identity and inflate apparent independence. The public development description lists training positives at 16 kHz and 2 seconds, validation positives at 48 kHz and 0.5–3 seconds, and validation negatives at 16 kHz and 2 seconds. These reported differences raise a possible sample-rate/duration shortcut or validation distribution-shift concern; no audio or code was inspected, so actual leakage or its effect is unestablished. In the selected participant report, the abstract and results table place the three methods between 89.10% and 92.65% test accuracy, but the Method B results prose states 90.18% versus 91.18% in the table, and the Method C prose states 94.01% versus 89.10% in the table. The report also describes 14 kHz preprocessing and a Method C 5–8 kHz feature band, where the upper portion would be above the 7 kHz Nyquist limit if that stated rate applies; the exact implementation was not verified. The organizer table reports average precision, a different metric, and its model-to-report mapping was not resolved. Do not treat these discrepancies as a reproduced benchmark result. Evaluation labels are public and rights are not stated in the Zenodo record, so this is not a concealed holdout or a cleared new benchmark. Other reports, exact source version and phone deployment were not tested.",
+    "lesson": "Apply the useful engineering practice to future Talk2Nature detector studies: report task-specific event performance together with device, preprocessing, model size, latency and peak memory; include feature-extraction cost rather than only model-forward time; preserve original recording and sample-rate/clip-duration provenance; split by independent source song, caller and acquisition group; and audit label balance across device, rate, duration, distance and environment before trusting a score. Treat conflicting report metrics and unclear signal-rate processing as questions to reproduce, not results to borrow. Keep the ten-second passive bird-presence question distinct from this Yellowhammer task. An on-device, user-started detector may later help a phone work locally with low latency and less audio transfer, but this challenge alone does not select a phone model or justify always-on capture or central audio storage. No model or data should enter AutoResearch from this metadata review.",
+    "next_review": "Revisit only if a qualified collaborator asks for an embedded detection comparison and the team has an approved intake exception or a smaller lawful sample. First inspect the exact split code and task technical reports; map SongID to original calls and recording conditions; test whether rate/duration predict labels; and define a genuinely independent test source. Do not reuse the public v2 evaluation labels as a locked holdout.",
+    "expert_review": "No independent Talk2Nature ornithology, bioacoustics, machine-learning or embedded-systems review has occurred.",
+    "review_locator": "BioDCASE Task 3 description, dataset split, evaluation and external-data sections; official rules on evaluation data and external resources; Zenodo 15228365 description, statistics, file inventory and license; Zenodo 21827695 description, file inventory and Rights; official task-results table; linked GitHub repository license and README; Oguamanam et al., five-page report, §§3–5, Table 2 and Discussion, especially preprocessing rate, spectral-flux bands, accuracy claims, and end-to-end device timing.",
+    "purpose": "Models & evaluation",
+    "reuse": {
+      "status": "Metadata-only design reference; not selected or admitted as a benchmark",
+      "asset": "Official task description, result summary, declared development-data license and linked Apache-2.0 baseline metadata",
+      "rights": "Development data declares CC BY 4.0; evaluation v2 shows no license; repository declares Apache-2.0, but dependencies and exact source files were not reviewed. Challenge materials, data, code, weights and reports have separate terms.",
+      "experiment": "No execution now. Any future study requires qualified review, an intake plan within policy, source-song/individual/recording-group splits, an artifact-shortcut audit and an independently held-out evaluation set."
+    }
   }
 ]
