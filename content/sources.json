@@ -6355,5 +6355,29 @@
     "url": "https://arxiv.org/abs/2609.15255",
     "checked": "2026-11-03",
     "origin": "Full primary-source arXiv preprint reviewed, including challenge design, data splits, evaluation metrics, results and discussion. No supplement, dataset, code, features or model outputs were acquired or executed."
+  },
+  {
+    "id": 635,
+    "title": "Murray et al. (2026), Open sharing in Conservation AI: Benefits and Barriers",
+    "description": "Peer-reviewed perspective combining a bibliometric survey of AI biodiversity-sensor studies with discussion of open and ethical resource sharing.",
+    "url": "https://doi.org/10.1111/con4.70065",
+    "checked": "2026-11-03",
+    "origin": "Reviewed the publisher abstract and publisher-hosted indexed passages on the bibliometric counts, sharing barriers, FAIR metadata and sensitive conservation data. Direct full-page retrieval and supporting-methods review were unavailable. Counts are author-reported and were not independently reconstructed; no article file, dataset or supplementary material was acquired."
+  },
+  {
+    "id": 636,
+    "title": "Wildlife Acoustics grant FAQ · eligibility for organizations outside the United States",
+    "description": "Official FAQ states that applicants outside the United States should include documentation of their organization's tax-exempt or nonprofit status. Where a country does not grant tax-exempt status or documentary proof, the applicant may certify responsibility for applicable taxes. The FAQ applies to Standard Product Grant and Software-Only Grant applications.",
+    "url": "https://www.wildlifeacoustics.com/resources/faqs/are-organizations-outside-the-us-eligible-to-apply",
+    "checked": "2026-11-03",
+    "origin": "Official Wildlife Acoustics FAQ page reviewed via indexed official-page text on November 3, 2026; the related official FAQ on countries without tax-exempt documentation was also checked. This clarifies application documentation, not Talk2Nature's legal eligibility or the grant agreement."
+  },
+  {
+    "id": 637,
+    "title": "Central European Birds v1.1 Zenodo API record · pinned schema file metadata",
+    "description": "The official Zenodo API identifies schema.json as a 10,237-byte file with provider MD5 0ad197cf958d368dba94b555a8e02cf8 and declares CC BY 4.0 for dataset metadata. The file was acquired through Talk2Nature’s bounded collector; the received MD5 and SHA-256 are recorded in its local-only receipt.",
+    "url": "https://zenodo.org/api/records/21821133",
+    "checked": "2026-11-03",
+    "origin": "Queried the official Zenodo v1.1 record API over verified TLS for the exact schema.json entry and record-level metadata license. The collector fetched only schema.json; its 10,237 bytes matched the provider MD5 and the local SHA-256 in the ignored receipt. No annotation table, audio, code, model or test label was acquired or inspected."
   }
 ]

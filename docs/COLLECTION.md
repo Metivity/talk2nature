@@ -1,5 +1,11 @@
 # Data, code and research collection
 
+## November 3: acquire only the CEB v1.1 schema
+
+The official [Zenodo v1.1 API record](https://zenodo.org/api/records/21821133) declares CC BY 4.0 for dataset metadata and lists `schema.json` at 10,237 bytes with provider MD5 `0ad197cf958d368dba94b555a8e02cf8`. Added a separate file-level resource record and fetched only this schema through `talk2nature.collection` to ignored `data/external/ceb-schema-json-v1-1/`. The collector verified the provider MD5; the local receipt records SHA-256 `07792fcc50dd82e74cf96fb528c2ac0c9ee5b0d038b76f01163436880a0742e1`.
+
+Run `python3 research/ceb_schema_audit.py` to verify the local file and receipt, then print a row-free structural summary. It identifies 22 fields, one annotated sound event per row, and an anonymized `filepath` pattern `<subset>_project_<NNN>/audio_<NNNNNN>.flac`. Keep all annotations for an exact filepath in one partition. The schema does not establish that `project_NNN` means independent site, device, session or deployment. It contains no verified negative intervals; unannotated time is not silence. The report is schema-only: no CSV rows, recordings, code, model, private labels or public test labels were inspected. The 8,559,233-byte training CSV still exceeds the 5 MiB intake cap; it was not fetched or chunked. The schema is not training-admitted and does not open the synthetic-only server gate.
+
 ## November 2: verify the bonobo reanalysis input layout
 
 Official Figshare v1 item 26217803 declares CC BY 4.0 and lists `xdata.txt` at 801,667 bytes. The verified HTTPS redirect used the already-supported `pfigshare-u-files` path. The bounded collector fetched only that exact file to ignored `data/external/bonobo-compositionality-original-dataset-figshare-v1/`; provider MD5 `24bcbb0c1b4d98ad645168307cb4f500` matched the received bytes, and the receipt records SHA-256 `84ad7b48bb41cf55b4f92c5a2fcf57780ad5590b0b4d941684f3a843b1abd6a4`.

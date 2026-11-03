@@ -4028,16 +4028,17 @@
     "source_ids": [
       333,
       441,
-      442
+      442,
+      637
     ],
-    "reviewed": "2026-10-23",
-    "review_stage": "Official Zenodo v1.1 record, version notes, schema and API file inventory reviewed; annotation rows, media and model remain uninspected",
-    "review_depth": "Reviewed the official Zenodo v1.1 landing page, published file inventory, component-specific rights statement and schema.json browser preview. The v1.1 notes identify annotation and taxonomy corrections; the prior v1 record 20762099 is superseded. Re-read the official Zenodo API inventory on October 23, 2026: train_soundscape.csv is 8,559,233 bytes (provider MD5 55b5e3f99566c5bb3ba4fb5b833424da) and test_soundscape.csv is 2,401,049 bytes (provider MD5 f572155ae41714e17b218e95d97b1ce9). These checksums are upstream metadata, not locally verified. No CSV rows, audio, code or weights were downloaded, played, parsed or executed; no detector was evaluated.",
-    "review_locator": "Zenodo record 21821133, v1.1, published 2026-08-06; DOI 10.5281/zenodo.21821133; schema.json preview and Changes in v1.1. Prior version: Zenodo record 20762099.",
+    "reviewed": "2026-11-03",
+    "review_stage": "Official Zenodo v1.1 record and complete schema.json reviewed; exact schema file acquired through the bounded collector with provider checksum verified. Annotation rows, media and models remain uninspected.",
+    "review_depth": "Reviewed the official Zenodo v1.1 record, version notes, file inventory, rights statement and schema. On November 3, acquired only the 10,237-byte CC BY 4.0 schema.json through the bounded collector; provider MD5 and local SHA-256 matched. Parsed 22 field definitions without emitting annotation rows. The schema documents one annotated sound event per row and an anonymized filepath pattern. No CSV rows, audio, code or weights were acquired, inspected or executed.",
+    "review_locator": "Zenodo record 21821133, v1.1, published 2026-08-06; DOI 10.5281/zenodo.21821133. Exact schema.json was acquired via the bounded collector and verified against the official API checksum; no annotation CSV or media was acquired.",
     "finding": "CEB v1.1 is a large library of bird recordings with human-marked sound events: 20,826 audio files and 92,857 annotations across 256 eBird species codes and 21 vocalization types. It can help test whether software finds and sorts labeled calls in recordings. It contains no independent observations of a listener's response or ground truth about what a bird meant, so it cannot test translation. The field soundscape recordings are more relevant to passive-monitoring workflows than the separate focal Xeno-Canto recordings.",
-    "limitations": "The full collection is 49.7 GB. train_soundscape uses weak point-centered labels with a fixed +/-2.5 second window; many rows have no vocalization type. Its annotation CSV is 8,559,233 bytes, above the collection tool's current 5 MiB per-file cap, so its anonymized project-group semantics and row distribution remain unknown. The smaller 2,401,049-byte test_soundscape.csv contains public test labels and was not inspected; it is not a concealed locked test, and a separate untouched evaluation would be needed. The data are mostly from Germany with a smaller Greek subset and are not a parrot-specific context corpus. The record gives CC BY 4.0 for soundscape audio and all dataset metadata/annotations, while train_xenocanto retains per-record Xeno-Canto licenses; the schema says some of those license fields are empty. The schema also identifies 40 zero-area boxes that must be excluded from localization tasks and one truncated Xeno-Canto audio file whose annotations extend beyond its duration. No project/site leakage, source overlap, annotation reliability or source-media privacy audit has been performed.",
+    "limitations": "The full collection is 49.7 GB. train_soundscape uses weak point-centered labels with a fixed +/-2.5 second window; many rows have no vocalization type. Its annotation CSV is 8,559,233 bytes, above the collection tool's current 5 MiB per-file cap, so no rows or group distribution were inspected. The schema documents anonymized paths of the form <subset>_project_<NNN>/audio_<NNNNNN>.flac and an event-per-row unit, but does not define whether project tokens represent independent sites, devices, sessions or deployments. Grouping by exact filepath can prevent the same recording crossing partitions; it cannot establish site-level independence. Unannotated time is not a verified negative interval. The smaller 2,401,049-byte test_soundscape.csv contains public test labels and was not inspected; it is not a concealed locked test, and a separate untouched evaluation would be needed. The data are mostly from Germany with a smaller Greek subset and are not a parrot-specific context corpus. Soundscape audio and metadata/annotations are declared CC BY 4.0, while train_xenocanto retains per-record Xeno-Canto licenses, some blank. The schema identifies 40 zero-area boxes and one truncated focal recording with annotations past the audio end. No project/site leakage, source overlap, annotation reliability or source-media privacy audit has been performed.",
     "lesson": "Use a large bird collection to test whether software can find and organize labeled sounds. Keep these acoustic categories separate from independently observed behavior, a receiver's response and any claim of meaning. The best species for a later communication-focused study may still be a companion parrot, but CEB does not answer that question.",
-    "next_review": "CEB remains a separate detection-engineering candidate, not the first communication-adjacent ML question. If the training-table group audit is still worth pursuing, first prepare a bounded, rights- and privacy-reviewed intake plan that fits an explicitly reviewed integrity limit; do not inspect the public test-label CSV as a locked evaluation. Then verify project-group meaning, source overlap and duplicates, exclude degenerate boxes, and obtain qualified bioacoustic review before proposing any model run. A separate untouched evaluation would be required for benchmark claims.",
+    "next_review": "Keep CEB as a separate detection-engineering candidate. Group all annotations for one exact filepath together if a permitted row-level audit later occurs; do not treat project_NNN as a site/session holdout without independent documentation. The training CSV exceeds the current 5 MiB collection limit; do not fetch or chunk it around that limit. The schema has no verified quiet-interval labels, and the public test-label CSV is not a concealed holdout. Prefer a smaller suitable dataset or a separately reviewed change to the intake policy before any model proposal.",
     "expert_review": "Not independently reviewed by a qualified bioacoustics or animal-communication specialist.",
     "purpose": "Models & evaluation",
     "study_snapshot": [
@@ -4048,6 +4049,10 @@
       [
         "Soundscape subsets",
         "train_soundscape has 18,469 field recordings and 62,298 weak annotations that mark an approximate time point; test_soundscape has 147 field recordings and 15,064 stronger labels with event boundaries."
+      ],
+      [
+        "Grouping key",
+        "The 22-field schema defines filepath as an anonymized archive path <subset>_project_<NNN>/audio_<NNNNNN>.flac and the primary unit as one annotated sound event per row. Keep an exact filepath in one split; project-token independence is undocumented."
       ],
       [
         "Focal recordings",
@@ -4063,7 +4068,7 @@
       ],
       [
         "Rights",
-        "The record declares CC BY 4.0 for soundscape audio and all metadata/annotations. The Xeno-Canto subset keeps per-record terms; some license fields are empty. No files were acquired."
+        "Soundscape audio and all metadata/annotations are declared CC BY 4.0. train_xenocanto retains per-record terms; some license fields are empty. Only the separate schema.json metadata file was acquired; no annotation rows or audio were acquired."
       ]
     ],
     "atlas": {
@@ -7630,5 +7635,27 @@
       "observation_period": null
     },
     "year_label": "BioDCASE 2026 active-learning challenge"
+  },
+  {
+    "slug": "open-sharing-conservation-ai-2026",
+    "title": "Open sharing in Conservation AI: useful openness needs data governance",
+    "seo_description": "A 2026 survey of conservation AI sharing points toward reproducible software and discoverable metadata, with sensitive data governed separately.",
+    "taxon": "Cross-taxon · open science and conservation AI",
+    "kind": "Bibliometric survey and open-science perspective",
+    "purpose": "Data standards & interoperability",
+    "year": "2026",
+    "year_label": "Conservation Letters 19(4), e70065; published 2026-07-24",
+    "source_ids": [
+      635
+    ],
+    "reviewed": "2026-11-03",
+    "review_stage": "Publisher abstract and publisher-hosted indexed passages reviewed; methods and supplement not reviewed",
+    "review_depth": "Reviewed the publisher abstract and indexed publisher passages reporting the survey scope and resource-sharing counts, plus the discussion of data security, ownership, FAIR metadata and context. The full article methods, classification rubric and supporting material were not accessible in this review. The 611-study counts are author-reported and were not reconstructed.",
+    "finding": "Murray et al. surveyed AI studies using biodiversity sensors for wildlife detection, classification or identification from 2000–2024. The publisher abstract reports 611 included publications: 16.9% shared new datasets, 18.0% shared code and 64.0% shared no dataset, code or graphical interface. Publisher-hosted indexed text reports 27.5% with openly available data, 11.0% with both data and code, and fewer than 1% with data, code and an online interface. The authors also discuss ownership, security, resource fragmentation and the risk of applying decontextualized data to conservation decisions.",
+    "limitations": "The bibliometric period ends in 2024 and the survey is limited to AI applied to biodiversity-sensor wildlife detection, classification or identification; it does not represent all animal-communication, open-source or conservation research. We reviewed only the publisher abstract and indexed passages, not the full methods, inclusion rubric or supplement, and did not independently reproduce the counts. These results measure reported sharing in the surveyed papers, not whether shared resources were usable, maintained or scientifically valid. No Talk2Nature adoption or impact follows from this article.",
+    "lesson": "For Talk2Nature, pair each software contribution with versioned code, an approachable use path, a synthetic reproducible example where appropriate, and explicit records for the paper, data, code and model as separate assets. Make metadata and access conditions discoverable where permitted. Decide whether recordings or precise locations can be released only after study-specific rights, consent, privacy, community authority, ecological sensitivity and withdrawal review. Open-source software does not require unrestricted publication of every dataset. Track independent task completion and reproduction separately from resource counts.",
+    "next_review": "Inspect the full methods and supporting information if accessible, then audit one future contribution against this code/example/metadata/data-rights checklist. Do not add public recording intake or relax the synthetic-only server gate based on this perspective.",
+    "expert_review": "No independent Talk2Nature governance or conservation-science review has occurred.",
+    "review_locator": "Murray et al. (2026), publisher abstract and indexed passages on the 2000–2024 bibliometric survey, resource availability and ethical sharing; DOI 10.1111/con4.70065."
   }
 ]
