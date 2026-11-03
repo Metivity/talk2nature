@@ -180,6 +180,13 @@ This applies the source review to discovery while protecting the precision of mu
 
 # Talk2Nature goals
 
+## November 3 continuation — complete a source-linked model comparison refresh
+
+Extended the clean current-main model-comparison note with two primary studies on prompt-based zero-shot bioacoustics and task-dependent embeddings, and recorded each article’s review depth and rights boundary. Applied the findings to the first-benchmark decision: narrow event screening only, prompts frozen on development data, a simple baseline, realistic background/unknown examples, group-held-out evaluation, abstention and human review. No code/model/data was acquired or run.
+
+A fresh public readback confirmed the crawlable robots/sitemap and working core page metadata, while three current-main research routes return live 404. The clean candidate passes 281 Python tests (one intentional skip), 176 Node tests, catalog validation (356 resources), and the 188-page public build/site check. It preserves all 154 live sitemap routes and adds 34. The candidate remains local. Goal continues through the authorized clean Metivity publication path; Search Console indexing is not inferred from sitemap availability.
+
+
 ## October 31 continuation — verify the keyboard-only Zero Command path
 
 On a clean local noindex build of current `main` `d4a2334`, I used only keyboard navigation at the browser backend's **480 × 844 CSS-pixel minimum**. From the ordinary Station route, Tab exposed **Skip to content**, reached **Try invented example · no microphone**, and Enter started the synthetic session with focus on **End rehearsal**. Enter stopped it and moved focus to review. Tab reached **Discard session**; after confirming removal of this temporary synthetic session, the app returned to **Ready** and focused the Station heading. The document remained 480 pixels wide. The full workflow used no microphone, playback, animal or participant data.

@@ -6243,5 +6243,21 @@
     "url": "https://huggingface.co/EarthSpeciesProject/sed-birdcode/tree/fd16e12a98360db51b4b6e9c23e29309a804661d",
     "checked": "2026-11-03",
     "origin": "Verified the Hub API revision fd16e12a98360db51b4b6e9c23e29309a804661d and read its immutable README model-card header, which declares MIT. The card describes 32 kHz inference and links to the repository; it does not establish rights in source training recordings or derived detections. No checkpoint files were downloaded, checksum-verified or run."
+  },
+  {
+    "id": 621,
+    "title": "Miao et al. (2025), zero-shot audio-language transfer across bioacoustic benchmarks",
+    "description": "Scientific Reports 15, 7242. Tests CLAP on eight bioacoustic benchmarks. With validation-set prompt engineering, the 2.1M-pair model was comparable to supervised ResNet-18 on most tasks and matched or exceeded it on six of eight. Broad event screening is demonstrated; fine-grained species identification and animal meaning are not.",
+    "url": "https://doi.org/10.1038/s41598-025-89153-3",
+    "checked": "2026-11-03",
+    "origin": "Publisher full text reviewed: abstract, benchmark/method, prompt setup, results, discussion, availability and CC BY 4.0 article terms. No code, model, audio or labels acquired or executed; linked code and underlying dataset terms were not audited."
+  },
+  {
+    "id": 622,
+    "title": "Chen and Yang (2025), No Free Lunch from Audio Pretraining in Bioacoustics",
+    "description": "arXiv:2508.10230. Compares 11 models across ten BEANS tasks using reduced-embedding clustering. Results vary by task; the authors report challenges separating background from labeled sounds and gains after fine-tuning or cleaning. Preprint, not independently reproduced by Talk2Nature.",
+    "url": "https://arxiv.org/abs/2508.10230",
+    "checked": "2026-11-03",
+    "origin": "Primary arXiv paper reviewed: model and task inventory, train/validation/test methods, clustering results, background-class discussion and limitations. No code/data/model acquired or run; preprint publication status and license beyond the displayed arXiv record were not established."
   }
 ]
