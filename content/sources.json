@@ -6235,5 +6235,13 @@
     "url": "https://doi.org/10.1111/2041-210X.70133",
     "checked": "2026-11-03",
     "origin": "Reviewed the publisher abstract and relevant main-text sections on hardware, deployment, storage metadata and compression, evaluation, ancillary-data circularity, uncertainty and ecological interpretation. Supporting information and simulation app were not inspected or run; cited data, code and models were not acquired. Article reuse terms were not established, so only an original summary and DOI link are used."
+  },
+  {
+    "id": 620,
+    "title": "Real-time Species Distribution Modelling for the MK digital twin, Zenodo source-code deposit",
+    "description": "Official Zenodo version metadata and README for the model-pipeline code cited by Ovaskainen et al. (2026).",
+    "url": "https://doi.org/10.5281/zenodo.15774443",
+    "checked": "2026-11-03",
+    "origin": "Queried the official Zenodo API for the concept DOI. The latest record at review time is version record 17354837, DOI 10.5281/zenodo.17354837, titled 'szwinter/realtime-birds: realtime-birds-v3', published 2025-06-30, resource type software, with a CC BY 4.0 declaration and 45 files totaling 168,949 bytes. Read only its README through the Zenodo API; it describes sequential Python and Slurm scripts intended for the CSC Mahti cluster and requires site-specific project configuration. No other code file, input data, app, model, recording or output was acquired or run. The deposit license does not cover the MK mobile app, its backend, associated recordings, FinBIF data or third-party dependencies."
   }
 ]
