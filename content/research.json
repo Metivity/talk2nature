@@ -7657,5 +7657,35 @@
     "next_review": "Inspect the full methods and supporting information if accessible, then audit one future contribution against this code/example/metadata/data-rights checklist. Do not add public recording intake or relax the synthetic-only server gate based on this perspective.",
     "expert_review": "No independent Talk2Nature governance or conservation-science review has occurred.",
     "review_locator": "Murray et al. (2026), publisher abstract and indexed passages on the 2000–2024 bibliometric survey, resource availability and ethical sharing; DOI 10.1111/con4.70065."
+  },
+  {
+    "slug": "seabad-bird-presence-dataset-2026",
+    "title": "SEABAD is promising for bird detection, but its split needs a source check",
+    "seo_description": "A source-based review of SEABAD finds a useful bird-presence dataset and a key evaluation caveat: random clip splits may reward source cues.",
+    "taxon": "Birds · passive acoustic monitoring",
+    "kind": "Dataset and detection benchmark review",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "source_ids": [
+      638,
+      639,
+      640
+    ],
+    "reviewed": "2026-11-03",
+    "review_stage": "Targeted preprint, repository README and dataset-record metadata review; no archive or implementation examined",
+    "review_depth": "Reviewed the preprint abstract and Sections 3.2–4.2 for negative-label sources, quality assurance, split design and reported results; the official Zenodo record; and the repository README/root inventory. This was not a full literature review or independent reproduction.",
+    "finding": "SEABAD offers 50,000 three-second clips balanced between bird-present and bird-absent labels, with positive clips drawn from Xeno-Canto and negatives assembled from six other environmental-audio collections. The preprint reports very high accuracy/AUC on a stratified random clip split. It manually audited a sample of 1,000 positive clips, while negative clips inherited labels from their source datasets and were not manually audited in that work. The published description does not establish that the test clips are independent by original recording, recording project, site, device or session.",
+    "limitations": "The class construction is strongly tied to source: positives are Xeno-Canto recordings and negatives are drawn from six distinct collections. It is therefore plausible that a model can exploit recording/source/domain cues; this is a risk inferred from the published curation design, not a finding from a reproduced source-classification test. A random clip holdout does not answer unseen-site generalization. The preprint and Zenodo list 1,840 ESC-50 negatives, while the README lists 444; exact versioned manifests need reconciliation. Zenodo declares CC BY 4.0 for the compilation, but embedded recordings have source-specific licenses, including noncommercial and share-alike terms. The README states MIT for curation code, but a repository-level license file was not visible in the reviewed root inventory. The paper is an arXiv preprint, not a Talk2Nature reproduction.",
+    "lesson": "Apply this work as an evaluation-design lesson: build a source-only baseline; keep each original recording and its derivatives within one partition; report leave-one-source-collection-out results separately from random-clip-split results; manually review a stratified sample of negative clips with qualified bird-listening expertise; and publish label uncertainty and per-source outcomes. Preserve a separately locked evaluation. A detector score is only a sound-presence result, not species identification, intent or communication.",
+    "next_review": "Keep metadata-only. Do not acquire the 4.2 GB archive, run its code or train a model until a qualified bioacoustics reviewer approves the bounded task, the conflicting source counts and exact split/group metadata are reconciled, component rights are checked for the intended use, negative-label reliability is reviewed, and an independent source-held-out evaluation is feasible. Compare the reviewed protocol with the project’s ten-second soundscape task before changing the first benchmark definition. AutoResearch and real-data admission remain NOT READY.",
+    "expert_review": "Not reviewed by an independent bioacoustics expert or ML/statistical reviewer.",
+    "atlas": {
+      "reviewed": "2026-11-03",
+      "location_status": "not_applicable",
+      "location_note": "A multi-source dataset review; no new study locations were independently verified.",
+      "locations": [],
+      "observation_period": null
+    },
+    "year_label": "SEABAD bird-presence dataset review"
   }
 ]
