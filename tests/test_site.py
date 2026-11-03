@@ -313,6 +313,31 @@ class SiteTests(unittest.TestCase):
         self.assertIn('MIT declared',by_id['birdcode-pretrained-checkpoint']['rights']['license'])
         self.assertEqual(by_id['birdcode-pretrained-checkpoint']['acquisition'],'metadata_only')
 
+    def test_animal_audio_model_map_is_cited_bounded_and_publicly_discoverable(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='animal-audio-model-landscape-2026')
+        self.assertEqual(len(note['source_ids']),12)
+        self.assertIn('not an exhaustive survey',note['review_depth'])
+        self.assertIn('not what an animal intends',note['finding'])
+        self.assertIn('No household phone feasibility',note['limitations'])
+        self.assertIn('Do not train a foundation model',note['lesson'])
+        source_ids={source['id'] for source in load('sources')}
+        self.assertTrue(set(note['source_ids']) <= source_ids)
+        paths=json.loads((project_root/'content'/'learning-paths.json').read_text())['paths']
+        model_path=next(path for path in paths if path['id']=='model')
+        self.assertIn(note['slug'],model_path['notes'])
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(root/'research'/note['slug']/'index.html').read_text()
+            self.assertIn('robots" content="index,follow',page)
+            self.assertIn('https://fixture.github.io/talk2nature/research/'+note['slug']+'/',page)
+            self.assertIn('AVEX offers a common interface',page)
+            self.assertIn('Every paper, code package, checkpoint',page)
+            self.assertIn('/research/'+note['slug']+'/',(root/'sitemap.xml').read_text())
+            reading_path=(root/'research'/'starting-points'/'index.html').read_text()
+            self.assertIn('/research/'+note['slug']+'/',reading_path)
+
     def test_elephant_chorus_note_keeps_overlap_context_and_permissions_bounded(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='elephant-chorus-context-convergence')

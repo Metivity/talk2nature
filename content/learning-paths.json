@@ -66,6 +66,7 @@
       "decision": "Start with frozen audio features and a small classifier. Compare against context-only, background and simple acoustic baselines.",
       "notes": [
         "aves-avex",
+        "animal-audio-model-landscape-2026",
         "perch",
         "naturelm",
         "speech-pretraining-transfer-2026",
