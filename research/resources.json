@@ -11010,6 +11010,64 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "clap-zero-shot-bioacoustics-2025",
+      "kind": "paper",
+      "title": "Zero-shot audio-language transfer across bioacoustic benchmarks",
+      "url": "https://doi.org/10.1038/s41598-025-89153-3",
+      "version": "Scientific Reports 15, article 7242 (2025), published 2025-02-28",
+      "source_ids": [
+        621
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "Reference study for prompt-based, group-level sound-event screening across bioacoustic benchmarks.",
+      "review_depth": "Publisher full text reviewed across abstract, benchmark methods, prompt selection, results, discussion and data/code availability. No model, code, audio or labels acquired or run.",
+      "access": "Open-access article; linked benchmark datasets are separately published. The paper identifies code records, but their files, dependencies and terms were not inspected.",
+      "decision": "Metadata-only research reference. Use the study to design a task-bounded comparison; do not treat it as a Talk2Nature result or model deployment recommendation.",
+      "limitations": "The evaluation uses fixed-window sound-event presence tasks, validation-tuned prompts and 44.1 kHz resampling. Broad/group-level transfer does not establish fine-grained species recognition or communication meaning. Dataset, model and code rights are separate from the article license.",
+      "attribution": "Miao, Z., Elizalde, B., Deshmukh, S. et al. (2025), Scientific Reports 15, 7242. DOI 10.1038/s41598-025-89153-3.",
+      "rights": {
+        "license": "CC BY 4.0 for article text",
+        "scope": "Article only; no automatic license for data, code, models or third-party material.",
+        "evidence_url": "https://doi.org/10.1038/s41598-025-89153-3",
+        "conditions": "Link and provide an original summary with attribution; inspect underlying data and code terms separately before any reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "audio-pretraining-embedding-benchmark-2025",
+      "kind": "paper",
+      "title": "No Free Lunch from Audio Pretraining in Bioacoustics: A Benchmark Study of Embeddings",
+      "url": "https://arxiv.org/abs/2508.10230",
+      "version": "arXiv:2508.10230 (2025), paper license not reviewed",
+      "source_ids": [
+        622
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "task": "Methods reference for task-dependent audio-embedding and background-class evaluation.",
+      "review_depth": "Primary arXiv article reviewed for model/task inventory, train/validation/test setup, clustering results and limitations. No source code, weights, benchmark payload or labels acquired or run.",
+      "access": "Public arXiv preprint and linked authors’ code repository; neither code files nor exact reuse terms were inspected.",
+      "decision": "Metadata-only reference. Do not acquire or reuse linked code/data until item-level terms and dependencies are checked; do not treat the paper’s clustering results as a universal leaderboard.",
+      "limitations": "The preprint compares a defined 11-model/10-task set using dimensionality reduction and clustering. Results depend on task, labels and background composition, and Talk2Nature did not reproduce them. Article/preprint, code, weights and each dataset have separate terms.",
+      "attribution": "Chen, C. and Yang, Z. (2025), No Free Lunch from Audio Pretraining in Bioacoustics: A Benchmark Study of Embeddings. arXiv:2508.10230.",
+      "rights": {
+        "license": "Unresolved; arXiv display notice and repository code license not reviewed",
+        "scope": "Preprint text only; code, benchmark data and model weights are separate.",
+        "evidence_url": "https://arxiv.org/abs/2508.10230",
+        "conditions": "Keep metadata and link only. Review the exact version and item-level licenses before downloading, reproducing or redistributing any file.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
     }
   ]
 }
