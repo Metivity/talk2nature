@@ -36,9 +36,9 @@ export function zipFiles(files) {
   return new Blob([...parts, ...directory, end], {type: 'application/zip'});
 }
 
-export async function sessionFiles(session, alias, settings, digest = bytes => crypto.subtle.digest('SHA-256', bytes)) {
+export async function sessionFiles(session, alias, settings, digest = bytes => crypto.subtle.digest('SHA-256', bytes), recorderDescription = '') {
   if (!session?.stopped) throw Error('Stop the session before saving it.');
-  const record = session.exportRecord(alias, settings);
+  const record = session.exportRecord(alias, settings, recorderDescription);
   // Snapshot both metadata and audio before the first asynchronous hash.
   const files = session.events.map(event => ({name: session.audioFilename(event.id), bytes: new Uint8Array(wavBytes(event.pcm, session.sampleRate))}));
   for (let i = 0; i < files.length; i++) {

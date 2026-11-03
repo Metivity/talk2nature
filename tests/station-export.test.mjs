@@ -37,6 +37,24 @@ test('export requires stopped session and alias; empty sessions still save a jou
   assert.equal(files.length,2); assert.equal(JSON.parse(new TextDecoder().decode(files[0].bytes)).events.length,0);
 });
 
+test('capture export labels processing rate and optional recorder description without verifying hardware', async () => {
+  const live=new StationSession(48000,{origin:'microphone'}); live.stop();
+  const files=await sessionFiles(live,'field',{input_sample_rate:44100},undefined,'Handheld field recorder');
+  const record=JSON.parse(new TextDecoder().decode(files[0].bytes));
+  assert.equal(record.sample_rate,48000);
+  assert.equal(record.audio_settings.input_sample_rate,44100);
+  assert.match(record.capture_metadata.sample_rate_role,/Web Audio processing rate/);
+  assert.equal(record.capture_metadata.recorder_description,'Handheld field recorder');
+  assert.equal(record.capture_metadata.recorder_description_provenance,'user-entered; not verified');
+  assert.equal(record.capture_metadata.microphone_frequency_response,'not measured');
+  await assert.rejects(sessionFiles(live,'field',{},undefined,'x'.repeat(81)),/80 characters/);
+
+  const synthetic=new StationSession(8000); synthetic.stop();
+  const simulated=JSON.parse(new TextDecoder().decode((await sessionFiles(synthetic,'practice',{},undefined,'Phone mic'))[0].bytes));
+  assert.equal(simulated.capture_metadata.recorder_description,null);
+  assert.equal(simulated.capture_metadata.microphone_frequency_response,'not applicable to synthetic audio');
+});
+
 test('ZIP rejects path traversal, duplicate names and unbounded input', () => {
   const file=name=>({name,bytes:new Uint8Array(2)});
   for(const name of ['../clip.wav','/clip.wav','dir/clip.wav','x\\clip.wav']) assert.throws(()=>zipFiles([file(name)]),/Invalid/);

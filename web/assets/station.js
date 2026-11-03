@@ -46,7 +46,7 @@ function controls() {
   $('station-new').disabled = !session || busy;
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
-  for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
+  for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-recorder-description', 'station-permission']) $(id).disabled = busy;
   const recordingPermissionConfirmed = $('station-permission').checked;
   $('station-start').disabled = busy || !recordingPermissionConfirmed;
   $('station-start').textContent = recordingPermissionConfirmed ? 'Start recording' : 'Permission needed';
@@ -282,7 +282,7 @@ async function exportSession(bundle) {
   if (!session || active || pending || exporting || !checkAlias()) return;
   exporting = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; controls(); renderEvents(); exportStatus('Preparing your local download…');
   try {
-    const files = await sessionFiles(session, $('station-alias').value, settings);
+    const files = await sessionFiles(session, $('station-alias').value, settings, undefined, $('station-recorder-description').value);
     if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
     else download(files[0].bytes, files[0].name, 'application/json');
     exportStatus(bundle ? 'Your file is ready. Check Downloads. If it opens as a preview, use Share → Save to Files (or your device’s save option), then return here and choose the button below.' : 'Journal download requested. It contains no sound; use Save this moment for your notes and sounds together.');
