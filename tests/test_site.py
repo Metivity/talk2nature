@@ -761,6 +761,20 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(dataset['files'],[])
         self.assertIn('not an audio dataset',dataset['decision'])
 
+    def test_forest_soundscape_review_applies_label_and_grouping_limits(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='northeastern-forest-bird-soundscapes-2026')
+        self.assertIn('unannotated windows stay unlabeled',note['lesson'])
+        self.assertIn('Split by whole site',note['lesson'])
+        self.assertIn('Four parks alone provide only four coarse geographic groups',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        records=[r for r in resources if r['url']=='https://zenodo.org/records/20038954']
+        self.assertEqual(len(records),1)
+        self.assertEqual(records[0]['id'],'northeastern-forest-bird-metadata-sample-v2')
+        self.assertIn('Rights/License panel is blank',next(s for s in load('sources') if s['id']==361)['description'])
+
     def test_resource_directory_lists_records_and_separates_rights_from_acquisition(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
