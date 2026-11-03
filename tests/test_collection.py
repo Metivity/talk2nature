@@ -61,7 +61,8 @@ class CollectionTests(unittest.TestCase):
             'northeastern-forest-bird-metadata-sample-v2', 'moth-plant-oviposition-data',
             'cockatiel-distress-call-study-data-2018',
             'monk-parakeet-identity-figshare-2023', 'powdermill-bird-soundscapes',
-            'bonobo-compositionality-original-dataset-figshare-v1'})
+            'bonobo-compositionality-original-dataset-figshare-v1',
+            'ceb-schema-json-v1-1'})
         self.assertLess(size, MAX_BATCH_BYTES)
         annotations = next(r for r in self.catalog['resources']
                            if r['id'] == 'monk-parakeet-annotations')

@@ -4903,15 +4903,16 @@
       "url": "https://zenodo.org/records/21821133",
       "version": "Zenodo v1.1; published 2026-08-06; DOI 10.5281/zenodo.21821133",
       "source_ids": [
-        333
+        333,
+        637
       ],
       "priority": 2,
-      "reviewed": "2026-10-23",
+      "reviewed": "2026-11-03",
       "task": "Bird sound-event detection, species identification, vocalization-type classification and localization; not observed behavior or receiver response.",
-      "review_depth": "Reviewed official Zenodo v1.1 record metadata, version notes, file inventory, rights statement and schema.json browser preview. Re-read the official API inventory on October 23, 2026: train_soundscape.csv is 8,559,233 bytes with provider MD5 55b5e3f99566c5bb3ba4fb5b833424da; test_soundscape.csv is 2,401,049 bytes with provider MD5 f572155ae41714e17b218e95d97b1ce9. Checksums are not locally verified. The training CSV exceeds the collection tool's 5 MiB per-file limit. No CSV rows, audio, code or weights were acquired, parsed or executed.",
-      "access": "49.7 GB collection. File-inventory metadata only; no media or annotation table acquired. The training annotation CSV exceeds the current collector's 5 MiB per-file cap. The smaller public test-label CSV was left uninspected and cannot serve as a concealed locked holdout.",
-      "decision": "Metadata-only candidate for bird detector engineering, separate from the first communication-adjacent question. Do not exceed the current intake cap or inspect the public test-label CSV as a locked evaluation. If training-table group structure remains necessary to justify this detection-only exercise, first prepare a bounded, rights- and privacy-reviewed intake plan; no model run is authorized.",
-      "limitations": "train_soundscape annotations are weak point-centered labels with a fixed +/-2.5 second window and often no vocalization-type label. The schema identifies 40 zero-area boxes to exclude from event localization and one truncated focal recording with annotations past the audio end. The API's project-group semantics and actual row-level group distribution remain unknown because the training CSV was not inspected. Soundscape audio and metadata are declared CC BY 4.0, while train_xenocanto retains per-record Xeno-Canto licenses and some license fields are empty. Source overlap, annotation reliability and source-media privacy remain unaudited.",
+      "review_depth": "Reviewed official Zenodo v1.1 record, version notes, file inventory, rights statement and schema. On November 3, separately acquired only schema.json through the bounded collector; its 10,237-byte size and provider MD5 matched, and its SHA-256 is recorded in the ignored receipt. Parsed the 22-field data dictionary without acquiring or inspecting annotation rows, audio, code or weights. train_soundscape.csv is 8,559,233 bytes, exceeds the 5 MiB collector limit and remains uninspected; test_soundscape.csv remains uninspected because its labels are public.",
+      "access": "The dataset audio and annotation tables remain metadata-only. One separately catalogued 10,237-byte schema file is retained with a receipt under ignored data/external; it is not in Git, website, examples, private storage or training. The larger training CSV was not fetched or chunked.",
+      "decision": "Metadata-only candidate for bird detector engineering, separate from the first communication-adjacent question. The separate schema file establishes filepath as the row-to-recording key, but not project-token meaning or a site/session/device split. Do not exceed the current intake cap, inspect public test labels as a locked evaluation, or start a model run.",
+      "limitations": "train_soundscape annotations are weak point-centered labels with a fixed +/-2.5 second window and often no vocalization-type label. The schema identifies 40 zero-area boxes to exclude from localization and one truncated focal recording whose annotations extend beyond the audio. It documents one sound event per row and anonymized paths of the form <subset>_project_<NNN>/audio_<NNNNNN>.flac; it does not establish that project tokens are independent site, session, device or deployment groups. Row-level grouping, source overlap, annotation reliability, valid negatives and source-media privacy remain unaudited. Soundscape assets are declared CC BY 4.0; focal Xeno-Canto audio has per-record terms, some blank.",
       "attribution": "Martin et al., Central European Birds (CEB), Zenodo v1.1, DOI 10.5281/zenodo.21821133.",
       "rights": {
         "license": "Component-specific: CC BY 4.0 for soundscape audio and dataset metadata/annotations; original per-record Xeno-Canto licenses for train_xenocanto.",
@@ -4924,6 +4925,53 @@
       },
       "acquisition": "metadata_only",
       "files": []
+    },
+    {
+      "id": "ceb-schema-json-v1-1",
+      "kind": "dataset",
+      "title": "Central European Birds v1.1 data dictionary (schema.json)",
+      "url": "https://zenodo.org/records/21821133",
+      "version": "Zenodo v1.1; record 21821133; DOI 10.5281/zenodo.21821133",
+      "source_ids": [
+        333,
+        637
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "task": "Inspect only the published metadata schema to determine which columns and path fields could support a bounded audit of soundscape-group structure.",
+      "review_depth": "The exact 10,237-byte schema.json was acquired through the bounded collector. Provider MD5 0ad197cf958d368dba94b555a8e02cf8 and local SHA-256 07792fcc50dd82e74cf96fb528c2ac0c9ee5b0d038b76f01163436880a0742e1 match the ignored receipt. Parsed 22 field definitions; no annotation rows, audio, labels or code were included.",
+      "access": "One data dictionary and its checksum receipt are retained only in ignored local external storage; they are excluded from Git, website, examples, private storage and training.",
+      "decision": "Schema inspection establishes an event-row unit and a filepath key suitable for keeping annotations from one exact audio file in one split. The anonymized project token does not establish an independent site/session/device split. This acquisition does not admit the dataset to analysis or training.",
+      "limitations": "The schema cannot establish row-level group distribution, physical site/device/session identity, source overlap, annotation reliability, valid negatives or source-media privacy. Do not inspect the public test-label CSV as a concealed holdout.",
+      "attribution": "Martin et al., Central European Birds (CEB), Zenodo v1.1 data dictionary, DOI 10.5281/zenodo.21821133; CC BY 4.0.",
+      "rights": {
+        "license": "CC-BY-4.0",
+        "scope": "The exact metadata schema.json file from Zenodo record 21821133 v1.1 only. This does not approve annotation tables, soundscape audio, focal Xeno-Canto audio, code, weights or derived records.",
+        "evidence_url": "https://zenodo.org/records/21821133",
+        "conditions": "Attribute the CEB data dictionary and indicate any changes. Keep the received file and receipt local and outside the public site, training, private server and examples.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "sample_approved",
+      "adapter": "zenodo_record",
+      "zenodo_record_id": 21821133,
+      "record_doi": "10.5281/zenodo.21821133",
+      "zenodo_api_license_id": "cc-by-4.0",
+      "license_notice": "Official Zenodo v1.1 API record 21821133 declares CC BY 4.0 for all dataset metadata and lists schema.json at 10,237 bytes with MD5 0ad197cf958d368dba94b555a8e02cf8.",
+      "admission_reason": "Acquire only the 10,237-byte CC BY 4.0 data dictionary to inspect field definitions and grouping keys. No annotation rows, audio, test labels, code, model execution, private-server intake, training or public redistribution is authorized.",
+      "analysis_admission": "not_admitted",
+      "files": [
+        {
+          "name": "schema.json",
+          "url": "https://zenodo.org/api/records/21821133/files/schema.json/content",
+          "zenodo_file_key": "schema.json",
+          "zenodo_record_id": 21821133,
+          "source_url": "https://zenodo.org/records/21821133",
+          "md5": "0ad197cf958d368dba94b555a8e02cf8",
+          "bytes": 10237
+        }
+      ]
     },
     {
       "id": "birdset-paper",
@@ -11302,6 +11350,35 @@
       },
       "priority": 2,
       "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "open-sharing-conservation-ai-2026",
+      "kind": "paper",
+      "title": "Murray et al. (2026), Open sharing in Conservation AI: Benefits and Barriers",
+      "url": "https://doi.org/10.1111/con4.70065",
+      "version": "Conservation Letters 19(4), e70065; version of record published 2026-07-24",
+      "source_ids": [
+        635
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "Evidence about open-resource availability and governance in biodiversity-sensor AI research.",
+      "review_depth": "Publisher abstract and publisher-hosted indexed passages reviewed. Full methods and supporting material not reviewed; counts not reconstructed.",
+      "access": "Publisher DOI record linked; no article file acquired.",
+      "decision": "Use to inform project sharing policy. Does not justify open release of sensitive recordings or change participant-data admission.",
+      "limitations": "Survey covers AI biodiversity-sensor studies for detection, classification or identification through 2024; it is not a census of animal communication or all conservation research. Reported shares were not independently verified.",
+      "attribution": "Murray KI, Berger-Wolf T, Schofield D, Hockings K, Hodgson D (2026). Open sharing in Conservation AI: Benefits and Barriers. Conservation Letters 19(4), e70065. https://doi.org/10.1111/con4.70065",
+      "rights": {
+        "license": "Not reviewed",
+        "scope": "Article text and figures; any datasets, code and software discussed are separate assets.",
+        "evidence_url": "https://doi.org/10.1111/con4.70065",
+        "conditions": "Link to the article and publish an original summary only unless article reuse terms are verified.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "not_admitted"
+      },
       "acquisition": "metadata_only",
       "files": []
     }

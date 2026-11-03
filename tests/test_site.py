@@ -22,6 +22,31 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
+    def test_compare_explains_detection_generalization_and_receiver_evidence(self):
+        project_root=Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            page=(root/'app'/'compare'/'index.html').read_text()
+        for phrase in (
+            'Is a bird sound present?',
+            'Detection is not translation.',
+            'Does it generalize?',
+            'Unmarked time is not automatically a verified quiet example.',
+            'What did a receiver do?',
+            'Timing alone cannot establish understanding.',
+            'It does not run these research analyses or infer animal meaning.',
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase,page)
+        for route in (
+            '/research/dcase2018-bird-presence-benchmark/',
+            '/research/birdset-powdermill-first-compute-candidate/',
+            '/research/honeybee-dance-following-2023/',
+        ):
+            with self.subTest(route=route):
+                self.assertIn(f'href="/talk2nature{route}"',page)
+
     def test_pipeline_comparison_research_is_applied_without_claiming_translation(self):
         project_root=Path(__file__).resolve().parents[1]
         notes=json.loads((project_root/'content'/'research.json').read_text())
@@ -1729,7 +1754,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Wildlife Acoustics · Q4 Scientific Product Grant',page)
             self.assertIn('Deadline <time datetime="2026-11-15">November 15, 2026</time>',page)
             self.assertIn('up to $4,000 per applicant from a quarterly pool of up to $12,000',page)
-            self.assertIn('charitable/educational tax-exempt status documentation',page)
+            self.assertIn('nonprofit/tax-exempt status documentation still applies',page)
+            self.assertIn('https://www.wildlifeacoustics.com/resources/faqs/are-organizations-outside-the-us-eligible-to-apply',page)
             self.assertIn('do not prepare an application now',page)
             self.assertIn('https://innovationisrael.org.il/wp-content/uploads/2024/06/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%94%D7%98%D7%91%D7%94-%D7%9E%D7%A1-7-%D7%A7%D7%A8%D7%9F-%D7%94%D7%94%D7%96%D7%A0%D7%A7-15.07.2026.pdf',page)
             self.assertIn('https://innovationisrael.org.il/rules/%D7%A0%D7%95%D7%94%D7%9C-%D7%A7%D7%95%D7%93-%D7%A4%D7%AA%D7%95%D7%97/',page)
@@ -2797,18 +2823,27 @@ class SiteTests(unittest.TestCase):
         project_root=Path(__file__).resolve().parents[1]
         resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
         resource=next(r for r in resources if r['id']=='central-european-birds-ceb-v1-1')
-        self.assertEqual(resource['reviewed'],'2026-10-23')
+        self.assertEqual(resource['reviewed'],'2026-11-03')
         self.assertEqual(resource['acquisition'],'metadata_only')
         self.assertEqual(resource['files'],[])
         self.assertIn('8,559,233 bytes',resource['review_depth'])
-        self.assertIn('5 MiB per-file limit',resource['review_depth'])
-        self.assertIn('No CSV rows',resource['review_depth'])
-        self.assertIn('left uninspected',resource['access'])
-        self.assertIn('cannot serve as a concealed locked holdout',resource['access'])
+        self.assertIn('5 MiB collector limit',resource['review_depth'])
+        self.assertIn('without acquiring or inspecting annotation rows',resource['review_depth'])
+        self.assertIn('schema file is retained',resource['access'])
+        self.assertIn('training CSV was not fetched or chunked',resource['access'])
+        schema=next(r for r in resources if r['id']=='ceb-schema-json-v1-1')
+        self.assertEqual(schema['acquisition'],'sample_approved')
+        self.assertEqual(schema['analysis_admission'],'not_admitted')
+        self.assertEqual([f['name'] for f in schema['files']],['schema.json'])
+        self.assertIn('10,237-byte',schema['review_depth'])
+        self.assertIn('does not establish an independent site/session/device split',schema['decision'])
         sources=json.loads((project_root/'content'/'sources.json').read_text())
         source=next(s for s in sources if s['id']==333)
         self.assertEqual(source['checked'],'2026-10-23')
         self.assertIn('not locally verified',source['origin'])
+        api_source=next(s for s in sources if s['id']==637)
+        self.assertEqual(api_source['checked'],'2026-11-03')
+        self.assertIn('provider MD5',api_source['description'])
 
     def test_zf_aim_release_manifest_keeps_unresolved_data_rights_out_of_training(self):
         project_root=Path(__file__).resolve().parents[1]

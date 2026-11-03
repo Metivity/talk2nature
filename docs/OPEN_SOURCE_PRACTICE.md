@@ -2,6 +2,12 @@
 
 **Plan reviewed:** October 8, 2026; **public participation snapshot:** November 2, 2026; **funding-readiness note:** October 25, 2026. This is a working project plan, not a claim of adoption or an external certification.
 
+## November 3, 2026: apply conservation-AI sharing evidence
+
+Murray et al. (2026), *Open sharing in Conservation AI: Benefits and Barriers*, report a bibliometric survey of 611 biodiversity-sensor AI publications from 2000–2024. Their publisher abstract says 16.9% shared new datasets, 18.0% shared code, and 64.0% shared none of the dataset, code or graphical-interface resources. A publisher-hosted indexed passage reports 27.5% with open data, 11.0% with both data and code, and fewer than 1% with all three resources. The article also warns that unrestricted release can conflict with wildlife-location security, data ownership, Indigenous and local authority, and ecological context. These are author-reported counts; our review covered the publisher abstract and indexed passages, not the complete methods or supporting material. They are not an independently reproduced census of the field. See the [source-linked review](https://metivity.github.io/talk2nature/research/open-sharing-conservation-ai-2026/).
+
+**Project application:** make each useful contribution reproducible through versioned code, a plain-language path, a synthetic example where appropriate, and source/data/model records that keep component rights distinct. For real recordings, make public metadata and access conditions discoverable when permitted; decide whether the files themselves may be shared only through a study-specific rights, consent, privacy, sensitive-location and withdrawal review. “Open source” for the software does not mean every recording or location must be public. Measure whether another person can complete and reproduce a task, not whether the repository has accumulated files or pages. Talk2Nature currently has no admitted research dataset or independent reproduction, so this is a design target rather than a claim that the sharing gap has been solved.
+
 ## What success means here
 
 Success is a useful, trustworthy research tool that another person can understand, reproduce, correct and maintain. Stars, downloads and page views can describe reach, but they do not show that the tool solves a real workflow or supports sound science.
