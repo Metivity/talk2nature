@@ -7357,7 +7357,7 @@
       610,
       611,
       612,
-      616
+      620
     ],
     "reviewed": "2026-11-03",
     "review_stage": "Full preprint text and pinned official code/model-card metadata reviewed; no supplementary-file review, code/data/model acquisition or reproduction",
@@ -7367,7 +7367,7 @@
     "lesson": "Do not build a competing general bird-event detector or package this checkpoint into the phone app now. The stronger near-term use is interoperability research: keep external detections in a separate proposal layer as immutable, versioned records with source recording/checksum, model and checkpoint revision, preprocessing/postprocessing, time bounds, label, score and review disposition; never overwrite observer notes or treat predictions as ground truth. If a named lab needs event-level review, first prototype a synthetic, loss-aware import of the existing selection-table fields. Evaluate any later use on a rights-cleared, task-matched set with site/device/session groups, calibrated thresholds, per-domain errors and independent human review. The current first binary bird-presence question remains distinct from BirdCODE's species-specific event task; neither task addresses meaning.",
     "next_review": "Only if a named researcher identifies a concrete workflow need: compare a pinned BirdCODE selection table with the synthetic annotation-lineage contract, document dropped/changed fields, and verify each model/data/output right before any real-file handling. Any benchmark needs an independent group-held-out test, a simple presence baseline, species/site error reporting and a reviewer. Keep the model metadata-only, and keep real-media intake and AutoResearch gated.",
     "expert_review": "No independent Talk2Nature reproduction or specialist review has occurred.",
-    "review_locator": "bioRxiv DOI 10.64898/2026.07.31.742086v1; pinned GitHub revision 617c6408fdd1b56c3873ef2d17006ffbaee61783; pinned model card revision fd16e12a98360db51b4b6e9c23e29309a804661d (sources 610-612, 616).",
+    "review_locator": "bioRxiv DOI 10.64898/2026.07.31.742086v1; pinned GitHub revision 617c6408fdd1b56c3873ef2d17006ffbaee61783; pinned model card revision fd16e12a98360db51b4b6e9c23e29309a804661d (sources 610-612, 620).",
     "purpose": "Models & evaluation",
     "reuse": {
       "status": "Metadata-only research comparator; no benchmark admission or mobile integration",

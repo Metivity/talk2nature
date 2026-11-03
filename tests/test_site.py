@@ -301,7 +301,7 @@ class SiteTests(unittest.TestCase):
     def test_birdcode_note_keeps_detection_proposals_and_asset_rights_separate(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='birdcode-event-detection')
-        self.assertEqual(note['source_ids'],[610,611,612,616])
+        self.assertEqual(note['source_ids'],[610,611,612,620])
         self.assertIn('full bioRxiv v1 article text',note['review_depth'])
         self.assertIn('shared environmental drivers',note['limitations'])
         self.assertIn('7.6 Hz',note['finding'])
