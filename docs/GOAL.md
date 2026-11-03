@@ -1670,6 +1670,12 @@ Keep the zero-command Save-to-Compare workflow on the active product track. Its 
 
 NLnet's GenAI policy 2.0 now applies to its November 3, 2026 CodeSupply and Restack calls. Given Talk2Nature's AI-assisted development history, the missing codebase disclosure inventory, and the absence of a validated CodeSupply package-metadata work package or established European dimension, do not pursue CodeSupply this cycle. Restack remains out of scope on current evidence. Do not generate proposal text or funded deliverables with GenAI. Reconsider only a future, human-led, rights-cleared work package after an eligibility and disclosure review. The formal five-track goal remains active; AutoResearch, benchmark readiness and real-data admission remain **NOT READY**.
 
+## November 3 continuation — apply a full BirdCODE methods review
+
+Expanded the existing BirdCODE note from abstract-level coverage to a full preprint-text review and pinned code/model-card metadata. This clarifies the actual task, reported evaluation domains and metrics, the five-second cross-species timing analysis, its causal/meaning limits, checkpoint scale, and separate paper/code/model/source-media rights. Applied the findings to the project: do not build a duplicate general bird detector or bundle a 1.1 GB checkpoint into the mobile app; if a named lab needs it, test a synthetic, loss-aware import of versioned model proposals alongside immutable human observations. Keep the selected first binary bird-presence question separate from species-specific event segmentation.
+
+No data, audio, code or weights were acquired or run; no result was reproduced. The evidence note, resource records, model/data decision and regression test are updated in this local candidate only. The five-track goal remains **active**; AutoResearch and real-data admission remain **NOT READY**.
+
 ### October 26 continuation — refresh current-main researcher reproduction
 
 Rechecked the documented researcher kit from a clean clone of current public `main` at [`08c6118fee3ecc9d78ef23b2e58a40c5655a8154`](https://github.com/Metivity/talk2nature/commit/08c6118fee3ecc9d78ef23b2e58a40c5655a8154). Synthetic annotation and both split examples ran reproducibly; all 175 Python tests (one intentional skip), 127 Node tests and 232 catalog records passed. Local and public-origin builds retained all 140 current routes. The detailed environment, outputs and limits are recorded in [RESEARCHER_START.md](RESEARCHER_START.md), [RESEARCHER_START_HISTORY.md](RESEARCHER_START_HISTORY.md) and [STATUS.md](STATUS.md).
