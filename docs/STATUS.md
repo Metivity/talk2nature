@@ -4,7 +4,7 @@ Reviewed Appendix A.5 of the primary NatureLM-audio paper: its CBI species-class
 
 At 320 CSS px, the local synthetic Station rehearsal fit without horizontal overflow and completed a microphone-free partial-observation workflow. The summary correctly retained the synthetic label and one human note. Clicking “Save this moment” changed the interface to “Your file is ready,” but Chrome's browser-control download event timed out, so the downloaded archive and Compare re-open were not verified in this run. No “I saved the file” acknowledgement was clicked. This remains maintainer emulation with invented audio, not a physical-phone or independent-user check; the named-device save/re-open gate stays open. No app defect was established, so no product code changed.
 
-**Checks:** pending for this documentation/catalog update. The local and public Pages release remain separate; no deployment occurred. AutoResearch and real-data admission remain **NOT READY**.
+**Checks:** Python suite **289 passed, 1 intentional skip**; local noindex build **193 pages plus 404**; site checker **194 HTML / 13,329 links / public:false**; explicit-origin public build **193 pages plus 404**; public checker **194 HTML / 13,523 links / 193 reachable public pages**; generated NatureLM note verified at 320 CSS px with no horizontal overflow. `git diff --check` passed. No deployment occurred. AutoResearch and real-data admission remain **NOT READY**.
 
 # November 3, 2026 — apply forest-soundscape methods to the first task
 
