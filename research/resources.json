@@ -10471,6 +10471,35 @@
       "files": []
     },
     {
+      "id": "finland-citizen-audio-digital-twin-code-2025",
+      "kind": "code",
+      "title": "Real-time Species Distribution Modelling for the MK digital twin",
+      "url": "https://doi.org/10.5281/zenodo.17354837",
+      "version": "Current Zenodo record 17354837, concept DOI 10.5281/zenodo.15774443; titled realtime-birds-v3; published 2025-06-30",
+      "source_ids": [
+        633
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "A model-pipeline architecture comparator for real-time bird occurrence forecasting; not the citizen app, a Talk2Nature integration, or an animal-communication benchmark.",
+      "review_depth": "Queried the official Zenodo API metadata for the concept DOI and current version, including declared license, resource type, file count and total size; read only the deposited README. The README describes sequential Python and Slurm scripts configured for the CSC Mahti cluster. No code file beyond the README, app, model, audio, input dataset or prediction output was acquired or run.",
+      "access": "Public Zenodo version record and README. Current record is DOI 10.5281/zenodo.17354837; the mutable GitHub branch is linked as supplemental software. No repository checkout or code execution.",
+      "decision": "Use as prior art for a governed occurrence-forecasting pipeline. Do not build a central recording service, copy code, or treat the deposit as the MK app/backend. Keep the project local-first until a named research workflow demonstrates a repeated handoff need and the institutional data gates are approved.",
+      "limitations": "The deposit contains 45 files totaling 168,949 bytes and documents model-pipeline scripts for CSC Mahti; it does not establish availability or rights for the complete mobile app, backend, recordings, FinBIF records, model weights, dependencies or operational deployment. The model is for bird occurrence/vocal activity forecasts, not call meaning, receiver comprehension or conversation. Talk2Nature did not reproduce its results.",
+      "attribution": "Ovaskainen et al. (2026) cite the real-time bird digital-twin code deposit; current Zenodo version record 17354837, concept DOI 10.5281/zenodo.15774443.",
+      "rights": {
+        "license": "CC-BY-4.0 (declared by current Zenodo software record)",
+        "scope": "Deposited code files in Zenodo version record 17354837 only. Separate rights apply to the mobile app, backend, associated recordings, FinBIF observations, models, third-party dependencies and outputs.",
+        "evidence_url": "https://zenodo.org/records/17354837",
+        "conditions": "Attribute the deposit and verify file-level third-party notices and dependency terms before reuse. No code was copied or run.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "bonobo-compositionality-science-paper-2025",
       "kind": "paper",
       "title": "Extensive compositionality in the vocal system of bonobos",
