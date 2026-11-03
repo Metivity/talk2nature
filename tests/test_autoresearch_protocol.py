@@ -9,8 +9,14 @@ class AutoResearchProtocolTests(unittest.TestCase):
     def test_pipeline_comparability_is_gated_without_approving_a_run(self):
         program = (ROOT / "research/autoresearch/program.md").read_text()
         adaptation = (ROOT / "docs/AUTORESEARCH_ADAPTATION.md").read_text()
+        decision = (ROOT / "docs/MODEL_DATA_DECISION.md").read_text()
 
         self.assertIn("Status: NOT READY", program)
+        self.assertIn("No ML task, dataset, model or run is approved.", program)
+        self.assertIn("passive bird-sound presence detection", decision)
+        self.assertIn("whether any bird sound is present in a ten-second soundscape clip", program)
+        self.assertIn("CEB v1.1 is the leading metadata-only candidate dataset", program)
+        self.assertIn("official evaluation labels are already public, not a concealed locked test", program)
         self.assertIn("known-caller classification versus unseen-caller transfer", program)
         self.assertIn("source and processing sample rates", program)
         self.assertIn("group/split membership, random seeds, class balance", program)

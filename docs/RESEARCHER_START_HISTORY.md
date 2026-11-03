@@ -2,6 +2,22 @@
 
 This file preserves the dated maintainer checks and unreleased candidate notes formerly appended to the [researcher start guide](RESEARCHER_START.md). They are historical snapshots, not independent reproductions or scientific results. Use [project status](STATUS.md) for the latest authoritative state.
 
+## Researcher-kit reproduction — November 3, 2026 — 4e169fc
+
+**Question:** do the published researcher quickstart commands work from the latest merged public `main`, with no package installation or research-data acquisition?
+
+**Verification:** ran the exact annotation, standard-manifest and dyadic-manifest commands in a clean detached worktree at [`4e169fcd2aa3afa3337d975f16ed80628d591c5d`](https://github.com/Metivity/talk2nature/commit/4e169fcd2aa3afa3337d975f16ed80628d591c5d). Environment: Python 3.12.5; no packages were installed. All three commands completed successfully. The annotation fixture reported a synthetic 8-second recording, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split returned 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split returned 10 groups and 6/2/4 records (6/2/2 groups). Output SHA-256 values matched the previous run: `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` (standard) and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139` (dyadic). The worktree remained tracked-clean; generated files stayed ignored.
+
+**Limits:** maintainer-run reproduction of synthetic metadata and command-line behavior only. No independent reproduction, scientific validation, biological observation, real data, audio or model weights were involved. It does not verify the website deployment, browser/device workflow or full suite.
+
+## Previous researcher-kit reproduction — November 3, 2026 — e702bd0
+
+**Question:** do the published researcher quickstart commands work on public `main` from a clean checkout, without package installation or research-data acquisition?
+
+**Verification:** cloned public `main` at [`e702bd0ff91896afeefeec062ebb57cf52453873`](https://github.com/Metivity/talk2nature/commit/e702bd0ff91896afeefeec062ebb57cf52453873) with `--depth 1`. Environment: Python 3.12.5; no packages were installed. Ran the exact annotation, standard-manifest and dyadic-manifest commands from `docs/RESEARCHER_START.md`; all completed successfully. The annotation fixture reported a synthetic 8-second recording, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split returned 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split returned 10 groups and 6/2/4 records (6/2/2 groups). Repeated outputs were byte-identical with SHA-256 values `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` (standard) and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139` (dyadic). The cloned working tree remained clean; generated files stayed ignored.
+
+**Limits:** maintainer-run reproduction of synthetic metadata and command-line behavior only. No full suite, site build, browser/device workflow, real data, audio, model weights, biological observation, independent reproduction or scientific validation was included. The outputs do not establish that the grouping keys represent true, complete biological identities.
+
 ## Current researcher-kit code verification — October 29, 2026 — d8cfd41
 
 A fresh depth-one HTTPS clone checked public `main` at [`d8cfd41a2bb65874057c432ba1c735f725b1aad3`](https://github.com/Metivity/talk2nature/commit/d8cfd41a2bb65874057c432ba1c735f725b1aad3), using Python 3.12.5, Node v22.22.1 and Git 2.53.0. No packages were installed and `data/external/` was absent. The synthetic annotation example reported an invented 8-second recording, two marked events, 2 seconds of interval-union coverage and zero observed context. The standard split produced 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split produced 10 groups and 6/2/4 records (6/2/2 groups). Repeated outputs were byte-identical: standard SHA-256 `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b`; dyadic `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139`. The catalog validator accepted 284 resources.

@@ -10477,7 +10477,7 @@
       "url": "https://doi.org/10.5281/zenodo.17354837",
       "version": "Current Zenodo record 17354837, concept DOI 10.5281/zenodo.15774443; titled realtime-birds-v3; published 2025-06-30",
       "source_ids": [
-        620
+        633
       ],
       "priority": 1,
       "reviewed": "2026-11-03",
@@ -10781,18 +10781,18 @@
       "id": "birdcode-sound-event-detection-code",
       "kind": "code",
       "title": "Earth Species Project sound-event-detection code (BirdCODE workflow)",
-      "url": "https://github.com/earthspecies/sound-event-detection",
-      "version": "Public main branch overview checked 2026-11-02; commit not pinned",
+      "url": "https://github.com/earthspecies/sound-event-detection/tree/617c6408fdd1b56c3873ef2d17006ffbaee61783",
+      "version": "main revision 617c6408fdd1b56c3873ef2d17006ffbaee61783 checked 2026-11-03",
       "source_ids": [
         612
       ],
       "priority": 2,
-      "reviewed": "2026-11-02",
-      "task": "Python software for frame-level bioacoustic detection, evaluation and large-scale inference; README documents the BirdCODE model and precomputed selection-table workflow.",
-      "review_depth": "Current public README, repository overview and visible MIT license notice reviewed. No code, dependencies, data, predictions or model weights were acquired or executed.",
+      "reviewed": "2026-11-03",
+      "task": "Python software for frame-level bioacoustic detection, evaluation and sharded large-scale inference; README documents local selection tables, versionable lineage and precomputed detections.",
+      "review_depth": "Pinned repository README, root MIT notice, demo contract, postprocessing defaults and evaluation/inference workflow reviewed. No code, dependencies, data, predictions or model weights were acquired or executed.",
       "access": "Public GitHub repository; model download described by its README requires separate checkpoint access and about 1.1 GB of weights.",
       "decision": "Metadata-only methods reference. Consider a version-pinned export or precomputed-detection handoff only if a researcher identifies a concrete need. Do not integrate it into the mobile app or treat outputs as observations or meaning labels.",
-      "limitations": "The main branch is mutable. MIT applies to repository code; it does not establish rights for checkpoints, source recordings, precomputed detections or dependencies. The paper is a preprint and Talk2Nature has not reproduced its results.",
+      "limitations": "The pinned revision is a snapshot, not a guarantee of future compatibility. MIT applies to repository code; it does not establish rights for checkpoints, source recordings, precomputed detections or dependencies. The paper is a preprint and Talk2Nature has not reproduced its results. The documented 1.1 GB checkpoint and demo runtime are upstream statements, not Talk2Nature mobile measurements.",
       "attribution": "Earth Species Project, sound-event-detection repository; cite the repository and relevant BirdCODE paper if used.",
       "rights": {
         "license": "MIT",
@@ -10811,24 +10811,24 @@
       "kind": "model",
       "title": "BirdCODE pretrained checkpoint",
       "url": "https://huggingface.co/EarthSpeciesProject/sed-birdcode",
-      "version": "Repository README links the current Hub model; exact checkpoint revision not reviewed",
+      "version": "Hub model card revision fd16e12a98360db51b4b6e9c23e29309a804661d checked 2026-11-03",
       "source_ids": [
-        612
+        620
       ],
       "priority": 2,
-      "reviewed": "2026-11-02",
+      "reviewed": "2026-11-03",
       "task": "Candidate bird-vocalization detection and classification with temporal boundaries; not a communication-meaning model.",
-      "review_depth": "Existence and approximate size are noted from the official code README. The checkpoint card, files, checksum, license, preprocessing implementation and inference were not reviewed.",
+      "review_depth": "Pinned Hub model-card metadata and README license declaration reviewed; the code README estimates approximately 1.1 GB. Checkpoint files, checksum, inference and preprocessing implementation were not acquired or run.",
       "access": "Public Hub route linked by the official repository; no checkpoint or audio acquired.",
-      "decision": "Do not add to the phone app or training pipeline. Keep as a research comparator pending an exact-version card, rights and resource review and a bounded need.",
-      "limitations": "The code README estimates about 1.1 GB of model weights, which is not a measured Talk2Nature runtime or a mobile performance test. Species labels and event boundaries do not establish a vocalization's meaning or receiver response.",
+      "decision": "Do not add to the phone app or training pipeline. Keep as a metadata-only research comparator; reconsider only for a named, task-matched study after component rights and a bounded need are reviewed.",
+      "limitations": "The pinned card declares MIT for this model repository, while the API license field is absent; preserve the declared card license and verify any later revision before use. This does not grant rights in training recordings, dependencies or derived detections. The approximately 1.1 GB figure is an upstream estimate, not a Talk2Nature runtime or mobile test. Species labels and event boundaries do not establish meaning or receiver response.",
       "attribution": "Earth Species Project; see the official sound-event-detection repository and BirdCODE preprint.",
       "rights": {
-        "license": "Not reviewed",
+        "license": "MIT declared in pinned model card; verify before use",
         "scope": "Checkpoint only; separate from code, training recordings and derived predictions.",
         "evidence_url": "https://huggingface.co/EarthSpeciesProject/sed-birdcode",
-        "conditions": "Inspect immutable model-card revision and all applicable base/dependency terms before any use.",
-        "research_use": "unresolved",
+        "conditions": "Recheck the exact model revision and applicable dependencies; separately establish training-data and derived-output terms before a study.",
+        "research_use": "conditional",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"
       },
@@ -11037,6 +11037,271 @@
         "commercial_use": "not_admitted",
         "redistribution": "not_admitted"
       },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "clap-zero-shot-bioacoustics-2025",
+      "kind": "paper",
+      "title": "Zero-shot audio-language transfer across bioacoustic benchmarks",
+      "url": "https://doi.org/10.1038/s41598-025-89153-3",
+      "version": "Scientific Reports 15, article 7242 (2025), published 2025-02-28",
+      "source_ids": [
+        621
+      ],
+      "priority": 1,
+      "reviewed": "2026-11-03",
+      "task": "Reference study for prompt-based, group-level sound-event screening across bioacoustic benchmarks.",
+      "review_depth": "Publisher full text reviewed across abstract, benchmark methods, prompt selection, results, discussion and data/code availability. No model, code, audio or labels acquired or run.",
+      "access": "Open-access article; linked benchmark datasets are separately published. The paper identifies code records, but their files, dependencies and terms were not inspected.",
+      "decision": "Metadata-only research reference. Use the study to design a task-bounded comparison; do not treat it as a Talk2Nature result or model deployment recommendation.",
+      "limitations": "The evaluation uses fixed-window sound-event presence tasks, validation-tuned prompts and 44.1 kHz resampling. Broad/group-level transfer does not establish fine-grained species recognition or communication meaning. Dataset, model and code rights are separate from the article license.",
+      "attribution": "Miao, Z., Elizalde, B., Deshmukh, S. et al. (2025), Scientific Reports 15, 7242. DOI 10.1038/s41598-025-89153-3.",
+      "rights": {
+        "license": "CC BY 4.0 for article text",
+        "scope": "Article only; no automatic license for data, code, models or third-party material.",
+        "evidence_url": "https://doi.org/10.1038/s41598-025-89153-3",
+        "conditions": "Link and provide an original summary with attribution; inspect underlying data and code terms separately before any reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "audio-pretraining-embedding-benchmark-2025",
+      "kind": "paper",
+      "title": "No Free Lunch from Audio Pretraining in Bioacoustics: A Benchmark Study of Embeddings",
+      "url": "https://arxiv.org/abs/2508.10230",
+      "version": "arXiv:2508.10230 (2025), paper license not reviewed",
+      "source_ids": [
+        622
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "task": "Methods reference for task-dependent audio-embedding and background-class evaluation.",
+      "review_depth": "Primary arXiv article reviewed for model/task inventory, train/validation/test setup, clustering results and limitations. No source code, weights, benchmark payload or labels acquired or run.",
+      "access": "Public arXiv preprint and linked authors’ code repository; neither code files nor exact reuse terms were inspected.",
+      "decision": "Metadata-only reference. Do not acquire or reuse linked code/data until item-level terms and dependencies are checked; do not treat the paper’s clustering results as a universal leaderboard.",
+      "limitations": "The preprint compares a defined 11-model/10-task set using dimensionality reduction and clustering. Results depend on task, labels and background composition, and Talk2Nature did not reproduce them. Article/preprint, code, weights and each dataset have separate terms.",
+      "attribution": "Chen, C. and Yang, Z. (2025), No Free Lunch from Audio Pretraining in Bioacoustics: A Benchmark Study of Embeddings. arXiv:2508.10230.",
+      "rights": {
+        "license": "Unresolved; arXiv display notice and repository code license not reviewed",
+        "scope": "Preprint text only; code, benchmark data and model weights are separate.",
+        "evidence_url": "https://arxiv.org/abs/2508.10230",
+        "conditions": "Keep metadata and link only. Review the exact version and item-level licenses before downloading, reproducing or redistributing any file.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2025-task3",
+      "kind": "project",
+      "title": "BioDCASE 2025 Task 3: Bioacoustics for Tiny Hardware",
+      "url": "https://biodcase.github.io/challenge2025/task3",
+      "version": "Task 3 page checked 2026-11-03",
+      "source_ids": [
+        623,
+        626,
+        628
+      ],
+      "task": "Task-design and efficiency-reporting precedent for narrow bird-sound detection on constrained embedded hardware.",
+      "review_depth": "Official task, rules, organizer results summary, repository README/license and one linked five-page TMU participant report reviewed. The other participant reports, code and audio were not audited or reproduced.",
+      "access": "Public task and results pages.",
+      "decision": "Use as an engineering precedent only. It is not the selected Talk2Nature benchmark, and organizer metrics are not Talk2Nature results.",
+      "limitations": "Yellowhammer-only, short-window detection on a specific board; not general bird presence, animal communication, or phone validation. One selected report contains accuracy mismatches and an unresolved sampling-rate/frequency-band description; the report-to-entry metric mapping cannot be equated with the organizer scoreboard AP without a verified method mapping.",
+      "attribution": "BioDCASE Challenge 2025, Task 3: Bioacoustics for Tiny Hardware.",
+      "rights": {
+        "license": "Not stated on the task/results pages; challenge rules state that submissions and technical reports are published under CC BY",
+        "scope": "Challenge descriptions, participant submissions/reports and linked resources may have different terms.",
+        "evidence_url": "https://biodcase.github.io/challenge2025/rules",
+        "conditions": "Link to official pages; review exact item terms before copying or redistributing materials.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2025-development-data",
+      "kind": "dataset",
+      "title": "BioDCASE 2025 Task 3: Bioacoustics for Tiny Hardware Development Set",
+      "url": "https://zenodo.org/records/15228365",
+      "version": "Zenodo v1, published 2025-04-16",
+      "source_ids": [
+        624
+      ],
+      "task": "Short binary Yellowhammer-vocalization detection and embedded-device evaluation; metadata reference only.",
+      "review_depth": "Zenodo description, split summary, file inventory, archive size and license reviewed. No archive bytes, audio or README file acquired.",
+      "access": "Zenodo v1; Development_Set.zip is 224.7 MB and exceeds Talk2Nature's current 5 MiB per-file intake limit.",
+      "decision": "Do not acquire under the current collector limit. Reconsider only after an approved bounded intake plan and independent grouping review.",
+      "limitations": "Playback/re-recording repeats SongIDs across conditions and distances; labels are target-species presence, not behavior or meaning. Exact audio, file-level source mapping, and leakage effects were not inspected.",
+      "attribution": "Morandi, I., Linhart, P., Kwak, M. and Petrusková, T. (2025), BioDCASE 2025 Task 3 Development Set, Zenodo, DOI 10.5281/zenodo.15228365.",
+      "rights": {
+        "license": "CC BY 4.0 (declared on Zenodo v1)",
+        "scope": "Dataset v1 record and files; does not cover the separate baseline code, evaluation-set v2 or technical reports.",
+        "evidence_url": "https://zenodo.org/records/15228365",
+        "conditions": "Attribution and license conditions apply. No bytes were acquired; source-recording and participant details were not independently examined.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2025-evaluation-data",
+      "kind": "dataset",
+      "title": "BioDCASE 2025 Task 3: Bioacoustics for Tiny Hardware Evaluation Set",
+      "url": "https://zenodo.org/records/21827695",
+      "version": "Zenodo v2, published 2026-08-06",
+      "source_ids": [
+        625
+      ],
+      "task": "Historical challenge evaluation audio and binary labels; not a hidden holdout for new work.",
+      "review_depth": "Zenodo record description, date, file inventory and Rights section reviewed. Labels, audio and files were not opened or acquired.",
+      "access": "Zenodo v2 publicly lists binary_labels.csv (17.1 kB) and Evaluation Set.zip (54.0 MB).",
+      "decision": "Do not use as a locked holdout; license is not stated on the record. Treat the evaluation labels as public and rights-unresolved.",
+      "limitations": "Challenge rules prohibit use of evaluation annotations for training or subjective judgments during participation. Their public release does not establish rights clearance or restore an unseen test.",
+      "attribution": "Morandi, I., Linhart, P., Kwak, M. and Petrusková, T. (2026), BioDCASE 2025 Task 3 Evaluation Set v2, Zenodo, DOI 10.5281/zenodo.21827695.",
+      "rights": {
+        "license": "Not stated in the Zenodo v2 Rights section",
+        "scope": "Evaluation audio and label files listed on this record.",
+        "evidence_url": "https://zenodo.org/records/21827695",
+        "conditions": "Keep metadata/link only until item-level reuse terms are clarified; do not use labels as a secret or locked test set.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2025-baseline-code",
+      "kind": "code",
+      "title": "BioDCASE-Tiny 2025 Baseline System",
+      "url": "https://github.com/birdnet-team/BioDCASE-Tiny-2025",
+      "version": "Public repository; exact commit and dependencies not audited",
+      "source_ids": [
+        627
+      ],
+      "task": "Reference pipeline for the BioDCASE Tiny 2025 embedded detection task.",
+      "review_depth": "Repository landing page, declared Apache-2.0 license and README deployment/setup descriptions reviewed; no source code, model, dependencies or hardware behavior inspected or run.",
+      "access": "Public GitHub repository linked from the official task page; its README calls for a Python environment and Docker/ESP-IDF for board deployment.",
+      "decision": "Metadata-only reference. Recheck exact commit, dependencies, data and weight rights before considering any reuse.",
+      "limitations": "Repository licensing does not clear data, model weights, dependencies or board-specific performance; host/device feature equivalence is a nontrivial implementation constraint described by the README.",
+      "attribution": "birdnet-team, BioDCASE-Tiny-2025 repository.",
+      "rights": {
+        "license": "Apache-2.0 declared by the repository",
+        "scope": "Repository code only as covered by its LICENSE file; dependencies, datasets, weights and reports are separate.",
+        "evidence_url": "https://github.com/birdnet-team/BioDCASE-Tiny-2025",
+        "conditions": "Retain required license and notice information; verify the exact version and all third-party component terms before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2025-oguamanam-report",
+      "kind": "paper",
+      "title": "Targeted Feature Extraction for Bird Sound Classification Systems",
+      "url": "https://biodcase.github.io/documents/challenge2025/technical_reports/Oguamanam_task3_technical_report.pdf",
+      "version": "BioDCASE 2025 Task 3 participant technical report, five pages",
+      "source_ids": [
+        623,
+        628
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "task": "Participant design reference comparing a shallow CNN, GFCC features and spectral-flux statistics for Yellowhammer detection under tiny-device constraints.",
+      "review_depth": "Full five-page official challenge-linked report reviewed, including preprocessing, feature extraction, model description, results table and discussion. No source code, audio or model was acquired or run.",
+      "access": "Official BioDCASE challenge-hosted PDF. The general challenge rules state that submitted reports are published under CC BY.",
+      "decision": "Metadata-only review. Do not reuse the reported score as a Talk2Nature result; its accuracy mismatch and unclear sample-rate/band handling require reproduction.",
+      "limitations": "Single task/species and hardware, unclear external validity. Abstract/table and prose disagree for Method B and Method C accuracy; report does not establish mapping of its measures to the organizer scoreboard AP. Its stated 14 kHz preprocessing and 5–8 kHz spectral-flux band need implementation-level clarification.",
+      "attribution": "Oguamanam, I., Machowski, L., Simic, M. and Krishnan, S. (2025), Targeted Feature Extraction for Bird Sound Classification Systems, BioDCASE Task 3 Technical Report.",
+      "rights": {
+        "license": "CC BY under the official challenge rules for submitted technical reports",
+        "scope": "This participant report only; dataset, code, dependencies and submitted model files have separate terms.",
+        "evidence_url": "https://biodcase.github.io/challenge2025/rules",
+        "conditions": "Attribute the authors and challenge; link to the report. No figures or substantial text are reproduced here.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2026-task3",
+      "kind": "project",
+      "title": "BioDCASE 2026 Task 3: Bioacoustics for Tiny Hardware",
+      "url": "https://biodcase.github.io/challenge2026/task3",
+      "version": "Task 3 page and official results checked 2026-11-03",
+      "source_ids": [
+        629,
+        630
+      ],
+      "task": "Task-specific edge-classification and efficiency-reporting precedent for bird sound on ESP32-S3 hardware.",
+      "review_depth": "Official task specification, dataset summary and results page reviewed. No dataset, submission artifacts or scores were independently reproduced.",
+      "access": "Public task and organizer-results pages.",
+      "decision": "Use as an engineering reference only. Not the Talk2Nature first benchmark, a phone validation, or evidence of animal communication.",
+      "limitations": "Ten bird species plus urban background; 2,750 short clips; exact dataset item-level terms not reviewed. Baseline repository states its profiler does not use live device microphone input.",
+      "attribution": "BioDCASE Challenge 2026, Task 3: Bioacoustics for Tiny Hardware.",
+      "rights": {
+        "license": "Dataset license not reviewed; unresolved. The repository license is a separate component.",
+        "scope": "Challenge page, dataset, code, submissions and papers have distinct terms.",
+        "evidence_url": "https://biodcase.github.io/challenge2026/task3",
+        "conditions": "Link to original pages; inspect exact dataset and artifact terms before any acquisition or reuse.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "biodcase-tiny-2026-code",
+      "kind": "code",
+      "title": "BioDCASE-Tiny 2026 baseline framework",
+      "url": "https://github.com/birdnet-team/BioDCASE-Tiny-2026",
+      "version": "Repository landing page and README checked 2026-11-03; branch not pinned",
+      "source_ids": [
+        631
+      ],
+      "task": "Reference training, feature-processing and ESP32-S3 deployment framework for the BioDCASE 2026 challenge.",
+      "review_depth": "Repository landing page, README and repository-level Apache-2.0 notice reviewed; source files, dependencies and execution were not inspected.",
+      "access": "Public GitHub repository.",
+      "decision": "Metadata-only engineering reference; do not add as a Talk2Nature dependency without a named need, pinned revision, dependency/license review and device-specific acceptance plan.",
+      "limitations": "The README says its profiler does not yet use real Korvo microphone input. Current branch is mutable and was not pinned in this record.",
+      "attribution": "BioDCASE Challenge 2026 baseline framework; cite the repository and task page.",
+      "rights": {
+        "license": "Apache-2.0 declared at repository root; exact files and dependencies not reviewed.",
+        "scope": "Repository software only; does not license challenge datasets or third-party components.",
+        "evidence_url": "https://github.com/birdnet-team/BioDCASE-Tiny-2026",
+        "conditions": "Review exact revision, file headers and dependency licenses before reuse.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-03",
       "acquisition": "metadata_only",
       "files": []
     }

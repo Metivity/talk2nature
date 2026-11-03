@@ -1,4 +1,4 @@
-import {addQuickObservation, sessionRecap} from './observation-ui.mjs';
+import {addQuickObservation, sessionRecap, sessionProvenance} from './observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from './window-model.mjs';
 import {animalPicker} from './animal-picker.mjs';
 import {microphoneCaptureAllowed, stationPreset} from './station-preset.mjs';
@@ -47,6 +47,7 @@ function controls() {
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
+  $('station-recorder-description').disabled = busy || Boolean(session);
   const recordingPermissionConfirmed = $('station-permission').checked;
   $('station-start').disabled = busy || !recordingPermissionConfirmed;
   $('station-start').textContent = recordingPermissionConfirmed ? 'Start recording' : 'Permission needed';
@@ -170,6 +171,16 @@ function download(content, name, type) {
 function renderEvents(focusEventId = null) {
   const recap = sessionRecap(session); $('station-recap').hidden = !recap;
   if (recap) { $('station-recap-title').textContent = recap.title; $('station-recap-detail').textContent = recap.detail; }
+  const provenance = $('station-provenance'), provenanceList = $('station-provenance-list');
+  const record = session?.exportRecord($('station-alias').value, settings, $('station-recorder-description').value);
+  const provenanceRows = session?.stopped ? sessionProvenance(record) : [];
+  provenance.hidden = !session?.stopped;
+  if (!provenanceRows.length) provenance.open = false;
+  provenanceList.replaceChildren();
+  for (const row of provenanceRows) {
+    const item = document.createElement('div'), label = document.createElement('dt'), value = document.createElement('dd');
+    label.textContent = row.label; value.textContent = row.value; item.append(label, value); provenanceList.append(item);
+  }
   const list = $('station-events'); list.replaceChildren();
   if (!session?.events.length) {
     const p = document.createElement('p'); p.className = 'station-empty'; p.setAttribute('role', 'status'); p.textContent = emptyEventsMessage(session, active);
@@ -282,7 +293,7 @@ async function exportSession(bundle) {
   if (!session || active || pending || exporting || !checkAlias()) return;
   exporting = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; controls(); renderEvents(); exportStatus('Preparing your local download…');
   try {
-    const files = await sessionFiles(session, $('station-alias').value, settings);
+    const files = await sessionFiles(session, $('station-alias').value, settings, undefined, $('station-recorder-description').value);
     if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
     else download(files[0].bytes, files[0].name, 'application/json');
     exportStatus(bundle ? 'Your file is ready. Check Downloads. If it opens as a preview, use Share → Save to Files (or your device’s save option), then return here and choose the button below.' : 'Journal download requested. It contains no sound; use Save this moment for your notes and sounds together.');

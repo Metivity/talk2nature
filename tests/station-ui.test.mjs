@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {webcrypto} from 'node:crypto';
 import {animalPicker} from '../web/assets/animal-picker.mjs';
-import {addQuickObservation, sessionRecap} from '../web/assets/observation-ui.mjs';
+import {addQuickObservation, sessionRecap, sessionProvenance} from '../web/assets/observation-ui.mjs';
 import {WindowSession, WINDOW_SECONDS} from '../web/assets/window-model.mjs';
 import {microphoneCaptureAllowed, stationPreset} from '../web/assets/station-preset.mjs';
 import {StationSession, SOURCE_LABELS, wavBytes} from '../web/assets/station-model.mjs';
@@ -85,7 +85,7 @@ function setup(mode = 'companion', realCaptureStart = null) {
     .replace(/^import .*;\n/gm, '')
     .replaceAll('import.meta.url', '"https://talk2nature.test/assets/station.js"');
   vm.runInNewContext(source, {
-    addQuickObservation, sessionRecap, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset, microphoneCaptureAllowed,
+    addQuickObservation, sessionRecap, sessionProvenance, WindowSession, WINDOW_SECONDS, animalPicker, stationPreset, microphoneCaptureAllowed,
     StationSession, wavBytes, SOURCE_LABELS, sessionFiles, zipFiles, AudioSession: SyntheticAudioSession,
     emptyEventsMessage, nextEventFocusId, document, window, navigator: {mediaDevices: {getUserMedia() { throw new Error('The Station UI test must never request microphone capture.'); }}},
     location: {href: `https://talk2nature.test/app/station/?mode=${mode}#station-console`},
@@ -109,6 +109,7 @@ test('the synthetic-only route rejects a hidden real-capture control but allows 
 
 test('companion rehearsal stays microphone-free and discard returns a marked review to Ready', async () => {
   const h = setup();
+  h.get('station-recorder-description').value = 'Phone microphone';
   assert.equal(h.get('station-capture-mode').value, 'window');
   assert.equal(h.get('station-animal-group').value, 'unknown');
   assert.equal(h.get('station-permission').checked, false);
@@ -127,12 +128,17 @@ test('companion rehearsal stays microphone-free and discard returns a marked rev
 
   await h.get('station-demo').fire('click');
   assert.equal(h.state.capture.synthetic, true);
+  assert.equal(h.get('station-recorder-description').disabled, true);
   assert.equal(h.get('station-console').dataset.phase, 'recording', h.get('station-status').textContent);
   h.state.capture.frame(new Float32Array(800).fill(0.04));
   await h.observations[0].fire('click');
   await h.get('station-stop').fire('click');
   assert.equal(h.get('station-console').dataset.phase, 'review', h.get('station-status').textContent);
+  assert.equal(h.get('station-recorder-description').disabled, true);
   assert.match(h.get('station-recap-detail').textContent, /Invented practice audio/);
+  assert.equal(h.get('station-provenance').hidden, false);
+  assert.ok(h.get('station-provenance-list').children.some(row => row.children[0].textContent === 'Capture source' && /no microphone used/.test(row.children[1].textContent)));
+  assert.ok(h.get('station-provenance-list').children.some(row => row.children[0].textContent === 'Recorder or microphone' && /Not applicable/.test(row.children[1].textContent)));
   assert.equal(h.get('station-event-total').textContent, '1');
   assert.equal(h.get('station-markers').children.length, 1);
 
@@ -195,6 +201,29 @@ test('a typed note is explicitly added to the timeline before it is included in 
   const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
   assert.equal(reopened.record.markers.length, 1);
   assert.equal(reopened.record.markers[0].note, 'A person walked past.');
+});
+
+test('recording provenance labels reported values, self-description limits and keeps device identity out', () => {
+  const rows = sessionProvenance({origin: 'microphone', sample_rate: 48000, clock: 'device wall clock; not synchronized', capture_metadata: {sample_rate_role: 'Web Audio processing rate; may differ from input rate', recorder_description: 'Handheld field recorder', recorder_description_provenance: 'user-entered; not verified', microphone_frequency_response: 'not measured'}, audio_settings: {input_sample_rate: 44100, input_channels: 2, auto_gain_control: false, noise_suppression: true, echo_cancellation: null}});
+  const values = Object.fromEntries(rows.map(row => [row.label, row.value]));
+  assert.match(values['Recorder or microphone'], /Handheld field recorder · user-entered; not verified/);
+  assert.equal(values['Input sample rate'].replace(/\D/g, ''), '44100');
+  assert.match(values['Input sample rate'], /browser-reported/);
+  assert.match(values['Input channels'], /2 · browser-reported/);
+  assert.equal(values['Processing sample rate'].replace(/\D/g, ''), '48000');
+  assert.match(values['Processing sample rate'], /Web Audio processing rate; may differ from input rate/);
+  assert.equal(values['Microphone frequency response'], 'not measured');
+  assert.match(values['Microphone processing'], /Automatic gain Off · noise suppression On · echo cancellation Not reported/);
+  assert.match(values['Capture source'], /device identifier not saved/);
+  assert.equal(values['Saved audio'], 'Mono 16-bit PCM WAV · uncompressed');
+  assert.ok(!JSON.stringify(rows).includes('deviceId'));
+  assert.deepEqual(sessionProvenance(null), [{label: 'Recording details', value: 'Not available for this session.'}]);
+  const synthetic = Object.fromEntries(sessionProvenance({origin: 'synthetic', sample_rate: 8000, clock: 'device wall clock', audio_settings: {}}).map(row => [row.label, row.value]));
+  assert.match(synthetic['Input sample rate'], /Not applicable/);
+  assert.match(synthetic['Microphone processing'], /Not applicable/);
+  assert.match(synthetic['Recorder or microphone'], /Not applicable/);
+  assert.match(synthetic['Processing sample rate'], /synthetic audio/);
+  assert.match(synthetic['Microphone frequency response'], /Not applicable/);
 });
 
 test('Finish and review follows note controls and returns focus to the review step', async () => {
