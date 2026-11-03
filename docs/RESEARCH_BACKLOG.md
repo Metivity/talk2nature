@@ -1,3 +1,13 @@
+# November 3, 2026 — refresh the shared bioacoustic loader release and architecture decision
+
+**Question:** did the release used in Talk2Nature's existing `alp-data` note remain current, and does the update change our architecture recommendation?
+
+**Evidence reviewed:** fetched PyPI's exact 1.12.0 JSON metadata and release page; read the current upstream `pyproject.toml`, README and MIT LICENSE over verified TLS. PyPI reports 1.12.0 uploaded October 28, 2026 and `Requires-Python >=3.11`. Its structured metadata has no SPDX license expression or license classifier. The mutable upstream README describes 35+ built-in datasets and says source datasets retain their creators' terms; the main-branch files were not pinned to the release commit, and no package artifacts or dataset entries were acquired or inspected.
+
+**Finding and application:** the Python floor and public loader scope are unchanged from the project decision, but the prior 1.11.1 citation was stale. Updated source records 233–234, the existing metadata-only research entry and the model architecture map to 1.12.0. Keep corpus access as an optional adapter and Talk2Nature focused on evidence lineage, review, rights and interoperability. Do not infer that the library's common loader clears rights or labels across underlying sources.
+
+**Checks and limits:** local JSON parsing succeeded; the local noindex site build and site link checker passed for this documentation/catalog update. No package, dependencies, dataset, audio, model weights or code were installed or executed. No dataset has been rights-cleared or technically integrated. Next, require one concrete researcher-selected dataset and task before an adapter compatibility exercise; preserve AutoResearch as **NOT READY**.
+
 # November 3, 2026 — apply the BioDCASE-Tiny 2026 results to the mobile/edge plan
 
 **Evidence reviewed:** official BioDCASE 2026 Task 3 description and results table, the baseline repository README and declared Apache-2.0 license, plus the DCASE 2026 proceedings page and the hardware-aware distillation paper's abstract. The challenge covers 2,750 three-second, 24 kHz recordings across ten bird species and an urban-background class. Its official result table jointly reports classification scores and ESP32-S3 model size, peak RAM, preprocessing/model time and total time. The top-ranked submission is a MobileNetV2-lite system with a reported 357,292-byte embedded model and 664.36 ms total time; the proceedings abstract reports a hardware-aware teacher-pool distillation approach ranked first on the ESP32-S3 evaluation track. These are challenge-reported results, not independently reproduced Talk2Nature measurements.

@@ -33,6 +33,12 @@ These families are not interchangeable. In particular, an audio-language model i
 
 These are the authors' reported results as summarized in the linked records. Talk2Nature has not reproduced them or independently validated these models.
 
+## Reuse the shared data layer; build the missing evidence layer
+
+Earth Species Project's [`alp-data`](https://github.com/earthspecies/alp-data) already offers a common loader interface for 35+ bioacoustic datasets, including streaming, transforms, split-aware loading and per-dataset source metadata. That is useful existing infrastructure to discover and evaluate before writing another generic corpus loader. It does not make source datasets uniformly licensed, ethically cleared, scientifically comparable or suitable for a communication question; each component still needs its own provenance, rights, label and grouping review. See the library's [metadata-only review](https://metivity.github.io/talk2nature/research/shared-bioacoustic-dataset-loader/).
+
+**Architecture decision:** Talk2Nature's distinctive contribution should be the evidence workflow around observations—consent and provenance, human annotation and review lineage, uncertainty, study-specific grouping, versioned exports and withdrawal—while treating corpus loaders as optional adapters. The current public research tools support Python 3.10+, whereas the reviewed `alp-data` 1.12.0 release declares Python 3.11+; keep any future adapter in a separate optional research environment so a dependency does not silently raise the minimum version for the public tools or private service. First use should be a synthetic compatibility and metadata-mapping exercise for one researcher-selected dataset, not an audio download or broad integration.
+
 ## Architecture to build toward
 
 1. **Capture and provenance:** the foreground mobile app records only after clear user action. Preserve the original media checksum, device/format details when available, time uncertainty, consent and processing history. Unknown values stay unknown.
