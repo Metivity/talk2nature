@@ -1,3 +1,42 @@
+# November 3, 2026 — apply forest-soundscape methods to the first task
+
+Revisited the already-catalogued Zenodo v2 forest soundscape corpus and applied its annotation and grouping limits to the existing public research assessment. Its record describes 1,302 ten-minute recordings across 104 sites/four parks, approximately 183,000 expert annotations and a 27.7 GB release. The landing-page Rights/License panel is blank; the previously reviewed Zenodo API metadata declares record-level CC BY 4.0. Its annotation account says faint/ambiguous calls and some bird/mammal sounds may be missed.
+
+Applied the findings to Talk2Nature's ten-second bird-presence candidate: event annotations may support positive windows, but unlabeled windows need human verification before serving as negatives; split by whole site before creating clips; compare context-only and audio-only baselines; evaluate phone transfer separately. The existing atlas entry stays pending because site sensitivity has not been reviewed. No data, code or models were newly acquired or run. AutoResearch and real-data admission remain **NOT READY**.
+
+Validation: Python suite **282 passed, 1 intentional skip**; Node suite **176/176**; local noindex build **189 pages plus 404**; site checker **190 HTML / 13,085 links**; public build **189 pages plus 404**; public checker **190 HTML / 13,276 links / 189 reachable pages**; desktop and mobile research page visually checked at 1440, 390 and 320 px; target route, canonical and sitemap checked; the atlas location remains pending sensitivity review. Git diff whitespace check passed. The public Pages deployment remains stale and requires the authenticated Metivity manual workflow; the available GitHub session is signed out, so no deploy was triggered.
+
+
+# November 3 — reconcile the first benchmark candidate; Pages publication pending
+
+PR [#689](https://github.com/Metivity/talk2nature/pull/689) merged to `main` as [`e675e9b`](https://github.com/Metivity/talk2nature/commit/e675e9b27b5b943e34486cda5911609bc3eb2708). Its Public Checks run [#41560741609](https://github.com/Metivity/talk2nature/actions/runs/41560741609) passed, including repository, browser-tool, native Android and preview-site checks. The update adds two primary-source records and applies their limits to the audio-language model comparison. This continuation adds four task-level metadata records and one report record; the candidate branch now contains **361 resource records** and includes one full technical-report review. That report surfaces unresolved accuracy and sample-rate/frequency-band inconsistencies, so its scores remain leads to reproduce rather than evidence to transfer.
+
+A cross-document audit found the model/data decision identifies passive bird-sound presence in a ten-second soundscape as the leading first computational question, while the AutoResearch program still described audio-based behavior-context prediction. DCASE 2018 is task-design prior art; CEB v1.1 is the existing metadata-only soundscape-data candidate. Its training annotations exceed the collection cap, project-group meaning is unverified, and public evaluation labels are not a concealed holdout. This continuation added a review of BioDCASE 2025 Task 3: a useful embedded-efficiency precedent, but too narrow to replace the ten-second soundscape question. Repeated songs, possible sample-rate/duration shortcuts, and publicly released evaluation labels are now recorded. No data, code, model or weights were acquired or run.
+
+Fresh live reads still show **284** resources at [`/research/resources/`](https://metivity.github.io/talk2nature/research/resources/); the new `/research/bioacoustic-model-comparison/` route returns **404**, and the sitemap `Last-Modified` remains October 29. The Pages workflow is manual. The available GitHub browser is signed out and the connected API has no workflow-dispatch action, so the authorized deployment could not be triggered. Search Console, indexing, rankings and traffic remain unverified. AutoResearch and real-data admission remain **NOT READY**.
+
+**Next:** keep the sound-presence question as a candidate only; determine whether a bounded, rights/privacy-reviewed CEB metadata intake can establish group structure without opening public test labels. If it cannot, find a smaller eligible dataset or record a no-go. Continue targeted, source-linked reviews when they change a concrete design choice; keep the BioDCASE page as a design reference for edge metrics and provenance, not benchmark performance. Continue toward publication via the authenticated Metivity workflow and verify the live route, resource count, sitemap and Station disclosure. Keep physical-device acceptance and independent scientific review open.
+
+# November 3 — turn the model map into a discoverable research-library page
+
+**Question:** can a reader compare current animal-audio model families without treating every model output as “communication”? Added the public synthesis note `animal-audio-model-landscape-2026` and linked it from the “Reuse models, then test transfer” reading path. It distinguishes event/species detectors, frozen encoders, audio-language systems, self-supervised structure discovery, and context-aware prediction. The note applies the reviews to a practical order of work: consented mobile capture and human review first; model outputs as versioned proposals; task-matched grouped evaluation before any model choice; receiver-response evidence only under qualified study review. It identifies AVEX as a possible researcher-side comparison interface to inspect, not a validated or integrated dependency.
+
+This is a targeted synthesis of existing project reviews, not a new systematic review or independent reproduction. The AVEX supported-model guide was freshly checked. Each citation retains its source-specific review depth and rights record. No audio, dataset, code, checkpoint or model was acquired or run; no new research result is claimed. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification:** source catalog validation and build completed; Python **281 passed, 1 intentional skip**; public build **188 pages plus 404**; site checker **189 HTML documents / 13,151 links / 188 reachable public pages**; `git diff --check` passed. The generated route `/research/animal-audio-model-landscape-2026/` has an indexable directive, exact canonical, 135-character description, 12 linked sources, and appears in the sitemap, library and model reading path. These are local candidate checks, not live publication.
+
+**Release context:** PR [#684](https://github.com/Metivity/talk2nature/pull/684) merged as [`42d6a47`](https://github.com/Metivity/talk2nature/commit/42d6a4739637ceb6da794c908b8a6cab35056fc2); PR [#686](https://github.com/Metivity/talk2nature/pull/686) merged as [`5231415`](https://github.com/Metivity/talk2nature/commit/5231415e51cb3cb6eb7defae6c7ed299106e987c). Both hosted Public Checks runs passed. A fresh live read still shows **284 resource records** versus **354** in current source, and the Station page still lacks the “Listen-only by design” disclosure. The Pages workflow remains manual; its browser page is signed out, so no deployment occurred.
+
+**Next:** submit this validated public-library route as a clean PR, confirm hosted checks on its final head, then publish only through the signed-in Metivity workflow and verify the route, live catalog, sitemap and Station disclosure. Keep physical-device, independent-review, benchmark and data-admission gates open.
+
+# November 3 — apply BirdCODE methods review to Compare
+
+Completed a full-text review of the BirdCODE preprint and pinned official repository/model-card metadata. Applied the distinction between large-scale event detection, temporal association and receiver understanding to the saved-moment Compare screen: it links the BirdCODE evidence note and says those analyses describe patterns without proving meaning or replies. The model remains metadata-only; no model, audio, code or predictions were acquired or run.
+
+**Checks:** focused Compare/mobile tests **20/20**; full Node suite **176/176**; Python suite **280 passed, 1 intentional skip**; local noindex build **187 pages plus 404**; site checker **188 HTML documents / 12,878 links**. PR [#684](https://github.com/Metivity/talk2nature/pull/684) remains a draft; hosted checks for head `9d119fb` are running. No merge or deployment occurred.
+
+**Next:** await hosted checks; continue the active five-track goal from the research and release gates, leaving physical-device acceptance, independent scientific review, AutoResearch and real-data admission open.
+
 # November 3 — apply a six-stage sensor-to-insight research review
 
 Reviewed the publisher abstract and relevant sections of Kitzes et al. (2026), which connect hardware, deployment, storage, AI, statistical inference and ecological insight. Added the paper to the source catalog, research library, resource directory and a new field-pipeline learning path. Applied the review to the Station architecture and benchmark card: record available device/format/processing provenance, keep unknowns explicit, preserve sensor context, report acoustic-quality strata, keep model outputs separate from observations, and avoid location-driven circular inference. This is an original linked summary; the publisher's support app was not inspected or run.
@@ -151,6 +190,13 @@ This applies the source review to discovery while protecting the precision of mu
 **Decision and next:** research additions are useful only when people can find and evaluate them. Prioritize publishing the reviewed clean candidate through the authorized Metivity Pages workflow, then verify the workflow result, all 17 added routes, live resource count, sitemap and page metadata. Remote `main` still resolves to `144ede63ae0b5c02cf83a09643c6cbd86178018f`, the base of this six-commit local candidate. No deployment was triggered; an authorized dispatch path remains unavailable in this session. After release, check Search Console processing separately. Keep the five-track goal **active**, the physical-device/screen-reader/newcomer gates open, and AutoResearch plus real-data admission **NOT READY**.
 
 # Talk2Nature goals
+
+## November 3 continuation — complete a source-linked model comparison refresh
+
+Extended the clean current-main model-comparison note with two primary studies on prompt-based zero-shot bioacoustics and task-dependent embeddings, and recorded each article’s review depth and rights boundary. Applied the findings to the first-benchmark decision: narrow event screening only, prompts frozen on development data, a simple baseline, realistic background/unknown examples, group-held-out evaluation, abstention and human review. No code/model/data was acquired or run.
+
+A fresh public readback confirmed the crawlable robots/sitemap and working core page metadata, while three current-main research routes return live 404. The clean candidate passes 281 Python tests (one intentional skip), 176 Node tests, catalog validation (356 resources), and the 188-page public build/site check. It preserves all 154 live sitemap routes and adds 34. The candidate remains local. Goal continues through the authorized clean Metivity publication path; Search Console indexing is not inferred from sitemap availability.
+
 
 ## October 31 continuation — verify the keyboard-only Zero Command path
 
@@ -1669,6 +1715,12 @@ Combined the plain-language Save-to-Compare workflow and the rights-bounded rook
 Keep the zero-command Save-to-Compare workflow on the active product track. Its next acceptance evidence is still a rendered candidate review, a named physical-phone check, and an authorized uncoached first-use session; no interaction or field-use claim is made until those checks happen. In parallel, use primary-source funding updates to protect the project from spending time on calls whose real requirements do not fit.
 
 NLnet's GenAI policy 2.0 now applies to its November 3, 2026 CodeSupply and Restack calls. Given Talk2Nature's AI-assisted development history, the missing codebase disclosure inventory, and the absence of a validated CodeSupply package-metadata work package or established European dimension, do not pursue CodeSupply this cycle. Restack remains out of scope on current evidence. Do not generate proposal text or funded deliverables with GenAI. Reconsider only a future, human-led, rights-cleared work package after an eligibility and disclosure review. The formal five-track goal remains active; AutoResearch, benchmark readiness and real-data admission remain **NOT READY**.
+
+## November 3 continuation — apply a full BirdCODE methods review
+
+Expanded the existing BirdCODE note from abstract-level coverage to a full preprint-text review and pinned code/model-card metadata. This clarifies the actual task, reported evaluation domains and metrics, the five-second cross-species timing analysis, its causal/meaning limits, checkpoint scale, and separate paper/code/model/source-media rights. Applied the findings to the project: do not build a duplicate general bird detector or bundle a 1.1 GB checkpoint into the mobile app; if a named lab needs it, test a synthetic, loss-aware import of versioned model proposals alongside immutable human observations. Keep the selected first binary bird-presence question separate from species-specific event segmentation.
+
+No data, audio, code or weights were acquired or run; no result was reproduced. The evidence note, resource records, model/data decision and regression test are updated in this local candidate only. The five-track goal remains **active**; AutoResearch and real-data admission remain **NOT READY**.
 
 ### October 26 continuation — refresh current-main researcher reproduction
 

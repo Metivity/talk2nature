@@ -47,6 +47,7 @@ function controls() {
   animal.lock(busy || Boolean(session));
   $('station-capture-mode').disabled = busy || Boolean(session);
   for (const id of ['station-start', 'station-demo', 'station-margin', 'station-alias', 'station-permission']) $(id).disabled = busy;
+  $('station-recorder-description').disabled = busy || Boolean(session);
   const recordingPermissionConfirmed = $('station-permission').checked;
   $('station-start').disabled = busy || !recordingPermissionConfirmed;
   $('station-start').textContent = recordingPermissionConfirmed ? 'Start recording' : 'Permission needed';
@@ -171,7 +172,7 @@ function renderEvents(focusEventId = null) {
   const recap = sessionRecap(session); $('station-recap').hidden = !recap;
   if (recap) { $('station-recap-title').textContent = recap.title; $('station-recap-detail').textContent = recap.detail; }
   const provenance = $('station-provenance'), provenanceList = $('station-provenance-list');
-  const record = session?.exportRecord($('station-alias').value, settings);
+  const record = session?.exportRecord($('station-alias').value, settings, $('station-recorder-description').value);
   const provenanceRows = session?.stopped ? sessionProvenance(record) : [];
   provenance.hidden = !session?.stopped;
   if (!provenanceRows.length) provenance.open = false;
@@ -292,7 +293,7 @@ async function exportSession(bundle) {
   if (!session || active || pending || exporting || !checkAlias()) return;
   exporting = true; $('station-save-ack').hidden = true; $('station-compare-link').hidden = true; controls(); renderEvents(); exportStatus('Preparing your local download…');
   try {
-    const files = await sessionFiles(session, $('station-alias').value, settings);
+    const files = await sessionFiles(session, $('station-alias').value, settings, undefined, $('station-recorder-description').value);
     if (bundle) download(zipFiles(files), `talk2nature-${session.id}.zip`, 'application/zip');
     else download(files[0].bytes, files[0].name, 'application/json');
     exportStatus(bundle ? 'Your file is ready. Check Downloads. If it opens as a preview, use Share → Save to Files (or your device’s save option), then return here and choose the button below.' : 'Journal download requested. It contains no sound; use Save this moment for your notes and sounds together.');
