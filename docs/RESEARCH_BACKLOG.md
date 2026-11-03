@@ -44,6 +44,14 @@ Reviewed the BirdCODE preprint abstract, the author-affiliated technical overvie
 
 # Prioritized research and machine-learning backlog
 
+## November 3 — defer the first benchmark after the DCASE/ArcticBirdSounds screen
+
+**Evidence reviewed:** reread the official DCASE Task 3 description, the official Zenodo DCASE evaluation-data deposit and BirdVox-DCASE-20k record, and the ArcticBirdSounds publisher article. DCASE is the closest match to binary bird-presence in a ten-second clip, but its task-level manual-label statement does not describe every component: BirdVox says its `hasbird` labels were automatically derived from source annotations. The public evaluation record lists 9.1 GB of audio archives but no label files or license value; prior preview and repeated submissions also create evaluation exposure. ArcticBirdSounds offers 20 hours of strong temporal annotations across 15 plots and six locations under a paper-declared CC BY 4.0 data license, but it is event-level, not a verified presence/absence task, and its labels do not establish quiet windows or independent field-session splits. Existing CEB review separately found unknown project grouping, no verified negatives and no concealed public test.
+
+**Applied decision:** no candidate in this reviewed shortlist clears task labels, component rights, independent groups, qualified review and a project-controlled locked evaluation. Defer selection; this does not claim that no suitable dataset exists anywhere. No data rows, recordings, code, models or weights were acquired or run. Keep the task definition narrow and AutoResearch/real-data admission **NOT READY**. The source-grounded DCASE and Arctic notes are in the research catalog, and the comparison is summarized in `MODEL_DATA_DECISION.md`.
+
+**Next:** search primary-source records for a smaller, rights-clear sound-presence dataset with explicit negative-label provenance, recoverable independent groups and an untouched evaluation. Before any archive access, require qualified bioacoustics review of the exact task and protocol. Do not inspect public evaluation labels or convert missing annotations into negatives.
+
 ## November 3 — CEB is not selected for the first benchmark
 
 **Decision:** retain Central European Birds (CEB) v1.1 as metadata-only detector prior art; do not use it for the first Talk2Nature benchmark under the current intake and evaluation gates. The reviewed schema supports grouping annotations by exact recording filepath, but does not establish independent site/session/device groups. The training annotation CSV exceeds the existing 5 MiB per-file intake cap, and the public test-label file cannot serve as a concealed locked evaluation. Unannotated intervals are not verified negatives. Do not bypass the size cap by chunking the table, inspect the public test labels, or start a model run.
