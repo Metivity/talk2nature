@@ -6259,5 +6259,53 @@
     "url": "https://arxiv.org/abs/2508.10230",
     "checked": "2026-11-03",
     "origin": "Primary arXiv paper reviewed: model and task inventory, train/validation/test methods, clustering results, background-class discussion and limitations. No code/data/model acquired or run; preprint publication status and license beyond the displayed arXiv record were not established."
+  },
+  {
+    "id": 623,
+    "title": "BioDCASE 2025 Task 3 — Bioacoustics for Tiny Hardware",
+    "description": "Official task specification for binary Yellowhammer-vocalization detection on an ESP32-S3-Korvo-2; reviewed the dataset description, participant/evaluation split, AP and embedded-resource metrics, submission conditions, and linked competition rules. The task page says results and an evaluation set are now available. No data, code or model was acquired or run.",
+    "url": "https://biodcase.github.io/challenge2025/task3",
+    "checked": "2026-11-03",
+    "origin": "Official challenge task page and linked rules. Reviewed task scope, recording/sample descriptions, external-data and evaluation restrictions; one participant report was reviewed separately as source 628, while the other participant report PDFs were not retrieved."
+  },
+  {
+    "id": 624,
+    "title": "BioDCASE 2025 Task 3 Yellowhammer development dataset",
+    "description": "Zenodo v1 development-set record. The record describes 2 h 37 min of playback/re-recorded Yellowhammer songs, split by bird individual, with repeated SongIDs across distances/settings; it declares CC BY 4.0. Archive is 224.7 MB, above Talk2Nature's current 5 MiB per-file intake cap. Metadata only; no files downloaded or inspected.",
+    "url": "https://zenodo.org/records/15228365",
+    "checked": "2026-11-03",
+    "origin": "Official Zenodo record v1, including description, file inventory, byte size and license field. Provider-declared checksum was not locally verified; audio and README bytes were not downloaded."
+  },
+  {
+    "id": 625,
+    "title": "BioDCASE 2025 Task 3 Yellowhammer evaluation dataset",
+    "description": "Zenodo v2 record says it contains evaluation audio and binary labels; both are publicly listed (54.0 MB archive and 17.1 kB CSV). The rights section displays no license. The labels are no longer a concealed holdout. The CSV and audio were not opened or acquired.",
+    "url": "https://zenodo.org/records/21827695",
+    "checked": "2026-11-03",
+    "origin": "Official Zenodo record v2, reviewed for the description, file inventory, record date and Rights section. File contents and provider checksum were not inspected or downloaded."
+  },
+  {
+    "id": 626,
+    "title": "BioDCASE 2025 Task 3 challenge results",
+    "description": "Official organizer results table lists submitted average precision and on-board model size, RAM, preprocessing and inference times; linked technical reports are available. The table is a task-specific challenge summary, not a Talk2Nature reproduction or cross-dataset leaderboard. One report was reviewed separately as source 628; other reports and submitted artifacts were not audited.",
+    "url": "https://biodcase.github.io/challenge2025/task3-results",
+    "checked": "2026-11-03",
+    "origin": "Official BioDCASE results page. Reviewed summary table and rendered abstracts; one linked five-page report was reviewed separately. Other technical report PDFs, submission artifacts, models and audio were not retrieved or run."
+  },
+  {
+    "id": 627,
+    "title": "BioDCASE-Tiny 2025 baseline framework",
+    "description": "Official task-linked GitHub repository for training and deploying the task pipeline on ESP32-S3-Korvo-2. GitHub declares Apache-2.0 for the repository. README describes a Python/Docker/ESP-IDF-oriented setup and notes host-to-device feature parity requirements. Code, dependency licenses, weights and execution were not reviewed.",
+    "url": "https://github.com/birdnet-team/BioDCASE-Tiny-2025",
+    "checked": "2026-11-03",
+    "origin": "Task-linked public repository landing page, declared license and README reviewed. Individual source files, dependency licenses, releases and commit-pinned behavior were not audited or run."
+  },
+  {
+    "id": 628,
+    "title": "Oguamanam et al. — Targeted Feature Extraction for Bird Sound Classification Systems",
+    "description": "Official BioDCASE 2025 Task 3 participant technical report from Toronto Metropolitan University. Full five-page report reviewed for preprocessing, feature extraction, model comparisons, test metrics, device resource table and discussion. It explores a shallow CNN and compact GFCC/spectral-flux classifiers. The report has internal score and stated sampling/frequency-band inconsistencies that need clarification; no code, audio or result was reproduced.",
+    "url": "https://biodcase.github.io/documents/challenge2025/technical_reports/Oguamanam_task3_technical_report.pdf",
+    "checked": "2026-11-03",
+    "origin": "Official challenge-linked PDF, all five pages reviewed. The linked challenge rules say submitted system outputs and technical reports are published under CC BY. No dataset, source code or model was retrieved or run."
   }
 ]
