@@ -1,3 +1,15 @@
+# November 4, 2026 — invite independent review through the repository
+
+**Question:** can qualified outside readers provide a bounded, source-grounded methods review of the metadata-only PeaDetect candidate?
+
+**Change:** opened public GitHub issue [#715](https://github.com/Metivity/talk2nature/issues/715) with five review questions and added it to the contributor guide. The request is limited to public materials and asks for no data files, labels, audio or coordinates.
+
+**Rights and status:** no researcher was contacted individually, no outside review has been received, and no dataset file or precise coordinate was accessed. Issue #715 was open with zero comments at creation. PeaDetect remains a candidate, not a selected benchmark; the issue does not clear underlying recording rights. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification:** the link resolves to the intended open issue; repository checks are pending on this documentation update. No scientific validation is claimed.
+
+**Next:** monitor for an independent, suitably scoped reply. If one arrives, record exactly what the reviewer inspected and update the candidate decision; otherwise do not imply endorsement or review. The Pages publication gate and named-device mobile checks remain open.
+
 # November 4, 2026 — diagnose file selection against the live Pages release
 
 **Question:** is the file chooser itself difficult, or is the public site still serving an older implementation?

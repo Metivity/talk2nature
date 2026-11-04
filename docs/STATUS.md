@@ -1,3 +1,9 @@
+# November 4, 2026 — open an independent PeaDetect methods-review issue
+
+Created public repository issue [#715](https://github.com/Metivity/talk2nature/issues/715) after checking for an existing open PeaDetect issue. It asks five bounded questions about task usefulness, source-recording grouping, platform baselines, minimum metadata review and later field transfer. It links the source-grounded brief and explicitly requests no dataset files, labels, audio, coordinates or uploads.
+
+No individual researcher was contacted. At creation the issue was open with zero comments; no independent review is recorded. Dataset files remain unaccessed and the benchmark remains unselected. AutoResearch and real-data admission remain **NOT READY**. Next: wait for public replies and assess their scope and evidence before changing the decision.
+
 # November 4, 2026 — diagnose file selection against the live Pages release
 
 The current `main` source already uses the shared accessible file-picker on all seven imports, with phone guidance, desktop drop support, selected-filename feedback and a prominent no-microphone example. At 390 CSS px, a local noindex browser preview accepted a generated synthetic WAV through the ordinary file chooser and opened it locally. This does not establish physical-phone behavior.
