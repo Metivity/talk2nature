@@ -7760,5 +7760,28 @@
       "locations": [],
       "observation_period": null
     }
+  },
+  {
+    "slug": "mygardenbird-source-splits-and-rights-2026",
+    "title": "MyGardenBird separates source recordings, but cannot test bird absence",
+    "seo_description": "A metadata-only review of MyGardenBird finds useful source-recording splits and unresolved licensing metadata, but only positive species clips.",
+    "taxon": "Birds · species classification · Southeast Asia",
+    "kind": "Dataset and task-fit review",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "MyGardenBird Malaysian bird-sound dataset review",
+    "source_ids": [
+      646,
+      647,
+      648
+    ],
+    "reviewed": "2026-11-05",
+    "review_stage": "Primary preprint methods/data-record review, official Zenodo API metadata and pinned repository README/license review; no payload inspection",
+    "review_depth": "Reviewed the arXiv preprint’s collection, annotation and quality-control procedure, source-recording-level split, data schema, validation and licensing statements. Queried the official Zenodo API for record identity, timestamps, license field and file inventory; checked the pinned GitHub README, repository license metadata and LICENSE text. No audio, archive, clip-level metadata rows, pipeline source or model was downloaded or run. The paper is a preprint, not peer-reviewed evidence or an independent reproduction.",
+    "finding": "MyGardenBird is useful prior art for preserving source-recording identity: the preprint describes 7,200 three-second clips across 12 known species, grouped by 1,381 source recordings for an 80:10:10 split. These are target-vocalization examples, not bird-present versus bird-absent soundscape samples. The split supports within-collection species classification, not new-site or field transfer. The study reports a single human curator; BirdNET consistency checking is not a second human annotation. Talk2Nature did not reproduce the reported scores.",
+    "limitations": "This positive-only 12-class task cannot test verified absence, soundscape prevalence or the project’s ten-second presence question. Source-file grouping is not site/date/device holdout. The preprint reports 35.3% of source recordings are CC BY-NC-ND and argues clip extraction is non-transformative; Talk2Nature makes no rights determination. It reports CC BY-NC-SA for the compilation, but the Zenodo metadata API returns a null record-level license. The GitHub README says MIT while API/root LICENSE say Unlicense. No assets were acquired or run; coordinates were not copied. Classification is not communication.",
+    "lesson": "Keep source IDs, clip onsets and frozen split membership linked; record paper, dataset and code rights separately. Do not use the reported scores as our baseline or select this positive-only dataset for bird-presence detection.",
+    "next_review": "Keep metadata-only. Consider a separate species-classification task only after specialist review of the estimand and per-source rights, especially ND material. Continue screening for presence/absence data with reviewed negatives and an untouched, leakage-safe evaluation. Do not download or run assets while rights remain unresolved.",
+    "expert_review": "No independent avian, licensing or statistical review has occurred."
   }
 ]
