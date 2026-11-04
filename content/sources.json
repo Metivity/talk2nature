@@ -6403,5 +6403,21 @@
     "url": "https://github.com/mun3im/seabad",
     "checked": "2026-11-03",
     "origin": "Reviewed the public repository landing page and README only. No source files were downloaded or executed; a repository-level license file was not visible in the reviewed root inventory."
+  },
+  {
+    "id": 641,
+    "title": "PeaDetect data article · full text",
+    "description": "Targeted review of dataset construction, source mix, label-validation protocol, source-recording folds and component-rights statements for the 2026 peafowl vocalization detector dataset.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13382432/",
+    "checked": "2026-11-04",
+    "origin": "Primary article review of its methods and data-availability sections. Article text is CC BY-NC 4.0; no audio, annotations or source files were acquired."
+  },
+  {
+    "id": 642,
+    "title": "PeaDetect dataset · Mendeley Data v1",
+    "description": "The versioned data page describes a CC BY 4.0 release with 2,950 five-second WAV clips, metadata and documentation; source recordings retain their own terms.",
+    "url": "https://data.mendeley.com/datasets/skryf4tkff/1",
+    "checked": "2026-11-04",
+    "origin": "Reviewed the official version 1 landing-page metadata, file descriptions, license declaration and linked Zenodo DOI. No download or file-level inspection occurred."
   }
 ]

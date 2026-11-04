@@ -1,3 +1,13 @@
+# November 4, 2026 — screen a narrow peafowl detection candidate
+
+After the CEB metadata review failed to establish safe independent groups, screened PeaDetect using its primary data article and official Mendeley v1 page. The source documents 2,950 five-second Indian-peafowl vocalization clips, two independent annotators, an ornithologist's review of 590 clips, and five folds grouped by original source recording. All 1,475 positive clips and 1,092 negative clips come from Xeno-Canto; the remaining 383 negatives are from Freesound. A platform-only rule would score 1,858/2,950 (62.98%) on this balanced curated collection. This is an arithmetic diagnostic, not an observed model.
+
+Added source records 641–642, separate article and dataset resource records, an indexable research note, and updates to the model/data decision, run card and backlog. Dataset access remains metadata-only. The Mendeley CC BY 4.0 declaration does not clear each source recording; the article has separate CC BY-NC 4.0 terms. Exact fold membership, per-item rights, site/recordist independence and field transfer remain open. Keep the general ten-second bird-presence task as the leading definition; PeaDetect is a distinct five-second peafowl candidate. No audio, rows, code, weights, expert outreach, training or AutoResearch run occurred. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification:** Python **290 tests passed, 1 intentional skip**. Explicit-origin public build: **194 pages plus 404**; site checker: **195 HTML documents, 13,583 links and 194 reachable public pages**. Generated route metadata, canonical, sitemap inclusion, source links and separate rights disclosures checked. This candidate is not published live; Pages deployment remains a separate manual step.
+
+**Next:** ask qualified independent avian-bioacoustics and ML/statistical reviewers whether the scoped reproduction is useful and whether its folds support a meaningful claim. Only then prepare a rights/privacy-reviewed manifest inspection plan. Keep a source-only baseline and external field-transfer requirement. Continue the already-authorized Pages release when the authenticated Metivity workflow is available; verify the live files and routes afterward.
+
 # November 4, 2026 — close the CEB metadata-only grouping gate
 
 **Question:** can public CEB v1.1 metadata establish independent recording domains for the proposed ten-second bird-sound-presence task without inspecting annotation rows or evaluation labels?
