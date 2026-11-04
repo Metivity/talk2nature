@@ -9,9 +9,9 @@ test('saved-moment actions appear before the research explainer and accept only 
   const html = await read('../web/templates/compare.html');
   assert.ok(html.indexOf('compare-workbench') < html.indexOf('compare-evidence'));
   assert.match(html, /class="file-picker compare-file-picker"[^>]*for="file-a"/);
-  assert.match(html, /session ZIP up to 27 MB/);
-  assert.match(html, /id="file-a" accept="\.zip,application\/zip" aria-label="Choose the first saved Talk2Nature session ZIP from this device"/);
-  assert.match(html, /id="file-b" accept="\.zip,application\/zip" aria-label="Choose a second saved Talk2Nature session ZIP from this device"/);
+  assert.match(html, /ZIP up to 27 MB/);
+  assert.match(html, /id="file-a" accept="\.zip,application\/zip" aria-label="Open the first saved Talk2Nature session ZIP from this device"/);
+  assert.match(html, /id="file-b" accept="\.zip,application\/zip" aria-label="Open a second saved Talk2Nature session ZIP from this device"/);
 });
 
 test('every public file import uses the shared touch-sized, labelled picker', async () => {
@@ -50,8 +50,21 @@ test('file picker names phone file locations and computer drop support', async (
   ]);
   for (const page of [listen, annotations, compare]) {
     assert.match(page, /Files or Downloads/);
-    assert.match(page, /computer: drop here/);
+    assert.match(page, /On phone: browse|on phone: browse/);
+    assert.doesNotMatch(page, /computer: drop here/);
   }
+});
+
+test('file actions say what opens and do not use an external-link arrow', async () => {
+  const [listen, compare] = await Promise.all([read('../web/templates/listen.html'), read('../web/templates/compare.html')]);
+  const actions = `${listen}\n${compare}`.match(/<span class="file-picker-action">[^<]*(?:<span[^>]*>[^<]*<\/span>)?<\/span>/g) ?? [];
+  assert.ok(actions.length >= 5);
+  assert.match(listen, /Open a sound or notebook/);
+  assert.match(listen, /Open a Station session ZIP/);
+  assert.match(listen, /Open saved labels for this sound/);
+  assert.match(compare, /Open a session ZIP/);
+  assert.match(compare, /Add a second session ZIP/);
+  assert.doesNotMatch(actions.join(' '), /↗/);
 });
 
 test('file picker opens one accepted dropped file through the normal change path', () => {

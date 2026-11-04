@@ -176,10 +176,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn("'End rehearsal'",station_script)
         live_labels=('Try invented example · no microphone','Mark an observation','Finish and review',
                      'Save this moment','I saved the file',
-                     'Open Compare moments to review it','Choose a saved moment')
+                     'Open Compare moments to review it','Open a session ZIP')
         for label in live_labels:
             with self.subTest(button=label):
-                self.assertIn(label,station if label!='Choose a saved moment' else compare)
+                self.assertIn(label,station if label!='Open a session ZIP' else compare)
         expected_steps=('Try an example · no microphone',
                         'no-microphone practice button','one observation marker',
                         'End rehearsal','Finish and review','invented-session recap')
@@ -190,8 +190,8 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(positions,sorted(positions))
         self.assertIn('Optional deeper file check',contributor)
         advanced_steps=('Save this moment','I saved the file',
-                        'Open Compare moments to review it','Choose a saved moment',
-                        'select the downloaded session ZIP')
+                        'Open Compare moments to review it','Open a session ZIP',
+                        'select the downloaded file')
         advanced_positions=[contributor.index(step) for step in advanced_steps]
         self.assertEqual(advanced_positions,sorted(advanced_positions))
 
@@ -1999,9 +1999,9 @@ class SiteTests(unittest.TestCase):
             self.assertIn('If it opens as a preview, use Share → Save to Files',station)
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
             self.assertIn('Open the original Talk2Nature session ZIP.',compare)
-            self.assertIn('Choose a saved moment',compare)
+            self.assertIn('Open a session ZIP',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
-            self.assertIn('First moment only is fine.',compare)
+            self.assertIn('Want a side-by-side view? Add a second session when you’re ready.',compare)
             self.assertIn('Open one saved moment.',(root/'app'/'index.html').read_text())
 
     def test_mobile_guide_explains_direct_single_session_reopen_without_unzipping(self):
@@ -2156,11 +2156,11 @@ class SiteTests(unittest.TestCase):
             self.assertIn('no unzipping needed',sound_desk)
             self.assertIn('Annotate a clip from a saved session',sound_desk)
             self.assertIn('accept=".zip,application/zip"',sound_desk)
-            self.assertIn('We check the saved sound hashes',sound_desk)
-            self.assertIn('carry a copy of the session journal',sound_desk)
+            self.assertIn('We check its sound hashes',sound_desk)
+            self.assertIn('include a copy of the session journal',sound_desk)
             self.assertIn('accept=".zip,application/zip"',compare)
-            self.assertIn('session ZIP up to 27 MB',compare)
-            self.assertIn('computer: drop here',compare)
+            self.assertIn('ZIP up to 27 MB',compare)
+            self.assertIn('On phone: browse Files or Downloads',compare)
 
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:
@@ -3399,6 +3399,29 @@ class SiteTests(unittest.TestCase):
             page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
         self.assertIn('BIRDeep tests regional bird-event detection, not site transfer',page)
         self.assertIn('does not establish a site-',page)
+        self.assertIn('index,follow',page)
+
+    def test_arcticbirdsounds_methods_review_is_visible_and_bounded(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='arcticbirdsounds-grouped-split-preflight')
+        request=note['review_request']
+        self.assertEqual(request['guide_path'],'docs/REVIEWER_SCOPE_BIRDEVENT.md')
+        self.assertEqual(request['issue_url'],'https://github.com/Metivity/talk2nature/issues/721')
+        self.assertIn('no reviewer response',request['status'])
+        self.assertIn('class-by-site',note['limitations'])
+        self.assertIn('not a verified negative',note['finding'])
+        guide=(project_root/'docs'/'REVIEWER_SCOPE_BIRDEVENT.md').read_text()
+        self.assertIn('does not authorize row-level inspection',guide)
+        self.assertIn('No reviewer response has been received',guide)
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True,
+                  'https://github.com/Metivity/talk2nature')
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+        self.assertIn('OPEN METHODS QUESTION',page)
+        self.assertIn('Can ArcticBirdSounds support a site-grouped bird-event pilot?',page)
+        self.assertIn(request['issue_url'],page)
+        self.assertIn('docs/REVIEWER_SCOPE_BIRDEVENT.md',page)
+        self.assertIn('A review is not an endorsement or partnership',page)
         self.assertIn('index,follow',page)
 
     def test_mygardenbird_is_positive_only_and_rights_unresolved(self):

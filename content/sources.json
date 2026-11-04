@@ -5197,14 +5197,14 @@
   {
     "id": 506,
     "title": "ArcticBirdSounds · OSF dataset node and current manifest metadata",
-    "description": "The current OSF API for node b9trx declares CC BY 4.0 and exposes dataset and source-code folders. Audio rows, annotations and code payloads were not opened in the metadata review.",
+    "description": "The current OSF API declares CC BY 4.0 for dataset node b9trx. The full filename manifests map to site groups; audio/annotation payloads and site coordinates were not opened or retained.",
     "url": "https://osf.io/b9trx/",
-    "checked": "2026-10-29",
-    "origin": "Official OSF node and license APIs were queried over verified TLS on October 29, 2026. The API license relationship resolves to CC-By Attribution 4.0 International. The linked project includes data and a separate source-code folder; folder/file metadata and the data archive central directory were reviewed under bounded rules, without opening audio, annotation rows or code files.",
+    "checked": "2026-11-05",
+    "origin": "Official OSF node/license APIs and complete paginated folder manifests refreshed over verified TLS on November 5, 2026. The current dataset-node relationship resolves to CC BY 4.0. The complete WAV and annotation/FLAC file manifests and a bounded ZIP central directory were checked by filename/size metadata; no audio, annotation rows or precise locations were read or retained.",
     "rights": {
-      "license": "CC BY 4.0 declared by the OSF dataset node.",
-      "scope": "Dataset node only. The separate source-code folder has no file-level license metadata; article/supplement, GitHub preparation code and pretrained models remain separate.",
-      "conditions": "Retain attribution and review provenance and license scope per component; do not treat a dataset-node license as authorization for unrelated code or model assets."
+      "license": "CC BY 4.0 declared by current OSF dataset-node API and the data paper.",
+      "scope": "Dataset node only. Article/supplement, the separate OSF source-code folder, linked GitHub preparation code, model assets and upstream inputs remain separate.",
+      "conditions": "Retain attribution and identify modifications. Verify component provenance and purpose-specific suitability before acquiring audio or annotations; do not publish precise wildlife coordinates."
     },
     "review_url": "https://api.osf.io/v2/nodes/b9trx/",
     "review_url_label": "Official OSF node/license API and project metadata; payloads not opened"
