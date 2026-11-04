@@ -2294,3 +2294,10 @@ Applied the schema review and current dataset comparison to the benchmark decisi
 ## November 3 continuation — apply DCASE and ArcticBirdSounds evidence and defer benchmark selection
 
 Reread the primary DCASE task, DCASE evaluation-deposit and BirdVox dataset records, and the ArcticBirdSounds paper; updated the source-grounded DCASE note, dataset resource record and model/data decision. DCASE still best matches ten-second bird-sound presence, but its task-level manual-label description conflicts with BirdVox's source-derived labels; its public evaluation archive lacks label files and a license value. ArcticBirdSounds supplies strong temporal events across six reported locations, but not verified ten-second absence labels or an untouched test for this task. Alongside the CEB no-go, this means no candidate in the current reviewed shortlist meets all benchmark gates. Defer selection without claiming the broader dataset universe is exhausted. No data, code, model or weights were acquired or run; AutoResearch and real-data admission remain **NOT READY**. The next step is a primary-source search for a smaller candidate with explicit negatives and a genuinely independent evaluation, followed by qualified review before acquisition.
+
+
+## November 5 continuation — improve the benchmark evidence and invite bounded review
+
+On a clean copy of current public `main`, refreshed the ArcticBirdSounds metadata-only audit. Complete CSV/FLAC filename keys map across six site labels and 19 plot/year groups; the paper-to-manifest discrepancy remains 2,400/20 versus 2,280/19. Updated the research note, rights/resource records and benchmark decision, and added a public, source-linked request for expert critique in issue [#721](https://github.com/Metivity/talk2nature/issues/721). The refreshed audit read no audio or annotation rows and retained no filenames, site labels or coordinates.
+
+This supports a possible site-group split, not verified independent sessions, label coverage or negative examples. No candidate is selected; benchmark readiness and AutoResearch remain **NOT READY**. The root checkout remains untouched.
