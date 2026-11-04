@@ -5,6 +5,7 @@ import {audacityPackage} from './audacity-export.mjs';
 import {aoefPackage} from './aoef-export.mjs';
 import {MAX_BUNDLE_BYTES, openSessionBundle, sessionSummary} from './session-import.mjs';
 import {createReviewAudioControls} from './review-audio.mjs';
+import {showFileSelection} from './file-picker.mjs';
 
 const $ = id => document.getElementById(id);
 const reviewAudio = createReviewAudioControls({audio:$('recording-audio'),button:$('listen-playback-toggle'),seek:$('listen-playback-seek'),time:$('listen-playback-time'),status:$('listen-playback-status'),confirm:message=>window.confirm(message)});
@@ -140,14 +141,14 @@ async function openRecording(bufferPromise, origin, stationSource = null) {
 }
 $('example').addEventListener('click', () => openRecording(Promise.resolve(syntheticWav()), 'synthetic'));
 $('wav-file').addEventListener('change', event => {
-  const file = event.target.files[0]; event.target.value = '';
+  const file = event.target.files[0]; showFileSelection(event.target, file); event.target.value = '';
   if (!file) return;
   const notebook = file.name.toLowerCase().endsWith('.t2n');
   if (file.size > (notebook ? MAX_NOTEBOOK_BYTES : MAX_BYTES)) { status('Choose a sound under 25 MB or a notebook under 28 MB.'); return; }
   return openRecording(file.arrayBuffer(), notebook ? 'notebook' : 'user-supplied');
 });
 $('session-zip-file').addEventListener('change', async event => {
-  const file=event.target.files[0]; event.target.value='';
+  const file=event.target.files[0]; showFileSelection(event.target,file); event.target.value='';
   if(!file) return;
   if(file.size>MAX_BUNDLE_BYTES) { $('session-import-status').textContent='Choose an original session ZIP smaller than 27 MB.'; return; }
   const current=++sessionImportRevision; $('session-zip-file').disabled=true;
@@ -227,7 +228,7 @@ $('export-aoef').addEventListener('click', async () => {
   finally { $('export-aoef').disabled = false; }
 });
 $('labels-file').addEventListener('change', async event => {
-  const file = event.target.files[0]; event.target.value = '';
+  const file = event.target.files[0]; showFileSelection(event.target, file); event.target.value = '';
   if (!file || !recording) return;
   if (file.size > 2 * 1024 * 1024) { status('Label files must be smaller than 2 MB.'); return; }
   const current = generation;
@@ -245,6 +246,7 @@ $('clear-recording').addEventListener('click', () => {
   if (!allowReplace()) return;
   generation++; releaseAudio(); recording = null; audioBytes = null; audioInfo = null; draftDirty = false; events = []; dirty = false;
   animal.set();
+  showFileSelection($('wav-file'), null); showFileSelection($('labels-file'), null);
   $('source-session-note').hidden=true; $('source-session-note').textContent=''; $('listen-loaded').hidden = true; $('event-list').replaceChildren(); status('Session cleared. Previously exported files remain on your device.');
 });
 let dragStart = null;
