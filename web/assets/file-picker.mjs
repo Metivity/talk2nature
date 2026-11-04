@@ -49,7 +49,7 @@ export function bindFilePicker(input, {DataTransferClass = globalThis.DataTransf
     setHover(false);
     const files = Array.from(event.dataTransfer?.files || []);
     if (files.length !== 1) {
-      announce(files.length ? 'Open one file at a time.' : 'No file was dropped. Tap to browse on this device.');
+      announce(files.length ? 'Open one file at a time.' : 'No file was dropped. Choose a file from this device.');
       return;
     }
     const [file] = files;
@@ -58,7 +58,7 @@ export function bindFilePicker(input, {DataTransferClass = globalThis.DataTransf
       return;
     }
     if (typeof DataTransferClass !== 'function' || typeof EventClass !== 'function') {
-      announce('File drop is unavailable here. Tap to browse on this device.');
+      announce('File drop is unavailable here. Choose a file from this device.');
       return;
     }
     try {
@@ -67,7 +67,7 @@ export function bindFilePicker(input, {DataTransferClass = globalThis.DataTransf
       input.files = transfer.files;
       input.dispatchEvent(new EventClass('change', {bubbles: true}));
     } catch {
-      announce('This browser could not open the dropped file. Tap to browse on this device.');
+      announce('This browser could not open the dropped file. Choose a file from this device.');
     }
   });
   return true;

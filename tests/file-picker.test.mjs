@@ -10,8 +10,8 @@ test('saved-moment actions appear before the research explainer and accept only 
   assert.ok(html.indexOf('compare-workbench') < html.indexOf('compare-evidence'));
   assert.match(html, /class="file-picker compare-file-picker"[^>]*for="file-a"/);
   assert.match(html, /session ZIP up to 27 MB/);
-  assert.match(html, /id="file-a" accept="\.zip,application\/zip" aria-label="Open the first saved Talk2Nature session ZIP"/);
-  assert.match(html, /id="file-b" accept="\.zip,application\/zip" aria-label="Open a second saved Talk2Nature session ZIP"/);
+  assert.match(html, /id="file-a" accept="\.zip,application\/zip" aria-label="Choose the first saved Talk2Nature session ZIP from this device"/);
+  assert.match(html, /id="file-b" accept="\.zip,application\/zip" aria-label="Choose a second saved Talk2Nature session ZIP from this device"/);
 });
 
 test('every public file import uses the shared touch-sized, labelled picker', async () => {
@@ -23,7 +23,7 @@ test('every public file import uses the shared touch-sized, labelled picker', as
   assert.equal(inputs.length, 7);
   const selectedNames = [listen, annotations, compare].join('\n').match(/data-selected-file aria-live="polite" hidden/g) ?? [];
   assert.equal(selectedNames.length, inputs.length);
-  for (const input of inputs) assert.match(input, /aria-label="Open/);
+  for (const input of inputs) assert.match(input, /aria-label="(?:Open|Choose)/);
   for (const id of ['wav-file', 'session-zip-file', 'labels-file', 'annotation-file-a', 'annotation-file-b']) {
     assert.match(`${listen}\n${annotations}`, new RegExp(`class="file-picker[^\"]*"[^>]*for="${id}"`));
   }
@@ -44,13 +44,13 @@ test('selected filename is shown in the local file picker and can be cleared', (
   assert.equal(output.hidden, true);
 });
 
-test('file picker describes device browsing and computer drop support', async () => {
+test('file picker names phone file locations and computer drop support', async () => {
   const [listen, annotations, compare] = await Promise.all([
     read('../web/templates/listen.html'), read('../web/templates/annotation-compare.html'), read('../web/templates/compare.html'),
   ]);
   for (const page of [listen, annotations, compare]) {
-    assert.match(page, /Tap to browse/);
-    assert.match(page, /desktop: drop here/);
+    assert.match(page, /Files or Downloads/);
+    assert.match(page, /computer: drop here/);
   }
 });
 
