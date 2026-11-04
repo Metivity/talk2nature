@@ -10,7 +10,7 @@ export const KINDS = ['uncertain', 'vocalization', 'other sound'];
 export const CONFIDENCE = ['uncertain', 'clear'];
 
 export function readWav(buffer) {
-  if (!(buffer instanceof ArrayBuffer) || buffer.byteLength < 44 || buffer.byteLength > MAX_BYTES) throw Error('Choose a WAV file between 44 bytes and 25 MB.');
+  if (!(buffer instanceof ArrayBuffer) || buffer.byteLength < 44 || buffer.byteLength > MAX_BYTES) throw Error('This file must be a WAV between 44 bytes and 25 MB. Open a supported sound file.');
   const view = new DataView(buffer);
   const tag = p => String.fromCharCode(...new Uint8Array(buffer, p, 4));
   if (tag(0) !== 'RIFF' || tag(8) !== 'WAVE' || view.getUint32(4, true) + 8 !== buffer.byteLength) throw Error('Expected a complete RIFF/WAVE file.');

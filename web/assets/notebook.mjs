@@ -27,7 +27,7 @@ export async function makeNotebook(audio, labels) {
   return output.buffer;
 }
 export async function readNotebook(buffer) {
-  if (!(buffer instanceof ArrayBuffer) || buffer.byteLength < 56 || buffer.byteLength > MAX_NOTEBOOK_BYTES) throw Error('Choose a complete Talk2Nature notebook under 28 MB.');
+  if (!(buffer instanceof ArrayBuffer) || buffer.byteLength < 56 || buffer.byteLength > MAX_NOTEBOOK_BYTES) throw Error('This is not a complete Talk2Nature notebook under 28 MB. Open the original notebook file.');
   if (decoder.decode(new Uint8Array(buffer, 0, 8)) !== MAGIC) throw Error('This is not a supported Talk2Nature notebook.');
   const length = new DataView(buffer).getUint32(8, true);
   if (!length || length > MAX_LABELS || 12 + length + 44 > buffer.byteLength) throw Error('The notebook is incomplete or its notes are too large.');

@@ -1,5 +1,11 @@
 # Search discovery snapshot — 2026-11-03
 
+## November 4 refresh
+
+A fresh site-restricted web search surfaced the Talk2Nature homepage, research library, atlas, evidence map, reading paths, frontiers, and several individual research notes. The search provider labeled the homepage result as crawled three weeks ago and the resource directory about six days ago; its homepage snippet still showed older copy and its old page title. This confirms discovery of some public routes, while also showing that search results lag the live site. It does not establish Google indexing, ranking, traffic or freshness. Search Console remains unavailable in the connected session.
+
+The current local candidate improves the home title and description with direct subject terms (“animal communication research” and “bioacoustic AI”) and places the contributor route in the hero. Those changes are not public until a Pages deployment and subsequent crawl. See [UX review](UX_REVIEW_2026-11-04.md) and the release status in [STATUS](STATUS.md).
+
 ## Question
 
 Can a public search surface Talk2Nature's research work, and what can this check establish before the newest research page is published?

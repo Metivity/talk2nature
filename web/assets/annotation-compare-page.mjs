@@ -1,7 +1,8 @@
 import {compareAnnotations,parseAnnotationText} from './annotation-compare.mjs';
-import {showFileSelection} from './file-picker.mjs';
+import {bindFilePicker, showFileSelection} from './file-picker.mjs';
 
 const $=id=>document.getElementById(id);
+for (const id of ['annotation-file-a','annotation-file-b']) bindFilePicker($(id));
 const selected={a:null,b:null};
 const selectionVersion={a:0,b:0};
 let currentReport=null, reportUrl=null;
@@ -54,7 +55,7 @@ async function openFile(key,file){
   const version=++selectionVersion[key];
   selected[key]=null;resetResults();$('annotation-compare-error').textContent='';$('annotation-status-'+key).textContent='Checking this local file…';
   try{
-    if(file.size>2*1024*1024)throw Error('Choose an annotation file smaller than 2 MB.');
+    if(file.size>2*1024*1024)throw Error('This file is over the 2 MB limit. Open a smaller labels JSON file.');
     const document=parseAnnotationText(await file.text());
     if(version!==selectionVersion[key])return;
     selected[key]=document;

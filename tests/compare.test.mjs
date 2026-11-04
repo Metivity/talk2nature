@@ -100,7 +100,7 @@ test('real file-change UI keeps a valid session after a bad replacement and rend
     document.hidden=true;documentEvents.visibilitychange();assert.equal(get('compare-player').paused,true);assert.match(get('compare-playback-status').textContent,/left the foreground/);
     await get('compare-playback-toggle').listeners.click();assert.equal(state.confirmations.length,3);assert.equal(get('compare-player').plays,2);
     get('file-a').files=[{name:'replacement.zip',size:7,arrayBuffer:async()=>new ArrayBuffer(7)}];get('file-a').listeners.change();
-    assert.equal(get('file-a').selectedFile.textContent,'Selected: replacement.zip');
+    assert.equal(get('file-a').selectedFile.textContent,'Ready on this device: replacement.zip · Open again to replace');
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
     assert.match(get('status-a').textContent,/previous session is still open/);assert.equal(get('title-a').textContent,'Saved moment');assert.match(text(get('content-a')),/<img/);
     get('clear-a').listeners.click();assert.equal(get('file-a').selectedFile.textContent,'');assert.equal(get('file-a').selectedFile.hidden,true);assert.equal(get('compare-player').src,undefined);assert.equal(get('compare-player-panel').hidden,true);assert.equal(get('compare-results').hidden,true);assert.equal(get('compare-view-results').hidden,true);

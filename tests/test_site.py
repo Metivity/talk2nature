@@ -1988,7 +1988,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('id="station-save-ack" class="station-save-ack" type="button" hidden>I saved the file</button>',station)
             self.assertIn('If it opens as a preview, use Share → Save to Files',station)
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
-            self.assertIn('Choose the original Talk2Nature session ZIP.',compare)
+            self.assertIn('Open the original Talk2Nature session ZIP.',compare)
             self.assertIn('Open a saved moment',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
             self.assertIn('First moment only is fine.',compare)
@@ -2149,7 +2149,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('We check the saved sound hashes',sound_desk)
             self.assertIn('carry a copy of the session journal',sound_desk)
             self.assertIn('accept=".zip,application/zip"',compare)
-            self.assertIn('Session ZIP · up to 27 MB · no unzipping',compare)
+            self.assertIn('session ZIP up to 27 MB',compare)
+            self.assertIn('desktop: drop here',compare)
 
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:

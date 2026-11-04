@@ -5,7 +5,7 @@ export const MAX_OVERLAP_PAIRS = 10000;
 
 export function parseAnnotationText(text) {
   if (typeof text !== 'string' || new TextEncoder().encode(text).byteLength > MAX_ANNOTATION_BYTES) {
-    throw Error('Choose an annotation file smaller than 2 MB.');
+    throw Error('This file is over the 2 MB limit. Open a smaller labels JSON file.');
   }
   let document;
   try { document = JSON.parse(text); }
