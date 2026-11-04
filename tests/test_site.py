@@ -22,6 +22,16 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
+    def test_homepage_offers_clear_first_steps(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True)
+            home=(root/'index.html').read_text()
+        self.assertIn('/talk2nature/app/station/?mode=demo#station-console',home)
+        self.assertIn('Try an example · no microphone',home)
+        self.assertIn('/talk2nature/community/university/',home)
+        self.assertIn('Choose a first contribution',home)
+
     def test_compare_explains_detection_generalization_and_receiver_evidence(self):
         project_root=Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as d:
@@ -166,10 +176,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn("'End rehearsal'",station_script)
         live_labels=('Try invented example · no microphone','Mark an observation','Finish and review',
                      'Save this moment','I saved the file',
-                     'Open Compare moments to review it','Open a saved moment')
+                     'Open Compare moments to review it','Choose a saved moment')
         for label in live_labels:
             with self.subTest(button=label):
-                self.assertIn(label,station if label!='Open a saved moment' else compare)
+                self.assertIn(label,station if label!='Choose a saved moment' else compare)
         expected_steps=('Try an example · no microphone',
                         'no-microphone practice button','one observation marker',
                         'End rehearsal','Finish and review','invented-session recap')
@@ -180,7 +190,7 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(positions,sorted(positions))
         self.assertIn('Optional deeper file check',contributor)
         advanced_steps=('Save this moment','I saved the file',
-                        'Open Compare moments to review it','Open a saved moment',
+                        'Open Compare moments to review it','Choose a saved moment',
                         'select the downloaded session ZIP')
         advanced_positions=[contributor.index(step) for step in advanced_steps]
         self.assertEqual(advanced_positions,sorted(advanced_positions))
@@ -1989,7 +1999,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('If it opens as a preview, use Share → Save to Files',station)
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
             self.assertIn('Open the original Talk2Nature session ZIP.',compare)
-            self.assertIn('Open a saved moment',compare)
+            self.assertIn('Choose a saved moment',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
             self.assertIn('First moment only is fine.',compare)
             self.assertIn('Open one saved moment.',(root/'app'/'index.html').read_text())
@@ -2150,7 +2160,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('carry a copy of the session journal',sound_desk)
             self.assertIn('accept=".zip,application/zip"',compare)
             self.assertIn('session ZIP up to 27 MB',compare)
-            self.assertIn('desktop: drop here',compare)
+            self.assertIn('computer: drop here',compare)
 
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:
