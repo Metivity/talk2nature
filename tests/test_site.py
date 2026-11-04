@@ -166,10 +166,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn("'End rehearsal'",station_script)
         live_labels=('Try invented example · no microphone','Mark an observation','Finish and review',
                      'Save this moment','I saved the file',
-                     'Open Compare moments to review it','Choose saved moment')
+                     'Open Compare moments to review it','Open a saved moment')
         for label in live_labels:
             with self.subTest(button=label):
-                self.assertIn(label,station if label!='Choose saved moment' else compare)
+                self.assertIn(label,station if label!='Open a saved moment' else compare)
         expected_steps=('Try an example · no microphone',
                         'no-microphone practice button','one observation marker',
                         'End rehearsal','Finish and review','invented-session recap')
@@ -180,8 +180,8 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(positions,sorted(positions))
         self.assertIn('Optional deeper file check',contributor)
         advanced_steps=('Save this moment','I saved the file',
-                        'Open Compare moments to review it','Choose saved moment',
-                        'to reopen the download')
+                        'Open Compare moments to review it','Open a saved moment',
+                        'select the downloaded session ZIP')
         advanced_positions=[contributor.index(step) for step in advanced_steps]
         self.assertEqual(advanced_positions,sorted(advanced_positions))
 
@@ -1988,10 +1988,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn('id="station-save-ack" class="station-save-ack" type="button" hidden>I saved the file</button>',station)
             self.assertIn('If it opens as a preview, use Share → Save to Files',station)
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
-            self.assertIn('Choose the moment you downloaded from Talk2Nature. No unzipping needed.',compare)
-            self.assertIn('Choose saved moment',compare)
+            self.assertIn('Choose the original Talk2Nature session ZIP.',compare)
+            self.assertIn('Open a saved moment',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
-            self.assertIn('You can review the first moment by itself.',compare)
+            self.assertIn('First moment only is fine.',compare)
             self.assertIn('Open one saved moment.',(root/'app'/'index.html').read_text())
 
     def test_mobile_guide_explains_direct_single_session_reopen_without_unzipping(self):
@@ -2149,7 +2149,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('We check the saved sound hashes',sound_desk)
             self.assertIn('carry a copy of the session journal',sound_desk)
             self.assertIn('accept=".zip,application/zip"',compare)
-            self.assertIn('No unzipping needed.',compare)
+            self.assertIn('Session ZIP · up to 27 MB · no unzipping',compare)
 
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:
