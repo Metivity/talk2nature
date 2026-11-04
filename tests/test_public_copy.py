@@ -12,12 +12,11 @@ class PublicCopyTests(unittest.TestCase):
             build(root, 'https://fixture.github.io/talk2nature', True)
             home = (root / 'index.html').read_text()
             companion = (root / 'app' / 'index.html').read_text()
+            public_html = '\n'.join(path.read_text() for path in root.rglob('*.html'))
             self.assertIn('Curiosity, held with care.', home)
-            self.assertNotIn('Less scrolling.', home)
-            self.assertNotIn('More noticing.', home)
             self.assertIn('Start with a<br><em>small observation.</em>', companion)
-            self.assertNotIn('Less scrolling.', companion)
-            self.assertNotIn('More noticing.', companion)
+            self.assertNotIn('Less scrolling.', public_html)
+            self.assertNotIn('More noticing.', public_html)
 
 
 if __name__ == '__main__':
