@@ -6419,5 +6419,29 @@
     "url": "https://data.mendeley.com/datasets/skryf4tkff/1",
     "checked": "2026-11-04",
     "origin": "Reviewed the official version 1 landing-page metadata, file descriptions, license declaration and linked Zenodo DOI. No download or file-level inspection occurred."
+  },
+  {
+    "id": 643,
+    "title": "A bird song detector for improving bird identification through deep learning: A case study from Doñana",
+    "description": "Márquez-Rodríguez et al. (2025), Ecological Informatics 90, 103254. Full-text review of collection design, annotation, split and reported results; this is the primary study, not an independent replication.",
+    "url": "https://doi.org/10.1016/j.ecoinf.2025.103254",
+    "checked": "2026-11-05",
+    "origin": "Publisher record plus author-posted full-text copy. Reviewed dataset design, annotation, train/validation/test allocation, results and data availability. No data, supplementary payload, code or weights acquired or executed."
+  },
+  {
+    "id": 644,
+    "title": "BIRDeep Audio Annotations · current Hugging Face dataset snapshot",
+    "description": "Official dataset-card and metadata review at commit 4168dcc5e6c3ac421c24dc83cf72191e8d26f935; the repository currently declares MIT and lists audio, images, labels and three split CSVs.",
+    "url": "https://huggingface.co/datasets/GrunCrow/BIRDeep_AudioAnnotations/tree/4168dcc5e6c3ac421c24dc83cf72191e8d26f935",
+    "checked": "2026-11-05",
+    "origin": "Read the official dataset card and verified snapshot SHA, last-modified metadata, current DOI and file inventory through the Hugging Face dataset page/API. The paper cites DOI 10.57967/hf/4821 while the current page shows 10.57967/hf/6980. The hosted viewer reports a training-CSV parse error; no CSV rows or media payload were fetched."
+  },
+  {
+    "id": 645,
+    "title": "BIRDeep neural-network and model repository · current main commit",
+    "description": "Project repository README, file listing and root license declaration for the research code, training outputs and model artifacts.",
+    "url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
+    "checked": "2026-11-05",
+    "origin": "Read the public repository landing page and README; GitHub API identified the current main commit bb0ac816535bf998bc38fadeb9197249aa137cdc (2026-06-22). The repository declares MIT for code and lists model/checkpoint files; no code, dependencies or model files were acquired or executed. The README contains an incomplete validation-metric placeholder, so it is not a standalone reproduction artifact."
   }
 ]

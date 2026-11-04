@@ -7696,8 +7696,11 @@
     "kind": "Dataset and task-fit review",
     "purpose": "Models & evaluation",
     "year": "2026",
-    "year_label": "Data in Brief 67, 113038; dataset v1 released 2026-07-08",
-    "source_ids": [641, 642],
+    "year_label": "PeaDetect peafowl vocalization dataset review",
+    "source_ids": [
+      641,
+      642
+    ],
     "reviewed": "2026-11-04",
     "review_stage": "Targeted primary-article methods and versioned dataset-record review; no dataset payload inspected",
     "review_depth": "Reviewed the article's data collection, source-class composition, preprocessing, labeling, expert-validation, source-recording split and data-availability sections; checked the official Mendeley Data v1 landing page for version, files and dataset-level license. The archive, CSV rows, source-level audio licenses, fold membership, code and model artifacts were not inspected. This is not an independent reproduction or specialist review.",
@@ -7726,7 +7729,36 @@
       "location_note": "The multi-source dataset article reports broad countries and its source metadata includes precise locations. No new site-level study geography was independently mapped; precise locations are not reproduced here.",
       "locations": [],
       "observation_period": null
-    },
-    "year_label": "PeaDetect peafowl vocalization dataset review"
+    }
+  },
+  {
+    "slug": "birdeep-donana-bird-vocalization-detection-2025",
+    "title": "BIRDeep tests regional bird-event detection, not site transfer",
+    "seo_description": "A source-grounded review of BIRDeep’s Doñana bird-vocalization labels, file-disjoint splits, rights and site-transfer limits.",
+    "taxon": "Birds · vocalization-event detection · Doñana",
+    "kind": "Dataset and task-fit review",
+    "purpose": "Models & evaluation",
+    "year": "2025",
+    "year_label": "BIRDeep Doñana bird-vocalization detection study",
+    "source_ids": [
+      643,
+      644,
+      645
+    ],
+    "reviewed": "2026-11-05",
+    "review_stage": "Full article methods/results review plus pinned dataset-card/API and repository metadata; no payload inspection",
+    "review_depth": "Reviewed the publisher article and author-posted full text for recorder design, annotation, data allocation and reported task; checked the official Hugging Face card and pinned snapshot metadata, plus the public GitHub repository README/license/file inventory and current main commit. No dataset row, audio, spectrogram, code, dependency or model payload was acquired or executed. This is not an independent reproduction or external scientific review.",
+    "finding": "BIRDeep is a useful source for learning how a regional bird-vocalization event detector can be built from expert temporal annotations. The paper describes 461 minutes of 32 kHz recordings, one minute recorded every ten minutes by nine AudioMoth recorders across three Doñana habitats. Two ornithologically experienced annotators marked vocalization events; field censuses were consulted when calls were uncertain. The article reports an 80/10/10 per-species allocation and explicitly keeps each exact audio file in one split. This supports a bounded file-disjoint within-study evaluation design. It does not establish a site-, recorder-, date- or session-held-out test. The labels and temporal-frequency boxes are closer to event detection/localization than to conversation or call meaning.",
+    "limitations": "Annotations prioritized high-activity periods, especially morning chorus; this collection cannot establish ordinary soundscape prevalence. A one-minute clip with no recorded annotation or an unverified interval is not automatically a true negative. The paper abstract reports 34 classes while its methods and dataset card report 38. The current HF page declares MIT and shows DOI 10.57967/hf/6980; the article cites an earlier dataset DOI, 10.57967/hf/4821. The hosted viewer currently reports a parser error for a training CSV row; we did not inspect or repair the CSV. The dataset page exposes exact recorder coordinates, which are intentionally not reproduced or mapped. The repository's MIT code statement does not clear audio or model weights, and the code README still contains an incomplete validation-metric placeholder. No qualified outside review has occurred. This is not a Talk2Nature result, selected benchmark, communication test or independent validation.",
+    "lesson": "Keep this as a regional event-detection and annotation-workflow lead. Preserve the distinction between event labels, verified absence, recording-level labels and ecological occupancy. The reported split is file-disjoint only on the evidence reviewed. A useful next assessment would test whether a site-held-out estimand can be formed without leaking adjacent recordings, whether negative segments are genuinely reviewed, and whether all data/model rights permit the intended use. Do not replace the general ten-second bird-presence question silently; the current review does not justify any benchmark selection.",
+    "next_review": "Keep metadata-only. Before any media, CSV or model access, obtain qualified independent bioacoustics and ML/statistical review; reconcile the dataset DOI/version and MIT declaration with intended use; determine whether a site/date/recorder-held-out split and verified negatives exist; inspect only a rights-approved, coordinate-minimized manifest if the review supports it. Do not train, run AutoResearch, map exact recorder sites or claim field transfer.",
+    "expert_review": "No independent review of the task, labels or split has occurred.",
+    "atlas": {
+      "reviewed": "2026-11-05",
+      "location_status": "pending",
+      "location_note": "The paper names Doñana National Park in Spain; the dataset card exposes exact recorder coordinates for nine locations. No sensitive-site review was conducted, so this entry is not mapped and no recorder coordinates are copied.",
+      "locations": [],
+      "observation_period": null
+    }
   }
 ]

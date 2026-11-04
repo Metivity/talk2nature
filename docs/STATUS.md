@@ -1,3 +1,9 @@
+# November 5, 2026 — screen BIRDeep as a metadata-only event-detection lead
+
+Added an evidence-grounded research note and separate paper, dataset, code and model-artifact records from the Doñana BIRDeep work. The paper reports expert temporal annotations and exact-audio-file-disjoint train/validation/test splits. It does not document site/recorder/date-held-out evaluation; sampling prioritized dawn/morning activity. The current dataset page declares MIT but the scope of audio rights is unresolved, its DOI differs from the identifier cited in the paper, and its hosted train CSV viewer currently reports a parser error. No rows, audio, code, weights or coordinates were acquired or used.
+
+The candidate is useful for event-detection methods, but it is not a general bird-presence benchmark or communication evidence. A separate review of negative-label coverage and site grouping is still needed before any access. AutoResearch and real-data admission remain **NOT READY**.
+
 # November 4, 2026 — open an independent PeaDetect methods-review issue
 
 Created public repository issue [#715](https://github.com/Metivity/talk2nature/issues/715) after checking for an existing open PeaDetect issue. It asks five bounded questions about task usefulness, source-recording grouping, platform baselines, minimum metadata review and later field transfer. It links the source-grounded brief and explicitly requests no dataset files, labels, audio, coordinates or uploads.
