@@ -1,4 +1,5 @@
 import {compareAnnotations,parseAnnotationText} from './annotation-compare.mjs';
+import {showFileSelection} from './file-picker.mjs';
 
 const $=id=>document.getElementById(id);
 const selected={a:null,b:null};
@@ -49,6 +50,7 @@ function render(report){
 }
 async function openFile(key,file){
   if(!file)return;
+  showFileSelection($('annotation-file-'+key),file);
   const version=++selectionVersion[key];
   selected[key]=null;resetResults();$('annotation-compare-error').textContent='';$('annotation-status-'+key).textContent='Checking this local file…';
   try{
@@ -68,7 +70,7 @@ for(const key of ['a','b'])$('annotation-file-'+key).addEventListener('change',e
 $('annotation-compare-clear').addEventListener('click',()=>{
   for(const key of ['a','b'])selectionVersion[key]++;
   selected.a=null;selected.b=null;resetResults();$('annotation-compare-error').textContent='';$('annotation-download-status').textContent='';
-  for(const key of ['a','b']){$('annotation-file-'+key).value='';$('annotation-status-'+key).textContent='Nothing selected.';}
+  for(const key of ['a','b']){showFileSelection($('annotation-file-'+key),null);$('annotation-file-'+key).value='';$('annotation-status-'+key).textContent='Nothing selected.';}
   $('annotation-file-a').focus();
 });
 $('annotation-report-download').addEventListener('click',()=>{
