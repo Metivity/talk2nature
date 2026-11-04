@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {showFileSelection} from '../web/assets/file-picker.mjs';
 
 const read = path => readFile(new URL(path, import.meta.url), 'utf8');
 
@@ -20,10 +21,25 @@ test('every public file import uses the shared touch-sized, labelled picker', as
   ]);
   const inputs = [listen, annotations, compare].join('\n').match(/<input[^>]+type="file"[^>]*>/g) ?? [];
   assert.equal(inputs.length, 7);
+  const selectedNames = [listen, annotations, compare].join('\n').match(/data-selected-file aria-live="polite" hidden/g) ?? [];
+  assert.equal(selectedNames.length, inputs.length);
   for (const input of inputs) assert.match(input, /aria-label="Choose/);
   for (const id of ['wav-file', 'session-zip-file', 'labels-file', 'annotation-file-a', 'annotation-file-b']) {
     assert.match(`${listen}\n${annotations}`, new RegExp(`class="file-picker[^\"]*"[^>]*for="${id}"`));
   }
   assert.match(design, /\.file-picker input\[type=file\]\{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0/);
   assert.match(design, /\.file-picker:focus-within\{outline:/);
+});
+
+test('selected filename is shown in the local file picker and can be cleared', () => {
+  const output = {textContent: '', title: '', hidden: true};
+  const label = {querySelector: selector => selector === '[data-selected-file]' ? output : null};
+  const input = {closest: selector => selector === '.file-picker' ? label : null};
+  assert.equal(showFileSelection(input, {name: 'evening-song.t2n'}), true);
+  assert.equal(output.textContent, 'Selected: evening-song.t2n');
+  assert.equal(output.title, 'evening-song.t2n');
+  assert.equal(output.hidden, false);
+  assert.equal(showFileSelection(input, null), false);
+  assert.equal(output.textContent, '');
+  assert.equal(output.hidden, true);
 });
