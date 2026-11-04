@@ -1,3 +1,15 @@
+# November 4, 2026 — diagnose file selection against the live Pages release
+
+**Question:** is the file chooser itself difficult, or is the public site still serving an older implementation?
+
+**Evidence:** current public `main` (`b120f480`) uses the shared, touch-sized, labeled file-picker across all seven file inputs. The Listen workflow states phone locations and supported sizes, shows a selected filename, accepts desktop drag-and-drop, and keeps its microphone-free example prominent. A local noindex preview at 390 CSS px displayed this path; a generated synthetic WAV opened successfully through the browser file chooser and stayed local. This is browser emulation, not physical-phone acceptance.
+
+**Live release and SEO:** the repository's live-site verifier ran with a certifi-verified TLS context. `robots.txt` and the sitemap were fetched, and all **154** sitemap routes were attempted. Canonical/title/description/indexability checks passed; the sole contract failure is the stale Station disclosure. A direct read of the live Listen page still shows the older bare browser file inputs and the internal phrase “Less scrolling. More noticing.” The new PeaDetect research route returns **404**. This is a stale Pages release, not a defect in the current source. No search-engine indexing or ranking result was checked.
+
+**Decision and limits:** no new file-picker redesign is justified by the current source test; the main usability gap is that the improved version is not published. The synthetic import does not establish actual iPhone/Android file-picker behavior, and the native picker remains controlled by the operating system. No participant or animal data were used.
+
+**Next:** publish the already-authorized current `main` through the manual Pages workflow when the Metivity GitHub session is signed in. Then repeat the live route/canonical/sitemap check, confirm the stale copy is gone, and inspect actual device behavior separately. Keep independent scientific review and Search Console indexing evidence open.
+
 # November 4, 2026 — open a bounded public methods-review request for PeaDetect
 
 **Question:** could the published five-fold, source-recording-grouped PeaDetect collection support a useful, narrowly stated five-second peafowl-vocalization detection reproduction, and what claim can the grouping justify?

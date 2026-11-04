@@ -1,3 +1,13 @@
+# November 4, 2026 — diagnose file selection against the live Pages release
+
+The current `main` source already uses the shared accessible file-picker on all seven imports, with phone guidance, desktop drop support, selected-filename feedback and a prominent no-microphone example. At 390 CSS px, a local noindex browser preview accepted a generated synthetic WAV through the ordinary file chooser and opened it locally. This does not establish physical-phone behavior.
+
+The certifi-verified live-site check fetched robots.txt and sitemap and attempted all **154** listed routes. Titles, descriptions, canonicals and `index,follow` passed for the checked routes; the only contract failure is the old Station disclosure. The live Listen page still serves bare native file inputs and the internal “Less scrolling. More noticing.” phrase, and the PeaDetect route returns **404**. Current source has not reached Pages. Search Console and search indexing were not checked.
+
+No file-picker source change is supported by this evidence. The immediate issue is stale deployment. The only selected file was a generated synthetic WAV; no animal, participant or third-party data were used. Native iPhone/Android file-picker behavior remains unverified.
+
+**Next:** use the manual Pages workflow with the signed-in Metivity GitHub session, then repeat the live route/sitemap check and inspect the actual published Listen page. Continue separate named-device and Search Console checks; no ranking or indexing result is claimed.
+
 # November 4, 2026 — open a bounded public methods-review request for PeaDetect
 
 **Question:** could the published five-fold, source-recording-grouped PeaDetect collection support a useful, narrowly stated five-second peafowl-vocalization detection reproduction, and what claim can the grouping justify?
