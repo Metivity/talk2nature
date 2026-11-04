@@ -5,6 +5,7 @@ import {WindowSession} from './window-model.mjs';
 import {sessionFiles,zipFiles} from './station-export.mjs';
 import {sessionLabel} from './session-label.mjs';
 import {createReviewAudioControls} from './review-audio.mjs';
+import {showFileSelection} from './file-picker.mjs';
 
 const $=id=>document.getElementById(id), slots={a:new SessionSlot(),b:new SessionSlot()};
 const reviewAudio=createReviewAudioControls({audio:$('compare-player'),button:$('compare-playback-toggle'),seek:$('compare-playback-seek'),time:$('compare-playback-time'),status:$('compare-playback-status'),confirm:message=>window.confirm(message)});
@@ -52,8 +53,8 @@ async function loadSlot(key,load){
   catch(error){$('status-'+key).textContent=`Could not open this session. ${error.message} ${slots[key].value?'Your previous session is still open.':''}`;}
 }
 for(const key of ['a','b']){
-  $('file-'+key).addEventListener('change',()=>{const file=$('file-'+key).files[0];if(!file)return;exampleRun++;$('compare-example').disabled=false;$('compare-status').textContent='Your files stay on this device. Nothing is uploaded or saved in the browser.';loadSlot(key,async()=>{if(file.size>MAX_BUNDLE_BYTES)throw Error('Choose a session ZIP smaller than 27 MB.');return openSessionBundle(await file.arrayBuffer());});$('file-'+key).value='';});
-  $('clear-'+key).addEventListener('click',()=>{exampleRun++;$('compare-example').disabled=false;$('compare-status').textContent='Your files stay on this device. Nothing is uploaded or saved in the browser.';slots[key].clear();if(audioSlot===key)stopPlayer();$('status-'+key).textContent='Closed. Your original saved file is unchanged.';renderSlot(key);renderComparison();$('file-'+key).focus();});
+  $('file-'+key).addEventListener('change',()=>{const input=$('file-'+key),file=input.files[0];showFileSelection(input,file);if(!file)return;exampleRun++;$('compare-example').disabled=false;$('compare-status').textContent='Your files stay on this device. Nothing is uploaded or saved in the browser.';loadSlot(key,async()=>{if(file.size>MAX_BUNDLE_BYTES)throw Error('Choose a session ZIP smaller than 27 MB.');return openSessionBundle(await file.arrayBuffer());});input.value='';});
+  $('clear-'+key).addEventListener('click',()=>{exampleRun++;$('compare-example').disabled=false;$('compare-status').textContent='Your files stay on this device. Nothing is uploaded or saved in the browser.';slots[key].clear();showFileSelection($('file-'+key),null);if(audioSlot===key)stopPlayer();$('status-'+key).textContent='Closed. Your original saved file is unchanged.';renderSlot(key);renderComparison();$('file-'+key).focus();});
 }
 async function example(index){
   const s=new WindowSession(8000,{origin:'synthetic',animalContext:{group:'parrot',species:'Budgerigar',basis:'observer-declared'}});
