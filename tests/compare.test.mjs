@@ -77,7 +77,8 @@ test('failed replacement preserves the open session; stale and cancelled loads c
 
 test('real file-change UI keeps a valid session after a bad replacement and renders notes as text',async()=>{
   class Element {
-    constructor(tag='div'){this.tag=tag;this.children=[];this.listeners={};this.textContent='';this.hidden=false;this.files=[];this.value='';this.paused=true;this.ended=false;this.currentTime=0;this.duration=NaN;this.plays=0;this.pauses=0;}
+    constructor(tag='div'){this.tag=tag;this.children=[];this.listeners={};this.textContent='';this.hidden=false;this.files=[];this.value='';this.paused=true;this.ended=false;this.currentTime=0;this.duration=NaN;this.plays=0;this.pauses=0;this.selectedFile={textContent:'',title:'',hidden:true};}
+    closest(selector){return selector==='.file-picker'?{querySelector:name=>name==='[data-selected-file]'?this.selectedFile:null}:null;}
     append(...nodes){this.children.push(...nodes);} replaceChildren(...nodes){this.children=nodes;this.textContent='';}
     addEventListener(name,fn){this.listeners[name]=fn;} setAttribute(name,value){this[name]=value;} removeAttribute(name){delete this[name];}
     pause(){this.paused=true;this.pauses++;this.listeners.pause?.();} async play(){this.paused=false;this.ended=false;this.plays++;this.listeners.play?.();} load(){} focus(){} scrollIntoView(){}
@@ -98,10 +99,11 @@ test('real file-change UI keeps a valid session after a bad replacement and rend
     state.confirm=true;await get('compare-playback-toggle').listeners.click();assert.equal(get('compare-player').plays,1);assert.equal(get('compare-playback-toggle').textContent,'Pause review');
     document.hidden=true;documentEvents.visibilitychange();assert.equal(get('compare-player').paused,true);assert.match(get('compare-playback-status').textContent,/left the foreground/);
     await get('compare-playback-toggle').listeners.click();assert.equal(state.confirmations.length,3);assert.equal(get('compare-player').plays,2);
-    get('file-a').files=[{size:7,arrayBuffer:async()=>new ArrayBuffer(7)}];get('file-a').listeners.change();
+    get('file-a').files=[{name:'replacement.zip',size:7,arrayBuffer:async()=>new ArrayBuffer(7)}];get('file-a').listeners.change();
+    assert.equal(get('file-a').selectedFile.textContent,'Selected: replacement.zip');
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
     assert.match(get('status-a').textContent,/previous session is still open/);assert.equal(get('title-a').textContent,'Saved moment');assert.match(text(get('content-a')),/<img/);
-    get('clear-a').listeners.click();assert.equal(get('compare-player').src,undefined);assert.equal(get('compare-player-panel').hidden,true);assert.equal(get('compare-results').hidden,true);assert.equal(get('compare-view-results').hidden,true);
+    get('clear-a').listeners.click();assert.equal(get('file-a').selectedFile.textContent,'');assert.equal(get('file-a').selectedFile.hidden,true);assert.equal(get('compare-player').src,undefined);assert.equal(get('compare-player-panel').hidden,true);assert.equal(get('compare-results').hidden,true);assert.equal(get('compare-view-results').hidden,true);
     await get('compare-example').listeners.click();assert.match(text(get('summary-a')),/complete/);assert.match(text(get('summary-b')),/partial/);assert.equal(get('compare-results').hidden,false);assert.equal(get('compare-view-results').hidden,false);assert.match(get('compare-status').textContent,/Choose “View side-by-side comparison”/);
     lifecycle.pagehide();assert.equal(get('compare-results').hidden,true);assert.equal(get('compare-view-results').hidden,true);assert.equal(get('details-a').hidden,true);assert.equal(get('details-b').hidden,true);assert.equal(get('compare-player').src,undefined);
   }finally{delete globalThis.document;delete globalThis.window;}
