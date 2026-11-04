@@ -1,3 +1,13 @@
+# November 4, 2026 — close the CEB metadata-only grouping gate
+
+**Question:** can public CEB v1.1 metadata establish independent recording domains for the proposed ten-second bird-sound-presence task without inspecting annotation rows or evaluation labels?
+
+**Evidence reviewed:** rechecked the official [Zenodo v1.1 record](https://zenodo.org/records/21821133), including its subset description, file inventory, license and version notes. The published file path uses anonymized `<subset>_project_<NNN>/audio_<NNNNNN>.flac` identifiers, but the record does not define those project tokens as sites, devices, sessions or deployments. The record says coordinates are rounded to whole degrees. It lists the 8,559,233-byte training annotation CSV above the collector's 5 MiB per-file cap and the 2,401,049-byte public test-label CSV; neither table was opened. No new files, rows, audio, code or model weights were acquired or run.
+
+**Decision:** public metadata cannot currently support the intended independent-domain claim. Keep CEB metadata-only and out of the first benchmark; do not chunk the training table around the cap or treat public test labels as a locked holdout. This is an evidence limit on the disclosed release metadata, not a claim that the underlying recordings lack meaningful groups. Continue screening a smaller candidate only if its negative-label provenance, source-recording/session/site keys, component rights and untouched evaluation can be established before data access. AutoResearch and real-data admission remain **NOT READY**.
+
+**Checks and limits:** the existing CEB note and run card already preserve its per-file grouping, rights and label caveats; this review adds no dataset admission or code change. This is a primary-record metadata review, not an expert review, row-level audit or independent benchmark.
+
 # November 3, 2026 — apply forest-soundscape methods to the first task
 
 Revisited the already-catalogued Zenodo v2 forest soundscape corpus and applied its annotation and grouping limits to the existing public research assessment. Its record describes 1,302 ten-minute recordings across 104 sites/four parks, approximately 183,000 expert annotations and a 27.7 GB release. The landing-page Rights/License panel is blank; the previously reviewed Zenodo API metadata declares record-level CC BY 4.0. Its annotation account says faint/ambiguous calls and some bird/mammal sounds may be missed.
