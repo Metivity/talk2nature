@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -11410,6 +11410,60 @@
       },
       "priority": 1,
       "reviewed": "2026-11-03",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "peadetect-data-article-2026",
+      "kind": "paper",
+      "title": "PeaDetect dataset: curated Indian peafowl vocalization recordings",
+      "url": "https://doi.org/10.1016/j.dib.2026.113038",
+      "version": "Data in Brief 67 (2026), article 113038; full text PMCID PMC13382432",
+      "source_ids": [641],
+      "task": "Dataset-methods reference for a proposed five-second peafowl-vocalization presence/absence reproduction; not evidence of meaning or receiver response.",
+      "review_depth": "Targeted review of data collection, source mix, label validation, folds and data availability; not an independent reproduction.",
+      "access": "Full text is available through PubMed Central. No supplements or article files were downloaded.",
+      "decision": "Use only as a cited methods source. Keep the article and separately licensed data release distinct.",
+      "limitations": "The article is CC BY-NC 4.0. This is separate from the dataset's CC BY 4.0 declaration and the source-level terms for Xeno-Canto and Freesound recordings. No code or trained model rights were reviewed.",
+      "attribution": "Puvanendran et al. (2026), Data in Brief 67, 113038, https://doi.org/10.1016/j.dib.2026.113038.",
+      "rights": {
+        "license": "CC BY-NC 4.0",
+        "scope": "Article text only; dataset, recordings, code and model artifacts have separate rights.",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13382432/",
+        "conditions": "Cite the article and respect noncommercial terms for article reuse. Publish an original summary and link rather than copying article text or figures.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-04",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "peadetect-v1-dataset-2026",
+      "kind": "dataset",
+      "title": "PeaDetect Indian peafowl vocalization dataset",
+      "url": "https://data.mendeley.com/datasets/skryf4tkff/1",
+      "version": "Mendeley Data v1, DOI 10.17632/skryf4tkff.1; linked Zenodo DOI 10.5281/zenodo.18948717",
+      "source_ids": [641, 642],
+      "task": "Candidate for a source-recording-grouped five-second peafowl vocalization detector reproduction; separate from the general ten-second bird-presence task.",
+      "review_depth": "Reviewed the article's published dataset description and the versioned Mendeley landing-page metadata. Archive, metadata rows, fold files and source-level licenses were not inspected.",
+      "access": "The v1 page advertises a 2,950-clip dataset with metadata, sources.csv, collection protocol, annotation guidelines and Ecological Metadata Language documentation. No download was performed.",
+      "decision": "Metadata-only candidate for independent review. Not selected or admitted; no training, evaluation or public file reuse is authorized by this record.",
+      "limitations": "The article says all positives are Xeno-Canto and negatives comprise 1,092 Xeno-Canto plus 383 Freesound clips. A source-only rule therefore has a calculated 63.0% accuracy on the balanced curated set; this is a diagnostic inference, not a measured baseline. Source-recording folds do not by themselves establish held-out site, recordist, device or field-session generalization. Record-level CC BY 4.0 does not supersede each source recording's terms. Dataset metadata contains precise coordinates that must not be republished.",
+      "attribution": "Puvanendran et al. (2026), PeaDetect Dataset v1, https://doi.org/10.17632/skryf4tkff.1; cite the original source recordings and their contributors as required by the manifest.",
+      "rights": {
+        "license": "CC BY 4.0 declared for the Mendeley v1 dataset release; per-recording Xeno-Canto and Freesound terms are unresolved.",
+        "scope": "Dataset-level landing-page declaration; does not independently clear original media, article, code or model artifacts.",
+        "evidence_url": "https://data.mendeley.com/datasets/skryf4tkff/1",
+        "conditions": "Before any file use, reconcile original recording IDs and licenses, preserve required attribution, minimize precise location data and verify intended research/commercial rights. No license acceptance or acquisition occurred.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 1,
+      "reviewed": "2026-11-04",
       "acquisition": "metadata_only",
       "files": []
     }

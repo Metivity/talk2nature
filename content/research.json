@@ -7687,5 +7687,32 @@
       "observation_period": null
     },
     "year_label": "SEABAD bird-presence dataset review"
+  },
+  {
+    "slug": "peadetect-peafowl-vocalization-dataset-2026",
+    "title": "PeaDetect offers a small, grouped peafowl detection candidate",
+    "seo_description": "A source-based review of PeaDetect finds expert-checked labels and source-recording folds, with field-transfer and audio-rights limits still open.",
+    "taxon": "Birds · Indian peafowl · passive acoustic detection",
+    "kind": "Dataset and task-fit review",
+    "purpose": "Models & evaluation",
+    "year": "2026",
+    "year_label": "Data in Brief 67, 113038; dataset v1 released 2026-07-08",
+    "source_ids": [641, 642],
+    "reviewed": "2026-11-04",
+    "review_stage": "Targeted primary-article methods and versioned dataset-record review; no dataset payload inspected",
+    "review_depth": "Reviewed the article's data collection, source-class composition, preprocessing, labeling, expert-validation, source-recording split and data-availability sections; checked the official Mendeley Data v1 landing page for version, files and dataset-level license. The archive, CSV rows, source-level audio licenses, fold membership, code and model artifacts were not inspected. This is not an independent reproduction or specialist review.",
+    "finding": "PeaDetect is a bounded species-specific candidate: 2,950 five-second clips with 1,475 peafowl-vocalization positives and 1,475 absences, assembled from public recordings and manually screened. The article reports two independent annotators, an ornithologist review of 590 clips, Cohen's kappa 0.905 on that subset, and five folds that keep clips from an original recording together. The published source composition is informative: all positives are from Xeno-Canto; 1,092 negative clips are also Xeno-Canto and 383 are Freesound. From these counts, a rule that predicts presence for every Xeno-Canto clip and absence for every Freesound clip would score 1,858/2,950 (62.98%; about 63.0%) accuracy on this balanced curated collection. That is a calculated source-only diagnostic, not an observed model result. It shows why source baselines and source-aware reporting matter even though Xeno-Canto also contributes negatives.",
+    "limitations": "The data paper's reported folds group by original source recording, but their exact manifest and membership were not inspected; site-, recordist-, device- and time-held-out independence is not established. The collection is curated from Xeno-Canto and Freesound, not field-recorded with a fixed Talk2Nature phone or station, so its score would not establish field transfer or real-world prevalence. Mendeley declares CC BY 4.0 for the dataset release, while the article is CC BY-NC 4.0 and the underlying Xeno-Canto/Freesound items have separate source terms that were not reconciled per file. The source metadata includes precise locations; never republish them. No independent reviewer has assessed the task, and no dataset files, labels, audio, code or weights were acquired or run. Vocalization detection is not communication decoding, behavior inference or evidence of receiver understanding.",
+    "lesson": "Retain the project's general ten-second bird-sound-presence question as the leading task definition; do not silently replace it with this five-second single-species collection. Treat PeaDetect as the strongest newly reviewed small-data candidate for a separate, explicitly scoped peafowl-vocalization reproduction. Before considering any access, have independent avian-bioacoustics and ML/statistical reviewers assess the question and whether exact source-recording folds support a useful claim. If later authorized and terms permit, first audit only the documented manifest and per-item licenses; predeclare a source-only baseline, source-recording-grouped analysis, uncertainty by recording, and an external field-transfer holdout. Do not use synthetic sources, internet platform identity or clipped segments as a substitute for deployment evidence, and do not enable playback or automated deterrence.",
+    "next_review": "Keep metadata-only. Next decision: obtain qualified independent review of whether the task is scientifically useful and whether the original-recording folds can support a clearly bounded reproduction. If supported, prepare a rights- and privacy-reviewed manifest-only inspection plan, including per-item Xeno-Canto/Freesound licenses and coordinate minimization, before any file retrieval. Do not run a detector or AutoResearch until the shared readiness gates and a genuinely independent field evaluation are satisfied.",
+    "expert_review": "No independent peafowl/avian-bioacoustics or ML/statistical review has occurred.",
+    "atlas": {
+      "reviewed": "2026-11-04",
+      "location_status": "not_applicable",
+      "location_note": "The multi-source dataset article reports broad countries and its source metadata includes precise locations. No new site-level study geography was independently mapped; precise locations are not reproduced here.",
+      "locations": [],
+      "observation_period": null
+    },
+    "year_label": "PeaDetect peafowl vocalization dataset review"
   }
 ]
