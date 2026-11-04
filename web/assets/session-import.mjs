@@ -22,7 +22,7 @@ function crc32(bytes) {
 
 // Read only our bounded, flat, uncompressed export format. Never extract paths.
 export function readBundleFiles(buffer) {
-  check(buffer instanceof ArrayBuffer && buffer.byteLength >= 22 && buffer.byteLength <= MAX_BUNDLE_BYTES, 'Choose a Talk2Nature session ZIP smaller than 27 MB.');
+  check(buffer instanceof ArrayBuffer && buffer.byteLength >= 22 && buffer.byteLength <= MAX_BUNDLE_BYTES, 'This is not a Talk2Nature session ZIP under 27 MB. Open the original session file.');
   const bytes=new Uint8Array(buffer), v=new DataView(buffer), end=bytes.length-22;
   const u16=p=>v.getUint16(p,true), u32=p=>v.getUint32(p,true);
   check(u32(end)===0x06054b50 && u16(end+4)===0 && u16(end+6)===0 && u16(end+20)===0, 'This is not an original Talk2Nature session ZIP.');
@@ -47,7 +47,7 @@ export function readBundleFiles(buffer) {
 }
 
 export function validateSessionJournal(r) {
-  check(object(r) && ['talk2nature.station.v1','talk2nature.station.v2','talk2nature.observation-window.v1'].includes(r.schema),'Choose a Station Save session ZIP. Sound desk notebooks and loose recordings use Review.');
+  check(object(r) && ['talk2nature.station.v1','talk2nature.station.v2','talk2nature.observation-window.v1'].includes(r.schema),'This file uses a different format. Open a Station Save ZIP; notebooks and loose recordings open in Review.');
   const window=r.schema==='talk2nature.observation-window.v1';
   const native=r.schema==='talk2nature.station.v2';
   const maxSession=native?28800:window?30:300.2;

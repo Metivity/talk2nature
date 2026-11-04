@@ -50,5 +50,5 @@ test('mismatched source declarations and repeated annotator IDs fail closed',()=
 test('annotation parser rejects invalid JSON, unsupported formats and oversized input',()=>{
   assert.throws(()=>parseAnnotationText('{'),/valid JSON/);
   assert.throws(()=>parseAnnotationText(JSON.stringify({...fixture('a'),schema:'other'})),/Unsupported annotation format/);
-  assert.throws(()=>parseAnnotationText(' '.repeat(2*1024*1024+1)),/smaller than 2 MB/);
+  assert.throws(()=>parseAnnotationText(' '.repeat(2*1024*1024+1)),/over the 2 MB limit/);
 });

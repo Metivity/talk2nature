@@ -5,9 +5,10 @@ import {audacityPackage} from './audacity-export.mjs';
 import {aoefPackage} from './aoef-export.mjs';
 import {MAX_BUNDLE_BYTES, openSessionBundle, sessionSummary} from './session-import.mjs';
 import {createReviewAudioControls} from './review-audio.mjs';
-import {showFileSelection} from './file-picker.mjs';
+import {bindFilePicker, showFileSelection} from './file-picker.mjs';
 
 const $ = id => document.getElementById(id);
+for (const id of ['wav-file', 'session-zip-file', 'labels-file']) bindFilePicker($(id));
 const reviewAudio = createReviewAudioControls({audio:$('recording-audio'),button:$('listen-playback-toggle'),seek:$('listen-playback-seek'),time:$('listen-playback-time'),status:$('listen-playback-status'),confirm:message=>window.confirm(message)});
 let audioBytes = null, recording = null, audioInfo = null, events = [], editing = null, mediaUrl = null, dirty = false, draftDirty = false, generation = 0, sessionBundle = null, sessionImportRevision = 0;
 const animal = animalPicker(document, 'listen', () => { if (recording) dirty = true; });
