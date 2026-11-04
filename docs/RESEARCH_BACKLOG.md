@@ -1,3 +1,11 @@
+## November 5 — MyGardenBird is a provenance reference, not the first presence task
+
+Screened the primary preprint, official Zenodo metadata, and pinned repository license declarations. MyGardenBird's 7,200 three-second target-species clips from 1,381 source recordings use source-file-separated splits; this is useful for lineage and split design. The dataset is positive-only across 12 classes, so it cannot test reviewed bird absence or the project's ten-second presence question. The preprint reports a single human curator; BirdNET validation is a model consistency check, not second-person annotation. The paper reports CC BY-NC-SA for the aggregate while 35.3% of underlying source files are said to be CC BY-NC-ND; the Zenodo record metadata returns no license. The repo README's MIT statement conflicts with API/root LICENSE metadata stating Unlicense. Preserve the discrepancies, do not acquire assets, and do not infer legal status.
+
+**Decision:** not selected for the first benchmark; retain as a metadata-only methods and provenance reference. Follow up only if an independent species-classification task is proposed and specialist review resolves the intended estimand and rights.
+
+**Next:** screen a task-matched presence/absence dataset with reviewed negatives, source/site/time groups, clear per-component rights, and a locked test. Keep the BIRDeep/PeaDetect/MyGardenBird candidates separate; AutoResearch and real-data admission remain **NOT READY**. Publish only through the authorized Pages workflow, then verify this route and the Station disclosure live; current Pages still has the older 154-route sitemap and the new route returns 404.
+
 ## November 5 — screen BIRDeep as a regional event-detection candidate
 
 Reviewed the peer-reviewed Doñana study, its current pinned Hugging Face metadata, and the BIRDeep code repository. The paper describes 461 minutes of 32 kHz one-minute recordings made every ten minutes at nine AudioMoth locations, two experienced annotators, and a split that keeps exact audio files together. Annotations prioritized morning chorus and field censuses helped resolve uncertainties. This is useful event-localization prior art, not general animal communication.

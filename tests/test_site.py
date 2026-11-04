@@ -3401,6 +3401,26 @@ class SiteTests(unittest.TestCase):
         self.assertIn('does not establish a site-',page)
         self.assertIn('index,follow',page)
 
+    def test_mygardenbird_is_positive_only_and_rights_unresolved(self):
+        note=next(n for n in load('research') if n['slug']=='mygardenbird-source-splits-and-rights-2026')
+        self.assertEqual(note['source_ids'],[646,647,648])
+        self.assertIn('bird-present versus bird-absent',note['finding'])
+        self.assertIn('cannot test bird absence',note['title'])
+        self.assertIn('35.3% of source recordings',note['limitations'])
+        self.assertIn('Zenodo metadata API returns a null record-level license',note['limitations'])
+        sources={s['id']:s for s in load('sources')}
+        self.assertIn('Unlicense',sources[648]['description'])
+        catalog={r['id']:r for r in json.loads((Path(__file__).resolve().parents[1]/'research'/'resources.json').read_text())['resources']}
+        self.assertEqual(catalog['mygardenbird-dataset-zenodo-2026']['acquisition'],'metadata_only')
+        self.assertIn('Unspecified in official Zenodo record metadata',catalog['mygardenbird-dataset-zenodo-2026']['rights']['license'])
+        self.assertIn('Conflicting repo declarations',catalog['mygardenbird-code-github-2026']['rights']['license'])
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True)
+            html=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+        self.assertIn('index,follow',html)
+        self.assertIn('source-recording',html)
+        self.assertIn('cannot test verified absence',html)
+
     def test_peadetect_has_a_bounded_public_review_request_without_data_access(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='peadetect-peafowl-vocalization-dataset-2026')

@@ -11419,7 +11419,9 @@
       "title": "PeaDetect dataset: curated Indian peafowl vocalization recordings",
       "url": "https://doi.org/10.1016/j.dib.2026.113038",
       "version": "Data in Brief 67 (2026), article 113038; full text PMCID PMC13382432",
-      "source_ids": [641],
+      "source_ids": [
+        641
+      ],
       "task": "Dataset-methods reference for a proposed five-second peafowl-vocalization presence/absence reproduction; not evidence of meaning or receiver response.",
       "review_depth": "Targeted review of data collection, source mix, label validation, folds and data availability; not an independent reproduction.",
       "access": "Full text is available through PubMed Central. No supplements or article files were downloaded.",
@@ -11446,7 +11448,10 @@
       "title": "PeaDetect Indian peafowl vocalization dataset",
       "url": "https://data.mendeley.com/datasets/skryf4tkff/1",
       "version": "Mendeley Data v1, DOI 10.17632/skryf4tkff.1; linked Zenodo DOI 10.5281/zenodo.18948717",
-      "source_ids": [641, 642],
+      "source_ids": [
+        641,
+        642
+      ],
       "task": "Candidate for a source-recording-grouped five-second peafowl vocalization detector reproduction; separate from the general ten-second bird-presence task.",
       "review_depth": "Reviewed the article's published dataset description and the versioned Mendeley landing-page metadata. Archive, metadata rows, fold files and source-level licenses were not inspected.",
       "access": "The v1 page advertises a 2,950-clip dataset with metadata, sources.csv, collection protocol, annotation guidelines and Ecological Metadata Language documentation. No download was performed.",
@@ -11577,6 +11582,95 @@
         "scope": "Model weights only; code, article and training data are separate.",
         "evidence_url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
         "conditions": "Require exact model/checkpoint commit, checksums, upstream base-weight lineage, training-data rights and artifact-specific terms before use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 3,
+      "reviewed": "2026-11-05",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "mygardenbird-preprint-2026",
+      "kind": "paper",
+      "title": "MyGardenBird: A Machine-Learning-Ready Bird Sound Dataset for Twelve Common Malaysian Birds",
+      "url": "https://arxiv.org/abs/2606.06975",
+      "version": "arXiv:2606.06975, posted 2026-06-05; preprint version reviewed 2026-11-05",
+      "source_ids": [
+        646
+      ],
+      "task": "Describes positive-only three-second clips for 12-species audio classification; not bird-presence/absence or communication.",
+      "review_depth": "Primary preprint review of methods, annotation/QC, grouped split, data schema, validation and rights statements; no independent review or reproduction.",
+      "access": "Metadata and paper only. The authors describe 7,200 16 kHz clips from 1,381 Xeno-canto recordings, source-file-separated splits and one human curator.",
+      "decision": "Useful methods/reference record. Do not select it for the current ten-second bird-presence task; positive-only clips cannot supply reviewed absences or field-prevalence evidence.",
+      "limitations": "Single-curator labels; BirdNET consistency check is not independent human annotation. Source-recording grouping is not site/date/device holdout. Preprint performance claims were not reproduced. The preprint discusses ND-licensed upstream recordings and asserts a non-transformative segmentation interpretation; no licensing opinion was made.",
+      "attribution": "Zabidi, Idris & Idris (2026), arXiv:2606.06975.",
+      "rights": {
+        "license": "Preprint text reuse terms not separately audited. Dataset/code licenses are distinct.",
+        "scope": "Paper only.",
+        "evidence_url": "https://arxiv.org/abs/2606.06975",
+        "conditions": "Link and summarize originally; do not reuse figures or assume a dataset or code license from the preprint.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-05",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "mygardenbird-dataset-zenodo-2026",
+      "kind": "dataset",
+      "title": "MyGardenBird 12-species Malaysian bird clips · Zenodo record 20306877",
+      "url": "https://doi.org/10.5281/zenodo.20306877",
+      "version": "Record 20306877; created 2026-05-20, updated 2026-06-08; concept DOI 10.5281/zenodo.20306876",
+      "source_ids": [
+        646,
+        647
+      ],
+      "task": "Positive-only three-second classification of 12 target species; not a soundscape presence/absence dataset.",
+      "review_depth": "Metadata-only: read official Zenodo API identity, timestamps, record-level license field and five-file name/size/checksum inventory. No file bytes or metadata rows inspected.",
+      "access": "The record lists 7,200-clip 16 kHz audio (553,515,403 bytes), 44.1 kHz audio, a plus set, code archive and metadata archive. API record-level license field is null.",
+      "decision": "Not selected as the first benchmark; may inform a future narrowly scoped species-classification task after rights and independent-evaluation review.",
+      "limitations": "The paper reports the compiled dataset as CC BY-NC-SA while many source recordings reportedly carry CC BY-NC-ND; exact source-level permission and compatibility remain unresolved. The null Zenodo license field is not a grant of rights. Coordinates may be present in metadata; none were accessed or republished. No payload was downloaded.",
+      "attribution": "MyGardenBird project, Zenodo record 20306877, https://doi.org/10.5281/zenodo.20306877.",
+      "rights": {
+        "license": "Unspecified in official Zenodo record metadata; article/repository claim CC BY-NC-SA but source-item terms remain unresolved.",
+        "scope": "Dataset release and upstream recordings; no use cleared.",
+        "evidence_url": "https://doi.org/10.5281/zenodo.20306877",
+        "conditions": "Do not acquire, transform, train, redistribute or commercially use until source-level licenses and ND-derivative interpretation are independently resolved.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 3,
+      "reviewed": "2026-11-05",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "mygardenbird-code-github-2026",
+      "kind": "code",
+      "title": "MyGardenBird curation and classifier pipeline · pinned GitHub commit",
+      "url": "https://github.com/mun3im/MyGardenBird/tree/bfb107282fa292810dfd90d2de4158bd4ca473bb",
+      "version": "main commit bfb107282fa292810dfd90d2de4158bd4ca473bb, checked 2026-11-05",
+      "source_ids": [
+        646,
+        648
+      ],
+      "task": "Preprocessing, source-level split generation and CNN species classification pipeline reported by the dataset authors.",
+      "review_depth": "Metadata-only repository README, GitHub repository API license field and pinned root LICENSE text. No source files were executed or acquired.",
+      "access": "README lists a Python/TensorFlow/Librosa workflow and says code MIT. Repository API identifies the root LICENSE as The Unlicense.",
+      "decision": "Do not treat the MIT README statement as resolved; preserve the license discrepancy and do not integrate pending owner clarification.",
+      "limitations": "The root repository API and LICENSE identify Unlicense while README states MIT. No code quality, dependency safety, reproducibility or model release was independently verified.",
+      "attribution": "mun3im/MyGardenBird, main commit bfb107282fa292810dfd90d2de4158bd4ca473bb.",
+      "rights": {
+        "license": "Conflicting repo declarations: root LICENSE/API say Unlicense; README says MIT. No selection made.",
+        "scope": "Code repository only. Dataset and any model artifacts are separately licensed.",
+        "evidence_url": "https://github.com/mun3im/MyGardenBird/tree/bfb107282fa292810dfd90d2de4158bd4ca473bb",
+        "conditions": "Confirm intended code license with maintainers before reuse; do not infer audio rights from software licensing.",
         "research_use": "unresolved",
         "commercial_use": "unresolved",
         "redistribution": "unresolved"

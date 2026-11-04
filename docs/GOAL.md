@@ -1,3 +1,17 @@
+# November 5, 2026 — screen MyGardenBird as a species-classification reference, not a presence benchmark
+
+**Question:** can a recently published Malaysian bird dataset provide evidence for the first ten-second bird-presence benchmark or improve our research data-provenance design?
+
+**Evidence reviewed:** the primary [arXiv preprint](https://arxiv.org/abs/2606.06975), including collection, QC, split, schema, validation and rights sections; official [Zenodo record/API](https://doi.org/10.5281/zenodo.20306877); and [pinned GitHub repository](https://github.com/mun3im/MyGardenBird/tree/bfb107282fa292810dfd90d2de4158bd4ca473bb) README, repository-license metadata and LICENSE text. The preprint describes 7,200 three-second target-species clips from 1,381 Xeno-canto recordings, source-file-separated train/validation/test sets and single-curator annotation. The current Zenodo API record has a null license field. Its preprint reports a mix including CC BY-NC-ND upstream recordings and advances an interpretation of temporal extraction; Talk2Nature makes no licensing determination. The repository README says MIT, while its API and root LICENSE say Unlicense.
+
+**Decision:** retain as a metadata-only curation/split reference, not the first benchmark. The dataset contains positive examples for 12 known species, not reviewed bird-absent soundscape windows; its reported species-classification results cannot test presence/absence, ecological prevalence, site transfer or our intended field workflow. Source recording separation is useful, but does not establish site/date/device separation.
+
+**Rights and safety:** dataset rights and source-item derivative permissions remain unresolved; code license statements conflict. No audio, archive, clip rows, code, models or weights were acquired or run. No coordinates were copied or mapped. The preprint has not received independent review by Talk2Nature; no independent statistical, avian or rights review occurred.
+
+**Verification:** Python **294 tests passed, 1 intentional skip**; Node **185/185**; all three JSON catalogs parse; `git diff --check` passes. The public build produced **196 pages plus 404** and passed **197 HTML / 13,746 links / 196 reachable pages**; the noindex build passed **197 HTML / 13,745 links**. The generated note has indexable public metadata and is in the generated sitemap. Chromium checks at 390px and 320px found matching document/viewport width, no failed requests or page errors; the concise copy reduced the 320px content height by about 850px. This is browser emulation, not physical-device or assistive-technology acceptance. A fresh live check still finds the old 154-route sitemap, the new route returns **404**, and the live Station misses the expected disclosure. No deployment, independent reproduction or participant data collection occurred.
+
+**Next:** continue looking for a task-matched presence/absence collection with independently reviewed negatives, source/site-aware groups, rights-resolved components and an untouched evaluation. Keep all real-data admission and AutoResearch gates **NOT READY**.
+
 # November 5, 2026 — add BIRDeep to the evidence map and narrow the benchmark decision
 
 **Question:** does the Doñana BIRDeep study provide a credible, small, rights-usable candidate for Talk2Nature’s first bird detection experiment?

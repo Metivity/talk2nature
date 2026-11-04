@@ -6443,5 +6443,29 @@
     "url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
     "checked": "2026-11-05",
     "origin": "Read the public repository landing page and README; GitHub API identified the current main commit bb0ac816535bf998bc38fadeb9197249aa137cdc (2026-06-22). The repository declares MIT for code and lists model/checkpoint files; no code, dependencies or model files were acquired or executed. The README contains an incomplete validation-metric placeholder, so it is not a standalone reproduction artifact."
+  },
+  {
+    "id": 646,
+    "title": "MyGardenBird: A Machine-Learning-Ready Bird Sound Dataset for Twelve Common Malaysian Birds",
+    "description": "Zabidi, Idris & Idris (2026), arXiv:2606.06975. Dataset-description preprint; describes 7,200 three-second clips from 1,381 Xeno-canto source recordings and source-recording-level splits.",
+    "url": "https://arxiv.org/abs/2606.06975",
+    "checked": "2026-11-05",
+    "origin": "Reviewed the primary preprint sections on collection, annotation/QC, source-level splitting, data schema, validation and rights. It is a preprint, not a peer-reviewed Talk2Nature assessment. No audio, clip rows, code or models acquired or run."
+  },
+  {
+    "id": 647,
+    "title": "MyGardenBird dataset · Zenodo record 20306877",
+    "description": "Official Zenodo API metadata for dataset DOI 10.5281/zenodo.20306877 (created 2026-05-20; updated 2026-06-08). The record-level metadata API returned no license value; file inventory only was read.",
+    "url": "https://doi.org/10.5281/zenodo.20306877",
+    "checked": "2026-11-05",
+    "origin": "Queried the Zenodo record API for DOI, timestamps, record-level license field, five asset names, sizes and provider checksums. The API license field was null; no file bytes, audio, metadata rows, coordinates or archives were downloaded."
+  },
+  {
+    "id": 648,
+    "title": "MyGardenBird curation and classifier repository · pinned main commit",
+    "description": "Public GitHub repository at main commit bfb107282fa292810dfd90d2de4158bd4ca473bb. README states code MIT; the repository API and LICENSE file identify The Unlicense.",
+    "url": "https://github.com/mun3im/MyGardenBird/tree/bfb107282fa292810dfd90d2de4158bd4ca473bb",
+    "checked": "2026-11-05",
+    "origin": "Reviewed the repository README, repository API license metadata and LICENSE text at the current main commit. README says MIT for code while API/root LICENSE identify Unlicense; the discrepancy is retained rather than resolved by assumption. No pipeline source, dependencies, dataset or model was acquired or executed."
   }
 ]
