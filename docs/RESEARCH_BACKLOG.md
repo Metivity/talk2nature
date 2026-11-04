@@ -44,6 +44,12 @@ Reviewed the BirdCODE preprint abstract, the author-affiliated technical overvie
 
 # Prioritized research and machine-learning backlog
 
+## November 4 — CEB project tokens do not establish independent groups
+
+Rechecked the official [CEB v1.1 Zenodo record](https://zenodo.org/records/21821133), including its license and version notes. It describes published paths as anonymized `<subset>_project_<NNN>/audio_<NNNNNN>.flac`; it does not define the project token as a site, device, session or deployment key. Rounded country-level coordinates do not repair that missing mapping. The 8,559,233-byte training-label table remains above the 5 MiB intake limit; the smaller test-label table is public and was not opened. No dataset files or rows were newly acquired or inspected.
+
+**Decision:** metadata-only intake does not resolve CEB's independent-domain gate. Keep it out of the first benchmark; do not bypass the size limit, infer negatives from unlabeled intervals, or describe the public test labels as locked. This narrows what can be claimed from the released metadata; it does not establish that the underlying project has no site/session structure. Next screen only a candidate whose annotation and acquisition-unit definitions can be checked before data access. Rights, qualified review, verified negatives, leakage-safe groups and a separate untouched test remain required. AutoResearch remains **NOT READY**.
+
 ## November 3 — defer the first benchmark after the DCASE/ArcticBirdSounds screen
 
 **Evidence reviewed:** reread the official DCASE Task 3 description, the official Zenodo DCASE evaluation-data deposit and BirdVox-DCASE-20k record, and the ArcticBirdSounds publisher article. DCASE is the closest match to binary bird-presence in a ten-second clip, but its task-level manual-label statement does not describe every component: BirdVox says its `hasbird` labels were automatically derived from source annotations. The public evaluation record lists 9.1 GB of audio archives but no label files or license value; prior preview and repeated submissions also create evaluation exposure. ArcticBirdSounds offers 20 hours of strong temporal annotations across 15 plots and six locations under a paper-declared CC BY 4.0 data license, but it is event-level, not a verified presence/absence task, and its labels do not establish quiet windows or independent field-session splits. Existing CEB review separately found unknown project grouping, no verified negatives and no concealed public test.
