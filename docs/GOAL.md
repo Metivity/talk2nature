@@ -6,7 +6,7 @@
 
 **Rights and status:** no researcher was contacted individually, no outside review has been received, and no dataset file or precise coordinate was accessed. Issue #715 was open with zero comments at creation. PeaDetect remains a candidate, not a selected benchmark; the issue does not clear underlying recording rights. AutoResearch and real-data admission remain **NOT READY**.
 
-**Verification:** the link resolves to the intended open issue; repository checks are pending on this documentation update. No scientific validation is claimed.
+**Verification:** the link resolves to the intended open issue; the full public-checks workflow passed on this documentation update (run 1510, November 4). No scientific validation is claimed.
 
 **Next:** monitor for an independent, suitably scoped reply. If one arrives, record exactly what the reviewer inspected and update the candidate decision; otherwise do not imply endorsement or review. The Pages publication gate and named-device mobile checks remain open.
 
