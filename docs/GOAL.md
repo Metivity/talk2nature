@@ -1,3 +1,17 @@
+# November 4, 2026 — open a bounded public methods-review request for PeaDetect
+
+**Question:** could the published five-fold, source-recording-grouped PeaDetect collection support a useful, narrowly stated five-second peafowl-vocalization detection reproduction, and what claim can the grouping justify?
+
+**Evidence reviewed:** the existing targeted review of the primary data article and the versioned Mendeley v1 landing-page metadata, as recorded in source IDs 641–642 and the `peadetect-peafowl-vocalization-dataset-2026` note. The article's source mix gives a 62.98% source-platform-only diagnostic on the balanced curated collection; this is arithmetic, not a baseline result. Article, dataset-level release and underlying recordings have separate rights. Exact fold membership and item-level recording terms remain unresolved.
+
+**Change:** added a source-linked independent-review brief, a five-question public methods-review request to the research note and the shared scientific-review issue form's candidate list. The request asks experts to critique task utility, the scope of source-recording grouping, source/platform baselines, minimal evidence needed before any manifest inspection, and later field transfer. It asks for no archive, rows, labels, audio or precise coordinates.
+
+**Rights, safety and status:** no researcher was contacted, no review received, no issue submitted, and no dataset files or coordinates accessed. The invitation is in the repository source and remains un-deployed until the manual Pages workflow runs. It is not an endorsement, partnership, data-access approval or benchmark selection. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification:** Python **292 passed, 1 intentional skip**; Node **185/185**; explicit-origin public build **194 pages plus 404** and **195 HTML / 13,594 links / 194 reachable public pages**; local noindex build **194 pages plus 404** and **195 HTML / 13,399 links**. The local research page and review anchor were opened in-browser at a narrow viewport; the invitation, links and no-access boundary were confirmed. The lower-card screenshot and physical-phone behavior were not independently verified. No external scientific validation is claimed. Source is not yet live; Pages deployment remains a separate manual step.
+
+**Next:** obtain an independent response through the public issue template if reviewers choose to participate. Only a positive, suitably scoped review supports drafting a separate manifest-only rights/privacy plan. Keep the general ten-second task distinct and evaluate any future candidate against field transfer.
+
 # November 4, 2026 — screen a narrow peafowl detection candidate
 
 After the CEB metadata review failed to establish safe independent groups, screened PeaDetect using its primary data article and official Mendeley v1 page. The source documents 2,950 five-second Indian-peafowl vocalization clips, two independent annotators, an ornithologist's review of 590 clips, and five folds grouped by original source recording. All 1,475 positive clips and 1,092 negative clips come from Xeno-Canto; the remaining 383 negatives are from Freesound. A platform-only rule would score 1,858/2,950 (62.98%) on this balanced curated collection. This is an arithmetic diagnostic, not an observed model.

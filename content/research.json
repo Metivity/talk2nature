@@ -7706,6 +7706,20 @@
     "lesson": "Retain the project's general ten-second bird-sound-presence question as the leading task definition; do not silently replace it with this five-second single-species collection. Treat PeaDetect as the strongest newly reviewed small-data candidate for a separate, explicitly scoped peafowl-vocalization reproduction. Before considering any access, have independent avian-bioacoustics and ML/statistical reviewers assess the question and whether exact source-recording folds support a useful claim. If later authorized and terms permit, first audit only the documented manifest and per-item licenses; predeclare a source-only baseline, source-recording-grouped analysis, uncertainty by recording, and an external field-transfer holdout. Do not use synthetic sources, internet platform identity or clipped segments as a substitute for deployment evidence, and do not enable playback or automated deterrence.",
     "next_review": "Keep metadata-only. Next decision: obtain qualified independent review of whether the task is scientifically useful and whether the original-recording folds can support a clearly bounded reproduction. If supported, prepare a rights- and privacy-reviewed manifest-only inspection plan, including per-item Xeno-Canto/Freesound licenses and coordinate minimization, before any file retrieval. Do not run a detector or AutoResearch until the shared readiness gates and a genuinely independent field evaluation are satisfied.",
     "expert_review": "No independent peafowl/avian-bioacoustics or ML/statistical review has occurred.",
+    "review_request": {
+      "title": "Independent review requested: PeaDetect folds and source shortcuts",
+      "summary": "We invite independent avian-bioacoustics, dataset-curation or ML/statistical reviewers to assess whether a five-second PeaDetect reproduction would be useful and what its source-recording folds can support. The published source mix yields a calculated 62.98% source-only accuracy on the curated balanced set; this is not a measured model result. This request is answerable from the linked article and dataset landing page and asks for no archive, manifest, labels, audio or coordinate access.",
+      "questions": [
+        "Is five-second peafowl-vocalization presence a useful, clearly bounded reproduction task? What narrow inference would be defensible?",
+        "Does grouping clips by original recording support only a new-source-recording claim? What evidence would assess recordist, location, device, date or collection-context overlap?",
+        "Given the source mix and calculated 62.98% source-only diagnostic, which source/platform and class-prior baselines, primary metric and uncertainty unit should be predeclared?",
+        "What is the smallest public, rights-respecting artifact or aggregate needed to assess the folds? Is manifest-level inspection necessary before deciding whether a reproduction is useful?",
+        "What separate field-transfer evaluation would be needed before describing the detector as useful outside this curated collection?"
+      ],
+      "status": "This page invites a public methods review. No independent review has been received. The request asks for no archive, manifest, rows, labels, audio or precise coordinates.",
+      "guide_path": "docs/PEADETECT_REVIEW_BRIEF.md",
+      "issue_url": "https://github.com/Metivity/talk2nature/issues/new?template=scientific-review.yml"
+    },
     "atlas": {
       "reviewed": "2026-11-04",
       "location_status": "not_applicable",

@@ -3379,4 +3379,29 @@ class SiteTests(unittest.TestCase):
             self.assertIn('No third-party data, audio or model was used',page)
 
 
+    def test_peadetect_has_a_bounded_public_review_request_without_data_access(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='peadetect-peafowl-vocalization-dataset-2026')
+        request=note['review_request']
+        self.assertEqual(request['guide_path'],'docs/PEADETECT_REVIEW_BRIEF.md')
+        self.assertEqual(len(request['questions']),5)
+        self.assertIn('invites a public methods review',request['status'])
+        self.assertIn('asks for no archive, manifest, labels, audio or coordinate access',request['summary'])
+        guide=(project_root/'docs'/'PEADETECT_REVIEW_BRIEF.md').read_text()
+        self.assertIn('1,858/2,950 = 62.98%',guide)
+        self.assertIn('No independent review has been received',guide)
+        self.assertIn('does not authorize file access',guide)
+        issue_template=(project_root/'.github'/'ISSUE_TEMPLATE'/'scientific-review.yml').read_text()
+        self.assertIn('metadata-only PeaDetect five-second peafowl detector candidate',issue_template)
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+        self.assertIn('Independent review requested: PeaDetect folds and source shortcuts',page)
+        self.assertIn('Review the open methods question',page)
+        self.assertLess(page.index('href=\"#open-methods-review\"'),page.index('OPEN METHODS QUESTION'))
+        self.assertIn('docs/PEADETECT_REVIEW_BRIEF.md',page)
+        self.assertIn('template=scientific-review.yml',page)
+        self.assertIn('A review is not an endorsement or partnership',page)
+
+
 if __name__=='__main__': unittest.main()
