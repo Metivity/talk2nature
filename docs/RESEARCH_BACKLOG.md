@@ -1,3 +1,13 @@
+## November 5 — screen BIRDeep as a regional event-detection candidate
+
+Reviewed the peer-reviewed Doñana study, its current pinned Hugging Face metadata, and the BIRDeep code repository. The paper describes 461 minutes of 32 kHz one-minute recordings made every ten minutes at nine AudioMoth locations, two experienced annotators, and a split that keeps exact audio files together. Annotations prioritized morning chorus and field censuses helped resolve uncertainties. This is useful event-localization prior art, not general animal communication.
+
+The reported allocation is per species and not a documented site/recorder/date/session holdout. The abstract's 34-class count conflicts with the 38 classes in methods/card. The article cites HF DOI 10.57967/hf/4821, while the current snapshot displays 10.57967/hf/6980; the current card declares MIT, but intended use and audio-rights scope are unverified. The hosted train-CSV viewer reports a parse error, and the repository README contains a placeholder validation metric. Code is declared MIT separately; model-weight terms and lineage are not verified. The page exposes exact recorder coordinates; none were copied or mapped.
+
+**Decision:** add the paper, data, code and model as separate metadata-only resource records and an indexable research note. Keep BIRDeep as a regional event-detection lead; do not select it for the general ten-second presence task, acquire files, run code or claim site transfer.
+
+**Next:** if a qualified outside review supports it, decide whether a rights-approved, coordinate-minimized metadata inspection can establish negative-label quality and site/date grouping. Keep AutoResearch and real-data admission **NOT READY**.
+
 ## November 4 — screen PeaDetect as a narrow source-grouped detection candidate
 
 The primary data article and official Mendeley v1 page describe 2,950 five-second Indian-peafowl clips, balanced between vocalization presence and absence. The article reports two annotators, an ornithologist's 590-clip review and source-recording-grouped five-fold splits. All positives are Xeno-Canto; of the negatives, 1,092 are also Xeno-Canto and 383 come from Freesound. A source-platform-only rule would therefore yield 1,858/2,950, or 62.98%, accuracy on the published balanced set. This is a calculation from the authors' counts, not a trained or measured baseline.

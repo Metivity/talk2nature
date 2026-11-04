@@ -1,3 +1,17 @@
+# November 5, 2026 — add BIRDeep to the evidence map and narrow the benchmark decision
+
+**Question:** does the Doñana BIRDeep study provide a credible, small, rights-usable candidate for Talk2Nature’s first bird detection experiment?
+
+**Evidence reviewed:** the peer-reviewed article’s recorder design, annotation and split methods plus results/data-availability sections; the official dataset-card/API metadata at Hugging Face snapshot `4168dcc5e6c3ac421c24dc83cf72191e8d26f935`; and the public BIRDeep code repository README, file inventory, MIT declaration and current main commit `bb0ac816535bf998bc38fadeb9197249aa137cdc`. The paper reports 461 minutes from nine recorders at three Doñana habitats, two experienced annotators, and file-disjoint splits. It prioritizes periods of high bird activity, especially morning chorus. The paper abstract reports 34 classes while methods/card report 38. The article cites dataset DOI `10.57967/hf/4821`; the current page shows `10.57967/hf/6980`. The hosted viewer reports a parser error on the training split.
+
+**Change and decision:** added a searchable research note, provenance records for the article/data/code/model assets, a candidate comparison row, and backlog/status updates. BIRDeep remains a metadata-only regional event-detection lead; its file-disjoint split does not establish site/recorder/date/session transfer, and event localization is not the project’s general ten-second bird-presence task. No candidate was selected.
+
+**Rights and safety:** the article is CC BY-NC 4.0; the current dataset page declares MIT but audio-rights scope and intended use were not independently cleared; the code repository declares MIT; model-weight terms remain unknown. No CSV rows, audio, images, code, weights or coordinates were accessed. Exposed recorder coordinates were not copied or mapped. No outside review occurred. AutoResearch and real-data admission remain **NOT READY**.
+
+**Verification:** Python **293 passed, 1 intentional skip**; Node **185/185**; all three JSON catalogs parse; `git diff --check` passes. The public-format build produced **195 pages plus 404** and the checker passed **196 HTML / 13,674 links / 195 reachable public pages**; the noindex preview produced the same page count and passed its local link check. The generated research route was opened in a browser and its title, evidence limits, next-step guidance and all three cited sources were confirmed. These checks verify a local candidate only; physical-device and assistive-technology acceptance, independent scientific review and public deployment remain open.
+
+**Next:** seek a bounded independent review of whether the dataset has genuine verified-negative coverage and whether a useful site/date-held-out split is possible. Only then consider a rights-reviewed, coordinate-minimized manifest inspection.
+
 # November 4, 2026 — invite independent review through the repository
 
 **Question:** can qualified outside readers provide a bounded, source-grounded methods review of the metadata-only PeaDetect candidate?

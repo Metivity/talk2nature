@@ -3379,6 +3379,28 @@ class SiteTests(unittest.TestCase):
             self.assertIn('No third-party data, audio or model was used',page)
 
 
+    def test_birdeep_is_a_file_disjoint_candidate_not_site_held_out_evidence(self):
+        project_root=Path(__file__).resolve().parents[1]
+        note=next(n for n in load('research') if n['slug']=='birdeep-donana-bird-vocalization-detection-2025')
+        self.assertEqual(note['source_ids'],[643,644,645])
+        self.assertIn('does not establish a site-',note['finding'])
+        self.assertIn('morning chorus',note['limitations'])
+        self.assertIn('10.57967/hf/4821',note['limitations'])
+        self.assertEqual(note['atlas']['location_status'],'pending')
+        self.assertEqual(note['atlas']['locations'],[])
+        resources=json.loads((project_root/'research'/'resources.json').read_text())['resources']
+        selected={r['id']:r for r in resources if r['id'].startswith('birdeep-donana-') or r['id'].startswith('birdeep-neural-') or r['id'].startswith('birdeep-trained-')}
+        self.assertIn('birdeep-donana-audio-annotations-2025',selected)
+        self.assertIn('birdeep-neural-network-code-2026',selected)
+        self.assertIn('birdeep-trained-model-artifacts-unassessed-2026',selected)
+        self.assertIn('not inferred from the repository MIT license',selected['birdeep-trained-model-artifacts-unassessed-2026']['rights']['license'])
+        with tempfile.TemporaryDirectory() as temp:
+            build(Path(temp),'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
+            page=(Path(temp)/'research'/note['slug']/'index.html').read_text()
+        self.assertIn('BIRDeep tests regional bird-event detection, not site transfer',page)
+        self.assertIn('does not establish a site-',page)
+        self.assertIn('index,follow',page)
+
     def test_peadetect_has_a_bounded_public_review_request_without_data_access(self):
         project_root=Path(__file__).resolve().parents[1]
         note=next(n for n in load('research') if n['slug']=='peadetect-peafowl-vocalization-dataset-2026')

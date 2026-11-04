@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "scope": "Animal-communication and bioacoustics, selected plant-acoustics and fungal-electrophysiology evidence and reuse candidates, plus methods tools for reproducible research; acquired external samples remain separate from research admission.",
   "resources": [
     {
@@ -11464,6 +11464,125 @@
       },
       "priority": 1,
       "reviewed": "2026-11-04",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdeep-donana-detector-paper-2025",
+      "kind": "paper",
+      "title": "A bird song detector for improving bird identification through deep learning: A case study from Doñana",
+      "url": "https://doi.org/10.1016/j.ecoinf.2025.103254",
+      "version": "Ecological Informatics 90 (2025), article 103254; DOI 10.1016/j.ecoinf.2025.103254",
+      "source_ids": [
+        643
+      ],
+      "task": "Primary methods and results report for a regional bird-vocalization detection/localization pipeline; not a communication or receiver-response study.",
+      "review_depth": "Full article methods/results and data-availability sections reviewed from an author-posted copy alongside the publisher record. No independent reproduction; code, audio and weights were not run or acquired.",
+      "access": "The paper describes 461 minutes of 32 kHz one-minute recordings sampled every ten minutes at nine Doñana locations across three habitats, with expert vocalization annotations. It reports file-disjoint train/validation/test allocation, aiming for an 80/10/10 ratio per species.",
+      "decision": "Useful prior art and a metadata-only candidate for a separately bounded regional event-detection reproduction. Not selected as Talk2Nature's general bird-presence benchmark; site-held-out transfer is not established.",
+      "limitations": "The article prioritizes annotation during high-activity periods, especially morning chorus, so its label coverage does not estimate ordinary field prevalence. The split keeps each exact audio file in one partition but does not document site-, recorder-, date- or session-held-out grouping. The article abstract reports 34 classes while its methods describe 38; the dataset card also says 38. The detector's event-localization task is not the same as ten-second bird presence. The article is CC BY-NC 4.0; code, audio and weights are separately licensed.",
+      "attribution": "Márquez-Rodríguez et al. (2025), Ecological Informatics 90, 103254, https://doi.org/10.1016/j.ecoinf.2025.103254.",
+      "rights": {
+        "license": "CC BY-NC 4.0 for the article text as stated by the publisher/institutional full text.",
+        "scope": "Article only. Dataset, audio, code, dependencies and trained weights have separate terms.",
+        "evidence_url": "https://doi.org/10.1016/j.ecoinf.2025.103254",
+        "conditions": "Publish an original summary and link; do not reuse article figures or text beyond permitted quotation. Review each software/data/model license separately.",
+        "research_use": "conditional",
+        "commercial_use": "not_admitted",
+        "redistribution": "conditional"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-05",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdeep-donana-audio-annotations-2025",
+      "kind": "dataset",
+      "title": "BIRDeep Audio Annotations from Doñana",
+      "url": "https://huggingface.co/datasets/GrunCrow/BIRDeep_AudioAnnotations/tree/4168dcc5e6c3ac421c24dc83cf72191e8d26f935",
+      "version": "Hugging Face snapshot 4168dcc5e6c3ac421c24dc83cf72191e8d26f935; current page DOI 10.57967/hf/6980; the paper cites prior dataset DOI 10.57967/hf/4821",
+      "source_ids": [
+        643,
+        644
+      ],
+      "task": "Expert temporal bird-vocalization annotation and regional event-detection prior art; distinct from general ten-second bird-presence and animal-communication tasks.",
+      "review_depth": "Primary paper and official dataset card/API metadata reviewed. No split CSV, annotation row, audio, image, archive or coordinate was inspected or downloaded. The hosted viewer currently reports a parser error for the training split.",
+      "access": "The current repository page reports 3.19 GB and lists audio, spectrogram images, labels, and train/validation/test CSV files. Dataset card declares MIT. The repository snapshot is pinned here; no payload was fetched.",
+      "decision": "Keep metadata-only as a promising regional event-detection candidate. Do not select it for the general ten-second task or run a detector until an independent reviewer, site/temporal grouping plan, label coverage, intended-use rights and locked evaluation are established.",
+      "limitations": "Reported file-level separation prevents the same exact audio file appearing across subsets, but the allocation is per species and no held-out recorder/site/date/session split is documented. Annotation prioritized dawn and morning activity; a recorded silence or unannotated interval is not automatically verified absence. The article abstract says 34 classes whereas the methods/card say 38. The publisher article cites dataset DOI 10.57967/hf/4821 while the current dataset page shows 10.57967/hf/6980. The page's MIT declaration is recorded as a repository statement, not a legal clearance for audio; intended-use and redistribution terms need qualified review. The page exposes exact recorder coordinates; none are reproduced here. No outside scientific review occurred.",
+      "attribution": "Márquez-Rodríguez et al. (2025), BIRDeep Audio Annotations; cite the pinned Hugging Face snapshot and the paper DOI. Dataset page: https://huggingface.co/datasets/GrunCrow/BIRDeep_AudioAnnotations/tree/4168dcc5e6c3ac421c24dc83cf72191e8d26f935.",
+      "rights": {
+        "license": "Current Hugging Face card/API declares MIT for the dataset repository; the audio-rights basis and scope of that declaration were not independently resolved.",
+        "scope": "Repository-level dataset-card declaration only; it does not independently clear recordings, annotations, images, paper, code or weights.",
+        "evidence_url": "https://huggingface.co/datasets/GrunCrow/BIRDeep_AudioAnnotations/tree/4168dcc5e6c3ac421c24dc83cf72191e8d26f935",
+        "conditions": "Before any access or reuse, obtain qualified review of the dataset-license scope, source ownership, consent/permissions, attribution, sensitive location handling and intended research/commercial use. Do not expose recorder coordinates.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 2,
+      "reviewed": "2026-11-05",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdeep-neural-network-code-2026",
+      "kind": "code",
+      "title": "BIRDeep neural-network detector and classifier code",
+      "url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
+      "version": "GitHub main commit bb0ac816535bf998bc38fadeb9197249aa137cdc, dated 2026-06-22",
+      "source_ids": [
+        643,
+        645
+      ],
+      "task": "Research code for the Doñana bird-vocalization detector and downstream species classifiers.",
+      "review_depth": "Repository README, visible file inventory and root MIT declaration reviewed. No code, dependencies, input data or tests were acquired/run; README includes an incomplete validation-metric placeholder.",
+      "access": "Public repository with scripts, environment specification, data links and model outputs. No software environment was created.",
+      "decision": "Metadata-only code reference. Do not depend on it or claim a reproduced result until a pinned checkout, dependency/license audit, data lineage and exact evaluation command are reviewed.",
+      "limitations": "The repository's MIT declaration applies to the repository code as stated; it does not automatically resolve third-party dependencies, source recordings, training data or checkpoint/weight rights. The public README is not a complete result artifact and includes a placeholder validation value.",
+      "attribution": "BIRDeep project, neural-network repository at commit bb0ac816535bf998bc38fadeb9197249aa137cdc; associated article DOI 10.1016/j.ecoinf.2025.103254.",
+      "rights": {
+        "license": "MIT declared by the repository for code.",
+        "scope": "Repository code declaration; model files and training data are separate assets.",
+        "evidence_url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
+        "conditions": "Pin the commit, review dependency licenses and code provenance; do not infer weight or data rights from the repository license.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "priority": 3,
+      "reviewed": "2026-11-05",
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdeep-trained-model-artifacts-unassessed-2026",
+      "kind": "model",
+      "title": "BIRDeep detector and classifier model artifacts (terms not reviewed)",
+      "url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
+      "version": "Repository inventory at commit bb0ac816535bf998bc38fadeb9197249aa137cdc; binary payloads not inspected",
+      "source_ids": [
+        643,
+        645
+      ],
+      "task": "The article and repository describe a YOLOv8 bird-vocalization detector and BirdNET-based regional classifiers.",
+      "review_depth": "Metadata-only discovery from the article and repository inventory. No checkpoint, model card, training manifest, binary hash or executable artifact was inspected.",
+      "access": "Repository includes model/checkpoint files and trained outputs; model artifact provenance and exact release lineage were not reviewed.",
+      "decision": "Do not acquire, install, run, redistribute or integrate these weights. Keep them separate from the MIT code record until exact artifact terms and training-data lineage are verified.",
+      "limitations": "A repository-level code license is not a model-weight license. Exact weight versions, architecture, hashes, dependency versions, source-data permissions and compatible commercial terms remain unresolved.",
+      "attribution": "BIRDeep project; associated methods article DOI 10.1016/j.ecoinf.2025.103254.",
+      "rights": {
+        "license": "Unknown for the trained/checkpoint artifacts; not inferred from the repository MIT license.",
+        "scope": "Model weights only; code, article and training data are separate.",
+        "evidence_url": "https://github.com/GrunCrow/BIRDeep_BirdSongDetector_NeuralNetworks/tree/bb0ac816535bf998bc38fadeb9197249aa137cdc",
+        "conditions": "Require exact model/checkpoint commit, checksums, upstream base-weight lineage, training-data rights and artifact-specific terms before use.",
+        "research_use": "unresolved",
+        "commercial_use": "unresolved",
+        "redistribution": "unresolved"
+      },
+      "priority": 3,
+      "reviewed": "2026-11-05",
       "acquisition": "metadata_only",
       "files": []
     }
