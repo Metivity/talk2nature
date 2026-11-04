@@ -10,6 +10,7 @@ import * as audacity from '../web/assets/audacity-export.mjs';
 import * as aoef from '../web/assets/aoef-export.mjs';
 import * as sessionImport from '../web/assets/session-import.mjs';
 import * as reviewAudio from '../web/assets/review-audio.mjs';
+import {showFileSelection} from '../web/assets/file-picker.mjs';
 import {WindowSession} from '../web/assets/window-model.mjs';
 import {sessionFiles,zipFiles} from '../web/assets/station-export.mjs';
 if (!globalThis.crypto) globalThis.crypto=webcrypto;
@@ -21,7 +22,9 @@ function setup(overrides={}) {
   const defaults={'event-start':'0','event-end':'1','event-kind':'uncertain','event-context':'unknown','event-source':'not observed','event-confidence':'uncertain','event-notes':''};
   const harness={confirm:false,confirmations:0,focus:null,playerPlays:0,playerPauses:0};
   function element(id='') {
-    return {id,value:defaults[id]??'',textContent:'',hidden:false,open:false,disabled:false,paused:true,handlers:{},children:[],clientWidth:600,
+    const selectedFile={textContent:'',title:'',hidden:true};
+    return {id,value:defaults[id]??'',textContent:'',hidden:false,open:false,disabled:false,paused:true,handlers:{},children:[],clientWidth:600,selectedFile,
+      closest(selector){return selector==='.file-picker'?{querySelector:name=>name==='[data-selected-file]'?selectedFile:null}:null;},
       addEventListener(name,fn){this.handlers[name]=fn;},
       async fire(name,event={}){return await this.handlers[name]?.(event);},
       append(...nodes){this.children.push(...nodes);},replaceChildren(...nodes){this.children=nodes;},
@@ -36,7 +39,7 @@ function setup(overrides={}) {
   const window={devicePixelRatio:1,confirm(){harness.confirmations++;return harness.confirm;},addEventListener(name,fn){windowEvents[name]=fn;}};
   const source=fs.readFileSync(new URL('../web/assets/listen.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
   const urlApi={createObjectURL(blob){const key=`blob:synthetic-${objectUrls.size+1}`;objectUrls.set(key,blob);return key;},revokeObjectURL(){}};
-  vm.runInNewContext(source,{...model,...notebook,...audacity,...aoef,...sessionImport,...reviewAudio,...overrides,animalPicker,document,window,crypto:webcrypto,Blob,structuredClone,URL:urlApi,setTimeout(){}});
+  vm.runInNewContext(source,{...model,...notebook,...audacity,...aoef,...sessionImport,...reviewAudio,...overrides,animalPicker,showFileSelection,document,window,crypto:webcrypto,Blob,structuredClone,URL:urlApi,setTimeout(){}});
   return {...harness,get,downloads,files,windowEvents,documentEvents,document,state:harness,async type(id,value){get(id).value=value;await get('event-form').fire('input');}};
 }
 
