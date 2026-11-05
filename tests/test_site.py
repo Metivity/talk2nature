@@ -3281,7 +3281,7 @@ class SiteTests(unittest.TestCase):
         archive=next(r for r in resources if r['id']=='zebra-finch-call-category-behavior-and-code-2025')
         self.assertIn(19,note['source_ids'])
         self.assertIn('Julie Elie received the 2026 Coller Dolittle annual prize',note['year_label'])
-        self.assertEqual(sources[19]['checked'],'2026-10-28')
+        self.assertEqual(sources[19]['checked'],'2026-11-05')
         self.assertIn('names zebra-finch researcher Julie Elie',sources[19]['description'])
         self.assertIn('versioned Zenodo record 13623969 (v1)',note['review_locator'])
         self.assertIn('concept DOI 13623968',note['review_locator'])
