@@ -16,11 +16,27 @@ class PageParser(HTMLParser):
         self.description=''; self.robots=''; self.canonical=''; self.lang=''
         self.meta={}
         self.structured_data=[]; self.in_structured_data=False
+        self.file_inputs=[]; self._file_picker_stack=[]
     def handle_starttag(self,tag,attrs):
         attrs=dict(attrs)
         if tag=='html': self.lang=attrs.get('lang','')
         if tag=='head': self.in_head=True
         if tag=='h1': self.h1+=1
+        if tag=='label' and 'file-picker' in attrs.get('class','').split():
+            self._file_picker_stack.append({
+                'for':attrs.get('for',''), 'hint':False, 'selection':False,
+                'text':[], 'input_ids':[],
+            })
+        if self._file_picker_stack:
+            picker=self._file_picker_stack[-1]
+            classes=set(attrs.get('class','').split())
+            if tag=='span' and 'file-picker-hint' in classes: picker['hint']=True
+            if 'data-selected-file' in attrs: picker['selection']=True
+        if tag=='input' and attrs.get('type')=='file':
+            picker=self._file_picker_stack[-1] if self._file_picker_stack else None
+            record={'id':attrs.get('id',''), 'accept':attrs.get('accept',''), 'picker':picker}
+            self.file_inputs.append(record)
+            if picker is not None: picker['input_ids'].append(record['id'])
         if tag=='title' and self.in_head:
             self.title_count+=1; self.in_title=True
         if attrs.get('id'): self.ids.add(attrs['id'])
@@ -42,9 +58,11 @@ class PageParser(HTMLParser):
         if tag=='title' and self.in_head: self.in_title=False
         if tag=='script' and self.in_structured_data: self.in_structured_data=False
         if tag=='head': self.in_head=False
+        if tag=='label' and self._file_picker_stack: self._file_picker_stack.pop()
     def handle_data(self,data):
         if self.in_title: self.title+=data
         if self.in_structured_data and self.structured_data: self.structured_data[-1]+=data
+        if self._file_picker_stack: self._file_picker_stack[-1]['text'].append(data)
 
 
 def check_site(root):
@@ -67,6 +85,19 @@ def check_site(root):
         rel=path.relative_to(root).as_posix()
         public_page=info['public'] and rel!='404.html'
         if doc.robots!=('index,follow' if public_page else 'noindex,nofollow'): errors.append(f'{path}: incorrect robots metadata')
+        for file_input in doc.file_inputs:
+            picker=file_input['picker']
+            if (
+                picker is None
+                or not file_input['id']
+                or picker['for']!=file_input['id']
+                or file_input['id'] not in picker['input_ids']
+                or not file_input['accept']
+                or not picker['hint']
+                or not picker['selection']
+                or not ''.join(picker['text']).strip()
+            ):
+                errors.append(f'{path}: file input must have a labeled format hint and selected-file feedback')
         if info['base_url']:
             expected=info['base_url']+'/'+(rel[:-10] if rel.endswith('index.html') else rel)
             if doc.canonical!=expected: errors.append(f'{path}: incorrect canonical URL')
