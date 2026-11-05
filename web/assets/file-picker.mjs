@@ -7,7 +7,14 @@ export function showFileSelection(input, file) {
     output.hidden = true;
     return false;
   }
-  output.textContent = `Selected on this device: ${file.name} · Tap to choose another`;
+  const bytes = Number(file.size);
+  const size = Number.isFinite(bytes) && bytes >= 0
+    ? bytes < 1024 ? `${bytes} B`
+      : bytes < 1024 ** 2 ? `${(bytes / 1024).toFixed(1)} KB`
+        : bytes < 1024 ** 3 ? `${(bytes / 1024 ** 2).toFixed(1)} MB`
+          : `${(bytes / 1024 ** 3).toFixed(1)} GB`
+    : '';
+  output.textContent = `Ready on this device: ${file.name}${size ? ` · ${size}` : ''}. Tap to change.`;
   output.title = file.name;
   output.hidden = false;
   return true;
