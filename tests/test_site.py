@@ -1998,7 +1998,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('id="station-save-ack" class="station-save-ack" type="button" hidden>I saved the file</button>',station)
             self.assertIn('If it opens as a preview, use Share → Save to Files',station)
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
-            self.assertIn('Open the original Talk2Nature session ZIP.',compare)
+            self.assertIn('Choose the original Talk2Nature session ZIP.',compare)
             self.assertIn('Choose a session ZIP',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
             self.assertIn('Want a side-by-side view? Add a second session when you’re ready.',compare)
