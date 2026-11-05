@@ -179,6 +179,18 @@ def _check_core_contract(path, url, body, root_url):
             raise LiveCheckError(f"{url}: contributor invitation is missing a direct first step: {missing_copy[0]}")
         if "Less scrolling. More noticing." in visible_copy:
             raise LiveCheckError(f"{url}: internal feedback copy is still visible")
+        expected_quick_links = {
+            ("#contribute-researchers", "I’m a researcher"),
+            ("#contribute-developers", "I’m a developer"),
+            ("#contribute-naturalists", "I’m a naturalist or supporter"),
+        }
+        actual_quick_links = {
+            (anchor["href"], anchor["text"])
+            for anchor in content.anchors
+            if anchor["href"].startswith("#")
+        }
+        if not expected_quick_links.issubset(actual_quick_links):
+            raise LiveCheckError(f"{url}: direct researcher, developer and naturalist paths are incomplete")
         expected_routes = {
             urljoin(root_url, "community/university/"),
             "https://github.com/Metivity/talk2nature/issues",
