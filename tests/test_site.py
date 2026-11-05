@@ -1737,7 +1737,7 @@ class SiteTests(unittest.TestCase):
             page=(root/'opportunities/index.html').read_text()
             self.assertEqual(sum(source['id']==121 for source in load('sources')),1)
             self.assertIn('Deadline <time datetime="2026-11-09">November 9, 2026</time> · 12:00 Israel time',page)
-            self.assertIn('No public result posted',page)
+            self.assertIn('no qualifying completed Talk2Nature study identified',page)
             self.assertIn('September 30, 2026 by noon CET',page)
             self.assertIn('August 30',page)
             self.assertIn('official date details',page)
