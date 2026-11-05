@@ -277,6 +277,9 @@ class SiteTests(unittest.TestCase):
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
             page=(root/'contribute'/'index.html').read_text()
+            for path in ('researchers', 'developers', 'naturalists'):
+                self.assertIn(f'href="#contribute-{path}"',page)
+                self.assertIn(f'id="contribute-{path}"',page)
             self.assertIn('A PHONE-FRIENDLY FIRST TASK',page)
             self.assertIn('Try the Field Companion with the microphone off.',page)
             self.assertIn('no-microphone practice option',page)

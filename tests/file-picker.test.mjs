@@ -33,14 +33,19 @@ test('every public file import uses the shared touch-sized, labelled picker', as
   assert.match(design, /\.file-picker:focus-within\{outline:/);
 });
 
-test('selected filename is shown in the local file picker and can be cleared', () => {
+test('selected filename and size are shown in the local file picker and can be cleared', () => {
   const output = {textContent: '', title: '', hidden: true};
   const label = {querySelector: selector => selector === '[data-selected-file]' ? output : null};
   const input = {closest: selector => selector === '.file-picker' ? label : null};
-  assert.equal(showFileSelection(input, {name: 'evening-song.t2n'}), true);
-  assert.equal(output.textContent, 'Selected on this device: evening-song.t2n · Tap to choose another');
+  assert.equal(showFileSelection(input, {name: 'evening-song.t2n', size: 2.5 * 1024 ** 2}), true);
+  assert.equal(output.textContent, 'Ready on this device: evening-song.t2n · 2.5 MB. Tap to change.');
   assert.equal(output.title, 'evening-song.t2n');
   assert.equal(output.hidden, false);
+  showFileSelection(input, {name: '<audio>.wav', size: 0});
+  assert.equal(output.textContent, 'Ready on this device: <audio>.wav · 0 B. Tap to change.');
+  assert.equal(output.title, '<audio>.wav');
+  showFileSelection(input, {name: 'older-browser.wav'});
+  assert.equal(output.textContent, 'Ready on this device: older-browser.wav. Tap to change.');
   assert.equal(showFileSelection(input, null), false);
   assert.equal(output.textContent, '');
   assert.equal(output.hidden, true);
@@ -125,6 +130,8 @@ test('contribution page offers role-specific paths before the longer phone walkt
   assert.match(build, /Browse open coding tasks/);
   assert.match(build, /Suggest a source or question/);
   assert.match(build, /Join Talk2Nature: animal communication research and tools/);
+  assert.match(build, /Jump to a contribution path/);
+  for (const role of ['researchers', 'developers', 'naturalists']) assert.match(build, new RegExp(`href="#contribute-${role}"`));
 });
 
 test('the app home makes saved-file import obvious without opening More tools', async () => {
