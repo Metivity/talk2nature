@@ -6491,5 +6491,16 @@
     "url": "https://www.geonames.org/5122440/city-of-ithaca.html",
     "checked": "2026-11-05",
     "origin": "GeoNames city reference used for an approximate display point; it does not identify any BirdVox sensor or wildlife location."
+  },
+  {
+    "id": 652,
+    "title": "Kunming, Yunnan, China · GeoNames city reference",
+    "description": "Gazetteer reference used only for the rounded Kunming city-region display point in the literature atlas.",
+    "url": "https://www.geonames.org/1804651/kunming.html",
+    "checked": "2026-11-05",
+    "origin": "GeoNames lists the Kunming city reference at 25.03889, 102.71833. The atlas point is rounded to one decimal place and does not identify the apiary or any study unit.",
+    "rights": {
+      "location": "GeoNames geographical data is available under CC BY 4.0; attribution is included through this source record. The rounded city reference does not represent study observations."
+    }
   }
 ]
