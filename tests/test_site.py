@@ -748,6 +748,29 @@ class SiteTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'invalid JSON-LD structured metadata'):
                 check_site(root)
 
+    def test_public_structured_metadata_must_match_page_title_description_canonical_and_language(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            target=root/'research'/'index.html'
+            original=target.read_text()
+            match=re.search(r'<script type="application/ld\+json">(.*?)</script>',original)
+            self.assertIsNotNone(match)
+            base=json.loads(match.group(1))
+            for field,value in (
+                ('name','unrelated title'),
+                ('description','unrelated summary'),
+                ('url','https://fixture.github.io/talk2nature/different/'),
+                ('inLanguage','fr'),
+                ('@type','Article'),
+            ):
+                with self.subTest(field=field):
+                    invalid={**base,field:value}
+                    page=original.replace(match.group(0),'<script type="application/ld+json">'+json.dumps(invalid)+'</script>',1)
+                    target.write_text(page)
+                    with self.assertRaisesRegex(ValueError,f'incorrect JSON-LD {re.escape(field)}'):
+                        check_site(root)
+
     def test_public_html_page_must_be_discoverable_from_homepage(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
