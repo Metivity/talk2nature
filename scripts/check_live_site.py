@@ -17,7 +17,16 @@ except ModuleNotFoundError:
     from check_site import PageParser
 
 
-HTML_PATHS = ("", "app/", "app/station/", "research/resources/")
+HTML_PATHS = (
+    "",
+    "contribute/",
+    "app/",
+    "app/station/",
+    "app/compare/",
+    "tools/listen/",
+    "tools/annotation-compare/",
+    "research/resources/",
+)
 
 
 class LiveCheckError(RuntimeError):
@@ -146,7 +155,100 @@ def _validate_sitemap_route(url, base_url):
 
 
 def _check_core_contract(path, url, body, root_url):
-    if path == "app/":
+    if path == "":
+        content = _VisibleContentParser()
+        content.feed(body)
+        visible_copy = _normalize_copy(" ".join(content.text))
+        if "Less scrolling. More noticing." in visible_copy:
+            raise LiveCheckError(f"{url}: internal feedback copy is still visible")
+        join_url = urljoin(root_url, "contribute/")
+        if not any(urljoin(root_url, anchor["href"]) == join_url for anchor in content.anchors):
+            raise LiveCheckError(f"{url}: homepage does not link to the contributor invitation")
+    elif path == "contribute/":
+        content = _VisibleContentParser()
+        content.feed(body)
+        visible_copy = _normalize_copy(" ".join(content.text))
+        required_copy = (
+            "Review a research workflow.",
+            "Improve a tool.",
+            "Ground the question.",
+            "Try the Field Companion with the microphone off.",
+        )
+        missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
+        if missing_copy:
+            raise LiveCheckError(f"{url}: contributor invitation is missing a direct first step: {missing_copy[0]}")
+        if "Less scrolling. More noticing." in visible_copy:
+            raise LiveCheckError(f"{url}: internal feedback copy is still visible")
+        expected_routes = {
+            urljoin(root_url, "community/university/"),
+            "https://github.com/Metivity/talk2nature/issues",
+            urljoin(root_url, "contribute/source/"),
+        }
+        linked_routes = {urljoin(root_url, anchor["href"]) for anchor in content.anchors}
+        if not expected_routes.issubset(linked_routes):
+            raise LiveCheckError(f"{url}: researcher, developer and source-suggestion routes are incomplete")
+    elif path == "tools/listen/":
+        content = _VisibleContentParser()
+        content.feed(body)
+        visible_copy = _normalize_copy(" ".join(content.text))
+        required_copy = (
+            "Open a sound or notebook",
+            "Tap to open Files on your device",
+            "Browse here or drop one file",
+            "WAV up to 2 min / 25 MB",
+            "MP3/M4A not supported",
+        )
+        missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
+        if missing_copy:
+            raise LiveCheckError(f"{url}: file-opening guidance is incomplete: {missing_copy[0]}")
+        picker = content.controls.get("wav-file")
+        if (
+            picker is None
+            or picker["tag"] != "input"
+            or picker["attributes"].get("type") != "file"
+            or ".wav" not in picker["attributes"].get("accept", "")
+        ):
+            raise LiveCheckError(f"{url}: the local WAV file picker is missing")
+    elif path == "app/compare/":
+        content = _VisibleContentParser()
+        content.feed(body)
+        visible_copy = _normalize_copy(" ".join(content.text))
+        required_copy = (
+            "Open a session ZIP",
+            "Tap to open Files on your device",
+            "Browse here or drop one file",
+            "ZIP up to 27 MB",
+        )
+        missing_copy = [phrase for phrase in required_copy if phrase not in visible_copy]
+        if missing_copy:
+            raise LiveCheckError(f"{url}: saved-session file guidance is incomplete: {missing_copy[0]}")
+        for control_id in ("file-a", "file-b"):
+            picker = content.controls.get(control_id)
+            if (
+                picker is None
+                or picker["tag"] != "input"
+                or picker["attributes"].get("type") != "file"
+                or ".zip" not in picker["attributes"].get("accept", "")
+            ):
+                raise LiveCheckError(f"{url}: the {control_id} session ZIP picker is missing")
+    elif path == "tools/annotation-compare/":
+        content = _VisibleContentParser()
+        content.feed(body)
+        visible_copy = _normalize_copy(" ".join(content.text))
+        if "Tap to open Files on your device" not in visible_copy or "Browse here or drop one file" not in visible_copy:
+            raise LiveCheckError(f"{url}: annotation file-opening guidance is incomplete")
+        if "Open observer A labels" not in visible_copy or "Open observer B labels" not in visible_copy:
+            raise LiveCheckError(f"{url}: the two observer-label file actions are missing")
+        for control_id in ("annotation-file-a", "annotation-file-b"):
+            picker = content.controls.get(control_id)
+            if (
+                picker is None
+                or picker["tag"] != "input"
+                or picker["attributes"].get("type") != "file"
+                or ".json" not in picker["attributes"].get("accept", "")
+            ):
+                raise LiveCheckError(f"{url}: the {control_id} JSON picker is missing")
+    elif path == "app/":
         content = _VisibleContentParser()
         content.feed(body)
         primary_actions = [anchor for anchor in content.anchors if "primary" in anchor["classes"]]
@@ -299,6 +401,9 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
         "permission_unchecked_by_default": True,
         "microphone_start_disabled_by_default": True,
         "synthetic_action_available": True,
+        "internal_feedback_copy_absent": True,
+        "contributor_paths_verified": True,
+        "file_picker_guidance_verified": True,
     }
 
 

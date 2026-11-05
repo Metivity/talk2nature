@@ -12,7 +12,19 @@ class FakeLiveSite:
         self.base_url = base_url.rstrip("/")
         self.calls = []
         self.pages = {
-            "": self._page("", "Talk2Nature"),
+            "": self._page(
+                "",
+                "Talk2Nature",
+                '<a href="/talk2nature/contribute/">Find a way to help</a>',
+            ),
+            "contribute/": self._page(
+                "contribute/",
+                "Join Talk2Nature",
+                '<h2>Review a research workflow.</h2><a href="/talk2nature/community/university/">Researcher path</a>'
+                '<h2>Improve a tool.</h2><a href="https://github.com/Metivity/talk2nature/issues">Developer path</a>'
+                '<h2>Ground the question.</h2><a href="/talk2nature/contribute/source/">Suggest a source</a>'
+                "Try the Field Companion with the microphone off.",
+            ),
             "app/": self._page(
                 "app/",
                 "Field Companion",
@@ -31,6 +43,30 @@ class FakeLiveSite:
                 '<button id="station-voice" aria-describedby="station-voice-guidance">Mark heard speech</button>'
                 '<p id="station-voice-guidance">Only mark nearby human speech when it occurs naturally. '
                 'Do not speak, call or imitate to elicit a response.</p>',
+            ),
+            "app/compare/": self._page(
+                "app/compare/",
+                "Review saved moments",
+                '<span>Open a session ZIP</span><span>Tap to open Files on your device</span>'
+                '<span>Browse here or drop one file</span><span>ZIP up to 27 MB</span>'
+                '<input id="file-a" type="file" accept=".zip,application/zip">'
+                '<input id="file-b" type="file" accept=".zip,application/zip">',
+            ),
+            "tools/listen/": self._page(
+                "tools/listen/",
+                "Listen",
+                '<span>Open a sound or notebook</span><span>Tap to open Files on your device</span>'
+                '<span>Browse here or drop one file</span><span>WAV up to 2 min / 25 MB</span>'
+                '<span>MP3/M4A not supported</span>'
+                '<input id="wav-file" type="file" accept=".wav,.t2n,audio/wav">',
+            ),
+            "tools/annotation-compare/": self._page(
+                "tools/annotation-compare/",
+                "Compare annotations",
+                '<span>Open observer A labels</span><span>Open observer B labels</span>'
+                '<span>Tap to open Files on your device</span><span>Browse here or drop one file</span>'
+                '<input id="annotation-file-a" type="file" accept=".json,application/json">'
+                '<input id="annotation-file-b" type="file" accept=".json,application/json">',
             ),
             "research/resources/": self._page("research/resources/", "Research resources"),
         }
@@ -79,8 +115,8 @@ class LiveSiteTests(unittest.TestCase):
     def test_checks_core_pages_sitemap_and_robots(self):
         site = FakeLiveSite()
         result = verify_live_site(site.base_url + "/", attempts=1, fetch=site.fetch)
-        self.assertEqual(result["pages_verified"], 4)
-        self.assertEqual(result["sitemap_urls"], 4)
+        self.assertEqual(result["pages_verified"], 8)
+        self.assertEqual(result["sitemap_urls"], 8)
         self.assertTrue(result["all_sitemap_pages_verified"])
         self.assertTrue(result["robots_names_sitemap"])
         self.assertTrue(result["zero_command_first_action_verified"])
@@ -88,7 +124,10 @@ class LiveSiteTests(unittest.TestCase):
         self.assertTrue(result["permission_unchecked_by_default"])
         self.assertTrue(result["microphone_start_disabled_by_default"])
         self.assertTrue(result["synthetic_action_available"])
-        self.assertEqual(len(site.calls), 6)
+        self.assertTrue(result["internal_feedback_copy_absent"])
+        self.assertTrue(result["contributor_paths_verified"])
+        self.assertTrue(result["file_picker_guidance_verified"])
+        self.assertEqual(len(site.calls), 10)
 
     def test_checks_every_sitemap_page_for_reachability_and_index_metadata(self):
         site = FakeLiveSite()
@@ -101,8 +140,8 @@ class LiveSiteTests(unittest.TestCase):
 
         result = verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
-        self.assertEqual(result["pages_verified"], 5)
-        self.assertEqual(result["sitemap_urls"], 5)
+        self.assertEqual(result["pages_verified"], 9)
+        self.assertEqual(result["sitemap_urls"], 9)
         self.assertIn((f"{site.base_url}/{route}", 5), site.calls)
 
     def test_reports_core_copy_failure_and_still_checks_all_sitemap_routes_and_robots(self):
@@ -120,7 +159,7 @@ class LiveSiteTests(unittest.TestCase):
             verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
         message = str(raised.exception)
-        self.assertIn("5 unique in-scope route(s), 5 route checks were attempted, robots fetched: True", message)
+        self.assertIn("9 unique in-scope route(s), 9 route checks were attempted, robots fetched: True", message)
         self.assertIn("Zero Command setup disclosure is incomplete", message)
         self.assertIn("https://example.github.io/talk2nature/research/missing-note/: expected HTTP 200, received 404", message)
         self.assertIn((f"{site.base_url}/{missing_route}", 5), site.calls)
@@ -214,7 +253,7 @@ class LiveSiteTests(unittest.TestCase):
         result = verify_live_site(
             site.base_url, attempts=2, interval=3, fetch=flaky_fetch, sleep=sleeps.append
         )
-        self.assertEqual(result["pages_verified"], 4)
+        self.assertEqual(result["pages_verified"], 8)
         self.assertEqual(sleeps, [3])
 
     def test_rejects_stale_or_blocked_live_metadata(self):
@@ -223,6 +262,22 @@ class LiveSiteTests(unittest.TestCase):
             'content="index,follow"', 'content="noindex,nofollow"'
         )
         with self.assertRaisesRegex(LiveCheckError, "not explicitly indexable"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_internal_feedback_copy_on_the_live_homepage(self):
+        site = FakeLiveSite()
+        site.pages[""] = site.pages[""].replace(
+            "<h1>Page</h1>", "<h1>Page</h1>Less scrolling. More noticing."
+        )
+        with self.assertRaisesRegex(LiveCheckError, "internal feedback copy is still visible"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_old_file_picker_instructions_on_live_listen_page(self):
+        site = FakeLiveSite()
+        site.pages["tools/listen/"] = site.pages["tools/listen/"].replace(
+            "Browse here or drop one file", "Choose File"
+        )
+        with self.assertRaisesRegex(LiveCheckError, "file-opening guidance is incomplete"):
             verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
     def test_requires_https_before_network_access(self):
