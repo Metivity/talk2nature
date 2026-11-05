@@ -10,8 +10,8 @@ test('saved-moment actions appear before the research explainer and accept only 
   assert.ok(html.indexOf('compare-workbench') < html.indexOf('compare-evidence'));
   assert.match(html, /class="file-picker compare-file-picker"[^>]*for="file-a"/);
   assert.match(html, /ZIP up to 27 MB/);
-  assert.match(html, /id="file-a" accept="\.zip,application\/zip" aria-label="Open the first saved Talk2Nature session ZIP from this device"/);
-  assert.match(html, /id="file-b" accept="\.zip,application\/zip" aria-label="Open a second saved Talk2Nature session ZIP from this device"/);
+  assert.match(html, /id="file-a" accept="\.zip,application\/zip" aria-label="Choose the first saved Talk2Nature session ZIP from this device"/);
+  assert.match(html, /id="file-b" accept="\.zip,application\/zip" aria-label="Choose a second saved Talk2Nature session ZIP from this device"/);
 });
 
 test('every public file import uses the shared touch-sized, labelled picker', async () => {
@@ -21,6 +21,8 @@ test('every public file import uses the shared touch-sized, labelled picker', as
   ]);
   const inputs = [listen, annotations, compare].join('\n').match(/<input[^>]+type="file"[^>]*>/g) ?? [];
   assert.equal(inputs.length, 7);
+  assert.match(listen, /id="wav-file" type="file" accept="\.wav,\.t2n,audio\/wav,audio\/x-wav"/);
+  assert.doesNotMatch(listen, /id="wav-file"[^>]*application\/octet-stream/);
   const selectedNames = [listen, annotations, compare].join('\n').match(/data-selected-file aria-live="polite" hidden/g) ?? [];
   assert.equal(selectedNames.length, inputs.length);
   for (const input of inputs) assert.match(input, /aria-label="(?:Open|Choose)/);
@@ -44,13 +46,12 @@ test('selected filename is shown in the local file picker and can be cleared', (
   assert.equal(output.hidden, true);
 });
 
-test('file picker names phone file locations and computer drop support', async () => {
+test('file picker names phone file locations and avoids relying on desktop-only drop instructions', async () => {
   const [listen, annotations, compare] = await Promise.all([
     read('../web/templates/listen.html'), read('../web/templates/annotation-compare.html'), read('../web/templates/compare.html'),
   ]);
   for (const page of [listen, annotations, compare]) {
     assert.match(page, /Files or Downloads/);
-    assert.match(page, /On phone: browse|on phone: browse/);
     assert.doesNotMatch(page, /computer: drop here/);
   }
 });
@@ -59,11 +60,11 @@ test('file actions say what opens and do not use an external-link arrow', async 
   const [listen, compare] = await Promise.all([read('../web/templates/listen.html'), read('../web/templates/compare.html')]);
   const actions = `${listen}\n${compare}`.match(/<span class="file-picker-action">[^<]*(?:<span[^>]*>[^<]*<\/span>)?<\/span>/g) ?? [];
   assert.ok(actions.length >= 5);
-  assert.match(listen, /Open a sound or notebook/);
-  assert.match(listen, /Open a Station session ZIP/);
-  assert.match(listen, /Open saved labels for this sound/);
-  assert.match(compare, /Open a session ZIP/);
-  assert.match(compare, /Add a second session ZIP/);
+  assert.match(listen, /Choose a sound or notebook/);
+  assert.match(listen, /Choose a Station session ZIP/);
+  assert.match(listen, /Choose saved labels for this sound/);
+  assert.match(compare, /Choose a session ZIP/);
+  assert.match(compare, /Choose a second session ZIP/);
   assert.doesNotMatch(actions.join(' '), /↗/);
 });
 
@@ -110,4 +111,12 @@ test('homepage title and description name the project focus in searchable langua
   assert.match(build, /Animal communication research and bioacoustic tools/);
   assert.match(build, /local tools for observing animal sounds\. Translation remains an open scientific question/);
   assert.match(build, /\{url\('contribute\/'\)\}\">Join the project/);
+});
+
+test('the app home makes saved-file import obvious without opening More tools', async () => {
+  const html = await read('../web/templates/app.html');
+  const link = html.indexOf('Already have a recording? Choose a sound or saved notebook');
+  const moreTools = html.indexOf('app-more-tools-panel');
+  assert.ok(link >= 0 && (moreTools < 0 || link < moreTools));
+  assert.match(html, /href="\{\{base\}\}\/app\/review\/"/);
 });
