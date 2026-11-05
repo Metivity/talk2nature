@@ -2,6 +2,14 @@
 
 This file preserves the dated maintainer checks and unreleased candidate notes formerly appended to the [researcher start guide](RESEARCHER_START.md). They are historical snapshots, not independent reproductions or scientific results. Use [project status](STATUS.md) for the latest authoritative state.
 
+## Researcher-kit reproduction — November 5, 2026 — 559e8fc
+
+**Question:** do the published researcher quickstart commands still work from the exact current public `main`, without package installation or research-data acquisition?
+
+**Verification:** made a fresh depth-one HTTPS clone at [`559e8fcb5cc9436f355daeea15dbfe8fab5ecd03`](https://github.com/Metivity/talk2nature/commit/559e8fcb5cc9436f355daeea15dbfe8fab5ecd03). Environment: Python **3.12.5** and Git **2.53.0**; no packages were installed. The documented annotation, standard-manifest and dyadic-manifest commands all completed successfully. The annotation report described an invented 8-second recording, two marked events, 2 seconds of marked-interval union and zero observed context. The standard split produced 10 connected groups and 12/4/4 train/validation/test records (6/2/2 groups); the dyadic split produced 10 groups and 6/2/4 records (6/2/2 groups). Repeated outputs were byte-identical and matched the guide's expected hashes: `814ccb3495156ef56ae43ccfe79faa4584843402c90d0d30462df93a52ebb35b` (standard) and `6a7e742f3f4056ad972d57d751837014c7a6ad4ac78d1046430b967165c9e139` (dyadic). Generated outputs stayed ignored, and the cloned working tree remained clean.
+
+**Limits:** maintainer-run reproduction of synthetic metadata and command-line behavior only. No independent researcher, browser/device, full-suite or site-build acceptance is established here. No animal or participant data, audio, model weights or biological result were involved. The fixture's grouping keys do not establish real identities, independence, label quality or rights.
+
 ## Researcher-kit reproduction — November 3, 2026 — 36ab7dc
 
 **Question:** do the published researcher quickstart commands still run from the exact current public `main`, without package installation or research-data acquisition?
