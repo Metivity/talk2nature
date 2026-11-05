@@ -7,7 +7,7 @@ export function showFileSelection(input, file) {
     output.hidden = true;
     return false;
   }
-  output.textContent = `Ready on this device: ${file.name} · Open again to replace`;
+  output.textContent = `Selected on this device: ${file.name} · Tap to choose another`;
   output.title = file.name;
   output.hidden = false;
   return true;

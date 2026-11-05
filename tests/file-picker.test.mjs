@@ -38,7 +38,7 @@ test('selected filename is shown in the local file picker and can be cleared', (
   const label = {querySelector: selector => selector === '[data-selected-file]' ? output : null};
   const input = {closest: selector => selector === '.file-picker' ? label : null};
   assert.equal(showFileSelection(input, {name: 'evening-song.t2n'}), true);
-  assert.equal(output.textContent, 'Ready on this device: evening-song.t2n · Open again to replace');
+  assert.equal(output.textContent, 'Selected on this device: evening-song.t2n · Tap to choose another');
   assert.equal(output.title, 'evening-song.t2n');
   assert.equal(output.hidden, false);
   assert.equal(showFileSelection(input, null), false);
@@ -108,8 +108,8 @@ test('file picker announces unsupported drops and never opens more than one file
 
 test('homepage title and description name the project focus in searchable language', async () => {
   const build = await read('../web/build.py');
-  assert.match(build, /Animal communication research and bioacoustic tools/);
-  assert.match(build, /local tools for observing animal sounds\. Translation remains an open scientific question/);
+  assert.match(build, /Open-source animal communication research and bioacoustic tools/);
+  assert.match(build, /Open-source animal communication research, bioacoustics and local tools for documenting animal sounds/);
   assert.match(build, /\{url\('contribute\/'\)\}\">Join the project/);
 });
 
