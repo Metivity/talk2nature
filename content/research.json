@@ -6692,14 +6692,15 @@
     "year": "2026",
     "source_ids": [
       563,
-      564
+      564,
+      652
     ],
-    "review_depth": "Full primary article reviewed through the official PNAS/PMC record: significance and abstract, audience-manipulation experiments, controls, measured dance variables, results, discussion, data statement and article license. The Zenodo v1 landing record and official API metadata were checked, including its record-level license and single-file size/checksum. No dataset payload, supplemental files, videos, code or model was downloaded, inspected or executed.",
+    "review_depth": "Full primary article reviewed through the official PNAS/PMC record: significance and abstract, audience-manipulation experiments, controls, measured dance variables, results, discussion, data statement and article license. The Zenodo v1 landing record and official API metadata were checked, including its record-level license and single-file size/checksum. No dataset payload, supplemental files, videos, code or model was downloaded, inspected or executed. The atlas location was rechecked against the primary article’s explicit “Location and Colonies” methods section on 2026-11-05; a separate GeoNames city-reference record was checked for the rounded display point.",
     "finding": "Lin et al. experimentally varied the dance-floor audience and the availability of appropriately aged potential followers. Dancers with fewer actual or potential followers communicated direction and distance less precisely: waggle-run duration and distance became more variable, although their means did not significantly change. Dancers also spent longer and moved farther during return runs when followers were scarce, consistent with audience-seeking behavior. This is direct evidence that receiver availability can shape signal production in this particular referential system.",
     "limitations": "This is a species- and signal-specific result about precision in the honey bee waggle dance, not evidence of open-ended language or general animal translation. The proposed audience-seeking pathway is supported by the observed return-run changes; the study does not establish a general cognitive mechanism transferable to other taxa. The Zenodo record lists one 109,830-byte XLSX file, but its contents and mapping to the reported analyses have not been inspected. No independent Talk2Nature reproduction, data-to-result audit or external specialist review has occurred.",
     "lesson": "A signal cannot always be evaluated in isolation from its receivers: who is available to attend may change the sender’s behavior and the precision of a known signal. For Talk2Nature, preserve audience/context and receiver observations when a protocol can validly measure them; do not turn an observed association or controlled effect into a claim that a model has decoded meaning.",
     "next_review": "Ask an independent insect-communication specialist and a separate statistical reviewer whether the released workbook can support a bounded reproduction of one prespecified primary result. Before any data analysis, map workbook fields to the published outcome, identify the experimental and nesting units (including trial and colony), assess whether the number of independent units supports the intended uncertainty estimate, and freeze a descriptive reproduction protocol. Do not select this as an ML benchmark unless reviewers identify a non-duplicative question, suitable group-held-out evaluation and adequate data. No payload acquisition or model run is authorized by this note.",
-    "reviewed": "2026-11-02",
+    "reviewed": "2026-11-05",
     "expert_review": "No independent Talk2Nature insect-communication or statistical specialist has reviewed this assessment.",
     "review_stage": "Targeted full primary-paper and dataset-metadata review; no payload acquisition or reproduction",
     "year_label": "Publication year",
@@ -6722,12 +6723,20 @@
         "The Zenodo v1 record declares CC BY 4.0 and lists one 109,830-byte XLSX file. Metadata only: payload not inspected; no reproduction or ML run."
       ]
     ],
-    "review_locator": "Lin et al. (2026), PNAS 123(14): e2518687123, DOI 10.1073/pnas.2518687123: significance, abstract, Experiments 1–2, controls, Results, Discussion, Methods and Data/Materials/Software Availability; Zenodo v1 DOI 10.5281/zenodo.10892587 and official API metadata reviewed 2026-11-02.",
+    "review_locator": "Lin et al. (2026), PNAS 123(14): e2518687123, DOI 10.1073/pnas.2518687123: significance, abstract, Experiments 1–2, controls, Results, Discussion, Methods and Data/Materials/Software Availability; Zenodo v1 DOI 10.5281/zenodo.10892587 and official API metadata reviewed 2026-11-02. Atlas follow-up 2026-11-05: “Location and Colonies” methods explicitly places the bee apiary at the Southwest Center for Biological Diversity, Chinese Academy of Sciences, Kunming, China.",
     "atlas": {
-      "reviewed": "2026-11-02",
-      "location_status": "pending",
-      "location_note": "The reviewed main-text methods identify a focal observation colony and feeder arrangement but do not establish its locality. XTBG/CAS author affiliations alone are not evidence of the field site. Check the SI Appendix or another primary study-site statement before mapping.",
-      "locations": [],
+      "reviewed": "2026-11-05",
+      "location_status": "mapped",
+      "location_note": "The primary article’s “Location and Colonies” methods explicitly names the bee apiary in Kunming, China. The atlas uses a one-decimal city-region locator derived from the separately cited GeoNames city reference; it is not the apiary, feeder, colony, recorder or animal position. No exact study coordinates or dataset payload were inspected or copied.",
+      "locations": [
+        {
+          "place_id": "kunming-region-china",
+          "role": "study_region",
+          "source_id": 563,
+          "locator": "Materials and Methods: Location and Colonies",
+          "basis": "The article explicitly identifies the apiary as the study locality. The displayed point is a separately cited, rounded city-region locator and does not identify the apiary or any experimental unit."
+        }
+      ],
       "observation_period": null
     }
   },

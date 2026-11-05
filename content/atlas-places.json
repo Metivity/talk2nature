@@ -393,6 +393,13 @@
       "precision": "region",
       "latitude": 42.4,
       "longitude": -76.5
+    },
+    {
+      "id": "kunming-region-china",
+      "label": "Kunming region, Yunnan, China",
+      "precision": "region",
+      "latitude": 25.0,
+      "longitude": 102.7
     }
   ]
 }
