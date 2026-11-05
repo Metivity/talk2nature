@@ -37,4 +37,4 @@ This checker validates page copy and file-input declarations; it does not emulat
 
 ## Next release action
 
-Run the manual GitHub Pages workflow for the approved main revision under the Metivity GitHub account. After deployment, require this live check to pass and separately inspect Search Console for indexing status. The connected GitHub integration offers run inspection but no workflow-dispatch action. The local GitHub CLI session currently has a different active account and an invalid Metivity token; do not use that session for deployment.
+Run the manual GitHub Pages workflow for the approved main revision under the Metivity GitHub account. After deployment, require this live check to pass and separately inspect Search Console for indexing status. Workflow dispatch is manual and was not performed during this audit.
