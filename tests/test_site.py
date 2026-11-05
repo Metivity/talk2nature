@@ -2001,7 +2001,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('Choose the original Talk2Nature session ZIP.',compare)
             self.assertIn('Choose a session ZIP',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
-            self.assertIn('Want a side-by-side view? Add a second session when you’re ready.',compare)
+            self.assertIn('Want a side-by-side view? Choose a second session when you’re ready.',compare)
             self.assertIn('Open one saved moment.',(root/'app'/'index.html').read_text())
 
     def test_mobile_guide_explains_direct_single_session_reopen_without_unzipping(self):
