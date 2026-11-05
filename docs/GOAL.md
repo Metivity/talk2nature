@@ -1,3 +1,13 @@
+# November 5, 2026 — refresh Coller Dolittle Prize fit and deadline
+
+**Question:** is there a credible route to submit Talk2Nature to the 2027 Coller Dolittle Prize after its stated deadline?
+
+**Evidence reviewed:** rechecked the official [Jeremy Coller Foundation announcement](https://www.jeremycollerfoundation.org/news-and-insights/press-releases/scientists-win-us100-000-in-2026-coller-dolittle-prize) and [TAU-hosted challenge page](https://coller-dolittle-24.sites.tau.ac.il/). The Foundation lists August 30, 2026; TAU lists September 30, 2026 at noon CET. Both have passed. TAU still displays an open-submissions label but neither official source describes late handling or a later cycle. TAU says the annual award is for work already performed and requires non-invasive research across multiple contexts using endogenous signals, a measurable animal response and public data.
+
+**Decision and change:** no late application. Talk2Nature's current software and synthetic tests do not meet the completed-research criteria, and a deadline conflict does not justify assuming late acceptance. Refreshed the Coller Dolittle opportunity record and source records 19 and 25 with the current check date, criteria and no-late-route status. No application was drafted or submitted, and no organizer was contacted.
+
+**Next:** reconsider only when a future cycle's official rules and dates are published and Talk2Nature has qualifying completed research reviewed against them. Keep any future applicant facts, data-release rights and submission declarations separate and evidence-backed.
+
 # November 5, 2026 — screen MyGardenBird as a species-classification reference, not a presence benchmark
 
 **Question:** can a recently published Malaysian bird dataset provide evidence for the first ten-second bird-presence benchmark or improve our research data-provenance design?

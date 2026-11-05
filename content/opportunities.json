@@ -22,13 +22,13 @@
     "deadline_time": "12:00 CET",
     "deadline_source_id": 25,
     "conflicting_date_source_id": 19,
-    "status": "Deadline passed · official dates conflict",
+    "status": "2027 deadline passed · official cutoff dates conflict · no late route identified",
     "amount": "$100,000 annual award; separate major-prize terms.",
     "source_id": 25,
     "fit": "For completed, non-invasive research across more than one context using endogenous signals, with a measurable animal response and public data. Current software and synthetic tests do not meet this research bar.",
-    "next_action": "The TAU-hosted 2027 page lists September 30, 2026 by noon CET and still displays 'Submissions are now open'; the Foundation's June 26 announcement lists August 30. Both dates have passed. Neither page describes late handling or a later cycle. The prize is for completed, non-invasive research using multiple contexts and endogenous signals, with measurable animal response and public data; Talk2Nature's synthetic software does not meet that research bar. Recheck official sources before planning for a future cycle.",
-    "verified": "2026-10-28",
-    "application_status": "No public result posted"
+    "next_action": "Do not submit a late application: the official TAU page lists September 30, 2026 by noon CET while the Foundation lists August 30, and both dates have passed. Neither official page describes a late route or a later cycle. TAU's rules require already-performed, non-invasive work across multiple contexts using endogenous signals, measurable animal response and public data. Talk2Nature's current software and synthetic tests do not qualify. Reassess a future cycle only after a reviewed study meets those criteria and the new rules and deadline are published.",
+    "verified": "2026-11-05",
+    "application_status": "Not submitted · deadline passed · no qualifying completed Talk2Nature study identified"
   },
   {
     "slug": "natgeo-trebek-2026",

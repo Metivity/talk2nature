@@ -1,3 +1,7 @@
+# November 5, 2026 — Coller Dolittle Prize fit rechecked
+
+Rechecked the official Foundation and Tel Aviv University prize pages. They give conflicting 2027 deadlines, August 30 and September 30, 2026 at noon CET, and both are past. The TAU page still says submissions are open, but neither source describes a late route or a later cycle. The prize is for already-completed, non-invasive, multi-context research using endogenous signals, with a measurable animal response and public data. Talk2Nature's present software/synthetic work does not meet that bar. Refreshed the opportunity and source records; no late application was drafted/submitted and no organizer was contacted. Reconsider only after a qualifying completed study and a published future cycle.
+
 # November 5, 2026 — MyGardenBird metadata-only screen
 
 Added a source-linked review of the MyGardenBird dataset descriptor, its Zenodo record and its pinned code repository. This is a positive-only 12-species classification collection, not a bird-presence/absence soundscape benchmark. Source-recording-level splits are useful prior art but do not prove site/date/device transfer. The preprint and repository report conflicting or incomplete rights metadata: Zenodo's record-level API license is null; the paper discusses upstream ND recordings; README says MIT while GitHub API/root LICENSE say Unlicense. These are unresolved, not a clearance decision.
