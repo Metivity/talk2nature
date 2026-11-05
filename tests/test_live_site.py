@@ -20,6 +20,9 @@ class FakeLiveSite:
             "contribute/": self._page(
                 "contribute/",
                 "Join Talk2Nature",
+                '<a href="#contribute-researchers">I’m a researcher</a>'
+                '<a href="#contribute-developers">I’m a developer</a>'
+                '<a href="#contribute-naturalists">I’m a naturalist or supporter</a>'
                 '<h2>Review a research workflow.</h2><a href="/talk2nature/community/university/">Researcher path</a>'
                 '<h2>Improve a tool.</h2><a href="https://github.com/Metivity/talk2nature/issues">Developer path</a>'
                 '<h2>Ground the question.</h2><a href="/talk2nature/contribute/source/">Suggest a source</a>'
@@ -270,6 +273,14 @@ class LiveSiteTests(unittest.TestCase):
             "<h1>Page</h1>", "<h1>Page</h1>Less scrolling. More noticing."
         )
         with self.assertRaisesRegex(LiveCheckError, "internal feedback copy is still visible"):
+            verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
+
+    def test_rejects_missing_contribution_quick_links(self):
+        site = FakeLiveSite()
+        site.pages["contribute/"] = site.pages["contribute/"].replace(
+            '<a href="#contribute-developers">I’m a developer</a>', ""
+        )
+        with self.assertRaisesRegex(LiveCheckError, "direct researcher, developer and naturalist paths"):
             verify_live_site(site.base_url, attempts=1, fetch=site.fetch)
 
     def test_rejects_old_file_picker_instructions_on_live_listen_page(self):
