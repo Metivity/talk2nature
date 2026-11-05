@@ -46,25 +46,27 @@ test('selected filename is shown in the local file picker and can be cleared', (
   assert.equal(output.hidden, true);
 });
 
-test('file picker names phone file locations and avoids relying on desktop-only drop instructions', async () => {
+test('file picker explains touch and desktop actions without hiding supported formats', async () => {
   const [listen, annotations, compare] = await Promise.all([
     read('../web/templates/listen.html'), read('../web/templates/annotation-compare.html'), read('../web/templates/compare.html'),
   ]);
   for (const page of [listen, annotations, compare]) {
-    assert.match(page, /Files or Downloads/);
-    assert.doesNotMatch(page, /computer: drop here/);
+    assert.match(page, /file-picker-touch-hint/);
+    assert.match(page, /file-picker-desktop-hint/);
+    assert.match(page, /Browse here or drop one file/);
   }
+  assert.match(listen, /MP3\/M4A not supported/);
 });
 
 test('file actions say what opens and do not use an external-link arrow', async () => {
   const [listen, compare] = await Promise.all([read('../web/templates/listen.html'), read('../web/templates/compare.html')]);
   const actions = `${listen}\n${compare}`.match(/<span class="file-picker-action">[^<]*(?:<span[^>]*>[^<]*<\/span>)?<\/span>/g) ?? [];
   assert.ok(actions.length >= 5);
-  assert.match(listen, /Choose a sound or notebook/);
-  assert.match(listen, /Choose a Station session ZIP/);
-  assert.match(listen, /Choose saved labels for this sound/);
-  assert.match(compare, /Choose a session ZIP/);
-  assert.match(compare, /Choose a second session ZIP/);
+  assert.match(listen, /Open a sound or notebook/);
+  assert.match(listen, /Open a Station session ZIP/);
+  assert.match(listen, /Open saved labels for this sound/);
+  assert.match(compare, /Open a session ZIP/);
+  assert.match(compare, /Open a second session ZIP/);
   assert.doesNotMatch(actions.join(' '), /↗/);
 });
 
@@ -111,6 +113,17 @@ test('homepage title and description name the project focus in searchable langua
   assert.match(build, /Open-source animal communication research and bioacoustic tools/);
   assert.match(build, /Open-source animal communication research, bioacoustics and local tools for documenting animal sounds/);
   assert.match(build, /\{url\('contribute\/'\)\}\">Join the project/);
+});
+
+test('contribution page offers role-specific paths before the longer phone walkthrough', async () => {
+  const build = await read('../web/build.py');
+  const researchers = build.indexOf('Choose how to contribute');
+  const walkthrough = build.indexOf('A PHONE-FRIENDLY FIRST TASK');
+  assert.ok(researchers >= 0 && walkthrough > researchers);
+  assert.match(build, /Review the researcher workflow/);
+  assert.match(build, /Browse open coding tasks/);
+  assert.match(build, /Suggest a source or question/);
+  assert.match(build, /Join Talk2Nature: animal communication research and tools/);
 });
 
 test('the app home makes saved-file import obvious without opening More tools', async () => {
