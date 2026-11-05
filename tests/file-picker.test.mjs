@@ -112,7 +112,8 @@ test('homepage title and description name the project focus in searchable langua
   const build = await read('../web/build.py');
   assert.match(build, /Open-source animal communication research and bioacoustic tools/);
   assert.match(build, /Open-source animal communication research, bioacoustics and local tools for documenting animal sounds/);
-  assert.match(build, /\{url\('contribute\/'\)\}\">Join the project/);
+  assert.match(build, /\{url\('contribute\/'\)\}\">Find a way to help/);
+  assert.match(build, /Choose a first contribution/);
 });
 
 test('contribution page offers role-specific paths before the longer phone walkthrough', async () => {
