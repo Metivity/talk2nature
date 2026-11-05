@@ -325,6 +325,65 @@
       "files": []
     },
     {
+      "id": "birdvox-70k-dataset",
+      "kind": "dataset",
+      "title": "BirdVox-70k flight-call clips · Zenodo record 1226427",
+      "url": "https://doi.org/10.5281/zenodo.1226427",
+      "version": "Zenodo record 1226427; v3.0 metadata dated March 2018",
+      "source_ids": [
+        649,
+        650
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-05",
+      "task": "Metadata-only reference for balanced 500 ms nocturnal migratory flight-call detection, derived from six sensor recordings; not general bird presence.",
+      "review_depth": "Read the depositor description, key schema, file inventory and Conditions of Use, plus primary paper methods on annotation, negative mining and sensor-held-out folds. No HDF5, audio, label row or coordinate file acquired.",
+      "access": "Zenodo lists six sensor-specific HDF5 files totaling about 6.8 GB plus tiny sensor-coordinate and start-time CSVs. The files exceed the current 5 MiB collector limit. No payload was downloaded.",
+      "decision": "Keep metadata-only as a narrow flight-call detection methods candidate. Do not substitute it for the ten-second any-bird-sound task or use its public folds as a locked Talk2Nature test.",
+      "limitations": "Single expert; one night and region; hard negatives were selected from high-confidence false alarms rather than sampled representatively. The paper says bird chatter and non-passerine sounds were ignored, so negative means no annotated target flight call, not no bird. Sensor holdout is not season/geography/device transfer.",
+      "attribution": "Lostanlen, Salamon, Farnsworth, Kelling and Bello, BirdVox-70k, Zenodo record 1226427; cite the 2018 ICASSP paper.",
+      "rights": {
+        "license": "CC BY 4.0 stated in the depositor Conditions of Use; Zenodo structured Rights field is blank.",
+        "scope": "Dataset release as described by the depositor; the paper, code, model weights and any downstream material have separate terms.",
+        "evidence_url": "https://zenodo.org/records/1226427",
+        "conditions": "Attribute creators and source, indicate changes and inspect the depositor Conditions of Use before any acquisition or reuse. No legal determination made.",
+        "research_use": "conditional",
+        "commercial_use": "conditional",
+        "redistribution": "conditional"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
+      "id": "birdvox-full-night-paper-2018",
+      "kind": "paper",
+      "title": "BirdVox-full-night: a dataset and benchmark for avian flight-call detection",
+      "url": "https://doi.org/10.1109/ICASSP.2018.8461410",
+      "version": "IEEE ICASSP 2018; author-hosted paper reviewed",
+      "source_ids": [
+        650
+      ],
+      "priority": 2,
+      "reviewed": "2026-11-05",
+      "task": "Primary methods source for the six-sensor continuous-flight-call dataset and BirdVox-70k clip benchmark.",
+      "review_depth": "Reviewed the primary paper's dataset construction, label definition, fold design, metrics, baselines and reported results; no experiment reproduced.",
+      "access": "Author-hosted full-text PDF linked from the paper record; Talk2Nature publishes only an original summary and source link.",
+      "decision": "Use as methods literature only; no code or model implementation adopted.",
+      "limitations": "Paper results are not Talk2Nature replications. The paper's evaluation covers six sensors from a single night and regional network; model weights and code have separate rights.",
+      "attribution": "Lostanlen, Salamon, Farnsworth, Kelling and Bello (2018), IEEE ICASSP, DOI 10.1109/ICASSP.2018.8461452.",
+      "rights": {
+        "license": "Not stated in the inspected paper record.",
+        "scope": "Paper text and figures only; the dataset has separately stated CC BY 4.0 terms.",
+        "evidence_url": "https://www.lostanlen.com/wp-content/uploads/2020/02/lostanlen2018icassp.pdf",
+        "conditions": "Link to the paper and provide an original summary; do not copy its text or figures.",
+        "research_use": "conditional",
+        "commercial_use": "unresolved",
+        "redistribution": "not_admitted"
+      },
+      "acquisition": "metadata_only",
+      "files": []
+    },
+    {
       "id": "beans-next",
       "kind": "dataset",
       "title": "BEANS-Next",

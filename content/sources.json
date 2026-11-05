@@ -6467,5 +6467,29 @@
     "url": "https://github.com/mun3im/MyGardenBird/tree/bfb107282fa292810dfd90d2de4158bd4ca473bb",
     "checked": "2026-11-05",
     "origin": "Reviewed the repository README, repository API license metadata and LICENSE text at the current main commit. README says MIT for code while API/root LICENSE identify Unlicense; the discrepancy is retained rather than resolved by assumption. No pipeline source, dependencies, dataset or model was acquired or executed."
+  },
+  {
+    "id": 649,
+    "title": "BirdVox-70k · official Zenodo dataset record",
+    "description": "Depositor metadata describes 70,804 half-second clips from six BirdVox-full-night sensor recordings, with a dataset-level CC BY 4.0 Conditions of Use statement. No audio or labels acquired.",
+    "url": "https://zenodo.org/records/1226427",
+    "checked": "2026-11-05",
+    "origin": "Official depositor record; description, file inventory, identifiers, labels, location precision and Conditions of Use reviewed. No files, label rows or coordinates acquired or copied."
+  },
+  {
+    "id": 650,
+    "title": "Lostanlen et al. (2018), BirdVox-full-night benchmark paper",
+    "description": "Primary ICASSP paper on continuous flight-call annotation, BirdVox-70k negative selection and leave-one-sensor-out evaluation.",
+    "url": "https://doi.org/10.1109/ICASSP.2018.8461410",
+    "checked": "2026-11-05",
+    "origin": "Primary conference paper reviewed for collection, annotation, clip construction, group split, metrics and reported baselines; results were not reproduced."
+  },
+  {
+    "id": 651,
+    "title": "Ithaca, New York · GeoNames city reference",
+    "description": "City-scale gazetteer reference used only to place the broadly reported BirdVox study region on the literature atlas.",
+    "url": "https://www.geonames.org/5122440/city-of-ithaca.html",
+    "checked": "2026-11-05",
+    "origin": "GeoNames city reference used for an approximate display point; it does not identify any BirdVox sensor or wildlife location."
   }
 ]

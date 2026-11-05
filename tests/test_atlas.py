@@ -73,7 +73,7 @@ class AtlasTests(unittest.TestCase):
         self.assertEqual({location['place_id'] for location in whales['locations']},{'amsterdam-saint-paul-islands','swams-southern-indian-ocean','elephant-island-southern-ocean'})
         self.assertTrue(all(location['source_id']==582 for location in whales['locations']))
         self.assertIn('individual hydrophone positions are not exposed',whales['location_note'])
-        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),50)
+        self.assertEqual(sum(bool(r['locations']) for r in atlas['records']),51)
         pteroset=records['pteroset-detection-benchmark-2026']
         self.assertEqual({location['place_id'] for location in pteroset['locations']},{'pivijay-study-region','puerto-asis-study-region'})
         self.assertIn('municipal reference points',pteroset['location_note'])
@@ -116,7 +116,7 @@ class AtlasTests(unittest.TestCase):
         stellwagen=next(p for p in atlas['places'] if p['id']=='stellwagen-bank-ma-bay')
         self.assertEqual(stellwagen['precision'],'region')
         self.assertEqual((stellwagen['latitude'],stellwagen['longitude']),(42.4,-70.4))
-        self.assertEqual(len(atlas['places']),55)
+        self.assertEqual(len(atlas['places']),56)
         lark=records['duponts-lark-vocal-types-2026']
         self.assertEqual(lark['locations'][0]['place_id'],'spain')
         self.assertIn('country-level',lark['location_note'])
@@ -203,8 +203,8 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('geolocation',html)
             self.assertIn('2024.lrec-main.1432.pdf',html)
             goals=(Path(d)/'research/atlas/goals/index.html').read_text()
-            self.assertIn('50 <span>/ 20 goal</span>',goals)
-            self.assertIn('aria-label="20 research notes with verified places: 50 current; goal 20"',goals)
+            self.assertIn('51 <span>/ 20 goal</span>',goals)
+            self.assertIn('aria-label="20 research notes with verified places: 51 current; goal 20"',goals)
             self.assertIn('3 <span>/ 3 goal</span>',goals)
             self.assertEqual(goals.count('Target reached'),2)
             self.assertIn('Needs a scientific reviewer',goals)
@@ -316,11 +316,11 @@ class AtlasTests(unittest.TestCase):
 
     def test_goals_compute_coverage_and_keep_scientific_gates_as_plans(self):
         plan=load('atlas-goals');atlas=self.atlas();goals=atlas_goals(atlas,plan)['goals']
-        self.assertEqual((goals[0]['current'],goals[0]['target']),(50,20))
+        self.assertEqual((goals[0]['current'],goals[0]['target']),(51,20))
         self.assertEqual(goals[1]['current'],3)
         self.assertTrue(all('current' not in g for g in goals[2:]))
         fewer=deepcopy(atlas);fewer['records']=[r for r in fewer['records'] if r['id'] not in {'dog-barks','budgerigar-vocal-sociality-data','mammalps-audio-behavior-benchmark','parrotlet-vocal-babbling-development','wild-parrot-duet-structure-2026'}]
-        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],45)
+        self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['current'],46)
         self.assertEqual(atlas_goals(fewer,plan)['goals'][0]['status'],'Target reached')
         mapped=[r for r in atlas['records'] if r['locations']]
         below=deepcopy(atlas); below['records']=[r for r in atlas['records'] if not r['locations']]+mapped[:19]
@@ -330,8 +330,8 @@ class AtlasTests(unittest.TestCase):
             output=Path(temp)
             build(output,'https://fixture.github.io/talk2nature',True)
             page=(output/'research/atlas/goals/index.html').read_text()
-            self.assertIn('50 <span>/ 20 goal</span>',page)
-            self.assertIn('aria-label="20 research notes with verified places: 50 current; goal 20"',page)
+            self.assertIn('51 <span>/ 20 goal</span>',page)
+            self.assertIn('aria-label="20 research notes with verified places: 51 current; goal 20"',page)
         for field,value in [('metric','unverified_uploads'),('target',True),('target',0),('path','https://elsewhere.example/'),('path','//elsewhere/')]:
             changed=deepcopy(plan);changed['goals'][0][field]=value
             with self.assertRaises(ValueError):atlas_goals(atlas,changed)

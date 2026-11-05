@@ -7802,5 +7802,51 @@
     "lesson": "Keep source IDs, clip onsets and frozen split membership linked; record paper, dataset and code rights separately. Do not use the reported scores as our baseline or select this positive-only dataset for bird-presence detection.",
     "next_review": "Keep metadata-only. Consider a separate species-classification task only after specialist review of the estimand and per-source rights, especially ND material. Continue screening for presence/absence data with reviewed negatives and an untouched, leakage-safe evaluation. Do not download or run assets while rights remain unresolved.",
     "expert_review": "No independent avian, licensing or statistical review has occurred."
+  },
+  {
+    "slug": "birdvox-70k-flight-call-detection-benchmark-2018",
+    "title": "BirdVox-70k tests flight-call detection, not general bird presence",
+    "seo_description": "A metadata-only review of BirdVox-70k: expert-labeled nocturnal flight calls, hard negatives, sensor-held-out folds and clear limits on transfer.",
+    "taxon": "Birds · nocturnal migration · flight-call detection",
+    "kind": "Dataset and benchmark assessment",
+    "purpose": "Models & evaluation",
+    "year": "2018–2019",
+    "year_label": "BirdVox-full-night and BirdVox-70k benchmark publications",
+    "source_ids": [
+      649,
+      650,
+      532,
+      651
+    ],
+    "reviewed": "2026-11-05",
+    "review_stage": "Primary ICASSP methods, Zenodo deposit conditions and PLOS follow-up evaluation reviewed; no audio, labels or model artifacts acquired",
+    "review_depth": "Reviewed the 2018 primary paper's collection, annotation, clip construction, negative selection, sensor-wise folds and reported results; the official Zenodo depositor description, file inventory and Conditions of Use; and the 2019 PLOS ONE study's two-stage evaluation and leave-one-sensor-out methods. No HDF5/audio files, coordinate CSV, label rows, code, model weights or dependencies were acquired or run. Published metrics were not reproduced; no external specialist review occurred.",
+    "finding": "BirdVox-full-night is a rare continuous-recording resource: six roughly ten-hour recordings from six sensors, with 35,402 nocturnal migratory passerine flight-call centers labeled in time and frequency by one expert over 102 hours. BirdVox-70k is a derived balanced set of 70,804 half-second clips, stored as six sensor-specific HDF5 files at 24 kHz mono. The paper's classifier uses short 150 ms windows. It describes 35,000 positive clips and 35,000 hard negatives selected from high-confidence false alarms of a model trained on external North American clips. The published evaluation rotates sensors: three train, two validate, and one test, then shifts the held-out sensor across folds. The dataset depositor states CC BY 4.0 for the data. This makes it strong methods precedent for sensor-held-out nocturnal flight-call detection.",
+    "limitations": "A flight-call negative means no annotated target migratory call under this annotation scope; the paper says bird chatter and non-passerine sounds were ignored, so it does not mean no bird or no animal. Negatives are deliberately mined hard examples rather than a representative random sample, and the release does not quantify possible missed calls in those windows. The 35,402 annotations were produced by one expert, not independently double-labeled. The six sensor groups cover one autumn night and one region; holding out a sensor does not test a new season, geography, species assemblage or phone microphone. The balanced clip task differs from ordinary soundscape prevalence and the project's general ten-second bird-presence question. Public cross-validation is not an untouched project-controlled test. Dataset license terms are stated in the depositor description while Zenodo's structured Rights field appears blank; retain that metadata discrepancy and inspect the item terms before any use. The linked article, data, code and weights have separate rights. No coordinates were reproduced. Detection does not establish behavior, meaning or communication.",
+    "lesson": "Retain BirdVox-70k as a narrow, metadata-only methods candidate: it demonstrates why source-sensor grouping, hard-negative provenance and continuous-recording evaluation matter. Do not replace the general ten-second bird-presence question with this half-second, single-night migration task or describe a flight-call detector as animal communication. Before considering a reproduction, obtain independent avian and statistical review, clarify the Zenodo license metadata, define the target negative class, audit the six sensor groups and hard-negative construction, and specify a genuinely untouched evaluation beyond this one night. Any future model result must be compared with simple acoustic and source-selection controls and must not overwrite human observations.",
+    "next_review": "Keep metadata-only and do not acquire the multi-gigabyte HDF5 files. The next decision is whether a narrowly scoped sensor-held-out methods reproduction is useful after specialist review; independently, continue seeking a task-matched ten-second presence dataset with reviewed negatives and an untouched, rights-cleared evaluation. Keep AutoResearch and real-data admission NOT READY.",
+    "expert_review": "No independent avian-bioacoustics, statistical or rights review has occurred.",
+    "review_locator": "Lostanlen et al. (2018): dataset construction and annotations, §§2–4 and conclusion; Zenodo record 1226427: description, keys, Conditions of Use and file inventory; Lostanlen et al. (2019): Stage 1 dataset/sensor-fold evaluation and Stage 2 continuous-recording evaluation.",
+    "atlas": {
+      "reviewed": "2026-11-05",
+      "location_status": "mapped",
+      "location_note": "The study describes six sensors near Ithaca. The map uses a city-scale locator only; no sensor coordinates were copied or mapped.",
+      "locations": [
+        {
+          "place_id": "ithaca-new-york-region",
+          "role": "study_region",
+          "source_id": 650,
+          "locator": "Methods §2: full-night recordings from six units around Ithaca, New York",
+          "basis": "Approximate city-scale study-region locator; not an individual sensor point."
+        }
+      ],
+      "observation_period": {
+        "label": "Six sensor recordings from the night of September 23–24",
+        "start_year": 2015,
+        "end_year": 2015,
+        "source_id": 650,
+        "locator": "Methods §2: units active September 23rd and 24th, 2015"
+      }
+    }
   }
 ]

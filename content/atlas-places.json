@@ -386,6 +386,13 @@
       "precision": "region",
       "latitude": -61.1,
       "longitude": -55.1
+    },
+    {
+      "id": "ithaca-new-york-region",
+      "label": "Ithaca region, New York, USA",
+      "precision": "region",
+      "latitude": 42.4,
+      "longitude": -76.5
     }
   ]
 }
