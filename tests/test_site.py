@@ -22,7 +22,7 @@ class SearchDescriptionParser(HTMLParser):
 
 
 class SiteTests(unittest.TestCase):
-    def test_homepage_offers_clear_first_steps(self):
+    def test_homepage_offers_clear_first_steps_without_repeating_long_sections(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True)
@@ -31,6 +31,24 @@ class SiteTests(unittest.TestCase):
         self.assertIn('Try an example · no microphone',home)
         self.assertIn('/talk2nature/community/university/',home)
         self.assertIn('Choose a first contribution',home)
+        for route in (
+            '/talk2nature/research/frontiers/#animals',
+            '/talk2nature/research/frontiers/#plants',
+            '/talk2nature/research/frontiers/#fungi',
+            '/talk2nature/research/map/',
+            '/talk2nature/research/atlas/',
+            '/talk2nature/research/',
+        ):
+            with self.subTest(route=route):
+                self.assertIn(route,home)
+        self.assertIn('Detection and prediction are useful starting points.',home)
+        self.assertNotIn('curiosity-garden',home)
+        self.assertNotIn('Less scrolling. More noticing.',home)
+        naturelm=next(n for n in load('research') if n['slug']=='naturelm')
+        concise_lesson=naturelm['lesson'].split('. ',1)[0]+'.'
+        self.assertIn(concise_lesson,home)
+        self.assertNotIn(naturelm['lesson'],home)
+        self.assertLess(len(home),12_000)
 
     def test_compare_explains_detection_generalization_and_receiver_evidence(self):
         project_root=Path(__file__).resolve().parents[1]
