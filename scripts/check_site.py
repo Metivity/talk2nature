@@ -101,7 +101,32 @@ def check_site(root):
         if info['base_url']:
             expected=info['base_url']+'/'+(rel[:-10] if rel.endswith('index.html') else rel)
             if doc.canonical!=expected: errors.append(f'{path}: incorrect canonical URL')
-        if public_page and not doc.structured_data: errors.append(f'{path}: missing JSON-LD structured metadata')
+        structured_objects=[]
+        for structured in doc.structured_data:
+            try:
+                value=json.loads(structured)
+                if not isinstance(value,dict):
+                    errors.append(f'{path}: JSON-LD structured metadata must be an object')
+                else:
+                    structured_objects.append(value)
+            except json.JSONDecodeError:
+                errors.append(f'{path}: invalid JSON-LD structured metadata')
+        if public_page:
+            if len(structured_objects)!=1:
+                errors.append(f'{path}: expected exactly one valid JSON-LD WebPage')
+            elif doc.canonical:
+                structured=structured_objects[0]
+                expected_structured={
+                    '@context':'https://schema.org',
+                    '@type':'WebPage',
+                    'name':doc.meta.get('og:title',[''])[0],
+                    'description':doc.description,
+                    'inLanguage':'en',
+                    'url':doc.canonical,
+                }
+                for key,value in expected_structured.items():
+                    if structured.get(key)!=value:
+                        errors.append(f'{path}: incorrect JSON-LD {key}')
         if public_page:
             expected_image=f'{info["base_url"]}/assets/social.png'
             required_social={
@@ -133,9 +158,6 @@ def check_site(root):
             twitter_title=doc.meta.get('twitter:title',[])
             if len(open_graph_title)==1 and len(twitter_title)==1 and open_graph_title[0]!=twitter_title[0]:
                 errors.append(f'{path}: Twitter and Open Graph titles do not match')
-        for structured in doc.structured_data:
-            try: json.loads(structured)
-            except json.JSONDecodeError: errors.append(f'{path}: invalid JSON-LD structured metadata')
     if info['public']:
         social_asset=root/'assets'/'social.png'
         if not social_asset.is_file():

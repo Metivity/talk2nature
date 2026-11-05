@@ -176,10 +176,10 @@ class SiteTests(unittest.TestCase):
         self.assertIn("'End rehearsal'",station_script)
         live_labels=('Try invented example · no microphone','Mark an observation','Finish and review',
                      'Save this moment','I saved the file',
-                     'Open Compare moments to review it','Choose a session ZIP')
+                     'Open Compare moments to review it','Open a session ZIP')
         for label in live_labels:
             with self.subTest(button=label):
-                self.assertIn(label,station if label!='Choose a session ZIP' else compare)
+                self.assertIn(label,station if label!='Open a session ZIP' else compare)
         expected_steps=('Try an example · no microphone',
                         'no-microphone practice button','one observation marker',
                         'End rehearsal','Finish and review','invented-session recap')
@@ -190,7 +190,7 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(positions,sorted(positions))
         self.assertIn('Optional deeper file check',contributor)
         advanced_steps=('Save this moment','I saved the file',
-                        'Open Compare moments to review it','Choose a session ZIP',
+                        'Open Compare moments to review it','Open a session ZIP',
                         'select the downloaded file')
         advanced_positions=[contributor.index(step) for step in advanced_steps]
         self.assertEqual(advanced_positions,sorted(advanced_positions))
@@ -259,13 +259,13 @@ class SiteTests(unittest.TestCase):
             root=Path(d)
             build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/Metivity/talk2nature')
             page=(root/'contribute'/'index.html').read_text()
-            self.assertIn('GOOD FIRST TASK / PHONE',page)
+            self.assertIn('A PHONE-FRIENDLY FIRST TASK',page)
             self.assertIn('Try the Field Companion with the microphone off.',page)
             self.assertIn('no-microphone practice option',page)
             self.assertNotIn('“Try invented example · no microphone,”',page)
             self.assertIn('href="https://github.com/Metivity/talk2nature/issues/115"',page)
-            self.assertIn('No animal recording or upload is needed.',page)
-            self.assertIn('posting a public reply requires GitHub sign-in',page)
+            self.assertIn('Trying the workflow requires no account.',page)
+            self.assertIn('Public GitHub replies need GitHub sign-in.',page)
             style=(root/'assets'/'style.css').read_text()
             self.assertIn('.first-contribution .actions a{min-height:44px',style)
 
@@ -747,6 +747,29 @@ class SiteTests(unittest.TestCase):
             target.write_text(page)
             with self.assertRaisesRegex(ValueError,'invalid JSON-LD structured metadata'):
                 check_site(root)
+
+    def test_public_structured_metadata_must_match_page_title_description_canonical_and_language(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            build(root,'https://fixture.github.io/talk2nature',True,'https://github.com/fixture/talk2nature')
+            target=root/'research'/'index.html'
+            original=target.read_text()
+            match=re.search(r'<script type="application/ld\+json">(.*?)</script>',original)
+            self.assertIsNotNone(match)
+            base=json.loads(match.group(1))
+            for field,value in (
+                ('name','unrelated title'),
+                ('description','unrelated summary'),
+                ('url','https://fixture.github.io/talk2nature/different/'),
+                ('inLanguage','fr'),
+                ('@type','Article'),
+            ):
+                with self.subTest(field=field):
+                    invalid={**base,field:value}
+                    page=original.replace(match.group(0),'<script type="application/ld+json">'+json.dumps(invalid)+'</script>',1)
+                    target.write_text(page)
+                    with self.assertRaisesRegex(ValueError,f'incorrect JSON-LD {re.escape(field)}'):
+                        check_site(root)
 
     def test_public_html_page_must_be_discoverable_from_homepage(self):
         with tempfile.TemporaryDirectory() as d:
@@ -1998,10 +2021,10 @@ class SiteTests(unittest.TestCase):
             self.assertIn('id="station-save-ack" class="station-save-ack" type="button" hidden>I saved the file</button>',station)
             self.assertIn('If it opens as a preview, use Share → Save to Files',station)
             self.assertIn('id="station-compare-link" class="station-save-next" href="/talk2nature/app/compare/" hidden>',station)
-            self.assertIn('Choose the original Talk2Nature session ZIP.',compare)
-            self.assertIn('Choose a session ZIP',compare)
+            self.assertIn('One Talk2Nature session ZIP is enough to start.',compare)
+            self.assertIn('Open a session ZIP',compare)
             self.assertIn('Open one saved session to review its notes and clips.',compare)
-            self.assertIn('Want a side-by-side view? Choose a second session when you’re ready.',compare)
+            self.assertIn('Add a second session only if you want to compare them.',compare)
             self.assertIn('Open one saved moment.',(root/'app'/'index.html').read_text())
 
     def test_mobile_guide_explains_direct_single_session_reopen_without_unzipping(self):
@@ -2160,7 +2183,8 @@ class SiteTests(unittest.TestCase):
             self.assertIn('include a copy of the session journal',sound_desk)
             self.assertIn('accept=".zip,application/zip"',compare)
             self.assertIn('ZIP up to 27 MB',compare)
-            self.assertIn('Tap to choose from Files or Downloads',compare)
+            self.assertIn('Tap to open Files on your device',compare)
+            self.assertIn('Browse here or drop one file',compare)
 
     def test_observation_practice_is_discoverable_and_declares_its_synthetic_scope(self):
         with tempfile.TemporaryDirectory() as d:
