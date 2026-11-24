@@ -19,22 +19,24 @@ Check whether a first-time visitor can find and complete the microphone-free pra
 
 Start each session on `/app/` in a clean browser profile. After consent, read this prompt once, then observe without coaching:
 
-> Please find a way to try the Field Companion without recording, add one observation note, finish the practice, save it, and reopen it. Then tell me what the saved session represents and where you think it went.
+> Please find a way to try the Field Companion without recording, finish the practice, add a short review note, save it, and reopen it. Then tell me what the saved session represents and where you think it went.
 
 Do not name the button labels, describe the file format, or tell the participant where to tap. If they ask for help, ask what they would try next; count that as assistance. Stop immediately if a permission prompt, real recording, animal file or personal data appears.
 
 Observe whether they can:
 
 1. Find and start microphone-free practice without granting permission.
-2. Add one human-entered note and finish the session.
+2. Finish the session, then add one review note about the invented practice.
 3. Save the practice and determine what the app asks next. If it asks the person to confirm the download, let them check the ordinary download location without hints; observe whether they find the visible Compare step and reopen the same file with the normal picker, without JSON editing or archive extraction.
-4. Explain that the example is invented practice material, not a recording or interpretation of an animal.
+4. Find the same review note in the reopened session and explain that the example is invented practice material, not a recording or interpretation of an animal.
 5. Understand whether anything was uploaded or played automatically, based on the interface wording.
 
-Record completion, approximate time, assistance, first hesitation, whether the person confirms finding the download, and any mismatch between what the interface says and what the participant believes. Do not record a participant's name, audio, screen or verbatim comments.
+Record the last completed step, whether the reopened review note matched, approximate time, assistance, first hesitation, whether the person confirms finding the download, and any mismatch between what the interface says and what the participant believes. Do not record a participant's name, audio, screen or verbatim comments.
 
 ## Acceptance and reporting
 
 The formative target is at least 4 of 5 participants completing the save-and-reopen path without coaching, and at least 4 of 5 correctly identifying the session as invented practice with no microphone capture. Any participant who believes the session contains real animal data is a copy/flow failure to investigate. These small counts are product signals, not a statistical usability study or validation of science claims.
 
 Report the tested revision, device/browser mix, counts, observed failure points, assistance and changes. Keep the result labeled as formative and do not claim broader usability from five people. Actual microphone capture, interruption behavior and hardware performance require a separate controlled device check and remain outside this walkthrough.
+
+The public [first-use invitation](https://github.com/Metivity/talk2nature/issues/115) offers a self-guided software check. Its replies are self-reports and are not automatically counted as completion of this observed protocol. Feedback links in the app carry only a public build token. The report labels that token separately from the feedback page build, since a cached app and current website can differ. Build tokens identify software versions, not participants or sessions.

@@ -181,7 +181,8 @@ class SiteTests(unittest.TestCase):
         compare=(project_root/'web'/'templates'/'compare.html').read_text()
         contributor=(project_root/'CONTRIBUTING.md').read_text()
         self.assertIn('Try an example · no microphone',home)
-        self.assertIn('**Finish and review**',contributor)
+        self.assertIn('**End rehearsal**',contributor)
+        self.assertNotIn('then **Finish and review**',contributor)
         self.assertNotIn('**Stop recording**',contributor)
         self.assertIn('Observe without prompting.',intro)
         self.assertIn('Talk2Nature sends no animal-directed sounds or prompts.',intro)
@@ -200,12 +201,13 @@ class SiteTests(unittest.TestCase):
                 self.assertIn(label,station if label!='Open a session ZIP' else compare)
         expected_steps=('Try an example · no microphone',
                         'no-microphone practice button','one observation marker',
-                        'End rehearsal','Finish and review','invented-session recap')
-        for name in ('README.md','CONTRIBUTING.md'):
-            with self.subTest(document=name):
-                copy=(project_root/name).read_text()
-                positions=[copy.index(step) for step in expected_steps]
-                self.assertEqual(positions,sorted(positions))
+                        'End rehearsal','invented-session recap')
+        positions=[contributor.index(step) for step in expected_steps]
+        self.assertEqual(positions,sorted(positions))
+        readme=(project_root/'README.md').read_text()
+        self.assertIn('https://metivity.github.io/talk2nature/app/',readme)
+        self.assertIn('https://github.com/Metivity/talk2nature/issues/115',readme)
+        self.assertNotIn('then **Finish and review**',readme)
         self.assertIn('Optional deeper file check',contributor)
         advanced_steps=('Save this moment','I saved the file',
                         'Open Compare moments to review it','Open a session ZIP',
@@ -2074,7 +2076,10 @@ class SiteTests(unittest.TestCase):
             build(root,'https://fixture.github.io/talk2nature',True)
             home=(root/'app/index.html').read_text()
             feedback=(root/'mobile/index.html').read_text()
-            self.assertIn('href="/talk2nature/mobile/#share"',home)
+            revision=json.loads((root/'build-info.json').read_text())['asset_revision']
+            self.assertIn(f'href="/talk2nature/mobile/?app_build={revision}#share"',home)
+            for route in ('app/station/','app/review/','app/compare/'):
+                self.assertIn(f'href="/talk2nature/mobile/?app_build={revision}#share"',(root/route/'index.html').read_text())
             self.assertIn('Tell us what worked or felt confusing',home)
             self.assertIn('No account needed. Nothing is sent automatically.',home)
             self.assertIn('id="mobile-feedback-form"',feedback)

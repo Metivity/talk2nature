@@ -140,6 +140,7 @@ def build(output, base_url='', public=False, repo_url=''):
             document=document.replace('<body>','<body class="app-body">').replace('width=device-width,initial-scale=1','width=device-width,initial-scale=1,viewport-fit=cover')
             document=document[:document.index('<header class="header">')]+header+document[document.index('<main id="main" tabindex="-1">'):]
             document=document[:document.index('<footer>')]+footer+'</body></html>'
+            document=document.replace(url('mobile/#share'), url(f'mobile/?app_build={asset_revision}#share'))
         target = output / (path + 'index.html' if path.endswith('/') or not path else path)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(version_html(document, prefix, asset_revision))

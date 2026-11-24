@@ -15,6 +15,7 @@ body:
     attributes:
       label: What did you try?
       options:
+        - Save and reopen an invented session
         - Compare two invented sessions
         - Try the microphone-free rehearsal
         - Another browser workflow
@@ -26,7 +27,7 @@ body:
     attributes:
       label: What happened?
       description: One sentence is enough. Say what helped, confused you, or did not work.
-      placeholder: I tried… I expected… I saw…
+      placeholder: I got as far as… I expected… I saw…
     validations:
       required: true
   - type: input

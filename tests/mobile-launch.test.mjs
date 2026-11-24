@@ -5,13 +5,13 @@ import vm from 'node:vm';
 
 const source=await readFile(new URL('../web/assets/mobile-launch.js',import.meta.url),'utf8');
 
-function harness({clipboardWrite=async()=>{}}={}){
+function harness({clipboardWrite=async()=>{},pageUrl='https://example.test/talk2nature/mobile/'}={}){
   const ids=['share-status','copy-project','share-project','mobile-feedback-form','feedback-workflow','feedback-outcome','feedback-device','feedback-note','feedback-preview','feedback-report','feedback-status','email-feedback','copy-feedback'];
   const elements=Object.fromEntries(ids.map(id=>[id,{id,value:'',hidden:id==='feedback-preview'||id==='email-feedback',href:'',textContent:'',listeners:{},addEventListener(name,handler){this.listeners[name]=handler},reportValidity(){this.reportedValidity=true},focus(){this.focused=true},select(){this.selected=true}}]));
   let copied='';let networkCalls=0;let storageReads=0;
-  const document={currentScript:{src:'https://example.test/talk2nature/assets/mobile-launch.js?v=unit'},getElementById:id=>elements[id]};
+  const document={currentScript:{src:'https://example.test/talk2nature/assets/mobile-launch.js?v=0123456789abcdef'},getElementById:id=>elements[id]};
   const navigator={clipboard:{writeText:async value=>{copied=value;await clipboardWrite(value);}}};
-  const context={document,navigator,URL,encodeURIComponent,fetch:async()=>{networkCalls++;},get localStorage(){storageReads++;return {};}};
+  const context={document,navigator,location:{href:pageUrl},URL,encodeURIComponent,fetch:async()=>{networkCalls++;},get localStorage(){storageReads++;return {};}};
   vm.runInNewContext(source,context);
   return {elements,navigator,get copied(){return copied;},get networkCalls(){return networkCalls;},get storageReads(){return storageReads;}};
 }
@@ -28,6 +28,8 @@ test('feedback report stays local and opens only a user-reviewed email draft',()
   assert.equal(prevented,true);
   assert.equal(h.elements['feedback-preview'].hidden,false);
   assert.match(h.elements['feedback-report'].value,/Workflow: No-mic practice/);
+  assert.match(h.elements['feedback-report'].value,/App build referenced by link: Not supplied/);
+  assert.match(h.elements['feedback-report'].value,/Feedback page build: 0123456789abcdef/);
   assert.match(h.elements['feedback-report'].value,/What was unclear or useful: The stop button & recap were clear\./);
   assert.match(h.elements['email-feedback'].href,/^mailto:raviv@metivity\.com\?/);
   assert.equal(h.elements['email-feedback'].hidden,false);
@@ -37,6 +39,27 @@ test('feedback report stays local and opens only a user-reviewed email draft',()
   assert.equal(h.elements['feedback-status'].focused,true);
   assert.equal(h.networkCalls,0);
   assert.equal(h.storageReads,0);
+});
+
+test('feedback retains the linked app build separately from its own build and omits other URL fields',()=>{
+  const h=harness({pageUrl:'https://example.test/talk2nature/mobile/?app_build=abcdef0123456789&note=private#share'});
+  h.elements['feedback-workflow'].value='No-mic practice';
+  h.elements['feedback-outcome'].value='Saved and reopened my file';
+  h.elements['mobile-feedback-form'].listeners.submit({preventDefault(){}});
+  assert.match(h.elements['feedback-report'].value,/App build referenced by link: abcdef0123456789/);
+  assert.match(h.elements['feedback-report'].value,/Feedback page build: 0123456789abcdef/);
+  assert.doesNotMatch(h.elements['feedback-report'].value,/private|https:/);
+  assert.equal(h.networkCalls,0);
+  assert.equal(h.storageReads,0);
+});
+
+test('arbitrary app-build query text is omitted from feedback',()=>{
+  const h=harness({pageUrl:'https://example.test/talk2nature/mobile/?app_build=private-text'});
+  h.elements['feedback-workflow'].value='No-mic practice';
+  h.elements['feedback-outcome'].value='Partway';
+  h.elements['mobile-feedback-form'].listeners.submit({preventDefault(){}});
+  assert.match(h.elements['feedback-report'].value,/App build referenced by link: Not supplied/);
+  assert.doesNotMatch(h.elements['feedback-report'].value,/private-text/);
 });
 
 test('email draft body safely encodes user punctuation and line breaks',()=>{
