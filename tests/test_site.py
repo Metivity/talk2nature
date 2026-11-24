@@ -181,7 +181,8 @@ class SiteTests(unittest.TestCase):
         compare=(project_root/'web'/'templates'/'compare.html').read_text()
         contributor=(project_root/'CONTRIBUTING.md').read_text()
         self.assertIn('Try an example · no microphone',home)
-        self.assertIn('**Finish and review**',contributor)
+        self.assertIn('**End rehearsal**',contributor)
+        self.assertNotIn('then **Finish and review**',contributor)
         self.assertNotIn('**Stop recording**',contributor)
         self.assertIn('Observe without prompting.',intro)
         self.assertIn('Talk2Nature sends no animal-directed sounds or prompts.',intro)
@@ -200,12 +201,13 @@ class SiteTests(unittest.TestCase):
                 self.assertIn(label,station if label!='Open a session ZIP' else compare)
         expected_steps=('Try an example · no microphone',
                         'no-microphone practice button','one observation marker',
-                        'End rehearsal','Finish and review','invented-session recap')
-        for name in ('README.md','CONTRIBUTING.md'):
-            with self.subTest(document=name):
-                copy=(project_root/name).read_text()
-                positions=[copy.index(step) for step in expected_steps]
-                self.assertEqual(positions,sorted(positions))
+                        'End rehearsal','invented-session recap')
+        positions=[contributor.index(step) for step in expected_steps]
+        self.assertEqual(positions,sorted(positions))
+        readme=(project_root/'README.md').read_text()
+        self.assertIn('https://metivity.github.io/talk2nature/app/',readme)
+        self.assertIn('https://github.com/Metivity/talk2nature/issues/115',readme)
+        self.assertNotIn('then **Finish and review**',readme)
         self.assertIn('Optional deeper file check',contributor)
         advanced_steps=('Save this moment','I saved the file',
                         'Open Compare moments to review it','Open a session ZIP',
