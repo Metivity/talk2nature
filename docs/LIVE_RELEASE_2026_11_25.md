@@ -1,0 +1,12 @@
+# November 25, 2026 — publish and verify the current public website
+
+The approved Metivity Pages workflow [run 45508570873](https://github.com/Metivity/talk2nature/actions/runs/45508570873) deployed source `69b5ec4405a003f2f00e375901bf433bab6f37e5`. Both build and deploy jobs completed successfully. The browser account was verified as Metivity before dispatch. This resolves the stale public release described in earlier entries.
+
+A separate verified-TLS run of `scripts/check_live_site.py` passed all **197 sitemap pages**, up from 154. It confirmed the crawl metadata, contributor paths, file-opening guidance, initial Station controls and absence of the internal feedback phrase. The locally built public candidate passed **198 HTML documents / 13,834 links / 197 reachable pages**. These checks establish deployed routes and technical crawlability. Search Console traffic and indexing coverage still need direct measurement.
+
+On the live Station at **390 × 844 CSS pixels**, an explicit invented rehearsal produced a **3.1-second partial observation window** with one uncertainty note. Saved its session ZIP, verified the archive contained the synthetic journal, one WAV and readme, then reopened that exact downloaded file through Chrome's native macOS file picker in Compare. The displayed duration, retained recording and note matched. Station and Compare each reported a document width of 390px. No microphone prompt appeared and no playback was invoked. The browser automation download listener timed out although Chrome completed the download; filesystem inspection and native Chrome download history confirmed the saved archive. The extension file-chooser API required an unavailable file-access setting, so the native picker completed the same user workflow without changing extension permissions.
+
+This is a maintainer-run desktop Chrome workflow at a phone-sized viewport. Named physical iPhone/Android, assistive-technology and independent newcomer checks remain pending. Public methods-review issues [715](https://github.com/Metivity/talk2nature/issues/715) and [721](https://github.com/Metivity/talk2nature/issues/721) are open with zero comments at this check.
+
+The five-track goal remains active. Next, obtain independent first-use and qualified methods feedback, measure Search Console when authenticated access is available, and address observed failures. Benchmark selection remains deferred under the documented dataset assessment. AutoResearch and real-data admission remain **NOT READY**.
+
