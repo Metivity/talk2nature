@@ -4,7 +4,7 @@ import sys
 import urllib.error
 from pathlib import Path
 
-from scripts.check_live_site import LiveCheckError, verify_live_site
+from scripts.check_live_site import LiveCheckError, _check_host_robots, verify_live_site
 
 
 class FakeLiveSite:
@@ -130,7 +130,85 @@ class LiveSiteTests(unittest.TestCase):
         self.assertTrue(result["internal_feedback_copy_absent"])
         self.assertTrue(result["contributor_paths_verified"])
         self.assertTrue(result["file_picker_guidance_verified"])
-        self.assertEqual(len(site.calls), 10)
+        self.assertEqual(len(site.calls), 11)
+        self.assertFalse(result["project_robots_is_crawler_policy"])
+        self.assertEqual(result["host_robots"]["status"], 404)
+        self.assertTrue(result["host_robots"]["googlebot_allowed"])
+        self.assertFalse(result["host_robots"]["names_sitemap"])
+
+    def test_root_robots_blocks_a_project_despite_permissive_project_file(self):
+        site = FakeLiveSite()
+        def fetch(url, timeout):
+            if url == "https://example.github.io/robots.txt":
+                return 200, "text/plain", "User-agent: *\nDisallow: /talk2nature/", url
+            return site.fetch(url, timeout)
+        with self.assertRaisesRegex(LiveCheckError, "host rules block Googlebot"):
+            verify_live_site(site.base_url, attempts=1, fetch=fetch)
+
+    def test_host_robots_status_handling_matches_google_policy(self):
+        for status in [401, 403, 404, 410]:
+            for raises in [False, True]:
+                with self.subTest(status=status, raises=raises):
+                    def fetch(url, timeout):
+                        if raises:
+                            raise urllib.error.HTTPError(url, status, "status", {}, None)
+                        return status, "text/html", "not a robots file", url
+                    result = _check_host_robots("https://example.com/project", [], "https://example.com/project/sitemap.xml", fetch, 5)
+                    self.assertEqual(result["status"], status)
+                    self.assertTrue(result["googlebot_allowed"])
+        for status in [429, 500, 503]:
+            with self.subTest(status=status):
+                with self.assertRaisesRegex(LiveCheckError, "cannot assess host crawl policy"):
+                    _check_host_robots("https://example.com/project", [], "https://example.com/project/sitemap.xml", lambda u, t: (status, "text/plain", "", u), 5)
+
+    def test_host_robots_rule_selection_and_matching(self):
+        base = "https://example.com/project"
+        sitemap = base + "/sitemap.xml"
+        cases = [
+            ("User-agent: *\nDisallow: /\nAllow: /project/", "/project/page", True),
+            ("User-agent: *\nAllow: /project/\nDisallow: /project/", "/project/page", True),
+            ("User-agent: *\nDisallow: /\nUser-agent: Googlebot\nAllow: /", "/project/page", True),
+            ("User-agent: Otherbot\nDisallow: /", "/project/page", True),
+            ("User-agent: Googlebot-News\nDisallow: /", "/project/page", True),
+            ("User-agent: Googlebot*\nDisallow: /project/page", "/project/page", False),
+            ("User-agent: Googlebot/2.1\nDisallow: /project/page", "/project/page", False),
+            ("User-agent: Googlebot\nDisallow: /unused\nUser-agent: googlebot\nDisallow: /project/page", "/project/page", False),
+            ("User-agent: Googlebot\nSitemap: ignored\nUser-agent: Otherbot\nDisallow: /project/page", "/project/page", False),
+            ("User-agent: *\nDisallow: /*page$", "/project/page", False),
+            ("User-agent: *\nDisallow: /*page$", "/project/page/", True),
+            ("User-agent: *\nDisallow: /project/café", "/project/caf%C3%A9", False),
+            ("User-agent: *\nDisallow: /project/%70age", "/project/page", False),
+            ("User-agent: *\nDisallow: /project%2Fpage", "/project/page", True),
+            ("\ufeffUSER-AGENT: *\nDisallow: /project/page # comment", "/project/page", False),
+            ("User-agent: *\nDisallow:", "/project/page", True),
+        ]
+        for body, path, allowed in cases:
+            with self.subTest(body=body, path=path):
+                fetch = lambda u, t: (200, "text/plain", body, u)
+                if allowed:
+                    self.assertTrue(_check_host_robots(base, ["https://example.com" + path], sitemap, fetch, 5)["googlebot_allowed"])
+                else:
+                    with self.assertRaisesRegex(LiveCheckError, "host rules block Googlebot"):
+                        _check_host_robots(base, ["https://example.com" + path], sitemap, fetch, 5)
+
+    def test_host_robots_also_checks_sitemap_and_does_not_require_discovery_hint(self):
+        base = "https://example.com/project"
+        sitemap = base + "/sitemap.xml"
+        body = "User-agent: *\nDisallow: /project/sitemap.xml"
+        with self.assertRaisesRegex(LiveCheckError, "sitemap.xml"):
+            _check_host_robots(base, [], sitemap, lambda u, t: (200, "text/plain", body, u), 5)
+        body = "User-agent: *\nAllow: /\nSitemap: " + sitemap
+        result = _check_host_robots(base, [], sitemap, lambda u, t: (200, "text/plain", body, u), 5)
+        self.assertTrue(result["names_sitemap"])
+
+    def test_host_robots_reports_network_failure_and_oversized_policy(self):
+        base = "https://example.com/project"
+        def unavailable(url, timeout):
+            raise urllib.error.URLError("connection reset")
+        with self.assertRaisesRegex(LiveCheckError, "https://example.com/robots.txt: cannot fetch"):
+            _check_host_robots(base, [], base + "/sitemap.xml", unavailable, 5)
+        with self.assertRaisesRegex(LiveCheckError, "exceeds 500 KiB"):
+            _check_host_robots(base, [], base + "/sitemap.xml", lambda u, t: (200, "text/plain", "#" * (500 * 1024 + 1), u), 5)
 
     def test_checks_every_sitemap_page_for_reachability_and_index_metadata(self):
         site = FakeLiveSite()
