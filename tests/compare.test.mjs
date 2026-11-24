@@ -89,10 +89,13 @@ test('real file-change UI keeps a valid session after a bad replacement and rend
   const lifecycle={};globalThis.window={confirm(message){state.confirmations.push(message);return state.confirm;},addEventListener:(name,fn)=>lifecycle[name]=fn};
   try{
     await import('../web/assets/compare.js?test-ui');
-    const files=await fixture(),blob=zipFiles(files),buffer=await blob.arrayBuffer();
+    const files=edit(await fixture(),r=>{r.events[0].notes='Added after recording.';}),blob=zipFiles(files),buffer=await blob.arrayBuffer();
     get('file-a').files=[{size:blob.size,arrayBuffer:async()=>buffer}];get('file-a').listeners.change();
     for(let i=0;i<100 && get('status-a').textContent.startsWith('Checking');i++)await new Promise(r=>setTimeout(r,2));
     assert.match(get('status-a').textContent,/Opened locally/);assert.match(text(get('content-a')),/<img src=x onerror=alert\(1\)>/);assert.equal(get('title-a').textContent,'Saved moment');assert.equal(get('compare-view-results').hidden,true);
+    assert.match(text(get('summary-a')),/1 timeline observation · 1 review note/);
+    assert.match(text(get('content-a')),/Review note Added after recording/);
+    assert.match(text(get('content-a')),/Timeline observations/);
     const markup=await readFile(new URL('../web/templates/compare.html',import.meta.url),'utf8');assert.match(markup,/id="compare-player"[^>]*hidden/);assert.doesNotMatch(markup,/<audio id="compare-player" controls/);assert.match(markup,/id="compare-view-results"[^>]*href="#compare-result-title"[^>]*hidden/);assert.match(markup,/id="compare-result-title" tabindex="-1"/);assert.match(markup,/id="compare-status" role="status" aria-live="polite"/);assert.match(markup,/do not by themselves show that a model decoded meaning or that one sound is a reply/);assert.match(markup,/research\/elephant-chorus-context-convergence/);assert.match(markup,/research\/v33da-overlap-context-2026/);assert.match(markup,/BirdCODE detects bird vocalizations at scale and tests timing associations between species/);assert.match(markup,/research\/birdcode-event-detection/);
     const button=get('content-a').children.find(e=>e.tag==='ol').children[0].children.find(e=>e.tag==='button');button.listeners.click();assert.equal(get('compare-player').paused,true);assert.ok(get('compare-player').src.startsWith('blob:'));
     await get('compare-playback-toggle').listeners.click();assert.equal(state.confirmations.length,1);assert.equal(get('compare-player').plays,0);assert.match(get('compare-playback-status').textContent,/not played/);
