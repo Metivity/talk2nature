@@ -168,9 +168,23 @@ function renderMarkers() {
 function download(content, name, type) {
   const url = URL.createObjectURL(new Blob([content], {type})), link = document.createElement('a'); link.href = url; link.download = name; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000);
 }
-function renderEvents(focusEventId = null) {
+function renderRecap() {
   const recap = sessionRecap(session); $('station-recap').hidden = !recap;
   if (recap) { $('station-recap-title').textContent = recap.title; $('station-recap-detail').textContent = recap.detail; }
+}
+function markReviewChanged() {
+  dirty = true;
+  $('station-save-status').hidden = true;
+  $('station-save-ack').hidden = true;
+  $('station-compare-link').hidden = true;
+  renderRecap();
+}
+function renderEvents(focusEventId = null) {
+  renderRecap();
+  const wholeMoment = session?.mode === 'window' && session.stopped && session.events.length === 1;
+  $('station-moment-note').hidden = !wholeMoment;
+  $('station-review-note').disabled = !wholeMoment || exporting;
+  $('station-review-note').value = wholeMoment ? session.events[0].notes : '';
   const provenance = $('station-provenance'), provenanceList = $('station-provenance-list');
   const record = session?.exportRecord($('station-alias').value, settings, $('station-recorder-description').value);
   const provenanceRows = session?.stopped ? sessionProvenance(record) : [];
@@ -196,9 +210,15 @@ function renderEvents(focusEventId = null) {
     detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · ${session.origin === 'synthetic' ? 'synthetic audio' : 'microphone audio'} · source ${event.source_label}`;
     sourceLabel.textContent = session.mode === 'window' ? 'Main source, if known (mixed or quiet? Leave uncertain)' : 'What made this sound?'; select.setAttribute('aria-label', `Source of sound ${event.id}`); select.disabled = active || pending || exporting;
     for (const source of SOURCE_LABELS) { const option = document.createElement('option'); option.value = source; option.textContent = source; select.append(option); } select.value = event.source_label;
-    const details = document.createElement('details'), summary = document.createElement('summary'), notes = document.createElement('textarea'); summary.textContent = 'Review note'; notes.value = event.notes; notes.maxLength = 300; notes.disabled = active || pending || exporting; notes.setAttribute('aria-label', `Review note for sound ${event.id}`); details.append(summary, notes);
-    const saveReview = () => { session.review(event.id, select.value, notes.value); dirty = true; detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · source ${event.source_label} (your review)`; renderMarkers(); };
-    select.addEventListener('change', saveReview); notes.addEventListener('change', saveReview); sourceLabel.append(select);
+    const details = document.createElement('details'), summary = document.createElement('summary');
+    const notes = wholeMoment ? $('station-review-note') : document.createElement('textarea');
+    if (!wholeMoment) {
+      summary.textContent = 'Review note'; notes.value = event.notes; notes.maxLength = 300; notes.disabled = active || pending || exporting; notes.setAttribute('aria-label', `Review note for sound ${event.id}`); details.append(summary, notes);
+      notes.addEventListener('input', () => { session.review(event.id, select.value, notes.value); markReviewChanged(); });
+    }
+    const saveReview = () => { session.review(event.id, select.value, notes.value); markReviewChanged(); detail.textContent = `${(event.clip_end_seconds - event.clip_start_seconds).toFixed(1)} s clip · source ${event.source_label} (your review)`; renderMarkers(); };
+    if (!wholeMoment) notes.addEventListener('change', saveReview);
+    select.addEventListener('change', saveReview); sourceLabel.append(select);
     const buttons = document.createElement('div'); buttons.className = 'station-controls';
     for (const [label, action] of [
       ['Load for review', () => {
@@ -221,13 +241,26 @@ function renderEvents(focusEventId = null) {
         }
       }]
     ]) { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.setAttribute('aria-label', `${label} ${event.id}`); button.disabled = active || pending || exporting; button.addEventListener('click', action); buttons.append(button); }
-    card.append(title, detail, sourceLabel, details, buttons); list.append(card);
+    card.append(title, detail, sourceLabel);
+    if (!wholeMoment) card.append(details);
+    card.append(buttons); list.append(card);
   }
   if (focusHeading) {
     focusHeading.focus();
     focusHeading.scrollIntoView({block: 'center', inline: 'nearest'});
   }
 }
+$('station-review-note').addEventListener('input', () => {
+  if (session?.mode !== 'window' || !session.stopped || session.events.length !== 1 || exporting) return;
+  const event = session.events[0];
+  session.review(event.id, event.source_label, $('station-review-note').value);
+  markReviewChanged();
+});
+$('station-review-note').addEventListener('change', () => {
+  if (!$('station-moment-note').hidden && !exporting) {
+    exportStatus('Review note updated. Save this moment to keep your changes.');
+  }
+});
 function modeGuidance() {
   const whole = $('station-capture-mode').value === 'window';
   $('station-sensitivity').hidden = whole;

@@ -13,6 +13,8 @@ Read our [zero-command observation rule](docs/ZERO_COMMAND.md) for the passive-o
 
 ## Start here
 
+After a whole-moment recording, add an optional review note before saving. [Workflow and verification](docs/milestones/2026-11-25-review-notes.md).
+
 The public website was updated on November 25, 2026. [Release verification](docs/LIVE_RELEASE_2026_11_25.md) records the deployed source, live route checks and saved-session walkthrough.
 
 - **Just curious?** Open the [Field Companion](https://metivity.github.io/talk2nature/app/) and choose **Try an example · no microphone**. On the Station screen, choose the no-microphone practice button, add one observation marker, tap **End rehearsal**, then **Finish and review**. Inspect the invented-session recap; you do not need an account, microphone permission, recording, upload, terminal or JSON editing. For a deeper file check, the [contribution guide](CONTRIBUTING.md) explains the optional save-and-reopen path. The [install guide](https://metivity.github.io/talk2nature/mobile/) explains the optional public-only offline shell.

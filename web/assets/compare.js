@@ -23,16 +23,18 @@ function renderSlot(key){
   $('title-'+key).textContent=s?sessionLabel(s.record.station_alias):key==='a'?'Open a saved session':'Another day, perhaps?';
   if(!s){$('details-'+key).open=false;return;}
   const r=s.record, summary=sessionSummary(s);
-  target.append(node('span',r.origin==='synthetic'?'INVENTED EXAMPLE':'MICROPHONE · DECLARED','compare-badge'),node('p',summary.kind,'compare-summary-kind'),node('p',`${seconds(r.duration_seconds)} observed · ${s.clips.length} retained recording${s.clips.length===1?'':'s'} · ${r.markers.length} observation${r.markers.length===1?'':'s'}`,'compare-summary-text'),node('p',`${animal(r)} · observer-declared`,'compare-summary-text'),node('p',`Soundscape context: ${soundscape(r)}`,'compare-summary-text'));
+  const reviewNotes = r.events.filter(event => event.notes.trim()).length;
+  const noteSummary = `${r.markers.length} timeline observation${r.markers.length===1?'':'s'}${reviewNotes ? ` · ${reviewNotes} review note${reviewNotes===1?'':'s'}` : ''}`;
+  target.append(node('span',r.origin==='synthetic'?'INVENTED EXAMPLE':'MICROPHONE · DECLARED','compare-badge'),node('p',summary.kind,'compare-summary-kind'),node('p',`${seconds(r.duration_seconds)} observed · ${s.clips.length} retained recording${s.clips.length===1?'':'s'} · ${noteSummary}`,'compare-summary-text'),node('p',`${animal(r)} · observer-declared`,'compare-summary-text'),node('p',`Soundscape context: ${soundscape(r)}`,'compare-summary-text'));
   content.append(node('h3','Saved recordings'));
   const clips=node('ol',undefined,'compare-entries');
-  s.clips.forEach((clip,i)=>{const li=node('li'),e=clip.event;li.append(node('strong',`Recording ${i+1} · ${seconds(e.samples/r.sample_rate)}`),node('p',`${seconds(e.clip_start_seconds)}–${seconds(e.clip_end_seconds)} into the session · Source label: ${e.source_label} (saved review)`));if(e.notes)li.append(node('p',e.notes));const b=node('button','Review this sound');b.type='button';b.addEventListener('click',()=>prepareClip(key,clip,i));li.append(b);clips.append(li);});
+  s.clips.forEach((clip,i)=>{const li=node('li'),e=clip.event;li.append(node('strong',`Recording ${i+1} · ${seconds(e.samples/r.sample_rate)}`),node('p',`${seconds(e.clip_start_seconds)}–${seconds(e.clip_end_seconds)} into the session · Source label: ${e.source_label} (saved review)`));if(e.notes)li.append(node('strong','Review note'),node('p',e.notes));const b=node('button','Review this sound');b.type='button';b.addEventListener('click',()=>prepareClip(key,clip,i));li.append(b);clips.append(li);});
   content.append(s.clips.length?clips:node('p','No audio was retained. That does not establish silence.','compare-summary-text'));
   if(summary.discarded)content.append(node('p',`${summary.discarded} discarded recording${summary.discarded===1?'':'s'}; audio is absent.`,'compare-summary-text'));
-  content.append(node('h3','Observer notes'));
+  content.append(node('h3','Timeline observations'));
   const notes=node('ol',undefined,'compare-entries');
   r.markers.forEach(m=>{const li=node('li');li.append(node('strong',`${seconds(m.at_seconds)} · ${m.kind==='person_voice'?'Person’s voice marked':'Observation'}`),node('p',m.note||'No written note.'));notes.append(li);});
-  content.append(r.markers.length?notes:node('p','No observer notes were saved.','compare-summary-text'));
+  content.append(r.markers.length?notes:node('p','No observations were marked during recording.','compare-summary-text'));
 }
 function renderComparison(){
   const a=slots.a.value,b=slots.b.value,ready=Boolean(a&&b);$('compare-results').hidden=!ready;$('compare-view-results').hidden=!ready;$('compare-table').replaceChildren();$('compare-warnings').replaceChildren();if(!ready)return;

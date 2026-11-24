@@ -16,11 +16,15 @@ export function sessionRecap(session) {
   const record = session.exportRecord();
   const count = record.events.length;
   const notes = record.markers.length;
+  const reviewNotes = record.events.filter(event => event.notes?.trim()).length;
   const origin = record.origin === 'synthetic' ? 'Invented practice audio' : 'Microphone audio';
   const title = !count ? 'No audio retained.' : record.sampling
     ? record.sampling.complete ? 'A whole 30-second moment.' : 'A partial moment. Still worth noting.'
     : `${count} sound ${count === 1 ? 'highlight' : 'highlights'} to review.`;
-  const detail = `${origin} · ${record.duration_seconds.toFixed(1)} seconds observed · ${notes} ${notes === 1 ? 'note' : 'notes'}. ${count ? 'Audio is still temporary. Save the session before leaving.' : 'You can save the journal, including notes and any discard records.'}`;
+  const noteSummary = reviewNotes
+    ? `${notes} timeline ${notes === 1 ? 'note' : 'notes'} · ${reviewNotes} review ${reviewNotes === 1 ? 'note' : 'notes'}`
+    : `${notes} ${notes === 1 ? 'note' : 'notes'}`;
+  const detail = `${origin} · ${record.duration_seconds.toFixed(1)} seconds observed · ${noteSummary}. ${count ? 'Audio is still temporary. Save the session before leaving.' : 'You can save the journal, including notes and any discard records.'}`;
   return {title, detail};
 }
 

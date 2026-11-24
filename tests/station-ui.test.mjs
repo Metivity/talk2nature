@@ -283,7 +283,7 @@ test('each manual playback start requires an immediate no-animal-playback confir
   await h.get('station-demo').fire('click');
   h.state.capture.frame(new Float32Array(800).fill(0.04));
   await h.get('station-stop').fire('click');
-  const reviewButton = h.get('station-events').children[0].children[4].children[0];
+  const reviewButton = h.get('station-events').children[0].children.find(child => child.className === 'station-controls').children[0];
 
   await reviewButton.fire('click');
   assert.equal(h.state.confirmations, 0);
@@ -321,7 +321,7 @@ test('Station clears review audio when hidden or leaving the page', async () => 
   await h.get('station-demo').fire('click');
   h.state.capture.frame(new Float32Array(800).fill(0.04));
   await h.get('station-stop').fire('click');
-  const loadButton = h.get('station-events').children[0].children[4].children[0];
+  const loadButton = h.get('station-events').children[0].children.find(child => child.className === 'station-controls').children[0];
   await loadButton.fire('click');
   h.state.confirm = true;
   await h.get('station-play-review').fire('click');
@@ -350,6 +350,7 @@ test('Station clears review audio when hidden or leaving the page', async () => 
 test('an unmarked draft stays out of the saved moment and is named as a draft after Stop', async () => {
   const h = setup();
   await h.get('station-demo').fire('click');
+  h.state.capture.frame(new Float32Array(800));
   h.get('station-note').value = 'This note was never added.';
   h.get('station-draft-warning').textContent = 'This note is still a draft. It was not added to your saved moment. Copy it elsewhere if you want to keep it.';
   await h.get('station-stop').fire('click');
@@ -361,6 +362,63 @@ test('an unmarked draft stays out of the saved moment and is named as a draft af
   const saved = h.state.downloads[0];
   const reopened = await openSessionBundle(await saved.blob.arrayBuffer());
   assert.equal(reopened.record.markers.length, 0);
+  assert.equal(reopened.record.events[0].notes, '');
+  assert.equal(h.get('station-review-note').value, '');
+});
+
+test('whole-moment review notes are visible before Save and survive export without inventing timeline markers', async () => {
+  const h = setup();
+  const markup = fs.readFileSync(new URL('../web/templates/station.html', import.meta.url), 'utf8');
+  assert.ok(markup.indexOf('id="station-moment-note"') < markup.indexOf('id="station-bundle"'));
+  assert.match(markup, /id="station-moment-note"[^>]*hidden/);
+  await h.get('station-demo').fire('click');
+  assert.equal(h.get('station-moment-note').hidden, true);
+  h.state.capture.frame(new Float32Array(800).fill(0.04));
+  await h.get('station-stop').fire('click');
+  assert.equal(h.get('station-moment-note').hidden, false);
+  assert.equal(h.get('station-review-note').disabled, false);
+  h.get('station-review-note').value = 'After watching, I am unsure which animal moved.';
+  await h.get('station-review-note').fire('input');
+  assert.match(h.get('station-recap-detail').textContent, /0 timeline notes · 1 review note/);
+  // Save before blur/change to exercise input-time capture.
+  await h.get('station-bundle').fire('click');
+  const reopened = await openSessionBundle(await h.state.downloads[0].blob.arrayBuffer());
+  assert.equal(reopened.record.events[0].notes, h.get('station-review-note').value);
+  assert.equal(reopened.record.markers.length, 0);
+  assert.equal(reopened.record.duration_seconds, .1);
+  assert.equal(reopened.record.events[0].source_label, 'unreviewed');
+  assert.equal(reopened.record.origin, 'synthetic');
+  const source = h.get('station-events').children[0].children[2].children[0];
+  source.value = 'uncertain';
+  await source.fire('change');
+  await h.get('station-bundle').fire('click');
+  const revised = await openSessionBundle(await h.state.downloads[1].blob.arrayBuffer());
+  assert.equal(revised.record.events[0].notes, reopened.record.events[0].notes);
+  assert.equal(revised.record.events[0].source_label, 'uncertain');
+});
+
+test('editing a saved review note requires a fresh download and discard clears the editor', async () => {
+  const h = setup();
+  await h.get('station-demo').fire('click');
+  h.state.capture.frame(new Float32Array(800));
+  await h.get('station-stop').fire('click');
+  await h.get('station-bundle').fire('click');
+  await h.get('station-save-ack').fire('click');
+  assert.equal(h.get('station-compare-link').hidden, false);
+  h.get('station-review-note').value = 'A later review note.';
+  await h.get('station-review-note').fire('input');
+  assert.equal(h.get('station-save-ack').hidden, true);
+  assert.equal(h.get('station-compare-link').hidden, true);
+  assert.equal(h.get('station-save-status').hidden, true);
+  await h.get('station-review-note').fire('change');
+  assert.match(h.get('station-save-status').textContent, /Save this moment to keep your changes/);
+  await h.get('station-new').fire('click');
+  assert.equal(h.state.confirmations, 1);
+  assert.equal(h.get('station-console').dataset.phase, 'review');
+  h.state.confirm = true;
+  await h.get('station-new').fire('click');
+  assert.equal(h.get('station-review-note').value, '');
+  assert.equal(h.get('station-moment-note').hidden, true);
 });
 
 test('checked download opens a plain-language Compare step and a new moment clears it', async () => {
