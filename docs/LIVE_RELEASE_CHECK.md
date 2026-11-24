@@ -1,5 +1,13 @@
 # Live release check: first-use UX
 
+## November 25 — host-level crawl verification
+
+The current release and native file-picker walkthrough are recorded in [the release receipt](LIVE_RELEASE_2026_11_25.md). The verifier now also checks the host-root robots policy against all sitemap pages and the sitemap itself. `robots_names_sitemap` retains its existing meaning for the generated project artifact. `project_robots_is_crawler_policy` makes its scope explicit, and `host_robots` reports the effective URL, HTTP status, web Googlebot permission and sitemap hint separately.
+
+A 404 at the host root is accepted under Google's documented no-restriction behavior. A 429, server error or network failure fails verification rather than claiming crawl access. Matching host rules that block any listed page or the sitemap also fail. This does not verify Google indexing or that Google's network receives the same response. See [the SEO audit](SEO_AUDIT.md) for sources and the current Search Console limitation.
+
+## November 5 historical snapshot
+
 **Reviewed:** November 5, 2026  
 **Source revision:** `a55ff385db8809617ba92e1cb2d4ea28171f02e9` (main after PR #730)  
 **Purpose:** ensure the post-deployment check tests the user-facing changes instead of only page reachability and SEO metadata.

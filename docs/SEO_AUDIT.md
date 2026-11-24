@@ -1,5 +1,15 @@
 # Search discovery and indexing audit
 
+## November 25 follow-up — check the host crawl policy
+
+The earlier `robots.txt` result below describes `/talk2nature/robots.txt`. Google applies crawl rules from the host-root `/robots.txt`; a file in a project subdirectory does not establish crawler policy. The revised live verifier now fetches `https://metivity.github.io/robots.txt` and checks its web Googlebot rules against the sitemap and all listed pages. It covers specific and wildcard agent groups, merged groups, longest matching paths, allow ties, UTF-8/escaped paths, wildcards and end anchors. Server failures and rate limiting leave the policy unresolved and fail the check.
+
+The current host-root response is **404**. Google's [robots specification](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec) treats client errors other than 429 as an absent robots file with no crawl restrictions. Thus this response does not explain the Search Console sitemap-fetch error. The project artifact still names the sitemap, but it does not provide automatic discovery through root robots. Search Console accepted the November 25 resubmission; processing remains unresolved as recorded in the [live-release receipt](LIVE_RELEASE_2026_11_25.md).
+
+The Search Console settings page confirms the project owner can access the URL-prefix property. Root robots and Crawl Stats reports are disabled there because they require a root-level property. No root property, domain setting or other repository was changed. A fresh run of the revised verifier passed all **197** live sitemap pages. This records the responses received by the checker and their applicable rules; Google's fetch result remains a separate observation.
+
+## November 2 historical snapshot
+
 **Checked:** November 2, 2026. This is a technical/discovery snapshot, not a ranking forecast. Owner-only query and page-level Search Console details are kept outside the public repository.
 
 ## Verified public signals

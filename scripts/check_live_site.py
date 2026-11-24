@@ -7,7 +7,7 @@ import time
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
-from urllib.parse import urljoin, urlsplit, urlunsplit
+from urllib.parse import quote, urljoin, urlsplit, urlunsplit
 from xml.etree import ElementTree
 
 try:
@@ -320,6 +320,99 @@ def _check_core_contract(path, url, body, root_url):
             raise LiveCheckError(f"{url}: the enabled invented, microphone-free action is missing")
 
 
+def _robots_path(value):
+    """Compare UTF-8 and escaped paths without decoding reserved separators."""
+    value = quote(value, safe="/%!$&'()*+,-.:;=?@_~")
+    def normalize_escape(match):
+        character = chr(int(match[1], 16))
+        if character.isascii() and (character.isalnum() or character in "-._~"):
+            return character
+        return match[0].upper()
+    return re.sub(r"%([0-9a-fA-F]{2})", normalize_escape, value)
+
+
+def _googlebot_rules(body):
+    """Select and merge web Googlebot groups, preserving allow-rule ties."""
+    groups = []
+    agents, rules = [], []
+    for line in body.lstrip("\ufeff").splitlines():
+        field, separator, value = line.split("#", 1)[0].partition(":")
+        if not separator:
+            continue
+        field, value = field.strip().lower(), value.strip()
+        if field == "user-agent":
+            if rules:
+                groups.append((agents, rules))
+                agents, rules = [], []
+            agents.append(value.lower())
+        elif field in {"allow", "disallow"} and agents:
+            rules.append((field, value))
+    groups.append((agents, rules))
+    specific = [rules for agents, rules in groups
+                if any(re.match(r"googlebot(?:$|[^a-z_-])", agent) for agent in agents)]
+    selected = specific or [rules for agents, rules in groups if "*" in agents]
+    selected_rules = []
+    for rules in selected:
+        for field, path in rules:
+            if not path.startswith("/"):
+                continue
+            path = _robots_path(path)
+            anchored = path.endswith("$")
+            pattern = path[:-1] if anchored else path.rstrip("*")
+            selected_rules.append((pattern.split("*"), anchored, len(pattern) + int(anchored), field == "allow"))
+    return selected_rules
+
+
+def _robots_matches(parts, anchored, path):
+    # Find literal segments in order without regex wildcard backtracking.
+    if not path.startswith(parts[0]):
+        return False
+    cursor = len(parts[0])
+    if len(parts) == 1:
+        return not anchored or cursor == len(path)
+    for part in parts[1:-1]:
+        position = path.find(part, cursor)
+        if position == -1:
+            return False
+        cursor = position + len(part)
+    tail = parts[-1]
+    if anchored:
+        return path.endswith(tail) and len(path) - len(tail) >= cursor
+    return path.find(tail, cursor) != -1
+
+
+def _check_host_robots(base_url, urls, sitemap_url, fetch, timeout):
+    # A project-path robots file is an artifact, not the host's crawl policy.
+    parsed = urlsplit(base_url)
+    url = urlunsplit((parsed.scheme, parsed.netloc, "/robots.txt", "", ""))
+    try:
+        status, _, body, _ = fetch(url, timeout)
+    except urllib.error.HTTPError as exc:
+        status, body = exc.code, ""
+    except OSError as exc:
+        raise LiveCheckError(f"{url}: cannot fetch host crawl policy: {exc}") from exc
+    if 400 <= status < 500 and status != 429:
+        return {"url": url, "status": status, "googlebot_allowed": True, "names_sitemap": False}
+    if not 200 <= status < 300:
+        raise LiveCheckError(f"{url}: cannot assess host crawl policy (HTTP {status})")
+    if len(body.encode("utf-8")) > 500 * 1024:
+        raise LiveCheckError(f"{url}: host robots exceeds 500 KiB; review crawler truncation")
+    rules = _googlebot_rules(body)
+    for target in sorted(set(urls) | {sitemap_url}):
+        path = _robots_path(urlsplit(target).path)
+        matches = [(length, allowed) for parts, anchored, length, allowed in rules
+                   if _robots_matches(parts, anchored, path)]
+        if matches and not max(matches)[1]:
+            raise LiveCheckError(f"{url}: host rules block Googlebot from {target}")
+    names_sitemap = any(
+        field.strip().lower() == "sitemap" and value.strip() == sitemap_url
+        for line in body.splitlines()
+        for field, separator, value in [line.split("#", 1)[0].partition(":")]
+        if separator
+    )
+    return {"url": url, "status": status, "googlebot_allowed": True, "names_sitemap": names_sitemap}
+
+
 def check_once(base_url, fetch=fetch_text, timeout=8):
     base_url = normalize_base_url(base_url)
     root_url = base_url + "/"
@@ -394,6 +487,12 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
     except (LiveCheckError, OSError, UnicodeDecodeError) as exc:
         errors.append(str(exc) if isinstance(exc, LiveCheckError) else f"{robots_url}: {exc}")
 
+    host_robots = None
+    try:
+        host_robots = _check_host_robots(base_url, sitemap_urls | set(checked_pages), sitemap_url, fetch, timeout)
+    except (LiveCheckError, OSError, UnicodeDecodeError) as exc:
+        errors.append(str(exc))
+
     if errors:
         unique_errors = sorted(set(errors))
         raise LiveCheckError(
@@ -408,6 +507,8 @@ def check_once(base_url, fetch=fetch_text, timeout=8):
         "sitemap_urls": len(sitemap_urls),
         "all_sitemap_pages_verified": True,
         "robots_names_sitemap": True,
+        "project_robots_is_crawler_policy": robots_url == host_robots["url"],
+        "host_robots": host_robots,
         "zero_command_first_action_verified": True,
         "station_disclosure_verified": True,
         "permission_unchecked_by_default": True,
