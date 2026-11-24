@@ -13,11 +13,9 @@ Read our [zero-command observation rule](docs/ZERO_COMMAND.md) for the passive-o
 
 ## Start here
 
-After a whole-moment recording, add an optional review note before saving. [Workflow and verification](docs/milestones/2026-11-25-review-notes.md).
-
 The public website was updated on November 25, 2026. [Release verification](docs/LIVE_RELEASE_2026_11_25.md) records the deployed source, live route checks and saved-session walkthrough.
 
-- **Just curious?** Open the [Field Companion](https://metivity.github.io/talk2nature/app/) and choose **Try an example · no microphone**. On the Station screen, choose the no-microphone practice button, add one observation marker, tap **End rehearsal**, then **Finish and review**. Inspect the invented-session recap; you do not need an account, microphone permission, recording, upload, terminal or JSON editing. For a deeper file check, the [contribution guide](CONTRIBUTING.md) explains the optional save-and-reopen path. The [install guide](https://metivity.github.io/talk2nature/mobile/) explains the optional public-only offline shell.
+- **Just curious?** Open the [Field Companion](https://metivity.github.io/talk2nature/app/) and try the invented example. End the rehearsal, review the moment, and add an optional note. Trying it needs no account or microphone. See the [review-note walkthrough](docs/milestones/2026-11-25-review-notes.md) or the [install guide](https://metivity.github.io/talk2nature/mobile/).
 - **Want to try one small contribution?** Follow the [good first phone task](https://github.com/Metivity/talk2nature/issues/115), or read [CONTRIBUTING.md](CONTRIBUTING.md) for other no-recording tasks. Trying the app does not require GitHub; posting an issue does. The task also offers email as an alternative.
 - **Researcher or research-software engineer?** Start with the [evaluation kit](docs/RESEARCHER_START.md): a no-setup browser walkthrough or reproducible synthetic command-line example. Then see the [candidate run card](docs/BENCHMARK_CANDIDATE_RUN_CARD.md) for current research questions and the evidence still missing before any model run.
 - **Scientific reviewer?** The [bat-context methods brief](docs/BAT_CONTEXT_REVIEW.md) asks for bounded feedback on one published evaluation design. Public-source review only; it does not request recordings or claim a partnership.

@@ -2074,7 +2074,10 @@ class SiteTests(unittest.TestCase):
             build(root,'https://fixture.github.io/talk2nature',True)
             home=(root/'app/index.html').read_text()
             feedback=(root/'mobile/index.html').read_text()
-            self.assertIn('href="/talk2nature/mobile/#share"',home)
+            revision=json.loads((root/'build-info.json').read_text())['asset_revision']
+            self.assertIn(f'href="/talk2nature/mobile/?app_build={revision}#share"',home)
+            for route in ('app/station/','app/review/','app/compare/'):
+                self.assertIn(f'href="/talk2nature/mobile/?app_build={revision}#share"',(root/route/'index.html').read_text())
             self.assertIn('Tell us what worked or felt confusing',home)
             self.assertIn('No account needed. Nothing is sent automatically.',home)
             self.assertIn('id="mobile-feedback-form"',feedback)

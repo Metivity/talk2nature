@@ -1,5 +1,8 @@
 'use strict';
 const projectUrl=new URL('../mobile/',document.currentScript.src).href;
+const buildToken=value=>/^[a-f0-9]{16}$/i.test(value||'')?value:'Not supplied';
+const feedbackBuild=buildToken(new URL(document.currentScript.src).searchParams.get('v'));
+const linkedAppBuild=buildToken(new URL(location.href).searchParams.get('app_build'));
 const status=document.getElementById('share-status');
 document.getElementById('copy-project')?.addEventListener('click',async()=>{
   try { await navigator.clipboard.writeText(projectUrl); status.textContent='Project link copied. No recordings or notes were included.'; }
@@ -23,7 +26,7 @@ feedbackForm?.addEventListener('submit',event=>{
   if(!workflow||!outcome){feedbackForm.reportValidity();return;}
   const device=document.getElementById('feedback-device')?.value.trim()||'Not provided';
   const note=document.getElementById('feedback-note')?.value.trim()||'No additional note';
-  const report=['Talk2Nature mobile workflow feedback',`Workflow: ${workflow}`,`Outcome: ${outcome}`,`Device/browser: ${device}`,`What was unclear or useful: ${note}`].join('\n');
+  const report=['Talk2Nature mobile workflow feedback',`Workflow: ${workflow}`,`Outcome: ${outcome}`,`App build referenced by link: ${linkedAppBuild}`,`Feedback page build: ${feedbackBuild}`,`Device/browser: ${device}`,`What was unclear or useful: ${note}`].join('\n');
   feedbackReport.value=report;
   const subject=encodeURIComponent('Talk2Nature mobile workflow feedback');
   const encodedBody=encodeURIComponent(report);
