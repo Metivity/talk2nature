@@ -1,3 +1,7 @@
+# Current status — November 25, 2026
+
+Public Pages deployed `12ac68383a82d0c04cdcd625bf5fca0ed1276bf1` through successful [run 45515362392](https://github.com/Metivity/talk2nature/actions/runs/45515362392). The 197-route live check passed. The [current acceptance audit](GOAL_ACCEPTANCE_AUDIT_2026_11_25.md) separates those technical results from the still-open physical-phone, independent-use and Google sitemap-fetch evidence. Two private researcher-contact drafts are prepared but unsent; no outreach approval or external review is inferred. Benchmark selection remains deferred and AutoResearch is **NOT READY**. Earlier dated entries below retain their historical status.
+
 # November 5, 2026 — Coller Dolittle Prize fit rechecked
 
 Rechecked the official Foundation and Tel Aviv University prize pages. They give conflicting 2027 deadlines, August 30 and September 30, 2026 at noon CET, and both are past. The TAU page still says submissions are open, but neither source describes a late route or a later cycle. The prize is for already-completed, non-invasive, multi-context research using endogenous signals, with a measurable animal response and public data. Talk2Nature's present software/synthetic work does not meet that bar. Refreshed the opportunity and source records; no late application was drafted/submitted and no organizer was contacted. Reconsider only after a qualifying completed study and a published future cycle.

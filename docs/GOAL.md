@@ -1,3 +1,7 @@
+# Current acceptance checkpoint — November 25, 2026
+
+The full five-track goal remains active. Read the [current acceptance audit](GOAL_ACCEPTANCE_AUDIT_2026_11_25.md) before continuing: public software/library improvements are deployed, while named-phone testing, independent-use feedback and Google sitemap processing remain open. The ML benchmark is deliberately deferred under the existing evidence and rights gates. Earlier dated entries below are historical evidence, not the current deployment status.
+
 # November 5, 2026 — refresh Coller Dolittle Prize fit and deadline
 
 **Question:** is there a credible route to submit Talk2Nature to the 2027 Coller Dolittle Prize after its stated deadline?
