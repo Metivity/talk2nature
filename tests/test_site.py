@@ -866,6 +866,12 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(page.count('<article class="resource-entry"'),len(resources))
             for resource in resources:
                 self.assertIn(html.escape(resource['title']),page)
+                self.assertIn(f'id="resource-{resource["id"]}"',page)
+                self.assertIn(f'href="/talk2nature/research/resources/#resource-{resource["id"]}"',page)
+            self.assertIn('Related research notes',page)
+            self.assertIn('a connection is not independent corroboration',page)
+            self.assertIn('href="/talk2nature/research/parrot-data-feasibility/"',page)
+            self.assertIn('Copy search link',page)
             self.assertIn('<title>Animal communication papers, datasets and methods · Talk2Nature</title>',page)
             self.assertIn('name="description" content="Browse papers, datasets, code, models and standards for reproducible research on animal communication, with review depth, limits and reuse-rights notes."',page)
             self.assertIn('rel="canonical" href="https://fixture.github.io/talk2nature/research/resources/"',page)
