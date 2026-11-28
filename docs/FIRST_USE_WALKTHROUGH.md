@@ -2,6 +2,8 @@
 
 **Status:** internal protocol draft. No testers have been recruited or tested with this document. It is not an ethics approval or authorization to contact people.
 
+For the concise participant card, facilitator sequence and five-person decision rule, use the [first validation-cycle kit](VALIDATION_CYCLE.md). This document remains the full protocol.
+
 ## Purpose
 
 Check whether a first-time visitor can find and complete the microphone-free practice, save it, reopen it in Compare, and understand that the session is invented practice material rather than an animal observation. This is formative software usability work, not animal research and not evidence of biological communication.
