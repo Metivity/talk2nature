@@ -44,6 +44,6 @@ Select at most three fixes from actual findings. Keep the first-attempt results 
 
 ## Separate researcher check
 
-Use the existing [researcher kit](RESEARCHER_START.md) and [bat-context methods brief](BAT_CONTEXT_REVIEW.md). The prepared source-author request and separate evaluation-design request remain private, unsent and subject to explicit approval. A source-author clarification is not independent validation. Record what each reviewer actually assessed and any relevant collaboration before characterizing the review.
+Use the existing [researcher kit](RESEARCHER_START.md) and [bat-context methods brief](BAT_CONTEXT_REVIEW.md). Check the current private correspondence before contacting anyone; prepared messages and replies stay outside Git. Further outreach requires explicit approval. Respect declined invitations, and do not count an availability reply as a methods critique. A source-author clarification is not independent validation. Record what each reviewer actually assessed and any relevant collaboration before characterizing the review.
 
 After the user and researcher evidence is available, write a **go, narrow or defer** decision for one concrete workflow. State who needs it, what existing tools already provide, what Talk2Nature adds and which unanswered question would change the decision. Until then, no study success or model-readiness claim is justified.
