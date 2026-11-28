@@ -1,5 +1,7 @@
 # Search discovery and indexing audit
 
+Latest observation: [November 28 Google discovery follow-up](SEO_DISCOVERY_2026_11_28.md). A live smartphone inspection could fetch the contribution page and one indexing request was accepted; actual indexing and the separate sitemap-fetch error remain unresolved.
+
 ## November 25 follow-up — check the host crawl policy
 
 The earlier `robots.txt` result below describes `/talk2nature/robots.txt`. Google applies crawl rules from the host-root `/robots.txt`; a file in a project subdirectory does not establish crawler policy. The revised live verifier now fetches `https://metivity.github.io/robots.txt` and checks its web Googlebot rules against the sitemap and all listed pages. It covers specific and wildcard agent groups, merged groups, longest matching paths, allow ties, UTF-8/escaped paths, wildcards and end anchors. Server failures and rate limiting leave the policy unresolved and fail the check.
